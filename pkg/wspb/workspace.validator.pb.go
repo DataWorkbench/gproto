@@ -26,17 +26,17 @@ func (this *Info) Validate() error {
 	if !(len(this.Name) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
 	}
-	if !(len(this.Name) < 128) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
 	}
-	if !(len(this.Description) < 1024) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Description))
+	if !(len(this.Description) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Description))
 	}
-	if !(this.Status > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Status))
+	if !(this.Status > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
 	}
-	if !(this.Status < 2) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '2'`, this.Status))
+	if !(this.Status < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
 	}
 	return nil
 }
@@ -72,11 +72,11 @@ func (this *CreateRequest) Validate() error {
 	if !(len(this.Name) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
 	}
-	if !(len(this.Name) < 128) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
 	}
-	if !(len(this.Description) < 1024) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Description))
+	if !(len(this.Description) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Description))
 	}
 	return nil
 }
@@ -102,11 +102,11 @@ func (this *UpdateRequest) Validate() error {
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
-	if !(len(this.Name) < 128) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
 	}
-	if !(len(this.Description) < 1024) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Description))
+	if !(len(this.Description) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Description))
 	}
 	return nil
 }
