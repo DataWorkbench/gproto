@@ -102,9 +102,6 @@ func (this *UpdateRequest) Validate() error {
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
-	if !(len(this.Name) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
-	}
 	if !(len(this.Name) < 128) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
 	}
