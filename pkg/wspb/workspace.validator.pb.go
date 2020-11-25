@@ -16,6 +16,9 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *EmptyReply) Validate() error {
+	return nil
+}
 func (this *Info) Validate() error {
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
@@ -38,6 +41,12 @@ func (this *Info) Validate() error {
 	if !(this.Status < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
 	}
+	if !(this.Created > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
+	}
+	if !(this.Updated > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
+	}
 	return nil
 }
 func (this *ListsRequest) Validate() error {
@@ -49,6 +58,9 @@ func (this *ListsRequest) Validate() error {
 	}
 	if !(this.Limit < 101) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
 	}
 	return nil
 }
@@ -81,24 +93,12 @@ func (this *CreateRequest) Validate() error {
 	return nil
 }
 func (this *DeleteRequest) Validate() error {
-	if !(len(this.Owner) > 10) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
 	return nil
 }
 func (this *UpdateRequest) Validate() error {
-	if !(len(this.Owner) > 10) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
@@ -111,12 +111,6 @@ func (this *UpdateRequest) Validate() error {
 	return nil
 }
 func (this *DescribeRequest) Validate() error {
-	if !(len(this.Owner) > 10) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
@@ -131,29 +125,14 @@ func (this *DescribeReply) Validate() error {
 	return nil
 }
 func (this *DisableRequest) Validate() error {
-	if !(len(this.Owner) > 10) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
 	return nil
 }
 func (this *EnableRequest) Validate() error {
-	if !(len(this.Owner) > 10) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
-	return nil
-}
-func (this *EmptyReply) Validate() error {
 	return nil
 }
