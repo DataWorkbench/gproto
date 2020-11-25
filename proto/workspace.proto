@@ -8,32 +8,34 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 // Workspace Service
 service Workspace {
-    rpc Lists(ListsRequest) returns (ListsReply) {}
-    rpc Create(CreateRequest) returns (EmptyReply) {}
-    rpc Delete(DeleteRequest) returns (EmptyReply) {}
-    rpc Update(UpdateRequest) returns (EmptyReply) {}
+    rpc Lists(ListsRequest)       returns (ListsReply)    {}
+    rpc Create(CreateRequest)     returns (EmptyReply)    {}
+    rpc Delete(DeleteRequest)     returns (EmptyReply)    {}
+    rpc Update(UpdateRequest)     returns (EmptyReply)    {}
     rpc Describe(DescribeRequest) returns (DescribeReply) {}
-    rpc Disable(DisableRequest) returns (EmptyReply) {}
-    rpc Enable(EnableRequest) returns (EmptyReply) {}
+    rpc Disable(DisableRequest)   returns (EmptyReply)    {}
+    rpc Enable(EnableRequest)     returns (EmptyReply)    {}
 }
+
+// EmptyReply represents no value returned
+message EmptyReply {}
 
 // The Workspace Info
 message Info {
-    string ID = 1 [ (validator.field) = { length_eq: 20 } ];
-    string Owner = 2 [ (validator.field) = { length_lt: 65 } ];
-    string Name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+    string ID = 1          [ (validator.field) = { length_eq: 20 } ];
+    string Owner = 2       [ (validator.field) = { length_lt: 65 } ];
+    string Name = 3        [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
     string Description = 4 [ (validator.field) = { length_lt: 1025 } ];
-    int32 Status = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-    int64 Created = 6 [ (validator.field) = { msg_exists: true } ];
-    int64 Updated = 7 [ (validator.field) = { msg_exists: true } ];
+    int32  Status = 5      [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+    int64  Created = 7     [ (validator.field) = { int_gt: 0 } ];
+    int64  Updated = 8     [ (validator.field) = { int_gt: 0 } ];
 }
 
-//
 // Request parameters used to ListWorkspaces
 message ListsRequest {
-    string Owner = 1 [ (validator.field) = { string_not_empty: true } ];
-    int32 Limit = 2 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 Offset = 3 [ (validator.field) = { msg_exists: true } ];
+    string Owner = 1  [ (validator.field) = { string_not_empty: true } ];
+    int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListWorkspaces
@@ -41,53 +43,42 @@ message ListsReply {
     repeated Info Infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
-//
 // Request parameters used to CreateWorkspace
 message CreateRequest {
-    string Owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
-    string Name = 2 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+    string Owner = 1       [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
+    string Name = 2        [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
     string Description = 3 [ (validator.field) = { length_lt: 1025 } ];
 }
 
-//
 // Request parameters used to DeleteWorkspace
 message DeleteRequest {
-    string Owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
     string ID = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
-//
 // Request parameters used to UpdateWorkspace
 message UpdateRequest {
-    string Owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
-    string ID = 2 [ (validator.field) = {length_eq: 20} ];
-    string Name = 3 [ (validator.field) = { length_lt: 129 } ];
+    string ID = 2          [ (validator.field) = { length_eq: 20 } ];
+    string Name = 3        [ (validator.field) = { length_lt: 129 } ];
     string Description = 4 [ (validator.field) = { length_lt: 1025 } ];
 }
 
-//
 // Request parameters used to DescribeWorkspace
 message DescribeRequest {
-    string Owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
-    string ID = 2 [ (validator.field) = {length_eq: 20} ];
+    string ID = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Reply parameters used to DescribeWorkspace
-message DescribeReply { Info Info = 1; }
+message DescribeReply {
+    Info Info = 1;
+}
 
-//
 // Request parameters used to DisableWorkspace
 message DisableRequest {
-    string Owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
-    string ID = 2 [ (validator.field) = {length_eq: 20} ];
+    string ID = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
-//
 // Request parameters used to EnableWorkspace
 message EnableRequest {
-    string Owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
-    string ID = 2 [ (validator.field) = {length_eq: 20} ];
+    string ID = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// EmptyReply represents no value returned
-message EmptyReply {}
