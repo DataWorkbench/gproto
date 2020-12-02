@@ -1,0 +1,164 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/wfpb";
+
+package wfpb;
+
+import "types.proto";
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+// Workflow Service
+service Workflow {
+	rpc Lists(ListsRequest)       returns (ListsReply)       {}
+	rpc Create(CreateRequest)     returns (types.EmptyReply) {}
+	rpc Delete(DeleteRequest)     returns (types.EmptyReply) {}
+	rpc Update(UpdateRequest)     returns (types.EmptyReply) {}
+	rpc Describe(DescribeRequest) returns (DescribeReply)    {}
+	rpc Publish(PublishRequest)   returns (types.EmptyReply) {}
+	rpc Offline(OfflineRequest)   returns (types.EmptyReply) {}
+	// version api
+	rpc ListVersions(ListVersionsRequest)               returns (ListVersionsReply)       {}
+	rpc ListCrontabVersions(ListCrontabVersionsRequest) returns (ListCrontabVersionsReply) {}
+	// crontab api
+	rpc CreateCrontab(CreateCrontabRequest)     returns (types.EmptyReply)    {}
+	rpc UpdateCrontab(UpdateCrontabRequest)     returns (types.EmptyReply)    {}
+	rpc DescribeCrontab(DescribeCrontabRequest) returns (DescribeCrontabReply) {}
+}
+
+// The Workflow Info
+message Info {
+	string SpaceId = 1 [ (validator.field) = { length_eq: 20 } ];
+	string ID = 2      [ (validator.field) = { length_eq: 20 } ];
+	string Name = 3    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 4    [ (validator.field) = { length_lt: 1025 } ];
+	int32  Status = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int64  Created = 6 [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 7 [ (validator.field) = { int_gt: 0 } ];
+}
+
+// The Workflow version Info
+message VersionInfo {
+	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
+	int64  Version = 2 [ (validator.field) = { int_gt: 0 } ];
+	string Name = 3    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 4    [ (validator.field) = { length_lt: 1025 } ];
+	int64  Created = 6 [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 7 [ (validator.field) = { int_gt: 0 } ];
+}
+
+// Request parameters used to ListWorkflow
+message ListsRequest {
+	string SpaceId = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  Limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  Offset = 3  [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Reply parameters used to ListWorkflow
+message ListsReply {
+	repeated Info Infos = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+// Request parameters used to ListWorkflowVersions
+message ListVersionsRequest {
+	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Reply parameters used to ListWorkflowVersions
+message ListVersionsReply {
+	repeated VersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+// Request parameters used to CreateWorkflow
+message CreateRequest {
+	string SpaceId = 1 [ (validator.field) = { length_eq: 20 } ];
+	string Name = 2    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 3    [ (validator.field) = { length_lt: 1025 } ];
+}
+
+// Request parameters used to DeleteWorkflow
+message DeleteRequest {
+	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// Request parameters used to UpdateWorkflow
+message UpdateRequest {
+	string ID = 2   [ (validator.field) = { length_eq: 20} ];
+	string Name = 3 [ (validator.field) = { length_lt: 129 } ];
+	string Desc = 4 [ (validator.field) = { length_lt: 1025 } ];
+}
+
+// Request parameters used to DescribeWorkflow
+message DescribeRequest {
+	string ID = 2 [ (validator.field) = {length_eq: 20} ];
+}
+
+// Reply parameters used to DescribeWorkflow
+message DescribeReply {
+	Info Info = 1;
+}
+
+// Request parameters used to PublishRequest
+message PublishRequest {
+	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// Request parameters used to OfflineRequest
+message OfflineRequest {
+	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// The Workflow crontab version Info
+message CrontabVersionInfo {
+	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
+	int64  Version = 2 [ (validator.field) = { int_gt: 0 } ];
+	int64  Started = 3 [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 4   [ (validator.field) = { int_gt: 0 } ];
+	string Express = 5 [ (validator.field) = { msg_exists: true } ];
+	int64  Created = 6 [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 7 [ (validator.field) = { int_gt: 0 } ];
+}
+
+// Request parameters used to ListCrontabVersions
+message ListCrontabVersionsRequest {
+	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Reply parameters used to ListCrontabVersions
+message ListCrontabVersionsReply {
+	repeated CrontabVersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+// Request parameters used to CreateCrontab
+message CreateCrontabRequest {
+	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 2 [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 3   [ (validator.field) = { int_gt: 0 } ];
+	string Express = 4 [ (validator.field) = { msg_exists: true } ];
+}
+
+// Request parameters used to UpdateCrontab
+message UpdateCrontabRequest {
+	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 2 [ (validator.field) = { } ];
+	int64  Ended = 3   [ (validator.field) = { } ];
+	string Express = 4 [ (validator.field) = { } ];
+}
+
+// Request parameters used to DescribeCrontab
+message DescribeCrontabRequest {
+	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// Reply parameters used to DescribeCrontab
+message DescribeCrontabReply {
+	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 2 [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 3   [ (validator.field) = { int_gt: 0 } ];
+	string Express = 4 [ (validator.field) = { msg_exists: true } ];
+	int64  Created = 5 [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 6 [ (validator.field) = { int_gt: 0 } ];
+}

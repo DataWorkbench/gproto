@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/wnpb";
+
+package wnpb;
+
+import "types.proto";
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+// Node Service
+service Node {
+	rpc Create(CreateRequest)     returns (types.EmptyReply) {}
+	rpc Delete(DeleteRequest)     returns (types.EmptyReply) {}
+	rpc Update(UpdateRequest)     returns (types.EmptyReply) {}
+	rpc Describe(DescribeRequest) returns (DescribeReply)    {}
+	// version api
+	rpc ListVersions(ListVersionsRequest) returns (ListVersionsReply) {}
+}
+
+// The Node Info
+message Info {
+	string FlowId = 1             [ (validator.field) = { length_eq: 20 } ];
+	string ID = 2                 [ (validator.field) = { length_eq: 20 } ];
+	string Name = 3               [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 4               [ (validator.field) = { length_lt: 1025 } ];
+	int32  Status = 5             [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	repeated string Upstreams = 6 [ (validator.field) = {} ];
+	int64  Created = 7            [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 8            [ (validator.field) = { int_gt: 0 } ];
+}
+
+// The Node version Info
+message VersionInfo {
+	string FlowId = 1             [ (validator.field) = { length_eq: 20 } ];
+	string ID = 2                 [ (validator.field) = { length_eq: 20 } ];
+	int64  Version = 3            [ (validator.field) = { int_gt: 0 } ];
+	string Name = 4               [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 5               [ (validator.field) = { length_lt: 1025 } ];
+	int32  Status = 6             [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	repeated string Upstreams = 7 [ (validator.field) = {} ];
+	int64  Created = 8            [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 9            [ (validator.field) = { int_gt: 0 } ];
+}
+
+// Request parameters used to ListWorkflowVersions
+message ListVersionsRequest {
+	string NodeId = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Reply parameters used to ListWorkflowVersions
+message ListVersionsReply {
+	repeated VersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+// Request parameters used to CreateNode
+message CreateRequest {
+	string FlowId = 1             [ (validator.field) = { length_eq: 20 } ];
+	string Name = 2               [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 3               [ (validator.field) = { length_lt: 1025 } ];
+	int32  Status = 5             [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	repeated string Upstreams = 6 [ (validator.field) = {} ];
+}
+
+// Request parameters used to DeleteNode
+message DeleteRequest {
+	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// Request parameters used to UpdateNode
+message UpdateRequest {
+	string ID = 2         	      [ (validator.field) = {length_eq: 20} ];
+	string Name = 3               [ (validator.field) = { length_lt: 129 } ];
+	string Desc = 4               [ (validator.field) = { length_lt: 1025 } ];
+	int32  Status = 5             [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	repeated string Upstreams = 6 [ (validator.field) = {} ];
+}
+
+// Request parameters used to DescribeNode
+message DescribeRequest {
+	string ID = 2 [ (validator.field) = {length_eq: 20} ];
+}
+
+// Reply parameters used to DescribeNode
+message DescribeReply {
+	Info Info = 1;
+}
