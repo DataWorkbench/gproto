@@ -1,24 +1,22 @@
 syntax = "proto3";
 
-option go_package = "pkg/wspb";
+option go_package = "github.com/DataWorkbench/gproto/pkg/wspb";
 
 package wspb;
 
+import "types.proto";
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 // Workspace Service
 service Workspace {
-    rpc Lists(ListsRequest)       returns (ListsReply)    {}
-    rpc Create(CreateRequest)     returns (EmptyReply)    {}
-    rpc Delete(DeleteRequest)     returns (EmptyReply)    {}
-    rpc Update(UpdateRequest)     returns (EmptyReply)    {}
-    rpc Describe(DescribeRequest) returns (DescribeReply) {}
-    rpc Disable(DisableRequest)   returns (EmptyReply)    {}
-    rpc Enable(EnableRequest)     returns (EmptyReply)    {}
+    rpc Lists(ListsRequest)       returns (ListsReply)       {}
+    rpc Create(CreateRequest)     returns (types.EmptyReply) {}
+    rpc Delete(DeleteRequest)     returns (types.EmptyReply) {}
+    rpc Update(UpdateRequest)     returns (types.EmptyReply) {}
+    rpc Describe(DescribeRequest) returns (DescribeReply)    {}
+    rpc Disable(DisableRequest)   returns (types.EmptyReply) {}
+    rpc Enable(EnableRequest)     returns (types.EmptyReply) {}
 }
-
-// EmptyReply represents no value returned
-message EmptyReply {}
 
 // The Workspace Info
 message Info {
@@ -81,4 +79,3 @@ message DisableRequest {
 message EnableRequest {
     string ID = 2 [ (validator.field) = { length_eq: 20 } ];
 }
-
