@@ -4,6 +4,7 @@ package wspb
 
 import (
 	context "context"
+	types "github.com/DataWorkbench/gproto/pkg/types"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -18,12 +19,12 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WorkspaceClient interface {
 	Lists(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error)
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*EmptyReply, error)
-	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*EmptyReply, error)
-	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*EmptyReply, error)
+	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
 	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeReply, error)
-	Disable(ctx context.Context, in *DisableRequest, opts ...grpc.CallOption) (*EmptyReply, error)
-	Enable(ctx context.Context, in *EnableRequest, opts ...grpc.CallOption) (*EmptyReply, error)
+	Disable(ctx context.Context, in *DisableRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Enable(ctx context.Context, in *EnableRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
 }
 
 type workspaceClient struct {
@@ -43,8 +44,8 @@ func (c *workspaceClient) Lists(ctx context.Context, in *ListsRequest, opts ...g
 	return out, nil
 }
 
-func (c *workspaceClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
-	out := new(EmptyReply)
+func (c *workspaceClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
+	out := new(types.EmptyReply)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -52,8 +53,8 @@ func (c *workspaceClient) Create(ctx context.Context, in *CreateRequest, opts ..
 	return out, nil
 }
 
-func (c *workspaceClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
-	out := new(EmptyReply)
+func (c *workspaceClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
+	out := new(types.EmptyReply)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/Delete", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -61,8 +62,8 @@ func (c *workspaceClient) Delete(ctx context.Context, in *DeleteRequest, opts ..
 	return out, nil
 }
 
-func (c *workspaceClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
-	out := new(EmptyReply)
+func (c *workspaceClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
+	out := new(types.EmptyReply)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/Update", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -79,8 +80,8 @@ func (c *workspaceClient) Describe(ctx context.Context, in *DescribeRequest, opt
 	return out, nil
 }
 
-func (c *workspaceClient) Disable(ctx context.Context, in *DisableRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
-	out := new(EmptyReply)
+func (c *workspaceClient) Disable(ctx context.Context, in *DisableRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
+	out := new(types.EmptyReply)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/Disable", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -88,8 +89,8 @@ func (c *workspaceClient) Disable(ctx context.Context, in *DisableRequest, opts 
 	return out, nil
 }
 
-func (c *workspaceClient) Enable(ctx context.Context, in *EnableRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
-	out := new(EmptyReply)
+func (c *workspaceClient) Enable(ctx context.Context, in *EnableRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
+	out := new(types.EmptyReply)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/Enable", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -102,12 +103,12 @@ func (c *workspaceClient) Enable(ctx context.Context, in *EnableRequest, opts ..
 // for forward compatibility
 type WorkspaceServer interface {
 	Lists(context.Context, *ListsRequest) (*ListsReply, error)
-	Create(context.Context, *CreateRequest) (*EmptyReply, error)
-	Delete(context.Context, *DeleteRequest) (*EmptyReply, error)
-	Update(context.Context, *UpdateRequest) (*EmptyReply, error)
+	Create(context.Context, *CreateRequest) (*types.EmptyReply, error)
+	Delete(context.Context, *DeleteRequest) (*types.EmptyReply, error)
+	Update(context.Context, *UpdateRequest) (*types.EmptyReply, error)
 	Describe(context.Context, *DescribeRequest) (*DescribeReply, error)
-	Disable(context.Context, *DisableRequest) (*EmptyReply, error)
-	Enable(context.Context, *EnableRequest) (*EmptyReply, error)
+	Disable(context.Context, *DisableRequest) (*types.EmptyReply, error)
+	Enable(context.Context, *EnableRequest) (*types.EmptyReply, error)
 	mustEmbedUnimplementedWorkspaceServer()
 }
 
@@ -118,22 +119,22 @@ type UnimplementedWorkspaceServer struct {
 func (UnimplementedWorkspaceServer) Lists(context.Context, *ListsRequest) (*ListsReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Lists not implemented")
 }
-func (UnimplementedWorkspaceServer) Create(context.Context, *CreateRequest) (*EmptyReply, error) {
+func (UnimplementedWorkspaceServer) Create(context.Context, *CreateRequest) (*types.EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedWorkspaceServer) Delete(context.Context, *DeleteRequest) (*EmptyReply, error) {
+func (UnimplementedWorkspaceServer) Delete(context.Context, *DeleteRequest) (*types.EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedWorkspaceServer) Update(context.Context, *UpdateRequest) (*EmptyReply, error) {
+func (UnimplementedWorkspaceServer) Update(context.Context, *UpdateRequest) (*types.EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
 func (UnimplementedWorkspaceServer) Describe(context.Context, *DescribeRequest) (*DescribeReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Describe not implemented")
 }
-func (UnimplementedWorkspaceServer) Disable(context.Context, *DisableRequest) (*EmptyReply, error) {
+func (UnimplementedWorkspaceServer) Disable(context.Context, *DisableRequest) (*types.EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Disable not implemented")
 }
-func (UnimplementedWorkspaceServer) Enable(context.Context, *EnableRequest) (*EmptyReply, error) {
+func (UnimplementedWorkspaceServer) Enable(context.Context, *EnableRequest) (*types.EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Enable not implemented")
 }
 func (UnimplementedWorkspaceServer) mustEmbedUnimplementedWorkspaceServer() {}
