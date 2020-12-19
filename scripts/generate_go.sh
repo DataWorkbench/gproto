@@ -17,8 +17,35 @@ if [ -z "${GOPATH}" ]; then
     exit 1
 fi
 
+# check the grpc plugin is installed.
 if ! type protoc > /dev/null 2>&1; then
-  echo "Error: the command <protoc> not install, please install it before running"
+  echo "Error: the plugin <protoc> not install, please install it before running"
+  exit 1
+fi
+
+if ! type protoc-gen-go > /dev/null 2>&1; then
+  echo "Error: the plugin <protoc-gen-go> not install, please install it before running"
+  exit 1
+fi
+
+if ! type protoc-gen-go-grpc > /dev/null 2>&1; then
+  echo "Error: the plugin <protoc-gen-go-grpc> not install, please install it before running"
+  exit 1
+fi
+
+# check the plugin version.
+if [[ $(protoc --version | cut -f2 -d' ') != "3.13.0" ]]; then
+  echo "Error: could not find protoc 3.13.0, is it installed in you PATH?"
+  exit 1
+fi
+
+if [[ $(protoc-gen-go --version 2>&1 | cut -f2 -d' ') != "v1.25.0" ]]; then
+  echo "Error: could not find protoc-gen-go v1.25.0, is it installed in you PATH?"
+  exit 1
+fi
+
+if [[ $(protoc-gen-go-grpc --version 2>&1 | cut -f2 -d' ') != "1.0.1" ]]; then
+  echo "Error: could not find protoc-gen-go-grpc 1.0.1, is it installed in you PATH?"
   exit 1
 fi
 
