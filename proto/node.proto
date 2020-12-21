@@ -32,7 +32,7 @@ message Info {
 // The Node version Info
 message VersionInfo {
 	string FlowId = 1             [ (validator.field) = { length_eq: 20 } ];
-	string NodeId = 2             [ (validator.field) = { length_eq: 20 } ];
+	string ID = 2                 [ (validator.field) = { length_eq: 20 } ];
 	int64  Version = 3            [ (validator.field) = { int_gt: 0 } ];
 	string Name = 4               [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	string Desc = 5               [ (validator.field) = { length_lt: 1025 } ];

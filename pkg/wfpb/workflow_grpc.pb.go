@@ -27,11 +27,10 @@ type WorkflowClient interface {
 	Offline(ctx context.Context, in *OfflineRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
 	// version api
 	ListVersions(ctx context.Context, in *ListVersionsRequest, opts ...grpc.CallOption) (*ListVersionsReply, error)
-	ListCrontabVersions(ctx context.Context, in *ListCrontabVersionsRequest, opts ...grpc.CallOption) (*ListCrontabVersionsReply, error)
-	// crontab api
-	CreateCrontab(ctx context.Context, in *CreateCrontabRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
-	UpdateCrontab(ctx context.Context, in *UpdateCrontabRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
-	DescribeCrontab(ctx context.Context, in *DescribeCrontabRequest, opts ...grpc.CallOption) (*DescribeCrontabReply, error)
+	ListScheduleVersions(ctx context.Context, in *ListScheduleVersionsRequest, opts ...grpc.CallOption) (*ListScheduleVersionsReply, error)
+	// schedule api
+	UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	DescribeSchedule(ctx context.Context, in *DescribeScheduleRequest, opts ...grpc.CallOption) (*DescribeScheduleReply, error)
 }
 
 type workflowClient struct {
@@ -114,36 +113,27 @@ func (c *workflowClient) ListVersions(ctx context.Context, in *ListVersionsReque
 	return out, nil
 }
 
-func (c *workflowClient) ListCrontabVersions(ctx context.Context, in *ListCrontabVersionsRequest, opts ...grpc.CallOption) (*ListCrontabVersionsReply, error) {
-	out := new(ListCrontabVersionsReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListCrontabVersions", in, out, opts...)
+func (c *workflowClient) ListScheduleVersions(ctx context.Context, in *ListScheduleVersionsRequest, opts ...grpc.CallOption) (*ListScheduleVersionsReply, error) {
+	out := new(ListScheduleVersionsReply)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListScheduleVersions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) CreateCrontab(ctx context.Context, in *CreateCrontabRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
+func (c *workflowClient) UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
 	out := new(types.EmptyReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/CreateCrontab", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpsertSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) UpdateCrontab(ctx context.Context, in *UpdateCrontabRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpdateCrontab", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) DescribeCrontab(ctx context.Context, in *DescribeCrontabRequest, opts ...grpc.CallOption) (*DescribeCrontabReply, error) {
-	out := new(DescribeCrontabReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeCrontab", in, out, opts...)
+func (c *workflowClient) DescribeSchedule(ctx context.Context, in *DescribeScheduleRequest, opts ...grpc.CallOption) (*DescribeScheduleReply, error) {
+	out := new(DescribeScheduleReply)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -163,11 +153,10 @@ type WorkflowServer interface {
 	Offline(context.Context, *OfflineRequest) (*types.EmptyReply, error)
 	// version api
 	ListVersions(context.Context, *ListVersionsRequest) (*ListVersionsReply, error)
-	ListCrontabVersions(context.Context, *ListCrontabVersionsRequest) (*ListCrontabVersionsReply, error)
-	// crontab api
-	CreateCrontab(context.Context, *CreateCrontabRequest) (*types.EmptyReply, error)
-	UpdateCrontab(context.Context, *UpdateCrontabRequest) (*types.EmptyReply, error)
-	DescribeCrontab(context.Context, *DescribeCrontabRequest) (*DescribeCrontabReply, error)
+	ListScheduleVersions(context.Context, *ListScheduleVersionsRequest) (*ListScheduleVersionsReply, error)
+	// schedule api
+	UpsertSchedule(context.Context, *UpsertScheduleRequest) (*types.EmptyReply, error)
+	DescribeSchedule(context.Context, *DescribeScheduleRequest) (*DescribeScheduleReply, error)
 	mustEmbedUnimplementedWorkflowServer()
 }
 
@@ -199,17 +188,14 @@ func (UnimplementedWorkflowServer) Offline(context.Context, *OfflineRequest) (*t
 func (UnimplementedWorkflowServer) ListVersions(context.Context, *ListVersionsRequest) (*ListVersionsReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListVersions not implemented")
 }
-func (UnimplementedWorkflowServer) ListCrontabVersions(context.Context, *ListCrontabVersionsRequest) (*ListCrontabVersionsReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListCrontabVersions not implemented")
+func (UnimplementedWorkflowServer) ListScheduleVersions(context.Context, *ListScheduleVersionsRequest) (*ListScheduleVersionsReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListScheduleVersions not implemented")
 }
-func (UnimplementedWorkflowServer) CreateCrontab(context.Context, *CreateCrontabRequest) (*types.EmptyReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateCrontab not implemented")
+func (UnimplementedWorkflowServer) UpsertSchedule(context.Context, *UpsertScheduleRequest) (*types.EmptyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpsertSchedule not implemented")
 }
-func (UnimplementedWorkflowServer) UpdateCrontab(context.Context, *UpdateCrontabRequest) (*types.EmptyReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCrontab not implemented")
-}
-func (UnimplementedWorkflowServer) DescribeCrontab(context.Context, *DescribeCrontabRequest) (*DescribeCrontabReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeCrontab not implemented")
+func (UnimplementedWorkflowServer) DescribeSchedule(context.Context, *DescribeScheduleRequest) (*DescribeScheduleReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeSchedule not implemented")
 }
 func (UnimplementedWorkflowServer) mustEmbedUnimplementedWorkflowServer() {}
 
@@ -368,74 +354,56 @@ func _Workflow_ListVersions_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ListCrontabVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCrontabVersionsRequest)
+func _Workflow_ListScheduleVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListScheduleVersionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ListCrontabVersions(ctx, in)
+		return srv.(WorkflowServer).ListScheduleVersions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListCrontabVersions",
+		FullMethod: "/wfpb.Workflow/ListScheduleVersions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListCrontabVersions(ctx, req.(*ListCrontabVersionsRequest))
+		return srv.(WorkflowServer).ListScheduleVersions(ctx, req.(*ListScheduleVersionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_CreateCrontab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateCrontabRequest)
+func _Workflow_UpsertSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertScheduleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).CreateCrontab(ctx, in)
+		return srv.(WorkflowServer).UpsertSchedule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/CreateCrontab",
+		FullMethod: "/wfpb.Workflow/UpsertSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).CreateCrontab(ctx, req.(*CreateCrontabRequest))
+		return srv.(WorkflowServer).UpsertSchedule(ctx, req.(*UpsertScheduleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_UpdateCrontab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateCrontabRequest)
+func _Workflow_DescribeSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DescribeScheduleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).UpdateCrontab(ctx, in)
+		return srv.(WorkflowServer).DescribeSchedule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/UpdateCrontab",
+		FullMethod: "/wfpb.Workflow/DescribeSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).UpdateCrontab(ctx, req.(*UpdateCrontabRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_DescribeCrontab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeCrontabRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeCrontab(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DescribeCrontab",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeCrontab(ctx, req.(*DescribeCrontabRequest))
+		return srv.(WorkflowServer).DescribeSchedule(ctx, req.(*DescribeScheduleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -477,20 +445,16 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Workflow_ListVersions_Handler,
 		},
 		{
-			MethodName: "ListCrontabVersions",
-			Handler:    _Workflow_ListCrontabVersions_Handler,
+			MethodName: "ListScheduleVersions",
+			Handler:    _Workflow_ListScheduleVersions_Handler,
 		},
 		{
-			MethodName: "CreateCrontab",
-			Handler:    _Workflow_CreateCrontab_Handler,
+			MethodName: "UpsertSchedule",
+			Handler:    _Workflow_UpsertSchedule_Handler,
 		},
 		{
-			MethodName: "UpdateCrontab",
-			Handler:    _Workflow_UpdateCrontab_Handler,
-		},
-		{
-			MethodName: "DescribeCrontab",
-			Handler:    _Workflow_DescribeCrontab_Handler,
+			MethodName: "DescribeSchedule",
+			Handler:    _Workflow_DescribeSchedule_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

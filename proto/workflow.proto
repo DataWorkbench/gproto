@@ -17,12 +17,11 @@ service Workflow {
 	rpc Publish(PublishRequest)   returns (types.EmptyReply) {}
 	rpc Offline(OfflineRequest)   returns (types.EmptyReply) {}
 	// version api
-	rpc ListVersions(ListVersionsRequest)               returns (ListVersionsReply)       {}
-	rpc ListCrontabVersions(ListCrontabVersionsRequest) returns (ListCrontabVersionsReply) {}
-	// crontab api
-	rpc CreateCrontab(CreateCrontabRequest)     returns (types.EmptyReply)    {}
-	rpc UpdateCrontab(UpdateCrontabRequest)     returns (types.EmptyReply)    {}
-	rpc DescribeCrontab(DescribeCrontabRequest) returns (DescribeCrontabReply) {}
+	rpc ListVersions(ListVersionsRequest)                 returns (ListVersionsReply)         {}
+	rpc ListScheduleVersions(ListScheduleVersionsRequest) returns (ListScheduleVersionsReply) {}
+	// schedule api
+	rpc UpsertSchedule(UpsertScheduleRequest)     returns (types.EmptyReply)      {}
+	rpc DescribeSchedule(DescribeScheduleRequest) returns (DescribeScheduleReply) {}
 }
 
 // The Workflow Info
@@ -38,7 +37,7 @@ message Info {
 
 // The Workflow version Info
 message VersionInfo {
-	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
+	string ID = 1      [ (validator.field) = { length_eq: 20 } ];
 	int64  Version = 2 [ (validator.field) = { int_gt: 0 } ];
 	string Name = 3    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	string Desc = 4    [ (validator.field) = { length_lt: 1025 } ];
@@ -109,56 +108,66 @@ message OfflineRequest {
 	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// The Workflow crontab version Info
-message CrontabVersionInfo {
-	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
-	int64  Version = 2 [ (validator.field) = { int_gt: 0 } ];
-	int64  Started = 3 [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 4   [ (validator.field) = { int_gt: 0 } ];
-	string Express = 5 [ (validator.field) = { msg_exists: true } ];
-	int64  Created = 6 [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 7 [ (validator.field) = { int_gt: 0 } ];
+// The Workflow schedule version Info
+message ScheduleVersionInfo {
+	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
+	int64  Version = 2          [ (validator.field) = { int_gt: 0 } ];
+	int64  Started = 3          [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 4            [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 5         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 6  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 7   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	string Express = 9          [ (validator.field) = { } ];
+	int64  Timed = 10           [ (validator.field) = { } ];
+	repeated int32  NotifyStrategy = 11  [ (validator.field) = { } ];
+	int64  Created = 12         [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 13         [ (validator.field) = { int_gt: 0 } ];
 }
 
-// Request parameters used to ListCrontabVersions
-message ListCrontabVersionsRequest {
+// Request parameters used to ListScheduleVersions
+message ListScheduleVersionsRequest {
 	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
 	int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
-// Reply parameters used to ListCrontabVersions
-message ListCrontabVersionsReply {
-	repeated CrontabVersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+// Reply parameters used to ListScheduleVersions
+message ListScheduleVersionsReply {
+	repeated ScheduleVersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
-// Request parameters used to CreateCrontab
-message CreateCrontabRequest {
-	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2 [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 3   [ (validator.field) = { int_gt: 0 } ];
-	string Express = 4 [ (validator.field) = { msg_exists: true } ];
+// Request parameters used to UpsertSchedule
+message UpsertScheduleRequest {
+	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 2          [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 3            [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 4         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	string Express = 8          [ (validator.field) = { } ];
+	int64  Timed = 9            [ (validator.field) = { } ];
+	repeated int32  NotifyStrategy = 10  [ (validator.field) = { } ];
 }
 
-// Request parameters used to UpdateCrontab
-message UpdateCrontabRequest {
-	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2 [ (validator.field) = { } ];
-	int64  Ended = 3   [ (validator.field) = { } ];
-	string Express = 4 [ (validator.field) = { } ];
-}
-
-// Request parameters used to DescribeCrontab
-message DescribeCrontabRequest {
+// Request parameters used to DescribeSchedule
+message DescribeScheduleRequest {
 	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Reply parameters used to DescribeCrontab
-message DescribeCrontabReply {
-	string FlowId = 1  [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2 [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 3   [ (validator.field) = { int_gt: 0 } ];
-	string Express = 4 [ (validator.field) = { msg_exists: true } ];
-	int64  Created = 5 [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 6 [ (validator.field) = { int_gt: 0 } ];
+// Reply parameters used to DescribeSchedule
+message DescribeScheduleReply {
+	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 2          [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 3            [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 4         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	string Express = 8          [ (validator.field) = { } ];
+	int64  Timed = 9            [ (validator.field) = { } ];
+	repeated int32  NotifyStrategy = 10  [ (validator.field) = { } ];
+	int64  Created = 11         [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 12         [ (validator.field) = { int_gt: 0 } ];
 }
