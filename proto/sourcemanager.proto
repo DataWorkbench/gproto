@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/smpb";
+
+package smpb;
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+// Sourcemanager Service
+service Sourcemanager {
+    rpc Create(CreateRequest) returns (EmptyReply) {}
+    rpc Update(UpdateRequest) returns (EmptyReply) {}
+    rpc Delete(DeleteRequest) returns(EmptyReply) {}
+    rpc List(ListsRequest) returns (ListsReply) {}
+    rpc Describe(DescribeRequest) returns (InfoReply) {}
+    rpc PingSource(PingSourceRequest) returns (EmptyReply) {}
+    
+    rpc SotCreate(SotCreateRequest) returns (EmptyReply) {}
+    rpc SotUpdate(SotUpdateRequest) returns (EmptyReply) {}
+    rpc SotDelete(SotDeleteRequest) returns (EmptyReply) {}
+    rpc SotList(SotListsRequest) returns (SotListsReply) {}
+    rpc SotDescribe(SotDescribeRequest) returns (SotInfoReply) {}
+    
+    rpc EngineMap(EngingMapRequest) returns (EngineMapReply) {}
+}
+
+message EngingMapRequest {
+    string EngineType = 1  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+}
+
+message EngineMapReply {
+    string EngineType = 1  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+    string SourceType = 2  [ (validator.field) = { length_gt: 0, length_lt: 257 } ];
+}
+    
+// The Sourcemanager Info
+message InfoReply {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+    string SourceType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+    string Creator = 6    [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+    string Url = 7    [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string CreateTime = 8   [ (validator.field) = { length_lt: 65 } ];
+    string UpdateTime = 9  [ (validator.field) = { length_lt: 65 } ];
+    string EngineType = 10  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+}
+
+// Reply parameters used to DescribeWorkspace
+message CreateRequest {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+    string SourceType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+    string Creator = 6    [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+    string Url = 7 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string EngineType = 8  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+}
+
+message UpdateRequest {
+    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+    string SourceType = 2  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+    string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
+    string Url = 5   [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+}
+
+message DeleteRequest {
+    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// EmptyReply represents no value returned
+message EmptyReply {
+}
+
+message ListsRequest {
+    int32 Limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 Offset = 2 [ (validator.field) = { msg_exists: true } ];
+}
+
+// Reply parameters used to ListWorkspaces
+message ListsReply {
+    repeated InfoReply Infos = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+message DescribeRequest {
+    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message PingSourceRequest {
+    string SourceType = 1 [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+    string Url = 2 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string EngineType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+}
+
+message SotInfoReply {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+    string TabType = 3 [ (validator.field) = { length_eq: 1 } ];
+    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+    string Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
+    string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
+}
+
+message SotCreateRequest {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+    string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
+    string Url = 5 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string TabType = 6 [ (validator.field) = { length_eq: 1 } ];
+}
+
+message SotUpdateRequest {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string Name = 2   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 3    [ (validator.field) = {  length_lt: 257 } ];
+    string Url = 4 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+}
+
+message SotDeleteRequest {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+}
+
+message SotListsReply {
+    repeated SotInfoReply Infos = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+message SotListsRequest {
+    string SourceID  = 1 [ (validator.field) = { length_eq: 20 } ];
+    int32 Limit = 2 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 Offset = 3 [ (validator.field) = { msg_exists: true } ];
+}
+
+message SotDescribeRequest {
+    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
