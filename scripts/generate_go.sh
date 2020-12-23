@@ -34,8 +34,8 @@ if ! type protoc-gen-go-grpc > /dev/null 2>&1; then
 fi
 
 # check the plugin version.
-if [[ $(protoc --version | cut -f2 -d' ') != "3.13.0" ]]; then
-  echo "Error: could not find protoc 3.13.0, is it installed in you PATH?"
+if [[ $(protoc --version | cut -f2 -d' ') != "3.14.0" ]]; then
+  echo "Error: could not find protoc 3.14.0, is it installed in you PATH?"
   exit 1
 fi
 
