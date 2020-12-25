@@ -37,10 +37,11 @@ message Info {
 
 // The Workflow version Info
 message VersionInfo {
-	string ID = 1      [ (validator.field) = { length_eq: 20 } ];
-	int64  Version = 2 [ (validator.field) = { int_gt: 0 } ];
-	string Name = 3    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 4    [ (validator.field) = { length_lt: 1025 } ];
+	string SpaceId = 1 [ (validator.field) = { length_eq: 20 } ];
+	string ID = 2      [ (validator.field) = { length_eq: 20 } ];
+	int64  Version = 3 [ (validator.field) = { int_gt: 0 } ];
+	string Name = 4    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 5    [ (validator.field) = { length_lt: 1025 } ];
 	int64  Created = 6 [ (validator.field) = { int_gt: 0 } ];
 	int64  Updated = 7 [ (validator.field) = { int_gt: 0 } ];
 }
@@ -110,19 +111,37 @@ message OfflineRequest {
 
 // The Workflow schedule version Info
 message ScheduleVersionInfo {
-	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
-	int64  Version = 2          [ (validator.field) = { int_gt: 0 } ];
-	int64  Started = 3          [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 4            [ (validator.field) = { int_gt: 0 } ];
-	int32  Priority = 5         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  FailureStrategy = 6  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  DependStrategy = 7   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  ScheduleStrategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	string Express = 9          [ (validator.field) = { } ];
-	int64  Timed = 10           [ (validator.field) = { } ];
-	repeated int32  NotifyStrategy = 11  [ (validator.field) = { } ];
-	int64  Created = 12         [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 13         [ (validator.field) = { int_gt: 0 } ];
+	string FlowId = 1            [ (validator.field) = { length_eq: 20 } ];
+	int64  Version = 2           [ (validator.field) = { int_gt: 0 } ];
+	int64  Started = 3           [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 4             [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 5          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 7    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 8  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int64  ScheduleSLimit = 9    [ (validator.field) = { int_gt: -1 } ];
+	string Express = 10          [ (validator.field) = { } ];
+	int32  NotifyStrategies = 11 [ (validator.field) = { } ];
+	string NotifyGroup = 12      [ (validator.field) = { } ]; // FIXME: Confirm the length of notify group id
+	int64  Created = 13          [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 14          [ (validator.field) = { int_gt: 0 } ];
+}
+
+// The Workflow schedule version Info
+message ScheduleInfo {
+	string FlowId = 1            [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 3           [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 4             [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 5          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 7    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 8  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int64  ScheduleSLimit = 9    [ (validator.field) = { int_gt: -1 } ];
+	string Express = 10          [ (validator.field) = { } ];
+	int32  NotifyStrategies = 11 [ (validator.field) = { } ];
+	string NotifyGroup = 12      [ (validator.field) = { } ]; // FIXME: Confirm the length of notify group id
+	int64  Created = 13          [ (validator.field) = { int_gt: 0 } ];
+	int64  Updated = 14          [ (validator.field) = { int_gt: 0 } ];
 }
 
 // Request parameters used to ListScheduleVersions
@@ -139,16 +158,17 @@ message ListScheduleVersionsReply {
 
 // Request parameters used to UpsertSchedule
 message UpsertScheduleRequest {
-	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2          [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 3            [ (validator.field) = { int_gt: 0 } ];
-	int32  Priority = 4         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  FailureStrategy = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  DependStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  ScheduleStrategy = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	string Express = 8          [ (validator.field) = { } ];
-	int64  Timed = 9            [ (validator.field) = { } ];
-	repeated int32  NotifyStrategy = 10  [ (validator.field) = { } ];
+	string FlowId = 1            [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 2           [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 3             [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 5   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 6    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 7  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int64  ScheduleSLimit = 8    [ (validator.field) = { int_gt: -1 } ];
+	string Express = 9           [ (validator.field) = { } ];
+	int32  NotifyStrategies = 10 [ (validator.field) = { } ];
+	string NotifyGroup = 11      [ (validator.field) = { } ]; // FIXME: Confirm the length of notify group id
 }
 
 // Request parameters used to DescribeSchedule
@@ -158,16 +178,5 @@ message DescribeScheduleRequest {
 
 // Reply parameters used to DescribeSchedule
 message DescribeScheduleReply {
-	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2          [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 3            [ (validator.field) = { int_gt: 0 } ];
-	int32  Priority = 4         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  FailureStrategy = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  DependStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  ScheduleStrategy = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	string Express = 8          [ (validator.field) = { } ];
-	int64  Timed = 9            [ (validator.field) = { } ];
-	repeated int32  NotifyStrategy = 10  [ (validator.field) = { } ];
-	int64  Created = 11         [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 12         [ (validator.field) = { int_gt: 0 } ];
+	ScheduleInfo Info = 1;
 }

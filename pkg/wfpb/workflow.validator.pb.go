@@ -48,6 +48,9 @@ func (this *Info) Validate() error {
 	return nil
 }
 func (this *VersionInfo) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
@@ -217,6 +220,54 @@ func (this *ScheduleVersionInfo) Validate() error {
 	if !(this.ScheduleStrategy < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.ScheduleStrategy))
 	}
+	if !(this.ScheduleSLimit > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleSLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ScheduleSLimit))
+	}
+	if !(this.Created > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
+	}
+	if !(this.Updated > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
+	}
+	return nil
+}
+func (this *ScheduleInfo) Validate() error {
+	if !(len(this.FlowId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
+	}
+	if !(this.Started > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Started", fmt.Errorf(`value '%v' must be greater than '0'`, this.Started))
+	}
+	if !(this.Ended > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Ended", fmt.Errorf(`value '%v' must be greater than '0'`, this.Ended))
+	}
+	if !(this.Priority > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Priority", fmt.Errorf(`value '%v' must be greater than '0'`, this.Priority))
+	}
+	if !(this.Priority < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Priority", fmt.Errorf(`value '%v' must be less than '3'`, this.Priority))
+	}
+	if !(this.FailureStrategy > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))
+	}
+	if !(this.FailureStrategy < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.FailureStrategy))
+	}
+	if !(this.DependStrategy > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.DependStrategy))
+	}
+	if !(this.DependStrategy < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.DependStrategy))
+	}
+	if !(this.ScheduleStrategy > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.ScheduleStrategy))
+	}
+	if !(this.ScheduleStrategy < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.ScheduleStrategy))
+	}
+	if !(this.ScheduleSLimit > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleSLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ScheduleSLimit))
+	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
 	}
@@ -284,6 +335,9 @@ func (this *UpsertScheduleRequest) Validate() error {
 	if !(this.ScheduleStrategy < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.ScheduleStrategy))
 	}
+	if !(this.ScheduleSLimit > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleSLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ScheduleSLimit))
+	}
 	return nil
 }
 func (this *DescribeScheduleRequest) Validate() error {
@@ -293,44 +347,10 @@ func (this *DescribeScheduleRequest) Validate() error {
 	return nil
 }
 func (this *DescribeScheduleReply) Validate() error {
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(this.Started > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Started", fmt.Errorf(`value '%v' must be greater than '0'`, this.Started))
-	}
-	if !(this.Ended > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Ended", fmt.Errorf(`value '%v' must be greater than '0'`, this.Ended))
-	}
-	if !(this.Priority > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Priority", fmt.Errorf(`value '%v' must be greater than '0'`, this.Priority))
-	}
-	if !(this.Priority < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Priority", fmt.Errorf(`value '%v' must be less than '3'`, this.Priority))
-	}
-	if !(this.FailureStrategy > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))
-	}
-	if !(this.FailureStrategy < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.FailureStrategy))
-	}
-	if !(this.DependStrategy > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.DependStrategy))
-	}
-	if !(this.DependStrategy < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.DependStrategy))
-	}
-	if !(this.ScheduleStrategy > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.ScheduleStrategy))
-	}
-	if !(this.ScheduleStrategy < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.ScheduleStrategy))
-	}
-	if !(this.Created > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
-	}
-	if !(this.Updated > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
 	}
 	return nil
 }

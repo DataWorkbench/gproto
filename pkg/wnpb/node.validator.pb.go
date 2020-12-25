@@ -39,6 +39,27 @@ func (this *Info) Validate() error {
 	if !(this.Status < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
 	}
+	if !(this.RetryLimit > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.RetryLimit))
+	}
+	if !(this.RetryInterval > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryInterval", fmt.Errorf(`value '%v' must be greater than '0'`, this.RetryInterval))
+	}
+	if !(this.Timeout > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '0'`, this.Timeout))
+	}
+	if !(this.FailureStrategy > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))
+	}
+	if !(this.FailureStrategy < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.FailureStrategy))
+	}
+	if !(this.Type > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must be greater than '0'`, this.Type))
+	}
+	if !(len(this.Defines) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Defines", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Defines))
+	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
 	}
@@ -51,11 +72,11 @@ func (this *VersionInfo) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
-	}
 	if !(this.Version > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
+	}
+	if !(len(this.ID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
 	if !(len(this.Name) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
@@ -71,6 +92,27 @@ func (this *VersionInfo) Validate() error {
 	}
 	if !(this.Status < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
+	}
+	if !(this.RetryLimit > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.RetryLimit))
+	}
+	if !(this.RetryInterval > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryInterval", fmt.Errorf(`value '%v' must be greater than '0'`, this.RetryInterval))
+	}
+	if !(this.Timeout > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '0'`, this.Timeout))
+	}
+	if !(this.FailureStrategy > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))
+	}
+	if !(this.FailureStrategy < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.FailureStrategy))
+	}
+	if !(this.Type > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must be greater than '0'`, this.Type))
+	}
+	if !(len(this.Defines) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Defines", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Defines))
 	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
@@ -124,6 +166,27 @@ func (this *CreateRequest) Validate() error {
 	if !(this.Status < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
 	}
+	if !(this.RetryLimit > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.RetryLimit))
+	}
+	if !(this.RetryInterval > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryInterval", fmt.Errorf(`value '%v' must be greater than '0'`, this.RetryInterval))
+	}
+	if !(this.Timeout > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '0'`, this.Timeout))
+	}
+	if !(this.FailureStrategy > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))
+	}
+	if !(this.FailureStrategy < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.FailureStrategy))
+	}
+	if !(this.Type > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must be greater than '0'`, this.Type))
+	}
+	if !(len(this.Defines) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Defines", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Defines))
+	}
 	return nil
 }
 func (this *DeleteRequest) Validate() error {
@@ -136,6 +199,9 @@ func (this *UpdateRequest) Validate() error {
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
 	if !(len(this.Name) < 129) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
 	}
@@ -147,6 +213,27 @@ func (this *UpdateRequest) Validate() error {
 	}
 	if !(this.Status < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
+	}
+	if !(this.RetryLimit > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.RetryLimit))
+	}
+	if !(this.RetryInterval > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RetryInterval", fmt.Errorf(`value '%v' must be greater than '0'`, this.RetryInterval))
+	}
+	if !(this.Timeout > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '0'`, this.Timeout))
+	}
+	if !(this.FailureStrategy > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))
+	}
+	if !(this.FailureStrategy < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.FailureStrategy))
+	}
+	if !(this.Type > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must be greater than '0'`, this.Type))
+	}
+	if !(len(this.Defines) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Defines", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Defines))
 	}
 	return nil
 }

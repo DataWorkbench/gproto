@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/shpb";
+
+package shpb;
+
+import "types.proto";
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+
+// Scheduler Service
+service Scheduler {
+	// Push pushes the release workflow.
+	rpc Push(PushRequest)     returns (types.EmptyReply) {}
+	// Remove removes the offline workflow.
+	rpc Remove(RemoveRequest) returns (types.EmptyReply) {}
+	// Report reports the node instance task execute result.
+	rpc Report(ReportRequest) returns (types.EmptyReply) {}
+}
+
+message NodeInfo {
+	string ID = 1                  [ (validator.field) = { length_eq: 20 } ];
+	int32  Status = 2              [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  RetryLimit = 3          [ (validator.field) = { int_gt: -1 } ];
+	int32  RetryInterval = 4       [ (validator.field) = { int_gt: 0 } ];
+	int32  Timeout = 5             [ (validator.field) = { int_gt: 0 } ];
+	int32  FailureStrategy = 6     [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  Type = 7                [ (validator.field) = { int_gt: 0 } ];
+	string Defines = 8             [ (validator.field) = { length_gt: 1} ];
+	repeated string Upstreams = 9  [ (validator.field) = {} ];
+}
+
+message ScheduleInfo {
+	int64  Started = 1          [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 2            [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 3         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 4  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 5   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 6 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int64  ScheduleLimit = 8    [ (validator.field) = { int_gt: -1 } ];
+	string Express = 7          [ (validator.field) = { } ];
+	int32  NotifyStrategies = 9 [ (validator.field) = { } ];
+	string NotifyGroup = 10     [ (validator.field) = { } ];
+}
+
+// Request parameters used to Push.
+message PushRequest {
+	string SpaceId = 1            [ (validator.field) = { length_eq: 20 } ];
+	string FlowId = 2             [ (validator.field) = { length_eq: 20 } ];
+	int64  Version = 3            [ (validator.field) = { int_gt: 0 } ];
+	repeated NodeInfo Nodes = 4   [ (validator.field) = { } ];
+	ScheduleInfo Schedule = 5     [ (validator.field) = { } ];
+}
+
+// Request parameters used to Remove.
+message RemoveRequest {
+	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// InstanceStatus
+enum InstanceStatus {
+	Succeed = 0;
+	Failed  = 1;
+}
+
+message ReportRequest {
+	string InstanceId = 1     [ (validator.field) = { length_eq: 20 } ];
+	InstanceStatus Status = 2 [ (validator.field) = { } ];
+}
