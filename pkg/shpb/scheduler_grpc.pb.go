@@ -4,7 +4,7 @@ package shpb
 
 import (
 	context "context"
-	types "github.com/DataWorkbench/gproto/pkg/types"
+	model "github.com/DataWorkbench/gproto/pkg/model"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,11 +19,11 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SchedulerClient interface {
 	// Push pushes the release workflow.
-	Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Remove removes the offline workflow.
-	Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Report reports the node instance task execute result.
-	Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type schedulerClient struct {
@@ -34,8 +34,8 @@ func NewSchedulerClient(cc grpc.ClientConnInterface) SchedulerClient {
 	return &schedulerClient{cc}
 }
 
-func (c *schedulerClient) Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *schedulerClient) Push(ctx context.Context, in *PushRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Push", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -43,8 +43,8 @@ func (c *schedulerClient) Push(ctx context.Context, in *PushRequest, opts ...grp
 	return out, nil
 }
 
-func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Remove", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -52,8 +52,8 @@ func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ..
 	return out, nil
 }
 
-func (c *schedulerClient) Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *schedulerClient) Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Report", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -66,11 +66,11 @@ func (c *schedulerClient) Report(ctx context.Context, in *ReportRequest, opts ..
 // for forward compatibility
 type SchedulerServer interface {
 	// Push pushes the release workflow.
-	Push(context.Context, *PushRequest) (*types.EmptyReply, error)
+	Push(context.Context, *PushRequest) (*model.EmptyStruct, error)
 	// Remove removes the offline workflow.
-	Remove(context.Context, *RemoveRequest) (*types.EmptyReply, error)
+	Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error)
 	// Report reports the node instance task execute result.
-	Report(context.Context, *ReportRequest) (*types.EmptyReply, error)
+	Report(context.Context, *ReportRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedSchedulerServer()
 }
 
@@ -78,13 +78,13 @@ type SchedulerServer interface {
 type UnimplementedSchedulerServer struct {
 }
 
-func (UnimplementedSchedulerServer) Push(context.Context, *PushRequest) (*types.EmptyReply, error) {
+func (UnimplementedSchedulerServer) Push(context.Context, *PushRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Push not implemented")
 }
-func (UnimplementedSchedulerServer) Remove(context.Context, *RemoveRequest) (*types.EmptyReply, error) {
+func (UnimplementedSchedulerServer) Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Remove not implemented")
 }
-func (UnimplementedSchedulerServer) Report(context.Context, *ReportRequest) (*types.EmptyReply, error) {
+func (UnimplementedSchedulerServer) Report(context.Context, *ReportRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Report not implemented")
 }
 func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}

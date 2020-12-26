@@ -4,7 +4,7 @@ package wnpb
 
 import (
 	context "context"
-	types "github.com/DataWorkbench/gproto/pkg/types"
+	model "github.com/DataWorkbench/gproto/pkg/model"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -18,9 +18,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type NodeClient interface {
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
-	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
-	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeReply, error)
 	// version api
 	ListVersions(ctx context.Context, in *ListVersionsRequest, opts ...grpc.CallOption) (*ListVersionsReply, error)
@@ -34,8 +34,8 @@ func NewNodeClient(cc grpc.ClientConnInterface) NodeClient {
 	return &nodeClient{cc}
 }
 
-func (c *nodeClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *nodeClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wnpb.Node/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -43,8 +43,8 @@ func (c *nodeClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc
 	return out, nil
 }
 
-func (c *nodeClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *nodeClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wnpb.Node/Delete", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -52,8 +52,8 @@ func (c *nodeClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc
 	return out, nil
 }
 
-func (c *nodeClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *nodeClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wnpb.Node/Update", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -83,9 +83,9 @@ func (c *nodeClient) ListVersions(ctx context.Context, in *ListVersionsRequest, 
 // All implementations must embed UnimplementedNodeServer
 // for forward compatibility
 type NodeServer interface {
-	Create(context.Context, *CreateRequest) (*types.EmptyReply, error)
-	Delete(context.Context, *DeleteRequest) (*types.EmptyReply, error)
-	Update(context.Context, *UpdateRequest) (*types.EmptyReply, error)
+	Create(context.Context, *CreateRequest) (*model.EmptyStruct, error)
+	Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error)
+	Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error)
 	Describe(context.Context, *DescribeRequest) (*DescribeReply, error)
 	// version api
 	ListVersions(context.Context, *ListVersionsRequest) (*ListVersionsReply, error)
@@ -96,13 +96,13 @@ type NodeServer interface {
 type UnimplementedNodeServer struct {
 }
 
-func (UnimplementedNodeServer) Create(context.Context, *CreateRequest) (*types.EmptyReply, error) {
+func (UnimplementedNodeServer) Create(context.Context, *CreateRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedNodeServer) Delete(context.Context, *DeleteRequest) (*types.EmptyReply, error) {
+func (UnimplementedNodeServer) Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedNodeServer) Update(context.Context, *UpdateRequest) (*types.EmptyReply, error) {
+func (UnimplementedNodeServer) Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
 func (UnimplementedNodeServer) Describe(context.Context, *DescribeRequest) (*DescribeReply, error) {

@@ -4,7 +4,7 @@ package wfpb
 
 import (
 	context "context"
-	types "github.com/DataWorkbench/gproto/pkg/types"
+	model "github.com/DataWorkbench/gproto/pkg/model"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,17 +19,17 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WorkflowClient interface {
 	Lists(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error)
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
-	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
-	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeReply, error)
-	Publish(ctx context.Context, in *PublishRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
-	Offline(ctx context.Context, in *OfflineRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	Publish(ctx context.Context, in *PublishRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Offline(ctx context.Context, in *OfflineRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// version api
 	ListVersions(ctx context.Context, in *ListVersionsRequest, opts ...grpc.CallOption) (*ListVersionsReply, error)
 	ListScheduleVersions(ctx context.Context, in *ListScheduleVersionsRequest, opts ...grpc.CallOption) (*ListScheduleVersionsReply, error)
 	// schedule api
-	UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*types.EmptyReply, error)
+	UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DescribeSchedule(ctx context.Context, in *DescribeScheduleRequest, opts ...grpc.CallOption) (*DescribeScheduleReply, error)
 }
 
@@ -50,8 +50,8 @@ func (c *workflowClient) Lists(ctx context.Context, in *ListsRequest, opts ...gr
 	return out, nil
 }
 
-func (c *workflowClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *workflowClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -59,8 +59,8 @@ func (c *workflowClient) Create(ctx context.Context, in *CreateRequest, opts ...
 	return out, nil
 }
 
-func (c *workflowClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *workflowClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Delete", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -68,8 +68,8 @@ func (c *workflowClient) Delete(ctx context.Context, in *DeleteRequest, opts ...
 	return out, nil
 }
 
-func (c *workflowClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *workflowClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Update", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -86,8 +86,8 @@ func (c *workflowClient) Describe(ctx context.Context, in *DescribeRequest, opts
 	return out, nil
 }
 
-func (c *workflowClient) Publish(ctx context.Context, in *PublishRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *workflowClient) Publish(ctx context.Context, in *PublishRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Publish", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -95,8 +95,8 @@ func (c *workflowClient) Publish(ctx context.Context, in *PublishRequest, opts .
 	return out, nil
 }
 
-func (c *workflowClient) Offline(ctx context.Context, in *OfflineRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *workflowClient) Offline(ctx context.Context, in *OfflineRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Offline", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -122,8 +122,8 @@ func (c *workflowClient) ListScheduleVersions(ctx context.Context, in *ListSched
 	return out, nil
 }
 
-func (c *workflowClient) UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*types.EmptyReply, error) {
-	out := new(types.EmptyReply)
+func (c *workflowClient) UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpsertSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -145,17 +145,17 @@ func (c *workflowClient) DescribeSchedule(ctx context.Context, in *DescribeSched
 // for forward compatibility
 type WorkflowServer interface {
 	Lists(context.Context, *ListsRequest) (*ListsReply, error)
-	Create(context.Context, *CreateRequest) (*types.EmptyReply, error)
-	Delete(context.Context, *DeleteRequest) (*types.EmptyReply, error)
-	Update(context.Context, *UpdateRequest) (*types.EmptyReply, error)
+	Create(context.Context, *CreateRequest) (*model.EmptyStruct, error)
+	Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error)
+	Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error)
 	Describe(context.Context, *DescribeRequest) (*DescribeReply, error)
-	Publish(context.Context, *PublishRequest) (*types.EmptyReply, error)
-	Offline(context.Context, *OfflineRequest) (*types.EmptyReply, error)
+	Publish(context.Context, *PublishRequest) (*model.EmptyStruct, error)
+	Offline(context.Context, *OfflineRequest) (*model.EmptyStruct, error)
 	// version api
 	ListVersions(context.Context, *ListVersionsRequest) (*ListVersionsReply, error)
 	ListScheduleVersions(context.Context, *ListScheduleVersionsRequest) (*ListScheduleVersionsReply, error)
 	// schedule api
-	UpsertSchedule(context.Context, *UpsertScheduleRequest) (*types.EmptyReply, error)
+	UpsertSchedule(context.Context, *UpsertScheduleRequest) (*model.EmptyStruct, error)
 	DescribeSchedule(context.Context, *DescribeScheduleRequest) (*DescribeScheduleReply, error)
 	mustEmbedUnimplementedWorkflowServer()
 }
@@ -167,22 +167,22 @@ type UnimplementedWorkflowServer struct {
 func (UnimplementedWorkflowServer) Lists(context.Context, *ListsRequest) (*ListsReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Lists not implemented")
 }
-func (UnimplementedWorkflowServer) Create(context.Context, *CreateRequest) (*types.EmptyReply, error) {
+func (UnimplementedWorkflowServer) Create(context.Context, *CreateRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedWorkflowServer) Delete(context.Context, *DeleteRequest) (*types.EmptyReply, error) {
+func (UnimplementedWorkflowServer) Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedWorkflowServer) Update(context.Context, *UpdateRequest) (*types.EmptyReply, error) {
+func (UnimplementedWorkflowServer) Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
 func (UnimplementedWorkflowServer) Describe(context.Context, *DescribeRequest) (*DescribeReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Describe not implemented")
 }
-func (UnimplementedWorkflowServer) Publish(context.Context, *PublishRequest) (*types.EmptyReply, error) {
+func (UnimplementedWorkflowServer) Publish(context.Context, *PublishRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Publish not implemented")
 }
-func (UnimplementedWorkflowServer) Offline(context.Context, *OfflineRequest) (*types.EmptyReply, error) {
+func (UnimplementedWorkflowServer) Offline(context.Context, *OfflineRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Offline not implemented")
 }
 func (UnimplementedWorkflowServer) ListVersions(context.Context, *ListVersionsRequest) (*ListVersionsReply, error) {
@@ -191,7 +191,7 @@ func (UnimplementedWorkflowServer) ListVersions(context.Context, *ListVersionsRe
 func (UnimplementedWorkflowServer) ListScheduleVersions(context.Context, *ListScheduleVersionsRequest) (*ListScheduleVersionsReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListScheduleVersions not implemented")
 }
-func (UnimplementedWorkflowServer) UpsertSchedule(context.Context, *UpsertScheduleRequest) (*types.EmptyReply, error) {
+func (UnimplementedWorkflowServer) UpsertSchedule(context.Context, *UpsertScheduleRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpsertSchedule not implemented")
 }
 func (UnimplementedWorkflowServer) DescribeSchedule(context.Context, *DescribeScheduleRequest) (*DescribeScheduleReply, error) {

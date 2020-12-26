@@ -5,11 +5,11 @@ package wspb
 
 import (
 	fmt "fmt"
-	math "math"
+	_ "github.com/DataWorkbench/gproto/pkg/model"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/DataWorkbench/gproto/pkg/types"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -17,36 +17,6 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *Info) Validate() error {
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
-	if !(len(this.Name) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
-	}
-	if !(len(this.Name) < 129) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
-	}
-	if !(len(this.Desc) < 1025) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
-	}
-	if !(this.Status > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
-	}
-	if !(this.Status < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
-	}
-	if !(this.Created > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
-	}
-	if !(this.Updated > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
-	}
-	return nil
-}
 func (this *ListsRequest) Validate() error {
 	if this.Owner == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must not be an empty string`, this.Owner))

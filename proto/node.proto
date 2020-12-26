@@ -4,54 +4,17 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/wnpb";
 
 package wnpb;
 
-import "types.proto";
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
 
 // Node Service
 service Node {
-	rpc Create(CreateRequest)     returns (types.EmptyReply) {}
-	rpc Delete(DeleteRequest)     returns (types.EmptyReply) {}
-	rpc Update(UpdateRequest)     returns (types.EmptyReply) {}
+	rpc Create(CreateRequest)     returns (model.EmptyStruct) {}
+	rpc Delete(DeleteRequest)     returns (model.EmptyStruct) {}
+	rpc Update(UpdateRequest)     returns (model.EmptyStruct) {}
 	rpc Describe(DescribeRequest) returns (DescribeReply)    {}
 	// version api
 	rpc ListVersions(ListVersionsRequest) returns (ListVersionsReply) {}
-}
-
-// The Node Info
-message Info {
-	string FlowId = 1              [ (validator.field) = { length_eq: 20 } ];
-	string ID = 2                  [ (validator.field) = { length_eq: 20 } ];
-	string Name = 3                [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 4                [ (validator.field) = { length_lt: 1025 } ];
-	int32  Status = 5              [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  RetryLimit = 6          [ (validator.field) = { int_gt: -1 } ];
-	int32  RetryInterval = 7       [ (validator.field) = { int_gt: 0 } ];
-	int32  Timeout = 8             [ (validator.field) = { int_gt: 0 } ];
-	int32  FailureStrategy = 9     [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  Type = 10               [ (validator.field) = { int_gt: 0 } ];
-	string Defines = 11            [ (validator.field) = { length_gt: 1} ];
-	repeated string Upstreams = 12 [ (validator.field) = {} ];
-	int64  Created = 13            [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 14            [ (validator.field) = { int_gt: 0 } ];
-}
-
-// The Node version Info
-message VersionInfo {
-	string FlowId = 1              [ (validator.field) = { length_eq: 20 } ];
-	int64  Version = 2             [ (validator.field) = { int_gt: 0 } ];
-	string ID = 3                  [ (validator.field) = { length_eq: 20 } ];
-	string Name = 5                [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 6                [ (validator.field) = { length_lt: 1025 } ];
-	int32  Status = 7              [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  RetryLimit = 8          [ (validator.field) = { int_gt: -1 } ];
-	int32  RetryInterval = 9       [ (validator.field) = { int_gt: 0 } ];
-	int32  Timeout = 10            [ (validator.field) = { int_gt: 0 } ];
-	int32  FailureStrategy = 11    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  Type = 12               [ (validator.field) = { int_gt: 0 } ];
-	string Defines = 13            [ (validator.field) = { length_gt: 1} ];
-	repeated string Upstreams = 14 [ (validator.field) = {} ];
-	int64  Created = 15            [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 16            [ (validator.field) = { int_gt: 0 } ];
 }
 
 // Request parameters used to ListWorkflowVersions
@@ -63,22 +26,22 @@ message ListVersionsRequest {
 
 // Reply parameters used to ListWorkflowVersions
 message ListVersionsReply {
-	repeated VersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.NodeVerInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to CreateNode
 message CreateRequest {
-	string FlowId = 1              [ (validator.field) = { length_eq: 20 } ];
-	string Name = 2                [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 3                [ (validator.field) = { length_lt: 1025 } ];
-	int32  Status = 4              [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  RetryLimit = 5          [ (validator.field) = { int_gt: -1 } ];
-	int32  RetryInterval = 6       [ (validator.field) = { int_gt: 0 } ];
-	int32  Timeout = 7             [ (validator.field) = { int_gt: 0 } ];
-	int32  FailureStrategy = 8     [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  Type = 9                [ (validator.field) = { int_gt: 0 } ];
-	string Defines = 10            [ (validator.field) = { length_gt: 1} ];
-	repeated string Upstreams = 11 [ (validator.field) = {} ];
+	string FlowId = 1          [ (validator.field) = { length_eq: 20 } ];
+	string Name = 2            [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 3            [ (validator.field) = { length_lt: 1025 } ];
+	int32  Status = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  RetryLimit = 5      [ (validator.field) = { int_gt: -1 } ];
+	int32  RetryInterval = 6   [ (validator.field) = { int_gt: 0 } ];
+	int32  Timeout = 7         [ (validator.field) = { int_gt: 0 } ];
+	int32  FailureStrategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  Type = 9            [ (validator.field) = { int_gt: 0 } ];
+	string Defines = 10        [ (validator.field) = { length_gt: 1} ];
+	string Upstreams = 11      [ (validator.field) = {} ];
 }
 
 // Request parameters used to DeleteNode
@@ -88,17 +51,17 @@ message DeleteRequest {
 
 // Request parameters used to UpdateNode
 message UpdateRequest {
-	string ID = 1         	      [ (validator.field) = {length_eq: 20} ];
-	string Name = 2                [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 3                [ (validator.field) = { length_lt: 1025 } ];
-	int32  Status = 4              [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  RetryLimit = 5          [ (validator.field) = { int_gt: -1 } ];
-	int32  RetryInterval = 6       [ (validator.field) = { int_gt: 0 } ];
-	int32  Timeout = 7             [ (validator.field) = { int_gt: 0 } ];
-	int32  FailureStrategy = 8     [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  Type = 9                [ (validator.field) = { int_gt: 0 } ];
-	string Defines = 10            [ (validator.field) = { length_gt: 1} ];
-	repeated string Upstreams = 11 [ (validator.field) = {} ];
+	string ID = 1         	   [ (validator.field) = {length_eq: 20} ];
+	string Name = 2            [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string Desc = 3            [ (validator.field) = { length_lt: 1025 } ];
+	int32  Status = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  RetryLimit = 5      [ (validator.field) = { int_gt: -1 } ];
+	int32  RetryInterval = 6   [ (validator.field) = { int_gt: 0 } ];
+	int32  Timeout = 7         [ (validator.field) = { int_gt: 0 } ];
+	int32  FailureStrategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  Type = 9            [ (validator.field) = { int_gt: 0 } ];
+	string Defines = 10        [ (validator.field) = { length_gt: 1} ];
+	string Upstreams = 11      [ (validator.field) = {} ];
 }
 
 // Request parameters used to DescribeNode
@@ -108,5 +71,5 @@ message DescribeRequest {
 
 // Reply parameters used to DescribeNode
 message DescribeReply {
-	Info Info = 1;
+	model.NodeInfo Info = 1;
 }
