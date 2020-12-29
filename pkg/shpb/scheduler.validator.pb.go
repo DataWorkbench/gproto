@@ -17,7 +17,7 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *PushRequest) Validate() error {
+func (this *AddRequest) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -47,9 +47,9 @@ func (this *RemoveRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ReportRequest) Validate() error {
-	if !(len(this.InstanceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+func (this *ReportJobStateRequest) Validate() error {
+	if !(len(this.ID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
 	return nil
 }

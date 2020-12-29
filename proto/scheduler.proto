@@ -10,16 +10,17 @@ import "model.proto";
 
 // Scheduler Service
 service Scheduler {
-	// Push pushes the release workflow.
-	rpc Push(PushRequest)     returns (model.EmptyStruct) {}
-	// Remove removes the offline workflow.
+	// Add adds a release workflow to schedule system.
+	rpc Add(AddRequest) returns (model.EmptyStruct) {}
+	// Remove removes a workflow from schedule system.
 	rpc Remove(RemoveRequest) returns (model.EmptyStruct) {}
+	
 	// Report reports the node instance task execute result.
-	rpc Report(ReportRequest) returns (model.EmptyStruct) {}
+	rpc ReportJobState(ReportJobStateRequest) returns (model.EmptyStruct) {}
 }
 
 // Request parameters used to Push.
-message PushRequest {
+message AddRequest {
 	string SpaceId = 1                [ (validator.field) = { length_eq: 20 } ];
 	string FlowId = 2                 [ (validator.field) = { length_eq: 20 } ];
 	int64  Version = 3                [ (validator.field) = { int_gt: 0 } ];
@@ -32,7 +33,9 @@ message RemoveRequest {
 	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-message ReportRequest {
-	string InstanceId = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  Status = 2     [ (validator.field) = { } ];
+message ReportJobStateRequest {
+	// ID is the node instance id.
+	string ID = 1     [ (validator.field) = { length_eq: 20 } ];
+	int32  State = 2 [ (validator.field) = { } ];;
+	string Message = 3;
 }
