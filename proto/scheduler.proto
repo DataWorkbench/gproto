@@ -14,9 +14,6 @@ service Scheduler {
 	rpc Add(AddRequest) returns (model.EmptyStruct) {}
 	// Remove removes a workflow from schedule system.
 	rpc Remove(RemoveRequest) returns (model.EmptyStruct) {}
-	
-	// Report reports the node instance task execute result.
-	rpc ReportJobState(ReportJobStateRequest) returns (model.EmptyStruct) {}
 }
 
 // Request parameters used to Push.
@@ -31,11 +28,4 @@ message AddRequest {
 // Request parameters used to Remove.
 message RemoveRequest {
 	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-message ReportJobStateRequest {
-	// ID is the node instance id.
-	string ID = 1     [ (validator.field) = { length_eq: 20 } ];
-	int32  State = 2 [ (validator.field) = { } ];;
-	string Message = 3;
 }

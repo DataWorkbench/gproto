@@ -130,7 +130,7 @@ message SchInfo {
 // The node info.
 message NodeInfo {
 	// Workflow ID it belongs to.
-	// @inject_tag: column:flow_id;"
+	// @inject_tag: gorm:"column:flow_id;"
 	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// Node ID, unique within a region.
@@ -214,4 +214,70 @@ message NodeVerInfo {
 	
 	// @inject_tag: gorm:"embedded"
 	NodeInfo Info = 1001 [ (validator.field) = { } ];
+}
+
+// The workflow instance info.
+message FlowInstInfo {
+	// Workflow ID it belongs to.
+	// @inject_tag: gorm:"column:flow_id;"
+	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The release version.
+	// @inject_tag: gorm:"column:version;
+	int64 Version = 2 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Workflow instance ID, unique.
+	// @inject_tag: gorm:"column:id;primarykey;"
+	string ID = 3 [ (validator.field) = { length_eq: 20 } ];
+	
+	// @inject_tag: gorm:"column:trigger;"
+	int32 Trigger = 4 [ (validator.field) = { } ];
+	
+	// Limit count of retries.
+	// @inject_tag: gorm:"column:state"
+	int32 state = 5 [ (validator.field) = { int_gt: 0 } ];
+
+	// @inject_tag: gorm:"column:created;autoCreateTime"
+	int64 Created = 6 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Timestamp of update time
+	// @inject_tag: gorm:"column:updated;autoUpdateTime"
+	int64 Updated = 7 [ (validator.field) = { int_gt: 0 } ];
+}
+
+// The workflow instance info.
+message NodeInstInfo {
+	// Workflow instance ID it belongs to
+	// @inject_tag: gorm:"column:flow_instance_id;"
+	string FlowInstId = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Workflow ID it belongs to.
+	// @inject_tag: gorm:"column:flow_id;"
+	string FlowId = 2 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Node ID it belongs to.
+	// @inject_tag: gorm:"column:node_id;"
+	string NodeId = 3 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The release version.
+	// @inject_tag: gorm:"column:version;
+	int64 Version = 4 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Workflow instance ID, unique.
+	// @inject_tag: gorm:"column:id;primarykey;"
+	string ID = 5 [ (validator.field) = { length_eq: 20 } ];
+	
+	// @inject_tag: gorm:"column:trigger;"
+	int32 Trigger = 6 [ (validator.field) = { } ];
+	
+	// Limit count of retries.
+	// @inject_tag: gorm:"column:state"
+	int32 state = 7 [ (validator.field) = { int_gt: 0 } ];
+	
+	// @inject_tag: gorm:"column:created;autoCreateTime"
+	int64 Created = 8 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Timestamp of update time
+	// @inject_tag: gorm:"column:updated;autoUpdateTime"
+	int64 Updated = 9 [ (validator.field) = { int_gt: 0 } ];
 }

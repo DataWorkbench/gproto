@@ -22,8 +22,6 @@ type SchedulerClient interface {
 	Add(ctx context.Context, in *AddRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Remove removes a workflow from schedule system.
 	Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// Report reports the node instance task execute result.
-	ReportJobState(ctx context.Context, in *ReportJobStateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type schedulerClient struct {
@@ -52,15 +50,6 @@ func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ..
 	return out, nil
 }
 
-func (c *schedulerClient) ReportJobState(ctx context.Context, in *ReportJobStateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ReportJobState", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // SchedulerServer is the server API for Scheduler service.
 // All implementations must embed UnimplementedSchedulerServer
 // for forward compatibility
@@ -69,8 +58,6 @@ type SchedulerServer interface {
 	Add(context.Context, *AddRequest) (*model.EmptyStruct, error)
 	// Remove removes a workflow from schedule system.
 	Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error)
-	// Report reports the node instance task execute result.
-	ReportJobState(context.Context, *ReportJobStateRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedSchedulerServer()
 }
 
@@ -83,9 +70,6 @@ func (UnimplementedSchedulerServer) Add(context.Context, *AddRequest) (*model.Em
 }
 func (UnimplementedSchedulerServer) Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Remove not implemented")
-}
-func (UnimplementedSchedulerServer) ReportJobState(context.Context, *ReportJobStateRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReportJobState not implemented")
 }
 func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}
 
@@ -136,24 +120,6 @@ func _Scheduler_Remove_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_ReportJobState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReportJobStateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SchedulerServer).ReportJobState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/shpb.Scheduler/ReportJobState",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).ReportJobState(ctx, req.(*ReportJobStateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 var _Scheduler_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "shpb.Scheduler",
 	HandlerType: (*SchedulerServer)(nil),
@@ -165,10 +131,6 @@ var _Scheduler_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Remove",
 			Handler:    _Scheduler_Remove_Handler,
-		},
-		{
-			MethodName: "ReportJobState",
-			Handler:    _Scheduler_ReportJobState_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

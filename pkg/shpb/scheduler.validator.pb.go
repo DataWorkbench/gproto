@@ -47,9 +47,3 @@ func (this *RemoveRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ReportJobStateRequest) Validate() error {
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
-	}
-	return nil
-}
