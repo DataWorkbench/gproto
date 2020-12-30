@@ -17,14 +17,11 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *JobReply) Validate() error {
-	if !(len(this.Status) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Status))
+	if !(this.Status > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
 	}
-	if !(len(this.Status) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Status))
-	}
-	if !(len(this.Message) < 2000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Message", fmt.Errorf(`value '%v' must have a length smaller than '2000'`, this.Message))
+	if !(len(this.Message) < 4000) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Message", fmt.Errorf(`value '%v' must have a length smaller than '4000'`, this.Message))
 	}
 	return nil
 }
@@ -38,11 +35,8 @@ func (this *RunJobRequest) Validate() error {
 	if !(len(this.WorkspaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("WorkspaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.WorkspaceID))
 	}
-	if !(len(this.NodeType) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("NodeType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.NodeType))
-	}
-	if !(len(this.NodeType) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("NodeType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.NodeType))
+	if !(this.NodeType > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NodeType", fmt.Errorf(`value '%v' must be greater than '0'`, this.NodeType))
 	}
 	if !(len(this.Depends) < 4000) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Depends", fmt.Errorf(`value '%v' must have a length smaller than '4000'`, this.Depends))
