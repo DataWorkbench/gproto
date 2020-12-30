@@ -27,11 +27,7 @@ message TaskInfo {
 
 // Request parameters used to Push.
 message AddRequest {
-	string space_id = 1               [ (validator.field) = { length_eq: 20 } ];
-	string flow_id = 2                [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 3                [ (validator.field) = { int_gt: 0 } ];
-	repeated model.NodeInfo nodes = 4 [ (validator.field) = { } ];
-	model.SchInfo schedule = 5        [ (validator.field) = { } ];
+	TaskInfo task = 1 [ (validator.field) = { } ];
 }
 
 // Request parameters used to Remove.
