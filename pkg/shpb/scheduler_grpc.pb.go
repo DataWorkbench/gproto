@@ -18,10 +18,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SchedulerClient interface {
-	// Add adds a release workflow to schedule system.
-	Add(ctx context.Context, in *AddRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// Remove removes a workflow from schedule system.
-	Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// PutFlow adds or updates a workflow in scheduler.
+	PutFlow(ctx context.Context, in *PutFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// DeleteFlow delete a workflow from scheduler.
+	DeleteFlow(ctx context.Context, in *DeleteFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type schedulerClient struct {
@@ -32,18 +32,18 @@ func NewSchedulerClient(cc grpc.ClientConnInterface) SchedulerClient {
 	return &schedulerClient{cc}
 }
 
-func (c *schedulerClient) Add(ctx context.Context, in *AddRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) PutFlow(ctx context.Context, in *PutFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Add", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/PutFlow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) DeleteFlow(ctx context.Context, in *DeleteFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Remove", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/DeleteFlow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -54,10 +54,10 @@ func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ..
 // All implementations must embed UnimplementedSchedulerServer
 // for forward compatibility
 type SchedulerServer interface {
-	// Add adds a release workflow to schedule system.
-	Add(context.Context, *AddRequest) (*model.EmptyStruct, error)
-	// Remove removes a workflow from schedule system.
-	Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error)
+	// PutFlow adds or updates a workflow in scheduler.
+	PutFlow(context.Context, *PutFlowRequest) (*model.EmptyStruct, error)
+	// DeleteFlow delete a workflow from scheduler.
+	DeleteFlow(context.Context, *DeleteFlowRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedSchedulerServer()
 }
 
@@ -65,11 +65,11 @@ type SchedulerServer interface {
 type UnimplementedSchedulerServer struct {
 }
 
-func (UnimplementedSchedulerServer) Add(context.Context, *AddRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Add not implemented")
+func (UnimplementedSchedulerServer) PutFlow(context.Context, *PutFlowRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PutFlow not implemented")
 }
-func (UnimplementedSchedulerServer) Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Remove not implemented")
+func (UnimplementedSchedulerServer) DeleteFlow(context.Context, *DeleteFlowRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFlow not implemented")
 }
 func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}
 
@@ -84,38 +84,38 @@ func RegisterSchedulerServer(s grpc.ServiceRegistrar, srv SchedulerServer) {
 	s.RegisterService(&_Scheduler_serviceDesc, srv)
 }
 
-func _Scheduler_Add_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddRequest)
+func _Scheduler_PutFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PutFlowRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).Add(ctx, in)
+		return srv.(SchedulerServer).PutFlow(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/Add",
+		FullMethod: "/shpb.Scheduler/PutFlow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).Add(ctx, req.(*AddRequest))
+		return srv.(SchedulerServer).PutFlow(ctx, req.(*PutFlowRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_Remove_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveRequest)
+func _Scheduler_DeleteFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteFlowRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).Remove(ctx, in)
+		return srv.(SchedulerServer).DeleteFlow(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/Remove",
+		FullMethod: "/shpb.Scheduler/DeleteFlow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).Remove(ctx, req.(*RemoveRequest))
+		return srv.(SchedulerServer).DeleteFlow(ctx, req.(*DeleteFlowRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -125,12 +125,12 @@ var _Scheduler_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*SchedulerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Add",
-			Handler:    _Scheduler_Add_Handler,
+			MethodName: "PutFlow",
+			Handler:    _Scheduler_PutFlow_Handler,
 		},
 		{
-			MethodName: "Remove",
-			Handler:    _Scheduler_Remove_Handler,
+			MethodName: "DeleteFlow",
+			Handler:    _Scheduler_DeleteFlow_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

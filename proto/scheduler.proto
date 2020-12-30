@@ -10,27 +10,27 @@ import "model.proto";
 
 // Scheduler Service
 service Scheduler {
-	// Add adds a release workflow to schedule system.
-	rpc Add(AddRequest) returns (model.EmptyStruct) {}
-	// Remove removes a workflow from schedule system.
-	rpc Remove(RemoveRequest) returns (model.EmptyStruct) {}
+	// PutFlow adds or updates a workflow in scheduler.
+	rpc PutFlow(PutFlowRequest) returns (model.EmptyStruct) {}
+	// DeleteFlow delete a workflow from scheduler.
+	rpc DeleteFlow(DeleteFlowRequest) returns (model.EmptyStruct) {}
 }
 
 // TaskInfo declares a task of release workflow.
 message TaskInfo {
-	string space_id = 1               [ (validator.field) = { length_eq: 20 } ];
-	string flow_id = 2                [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 3                [ (validator.field) = { int_gt: 0 } ];
-	repeated model.NodeInfo nodes = 4 [ (validator.field) = { } ];
-	model.SchInfo schedule = 5        [ (validator.field) = { } ];
+	string space_id = 1                   [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 2                    [ (validator.field) = { length_eq: 20 } ];
+	int64  version = 3                    [ (validator.field) = { int_gt: 0 } ];
+	model.SchCore schedule = 4            [ (validator.field) = { msg_exists: true } ];
+	map<string, model.NodeCore> nodes = 5 [ (validator.field) = { msg_exists: true } ];
 }
 
 // Request parameters used to Push.
-message AddRequest {
+message PutFlowRequest {
 	TaskInfo task = 1 [ (validator.field) = { } ];
 }
 
 // Request parameters used to Remove.
-message RemoveRequest {
+message DeleteFlowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }

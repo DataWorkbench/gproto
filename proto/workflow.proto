@@ -101,17 +101,8 @@ message ListScheduleVersionsReply {
 
 // Request parameters used to UpsertSchedule
 message UpsertScheduleRequest {
-	string flow_id = 1            [ (validator.field) = { length_eq: 20 } ];
-	int64  started = 2            [ (validator.field) = { int_gt: 0 } ];
-	int64  ended = 3              [ (validator.field) = { int_gt: 0 } ];
-	int32  priority = 4           [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  failure_strategy = 5    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  depend_strategy = 6     [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  schedule_strategy = 7   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int64  schedule_limit = 8     [ (validator.field) = { int_gt: -1 } ];
-	string express = 9            [ (validator.field) = { } ];
-	int32  notify_strategies = 10 [ (validator.field) = { } ];
-	string notify_group = 11      [ (validator.field) = { } ]; // FIXME: Confirm the length of notify group id
+	string flow_id = 1     [ (validator.field) = { length_eq: 20 } ];
+	model.SchCore core = 2 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to DescribeSchedule

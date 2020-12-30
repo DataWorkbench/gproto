@@ -31,17 +31,8 @@ message ListVersionsReply {
 
 // Request parameters used to CreateNode
 message CreateRequest {
-	string flow_id = 1          [ (validator.field) = { length_eq: 20 } ];
-	string name = 2            [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string desc = 3            [ (validator.field) = { length_lt: 1025 } ];
-	int32  status = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  retry_limit = 5      [ (validator.field) = { int_gt: -1 } ];
-	int32  retry_interval = 6   [ (validator.field) = { int_gt: 0 } ];
-	int32  timeout = 7         [ (validator.field) = { int_gt: 0 } ];
-	int32  failure_strategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  type = 9            [ (validator.field) = { int_gt: 0 } ];
-	string statements = 10     [ (validator.field) = { length_gt: 1} ];
-	string upstreams = 11      [ (validator.field) = {} ];
+	string flow_id = 1      [ (validator.field) = { length_eq: 20 } ];
+	model.NodeCore core = 2 [ (validator.field) = { msg_exists: true } ];
 }
 
 // Request parameters used to DeleteNode
@@ -51,17 +42,8 @@ message DeleteRequest {
 
 // Request parameters used to UpdateNode
 message UpdateRequest {
-	string id = 1         	    [ (validator.field) = { length_eq: 20} ];
-	string name = 2             [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string desc = 3             [ (validator.field) = { length_lt: 1025 } ];
-	int32  status = 4           [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  retry_limit = 5      [ (validator.field) = { int_gt: -1 } ];
-	int32  retry_interval = 6   [ (validator.field) = { int_gt: 0 } ];
-	int32  timeout = 7          [ (validator.field) = { int_gt: 0 } ];
-	int32  failure_strategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  type = 9             [ (validator.field) = { int_gt: 0 } ];
-	string statements = 10      [ (validator.field) = { length_gt: 1} ];
-	string upstreams = 11       [ (validator.field) = {} ];
+	string id = 1         	[ (validator.field) = { length_eq: 20} ];
+	model.NodeCore core = 2 [ (validator.field) = { msg_exists: true } ];
 }
 
 // Request parameters used to DescribeNode

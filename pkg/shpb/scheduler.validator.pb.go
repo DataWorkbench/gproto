@@ -27,21 +27,18 @@ func (this *TaskInfo) Validate() error {
 	if !(this.Version > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
 	}
-	for _, item := range this.Nodes {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
-			}
-		}
+	if nil == this.Schedule {
+		return github_com_mwitkow_go_proto_validators.FieldError("Schedule", fmt.Errorf("message must exist"))
 	}
 	if this.Schedule != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schedule); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Schedule", err)
 		}
 	}
+	// Validation of proto3 map<> fields is unsupported.
 	return nil
 }
-func (this *AddRequest) Validate() error {
+func (this *PutFlowRequest) Validate() error {
 	if this.Task != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Task); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Task", err)
@@ -49,7 +46,7 @@ func (this *AddRequest) Validate() error {
 	}
 	return nil
 }
-func (this *RemoveRequest) Validate() error {
+func (this *DeleteFlowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
