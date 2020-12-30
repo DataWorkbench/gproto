@@ -19,57 +19,57 @@ service Node {
 
 // Request parameters used to ListWorkflowVersions
 message ListVersionsRequest {
-	string NodeId = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
+	string node_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListWorkflowVersions
 message ListVersionsReply {
-	repeated model.NodeVerInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.NodeVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to CreateNode
 message CreateRequest {
-	string FlowId = 1          [ (validator.field) = { length_eq: 20 } ];
-	string Name = 2            [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 3            [ (validator.field) = { length_lt: 1025 } ];
-	int32  Status = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  RetryLimit = 5      [ (validator.field) = { int_gt: -1 } ];
-	int32  RetryInterval = 6   [ (validator.field) = { int_gt: 0 } ];
-	int32  Timeout = 7         [ (validator.field) = { int_gt: 0 } ];
-	int32  FailureStrategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  Type = 9            [ (validator.field) = { int_gt: 0 } ];
-	string Defines = 10        [ (validator.field) = { length_gt: 1} ];
-	string Upstreams = 11      [ (validator.field) = {} ];
+	string flow_id = 1          [ (validator.field) = { length_eq: 20 } ];
+	string name = 2            [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string desc = 3            [ (validator.field) = { length_lt: 1025 } ];
+	int32  status = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  retry_limit = 5      [ (validator.field) = { int_gt: -1 } ];
+	int32  retry_interval = 6   [ (validator.field) = { int_gt: 0 } ];
+	int32  timeout = 7         [ (validator.field) = { int_gt: 0 } ];
+	int32  failure_strategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  type = 9            [ (validator.field) = { int_gt: 0 } ];
+	string statements = 10     [ (validator.field) = { length_gt: 1} ];
+	string upstreams = 11      [ (validator.field) = {} ];
 }
 
 // Request parameters used to DeleteNode
 message DeleteRequest {
-	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to UpdateNode
 message UpdateRequest {
-	string ID = 1         	   [ (validator.field) = {length_eq: 20} ];
-	string Name = 2            [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 3            [ (validator.field) = { length_lt: 1025 } ];
-	int32  Status = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  RetryLimit = 5      [ (validator.field) = { int_gt: -1 } ];
-	int32  RetryInterval = 6   [ (validator.field) = { int_gt: 0 } ];
-	int32  Timeout = 7         [ (validator.field) = { int_gt: 0 } ];
-	int32  FailureStrategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  Type = 9            [ (validator.field) = { int_gt: 0 } ];
-	string Defines = 10        [ (validator.field) = { length_gt: 1} ];
-	string Upstreams = 11      [ (validator.field) = {} ];
+	string id = 1         	    [ (validator.field) = { length_eq: 20} ];
+	string name = 2             [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string desc = 3             [ (validator.field) = { length_lt: 1025 } ];
+	int32  status = 4           [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  retry_limit = 5      [ (validator.field) = { int_gt: -1 } ];
+	int32  retry_interval = 6   [ (validator.field) = { int_gt: 0 } ];
+	int32  timeout = 7          [ (validator.field) = { int_gt: 0 } ];
+	int32  failure_strategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  type = 9             [ (validator.field) = { int_gt: 0 } ];
+	string statements = 10      [ (validator.field) = { length_gt: 1} ];
+	string upstreams = 11       [ (validator.field) = {} ];
 }
 
 // Request parameters used to DescribeNode
 message DescribeRequest {
-	string ID = 2 [ (validator.field) = {length_eq: 20} ];
+	string id = 2 [ (validator.field) = {length_eq: 20} ];
 }
 
 // Reply parameters used to DescribeNode
 message DescribeReply {
-	model.NodeInfo Info = 1;
+	model.NodeInfo info = 1;
 }

@@ -26,100 +26,100 @@ service Workflow {
 
 // Request parameters used to ListWorkflow
 message ListsRequest {
-	string SpaceId = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  Limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  Offset = 3  [ (validator.field) = { int_gt: -1 } ];
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  offset = 3  [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListWorkflow
 message ListsReply {
-	repeated model.FlowInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.FlowInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to ListWorkflowVersions
 message ListVersionsRequest {
-	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListWorkflowVersions
 message ListVersionsReply {
-	repeated model.FlowVerInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.FlowVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to CreateWorkflow
 message CreateRequest {
-	string SpaceId = 1 [ (validator.field) = { length_eq: 20 } ];
-	string Name = 2    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 3    [ (validator.field) = { length_lt: 1025 } ];
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string name = 2    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string desc = 3    [ (validator.field) = { length_lt: 1025 } ];
 }
 
 // Request parameters used to DeleteWorkflow
 message DeleteRequest {
-	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to UpdateWorkflow
 message UpdateRequest {
-	string ID = 2   [ (validator.field) = { length_eq: 20} ];
-	string Name = 3 [ (validator.field) = { length_lt: 129 } ];
-	string Desc = 4 [ (validator.field) = { length_lt: 1025 } ];
+	string id = 2   [ (validator.field) = { length_eq: 20} ];
+	string name = 3 [ (validator.field) = { length_lt: 129 } ];
+	string desc = 4 [ (validator.field) = { length_lt: 1025 } ];
 }
 
 // Request parameters used to DescribeWorkflow
 message DescribeRequest {
-	string ID = 2 [ (validator.field) = {length_eq: 20} ];
+	string id = 2 [ (validator.field) = {length_eq: 20} ];
 }
 
 // Reply parameters used to DescribeWorkflow
 message DescribeReply {
-	model.FlowInfo Info = 1;
+	model.FlowInfo info = 1;
 }
 
 // Request parameters used to PublishRequest
 message PublishRequest {
-	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to OfflineRequest
 message OfflineRequest {
-	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to ListScheduleVersions
 message ListScheduleVersionsRequest {
-	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  Limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  Offset = 3 [ (validator.field) = { int_gt: -1 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListScheduleVersions
 message ListScheduleVersionsReply {
-	repeated model.SchVerInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.SchVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to UpsertSchedule
 message UpsertScheduleRequest {
-	string FlowId = 1            [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2           [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 3             [ (validator.field) = { int_gt: 0 } ];
-	int32  Priority = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  FailureStrategy = 5   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  DependStrategy = 6    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  ScheduleStrategy = 7  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int64  ScheduleSLimit = 8    [ (validator.field) = { int_gt: -1 } ];
-	string Express = 9           [ (validator.field) = { } ];
-	int32  NotifyStrategies = 10 [ (validator.field) = { } ];
-	string NotifyGroup = 11      [ (validator.field) = { } ]; // FIXME: Confirm the length of notify group id
+	string flow_id = 1            [ (validator.field) = { length_eq: 20 } ];
+	int64  started = 2            [ (validator.field) = { int_gt: 0 } ];
+	int64  ended = 3              [ (validator.field) = { int_gt: 0 } ];
+	int32  priority = 4           [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  failure_strategy = 5    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  depend_strategy = 6     [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  schedule_strategy = 7   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int64  schedule_limit = 8     [ (validator.field) = { int_gt: -1 } ];
+	string express = 9            [ (validator.field) = { } ];
+	int32  notify_strategies = 10 [ (validator.field) = { } ];
+	string notify_group = 11      [ (validator.field) = { } ]; // FIXME: Confirm the length of notify group id
 }
 
 // Request parameters used to DescribeSchedule
 message DescribeScheduleRequest {
-	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Reply parameters used to DescribeSchedule
 message DescribeScheduleReply {
-	model.SchInfo Info = 1;
+	model.SchInfo info = 1;
 }

@@ -79,20 +79,20 @@ func (this *CreateRequest) Validate() error {
 	if !(this.Type > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must be greater than '0'`, this.Type))
 	}
-	if !(len(this.Defines) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Defines", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Defines))
+	if !(len(this.Statements) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Statements", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Statements))
 	}
 	return nil
 }
 func (this *DeleteRequest) Validate() error {
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	return nil
 }
 func (this *UpdateRequest) Validate() error {
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	if !(len(this.Name) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
@@ -127,14 +127,14 @@ func (this *UpdateRequest) Validate() error {
 	if !(this.Type > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must be greater than '0'`, this.Type))
 	}
-	if !(len(this.Defines) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Defines", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Defines))
+	if !(len(this.Statements) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Statements", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Statements))
 	}
 	return nil
 }
 func (this *DescribeRequest) Validate() error {
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	return nil
 }
