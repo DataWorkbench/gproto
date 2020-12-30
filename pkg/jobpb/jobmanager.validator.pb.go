@@ -38,11 +38,8 @@ func (this *RunJobRequest) Validate() error {
 	if !(this.NodeType > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("NodeType", fmt.Errorf(`value '%v' must be greater than '0'`, this.NodeType))
 	}
-	if !(len(this.Depends) < 4000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Depends", fmt.Errorf(`value '%v' must have a length smaller than '4000'`, this.Depends))
-	}
-	if !(len(this.MainRun) < 8000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("MainRun", fmt.Errorf(`value '%v' must have a length smaller than '8000'`, this.MainRun))
+	if !(len(this.Depends) < 10000) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Depends", fmt.Errorf(`value '%v' must have a length smaller than '10000'`, this.Depends))
 	}
 	return nil
 }
