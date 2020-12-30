@@ -4,45 +4,24 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/wfpb";
 
 package wfpb;
 
-import "types.proto";
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
 
 // Workflow Service
 service Workflow {
-	rpc Lists(ListsRequest)       returns (ListsReply)       {}
-	rpc Create(CreateRequest)     returns (types.EmptyReply) {}
-	rpc Delete(DeleteRequest)     returns (types.EmptyReply) {}
-	rpc Update(UpdateRequest)     returns (types.EmptyReply) {}
-	rpc Describe(DescribeRequest) returns (DescribeReply)    {}
-	rpc Publish(PublishRequest)   returns (types.EmptyReply) {}
-	rpc Offline(OfflineRequest)   returns (types.EmptyReply) {}
+	rpc Lists(ListsRequest)       returns (ListsReply)        {}
+	rpc Create(CreateRequest)     returns (model.EmptyStruct) {}
+	rpc Delete(DeleteRequest)     returns (model.EmptyStruct) {}
+	rpc Update(UpdateRequest)     returns (model.EmptyStruct) {}
+	rpc Describe(DescribeRequest) returns (DescribeReply)     {}
+	rpc Publish(PublishRequest)   returns (model.EmptyStruct) {}
+	rpc Offline(OfflineRequest)   returns (model.EmptyStruct) {}
 	// version api
 	rpc ListVersions(ListVersionsRequest)                 returns (ListVersionsReply)         {}
 	rpc ListScheduleVersions(ListScheduleVersionsRequest) returns (ListScheduleVersionsReply) {}
 	// schedule api
-	rpc UpsertSchedule(UpsertScheduleRequest)     returns (types.EmptyReply)      {}
+	rpc UpsertSchedule(UpsertScheduleRequest)     returns (model.EmptyStruct)     {}
 	rpc DescribeSchedule(DescribeScheduleRequest) returns (DescribeScheduleReply) {}
-}
-
-// The Workflow Info
-message Info {
-	string SpaceId = 1 [ (validator.field) = { length_eq: 20 } ];
-	string ID = 2      [ (validator.field) = { length_eq: 20 } ];
-	string Name = 3    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 4    [ (validator.field) = { length_lt: 1025 } ];
-	int32  Status = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int64  Created = 6 [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 7 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// The Workflow version Info
-message VersionInfo {
-	string ID = 1      [ (validator.field) = { length_eq: 20 } ];
-	int64  Version = 2 [ (validator.field) = { int_gt: 0 } ];
-	string Name = 3    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string Desc = 4    [ (validator.field) = { length_lt: 1025 } ];
-	int64  Created = 6 [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 7 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // Request parameters used to ListWorkflow
@@ -54,7 +33,7 @@ message ListsRequest {
 
 // Reply parameters used to ListWorkflow
 message ListsReply {
-	repeated Info Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.FlowInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to ListWorkflowVersions
@@ -66,7 +45,7 @@ message ListVersionsRequest {
 
 // Reply parameters used to ListWorkflowVersions
 message ListVersionsReply {
-	repeated VersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.FlowVerInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to CreateWorkflow
@@ -95,7 +74,7 @@ message DescribeRequest {
 
 // Reply parameters used to DescribeWorkflow
 message DescribeReply {
-	Info Info = 1;
+	model.FlowInfo Info = 1;
 }
 
 // Request parameters used to PublishRequest
@@ -108,23 +87,6 @@ message OfflineRequest {
 	string ID = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// The Workflow schedule version Info
-message ScheduleVersionInfo {
-	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
-	int64  Version = 2          [ (validator.field) = { int_gt: 0 } ];
-	int64  Started = 3          [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 4            [ (validator.field) = { int_gt: 0 } ];
-	int32  Priority = 5         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  FailureStrategy = 6  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  DependStrategy = 7   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  ScheduleStrategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	string Express = 9          [ (validator.field) = { } ];
-	int64  Timed = 10           [ (validator.field) = { } ];
-	repeated int32  NotifyStrategy = 11  [ (validator.field) = { } ];
-	int64  Created = 12         [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 13         [ (validator.field) = { int_gt: 0 } ];
-}
-
 // Request parameters used to ListScheduleVersions
 message ListScheduleVersionsRequest {
 	string FlowId = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -134,21 +96,22 @@ message ListScheduleVersionsRequest {
 
 // Reply parameters used to ListScheduleVersions
 message ListScheduleVersionsReply {
-	repeated ScheduleVersionInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.SchVerInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to UpsertSchedule
 message UpsertScheduleRequest {
-	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2          [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 3            [ (validator.field) = { int_gt: 0 } ];
-	int32  Priority = 4         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  FailureStrategy = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  DependStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  ScheduleStrategy = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	string Express = 8          [ (validator.field) = { } ];
-	int64  Timed = 9            [ (validator.field) = { } ];
-	repeated int32  NotifyStrategy = 10  [ (validator.field) = { } ];
+	string FlowId = 1            [ (validator.field) = { length_eq: 20 } ];
+	int64  Started = 2           [ (validator.field) = { int_gt: 0 } ];
+	int64  Ended = 3             [ (validator.field) = { int_gt: 0 } ];
+	int32  Priority = 4          [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  FailureStrategy = 5   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  DependStrategy = 6    [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32  ScheduleStrategy = 7  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int64  ScheduleSLimit = 8    [ (validator.field) = { int_gt: -1 } ];
+	string Express = 9           [ (validator.field) = { } ];
+	int32  NotifyStrategies = 10 [ (validator.field) = { } ];
+	string NotifyGroup = 11      [ (validator.field) = { } ]; // FIXME: Confirm the length of notify group id
 }
 
 // Request parameters used to DescribeSchedule
@@ -158,16 +121,5 @@ message DescribeScheduleRequest {
 
 // Reply parameters used to DescribeSchedule
 message DescribeScheduleReply {
-	string FlowId = 1           [ (validator.field) = { length_eq: 20 } ];
-	int64  Started = 2          [ (validator.field) = { int_gt: 0 } ];
-	int64  Ended = 3            [ (validator.field) = { int_gt: 0 } ];
-	int32  Priority = 4         [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  FailureStrategy = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  DependStrategy = 6   [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	int32  ScheduleStrategy = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	string Express = 8          [ (validator.field) = { } ];
-	int64  Timed = 9            [ (validator.field) = { } ];
-	repeated int32  NotifyStrategy = 10  [ (validator.field) = { } ];
-	int64  Created = 11         [ (validator.field) = { int_gt: 0 } ];
-	int64  Updated = 12         [ (validator.field) = { int_gt: 0 } ];
+	model.SchInfo Info = 1;
 }

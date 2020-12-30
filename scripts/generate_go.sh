@@ -6,8 +6,18 @@
 # go-proto-validators
 #
 
+if ! [[ "$0" =~ scripts/generate_go.sh ]]; then
+	echo "must be run from repository root"
+	exit 255
+fi
+
 current_path=$(cd "$(dirname "${0}")" || exit 1; pwd)
+
+# install dep package.
+sh "${current_path}/ensure_dep.sh"
+
 cd "${current_path}"/.. || exit 1
+
 
 MODULE="github.com/DataWorkbench/gproto"
 GOPATH=$(go env GOPATH)
@@ -58,7 +68,11 @@ for f in proto/*.proto;do
 
   protoc -I=. -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --govalidators_opt=paths=source_relative --govalidators_out=. --go_out=. --go-grpc_out=. "$f"
 
+  protoc-go-inject-tag -input="./${dir}/${name}.pb.go"
+
   mv -f proto/"${name}".validator.pb.go ".${dir}/"
 done
+
+go fmt ./... >/dev/null 2>&1;
 
 exit $?

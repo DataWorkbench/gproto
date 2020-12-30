@@ -4,29 +4,18 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/wspb";
 
 package wspb;
 
-import "types.proto";
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
 
 // Workspace Service
 service Workspace {
-    rpc Lists(ListsRequest)       returns (ListsReply)       {}
-    rpc Create(CreateRequest)     returns (types.EmptyReply) {}
-    rpc Delete(DeleteRequest)     returns (types.EmptyReply) {}
-    rpc Update(UpdateRequest)     returns (types.EmptyReply) {}
-    rpc Describe(DescribeRequest) returns (DescribeReply)    {}
-    rpc Disable(DisableRequest)   returns (types.EmptyReply) {}
-    rpc Enable(EnableRequest)     returns (types.EmptyReply) {}
-}
-
-// The Workspace Info
-message Info {
-    string ID = 1      [ (validator.field) = { length_eq: 20 } ];
-    string Owner = 2   [ (validator.field) = { length_lt: 65 } ];
-    string Name = 3    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-    string Desc = 4    [ (validator.field) = { length_lt: 1025 } ];
-    int32  Status = 5  [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-    int64  Created = 7 [ (validator.field) = { int_gt: 0 } ];
-    int64  Updated = 8 [ (validator.field) = { int_gt: 0 } ];
+    rpc Lists(ListsRequest)       returns (ListsReply)        {}
+    rpc Create(CreateRequest)     returns (model.EmptyStruct) {}
+    rpc Delete(DeleteRequest)     returns (model.EmptyStruct) {}
+    rpc Update(UpdateRequest)     returns (model.EmptyStruct) {}
+    rpc Describe(DescribeRequest) returns (DescribeReply)     {}
+    rpc Disable(DisableRequest)   returns (model.EmptyStruct) {}
+    rpc Enable(EnableRequest)     returns (model.EmptyStruct) {}
 }
 
 // Request parameters used to ListWorkspaces
@@ -38,7 +27,7 @@ message ListsRequest {
 
 // Reply parameters used to ListWorkspaces
 message ListsReply {
-    repeated Info Infos = 1 [ (validator.field) = { msg_exists: false } ];
+    repeated model.SpaceInfo Infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to CreateWorkspace
@@ -67,7 +56,7 @@ message DescribeRequest {
 
 // Reply parameters used to DescribeWorkspace
 message DescribeReply {
-    Info Info = 1;
+    model.SpaceInfo Info = 1;
 }
 
 // Request parameters used to DisableWorkspace
