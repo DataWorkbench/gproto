@@ -78,6 +78,7 @@ message EmptyReply {
 message ListsRequest {
     int32 Limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
     int32 Offset = 2 [ (validator.field) = { msg_exists: true } ];
+    string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Reply parameters used to ListWorkspaces

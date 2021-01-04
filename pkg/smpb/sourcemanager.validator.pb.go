@@ -173,6 +173,9 @@ func (this *ListsRequest) Validate() error {
 	if !(this.Limit < 101) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
 	}
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
 	return nil
 }
 func (this *ListsReply) Validate() error {
