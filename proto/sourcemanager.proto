@@ -121,6 +121,7 @@ message SotUpdateRequest {
     string Name = 2   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 3    [ (validator.field) = {  length_lt: 257 } ];
     string Url = 4 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string TabType = 5 [ (validator.field) = { length_eq: 1 } ];
 }
 
 message SotDeleteRequest {

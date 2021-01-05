@@ -294,6 +294,9 @@ func (this *SotUpdateRequest) Validate() error {
 	if !(len(this.Url) < 2001) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
 	}
+	if !(len(this.TabType) == 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TabType", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.TabType))
+	}
 	return nil
 }
 func (this *SotDeleteRequest) Validate() error {
