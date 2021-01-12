@@ -191,8 +191,8 @@ func (this *NodeCore) Validate() error {
 	if !(this.RetryInterval > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("RetryInterval", fmt.Errorf(`value '%v' must be greater than '0'`, this.RetryInterval))
 	}
-	if !(this.Timeout > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '0'`, this.Timeout))
+	if !(this.Timeout > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Timeout))
 	}
 	if !(this.FailureStrategy > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))

@@ -189,7 +189,7 @@ message NodeCore {
 	
 	// Seconds of timeout. 0 means never timeout.
 	// @inject_tag: gorm:"column:timeout"
-	int32 timeout = 6 [ (validator.field) = { int_gt: 0 } ];
+	int32 timeout = 6 [ (validator.field) = { int_gt: -1 } ];
 	
 	// Strategy when node task execute fail. 1 => "none", 2 => "ignore".
 	// @inject_tag: gorm:"column:failure_strategy;"
