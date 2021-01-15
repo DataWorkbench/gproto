@@ -41,7 +41,7 @@ message InfoReply {
     string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
     string Creator = 6    [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-    string Url = 7    [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string Url = 7    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
     string CreateTime = 8   [ (validator.field) = { length_lt: 65 } ];
     string UpdateTime = 9  [ (validator.field) = { length_lt: 65 } ];
     string EngineType = 10  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
@@ -55,7 +55,7 @@ message CreateRequest {
     string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
     string Creator = 6    [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-    string Url = 7 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string Url = 7 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
     string EngineType = 8  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
 }
 
@@ -64,7 +64,7 @@ message UpdateRequest {
     string SourceType = 2  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
     string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 5   [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string Url = 5   [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
 }
 
 message DeleteRequest {
@@ -92,7 +92,7 @@ message DescribeRequest {
 
 message PingSourceRequest {
     string SourceType = 1 [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string Url = 2 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string Url = 2 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
     string EngineType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
 }
 
@@ -102,7 +102,7 @@ message SotInfoReply {
     string TabType = 3 [ (validator.field) = { length_eq: 1 } ];
     string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
     string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
     string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
 }
@@ -112,7 +112,7 @@ message SotCreateRequest {
     string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
     string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 5 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string Url = 5 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
     string TabType = 6 [ (validator.field) = { length_eq: 1 } ];
 }
 
@@ -120,7 +120,7 @@ message SotUpdateRequest {
     string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
     string Name = 2   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 3    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 4 [ (validator.field) = { length_gt: 0, length_lt: 2001 } ];
+    string Url = 4 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
     string TabType = 5 [ (validator.field) = { length_eq: 1 } ];
 }
 

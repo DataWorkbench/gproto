@@ -71,8 +71,8 @@ func (this *InfoReply) Validate() error {
 	if !(len(this.Url) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Url))
 	}
-	if !(len(this.Url) < 2001) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
+	if !(len(this.Url) < 8001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '8001'`, this.Url))
 	}
 	if !(len(this.CreateTime) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("CreateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.CreateTime))
@@ -119,8 +119,8 @@ func (this *CreateRequest) Validate() error {
 	if !(len(this.Url) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Url))
 	}
-	if !(len(this.Url) < 2001) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
+	if !(len(this.Url) < 8001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '8001'`, this.Url))
 	}
 	if !(len(this.EngineType) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.EngineType))
@@ -152,8 +152,8 @@ func (this *UpdateRequest) Validate() error {
 	if !(len(this.Url) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Url))
 	}
-	if !(len(this.Url) < 2001) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
+	if !(len(this.Url) < 8001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '8001'`, this.Url))
 	}
 	return nil
 }
@@ -204,8 +204,8 @@ func (this *PingSourceRequest) Validate() error {
 	if !(len(this.Url) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Url))
 	}
-	if !(len(this.Url) < 2001) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
+	if !(len(this.Url) < 8001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '8001'`, this.Url))
 	}
 	if !(len(this.EngineType) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.EngineType))
@@ -237,8 +237,8 @@ func (this *SotInfoReply) Validate() error {
 	if !(len(this.Url) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Url))
 	}
-	if !(len(this.Url) < 2001) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
+	if !(len(this.Url) < 8001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '8001'`, this.Url))
 	}
 	if !(len(this.CreateTime) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("CreateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.CreateTime))
@@ -267,8 +267,8 @@ func (this *SotCreateRequest) Validate() error {
 	if !(len(this.Url) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Url))
 	}
-	if !(len(this.Url) < 2001) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
+	if !(len(this.Url) < 8001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '8001'`, this.Url))
 	}
 	if !(len(this.TabType) == 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("TabType", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.TabType))
@@ -291,8 +291,8 @@ func (this *SotUpdateRequest) Validate() error {
 	if !(len(this.Url) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Url))
 	}
-	if !(len(this.Url) < 2001) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.Url))
+	if !(len(this.Url) < 8001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Url", fmt.Errorf(`value '%v' must have a length smaller than '8001'`, this.Url))
 	}
 	if !(len(this.TabType) == 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("TabType", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.TabType))
