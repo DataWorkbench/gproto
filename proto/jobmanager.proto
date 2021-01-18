@@ -15,7 +15,7 @@ service Jobmanager {
 
 message JobReply {
     int32 Status = 1  [ (validator.field) = { int_gt: 0 } ];
-    string Message = 2 [ (validator.field) = { length_lt: 4000 } ];
+    string Message = 2 ;
 }
 
 // EmptyReply represents no value returned
@@ -26,7 +26,7 @@ message RunJobRequest {
     string ID = 1  [ (validator.field) = { length_eq: 20 } ];
     string WorkspaceID = 2 [ (validator.field) = { length_eq: 20 } ];
     int32 NodeType = 3 [ (validator.field) = { int_gt: 0 } ];
-    string Depends = 4 [ (validator.field) = { length_lt: 10000 } ];
+    string Depends = 4 ;
 }
 
 message GetJobStatusRequest {

@@ -20,9 +20,6 @@ func (this *JobReply) Validate() error {
 	if !(this.Status > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
 	}
-	if !(len(this.Message) < 4000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Message", fmt.Errorf(`value '%v' must have a length smaller than '4000'`, this.Message))
-	}
 	return nil
 }
 func (this *EmptyReply) Validate() error {
@@ -37,9 +34,6 @@ func (this *RunJobRequest) Validate() error {
 	}
 	if !(this.NodeType > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("NodeType", fmt.Errorf(`value '%v' must be greater than '0'`, this.NodeType))
-	}
-	if !(len(this.Depends) < 10000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Depends", fmt.Errorf(`value '%v' must have a length smaller than '10000'`, this.Depends))
 	}
 	return nil
 }
