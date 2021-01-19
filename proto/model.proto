@@ -58,10 +58,6 @@ message FlowInfo {
 	// @inject_tag: gorm:"column:desc;"
 	string desc = 4 [ (validator.field) = { length_lt: 1025 } ];
 	
-	// Workflow status, 1 => "offline", 2 => "releasing"; 3 => "online"
-	// @inject_tag: gorm:"column:status;"
-	int32 status = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	
 	// Timestamp of create time.
 	// @inject_tag: gorm:"column:created;autoCreateTime"
 	int64 created = 6 [ (validator.field) = { int_gt: 0 } ];

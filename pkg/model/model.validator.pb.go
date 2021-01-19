@@ -65,12 +65,6 @@ func (this *FlowInfo) Validate() error {
 	if !(len(this.Desc) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
 	}
-	if !(this.Status > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
-	}
-	if !(this.Status < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
-	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
 	}
