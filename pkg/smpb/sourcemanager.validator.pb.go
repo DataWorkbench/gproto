@@ -16,6 +16,12 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *DeleteAllRequest) Validate() error {
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
+	return nil
+}
 func (this *EngingMapRequest) Validate() error {
 	if !(len(this.EngineType) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.EngineType))
@@ -85,6 +91,9 @@ func (this *InfoReply) Validate() error {
 	}
 	if !(len(this.EngineType) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.EngineType))
+	}
+	if !(len(this.Connected) == 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Connected", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.Connected))
 	}
 	return nil
 }

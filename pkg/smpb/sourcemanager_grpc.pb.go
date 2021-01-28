@@ -29,6 +29,7 @@ type SourcemanagerClient interface {
 	SotList(ctx context.Context, in *SotListsRequest, opts ...grpc.CallOption) (*SotListsReply, error)
 	SotDescribe(ctx context.Context, in *SotDescribeRequest, opts ...grpc.CallOption) (*SotInfoReply, error)
 	EngineMap(ctx context.Context, in *EngingMapRequest, opts ...grpc.CallOption) (*EngineMapReply, error)
+	DeleteAll(ctx context.Context, in *DeleteAllRequest, opts ...grpc.CallOption) (*EmptyReply, error)
 }
 
 type sourcemanagerClient struct {
@@ -147,6 +148,15 @@ func (c *sourcemanagerClient) EngineMap(ctx context.Context, in *EngingMapReques
 	return out, nil
 }
 
+func (c *sourcemanagerClient) DeleteAll(ctx context.Context, in *DeleteAllRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
+	out := new(EmptyReply)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DeleteAll", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SourcemanagerServer is the server API for Sourcemanager service.
 // All implementations must embed UnimplementedSourcemanagerServer
 // for forward compatibility
@@ -163,6 +173,7 @@ type SourcemanagerServer interface {
 	SotList(context.Context, *SotListsRequest) (*SotListsReply, error)
 	SotDescribe(context.Context, *SotDescribeRequest) (*SotInfoReply, error)
 	EngineMap(context.Context, *EngingMapRequest) (*EngineMapReply, error)
+	DeleteAll(context.Context, *DeleteAllRequest) (*EmptyReply, error)
 	mustEmbedUnimplementedSourcemanagerServer()
 }
 
@@ -205,6 +216,9 @@ func (UnimplementedSourcemanagerServer) SotDescribe(context.Context, *SotDescrib
 }
 func (UnimplementedSourcemanagerServer) EngineMap(context.Context, *EngingMapRequest) (*EngineMapReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EngineMap not implemented")
+}
+func (UnimplementedSourcemanagerServer) DeleteAll(context.Context, *DeleteAllRequest) (*EmptyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAll not implemented")
 }
 func (UnimplementedSourcemanagerServer) mustEmbedUnimplementedSourcemanagerServer() {}
 
@@ -435,6 +449,24 @@ func _Sourcemanager_EngineMap_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Sourcemanager_DeleteAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAllRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourcemanagerServer).DeleteAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smpb.Sourcemanager/DeleteAll",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourcemanagerServer).DeleteAll(ctx, req.(*DeleteAllRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Sourcemanager_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "smpb.Sourcemanager",
 	HandlerType: (*SourcemanagerServer)(nil),
@@ -486,6 +518,10 @@ var _Sourcemanager_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "EngineMap",
 			Handler:    _Sourcemanager_EngineMap_Handler,
+		},
+		{
+			MethodName: "DeleteAll",
+			Handler:    _Sourcemanager_DeleteAll_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
