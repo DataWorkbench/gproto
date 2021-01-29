@@ -11,6 +11,7 @@ service Jobmanager {
     rpc RunJob(RunJobRequest) returns (JobReply) {}
     rpc GetJobStatus(GetJobStatusRequest) returns (JobReply) {}
     rpc CancelJob(CancelJobRequest) returns (EmptyReply) {}
+    rpc CancelAllJob(CancelAllJobRequest) returns (EmptyReply) {}
 }
 
 message JobReply {
@@ -35,4 +36,8 @@ message GetJobStatusRequest {
 
 message CancelJobRequest {
     string ID = 1  [ (validator.field) = { length_eq: 20 } ];
+}
+
+message CancelAllJobRequest {
+    string SpaceID = 1  [ (validator.field) = { length_eq: 20 } ];
 }

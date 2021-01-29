@@ -49,3 +49,9 @@ func (this *CancelJobRequest) Validate() error {
 	}
 	return nil
 }
+func (this *CancelAllJobRequest) Validate() error {
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
+	return nil
+}

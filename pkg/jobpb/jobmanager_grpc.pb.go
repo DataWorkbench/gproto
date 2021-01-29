@@ -20,6 +20,7 @@ type JobmanagerClient interface {
 	RunJob(ctx context.Context, in *RunJobRequest, opts ...grpc.CallOption) (*JobReply, error)
 	GetJobStatus(ctx context.Context, in *GetJobStatusRequest, opts ...grpc.CallOption) (*JobReply, error)
 	CancelJob(ctx context.Context, in *CancelJobRequest, opts ...grpc.CallOption) (*EmptyReply, error)
+	CancelAllJob(ctx context.Context, in *CancelAllJobRequest, opts ...grpc.CallOption) (*EmptyReply, error)
 }
 
 type jobmanagerClient struct {
@@ -57,6 +58,15 @@ func (c *jobmanagerClient) CancelJob(ctx context.Context, in *CancelJobRequest, 
 	return out, nil
 }
 
+func (c *jobmanagerClient) CancelAllJob(ctx context.Context, in *CancelAllJobRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
+	out := new(EmptyReply)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelAllJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // JobmanagerServer is the server API for Jobmanager service.
 // All implementations must embed UnimplementedJobmanagerServer
 // for forward compatibility
@@ -64,6 +74,7 @@ type JobmanagerServer interface {
 	RunJob(context.Context, *RunJobRequest) (*JobReply, error)
 	GetJobStatus(context.Context, *GetJobStatusRequest) (*JobReply, error)
 	CancelJob(context.Context, *CancelJobRequest) (*EmptyReply, error)
+	CancelAllJob(context.Context, *CancelAllJobRequest) (*EmptyReply, error)
 	mustEmbedUnimplementedJobmanagerServer()
 }
 
@@ -79,6 +90,9 @@ func (UnimplementedJobmanagerServer) GetJobStatus(context.Context, *GetJobStatus
 }
 func (UnimplementedJobmanagerServer) CancelJob(context.Context, *CancelJobRequest) (*EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelJob not implemented")
+}
+func (UnimplementedJobmanagerServer) CancelAllJob(context.Context, *CancelAllJobRequest) (*EmptyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CancelAllJob not implemented")
 }
 func (UnimplementedJobmanagerServer) mustEmbedUnimplementedJobmanagerServer() {}
 
@@ -147,6 +161,24 @@ func _Jobmanager_CancelJob_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Jobmanager_CancelAllJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelAllJobRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobmanagerServer).CancelAllJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/jobpb.Jobmanager/CancelAllJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobmanagerServer).CancelAllJob(ctx, req.(*CancelAllJobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "jobpb.Jobmanager",
 	HandlerType: (*JobmanagerServer)(nil),
@@ -162,6 +194,10 @@ var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CancelJob",
 			Handler:    _Jobmanager_CancelJob_Handler,
+		},
+		{
+			MethodName: "CancelAllJob",
+			Handler:    _Jobmanager_CancelAllJob_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
