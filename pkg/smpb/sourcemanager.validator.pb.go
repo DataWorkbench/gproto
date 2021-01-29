@@ -92,6 +92,9 @@ func (this *InfoReply) Validate() error {
 	if !(len(this.EngineType) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.EngineType))
 	}
+	if !(len(this.Direction) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Direction", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.Direction))
+	}
 	if !(len(this.Connected) == 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Connected", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.Connected))
 	}

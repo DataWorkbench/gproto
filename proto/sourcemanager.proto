@@ -50,7 +50,8 @@ message InfoReply {
     string CreateTime = 8   [ (validator.field) = { length_lt: 65 } ];
     string UpdateTime = 9  [ (validator.field) = { length_lt: 65 } ];
     string EngineType = 10  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string Connected = 11 [ (validator.field) = { length_eq: 1 } ]; // t f
+    string Direction = 11 [ (validator.field) = { length_lt: 17 } ];
+    string Connected = 12 [ (validator.field) = { length_eq: 1 } ]; // t f
 }
 
 // Reply parameters used to DescribeWorkspace
