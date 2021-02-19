@@ -179,11 +179,14 @@ func (this *EmptyReply) Validate() error {
 	return nil
 }
 func (this *ListsRequest) Validate() error {
-	if !(this.Limit > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	if !(this.PageSize > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PageSize", fmt.Errorf(`value '%v' must be greater than '0'`, this.PageSize))
 	}
-	if !(this.Limit < 101) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	if !(this.PageSize < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PageSize", fmt.Errorf(`value '%v' must be less than '101'`, this.PageSize))
+	}
+	if !(this.PageNo > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PageNo", fmt.Errorf(`value '%v' must be greater than '0'`, this.PageNo))
 	}
 	if !(len(this.SpaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
@@ -331,11 +334,14 @@ func (this *SotListsRequest) Validate() error {
 	if !(len(this.SourceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SourceID))
 	}
-	if !(this.Limit > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	if !(this.PageSize > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PageSize", fmt.Errorf(`value '%v' must be greater than '0'`, this.PageSize))
 	}
-	if !(this.Limit < 101) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	if !(this.PageSize < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PageSize", fmt.Errorf(`value '%v' must be less than '101'`, this.PageSize))
+	}
+	if !(this.PageNo > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PageNo", fmt.Errorf(`value '%v' must be greater than '0'`, this.PageNo))
 	}
 	return nil
 }

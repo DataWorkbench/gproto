@@ -83,8 +83,8 @@ message EmptyReply {
 }
 
 message ListsRequest {
-    int32 Limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 Offset = 2 [ (validator.field) = { msg_exists: true } ];
+    int32 PageSize = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 PageNo = 2 [ (validator.field) = { int_gt: 0 } ];
     string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
 }
 
@@ -141,8 +141,8 @@ message SotListsReply {
 
 message SotListsRequest {
     string SourceID  = 1 [ (validator.field) = { length_eq: 20 } ];
-    int32 Limit = 2 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 Offset = 3 [ (validator.field) = { msg_exists: true } ];
+    int32 PageSize = 2 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 PageNo = 3 [ (validator.field) = { int_gt: 0 } ];
 }
 
 message SotDescribeRequest {
