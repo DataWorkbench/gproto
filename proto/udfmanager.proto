@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/udfpb";
+
+package udfpb;
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+service Udfmanager {
+    rpc Create(CreateRequest) returns (EmptyReply) {}
+    rpc Update(UpdateRequest) returns (EmptyReply) {}
+    rpc Delete(DeleteRequest) returns (EmptyReply) {}
+	rpc DeleteAll(DeleteAllRequest) returns (EmptyReply) {}
+    rpc Describe(DescribeRequest) returns (InfoReply) {}
+    rpc List(ListsRequest) returns (ListsReply) {}
+}
+
+// EmptyReply represents no value returned
+message EmptyReply {
+}
+
+message CreateRequest {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+    string UdfType = 3  [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+    string Define = 6    [ (validator.field) = { length_gt: 0 } ];
+}
+
+message UpdateRequest {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string UdfType = 2  [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+    string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
+    string Define = 5    [ (validator.field) = { length_gt: 0 } ];
+}
+
+message DeleteRequest {
+    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message DeleteAllRequest {
+    string SpaceID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message InfoReply {
+    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
+    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+    string UdfType = 3  [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+    string Define = 6    [ (validator.field) = { length_gt: 0 } ];
+    string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
+    string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
+}
+
+message DescribeRequest {
+    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+
+message ListsRequest {
+    int32 PageSize = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 PageNo = 2 [ (validator.field) = { int_gt: 0, int_lt: 1000000 } ];
+    string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// Reply parameters used to ListWorkspaces
+message ListsReply {
+    repeated InfoReply Infos = 1 [ (validator.field) = { msg_exists: false } ];
+}
