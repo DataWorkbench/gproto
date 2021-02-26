@@ -61,8 +61,8 @@ message DescribeRequest {
 
 
 message ListsRequest {
-    int32 PageSize = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 PageNo = 2 [ (validator.field) = { int_gt: 0, int_lt: 1000000 } ];
+    int32 Limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 Offset = 2 [ (validator.field) = { int_gt: -1 } ];
     string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
 }
 

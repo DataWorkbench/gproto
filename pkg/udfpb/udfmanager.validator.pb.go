@@ -122,17 +122,14 @@ func (this *DescribeRequest) Validate() error {
 	return nil
 }
 func (this *ListsRequest) Validate() error {
-	if !(this.PageSize > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("PageSize", fmt.Errorf(`value '%v' must be greater than '0'`, this.PageSize))
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
 	}
-	if !(this.PageSize < 101) {
-		return github_com_mwitkow_go_proto_validators.FieldError("PageSize", fmt.Errorf(`value '%v' must be less than '101'`, this.PageSize))
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
 	}
-	if !(this.PageNo > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("PageNo", fmt.Errorf(`value '%v' must be greater than '0'`, this.PageNo))
-	}
-	if !(this.PageNo < 1000000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("PageNo", fmt.Errorf(`value '%v' must be less than '1000000'`, this.PageNo))
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
 	}
 	if !(len(this.SpaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
