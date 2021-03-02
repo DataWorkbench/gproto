@@ -10,16 +10,28 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 message Engine{
     string ID = 1 [ (validator.field) = {length_eq: 20} ];
     string Name = 2 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string ShowName = 3 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string Owner = 4 [ (validator.field) = { length_lt: 65 } ];
-    string Version = 5;
-    enum EngineType {
-        INBUILT = 0;
-        EXTERNAL = 1;
-    }
-    EngineType Type = 6;  // inbuilt, external
-    int32 Recommend = 7;  // 0 or 1
-    string URL = 8;
+    string Owner = 3 [ (validator.field) = { length_lt: 65 } ];
+    string Desc = 4;
+    string URL = 5;
+    string ServerType = 6; //spark, flink
+    string Status = 7;
+    string IsInbuilt = 8; // inbuilt, external
+    int64 Created = 9;
+    int64 Updated = 10;
+}
+
+message CreateRequest {
+    string Name = 1 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
+    string Owner = 2 [ (validator.field) = { length_lt: 65 } ];
+    string Desc = 3;
+    string URL = 4;
+    string ServerType = 5; //spark, flink
+}
+
+message CreateResponse {
+    string ID = 1;
+    int32 StatusCode = 2;
+    string Message = 3;
 }
 
 message ListRequest {
@@ -32,7 +44,8 @@ message ListRequest {
 
 message ListResponse {
     repeated Engine Engines = 1 [ (validator.field) = { msg_exists: false } ];
-    string StatusCode = 2;
+    int32 StatusCode = 2;
+    string message = 3;
 }
 
 message DescribeRequest {
@@ -40,33 +53,44 @@ message DescribeRequest {
 }
 
 message DescribeResponse {
-    Engine info = 1;
-    string StatusCode = 2;
+    Engine engine = 1;
+    int32 StatusCode = 2;
+    string message = 3;
 }
-
 
 message RegisterRequest {
     string Name = 1 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string ShowName = 2 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string Owner = 3 [ (validator.field) = { length_lt: 65 } ];
+    string Owner = 2 [ (validator.field) = { length_lt: 65 } ];
+    string Desc = 3;
     string URL = 4;
+    string ServerType = 5; //spark, flink
 }
 
 message RegisterResponse {
-    string StatusCode = 1;
-    string Message = 2;
+    string ID = 1;
+    int32 StatusCode = 2;
+    string Message = 3;
+}
+
+message DeregisterRequest {
+    string ID = 1 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
+}
+
+message DeregisterResponse {
+    string ID = 1;
+    int32 StatusCode = 2;
+    string Message = 3;
 }
 
 message ModifyRequest {
     string ID = 1 [ (validator.field) = {length_eq: 20} ];
     string Name = 2 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string ShowName = 3 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string Owner = 4 [ (validator.field) = { length_lt: 65 } ];
-    string URL = 5;
+    string Desc = 3;
+    string URL = 4;
 }
 
 message ModifyResponse {
-    string StatusCode = 1;
+    int32 StatusCode = 1;
     string Message = 2;
 }
 
@@ -75,19 +99,7 @@ message DeleteRequest {
 }
 
 message DeleteResponse {
-    string StatusCode = 1;
-    string Message = 2;
-}
-
-message CreateRequest {
-    string Name = 1 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string ShowName = 2 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string Owner = 3 [ (validator.field) = { length_lt: 65 } ];
-    string URL = 4;
-}
-
-message CreateResponse {
-    string StatusCode = 1;
+    int32 StatusCode = 1;
     string Message = 2;
 }
 
