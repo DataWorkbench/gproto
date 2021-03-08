@@ -9,13 +9,13 @@ import "model.proto";
 
 // Workspace Service
 service Workspace {
-    rpc Lists(ListsRequest)       returns (ListsReply)        {}
-    rpc Create(CreateRequest)     returns (model.EmptyStruct) {}
-    rpc Delete(DeleteRequest)     returns (model.EmptyStruct) {}
-    rpc Update(UpdateRequest)     returns (model.EmptyStruct) {}
-    rpc Describe(DescribeRequest) returns (DescribeReply)     {}
-    rpc Disable(DisableRequest)   returns (model.EmptyStruct) {}
-    rpc Enable(EnableRequest)     returns (model.EmptyStruct) {}
+    rpc ListWorkspaces(ListsRequest)       returns (ListsReply)        {}
+    rpc CreateWorkspace(CreateRequest)     returns (model.EmptyStruct) {}
+    rpc DeleteWorkspace(DeleteRequest)     returns (model.EmptyStruct) {}
+    rpc UpdateWorkspace(UpdateRequest)     returns (model.EmptyStruct) {}
+    rpc DescribeWorkspace(DescribeRequest) returns (DescribeReply)     {}
+    rpc DisableWorkspace(DisableRequest)   returns (model.EmptyStruct) {}
+    rpc EnableWorkspace(EnableRequest)     returns (model.EmptyStruct) {}
 }
 
 // Request parameters used to ListWorkspaces
