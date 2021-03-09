@@ -17,7 +17,7 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *ListsRequest) Validate() error {
+func (this *ListWorkspacesRequest) Validate() error {
 	if this.Owner == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must not be an empty string`, this.Owner))
 	}
@@ -32,7 +32,7 @@ func (this *ListsRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ListsReply) Validate() error {
+func (this *ListWorkspacesReply) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -42,7 +42,7 @@ func (this *ListsReply) Validate() error {
 	}
 	return nil
 }
-func (this *CreateRequest) Validate() error {
+func (this *CreateWorkspaceRequest) Validate() error {
 	if !(len(this.Owner) > 10) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
 	}
@@ -60,13 +60,13 @@ func (this *CreateRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DeleteRequest) Validate() error {
+func (this *DeleteWorkspaceRequest) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	return nil
 }
-func (this *UpdateRequest) Validate() error {
+func (this *UpdateWorkspaceRequest) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
@@ -78,13 +78,13 @@ func (this *UpdateRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DescribeRequest) Validate() error {
+func (this *DescribeWorkspaceRequest) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	return nil
 }
-func (this *DescribeReply) Validate() error {
+func (this *DescribeWorkspaceReply) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -92,15 +92,51 @@ func (this *DescribeReply) Validate() error {
 	}
 	return nil
 }
-func (this *DisableRequest) Validate() error {
+func (this *DisableWorkspaceRequest) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	return nil
 }
-func (this *EnableRequest) Validate() error {
+func (this *EnableWorkspaceRequest) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *AddAuditRequest) Validate() error {
+	if nil == this.Info {
+		return github_com_mwitkow_go_proto_validators.FieldError("Info", fmt.Errorf("message must exist"))
+	}
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
+func (this *ListAuditsRequest) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	return nil
+}
+func (this *ListAuditsReply) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
 	}
 	return nil
 }

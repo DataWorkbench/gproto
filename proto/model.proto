@@ -344,3 +344,25 @@ message NodeInstInfo {
 	// @inject_tag: gorm:"column:updated;autoUpdateTime"
 	int64 updated = 9 [ (validator.field) = { int_gt: 0 } ];
 }
+
+// The workspace operation audit record.
+message AuditInfo {
+	// @inject_tag: gorm:"column:space_id;"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The user id of who execute this operation.
+	// @inject_tag: gorm:"column:user_id;"
+	string user_id = 2 [ (validator.field) = { length_lt: 65 } ];
+	
+	// The operation type, 1 => "unknown", 2 => "read",  3 => "write", 4 => "delete"
+	// @inject_tag: gorm:"column:op_type"
+	int32 op_type = 3 [ (validator.field) = { int_gt: 0 } ];
+	
+	// The operation name (action)
+	// @inject_tag: gorm:"column:op_name;"
+	string op_name = 4 [ (validator.field) = { } ];
+	
+	// Timestamp of time of when accessed.
+	// @inject_tag: gorm:"column:timed;autoCreateTime"
+	int64 timed = 5 [ (validator.field) = { int_gt: 0 } ];
+}

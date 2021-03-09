@@ -9,62 +9,84 @@ import "model.proto";
 
 // Workspace Service
 service Workspace {
-    rpc ListWorkspaces(ListsRequest)       returns (ListsReply)        {}
-    rpc CreateWorkspace(CreateRequest)     returns (model.EmptyStruct) {}
-    rpc DeleteWorkspace(DeleteRequest)     returns (model.EmptyStruct) {}
-    rpc UpdateWorkspace(UpdateRequest)     returns (model.EmptyStruct) {}
-    rpc DescribeWorkspace(DescribeRequest) returns (DescribeReply)     {}
-    rpc DisableWorkspace(DisableRequest)   returns (model.EmptyStruct) {}
-    rpc EnableWorkspace(EnableRequest)     returns (model.EmptyStruct) {}
+    // API of workspace manager.
+    rpc ListWorkspaces(ListWorkspacesRequest)       returns (ListWorkspacesReply)    {}
+    rpc CreateWorkspace(CreateWorkspaceRequest)     returns (model.EmptyStruct)      {}
+    rpc DeleteWorkspace(DeleteWorkspaceRequest)     returns (model.EmptyStruct)      {}
+    rpc UpdateWorkspace(UpdateWorkspaceRequest)     returns (model.EmptyStruct)      {}
+    rpc DescribeWorkspace(DescribeWorkspaceRequest) returns (DescribeWorkspaceReply) {}
+    rpc DisableWorkspace(DisableWorkspaceRequest)   returns (model.EmptyStruct)      {}
+    rpc EnableWorkspace(EnableWorkspaceRequest)     returns (model.EmptyStruct)      {}
+    
+    // API of workspace operation audit log.
+    rpc AddAudit(AddAuditRequest)     returns (model.EmptyStruct) {}
+    rpc ListAudits(ListAuditsRequest) returns (ListAuditsReply)   {}
 }
 
 // Request parameters used to ListWorkspaces
-message ListsRequest {
+message ListWorkspacesRequest {
     string owner = 1  [ (validator.field) = { string_not_empty: true } ];
     int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
     int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListWorkspaces
-message ListsReply {
+message ListWorkspacesReply {
     repeated model.SpaceInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to CreateWorkspace
-message CreateRequest {
+message CreateWorkspaceRequest {
     string owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
     string name = 2  [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
     string desc = 3  [ (validator.field) = { length_lt: 1025 } ];
 }
 
 // Request parameters used to DeleteWorkspace
-message DeleteRequest {
-    string id = 2 [ (validator.field) = { length_eq: 20 } ];
+message DeleteWorkspaceRequest {
+    string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to UpdateWorkspace
-message UpdateRequest {
-    string id = 2   [ (validator.field) = { length_eq: 20 } ];
-    string name = 3 [ (validator.field) = { length_lt: 129 } ];
-    string desc = 4 [ (validator.field) = { length_lt: 1025 } ];
+message UpdateWorkspaceRequest {
+    string id = 1   [ (validator.field) = { length_eq: 20 } ];
+    string name = 2 [ (validator.field) = { length_lt: 129 } ];
+    string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
 }
 
 // Request parameters used to DescribeWorkspace
-message DescribeRequest {
-    string id = 2 [ (validator.field) = { length_eq: 20 } ];
+message DescribeWorkspaceRequest {
+    string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Reply parameters used to DescribeWorkspace
-message DescribeReply {
+message DescribeWorkspaceReply {
     model.SpaceInfo info = 1;
 }
 
 // Request parameters used to DisableWorkspace
-message DisableRequest {
-    string id = 2 [ (validator.field) = { length_eq: 20 } ];
+message DisableWorkspaceRequest {
+    string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to EnableWorkspace
-message EnableRequest {
-    string id = 2 [ (validator.field) = { length_eq: 20 } ];
+message EnableWorkspaceRequest {
+    string id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// Request parameters used to AddAudit
+message AddAuditRequest {
+    model.AuditInfo info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
+// Request parameters used to ListAudits
+message ListAuditsRequest {
+    string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+    int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Reply parameters used to AddAudit
+message ListAuditsReply {
+    repeated model.AuditInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
