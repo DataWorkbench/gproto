@@ -10,12 +10,12 @@ import "model.proto";
 // Workflow Service
 service Workflow {
 	// Operation of workflow.
-	rpc Lists(ListsRequest)       returns (ListsReply)        {}
-	rpc Create(CreateRequest)     returns (model.EmptyStruct) {}
-	rpc Delete(DeleteRequest)     returns (model.EmptyStruct) {}
-	rpc Update(UpdateRequest)     returns (model.EmptyStruct) {}
-	rpc Describe(DescribeRequest) returns (DescribeReply)     {}
-	rpc Execute(ExecuteRequest)   returns (model.EmptyStruct) {}
+	rpc ListWorkflows(ListWorkflowsRequest)       returns (ListWorkflowsReply)    {}
+	rpc CreateWorkflow(CreateWorkflowRequest)     returns (model.EmptyStruct)     {}
+	rpc DeleteWorkflow(DeleteWorkflowRequest)     returns (model.EmptyStruct)     {}
+	rpc UpdateWorkflow(UpdateWorkflowRequest)     returns (model.EmptyStruct)     {}
+	rpc DescribeWorkflow(DescribeWorkflowRequest) returns (DescribeWorkflowReply) {}
+	rpc ExecuteWorkflow(ExecuteWorkflowRequest)   returns (model.EmptyStruct)     {}
 	
 	// Operation of schedule.
 	rpc UpsertSchedule(UpsertScheduleRequest)     returns (model.EmptyStruct)     {}
@@ -30,16 +30,16 @@ service Workflow {
 	
 	// Operation of release version.
 	rpc ListReleases(ListReleasesRequest) returns (ListReleasesReply) {}
-	rpc Release(ReleaseRequest)           returns (model.EmptyStruct) {}
-	rpc Suspend(SuspendRequest)           returns (model.EmptyStruct) {}
-	rpc Resume(ResumeRequest)             returns (model.EmptyStruct) {}
+	rpc ReleaseWorkflow(ReleaseRequest)   returns (model.EmptyStruct) {}
+	rpc SuspendWorkflow(SuspendRequest)   returns (model.EmptyStruct) {}
+	rpc ResumeWorkflow(ResumeRequest)     returns (model.EmptyStruct) {}
 	
-	rpc ListFlowVersions(ListFlowVersionsRequest)         returns (ListFlowVersionsReply)     {}
+	rpc ListWorkflowVersions(ListWorkflowVersionsRequest) returns (ListWorkflowVersionsReply) {}
 	rpc ListScheduleVersions(ListScheduleVersionsRequest) returns (ListScheduleVersionsReply) {}
 	rpc ListVersionNodes(ListVersionNodesRequest)         returns (ListVersionNodesReply)     {}
 	rpc ListNodeVersions(ListNodeVersionsRequest)         returns (ListNodeVersionsReply)     {}
 	
-	rpc DescribeVersion(DescribeVersionRequest)                 returns (DescribeVersionReply)         {}
+	rpc DescribeWorkflowVersion(DescribeWorkflowVersionRequest) returns (DescribeWorkflowVersionReply) {}
 	rpc DescribeScheduleVersion(DescribeScheduleVersionRequest) returns (DescribeScheduleVersionReply) {}
 	rpc DescribeNodeVersion(DescribeNodeVersionRequest)         returns (DescribeNodeVersionReply)     {}
 }
@@ -47,48 +47,48 @@ service Workflow {
 // Operation of workflow.
 //
 // Request parameters used to ListWorkflow
-message ListsRequest {
+message ListWorkflowsRequest {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	int32  limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	int32  offset = 3  [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListWorkflow
-message ListsReply {
+message ListWorkflowsReply {
 	repeated model.FlowInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to CreateWorkflow
-message CreateRequest {
+message CreateWorkflowRequest {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	string name = 2    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	string desc = 3    [ (validator.field) = { length_lt: 1025 } ];
 }
 
 // Request parameters used to DeleteWorkflow
-message DeleteRequest {
+message DeleteWorkflowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to UpdateWorkflow
-message UpdateRequest {
+message UpdateWorkflowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20} ];
 	string name = 2    [ (validator.field) = { length_lt: 129 } ];
 	string desc = 3    [ (validator.field) = { length_lt: 1025 } ];
 }
 
 // Request parameters used to DescribeWorkflow
-message DescribeRequest {
+message DescribeWorkflowRequest {
 	string flow_id = 1 [ (validator.field) = {length_eq: 20} ];
 }
 
 // Reply parameters used to DescribeWorkflow
-message DescribeReply {
+message DescribeWorkflowReply {
 	model.FlowInfo info = 1;
 }
 
 // Request parameters used to Execute
-message ExecuteRequest {
+message ExecuteWorkflowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
@@ -189,14 +189,14 @@ message ListScheduleVersionsReply {
 }
 
 // Request parameters used to ListFlowVersions
-message ListFlowVersionsRequest {
+message ListWorkflowVersionsRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	int32  limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	int32  offset = 3  [ (validator.field) = { int_gt: -1 } ];
 }
 
 // Reply parameters used to ListFlowVersions
-message ListFlowVersionsReply {
+message ListWorkflowVersionsReply {
 	repeated model.FlowVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
@@ -224,13 +224,13 @@ message ListNodeVersionsReply {
 }
 
 // Request parameters used to DescribeVersion
-message DescribeVersionRequest {
+message DescribeWorkflowVersionRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // Reply parameters used to DescribeVersion
-message DescribeVersionReply {
+message DescribeWorkflowVersionReply {
 	model.FlowVerInfo info = 1;
 }
 

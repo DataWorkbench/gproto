@@ -17,7 +17,7 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *ListsRequest) Validate() error {
+func (this *ListWorkflowsRequest) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -32,7 +32,7 @@ func (this *ListsRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ListsReply) Validate() error {
+func (this *ListWorkflowsReply) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -42,7 +42,7 @@ func (this *ListsReply) Validate() error {
 	}
 	return nil
 }
-func (this *CreateRequest) Validate() error {
+func (this *CreateWorkflowRequest) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -57,13 +57,13 @@ func (this *CreateRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DeleteRequest) Validate() error {
+func (this *DeleteWorkflowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
 	return nil
 }
-func (this *UpdateRequest) Validate() error {
+func (this *UpdateWorkflowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
@@ -75,13 +75,13 @@ func (this *UpdateRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DescribeRequest) Validate() error {
+func (this *DescribeWorkflowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
 	return nil
 }
-func (this *DescribeReply) Validate() error {
+func (this *DescribeWorkflowReply) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -89,7 +89,7 @@ func (this *DescribeReply) Validate() error {
 	}
 	return nil
 }
-func (this *ExecuteRequest) Validate() error {
+func (this *ExecuteWorkflowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
@@ -243,7 +243,7 @@ func (this *ListScheduleVersionsReply) Validate() error {
 	}
 	return nil
 }
-func (this *ListFlowVersionsRequest) Validate() error {
+func (this *ListWorkflowVersionsRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
@@ -258,7 +258,7 @@ func (this *ListFlowVersionsRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ListFlowVersionsReply) Validate() error {
+func (this *ListWorkflowVersionsReply) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -312,7 +312,7 @@ func (this *ListNodeVersionsReply) Validate() error {
 	}
 	return nil
 }
-func (this *DescribeVersionRequest) Validate() error {
+func (this *DescribeWorkflowVersionRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
@@ -321,7 +321,7 @@ func (this *DescribeVersionRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DescribeVersionReply) Validate() error {
+func (this *DescribeWorkflowVersionReply) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
