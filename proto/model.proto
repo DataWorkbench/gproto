@@ -229,6 +229,10 @@ message NodeCore {
 	// Task statements.
 	// @inject_tag: gorm:"column:statements"
 	string statements = 10 [ (validator.field) = { length_gt: 1} ];
+	
+	// The position of the node in graph.
+	// @inject_tag: gorm:"column:position"
+	string position = 11 [ (validator.field) = { } ];
 }
 
 // The node info.

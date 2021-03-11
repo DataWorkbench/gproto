@@ -34,6 +34,7 @@ type WorkflowClient interface {
 	DeleteNode(ctx context.Context, in *DeleteNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	UpdateNode(ctx context.Context, in *UpdateNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DescribeNode(ctx context.Context, in *DescribeNodeRequest, opts ...grpc.CallOption) (*DescribeNodeReply, error)
+	UpdateNodePosition(ctx context.Context, in *UpdateNodePositionRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Operation of release version.
 	ListReleases(ctx context.Context, in *ListReleasesRequest, opts ...grpc.CallOption) (*ListReleasesReply, error)
 	ReleaseWorkflow(ctx context.Context, in *ReleaseRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
@@ -173,6 +174,15 @@ func (c *workflowClient) DescribeNode(ctx context.Context, in *DescribeNodeReque
 	return out, nil
 }
 
+func (c *workflowClient) UpdateNodePosition(ctx context.Context, in *UpdateNodePositionRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpdateNodePosition", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *workflowClient) ListReleases(ctx context.Context, in *ListReleasesRequest, opts ...grpc.CallOption) (*ListReleasesReply, error) {
 	out := new(ListReleasesReply)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListReleases", in, out, opts...)
@@ -292,6 +302,7 @@ type WorkflowServer interface {
 	DeleteNode(context.Context, *DeleteNodeRequest) (*model.EmptyStruct, error)
 	UpdateNode(context.Context, *UpdateNodeRequest) (*model.EmptyStruct, error)
 	DescribeNode(context.Context, *DescribeNodeRequest) (*DescribeNodeReply, error)
+	UpdateNodePosition(context.Context, *UpdateNodePositionRequest) (*model.EmptyStruct, error)
 	// Operation of release version.
 	ListReleases(context.Context, *ListReleasesRequest) (*ListReleasesReply, error)
 	ReleaseWorkflow(context.Context, *ReleaseRequest) (*model.EmptyStruct, error)
@@ -349,6 +360,9 @@ func (UnimplementedWorkflowServer) UpdateNode(context.Context, *UpdateNodeReques
 }
 func (UnimplementedWorkflowServer) DescribeNode(context.Context, *DescribeNodeRequest) (*DescribeNodeReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeNode not implemented")
+}
+func (UnimplementedWorkflowServer) UpdateNodePosition(context.Context, *UpdateNodePositionRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNodePosition not implemented")
 }
 func (UnimplementedWorkflowServer) ListReleases(context.Context, *ListReleasesRequest) (*ListReleasesReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListReleases not implemented")
@@ -630,6 +644,24 @@ func _Workflow_DescribeNode_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Workflow_UpdateNodePosition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNodePositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkflowServer).UpdateNodePosition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wfpb.Workflow/UpdateNodePosition",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkflowServer).UpdateNodePosition(ctx, req.(*UpdateNodePositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Workflow_ListReleases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListReleasesRequest)
 	if err := dec(in); err != nil {
@@ -883,6 +915,10 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeNode",
 			Handler:    _Workflow_DescribeNode_Handler,
+		},
+		{
+			MethodName: "UpdateNodePosition",
+			Handler:    _Workflow_UpdateNodePosition_Handler,
 		},
 		{
 			MethodName: "ListReleases",

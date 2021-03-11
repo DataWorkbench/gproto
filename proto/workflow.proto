@@ -27,6 +27,7 @@ service Workflow {
 	rpc DeleteNode(DeleteNodeRequest)     returns (model.EmptyStruct) {}
 	rpc UpdateNode(UpdateNodeRequest)     returns (model.EmptyStruct) {}
 	rpc DescribeNode(DescribeNodeRequest) returns (DescribeNodeReply) {}
+	rpc UpdateNodePosition(UpdateNodePositionRequest) returns (model.EmptyStruct) {}
 	
 	// Operation of release version.
 	rpc ListReleases(ListReleasesRequest) returns (ListReleasesReply) {}
@@ -147,6 +148,11 @@ message DescribeNodeRequest {
 // Reply parameters used to DescribeNode
 message DescribeNodeReply {
 	model.NodeInfo info = 1;
+}
+
+message UpdateNodePositionRequest {
+	string node_id = 1  [ (validator.field) = { length_eq: 20} ];
+	string position = 2 [ (validator.field) = { } ];
 }
 
 // Operation of release.

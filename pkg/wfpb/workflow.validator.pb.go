@@ -184,6 +184,12 @@ func (this *DescribeNodeReply) Validate() error {
 	}
 	return nil
 }
+func (this *UpdateNodePositionRequest) Validate() error {
+	if !(len(this.NodeId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NodeId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.NodeId))
+	}
+	return nil
+}
 func (this *ListReleasesRequest) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
