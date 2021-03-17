@@ -9,9 +9,17 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 service Sqldeveloper {
 	rpc DAGToSQL(DAG) returns(SQL) {}
 	rpc SQLToDAG(SQL) returns(DAG) {}
+	rpc NodeRelations(EmptyRequest) returns(Relations) {}
 }
 
 message EmptyReply {
+}
+
+message EmptyRequest {
+}
+
+message Relations {
+    string relations  = 1 [ (validator.field) = { length_gt: 1 } ];
 }
 
 message DAG {

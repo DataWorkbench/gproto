@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 type SqldeveloperClient interface {
 	DAGToSQL(ctx context.Context, in *DAG, opts ...grpc.CallOption) (*SQL, error)
 	SQLToDAG(ctx context.Context, in *SQL, opts ...grpc.CallOption) (*DAG, error)
+	NodeRelations(ctx context.Context, in *EmptyRequest, opts ...grpc.CallOption) (*Relations, error)
 }
 
 type sqldeveloperClient struct {
@@ -47,12 +48,22 @@ func (c *sqldeveloperClient) SQLToDAG(ctx context.Context, in *SQL, opts ...grpc
 	return out, nil
 }
 
+func (c *sqldeveloperClient) NodeRelations(ctx context.Context, in *EmptyRequest, opts ...grpc.CallOption) (*Relations, error) {
+	out := new(Relations)
+	err := c.cc.Invoke(ctx, "/sqlpb.Sqldeveloper/NodeRelations", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SqldeveloperServer is the server API for Sqldeveloper service.
 // All implementations must embed UnimplementedSqldeveloperServer
 // for forward compatibility
 type SqldeveloperServer interface {
 	DAGToSQL(context.Context, *DAG) (*SQL, error)
 	SQLToDAG(context.Context, *SQL) (*DAG, error)
+	NodeRelations(context.Context, *EmptyRequest) (*Relations, error)
 	mustEmbedUnimplementedSqldeveloperServer()
 }
 
@@ -65,6 +76,9 @@ func (UnimplementedSqldeveloperServer) DAGToSQL(context.Context, *DAG) (*SQL, er
 }
 func (UnimplementedSqldeveloperServer) SQLToDAG(context.Context, *SQL) (*DAG, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SQLToDAG not implemented")
+}
+func (UnimplementedSqldeveloperServer) NodeRelations(context.Context, *EmptyRequest) (*Relations, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NodeRelations not implemented")
 }
 func (UnimplementedSqldeveloperServer) mustEmbedUnimplementedSqldeveloperServer() {}
 
@@ -115,6 +129,24 @@ func _Sqldeveloper_SQLToDAG_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Sqldeveloper_NodeRelations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EmptyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SqldeveloperServer).NodeRelations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/sqlpb.Sqldeveloper/NodeRelations",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SqldeveloperServer).NodeRelations(ctx, req.(*EmptyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Sqldeveloper_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "sqlpb.Sqldeveloper",
 	HandlerType: (*SqldeveloperServer)(nil),
@@ -126,6 +158,10 @@ var _Sqldeveloper_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SQLToDAG",
 			Handler:    _Sqldeveloper_SQLToDAG_Handler,
+		},
+		{
+			MethodName: "NodeRelations",
+			Handler:    _Sqldeveloper_NodeRelations_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

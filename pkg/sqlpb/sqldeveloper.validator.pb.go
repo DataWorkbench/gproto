@@ -19,6 +19,15 @@ var _ = math.Inf
 func (this *EmptyReply) Validate() error {
 	return nil
 }
+func (this *EmptyRequest) Validate() error {
+	return nil
+}
+func (this *Relations) Validate() error {
+	if !(len(this.Relations) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Relations", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Relations))
+	}
+	return nil
+}
 func (this *DAG) Validate() error {
 	if !(len(this.Dag) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Dag", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Dag))
