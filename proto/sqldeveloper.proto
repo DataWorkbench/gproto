@@ -19,7 +19,7 @@ message EmptyRequest {
 }
 
 message Relations {
-    string relations  = 1 [ (validator.field) = { length_gt: 1 } ];
+    string Relations  = 1 [ (validator.field) = { length_gt: 1 } ];
 }
 
 message DAG {
