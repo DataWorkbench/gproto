@@ -10,27 +10,30 @@ import "model.proto";
 
 // Scheduler Service
 service Scheduler {
-	// PutFlow adds or updates a workflow in scheduler.
-	rpc PutFlow(PutFlowRequest) returns (model.EmptyStruct) {}
-	// DeleteFlow delete a workflow from scheduler.
-	rpc DeleteFlow(DeleteFlowRequest) returns (model.EmptyStruct) {}
+	// Execute execute immediately a workflow task. It trigger by user on console.
+	rpc Execute(ExecuteRequest) returns (model.EmptyStruct) {}
+	
+	// Submit submit a workflow task to scheduler system, It will
+	// be cover if old job exists.
+	rpc Submit(SubmitRequest) returns (model.EmptyStruct) {}
+	
+	// Remove remove specific workflow task from scheduler system.
+	rpc Remove(RemoveRequest) returns (model.EmptyStruct) {}
 }
 
-// TaskInfo declares a task of release workflow.
-message TaskInfo {
-	string space_id = 1                   [ (validator.field) = { length_eq: 20 } ];
-	string flow_id = 2                    [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 3                    [ (validator.field) = { int_gt: 0 } ];
-	model.SchCore schedule = 4            [ (validator.field) = { msg_exists: true } ];
-	map<string, model.NodeCore> nodes = 5 [ (validator.field) = { msg_exists: true } ];
+// Request parameters used to Execute.
+message ExecuteRequest {
+	model.FlowMeta meta = 1 [ (validator.field) = { } ];
 }
 
-// Request parameters used to Push.
-message PutFlowRequest {
-	TaskInfo task = 1 [ (validator.field) = { } ];
+// Request parameters used to Submit.
+message SubmitRequest {
+	model.FlowMeta meta = 1 [ (validator.field) = { } ];
+	int32 force_stop = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }
 
 // Request parameters used to Remove.
-message DeleteFlowRequest {
+message RemoveRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	int32 force_stop = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }

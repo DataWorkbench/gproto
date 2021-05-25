@@ -17,38 +17,37 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *TaskInfo) Validate() error {
-	if !(len(this.SpaceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
-	if nil == this.Schedule {
-		return github_com_mwitkow_go_proto_validators.FieldError("Schedule", fmt.Errorf("message must exist"))
-	}
-	if this.Schedule != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schedule); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Schedule", err)
-		}
-	}
-	// Validation of proto3 map<> fields is unsupported.
-	return nil
-}
-func (this *PutFlowRequest) Validate() error {
-	if this.Task != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Task); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Task", err)
+func (this *ExecuteRequest) Validate() error {
+	if this.Meta != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Meta", err)
 		}
 	}
 	return nil
 }
-func (this *DeleteFlowRequest) Validate() error {
+func (this *SubmitRequest) Validate() error {
+	if this.Meta != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Meta", err)
+		}
+	}
+	if !(this.ForceStop > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ForceStop))
+	}
+	if !(this.ForceStop < 2) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be less than '2'`, this.ForceStop))
+	}
+	return nil
+}
+func (this *RemoveRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
+	}
+	if !(this.ForceStop > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ForceStop))
+	}
+	if !(this.ForceStop < 2) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be less than '2'`, this.ForceStop))
 	}
 	return nil
 }

@@ -18,35 +18,28 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WorkflowClient interface {
-	// Operation of workflow.
-	ListWorkflows(ctx context.Context, in *ListWorkflowsRequest, opts ...grpc.CallOption) (*ListWorkflowsReply, error)
-	CreateWorkflow(ctx context.Context, in *CreateWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DeleteWorkflow(ctx context.Context, in *DeleteWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	UpdateWorkflow(ctx context.Context, in *UpdateWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DescribeWorkflow(ctx context.Context, in *DescribeWorkflowRequest, opts ...grpc.CallOption) (*DescribeWorkflowReply, error)
-	ExecuteWorkflow(ctx context.Context, in *ExecuteWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// Operation of schedule.
-	UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DescribeSchedule(ctx context.Context, in *DescribeScheduleRequest, opts ...grpc.CallOption) (*DescribeScheduleReply, error)
-	// Operation of node.
-	ListNodes(ctx context.Context, in *ListNodesRequest, opts ...grpc.CallOption) (*ListNodesReply, error)
-	CreateNode(ctx context.Context, in *CreateNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DeleteNode(ctx context.Context, in *DeleteNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	UpdateNode(ctx context.Context, in *UpdateNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DescribeNode(ctx context.Context, in *DescribeNodeRequest, opts ...grpc.CallOption) (*DescribeNodeReply, error)
-	UpdateNodePosition(ctx context.Context, in *UpdateNodePositionRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// Operation of release version.
-	ListReleases(ctx context.Context, in *ListReleasesRequest, opts ...grpc.CallOption) (*ListReleasesReply, error)
-	ReleaseWorkflow(ctx context.Context, in *ReleaseRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	SuspendWorkflow(ctx context.Context, in *SuspendRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	ResumeWorkflow(ctx context.Context, in *ResumeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	ListWorkflowVersions(ctx context.Context, in *ListWorkflowVersionsRequest, opts ...grpc.CallOption) (*ListWorkflowVersionsReply, error)
-	ListScheduleVersions(ctx context.Context, in *ListScheduleVersionsRequest, opts ...grpc.CallOption) (*ListScheduleVersionsReply, error)
-	ListVersionNodes(ctx context.Context, in *ListVersionNodesRequest, opts ...grpc.CallOption) (*ListVersionNodesReply, error)
-	ListNodeVersions(ctx context.Context, in *ListNodeVersionsRequest, opts ...grpc.CallOption) (*ListNodeVersionsReply, error)
-	DescribeWorkflowVersion(ctx context.Context, in *DescribeWorkflowVersionRequest, opts ...grpc.CallOption) (*DescribeWorkflowVersionReply, error)
-	DescribeScheduleVersion(ctx context.Context, in *DescribeScheduleVersionRequest, opts ...grpc.CallOption) (*DescribeScheduleVersionReply, error)
-	DescribeNodeVersion(ctx context.Context, in *DescribeNodeVersionRequest, opts ...grpc.CallOption) (*DescribeNodeVersionReply, error)
+	// Lists for get a list of workflow in the workspace.
+	Lists(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error)
+	// Create wor create a new workflow.
+	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// Delete for delete the specified workflow.
+	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// Update for update the info for the specified workflow.
+	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// Describe for get the info of the specified workflow.
+	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeReply, error)
+	// SetNodes for set the node properties of the specified workflow.
+	SetNode(ctx context.Context, in *SetNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// GetNodes for get the node properties of the specified workflow.
+	GetNode(ctx context.Context, in *GetNodeRequest, opts ...grpc.CallOption) (*GetNodeReply, error)
+	// SetEnv for set the environmental parameters of the specified workflow.
+	SetEnv(ctx context.Context, in *SetEnvRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// GetEnv for get the environmental parameters of the specified workflow.
+	GetEnv(ctx context.Context, in *GetEnvRequest, opts ...grpc.CallOption) (*GetEnvReply, error)
+	// SetSchedule for set the schedule properties of the specified workflow.
+	SetSchedule(ctx context.Context, in *SetScheduleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// GetSchedule for get the schedule properties of the specified workflow.
+	GetSchedule(ctx context.Context, in *GetScheduleRequest, opts ...grpc.CallOption) (*GetScheduleReply, error)
 }
 
 type workflowClient struct {
@@ -57,225 +50,99 @@ func NewWorkflowClient(cc grpc.ClientConnInterface) WorkflowClient {
 	return &workflowClient{cc}
 }
 
-func (c *workflowClient) ListWorkflows(ctx context.Context, in *ListWorkflowsRequest, opts ...grpc.CallOption) (*ListWorkflowsReply, error) {
-	out := new(ListWorkflowsReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListWorkflows", in, out, opts...)
+func (c *workflowClient) Lists(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error) {
+	out := new(ListsReply)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Lists", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) CreateWorkflow(ctx context.Context, in *CreateWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/CreateWorkflow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DeleteWorkflow(ctx context.Context, in *DeleteWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DeleteWorkflow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Delete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) UpdateWorkflow(ctx context.Context, in *UpdateWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpdateWorkflow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Update", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DescribeWorkflow(ctx context.Context, in *DescribeWorkflowRequest, opts ...grpc.CallOption) (*DescribeWorkflowReply, error) {
-	out := new(DescribeWorkflowReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeWorkflow", in, out, opts...)
+func (c *workflowClient) Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeReply, error) {
+	out := new(DescribeReply)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Describe", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ExecuteWorkflow(ctx context.Context, in *ExecuteWorkflowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) SetNode(ctx context.Context, in *SetNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ExecuteWorkflow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SetNode", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) UpsertSchedule(ctx context.Context, in *UpsertScheduleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) GetNode(ctx context.Context, in *GetNodeRequest, opts ...grpc.CallOption) (*GetNodeReply, error) {
+	out := new(GetNodeReply)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/GetNode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workflowClient) SetEnv(ctx context.Context, in *SetEnvRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpsertSchedule", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SetEnv", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DescribeSchedule(ctx context.Context, in *DescribeScheduleRequest, opts ...grpc.CallOption) (*DescribeScheduleReply, error) {
-	out := new(DescribeScheduleReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeSchedule", in, out, opts...)
+func (c *workflowClient) GetEnv(ctx context.Context, in *GetEnvRequest, opts ...grpc.CallOption) (*GetEnvReply, error) {
+	out := new(GetEnvReply)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/GetEnv", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ListNodes(ctx context.Context, in *ListNodesRequest, opts ...grpc.CallOption) (*ListNodesReply, error) {
-	out := new(ListNodesReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListNodes", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) CreateNode(ctx context.Context, in *CreateNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) SetSchedule(ctx context.Context, in *SetScheduleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/CreateNode", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SetSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DeleteNode(ctx context.Context, in *DeleteNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DeleteNode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) UpdateNode(ctx context.Context, in *UpdateNodeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpdateNode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) DescribeNode(ctx context.Context, in *DescribeNodeRequest, opts ...grpc.CallOption) (*DescribeNodeReply, error) {
-	out := new(DescribeNodeReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeNode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) UpdateNodePosition(ctx context.Context, in *UpdateNodePositionRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/UpdateNodePosition", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) ListReleases(ctx context.Context, in *ListReleasesRequest, opts ...grpc.CallOption) (*ListReleasesReply, error) {
-	out := new(ListReleasesReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListReleases", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) ReleaseWorkflow(ctx context.Context, in *ReleaseRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ReleaseWorkflow", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) SuspendWorkflow(ctx context.Context, in *SuspendRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SuspendWorkflow", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) ResumeWorkflow(ctx context.Context, in *ResumeRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ResumeWorkflow", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) ListWorkflowVersions(ctx context.Context, in *ListWorkflowVersionsRequest, opts ...grpc.CallOption) (*ListWorkflowVersionsReply, error) {
-	out := new(ListWorkflowVersionsReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListWorkflowVersions", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) ListScheduleVersions(ctx context.Context, in *ListScheduleVersionsRequest, opts ...grpc.CallOption) (*ListScheduleVersionsReply, error) {
-	out := new(ListScheduleVersionsReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListScheduleVersions", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) ListVersionNodes(ctx context.Context, in *ListVersionNodesRequest, opts ...grpc.CallOption) (*ListVersionNodesReply, error) {
-	out := new(ListVersionNodesReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListVersionNodes", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) ListNodeVersions(ctx context.Context, in *ListNodeVersionsRequest, opts ...grpc.CallOption) (*ListNodeVersionsReply, error) {
-	out := new(ListNodeVersionsReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListNodeVersions", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) DescribeWorkflowVersion(ctx context.Context, in *DescribeWorkflowVersionRequest, opts ...grpc.CallOption) (*DescribeWorkflowVersionReply, error) {
-	out := new(DescribeWorkflowVersionReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeWorkflowVersion", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) DescribeScheduleVersion(ctx context.Context, in *DescribeScheduleVersionRequest, opts ...grpc.CallOption) (*DescribeScheduleVersionReply, error) {
-	out := new(DescribeScheduleVersionReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeScheduleVersion", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workflowClient) DescribeNodeVersion(ctx context.Context, in *DescribeNodeVersionRequest, opts ...grpc.CallOption) (*DescribeNodeVersionReply, error) {
-	out := new(DescribeNodeVersionReply)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeNodeVersion", in, out, opts...)
+func (c *workflowClient) GetSchedule(ctx context.Context, in *GetScheduleRequest, opts ...grpc.CallOption) (*GetScheduleReply, error) {
+	out := new(GetScheduleReply)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/GetSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -286,35 +153,28 @@ func (c *workflowClient) DescribeNodeVersion(ctx context.Context, in *DescribeNo
 // All implementations must embed UnimplementedWorkflowServer
 // for forward compatibility
 type WorkflowServer interface {
-	// Operation of workflow.
-	ListWorkflows(context.Context, *ListWorkflowsRequest) (*ListWorkflowsReply, error)
-	CreateWorkflow(context.Context, *CreateWorkflowRequest) (*model.EmptyStruct, error)
-	DeleteWorkflow(context.Context, *DeleteWorkflowRequest) (*model.EmptyStruct, error)
-	UpdateWorkflow(context.Context, *UpdateWorkflowRequest) (*model.EmptyStruct, error)
-	DescribeWorkflow(context.Context, *DescribeWorkflowRequest) (*DescribeWorkflowReply, error)
-	ExecuteWorkflow(context.Context, *ExecuteWorkflowRequest) (*model.EmptyStruct, error)
-	// Operation of schedule.
-	UpsertSchedule(context.Context, *UpsertScheduleRequest) (*model.EmptyStruct, error)
-	DescribeSchedule(context.Context, *DescribeScheduleRequest) (*DescribeScheduleReply, error)
-	// Operation of node.
-	ListNodes(context.Context, *ListNodesRequest) (*ListNodesReply, error)
-	CreateNode(context.Context, *CreateNodeRequest) (*model.EmptyStruct, error)
-	DeleteNode(context.Context, *DeleteNodeRequest) (*model.EmptyStruct, error)
-	UpdateNode(context.Context, *UpdateNodeRequest) (*model.EmptyStruct, error)
-	DescribeNode(context.Context, *DescribeNodeRequest) (*DescribeNodeReply, error)
-	UpdateNodePosition(context.Context, *UpdateNodePositionRequest) (*model.EmptyStruct, error)
-	// Operation of release version.
-	ListReleases(context.Context, *ListReleasesRequest) (*ListReleasesReply, error)
-	ReleaseWorkflow(context.Context, *ReleaseRequest) (*model.EmptyStruct, error)
-	SuspendWorkflow(context.Context, *SuspendRequest) (*model.EmptyStruct, error)
-	ResumeWorkflow(context.Context, *ResumeRequest) (*model.EmptyStruct, error)
-	ListWorkflowVersions(context.Context, *ListWorkflowVersionsRequest) (*ListWorkflowVersionsReply, error)
-	ListScheduleVersions(context.Context, *ListScheduleVersionsRequest) (*ListScheduleVersionsReply, error)
-	ListVersionNodes(context.Context, *ListVersionNodesRequest) (*ListVersionNodesReply, error)
-	ListNodeVersions(context.Context, *ListNodeVersionsRequest) (*ListNodeVersionsReply, error)
-	DescribeWorkflowVersion(context.Context, *DescribeWorkflowVersionRequest) (*DescribeWorkflowVersionReply, error)
-	DescribeScheduleVersion(context.Context, *DescribeScheduleVersionRequest) (*DescribeScheduleVersionReply, error)
-	DescribeNodeVersion(context.Context, *DescribeNodeVersionRequest) (*DescribeNodeVersionReply, error)
+	// Lists for get a list of workflow in the workspace.
+	Lists(context.Context, *ListsRequest) (*ListsReply, error)
+	// Create wor create a new workflow.
+	Create(context.Context, *CreateRequest) (*model.EmptyStruct, error)
+	// Delete for delete the specified workflow.
+	Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error)
+	// Update for update the info for the specified workflow.
+	Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error)
+	// Describe for get the info of the specified workflow.
+	Describe(context.Context, *DescribeRequest) (*DescribeReply, error)
+	// SetNodes for set the node properties of the specified workflow.
+	SetNode(context.Context, *SetNodeRequest) (*model.EmptyStruct, error)
+	// GetNodes for get the node properties of the specified workflow.
+	GetNode(context.Context, *GetNodeRequest) (*GetNodeReply, error)
+	// SetEnv for set the environmental parameters of the specified workflow.
+	SetEnv(context.Context, *SetEnvRequest) (*model.EmptyStruct, error)
+	// GetEnv for get the environmental parameters of the specified workflow.
+	GetEnv(context.Context, *GetEnvRequest) (*GetEnvReply, error)
+	// SetSchedule for set the schedule properties of the specified workflow.
+	SetSchedule(context.Context, *SetScheduleRequest) (*model.EmptyStruct, error)
+	// GetSchedule for get the schedule properties of the specified workflow.
+	GetSchedule(context.Context, *GetScheduleRequest) (*GetScheduleReply, error)
 	mustEmbedUnimplementedWorkflowServer()
 }
 
@@ -322,80 +182,38 @@ type WorkflowServer interface {
 type UnimplementedWorkflowServer struct {
 }
 
-func (UnimplementedWorkflowServer) ListWorkflows(context.Context, *ListWorkflowsRequest) (*ListWorkflowsReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListWorkflows not implemented")
+func (UnimplementedWorkflowServer) Lists(context.Context, *ListsRequest) (*ListsReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Lists not implemented")
 }
-func (UnimplementedWorkflowServer) CreateWorkflow(context.Context, *CreateWorkflowRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateWorkflow not implemented")
+func (UnimplementedWorkflowServer) Create(context.Context, *CreateRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedWorkflowServer) DeleteWorkflow(context.Context, *DeleteWorkflowRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteWorkflow not implemented")
+func (UnimplementedWorkflowServer) Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedWorkflowServer) UpdateWorkflow(context.Context, *UpdateWorkflowRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateWorkflow not implemented")
+func (UnimplementedWorkflowServer) Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedWorkflowServer) DescribeWorkflow(context.Context, *DescribeWorkflowRequest) (*DescribeWorkflowReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeWorkflow not implemented")
+func (UnimplementedWorkflowServer) Describe(context.Context, *DescribeRequest) (*DescribeReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Describe not implemented")
 }
-func (UnimplementedWorkflowServer) ExecuteWorkflow(context.Context, *ExecuteWorkflowRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExecuteWorkflow not implemented")
+func (UnimplementedWorkflowServer) SetNode(context.Context, *SetNodeRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetNode not implemented")
 }
-func (UnimplementedWorkflowServer) UpsertSchedule(context.Context, *UpsertScheduleRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpsertSchedule not implemented")
+func (UnimplementedWorkflowServer) GetNode(context.Context, *GetNodeRequest) (*GetNodeReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNode not implemented")
 }
-func (UnimplementedWorkflowServer) DescribeSchedule(context.Context, *DescribeScheduleRequest) (*DescribeScheduleReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeSchedule not implemented")
+func (UnimplementedWorkflowServer) SetEnv(context.Context, *SetEnvRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetEnv not implemented")
 }
-func (UnimplementedWorkflowServer) ListNodes(context.Context, *ListNodesRequest) (*ListNodesReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListNodes not implemented")
+func (UnimplementedWorkflowServer) GetEnv(context.Context, *GetEnvRequest) (*GetEnvReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEnv not implemented")
 }
-func (UnimplementedWorkflowServer) CreateNode(context.Context, *CreateNodeRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNode not implemented")
+func (UnimplementedWorkflowServer) SetSchedule(context.Context, *SetScheduleRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetSchedule not implemented")
 }
-func (UnimplementedWorkflowServer) DeleteNode(context.Context, *DeleteNodeRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteNode not implemented")
-}
-func (UnimplementedWorkflowServer) UpdateNode(context.Context, *UpdateNodeRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateNode not implemented")
-}
-func (UnimplementedWorkflowServer) DescribeNode(context.Context, *DescribeNodeRequest) (*DescribeNodeReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeNode not implemented")
-}
-func (UnimplementedWorkflowServer) UpdateNodePosition(context.Context, *UpdateNodePositionRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateNodePosition not implemented")
-}
-func (UnimplementedWorkflowServer) ListReleases(context.Context, *ListReleasesRequest) (*ListReleasesReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListReleases not implemented")
-}
-func (UnimplementedWorkflowServer) ReleaseWorkflow(context.Context, *ReleaseRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReleaseWorkflow not implemented")
-}
-func (UnimplementedWorkflowServer) SuspendWorkflow(context.Context, *SuspendRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SuspendWorkflow not implemented")
-}
-func (UnimplementedWorkflowServer) ResumeWorkflow(context.Context, *ResumeRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResumeWorkflow not implemented")
-}
-func (UnimplementedWorkflowServer) ListWorkflowVersions(context.Context, *ListWorkflowVersionsRequest) (*ListWorkflowVersionsReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListWorkflowVersions not implemented")
-}
-func (UnimplementedWorkflowServer) ListScheduleVersions(context.Context, *ListScheduleVersionsRequest) (*ListScheduleVersionsReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListScheduleVersions not implemented")
-}
-func (UnimplementedWorkflowServer) ListVersionNodes(context.Context, *ListVersionNodesRequest) (*ListVersionNodesReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListVersionNodes not implemented")
-}
-func (UnimplementedWorkflowServer) ListNodeVersions(context.Context, *ListNodeVersionsRequest) (*ListNodeVersionsReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListNodeVersions not implemented")
-}
-func (UnimplementedWorkflowServer) DescribeWorkflowVersion(context.Context, *DescribeWorkflowVersionRequest) (*DescribeWorkflowVersionReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeWorkflowVersion not implemented")
-}
-func (UnimplementedWorkflowServer) DescribeScheduleVersion(context.Context, *DescribeScheduleVersionRequest) (*DescribeScheduleVersionReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeScheduleVersion not implemented")
-}
-func (UnimplementedWorkflowServer) DescribeNodeVersion(context.Context, *DescribeNodeVersionRequest) (*DescribeNodeVersionReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeNodeVersion not implemented")
+func (UnimplementedWorkflowServer) GetSchedule(context.Context, *GetScheduleRequest) (*GetScheduleReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSchedule not implemented")
 }
 func (UnimplementedWorkflowServer) mustEmbedUnimplementedWorkflowServer() {}
 
@@ -410,452 +228,200 @@ func RegisterWorkflowServer(s grpc.ServiceRegistrar, srv WorkflowServer) {
 	s.RegisterService(&_Workflow_serviceDesc, srv)
 }
 
-func _Workflow_ListWorkflows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListWorkflowsRequest)
+func _Workflow_Lists_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ListWorkflows(ctx, in)
+		return srv.(WorkflowServer).Lists(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListWorkflows",
+		FullMethod: "/wfpb.Workflow/Lists",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListWorkflows(ctx, req.(*ListWorkflowsRequest))
+		return srv.(WorkflowServer).Lists(ctx, req.(*ListsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_CreateWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateWorkflowRequest)
+func _Workflow_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).CreateWorkflow(ctx, in)
+		return srv.(WorkflowServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/CreateWorkflow",
+		FullMethod: "/wfpb.Workflow/Create",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).CreateWorkflow(ctx, req.(*CreateWorkflowRequest))
+		return srv.(WorkflowServer).Create(ctx, req.(*CreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_DeleteWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteWorkflowRequest)
+func _Workflow_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DeleteWorkflow(ctx, in)
+		return srv.(WorkflowServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DeleteWorkflow",
+		FullMethod: "/wfpb.Workflow/Delete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DeleteWorkflow(ctx, req.(*DeleteWorkflowRequest))
+		return srv.(WorkflowServer).Delete(ctx, req.(*DeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_UpdateWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateWorkflowRequest)
+func _Workflow_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).UpdateWorkflow(ctx, in)
+		return srv.(WorkflowServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/UpdateWorkflow",
+		FullMethod: "/wfpb.Workflow/Update",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).UpdateWorkflow(ctx, req.(*UpdateWorkflowRequest))
+		return srv.(WorkflowServer).Update(ctx, req.(*UpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_DescribeWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeWorkflowRequest)
+func _Workflow_Describe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DescribeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeWorkflow(ctx, in)
+		return srv.(WorkflowServer).Describe(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DescribeWorkflow",
+		FullMethod: "/wfpb.Workflow/Describe",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeWorkflow(ctx, req.(*DescribeWorkflowRequest))
+		return srv.(WorkflowServer).Describe(ctx, req.(*DescribeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ExecuteWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExecuteWorkflowRequest)
+func _Workflow_SetNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetNodeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ExecuteWorkflow(ctx, in)
+		return srv.(WorkflowServer).SetNode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ExecuteWorkflow",
+		FullMethod: "/wfpb.Workflow/SetNode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ExecuteWorkflow(ctx, req.(*ExecuteWorkflowRequest))
+		return srv.(WorkflowServer).SetNode(ctx, req.(*SetNodeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_UpsertSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpsertScheduleRequest)
+func _Workflow_GetNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNodeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).UpsertSchedule(ctx, in)
+		return srv.(WorkflowServer).GetNode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/UpsertSchedule",
+		FullMethod: "/wfpb.Workflow/GetNode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).UpsertSchedule(ctx, req.(*UpsertScheduleRequest))
+		return srv.(WorkflowServer).GetNode(ctx, req.(*GetNodeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_DescribeSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeScheduleRequest)
+func _Workflow_SetEnv_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetEnvRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeSchedule(ctx, in)
+		return srv.(WorkflowServer).SetEnv(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DescribeSchedule",
+		FullMethod: "/wfpb.Workflow/SetEnv",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeSchedule(ctx, req.(*DescribeScheduleRequest))
+		return srv.(WorkflowServer).SetEnv(ctx, req.(*SetEnvRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ListNodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListNodesRequest)
+func _Workflow_GetEnv_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEnvRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ListNodes(ctx, in)
+		return srv.(WorkflowServer).GetEnv(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListNodes",
+		FullMethod: "/wfpb.Workflow/GetEnv",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListNodes(ctx, req.(*ListNodesRequest))
+		return srv.(WorkflowServer).GetEnv(ctx, req.(*GetEnvRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_CreateNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNodeRequest)
+func _Workflow_SetSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetScheduleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).CreateNode(ctx, in)
+		return srv.(WorkflowServer).SetSchedule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/CreateNode",
+		FullMethod: "/wfpb.Workflow/SetSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).CreateNode(ctx, req.(*CreateNodeRequest))
+		return srv.(WorkflowServer).SetSchedule(ctx, req.(*SetScheduleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_DeleteNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteNodeRequest)
+func _Workflow_GetSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetScheduleRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DeleteNode(ctx, in)
+		return srv.(WorkflowServer).GetSchedule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DeleteNode",
+		FullMethod: "/wfpb.Workflow/GetSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DeleteNode(ctx, req.(*DeleteNodeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_UpdateNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNodeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).UpdateNode(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/UpdateNode",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).UpdateNode(ctx, req.(*UpdateNodeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_DescribeNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeNodeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeNode(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DescribeNode",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeNode(ctx, req.(*DescribeNodeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_UpdateNodePosition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNodePositionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).UpdateNodePosition(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/UpdateNodePosition",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).UpdateNodePosition(ctx, req.(*UpdateNodePositionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_ListReleases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListReleasesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).ListReleases(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListReleases",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListReleases(ctx, req.(*ListReleasesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_ReleaseWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReleaseRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).ReleaseWorkflow(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ReleaseWorkflow",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ReleaseWorkflow(ctx, req.(*ReleaseRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_SuspendWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SuspendRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).SuspendWorkflow(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/SuspendWorkflow",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).SuspendWorkflow(ctx, req.(*SuspendRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_ResumeWorkflow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ResumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).ResumeWorkflow(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ResumeWorkflow",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ResumeWorkflow(ctx, req.(*ResumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_ListWorkflowVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListWorkflowVersionsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).ListWorkflowVersions(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListWorkflowVersions",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListWorkflowVersions(ctx, req.(*ListWorkflowVersionsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_ListScheduleVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListScheduleVersionsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).ListScheduleVersions(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListScheduleVersions",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListScheduleVersions(ctx, req.(*ListScheduleVersionsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_ListVersionNodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListVersionNodesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).ListVersionNodes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListVersionNodes",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListVersionNodes(ctx, req.(*ListVersionNodesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_ListNodeVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListNodeVersionsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).ListNodeVersions(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ListNodeVersions",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListNodeVersions(ctx, req.(*ListNodeVersionsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_DescribeWorkflowVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeWorkflowVersionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeWorkflowVersion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DescribeWorkflowVersion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeWorkflowVersion(ctx, req.(*DescribeWorkflowVersionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_DescribeScheduleVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeScheduleVersionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeScheduleVersion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DescribeScheduleVersion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeScheduleVersion(ctx, req.(*DescribeScheduleVersionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_DescribeNodeVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeNodeVersionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeNodeVersion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DescribeNodeVersion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeNodeVersion(ctx, req.(*DescribeNodeVersionRequest))
+		return srv.(WorkflowServer).GetSchedule(ctx, req.(*GetScheduleRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -865,104 +431,48 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*WorkflowServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListWorkflows",
-			Handler:    _Workflow_ListWorkflows_Handler,
+			MethodName: "Lists",
+			Handler:    _Workflow_Lists_Handler,
 		},
 		{
-			MethodName: "CreateWorkflow",
-			Handler:    _Workflow_CreateWorkflow_Handler,
+			MethodName: "Create",
+			Handler:    _Workflow_Create_Handler,
 		},
 		{
-			MethodName: "DeleteWorkflow",
-			Handler:    _Workflow_DeleteWorkflow_Handler,
+			MethodName: "Delete",
+			Handler:    _Workflow_Delete_Handler,
 		},
 		{
-			MethodName: "UpdateWorkflow",
-			Handler:    _Workflow_UpdateWorkflow_Handler,
+			MethodName: "Update",
+			Handler:    _Workflow_Update_Handler,
 		},
 		{
-			MethodName: "DescribeWorkflow",
-			Handler:    _Workflow_DescribeWorkflow_Handler,
+			MethodName: "Describe",
+			Handler:    _Workflow_Describe_Handler,
 		},
 		{
-			MethodName: "ExecuteWorkflow",
-			Handler:    _Workflow_ExecuteWorkflow_Handler,
+			MethodName: "SetNode",
+			Handler:    _Workflow_SetNode_Handler,
 		},
 		{
-			MethodName: "UpsertSchedule",
-			Handler:    _Workflow_UpsertSchedule_Handler,
+			MethodName: "GetNode",
+			Handler:    _Workflow_GetNode_Handler,
 		},
 		{
-			MethodName: "DescribeSchedule",
-			Handler:    _Workflow_DescribeSchedule_Handler,
+			MethodName: "SetEnv",
+			Handler:    _Workflow_SetEnv_Handler,
 		},
 		{
-			MethodName: "ListNodes",
-			Handler:    _Workflow_ListNodes_Handler,
+			MethodName: "GetEnv",
+			Handler:    _Workflow_GetEnv_Handler,
 		},
 		{
-			MethodName: "CreateNode",
-			Handler:    _Workflow_CreateNode_Handler,
+			MethodName: "SetSchedule",
+			Handler:    _Workflow_SetSchedule_Handler,
 		},
 		{
-			MethodName: "DeleteNode",
-			Handler:    _Workflow_DeleteNode_Handler,
-		},
-		{
-			MethodName: "UpdateNode",
-			Handler:    _Workflow_UpdateNode_Handler,
-		},
-		{
-			MethodName: "DescribeNode",
-			Handler:    _Workflow_DescribeNode_Handler,
-		},
-		{
-			MethodName: "UpdateNodePosition",
-			Handler:    _Workflow_UpdateNodePosition_Handler,
-		},
-		{
-			MethodName: "ListReleases",
-			Handler:    _Workflow_ListReleases_Handler,
-		},
-		{
-			MethodName: "ReleaseWorkflow",
-			Handler:    _Workflow_ReleaseWorkflow_Handler,
-		},
-		{
-			MethodName: "SuspendWorkflow",
-			Handler:    _Workflow_SuspendWorkflow_Handler,
-		},
-		{
-			MethodName: "ResumeWorkflow",
-			Handler:    _Workflow_ResumeWorkflow_Handler,
-		},
-		{
-			MethodName: "ListWorkflowVersions",
-			Handler:    _Workflow_ListWorkflowVersions_Handler,
-		},
-		{
-			MethodName: "ListScheduleVersions",
-			Handler:    _Workflow_ListScheduleVersions_Handler,
-		},
-		{
-			MethodName: "ListVersionNodes",
-			Handler:    _Workflow_ListVersionNodes_Handler,
-		},
-		{
-			MethodName: "ListNodeVersions",
-			Handler:    _Workflow_ListNodeVersions_Handler,
-		},
-		{
-			MethodName: "DescribeWorkflowVersion",
-			Handler:    _Workflow_DescribeWorkflowVersion_Handler,
-		},
-		{
-			MethodName: "DescribeScheduleVersion",
-			Handler:    _Workflow_DescribeScheduleVersion_Handler,
-		},
-		{
-			MethodName: "DescribeNodeVersion",
-			Handler:    _Workflow_DescribeNodeVersion_Handler,
+			MethodName: "GetSchedule",
+			Handler:    _Workflow_GetSchedule_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

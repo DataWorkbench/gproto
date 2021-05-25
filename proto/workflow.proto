@@ -9,255 +9,126 @@ import "model.proto";
 
 // Workflow Service
 service Workflow {
-	// Operation of workflow.
-	rpc ListWorkflows(ListWorkflowsRequest)       returns (ListWorkflowsReply)    {}
-	rpc CreateWorkflow(CreateWorkflowRequest)     returns (model.EmptyStruct)     {}
-	rpc DeleteWorkflow(DeleteWorkflowRequest)     returns (model.EmptyStruct)     {}
-	rpc UpdateWorkflow(UpdateWorkflowRequest)     returns (model.EmptyStruct)     {}
-	rpc DescribeWorkflow(DescribeWorkflowRequest) returns (DescribeWorkflowReply) {}
-	rpc ExecuteWorkflow(ExecuteWorkflowRequest)   returns (model.EmptyStruct)     {}
+	// Lists for get a list of workflow in the workspace.
+	rpc Lists(ListsRequest) returns (ListsReply) {}
 	
-	// Operation of schedule.
-	rpc UpsertSchedule(UpsertScheduleRequest)     returns (model.EmptyStruct)     {}
-	rpc DescribeSchedule(DescribeScheduleRequest) returns (DescribeScheduleReply) {}
+	// Create wor create a new workflow.
+	rpc Create(CreateRequest) returns (model.EmptyStruct) {}
 	
-	// Operation of node.
-	rpc ListNodes(ListNodesRequest)       returns (ListNodesReply) {}
-	rpc CreateNode(CreateNodeRequest)     returns (model.EmptyStruct) {}
-	rpc DeleteNode(DeleteNodeRequest)     returns (model.EmptyStruct) {}
-	rpc UpdateNode(UpdateNodeRequest)     returns (model.EmptyStruct) {}
-	rpc DescribeNode(DescribeNodeRequest) returns (DescribeNodeReply) {}
-	rpc UpdateNodePosition(UpdateNodePositionRequest) returns (model.EmptyStruct) {}
+	// Delete for delete the specified workflow.
+	rpc Delete(DeleteRequest) returns (model.EmptyStruct) {}
 	
-	// Operation of release version.
-	rpc ListReleases(ListReleasesRequest) returns (ListReleasesReply) {}
-	rpc ReleaseWorkflow(ReleaseRequest)   returns (model.EmptyStruct) {}
-	rpc SuspendWorkflow(SuspendRequest)   returns (model.EmptyStruct) {}
-	rpc ResumeWorkflow(ResumeRequest)     returns (model.EmptyStruct) {}
+	// Update for update the info for the specified workflow.
+	rpc Update(UpdateRequest) returns (model.EmptyStruct) {}
 	
-	rpc ListWorkflowVersions(ListWorkflowVersionsRequest) returns (ListWorkflowVersionsReply) {}
-	rpc ListScheduleVersions(ListScheduleVersionsRequest) returns (ListScheduleVersionsReply) {}
-	rpc ListVersionNodes(ListVersionNodesRequest)         returns (ListVersionNodesReply)     {}
-	rpc ListNodeVersions(ListNodeVersionsRequest)         returns (ListNodeVersionsReply)     {}
+	// Describe for get the info of the specified workflow.
+	rpc Describe(DescribeRequest) returns (DescribeReply) {}
 	
-	rpc DescribeWorkflowVersion(DescribeWorkflowVersionRequest) returns (DescribeWorkflowVersionReply) {}
-	rpc DescribeScheduleVersion(DescribeScheduleVersionRequest) returns (DescribeScheduleVersionReply) {}
-	rpc DescribeNodeVersion(DescribeNodeVersionRequest)         returns (DescribeNodeVersionReply)     {}
+	// SetNodes for set the node properties of the specified workflow.
+	rpc SetNode(SetNodeRequest) returns (model.EmptyStruct)  {}
+	
+	// GetNodes for get the node properties of the specified workflow.
+	rpc GetNode(GetNodeRequest) returns (GetNodeReply) {}
+	
+	// SetEnv for set the environmental parameters of the specified workflow.
+	rpc SetEnv(SetEnvRequest) returns (model.EmptyStruct) {}
+	
+	// GetEnv for get the environmental parameters of the specified workflow.
+	rpc GetEnv(GetEnvRequest) returns (GetEnvReply) {}
+	
+	// SetSchedule for set the schedule properties of the specified workflow.
+	rpc SetSchedule(SetScheduleRequest) returns (model.EmptyStruct) {}
+	
+	// GetSchedule for get the schedule properties of the specified workflow.
+	rpc GetSchedule(GetScheduleRequest) returns (GetScheduleReply) {}
 }
 
 // Operation of workflow.
 //
-// Request parameters used to ListWorkflow
-message ListWorkflowsRequest {
+// Request parameters used to Lists
+message ListsRequest {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3  [ (validator.field) = { int_gt: -1 } ];
+	int32  type = 2     [ (validator.field) = { int_gt: 0 } ];
+	int32  limit = 3    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  offset = 4   [ (validator.field) = { int_gt: -1 } ];
 }
 
-// Reply parameters used to ListWorkflow
-message ListWorkflowsReply {
+// Reply parameters used to Lists
+message ListsReply {
 	repeated model.FlowInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
-// Request parameters used to CreateWorkflow
-message CreateWorkflowRequest {
+// Request parameters used to Create
+message CreateRequest {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string name = 2    [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string desc = 3    [ (validator.field) = { length_lt: 1025 } ];
+	string name = 2     [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string desc = 3     [ (validator.field) = { length_lt: 1025 } ];
+	int32  type = 4     [ (validator.field) = { int_gt: 0 } ];
 }
 
-// Request parameters used to DeleteWorkflow
-message DeleteWorkflowRequest {
+// Request parameters used to Delete
+message DeleteRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Request parameters used to UpdateWorkflow
-message UpdateWorkflowRequest {
+// Request parameters used to Update
+message UpdateRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20} ];
 	string name = 2    [ (validator.field) = { length_lt: 129 } ];
 	string desc = 3    [ (validator.field) = { length_lt: 1025 } ];
 }
 
-// Request parameters used to DescribeWorkflow
-message DescribeWorkflowRequest {
+// Request parameters used to Describe
+message DescribeRequest {
 	string flow_id = 1 [ (validator.field) = {length_eq: 20} ];
 }
 
-// Reply parameters used to DescribeWorkflow
-message DescribeWorkflowReply {
+// Reply parameters used to Describe
+message DescribeReply {
 	model.FlowInfo info = 1;
 }
 
-// Request parameters used to Execute
-message ExecuteWorkflowRequest {
+// Request parameters used to SetNode.
+message SetNodeRequest {
+	model.FlowNodeInfo info = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+// Request parameters used to GetNode
+message GetNodeRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Operation of schedule.
-//
-// Request parameters used to UpsertSchedule
-message UpsertScheduleRequest {
-	string flow_id = 1     [ (validator.field) = { length_eq: 20 } ];
-	model.SchCore core = 2 [ (validator.field) = { msg_exists: false } ];
+// Reply parameters used to GetNodes
+message GetNodeReply {
+	model.FlowNodeInfo info = 1;
 }
 
-// Request parameters used to DescribeSchedule
-message DescribeScheduleRequest {
+// Request parameters used to SetSchedule
+message SetScheduleRequest {
+	model.FlowSchInfo info = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+// Request parameters used to GetSchedule
+message GetScheduleRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Reply parameters used to DescribeSchedule
-message DescribeScheduleReply {
-	model.SchInfo info = 1;
-}
-
-// Operation of node.
-//
-// Request parameters used to ListVersionNodes
-message ListNodesRequest {
+// Request parameters used to GetEnv
+message GetEnvRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Reply parameters used to ListVersionNodes
-message ListNodesReply {
-	repeated model.NodeInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
+// Reply parameters used to GetEnv
+message GetEnvReply {
+	model.FlowEnvInfo info = 1;
 }
 
-// Request parameters used to CreateNode
-message CreateNodeRequest {
-	string flow_id = 1      [ (validator.field) = { length_eq: 20 } ];
-	model.NodeCore core = 2 [ (validator.field) = { msg_exists: true } ];
+// Reply parameters used to GetSchedule
+message GetScheduleReply {
+	model.FlowSchInfo info = 1;
 }
 
-// Request parameters used to DeleteNode
-message DeleteNodeRequest {
-	string node_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to UpdateNode
-message UpdateNodeRequest {
-	string node_id = 1      [ (validator.field) = { length_eq: 20} ];
-	model.NodeCore core = 2 [ (validator.field) = { msg_exists: true } ];
-}
-
-// Request parameters used to DescribeNode
-message DescribeNodeRequest {
-	string node_id = 1 [ (validator.field) = {length_eq: 20} ];
-}
-
-// Reply parameters used to DescribeNode
-message DescribeNodeReply {
-	model.NodeInfo info = 1;
-}
-
-message UpdateNodePositionRequest {
-	string node_id = 1  [ (validator.field) = { length_eq: 20} ];
-	string position = 2 [ (validator.field) = { } ];
-}
-
-// Operation of release.
-//
-// Request parameters used to ListReleases.
-message ListReleasesRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Reply parameters used to ListReleases.
-message ListReleasesReply {
-	repeated model.FlowReleaseInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to ReleaseWorkflow
-message ReleaseRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to SuspendRelease.
-message SuspendRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to ResumeRelease.
-message ResumeRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to ListScheduleVersions
-message ListScheduleVersionsRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to ListScheduleVersions
-message ListScheduleVersionsReply {
-	repeated model.SchVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to ListFlowVersions
-message ListWorkflowVersionsRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3  [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to ListFlowVersions
-message ListWorkflowVersionsReply {
-	repeated model.FlowVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to ListVersionNodes
-message ListVersionNodesRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to ListVersionNodes
-message ListVersionNodesReply {
-	repeated model.NodeVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to ListNodeVersions
-message ListNodeVersionsRequest {
-	string node_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3  [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to ListNodeVersions
-message ListNodeVersionsReply {
-	repeated model.NodeVerInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to DescribeVersion
-message DescribeWorkflowVersionRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to DescribeVersion
-message DescribeWorkflowVersionReply {
-	model.FlowVerInfo info = 1;
-}
-
-// Request parameters used to DescribeScheduleVersion
-message DescribeScheduleVersionRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to DescribeScheduleVersion
-message DescribeScheduleVersionReply {
-	model.SchVerInfo info = 1;
-}
-
-// Request parameters used to DescribeScheduleVersion
-message DescribeNodeVersionRequest {
-	string node_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to DescribeScheduleVersion
-message DescribeNodeVersionReply {
-	model.NodeVerInfo info = 1;
+// Request parameters used to SetEnv
+message SetEnvRequest {
+	model.FlowEnvInfo info = 1 [ (validator.field) = { msg_exists: false } ];
 }
