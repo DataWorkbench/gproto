@@ -33,7 +33,7 @@ type ExecuteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Meta *model.FlowMeta `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"` //	int32 force_stop = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+	Meta *model.FlowMeta `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"`
 }
 
 func (x *ExecuteRequest) Reset() {

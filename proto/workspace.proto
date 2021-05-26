@@ -9,6 +9,8 @@ import "model.proto";
 
 // Workspace Service
 service Workspace {
+//    rpc OpenService(model.EmptyStruct) returns (model.EmptyStruct) {}
+    
     // API of workspace manager.
     rpc ListWorkspaces(ListWorkspacesRequest)       returns (ListWorkspacesReply)    {}
     rpc CreateWorkspace(CreateWorkspaceRequest)     returns (model.EmptyStruct)      {}
@@ -21,6 +23,15 @@ service Workspace {
     // API of workspace operation audit log.
     rpc AddAudit(AddAuditRequest)     returns (model.EmptyStruct) {}
     rpc ListAudits(ListAuditsRequest) returns (ListAuditsReply)   {}
+    
+    // API of workspace role.
+    rpc ListSystemRoles(model.EmptyStruct) returns (ListSystemRolesReply) {}
+    
+    // API of workspace member
+    rpc ListMembers(ListMembersRequest)   returns (ListMembersReply)  {}
+    rpc AddMember(AddMemberRequest)       returns (model.EmptyStruct) {}
+    rpc RemoveMember(RemoveMemberRequest) returns (model.EmptyStruct) {}
+    rpc UpdateMember(UpdateMemberRequest) returns (model.EmptyStruct) {}
 }
 
 // Request parameters used to ListWorkspaces
@@ -32,7 +43,7 @@ message ListWorkspacesRequest {
 
 // Reply parameters used to ListWorkspaces
 message ListWorkspacesReply {
-    repeated model.SpaceInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
+    repeated model.SpaceInfo infos = 1 [ (validator.field) = { } ];
 }
 
 // Request parameters used to CreateWorkspace
@@ -88,5 +99,47 @@ message ListAuditsRequest {
 
 // Reply parameters used to AddAudit
 message ListAuditsReply {
-    repeated model.AuditInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
+    repeated model.AuditInfo infos = 1 [ (validator.field) = { } ];
+}
+
+// Reply parameters used to ListSystemRoles
+message ListSystemRolesReply {
+    repeated model.RoleInfo infos = 1 [ (validator.field) = { } ];
+}
+
+// Reply parameters used to ListMembers
+message ListMembersReply {
+    message RoleList {
+        repeated model.RoleInfo infos = 1;
+    }
+    repeated model.MemberInfo members = 1 [ (validator.field) = { } ];
+    // map => "member_id": RoleList
+    map<string, RoleList> roles = 2 [ (validator.field) = { } ];
+}
+
+// Request parameters used to ListMembers
+message ListMembersRequest {
+    string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+    int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Request parameters used to AddMember
+message AddMemberRequest {
+    string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+    string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+    string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
+}
+
+// Request parameters used to RemoveMember
+message RemoveMemberRequest {
+    string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+    string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+}
+
+// Request parameters used to UpdateMember
+message UpdateMemberRequest {
+    string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+    string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+    string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
 }

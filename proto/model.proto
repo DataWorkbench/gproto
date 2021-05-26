@@ -287,3 +287,41 @@ message AuditInfo {
 	// @inject_tag: gorm:"column:timed;autoCreateTime;"
 	int64 timed = 5 [ (validator.field) = { int_gt: 0 } ];
 }
+
+// The Role info.
+message RoleInfo {
+//	// @inject_tag: gorm:"column:space_id;"
+//	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// @inject_tag: gorm:"column:id;"
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
+	
+	// @inject_tag: gorm:"column:code;"
+	string code = 3 [ (validator.field) = { length_eq: 64 } ];
+	
+	// @inject_tag: gorm:"column:name;"
+	string name = 4 [ (validator.field) = { length_lt: 128 } ];
+	
+	// @inject_tag: gorm:"column:type;" 1 => "SYSTEM" 2 => "CUSTOM"
+	int32 type = 5 [ (validator.field) = { int_gt: 0 } ];
+}
+
+// The workspace member info.
+message MemberInfo {
+	// @inject_tag: gorm:"column:space_id;primaryKey;"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// Use account user-id as member id.
+	// @inject_tag: gorm:"column:member_id;primaryKey;"
+	string member_id = 3 [ (validator.field) = { length_lt: 65 } ];
+	
+	// @inject_tag: gorm:"column:role_ids;" The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
+	string role_ids = 4 [ (validator.field) = { length_lt: 256 } ];
+	
+	// @inject_tag: gorm:"column:created;autoCreateTime;"
+	int64 created = 5 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Timestamp of update time
+	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
+	int64 updated = 6 [ (validator.field) = { int_gt: 0 } ];
+}
