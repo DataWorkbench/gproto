@@ -219,3 +219,18 @@ func (this *UpdateMemberRequest) Validate() error {
 	}
 	return nil
 }
+func (this *CheckPermissionRequest) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.ReqUserId) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ReqUserId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.ReqUserId))
+	}
+	if !(this.OpType > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OpType", fmt.Errorf(`value '%v' must be greater than '0'`, this.OpType))
+	}
+	if !(this.OpType < 4) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OpType", fmt.Errorf(`value '%v' must be less than '4'`, this.OpType))
+	}
+	return nil
+}

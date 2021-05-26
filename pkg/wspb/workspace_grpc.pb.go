@@ -31,11 +31,13 @@ type WorkspaceClient interface {
 	ListAudits(ctx context.Context, in *ListAuditsRequest, opts ...grpc.CallOption) (*ListAuditsReply, error)
 	// API of workspace role.
 	ListSystemRoles(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*ListSystemRolesReply, error)
-	// API of workspace member
+	// API of workspace member.
 	ListMembers(ctx context.Context, in *ListMembersRequest, opts ...grpc.CallOption) (*ListMembersReply, error)
 	AddMember(ctx context.Context, in *AddMemberRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	RemoveMember(ctx context.Context, in *RemoveMemberRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	UpdateMember(ctx context.Context, in *UpdateMemberRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// Permission Auth.
+	CheckPermission(ctx context.Context, in *CheckPermissionRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type workspaceClient struct {
@@ -172,6 +174,15 @@ func (c *workspaceClient) UpdateMember(ctx context.Context, in *UpdateMemberRequ
 	return out, nil
 }
 
+func (c *workspaceClient) CheckPermission(ctx context.Context, in *CheckPermissionRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.Workspace/CheckPermission", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkspaceServer is the server API for Workspace service.
 // All implementations must embed UnimplementedWorkspaceServer
 // for forward compatibility
@@ -189,11 +200,13 @@ type WorkspaceServer interface {
 	ListAudits(context.Context, *ListAuditsRequest) (*ListAuditsReply, error)
 	// API of workspace role.
 	ListSystemRoles(context.Context, *model.EmptyStruct) (*ListSystemRolesReply, error)
-	// API of workspace member
+	// API of workspace member.
 	ListMembers(context.Context, *ListMembersRequest) (*ListMembersReply, error)
 	AddMember(context.Context, *AddMemberRequest) (*model.EmptyStruct, error)
 	RemoveMember(context.Context, *RemoveMemberRequest) (*model.EmptyStruct, error)
 	UpdateMember(context.Context, *UpdateMemberRequest) (*model.EmptyStruct, error)
+	// Permission Auth.
+	CheckPermission(context.Context, *CheckPermissionRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedWorkspaceServer()
 }
 
@@ -242,6 +255,9 @@ func (UnimplementedWorkspaceServer) RemoveMember(context.Context, *RemoveMemberR
 }
 func (UnimplementedWorkspaceServer) UpdateMember(context.Context, *UpdateMemberRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMember not implemented")
+}
+func (UnimplementedWorkspaceServer) CheckPermission(context.Context, *CheckPermissionRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckPermission not implemented")
 }
 func (UnimplementedWorkspaceServer) mustEmbedUnimplementedWorkspaceServer() {}
 
@@ -508,6 +524,24 @@ func _Workspace_UpdateMember_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Workspace_CheckPermission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CheckPermissionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServer).CheckPermission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.Workspace/CheckPermission",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServer).CheckPermission(ctx, req.(*CheckPermissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Workspace_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "wspb.Workspace",
 	HandlerType: (*WorkspaceServer)(nil),
@@ -567,6 +601,10 @@ var _Workspace_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateMember",
 			Handler:    _Workspace_UpdateMember_Handler,
+		},
+		{
+			MethodName: "CheckPermission",
+			Handler:    _Workspace_CheckPermission_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
