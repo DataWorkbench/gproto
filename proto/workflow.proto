@@ -41,6 +41,9 @@ service Workflow {
 	
 	// GetSchedule for get the schedule properties of the specified workflow.
 	rpc GetSchedule(GetScheduleRequest) returns (GetScheduleReply) {}
+	
+	// Execute for manual execution a workflow task.
+	rpc Execute(ExecuteRequest) returns (model.EmptyStruct) {}
 }
 
 // Operation of workflow.
@@ -131,4 +134,9 @@ message GetScheduleReply {
 // Request parameters used to SetEnv
 message SetEnvRequest {
 	model.FlowEnvInfo info = 1 [ (validator.field) = { msg_exists: false } ];
+}
+
+// Request parameters used to Execute
+message ExecuteRequest {
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }

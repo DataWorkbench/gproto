@@ -40,6 +40,8 @@ type WorkflowClient interface {
 	SetSchedule(ctx context.Context, in *SetScheduleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// GetSchedule for get the schedule properties of the specified workflow.
 	GetSchedule(ctx context.Context, in *GetScheduleRequest, opts ...grpc.CallOption) (*GetScheduleReply, error)
+	// Execute for manual execution a workflow task.
+	Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type workflowClient struct {
@@ -149,6 +151,15 @@ func (c *workflowClient) GetSchedule(ctx context.Context, in *GetScheduleRequest
 	return out, nil
 }
 
+func (c *workflowClient) Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/Execute", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkflowServer is the server API for Workflow service.
 // All implementations must embed UnimplementedWorkflowServer
 // for forward compatibility
@@ -175,6 +186,8 @@ type WorkflowServer interface {
 	SetSchedule(context.Context, *SetScheduleRequest) (*model.EmptyStruct, error)
 	// GetSchedule for get the schedule properties of the specified workflow.
 	GetSchedule(context.Context, *GetScheduleRequest) (*GetScheduleReply, error)
+	// Execute for manual execution a workflow task.
+	Execute(context.Context, *ExecuteRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedWorkflowServer()
 }
 
@@ -214,6 +227,9 @@ func (UnimplementedWorkflowServer) SetSchedule(context.Context, *SetScheduleRequ
 }
 func (UnimplementedWorkflowServer) GetSchedule(context.Context, *GetScheduleRequest) (*GetScheduleReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSchedule not implemented")
+}
+func (UnimplementedWorkflowServer) Execute(context.Context, *ExecuteRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Execute not implemented")
 }
 func (UnimplementedWorkflowServer) mustEmbedUnimplementedWorkflowServer() {}
 
@@ -426,6 +442,24 @@ func _Workflow_GetSchedule_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Workflow_Execute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecuteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkflowServer).Execute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wfpb.Workflow/Execute",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkflowServer).Execute(ctx, req.(*ExecuteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Workflow_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "wfpb.Workflow",
 	HandlerType: (*WorkflowServer)(nil),
@@ -473,6 +507,10 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSchedule",
 			Handler:    _Workflow_GetSchedule_Handler,
+		},
+		{
+			MethodName: "Execute",
+			Handler:    _Workflow_Execute_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

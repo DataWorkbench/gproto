@@ -8,9 +8,6 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
 service Publisher {
-	// Execute for manual execution a workflow task.
-	rpc Execute(ExecuteRequest) returns (model.EmptyStruct) {}
-	
 	// Release to publish the specified workflow to schedule system with a new version.
 	rpc Release(ReleaseRequest) returns (model.EmptyStruct) {}
 	
@@ -49,11 +46,6 @@ message ListReleasesRequest {
 // Reply parameters used to ListReleases.
 message ListReleasesReply {
 	repeated model.ReleaseLatestInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to Execute
-message ExecuteRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to Release

@@ -161,3 +161,9 @@ func (this *SetEnvRequest) Validate() error {
 	}
 	return nil
 }
+func (this *ExecuteRequest) Validate() error {
+	if !(len(this.FlowId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
+	}
+	return nil
+}

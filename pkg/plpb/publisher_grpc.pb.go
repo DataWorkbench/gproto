@@ -18,8 +18,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PublisherClient interface {
-	// Execute for manual execution a workflow task.
-	Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Release to publish the specified workflow to schedule system with a new version.
 	Release(ctx context.Context, in *ReleaseRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Suspend to suspend the specified workflow in schedule system.
@@ -46,15 +44,6 @@ type publisherClient struct {
 
 func NewPublisherClient(cc grpc.ClientConnInterface) PublisherClient {
 	return &publisherClient{cc}
-}
-
-func (c *publisherClient) Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/plpb.Publisher/Execute", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *publisherClient) Release(ctx context.Context, in *ReleaseRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
@@ -142,8 +131,6 @@ func (c *publisherClient) GetSchedule(ctx context.Context, in *GetScheduleReques
 // All implementations must embed UnimplementedPublisherServer
 // for forward compatibility
 type PublisherServer interface {
-	// Execute for manual execution a workflow task.
-	Execute(context.Context, *ExecuteRequest) (*model.EmptyStruct, error)
 	// Release to publish the specified workflow to schedule system with a new version.
 	Release(context.Context, *ReleaseRequest) (*model.EmptyStruct, error)
 	// Suspend to suspend the specified workflow in schedule system.
@@ -169,9 +156,6 @@ type PublisherServer interface {
 type UnimplementedPublisherServer struct {
 }
 
-func (UnimplementedPublisherServer) Execute(context.Context, *ExecuteRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Execute not implemented")
-}
 func (UnimplementedPublisherServer) Release(context.Context, *ReleaseRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Release not implemented")
 }
@@ -210,24 +194,6 @@ type UnsafePublisherServer interface {
 
 func RegisterPublisherServer(s grpc.ServiceRegistrar, srv PublisherServer) {
 	s.RegisterService(&_Publisher_serviceDesc, srv)
-}
-
-func _Publisher_Execute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExecuteRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PublisherServer).Execute(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/plpb.Publisher/Execute",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PublisherServer).Execute(ctx, req.(*ExecuteRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Publisher_Release_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -396,10 +362,6 @@ var _Publisher_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "plpb.Publisher",
 	HandlerType: (*PublisherServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Execute",
-			Handler:    _Publisher_Execute_Handler,
-		},
 		{
 			MethodName: "Release",
 			Handler:    _Publisher_Release_Handler,
