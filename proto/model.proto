@@ -40,8 +40,8 @@ message SpaceInfo {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// The workflow info
-message FlowInfo {
+// The stream workflow info
+message StreamFlowInfo {
 	// Workspace ID it belongs to.
 	// @inject_tag: gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -76,8 +76,8 @@ message FlowInfo {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// FlowEnvInfo represents a workflow environmental parameters info.
-message FlowEnvInfo {
+// StreamFlowEnv represents a workflow environmental parameters info.
+message StreamFlowEnv {
 	// Workflow ID it belongs to.
 	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -92,8 +92,8 @@ message FlowEnvInfo {
 	string env = 3 [ (validator.field) = { } ];
 }
 
-// FlowEnvInfo represents a workflow environmental parameters info.
-message FlowNodeInfo {
+// StreamFlowNode represents a workflow environmental parameters info.
+message StreamFlowNode {
 	// Workflow ID it belongs to.
 	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -108,8 +108,8 @@ message FlowNodeInfo {
 	string nodes = 3 [ (validator.field) = { } ];
 }
 
-// SchInfo represents a workflow schedule info.
-message FlowSchInfo {
+// StreamFlowSchedule represents a workflow schedule info.
+message StreamFlowSchedule {
 	// Workflow ID it belongs to.
 	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -126,43 +126,26 @@ message FlowSchInfo {
 	// Timestamp of end time of the validity period, unit in seconds.
 	// @inject_tag: gorm:"column:ended;"
 	int64 ended = 4 [ (validator.field) = { int_gt: 0 } ];
-
-	// Schedule priority, 1 => "highest", 2 => "high", 3 => "medium", 4 => "low", 5 => "lowest", default 3.
-	// @inject_tag: gorm:"column:priority;"
-	int32 priority = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-
-	// Strategy when node task execute fail.
-	// @inject_tag: gorm:"column:failure_strategy;"
-	int32 failure_strategy = 6 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-
-	// Strategy of dependency.
+	
+	// Strategy of dependency. 1 => "none", 2 => "last".
 	// @inject_tag: gorm:"column:depend_strategy;"
-	int32 depend_strategy = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-
-	// Strategy of schedule, 1 => "loop".
-	// @inject_tag: gorm:"column:schedule_strategy;"
-	int32 schedule_strategy = 8 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-
-	// Limit count of schedule, 0 means no limited.
-	// @inject_tag: gorm:"column:schedule_limit;"
-	int64 schedule_limit = 9 [ (validator.field) = { int_gt: -1 } ];
-
+	int32 depend_strategy = 6 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	
 	// Express is the standard unix crontab express, used with loop ScheduleStrategy.
 	// @inject_tag: gorm:"column:express;"
-	string express = 10 [ (validator.field) = { } ];
-	
+	string express = 7 [ (validator.field) = { } ];
 }
 
 // FlowMeta represents a full workflow metadata where are FlowInfo, FlowNodeInfo, FlowEnvInfo, FlowSchInfo
-message FlowMeta {
-	FlowInfo     flow =  1    [ (validator.field) = { msg_exists: true } ];
-	FlowNodeInfo node =  2    [ (validator.field) = { msg_exists: true } ];
-	FlowEnvInfo  env = 3      [ (validator.field) = { msg_exists: true } ];
-	FlowSchInfo  schedule = 4 [ (validator.field) = { msg_exists: true } ];
+message StreamFlowMeta {
+	StreamFlowInfo     flow =  1    [ (validator.field) = { msg_exists: true } ];
+	StreamFlowNode     node =  2    [ (validator.field) = { msg_exists: true } ];
+	StreamFlowEnv      env = 3      [ (validator.field) = { msg_exists: true } ];
+	StreamFlowSchedule schedule = 4 [ (validator.field) = { msg_exists: true } ];
 }
 
-// The latest release workflow info.
-message ReleaseLatestInfo {
+// The stream workflow info of release.
+message ReleaseStreamFlowInfo {
 	// Workspace ID it belongs to.
 	// @inject_tag: gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -200,70 +183,37 @@ message ReleaseLatestInfo {
 	int64 updated = 9 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// The workflow instance info.
-message FlowInstInfo {
-	// Workflow ID it belongs to.
-	// @inject_tag: gorm:"column:flow_id;"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The release version.
-	// @inject_tag: gorm:"column:version;
-	int64 version = 2 [ (validator.field) = { int_gt: 0 } ];
-	
-	// Workflow instance ID, unique.
-	// @inject_tag: gorm:"column:id;primarykey;"
-	string id = 3 [ (validator.field) = { length_eq: 20 } ];
-	
-	// @inject_tag: gorm:"column:trigger;"
-	int32 trigger = 4 [ (validator.field) = { } ];
-	
-	// Limit count of retries.
-	// @inject_tag: gorm:"column:state;"
-	int32 state = 5 [ (validator.field) = { int_gt: 0 } ];
+// The instance info of stream workflow.
+message StreamFlowInstInfo {
+	// Workspace ID it belongs to.
+	// @inject_tag: gorm:"column:space_id;"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
-	// @inject_tag: gorm:"column:created;autoCreateTime;"
-	int64 created = 6 [ (validator.field) = { int_gt: 0 } ];
-	
-	// Timestamp of update time
-	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 7 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// The workflow instance info.
-message NodeInstInfo {
-	// Workflow instance ID it belongs to
-	// @inject_tag: gorm:"column:flow_instance_id;"
-	string flow_inst_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
 	// Workflow ID it belongs to.
 	// @inject_tag: gorm:"column:flow_id;"
 	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Node ID it belongs to.
-	// @inject_tag: gorm:"column:node_id;"
-	string node_id = 3 [ (validator.field) = { length_eq: 20 } ];
-	
 	// The release version.
-	// @inject_tag: gorm:"column:version;"
-	int64 version = 4 [ (validator.field) = { int_gt: 0 } ];
+	// @inject_tag: gorm:"column:version;
+	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Workflow instance ID, unique.
 	// @inject_tag: gorm:"column:id;primarykey;"
-	string id = 5 [ (validator.field) = { length_eq: 20 } ];
+	string id = 4 [ (validator.field) = { length_eq: 20 } ];
 	
 	// @inject_tag: gorm:"column:trigger;"
-	int32 trigger = 6 [ (validator.field) = { } ];
+	int32 trigger = 5 [ (validator.field) = { } ];
 	
-	// The running state.
+	// Limit count of retries.
 	// @inject_tag: gorm:"column:state;"
-	int32 state = 7 [ (validator.field) = { int_gt: 0 } ];
-	
+	int32 state = 6 [ (validator.field) = { int_gt: 0 } ];
+
 	// @inject_tag: gorm:"column:created;autoCreateTime;"
-	int64 created = 8 [ (validator.field) = { int_gt: 0 } ];
+	int64 created = 7 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of update time
 	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 9 [ (validator.field) = { int_gt: 0 } ];
+	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The workspace operation audit record.

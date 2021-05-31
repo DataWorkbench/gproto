@@ -17,7 +17,7 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *ExecuteRequest) Validate() error {
+func (this *ExecuteStreamFlowRequest) Validate() error {
 	if this.Meta != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Meta", err)
@@ -25,7 +25,7 @@ func (this *ExecuteRequest) Validate() error {
 	}
 	return nil
 }
-func (this *SubmitRequest) Validate() error {
+func (this *SubmitStreamFlowRequest) Validate() error {
 	if this.Meta != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Meta", err)
@@ -39,7 +39,7 @@ func (this *SubmitRequest) Validate() error {
 	}
 	return nil
 }
-func (this *RemoveRequest) Validate() error {
+func (this *RemoveStreamFlowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}

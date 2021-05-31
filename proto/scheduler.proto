@@ -11,29 +11,29 @@ import "model.proto";
 // Scheduler Service
 service Scheduler {
 	// Execute execute immediately a workflow task. It trigger by user on console.
-	rpc Execute(ExecuteRequest) returns (model.EmptyStruct) {}
+	rpc ExecuteStreamFlow(ExecuteStreamFlowRequest) returns (model.EmptyStruct) {}
 	
 	// Submit submit a workflow task to scheduler system, It will
 	// be cover if old job exists.
-	rpc Submit(SubmitRequest) returns (model.EmptyStruct) {}
+	rpc SubmitStreamFlow(SubmitStreamFlowRequest) returns (model.EmptyStruct) {}
 	
 	// Remove remove specific workflow task from scheduler system.
-	rpc Remove(RemoveRequest) returns (model.EmptyStruct) {}
+	rpc RemoveStreamFlow(RemoveStreamFlowRequest) returns (model.EmptyStruct) {}
 }
 
 // Request parameters used to Execute.
-message ExecuteRequest {
-	model.FlowMeta meta = 1 [ (validator.field) = { } ];
+message ExecuteStreamFlowRequest {
+	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
 }
 
 // Request parameters used to Submit.
-message SubmitRequest {
-	model.FlowMeta meta = 1 [ (validator.field) = { } ];
+message SubmitStreamFlowRequest {
+	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
 	int32 force_stop = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }
 
 // Request parameters used to Remove.
-message RemoveRequest {
+message RemoveStreamFlowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	int32 force_stop = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }

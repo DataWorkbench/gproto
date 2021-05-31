@@ -19,12 +19,12 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SchedulerClient interface {
 	// Execute execute immediately a workflow task. It trigger by user on console.
-	Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	ExecuteStreamFlow(ctx context.Context, in *ExecuteStreamFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Submit submit a workflow task to scheduler system, It will
 	// be cover if old job exists.
-	Submit(ctx context.Context, in *SubmitRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	SubmitStreamFlow(ctx context.Context, in *SubmitStreamFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Remove remove specific workflow task from scheduler system.
-	Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	RemoveStreamFlow(ctx context.Context, in *RemoveStreamFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type schedulerClient struct {
@@ -35,27 +35,27 @@ func NewSchedulerClient(cc grpc.ClientConnInterface) SchedulerClient {
 	return &schedulerClient{cc}
 }
 
-func (c *schedulerClient) Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) ExecuteStreamFlow(ctx context.Context, in *ExecuteStreamFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Execute", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ExecuteStreamFlow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) Submit(ctx context.Context, in *SubmitRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) SubmitStreamFlow(ctx context.Context, in *SubmitStreamFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Submit", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/SubmitStreamFlow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) RemoveStreamFlow(ctx context.Context, in *RemoveStreamFlowRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/Remove", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/RemoveStreamFlow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -67,12 +67,12 @@ func (c *schedulerClient) Remove(ctx context.Context, in *RemoveRequest, opts ..
 // for forward compatibility
 type SchedulerServer interface {
 	// Execute execute immediately a workflow task. It trigger by user on console.
-	Execute(context.Context, *ExecuteRequest) (*model.EmptyStruct, error)
+	ExecuteStreamFlow(context.Context, *ExecuteStreamFlowRequest) (*model.EmptyStruct, error)
 	// Submit submit a workflow task to scheduler system, It will
 	// be cover if old job exists.
-	Submit(context.Context, *SubmitRequest) (*model.EmptyStruct, error)
+	SubmitStreamFlow(context.Context, *SubmitStreamFlowRequest) (*model.EmptyStruct, error)
 	// Remove remove specific workflow task from scheduler system.
-	Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error)
+	RemoveStreamFlow(context.Context, *RemoveStreamFlowRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedSchedulerServer()
 }
 
@@ -80,14 +80,14 @@ type SchedulerServer interface {
 type UnimplementedSchedulerServer struct {
 }
 
-func (UnimplementedSchedulerServer) Execute(context.Context, *ExecuteRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Execute not implemented")
+func (UnimplementedSchedulerServer) ExecuteStreamFlow(context.Context, *ExecuteStreamFlowRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExecuteStreamFlow not implemented")
 }
-func (UnimplementedSchedulerServer) Submit(context.Context, *SubmitRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Submit not implemented")
+func (UnimplementedSchedulerServer) SubmitStreamFlow(context.Context, *SubmitStreamFlowRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitStreamFlow not implemented")
 }
-func (UnimplementedSchedulerServer) Remove(context.Context, *RemoveRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Remove not implemented")
+func (UnimplementedSchedulerServer) RemoveStreamFlow(context.Context, *RemoveStreamFlowRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveStreamFlow not implemented")
 }
 func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}
 
@@ -102,56 +102,56 @@ func RegisterSchedulerServer(s grpc.ServiceRegistrar, srv SchedulerServer) {
 	s.RegisterService(&_Scheduler_serviceDesc, srv)
 }
 
-func _Scheduler_Execute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExecuteRequest)
+func _Scheduler_ExecuteStreamFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecuteStreamFlowRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).Execute(ctx, in)
+		return srv.(SchedulerServer).ExecuteStreamFlow(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/Execute",
+		FullMethod: "/shpb.Scheduler/ExecuteStreamFlow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).Execute(ctx, req.(*ExecuteRequest))
+		return srv.(SchedulerServer).ExecuteStreamFlow(ctx, req.(*ExecuteStreamFlowRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_Submit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubmitRequest)
+func _Scheduler_SubmitStreamFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitStreamFlowRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).Submit(ctx, in)
+		return srv.(SchedulerServer).SubmitStreamFlow(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/Submit",
+		FullMethod: "/shpb.Scheduler/SubmitStreamFlow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).Submit(ctx, req.(*SubmitRequest))
+		return srv.(SchedulerServer).SubmitStreamFlow(ctx, req.(*SubmitStreamFlowRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_Remove_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveRequest)
+func _Scheduler_RemoveStreamFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveStreamFlowRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).Remove(ctx, in)
+		return srv.(SchedulerServer).RemoveStreamFlow(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/Remove",
+		FullMethod: "/shpb.Scheduler/RemoveStreamFlow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).Remove(ctx, req.(*RemoveRequest))
+		return srv.(SchedulerServer).RemoveStreamFlow(ctx, req.(*RemoveStreamFlowRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -161,16 +161,16 @@ var _Scheduler_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*SchedulerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Execute",
-			Handler:    _Scheduler_Execute_Handler,
+			MethodName: "ExecuteStreamFlow",
+			Handler:    _Scheduler_ExecuteStreamFlow_Handler,
 		},
 		{
-			MethodName: "Submit",
-			Handler:    _Scheduler_Submit_Handler,
+			MethodName: "SubmitStreamFlow",
+			Handler:    _Scheduler_SubmitStreamFlow_Handler,
 		},
 		{
-			MethodName: "Remove",
-			Handler:    _Scheduler_Remove_Handler,
+			MethodName: "RemoveStreamFlow",
+			Handler:    _Scheduler_RemoveStreamFlow_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

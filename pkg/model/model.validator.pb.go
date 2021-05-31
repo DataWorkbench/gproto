@@ -49,7 +49,7 @@ func (this *SpaceInfo) Validate() error {
 	}
 	return nil
 }
-func (this *FlowInfo) Validate() error {
+func (this *StreamFlowInfo) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -76,19 +76,19 @@ func (this *FlowInfo) Validate() error {
 	}
 	return nil
 }
-func (this *FlowEnvInfo) Validate() error {
+func (this *StreamFlowEnv) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
 	return nil
 }
-func (this *FlowNodeInfo) Validate() error {
+func (this *StreamFlowNode) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
 	return nil
 }
-func (this *FlowSchInfo) Validate() error {
+func (this *StreamFlowSchedule) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
@@ -98,36 +98,15 @@ func (this *FlowSchInfo) Validate() error {
 	if !(this.Ended > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Ended", fmt.Errorf(`value '%v' must be greater than '0'`, this.Ended))
 	}
-	if !(this.Priority > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Priority", fmt.Errorf(`value '%v' must be greater than '0'`, this.Priority))
-	}
-	if !(this.Priority < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Priority", fmt.Errorf(`value '%v' must be less than '3'`, this.Priority))
-	}
-	if !(this.FailureStrategy > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.FailureStrategy))
-	}
-	if !(this.FailureStrategy < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FailureStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.FailureStrategy))
-	}
 	if !(this.DependStrategy > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.DependStrategy))
 	}
 	if !(this.DependStrategy < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.DependStrategy))
 	}
-	if !(this.ScheduleStrategy > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.ScheduleStrategy))
-	}
-	if !(this.ScheduleStrategy < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.ScheduleStrategy))
-	}
-	if !(this.ScheduleLimit > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ScheduleLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ScheduleLimit))
-	}
 	return nil
 }
-func (this *FlowMeta) Validate() error {
+func (this *StreamFlowMeta) Validate() error {
 	if nil == this.Flow {
 		return github_com_mwitkow_go_proto_validators.FieldError("Flow", fmt.Errorf("message must exist"))
 	}
@@ -162,7 +141,7 @@ func (this *FlowMeta) Validate() error {
 	}
 	return nil
 }
-func (this *ReleaseLatestInfo) Validate() error {
+func (this *ReleaseStreamFlowInfo) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -192,36 +171,12 @@ func (this *ReleaseLatestInfo) Validate() error {
 	}
 	return nil
 }
-func (this *FlowInstInfo) Validate() error {
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
-	}
-	if !(this.State > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must be greater than '0'`, this.State))
-	}
-	if !(this.Created > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
-	}
-	if !(this.Updated > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
-	}
-	return nil
-}
-func (this *NodeInstInfo) Validate() error {
-	if !(len(this.FlowInstId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowInstId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowInstId))
+func (this *StreamFlowInstInfo) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(len(this.NodeId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("NodeId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.NodeId))
 	}
 	if !(this.Version > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
