@@ -144,8 +144,8 @@ message StreamFlowMeta {
 	StreamFlowSchedule schedule = 4 [ (validator.field) = { msg_exists: true } ];
 }
 
-// The stream workflow info of release.
-message ReleaseStreamFlowInfo {
+// The release stream workflow info.
+message StreamFlowReleaseInfo {
 	// Workspace ID it belongs to.
 	// @inject_tag: gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -201,19 +201,16 @@ message StreamFlowInstInfo {
 	// @inject_tag: gorm:"column:id;primarykey;"
 	string id = 4 [ (validator.field) = { length_eq: 20 } ];
 	
-	// @inject_tag: gorm:"column:trigger;"
-	int32 trigger = 5 [ (validator.field) = { } ];
-	
-	// Limit count of retries.
+	// The instance state.
 	// @inject_tag: gorm:"column:state;"
-	int32 state = 6 [ (validator.field) = { int_gt: 0 } ];
+	int32 state = 5 [ (validator.field) = { int_gt: 0 } ];
 
 	// @inject_tag: gorm:"column:created;autoCreateTime;"
-	int64 created = 7 [ (validator.field) = { int_gt: 0 } ];
+	int64 created = 6 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of update time
 	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
+	int64 updated = 7 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The workspace operation audit record.

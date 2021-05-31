@@ -9,6 +9,10 @@ import "model.proto";
 
 // Workflow Service
 service Workflow {
+	// DeleteAllFlows delete all workflow that specified workspace id.
+	// And removed all workflow task from schedule system.
+	rpc DeleteAllFlows(DeleteAllFlowsRequest) returns(model.EmptyStruct) {}
+	
 	// Interface for stream workflow.
 	//
 	// ListStreamFlows to get a list of stream workflow of the workspace.
@@ -58,7 +62,7 @@ service Workflow {
 	// ResumeStreamFlow to resume the suspended workflow in schedule system.
 	rpc ResumeReleaseStreamFlow(ResumeReleaseStreamFlowRequest) returns (model.EmptyStruct) {}
 	
-	// ListStreamReleases for gets a list of all published workflow in the workspace.
+	// ListReleaseStreamFlows for gets a list of all published workflow in the workspace.
 	rpc ListReleaseStreamFlows(ListReleaseStreamFlowsRequest) returns (ListReleaseStreamFlowsReply) {}
 	
 	// Interface for stream workflow versions.
@@ -77,6 +81,11 @@ service Workflow {
 	
 	// GetStreamReleaseSchedule for get the schedule properties of the workflow of the specified version.
 	rpc GetStreamFlowVersionSchedule(GetStreamFlowVersionScheduleRequest) returns (GetStreamFlowVersionScheduleReply) {}
+}
+
+// Request parameters used to PurgeAllFlow.
+message DeleteAllFlowsRequest {
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Operation of workflow.
@@ -101,7 +110,7 @@ message CreateStreamFlowRequest {
 	int32  type = 4     [ (validator.field) = { int_gt: 0 } ];
 }
 
-// Request parameters used to Delete
+// Request parameters used to DeleteStreamFlow.
 message DeleteStreamFlowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
@@ -182,7 +191,7 @@ message ListReleaseStreamFlowsRequest {
 
 // Reply parameters used to ListReleases.
 message ListReleaseStreamFlowsReply {
-	repeated model.ReleaseStreamFlowInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
+	repeated model.StreamFlowReleaseInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
 }
 
 // Request parameters used to Release

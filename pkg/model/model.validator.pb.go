@@ -141,7 +141,7 @@ func (this *StreamFlowMeta) Validate() error {
 	}
 	return nil
 }
-func (this *ReleaseStreamFlowInfo) Validate() error {
+func (this *StreamFlowReleaseInfo) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
