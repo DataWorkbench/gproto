@@ -202,11 +202,11 @@ func (this *ReleaseStreamFlowRequest) Validate() error {
 	if !(len(this.Desc) == 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length equal to '1025'`, this.Desc))
 	}
-	if !(this.ForceStop > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ForceStop))
+	if !(this.StopRunning > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("StopRunning", fmt.Errorf(`value '%v' must be greater than '-1'`, this.StopRunning))
 	}
-	if !(this.ForceStop < 2) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be less than '2'`, this.ForceStop))
+	if !(this.StopRunning < 2) {
+		return github_com_mwitkow_go_proto_validators.FieldError("StopRunning", fmt.Errorf(`value '%v' must be less than '2'`, this.StopRunning))
 	}
 	return nil
 }
@@ -214,11 +214,11 @@ func (this *SuspendReleaseStreamFlowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
-	if !(this.ForceStop > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ForceStop))
+	if !(this.StopRunning > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("StopRunning", fmt.Errorf(`value '%v' must be greater than '-1'`, this.StopRunning))
 	}
-	if !(this.ForceStop < 2) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ForceStop", fmt.Errorf(`value '%v' must be less than '2'`, this.ForceStop))
+	if !(this.StopRunning < 2) {
+		return github_com_mwitkow_go_proto_validators.FieldError("StopRunning", fmt.Errorf(`value '%v' must be less than '2'`, this.StopRunning))
 	}
 	return nil
 }

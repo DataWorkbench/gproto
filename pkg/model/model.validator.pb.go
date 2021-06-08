@@ -243,3 +243,14 @@ func (this *MemberInfo) Validate() error {
 	}
 	return nil
 }
+func (this *TaskMessage) Validate() error {
+	if this.Meta != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Meta", err)
+		}
+	}
+	return nil
+}
+func (this *InstMessage) Validate() error {
+	return nil
+}

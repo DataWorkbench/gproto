@@ -18,6 +18,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SchedulerClient interface {
+	// Interface for stream workflow task.
+	//
 	// DeleteAllFlows delete all workflow instance that specified workspace id.
 	// And offline all workflow tasks.
 	DeleteAllFlows(ctx context.Context, in *DeleteAllFlowsRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
@@ -180,6 +182,8 @@ func (c *schedulerClient) TerminateStreamTestInst(ctx context.Context, in *Termi
 // All implementations must embed UnimplementedSchedulerServer
 // for forward compatibility
 type SchedulerServer interface {
+	// Interface for stream workflow task.
+	//
 	// DeleteAllFlows delete all workflow instance that specified workspace id.
 	// And offline all workflow tasks.
 	DeleteAllFlows(context.Context, *DeleteAllFlowsRequest) (*model.EmptyStruct, error)

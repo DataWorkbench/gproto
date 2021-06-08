@@ -272,3 +272,16 @@ message MemberInfo {
 	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
 	int64 updated = 6 [ (validator.field) = { int_gt: 0 } ];
 }
+
+// The message in task queue..
+message TaskMessage {
+	string         req_id = 1 [ (validator.field) = { } ];
+	StreamFlowMeta meta = 2   [ (validator.field) = { } ];
+}
+
+// The message in instance queue..
+message InstMessage {
+	string req_id = 1 [ (validator.field) = { } ];
+	// 1 => "running"  2 => "terminated"
+	int32  action = 2 [ (validator.field) = { } ];
+}

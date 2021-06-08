@@ -1102,6 +1102,119 @@ func (x *MemberInfo) GetUpdated() int64 {
 	return 0
 }
 
+// The message in task queue..
+type TaskMessage struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ReqId string          `protobuf:"bytes,1,opt,name=req_id,json=reqId,proto3" json:"req_id,omitempty"`
+	Meta  *StreamFlowMeta `protobuf:"bytes,2,opt,name=meta,proto3" json:"meta,omitempty"`
+}
+
+func (x *TaskMessage) Reset() {
+	*x = TaskMessage{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TaskMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskMessage) ProtoMessage() {}
+
+func (x *TaskMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskMessage.ProtoReflect.Descriptor instead.
+func (*TaskMessage) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *TaskMessage) GetReqId() string {
+	if x != nil {
+		return x.ReqId
+	}
+	return ""
+}
+
+func (x *TaskMessage) GetMeta() *StreamFlowMeta {
+	if x != nil {
+		return x.Meta
+	}
+	return nil
+}
+
+// The message in instance queue..
+type InstMessage struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ReqId string `protobuf:"bytes,1,opt,name=req_id,json=reqId,proto3" json:"req_id,omitempty"`
+	// 1 => "running"  2 => "terminated"
+	Action int32 `protobuf:"varint,2,opt,name=action,proto3" json:"action,omitempty"`
+}
+
+func (x *InstMessage) Reset() {
+	*x = InstMessage{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *InstMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InstMessage) ProtoMessage() {}
+
+func (x *InstMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InstMessage.ProtoReflect.Descriptor instead.
+func (*InstMessage) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *InstMessage) GetReqId() string {
+	if x != nil {
+		return x.ReqId
+	}
+	return ""
+}
+
+func (x *InstMessage) GetAction() int32 {
+	if x != nil {
+		return x.Action
+	}
+	return 0
+}
+
 var File_proto_model_proto protoreflect.FileDescriptor
 
 var file_proto_model_proto_rawDesc = []byte{
@@ -1251,10 +1364,21 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x05, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x63,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65,
 	0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52,
-	0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62,
-	0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x22, 0x5b, 0x0a, 0x0b, 0x54, 0x61, 0x73, 0x6b,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x1b, 0x0a, 0x06, 0x72, 0x65, 0x71, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x72,
+	0x65, 0x71, 0x49, 0x64, 0x12, 0x2f, 0x0a, 0x04, 0x6d, 0x65, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x15, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61,
+	0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x4d, 0x65, 0x74, 0x61, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
+	0x04, 0x6d, 0x65, 0x74, 0x61, 0x22, 0x48, 0x0a, 0x0b, 0x49, 0x6e, 0x73, 0x74, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x12, 0x1b, 0x0a, 0x06, 0x72, 0x65, 0x71, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x72, 0x65, 0x71, 0x49,
+	0x64, 0x12, 0x1c, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x05, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x42,
+	0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61,
+	0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1269,7 +1393,7 @@ func file_proto_model_proto_rawDescGZIP() []byte {
 	return file_proto_model_proto_rawDescData
 }
 
-var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_proto_model_proto_goTypes = []interface{}{
 	(*EmptyStruct)(nil),           // 0: model.EmptyStruct
 	(*SpaceInfo)(nil),             // 1: model.SpaceInfo
@@ -1283,17 +1407,20 @@ var file_proto_model_proto_goTypes = []interface{}{
 	(*AuditInfo)(nil),             // 9: model.AuditInfo
 	(*RoleInfo)(nil),              // 10: model.RoleInfo
 	(*MemberInfo)(nil),            // 11: model.MemberInfo
+	(*TaskMessage)(nil),           // 12: model.TaskMessage
+	(*InstMessage)(nil),           // 13: model.InstMessage
 }
 var file_proto_model_proto_depIdxs = []int32{
 	2, // 0: model.StreamFlowMeta.flow:type_name -> model.StreamFlowInfo
 	4, // 1: model.StreamFlowMeta.node:type_name -> model.StreamFlowNode
 	3, // 2: model.StreamFlowMeta.env:type_name -> model.StreamFlowEnv
 	5, // 3: model.StreamFlowMeta.schedule:type_name -> model.StreamFlowSchedule
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	6, // 4: model.TaskMessage.meta:type_name -> model.StreamFlowMeta
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_proto_model_proto_init() }
@@ -1446,6 +1573,30 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
+		file_proto_model_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TaskMessage); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_model_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*InstMessage); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1453,7 +1604,7 @@ func file_proto_model_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_model_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   12,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

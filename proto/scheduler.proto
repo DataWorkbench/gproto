@@ -10,6 +10,8 @@ import "model.proto";
 
 // Scheduler Service
 service Scheduler {
+	// Interface for stream workflow task.
+	//
 	// DeleteAllFlows delete all workflow instance that specified workspace id.
 	// And offline all workflow tasks.
 	rpc DeleteAllFlows(DeleteAllFlowsRequest) returns (model.EmptyStruct) {}
@@ -74,13 +76,13 @@ message DeleteStreamFlowRequest {
 // Request parameters used to SubmitStreamFlow.
 message SubmitStreamFlowRequest {
 	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
-	int32 force_stop = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+	int32 stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }
 
 // Request parameters used to RemoveStreamFlow.
 message OfflineStreamFlowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32 force_stop = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+	int32 stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }
 
 // Request parameters used to ListStreamCycleInst.
@@ -99,17 +101,20 @@ message ListStreamCycleInstReply {
 
 // Request parameters used to SuspendStreamCycleInst.
 message SuspendStreamCycleInstRequest {
-	string inst_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to ResumeStreamCycleInst.
 message ResumeStreamCycleInstRequest {
-	string inst_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to TerminateStreamCycleInst.
 message TerminateStreamCycleInstRequest {
-	string inst_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to ListStreamTestInst.
@@ -128,15 +133,18 @@ message ListStreamTestInstReply {
 
 // Request parameters used to SuspendStreamTestInst.
 message SuspendStreamTestInstRequest {
-	string inst_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to ResumeStreamTestInst.
 message ResumeStreamTestInstRequest {
-	string inst_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // Request parameters used to TerminateStreamTestInst.
 message TerminateStreamTestInstRequest {
-	string inst_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
