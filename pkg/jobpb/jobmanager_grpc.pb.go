@@ -4,6 +4,7 @@ package jobpb
 
 import (
 	context "context"
+	model "github.com/DataWorkbench/gproto/pkg/model"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,8 +20,9 @@ const _ = grpc.SupportPackageIsVersion7
 type JobmanagerClient interface {
 	RunJob(ctx context.Context, in *RunJobRequest, opts ...grpc.CallOption) (*JobReply, error)
 	GetJobStatus(ctx context.Context, in *GetJobStatusRequest, opts ...grpc.CallOption) (*JobReply, error)
-	CancelJob(ctx context.Context, in *CancelJobRequest, opts ...grpc.CallOption) (*EmptyReply, error)
-	CancelAllJob(ctx context.Context, in *CancelAllJobRequest, opts ...grpc.CallOption) (*EmptyReply, error)
+	CancelJob(ctx context.Context, in *CancelJobRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	PickupAloneJobs(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	CancelAllJob(ctx context.Context, in *CancelAllJobRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type jobmanagerClient struct {
@@ -49,8 +51,8 @@ func (c *jobmanagerClient) GetJobStatus(ctx context.Context, in *GetJobStatusReq
 	return out, nil
 }
 
-func (c *jobmanagerClient) CancelJob(ctx context.Context, in *CancelJobRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
-	out := new(EmptyReply)
+func (c *jobmanagerClient) CancelJob(ctx context.Context, in *CancelJobRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelJob", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -58,8 +60,17 @@ func (c *jobmanagerClient) CancelJob(ctx context.Context, in *CancelJobRequest, 
 	return out, nil
 }
 
-func (c *jobmanagerClient) CancelAllJob(ctx context.Context, in *CancelAllJobRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
-	out := new(EmptyReply)
+func (c *jobmanagerClient) PickupAloneJobs(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/PickupAloneJobs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *jobmanagerClient) CancelAllJob(ctx context.Context, in *CancelAllJobRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelAllJob", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -73,8 +84,9 @@ func (c *jobmanagerClient) CancelAllJob(ctx context.Context, in *CancelAllJobReq
 type JobmanagerServer interface {
 	RunJob(context.Context, *RunJobRequest) (*JobReply, error)
 	GetJobStatus(context.Context, *GetJobStatusRequest) (*JobReply, error)
-	CancelJob(context.Context, *CancelJobRequest) (*EmptyReply, error)
-	CancelAllJob(context.Context, *CancelAllJobRequest) (*EmptyReply, error)
+	CancelJob(context.Context, *CancelJobRequest) (*model.EmptyStruct, error)
+	PickupAloneJobs(context.Context, *model.EmptyStruct) (*model.EmptyStruct, error)
+	CancelAllJob(context.Context, *CancelAllJobRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedJobmanagerServer()
 }
 
@@ -88,10 +100,13 @@ func (UnimplementedJobmanagerServer) RunJob(context.Context, *RunJobRequest) (*J
 func (UnimplementedJobmanagerServer) GetJobStatus(context.Context, *GetJobStatusRequest) (*JobReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetJobStatus not implemented")
 }
-func (UnimplementedJobmanagerServer) CancelJob(context.Context, *CancelJobRequest) (*EmptyReply, error) {
+func (UnimplementedJobmanagerServer) CancelJob(context.Context, *CancelJobRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelJob not implemented")
 }
-func (UnimplementedJobmanagerServer) CancelAllJob(context.Context, *CancelAllJobRequest) (*EmptyReply, error) {
+func (UnimplementedJobmanagerServer) PickupAloneJobs(context.Context, *model.EmptyStruct) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PickupAloneJobs not implemented")
+}
+func (UnimplementedJobmanagerServer) CancelAllJob(context.Context, *CancelAllJobRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelAllJob not implemented")
 }
 func (UnimplementedJobmanagerServer) mustEmbedUnimplementedJobmanagerServer() {}
@@ -161,6 +176,24 @@ func _Jobmanager_CancelJob_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Jobmanager_PickupAloneJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(model.EmptyStruct)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobmanagerServer).PickupAloneJobs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/jobpb.Jobmanager/PickupAloneJobs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobmanagerServer).PickupAloneJobs(ctx, req.(*model.EmptyStruct))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Jobmanager_CancelAllJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CancelAllJobRequest)
 	if err := dec(in); err != nil {
@@ -194,6 +227,10 @@ var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CancelJob",
 			Handler:    _Jobmanager_CancelJob_Handler,
+		},
+		{
+			MethodName: "PickupAloneJobs",
+			Handler:    _Jobmanager_PickupAloneJobs_Handler,
 		},
 		{
 			MethodName: "CancelAllJob",

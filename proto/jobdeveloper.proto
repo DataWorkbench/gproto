@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/jobdevpb";
+
+package jobdevpb;
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
+
+service Jobdeveloper {
+	rpc JobParser(JobParserRequest) returns(JobElement) {}
+	rpc JobFree(JobFreeRequest) returns(JobFreeAction) {}
+	rpc NodeRelations(model.EmptyStruct) returns(Relations) {}
+}
+
+message JobParserRequest {
+	string ID = 1  [ (validator.field) = { length_eq: 20 } ];
+    string WorkspaceID = 2  [ (validator.field) = { length_eq: 20 } ];
+    string EngineID = 3  [ (validator.field) = { length_eq: 20 } ]; //if EngineID equal "", engine is serverless.
+	string EngineType = 4  [ (validator.field) = { length_gt: 1 } ];
+	string JobInfo = 5  [ (validator.field) = { length_gt: 1 } ];
+}
+
+message JobFreeRequest {
+	string EngineType = 1  [ (validator.field) = { length_gt: 1 } ];
+	string JobResources = 2;
+}
+
+message JobFreeAction {
+	string JobResources = 1;
+}
+
+message Relations {
+    string Relations  = 1 [ (validator.field) = { length_gt: 1 } ];
+}
+
+message JobElement {
+    string JobElement  = 1 [ (validator.field) = { length_gt: 1 } ];
+} // this is json. different engine have different element

@@ -5,6 +5,7 @@ package udfpb
 
 import (
 	fmt "fmt"
+	_ "github.com/DataWorkbench/gproto/pkg/model"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
@@ -16,9 +17,6 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *EmptyReply) Validate() error {
-	return nil
-}
 func (this *CreateRequest) Validate() error {
 	if !(len(this.ID) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.ID))
@@ -124,9 +122,6 @@ func (this *DescribeRequest) Validate() error {
 func (this *ListsRequest) Validate() error {
 	if !(this.Limit > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
-	}
-	if !(this.Limit < 101) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
 	}
 	if !(this.Offset > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))

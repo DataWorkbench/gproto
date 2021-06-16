@@ -5,18 +5,15 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/udfpb";
 package udfpb;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
 
 service Udfmanager {
-    rpc Create(CreateRequest) returns (EmptyReply) {}
-    rpc Update(UpdateRequest) returns (EmptyReply) {}
-    rpc Delete(DeleteRequest) returns (EmptyReply) {}
-	rpc DeleteAll(DeleteAllRequest) returns (EmptyReply) {}
+    rpc Create(CreateRequest) returns (model.EmptyStruct) {}
+    rpc Update(UpdateRequest) returns (model.EmptyStruct) {}
+    rpc Delete(DeleteRequest) returns (model.EmptyStruct) {}
+	rpc DeleteAll(DeleteAllRequest) returns (model.EmptyStruct) {}
     rpc Describe(DescribeRequest) returns (InfoReply) {}
     rpc List(ListsRequest) returns (ListsReply) {}
-}
-
-// EmptyReply represents no value returned
-message EmptyReply {
 }
 
 message CreateRequest {
@@ -59,9 +56,8 @@ message DescribeRequest {
     string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-
 message ListsRequest {
-    int32 Limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 Limit = 1 [ (validator.field) = { int_gt: 0 } ];
     int32 Offset = 2 [ (validator.field) = { int_gt: -1 } ];
     string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
 }
