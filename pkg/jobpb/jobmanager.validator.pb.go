@@ -21,8 +21,8 @@ func (this *RunJobRequest) Validate() error {
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
-	if !(len(this.WorkspaceID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("WorkspaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.WorkspaceID))
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
 	}
 	if !(len(this.EngineID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.EngineID))
@@ -36,12 +36,12 @@ func (this *RunJobRequest) Validate() error {
 	return nil
 }
 func (this *JobReply) Validate() error {
-	if !(this.Status > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
+	if !(this.State > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must be greater than '0'`, this.State))
 	}
 	return nil
 }
-func (this *GetJobStatusRequest) Validate() error {
+func (this *GetJobStateRequest) Validate() error {
 	if !(len(this.ID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
 	}
