@@ -9,6 +9,8 @@ import "model.proto";
 
 // Workspace Service
 service Workspace {
+//    rpc OpenService(model.EmptyStruct) returns (model.EmptyStruct) {}
+    
     // API of workspace manager.
     rpc ListWorkspaces(ListWorkspacesRequest)       returns (ListWorkspacesReply)    {}
     rpc CreateWorkspace(CreateWorkspaceRequest)     returns (model.EmptyStruct)      {}
@@ -21,72 +23,135 @@ service Workspace {
     // API of workspace operation audit log.
     rpc AddAudit(AddAuditRequest)     returns (model.EmptyStruct) {}
     rpc ListAudits(ListAuditsRequest) returns (ListAuditsReply)   {}
+    
+    // API of workspace role.
+    rpc ListSystemRoles(model.EmptyStruct) returns (ListSystemRolesReply) {}
+    
+    // API of workspace member.
+    rpc ListMembers(ListMembersRequest)   returns (ListMembersReply)  {}
+    rpc AddMember(AddMemberRequest)       returns (model.EmptyStruct) {}
+    rpc RemoveMember(RemoveMemberRequest) returns (model.EmptyStruct) {}
+    rpc UpdateMember(UpdateMemberRequest) returns (model.EmptyStruct) {}
+    
+    // Permission Auth.
+    rpc CheckPermission(CheckPermissionRequest) returns (model.EmptyStruct) {}
 }
 
-// Request parameters used to ListWorkspaces
+// Request parameters used to ListWorkspaces.
 message ListWorkspacesRequest {
     string owner = 1  [ (validator.field) = { string_not_empty: true } ];
     int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
     int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
-// Reply parameters used to ListWorkspaces
+// Reply parameters used to ListWorkspaces.
 message ListWorkspacesReply {
-    repeated model.SpaceInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
+    repeated model.SpaceInfo infos = 1 [ (validator.field) = { } ];
 }
 
-// Request parameters used to CreateWorkspace
+// Request parameters used to CreateWorkspace.
 message CreateWorkspaceRequest {
     string owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
     string name = 2  [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
     string desc = 3  [ (validator.field) = { length_lt: 1025 } ];
 }
 
-// Request parameters used to DeleteWorkspace
+// Request parameters used to DeleteWorkspace.
 message DeleteWorkspaceRequest {
     string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Request parameters used to UpdateWorkspace
+// Request parameters used to UpdateWorkspace.
 message UpdateWorkspaceRequest {
     string id = 1   [ (validator.field) = { length_eq: 20 } ];
     string name = 2 [ (validator.field) = { length_lt: 129 } ];
     string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
 }
 
-// Request parameters used to DescribeWorkspace
+// Request parameters used to DescribeWorkspace.
 message DescribeWorkspaceRequest {
     string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Reply parameters used to DescribeWorkspace
+// Reply parameters used to DescribeWorkspace.
 message DescribeWorkspaceReply {
     model.SpaceInfo info = 1;
 }
 
-// Request parameters used to DisableWorkspace
+// Request parameters used to DisableWorkspace.
 message DisableWorkspaceRequest {
     string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Request parameters used to EnableWorkspace
+// Request parameters used to EnableWorkspace.
 message EnableWorkspaceRequest {
     string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// Request parameters used to AddAudit
+// Request parameters used to AddAudit.
 message AddAuditRequest {
     model.AuditInfo info = 1 [ (validator.field) = { msg_exists: true } ];
 }
 
-// Request parameters used to ListAudits
+// Request parameters used to ListAudits.
 message ListAuditsRequest {
     string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
     int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
     int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
-// Reply parameters used to AddAudit
+// Reply parameters used to AddAudit.
 message ListAuditsReply {
-    repeated model.AuditInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
+    repeated model.AuditInfo infos = 1 [ (validator.field) = { } ];
+}
+
+// Reply parameters used to ListSystemRoles.
+message ListSystemRolesReply {
+    repeated model.RoleInfo infos = 1 [ (validator.field) = { } ];
+}
+
+// Reply parameters used to ListMembers.
+message ListMembersReply {
+    message RoleList {
+        repeated model.RoleInfo infos = 1;
+    }
+    repeated model.MemberInfo members = 1 [ (validator.field) = { } ];
+    // map => "member_id": RoleList
+    map<string, RoleList> roles = 2 [ (validator.field) = { } ];
+}
+
+// Request parameters used to ListMembers.
+message ListMembersRequest {
+    string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+    int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Request parameters used to AddMember.
+message AddMemberRequest {
+    string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+    string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+    string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
+}
+
+// Request parameters used to RemoveMember.
+message RemoveMemberRequest {
+    string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+    string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+}
+
+// Request parameters used to UpdateMember.
+message UpdateMemberRequest {
+    string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+    string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+    string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
+}
+
+// Request parameters used to CheckPermission.
+message CheckPermissionRequest {
+    string space_id = 1    [ (validator.field) = { length_eq: 20 } ];
+    string req_user_id = 2 [ (validator.field) = { length_lt: 65 } ];
+    string resource = 3    [ (validator.field) = { } ];
+    string op_name = 4     [ (validator.field) = { } ];
+    int32  op_type = 5     [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
 }
