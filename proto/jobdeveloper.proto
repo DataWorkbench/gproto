@@ -18,7 +18,8 @@ message JobParserRequest {
     string WorkspaceID = 2  [ (validator.field) = { length_eq: 20 } ];
     string EngineID = 3  [ (validator.field) = { length_eq: 20 } ]; //if EngineID equal "", engine is serverless.
 	string EngineType = 4  [ (validator.field) = { length_gt: 1 } ];
-	string JobInfo = 5  [ (validator.field) = { length_gt: 1 } ];
+	string Command = 5  [ (validator.field) = { length_gt: 1 } ];
+	string JobInfo = 6  [ (validator.field) = { length_gt: 1 } ];
 }
 
 message JobFreeRequest {

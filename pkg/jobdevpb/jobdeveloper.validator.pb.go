@@ -30,6 +30,9 @@ func (this *JobParserRequest) Validate() error {
 	if !(len(this.EngineType) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.EngineType))
 	}
+	if !(len(this.Command) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Command))
+	}
 	if !(len(this.JobInfo) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobInfo", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.JobInfo))
 	}
