@@ -199,8 +199,8 @@ func (this *ReleaseStreamFlowRequest) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
-	if !(len(this.Desc) == 1025) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length equal to '1025'`, this.Desc))
+	if !(len(this.Desc) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
 	}
 	if !(this.StopRunning > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("StopRunning", fmt.Errorf(`value '%v' must be greater than '-1'`, this.StopRunning))
