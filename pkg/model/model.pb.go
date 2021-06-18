@@ -460,9 +460,12 @@ type StreamFlowSchedule struct {
 	// Strategy of dependency. 1 => "none", 2 => "last".
 	// @inject_tag: gorm:"column:depend_strategy;"
 	DependStrategy int32 `protobuf:"varint,6,opt,name=depend_strategy,json=dependStrategy,proto3" json:"depend_strategy,omitempty" gorm:"column:depend_strategy;"`
-	RetryLimit     int32 `protobuf:"varint,7,opt,name=retry_limit,json=retryLimit,proto3" json:"retry_limit,omitempty"`
-	RetryInterval  int32 `protobuf:"varint,8,opt,name=retry_interval,json=retryInterval,proto3" json:"retry_interval,omitempty"`
-	Timeout        int32 `protobuf:"varint,9,opt,name=timeout,proto3" json:"timeout,omitempty"`
+	// @inject_tag: gorm:"column:retry_limit;"
+	RetryLimit int32 `protobuf:"varint,7,opt,name=retry_limit,json=retryLimit,proto3" json:"retry_limit,omitempty" gorm:"column:retry_limit;"`
+	// @inject_tag: gorm:"column:retry_interval;"
+	RetryInterval int32 `protobuf:"varint,8,opt,name=retry_interval,json=retryInterval,proto3" json:"retry_interval,omitempty" gorm:"column:retry_interval;"`
+	// @inject_tag: gorm:"column:timeout;"
+	Timeout int32 `protobuf:"varint,9,opt,name=timeout,proto3" json:"timeout,omitempty" gorm:"column:timeout;"`
 	// Express is the standard unix crontab express, used with loop ScheduleStrategy.
 	// @inject_tag: gorm:"column:express;"
 	Express string `protobuf:"bytes,10,opt,name=express,proto3" json:"express,omitempty" gorm:"column:express;"`
@@ -645,8 +648,8 @@ type StreamFlowReleaseInfo struct {
 	// @inject_tag: gorm:"column:space_id;"
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
 	// Workflow ID, unique within a region.
-	// @inject_tag: gorm:"column:id;primarykey;"
-	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:id;primarykey;"`
+	// @inject_tag: gorm:"column:flow_id;primarykey;"
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
 	// The release version.
 	// @inject_tag: gorm:"column:version;
 	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`

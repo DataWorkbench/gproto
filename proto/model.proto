@@ -131,10 +131,13 @@ message StreamFlowSchedule {
 	// @inject_tag: gorm:"column:depend_strategy;"
 	int32 depend_strategy = 6 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 	
+	// @inject_tag: gorm:"column:retry_limit;"
 	int32 retry_limit = 7 [ (validator.field) = { } ];
 	
+	// @inject_tag: gorm:"column:retry_interval;"
 	int32 retry_interval = 8 [ (validator.field) = { } ];
 	
+	// @inject_tag: gorm:"column:timeout;"
 	int32 timeout = 9 [ (validator.field) = { } ];
 	
 	// Express is the standard unix crontab express, used with loop ScheduleStrategy.
@@ -157,7 +160,7 @@ message StreamFlowReleaseInfo {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// Workflow ID, unique within a region.
-	// @inject_tag: gorm:"column:id;primarykey;"
+	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
