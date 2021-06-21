@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/obpb";
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+service Observer {
+  rpc GetPeriodicTasksStatusStatistics(pTasksStatusStatRequest) returns (pTasksStatusStatReply) {}
+  rpc GetPeriodicTasksExecutingStatistics(pTasksExecStatRequest) returns (pTasksExecStatReply) {}
+  rpc GetPeriodicTasksDispatchCount(pTaskDispatchCountRequest) returns (pTaskDispatchCountReply) {}
+  rpc GetPeriodicTasksRuntimeRanking(pTaskRuntimeRankingRequest) returns (pTaskRuntimeRankingReply) {}
+  rpc GetPeriodicTasksErrorRanking(pTaskErrorRankingRequest) returns (pTaskErrorRankingReply) {}
+}
+
+message pTasksStatusStatRequest {
+
+}
+
+message pTasksStatusStatReply {
+
+}
+
+message pTasksExecStatRequest {
+
+}
+
+message pTasksExecStatReply {
+
+}
+
+message pTaskDispatchCountRequest {
+
+}
+
+message pTaskDispatchCountReply {
+
+}
+
+message pTaskRuntimeRankingRequest {
+
+}
+
+message pTaskRuntimeRankingReply {
+
+}
+
+message pTaskErrorRankingRequest {
+
+}
+
+message pTaskErrorRankingReply {
+
+}
