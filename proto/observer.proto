@@ -3,51 +3,63 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/obpb";
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
 
 service Observer {
-  rpc GetPeriodicTasksStatusStatistics(pTasksStatusStatRequest) returns (pTasksStatusStatReply) {}
-  rpc GetPeriodicTasksExecutingStatistics(pTasksExecStatRequest) returns (pTasksExecStatReply) {}
-  rpc GetPeriodicTasksDispatchCount(pTaskDispatchCountRequest) returns (pTaskDispatchCountReply) {}
-  rpc GetPeriodicTasksRuntimeRanking(pTaskRuntimeRankingRequest) returns (pTaskRuntimeRankingReply) {}
-  rpc GetPeriodicTasksErrorRanking(pTaskErrorRankingRequest) returns (pTaskErrorRankingReply) {}
+  rpc GetPeriodicTasksStatusStatistics(PTasksStatusStatRequest) returns (PTasksStatusStatReply) {}
+  rpc GetPeriodicTasksExecutingStatistics(PTasksExecStatRequest) returns (PTasksExecStatReply) {}
+  rpc GetPeriodicTasksDispatchCount(PTaskDispatchCountRequest) returns (PTaskDispatchCountReply) {}
+  rpc GetPeriodicTasksRuntimeRanking(PTaskRuntimeRankingRequest) returns (PTaskRuntimeRankingReply) {}
+  rpc GetPeriodicTasksErrorRanking(PTaskErrorRankingRequest) returns (PTaskErrorRankingReply) {}
 }
 
-message pTasksStatusStatRequest {
-
+message PTasksStatusStatRequest {
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  int64 start_time = 2 [ (validator.field) = { int_gt: -1 } ];
+  int64 end_time = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
-message pTasksStatusStatReply {
-
+message PTasksStatusStatReply {
+  repeated model.InstanceStatusStat infos = 1 [ (validator.field) = { } ];
 }
 
-message pTasksExecStatRequest {
-
+message PTasksExecStatRequest {
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  int32 state = 2 [ (validator.field) = { int_gt: -1 } ];
 }
 
-message pTasksExecStatReply {
-
+message PTasksExecStatReply {
+  repeated model.InstanceTaskExecStat today = 1 [ (validator.field) = { } ];
+  repeated model.InstanceTaskExecStat yesterday = 2 [ (validator.field) = { } ];
+  repeated model.InstanceTaskExecStat history = 3 [ (validator.field) = { } ];
 }
 
-message pTaskDispatchCountRequest {
-
+message PTaskDispatchCountRequest {
+  string space_id = 1 [(validator.field) = { string_not_empty: true } ];
+  int64 start_time = 2 [ (validator.field) = { int_gt: -1 } ];
+  int64 end_time = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
-message pTaskDispatchCountReply {
-
+message PTaskDispatchCountReply {
+  repeated model.DispatchTaskCountInfo infos = 1 [ (validator.field) = { } ];
 }
 
-message pTaskRuntimeRankingRequest {
-
+message PTaskRuntimeRankingRequest {
+  string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+  int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+  int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
 }
 
-message pTaskRuntimeRankingReply {
-
+message PTaskRuntimeRankingReply {
+  repeated model.InstanceRuntimeRankInfo infos = 1 [ (validator.field) = { } ];
 }
 
-message pTaskErrorRankingRequest {
-
+message PTaskErrorRankingRequest {
+  string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+  int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+  int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
 }
 
-message pTaskErrorRankingReply {
-
+message PTaskErrorRankingReply {
+  repeated model.InstanceErrorRankInfo infos = 1 [ (validator.field) = { } ];
 }

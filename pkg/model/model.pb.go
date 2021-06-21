@@ -1318,6 +1318,327 @@ func (x *QueueMessage) GetStarted() int64 {
 	return 0
 }
 
+type InstanceStatusStat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// instance status
+	State int32 `protobuf:"varint,1,opt,name=state,proto3" json:"state,omitempty"`
+	// instance count with the status
+	Count int64 `protobuf:"varint,2,opt,name=count,proto3" json:"count,omitempty"`
+}
+
+func (x *InstanceStatusStat) Reset() {
+	*x = InstanceStatusStat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *InstanceStatusStat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InstanceStatusStat) ProtoMessage() {}
+
+func (x *InstanceStatusStat) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InstanceStatusStat.ProtoReflect.Descriptor instead.
+func (*InstanceStatusStat) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *InstanceStatusStat) GetState() int32 {
+	if x != nil {
+		return x.State
+	}
+	return 0
+}
+
+func (x *InstanceStatusStat) GetCount() int64 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type InstanceRuntimeRankInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// instance id
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// flow_id
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty"`
+	// running time
+	RunningTime int64 `protobuf:"varint,3,opt,name=running_time,json=runningTime,proto3" json:"running_time,omitempty"`
+	// version
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty"`
+}
+
+func (x *InstanceRuntimeRankInfo) Reset() {
+	*x = InstanceRuntimeRankInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *InstanceRuntimeRankInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InstanceRuntimeRankInfo) ProtoMessage() {}
+
+func (x *InstanceRuntimeRankInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InstanceRuntimeRankInfo.ProtoReflect.Descriptor instead.
+func (*InstanceRuntimeRankInfo) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *InstanceRuntimeRankInfo) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *InstanceRuntimeRankInfo) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *InstanceRuntimeRankInfo) GetRunningTime() int64 {
+	if x != nil {
+		return x.RunningTime
+	}
+	return 0
+}
+
+func (x *InstanceRuntimeRankInfo) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
+type InstanceErrorRankInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// flow_id
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty"`
+	// version
+	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	// running time
+	ErrorCount int64 `protobuf:"varint,3,opt,name=error_count,json=errorCount,proto3" json:"error_count,omitempty"`
+}
+
+func (x *InstanceErrorRankInfo) Reset() {
+	*x = InstanceErrorRankInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *InstanceErrorRankInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InstanceErrorRankInfo) ProtoMessage() {}
+
+func (x *InstanceErrorRankInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InstanceErrorRankInfo.ProtoReflect.Descriptor instead.
+func (*InstanceErrorRankInfo) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *InstanceErrorRankInfo) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *InstanceErrorRankInfo) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
+func (x *InstanceErrorRankInfo) GetErrorCount() int64 {
+	if x != nil {
+		return x.ErrorCount
+	}
+	return 0
+}
+
+type DispatchTaskCountInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// flow_count
+	FlowCount int32 `protobuf:"varint,1,opt,name=flow_count,json=flowCount,proto3" json:"flow_count,omitempty"`
+	// instance count
+	InstanceCount int32 `protobuf:"varint,2,opt,name=instance_count,json=instanceCount,proto3" json:"instance_count,omitempty"`
+	// updated time
+	Updated int64 `protobuf:"varint,6,opt,name=updated,proto3" json:"updated,omitempty"`
+}
+
+func (x *DispatchTaskCountInfo) Reset() {
+	*x = DispatchTaskCountInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DispatchTaskCountInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DispatchTaskCountInfo) ProtoMessage() {}
+
+func (x *DispatchTaskCountInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DispatchTaskCountInfo.ProtoReflect.Descriptor instead.
+func (*DispatchTaskCountInfo) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *DispatchTaskCountInfo) GetFlowCount() int32 {
+	if x != nil {
+		return x.FlowCount
+	}
+	return 0
+}
+
+func (x *DispatchTaskCountInfo) GetInstanceCount() int32 {
+	if x != nil {
+		return x.InstanceCount
+	}
+	return 0
+}
+
+func (x *DispatchTaskCountInfo) GetUpdated() int64 {
+	if x != nil {
+		return x.Updated
+	}
+	return 0
+}
+
+type InstanceTaskExecStat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// hour
+	Hour int32 `protobuf:"varint,1,opt,name=hour,proto3" json:"hour,omitempty"`
+	// success count
+	InstanceCount int64 `protobuf:"varint,2,opt,name=instance_count,json=instanceCount,proto3" json:"instance_count,omitempty"`
+}
+
+func (x *InstanceTaskExecStat) Reset() {
+	*x = InstanceTaskExecStat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *InstanceTaskExecStat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InstanceTaskExecStat) ProtoMessage() {}
+
+func (x *InstanceTaskExecStat) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InstanceTaskExecStat.ProtoReflect.Descriptor instead.
+func (*InstanceTaskExecStat) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *InstanceTaskExecStat) GetHour() int32 {
+	if x != nil {
+		return x.Hour
+	}
+	return 0
+}
+
+func (x *InstanceTaskExecStat) GetInstanceCount() int64 {
+	if x != nil {
+		return x.InstanceCount
+	}
+	return 0
+}
+
 var File_proto_model_proto protoreflect.FileDescriptor
 
 var file_proto_model_proto_rawDesc = []byte{
@@ -1500,11 +1821,53 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x12, 0x1a, 0x0a, 0x05, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x42,
 	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x12, 0x1e, 0x0a, 0x07,
 	0x73, 0x74, 0x61, 0x72, 0x74, 0x65, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2,
-	0xdf, 0x1f, 0x00, 0x52, 0x07, 0x73, 0x74, 0x61, 0x72, 0x74, 0x65, 0x64, 0x42, 0x2b, 0x5a, 0x29,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57,
-	0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
-	0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0xdf, 0x1f, 0x00, 0x52, 0x07, 0x73, 0x74, 0x61, 0x72, 0x74, 0x65, 0x64, 0x22, 0x62, 0x0a, 0x12,
+	0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x53, 0x74,
+	0x61, 0x74, 0x12, 0x25, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0x01, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x25, 0x0a, 0x05, 0x63, 0x6f, 0x75,
+	0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74,
+	0x22, 0xa2, 0x01, 0x0a, 0x17, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x75, 0x6e,
+	0x74, 0x69, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x6b, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x14, 0x0a, 0x02,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x02,
+	0x69, 0x64, 0x12, 0x1d, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49,
+	0x64, 0x12, 0x32, 0x0a, 0x0c, 0x72, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x5f, 0x74, 0x69, 0x6d,
+	0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x0b, 0x72, 0x75, 0x6e, 0x6e, 0x69, 0x6e,
+	0x67, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x1e, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65,
+	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x88, 0x01, 0x0a, 0x15, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e,
+	0x63, 0x65, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x61, 0x6e, 0x6b, 0x49, 0x6e, 0x66, 0x6f, 0x12,
+	0x1d, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1e,
+	0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x30,
+	0x0a, 0x0b, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0x01, 0x52, 0x0a, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x43, 0x6f, 0x75, 0x6e, 0x74,
+	0x22, 0xa1, 0x01, 0x0a, 0x15, 0x44, 0x69, 0x73, 0x70, 0x61, 0x74, 0x63, 0x68, 0x54, 0x61, 0x73,
+	0x6b, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x2e, 0x0a, 0x0a, 0x66, 0x6c,
+	0x6f, 0x77, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f,
+	0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52,
+	0x09, 0x66, 0x6c, 0x6f, 0x77, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x36, 0x0a, 0x0e, 0x69, 0x6e,
+	0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0x01, 0x52, 0x0d, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x43, 0x6f, 0x75,
+	0x6e, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x06, 0x20,
+	0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x75, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x64, 0x22, 0x75, 0x0a, 0x14, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65,
+	0x54, 0x61, 0x73, 0x6b, 0x45, 0x78, 0x65, 0x63, 0x53, 0x74, 0x61, 0x74, 0x12, 0x25, 0x0a, 0x04,
+	0x68, 0x6f, 0x75, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x11, 0xe2, 0xdf, 0x1f, 0x0d,
+	0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x18, 0x19, 0x52, 0x04, 0x68,
+	0x6f, 0x75, 0x72, 0x12, 0x36, 0x0a, 0x0e, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x5f,
+	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f,
+	0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x0d, 0x69, 0x6e,
+	0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x42, 0x2b, 0x5a, 0x29, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f,
+	0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70,
+	0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1519,22 +1882,27 @@ func file_proto_model_proto_rawDescGZIP() []byte {
 	return file_proto_model_proto_rawDescData
 }
 
-var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_proto_model_proto_goTypes = []interface{}{
-	(*EmptyStruct)(nil),           // 0: model.EmptyStruct
-	(*SpaceInfo)(nil),             // 1: model.SpaceInfo
-	(*StreamFlowInfo)(nil),        // 2: model.StreamFlowInfo
-	(*StreamFlowNode)(nil),        // 3: model.StreamFlowNode
-	(*StreamFlowEnv)(nil),         // 4: model.StreamFlowEnv
-	(*StreamFlowSchedule)(nil),    // 5: model.StreamFlowSchedule
-	(*StreamFlowMeta)(nil),        // 6: model.StreamFlowMeta
-	(*StreamFlowReleaseInfo)(nil), // 7: model.StreamFlowReleaseInfo
-	(*StreamFlowInstInfo)(nil),    // 8: model.StreamFlowInstInfo
-	(*AuditInfo)(nil),             // 9: model.AuditInfo
-	(*RoleInfo)(nil),              // 10: model.RoleInfo
-	(*MemberInfo)(nil),            // 11: model.MemberInfo
-	(*MonitorRuleInfo)(nil),       // 12: model.MonitorRuleInfo
-	(*QueueMessage)(nil),          // 13: model.QueueMessage
+	(*EmptyStruct)(nil),             // 0: model.EmptyStruct
+	(*SpaceInfo)(nil),               // 1: model.SpaceInfo
+	(*StreamFlowInfo)(nil),          // 2: model.StreamFlowInfo
+	(*StreamFlowNode)(nil),          // 3: model.StreamFlowNode
+	(*StreamFlowEnv)(nil),           // 4: model.StreamFlowEnv
+	(*StreamFlowSchedule)(nil),      // 5: model.StreamFlowSchedule
+	(*StreamFlowMeta)(nil),          // 6: model.StreamFlowMeta
+	(*StreamFlowReleaseInfo)(nil),   // 7: model.StreamFlowReleaseInfo
+	(*StreamFlowInstInfo)(nil),      // 8: model.StreamFlowInstInfo
+	(*AuditInfo)(nil),               // 9: model.AuditInfo
+	(*RoleInfo)(nil),                // 10: model.RoleInfo
+	(*MemberInfo)(nil),              // 11: model.MemberInfo
+	(*MonitorRuleInfo)(nil),         // 12: model.MonitorRuleInfo
+	(*QueueMessage)(nil),            // 13: model.QueueMessage
+	(*InstanceStatusStat)(nil),      // 14: model.InstanceStatusStat
+	(*InstanceRuntimeRankInfo)(nil), // 15: model.InstanceRuntimeRankInfo
+	(*InstanceErrorRankInfo)(nil),   // 16: model.InstanceErrorRankInfo
+	(*DispatchTaskCountInfo)(nil),   // 17: model.DispatchTaskCountInfo
+	(*InstanceTaskExecStat)(nil),    // 18: model.InstanceTaskExecStat
 }
 var file_proto_model_proto_depIdxs = []int32{
 	2, // 0: model.StreamFlowMeta.flow:type_name -> model.StreamFlowInfo
@@ -1723,6 +2091,66 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
+		file_proto_model_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*InstanceStatusStat); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_model_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*InstanceRuntimeRankInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_model_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*InstanceErrorRankInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_model_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DispatchTaskCountInfo); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_model_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*InstanceTaskExecStat); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1730,7 +2158,7 @@ func file_proto_model_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_model_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   19,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

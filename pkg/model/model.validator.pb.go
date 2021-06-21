@@ -305,3 +305,48 @@ func (this *QueueMessage) Validate() error {
 	}
 	return nil
 }
+func (this *InstanceStatusStat) Validate() error {
+	if !(this.State > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must be greater than '-1'`, this.State))
+	}
+	if !(this.Count > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Count", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Count))
+	}
+	return nil
+}
+func (this *InstanceRuntimeRankInfo) Validate() error {
+	if !(this.RunningTime > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RunningTime", fmt.Errorf(`value '%v' must be greater than '-1'`, this.RunningTime))
+	}
+	return nil
+}
+func (this *InstanceErrorRankInfo) Validate() error {
+	if !(this.ErrorCount > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ErrorCount", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ErrorCount))
+	}
+	return nil
+}
+func (this *DispatchTaskCountInfo) Validate() error {
+	if !(this.FlowCount > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlowCount", fmt.Errorf(`value '%v' must be greater than '-1'`, this.FlowCount))
+	}
+	if !(this.InstanceCount > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceCount", fmt.Errorf(`value '%v' must be greater than '-1'`, this.InstanceCount))
+	}
+	if !(this.Updated > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
+	}
+	return nil
+}
+func (this *InstanceTaskExecStat) Validate() error {
+	if !(this.Hour > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Hour", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Hour))
+	}
+	if !(this.Hour < 25) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Hour", fmt.Errorf(`value '%v' must be less than '25'`, this.Hour))
+	}
+	if !(this.InstanceCount > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceCount", fmt.Errorf(`value '%v' must be greater than '-1'`, this.InstanceCount))
+	}
+	return nil
+}
