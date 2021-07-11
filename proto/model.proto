@@ -219,8 +219,8 @@ message AuditInfo {
 	string op_name = 4 [ (validator.field) = { } ];
 	
 	// Timestamp of time of when accessed.
-	// @inject_tag: gorm:"column:timed;autoCreateTime;"
-	int64 timed = 5 [ (validator.field) = { int_gt: 0 } ];
+	// @inject_tag: gorm:"column:created;autoCreateTime;"
+	int64 created = 5 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The Role info.
