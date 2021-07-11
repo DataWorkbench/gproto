@@ -229,8 +229,8 @@ func (this *CheckPermissionRequest) Validate() error {
 	if !(this.OpType > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("OpType", fmt.Errorf(`value '%v' must be greater than '0'`, this.OpType))
 	}
-	if !(this.OpType < 4) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OpType", fmt.Errorf(`value '%v' must be less than '4'`, this.OpType))
+	if !(this.OpType < 5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OpType", fmt.Errorf(`value '%v' must be less than '5'`, this.OpType))
 	}
 	return nil
 }

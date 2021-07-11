@@ -83,7 +83,7 @@ message StreamFlowNode {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
-	// Only used in published workflow.
+	// Only used in released workflow.
 	// @inject_tag: gorm:"column:version;primarykey;"
 	int64 version = 2 [ (validator.field) = { } ];
 	
@@ -99,7 +99,7 @@ message StreamFlowEnv {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
-	// Only used in published workflow.
+	// Only used in released workflow.
 	// @inject_tag: gorm:"column:version;primarykey;"
 	int64 version = 2 [ (validator.field) = { } ];
 	
@@ -115,34 +115,13 @@ message StreamFlowSchedule {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
-	// Only used in published workflow.
+	// Only used in released workflow.
 	// @inject_tag: gorm:"column:version;primarykey;"
 	int64 version = 2 [ (validator.field) = {} ];
 	
-	// Timestamp of start time of the validity period, unit in seconds.
-	// @inject_tag: gorm:"column:started;"
-	int64 started = 3 [ (validator.field) = { int_gt: 0 } ];
-
-	// Timestamp of end time of the validity period, unit in seconds.
-	// @inject_tag: gorm:"column:ended;"
-	int64 ended = 4 [ (validator.field) = { int_gt: 0 } ];
-	
-	// Strategy of dependency. 1 => "none", 2 => "last".
-	// @inject_tag: gorm:"column:depend_strategy;"
-	int32 depend_strategy = 6 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
-	
-	// @inject_tag: gorm:"column:retry_limit;"
-	int32 retry_limit = 7 [ (validator.field) = { } ];
-	
-	// @inject_tag: gorm:"column:retry_interval;"
-	int32 retry_interval = 8 [ (validator.field) = { } ];
-	
-	// @inject_tag: gorm:"column:timeout;"
-	int32 timeout = 9 [ (validator.field) = { } ];
-	
-	// Express is the standard unix crontab express, used with loop ScheduleStrategy.
-	// @inject_tag: gorm:"column:express;"
-	string express = 10 [ (validator.field) = { } ];
+	// The schedule content of workflow in json format.
+	// @inject_tag: gorm:"column:schedule;"
+	string schedule = 3 [ (validator.field) = { } ];
 }
 
 // FlowMeta represents a full workflow metadata where are FlowInfo, FlowNodeInfo, FlowEnvInfo, FlowSchInfo
@@ -253,7 +232,7 @@ message RoleInfo {
 	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
 	// @inject_tag: gorm:"column:code;"
-	string code = 3 [ (validator.field) = { length_eq: 64 } ];
+	string code = 3 [ (validator.field) = { length_lt: 64 } ];
 	
 	// @inject_tag: gorm:"column:name;"
 	string name = 4 [ (validator.field) = { length_lt: 128 } ];

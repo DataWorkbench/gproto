@@ -92,18 +92,6 @@ func (this *StreamFlowSchedule) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
-	if !(this.Started > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Started", fmt.Errorf(`value '%v' must be greater than '0'`, this.Started))
-	}
-	if !(this.Ended > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Ended", fmt.Errorf(`value '%v' must be greater than '0'`, this.Ended))
-	}
-	if !(this.DependStrategy > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be greater than '0'`, this.DependStrategy))
-	}
-	if !(this.DependStrategy < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("DependStrategy", fmt.Errorf(`value '%v' must be less than '3'`, this.DependStrategy))
-	}
 	return nil
 }
 func (this *StreamFlowMeta) Validate() error {
@@ -214,8 +202,8 @@ func (this *RoleInfo) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
-	if !(len(this.Code) == 64) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length equal to '64'`, this.Code))
+	if !(len(this.Code) < 64) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length smaller than '64'`, this.Code))
 	}
 	if !(len(this.Name) < 128) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
