@@ -231,6 +231,72 @@ func (this *MemberInfo) Validate() error {
 	}
 	return nil
 }
+func (this *MonitorRuleInfo) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(this.Status > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
+	}
+	if !(this.Status < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
+	}
+	if !(this.Uint > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Uint", fmt.Errorf(`value '%v' must be greater than '0'`, this.Uint))
+	}
+	if !(this.Uint < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Uint", fmt.Errorf(`value '%v' must be less than '3'`, this.Uint))
+	}
+	if !(len(this.Text) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Text", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Text))
+	}
+	if !(len(this.Text) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Text", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Text))
+	}
+	if !(this.Trigger > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Trigger", fmt.Errorf(`value '%v' must be greater than '0'`, this.Trigger))
+	}
+	if !(this.AlarmTimes > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AlarmTimes", fmt.Errorf(`value '%v' must be greater than '0'`, this.AlarmTimes))
+	}
+	if !(this.AlarmTimes < 100) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AlarmTimes", fmt.Errorf(`value '%v' must be less than '100'`, this.AlarmTimes))
+	}
+	if !(this.AlarmInterval > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AlarmInterval", fmt.Errorf(`value '%v' must be greater than '0'`, this.AlarmInterval))
+	}
+	if !(this.AlarmInterval < 31) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AlarmInterval", fmt.Errorf(`value '%v' must be less than '31'`, this.AlarmInterval))
+	}
+	if !(len(this.AlarmType) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AlarmType", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.AlarmType))
+	}
+	if !(len(this.AlarmType) < 33) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AlarmType", fmt.Errorf(`value '%v' must have a length smaller than '33'`, this.AlarmType))
+	}
+	if !(len(this.FreeTime) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FreeTime", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.FreeTime))
+	}
+	if !(len(this.FreeTime) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FreeTime", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.FreeTime))
+	}
+	if !(len(this.Receiver) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Receiver", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Receiver))
+	}
+	if !(len(this.Receiver) < 257) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Receiver", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Receiver))
+	}
+	return nil
+}
 func (this *QueueMessage) Validate() error {
 	if this.Meta != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
