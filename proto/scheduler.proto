@@ -55,6 +55,15 @@ service Scheduler {
 	
 	//
 	rpc TerminateStreamTestInst(TerminateStreamTestInstRequest) returns (model.EmptyStruct) {}
+	
+	//
+	rpc ListMonitorRules(ListMonitorRulesRequest)       returns (ListMonitorRulesReply) {}
+	rpc CreateMonitorRule(CreateMonitorRuleRequest)     returns (model.EmptyStruct) {}
+	rpc DeleteMonitorRule(DeleteMonitorRuleRequest)     returns (model.EmptyStruct) {}
+	rpc UpdateMonitorRule(UpdateMonitorRuleRequest)     returns (model.EmptyStruct) {}
+	rpc DescribeMonitorRule(DescribeMonitorRuleRequest) returns (DescribeMonitorRuleReply) {}
+	rpc EnableMonitorRule(EnableMonitorRuleRequest)     returns (model.EmptyStruct) {}
+	rpc DisableMonitorRule(DisableMonitorRuleRequest)   returns (model.EmptyStruct) {}
 }
 
 // Request parameters used to DeleteAllFlows.
@@ -147,4 +156,51 @@ message ResumeStreamTestInstRequest {
 message TerminateStreamTestInstRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// Reply parameters used to ListMonitorRules.
+message ListMonitorRulesRequest {
+	string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+	int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
+}
+
+// Reply parameters used to ListMonitorRules.
+message ListMonitorRulesReply {
+	repeated model.MonitorRuleInfo infos = 1 [ (validator.field) = { } ];
+}
+
+// CreateMonitorRule
+message CreateMonitorRuleRequest {
+	model.MonitorRuleInfo info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
+// DeleteMonitorRule
+message DeleteMonitorRuleRequest {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// UpdateMonitorRule
+message UpdateMonitorRuleRequest {
+	model.MonitorRuleInfo info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
+// DescribeMonitorRule
+message DescribeMonitorRuleRequest {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// DescribeMonitorRule
+message DescribeMonitorRuleReply {
+	model.MonitorRuleInfo info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
+// EnableMonitorRule
+message EnableMonitorRuleRequest {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// DisableMonitorRule
+message DisableMonitorRuleRequest {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }

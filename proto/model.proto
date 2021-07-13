@@ -261,6 +261,57 @@ message MemberInfo {
 	int64 updated = 6 [ (validator.field) = { int_gt: 0 } ];
 }
 
+// The monitor rule info
+message MonitorRuleInfo {
+	// Workspace ID it belongs to.
+	// @inject_tag: gorm:"column:space_id;"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Rule ID, unique within a region.
+	// @inject_tag: gorm:"column:id;primarykey;"
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Rule Name.
+	// @inject_tag: gorm:"column:name;"
+	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	
+	// Rule status, 1 => "enabled", 2 => "disabled".
+	// @inject_tag: gorm:"column:status;"
+	int32 status = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	
+	// The object unit, 1 => "workspace" 2 => "workflow'
+	// @inject_tag: gorm:"column:uint;"
+	int32 uint = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	
+	// The object text.
+	// @inject_tag: gorm:"column:text;"
+	string text = 6 [ (validator.field) = { length_gt: 1, length_lt: 1025 } ];
+	
+	// The trigger conditions. 3 => "retrying" 6 => "timeout"  7 => "succeed", 8 => "failed",
+	// @inject_tag: gorm:"column:trigger;"
+	int32 trigger = 7 [ (validator.field) = { int_gt: 0} ];
+	
+	// The alarm times. 1 ~ 99
+	// @inject_tag: gorm:"column:alarm_times;"
+	int32 alarm_times = 8 [ (validator.field) = { int_gt: 0, int_lt: 100 } ];
+	
+	// The alarm interval. 1 ~ 30
+	// @inject_tag: gorm:"column:alarm_interval;"
+	int32 alarm_interval = 9 [ (validator.field) = { int_gt: 0, int_lt: 31 } ];
+	
+	// The alarm type. "sms, email"
+	// @inject_tag: gorm:"column:alarm_type;"
+	string alarm_type = 10 [ (validator.field) = { length_gt: 1, length_lt: 33 } ];
+	
+	// The free time. "00:01,03:00".
+	// @inject_tag: gorm:"column:free_time;"
+	string free_time = 11 [ (validator.field) = { length_gt: 1, length_lt: 17 } ];
+	
+	// The alarm receiver. "usr-111111,usr-22222".
+	// @inject_tag: gorm:"column:receiver;"
+	string receiver = 12 [ (validator.field) = { length_gt: 1, length_lt: 257 } ];
+}
+
 // The message in inst queue..
 message QueueMessage {
 	// The request id of beginning.
