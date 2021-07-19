@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/fmpb";
+
+package fmpb;
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
+
+service FileManager{
+  rpc Upload(UploadRequest) returns (model.EmptyStruct){}
+  rpc UploadStream(stream UploadRequest) returns (model.EmptyStruct){}
+  rpc DownloadStream(DownloadRequest) returns (stream DownloadReply){}
+  rpc GetDirList(DirRequest) returns(ListDirReply){}
+  rpc DeleteFileById(DeleteRequest) returns(model.EmptyStruct){}
+  rpc DeleteDirById(DeleteRequest) returns(model.EmptyStruct){}
+  rpc GetFileById(IdRequest) returns (FileInfoReply){}
+  rpc GetFileList(ListFileRequest) returns (FileListReply){}
+}
+
+message UploadRequest{
+  string ID = 1 [(validator.field) = {length_lt: 21}];
+  string SpaceID = 2 [(validator.field) = {length_eq: 20}];
+  bytes Data = 3;
+  string FileName = 4 [(validator.field) = {msg_exists: true}];
+  string FileDir = 5 [(validator.field) = {msg_exists: true}];
+  int32 FileType = 6 [(validator.field) = {int_lt:4}];
+  string HdfsAddress = 7 [(validator.field) = {msg_exists: true}];
+  string UserID = 8 [(validator.field) = {msg_exists: false}];
+}
+
+message DirRequest{
+  string Parent = 1  [(validator.field) = {length_lt: 21}];
+  string SpaceID = 2 [(validator.field) = {length_eq: 20}];
+  string Address = 3  [(validator.field) = {msg_exists: true}];
+  repeated int32 FileType = 4;
+}
+
+message DownloadRequest{
+  string ID = 1 [(validator.field) = {length_lt: 21}];
+}
+
+message DeleteRequest{
+  string ID = 1 [(validator.field) = {length_lt: 21}];
+}
+
+message IdRequest{
+  string ID = 1[(validator.field) = {length_lt: 21}];
+}
+
+message ListFileRequest{
+  string Address = 1;
+  string SpaceID = 2;
+  string URI = 3;
+  int32 FileType = 4;
+  string FileName = 5;
+}
+
+
+message ListDirReply{
+  message ListInfo{
+    string ID = 1;
+    string Name = 2;
+    bool IsDir = 3;
+  }
+  repeated ListInfo FileInfo = 1;
+}
+
+message DownloadReply{
+  bytes Data = 1;
+}
+
+message FileInfoReply{
+  string Name = 1;
+  int32 FileType = 2;
+  string URI = 4;
+}
+
+message FileListReply{
+  uint32 Total = 1;
+  repeated FileInfoReply FileInfoList = 2;
+}
+
