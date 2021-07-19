@@ -197,7 +197,7 @@ message ListReleaseStreamFlowsReply {
 // Request parameters used to Release
 message ReleaseStreamFlowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string desc = 2 [ (validator.field) = { length_eq: 1025 } ];
+	string desc = 2 [ (validator.field) = { length_lt: 1025 } ];
 	int32 stop_running = 3 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }
 

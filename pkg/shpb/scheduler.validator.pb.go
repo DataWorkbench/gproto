@@ -167,3 +167,85 @@ func (this *TerminateStreamTestInstRequest) Validate() error {
 	}
 	return nil
 }
+func (this *ListMonitorRulesRequest) Validate() error {
+	if this.SpaceId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
+	}
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	return nil
+}
+func (this *ListMonitorRulesReply) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *CreateMonitorRuleRequest) Validate() error {
+	if nil == this.Info {
+		return github_com_mwitkow_go_proto_validators.FieldError("Info", fmt.Errorf("message must exist"))
+	}
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
+func (this *DeleteMonitorRuleRequest) Validate() error {
+	if !(len(this.RuleId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RuleId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.RuleId))
+	}
+	return nil
+}
+func (this *UpdateMonitorRuleRequest) Validate() error {
+	if nil == this.Info {
+		return github_com_mwitkow_go_proto_validators.FieldError("Info", fmt.Errorf("message must exist"))
+	}
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
+func (this *DescribeMonitorRuleRequest) Validate() error {
+	if !(len(this.RuleId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RuleId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.RuleId))
+	}
+	return nil
+}
+func (this *DescribeMonitorRuleReply) Validate() error {
+	if nil == this.Info {
+		return github_com_mwitkow_go_proto_validators.FieldError("Info", fmt.Errorf("message must exist"))
+	}
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
+func (this *EnableMonitorRuleRequest) Validate() error {
+	if !(len(this.RuleId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RuleId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.RuleId))
+	}
+	return nil
+}
+func (this *DisableMonitorRuleRequest) Validate() error {
+	if !(len(this.RuleId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RuleId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.RuleId))
+	}
+	return nil
+}

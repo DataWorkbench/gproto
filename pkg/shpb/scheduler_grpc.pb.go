@@ -51,6 +51,14 @@ type SchedulerClient interface {
 	ResumeStreamTestInst(ctx context.Context, in *ResumeStreamTestInstRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	//
 	TerminateStreamTestInst(ctx context.Context, in *TerminateStreamTestInstRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	//
+	ListMonitorRules(ctx context.Context, in *ListMonitorRulesRequest, opts ...grpc.CallOption) (*ListMonitorRulesReply, error)
+	CreateMonitorRule(ctx context.Context, in *CreateMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteMonitorRule(ctx context.Context, in *DeleteMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	UpdateMonitorRule(ctx context.Context, in *UpdateMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DescribeMonitorRule(ctx context.Context, in *DescribeMonitorRuleRequest, opts ...grpc.CallOption) (*DescribeMonitorRuleReply, error)
+	EnableMonitorRule(ctx context.Context, in *EnableMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DisableMonitorRule(ctx context.Context, in *DisableMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type schedulerClient struct {
@@ -178,6 +186,69 @@ func (c *schedulerClient) TerminateStreamTestInst(ctx context.Context, in *Termi
 	return out, nil
 }
 
+func (c *schedulerClient) ListMonitorRules(ctx context.Context, in *ListMonitorRulesRequest, opts ...grpc.CallOption) (*ListMonitorRulesReply, error) {
+	out := new(ListMonitorRulesReply)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ListMonitorRules", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) CreateMonitorRule(ctx context.Context, in *CreateMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/CreateMonitorRule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) DeleteMonitorRule(ctx context.Context, in *DeleteMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/DeleteMonitorRule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) UpdateMonitorRule(ctx context.Context, in *UpdateMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/UpdateMonitorRule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) DescribeMonitorRule(ctx context.Context, in *DescribeMonitorRuleRequest, opts ...grpc.CallOption) (*DescribeMonitorRuleReply, error) {
+	out := new(DescribeMonitorRuleReply)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/DescribeMonitorRule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) EnableMonitorRule(ctx context.Context, in *EnableMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/EnableMonitorRule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) DisableMonitorRule(ctx context.Context, in *DisableMonitorRuleRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/DisableMonitorRule", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SchedulerServer is the server API for Scheduler service.
 // All implementations must embed UnimplementedSchedulerServer
 // for forward compatibility
@@ -215,6 +286,14 @@ type SchedulerServer interface {
 	ResumeStreamTestInst(context.Context, *ResumeStreamTestInstRequest) (*model.EmptyStruct, error)
 	//
 	TerminateStreamTestInst(context.Context, *TerminateStreamTestInstRequest) (*model.EmptyStruct, error)
+	//
+	ListMonitorRules(context.Context, *ListMonitorRulesRequest) (*ListMonitorRulesReply, error)
+	CreateMonitorRule(context.Context, *CreateMonitorRuleRequest) (*model.EmptyStruct, error)
+	DeleteMonitorRule(context.Context, *DeleteMonitorRuleRequest) (*model.EmptyStruct, error)
+	UpdateMonitorRule(context.Context, *UpdateMonitorRuleRequest) (*model.EmptyStruct, error)
+	DescribeMonitorRule(context.Context, *DescribeMonitorRuleRequest) (*DescribeMonitorRuleReply, error)
+	EnableMonitorRule(context.Context, *EnableMonitorRuleRequest) (*model.EmptyStruct, error)
+	DisableMonitorRule(context.Context, *DisableMonitorRuleRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedSchedulerServer()
 }
 
@@ -260,6 +339,27 @@ func (UnimplementedSchedulerServer) ResumeStreamTestInst(context.Context, *Resum
 }
 func (UnimplementedSchedulerServer) TerminateStreamTestInst(context.Context, *TerminateStreamTestInstRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TerminateStreamTestInst not implemented")
+}
+func (UnimplementedSchedulerServer) ListMonitorRules(context.Context, *ListMonitorRulesRequest) (*ListMonitorRulesReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListMonitorRules not implemented")
+}
+func (UnimplementedSchedulerServer) CreateMonitorRule(context.Context, *CreateMonitorRuleRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateMonitorRule not implemented")
+}
+func (UnimplementedSchedulerServer) DeleteMonitorRule(context.Context, *DeleteMonitorRuleRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteMonitorRule not implemented")
+}
+func (UnimplementedSchedulerServer) UpdateMonitorRule(context.Context, *UpdateMonitorRuleRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateMonitorRule not implemented")
+}
+func (UnimplementedSchedulerServer) DescribeMonitorRule(context.Context, *DescribeMonitorRuleRequest) (*DescribeMonitorRuleReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeMonitorRule not implemented")
+}
+func (UnimplementedSchedulerServer) EnableMonitorRule(context.Context, *EnableMonitorRuleRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableMonitorRule not implemented")
+}
+func (UnimplementedSchedulerServer) DisableMonitorRule(context.Context, *DisableMonitorRuleRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableMonitorRule not implemented")
 }
 func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}
 
@@ -508,6 +608,132 @@ func _Scheduler_TerminateStreamTestInst_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Scheduler_ListMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMonitorRulesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).ListMonitorRules(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shpb.Scheduler/ListMonitorRules",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).ListMonitorRules(ctx, req.(*ListMonitorRulesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_CreateMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateMonitorRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).CreateMonitorRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shpb.Scheduler/CreateMonitorRule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).CreateMonitorRule(ctx, req.(*CreateMonitorRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_DeleteMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteMonitorRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).DeleteMonitorRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shpb.Scheduler/DeleteMonitorRule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).DeleteMonitorRule(ctx, req.(*DeleteMonitorRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_UpdateMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateMonitorRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).UpdateMonitorRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shpb.Scheduler/UpdateMonitorRule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).UpdateMonitorRule(ctx, req.(*UpdateMonitorRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_DescribeMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DescribeMonitorRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).DescribeMonitorRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shpb.Scheduler/DescribeMonitorRule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).DescribeMonitorRule(ctx, req.(*DescribeMonitorRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_EnableMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnableMonitorRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).EnableMonitorRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shpb.Scheduler/EnableMonitorRule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).EnableMonitorRule(ctx, req.(*EnableMonitorRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_DisableMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DisableMonitorRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).DisableMonitorRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/shpb.Scheduler/DisableMonitorRule",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).DisableMonitorRule(ctx, req.(*DisableMonitorRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Scheduler_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "shpb.Scheduler",
 	HandlerType: (*SchedulerServer)(nil),
@@ -563,6 +789,34 @@ var _Scheduler_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "TerminateStreamTestInst",
 			Handler:    _Scheduler_TerminateStreamTestInst_Handler,
+		},
+		{
+			MethodName: "ListMonitorRules",
+			Handler:    _Scheduler_ListMonitorRules_Handler,
+		},
+		{
+			MethodName: "CreateMonitorRule",
+			Handler:    _Scheduler_CreateMonitorRule_Handler,
+		},
+		{
+			MethodName: "DeleteMonitorRule",
+			Handler:    _Scheduler_DeleteMonitorRule_Handler,
+		},
+		{
+			MethodName: "UpdateMonitorRule",
+			Handler:    _Scheduler_UpdateMonitorRule_Handler,
+		},
+		{
+			MethodName: "DescribeMonitorRule",
+			Handler:    _Scheduler_DescribeMonitorRule_Handler,
+		},
+		{
+			MethodName: "EnableMonitorRule",
+			Handler:    _Scheduler_EnableMonitorRule_Handler,
+		},
+		{
+			MethodName: "DisableMonitorRule",
+			Handler:    _Scheduler_DisableMonitorRule_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

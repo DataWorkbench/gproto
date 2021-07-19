@@ -883,6 +883,454 @@ func (x *TerminateStreamTestInstRequest) GetInstId() string {
 	return ""
 }
 
+// Reply parameters used to ListMonitorRules.
+type ListMonitorRulesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty"`
+	Limit   int32  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset  int32  `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty"`
+}
+
+func (x *ListMonitorRulesRequest) Reset() {
+	*x = ListMonitorRulesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListMonitorRulesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMonitorRulesRequest) ProtoMessage() {}
+
+func (x *ListMonitorRulesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMonitorRulesRequest.ProtoReflect.Descriptor instead.
+func (*ListMonitorRulesRequest) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ListMonitorRulesRequest) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ListMonitorRulesRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListMonitorRulesRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+// Reply parameters used to ListMonitorRules.
+type ListMonitorRulesReply struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*model.MonitorRuleInfo `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
+}
+
+func (x *ListMonitorRulesReply) Reset() {
+	*x = ListMonitorRulesReply{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListMonitorRulesReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMonitorRulesReply) ProtoMessage() {}
+
+func (x *ListMonitorRulesReply) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMonitorRulesReply.ProtoReflect.Descriptor instead.
+func (*ListMonitorRulesReply) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *ListMonitorRulesReply) GetInfos() []*model.MonitorRuleInfo {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+// CreateMonitorRule
+type CreateMonitorRuleRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.MonitorRuleInfo `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *CreateMonitorRuleRequest) Reset() {
+	*x = CreateMonitorRuleRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateMonitorRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateMonitorRuleRequest) ProtoMessage() {}
+
+func (x *CreateMonitorRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateMonitorRuleRequest.ProtoReflect.Descriptor instead.
+func (*CreateMonitorRuleRequest) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *CreateMonitorRuleRequest) GetInfo() *model.MonitorRuleInfo {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// DeleteMonitorRule
+type DeleteMonitorRuleRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RuleId string `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id,omitempty"`
+}
+
+func (x *DeleteMonitorRuleRequest) Reset() {
+	*x = DeleteMonitorRuleRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteMonitorRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteMonitorRuleRequest) ProtoMessage() {}
+
+func (x *DeleteMonitorRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteMonitorRuleRequest.ProtoReflect.Descriptor instead.
+func (*DeleteMonitorRuleRequest) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *DeleteMonitorRuleRequest) GetRuleId() string {
+	if x != nil {
+		return x.RuleId
+	}
+	return ""
+}
+
+// UpdateMonitorRule
+type UpdateMonitorRuleRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.MonitorRuleInfo `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *UpdateMonitorRuleRequest) Reset() {
+	*x = UpdateMonitorRuleRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateMonitorRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateMonitorRuleRequest) ProtoMessage() {}
+
+func (x *UpdateMonitorRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateMonitorRuleRequest.ProtoReflect.Descriptor instead.
+func (*UpdateMonitorRuleRequest) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *UpdateMonitorRuleRequest) GetInfo() *model.MonitorRuleInfo {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// DescribeMonitorRule
+type DescribeMonitorRuleRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RuleId string `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id,omitempty"`
+}
+
+func (x *DescribeMonitorRuleRequest) Reset() {
+	*x = DescribeMonitorRuleRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeMonitorRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeMonitorRuleRequest) ProtoMessage() {}
+
+func (x *DescribeMonitorRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeMonitorRuleRequest.ProtoReflect.Descriptor instead.
+func (*DescribeMonitorRuleRequest) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *DescribeMonitorRuleRequest) GetRuleId() string {
+	if x != nil {
+		return x.RuleId
+	}
+	return ""
+}
+
+// DescribeMonitorRule
+type DescribeMonitorRuleReply struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.MonitorRuleInfo `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *DescribeMonitorRuleReply) Reset() {
+	*x = DescribeMonitorRuleReply{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeMonitorRuleReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeMonitorRuleReply) ProtoMessage() {}
+
+func (x *DescribeMonitorRuleReply) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeMonitorRuleReply.ProtoReflect.Descriptor instead.
+func (*DescribeMonitorRuleReply) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *DescribeMonitorRuleReply) GetInfo() *model.MonitorRuleInfo {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// EnableMonitorRule
+type EnableMonitorRuleRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RuleId string `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id,omitempty"`
+}
+
+func (x *EnableMonitorRuleRequest) Reset() {
+	*x = EnableMonitorRuleRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EnableMonitorRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnableMonitorRuleRequest) ProtoMessage() {}
+
+func (x *EnableMonitorRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnableMonitorRuleRequest.ProtoReflect.Descriptor instead.
+func (*EnableMonitorRuleRequest) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *EnableMonitorRuleRequest) GetRuleId() string {
+	if x != nil {
+		return x.RuleId
+	}
+	return ""
+}
+
+// DisableMonitorRule
+type DisableMonitorRuleRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RuleId string `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id,omitempty"`
+}
+
+func (x *DisableMonitorRuleRequest) Reset() {
+	*x = DisableMonitorRuleRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_scheduler_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DisableMonitorRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisableMonitorRuleRequest) ProtoMessage() {}
+
+func (x *DisableMonitorRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_scheduler_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisableMonitorRuleRequest.ProtoReflect.Descriptor instead.
+func (*DisableMonitorRuleRequest) Descriptor() ([]byte, []int) {
+	return file_proto_scheduler_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *DisableMonitorRuleRequest) GetRuleId() string {
+	if x != nil {
+		return x.RuleId
+	}
+	return ""
+}
+
 var File_proto_scheduler_proto protoreflect.FileDescriptor
 
 var file_proto_scheduler_proto_rawDesc = []byte{
@@ -996,7 +1444,51 @@ var file_proto_scheduler_proto_rawDesc = []byte{
 	0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f,
 	0x77, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x69, 0x6e, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x69,
-	0x6e, 0x73, 0x74, 0x49, 0x64, 0x32, 0xa7, 0x08, 0x0a, 0x09, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75,
+	0x6e, 0x73, 0x74, 0x49, 0x64, 0x22, 0x85, 0x01, 0x0a, 0x17, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f,
+	0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x21, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x58, 0x01, 0x52, 0x07, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c,
+	0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x22, 0x4b, 0x0a,
+	0x15, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65,
+	0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x32, 0x0a, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x6f,
+	0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x04, 0xe2,
+	0xdf, 0x1f, 0x00, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x4e, 0x0a, 0x18, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x32, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x6f, 0x6e,
+	0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x06, 0xe2, 0xdf,
+	0x1f, 0x02, 0x20, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x3c, 0x0a, 0x18, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x06, 0x72, 0x75, 0x6c, 0x65, 0x49, 0x64, 0x22, 0x4e, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x32, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x6f, 0x6e, 0x69, 0x74,
+	0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02,
+	0x20, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x3e, 0x0a, 0x1a, 0x44, 0x65, 0x73, 0x63,
+	0x72, 0x69, 0x62, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x06, 0x72, 0x75, 0x6c, 0x65, 0x49, 0x64, 0x22, 0x4e, 0x0a, 0x18, 0x44, 0x65, 0x73, 0x63,
+	0x72, 0x69, 0x62, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52,
+	0x65, 0x70, 0x6c, 0x79, 0x12, 0x32, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x6f, 0x6e, 0x69, 0x74,
+	0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02,
+	0x20, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x3c, 0x0a, 0x18, 0x45, 0x6e, 0x61, 0x62,
+	0x6c, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06,
+	0x72, 0x75, 0x6c, 0x65, 0x49, 0x64, 0x22, 0x3d, 0x0a, 0x19, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c,
+	0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x72,
+	0x75, 0x6c, 0x65, 0x49, 0x64, 0x32, 0xcd, 0x0c, 0x0a, 0x09, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75,
 	0x6c, 0x65, 0x72, 0x12, 0x43, 0x0a, 0x0e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x6c, 0x6c,
 	0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x1b, 0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x44, 0x65, 0x6c,
 	0x65, 0x74, 0x65, 0x41, 0x6c, 0x6c, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
@@ -1062,11 +1554,45 @@ var file_proto_scheduler_proto_rawDesc = []byte{
 	0x6e, 0x73, 0x74, 0x12, 0x24, 0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x54, 0x65, 0x72, 0x6d, 0x69,
 	0x6e, 0x61, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x54, 0x65, 0x73, 0x74, 0x49, 0x6e,
 	0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42,
-	0x2a, 0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61,
-	0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x73, 0x68, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12,
+	0x50, 0x0a, 0x10, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75,
+	0x6c, 0x65, 0x73, 0x12, 0x1d, 0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d,
+	0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f,
+	0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x22,
+	0x00, 0x12, 0x49, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74,
+	0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x12, 0x1e, 0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45,
+	0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12, 0x49, 0x0a, 0x11,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c,
+	0x65, 0x12, 0x1e, 0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d,
+	0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53,
+	0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12, 0x49, 0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x12, 0x1e, 0x2e, 0x73,
+	0x68, 0x70, 0x62, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f,
+	0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74,
+	0x22, 0x00, 0x12, 0x59, 0x0a, 0x13, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4d, 0x6f,
+	0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x12, 0x20, 0x2e, 0x73, 0x68, 0x70, 0x62,
+	0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72,
+	0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x73, 0x68,
+	0x70, 0x62, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74,
+	0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x00, 0x12, 0x49, 0x0a,
+	0x11, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75,
+	0x6c, 0x65, 0x12, 0x1e, 0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65,
+	0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79,
+	0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12, 0x4b, 0x0a, 0x12, 0x44, 0x69, 0x73, 0x61,
+	0x62, 0x6c, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x12, 0x1f,
+	0x2e, 0x73, 0x68, 0x70, 0x62, 0x2e, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x4d, 0x6f, 0x6e,
+	0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72,
+	0x75, 0x63, 0x74, 0x22, 0x00, 0x42, 0x2a, 0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63,
+	0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x73, 0x68, 0x70,
+	0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1081,7 +1607,7 @@ func file_proto_scheduler_proto_rawDescGZIP() []byte {
 	return file_proto_scheduler_proto_rawDescData
 }
 
-var file_proto_scheduler_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_proto_scheduler_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_proto_scheduler_proto_goTypes = []interface{}{
 	(*DeleteAllFlowsRequest)(nil),           // 0: shpb.DeleteAllFlowsRequest
 	(*ExecuteStreamFlowRequest)(nil),        // 1: shpb.ExecuteStreamFlowRequest
@@ -1098,46 +1624,74 @@ var file_proto_scheduler_proto_goTypes = []interface{}{
 	(*SuspendStreamTestInstRequest)(nil),    // 12: shpb.SuspendStreamTestInstRequest
 	(*ResumeStreamTestInstRequest)(nil),     // 13: shpb.ResumeStreamTestInstRequest
 	(*TerminateStreamTestInstRequest)(nil),  // 14: shpb.TerminateStreamTestInstRequest
-	(*model.StreamFlowMeta)(nil),            // 15: model.StreamFlowMeta
-	(*model.StreamFlowInstInfo)(nil),        // 16: model.StreamFlowInstInfo
-	(*model.EmptyStruct)(nil),               // 17: model.EmptyStruct
+	(*ListMonitorRulesRequest)(nil),         // 15: shpb.ListMonitorRulesRequest
+	(*ListMonitorRulesReply)(nil),           // 16: shpb.ListMonitorRulesReply
+	(*CreateMonitorRuleRequest)(nil),        // 17: shpb.CreateMonitorRuleRequest
+	(*DeleteMonitorRuleRequest)(nil),        // 18: shpb.DeleteMonitorRuleRequest
+	(*UpdateMonitorRuleRequest)(nil),        // 19: shpb.UpdateMonitorRuleRequest
+	(*DescribeMonitorRuleRequest)(nil),      // 20: shpb.DescribeMonitorRuleRequest
+	(*DescribeMonitorRuleReply)(nil),        // 21: shpb.DescribeMonitorRuleReply
+	(*EnableMonitorRuleRequest)(nil),        // 22: shpb.EnableMonitorRuleRequest
+	(*DisableMonitorRuleRequest)(nil),       // 23: shpb.DisableMonitorRuleRequest
+	(*model.StreamFlowMeta)(nil),            // 24: model.StreamFlowMeta
+	(*model.StreamFlowInstInfo)(nil),        // 25: model.StreamFlowInstInfo
+	(*model.MonitorRuleInfo)(nil),           // 26: model.MonitorRuleInfo
+	(*model.EmptyStruct)(nil),               // 27: model.EmptyStruct
 }
 var file_proto_scheduler_proto_depIdxs = []int32{
-	15, // 0: shpb.ExecuteStreamFlowRequest.meta:type_name -> model.StreamFlowMeta
-	15, // 1: shpb.SubmitStreamFlowRequest.meta:type_name -> model.StreamFlowMeta
-	16, // 2: shpb.ListStreamCycleInstReply.infos:type_name -> model.StreamFlowInstInfo
-	16, // 3: shpb.ListStreamTestInstReply.infos:type_name -> model.StreamFlowInstInfo
-	0,  // 4: shpb.Scheduler.DeleteAllFlows:input_type -> shpb.DeleteAllFlowsRequest
-	1,  // 5: shpb.Scheduler.ExecuteStreamFlow:input_type -> shpb.ExecuteStreamFlowRequest
-	2,  // 6: shpb.Scheduler.DeleteStreamFlow:input_type -> shpb.DeleteStreamFlowRequest
-	3,  // 7: shpb.Scheduler.SubmitStreamFlow:input_type -> shpb.SubmitStreamFlowRequest
-	4,  // 8: shpb.Scheduler.OfflineStreamFlow:input_type -> shpb.OfflineStreamFlowRequest
-	5,  // 9: shpb.Scheduler.ListStreamCycleInst:input_type -> shpb.ListStreamCycleInstRequest
-	7,  // 10: shpb.Scheduler.SuspendStreamCycleInst:input_type -> shpb.SuspendStreamCycleInstRequest
-	8,  // 11: shpb.Scheduler.ResumeStreamCycleInst:input_type -> shpb.ResumeStreamCycleInstRequest
-	9,  // 12: shpb.Scheduler.TerminateStreamCycleInst:input_type -> shpb.TerminateStreamCycleInstRequest
-	10, // 13: shpb.Scheduler.ListStreamTestInst:input_type -> shpb.ListStreamTestInstRequest
-	12, // 14: shpb.Scheduler.SuspendStreamTestInst:input_type -> shpb.SuspendStreamTestInstRequest
-	13, // 15: shpb.Scheduler.ResumeStreamTestInst:input_type -> shpb.ResumeStreamTestInstRequest
-	14, // 16: shpb.Scheduler.TerminateStreamTestInst:input_type -> shpb.TerminateStreamTestInstRequest
-	17, // 17: shpb.Scheduler.DeleteAllFlows:output_type -> model.EmptyStruct
-	17, // 18: shpb.Scheduler.ExecuteStreamFlow:output_type -> model.EmptyStruct
-	17, // 19: shpb.Scheduler.DeleteStreamFlow:output_type -> model.EmptyStruct
-	17, // 20: shpb.Scheduler.SubmitStreamFlow:output_type -> model.EmptyStruct
-	17, // 21: shpb.Scheduler.OfflineStreamFlow:output_type -> model.EmptyStruct
-	6,  // 22: shpb.Scheduler.ListStreamCycleInst:output_type -> shpb.ListStreamCycleInstReply
-	17, // 23: shpb.Scheduler.SuspendStreamCycleInst:output_type -> model.EmptyStruct
-	17, // 24: shpb.Scheduler.ResumeStreamCycleInst:output_type -> model.EmptyStruct
-	17, // 25: shpb.Scheduler.TerminateStreamCycleInst:output_type -> model.EmptyStruct
-	11, // 26: shpb.Scheduler.ListStreamTestInst:output_type -> shpb.ListStreamTestInstReply
-	17, // 27: shpb.Scheduler.SuspendStreamTestInst:output_type -> model.EmptyStruct
-	17, // 28: shpb.Scheduler.ResumeStreamTestInst:output_type -> model.EmptyStruct
-	17, // 29: shpb.Scheduler.TerminateStreamTestInst:output_type -> model.EmptyStruct
-	17, // [17:30] is the sub-list for method output_type
-	4,  // [4:17] is the sub-list for method input_type
-	4,  // [4:4] is the sub-list for extension type_name
-	4,  // [4:4] is the sub-list for extension extendee
-	0,  // [0:4] is the sub-list for field type_name
+	24, // 0: shpb.ExecuteStreamFlowRequest.meta:type_name -> model.StreamFlowMeta
+	24, // 1: shpb.SubmitStreamFlowRequest.meta:type_name -> model.StreamFlowMeta
+	25, // 2: shpb.ListStreamCycleInstReply.infos:type_name -> model.StreamFlowInstInfo
+	25, // 3: shpb.ListStreamTestInstReply.infos:type_name -> model.StreamFlowInstInfo
+	26, // 4: shpb.ListMonitorRulesReply.infos:type_name -> model.MonitorRuleInfo
+	26, // 5: shpb.CreateMonitorRuleRequest.info:type_name -> model.MonitorRuleInfo
+	26, // 6: shpb.UpdateMonitorRuleRequest.info:type_name -> model.MonitorRuleInfo
+	26, // 7: shpb.DescribeMonitorRuleReply.info:type_name -> model.MonitorRuleInfo
+	0,  // 8: shpb.Scheduler.DeleteAllFlows:input_type -> shpb.DeleteAllFlowsRequest
+	1,  // 9: shpb.Scheduler.ExecuteStreamFlow:input_type -> shpb.ExecuteStreamFlowRequest
+	2,  // 10: shpb.Scheduler.DeleteStreamFlow:input_type -> shpb.DeleteStreamFlowRequest
+	3,  // 11: shpb.Scheduler.SubmitStreamFlow:input_type -> shpb.SubmitStreamFlowRequest
+	4,  // 12: shpb.Scheduler.OfflineStreamFlow:input_type -> shpb.OfflineStreamFlowRequest
+	5,  // 13: shpb.Scheduler.ListStreamCycleInst:input_type -> shpb.ListStreamCycleInstRequest
+	7,  // 14: shpb.Scheduler.SuspendStreamCycleInst:input_type -> shpb.SuspendStreamCycleInstRequest
+	8,  // 15: shpb.Scheduler.ResumeStreamCycleInst:input_type -> shpb.ResumeStreamCycleInstRequest
+	9,  // 16: shpb.Scheduler.TerminateStreamCycleInst:input_type -> shpb.TerminateStreamCycleInstRequest
+	10, // 17: shpb.Scheduler.ListStreamTestInst:input_type -> shpb.ListStreamTestInstRequest
+	12, // 18: shpb.Scheduler.SuspendStreamTestInst:input_type -> shpb.SuspendStreamTestInstRequest
+	13, // 19: shpb.Scheduler.ResumeStreamTestInst:input_type -> shpb.ResumeStreamTestInstRequest
+	14, // 20: shpb.Scheduler.TerminateStreamTestInst:input_type -> shpb.TerminateStreamTestInstRequest
+	15, // 21: shpb.Scheduler.ListMonitorRules:input_type -> shpb.ListMonitorRulesRequest
+	17, // 22: shpb.Scheduler.CreateMonitorRule:input_type -> shpb.CreateMonitorRuleRequest
+	18, // 23: shpb.Scheduler.DeleteMonitorRule:input_type -> shpb.DeleteMonitorRuleRequest
+	19, // 24: shpb.Scheduler.UpdateMonitorRule:input_type -> shpb.UpdateMonitorRuleRequest
+	20, // 25: shpb.Scheduler.DescribeMonitorRule:input_type -> shpb.DescribeMonitorRuleRequest
+	22, // 26: shpb.Scheduler.EnableMonitorRule:input_type -> shpb.EnableMonitorRuleRequest
+	23, // 27: shpb.Scheduler.DisableMonitorRule:input_type -> shpb.DisableMonitorRuleRequest
+	27, // 28: shpb.Scheduler.DeleteAllFlows:output_type -> model.EmptyStruct
+	27, // 29: shpb.Scheduler.ExecuteStreamFlow:output_type -> model.EmptyStruct
+	27, // 30: shpb.Scheduler.DeleteStreamFlow:output_type -> model.EmptyStruct
+	27, // 31: shpb.Scheduler.SubmitStreamFlow:output_type -> model.EmptyStruct
+	27, // 32: shpb.Scheduler.OfflineStreamFlow:output_type -> model.EmptyStruct
+	6,  // 33: shpb.Scheduler.ListStreamCycleInst:output_type -> shpb.ListStreamCycleInstReply
+	27, // 34: shpb.Scheduler.SuspendStreamCycleInst:output_type -> model.EmptyStruct
+	27, // 35: shpb.Scheduler.ResumeStreamCycleInst:output_type -> model.EmptyStruct
+	27, // 36: shpb.Scheduler.TerminateStreamCycleInst:output_type -> model.EmptyStruct
+	11, // 37: shpb.Scheduler.ListStreamTestInst:output_type -> shpb.ListStreamTestInstReply
+	27, // 38: shpb.Scheduler.SuspendStreamTestInst:output_type -> model.EmptyStruct
+	27, // 39: shpb.Scheduler.ResumeStreamTestInst:output_type -> model.EmptyStruct
+	27, // 40: shpb.Scheduler.TerminateStreamTestInst:output_type -> model.EmptyStruct
+	16, // 41: shpb.Scheduler.ListMonitorRules:output_type -> shpb.ListMonitorRulesReply
+	27, // 42: shpb.Scheduler.CreateMonitorRule:output_type -> model.EmptyStruct
+	27, // 43: shpb.Scheduler.DeleteMonitorRule:output_type -> model.EmptyStruct
+	27, // 44: shpb.Scheduler.UpdateMonitorRule:output_type -> model.EmptyStruct
+	21, // 45: shpb.Scheduler.DescribeMonitorRule:output_type -> shpb.DescribeMonitorRuleReply
+	27, // 46: shpb.Scheduler.EnableMonitorRule:output_type -> model.EmptyStruct
+	27, // 47: shpb.Scheduler.DisableMonitorRule:output_type -> model.EmptyStruct
+	28, // [28:48] is the sub-list for method output_type
+	8,  // [8:28] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_proto_scheduler_proto_init() }
@@ -1326,6 +1880,114 @@ func file_proto_scheduler_proto_init() {
 				return nil
 			}
 		}
+		file_proto_scheduler_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListMonitorRulesRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListMonitorRulesReply); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateMonitorRuleRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteMonitorRuleRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateMonitorRuleRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeMonitorRuleRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeMonitorRuleReply); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*EnableMonitorRuleRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_scheduler_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DisableMonitorRuleRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1333,7 +1995,7 @@ func file_proto_scheduler_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_scheduler_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

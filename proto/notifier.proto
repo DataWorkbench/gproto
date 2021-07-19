@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/nfpb";
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+service Notification {
+    rpc SendInternalNotice(SendInternalNoticeRequest) returns (SendInternalNoticeReply) {}
+    rpc ListNotifications(ListRequest) returns (ListReply) {}
+}
+
+message SendInternalNoticeRequest {
+    string user_id = 1 [ (validator.field) = { string_not_empty: true } ];
+    string title = 2;
+    string content = 3;
+    string short_content = 4;
+    repeated string email_address = 5;
+}
+
+message SendInternalNoticeReply {
+    int32 status = 1  [ (validator.field) = { int_gt: -1 } ];
+    string message = 2 ;
+}
+
+message RecordEntry {
+    string notification_post_id = 1 [ (validator.field) = { length_eq: 20 } ];
+    string owner = 2;
+    string notify_type = 3;
+    string title = 4;
+    string content = 5;
+    string short_content = 6;
+    string status = 7;
+    int64 create_time = 8;
+    int64 status_time = 9;
+    string email_address = 10;
+}
+
+message ListRequest {
+    string notification_post_id = 1;
+    string owner = 2 ;
+    repeated string status = 3 [ (validator.field) = { string_not_empty: true } ];
+    int32 limit = 4 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 offset = 5 [ (validator.field) = { msg_exists: true } ];
+}
+
+message ListReply {
+    repeated RecordEntry records = 1 [ (validator.field) = { } ];
+    int64 total_count = 2;
+    int32 status = 3  [ (validator.field) = { int_gt: -1 } ];
+    string message = 4 ;
+}
