@@ -72,25 +72,18 @@ type SpaceInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID, unique within a region.
-	// @inject_tag: gorm:"column:id;primaryKey;"
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primaryKey;"`
 	// User id of workspace owner.
-	// @inject_tag: gorm:"column:owner;"
 	Owner string `protobuf:"bytes,2,opt,name=owner,proto3" json:"owner,omitempty" gorm:"column:owner;"`
 	// Workspace Name, unique within a region.
-	// @inject_tag: gorm:"column:name;"
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
 	// Workspace Description.
-	// @inject_tag: gorm:"column:desc;"
 	Desc string `protobuf:"bytes,4,opt,name=desc,proto3" json:"desc,omitempty" gorm:"column:desc;"`
 	// Workspace status, 0 => "enabled", 1 => "disabled".
-	// @inject_tag: gorm:"column:status;"
 	Status int32 `protobuf:"varint,5,opt,name=status,proto3" json:"status,omitempty" gorm:"column:status;"`
 	// Timestamp of create time.
-	// @inject_tag: gorm:"column:created;autoCreateTime;"
 	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
-	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
 	Updated int64 `protobuf:"varint,8,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
 }
 
@@ -182,29 +175,21 @@ type StreamFlowInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	// @inject_tag: gorm:"column:space_id;"
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
 	// Workflow ID, unique within a region.
-	// @inject_tag: gorm:"column:id;primarykey;"
 	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
 	// The workflow version id, only used for Published workflows.
 	// Only used in published workflow.
-	// @inject_tag: gorm:"column:version;primarykey;"
 	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
 	// Workflow Name, Unique within a workspace.
-	// @inject_tag: gorm:"column:name;"
 	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
 	// Workflow Description.
-	// @inject_tag: gorm:"column:desc;"
 	Desc string `protobuf:"bytes,5,opt,name=desc,proto3" json:"desc,omitempty" gorm:"column:desc;"`
 	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
-	// @inject_tag: gorm:"column:type;"
 	Type int32 `protobuf:"varint,6,opt,name=type,proto3" json:"type,omitempty" gorm:"column:type;"`
 	// Timestamp of create time.
-	// @inject_tag: gorm:"column:created;autoCreateTime;"
 	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
-	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
 	Updated int64 `protobuf:"varint,8,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
 }
 
@@ -303,14 +288,11 @@ type StreamFlowNode struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workflow ID it belongs to.
-	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
 	// The release version.
 	// Only used in released workflow.
-	// @inject_tag: gorm:"column:version;primarykey;"
 	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
 	// The env content of workflow in json format.
-	// @inject_tag: gorm:"column:nodes;"
 	Nodes string `protobuf:"bytes,3,opt,name=nodes,proto3" json:"nodes,omitempty" gorm:"column:nodes;"`
 }
 
@@ -374,14 +356,11 @@ type StreamFlowEnv struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workflow ID it belongs to.
-	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
 	// The release version.
 	// Only used in released workflow.
-	// @inject_tag: gorm:"column:version;primarykey;"
 	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
 	// The env content of workflow in json format.
-	// @inject_tag: gorm:"column:env;"
 	Env string `protobuf:"bytes,3,opt,name=env,proto3" json:"env,omitempty" gorm:"column:env;"`
 }
 
@@ -445,14 +424,11 @@ type StreamFlowSchedule struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workflow ID it belongs to.
-	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
 	// The release version.
 	// Only used in released workflow.
-	// @inject_tag: gorm:"column:version;primarykey;"
 	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
 	// The schedule content of workflow in json format.
-	// @inject_tag: gorm:"column:schedule;"
 	Schedule string `protobuf:"bytes,3,opt,name=schedule,proto3" json:"schedule,omitempty" gorm:"column:schedule;"`
 }
 
@@ -588,31 +564,22 @@ type StreamFlowReleaseInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	// @inject_tag: gorm:"column:space_id;"
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
 	// Workflow ID, unique within a region.
-	// @inject_tag: gorm:"column:flow_id;primarykey;"
 	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
 	// The release version.
-	// @inject_tag: gorm:"column:version;
 	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
 	// Workflow Name, Unique within a workspace.
-	// @inject_tag: gorm:"column:name;"
 	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
 	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
-	// @inject_tag: gorm:"column:type;"
 	Type int32 `protobuf:"varint,5,opt,name=type,proto3" json:"type,omitempty" gorm:"column:type;"`
 	// Release status, 1 => "active", 2 => "suspended"
-	// @inject_tag: gorm:"column:status;"
 	Status int32 `protobuf:"varint,6,opt,name=status,proto3" json:"status,omitempty" gorm:"column:status;"`
 	// Workflow release description.
-	// @inject_tag: gorm:"column:desc;"
 	Desc string `protobuf:"bytes,7,opt,name=desc,proto3" json:"desc,omitempty" gorm:"column:desc;"`
 	// Timestamp of create time.
-	// @inject_tag: gorm:"column:created;autoCreateTime;"
 	Created int64 `protobuf:"varint,8,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
-	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
 	Updated int64 `protobuf:"varint,9,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
 }
 
@@ -718,24 +685,17 @@ type StreamFlowInstInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	// @inject_tag: gorm:"column:space_id;"
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
 	// Workflow ID it belongs to.
-	// @inject_tag: gorm:"column:flow_id;"
 	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;"`
 	// The release version.
-	// @inject_tag: gorm:"column:version;
 	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
 	// Workflow instance ID, unique.
-	// @inject_tag: gorm:"column:id;primarykey;"
 	Id string `protobuf:"bytes,4,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
 	// The instance state.
-	// @inject_tag: gorm:"column:state;"
-	State int32 `protobuf:"varint,5,opt,name=state,proto3" json:"state,omitempty" gorm:"column:state;"`
-	// @inject_tag: gorm:"column:created;autoCreateTime;"
+	State   int32 `protobuf:"varint,5,opt,name=state,proto3" json:"state,omitempty" gorm:"column:state;"`
 	Created int64 `protobuf:"varint,6,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
-	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
 	Updated int64 `protobuf:"varint,7,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
 }
 
@@ -826,19 +786,14 @@ type AuditInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: gorm:"column:space_id;"
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
 	// The user id of who execute this operation.
-	// @inject_tag: gorm:"column:user_id;"
 	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" gorm:"column:user_id;"`
 	// The operation type, 1 => "unknown", 2 => "read", 3 => "write", 4 => "delete"
-	// @inject_tag: gorm:"column:op_type;"
 	OpType int32 `protobuf:"varint,3,opt,name=op_type,json=opType,proto3" json:"op_type,omitempty" gorm:"column:op_type;"`
 	// The operation name (action)
-	// @inject_tag: gorm:"column:op_name;"
 	OpName string `protobuf:"bytes,4,opt,name=op_name,json=opName,proto3" json:"op_name,omitempty" gorm:"column:op_name;"`
 	// Timestamp of time of when accessed.
-	// @inject_tag: gorm:"column:created;autoCreateTime;"
 	Created int64 `protobuf:"varint,5,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
 }
 
@@ -915,14 +870,10 @@ type RoleInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: gorm:"column:id;"
-	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;"`
-	// @inject_tag: gorm:"column:code;"
+	Id   string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;"`
 	Code string `protobuf:"bytes,3,opt,name=code,proto3" json:"code,omitempty" gorm:"column:code;"`
-	// @inject_tag: gorm:"column:name;"
 	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
-	// @inject_tag: gorm:"column:type;" 1 => "SYSTEM" 2 => "CUSTOM"
-	Type int32 `protobuf:"varint,5,opt,name=type,proto3" json:"type,omitempty" gorm:"column:type;"`
+	Type int32  `protobuf:"varint,5,opt,name=type,proto3" json:"type,omitempty" gorm:"column:type;"`
 }
 
 func (x *RoleInfo) Reset() {
@@ -991,17 +942,12 @@ type MemberInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: gorm:"column:space_id;primaryKey;"
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;primaryKey;"`
 	// Use account user-id as member id.
-	// @inject_tag: gorm:"column:member_id;primaryKey;"
 	MemberId string `protobuf:"bytes,3,opt,name=member_id,json=memberId,proto3" json:"member_id,omitempty" gorm:"column:member_id;primaryKey;"`
-	// @inject_tag: gorm:"column:role_ids;" The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-	RoleIds string `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids,omitempty" gorm:"column:role_ids;"`
-	// @inject_tag: gorm:"column:created;autoCreateTime;"
-	Created int64 `protobuf:"varint,5,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
+	RoleIds  string `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids,omitempty" gorm:"column:role_ids;"`
+	Created  int64  `protobuf:"varint,5,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
-	// @inject_tag: gorm:"column:updated;autoUpdateTime;"
 	Updated int64 `protobuf:"varint,6,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
 }
 
@@ -1079,40 +1025,28 @@ type MonitorRuleInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	// @inject_tag: gorm:"column:space_id;"
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
 	// Rule ID, unique within a region.
-	// @inject_tag: gorm:"column:id;primarykey;"
 	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
 	// Rule Name.
-	// @inject_tag: gorm:"column:name;"
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
 	// Rule status, 1 => "enabled", 2 => "disabled".
-	// @inject_tag: gorm:"column:status;"
 	Status int32 `protobuf:"varint,4,opt,name=status,proto3" json:"status,omitempty" gorm:"column:status;"`
 	// The object unit, 1 => "workspace" 2 => "workflow'
-	// @inject_tag: gorm:"column:uint;"
 	Uint int32 `protobuf:"varint,5,opt,name=uint,proto3" json:"uint,omitempty" gorm:"column:uint;"`
 	// The object text.
-	// @inject_tag: gorm:"column:text;"
 	Text string `protobuf:"bytes,6,opt,name=text,proto3" json:"text,omitempty" gorm:"column:text;"`
 	// The trigger conditions. 3 => "retrying" 6 => "timeout"  7 => "succeed", 8 => "failed",
-	// @inject_tag: gorm:"column:trigger;"
 	Trigger int32 `protobuf:"varint,7,opt,name=trigger,proto3" json:"trigger,omitempty" gorm:"column:trigger;"`
 	// The alarm times. 1 ~ 99
-	// @inject_tag: gorm:"column:alarm_times;"
 	AlarmTimes int32 `protobuf:"varint,8,opt,name=alarm_times,json=alarmTimes,proto3" json:"alarm_times,omitempty" gorm:"column:alarm_times;"`
 	// The alarm interval. 1 ~ 30
-	// @inject_tag: gorm:"column:alarm_interval;"
 	AlarmInterval int32 `protobuf:"varint,9,opt,name=alarm_interval,json=alarmInterval,proto3" json:"alarm_interval,omitempty" gorm:"column:alarm_interval;"`
 	// The alarm type. "sms, email"
-	// @inject_tag: gorm:"column:alarm_type;"
 	AlarmType string `protobuf:"bytes,10,opt,name=alarm_type,json=alarmType,proto3" json:"alarm_type,omitempty" gorm:"column:alarm_type;"`
 	// The free time. "00:01,03:00".
-	// @inject_tag: gorm:"column:free_time;"
 	FreeTime string `protobuf:"bytes,11,opt,name=free_time,json=freeTime,proto3" json:"free_time,omitempty" gorm:"column:free_time;"`
 	// The alarm receiver. "usr-111111,usr-22222".
-	// @inject_tag: gorm:"column:receiver;"
 	Receiver string `protobuf:"bytes,12,opt,name=receiver,proto3" json:"receiver,omitempty" gorm:"column:receiver;"`
 }
 
