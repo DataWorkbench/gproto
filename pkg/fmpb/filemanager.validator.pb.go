@@ -18,8 +18,8 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *UploadRequest) Validate() error {
-	if !(len(this.ID) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.ID))
+	if !(len(this.ID) < 25) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
 	}
 	if !(len(this.SpaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
@@ -30,8 +30,8 @@ func (this *UploadRequest) Validate() error {
 	return nil
 }
 func (this *DirRequest) Validate() error {
-	if !(len(this.Parent) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Parent", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Parent))
+	if !(len(this.Parent) < 25) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Parent", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.Parent))
 	}
 	if !(len(this.SpaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
@@ -39,20 +39,20 @@ func (this *DirRequest) Validate() error {
 	return nil
 }
 func (this *DownloadRequest) Validate() error {
-	if !(len(this.ID) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.ID))
+	if !(len(this.ID) < 25) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
 	}
 	return nil
 }
 func (this *DeleteRequest) Validate() error {
-	if !(len(this.ID) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.ID))
+	if !(len(this.ID) < 25) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
 	}
 	return nil
 }
 func (this *IdRequest) Validate() error {
-	if !(len(this.ID) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.ID))
+	if !(len(this.ID) < 25) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
 	}
 	return nil
 }
