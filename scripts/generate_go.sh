@@ -70,6 +70,8 @@ for f in proto/*.proto;do
 
   protoc-go-inject-tag -input="./${dir}/${name}.pb.go"
 
+  sed -i '/\@inject_tag/d' "./${dir}/${name}.pb.go"
+
   mv -f proto/"${name}".validator.pb.go ".${dir}/"
 done
 
