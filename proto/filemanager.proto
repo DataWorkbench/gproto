@@ -19,7 +19,7 @@ service FileManager{
 }
 
 message UploadRequest{
-  string ID = 1 [(validator.field) = {length_lt: 21}];
+  string ID = 1 [(validator.field) = {length_lt: 25}];
   string SpaceID = 2 [(validator.field) = {length_eq: 20}];
   bytes Data = 3;
   string FileName = 4 [(validator.field) = {msg_exists: true}];
@@ -30,22 +30,22 @@ message UploadRequest{
 }
 
 message DirRequest{
-  string Parent = 1  [(validator.field) = {length_lt: 21}];
+  string Parent = 1  [(validator.field) = {length_lt: 25}];
   string SpaceID = 2 [(validator.field) = {length_eq: 20}];
   string Address = 3  [(validator.field) = {msg_exists: true}];
   repeated int32 FileType = 4;
 }
 
 message DownloadRequest{
-  string ID = 1 [(validator.field) = {length_lt: 21}];
+  string ID = 1 [(validator.field) = {length_lt: 25}];
 }
 
 message DeleteRequest{
-  string ID = 1 [(validator.field) = {length_lt: 21}];
+  string ID = 1 [(validator.field) = {length_lt: 25}];
 }
 
 message IdRequest{
-  string ID = 1[(validator.field) = {length_lt: 21}];
+  string ID = 1[(validator.field) = {length_lt: 25}];
 }
 
 message ListFileRequest{
@@ -61,7 +61,8 @@ message ListDirReply{
   message ListInfo{
     string ID = 1;
     string Name = 2;
-    bool IsDir = 3;
+    string Path = 3;
+    bool IsDir = 4;
   }
   repeated ListInfo FileInfo = 1;
 }
