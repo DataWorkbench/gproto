@@ -35,7 +35,7 @@ message EngingMapRequest {
 
 message EngineMapReply {
     string EngineType = 1  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string SourceType = 2  [ (validator.field) = { length_gt: 0, length_lt: 257 } ];
+    string SourceType = 2  [ (validator.field) = { length_gt: 0} ];
 }
     
 // The Sourcemanager Info

@@ -41,9 +41,6 @@ func (this *EngineMapReply) Validate() error {
 	if !(len(this.SourceType) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SourceType))
 	}
-	if !(len(this.SourceType) < 257) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.SourceType))
-	}
 	return nil
 }
 func (this *InfoReply) Validate() error {
