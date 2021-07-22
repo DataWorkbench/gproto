@@ -26,7 +26,6 @@ message UploadRequest{
   string FileDir = 5 [(validator.field) = {msg_exists: true}];
   int32 FileType = 6 [(validator.field) = {int_lt:4}];
   string HdfsAddress = 7 [(validator.field) = {msg_exists: true}];
-  string UserID = 8 [(validator.field) = {msg_exists: false}];
 }
 
 message DirRequest{
