@@ -29,7 +29,7 @@ func (this *UploadRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DirRequest) Validate() error {
+func (this *GetFileListRequest) Validate() error {
 	if !(len(this.Parent) < 25) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Parent", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.Parent))
 	}
@@ -56,10 +56,7 @@ func (this *IdRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ListFileRequest) Validate() error {
-	return nil
-}
-func (this *ListDirReply) Validate() error {
+func (this *GetFileListReply) Validate() error {
 	for _, item := range this.FileInfo {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -69,22 +66,15 @@ func (this *ListDirReply) Validate() error {
 	}
 	return nil
 }
-func (this *ListDirReply_ListInfo) Validate() error {
+func (this *GetFileListReply_ListInfo) Validate() error {
+	return nil
+}
+func (this *UploadReply) Validate() error {
 	return nil
 }
 func (this *DownloadReply) Validate() error {
 	return nil
 }
 func (this *FileInfoReply) Validate() error {
-	return nil
-}
-func (this *FileListReply) Validate() error {
-	for _, item := range this.FileInfoList {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("FileInfoList", err)
-			}
-		}
-	}
 	return nil
 }
