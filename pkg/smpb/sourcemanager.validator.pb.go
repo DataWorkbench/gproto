@@ -191,6 +191,9 @@ func (this *ListsRequest) Validate() error {
 	return nil
 }
 func (this *ListsReply) Validate() error {
+	if !(this.Total > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Total", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Total))
+	}
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -309,6 +312,9 @@ func (this *SotDeleteRequest) Validate() error {
 	return nil
 }
 func (this *SotListsReply) Validate() error {
+	if !(this.Total > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Total", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Total))
+	}
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
