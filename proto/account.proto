@@ -43,6 +43,7 @@ message User {
     string role = 7;
     string currency = 8;
     string gravatar_email = 9;
+    int32 privilege = 10;
 }
 
 message DescribeUsersReply {
