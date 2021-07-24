@@ -30,9 +30,6 @@ func (this *UploadRequest) Validate() error {
 	return nil
 }
 func (this *GetFileListRequest) Validate() error {
-	if !(len(this.Parent) < 25) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Parent", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.Parent))
-	}
 	if !(len(this.SpaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
 	}
@@ -44,9 +41,15 @@ func (this *DownloadRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DeleteRequest) Validate() error {
+func (this *DeleteFileRequest) Validate() error {
 	if !(len(this.ID) < 25) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
+	}
+	return nil
+}
+func (this *DeleteDirRequest) Validate() error {
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
 	}
 	return nil
 }
@@ -76,5 +79,15 @@ func (this *DownloadReply) Validate() error {
 	return nil
 }
 func (this *FileInfoReply) Validate() error {
+	return nil
+}
+func (this *DeleteDirReply) Validate() error {
+	for _, item := range this.Files {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Files", err)
+			}
+		}
+	}
 	return nil
 }
