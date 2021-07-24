@@ -64,5 +64,6 @@ message ListsRequest {
 
 // Reply parameters used to ListWorkspaces
 message ListsReply {
-    repeated InfoReply Infos = 1 [ (validator.field) = { msg_exists: false } ];
+	int32 total = 1 [ (validator.field) = { int_gt: -1 } ];
+    repeated InfoReply Infos = 2 [ (validator.field) = { msg_exists: false } ];
 }
