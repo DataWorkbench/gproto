@@ -18,8 +18,8 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *UploadRequest) Validate() error {
-	if !(len(this.ID) < 25) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
+	if !(len(this.ID) < 24) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '24'`, this.ID))
 	}
 	if !(len(this.SpaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
@@ -29,65 +29,36 @@ func (this *UploadRequest) Validate() error {
 	}
 	return nil
 }
-func (this *GetFileListRequest) Validate() error {
-	if !(len(this.SpaceID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
-	}
-	return nil
-}
 func (this *DownloadRequest) Validate() error {
-	if !(len(this.ID) < 25) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
+	if !(len(this.ID) < 24) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '24'`, this.ID))
 	}
-	return nil
-}
-func (this *DeleteFileRequest) Validate() error {
-	if !(len(this.ID) < 25) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
-	}
-	return nil
-}
-func (this *DeleteDirRequest) Validate() error {
-	if !(len(this.SpaceID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
-	}
-	return nil
-}
-func (this *IdRequest) Validate() error {
-	if !(len(this.ID) < 25) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.ID))
-	}
-	return nil
-}
-func (this *GetFileListReply) Validate() error {
-	for _, item := range this.FileInfo {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("FileInfo", err)
-			}
-		}
-	}
-	return nil
-}
-func (this *GetFileListReply_ListInfo) Validate() error {
-	return nil
-}
-func (this *UploadReply) Validate() error {
 	return nil
 }
 func (this *DownloadReply) Validate() error {
 	return nil
 }
-func (this *FileInfoReply) Validate() error {
+func (this *GetDirListRequest) Validate() error {
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
 	return nil
 }
-func (this *DeleteDirReply) Validate() error {
-	for _, item := range this.Files {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Files", err)
-			}
-		}
+func (this *GetDirListReply) Validate() error {
+	return nil
+}
+func (this *DeleteRequest) Validate() error {
+	if !(len(this.ID) < 24) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '24'`, this.ID))
 	}
+	return nil
+}
+func (this *IdRequest) Validate() error {
+	if !(len(this.ID) < 24) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '24'`, this.ID))
+	}
+	return nil
+}
+func (this *FileInfoReply) Validate() error {
 	return nil
 }

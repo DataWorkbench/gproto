@@ -8,16 +8,16 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
 service FileManager{
-  rpc UploadStream(stream UploadRequest) returns (UploadReply){}
+  rpc UploadStream(stream UploadRequest) returns (model.EmptyStruct){}
   rpc DownloadStream(DownloadRequest) returns (stream DownloadReply){}
-  rpc GetFileList(GetFileListRequest) returns(GetFileListReply){}
+  rpc GetDirList(GetDirListRequest) returns(GetDirListReply){}
+  rpc DeleteFileById(DeleteRequest) returns(model.EmptyStruct){}
+  rpc DeleteDirById(DeleteRequest) returns(model.EmptyStruct){}
   rpc GetFileById(IdRequest) returns (FileInfoReply){}
-  rpc DeleteFileById(DeleteFileRequest) returns(model.EmptyStruct){}
-  rpc DeleteDir(DeleteDirRequest) returns(DeleteDirReply){}
 }
 
 message UploadRequest{
-  string ID = 1 [(validator.field) = {length_lt: 25}];
+  string ID = 1 [(validator.field) = {length_lt: 24}];
   string SpaceID = 2 [(validator.field) = {length_eq: 20}];
   bytes Data = 3;
   string FileName = 4 [(validator.field) = {msg_exists: true}];
@@ -25,55 +25,33 @@ message UploadRequest{
   int32 FileType = 6 [(validator.field) = {int_lt:4}];
 }
 
-message GetFileListRequest{
-  string SpaceID = 2 [(validator.field) = {length_eq: 20}];
-  string Address = 3  [(validator.field) = {msg_exists: true}];
-  repeated int32 FileType = 4;
-}
-
 message DownloadRequest{
-  string ID = 1 [(validator.field) = {length_lt: 25}];
-}
-
-message DeleteFileRequest{
-  string ID = 1 [(validator.field) = {length_lt: 25}];
-}
-
-message DeleteDirRequest{
-  string SpaceID = 2 [(validator.field) = {length_eq: 20}];
-  string Path = 3;
-}
-
-message IdRequest{
-  string ID = 1[(validator.field) = {length_lt: 25}];
-}
-
-message GetFileListReply{
-  message ListInfo{
-    string ID = 1;
-    string Name = 2;
-    string URL = 3;
-    string Dir = 4;
-  }
-  repeated ListInfo FileInfo = 1;
-}
-
-message UploadReply{
-  string URL = 1;
+  string ID = 1 [(validator.field) = {length_lt: 24}];
 }
 
 message DownloadReply{
   bytes Data = 1;
 }
 
+message GetDirListRequest{
+  string SpaceID = 1 [(validator.field) = {length_eq: 20}];
+}
+
+message GetDirListReply{
+  string JsonData = 1;
+}
+
+message DeleteRequest{
+  string ID = 1 [(validator.field) = {length_lt: 24}];
+}
+
+message IdRequest{
+  string ID = 1[(validator.field) = {length_lt: 24}];
+}
+
 message FileInfoReply{
   string Name = 1;
   int32 FileType = 2;
-  string Path = 3;
-  string Url = 4;
-}
-
-message DeleteDirReply{
-  repeated FileInfoReply files = 1;
-  int32 count = 2;
+  string URL = 4;
+  string Path = 5;
 }
