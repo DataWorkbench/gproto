@@ -8,7 +8,7 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
 service FileManager{
-  rpc UploadStream(stream UploadRequest) returns (model.EmptyStruct){}
+  rpc UploadStream(stream UploadRequest) returns (UploadReply){}
   rpc DownloadStream(DownloadRequest) returns (stream DownloadReply){}
   rpc GetDirList(GetDirListRequest) returns(GetDirListReply){}
   rpc GetSubDirFile(GetSubDirListRequest) returns (GetSubDirListReply){}
@@ -19,12 +19,16 @@ service FileManager{
 }
 
 message UploadRequest{
-  string ID = 1 [(validator.field) = {length_lt: 24}];
   string SpaceID = 2 [(validator.field) = {length_eq: 20}];
   bytes Data = 3;
   string FileName = 4 [(validator.field) = {msg_exists: true}];
   string FileDir = 5 [(validator.field) = {msg_exists: true}];
   int32 FileType = 6 [(validator.field) = {int_lt:4}];
+}
+
+message UploadReply{
+  string ID = 1;
+  string URL = 2;
 }
 
 message DownloadRequest{

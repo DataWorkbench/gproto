@@ -47,7 +47,7 @@ func (c *fileManagerClient) UploadStream(ctx context.Context, opts ...grpc.CallO
 
 type FileManager_UploadStreamClient interface {
 	Send(*UploadRequest) error
-	CloseAndRecv() (*model.EmptyStruct, error)
+	CloseAndRecv() (*UploadReply, error)
 	grpc.ClientStream
 }
 
@@ -59,11 +59,11 @@ func (x *fileManagerUploadStreamClient) Send(m *UploadRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *fileManagerUploadStreamClient) CloseAndRecv() (*model.EmptyStruct, error) {
+func (x *fileManagerUploadStreamClient) CloseAndRecv() (*UploadReply, error) {
 	if err := x.ClientStream.CloseSend(); err != nil {
 		return nil, err
 	}
-	m := new(model.EmptyStruct)
+	m := new(UploadReply)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -217,7 +217,7 @@ func _FileManager_UploadStream_Handler(srv interface{}, stream grpc.ServerStream
 }
 
 type FileManager_UploadStreamServer interface {
-	SendAndClose(*model.EmptyStruct) error
+	SendAndClose(*UploadReply) error
 	Recv() (*UploadRequest, error)
 	grpc.ServerStream
 }
@@ -226,7 +226,7 @@ type fileManagerUploadStreamServer struct {
 	grpc.ServerStream
 }
 
-func (x *fileManagerUploadStreamServer) SendAndClose(m *model.EmptyStruct) error {
+func (x *fileManagerUploadStreamServer) SendAndClose(m *UploadReply) error {
 	return x.ServerStream.SendMsg(m)
 }
 
