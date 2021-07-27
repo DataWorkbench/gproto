@@ -11,6 +11,8 @@ service FileManager{
   rpc UploadStream(stream UploadRequest) returns (model.EmptyStruct){}
   rpc DownloadStream(DownloadRequest) returns (stream DownloadReply){}
   rpc GetDirList(GetDirListRequest) returns(GetDirListReply){}
+  rpc GetSubDirFile(GetSubDirListRequest) returns (GetSubDirListReply){}
+  rpc UpdateFile(UpdateFileRequest)returns (model.EmptyStruct){}
   rpc DeleteFileById(DeleteRequest) returns(model.EmptyStruct){}
   rpc DeleteDirById(DeleteRequest) returns(model.EmptyStruct){}
   rpc GetFileById(IdRequest) returns (FileInfoReply){}
@@ -39,6 +41,27 @@ message GetDirListRequest{
 
 message GetDirListReply{
   string JsonData = 1;
+}
+
+message GetSubDirListRequest{
+  string ID = 1 [(validator.field) = {length_lt: 24}];
+}
+
+message GetSubDirListReply{
+  message Dir{
+    string ID = 1;
+    string Name = 2;
+  }
+  message File{
+    string ID = 1;
+    string Name = 2;
+  }
+}
+
+message UpdateFileRequest{
+  string ID = 1 [(validator.field) = {length_lt: 24}];
+  string Name = 2;
+  int32 Type = 3;
 }
 
 message DeleteRequest{

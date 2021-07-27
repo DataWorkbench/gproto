@@ -47,6 +47,27 @@ func (this *GetDirListRequest) Validate() error {
 func (this *GetDirListReply) Validate() error {
 	return nil
 }
+func (this *GetSubDirListRequest) Validate() error {
+	if !(len(this.ID) < 24) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '24'`, this.ID))
+	}
+	return nil
+}
+func (this *GetSubDirListReply) Validate() error {
+	return nil
+}
+func (this *GetSubDirListReply_Dir) Validate() error {
+	return nil
+}
+func (this *GetSubDirListReply_File) Validate() error {
+	return nil
+}
+func (this *UpdateFileRequest) Validate() error {
+	if !(len(this.ID) < 24) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '24'`, this.ID))
+	}
+	return nil
+}
 func (this *DeleteRequest) Validate() error {
 	if !(len(this.ID) < 24) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length smaller than '24'`, this.ID))
