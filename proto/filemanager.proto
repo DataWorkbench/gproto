@@ -67,6 +67,7 @@ message UpdateFileRequest{
   string ID = 1 [(validator.field) = {length_lt: 24}];
   string Name = 2;
   int32 Type = 3;
+  string Path = 4;
 }
 
 message DeleteRequest{
