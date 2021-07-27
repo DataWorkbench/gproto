@@ -55,7 +55,12 @@ message GetSubDirListReply{
   message File{
     string ID = 1;
     string Name = 2;
+    string URL = 3;
   }
+  string ID = 1;
+  string Name = 2;
+  repeated Dir ChileDirs = 3;
+  repeated File ChildFiles = 4;
 }
 
 message UpdateFileRequest{

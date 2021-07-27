@@ -54,6 +54,20 @@ func (this *GetSubDirListRequest) Validate() error {
 	return nil
 }
 func (this *GetSubDirListReply) Validate() error {
+	for _, item := range this.ChileDirs {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ChileDirs", err)
+			}
+		}
+	}
+	for _, item := range this.ChildFiles {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ChildFiles", err)
+			}
+		}
+	}
 	return nil
 }
 func (this *GetSubDirListReply_Dir) Validate() error {
