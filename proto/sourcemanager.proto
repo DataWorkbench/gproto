@@ -14,6 +14,8 @@ service Sourcemanager {
     rpc List(ListsRequest) returns (ListsReply) {}
     rpc Describe(DescribeRequest) returns (InfoReply) {}
     rpc PingSource(PingSourceRequest) returns (EmptyReply) {}
+    rpc Enable(StateRequest) returns (EmptyReply) {}
+    rpc Disable(StateRequest) returns (EmptyReply) {}
     
     rpc SotCreate(SotCreateRequest) returns (EmptyReply) {}
     rpc SotUpdate(SotUpdateRequest) returns (EmptyReply) {}
@@ -95,6 +97,10 @@ message ListsReply {
 }
 
 message DescribeRequest {
+    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message StateRequest {
     string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 

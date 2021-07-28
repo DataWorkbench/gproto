@@ -209,6 +209,12 @@ func (this *DescribeRequest) Validate() error {
 	}
 	return nil
 }
+func (this *StateRequest) Validate() error {
+	if !(len(this.ID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
+	}
+	return nil
+}
 func (this *PingSourceRequest) Validate() error {
 	if !(len(this.SourceType) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SourceType))

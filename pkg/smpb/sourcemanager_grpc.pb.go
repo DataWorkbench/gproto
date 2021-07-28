@@ -23,6 +23,8 @@ type SourcemanagerClient interface {
 	List(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error)
 	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*InfoReply, error)
 	PingSource(ctx context.Context, in *PingSourceRequest, opts ...grpc.CallOption) (*EmptyReply, error)
+	Enable(ctx context.Context, in *StateRequest, opts ...grpc.CallOption) (*EmptyReply, error)
+	Disable(ctx context.Context, in *StateRequest, opts ...grpc.CallOption) (*EmptyReply, error)
 	SotCreate(ctx context.Context, in *SotCreateRequest, opts ...grpc.CallOption) (*EmptyReply, error)
 	SotUpdate(ctx context.Context, in *SotUpdateRequest, opts ...grpc.CallOption) (*EmptyReply, error)
 	SotDelete(ctx context.Context, in *SotDeleteRequest, opts ...grpc.CallOption) (*EmptyReply, error)
@@ -88,6 +90,24 @@ func (c *sourcemanagerClient) Describe(ctx context.Context, in *DescribeRequest,
 func (c *sourcemanagerClient) PingSource(ctx context.Context, in *PingSourceRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
 	out := new(EmptyReply)
 	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/PingSource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourcemanagerClient) Enable(ctx context.Context, in *StateRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
+	out := new(EmptyReply)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Enable", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourcemanagerClient) Disable(ctx context.Context, in *StateRequest, opts ...grpc.CallOption) (*EmptyReply, error) {
+	out := new(EmptyReply)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Disable", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -167,6 +187,8 @@ type SourcemanagerServer interface {
 	List(context.Context, *ListsRequest) (*ListsReply, error)
 	Describe(context.Context, *DescribeRequest) (*InfoReply, error)
 	PingSource(context.Context, *PingSourceRequest) (*EmptyReply, error)
+	Enable(context.Context, *StateRequest) (*EmptyReply, error)
+	Disable(context.Context, *StateRequest) (*EmptyReply, error)
 	SotCreate(context.Context, *SotCreateRequest) (*EmptyReply, error)
 	SotUpdate(context.Context, *SotUpdateRequest) (*EmptyReply, error)
 	SotDelete(context.Context, *SotDeleteRequest) (*EmptyReply, error)
@@ -198,6 +220,12 @@ func (UnimplementedSourcemanagerServer) Describe(context.Context, *DescribeReque
 }
 func (UnimplementedSourcemanagerServer) PingSource(context.Context, *PingSourceRequest) (*EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PingSource not implemented")
+}
+func (UnimplementedSourcemanagerServer) Enable(context.Context, *StateRequest) (*EmptyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Enable not implemented")
+}
+func (UnimplementedSourcemanagerServer) Disable(context.Context, *StateRequest) (*EmptyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Disable not implemented")
 }
 func (UnimplementedSourcemanagerServer) SotCreate(context.Context, *SotCreateRequest) (*EmptyReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SotCreate not implemented")
@@ -337,6 +365,42 @@ func _Sourcemanager_PingSource_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SourcemanagerServer).PingSource(ctx, req.(*PingSourceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Sourcemanager_Enable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourcemanagerServer).Enable(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smpb.Sourcemanager/Enable",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourcemanagerServer).Enable(ctx, req.(*StateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Sourcemanager_Disable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourcemanagerServer).Disable(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smpb.Sourcemanager/Disable",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourcemanagerServer).Disable(ctx, req.(*StateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -494,6 +558,14 @@ var _Sourcemanager_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PingSource",
 			Handler:    _Sourcemanager_PingSource_Handler,
+		},
+		{
+			MethodName: "Enable",
+			Handler:    _Sourcemanager_Enable_Handler,
+		},
+		{
+			MethodName: "Disable",
+			Handler:    _Sourcemanager_Disable_Handler,
 		},
 		{
 			MethodName: "SotCreate",
