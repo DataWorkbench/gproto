@@ -8,83 +8,61 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
 service FileManager{
-  rpc UploadStream(stream UploadRequest) returns (UploadReply){}
-  rpc DownloadStream(DownloadRequest) returns (stream DownloadReply){}
-  rpc GetDirList(GetDirListRequest) returns(GetDirListReply){}
-  rpc GetSubDirFile(GetSubDirListRequest) returns (GetSubDirListReply){}
-  rpc UpdateFile(UpdateFileRequest)returns (model.EmptyStruct){}
-  rpc DeleteFileById(DeleteRequest) returns(model.EmptyStruct){}
-  rpc DeleteDirById(DeleteRequest) returns(model.EmptyStruct){}
-  rpc GetFileById(IdRequest) returns (FileInfoReply){}
+  rpc Upload(stream UploadFileRequest) returns (FileInfoResponse){}
+  rpc Download(DownloadRequest) returns (stream DownloadResponse){}
+  rpc GetFile(FilesFilterRequest) returns (FileListResponse){}
+  rpc Update(UpdateFileRequest) returns(model.EmptyStruct){}
+  rpc Delete(DeleteFileRequest) returns(model.EmptyStruct){}
 }
 
-message UploadRequest{
-  string SpaceID = 2 [(validator.field) = {length_eq: 20}];
-  bytes Data = 3;
-  string FileName = 4 [(validator.field) = {msg_exists: true}];
-  string FileDir = 5 [(validator.field) = {msg_exists: true}];
-  int32 FileType = 6 [(validator.field) = {int_lt:4}];
-}
-
-message UploadReply{
-  string ID = 1;
-  string URL = 2;
+message UploadFileRequest{
+  string SpaceID = 1 [(validator.field) = {length_eq: 20}];
+  string FileName = 2 [(validator.field) = {msg_exists: true}];
+  string FilePath = 3 [(validator.field) = {msg_exists: true}];
+  int32 FileType = 4 [(validator.field) = {int_lt:3}];
+  bytes Data = 5;
 }
 
 message DownloadRequest{
-  string ID = 1 [(validator.field) = {length_lt: 24}];
+  string ID = 1 [(validator.field) = {length_lt: 25}];
 }
 
-message DownloadReply{
-  bytes Data = 1;
-}
-
-message GetDirListRequest{
-  string SpaceID = 1 [(validator.field) = {length_eq: 20}];
-}
-
-message GetDirListReply{
-  string JsonData = 1;
-}
-
-message GetSubDirListRequest{
-  string ID = 1 [(validator.field) = {length_lt: 24}];
-}
-
-message GetSubDirListReply{
-  message Dir{
-    string ID = 1;
-    string Name = 2;
-  }
-  message File{
-    string ID = 1;
-    string Name = 2;
-    string URL = 3;
-  }
+message FilesFilterRequest{
   string ID = 1;
-  string Name = 2;
-  repeated Dir ChileDirs = 3;
-  repeated File ChildFiles = 4;
+  int32 Type = 2;
+  string Name = 3;
+  string Path = 4;
+  string SpaceID = 5 [(validator.field) = {length_eq: 20}];
 }
 
 message UpdateFileRequest{
-  string ID = 1 [(validator.field) = {length_lt: 24}];
-  string Name = 2;
-  int32 Type = 3;
-  string Path = 4;
+  string ID = 1 [(validator.field) = {length_eq: 21}];
+  string Name = 2 [(validator.field) = {msg_exists: true}];
+  string Path = 3 [(validator.field) = {msg_exists: true}];
+  int32 Type = 4 [(validator.field) = {int_lt:3}];
 }
 
-message DeleteRequest{
-  string ID = 1 [(validator.field) = {length_lt: 24}];
+message DeleteFileRequest{
+  string ID = 1;
+  string SpaceID = 2 [(validator.field) = {length_eq: 20}];
 }
 
-message IdRequest{
-  string ID = 1[(validator.field) = {length_lt: 24}];
+message FileInfoResponse{
+  string ID = 1;
+  string SpaceID = 2;
+  string FileName = 3;
+  string FilePath = 4;
+  int32  FileType = 5;
+  string HdfsAddress = 6;
+  string URL = 7;
 }
 
-message FileInfoReply{
-  string Name = 1;
-  int32 FileType = 2;
-  string URL = 4;
-  string Path = 5;
+message DownloadResponse{
+  bytes Data = 1;
 }
+
+message FileListResponse {
+  int32 total = 1;
+  repeated FileInfoResponse Data = 2;
+}
+
