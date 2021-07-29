@@ -95,6 +95,9 @@ func (this *InfoReply) Validate() error {
 	if !(len(this.Connected) == 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Connected", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.Connected))
 	}
+	if !(len(this.State) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.State))
+	}
 	return nil
 }
 func (this *CreateRequest) Validate() error {

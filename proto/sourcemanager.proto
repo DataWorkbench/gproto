@@ -54,6 +54,7 @@ message InfoReply {
     string EngineType = 10  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
     string Direction = 11 [ (validator.field) = { length_lt: 17 } ];
     string Connected = 12 [ (validator.field) = { length_eq: 1 } ]; // t f
+    string State = 13 [ (validator.field) = { length_lt: 17 } ];
 }
 
 // Reply parameters used to DescribeWorkspace
