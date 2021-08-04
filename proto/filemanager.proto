@@ -8,11 +8,11 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
 service FileManager{
-  rpc Upload(stream UploadFileRequest) returns (FileInfoResponse){}
-  rpc Download(DownloadRequest) returns (stream DownloadResponse){}
-  rpc GetFile(FilesFilterRequest) returns (FileListResponse){}
-  rpc Update(UpdateFileRequest) returns(model.EmptyStruct){}
-  rpc Delete(DeleteFileRequest) returns(model.EmptyStruct){}
+  rpc UploadFile(stream UploadFileRequest) returns (FileInfoResponse){}
+  rpc DownloadFile(DownloadRequest) returns (stream DownloadResponse){}
+  rpc ListFiles(FilesFilterRequest) returns (FileListResponse){}
+  rpc UpdateFile(UpdateFileRequest) returns(model.EmptyStruct){}
+  rpc DeleteFile(DeleteFileRequest) returns(model.EmptyStruct){}
 }
 
 message UploadFileRequest{
