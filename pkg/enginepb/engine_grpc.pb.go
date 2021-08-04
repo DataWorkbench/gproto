@@ -17,12 +17,12 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type EngineServiceClient interface {
-	List(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (*ListResponse, error)
 	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeResponse, error)
-	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
+	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error)
 	Modify(ctx context.Context, in *ModifyRequest, opts ...grpc.CallOption) (*ModifyResponse, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error)
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error)
+	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
+	DeRegister(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DeregisterResponse, error)
 }
 
 type engineServiceClient struct {
@@ -31,15 +31,6 @@ type engineServiceClient struct {
 
 func NewEngineServiceClient(cc grpc.ClientConnInterface) EngineServiceClient {
 	return &engineServiceClient{cc}
-}
-
-func (c *engineServiceClient) List(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (*ListResponse, error) {
-	out := new(ListResponse)
-	err := c.cc.Invoke(ctx, "/enginepb.EngineService/List", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *engineServiceClient) Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeResponse, error) {
@@ -51,9 +42,9 @@ func (c *engineServiceClient) Describe(ctx context.Context, in *DescribeRequest,
 	return out, nil
 }
 
-func (c *engineServiceClient) Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error) {
-	out := new(RegisterResponse)
-	err := c.cc.Invoke(ctx, "/enginepb.EngineService/Register", in, out, opts...)
+func (c *engineServiceClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error) {
+	out := new(CreateResponse)
+	err := c.cc.Invoke(ctx, "/enginepb.EngineService/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -78,9 +69,18 @@ func (c *engineServiceClient) Delete(ctx context.Context, in *DeleteRequest, opt
 	return out, nil
 }
 
-func (c *engineServiceClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error) {
-	out := new(CreateResponse)
-	err := c.cc.Invoke(ctx, "/enginepb.EngineService/Create", in, out, opts...)
+func (c *engineServiceClient) Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error) {
+	out := new(RegisterResponse)
+	err := c.cc.Invoke(ctx, "/enginepb.EngineService/Register", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineServiceClient) DeRegister(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DeregisterResponse, error) {
+	out := new(DeregisterResponse)
+	err := c.cc.Invoke(ctx, "/enginepb.EngineService/DeRegister", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,12 +91,12 @@ func (c *engineServiceClient) Create(ctx context.Context, in *CreateRequest, opt
 // All implementations must embed UnimplementedEngineServiceServer
 // for forward compatibility
 type EngineServiceServer interface {
-	List(context.Context, *ListRequest) (*ListResponse, error)
 	Describe(context.Context, *DescribeRequest) (*DescribeResponse, error)
-	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
+	Create(context.Context, *CreateRequest) (*CreateResponse, error)
 	Modify(context.Context, *ModifyRequest) (*ModifyResponse, error)
 	Delete(context.Context, *DeleteRequest) (*DeleteResponse, error)
-	Create(context.Context, *CreateRequest) (*CreateResponse, error)
+	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
+	DeRegister(context.Context, *DescribeRequest) (*DeregisterResponse, error)
 	mustEmbedUnimplementedEngineServiceServer()
 }
 
@@ -104,14 +104,11 @@ type EngineServiceServer interface {
 type UnimplementedEngineServiceServer struct {
 }
 
-func (UnimplementedEngineServiceServer) List(context.Context, *ListRequest) (*ListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
-}
 func (UnimplementedEngineServiceServer) Describe(context.Context, *DescribeRequest) (*DescribeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Describe not implemented")
 }
-func (UnimplementedEngineServiceServer) Register(context.Context, *RegisterRequest) (*RegisterResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Register not implemented")
+func (UnimplementedEngineServiceServer) Create(context.Context, *CreateRequest) (*CreateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
 func (UnimplementedEngineServiceServer) Modify(context.Context, *ModifyRequest) (*ModifyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Modify not implemented")
@@ -119,8 +116,11 @@ func (UnimplementedEngineServiceServer) Modify(context.Context, *ModifyRequest) 
 func (UnimplementedEngineServiceServer) Delete(context.Context, *DeleteRequest) (*DeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedEngineServiceServer) Create(context.Context, *CreateRequest) (*CreateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+func (UnimplementedEngineServiceServer) Register(context.Context, *RegisterRequest) (*RegisterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Register not implemented")
+}
+func (UnimplementedEngineServiceServer) DeRegister(context.Context, *DescribeRequest) (*DeregisterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeRegister not implemented")
 }
 func (UnimplementedEngineServiceServer) mustEmbedUnimplementedEngineServiceServer() {}
 
@@ -133,24 +133,6 @@ type UnsafeEngineServiceServer interface {
 
 func RegisterEngineServiceServer(s grpc.ServiceRegistrar, srv EngineServiceServer) {
 	s.RegisterService(&_EngineService_serviceDesc, srv)
-}
-
-func _EngineService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(EngineServiceServer).List(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/enginepb.EngineService/List",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EngineServiceServer).List(ctx, req.(*ListRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _EngineService_Describe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -171,20 +153,20 @@ func _EngineService_Describe_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EngineService_Register_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RegisterRequest)
+func _EngineService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EngineServiceServer).Register(ctx, in)
+		return srv.(EngineServiceServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/enginepb.EngineService/Register",
+		FullMethod: "/enginepb.EngineService/Create",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EngineServiceServer).Register(ctx, req.(*RegisterRequest))
+		return srv.(EngineServiceServer).Create(ctx, req.(*CreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -225,20 +207,38 @@ func _EngineService_Delete_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EngineService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRequest)
+func _EngineService_Register_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EngineServiceServer).Create(ctx, in)
+		return srv.(EngineServiceServer).Register(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/enginepb.EngineService/Create",
+		FullMethod: "/enginepb.EngineService/Register",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EngineServiceServer).Create(ctx, req.(*CreateRequest))
+		return srv.(EngineServiceServer).Register(ctx, req.(*RegisterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EngineService_DeRegister_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DescribeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServiceServer).DeRegister(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.EngineService/DeRegister",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServiceServer).DeRegister(ctx, req.(*DescribeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -248,16 +248,12 @@ var _EngineService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*EngineServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "List",
-			Handler:    _EngineService_List_Handler,
-		},
-		{
 			MethodName: "Describe",
 			Handler:    _EngineService_Describe_Handler,
 		},
 		{
-			MethodName: "Register",
-			Handler:    _EngineService_Register_Handler,
+			MethodName: "Create",
+			Handler:    _EngineService_Create_Handler,
 		},
 		{
 			MethodName: "Modify",
@@ -268,8 +264,12 @@ var _EngineService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _EngineService_Delete_Handler,
 		},
 		{
-			MethodName: "Create",
-			Handler:    _EngineService_Create_Handler,
+			MethodName: "Register",
+			Handler:    _EngineService_Register_Handler,
+		},
+		{
+			MethodName: "DeRegister",
+			Handler:    _EngineService_DeRegister_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
