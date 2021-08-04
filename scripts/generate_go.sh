@@ -68,9 +68,9 @@ for f in proto/*.proto;do
 
   protoc -I=. -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --govalidators_opt=paths=source_relative --govalidators_out=. --go_out=. --go-grpc_out=. "$f"
 
-  protoc-go-inject-tag -input="./${dir}/${name}.pb.go"
+  protoc-go-inject-tag -input=".${dir}/${name}.pb.go"
 
-  sed -i '/\@inject_tag/d' "./${dir}/${name}.pb.go"
+  sed -i "" '/\@inject_tag/d' ".${dir}/${name}.pb.go"
 
   mv -f proto/"${name}".validator.pb.go ".${dir}/"
 done
