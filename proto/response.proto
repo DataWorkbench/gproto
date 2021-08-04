@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/response";
+
+package response;
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
+
+// ListAudits used as reply parameters in RPC or response body in HTTP.
+message ListAudits {
+	repeated model.OpAudit infos = 1 [ (validator.field) = { } ];
+	bool has_more = 2 [ (validator.field) = { } ];
+}

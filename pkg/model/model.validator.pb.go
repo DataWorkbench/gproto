@@ -183,15 +183,12 @@ func (this *StreamFlowInstInfo) Validate() error {
 	}
 	return nil
 }
-func (this *AuditInfo) Validate() error {
-	if !(len(this.SpaceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
+func (this *OpAudit) Validate() error {
 	if !(len(this.UserId) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UserId))
 	}
-	if !(this.OpType > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("OpType", fmt.Errorf(`value '%v' must be greater than '0'`, this.OpType))
+	if !(len(this.Action) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Action", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Action))
 	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))

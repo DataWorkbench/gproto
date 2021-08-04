@@ -6,6 +6,8 @@ package wspb
 import (
 	fmt "fmt"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
+	_ "github.com/DataWorkbench/gproto/pkg/request"
+	_ "github.com/DataWorkbench/gproto/pkg/response"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
@@ -111,31 +113,6 @@ func (this *AddAuditRequest) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
-		}
-	}
-	return nil
-}
-func (this *ListAuditsRequest) Validate() error {
-	if !(len(this.SpaceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	if !(this.Limit > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
-	}
-	if !(this.Limit < 101) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
-	}
-	if !(this.Offset > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
-	}
-	return nil
-}
-func (this *ListAuditsReply) Validate() error {
-	for _, item := range this.Infos {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
-			}
 		}
 	}
 	return nil

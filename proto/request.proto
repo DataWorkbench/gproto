@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/request";
+
+package request;
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
+
+// ListAudits used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListAudits {
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: params:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	
+	// The offset position.
+	// Not required, default 0.
+	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+	
+	// The used_id fixed to request user id.
+	// @inject_tag: params:"-" form:"-" default:"" binding:"-" swaggerignore:"true"
+	string user_id = 3 [ (validator.field) = { length_lt: 65 } ];
+	
+	// Querying conditions. Not required.
+	// @inject_tag: params:"space_id" form:"space_id" default:"" binding:"-"
+	string space_id = 4 [ (validator.field) = { } ];
+	
+	// Querying conditions. Not required.
+	// @inject_tag: params:"type" form:"type" default:"" binding:"-"
+	model.OpAudit.Type type = 5 [ (validator.field) = { } ];
+	
+	// Querying conditions. Not required.
+	// @inject_tag: params:"action" form:"action" default:"" binding:"-"
+	string action = 6 [ (validator.field) = { } ];
+	
+	// Querying conditions. Not required.
+	// @inject_tag: params:"state" form:"state" default:"" binding:"-"
+	model.OpAudit.State state = 7 [ (validator.field) = { } ];
+	
+	// Querying conditions. Not required.
+	// Desc: Timestamp of start time.
+	// @inject_tag: params:"started" form:"started" default:"" binding:"-"
+	int64 started = 8 [ (validator.field) = { } ];
+	
+	// Querying conditions. Not required.
+	// Desc: Timestamp of end time.
+	// @inject_tag: params:"ended" form:"ended" default:"" binding:"-"
+	int64 ended = 9 [ (validator.field) = { } ];
+}
+
+

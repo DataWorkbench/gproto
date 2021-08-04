@@ -201,26 +201,45 @@ message StreamFlowInstInfo {
 	int64 updated = 7 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// The workspace operation audit record.
-message AuditInfo {
-	// @inject_tag: gorm:"column:space_id;"
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// The workspace operation audit log record.
+message OpAudit {
+	enum Type {
+		_ = 0;
+		Unknown = 1;
+		Create = 2;
+		Delete = 3;
+		Update = 4;
+		Read = 5;
+	}
+	
+	enum State {
+		__ = 0;
+		Success = 1;
+		Failed = 2;
+	}
 	
 	// The user id of who execute this operation.
-	// @inject_tag: gorm:"column:user_id;"
-	string user_id = 2 [ (validator.field) = { length_lt: 65 } ];
+	// @inject_tag: gorm:"column:user_id;primaryKey;"
+	string user_id = 1 [ (validator.field) = { length_lt: 65 } ];
 	
-	// The operation type, 1 => "unknown", 2 => "read", 3 => "write", 4 => "delete"
-	// @inject_tag: gorm:"column:op_type;"
-	int32 op_type = 3 [ (validator.field) = { int_gt: 0 } ];
+	// @inject_tag: gorm:"column:space_id;primaryKey;"
+	string space_id = 2 [ (validator.field) = {} ];
 	
-	// The operation name (action)
-	// @inject_tag: gorm:"column:op_name;"
-	string op_name = 4 [ (validator.field) = { } ];
+	// -- The type of operation, 2 => "Create",  3 => "Delete", 4 => "Update"
+	// @inject_tag: gorm:"column:type;"
+	Type type = 3 [ (validator.field) = { int_gt: 0 } ];
+	
+	//	-- The operation of user behavior.
+	// @inject_tag: gorm:"column:action;"
+	string action = 4 [ (validator.field) = { length_gt: 0} ];
+	
+	// -- The result of operation, 1 => "Success", 2 => "Failed".
+	// @inject_tag: gorm:"column:state;"
+	State state = 5 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of time of when accessed.
 	// @inject_tag: gorm:"column:created;autoCreateTime;"
-	int64 created = 5 [ (validator.field) = { int_gt: 0 } ];
+	int64 created = 6 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The Role info.

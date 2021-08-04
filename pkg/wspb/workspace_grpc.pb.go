@@ -5,6 +5,8 @@ package wspb
 import (
 	context "context"
 	model "github.com/DataWorkbench/gproto/pkg/model"
+	request "github.com/DataWorkbench/gproto/pkg/request"
+	response "github.com/DataWorkbench/gproto/pkg/response"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -28,7 +30,7 @@ type WorkspaceClient interface {
 	EnableWorkspace(ctx context.Context, in *EnableWorkspaceRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// API of workspace operation audit log.
 	AddAudit(ctx context.Context, in *AddAuditRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	ListAudits(ctx context.Context, in *ListAuditsRequest, opts ...grpc.CallOption) (*ListAuditsReply, error)
+	ListAudits(ctx context.Context, in *request.ListAudits, opts ...grpc.CallOption) (*response.ListAudits, error)
 	// API of workspace role.
 	ListSystemRoles(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*ListSystemRolesReply, error)
 	// API of workspace member.
@@ -120,8 +122,8 @@ func (c *workspaceClient) AddAudit(ctx context.Context, in *AddAuditRequest, opt
 	return out, nil
 }
 
-func (c *workspaceClient) ListAudits(ctx context.Context, in *ListAuditsRequest, opts ...grpc.CallOption) (*ListAuditsReply, error) {
-	out := new(ListAuditsReply)
+func (c *workspaceClient) ListAudits(ctx context.Context, in *request.ListAudits, opts ...grpc.CallOption) (*response.ListAudits, error) {
+	out := new(response.ListAudits)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/ListAudits", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -197,7 +199,7 @@ type WorkspaceServer interface {
 	EnableWorkspace(context.Context, *EnableWorkspaceRequest) (*model.EmptyStruct, error)
 	// API of workspace operation audit log.
 	AddAudit(context.Context, *AddAuditRequest) (*model.EmptyStruct, error)
-	ListAudits(context.Context, *ListAuditsRequest) (*ListAuditsReply, error)
+	ListAudits(context.Context, *request.ListAudits) (*response.ListAudits, error)
 	// API of workspace role.
 	ListSystemRoles(context.Context, *model.EmptyStruct) (*ListSystemRolesReply, error)
 	// API of workspace member.
@@ -238,7 +240,7 @@ func (UnimplementedWorkspaceServer) EnableWorkspace(context.Context, *EnableWork
 func (UnimplementedWorkspaceServer) AddAudit(context.Context, *AddAuditRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddAudit not implemented")
 }
-func (UnimplementedWorkspaceServer) ListAudits(context.Context, *ListAuditsRequest) (*ListAuditsReply, error) {
+func (UnimplementedWorkspaceServer) ListAudits(context.Context, *request.ListAudits) (*response.ListAudits, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAudits not implemented")
 }
 func (UnimplementedWorkspaceServer) ListSystemRoles(context.Context, *model.EmptyStruct) (*ListSystemRolesReply, error) {
@@ -417,7 +419,7 @@ func _Workspace_AddAudit_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _Workspace_ListAudits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListAuditsRequest)
+	in := new(request.ListAudits)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -429,7 +431,7 @@ func _Workspace_ListAudits_Handler(srv interface{}, ctx context.Context, dec fun
 		FullMethod: "/wspb.Workspace/ListAudits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).ListAudits(ctx, req.(*ListAuditsRequest))
+		return srv.(WorkspaceServer).ListAudits(ctx, req.(*request.ListAudits))
 	}
 	return interceptor(ctx, in, info, handler)
 }

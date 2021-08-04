@@ -6,6 +6,8 @@ package wspb;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
+import "request.proto";
+import "response.proto";
 
 // Workspace Service
 service Workspace {
@@ -22,7 +24,7 @@ service Workspace {
     
     // API of workspace operation audit log.
     rpc AddAudit(AddAuditRequest)     returns (model.EmptyStruct) {}
-    rpc ListAudits(ListAuditsRequest) returns (ListAuditsReply)   {}
+    rpc ListAudits(request.ListAudits) returns (response.ListAudits) {}
     
     // API of workspace role.
     rpc ListSystemRoles(model.EmptyStruct) returns (ListSystemRolesReply) {}
@@ -90,19 +92,7 @@ message EnableWorkspaceRequest {
 
 // Request parameters used to AddAudit.
 message AddAuditRequest {
-    model.AuditInfo info = 1 [ (validator.field) = { msg_exists: true } ];
-}
-
-// Request parameters used to ListAudits.
-message ListAuditsRequest {
-    string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-    int32  limit = 2  [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32  offset = 3 [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to AddAudit.
-message ListAuditsReply {
-    repeated model.AuditInfo infos = 1 [ (validator.field) = { } ];
+    model.OpAudit info = 1 [ (validator.field) = { msg_exists: true } ];
 }
 
 // Reply parameters used to ListSystemRoles.
