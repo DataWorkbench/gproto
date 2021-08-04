@@ -52,7 +52,7 @@ message InfoReply {
     string Define = 6    [ (validator.field) = { length_gt: 0 } ];
     string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
     string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
-    string UsageSample = 9  [ (validator.field) = { length_lt: -1 } ];
+    string UsageSample = 9  [ (validator.field) = { length_gt: -1 } ];
 }
 
 message DescribeRequest {

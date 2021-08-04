@@ -117,8 +117,8 @@ func (this *InfoReply) Validate() error {
 	if !(len(this.UpdateTime) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UpdateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UpdateTime))
 	}
-	if !(len(this.UsageSample) < -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("UsageSample", fmt.Errorf(`value '%v' must have a length smaller than '-1'`, this.UsageSample))
+	if !(len(this.UsageSample) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UsageSample", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.UsageSample))
 	}
 	return nil
 }
