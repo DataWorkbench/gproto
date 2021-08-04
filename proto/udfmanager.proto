@@ -23,6 +23,7 @@ message CreateRequest {
     string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
     string Define = 6    [ (validator.field) = { length_gt: 0 } ];
+    string UsageSample = 7    [ (validator.field) = { length_gt: -1 } ];
 }
 
 message UpdateRequest {
@@ -31,6 +32,7 @@ message UpdateRequest {
     string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
     string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
     string Define = 5    [ (validator.field) = { length_gt: 0 } ];
+    string UsageSample = 6    [ (validator.field) = { length_gt: -1 } ];
 }
 
 message DeleteRequest {
@@ -50,6 +52,7 @@ message InfoReply {
     string Define = 6    [ (validator.field) = { length_gt: 0 } ];
     string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
     string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
+    string UsageSample = 9  [ (validator.field) = { length_gt: -1 } ];
 }
 
 message DescribeRequest {

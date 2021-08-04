@@ -18,11 +18,11 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FileManagerClient interface {
-	Upload(ctx context.Context, opts ...grpc.CallOption) (FileManager_UploadClient, error)
-	Download(ctx context.Context, in *DownloadRequest, opts ...grpc.CallOption) (FileManager_DownloadClient, error)
-	GetFile(ctx context.Context, in *FilesFilterRequest, opts ...grpc.CallOption) (*FileListResponse, error)
-	Update(ctx context.Context, in *UpdateFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	Delete(ctx context.Context, in *DeleteFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	UploadFile(ctx context.Context, opts ...grpc.CallOption) (FileManager_UploadFileClient, error)
+	DownloadFile(ctx context.Context, in *DownloadRequest, opts ...grpc.CallOption) (FileManager_DownloadFileClient, error)
+	ListFiles(ctx context.Context, in *FilesFilterRequest, opts ...grpc.CallOption) (*FileListResponse, error)
+	UpdateFile(ctx context.Context, in *UpdateFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteFile(ctx context.Context, in *DeleteFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type fileManagerClient struct {
@@ -33,30 +33,30 @@ func NewFileManagerClient(cc grpc.ClientConnInterface) FileManagerClient {
 	return &fileManagerClient{cc}
 }
 
-func (c *fileManagerClient) Upload(ctx context.Context, opts ...grpc.CallOption) (FileManager_UploadClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_FileManager_serviceDesc.Streams[0], "/fmpb.FileManager/Upload", opts...)
+func (c *fileManagerClient) UploadFile(ctx context.Context, opts ...grpc.CallOption) (FileManager_UploadFileClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_FileManager_serviceDesc.Streams[0], "/fmpb.FileManager/UploadFile", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &fileManagerUploadClient{stream}
+	x := &fileManagerUploadFileClient{stream}
 	return x, nil
 }
 
-type FileManager_UploadClient interface {
+type FileManager_UploadFileClient interface {
 	Send(*UploadFileRequest) error
 	CloseAndRecv() (*FileInfoResponse, error)
 	grpc.ClientStream
 }
 
-type fileManagerUploadClient struct {
+type fileManagerUploadFileClient struct {
 	grpc.ClientStream
 }
 
-func (x *fileManagerUploadClient) Send(m *UploadFileRequest) error {
+func (x *fileManagerUploadFileClient) Send(m *UploadFileRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *fileManagerUploadClient) CloseAndRecv() (*FileInfoResponse, error) {
+func (x *fileManagerUploadFileClient) CloseAndRecv() (*FileInfoResponse, error) {
 	if err := x.ClientStream.CloseSend(); err != nil {
 		return nil, err
 	}
@@ -67,12 +67,12 @@ func (x *fileManagerUploadClient) CloseAndRecv() (*FileInfoResponse, error) {
 	return m, nil
 }
 
-func (c *fileManagerClient) Download(ctx context.Context, in *DownloadRequest, opts ...grpc.CallOption) (FileManager_DownloadClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_FileManager_serviceDesc.Streams[1], "/fmpb.FileManager/Download", opts...)
+func (c *fileManagerClient) DownloadFile(ctx context.Context, in *DownloadRequest, opts ...grpc.CallOption) (FileManager_DownloadFileClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_FileManager_serviceDesc.Streams[1], "/fmpb.FileManager/DownloadFile", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &fileManagerDownloadClient{stream}
+	x := &fileManagerDownloadFileClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -82,16 +82,16 @@ func (c *fileManagerClient) Download(ctx context.Context, in *DownloadRequest, o
 	return x, nil
 }
 
-type FileManager_DownloadClient interface {
+type FileManager_DownloadFileClient interface {
 	Recv() (*DownloadResponse, error)
 	grpc.ClientStream
 }
 
-type fileManagerDownloadClient struct {
+type fileManagerDownloadFileClient struct {
 	grpc.ClientStream
 }
 
-func (x *fileManagerDownloadClient) Recv() (*DownloadResponse, error) {
+func (x *fileManagerDownloadFileClient) Recv() (*DownloadResponse, error) {
 	m := new(DownloadResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -99,27 +99,27 @@ func (x *fileManagerDownloadClient) Recv() (*DownloadResponse, error) {
 	return m, nil
 }
 
-func (c *fileManagerClient) GetFile(ctx context.Context, in *FilesFilterRequest, opts ...grpc.CallOption) (*FileListResponse, error) {
+func (c *fileManagerClient) ListFiles(ctx context.Context, in *FilesFilterRequest, opts ...grpc.CallOption) (*FileListResponse, error) {
 	out := new(FileListResponse)
-	err := c.cc.Invoke(ctx, "/fmpb.FileManager/GetFile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fmpb.FileManager/ListFiles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *fileManagerClient) Update(ctx context.Context, in *UpdateFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *fileManagerClient) UpdateFile(ctx context.Context, in *UpdateFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/fmpb.FileManager/Update", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fmpb.FileManager/UpdateFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *fileManagerClient) Delete(ctx context.Context, in *DeleteFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *fileManagerClient) DeleteFile(ctx context.Context, in *DeleteFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/fmpb.FileManager/Delete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fmpb.FileManager/DeleteFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -130,11 +130,11 @@ func (c *fileManagerClient) Delete(ctx context.Context, in *DeleteFileRequest, o
 // All implementations must embed UnimplementedFileManagerServer
 // for forward compatibility
 type FileManagerServer interface {
-	Upload(FileManager_UploadServer) error
-	Download(*DownloadRequest, FileManager_DownloadServer) error
-	GetFile(context.Context, *FilesFilterRequest) (*FileListResponse, error)
-	Update(context.Context, *UpdateFileRequest) (*model.EmptyStruct, error)
-	Delete(context.Context, *DeleteFileRequest) (*model.EmptyStruct, error)
+	UploadFile(FileManager_UploadFileServer) error
+	DownloadFile(*DownloadRequest, FileManager_DownloadFileServer) error
+	ListFiles(context.Context, *FilesFilterRequest) (*FileListResponse, error)
+	UpdateFile(context.Context, *UpdateFileRequest) (*model.EmptyStruct, error)
+	DeleteFile(context.Context, *DeleteFileRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedFileManagerServer()
 }
 
@@ -142,20 +142,20 @@ type FileManagerServer interface {
 type UnimplementedFileManagerServer struct {
 }
 
-func (UnimplementedFileManagerServer) Upload(FileManager_UploadServer) error {
-	return status.Errorf(codes.Unimplemented, "method Upload not implemented")
+func (UnimplementedFileManagerServer) UploadFile(FileManager_UploadFileServer) error {
+	return status.Errorf(codes.Unimplemented, "method UploadFile not implemented")
 }
-func (UnimplementedFileManagerServer) Download(*DownloadRequest, FileManager_DownloadServer) error {
-	return status.Errorf(codes.Unimplemented, "method Download not implemented")
+func (UnimplementedFileManagerServer) DownloadFile(*DownloadRequest, FileManager_DownloadFileServer) error {
+	return status.Errorf(codes.Unimplemented, "method DownloadFile not implemented")
 }
-func (UnimplementedFileManagerServer) GetFile(context.Context, *FilesFilterRequest) (*FileListResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFile not implemented")
+func (UnimplementedFileManagerServer) ListFiles(context.Context, *FilesFilterRequest) (*FileListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFiles not implemented")
 }
-func (UnimplementedFileManagerServer) Update(context.Context, *UpdateFileRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
+func (UnimplementedFileManagerServer) UpdateFile(context.Context, *UpdateFileRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFile not implemented")
 }
-func (UnimplementedFileManagerServer) Delete(context.Context, *DeleteFileRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
+func (UnimplementedFileManagerServer) DeleteFile(context.Context, *DeleteFileRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFile not implemented")
 }
 func (UnimplementedFileManagerServer) mustEmbedUnimplementedFileManagerServer() {}
 
@@ -170,25 +170,25 @@ func RegisterFileManagerServer(s grpc.ServiceRegistrar, srv FileManagerServer) {
 	s.RegisterService(&_FileManager_serviceDesc, srv)
 }
 
-func _FileManager_Upload_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(FileManagerServer).Upload(&fileManagerUploadServer{stream})
+func _FileManager_UploadFile_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(FileManagerServer).UploadFile(&fileManagerUploadFileServer{stream})
 }
 
-type FileManager_UploadServer interface {
+type FileManager_UploadFileServer interface {
 	SendAndClose(*FileInfoResponse) error
 	Recv() (*UploadFileRequest, error)
 	grpc.ServerStream
 }
 
-type fileManagerUploadServer struct {
+type fileManagerUploadFileServer struct {
 	grpc.ServerStream
 }
 
-func (x *fileManagerUploadServer) SendAndClose(m *FileInfoResponse) error {
+func (x *fileManagerUploadFileServer) SendAndClose(m *FileInfoResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *fileManagerUploadServer) Recv() (*UploadFileRequest, error) {
+func (x *fileManagerUploadFileServer) Recv() (*UploadFileRequest, error) {
 	m := new(UploadFileRequest)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -196,77 +196,77 @@ func (x *fileManagerUploadServer) Recv() (*UploadFileRequest, error) {
 	return m, nil
 }
 
-func _FileManager_Download_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _FileManager_DownloadFile_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(DownloadRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(FileManagerServer).Download(m, &fileManagerDownloadServer{stream})
+	return srv.(FileManagerServer).DownloadFile(m, &fileManagerDownloadFileServer{stream})
 }
 
-type FileManager_DownloadServer interface {
+type FileManager_DownloadFileServer interface {
 	Send(*DownloadResponse) error
 	grpc.ServerStream
 }
 
-type fileManagerDownloadServer struct {
+type fileManagerDownloadFileServer struct {
 	grpc.ServerStream
 }
 
-func (x *fileManagerDownloadServer) Send(m *DownloadResponse) error {
+func (x *fileManagerDownloadFileServer) Send(m *DownloadResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _FileManager_GetFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _FileManager_ListFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FilesFilterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FileManagerServer).GetFile(ctx, in)
+		return srv.(FileManagerServer).ListFiles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fmpb.FileManager/GetFile",
+		FullMethod: "/fmpb.FileManager/ListFiles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FileManagerServer).GetFile(ctx, req.(*FilesFilterRequest))
+		return srv.(FileManagerServer).ListFiles(ctx, req.(*FilesFilterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FileManager_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _FileManager_UpdateFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateFileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FileManagerServer).Update(ctx, in)
+		return srv.(FileManagerServer).UpdateFile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fmpb.FileManager/Update",
+		FullMethod: "/fmpb.FileManager/UpdateFile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FileManagerServer).Update(ctx, req.(*UpdateFileRequest))
+		return srv.(FileManagerServer).UpdateFile(ctx, req.(*UpdateFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FileManager_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _FileManager_DeleteFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteFileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FileManagerServer).Delete(ctx, in)
+		return srv.(FileManagerServer).DeleteFile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fmpb.FileManager/Delete",
+		FullMethod: "/fmpb.FileManager/DeleteFile",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FileManagerServer).Delete(ctx, req.(*DeleteFileRequest))
+		return srv.(FileManagerServer).DeleteFile(ctx, req.(*DeleteFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -276,27 +276,27 @@ var _FileManager_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*FileManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetFile",
-			Handler:    _FileManager_GetFile_Handler,
+			MethodName: "ListFiles",
+			Handler:    _FileManager_ListFiles_Handler,
 		},
 		{
-			MethodName: "Update",
-			Handler:    _FileManager_Update_Handler,
+			MethodName: "UpdateFile",
+			Handler:    _FileManager_UpdateFile_Handler,
 		},
 		{
-			MethodName: "Delete",
-			Handler:    _FileManager_Delete_Handler,
+			MethodName: "DeleteFile",
+			Handler:    _FileManager_DeleteFile_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
-			StreamName:    "Upload",
-			Handler:       _FileManager_Upload_Handler,
+			StreamName:    "UploadFile",
+			Handler:       _FileManager_UploadFile_Handler,
 			ClientStreams: true,
 		},
 		{
-			StreamName:    "Download",
-			Handler:       _FileManager_Download_Handler,
+			StreamName:    "DownloadFile",
+			Handler:       _FileManager_DownloadFile_Handler,
 			ServerStreams: true,
 		},
 	},
