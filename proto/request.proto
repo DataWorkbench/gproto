@@ -7,6 +7,91 @@ package request;
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListWorkspaces {
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	
+	// The offset position. Not required, default 0.
+	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+	
+	// The used_id fixed to request user id.
+	// @inject_tag: params:"-" form:"-" default:"" binding:"-" swaggerignore:"true"
+	string user_id = 3 [ (validator.field) = { length_lt: 65 } ];
+}
+
+// CreateWorkspace used as a request parameters for RPC and HTTP(based on Body)
+message CreateWorkspace {
+	// The owner fixed to request user id.
+	// @inject_tag: params:"-" default:"" binding:"-" swaggerignore:"true"
+	string owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
+	
+	// The space name of each account in each region is unique. Is required.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	//@inject_tag: params:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
+	string name = 2 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	
+	// Description of the workspace, Not required, Max 1024 char.
+	//@inject_tag: params:"desc" default:"" binding:"lte=1024"
+	string desc = 3  [ (validator.field) = { length_lt: 1025 } ];
+}
+
+// DeleteWorkspace used as a request parameters for RPC.
+message DeleteWorkspace {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// UpdateWorkspace used as a request parameters for RPC and HTTP(based on Body)
+message UpdateWorkspace {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The space name of each account in each region is unique. Is required.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	//@inject_tag: params:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
+	string name = 2 [ (validator.field) = { length_lt: 129 } ];
+	
+	// Description of the workspace, Not required, Max 1024 char.
+	//@inject_tag: params:"desc" default:"" binding:"lte=1024"
+	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
+}
+
+// DescribeWorkspace used as a request parameters for RPC.
+message DescribeWorkspace {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// DisableWorkspace used as a request parameters for RPC.
+message DisableWorkspace {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// EnableWorkspace used as a request parameters for RPC.
+message EnableWorkspace {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Whether resume all suspended workflow.
+	// @inject_tag: `params:"resume_workflow" default:"false" binding:"-"`
+	bool resume_workflow = 2 [ (validator.field) = { } ];
+}
+
+// AddAudit used as a request parameters for RPC.
+message AddAudit {
+	model.OpAudit info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
 // ListAudits used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListAudits {
 	// Limit the maximum number of entries returned this time.
@@ -14,8 +99,7 @@ message ListAudits {
 	// @inject_tag: params:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
-	// The offset position.
-	// Not required, default 0.
+	// The offset position. Not required, default 0.
 	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
 	
@@ -50,4 +134,68 @@ message ListAudits {
 	int64 ended = 9 [ (validator.field) = { } ];
 }
 
+// ListMembers used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListMembers {
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	
+	// The offset position. Not required, default 0.
+	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+	
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
+}
 
+// AddMember used as a request parameters for RPC and HTTP(based on Body).
+message AddMember {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+	
+	// The account user_id. Is Required.
+	// @inject_tag: params:"user_id" json:"user_id" default:"" binding:"required"
+	string user_id = 2 [ (validator.field) = { length_lt: 65 } ];
+	
+	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required.
+	// @inject_tag: params:"role_ids" default:"" binding:"required"
+	string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
+}
+
+// RemoveMember used as a request parameters for RPC and HTTP(based on Body).
+message RemoveMember {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+	
+	// The member(user) id in HTTP Request-URI
+	// @inject_tag: params:"member_id" uri:"member_id" default:"" binding:"-" swaggerignore:"true"
+	string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+}
+
+// UpdateMember used as a request parameters for RPC and HTTP(based on Body).
+message UpdateMember {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
+	
+	// The member(user) id in HTTP Request-URI
+	// @inject_tag: params:"member_id" uri:"member_id" default:"" binding:"-" swaggerignore:"true"
+	string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
+	
+	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required.
+	// @inject_tag: params:"role_ids" default:"" binding:"required"
+	string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
+}
+
+// CheckPermission used as a request parameters for RPC.
+message CheckPermission {
+	string req_user_id         = 1 [ (validator.field) = { length_lt: 65 } ];
+	string space_id            = 2 [ (validator.field) = { length_eq: 20 } ];
+	string resource            = 3 [ (validator.field) = { } ];
+	string action              = 4 [ (validator.field) = { } ];
+	model.OpAudit.Type op_type = 5 [ (validator.field) = { int_gt: 0, int_lt: 5 } ];
+}

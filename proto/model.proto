@@ -10,7 +10,13 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 message EmptyStruct {}
 
 // The workspace info.
-message SpaceInfo {
+message Workspace {
+	enum Status {
+		_ = 0;
+		Enabled = 1;
+		Disabled = 2;
+	}
+	
 	// Workspace ID, unique within a region.
 	// @inject_tag: gorm:"column:id;primaryKey;"
 	string id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -27,9 +33,9 @@ message SpaceInfo {
 	// @inject_tag: gorm:"column:desc;"
 	string desc = 4 [ (validator.field) = { length_lt: 1025 } ];
 	
-	// Workspace status, 0 => "enabled", 1 => "disabled".
+	// Workspace status, 1 => "enabled", 2 => "disabled".
 	// @inject_tag: gorm:"column:status;"
-	int32 status = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	Status status = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 	
 	// Timestamp of create time.
 	// @inject_tag: gorm:"column:created;autoCreateTime;"
@@ -243,7 +249,12 @@ message OpAudit {
 }
 
 // The Role info.
-message RoleInfo {
+message Role {
+	enum Type {
+		_ = 0;
+		System = 1;
+		Custom = 2;
+	}
 //	// @inject_tag: gorm:"column:space_id;"
 //	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
@@ -256,12 +267,12 @@ message RoleInfo {
 	// @inject_tag: gorm:"column:name;"
 	string name = 4 [ (validator.field) = { length_lt: 128 } ];
 	
-	// @inject_tag: gorm:"column:type;" 1 => "SYSTEM" 2 => "CUSTOM"
-	int32 type = 5 [ (validator.field) = { int_gt: 0 } ];
+	// @inject_tag: gorm:"column:type;" 1 => "System" 2 => "Custom"
+	Type type = 5 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The workspace member info.
-message MemberInfo {
+message Member {
 	// @inject_tag: gorm:"column:space_id;primaryKey;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 

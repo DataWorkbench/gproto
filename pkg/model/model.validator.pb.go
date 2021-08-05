@@ -19,7 +19,7 @@ var _ = math.Inf
 func (this *EmptyStruct) Validate() error {
 	return nil
 }
-func (this *SpaceInfo) Validate() error {
+func (this *Workspace) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
@@ -34,12 +34,6 @@ func (this *SpaceInfo) Validate() error {
 	}
 	if !(len(this.Desc) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
-	}
-	if !(this.Status > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be greater than '0'`, this.Status))
-	}
-	if !(this.Status < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Status", fmt.Errorf(`value '%v' must be less than '3'`, this.Status))
 	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
@@ -195,7 +189,7 @@ func (this *OpAudit) Validate() error {
 	}
 	return nil
 }
-func (this *RoleInfo) Validate() error {
+func (this *Role) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
@@ -205,12 +199,9 @@ func (this *RoleInfo) Validate() error {
 	if !(len(this.Name) < 128) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
 	}
-	if !(this.Type > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must be greater than '0'`, this.Type))
-	}
 	return nil
 }
-func (this *MemberInfo) Validate() error {
+func (this *Member) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}

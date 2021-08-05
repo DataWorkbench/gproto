@@ -17,6 +17,86 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *ListWorkspaces) Validate() error {
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	if !(len(this.UserId) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UserId))
+	}
+	return nil
+}
+func (this *CreateWorkspace) Validate() error {
+	if !(len(this.Owner) > 10) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
+	}
+	if !(len(this.Owner) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(len(this.Desc) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
+	}
+	return nil
+}
+func (this *DeleteWorkspace) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *UpdateWorkspace) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(len(this.Desc) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
+	}
+	return nil
+}
+func (this *DescribeWorkspace) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *DisableWorkspace) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *EnableWorkspace) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *AddAudit) Validate() error {
+	if nil == this.Info {
+		return github_com_mwitkow_go_proto_validators.FieldError("Info", fmt.Errorf("message must exist"))
+	}
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
 func (this *ListAudits) Validate() error {
 	if !(this.Limit > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
@@ -29,6 +109,63 @@ func (this *ListAudits) Validate() error {
 	}
 	if !(len(this.UserId) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UserId))
+	}
+	return nil
+}
+func (this *ListMembers) Validate() error {
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	return nil
+}
+func (this *AddMember) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.UserId) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UserId))
+	}
+	if !(len(this.RoleIds) < 256) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RoleIds", fmt.Errorf(`value '%v' must have a length smaller than '256'`, this.RoleIds))
+	}
+	return nil
+}
+func (this *RemoveMember) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.MemberId) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MemberId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.MemberId))
+	}
+	return nil
+}
+func (this *UpdateMember) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.MemberId) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MemberId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.MemberId))
+	}
+	if !(len(this.RoleIds) < 256) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RoleIds", fmt.Errorf(`value '%v' must have a length smaller than '256'`, this.RoleIds))
+	}
+	return nil
+}
+func (this *CheckPermission) Validate() error {
+	if !(len(this.ReqUserId) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ReqUserId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.ReqUserId))
+	}
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
 	return nil
 }

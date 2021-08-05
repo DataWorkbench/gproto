@@ -17,7 +17,62 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *ListWorkspaces) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
 func (this *ListAudits) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *CreateWorkspace) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *DescribeWorkspace) Validate() error {
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
+func (this *ListMembers) Validate() error {
+	for _, item := range this.Members {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Members", err)
+			}
+		}
+	}
+	// Validation of proto3 map<> fields is unsupported.
+	return nil
+}
+func (this *ListMembers_RoleList) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *ListSystemRoles) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
