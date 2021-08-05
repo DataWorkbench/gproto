@@ -103,7 +103,7 @@ type CreateWorkspace struct {
 
 	// The owner fixed to request user id.
 	Owner string `protobuf:"bytes,1,opt,name=owner,proto3" json:"owner,omitempty" params:"-" binding:"-" swaggerignore:"true"`
-	// The space name of each account in each region is unique. Is required.
+	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
 	// Description of the workspace, Not required, Max 1024 char.
@@ -220,10 +220,10 @@ type UpdateWorkspace struct {
 
 	// The workspace id in HTTP Request-URI
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-	// The space name of each account in each region is unique. Is required.
+	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
-	// Description of the workspace, Not required, Max 1024 char.
+	// Description of the workspace, Not required, Max length 1024.
 	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
 }
 
@@ -948,6 +948,1247 @@ func (x *CheckPermission) GetOpType() model.OpAudit_Type {
 	return model.OpAudit__
 }
 
+// DeleteAllFlows used as a request parameters for RPC.
+type DeleteAllFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *DeleteAllFlows) Reset() {
+	*x = DeleteAllFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAllFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAllFlows) ProtoMessage() {}
+
+func (x *DeleteAllFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAllFlows.ProtoReflect.Descriptor instead.
+func (*DeleteAllFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *DeleteAllFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+// ListStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ListStreamFlows) Reset() {
+	*x = ListStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStreamFlows) ProtoMessage() {}
+
+func (x *ListStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStreamFlows.ProtoReflect.Descriptor instead.
+func (*ListStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ListStreamFlows) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListStreamFlows) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+// CreateStreamFlow used as a request parameters for RPC and HTTP(based on Body)
+type CreateStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow name in each workspace is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128"`
+	// Description of the workspace, Not required, Max length 1024.
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	// Workflow Type. Is Required, Optional Value: 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator".
+	// Desc: Cannot be modified after creation.
+	Type model.StreamFlow_Type `protobuf:"varint,4,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type,omitempty" params:"type" binding:"gte=1,lte=3"`
+}
+
+func (x *CreateStreamFlow) Reset() {
+	*x = CreateStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateStreamFlow) ProtoMessage() {}
+
+func (x *CreateStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateStreamFlow.ProtoReflect.Descriptor instead.
+func (*CreateStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *CreateStreamFlow) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *CreateStreamFlow) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateStreamFlow) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+func (x *CreateStreamFlow) GetType() model.StreamFlow_Type {
+	if x != nil {
+		return x.Type
+	}
+	return model.StreamFlow__
+}
+
+// DeleteStreamFlow used as a request parameters for RPC.
+type DeleteStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *DeleteStreamFlow) Reset() {
+	*x = DeleteStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteStreamFlow) ProtoMessage() {}
+
+func (x *DeleteStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteStreamFlow.ProtoReflect.Descriptor instead.
+func (*DeleteStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *DeleteStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// UpdateStreamFlow used as a request parameters for RPC and HTTP(based on Body).
+type UpdateStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow name in each workspace is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128"`
+	// Description of the workspace, Not required, Max length 1024.
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+}
+
+func (x *UpdateStreamFlow) Reset() {
+	*x = UpdateStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateStreamFlow) ProtoMessage() {}
+
+func (x *UpdateStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateStreamFlow.ProtoReflect.Descriptor instead.
+func (*UpdateStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *UpdateStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *UpdateStreamFlow) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateStreamFlow) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+// DescribeStreamFlow used as a request parameters for RPC.
+type DescribeStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *DescribeStreamFlow) Reset() {
+	*x = DescribeStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeStreamFlow) ProtoMessage() {}
+
+func (x *DescribeStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeStreamFlow.ProtoReflect.Descriptor instead.
+func (*DescribeStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *DescribeStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// SetStreamFlowNode used as a request parameters for RPC.
+type SetStreamFlowNode struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.StreamFlowNode `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *SetStreamFlowNode) Reset() {
+	*x = SetStreamFlowNode{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SetStreamFlowNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetStreamFlowNode) ProtoMessage() {}
+
+func (x *SetStreamFlowNode) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetStreamFlowNode.ProtoReflect.Descriptor instead.
+func (*SetStreamFlowNode) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *SetStreamFlowNode) GetInfo() *model.StreamFlowNode {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// SetStreamFlowSchedule used as a request parameters for RPC.
+type SetStreamFlowSchedule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.StreamFlowSchedule `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *SetStreamFlowSchedule) Reset() {
+	*x = SetStreamFlowSchedule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SetStreamFlowSchedule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetStreamFlowSchedule) ProtoMessage() {}
+
+func (x *SetStreamFlowSchedule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetStreamFlowSchedule.ProtoReflect.Descriptor instead.
+func (*SetStreamFlowSchedule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *SetStreamFlowSchedule) GetInfo() *model.StreamFlowSchedule {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// SetStreamFlowEnv used as a request parameters for RPC.
+type SetStreamFlowEnv struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.StreamFlowEnv `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *SetStreamFlowEnv) Reset() {
+	*x = SetStreamFlowEnv{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SetStreamFlowEnv) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetStreamFlowEnv) ProtoMessage() {}
+
+func (x *SetStreamFlowEnv) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetStreamFlowEnv.ProtoReflect.Descriptor instead.
+func (*SetStreamFlowEnv) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *SetStreamFlowEnv) GetInfo() *model.StreamFlowEnv {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// GetStreamFlowNode used as a request parameters for RPC.
+type GetStreamFlowNode struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowNode) Reset() {
+	*x = GetStreamFlowNode{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowNode) ProtoMessage() {}
+
+func (x *GetStreamFlowNode) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowNode.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowNode) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *GetStreamFlowNode) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// GetStreamFlowSchedule used as a request parameters for RPC.
+type GetStreamFlowSchedule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowSchedule) Reset() {
+	*x = GetStreamFlowSchedule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowSchedule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowSchedule) ProtoMessage() {}
+
+func (x *GetStreamFlowSchedule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowSchedule.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowSchedule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *GetStreamFlowSchedule) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// GetStreamFlowEnv used as a request parameters for RPC.
+type GetStreamFlowEnv struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowEnv) Reset() {
+	*x = GetStreamFlowEnv{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowEnv) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowEnv) ProtoMessage() {}
+
+func (x *GetStreamFlowEnv) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowEnv.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowEnv) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *GetStreamFlowEnv) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// ExecuteStreamFlow used as a request parameters for RPC.
+type ExecuteStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ExecuteStreamFlow) Reset() {
+	*x = ExecuteStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExecuteStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExecuteStreamFlow) ProtoMessage() {}
+
+func (x *ExecuteStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExecuteStreamFlow.ProtoReflect.Descriptor instead.
+func (*ExecuteStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ExecuteStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// ListReleaseStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query).
+type ListReleaseStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ListReleaseStreamFlows) Reset() {
+	*x = ListReleaseStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[27]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListReleaseStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListReleaseStreamFlows) ProtoMessage() {}
+
+func (x *ListReleaseStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[27]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListReleaseStreamFlows.ProtoReflect.Descriptor instead.
+func (*ListReleaseStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ListReleaseStreamFlows) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListReleaseStreamFlows) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListReleaseStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+// ReleaseStreamFlow used as a request parameters for RPC and HTTP(based on Body.)
+type ReleaseStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// Description for this releases. Not required, Max length 1024.
+	Desc        string `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	StopRunning bool   `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running,omitempty" params:"stop_running" binding:"-"`
+}
+
+func (x *ReleaseStreamFlow) Reset() {
+	*x = ReleaseStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[28]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReleaseStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReleaseStreamFlow) ProtoMessage() {}
+
+func (x *ReleaseStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[28]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReleaseStreamFlow.ProtoReflect.Descriptor instead.
+func (*ReleaseStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *ReleaseStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *ReleaseStreamFlow) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+func (x *ReleaseStreamFlow) GetStopRunning() bool {
+	if x != nil {
+		return x.StopRunning
+	}
+	return false
+}
+
+// SuspendReleaseStreamFlow used as a request parameters for RPC and HTTP(based on Body).
+type SuspendReleaseStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId      string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	StopRunning bool   `protobuf:"varint,2,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running,omitempty" params:"stop_running" binding:"-"`
+}
+
+func (x *SuspendReleaseStreamFlow) Reset() {
+	*x = SuspendReleaseStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[29]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SuspendReleaseStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SuspendReleaseStreamFlow) ProtoMessage() {}
+
+func (x *SuspendReleaseStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[29]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SuspendReleaseStreamFlow.ProtoReflect.Descriptor instead.
+func (*SuspendReleaseStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *SuspendReleaseStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *SuspendReleaseStreamFlow) GetStopRunning() bool {
+	if x != nil {
+		return x.StopRunning
+	}
+	return false
+}
+
+// ResumeReleaseStreamFlow used as a request parameters for RPC.
+type ResumeReleaseStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ResumeReleaseStreamFlow) Reset() {
+	*x = ResumeReleaseStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[30]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResumeReleaseStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResumeReleaseStreamFlow) ProtoMessage() {}
+
+func (x *ResumeReleaseStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[30]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResumeReleaseStreamFlow.ProtoReflect.Descriptor instead.
+func (*ResumeReleaseStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *ResumeReleaseStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// ListStreamFlowVersions used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListStreamFlowVersions struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,3,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ListStreamFlowVersions) Reset() {
+	*x = ListStreamFlowVersions{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[31]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStreamFlowVersions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStreamFlowVersions) ProtoMessage() {}
+
+func (x *ListStreamFlowVersions) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[31]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStreamFlowVersions.ProtoReflect.Descriptor instead.
+func (*ListStreamFlowVersions) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *ListStreamFlowVersions) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListStreamFlowVersions) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListStreamFlowVersions) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// DescribeStreamFlowVersion used as a request parameters for RPC.
+type DescribeStreamFlowVersion struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *DescribeStreamFlowVersion) Reset() {
+	*x = DescribeStreamFlowVersion{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[32]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeStreamFlowVersion) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeStreamFlowVersion) ProtoMessage() {}
+
+func (x *DescribeStreamFlowVersion) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[32]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeStreamFlowVersion.ProtoReflect.Descriptor instead.
+func (*DescribeStreamFlowVersion) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *DescribeStreamFlowVersion) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *DescribeStreamFlowVersion) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// GetStreamFlowVersionNode used as a request parameters for RPC.
+type GetStreamFlowVersionNode struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowVersionNode) Reset() {
+	*x = GetStreamFlowVersionNode{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowVersionNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowVersionNode) ProtoMessage() {}
+
+func (x *GetStreamFlowVersionNode) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowVersionNode.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowVersionNode) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *GetStreamFlowVersionNode) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *GetStreamFlowVersionNode) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// GetStreamFlowVersionEnv used as a request parameters for RPC.
+type GetStreamFlowVersionEnv struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowVersionEnv) Reset() {
+	*x = GetStreamFlowVersionEnv{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowVersionEnv) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowVersionEnv) ProtoMessage() {}
+
+func (x *GetStreamFlowVersionEnv) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowVersionEnv.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowVersionEnv) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *GetStreamFlowVersionEnv) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *GetStreamFlowVersionEnv) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// GetStreamFlowVersionSchedule used as a request parameters for RPC.
+type GetStreamFlowVersionSchedule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowVersionSchedule) Reset() {
+	*x = GetStreamFlowVersionSchedule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[35]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowVersionSchedule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowVersionSchedule) ProtoMessage() {}
+
+func (x *GetStreamFlowVersionSchedule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[35]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowVersionSchedule.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowVersionSchedule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *GetStreamFlowVersionSchedule) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *GetStreamFlowVersionSchedule) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
 var File_proto_request_proto protoreflect.FileDescriptor
 
 var file_proto_request_proto_rawDesc = []byte{
@@ -1059,10 +2300,135 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x70, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f, 0x70, 0x41, 0x75, 0x64, 0x69, 0x74, 0x2e, 0x54, 0x79, 0x70,
 	0x65, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x05, 0x52, 0x06, 0x6f, 0x70, 0x54,
-	0x79, 0x70, 0x65, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f,
-	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x79, 0x70, 0x65, 0x22, 0x34, 0x0a, 0x0e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x6c, 0x6c,
+	0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x7e, 0x0a, 0x0f, 0x4c, 0x69, 0x73,
+	0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x1e, 0x0a, 0x05,
+	0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f,
+	0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06,
+	0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf,
+	0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f,
+	0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69,
+	0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0xa6, 0x01, 0x0a, 0x10, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x22,
+	0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x49, 0x64, 0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x12, 0x1b, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x32,
+	0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x2e,
+	0x54, 0x79, 0x70, 0x65, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x04, 0x74, 0x79,
+	0x70, 0x65, 0x22, 0x34, 0x0a, 0x10, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x22, 0x70, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x20, 0x0a, 0x07,
+	0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
+	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1d,
+	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf,
+	0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1b, 0x0a,
+	0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f,
+	0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x22, 0x36, 0x0a, 0x12, 0x44, 0x65,
+	0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77,
+	0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77,
+	0x49, 0x64, 0x22, 0x46, 0x0a, 0x11, 0x53, 0x65, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46,
+	0x6c, 0x6f, 0x77, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x31, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74,
+	0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x4e, 0x6f, 0x64, 0x65, 0x42, 0x06, 0xe2, 0xdf,
+	0x1f, 0x02, 0x20, 0x00, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x4e, 0x0a, 0x15, 0x53, 0x65,
+	0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x53, 0x63, 0x68, 0x65, 0x64,
+	0x75, 0x6c, 0x65, 0x12, 0x35, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x19, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d,
+	0x46, 0x6c, 0x6f, 0x77, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x42, 0x06, 0xe2, 0xdf,
+	0x1f, 0x02, 0x20, 0x00, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x44, 0x0a, 0x10, 0x53, 0x65,
+	0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x12, 0x30,
+	0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x45,
+	0x6e, 0x76, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x00, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f,
+	0x22, 0x35, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f,
+	0x77, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52,
+	0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x22, 0x39, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x53, 0x74,
+	0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65,
+	0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77,
+	0x49, 0x64, 0x22, 0x34, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46,
+	0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x22, 0x35, 0x0a, 0x11, 0x45, 0x78, 0x65, 0x63,
+	0x75, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x20, 0x0a,
+	0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
+	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x22,
+	0x85, 0x01, 0x0a, 0x16, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x6c, 0x65, 0x61, 0x73, 0x65, 0x53,
+	0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69,
+	0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10,
+	0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66,
+	0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b,
+	0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x88, 0x01, 0x0a, 0x11, 0x52, 0x65, 0x6c, 0x65,
+	0x61, 0x73, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x20, 0x0a,
+	0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
+	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12,
+	0x1b, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
+	0xdf, 0x1f, 0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x34, 0x0a, 0x0c,
+	0x73, 0x74, 0x6f, 0x70, 0x5f, 0x72, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x08, 0x42, 0x11, 0xe2, 0xdf, 0x1f, 0x0d, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0x01, 0x18, 0x02, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x70, 0x52, 0x75, 0x6e, 0x6e, 0x69,
+	0x6e, 0x67, 0x22, 0x72, 0x0a, 0x18, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x52, 0x65, 0x6c,
+	0x65, 0x61, 0x73, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x20,
+	0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64,
+	0x12, 0x34, 0x0a, 0x0c, 0x73, 0x74, 0x6f, 0x70, 0x5f, 0x72, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x42, 0x11, 0xe2, 0xdf, 0x1f, 0x0d, 0x10, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x18, 0x02, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x70, 0x52,
+	0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x22, 0x3b, 0x0a, 0x17, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65,
+	0x52, 0x65, 0x6c, 0x65, 0x61, 0x73, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f,
+	0x77, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f,
+	0x77, 0x49, 0x64, 0x22, 0x83, 0x01, 0x0a, 0x16, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x1e,
+	0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2,
+	0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27,
+	0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f,
+	0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52,
+	0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f,
+	0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01,
+	0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x22, 0x5f, 0x0a, 0x19, 0x44, 0x65, 0x73,
+	0x63, 0x72, 0x69, 0x62, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x56,
+	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73,
+	0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10,
+	0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x5e, 0x0a, 0x18, 0x47, 0x65,
+	0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x56, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73,
+	0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10,
+	0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x5d, 0x0a, 0x17, 0x47, 0x65,
+	0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x56, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x45, 0x6e, 0x76, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52,
+	0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00,
+	0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x62, 0x0a, 0x1c, 0x47, 0x65, 0x74,
+	0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f,
+	0x6e, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f,
+	0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
+	0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x76,
+	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf,
+	0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x2d, 0x5a,
+	0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61,
+	0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1077,36 +2443,66 @@ func file_proto_request_proto_rawDescGZIP() []byte {
 	return file_proto_request_proto_rawDescData
 }
 
-var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
 var file_proto_request_proto_goTypes = []interface{}{
-	(*ListWorkspaces)(nil),    // 0: request.ListWorkspaces
-	(*CreateWorkspace)(nil),   // 1: request.CreateWorkspace
-	(*DeleteWorkspace)(nil),   // 2: request.DeleteWorkspace
-	(*UpdateWorkspace)(nil),   // 3: request.UpdateWorkspace
-	(*DescribeWorkspace)(nil), // 4: request.DescribeWorkspace
-	(*DisableWorkspace)(nil),  // 5: request.DisableWorkspace
-	(*EnableWorkspace)(nil),   // 6: request.EnableWorkspace
-	(*AddAudit)(nil),          // 7: request.AddAudit
-	(*ListAudits)(nil),        // 8: request.ListAudits
-	(*ListMembers)(nil),       // 9: request.ListMembers
-	(*AddMember)(nil),         // 10: request.AddMember
-	(*RemoveMember)(nil),      // 11: request.RemoveMember
-	(*UpdateMember)(nil),      // 12: request.UpdateMember
-	(*CheckPermission)(nil),   // 13: request.CheckPermission
-	(*model.OpAudit)(nil),     // 14: model.OpAudit
-	(model.OpAudit_Type)(0),   // 15: model.OpAudit.Type
-	(model.OpAudit_State)(0),  // 16: model.OpAudit.State
+	(*ListWorkspaces)(nil),               // 0: request.ListWorkspaces
+	(*CreateWorkspace)(nil),              // 1: request.CreateWorkspace
+	(*DeleteWorkspace)(nil),              // 2: request.DeleteWorkspace
+	(*UpdateWorkspace)(nil),              // 3: request.UpdateWorkspace
+	(*DescribeWorkspace)(nil),            // 4: request.DescribeWorkspace
+	(*DisableWorkspace)(nil),             // 5: request.DisableWorkspace
+	(*EnableWorkspace)(nil),              // 6: request.EnableWorkspace
+	(*AddAudit)(nil),                     // 7: request.AddAudit
+	(*ListAudits)(nil),                   // 8: request.ListAudits
+	(*ListMembers)(nil),                  // 9: request.ListMembers
+	(*AddMember)(nil),                    // 10: request.AddMember
+	(*RemoveMember)(nil),                 // 11: request.RemoveMember
+	(*UpdateMember)(nil),                 // 12: request.UpdateMember
+	(*CheckPermission)(nil),              // 13: request.CheckPermission
+	(*DeleteAllFlows)(nil),               // 14: request.DeleteAllFlows
+	(*ListStreamFlows)(nil),              // 15: request.ListStreamFlows
+	(*CreateStreamFlow)(nil),             // 16: request.CreateStreamFlow
+	(*DeleteStreamFlow)(nil),             // 17: request.DeleteStreamFlow
+	(*UpdateStreamFlow)(nil),             // 18: request.UpdateStreamFlow
+	(*DescribeStreamFlow)(nil),           // 19: request.DescribeStreamFlow
+	(*SetStreamFlowNode)(nil),            // 20: request.SetStreamFlowNode
+	(*SetStreamFlowSchedule)(nil),        // 21: request.SetStreamFlowSchedule
+	(*SetStreamFlowEnv)(nil),             // 22: request.SetStreamFlowEnv
+	(*GetStreamFlowNode)(nil),            // 23: request.GetStreamFlowNode
+	(*GetStreamFlowSchedule)(nil),        // 24: request.GetStreamFlowSchedule
+	(*GetStreamFlowEnv)(nil),             // 25: request.GetStreamFlowEnv
+	(*ExecuteStreamFlow)(nil),            // 26: request.ExecuteStreamFlow
+	(*ListReleaseStreamFlows)(nil),       // 27: request.ListReleaseStreamFlows
+	(*ReleaseStreamFlow)(nil),            // 28: request.ReleaseStreamFlow
+	(*SuspendReleaseStreamFlow)(nil),     // 29: request.SuspendReleaseStreamFlow
+	(*ResumeReleaseStreamFlow)(nil),      // 30: request.ResumeReleaseStreamFlow
+	(*ListStreamFlowVersions)(nil),       // 31: request.ListStreamFlowVersions
+	(*DescribeStreamFlowVersion)(nil),    // 32: request.DescribeStreamFlowVersion
+	(*GetStreamFlowVersionNode)(nil),     // 33: request.GetStreamFlowVersionNode
+	(*GetStreamFlowVersionEnv)(nil),      // 34: request.GetStreamFlowVersionEnv
+	(*GetStreamFlowVersionSchedule)(nil), // 35: request.GetStreamFlowVersionSchedule
+	(*model.OpAudit)(nil),                // 36: model.OpAudit
+	(model.OpAudit_Type)(0),              // 37: model.OpAudit.Type
+	(model.OpAudit_State)(0),             // 38: model.OpAudit.State
+	(model.StreamFlow_Type)(0),           // 39: model.StreamFlow.Type
+	(*model.StreamFlowNode)(nil),         // 40: model.StreamFlowNode
+	(*model.StreamFlowSchedule)(nil),     // 41: model.StreamFlowSchedule
+	(*model.StreamFlowEnv)(nil),          // 42: model.StreamFlowEnv
 }
 var file_proto_request_proto_depIdxs = []int32{
-	14, // 0: request.AddAudit.info:type_name -> model.OpAudit
-	15, // 1: request.ListAudits.type:type_name -> model.OpAudit.Type
-	16, // 2: request.ListAudits.state:type_name -> model.OpAudit.State
-	15, // 3: request.CheckPermission.op_type:type_name -> model.OpAudit.Type
-	4,  // [4:4] is the sub-list for method output_type
-	4,  // [4:4] is the sub-list for method input_type
-	4,  // [4:4] is the sub-list for extension type_name
-	4,  // [4:4] is the sub-list for extension extendee
-	0,  // [0:4] is the sub-list for field type_name
+	36, // 0: request.AddAudit.info:type_name -> model.OpAudit
+	37, // 1: request.ListAudits.type:type_name -> model.OpAudit.Type
+	38, // 2: request.ListAudits.state:type_name -> model.OpAudit.State
+	37, // 3: request.CheckPermission.op_type:type_name -> model.OpAudit.Type
+	39, // 4: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
+	40, // 5: request.SetStreamFlowNode.info:type_name -> model.StreamFlowNode
+	41, // 6: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	42, // 7: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	8,  // [8:8] is the sub-list for method output_type
+	8,  // [8:8] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_proto_request_proto_init() }
@@ -1283,6 +2679,270 @@ func file_proto_request_proto_init() {
 				return nil
 			}
 		}
+		file_proto_request_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteAllFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetStreamFlowNode); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetStreamFlowSchedule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetStreamFlowEnv); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowNode); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowSchedule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowEnv); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExecuteStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListReleaseStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReleaseStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SuspendReleaseStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResumeReleaseStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStreamFlowVersions); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeStreamFlowVersion); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowVersionNode); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowVersionEnv); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowVersionSchedule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1290,7 +2950,7 @@ func file_proto_request_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_request_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   36,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

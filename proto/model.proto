@@ -46,8 +46,22 @@ message Workspace {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
+//enum StreamFlowType {
+//	_ = 0;
+//	SQL = 1;
+//	JAR = 2;
+//	Operator = 3;
+//}
+
 // The stream workflow info
-message StreamFlowInfo {
+message StreamFlow {
+	enum Type {
+		_ = 0;
+		SQL = 1;
+		JAR = 2;
+		Operator = 3;
+	}
+	
 	// Workspace ID it belongs to.
 	// @inject_tag: gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -71,7 +85,7 @@ message StreamFlowInfo {
 	
 	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
 	// @inject_tag: gorm:"column:type;"
-	int32 type = 6 [ (validator.field) = { int_gt: 0 } ];
+	Type type = 6 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of create time.
 	// @inject_tag: gorm:"column:created;autoCreateTime;"
@@ -132,14 +146,20 @@ message StreamFlowSchedule {
 
 // FlowMeta represents a full workflow metadata where are FlowInfo, FlowNodeInfo, FlowEnvInfo, FlowSchInfo
 message StreamFlowMeta {
-	StreamFlowInfo     flow =  1    [ (validator.field) = { msg_exists: true } ];
+	StreamFlow        flow =  1    [ (validator.field) = { msg_exists: true } ];
 	StreamFlowNode     node =  2    [ (validator.field) = { msg_exists: true } ];
 	StreamFlowEnv      env = 3      [ (validator.field) = { msg_exists: true } ];
 	StreamFlowSchedule schedule = 4 [ (validator.field) = { msg_exists: true } ];
 }
 
 // The release stream workflow info.
-message StreamFlowReleaseInfo {
+message StreamFlowRelease {
+	enum Status {
+		_ = 0;
+		Active = 1;
+		Suspended = 2;
+	}
+	
 	// Workspace ID it belongs to.
 	// @inject_tag: gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -158,11 +178,11 @@ message StreamFlowReleaseInfo {
 	
 	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
 	// @inject_tag: gorm:"column:type;"
-	int32 type = 5 [ (validator.field) = { int_gt: 0 } ];
+	StreamFlow.Type type = 5 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Release status, 1 => "active", 2 => "suspended"
 	// @inject_tag: gorm:"column:status;"
-	int32 status = 6 [ (validator.field) = { length_lt: 1025 } ];
+	Status status = 6 [ (validator.field) = { length_lt: 1025 } ];
 	
 	// Workflow release description.
 	// @inject_tag: gorm:"column:desc;"

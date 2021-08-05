@@ -85,13 +85,13 @@ message DeleteStreamFlowRequest {
 // Request parameters used to SubmitStreamFlow.
 message SubmitStreamFlowRequest {
 	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
-	int32 stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }
 
 // Request parameters used to RemoveStreamFlow.
 message OfflineStreamFlowRequest {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32 stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
 }
 
 // Request parameters used to ListStreamCycleInst.
