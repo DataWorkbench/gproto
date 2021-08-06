@@ -950,6 +950,167 @@ func (x *GetStreamFlowVersionSchedule) GetInfo() *model.StreamFlowSchedule {
 	return nil
 }
 
+// ListMonitorRules used as reply parameters in RPC or response body in HTTP.
+type ListMonitorRules struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos   []*model.MonitorRule `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
+	HasMore bool                 `protobuf:"varint,2,opt,name=has_more,json=hasMore,proto3" json:"has_more,omitempty"`
+}
+
+func (x *ListMonitorRules) Reset() {
+	*x = ListMonitorRules{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListMonitorRules) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMonitorRules) ProtoMessage() {}
+
+func (x *ListMonitorRules) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMonitorRules.ProtoReflect.Descriptor instead.
+func (*ListMonitorRules) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ListMonitorRules) GetInfos() []*model.MonitorRule {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *ListMonitorRules) GetHasMore() bool {
+	if x != nil {
+		return x.HasMore
+	}
+	return false
+}
+
+// DescribeMonitorRule used as reply parameters in RPC.
+type DescribeMonitorRule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.MonitorRule `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *DescribeMonitorRule) Reset() {
+	*x = DescribeMonitorRule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeMonitorRule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeMonitorRule) ProtoMessage() {}
+
+func (x *DescribeMonitorRule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeMonitorRule.ProtoReflect.Descriptor instead.
+func (*DescribeMonitorRule) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *DescribeMonitorRule) GetInfo() *model.MonitorRule {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query).
+// This struct can used for ListStreamTestInst and ListStreamCycleInst
+type ListStreamInst struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos   []*model.StreamFlowInst `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos,omitempty"`
+	HasMore bool                    `protobuf:"varint,2,opt,name=has_more,json=hasMore,proto3" json:"has_more,omitempty"`
+}
+
+func (x *ListStreamInst) Reset() {
+	*x = ListStreamInst{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStreamInst) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStreamInst) ProtoMessage() {}
+
+func (x *ListStreamInst) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStreamInst.ProtoReflect.Descriptor instead.
+func (*ListStreamInst) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ListStreamInst) GetInfos() []*model.StreamFlowInst {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *ListStreamInst) GetHasMore() bool {
+	if x != nil {
+		return x.HasMore
+	}
+	return false
+}
+
 type ListMembers_RoleList struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -961,7 +1122,7 @@ type ListMembers_RoleList struct {
 func (x *ListMembers_RoleList) Reset() {
 	*x = ListMembers_RoleList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_response_proto_msgTypes[18]
+		mi := &file_proto_response_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -974,7 +1135,7 @@ func (x *ListMembers_RoleList) String() string {
 func (*ListMembers_RoleList) ProtoMessage() {}
 
 func (x *ListMembers_RoleList) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_response_proto_msgTypes[18]
+	mi := &file_proto_response_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1103,11 +1264,28 @@ var file_proto_response_proto_rawDesc = []byte{
 	0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x12,
 	0x2d, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e,
 	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77,
-	0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x42, 0x2e,
-	0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
-	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x63,
+	0x0a, 0x10, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c,
+	0x65, 0x73, 0x12, 0x2e, 0x0a, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f,
+	0x72, 0x52, 0x75, 0x6c, 0x65, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x69, 0x6e, 0x66,
+	0x6f, 0x73, 0x12, 0x1f, 0x0a, 0x08, 0x68, 0x61, 0x73, 0x5f, 0x6d, 0x6f, 0x72, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d,
+	0x6f, 0x72, 0x65, 0x22, 0x45, 0x0a, 0x13, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4d,
+	0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x12, 0x2e, 0x0a, 0x04, 0x69, 0x6e,
+	0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
+	0x2e, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x42, 0x06, 0xe2, 0xdf,
+	0x1f, 0x02, 0x20, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x64, 0x0a, 0x0e, 0x4c, 0x69,
+	0x73, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x73, 0x74, 0x12, 0x31, 0x0a, 0x05,
+	0x69, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x49, 0x6e,
+	0x73, 0x74, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12,
+	0x1f, 0x0a, 0x08, 0x68, 0x61, 0x73, 0x5f, 0x6d, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d, 0x6f, 0x72, 0x65,
+	0x42, 0x2e, 0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44,
+	0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1122,7 +1300,7 @@ func file_proto_response_proto_rawDescGZIP() []byte {
 	return file_proto_response_proto_rawDescData
 }
 
-var file_proto_response_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
+var file_proto_response_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
 var file_proto_response_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),               // 0: response.ListWorkspaces
 	(*ListAudits)(nil),                   // 1: response.ListAudits
@@ -1142,43 +1320,51 @@ var file_proto_response_proto_goTypes = []interface{}{
 	(*GetStreamFlowVersionNode)(nil),     // 15: response.GetStreamFlowVersionNode
 	(*GetStreamFlowVersionEnv)(nil),      // 16: response.GetStreamFlowVersionEnv
 	(*GetStreamFlowVersionSchedule)(nil), // 17: response.GetStreamFlowVersionSchedule
-	(*ListMembers_RoleList)(nil),         // 18: response.ListMembers.RoleList
-	nil,                                  // 19: response.ListMembers.RolesEntry
-	(*model.Workspace)(nil),              // 20: model.Workspace
-	(*model.OpAudit)(nil),                // 21: model.OpAudit
-	(*model.Member)(nil),                 // 22: model.Member
-	(*model.Role)(nil),                   // 23: model.Role
-	(*model.StreamFlow)(nil),             // 24: model.StreamFlow
-	(*model.StreamFlowNode)(nil),         // 25: model.StreamFlowNode
-	(*model.StreamFlowEnv)(nil),          // 26: model.StreamFlowEnv
-	(*model.StreamFlowSchedule)(nil),     // 27: model.StreamFlowSchedule
-	(*model.StreamFlowRelease)(nil),      // 28: model.StreamFlowRelease
+	(*ListMonitorRules)(nil),             // 18: response.ListMonitorRules
+	(*DescribeMonitorRule)(nil),          // 19: response.DescribeMonitorRule
+	(*ListStreamInst)(nil),               // 20: response.ListStreamInst
+	(*ListMembers_RoleList)(nil),         // 21: response.ListMembers.RoleList
+	nil,                                  // 22: response.ListMembers.RolesEntry
+	(*model.Workspace)(nil),              // 23: model.Workspace
+	(*model.OpAudit)(nil),                // 24: model.OpAudit
+	(*model.Member)(nil),                 // 25: model.Member
+	(*model.Role)(nil),                   // 26: model.Role
+	(*model.StreamFlow)(nil),             // 27: model.StreamFlow
+	(*model.StreamFlowNode)(nil),         // 28: model.StreamFlowNode
+	(*model.StreamFlowEnv)(nil),          // 29: model.StreamFlowEnv
+	(*model.StreamFlowSchedule)(nil),     // 30: model.StreamFlowSchedule
+	(*model.StreamFlowRelease)(nil),      // 31: model.StreamFlowRelease
+	(*model.MonitorRule)(nil),            // 32: model.MonitorRule
+	(*model.StreamFlowInst)(nil),         // 33: model.StreamFlowInst
 }
 var file_proto_response_proto_depIdxs = []int32{
-	20, // 0: response.ListWorkspaces.infos:type_name -> model.Workspace
-	21, // 1: response.ListAudits.infos:type_name -> model.OpAudit
-	20, // 2: response.DescribeWorkspace.info:type_name -> model.Workspace
-	22, // 3: response.ListMembers.members:type_name -> model.Member
-	19, // 4: response.ListMembers.roles:type_name -> response.ListMembers.RolesEntry
-	23, // 5: response.ListSystemRoles.infos:type_name -> model.Role
-	24, // 6: response.ListStreamFlows.infos:type_name -> model.StreamFlow
-	24, // 7: response.DescribeStreamFlow.info:type_name -> model.StreamFlow
-	25, // 8: response.GetStreamFlowNode.info:type_name -> model.StreamFlowNode
-	26, // 9: response.GetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
-	27, // 10: response.GetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
-	28, // 11: response.ListReleaseStreamFlows.infos:type_name -> model.StreamFlowRelease
-	24, // 12: response.ListStreamFlowVersions.infos:type_name -> model.StreamFlow
-	24, // 13: response.DescribeStreamFlowVersion.info:type_name -> model.StreamFlow
-	25, // 14: response.GetStreamFlowVersionNode.info:type_name -> model.StreamFlowNode
-	26, // 15: response.GetStreamFlowVersionEnv.info:type_name -> model.StreamFlowEnv
-	27, // 16: response.GetStreamFlowVersionSchedule.info:type_name -> model.StreamFlowSchedule
-	23, // 17: response.ListMembers.RoleList.infos:type_name -> model.Role
-	18, // 18: response.ListMembers.RolesEntry.value:type_name -> response.ListMembers.RoleList
-	19, // [19:19] is the sub-list for method output_type
-	19, // [19:19] is the sub-list for method input_type
-	19, // [19:19] is the sub-list for extension type_name
-	19, // [19:19] is the sub-list for extension extendee
-	0,  // [0:19] is the sub-list for field type_name
+	23, // 0: response.ListWorkspaces.infos:type_name -> model.Workspace
+	24, // 1: response.ListAudits.infos:type_name -> model.OpAudit
+	23, // 2: response.DescribeWorkspace.info:type_name -> model.Workspace
+	25, // 3: response.ListMembers.members:type_name -> model.Member
+	22, // 4: response.ListMembers.roles:type_name -> response.ListMembers.RolesEntry
+	26, // 5: response.ListSystemRoles.infos:type_name -> model.Role
+	27, // 6: response.ListStreamFlows.infos:type_name -> model.StreamFlow
+	27, // 7: response.DescribeStreamFlow.info:type_name -> model.StreamFlow
+	28, // 8: response.GetStreamFlowNode.info:type_name -> model.StreamFlowNode
+	29, // 9: response.GetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	30, // 10: response.GetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	31, // 11: response.ListReleaseStreamFlows.infos:type_name -> model.StreamFlowRelease
+	27, // 12: response.ListStreamFlowVersions.infos:type_name -> model.StreamFlow
+	27, // 13: response.DescribeStreamFlowVersion.info:type_name -> model.StreamFlow
+	28, // 14: response.GetStreamFlowVersionNode.info:type_name -> model.StreamFlowNode
+	29, // 15: response.GetStreamFlowVersionEnv.info:type_name -> model.StreamFlowEnv
+	30, // 16: response.GetStreamFlowVersionSchedule.info:type_name -> model.StreamFlowSchedule
+	32, // 17: response.ListMonitorRules.infos:type_name -> model.MonitorRule
+	32, // 18: response.DescribeMonitorRule.info:type_name -> model.MonitorRule
+	33, // 19: response.ListStreamInst.infos:type_name -> model.StreamFlowInst
+	26, // 20: response.ListMembers.RoleList.infos:type_name -> model.Role
+	21, // 21: response.ListMembers.RolesEntry.value:type_name -> response.ListMembers.RoleList
+	22, // [22:22] is the sub-list for method output_type
+	22, // [22:22] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_proto_response_proto_init() }
@@ -1404,6 +1590,42 @@ func file_proto_response_proto_init() {
 			}
 		}
 		file_proto_response_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListMonitorRules); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeMonitorRule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStreamInst); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListMembers_RoleList); i {
 			case 0:
 				return &v.state
@@ -1422,7 +1644,7 @@ func file_proto_response_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_response_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   20,
+			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

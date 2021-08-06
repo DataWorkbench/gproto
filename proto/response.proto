@@ -109,3 +109,24 @@ message GetStreamFlowVersionEnv {
 message GetStreamFlowVersionSchedule {
 	model.StreamFlowSchedule info = 1;
 }
+
+// ListMonitorRules used as reply parameters in RPC or response body in HTTP.
+message ListMonitorRules {
+	repeated model.MonitorRule infos = 1 [ (validator.field) = { } ];
+	bool has_more = 2 [ (validator.field) = { } ];
+}
+
+// DescribeMonitorRule used as reply parameters in RPC.
+message DescribeMonitorRule {
+	model.MonitorRule info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query).
+// This struct can used for ListStreamTestInst and ListStreamCycleInst
+message ListStreamInst {
+	repeated model.StreamFlowInst infos = 1 [ (validator.field) = { } ];
+	bool has_more = 2 [ (validator.field) = { } ];
+}
+
+
+

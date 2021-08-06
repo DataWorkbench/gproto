@@ -4,9 +4,9 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/shpb";
 
 package shpb;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
-
+import "request.proto";
+import "response.proto";
 
 // Scheduler Service
 service Scheduler {
@@ -14,193 +14,42 @@ service Scheduler {
 	//
 	// DeleteAllFlows delete all workflow instance that specified workspace id.
 	// And offline all workflow tasks.
-	rpc DeleteAllFlows(DeleteAllFlowsRequest) returns (model.EmptyStruct) {}
+	rpc DeleteAllFlows(request.DeleteAllFlows) returns (model.EmptyStruct) {}
 	
 	// Execute execute immediately a workflow task. It trigger by user on console.
-	rpc ExecuteStreamFlow(ExecuteStreamFlowRequest) returns (model.EmptyStruct) {}
+	rpc ExecuteStreamFlow(request.ExecuteStreamFlow) returns (model.EmptyStruct) {}
 	
 	// DeleteStreamFlow delete all stream workflow instance by specified workflow id.
 	// And offline workflow task from schedule system.
-	rpc DeleteStreamFlow(DeleteStreamFlowRequest) returns(model.EmptyStruct) {}
+	rpc DeleteStreamFlow(request.DeleteStreamFlow) returns(model.EmptyStruct) {}
 	
 	// Submit submit a workflow task to scheduler system, It will
 	// be cover if old job exists.
-	rpc SubmitStreamFlow(SubmitStreamFlowRequest) returns (model.EmptyStruct) {}
+	rpc SubmitStreamFlow(request.SubmitStreamFlow) returns (model.EmptyStruct) {}
 	
 	// Remove remove specific workflow task from scheduler system.
-	rpc OfflineStreamFlow(OfflineStreamFlowRequest) returns (model.EmptyStruct) {}
+	rpc OfflineStreamFlow(request.OfflineStreamFlow) returns (model.EmptyStruct) {}
 	
 	// Interface for stream workflow cycle instance.
 	//
-	rpc ListStreamCycleInst(ListStreamCycleInstRequest) returns (ListStreamCycleInstReply) {}
-	
-	//
-	rpc SuspendStreamCycleInst(SuspendStreamCycleInstRequest) returns (model.EmptyStruct) {}
-	
-	//
-	rpc ResumeStreamCycleInst(ResumeStreamCycleInstRequest) returns (model.EmptyStruct) {}
-	
-	//
-	rpc TerminateStreamCycleInst(TerminateStreamCycleInstRequest) returns (model.EmptyStruct) {}
+	rpc ListStreamCycleInst(request.ListStreamInst)           returns (response.ListStreamInst) {}
+	rpc SuspendStreamCycleInst(request.SuspendStreamInst)     returns (model.EmptyStruct)       {}
+	rpc ResumeStreamCycleInst(request.ResumeStreamInst)       returns (model.EmptyStruct)       {}
+	rpc TerminateStreamCycleInst(request.TerminateStreamInst) returns (model.EmptyStruct)       {}
 	
 	// Interface for stream workflow test instance.
 	//
-	rpc ListStreamTestInst(ListStreamTestInstRequest) returns (ListStreamTestInstReply) {}
+	rpc ListStreamTestInst(request.ListStreamInst)           returns (response.ListStreamInst) {}
+	rpc SuspendStreamTestInst(request.SuspendStreamInst)     returns (model.EmptyStruct)       {}
+	rpc ResumeStreamTestInst(request.ResumeStreamInst)       returns (model.EmptyStruct)       {}
+	rpc TerminateStreamTestInst(request.TerminateStreamInst) returns (model.EmptyStruct)       {}
 	
 	//
-	rpc SuspendStreamTestInst(SuspendStreamTestInstRequest) returns (model.EmptyStruct) {}
-	
-	//
-	rpc ResumeStreamTestInst(ResumeStreamTestInstRequest) returns (model.EmptyStruct) {}
-	
-	//
-	rpc TerminateStreamTestInst(TerminateStreamTestInstRequest) returns (model.EmptyStruct) {}
-	
-	//
-	rpc ListMonitorRules(ListMonitorRulesRequest)       returns (ListMonitorRulesReply) {}
-	rpc CreateMonitorRule(CreateMonitorRuleRequest)     returns (model.EmptyStruct) {}
-	rpc DeleteMonitorRule(DeleteMonitorRuleRequest)     returns (model.EmptyStruct) {}
-	rpc UpdateMonitorRule(UpdateMonitorRuleRequest)     returns (model.EmptyStruct) {}
-	rpc DescribeMonitorRule(DescribeMonitorRuleRequest) returns (DescribeMonitorRuleReply) {}
-	rpc EnableMonitorRule(EnableMonitorRuleRequest)     returns (model.EmptyStruct) {}
-	rpc DisableMonitorRule(DisableMonitorRuleRequest)   returns (model.EmptyStruct) {}
-}
-
-// Request parameters used to DeleteAllFlows.
-message DeleteAllFlowsRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	repeated string stream_flow_ids = 2 [ (validator.field) = { } ];
-}
-
-// Request parameters used to ExecuteStreamFlow.
-message ExecuteStreamFlowRequest {
-	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
-}
-
-// Request parameters used to DeleteStreamFlow.
-message DeleteStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to SubmitStreamFlow.
-message SubmitStreamFlowRequest {
-	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
-	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
-}
-
-// Request parameters used to RemoveStreamFlow.
-message OfflineStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
-}
-
-// Request parameters used to ListStreamCycleInst.
-message ListStreamCycleInstRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
-	string flow_id = 4  [ (validator.field) = { } ];
-	int64  version = 5  [ (validator.field) = { } ];
-}
-
-// Reply parameters used to ListStreamCycleInst.
-message ListStreamCycleInstReply {
-	repeated model.StreamFlowInstInfo infos = 1 [ (validator.field) = { } ];
-}
-
-// Request parameters used to SuspendStreamCycleInst.
-message SuspendStreamCycleInstRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to ResumeStreamCycleInst.
-message ResumeStreamCycleInstRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to TerminateStreamCycleInst.
-message TerminateStreamCycleInstRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to ListStreamTestInst.
-message ListStreamTestInstRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
-	string flow_id = 4  [ (validator.field) = { } ];
-	int64  version = 5  [ (validator.field) = { } ];
-}
-
-// Reply parameters used to ListStreamTestInst.
-message ListStreamTestInstReply {
-	repeated model.StreamFlowInstInfo infos = 1 [ (validator.field) = { } ];
-}
-
-// Request parameters used to SuspendStreamTestInst.
-message SuspendStreamTestInstRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to ResumeStreamTestInst.
-message ResumeStreamTestInstRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to TerminateStreamTestInst.
-message TerminateStreamTestInstRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Reply parameters used to ListMonitorRules.
-message ListMonitorRulesRequest {
-	string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
-	int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to ListMonitorRules.
-message ListMonitorRulesReply {
-	repeated model.MonitorRuleInfo infos = 1 [ (validator.field) = { } ];
-}
-
-// CreateMonitorRule
-message CreateMonitorRuleRequest {
-	model.MonitorRuleInfo info = 1 [ (validator.field) = { msg_exists: true } ];
-}
-
-// DeleteMonitorRule
-message DeleteMonitorRuleRequest {
-	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// UpdateMonitorRule
-message UpdateMonitorRuleRequest {
-	model.MonitorRuleInfo info = 1 [ (validator.field) = { msg_exists: true } ];
-}
-
-// DescribeMonitorRule
-message DescribeMonitorRuleRequest {
-	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// DescribeMonitorRule
-message DescribeMonitorRuleReply {
-	model.MonitorRuleInfo info = 1 [ (validator.field) = { msg_exists: true } ];
-}
-
-// EnableMonitorRule
-message EnableMonitorRuleRequest {
-	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// DisableMonitorRule
-message DisableMonitorRuleRequest {
-	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
+	rpc CreateMonitorRule(request.CreateMonitorRule)     returns (model.EmptyStruct)            {}
+	rpc DeleteMonitorRule(request.DeleteMonitorRule)     returns (model.EmptyStruct)            {}
+	rpc UpdateMonitorRule(request.UpdateMonitorRule)     returns (model.EmptyStruct)            {}
+	rpc DescribeMonitorRule(request.DescribeMonitorRule) returns (response.DescribeMonitorRule) {}
+	rpc EnableMonitorRule(request.EnableMonitorRule)     returns (model.EmptyStruct)            {}
+	rpc DisableMonitorRule(request.DisableMonitorRule)   returns (model.EmptyStruct)            {}
 }

@@ -198,7 +198,18 @@ message StreamFlowRelease {
 }
 
 // The instance info of stream workflow.
-message StreamFlowInstInfo {
+message StreamFlowInst {
+	enum State {
+		_ = 0;
+		Pending = 1;
+		Running = 2;
+		Retrying = 3;
+		Suspended = 4;
+		Terminated = 5;
+		Timeout = 6;
+		Succeed = 7;
+		Failed = 8;
+	}
 	// Workspace ID it belongs to.
 	// @inject_tag: gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -217,7 +228,7 @@ message StreamFlowInstInfo {
 	
 	// The instance state.
 	// @inject_tag: gorm:"column:state;"
-	int32 state = 5 [ (validator.field) = { int_gt: 0 } ];
+	State state = 5 [ (validator.field) = { int_gt: 0 } ];
 
 	// @inject_tag: gorm:"column:created;autoCreateTime;"
 	int64 created = 6 [ (validator.field) = { int_gt: 0 } ];
@@ -312,7 +323,12 @@ message Member {
 }
 
 // The monitor rule info
-message MonitorRuleInfo {
+message MonitorRule {
+	enum Status {
+		_ = 0;
+		Enabled = 1;
+		Disabled = 2;
+	}
 	// Workspace ID it belongs to.
 	// @inject_tag: gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -327,7 +343,7 @@ message MonitorRuleInfo {
 
 	// Rule status, 1 => "enabled", 2 => "disabled".
 	// @inject_tag: gorm:"column:status;"
-	int32 status = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	Status status = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 
 	// The object unit, 1 => "workspace" 2 => "workflow'
 	// @inject_tag: gorm:"column:uint;"

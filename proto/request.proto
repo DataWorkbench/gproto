@@ -205,6 +205,9 @@ message DeleteAllFlows {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Only used to flowmanager -> scheduler.
+	repeated string stream_flow_ids = 2 [ (validator.field) = { } ];
 }
 
 // ListStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query)
@@ -315,6 +318,9 @@ message ExecuteStreamFlow {
 	// The workflow id in HTTP Request-URI
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Only used for flowmanager -> scheduler.
+	model.StreamFlowMeta meta = 2 [ (validator.field) = { } ];
 }
 
 // ListReleaseStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query).
@@ -386,7 +392,7 @@ message DescribeStreamFlowVersion {
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version in HTTP Request-URI
+	// The workflow version id in HTTP Request-URI
 	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
 }
@@ -397,7 +403,7 @@ message GetStreamFlowVersionNode {
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version in HTTP Request-URI
+	// The workflow version id in HTTP Request-URI
 	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
 }
@@ -408,9 +414,9 @@ message GetStreamFlowVersionEnv {
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version in HTTP Request-URI
+	// The workflow version id in HTTP Request-URI
 	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
+	int64 version = 2 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // GetStreamFlowVersionSchedule used as a request parameters for RPC.
@@ -419,7 +425,128 @@ message GetStreamFlowVersionSchedule {
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version in HTTP Request-URI
+	// The workflow version id in HTTP Request-URI
 	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
+	int64 version = 2 [ (validator.field) = { int_gt: 0 } ];
+}
+
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListMonitorRules {
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	
+	// The offset position. Not required, default 0.
+	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+	
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// CreateMonitorRule used as a request parameters for RPC .
+message CreateMonitorRule {
+	model.MonitorRule info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
+// DeleteMonitorRule used as a request parameters for RPC.
+message DeleteMonitorRule {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// UpdateMonitorRule used as a request parameters for RPC.
+message UpdateMonitorRule {
+	model.MonitorRule info = 1 [ (validator.field) = { msg_exists: true } ];
+}
+
+// DescribeMonitorRule used as a request parameters for RPC.
+message DescribeMonitorRule {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// EnableMonitorRule used as a request parameters for RPC.
+message EnableMonitorRule {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// DisableMonitorRule used as a request parameters for RPC.
+message DisableMonitorRule {
+	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+//
+
+// SubmitStreamFlow used as a request parameters for RPC.
+message SubmitStreamFlow {
+	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
+	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+}
+
+// OfflineStreamFlow used as a request parameters for RPC.
+message OfflineStreamFlow {
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+}
+
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query).
+// This struct can used for ListStreamTestInst and ListStreamCycleInst
+message ListStreamInst{
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	
+	// The offset position. Not required, default 0.
+	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+	
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The workflow id in HTTP Request-URI
+	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	string flow_id = 4 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The workflow version id in HTTP Request-URI
+	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
+	int64  version = 5  [ (validator.field) = { } ];
+}
+
+// SuspendStreamInst used as a request parameters for RPC.
+// This struct can used for SuspendStreamCycleInst and SuspendStreamTestInst.
+message SuspendStreamInst {
+	// The workflow id in HTTP Request-URI
+	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The instance id in HTTP Request-URI
+	// @inject_tag: params:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// ResumeStreamInst used as a request parameters for RPC.
+// This struct can used for ResumeStreamCycleInst and SuspendStreamTestInst.
+message ResumeStreamInst {
+	// The workflow id in HTTP Request-URI
+	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The instance id in HTTP Request-URI
+	// @inject_tag: params:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// TerminateStreamInst used as a request parameters for RPC.
+// This struct can used for TerminateStreamCycleInst and TerminateStreamTestInst.
+message TerminateStreamInst {
+	// The workflow id in HTTP Request-URI
+	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The instance id in HTTP Request-URI
+	// @inject_tag: params:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
+	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
