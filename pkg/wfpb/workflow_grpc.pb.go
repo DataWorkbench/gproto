@@ -20,17 +20,28 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WorkflowClient interface {
-	// DeleteAllFlows delete all workflow that specified workspace id.
-	// And removed all workflow task from schedule system.
-	DeleteAllFlows(ctx context.Context, in *request.DeleteAllFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// DeleteFlowsBySpaceIds delete the specified workspaces and its resources;
+	// This Interface called by apiserver(DeleteWorkspaces).
+	// Resources includes:
+	//   - Workflow of stream and batch and them's history version.
+	//   - Node, env schedule and them's history version.
+	//   - Released's workflow.
+	//   - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//   - All instances records. (By Scheduler-Server)
+	DeleteFlowsBySpaceIds(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Interface for stream workflow.
 	//
 	// ListStreamFlows to get a list of stream workflow of the workspace.
 	ListStreamFlows(ctx context.Context, in *request.ListStreamFlows, opts ...grpc.CallOption) (*response.ListStreamFlows, error)
+	// DeleteStreamFlows delete stream workflow ant its related resources where in ids.
+	// Resources includes:
+	//  - History version and Released's workflow.
+	//  - Node, env schedule and its history version.
+	//  - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//  - All instances records. (By Scheduler-Server)
+	DeleteStreamFlows(ctx context.Context, in *request.DeleteStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// CreateStreamFlow to create a new stream workflow.
 	CreateStreamFlow(ctx context.Context, in *request.CreateStreamFlow, opts ...grpc.CallOption) (*response.CreateStreamFlow, error)
-	// DeleteStreamFlow to delete the specified stream workflow.
-	DeleteStreamFlow(ctx context.Context, in *request.DeleteStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// UpdateStreamFlow to update the info for the specified stream workflow.
 	UpdateStreamFlow(ctx context.Context, in *request.UpdateStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// DescribeStreamFlow to get the info of the specified stream workflow.
@@ -53,10 +64,10 @@ type WorkflowClient interface {
 	//
 	// ReleaseStreamFlow to publish the specified workflow to schedule system with a new version.
 	ReleaseStreamFlow(ctx context.Context, in *request.ReleaseStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// SuspendStreamFlow to suspend the specified workflow in schedule system.
-	SuspendReleaseStreamFlow(ctx context.Context, in *request.SuspendReleaseStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// ResumeStreamFlow to resume the suspended workflow in schedule system.
-	ResumeReleaseStreamFlow(ctx context.Context, in *request.ResumeReleaseStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// SuspendReleaseStreamFlows to suspend the specified workflow list in schedule system.
+	SuspendReleaseStreamFlows(ctx context.Context, in *request.SuspendReleaseStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// ResumeReleaseStreamFlows to resume the suspended workflow list in schedule system.
+	ResumeReleaseStreamFlows(ctx context.Context, in *request.ResumeReleaseStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// ListReleaseStreamFlows for gets a list of all published workflow in the workspace.
 	ListReleaseStreamFlows(ctx context.Context, in *request.ListReleaseStreamFlows, opts ...grpc.CallOption) (*response.ListReleaseStreamFlows, error)
 	// Interface for stream workflow versions.
@@ -81,9 +92,9 @@ func NewWorkflowClient(cc grpc.ClientConnInterface) WorkflowClient {
 	return &workflowClient{cc}
 }
 
-func (c *workflowClient) DeleteAllFlows(ctx context.Context, in *request.DeleteAllFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) DeleteFlowsBySpaceIds(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DeleteAllFlows", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DeleteFlowsBySpaceIds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,18 +110,18 @@ func (c *workflowClient) ListStreamFlows(ctx context.Context, in *request.ListSt
 	return out, nil
 }
 
-func (c *workflowClient) CreateStreamFlow(ctx context.Context, in *request.CreateStreamFlow, opts ...grpc.CallOption) (*response.CreateStreamFlow, error) {
-	out := new(response.CreateStreamFlow)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/CreateStreamFlow", in, out, opts...)
+func (c *workflowClient) DeleteStreamFlows(ctx context.Context, in *request.DeleteStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DeleteStreamFlows", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DeleteStreamFlow(ctx context.Context, in *request.DeleteStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DeleteStreamFlow", in, out, opts...)
+func (c *workflowClient) CreateStreamFlow(ctx context.Context, in *request.CreateStreamFlow, opts ...grpc.CallOption) (*response.CreateStreamFlow, error) {
+	out := new(response.CreateStreamFlow)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/CreateStreamFlow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -207,18 +218,18 @@ func (c *workflowClient) ReleaseStreamFlow(ctx context.Context, in *request.Rele
 	return out, nil
 }
 
-func (c *workflowClient) SuspendReleaseStreamFlow(ctx context.Context, in *request.SuspendReleaseStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) SuspendReleaseStreamFlows(ctx context.Context, in *request.SuspendReleaseStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SuspendReleaseStreamFlow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SuspendReleaseStreamFlows", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ResumeReleaseStreamFlow(ctx context.Context, in *request.ResumeReleaseStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) ResumeReleaseStreamFlows(ctx context.Context, in *request.ResumeReleaseStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ResumeReleaseStreamFlow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ResumeReleaseStreamFlows", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -283,17 +294,28 @@ func (c *workflowClient) GetStreamFlowVersionSchedule(ctx context.Context, in *r
 // All implementations must embed UnimplementedWorkflowServer
 // for forward compatibility
 type WorkflowServer interface {
-	// DeleteAllFlows delete all workflow that specified workspace id.
-	// And removed all workflow task from schedule system.
-	DeleteAllFlows(context.Context, *request.DeleteAllFlows) (*model.EmptyStruct, error)
+	// DeleteFlowsBySpaceIds delete the specified workspaces and its resources;
+	// This Interface called by apiserver(DeleteWorkspaces).
+	// Resources includes:
+	//   - Workflow of stream and batch and them's history version.
+	//   - Node, env schedule and them's history version.
+	//   - Released's workflow.
+	//   - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//   - All instances records. (By Scheduler-Server)
+	DeleteFlowsBySpaceIds(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
 	// Interface for stream workflow.
 	//
 	// ListStreamFlows to get a list of stream workflow of the workspace.
 	ListStreamFlows(context.Context, *request.ListStreamFlows) (*response.ListStreamFlows, error)
+	// DeleteStreamFlows delete stream workflow ant its related resources where in ids.
+	// Resources includes:
+	//  - History version and Released's workflow.
+	//  - Node, env schedule and its history version.
+	//  - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//  - All instances records. (By Scheduler-Server)
+	DeleteStreamFlows(context.Context, *request.DeleteStreamFlows) (*model.EmptyStruct, error)
 	// CreateStreamFlow to create a new stream workflow.
 	CreateStreamFlow(context.Context, *request.CreateStreamFlow) (*response.CreateStreamFlow, error)
-	// DeleteStreamFlow to delete the specified stream workflow.
-	DeleteStreamFlow(context.Context, *request.DeleteStreamFlow) (*model.EmptyStruct, error)
 	// UpdateStreamFlow to update the info for the specified stream workflow.
 	UpdateStreamFlow(context.Context, *request.UpdateStreamFlow) (*model.EmptyStruct, error)
 	// DescribeStreamFlow to get the info of the specified stream workflow.
@@ -316,10 +338,10 @@ type WorkflowServer interface {
 	//
 	// ReleaseStreamFlow to publish the specified workflow to schedule system with a new version.
 	ReleaseStreamFlow(context.Context, *request.ReleaseStreamFlow) (*model.EmptyStruct, error)
-	// SuspendStreamFlow to suspend the specified workflow in schedule system.
-	SuspendReleaseStreamFlow(context.Context, *request.SuspendReleaseStreamFlow) (*model.EmptyStruct, error)
-	// ResumeStreamFlow to resume the suspended workflow in schedule system.
-	ResumeReleaseStreamFlow(context.Context, *request.ResumeReleaseStreamFlow) (*model.EmptyStruct, error)
+	// SuspendReleaseStreamFlows to suspend the specified workflow list in schedule system.
+	SuspendReleaseStreamFlows(context.Context, *request.SuspendReleaseStreamFlows) (*model.EmptyStruct, error)
+	// ResumeReleaseStreamFlows to resume the suspended workflow list in schedule system.
+	ResumeReleaseStreamFlows(context.Context, *request.ResumeReleaseStreamFlows) (*model.EmptyStruct, error)
 	// ListReleaseStreamFlows for gets a list of all published workflow in the workspace.
 	ListReleaseStreamFlows(context.Context, *request.ListReleaseStreamFlows) (*response.ListReleaseStreamFlows, error)
 	// Interface for stream workflow versions.
@@ -341,17 +363,17 @@ type WorkflowServer interface {
 type UnimplementedWorkflowServer struct {
 }
 
-func (UnimplementedWorkflowServer) DeleteAllFlows(context.Context, *request.DeleteAllFlows) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAllFlows not implemented")
+func (UnimplementedWorkflowServer) DeleteFlowsBySpaceIds(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFlowsBySpaceIds not implemented")
 }
 func (UnimplementedWorkflowServer) ListStreamFlows(context.Context, *request.ListStreamFlows) (*response.ListStreamFlows, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListStreamFlows not implemented")
 }
+func (UnimplementedWorkflowServer) DeleteStreamFlows(context.Context, *request.DeleteStreamFlows) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamFlows not implemented")
+}
 func (UnimplementedWorkflowServer) CreateStreamFlow(context.Context, *request.CreateStreamFlow) (*response.CreateStreamFlow, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStreamFlow not implemented")
-}
-func (UnimplementedWorkflowServer) DeleteStreamFlow(context.Context, *request.DeleteStreamFlow) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamFlow not implemented")
 }
 func (UnimplementedWorkflowServer) UpdateStreamFlow(context.Context, *request.UpdateStreamFlow) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateStreamFlow not implemented")
@@ -383,11 +405,11 @@ func (UnimplementedWorkflowServer) ExecuteStreamFlow(context.Context, *request.E
 func (UnimplementedWorkflowServer) ReleaseStreamFlow(context.Context, *request.ReleaseStreamFlow) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReleaseStreamFlow not implemented")
 }
-func (UnimplementedWorkflowServer) SuspendReleaseStreamFlow(context.Context, *request.SuspendReleaseStreamFlow) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SuspendReleaseStreamFlow not implemented")
+func (UnimplementedWorkflowServer) SuspendReleaseStreamFlows(context.Context, *request.SuspendReleaseStreamFlows) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SuspendReleaseStreamFlows not implemented")
 }
-func (UnimplementedWorkflowServer) ResumeReleaseStreamFlow(context.Context, *request.ResumeReleaseStreamFlow) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseStreamFlow not implemented")
+func (UnimplementedWorkflowServer) ResumeReleaseStreamFlows(context.Context, *request.ResumeReleaseStreamFlows) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseStreamFlows not implemented")
 }
 func (UnimplementedWorkflowServer) ListReleaseStreamFlows(context.Context, *request.ListReleaseStreamFlows) (*response.ListReleaseStreamFlows, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListReleaseStreamFlows not implemented")
@@ -420,20 +442,20 @@ func RegisterWorkflowServer(s grpc.ServiceRegistrar, srv WorkflowServer) {
 	s.RegisterService(&_Workflow_serviceDesc, srv)
 }
 
-func _Workflow_DeleteAllFlows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DeleteAllFlows)
+func _Workflow_DeleteFlowsBySpaceIds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DeleteAllFlows(ctx, in)
+		return srv.(WorkflowServer).DeleteFlowsBySpaceIds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DeleteAllFlows",
+		FullMethod: "/wfpb.Workflow/DeleteFlowsBySpaceIds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DeleteAllFlows(ctx, req.(*request.DeleteAllFlows))
+		return srv.(WorkflowServer).DeleteFlowsBySpaceIds(ctx, req.(*request.DeleteWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -456,6 +478,24 @@ func _Workflow_ListStreamFlows_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Workflow_DeleteStreamFlows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteStreamFlows)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkflowServer).DeleteStreamFlows(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wfpb.Workflow/DeleteStreamFlows",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkflowServer).DeleteStreamFlows(ctx, req.(*request.DeleteStreamFlows))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Workflow_CreateStreamFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.CreateStreamFlow)
 	if err := dec(in); err != nil {
@@ -470,24 +510,6 @@ func _Workflow_CreateStreamFlow_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkflowServer).CreateStreamFlow(ctx, req.(*request.CreateStreamFlow))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workflow_DeleteStreamFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DeleteStreamFlow)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).DeleteStreamFlow(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/DeleteStreamFlow",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DeleteStreamFlow(ctx, req.(*request.DeleteStreamFlow))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -672,38 +694,38 @@ func _Workflow_ReleaseStreamFlow_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_SuspendReleaseStreamFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.SuspendReleaseStreamFlow)
+func _Workflow_SuspendReleaseStreamFlows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.SuspendReleaseStreamFlows)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).SuspendReleaseStreamFlow(ctx, in)
+		return srv.(WorkflowServer).SuspendReleaseStreamFlows(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/SuspendReleaseStreamFlow",
+		FullMethod: "/wfpb.Workflow/SuspendReleaseStreamFlows",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).SuspendReleaseStreamFlow(ctx, req.(*request.SuspendReleaseStreamFlow))
+		return srv.(WorkflowServer).SuspendReleaseStreamFlows(ctx, req.(*request.SuspendReleaseStreamFlows))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ResumeReleaseStreamFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ResumeReleaseStreamFlow)
+func _Workflow_ResumeReleaseStreamFlows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ResumeReleaseStreamFlows)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ResumeReleaseStreamFlow(ctx, in)
+		return srv.(WorkflowServer).ResumeReleaseStreamFlows(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ResumeReleaseStreamFlow",
+		FullMethod: "/wfpb.Workflow/ResumeReleaseStreamFlows",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ResumeReleaseStreamFlow(ctx, req.(*request.ResumeReleaseStreamFlow))
+		return srv.(WorkflowServer).ResumeReleaseStreamFlows(ctx, req.(*request.ResumeReleaseStreamFlows))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -821,20 +843,20 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*WorkflowServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "DeleteAllFlows",
-			Handler:    _Workflow_DeleteAllFlows_Handler,
+			MethodName: "DeleteFlowsBySpaceIds",
+			Handler:    _Workflow_DeleteFlowsBySpaceIds_Handler,
 		},
 		{
 			MethodName: "ListStreamFlows",
 			Handler:    _Workflow_ListStreamFlows_Handler,
 		},
 		{
-			MethodName: "CreateStreamFlow",
-			Handler:    _Workflow_CreateStreamFlow_Handler,
+			MethodName: "DeleteStreamFlows",
+			Handler:    _Workflow_DeleteStreamFlows_Handler,
 		},
 		{
-			MethodName: "DeleteStreamFlow",
-			Handler:    _Workflow_DeleteStreamFlow_Handler,
+			MethodName: "CreateStreamFlow",
+			Handler:    _Workflow_CreateStreamFlow_Handler,
 		},
 		{
 			MethodName: "UpdateStreamFlow",
@@ -877,12 +899,12 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Workflow_ReleaseStreamFlow_Handler,
 		},
 		{
-			MethodName: "SuspendReleaseStreamFlow",
-			Handler:    _Workflow_SuspendReleaseStreamFlow_Handler,
+			MethodName: "SuspendReleaseStreamFlows",
+			Handler:    _Workflow_SuspendReleaseStreamFlows_Handler,
 		},
 		{
-			MethodName: "ResumeReleaseStreamFlow",
-			Handler:    _Workflow_ResumeReleaseStreamFlow_Handler,
+			MethodName: "ResumeReleaseStreamFlows",
+			Handler:    _Workflow_ResumeReleaseStreamFlows_Handler,
 		},
 		{
 			MethodName: "ListReleaseStreamFlows",

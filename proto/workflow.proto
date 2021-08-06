@@ -10,20 +10,31 @@ import "response.proto";
 
 // Workflow Service
 service Workflow {
-	// DeleteAllFlows delete all workflow that specified workspace id.
-	// And removed all workflow task from schedule system.
-	rpc DeleteAllFlows(request.DeleteAllFlows) returns(model.EmptyStruct) {}
+	// DeleteFlowsBySpaceIds delete the specified workspaces and its resources;
+	// This Interface called by apiserver(DeleteWorkspaces).
+	// Resources includes:
+	//   - Workflow of stream and batch and them's history version.
+	//   - Node, env schedule and them's history version.
+	//   - Released's workflow.
+	//   - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//   - All instances records. (By Scheduler-Server)
+	rpc DeleteFlowsBySpaceIds(request.DeleteWorkspaces) returns(model.EmptyStruct) {}
 	
 	// Interface for stream workflow.
 	//
 	// ListStreamFlows to get a list of stream workflow of the workspace.
 	rpc ListStreamFlows(request.ListStreamFlows) returns (response.ListStreamFlows) {}
+
+	// DeleteStreamFlows delete stream workflow ant its related resources where in ids.
+	// Resources includes:
+	//  - History version and Released's workflow.
+	//  - Node, env schedule and its history version.
+	//  - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//  - All instances records. (By Scheduler-Server)
+	rpc DeleteStreamFlows(request.DeleteStreamFlows) returns (model.EmptyStruct) {}
 	
 	// CreateStreamFlow to create a new stream workflow.
 	rpc CreateStreamFlow(request.CreateStreamFlow) returns (response.CreateStreamFlow) {}
-	
-	// DeleteStreamFlow to delete the specified stream workflow.
-	rpc DeleteStreamFlow(request.DeleteStreamFlow) returns (model.EmptyStruct) {}
 	
 	// UpdateStreamFlow to update the info for the specified stream workflow.
 	rpc UpdateStreamFlow(request.UpdateStreamFlow) returns (model.EmptyStruct) {}
@@ -57,11 +68,11 @@ service Workflow {
 	// ReleaseStreamFlow to publish the specified workflow to schedule system with a new version.
 	rpc ReleaseStreamFlow(request.ReleaseStreamFlow) returns (model.EmptyStruct) {}
 	
-	// SuspendStreamFlow to suspend the specified workflow in schedule system.
-	rpc SuspendReleaseStreamFlow(request.SuspendReleaseStreamFlow) returns (model.EmptyStruct) {}
+	// SuspendReleaseStreamFlows to suspend the specified workflow list in schedule system.
+	rpc SuspendReleaseStreamFlows(request.SuspendReleaseStreamFlows) returns (model.EmptyStruct) {}
 	
-	// ResumeStreamFlow to resume the suspended workflow in schedule system.
-	rpc ResumeReleaseStreamFlow(request.ResumeReleaseStreamFlow) returns (model.EmptyStruct) {}
+	// ResumeReleaseStreamFlows to resume the suspended workflow list in schedule system.
+	rpc ResumeReleaseStreamFlows(request.ResumeReleaseStreamFlows) returns (model.EmptyStruct) {}
 	
 	// ListReleaseStreamFlows for gets a list of all published workflow in the workspace.
 	rpc ListReleaseStreamFlows(request.ListReleaseStreamFlows) returns (response.ListReleaseStreamFlows) {}

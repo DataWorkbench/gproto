@@ -22,22 +22,25 @@ const _ = grpc.SupportPackageIsVersion7
 type WorkspaceClient interface {
 	// API of workspace manager.
 	ListWorkspaces(ctx context.Context, in *request.ListWorkspaces, opts ...grpc.CallOption) (*response.ListWorkspaces, error)
+	// DeleteWorkspaces delete the specified workspaces and its resources;
+	// Resources includes
+	//  - Members.
+	//  - Audit(Operation Records).
+	DeleteWorkspaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DisableWorkspaces(ctx context.Context, in *request.DisableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	EnableWorkspaces(ctx context.Context, in *request.EnableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	CreateWorkspace(ctx context.Context, in *request.CreateWorkspace, opts ...grpc.CallOption) (*response.CreateWorkspace, error)
-	DeleteWorkspace(ctx context.Context, in *request.DeleteWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	UpdateWorkspace(ctx context.Context, in *request.UpdateWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DescribeWorkspace(ctx context.Context, in *request.DescribeWorkspace, opts ...grpc.CallOption) (*response.DescribeWorkspace, error)
-	DisableWorkspace(ctx context.Context, in *request.DisableWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	EnableWorkspace(ctx context.Context, in *request.EnableWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// API of workspace operation audit log.
 	AddAudit(ctx context.Context, in *request.AddAudit, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	ListAudits(ctx context.Context, in *request.ListAudits, opts ...grpc.CallOption) (*response.ListAudits, error)
 	// API of workspace role.
-	ListSystemRoles(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListSystemRoles, error)
+	ListSystemRoles(ctx context.Context, in *request.ListSystemRoles, opts ...grpc.CallOption) (*response.ListSystemRoles, error)
 	// API of workspace member.
 	ListMembers(ctx context.Context, in *request.ListMembers, opts ...grpc.CallOption) (*response.ListMembers, error)
-	AddMember(ctx context.Context, in *request.AddMember, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	RemoveMember(ctx context.Context, in *request.RemoveMember, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	UpdateMember(ctx context.Context, in *request.UpdateMember, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	UpsertMembers(ctx context.Context, in *request.UpsertMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteMembers(ctx context.Context, in *request.DeleteMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Permission Auth.
 	CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
@@ -59,18 +62,36 @@ func (c *workspaceClient) ListWorkspaces(ctx context.Context, in *request.ListWo
 	return out, nil
 }
 
-func (c *workspaceClient) CreateWorkspace(ctx context.Context, in *request.CreateWorkspace, opts ...grpc.CallOption) (*response.CreateWorkspace, error) {
-	out := new(response.CreateWorkspace)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/CreateWorkspace", in, out, opts...)
+func (c *workspaceClient) DeleteWorkspaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.Workspace/DeleteWorkspaces", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) DeleteWorkspace(ctx context.Context, in *request.DeleteWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workspaceClient) DisableWorkspaces(ctx context.Context, in *request.DisableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/DeleteWorkspace", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.Workspace/DisableWorkspaces", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceClient) EnableWorkspaces(ctx context.Context, in *request.EnableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.Workspace/EnableWorkspaces", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workspaceClient) CreateWorkspace(ctx context.Context, in *request.CreateWorkspace, opts ...grpc.CallOption) (*response.CreateWorkspace, error) {
+	out := new(response.CreateWorkspace)
+	err := c.cc.Invoke(ctx, "/wspb.Workspace/CreateWorkspace", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,24 +116,6 @@ func (c *workspaceClient) DescribeWorkspace(ctx context.Context, in *request.Des
 	return out, nil
 }
 
-func (c *workspaceClient) DisableWorkspace(ctx context.Context, in *request.DisableWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/DisableWorkspace", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) EnableWorkspace(ctx context.Context, in *request.EnableWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/EnableWorkspace", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *workspaceClient) AddAudit(ctx context.Context, in *request.AddAudit, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/AddAudit", in, out, opts...)
@@ -131,7 +134,7 @@ func (c *workspaceClient) ListAudits(ctx context.Context, in *request.ListAudits
 	return out, nil
 }
 
-func (c *workspaceClient) ListSystemRoles(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListSystemRoles, error) {
+func (c *workspaceClient) ListSystemRoles(ctx context.Context, in *request.ListSystemRoles, opts ...grpc.CallOption) (*response.ListSystemRoles, error) {
 	out := new(response.ListSystemRoles)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/ListSystemRoles", in, out, opts...)
 	if err != nil {
@@ -149,27 +152,18 @@ func (c *workspaceClient) ListMembers(ctx context.Context, in *request.ListMembe
 	return out, nil
 }
 
-func (c *workspaceClient) AddMember(ctx context.Context, in *request.AddMember, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workspaceClient) UpsertMembers(ctx context.Context, in *request.UpsertMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/AddMember", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.Workspace/UpsertMembers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) RemoveMember(ctx context.Context, in *request.RemoveMember, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workspaceClient) DeleteMembers(ctx context.Context, in *request.DeleteMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/RemoveMember", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) UpdateMember(ctx context.Context, in *request.UpdateMember, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/UpdateMember", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.Workspace/DeleteMembers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -191,22 +185,25 @@ func (c *workspaceClient) CheckPermission(ctx context.Context, in *request.Check
 type WorkspaceServer interface {
 	// API of workspace manager.
 	ListWorkspaces(context.Context, *request.ListWorkspaces) (*response.ListWorkspaces, error)
+	// DeleteWorkspaces delete the specified workspaces and its resources;
+	// Resources includes
+	//  - Members.
+	//  - Audit(Operation Records).
+	DeleteWorkspaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
+	DisableWorkspaces(context.Context, *request.DisableWorkspaces) (*model.EmptyStruct, error)
+	EnableWorkspaces(context.Context, *request.EnableWorkspaces) (*model.EmptyStruct, error)
 	CreateWorkspace(context.Context, *request.CreateWorkspace) (*response.CreateWorkspace, error)
-	DeleteWorkspace(context.Context, *request.DeleteWorkspace) (*model.EmptyStruct, error)
 	UpdateWorkspace(context.Context, *request.UpdateWorkspace) (*model.EmptyStruct, error)
 	DescribeWorkspace(context.Context, *request.DescribeWorkspace) (*response.DescribeWorkspace, error)
-	DisableWorkspace(context.Context, *request.DisableWorkspace) (*model.EmptyStruct, error)
-	EnableWorkspace(context.Context, *request.EnableWorkspace) (*model.EmptyStruct, error)
 	// API of workspace operation audit log.
 	AddAudit(context.Context, *request.AddAudit) (*model.EmptyStruct, error)
 	ListAudits(context.Context, *request.ListAudits) (*response.ListAudits, error)
 	// API of workspace role.
-	ListSystemRoles(context.Context, *model.EmptyStruct) (*response.ListSystemRoles, error)
+	ListSystemRoles(context.Context, *request.ListSystemRoles) (*response.ListSystemRoles, error)
 	// API of workspace member.
 	ListMembers(context.Context, *request.ListMembers) (*response.ListMembers, error)
-	AddMember(context.Context, *request.AddMember) (*model.EmptyStruct, error)
-	RemoveMember(context.Context, *request.RemoveMember) (*model.EmptyStruct, error)
-	UpdateMember(context.Context, *request.UpdateMember) (*model.EmptyStruct, error)
+	UpsertMembers(context.Context, *request.UpsertMembers) (*model.EmptyStruct, error)
+	DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error)
 	// Permission Auth.
 	CheckPermission(context.Context, *request.CheckPermission) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedWorkspaceServer()
@@ -219,11 +216,17 @@ type UnimplementedWorkspaceServer struct {
 func (UnimplementedWorkspaceServer) ListWorkspaces(context.Context, *request.ListWorkspaces) (*response.ListWorkspaces, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListWorkspaces not implemented")
 }
+func (UnimplementedWorkspaceServer) DeleteWorkspaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteWorkspaces not implemented")
+}
+func (UnimplementedWorkspaceServer) DisableWorkspaces(context.Context, *request.DisableWorkspaces) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableWorkspaces not implemented")
+}
+func (UnimplementedWorkspaceServer) EnableWorkspaces(context.Context, *request.EnableWorkspaces) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableWorkspaces not implemented")
+}
 func (UnimplementedWorkspaceServer) CreateWorkspace(context.Context, *request.CreateWorkspace) (*response.CreateWorkspace, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWorkspace not implemented")
-}
-func (UnimplementedWorkspaceServer) DeleteWorkspace(context.Context, *request.DeleteWorkspace) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteWorkspace not implemented")
 }
 func (UnimplementedWorkspaceServer) UpdateWorkspace(context.Context, *request.UpdateWorkspace) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateWorkspace not implemented")
@@ -231,32 +234,23 @@ func (UnimplementedWorkspaceServer) UpdateWorkspace(context.Context, *request.Up
 func (UnimplementedWorkspaceServer) DescribeWorkspace(context.Context, *request.DescribeWorkspace) (*response.DescribeWorkspace, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeWorkspace not implemented")
 }
-func (UnimplementedWorkspaceServer) DisableWorkspace(context.Context, *request.DisableWorkspace) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DisableWorkspace not implemented")
-}
-func (UnimplementedWorkspaceServer) EnableWorkspace(context.Context, *request.EnableWorkspace) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method EnableWorkspace not implemented")
-}
 func (UnimplementedWorkspaceServer) AddAudit(context.Context, *request.AddAudit) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddAudit not implemented")
 }
 func (UnimplementedWorkspaceServer) ListAudits(context.Context, *request.ListAudits) (*response.ListAudits, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAudits not implemented")
 }
-func (UnimplementedWorkspaceServer) ListSystemRoles(context.Context, *model.EmptyStruct) (*response.ListSystemRoles, error) {
+func (UnimplementedWorkspaceServer) ListSystemRoles(context.Context, *request.ListSystemRoles) (*response.ListSystemRoles, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListSystemRoles not implemented")
 }
 func (UnimplementedWorkspaceServer) ListMembers(context.Context, *request.ListMembers) (*response.ListMembers, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListMembers not implemented")
 }
-func (UnimplementedWorkspaceServer) AddMember(context.Context, *request.AddMember) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddMember not implemented")
+func (UnimplementedWorkspaceServer) UpsertMembers(context.Context, *request.UpsertMembers) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpsertMembers not implemented")
 }
-func (UnimplementedWorkspaceServer) RemoveMember(context.Context, *request.RemoveMember) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveMember not implemented")
-}
-func (UnimplementedWorkspaceServer) UpdateMember(context.Context, *request.UpdateMember) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateMember not implemented")
+func (UnimplementedWorkspaceServer) DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteMembers not implemented")
 }
 func (UnimplementedWorkspaceServer) CheckPermission(context.Context, *request.CheckPermission) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckPermission not implemented")
@@ -292,6 +286,60 @@ func _Workspace_ListWorkspaces_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Workspace_DeleteWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteWorkspaces)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServer).DeleteWorkspaces(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.Workspace/DeleteWorkspaces",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServer).DeleteWorkspaces(ctx, req.(*request.DeleteWorkspaces))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Workspace_DisableWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DisableWorkspaces)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServer).DisableWorkspaces(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.Workspace/DisableWorkspaces",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServer).DisableWorkspaces(ctx, req.(*request.DisableWorkspaces))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Workspace_EnableWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.EnableWorkspaces)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkspaceServer).EnableWorkspaces(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.Workspace/EnableWorkspaces",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkspaceServer).EnableWorkspaces(ctx, req.(*request.EnableWorkspaces))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Workspace_CreateWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.CreateWorkspace)
 	if err := dec(in); err != nil {
@@ -306,24 +354,6 @@ func _Workspace_CreateWorkspace_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServer).CreateWorkspace(ctx, req.(*request.CreateWorkspace))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_DeleteWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DeleteWorkspace)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).DeleteWorkspace(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/DeleteWorkspace",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).DeleteWorkspace(ctx, req.(*request.DeleteWorkspace))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -360,42 +390,6 @@ func _Workspace_DescribeWorkspace_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkspaceServer).DescribeWorkspace(ctx, req.(*request.DescribeWorkspace))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_DisableWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DisableWorkspace)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).DisableWorkspace(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/DisableWorkspace",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).DisableWorkspace(ctx, req.(*request.DisableWorkspace))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_EnableWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.EnableWorkspace)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).EnableWorkspace(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/EnableWorkspace",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).EnableWorkspace(ctx, req.(*request.EnableWorkspace))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -437,7 +431,7 @@ func _Workspace_ListAudits_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 func _Workspace_ListSystemRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(model.EmptyStruct)
+	in := new(request.ListSystemRoles)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -449,7 +443,7 @@ func _Workspace_ListSystemRoles_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/wspb.Workspace/ListSystemRoles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).ListSystemRoles(ctx, req.(*model.EmptyStruct))
+		return srv.(WorkspaceServer).ListSystemRoles(ctx, req.(*request.ListSystemRoles))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -472,56 +466,38 @@ func _Workspace_ListMembers_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_AddMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.AddMember)
+func _Workspace_UpsertMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.UpsertMembers)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).AddMember(ctx, in)
+		return srv.(WorkspaceServer).UpsertMembers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/AddMember",
+		FullMethod: "/wspb.Workspace/UpsertMembers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).AddMember(ctx, req.(*request.AddMember))
+		return srv.(WorkspaceServer).UpsertMembers(ctx, req.(*request.UpsertMembers))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_RemoveMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.RemoveMember)
+func _Workspace_DeleteMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteMembers)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).RemoveMember(ctx, in)
+		return srv.(WorkspaceServer).DeleteMembers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/RemoveMember",
+		FullMethod: "/wspb.Workspace/DeleteMembers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).RemoveMember(ctx, req.(*request.RemoveMember))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_UpdateMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.UpdateMember)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).UpdateMember(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/UpdateMember",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).UpdateMember(ctx, req.(*request.UpdateMember))
+		return srv.(WorkspaceServer).DeleteMembers(ctx, req.(*request.DeleteMembers))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -553,12 +529,20 @@ var _Workspace_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Workspace_ListWorkspaces_Handler,
 		},
 		{
-			MethodName: "CreateWorkspace",
-			Handler:    _Workspace_CreateWorkspace_Handler,
+			MethodName: "DeleteWorkspaces",
+			Handler:    _Workspace_DeleteWorkspaces_Handler,
 		},
 		{
-			MethodName: "DeleteWorkspace",
-			Handler:    _Workspace_DeleteWorkspace_Handler,
+			MethodName: "DisableWorkspaces",
+			Handler:    _Workspace_DisableWorkspaces_Handler,
+		},
+		{
+			MethodName: "EnableWorkspaces",
+			Handler:    _Workspace_EnableWorkspaces_Handler,
+		},
+		{
+			MethodName: "CreateWorkspace",
+			Handler:    _Workspace_CreateWorkspace_Handler,
 		},
 		{
 			MethodName: "UpdateWorkspace",
@@ -567,14 +551,6 @@ var _Workspace_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeWorkspace",
 			Handler:    _Workspace_DescribeWorkspace_Handler,
-		},
-		{
-			MethodName: "DisableWorkspace",
-			Handler:    _Workspace_DisableWorkspace_Handler,
-		},
-		{
-			MethodName: "EnableWorkspace",
-			Handler:    _Workspace_EnableWorkspace_Handler,
 		},
 		{
 			MethodName: "AddAudit",
@@ -593,16 +569,12 @@ var _Workspace_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Workspace_ListMembers_Handler,
 		},
 		{
-			MethodName: "AddMember",
-			Handler:    _Workspace_AddMember_Handler,
+			MethodName: "UpsertMembers",
+			Handler:    _Workspace_UpsertMembers_Handler,
 		},
 		{
-			MethodName: "RemoveMember",
-			Handler:    _Workspace_RemoveMember_Handler,
-		},
-		{
-			MethodName: "UpdateMember",
-			Handler:    _Workspace_UpdateMember_Handler,
+			MethodName: "DeleteMembers",
+			Handler:    _Workspace_DeleteMembers_Handler,
 		},
 		{
 			MethodName: "CheckPermission",

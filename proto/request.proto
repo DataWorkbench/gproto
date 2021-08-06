@@ -23,6 +23,32 @@ message ListWorkspaces {
 	string user_id = 3 [ (validator.field) = { length_lt: 65 } ];
 }
 
+// DeleteWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+message DeleteWorkspaces {
+	// The list of workspace id. Is required, Min 1, Max 100.
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated string ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+// DisableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+message DisableWorkspaces {
+	// The list of workspace id. Is required, Contains at least one.
+	// Disable workspace will suspend all release workflow and stop all running instances.
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated string ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+// EnableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+message EnableWorkspaces {
+	// The list of workspace id. Is required, Contains at least one.
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated string ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+	
+	// Whether resume all suspended workflow. Not required, default false.
+	// @inject_tag: `params:"resume_workflow" default:"false" binding:"-"`
+	bool resume_workflow = 2 [ (validator.field) = { } ];
+}
+
 // CreateWorkspace used as a request parameters for RPC and HTTP(based on Body)
 message CreateWorkspace {
 	// The owner fixed to request user id.
@@ -37,13 +63,6 @@ message CreateWorkspace {
 	// Description of the workspace, Not required, Max 1024 char.
 	//@inject_tag: params:"desc" default:"" binding:"lte=1024"
 	string desc = 3  [ (validator.field) = { length_lt: 1025 } ];
-}
-
-// DeleteWorkspace used as a request parameters for RPC.
-message DeleteWorkspace {
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // UpdateWorkspace used as a request parameters for RPC and HTTP(based on Body)
@@ -67,24 +86,6 @@ message DescribeWorkspace {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// DisableWorkspace used as a request parameters for RPC.
-message DisableWorkspace {
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// EnableWorkspace used as a request parameters for RPC.
-message EnableWorkspace {
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// Whether resume all suspended workflow.
-	// @inject_tag: `params:"resume_workflow" default:"false" binding:"-"`
-	bool resume_workflow = 2 [ (validator.field) = { } ];
 }
 
 // AddAudit used as a request parameters for RPC.
@@ -134,6 +135,22 @@ message ListAudits {
 	int64 ended = 9 [ (validator.field) = { } ];
 }
 
+// ListSystemRoles used as reply parameters in RPC or response body in HTTP.
+message ListSystemRoles {
+//	// Limit the maximum number of entries returned this time.
+//	// Not required, Max 100, default 100.
+//	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+//	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+//
+//	// The offset position. Not required, default 0.
+//	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
+//	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+//
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
+}
+
 // ListMembers used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListMembers {
 	// Limit the maximum number of entries returned this time.
@@ -150,45 +167,36 @@ message ListMembers {
 	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// AddMember used as a request parameters for RPC and HTTP(based on Body).
-message AddMember {
+// UpsertMembers used as a request parameters for RPC and HTTP(based on Body).
+message UpsertMembers {
+	message Pair {
+		// The account user_id. Is Required.
+		// @inject_tag: params:"user_id" default:"" binding:"required"
+		string user_id = 2 [ (validator.field) = { length_lt: 65 } ];
+		
+		// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
+		// @inject_tag: params:"role_ids" default:"" binding:"get=1,lte=100"
+		string role_ids = 3  [ (validator.field) = { length_lt: 101 } ];
+	}
+	
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
 	
-	// The account user_id. Is Required.
-	// @inject_tag: params:"user_id" json:"user_id" default:"" binding:"required"
-	string user_id = 2 [ (validator.field) = { length_lt: 65 } ];
-	
-	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required.
-	// @inject_tag: params:"role_ids" default:"" binding:"required"
-	string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
+	// The list of pair to user_id => role_ids. Min: 1, Max: 100
+	// @inject_tag: params:"users" default:"" binding:"gte=1,lte=100""
+	repeated Pair users = 2 [ (validator.field) = { length_lt: 101 } ];
 }
 
-// RemoveMember used as a request parameters for RPC and HTTP(based on Body).
-message RemoveMember {
+// DeleteMembers used as a request parameters for RPC and HTTP(based on Body).
+message DeleteMembers {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
 	
-	// The member(user) id in HTTP Request-URI
-	// @inject_tag: params:"member_id" uri:"member_id" default:"" binding:"-" swaggerignore:"true"
-	string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
-}
-
-// UpdateMember used as a request parameters for RPC and HTTP(based on Body).
-message UpdateMember {
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string space_id = 1  [ (validator.field) = { length_eq: 20 } ];
-	
-	// The member(user) id in HTTP Request-URI
-	// @inject_tag: params:"member_id" uri:"member_id" default:"" binding:"-" swaggerignore:"true"
-	string member_id = 2 [ (validator.field) = { length_lt: 65 } ];
-	
-	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required.
-	// @inject_tag: params:"role_ids" default:"" binding:"required"
-	string role_ids = 3  [ (validator.field) = { length_lt: 256 } ];
+	// The user(member) id. Is required, Min: 1, Max 100.
+	// @inject_tag: params:"user_ids" default:"" binding:"-""
+	repeated string user_ids = 2 [ (validator.field) = { length_lt: 100 } ];
 }
 
 // CheckPermission used as a request parameters for RPC.
@@ -198,16 +206,6 @@ message CheckPermission {
 	string resource            = 3 [ (validator.field) = { } ];
 	string action              = 4 [ (validator.field) = { } ];
 	model.OpAudit.Type op_type = 5 [ (validator.field) = { int_gt: 0, int_lt: 5 } ];
-}
-
-// DeleteAllFlows used as a request parameters for RPC.
-message DeleteAllFlows {
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// Only used to flowmanager -> scheduler.
-	repeated string stream_flow_ids = 2 [ (validator.field) = { } ];
 }
 
 // ListStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query)
@@ -235,23 +233,26 @@ message CreateStreamFlow {
 	// The workflow name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	// @inject_tag: params:"name" default:"" binding:"gte=2,lte=128"
-	string name = 2     [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string name = 2 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	
 	// Description of the workspace, Not required, Max length 1024.
 	// @inject_tag: params:"desc" default:"" binding:"lte=1024"
-	string desc = 3     [ (validator.field) = { length_lt: 1025 } ];
+	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
 	
 	// Workflow Type. Is Required, Optional Value: 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator".
 	// Desc: Cannot be modified after creation.
 	// @inject_tag: params:"type" default:"" binding:"gte=1,lte=3"
-	model.StreamFlow.Type  type = 4     [ (validator.field) = { int_gt: 0 } ];
+	model.StreamFlow.Type  type = 4  [ (validator.field) = { int_gt: 0 } ];
 }
 
-// DeleteStreamFlow used as a request parameters for RPC.
-message DeleteStreamFlow {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// DeleteStreamFlows used as a request parameters for RPC and HTTP(based on Body)
+message DeleteStreamFlows {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	// The list of workflow id. Is required, Min 1, Max 100.
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated string ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 }
 
 // UpdateStreamFlow used as a request parameters for RPC and HTTP(based on Body).
@@ -350,24 +351,32 @@ message ReleaseStreamFlow {
 	string desc = 2 [ (validator.field) = { length_lt: 1025 } ];
 	
 	// @inject_tag: params:"stop_running" default:"" binding:"-"
-	bool stop_running = 3 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
-// SuspendReleaseStreamFlow used as a request parameters for RPC and HTTP(based on Body).
-message SuspendReleaseStreamFlow {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// SuspendReleaseStreamFlows used as a request parameters for RPC and HTTP(based on Body).
+message SuspendReleaseStreamFlows {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The list of workflow id. Is Required. Min: 1, Max: 100
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated string ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 	
 	// @inject_tag: params:"stop_running" default:"" binding:"-"
-	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
-// ResumeReleaseStreamFlow used as a request parameters for RPC.
-message ResumeReleaseStreamFlow {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// ResumeReleaseStreamFlows used as a request parameters for RPC.
+message ResumeReleaseStreamFlows {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The list of workflow id. Is Required. Min: 1, Max: 100
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated string ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 }
 
 // ListStreamFlowVersions used as a request parameters for RPC and HTTP(based on URL-Query)
@@ -446,14 +455,30 @@ message ListMonitorRules {
 	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// CreateMonitorRule used as a request parameters for RPC .
+// CreateMonitorRule used as a request parameters for RPC and HTTP(based on Body).
 message CreateMonitorRule {
 	model.MonitorRule info = 1 [ (validator.field) = { msg_exists: true } ];
 }
 
-// DeleteMonitorRule used as a request parameters for RPC.
-message DeleteMonitorRule {
-	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// DeleteMonitorRules used as a request parameters for RPC and HTTP(based on Body).
+message DeleteMonitorRules {
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	// @inject_tag: params:"rule_ids" default:"" binding:"gte=1,lte=100"
+	repeated string rule_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+// EnableMonitorRules used as a request parameters for RPC and HTTP(based on Body).
+message EnableMonitorRules {
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	// @inject_tag: params:"rule_ids" default:"" binding:"gte=1,lte=100"
+	repeated string rule_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+// DisableMonitorRules used as a request parameters for RPC and HTTP(based on Body).
+message DisableMonitorRules {
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	// @inject_tag: params:"rule_ids" default:"" binding:"gte=1,lte=100"
+	repeated string rule_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 }
 
 // UpdateMonitorRule used as a request parameters for RPC.
@@ -463,36 +488,29 @@ message UpdateMonitorRule {
 
 // DescribeMonitorRule used as a request parameters for RPC.
 message DescribeMonitorRule {
-	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// EnableMonitorRule used as a request parameters for RPC.
-message EnableMonitorRule {
-	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// DisableMonitorRule used as a request parameters for RPC.
-message DisableMonitorRule {
+	// The monitor rule id in HTTP Request-URI. Is Required.
+	// @inject_tag: params:"rule_id" uri:"rule_id" default:"" binding:"len=20" swaggerignore:"true"
 	string rule_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
 //
 
-// SubmitStreamFlow used as a request parameters for RPC.
-message SubmitStreamFlow {
-	model.StreamFlowMeta meta = 1 [ (validator.field) = { } ];
-	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+// SubmitStreamFlows used as a request parameters for RPC.
+message SubmitStreamFlows {
+	repeated model.StreamFlowMeta metas = 1 [ (validator.field) = { } ];
+	bool stop_running = 2 [ (validator.field) = { } ];
 }
 
-// OfflineStreamFlow used as a request parameters for RPC.
-message OfflineStreamFlow {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	bool stop_running = 2 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
+// OfflineStreamFlows used as a request parameters for RPC.
+message OfflineStreamFlows {
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	repeated string flow_ids = 2 [ (validator.field) = { length_eq: 20 } ];
+	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
-// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query).
-// This struct can used for ListStreamTestInst and ListStreamCycleInst
-message ListStreamInst{
+// ListStreamInsts used as a request parameters for RPC and HTTP(based on URL-Query).
+// This struct can used for ListStreamInsts and ListStreamInsts
+message ListStreamInsts {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
 	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
@@ -502,51 +520,62 @@ message ListStreamInst{
 	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
 	
-	// The workspace id in HTTP Request-URI
+	// The workspace id in HTTP Request-URI. Is Required.
 	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	// The workflow id. Not required.
+	// @inject_tag: params:"flow_id" form:"flow_id" default:"" binding:"-"
 	string flow_id = 4 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version id in HTTP Request-URI
-	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64  version = 5  [ (validator.field) = { } ];
+	// The workflow version id. Not required.
+	// @inject_tag: params:"ver_id" form:"ver_id" default:"" binding:"-"
+	int64 version = 5 [ (validator.field) = { } ];
 }
 
-// SuspendStreamInst used as a request parameters for RPC.
-// This struct can used for SuspendStreamCycleInst and SuspendStreamTestInst.
-message SuspendStreamInst {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The instance id in HTTP Request-URI
-	// @inject_tag: params:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
+// FlowInstIdPair is the k/v pair of flowId => instId.
+message FlowInstIdPair {
+	// The workflow id. Is Required.
+	// @inject_tag: params:"flow_id" default:"" binding:"len=20""
+	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// The instance id. Is Required.
+	// @inject_tag: params:"inst_id" default:"" binding:"len=20"
+	string inst_id = 3 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// ResumeStreamInst used as a request parameters for RPC.
-// This struct can used for ResumeStreamCycleInst and SuspendStreamTestInst.
-message ResumeStreamInst {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The instance id in HTTP Request-URI
-	// @inject_tag: params:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// TerminateStreamInst used as a request parameters for RPC.
+// TerminateStreamInsts used as a request parameters for RPC.
 // This struct can used for TerminateStreamCycleInst and TerminateStreamTestInst.
-message TerminateStreamInst {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+message TerminateStreamInsts {
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated FlowInstIdPair ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+}
+
+// SuspendStreamInsts used as a request parameters for RPC.
+// This struct can used for SuspendStreamCycleInst and SuspendStreamTestInst.
+message SuspendStreamInsts {
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The instance id in HTTP Request-URI
-	// @inject_tag: params:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
-	string inst_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated FlowInstIdPair ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+}
+
+// ResumeStreamInsts used as a request parameters for RPC.
+// This struct can used for ResumeStreamCycleInst and SuspendStreamTestInst.
+message ResumeStreamInsts {
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	// @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+	repeated FlowInstIdPair ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
 }
