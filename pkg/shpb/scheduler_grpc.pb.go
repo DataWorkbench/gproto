@@ -33,15 +33,15 @@ type SchedulerClient interface {
 	//  - Offline workflow and force stop all running instances.
 	//  - All instances records.
 	DeleteStreamFlows(ctx context.Context, in *request.DeleteStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// FIXME
+	// FIXME: Review it.
 	// Execute execute immediately a workflow task. It trigger by user on console.
 	ExecuteStreamFlow(ctx context.Context, in *request.ExecuteStreamFlow, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Submit submit a workflow task to scheduler system, It will
 	// be cover if old job exists.
-	// FIXME
+	// FIXME: Review it.
 	SubmitStreamFlows(ctx context.Context, in *request.SubmitStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Remove remove specific workflow task from scheduler system.
-	// FIXME
+	// FIXME: Review it.
 	OfflineStreamFlows(ctx context.Context, in *request.OfflineStreamFlows, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Interface for stream workflow cycle instance.
 	//
@@ -270,15 +270,15 @@ type SchedulerServer interface {
 	//  - Offline workflow and force stop all running instances.
 	//  - All instances records.
 	DeleteStreamFlows(context.Context, *request.DeleteStreamFlows) (*model.EmptyStruct, error)
-	// FIXME
+	// FIXME: Review it.
 	// Execute execute immediately a workflow task. It trigger by user on console.
 	ExecuteStreamFlow(context.Context, *request.ExecuteStreamFlow) (*model.EmptyStruct, error)
 	// Submit submit a workflow task to scheduler system, It will
 	// be cover if old job exists.
-	// FIXME
+	// FIXME: Review it.
 	SubmitStreamFlows(context.Context, *request.SubmitStreamFlows) (*model.EmptyStruct, error)
 	// Remove remove specific workflow task from scheduler system.
-	// FIXME
+	// FIXME: Review it.
 	OfflineStreamFlows(context.Context, *request.OfflineStreamFlows) (*model.EmptyStruct, error)
 	// Interface for stream workflow cycle instance.
 	//
