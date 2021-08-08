@@ -12,44 +12,53 @@ import "response.proto";
 service Scheduler {
 	// Interface for stream workflow task.
 	//
-	// DeleteAllFlows delete all workflow instance that specified workspace id.
-	// And offline all workflow tasks.
-	rpc DeleteAllFlows(request.DeleteAllFlows) returns (model.EmptyStruct) {}
+	// DeleteFlowsBySpaceIds delete the specified workspaces and its resources;
+	// This Interface called by flowmanager(DeleteFlowsBySpaceIds).
+	// Resources Includes:
+	//   - Offline workflow and force stop all running instances.
+	//   - All instances records.
+	rpc DeleteFlowsBySpaceIds(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
 	
+	// DeleteStreamFlows delete stream workflow ant its related resources where in ids.
+	// Resources includes:
+	//  - Offline workflow and force stop all running instances.
+	//  - All instances records.
+	rpc DeleteStreamFlows(request.DeleteStreamFlows) returns (model.EmptyStruct) {}
+	
+	// FIXME: Review it.
 	// Execute execute immediately a workflow task. It trigger by user on console.
 	rpc ExecuteStreamFlow(request.ExecuteStreamFlow) returns (model.EmptyStruct) {}
 	
-	// DeleteStreamFlow delete all stream workflow instance by specified workflow id.
-	// And offline workflow task from schedule system.
-	rpc DeleteStreamFlow(request.DeleteStreamFlow) returns(model.EmptyStruct) {}
-	
 	// Submit submit a workflow task to scheduler system, It will
 	// be cover if old job exists.
-	rpc SubmitStreamFlow(request.SubmitStreamFlow) returns (model.EmptyStruct) {}
+	// FIXME: Review it.
+	rpc SubmitStreamFlows(request.SubmitStreamFlows) returns (model.EmptyStruct) {}
 	
 	// Remove remove specific workflow task from scheduler system.
-	rpc OfflineStreamFlow(request.OfflineStreamFlow) returns (model.EmptyStruct) {}
+	// FIXME: Review it.
+	rpc OfflineStreamFlows(request.OfflineStreamFlows) returns (model.EmptyStruct) {}
+
 	
 	// Interface for stream workflow cycle instance.
 	//
-	rpc ListStreamCycleInst(request.ListStreamInst)           returns (response.ListStreamInst) {}
-	rpc SuspendStreamCycleInst(request.SuspendStreamInst)     returns (model.EmptyStruct)       {}
-	rpc ResumeStreamCycleInst(request.ResumeStreamInst)       returns (model.EmptyStruct)       {}
-	rpc TerminateStreamCycleInst(request.TerminateStreamInst) returns (model.EmptyStruct)       {}
+	rpc ListStreamCycleInsts(request.ListStreamInsts)         returns (response.ListStreamInsts) {}
+	rpc TerminateStreamCycleInsts(request.TerminateStreamInsts) returns (model.EmptyStruct)       {}
+	rpc SuspendStreamCycleInsts(request.SuspendStreamInsts)     returns (model.EmptyStruct)       {}
+	rpc ResumeStreamCycleInsts(request.ResumeStreamInsts)       returns (model.EmptyStruct)       {}
 	
 	// Interface for stream workflow test instance.
 	//
-	rpc ListStreamTestInst(request.ListStreamInst)           returns (response.ListStreamInst) {}
-	rpc SuspendStreamTestInst(request.SuspendStreamInst)     returns (model.EmptyStruct)       {}
-	rpc ResumeStreamTestInst(request.ResumeStreamInst)       returns (model.EmptyStruct)       {}
-	rpc TerminateStreamTestInst(request.TerminateStreamInst) returns (model.EmptyStruct)       {}
+	rpc ListStreamTestInsts(request.ListStreamInsts)         returns (response.ListStreamInsts) {}
+	rpc TerminateStreamTestInsts(request.TerminateStreamInsts) returns (model.EmptyStruct)       {}
+	rpc SuspendStreamTestInsts(request.SuspendStreamInsts)     returns (model.EmptyStruct)       {}
+	rpc ResumeStreamTestInsts(request.ResumeStreamInsts)       returns (model.EmptyStruct)       {}
 	
-	//
+	// Interface for monitor.
 	rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
+	rpc DeleteMonitorRules(request.DeleteMonitorRules)   returns (model.EmptyStruct)            {}
+	rpc EnableMonitorRules(request.EnableMonitorRules)   returns (model.EmptyStruct)            {}
+	rpc DisableMonitorRules(request.DisableMonitorRules) returns (model.EmptyStruct)            {}
 	rpc CreateMonitorRule(request.CreateMonitorRule)     returns (model.EmptyStruct)            {}
-	rpc DeleteMonitorRule(request.DeleteMonitorRule)     returns (model.EmptyStruct)            {}
 	rpc UpdateMonitorRule(request.UpdateMonitorRule)     returns (model.EmptyStruct)            {}
 	rpc DescribeMonitorRule(request.DescribeMonitorRule) returns (response.DescribeMonitorRule) {}
-	rpc EnableMonitorRule(request.EnableMonitorRule)     returns (model.EmptyStruct)            {}
-	rpc DisableMonitorRule(request.DisableMonitorRule)   returns (model.EmptyStruct)            {}
 }

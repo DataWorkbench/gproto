@@ -46,13 +46,6 @@ message Workspace {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
-//enum StreamFlowType {
-//	_ = 0;
-//	SQL = 1;
-//	JAR = 2;
-//	Operator = 3;
-//}
-
 // The stream workflow info
 message StreamFlow {
 	enum Type {
@@ -286,8 +279,8 @@ message Role {
 		System = 1;
 		Custom = 2;
 	}
-//	// @inject_tag: gorm:"column:space_id;"
-//	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: gorm:"column:space_id;"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// @inject_tag: gorm:"column:id;"
 	string id = 2 [ (validator.field) = { length_eq: 20 } ];
@@ -306,10 +299,10 @@ message Role {
 message Member {
 	// @inject_tag: gorm:"column:space_id;primaryKey;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-
-	// Use account user-id as member id.
-	// @inject_tag: gorm:"column:member_id;primaryKey;"
-	string member_id = 3 [ (validator.field) = { length_lt: 65 } ];
+	
+	// The user id in account-server.
+	// @inject_tag: gorm:"column:user_id;primaryKey;"
+	string user_id = 3 [ (validator.field) = { length_lt: 65 } ];
 	
 	// @inject_tag: gorm:"column:role_ids;" The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
 	string role_ids = 4 [ (validator.field) = { length_lt: 256 } ];
