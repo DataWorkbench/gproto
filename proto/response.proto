@@ -32,12 +32,8 @@ message DescribeWorkspace {
 
 // ListSystemRoles used as reply parameters in RPC or response body in HTTP.
 message ListMembers {
-	message RoleList {
-		repeated model.Role infos = 1;
-	}
-	repeated model.Member members = 1 [ (validator.field) = { } ];
-	// map => "member_id": RoleList
-	map<string, RoleList> roles = 2 [ (validator.field) = { } ];
+	repeated model.Member infos = 1 [ (validator.field) = { } ];
+	bool has_more = 2 [ (validator.field) = { } ];
 }
 
 // ListSystemRoles used as reply parameters in RPC or response body in HTTP.
@@ -123,10 +119,7 @@ message DescribeMonitorRule {
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query).
 // This struct can used for ListStreamTestInst and ListStreamCycleInst
-message ListStreamInst {
+message ListStreamInsts {
 	repeated model.StreamFlowInst infos = 1 [ (validator.field) = { } ];
 	bool has_more = 2 [ (validator.field) = { } ];
 }
-
-
-

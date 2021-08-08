@@ -52,17 +52,6 @@ func (this *DescribeWorkspace) Validate() error {
 	return nil
 }
 func (this *ListMembers) Validate() error {
-	for _, item := range this.Members {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Members", err)
-			}
-		}
-	}
-	// Validation of proto3 map<> fields is unsupported.
-	return nil
-}
-func (this *ListMembers_RoleList) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -203,7 +192,7 @@ func (this *DescribeMonitorRule) Validate() error {
 	}
 	return nil
 }
-func (this *ListStreamInst) Validate() error {
+func (this *ListStreamInsts) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
