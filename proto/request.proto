@@ -11,7 +11,7 @@ import "model.proto";
 message ListWorkspaces {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
@@ -97,7 +97,7 @@ message AddAudit {
 message ListAudits {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
@@ -139,7 +139,7 @@ message ListAudits {
 message ListSystemRoles {
 //	// Limit the maximum number of entries returned this time.
 //	// Not required, Max 100, default 100.
-//	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+//	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 //	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 //
 //	// The offset position. Not required, default 0.
@@ -155,7 +155,7 @@ message ListSystemRoles {
 message ListMembers {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
@@ -212,7 +212,7 @@ message CheckPermission {
 message ListStreamFlows {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
@@ -328,7 +328,7 @@ message ExecuteStreamFlow {
 message ListReleaseStreamFlows {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
@@ -383,7 +383,7 @@ message ResumeReleaseStreamFlows {
 message ListStreamFlowVersions {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
@@ -443,7 +443,7 @@ message GetStreamFlowVersionSchedule {
 message ListMonitorRules {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
@@ -513,7 +513,7 @@ message OfflineStreamFlows {
 message ListStreamInsts {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"
+	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
 	
 	// The offset position. Not required, default 0.
