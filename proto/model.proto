@@ -340,7 +340,7 @@ message MonitorRule {
 
 	// The object unit, 1 => "workspace" 2 => "workflow'
 	// @inject_tag: gorm:"column:uint;"
-	int32 uint = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	int32 unit = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 
 	// The object text.
 	// @inject_tag: gorm:"column:text;"

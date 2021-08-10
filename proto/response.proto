@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/response";
-
+//option go_package = "github.com/DataWorkbench/gproto/pkg/response";
+option go_package = "/response";
 package response;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
@@ -11,7 +11,9 @@ import "model.proto";
 message ListWorkspaces {
 	repeated model.Workspace infos = 1 [ (validator.field) = { } ];
 	bool has_more = 2 [ (validator.field) = { } ];
+	int64  total = 3 [ (validator.field) = { } ];
 }
+
 
 // ListAudits used as reply parameters in RPC or response body in HTTP.
 message ListAudits {
@@ -34,18 +36,21 @@ message DescribeWorkspace {
 message ListMembers {
 	repeated model.Member infos = 1 [ (validator.field) = { } ];
 	bool has_more = 2 [ (validator.field) = { } ];
+	int64  total = 3 [ (validator.field) = { } ];
 }
 
 // ListSystemRoles used as reply parameters in RPC or response body in HTTP.
 message ListSystemRoles {
 	repeated model.Role infos = 1 [ (validator.field) = { } ];
 	bool has_more = 2 [ (validator.field) = { } ];
+	int64  total = 3 [ (validator.field) = { } ];
 }
 
 // ListStreamFlows used as reply parameters in RPC or response body in HTTP.
 message ListStreamFlows {
 	repeated model.StreamFlow infos = 1 [ (validator.field) = { msg_exists: false } ];
 	bool has_more = 2 [ (validator.field) = { } ];
+	int64  total = 3 [ (validator.field) = { } ];
 }
 
 // DescribeStreamFlow used as reply parameters in RPC.
@@ -78,6 +83,7 @@ message GetStreamFlowSchedule {
 message ListReleaseStreamFlows {
 	repeated model.StreamFlowRelease infos = 1 [ (validator.field) = { msg_exists: false } ];
 	bool has_more = 2 [ (validator.field) = { } ];
+	int64  total = 3 [ (validator.field) = { } ];
 }
 
 // ListStreamFlowVersions used as reply parameters in RPC or response body in HTTP.
@@ -110,6 +116,7 @@ message GetStreamFlowVersionSchedule {
 message ListMonitorRules {
 	repeated model.MonitorRule infos = 1 [ (validator.field) = { } ];
 	bool has_more = 2 [ (validator.field) = { } ];
+	int64  total = 3 [ (validator.field) = { } ];
 }
 
 // DescribeMonitorRule used as reply parameters in RPC.
