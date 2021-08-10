@@ -35,7 +35,7 @@ type ListWorkspaces struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The used_id fixed to request user id.
@@ -493,7 +493,7 @@ type ListAudits struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The used_id fixed to request user id.
@@ -673,7 +673,7 @@ type ListMembers struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI
@@ -937,7 +937,7 @@ type ListStreamFlows struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI
@@ -1607,7 +1607,7 @@ type ListReleaseStreamFlows struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI
@@ -1865,7 +1865,7 @@ type ListStreamFlowVersions struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workflow id in HTTP Request-URI
@@ -2165,7 +2165,7 @@ type ListMonitorRules struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI
@@ -2646,7 +2646,7 @@ type ListStreamInsts struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI. Is Required.
