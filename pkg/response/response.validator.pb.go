@@ -5,11 +5,11 @@ package response
 
 import (
 	fmt "fmt"
-	_ "github.com/DataWorkbench/gproto/pkg/model"
+	math "math"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
+	_ "github.com/DataWorkbench/gproto/pkg/model"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
