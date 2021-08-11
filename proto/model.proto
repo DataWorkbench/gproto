@@ -9,6 +9,18 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 // EmptyStruct represents no value with a message.
 message EmptyStruct {}
 
+// Error transmits customized-error between grpc client and server by status details
+message Error {
+	// Code is summary information of error.
+	string code = 1;
+	// Status is http status code.
+	int32 status = 2;
+	// EnUS is detail information of error with en_us format.
+	string en_us = 3;
+	// ZhCN is detail information of error with zh_cn format.
+	string zh_cn = 4;
+}
+
 // The workspace info.
 message Workspace {
 	enum Status {
