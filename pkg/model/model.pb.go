@@ -2,11 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.14.0
-<<<<<<< HEAD
-// source: model.proto
-=======
 // source: proto/model.proto
->>>>>>> parent of cfcd8f5... add total
 
 package model
 
