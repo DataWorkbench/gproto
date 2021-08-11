@@ -226,11 +226,11 @@ func (this *MonitorRule) Validate() error {
 	if !(len(this.Name) < 129) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
 	}
-	if !(this.Unit > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Unit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Unit))
+	if !(this.Uint > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Uint", fmt.Errorf(`value '%v' must be greater than '0'`, this.Uint))
 	}
-	if !(this.Unit < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Unit", fmt.Errorf(`value '%v' must be less than '3'`, this.Unit))
+	if !(this.Uint < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Uint", fmt.Errorf(`value '%v' must be less than '3'`, this.Uint))
 	}
 	if !(len(this.Text) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Text", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Text))
