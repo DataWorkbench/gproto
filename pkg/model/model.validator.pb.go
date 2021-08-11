@@ -19,6 +19,9 @@ var _ = math.Inf
 func (this *EmptyStruct) Validate() error {
 	return nil
 }
+func (this *Error) Validate() error {
+	return nil
+}
 func (this *Workspace) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
