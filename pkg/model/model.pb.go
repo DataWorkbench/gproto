@@ -1472,7 +1472,7 @@ type MonitorRule struct {
 	// Rule status, 1 => "enabled", 2 => "disabled".
 	Status MonitorRule_Status `protobuf:"varint,4,opt,name=status,proto3,enum=model.MonitorRule_Status" json:"status,omitempty" gorm:"column:status;"`
 	// The object unit, 1 => "workspace" 2 => "workflow'
-	Unit int32 `protobuf:"varint,5,opt,name=unit,proto3" json:"unit,omitempty" gorm:"column:unit;"`
+	Unit int32 `protobuf:"varint,5,opt,name=unit,proto3" json:"unit,omitempty" gorm:"column:uint;"`
 	// The object text.
 	Text string `protobuf:"bytes,6,opt,name=text,proto3" json:"text,omitempty" gorm:"column:text;"`
 	// The trigger conditions. 3 => "retrying" 6 => "timeout"  7 => "succeed", 8 => "failed",
