@@ -73,6 +73,7 @@ for f in proto/*.proto;do
   if grep "validator.proto" "$f" >/dev/null 2>&1; then
     protoc -I=. -I="${GOPATH}"/src  -I=./proto --govalidators_opt=paths=source_relative --govalidators_out=. "$f"
     mv -f proto/"${name}".validator.pb.go ".${dir}/"
+    sed -i "" 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
   else
     /bin/rm -f ".${dir}/${name}.validator.pb.go"
   fi
@@ -86,5 +87,9 @@ for f in proto/*.proto;do
 done
 
 go fmt ./... >/dev/null 2>&1;
+
+make tidy || exit $?
+make vet || exit $?
+make lint || exit $?
 
 exit $?
