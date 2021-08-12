@@ -70,12 +70,19 @@ for f in proto/*.proto;do
   protoc -I=. -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --go_out=. --go-grpc_out=. "$f"
 
   # Generate validator code.
-  protoc -I=. -I="${GOPATH}"/src  -I=./proto --govalidators_opt=paths=source_relative --govalidators_out=. "$f"
-  mv -f proto/"${name}".validator.pb.go ".${dir}/"
+  if grep "validator.proto" "$f" >/dev/null 2>&1; then
+    protoc -I=. -I="${GOPATH}"/src  -I=./proto --govalidators_opt=paths=source_relative --govalidators_out=. "$f"
+    mv -f proto/"${name}".validator.pb.go ".${dir}/"
+  else
+    /bin/rm -f ".${dir}/${name}.validator.pb.go"
+  fi
 
   # Inject tag to struct and remove comments.
-  protoc-go-inject-tag -input=".${dir}/${name}.pb.go"
-  sed -i "" '/\@inject_tag/d' ".${dir}/${name}.pb.go"
+  pbgo=".${dir}/${name}.pb.go"
+  if grep "\@inject_tag" "${pbgo}" >/dev/null 2>&1; then
+    protoc-go-inject-tag -input="${pbgo}"
+    sed -i "" '/\@inject_tag/d' "${pbgo}"
+  fi
 done
 
 go fmt ./... >/dev/null 2>&1;
