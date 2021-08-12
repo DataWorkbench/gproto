@@ -66,13 +66,16 @@ for f in proto/*.proto;do
   package=$(echo "${package}"|sed 's/"//g; s/;//g')
   dir=${package//"$MODULE"/}
 
-  protoc -I=. -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --govalidators_opt=paths=source_relative --govalidators_out=. --go_out=. --go-grpc_out=. "$f"
+  # Generate go struct and grpc.
+  protoc -I=. -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --go_out=. --go-grpc_out=. "$f"
 
-  protoc-go-inject-tag -input=".${dir}/${name}.pb.go"
-
-  sed -i "" '/\@inject_tag/d' ".${dir}/${name}.pb.go"
-
+  # Generate validator code.
+  protoc -I=. -I="${GOPATH}"/src  -I=./proto --govalidators_opt=paths=source_relative --govalidators_out=. "$f"
   mv -f proto/"${name}".validator.pb.go ".${dir}/"
+
+  # Inject tag to struct and remove comments.
+  protoc-go-inject-tag -input=".${dir}/${name}.pb.go"
+  sed -i "" '/\@inject_tag/d' ".${dir}/${name}.pb.go"
 done
 
 go fmt ./... >/dev/null 2>&1;
