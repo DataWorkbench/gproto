@@ -276,21 +276,38 @@ message DescribeStreamFlow {
 	// The workflow id in HTTP Request-URI
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = {length_eq: 20} ];
+	
+	// The workflow version id in HTTP Request-URI
+	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
+	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // SetStreamFlowNode used as a request parameters for RPC.
 message SetStreamFlowNode {
-	model.StreamFlowNode info = 1 [ (validator.field) = { msg_exists: false } ];
+	// Workflow ID it belongs to.
+	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The node info of JSON format.
+	string nodes = 2 [ (validator.field) = { msg_exists: false } ];
 }
 
 // SetStreamFlowSchedule used as a request parameters for RPC.
 message SetStreamFlowSchedule {
-	model.StreamFlowSchedule info = 1 [ (validator.field) = { msg_exists: false } ];
+	// Workflow ID it belongs to.
+	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	model.StreamFlowSchedule info = 2 [ (validator.field) = { msg_exists: false } ];
 }
 
 // SetStreamFlowEnv used as a request parameters for RPC.
 message SetStreamFlowEnv {
-	model.StreamFlowEnv info = 1 [ (validator.field) = { msg_exists: false } ];
+	// Workflow ID it belongs to.
+	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
+	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	model.StreamFlowEnv info = 2 [ (validator.field) = { msg_exists: false } ];
 }
 
 // GetStreamFlowNode used as a request parameters for RPC.
@@ -298,6 +315,10 @@ message GetStreamFlowNode {
 	// The workflow id in HTTP Request-URI
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The workflow version id in HTTP Request-URI
+	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
+	int64  version = 2 [ (validator.field) = { } ];
 }
 
 // GetStreamFlowSchedule used as a request parameters for RPC.
@@ -305,6 +326,10 @@ message GetStreamFlowSchedule {
 	// The workflow id in HTTP Request-URI
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The workflow version id in HTTP Request-URI
+	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
+	int64  version = 2 [ (validator.field) = { } ];
 }
 
 // GetStreamFlowEnv used as a request parameters for RPC.
@@ -312,6 +337,10 @@ message GetStreamFlowEnv {
 	// The workflow id in HTTP Request-URI
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The workflow version id in HTTP Request-URI
+	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
+	int64 version = 2 [ (validator.field) = { } ];
 }
 
 // ExecuteStreamFlow used as a request parameters for RPC.
@@ -393,50 +422,6 @@ message ListStreamFlowVersions {
 	// The workflow id in HTTP Request-URI
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
 	string flow_id = 3 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// DescribeStreamFlowVersion used as a request parameters for RPC.
-message DescribeStreamFlowVersion {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The workflow version id in HTTP Request-URI
-	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// GetStreamFlowVersionNode used as a request parameters for RPC.
-message GetStreamFlowVersionNode {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The workflow version id in HTTP Request-URI
-	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// GetStreamFlowVersionEnv used as a request parameters for RPC.
-message GetStreamFlowVersionEnv {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The workflow version id in HTTP Request-URI
-	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64 version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// GetStreamFlowVersionSchedule used as a request parameters for RPC.
-message GetStreamFlowVersionSchedule {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The workflow version id in HTTP Request-URI
-	// @inject_tag: params:"ver_id" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64 version = 2 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)

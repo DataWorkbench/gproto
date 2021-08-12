@@ -83,14 +83,14 @@ service Workflow {
 	rpc ListStreamFlowVersions(request.ListStreamFlowVersions) returns (response.ListStreamFlowVersions) {}
 	
 	// DescribeStreamVersion for get the info of the workflow of the specified version.
-	rpc DescribeStreamFlowVersion(request.DescribeStreamFlowVersion) returns (response.DescribeStreamFlowVersion) {}
+	rpc DescribeStreamFlowVersion(request.DescribeStreamFlow) returns (response.DescribeStreamFlow) {}
 	
 	// GetStreamVersionNode for get the node properties of the workflow of the specified version.
-	rpc GetStreamFlowVersionNode(request.GetStreamFlowVersionNode) returns (response.GetStreamFlowVersionNode) {}
+	rpc GetStreamFlowVersionNode(request.GetStreamFlowNode) returns (response.GetStreamFlowNode) {}
 	
 	// GetStreamVersionEnv for get the environmental parameters of the workflow of the specified version.
-	rpc GetStreamFlowVersionEnv(request.GetStreamFlowVersionEnv) returns (response.GetStreamFlowVersionEnv) {}
+	rpc GetStreamFlowVersionEnv(request.GetStreamFlowEnv) returns (response.GetStreamFlowEnv) {}
 	
 	// GetStreamReleaseSchedule for get the schedule properties of the workflow of the specified version.
-	rpc GetStreamFlowVersionSchedule(request.GetStreamFlowVersionSchedule) returns (response.GetStreamFlowVersionSchedule) {}
+	rpc GetStreamFlowVersionSchedule(request.GetStreamFlowSchedule) returns (response.GetStreamFlowSchedule) {}
 }
