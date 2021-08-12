@@ -253,17 +253,21 @@ func (this *DescribeStreamFlow) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
+	if !(this.Version > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
+	}
 	return nil
 }
 func (this *SetStreamFlowNode) Validate() error {
-	if this.Info != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
-		}
+	if !(len(this.FlowId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
 	return nil
 }
 func (this *SetStreamFlowSchedule) Validate() error {
+	if !(len(this.FlowId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
+	}
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -272,6 +276,9 @@ func (this *SetStreamFlowSchedule) Validate() error {
 	return nil
 }
 func (this *SetStreamFlowEnv) Validate() error {
+	if !(len(this.FlowId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
+	}
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -372,42 +379,6 @@ func (this *ListStreamFlowVersions) Validate() error {
 	}
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	return nil
-}
-func (this *DescribeStreamFlowVersion) Validate() error {
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
-	return nil
-}
-func (this *GetStreamFlowVersionNode) Validate() error {
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
-	return nil
-}
-func (this *GetStreamFlowVersionEnv) Validate() error {
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
-	return nil
-}
-func (this *GetStreamFlowVersionSchedule) Validate() error {
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
 	}
 	return nil
 }

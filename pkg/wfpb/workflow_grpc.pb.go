@@ -75,13 +75,13 @@ type WorkflowClient interface {
 	// ListStreamVersions for gets a list of all versions of the specified workflow.
 	ListStreamFlowVersions(ctx context.Context, in *request.ListStreamFlowVersions, opts ...grpc.CallOption) (*response.ListStreamFlowVersions, error)
 	// DescribeStreamVersion for get the info of the workflow of the specified version.
-	DescribeStreamFlowVersion(ctx context.Context, in *request.DescribeStreamFlowVersion, opts ...grpc.CallOption) (*response.DescribeStreamFlowVersion, error)
+	DescribeStreamFlowVersion(ctx context.Context, in *request.DescribeStreamFlow, opts ...grpc.CallOption) (*response.DescribeStreamFlow, error)
 	// GetStreamVersionNode for get the node properties of the workflow of the specified version.
-	GetStreamFlowVersionNode(ctx context.Context, in *request.GetStreamFlowVersionNode, opts ...grpc.CallOption) (*response.GetStreamFlowVersionNode, error)
+	GetStreamFlowVersionNode(ctx context.Context, in *request.GetStreamFlowNode, opts ...grpc.CallOption) (*response.GetStreamFlowNode, error)
 	// GetStreamVersionEnv for get the environmental parameters of the workflow of the specified version.
-	GetStreamFlowVersionEnv(ctx context.Context, in *request.GetStreamFlowVersionEnv, opts ...grpc.CallOption) (*response.GetStreamFlowVersionEnv, error)
+	GetStreamFlowVersionEnv(ctx context.Context, in *request.GetStreamFlowEnv, opts ...grpc.CallOption) (*response.GetStreamFlowEnv, error)
 	// GetStreamReleaseSchedule for get the schedule properties of the workflow of the specified version.
-	GetStreamFlowVersionSchedule(ctx context.Context, in *request.GetStreamFlowVersionSchedule, opts ...grpc.CallOption) (*response.GetStreamFlowVersionSchedule, error)
+	GetStreamFlowVersionSchedule(ctx context.Context, in *request.GetStreamFlowSchedule, opts ...grpc.CallOption) (*response.GetStreamFlowSchedule, error)
 }
 
 type workflowClient struct {
@@ -254,8 +254,8 @@ func (c *workflowClient) ListStreamFlowVersions(ctx context.Context, in *request
 	return out, nil
 }
 
-func (c *workflowClient) DescribeStreamFlowVersion(ctx context.Context, in *request.DescribeStreamFlowVersion, opts ...grpc.CallOption) (*response.DescribeStreamFlowVersion, error) {
-	out := new(response.DescribeStreamFlowVersion)
+func (c *workflowClient) DescribeStreamFlowVersion(ctx context.Context, in *request.DescribeStreamFlow, opts ...grpc.CallOption) (*response.DescribeStreamFlow, error) {
+	out := new(response.DescribeStreamFlow)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/DescribeStreamFlowVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -263,8 +263,8 @@ func (c *workflowClient) DescribeStreamFlowVersion(ctx context.Context, in *requ
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamFlowVersionNode(ctx context.Context, in *request.GetStreamFlowVersionNode, opts ...grpc.CallOption) (*response.GetStreamFlowVersionNode, error) {
-	out := new(response.GetStreamFlowVersionNode)
+func (c *workflowClient) GetStreamFlowVersionNode(ctx context.Context, in *request.GetStreamFlowNode, opts ...grpc.CallOption) (*response.GetStreamFlowNode, error) {
+	out := new(response.GetStreamFlowNode)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/GetStreamFlowVersionNode", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -272,8 +272,8 @@ func (c *workflowClient) GetStreamFlowVersionNode(ctx context.Context, in *reque
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamFlowVersionEnv(ctx context.Context, in *request.GetStreamFlowVersionEnv, opts ...grpc.CallOption) (*response.GetStreamFlowVersionEnv, error) {
-	out := new(response.GetStreamFlowVersionEnv)
+func (c *workflowClient) GetStreamFlowVersionEnv(ctx context.Context, in *request.GetStreamFlowEnv, opts ...grpc.CallOption) (*response.GetStreamFlowEnv, error) {
+	out := new(response.GetStreamFlowEnv)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/GetStreamFlowVersionEnv", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -281,8 +281,8 @@ func (c *workflowClient) GetStreamFlowVersionEnv(ctx context.Context, in *reques
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamFlowVersionSchedule(ctx context.Context, in *request.GetStreamFlowVersionSchedule, opts ...grpc.CallOption) (*response.GetStreamFlowVersionSchedule, error) {
-	out := new(response.GetStreamFlowVersionSchedule)
+func (c *workflowClient) GetStreamFlowVersionSchedule(ctx context.Context, in *request.GetStreamFlowSchedule, opts ...grpc.CallOption) (*response.GetStreamFlowSchedule, error) {
+	out := new(response.GetStreamFlowSchedule)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/GetStreamFlowVersionSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -349,13 +349,13 @@ type WorkflowServer interface {
 	// ListStreamVersions for gets a list of all versions of the specified workflow.
 	ListStreamFlowVersions(context.Context, *request.ListStreamFlowVersions) (*response.ListStreamFlowVersions, error)
 	// DescribeStreamVersion for get the info of the workflow of the specified version.
-	DescribeStreamFlowVersion(context.Context, *request.DescribeStreamFlowVersion) (*response.DescribeStreamFlowVersion, error)
+	DescribeStreamFlowVersion(context.Context, *request.DescribeStreamFlow) (*response.DescribeStreamFlow, error)
 	// GetStreamVersionNode for get the node properties of the workflow of the specified version.
-	GetStreamFlowVersionNode(context.Context, *request.GetStreamFlowVersionNode) (*response.GetStreamFlowVersionNode, error)
+	GetStreamFlowVersionNode(context.Context, *request.GetStreamFlowNode) (*response.GetStreamFlowNode, error)
 	// GetStreamVersionEnv for get the environmental parameters of the workflow of the specified version.
-	GetStreamFlowVersionEnv(context.Context, *request.GetStreamFlowVersionEnv) (*response.GetStreamFlowVersionEnv, error)
+	GetStreamFlowVersionEnv(context.Context, *request.GetStreamFlowEnv) (*response.GetStreamFlowEnv, error)
 	// GetStreamReleaseSchedule for get the schedule properties of the workflow of the specified version.
-	GetStreamFlowVersionSchedule(context.Context, *request.GetStreamFlowVersionSchedule) (*response.GetStreamFlowVersionSchedule, error)
+	GetStreamFlowVersionSchedule(context.Context, *request.GetStreamFlowSchedule) (*response.GetStreamFlowSchedule, error)
 	mustEmbedUnimplementedWorkflowServer()
 }
 
@@ -417,16 +417,16 @@ func (UnimplementedWorkflowServer) ListReleaseStreamFlows(context.Context, *requ
 func (UnimplementedWorkflowServer) ListStreamFlowVersions(context.Context, *request.ListStreamFlowVersions) (*response.ListStreamFlowVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListStreamFlowVersions not implemented")
 }
-func (UnimplementedWorkflowServer) DescribeStreamFlowVersion(context.Context, *request.DescribeStreamFlowVersion) (*response.DescribeStreamFlowVersion, error) {
+func (UnimplementedWorkflowServer) DescribeStreamFlowVersion(context.Context, *request.DescribeStreamFlow) (*response.DescribeStreamFlow, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeStreamFlowVersion not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamFlowVersionNode(context.Context, *request.GetStreamFlowVersionNode) (*response.GetStreamFlowVersionNode, error) {
+func (UnimplementedWorkflowServer) GetStreamFlowVersionNode(context.Context, *request.GetStreamFlowNode) (*response.GetStreamFlowNode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamFlowVersionNode not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamFlowVersionEnv(context.Context, *request.GetStreamFlowVersionEnv) (*response.GetStreamFlowVersionEnv, error) {
+func (UnimplementedWorkflowServer) GetStreamFlowVersionEnv(context.Context, *request.GetStreamFlowEnv) (*response.GetStreamFlowEnv, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamFlowVersionEnv not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamFlowVersionSchedule(context.Context, *request.GetStreamFlowVersionSchedule) (*response.GetStreamFlowVersionSchedule, error) {
+func (UnimplementedWorkflowServer) GetStreamFlowVersionSchedule(context.Context, *request.GetStreamFlowSchedule) (*response.GetStreamFlowSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamFlowVersionSchedule not implemented")
 }
 func (UnimplementedWorkflowServer) mustEmbedUnimplementedWorkflowServer() {}
@@ -767,7 +767,7 @@ func _Workflow_ListStreamFlowVersions_Handler(srv interface{}, ctx context.Conte
 }
 
 func _Workflow_DescribeStreamFlowVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DescribeStreamFlowVersion)
+	in := new(request.DescribeStreamFlow)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -779,13 +779,13 @@ func _Workflow_DescribeStreamFlowVersion_Handler(srv interface{}, ctx context.Co
 		FullMethod: "/wfpb.Workflow/DescribeStreamFlowVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeStreamFlowVersion(ctx, req.(*request.DescribeStreamFlowVersion))
+		return srv.(WorkflowServer).DescribeStreamFlowVersion(ctx, req.(*request.DescribeStreamFlow))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Workflow_GetStreamFlowVersionNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.GetStreamFlowVersionNode)
+	in := new(request.GetStreamFlowNode)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -797,13 +797,13 @@ func _Workflow_GetStreamFlowVersionNode_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/wfpb.Workflow/GetStreamFlowVersionNode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamFlowVersionNode(ctx, req.(*request.GetStreamFlowVersionNode))
+		return srv.(WorkflowServer).GetStreamFlowVersionNode(ctx, req.(*request.GetStreamFlowNode))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Workflow_GetStreamFlowVersionEnv_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.GetStreamFlowVersionEnv)
+	in := new(request.GetStreamFlowEnv)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -815,13 +815,13 @@ func _Workflow_GetStreamFlowVersionEnv_Handler(srv interface{}, ctx context.Cont
 		FullMethod: "/wfpb.Workflow/GetStreamFlowVersionEnv",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamFlowVersionEnv(ctx, req.(*request.GetStreamFlowVersionEnv))
+		return srv.(WorkflowServer).GetStreamFlowVersionEnv(ctx, req.(*request.GetStreamFlowEnv))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Workflow_GetStreamFlowVersionSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.GetStreamFlowVersionSchedule)
+	in := new(request.GetStreamFlowSchedule)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -833,7 +833,7 @@ func _Workflow_GetStreamFlowVersionSchedule_Handler(srv interface{}, ctx context
 		FullMethod: "/wfpb.Workflow/GetStreamFlowVersionSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamFlowVersionSchedule(ctx, req.(*request.GetStreamFlowVersionSchedule))
+		return srv.(WorkflowServer).GetStreamFlowVersionSchedule(ctx, req.(*request.GetStreamFlowSchedule))
 	}
 	return interceptor(ctx, in, info, handler)
 }

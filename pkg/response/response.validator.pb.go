@@ -5,11 +5,11 @@ package response
 
 import (
 	fmt "fmt"
-	math "math"
+	_ "github.com/DataWorkbench/gproto/pkg/model"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
-	_ "github.com/DataWorkbench/gproto/pkg/model"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -96,11 +96,6 @@ func (this *DescribeStreamFlow) Validate() error {
 	return nil
 }
 func (this *GetStreamFlowNode) Validate() error {
-	if this.Info != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
-		}
-	}
 	return nil
 }
 func (this *GetStreamFlowEnv) Validate() error {
@@ -135,38 +130,6 @@ func (this *ListStreamFlowVersions) Validate() error {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
 				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
 			}
-		}
-	}
-	return nil
-}
-func (this *DescribeStreamFlowVersion) Validate() error {
-	if this.Info != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
-		}
-	}
-	return nil
-}
-func (this *GetStreamFlowVersionNode) Validate() error {
-	if this.Info != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
-		}
-	}
-	return nil
-}
-func (this *GetStreamFlowVersionEnv) Validate() error {
-	if this.Info != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
-		}
-	}
-	return nil
-}
-func (this *GetStreamFlowVersionSchedule) Validate() error {
-	if this.Info != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
 		}
 	}
 	return nil

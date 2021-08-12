@@ -26,6 +26,107 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
+type ScheduleConcurrencyPolicy int32
+
+const (
+	ScheduleConcurrencyPolicy__       ScheduleConcurrencyPolicy = 0
+	ScheduleConcurrencyPolicy_Allow   ScheduleConcurrencyPolicy = 1
+	ScheduleConcurrencyPolicy_Forbid  ScheduleConcurrencyPolicy = 2
+	ScheduleConcurrencyPolicy_Replace ScheduleConcurrencyPolicy = 3
+)
+
+// Enum value maps for ScheduleConcurrencyPolicy.
+var (
+	ScheduleConcurrencyPolicy_name = map[int32]string{
+		0: "_",
+		1: "Allow",
+		2: "Forbid",
+		3: "Replace",
+	}
+	ScheduleConcurrencyPolicy_value = map[string]int32{
+		"_":       0,
+		"Allow":   1,
+		"Forbid":  2,
+		"Replace": 3,
+	}
+)
+
+func (x ScheduleConcurrencyPolicy) Enum() *ScheduleConcurrencyPolicy {
+	p := new(ScheduleConcurrencyPolicy)
+	*p = x
+	return p
+}
+
+func (x ScheduleConcurrencyPolicy) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ScheduleConcurrencyPolicy) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_model_proto_enumTypes[0].Descriptor()
+}
+
+func (ScheduleConcurrencyPolicy) Type() protoreflect.EnumType {
+	return &file_proto_model_proto_enumTypes[0]
+}
+
+func (x ScheduleConcurrencyPolicy) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ScheduleConcurrencyPolicy.Descriptor instead.
+func (ScheduleConcurrencyPolicy) EnumDescriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{0}
+}
+
+type ScheduleRetryPolicy int32
+
+const (
+	ScheduleRetryPolicy___   ScheduleRetryPolicy = 0
+	ScheduleRetryPolicy_None ScheduleRetryPolicy = 1
+	ScheduleRetryPolicy_Auto ScheduleRetryPolicy = 2
+)
+
+// Enum value maps for ScheduleRetryPolicy.
+var (
+	ScheduleRetryPolicy_name = map[int32]string{
+		0: "__",
+		1: "None",
+		2: "Auto",
+	}
+	ScheduleRetryPolicy_value = map[string]int32{
+		"__":   0,
+		"None": 1,
+		"Auto": 2,
+	}
+)
+
+func (x ScheduleRetryPolicy) Enum() *ScheduleRetryPolicy {
+	p := new(ScheduleRetryPolicy)
+	*p = x
+	return p
+}
+
+func (x ScheduleRetryPolicy) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ScheduleRetryPolicy) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_model_proto_enumTypes[1].Descriptor()
+}
+
+func (ScheduleRetryPolicy) Type() protoreflect.EnumType {
+	return &file_proto_model_proto_enumTypes[1]
+}
+
+func (x ScheduleRetryPolicy) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ScheduleRetryPolicy.Descriptor instead.
+func (ScheduleRetryPolicy) EnumDescriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{1}
+}
+
 type Workspace_Status int32
 
 const (
@@ -59,11 +160,11 @@ func (x Workspace_Status) String() string {
 }
 
 func (Workspace_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[0].Descriptor()
+	return file_proto_model_proto_enumTypes[2].Descriptor()
 }
 
 func (Workspace_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[0]
+	return &file_proto_model_proto_enumTypes[2]
 }
 
 func (x Workspace_Status) Number() protoreflect.EnumNumber {
@@ -111,11 +212,11 @@ func (x StreamFlow_Type) String() string {
 }
 
 func (StreamFlow_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[1].Descriptor()
+	return file_proto_model_proto_enumTypes[3].Descriptor()
 }
 
 func (StreamFlow_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[1]
+	return &file_proto_model_proto_enumTypes[3]
 }
 
 func (x StreamFlow_Type) Number() protoreflect.EnumNumber {
@@ -160,11 +261,11 @@ func (x StreamFlowRelease_Status) String() string {
 }
 
 func (StreamFlowRelease_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[2].Descriptor()
+	return file_proto_model_proto_enumTypes[4].Descriptor()
 }
 
 func (StreamFlowRelease_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[2]
+	return &file_proto_model_proto_enumTypes[4]
 }
 
 func (x StreamFlowRelease_Status) Number() protoreflect.EnumNumber {
@@ -173,7 +274,7 @@ func (x StreamFlowRelease_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use StreamFlowRelease_Status.Descriptor instead.
 func (StreamFlowRelease_Status) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{8, 0}
+	return file_proto_model_proto_rawDescGZIP(), []int{7, 0}
 }
 
 type StreamFlowInst_State int32
@@ -227,11 +328,11 @@ func (x StreamFlowInst_State) String() string {
 }
 
 func (StreamFlowInst_State) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[3].Descriptor()
+	return file_proto_model_proto_enumTypes[5].Descriptor()
 }
 
 func (StreamFlowInst_State) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[3]
+	return &file_proto_model_proto_enumTypes[5]
 }
 
 func (x StreamFlowInst_State) Number() protoreflect.EnumNumber {
@@ -240,7 +341,7 @@ func (x StreamFlowInst_State) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use StreamFlowInst_State.Descriptor instead.
 func (StreamFlowInst_State) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{9, 0}
+	return file_proto_model_proto_rawDescGZIP(), []int{8, 0}
 }
 
 type OpAudit_Type int32
@@ -285,11 +386,11 @@ func (x OpAudit_Type) String() string {
 }
 
 func (OpAudit_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[4].Descriptor()
+	return file_proto_model_proto_enumTypes[6].Descriptor()
 }
 
 func (OpAudit_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[4]
+	return &file_proto_model_proto_enumTypes[6]
 }
 
 func (x OpAudit_Type) Number() protoreflect.EnumNumber {
@@ -298,7 +399,7 @@ func (x OpAudit_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OpAudit_Type.Descriptor instead.
 func (OpAudit_Type) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{10, 0}
+	return file_proto_model_proto_rawDescGZIP(), []int{9, 0}
 }
 
 type OpAudit_State int32
@@ -334,11 +435,11 @@ func (x OpAudit_State) String() string {
 }
 
 func (OpAudit_State) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[5].Descriptor()
+	return file_proto_model_proto_enumTypes[7].Descriptor()
 }
 
 func (OpAudit_State) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[5]
+	return &file_proto_model_proto_enumTypes[7]
 }
 
 func (x OpAudit_State) Number() protoreflect.EnumNumber {
@@ -347,7 +448,7 @@ func (x OpAudit_State) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OpAudit_State.Descriptor instead.
 func (OpAudit_State) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{10, 1}
+	return file_proto_model_proto_rawDescGZIP(), []int{9, 1}
 }
 
 type Role_Type int32
@@ -383,11 +484,11 @@ func (x Role_Type) String() string {
 }
 
 func (Role_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[6].Descriptor()
+	return file_proto_model_proto_enumTypes[8].Descriptor()
 }
 
 func (Role_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[6]
+	return &file_proto_model_proto_enumTypes[8]
 }
 
 func (x Role_Type) Number() protoreflect.EnumNumber {
@@ -396,7 +497,7 @@ func (x Role_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Role_Type.Descriptor instead.
 func (Role_Type) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{11, 0}
+	return file_proto_model_proto_rawDescGZIP(), []int{10, 0}
 }
 
 type MonitorRule_Status int32
@@ -432,11 +533,11 @@ func (x MonitorRule_Status) String() string {
 }
 
 func (MonitorRule_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[7].Descriptor()
+	return file_proto_model_proto_enumTypes[9].Descriptor()
 }
 
 func (MonitorRule_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[7]
+	return &file_proto_model_proto_enumTypes[9]
 }
 
 func (x MonitorRule_Status) Number() protoreflect.EnumNumber {
@@ -445,7 +546,7 @@ func (x MonitorRule_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use MonitorRule_Status.Descriptor instead.
 func (MonitorRule_Status) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{13, 0}
+	return file_proto_model_proto_rawDescGZIP(), []int{12, 0}
 }
 
 // EmptyStruct represents no value with a message.
@@ -779,93 +880,31 @@ func (x *StreamFlow) GetUpdated() int64 {
 	return 0
 }
 
-// StreamFlowNode represents a workflow environmental parameters info.
-type StreamFlowNode struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// Workflow ID it belongs to.
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
-	// The release version.
-	// Only used in released workflow.
-	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
-	// The env content of workflow in json format.
-	Nodes string `protobuf:"bytes,3,opt,name=nodes,proto3" json:"nodes,omitempty" gorm:"column:nodes;"`
-}
-
-func (x *StreamFlowNode) Reset() {
-	*x = StreamFlowNode{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *StreamFlowNode) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*StreamFlowNode) ProtoMessage() {}
-
-func (x *StreamFlowNode) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use StreamFlowNode.ProtoReflect.Descriptor instead.
-func (*StreamFlowNode) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *StreamFlowNode) GetFlowId() string {
-	if x != nil {
-		return x.FlowId
-	}
-	return ""
-}
-
-func (x *StreamFlowNode) GetVersion() int64 {
-	if x != nil {
-		return x.Version
-	}
-	return 0
-}
-
-func (x *StreamFlowNode) GetNodes() string {
-	if x != nil {
-		return x.Nodes
-	}
-	return ""
-}
-
 // StreamFlowEnv represents a workflow environmental parameters info.
+// Not use with gorm.
 type StreamFlowEnv struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Workflow ID it belongs to.
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
-	// The release version.
-	// Only used in released workflow.
-	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
-	// The env content of workflow in json format.
-	Env string `protobuf:"bytes,3,opt,name=env,proto3" json:"env,omitempty" gorm:"column:env;"`
+	// The engine id.
+	EngineId string `protobuf:"bytes,1,opt,name=engine_id,json=engineId,proto3" json:"engine_id,omitempty" params:"engine_id" binding:"len=20"`
+	// Flink parallelism. Is required, Min 1, Max ?
+	Parallelism int32 `protobuf:"varint,2,opt,name=parallelism,proto3" json:"parallelism,omitempty" params:"parallelism" binding:"gte=1"`
+	// Flink JobManager.  1CU = 1C + 2GB. Is required, Min 1, Max ?
+	JobCu int32 `protobuf:"varint,3,opt,name=job_cu,json=jobCu,proto3" json:"job_cu,omitempty" params:"job_cu" binding:"gte=1"`
+	// Flink TaskManager. 1CU = 1C + 2GB. Is required, Min 1, Max ?
+	TaskCu int32 `protobuf:"varint,4,opt,name=task_cu,json=taskCu,proto3" json:"task_cu,omitempty" params:"job_cu" binding:"gte=1"`
+	// Flink task number for TaskManager. Is required, Min 1, Max ?
+	TaskNum int32 `protobuf:"varint,5,opt,name=task_num,json=taskNum,proto3" json:"task_num,omitempty" params:"task_num" binding:"gte=1"`
+	// The user-defined env parameters.
+	Custom map[string]string `protobuf:"bytes,6,rep,name=custom,proto3" json:"custom,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" params:"custom" binding:"-"`
 }
 
 func (x *StreamFlowEnv) Reset() {
 	*x = StreamFlowEnv{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[5]
+		mi := &file_proto_model_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -878,7 +917,7 @@ func (x *StreamFlowEnv) String() string {
 func (*StreamFlowEnv) ProtoMessage() {}
 
 func (x *StreamFlowEnv) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[5]
+	mi := &file_proto_model_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -891,28 +930,49 @@ func (x *StreamFlowEnv) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamFlowEnv.ProtoReflect.Descriptor instead.
 func (*StreamFlowEnv) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{5}
+	return file_proto_model_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *StreamFlowEnv) GetFlowId() string {
+func (x *StreamFlowEnv) GetEngineId() string {
 	if x != nil {
-		return x.FlowId
+		return x.EngineId
 	}
 	return ""
 }
 
-func (x *StreamFlowEnv) GetVersion() int64 {
+func (x *StreamFlowEnv) GetParallelism() int32 {
 	if x != nil {
-		return x.Version
+		return x.Parallelism
 	}
 	return 0
 }
 
-func (x *StreamFlowEnv) GetEnv() string {
+func (x *StreamFlowEnv) GetJobCu() int32 {
 	if x != nil {
-		return x.Env
+		return x.JobCu
 	}
-	return ""
+	return 0
+}
+
+func (x *StreamFlowEnv) GetTaskCu() int32 {
+	if x != nil {
+		return x.TaskCu
+	}
+	return 0
+}
+
+func (x *StreamFlowEnv) GetTaskNum() int32 {
+	if x != nil {
+		return x.TaskNum
+	}
+	return 0
+}
+
+func (x *StreamFlowEnv) GetCustom() map[string]string {
+	if x != nil {
+		return x.Custom
+	}
+	return nil
 }
 
 // StreamFlowSchedule represents a workflow schedule info.
@@ -921,19 +981,37 @@ type StreamFlowSchedule struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Workflow ID it belongs to.
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;primarykey;"`
-	// The release version.
-	// Only used in released workflow.
-	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
-	// The schedule content of workflow in json format.
-	Schedule string `protobuf:"bytes,3,opt,name=schedule,proto3" json:"schedule,omitempty" gorm:"column:schedule;"`
+	// Timestamp of start time of the validity period, unit in seconds.
+	// Not required, default 0, means no limit.
+	Started int64 `protobuf:"varint,1,opt,name=started,proto3" json:"started,omitempty" params:"started" default:"0" binding:"gte=0"`
+	// Timestamp of end time of the validity period, unit in seconds.
+	// Not required, default 0, means no limit.
+	Ended int64 `protobuf:"varint,2,opt,name=ended,proto3" json:"ended,omitempty" params:"task_num" default:"0" binding:"gte=0"`
+	// Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace"
+	// - allow: Multiple task instances are allowed at the same time.
+	// - forbid: No new instances will be created, and this schedule cycle will be skipped,
+	// - replace: Force stop the old running instances and create new.
+	// Is required.
+	ConcurrencyPolicy ScheduleConcurrencyPolicy `protobuf:"varint,3,opt,name=concurrency_policy,json=concurrencyPolicy,proto3,enum=model.ScheduleConcurrencyPolicy" json:"concurrency_policy,omitempty" params:"concurrency_policy" binding:"gte=1,lte=3"`
+	// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
+	// Is required.
+	RetryPolicy ScheduleRetryPolicy `protobuf:"varint,4,opt,name=retry_policy,json=retryPolicy,proto3,enum=model.ScheduleRetryPolicy" json:"retry_policy,omitempty" params:"retry_policy" binding:"gte=1,lte=2"`
+	// FIXME: test binding.
+	// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+	RetryLimit int32 `protobuf:"varint,5,opt,name=retry_limit,json=retryLimit,proto3" json:"retry_limit,omitempty" params:"task_num" binding:"required_with=retry_policy=2,gte=1,lte=99"`
+	// Retry interval,  Is required with retry_policy = 2, Min 1, Max 30.
+	RetryInterval int32 `protobuf:"varint,6,opt,name=retry_interval,json=retryInterval,proto3" json:"retry_interval,omitempty" params:"task_num" binding:"required_with=retry_policy=2,gte=1,lte=30"`
+	// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 4320min.
+	Timeout int32 `protobuf:"varint,7,opt,name=timeout,proto3" json:"timeout,omitempty" params:"timeout" default:"0" binding:"gte=0"`
+	// Crontab Express. Is required.
+	// FIXME: check binding.
+	Express string `protobuf:"bytes,8,opt,name=express,proto3" json:"express,omitempty" params:"express" binding:"gte=5,lte=128"`
 }
 
 func (x *StreamFlowSchedule) Reset() {
 	*x = StreamFlowSchedule{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[6]
+		mi := &file_proto_model_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -946,7 +1024,7 @@ func (x *StreamFlowSchedule) String() string {
 func (*StreamFlowSchedule) ProtoMessage() {}
 
 func (x *StreamFlowSchedule) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[6]
+	mi := &file_proto_model_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -959,26 +1037,61 @@ func (x *StreamFlowSchedule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamFlowSchedule.ProtoReflect.Descriptor instead.
 func (*StreamFlowSchedule) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{6}
+	return file_proto_model_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *StreamFlowSchedule) GetFlowId() string {
+func (x *StreamFlowSchedule) GetStarted() int64 {
 	if x != nil {
-		return x.FlowId
-	}
-	return ""
-}
-
-func (x *StreamFlowSchedule) GetVersion() int64 {
-	if x != nil {
-		return x.Version
+		return x.Started
 	}
 	return 0
 }
 
-func (x *StreamFlowSchedule) GetSchedule() string {
+func (x *StreamFlowSchedule) GetEnded() int64 {
 	if x != nil {
-		return x.Schedule
+		return x.Ended
+	}
+	return 0
+}
+
+func (x *StreamFlowSchedule) GetConcurrencyPolicy() ScheduleConcurrencyPolicy {
+	if x != nil {
+		return x.ConcurrencyPolicy
+	}
+	return ScheduleConcurrencyPolicy__
+}
+
+func (x *StreamFlowSchedule) GetRetryPolicy() ScheduleRetryPolicy {
+	if x != nil {
+		return x.RetryPolicy
+	}
+	return ScheduleRetryPolicy___
+}
+
+func (x *StreamFlowSchedule) GetRetryLimit() int32 {
+	if x != nil {
+		return x.RetryLimit
+	}
+	return 0
+}
+
+func (x *StreamFlowSchedule) GetRetryInterval() int32 {
+	if x != nil {
+		return x.RetryInterval
+	}
+	return 0
+}
+
+func (x *StreamFlowSchedule) GetTimeout() int32 {
+	if x != nil {
+		return x.Timeout
+	}
+	return 0
+}
+
+func (x *StreamFlowSchedule) GetExpress() string {
+	if x != nil {
+		return x.Express
 	}
 	return ""
 }
@@ -990,7 +1103,7 @@ type StreamFlowMeta struct {
 	unknownFields protoimpl.UnknownFields
 
 	Flow     *StreamFlow         `protobuf:"bytes,1,opt,name=flow,proto3" json:"flow,omitempty"`
-	Node     *StreamFlowNode     `protobuf:"bytes,2,opt,name=node,proto3" json:"node,omitempty"`
+	Nodes    string              `protobuf:"bytes,2,opt,name=nodes,proto3" json:"nodes,omitempty"`
 	Env      *StreamFlowEnv      `protobuf:"bytes,3,opt,name=env,proto3" json:"env,omitempty"`
 	Schedule *StreamFlowSchedule `protobuf:"bytes,4,opt,name=schedule,proto3" json:"schedule,omitempty"`
 }
@@ -998,7 +1111,7 @@ type StreamFlowMeta struct {
 func (x *StreamFlowMeta) Reset() {
 	*x = StreamFlowMeta{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[7]
+		mi := &file_proto_model_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1011,7 +1124,7 @@ func (x *StreamFlowMeta) String() string {
 func (*StreamFlowMeta) ProtoMessage() {}
 
 func (x *StreamFlowMeta) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[7]
+	mi := &file_proto_model_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1024,7 +1137,7 @@ func (x *StreamFlowMeta) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamFlowMeta.ProtoReflect.Descriptor instead.
 func (*StreamFlowMeta) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{7}
+	return file_proto_model_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *StreamFlowMeta) GetFlow() *StreamFlow {
@@ -1034,11 +1147,11 @@ func (x *StreamFlowMeta) GetFlow() *StreamFlow {
 	return nil
 }
 
-func (x *StreamFlowMeta) GetNode() *StreamFlowNode {
+func (x *StreamFlowMeta) GetNodes() string {
 	if x != nil {
-		return x.Node
+		return x.Nodes
 	}
-	return nil
+	return ""
 }
 
 func (x *StreamFlowMeta) GetEnv() *StreamFlowEnv {
@@ -1084,7 +1197,7 @@ type StreamFlowRelease struct {
 func (x *StreamFlowRelease) Reset() {
 	*x = StreamFlowRelease{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[8]
+		mi := &file_proto_model_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1097,7 +1210,7 @@ func (x *StreamFlowRelease) String() string {
 func (*StreamFlowRelease) ProtoMessage() {}
 
 func (x *StreamFlowRelease) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[8]
+	mi := &file_proto_model_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1110,7 +1223,7 @@ func (x *StreamFlowRelease) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamFlowRelease.ProtoReflect.Descriptor instead.
 func (*StreamFlowRelease) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{8}
+	return file_proto_model_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *StreamFlowRelease) GetSpaceId() string {
@@ -1200,7 +1313,7 @@ type StreamFlowInst struct {
 func (x *StreamFlowInst) Reset() {
 	*x = StreamFlowInst{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[9]
+		mi := &file_proto_model_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1213,7 +1326,7 @@ func (x *StreamFlowInst) String() string {
 func (*StreamFlowInst) ProtoMessage() {}
 
 func (x *StreamFlowInst) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[9]
+	mi := &file_proto_model_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1226,7 +1339,7 @@ func (x *StreamFlowInst) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamFlowInst.ProtoReflect.Descriptor instead.
 func (*StreamFlowInst) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{9}
+	return file_proto_model_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *StreamFlowInst) GetSpaceId() string {
@@ -1300,7 +1413,7 @@ type OpAudit struct {
 func (x *OpAudit) Reset() {
 	*x = OpAudit{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[10]
+		mi := &file_proto_model_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1313,7 +1426,7 @@ func (x *OpAudit) String() string {
 func (*OpAudit) ProtoMessage() {}
 
 func (x *OpAudit) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[10]
+	mi := &file_proto_model_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1326,7 +1439,7 @@ func (x *OpAudit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OpAudit.ProtoReflect.Descriptor instead.
 func (*OpAudit) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{10}
+	return file_proto_model_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *OpAudit) GetUserId() string {
@@ -1387,7 +1500,7 @@ type Role struct {
 func (x *Role) Reset() {
 	*x = Role{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[11]
+		mi := &file_proto_model_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1400,7 +1513,7 @@ func (x *Role) String() string {
 func (*Role) ProtoMessage() {}
 
 func (x *Role) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[11]
+	mi := &file_proto_model_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1413,7 +1526,7 @@ func (x *Role) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Role.ProtoReflect.Descriptor instead.
 func (*Role) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{11}
+	return file_proto_model_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Role) GetSpaceId() string {
@@ -1469,7 +1582,7 @@ type Member struct {
 func (x *Member) Reset() {
 	*x = Member{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[12]
+		mi := &file_proto_model_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1482,7 +1595,7 @@ func (x *Member) String() string {
 func (*Member) ProtoMessage() {}
 
 func (x *Member) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[12]
+	mi := &file_proto_model_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1495,7 +1608,7 @@ func (x *Member) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Member.ProtoReflect.Descriptor instead.
 func (*Member) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{12}
+	return file_proto_model_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *Member) GetSpaceId() string {
@@ -1568,7 +1681,7 @@ type MonitorRule struct {
 func (x *MonitorRule) Reset() {
 	*x = MonitorRule{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[13]
+		mi := &file_proto_model_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1581,7 +1694,7 @@ func (x *MonitorRule) String() string {
 func (*MonitorRule) ProtoMessage() {}
 
 func (x *MonitorRule) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[13]
+	mi := &file_proto_model_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1594,7 +1707,7 @@ func (x *MonitorRule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MonitorRule.ProtoReflect.Descriptor instead.
 func (*MonitorRule) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{13}
+	return file_proto_model_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *MonitorRule) GetSpaceId() string {
@@ -1703,7 +1816,7 @@ type QueueMessage struct {
 func (x *QueueMessage) Reset() {
 	*x = QueueMessage{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[14]
+		mi := &file_proto_model_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1716,7 +1829,7 @@ func (x *QueueMessage) String() string {
 func (*QueueMessage) ProtoMessage() {}
 
 func (x *QueueMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[14]
+	mi := &file_proto_model_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1729,7 +1842,7 @@ func (x *QueueMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QueueMessage.ProtoReflect.Descriptor instead.
 func (*QueueMessage) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{14}
+	return file_proto_model_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *QueueMessage) GetReqId() string {
@@ -1781,7 +1894,7 @@ type InstanceStatusStat struct {
 func (x *InstanceStatusStat) Reset() {
 	*x = InstanceStatusStat{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[15]
+		mi := &file_proto_model_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1794,7 +1907,7 @@ func (x *InstanceStatusStat) String() string {
 func (*InstanceStatusStat) ProtoMessage() {}
 
 func (x *InstanceStatusStat) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[15]
+	mi := &file_proto_model_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1807,7 +1920,7 @@ func (x *InstanceStatusStat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstanceStatusStat.ProtoReflect.Descriptor instead.
 func (*InstanceStatusStat) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{15}
+	return file_proto_model_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *InstanceStatusStat) GetState() int32 {
@@ -1842,7 +1955,7 @@ type InstanceRuntimeRankInfo struct {
 func (x *InstanceRuntimeRankInfo) Reset() {
 	*x = InstanceRuntimeRankInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[16]
+		mi := &file_proto_model_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1855,7 +1968,7 @@ func (x *InstanceRuntimeRankInfo) String() string {
 func (*InstanceRuntimeRankInfo) ProtoMessage() {}
 
 func (x *InstanceRuntimeRankInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[16]
+	mi := &file_proto_model_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1868,7 +1981,7 @@ func (x *InstanceRuntimeRankInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstanceRuntimeRankInfo.ProtoReflect.Descriptor instead.
 func (*InstanceRuntimeRankInfo) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{16}
+	return file_proto_model_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *InstanceRuntimeRankInfo) GetId() string {
@@ -1915,7 +2028,7 @@ type InstanceErrorRankInfo struct {
 func (x *InstanceErrorRankInfo) Reset() {
 	*x = InstanceErrorRankInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[17]
+		mi := &file_proto_model_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1928,7 +2041,7 @@ func (x *InstanceErrorRankInfo) String() string {
 func (*InstanceErrorRankInfo) ProtoMessage() {}
 
 func (x *InstanceErrorRankInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[17]
+	mi := &file_proto_model_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1941,7 +2054,7 @@ func (x *InstanceErrorRankInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstanceErrorRankInfo.ProtoReflect.Descriptor instead.
 func (*InstanceErrorRankInfo) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{17}
+	return file_proto_model_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *InstanceErrorRankInfo) GetFlowId() string {
@@ -1981,7 +2094,7 @@ type DispatchTaskCountInfo struct {
 func (x *DispatchTaskCountInfo) Reset() {
 	*x = DispatchTaskCountInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[18]
+		mi := &file_proto_model_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1994,7 +2107,7 @@ func (x *DispatchTaskCountInfo) String() string {
 func (*DispatchTaskCountInfo) ProtoMessage() {}
 
 func (x *DispatchTaskCountInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[18]
+	mi := &file_proto_model_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2007,7 +2120,7 @@ func (x *DispatchTaskCountInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DispatchTaskCountInfo.ProtoReflect.Descriptor instead.
 func (*DispatchTaskCountInfo) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{18}
+	return file_proto_model_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *DispatchTaskCountInfo) GetFlowCount() int32 {
@@ -2045,7 +2158,7 @@ type InstanceTaskExecStat struct {
 func (x *InstanceTaskExecStat) Reset() {
 	*x = InstanceTaskExecStat{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[19]
+		mi := &file_proto_model_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2058,7 +2171,7 @@ func (x *InstanceTaskExecStat) String() string {
 func (*InstanceTaskExecStat) ProtoMessage() {}
 
 func (x *InstanceTaskExecStat) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[19]
+	mi := &file_proto_model_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2071,7 +2184,7 @@ func (x *InstanceTaskExecStat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstanceTaskExecStat.ProtoReflect.Descriptor instead.
 func (*InstanceTaskExecStat) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{19}
+	return file_proto_model_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *InstanceTaskExecStat) GetHour() int32 {
@@ -2142,36 +2255,62 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x02, 0x10, 0x00, 0x52, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x22, 0x2d, 0x0a, 0x04,
 	0x54, 0x79, 0x70, 0x65, 0x12, 0x05, 0x0a, 0x01, 0x5f, 0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x53,
 	0x51, 0x4c, 0x10, 0x01, 0x12, 0x07, 0x0a, 0x03, 0x4a, 0x41, 0x52, 0x10, 0x02, 0x12, 0x0c, 0x0a,
-	0x08, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x10, 0x03, 0x22, 0x6e, 0x0a, 0x0e, 0x53,
-	0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a,
-	0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
-	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12,
-	0x1e, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03,
-	0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12,
-	0x1a, 0x0a, 0x05, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04,
-	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x22, 0x69, 0x0a, 0x0d, 0x53,
-	0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x12, 0x20, 0x0a, 0x07,
-	0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
-	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1e,
-	0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42,
-	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x16,
-	0x0a, 0x03, 0x65, 0x6e, 0x76, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
-	0x00, 0x52, 0x03, 0x65, 0x6e, 0x76, 0x22, 0x78, 0x0a, 0x12, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d,
-	0x46, 0x6c, 0x6f, 0x77, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x20, 0x0a, 0x07,
-	0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
-	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1e,
-	0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42,
-	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x20,
-	0x0a, 0x08, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
-	0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x08, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65,
-	0x22, 0xe1, 0x01, 0x0a, 0x0e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x4d,
-	0x65, 0x74, 0x61, 0x12, 0x2d, 0x0a, 0x04, 0x66, 0x6c, 0x6f, 0x77, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x11, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d,
-	0x46, 0x6c, 0x6f, 0x77, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x04, 0x66, 0x6c,
-	0x6f, 0x77, 0x12, 0x31, 0x0a, 0x04, 0x6e, 0x6f, 0x64, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x15, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46,
-	0x6c, 0x6f, 0x77, 0x4e, 0x6f, 0x64, 0x65, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52,
-	0x04, 0x6e, 0x6f, 0x64, 0x65, 0x12, 0x2e, 0x0a, 0x03, 0x65, 0x6e, 0x76, 0x18, 0x03, 0x20, 0x01,
+	0x08, 0x4f, 0x70, 0x65, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x10, 0x03, 0x22, 0xbd, 0x02, 0x0a, 0x0d,
+	0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x12, 0x24, 0x0a,
+	0x09, 0x65, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x08, 0x65, 0x6e, 0x67, 0x69, 0x6e,
+	0x65, 0x49, 0x64, 0x12, 0x28, 0x0a, 0x0b, 0x70, 0x61, 0x72, 0x61, 0x6c, 0x6c, 0x65, 0x6c, 0x69,
+	0x73, 0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00,
+	0x52, 0x0b, 0x70, 0x61, 0x72, 0x61, 0x6c, 0x6c, 0x65, 0x6c, 0x69, 0x73, 0x6d, 0x12, 0x1d, 0x0a,
+	0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x63, 0x75, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x42, 0x06, 0xe2,
+	0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x43, 0x75, 0x12, 0x1f, 0x0a, 0x07,
+	0x74, 0x61, 0x73, 0x6b, 0x5f, 0x63, 0x75, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x42, 0x06, 0xe2,
+	0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x06, 0x74, 0x61, 0x73, 0x6b, 0x43, 0x75, 0x12, 0x21, 0x0a,
+	0x08, 0x74, 0x61, 0x73, 0x6b, 0x5f, 0x6e, 0x75, 0x6d, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x42,
+	0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x4e, 0x75, 0x6d,
+	0x12, 0x3e, 0x0a, 0x06, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x18, 0x06, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x20, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46,
+	0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x45, 0x6e, 0x74,
+	0x72, 0x79, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
+	0x1a, 0x39, 0x0a, 0x0b, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12,
+	0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65,
+	0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0xc7, 0x03, 0x0a, 0x12,
+	0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75,
+	0x6c, 0x65, 0x12, 0x29, 0x0a, 0x07, 0x73, 0x74, 0x61, 0x72, 0x74, 0x65, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0x01, 0x52, 0x07, 0x73, 0x74, 0x61, 0x72, 0x74, 0x65, 0x64, 0x12, 0x25, 0x0a,
+	0x05, 0x65, 0x6e, 0x64, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf,
+	0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x05, 0x65,
+	0x6e, 0x64, 0x65, 0x64, 0x12, 0x59, 0x0a, 0x12, 0x63, 0x6f, 0x6e, 0x63, 0x75, 0x72, 0x72, 0x65,
+	0x6e, 0x63, 0x79, 0x5f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e,
+	0x32, 0x20, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c,
+	0x65, 0x43, 0x6f, 0x6e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69,
+	0x63, 0x79, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x04, 0x52, 0x11, 0x63, 0x6f,
+	0x6e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12,
+	0x47, 0x0a, 0x0c, 0x72, 0x65, 0x74, 0x72, 0x79, 0x5f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x63,
+	0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63,
+	0x79, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x03, 0x52, 0x0b, 0x72, 0x65, 0x74,
+	0x72, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x32, 0x0a, 0x0b, 0x72, 0x65, 0x74, 0x72,
+	0x79, 0x5f, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x42, 0x11, 0xe2,
+	0xdf, 0x1f, 0x0d, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x18, 0x64,
+	0x52, 0x0a, 0x72, 0x65, 0x74, 0x72, 0x79, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x38, 0x0a, 0x0e,
+	0x72, 0x65, 0x74, 0x72, 0x79, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x76, 0x61, 0x6c, 0x18, 0x06,
+	0x20, 0x01, 0x28, 0x05, 0x42, 0x11, 0xe2, 0xdf, 0x1f, 0x0d, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0x01, 0x18, 0x1f, 0x52, 0x0d, 0x72, 0x65, 0x74, 0x72, 0x79, 0x49, 0x6e,
+	0x74, 0x65, 0x72, 0x76, 0x61, 0x6c, 0x12, 0x2b, 0x0a, 0x07, 0x74, 0x69, 0x6d, 0x65, 0x6f, 0x75,
+	0x74, 0x18, 0x07, 0x20, 0x01, 0x28, 0x05, 0x42, 0x11, 0xe2, 0xdf, 0x1f, 0x0d, 0x10, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x18, 0x64, 0x52, 0x07, 0x74, 0x69, 0x6d, 0x65,
+	0x6f, 0x75, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x65, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x18, 0x08,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x07, 0x65, 0x78,
+	0x70, 0x72, 0x65, 0x73, 0x73, 0x22, 0xcc, 0x01, 0x0a, 0x0e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d,
+	0x46, 0x6c, 0x6f, 0x77, 0x4d, 0x65, 0x74, 0x61, 0x12, 0x2d, 0x0a, 0x04, 0x66, 0x6c, 0x6f, 0x77,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53,
+	0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20,
+	0x01, 0x52, 0x04, 0x66, 0x6c, 0x6f, 0x77, 0x12, 0x1c, 0x0a, 0x05, 0x6e, 0x6f, 0x64, 0x65, 0x73,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x05,
+	0x6e, 0x6f, 0x64, 0x65, 0x73, 0x12, 0x2e, 0x0a, 0x03, 0x65, 0x6e, 0x76, 0x18, 0x03, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x14, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61,
 	0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01,
 	0x52, 0x03, 0x65, 0x6e, 0x76, 0x12, 0x3d, 0x0a, 0x08, 0x73, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c,
@@ -2363,8 +2502,18 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x52, 0x04, 0x68, 0x6f, 0x75, 0x72, 0x12, 0x36, 0x0a, 0x0e, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e,
 	0x63, 0x65, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0f,
 	0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52,
-	0x0d, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x42, 0x08,
-	0x5a, 0x06, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x0d, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x2a, 0x46,
+	0x0a, 0x19, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x63, 0x75, 0x72,
+	0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x05, 0x0a, 0x01, 0x5f,
+	0x10, 0x00, 0x12, 0x09, 0x0a, 0x05, 0x41, 0x6c, 0x6c, 0x6f, 0x77, 0x10, 0x01, 0x12, 0x0a, 0x0a,
+	0x06, 0x46, 0x6f, 0x72, 0x62, 0x69, 0x64, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x65, 0x70,
+	0x6c, 0x61, 0x63, 0x65, 0x10, 0x03, 0x2a, 0x31, 0x0a, 0x13, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75,
+	0x6c, 0x65, 0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x06, 0x0a,
+	0x02, 0x5f, 0x5f, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x6f, 0x6e, 0x65, 0x10, 0x01, 0x12,
+	0x08, 0x0a, 0x04, 0x41, 0x75, 0x74, 0x6f, 0x10, 0x02, 0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b,
+	0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67,
+	0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2379,58 +2528,62 @@ func file_proto_model_proto_rawDescGZIP() []byte {
 	return file_proto_model_proto_rawDescData
 }
 
-var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
+var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 10)
 var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
 var file_proto_model_proto_goTypes = []interface{}{
-	(Workspace_Status)(0),           // 0: model.Workspace.Status
-	(StreamFlow_Type)(0),            // 1: model.StreamFlow.Type
-	(StreamFlowRelease_Status)(0),   // 2: model.StreamFlowRelease.Status
-	(StreamFlowInst_State)(0),       // 3: model.StreamFlowInst.State
-	(OpAudit_Type)(0),               // 4: model.OpAudit.Type
-	(OpAudit_State)(0),              // 5: model.OpAudit.State
-	(Role_Type)(0),                  // 6: model.Role.Type
-	(MonitorRule_Status)(0),         // 7: model.MonitorRule.Status
-	(*EmptyStruct)(nil),             // 8: model.EmptyStruct
-	(*Error)(nil),                   // 9: model.Error
-	(*Workspace)(nil),               // 10: model.Workspace
-	(*StreamFlow)(nil),              // 11: model.StreamFlow
-	(*StreamFlowNode)(nil),          // 12: model.StreamFlowNode
-	(*StreamFlowEnv)(nil),           // 13: model.StreamFlowEnv
-	(*StreamFlowSchedule)(nil),      // 14: model.StreamFlowSchedule
-	(*StreamFlowMeta)(nil),          // 15: model.StreamFlowMeta
-	(*StreamFlowRelease)(nil),       // 16: model.StreamFlowRelease
-	(*StreamFlowInst)(nil),          // 17: model.StreamFlowInst
-	(*OpAudit)(nil),                 // 18: model.OpAudit
-	(*Role)(nil),                    // 19: model.Role
-	(*Member)(nil),                  // 20: model.Member
-	(*MonitorRule)(nil),             // 21: model.MonitorRule
-	(*QueueMessage)(nil),            // 22: model.QueueMessage
-	(*InstanceStatusStat)(nil),      // 23: model.InstanceStatusStat
-	(*InstanceRuntimeRankInfo)(nil), // 24: model.InstanceRuntimeRankInfo
-	(*InstanceErrorRankInfo)(nil),   // 25: model.InstanceErrorRankInfo
-	(*DispatchTaskCountInfo)(nil),   // 26: model.DispatchTaskCountInfo
-	(*InstanceTaskExecStat)(nil),    // 27: model.InstanceTaskExecStat
+	(ScheduleConcurrencyPolicy)(0),  // 0: model.ScheduleConcurrencyPolicy
+	(ScheduleRetryPolicy)(0),        // 1: model.ScheduleRetryPolicy
+	(Workspace_Status)(0),           // 2: model.Workspace.Status
+	(StreamFlow_Type)(0),            // 3: model.StreamFlow.Type
+	(StreamFlowRelease_Status)(0),   // 4: model.StreamFlowRelease.Status
+	(StreamFlowInst_State)(0),       // 5: model.StreamFlowInst.State
+	(OpAudit_Type)(0),               // 6: model.OpAudit.Type
+	(OpAudit_State)(0),              // 7: model.OpAudit.State
+	(Role_Type)(0),                  // 8: model.Role.Type
+	(MonitorRule_Status)(0),         // 9: model.MonitorRule.Status
+	(*EmptyStruct)(nil),             // 10: model.EmptyStruct
+	(*Error)(nil),                   // 11: model.Error
+	(*Workspace)(nil),               // 12: model.Workspace
+	(*StreamFlow)(nil),              // 13: model.StreamFlow
+	(*StreamFlowEnv)(nil),           // 14: model.StreamFlowEnv
+	(*StreamFlowSchedule)(nil),      // 15: model.StreamFlowSchedule
+	(*StreamFlowMeta)(nil),          // 16: model.StreamFlowMeta
+	(*StreamFlowRelease)(nil),       // 17: model.StreamFlowRelease
+	(*StreamFlowInst)(nil),          // 18: model.StreamFlowInst
+	(*OpAudit)(nil),                 // 19: model.OpAudit
+	(*Role)(nil),                    // 20: model.Role
+	(*Member)(nil),                  // 21: model.Member
+	(*MonitorRule)(nil),             // 22: model.MonitorRule
+	(*QueueMessage)(nil),            // 23: model.QueueMessage
+	(*InstanceStatusStat)(nil),      // 24: model.InstanceStatusStat
+	(*InstanceRuntimeRankInfo)(nil), // 25: model.InstanceRuntimeRankInfo
+	(*InstanceErrorRankInfo)(nil),   // 26: model.InstanceErrorRankInfo
+	(*DispatchTaskCountInfo)(nil),   // 27: model.DispatchTaskCountInfo
+	(*InstanceTaskExecStat)(nil),    // 28: model.InstanceTaskExecStat
+	nil,                             // 29: model.StreamFlowEnv.CustomEntry
 }
 var file_proto_model_proto_depIdxs = []int32{
-	0,  // 0: model.Workspace.status:type_name -> model.Workspace.Status
-	1,  // 1: model.StreamFlow.type:type_name -> model.StreamFlow.Type
-	11, // 2: model.StreamFlowMeta.flow:type_name -> model.StreamFlow
-	12, // 3: model.StreamFlowMeta.node:type_name -> model.StreamFlowNode
-	13, // 4: model.StreamFlowMeta.env:type_name -> model.StreamFlowEnv
-	14, // 5: model.StreamFlowMeta.schedule:type_name -> model.StreamFlowSchedule
-	1,  // 6: model.StreamFlowRelease.type:type_name -> model.StreamFlow.Type
-	2,  // 7: model.StreamFlowRelease.status:type_name -> model.StreamFlowRelease.Status
-	3,  // 8: model.StreamFlowInst.state:type_name -> model.StreamFlowInst.State
-	4,  // 9: model.OpAudit.type:type_name -> model.OpAudit.Type
-	5,  // 10: model.OpAudit.state:type_name -> model.OpAudit.State
-	6,  // 11: model.Role.type:type_name -> model.Role.Type
-	7,  // 12: model.MonitorRule.status:type_name -> model.MonitorRule.Status
-	15, // 13: model.QueueMessage.meta:type_name -> model.StreamFlowMeta
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	2,  // 0: model.Workspace.status:type_name -> model.Workspace.Status
+	3,  // 1: model.StreamFlow.type:type_name -> model.StreamFlow.Type
+	29, // 2: model.StreamFlowEnv.custom:type_name -> model.StreamFlowEnv.CustomEntry
+	0,  // 3: model.StreamFlowSchedule.concurrency_policy:type_name -> model.ScheduleConcurrencyPolicy
+	1,  // 4: model.StreamFlowSchedule.retry_policy:type_name -> model.ScheduleRetryPolicy
+	13, // 5: model.StreamFlowMeta.flow:type_name -> model.StreamFlow
+	14, // 6: model.StreamFlowMeta.env:type_name -> model.StreamFlowEnv
+	15, // 7: model.StreamFlowMeta.schedule:type_name -> model.StreamFlowSchedule
+	3,  // 8: model.StreamFlowRelease.type:type_name -> model.StreamFlow.Type
+	4,  // 9: model.StreamFlowRelease.status:type_name -> model.StreamFlowRelease.Status
+	5,  // 10: model.StreamFlowInst.state:type_name -> model.StreamFlowInst.State
+	6,  // 11: model.OpAudit.type:type_name -> model.OpAudit.Type
+	7,  // 12: model.OpAudit.state:type_name -> model.OpAudit.State
+	8,  // 13: model.Role.type:type_name -> model.Role.Type
+	9,  // 14: model.MonitorRule.status:type_name -> model.MonitorRule.Status
+	16, // 15: model.QueueMessage.meta:type_name -> model.StreamFlowMeta
+	16, // [16:16] is the sub-list for method output_type
+	16, // [16:16] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_proto_model_proto_init() }
@@ -2488,18 +2641,6 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StreamFlowNode); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_proto_model_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StreamFlowEnv); i {
 			case 0:
 				return &v.state
@@ -2511,7 +2652,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StreamFlowSchedule); i {
 			case 0:
 				return &v.state
@@ -2523,7 +2664,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StreamFlowMeta); i {
 			case 0:
 				return &v.state
@@ -2535,7 +2676,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StreamFlowRelease); i {
 			case 0:
 				return &v.state
@@ -2547,7 +2688,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StreamFlowInst); i {
 			case 0:
 				return &v.state
@@ -2559,7 +2700,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*OpAudit); i {
 			case 0:
 				return &v.state
@@ -2571,7 +2712,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Role); i {
 			case 0:
 				return &v.state
@@ -2583,7 +2724,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Member); i {
 			case 0:
 				return &v.state
@@ -2595,7 +2736,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MonitorRule); i {
 			case 0:
 				return &v.state
@@ -2607,7 +2748,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*QueueMessage); i {
 			case 0:
 				return &v.state
@@ -2619,7 +2760,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InstanceStatusStat); i {
 			case 0:
 				return &v.state
@@ -2631,7 +2772,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InstanceRuntimeRankInfo); i {
 			case 0:
 				return &v.state
@@ -2643,7 +2784,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InstanceErrorRankInfo); i {
 			case 0:
 				return &v.state
@@ -2655,7 +2796,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DispatchTaskCountInfo); i {
 			case 0:
 				return &v.state
@@ -2667,7 +2808,7 @@ func file_proto_model_proto_init() {
 				return nil
 			}
 		}
-		file_proto_model_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_model_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InstanceTaskExecStat); i {
 			case 0:
 				return &v.state
@@ -2685,7 +2826,7 @@ func file_proto_model_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_model_proto_rawDesc,
-			NumEnums:      8,
+			NumEnums:      10,
 			NumMessages:   20,
 			NumExtensions: 0,
 			NumServices:   0,
