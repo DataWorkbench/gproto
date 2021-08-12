@@ -43,7 +43,7 @@ message UpdateFileRequest{
 }
 
 message DeleteFileRequest{
-  string ID = 1;
+  repeated string IDS = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];;
   string SpaceID = 2 [(validator.field) = {length_eq: 20}];
 }
 

@@ -48,6 +48,14 @@ func (this *UpdateFileRequest) Validate() error {
 	return nil
 }
 func (this *DeleteFileRequest) Validate() error {
+	for _, item := range this.IDS {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("IDS", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("IDS", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
+	}
 	if !(len(this.SpaceID) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
 	}
