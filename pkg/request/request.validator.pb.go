@@ -259,12 +259,18 @@ func (this *DescribeStreamFlow) Validate() error {
 	return nil
 }
 func (this *SetStreamFlowNode) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
 	return nil
 }
 func (this *SetStreamFlowSchedule) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
@@ -276,6 +282,9 @@ func (this *SetStreamFlowSchedule) Validate() error {
 	return nil
 }
 func (this *SetStreamFlowEnv) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
@@ -308,9 +317,9 @@ func (this *ExecuteStreamFlow) Validate() error {
 	if !(len(this.FlowId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
-	if this.Meta != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Meta", err)
+	if this.Property != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Property); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Property", err)
 		}
 	}
 	return nil
@@ -459,10 +468,10 @@ func (this *DescribeMonitorRule) Validate() error {
 	return nil
 }
 func (this *SubmitStreamFlows) Validate() error {
-	for _, item := range this.Metas {
+	for _, item := range this.Properties {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Metas", err)
+				return github_com_mwitkow_go_proto_validators.FieldError("Properties", err)
 			}
 		}
 	}

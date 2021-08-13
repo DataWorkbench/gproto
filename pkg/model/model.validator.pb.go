@@ -7,6 +7,7 @@ import (
 	fmt "fmt"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	_ "github.com/yu31/proto-go-plugin/gosql/pb"
 	proto "google.golang.org/protobuf/proto"
 	math "math"
 )
@@ -116,25 +117,17 @@ func (this *StreamFlowSchedule) Validate() error {
 	}
 	return nil
 }
-func (this *StreamFlowMeta) Validate() error {
-	if nil == this.Flow {
-		return github_com_mwitkow_go_proto_validators.FieldError("Flow", fmt.Errorf("message must exist"))
+func (this *StreamFlowProperty) Validate() error {
+	if !(len(this.FlowId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
 	}
-	if this.Flow != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Flow); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Flow", err)
-		}
-	}
-	if nil == this.Env {
-		return github_com_mwitkow_go_proto_validators.FieldError("Env", fmt.Errorf("message must exist"))
+	if !(this.Version > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
 	}
 	if this.Env != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Env); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Env", err)
 		}
-	}
-	if nil == this.Schedule {
-		return github_com_mwitkow_go_proto_validators.FieldError("Schedule", fmt.Errorf("message must exist"))
 	}
 	if this.Schedule != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schedule); err != nil {
@@ -297,9 +290,9 @@ func (this *MonitorRule) Validate() error {
 	return nil
 }
 func (this *QueueMessage) Validate() error {
-	if this.Meta != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Meta); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Meta", err)
+	if this.Property != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Property); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Property", err)
 		}
 	}
 	return nil
