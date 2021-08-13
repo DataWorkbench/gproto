@@ -78,6 +78,14 @@ for f in proto/*.proto;do
     /bin/rm -f ".${dir}/${name}.validator.pb.go"
   fi
 
+    # Generate gosql code.
+  if grep 'gosql.proto' "$f"  >/dev/null 2>&1; then
+     protoc -I=. -I="${GOPATH}"/src  -I=./proto --gosql_opt=paths=source_relative --gosql_out=. "$f"
+     mv -f proto/"${name}".sql.pb.go ".${dir}/"
+  else
+    /bin/rm -f ".${dir}/${name}.sql.pb.go"
+  fi
+
   # Inject tag to struct and remove comments.
   pbgo=".${dir}/${name}.pb.go"
   if grep "\@inject_tag" "${pbgo}" >/dev/null 2>&1; then

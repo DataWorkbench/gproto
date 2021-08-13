@@ -284,30 +284,42 @@ message DescribeStreamFlow {
 
 // SetStreamFlowNode used as a request parameters for RPC.
 message SetStreamFlowNode {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
 	// Workflow ID it belongs to.
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
 
 	// The node info of JSON format.
-	string nodes = 2 [ (validator.field) = { msg_exists: false } ];
+	string nodes = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
 // SetStreamFlowSchedule used as a request parameters for RPC.
 message SetStreamFlowSchedule {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
 	// Workflow ID it belongs to.
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
-	model.StreamFlowSchedule info = 2 [ (validator.field) = { msg_exists: false } ];
+	model.StreamFlowSchedule info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
 // SetStreamFlowEnv used as a request parameters for RPC.
 message SetStreamFlowEnv {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
 	// Workflow ID it belongs to.
 	// @inject_tag: params:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
-	model.StreamFlowEnv info = 2 [ (validator.field) = { msg_exists: false } ];
+	model.StreamFlowEnv info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
 // GetStreamFlowNode used as a request parameters for RPC.
@@ -350,7 +362,8 @@ message ExecuteStreamFlow {
 	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// Only used for flowmanager -> scheduler.
-	model.StreamFlowMeta meta = 2 [ (validator.field) = { } ];
+	// FIXME: review it.
+	model.StreamFlowProperty property = 2 [ (validator.field) = { } ];
 }
 
 // ListReleaseStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query).
@@ -481,8 +494,9 @@ message DescribeMonitorRule {
 //
 
 // SubmitStreamFlows used as a request parameters for RPC.
+// FIXME: review it.
 message SubmitStreamFlows {
-	repeated model.StreamFlowMeta metas = 1 [ (validator.field) = { } ];
+	repeated model.StreamFlowProperty properties = 1 [ (validator.field) = { } ];
 	bool stop_running = 2 [ (validator.field) = { } ];
 }
 

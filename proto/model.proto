@@ -5,6 +5,7 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/model";
 package model;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "github.com/yu31/proto-go-plugin/gosql.proto";
 
 // EmptyStruct represents no value with a message.
 message EmptyStruct {}
@@ -109,28 +110,29 @@ message StreamFlow {
 // StreamFlowEnv represents a workflow environmental parameters info.
 // Not use with gorm.
 message StreamFlowEnv {
+	option (gosql.serialize) = { json: {} };
 	// The engine id.
-	// @inject_tag: params:"engine_id" default:"" binding:"len=20"
+	// @inject_tag: params:"engine_id" json:"engine_id" default:"" binding:"len=20"
 	string engine_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// Flink parallelism. Is required, Min 1, Max ?
-	// @inject_tag: params:"parallelism" default:"" binding:"gte=1"
+	// @inject_tag: params:"parallelism" json:"parallelism" default:"" binding:"gte=1"
 	int32 parallelism = 2 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Flink JobManager.  1CU = 1C + 2GB. Is required, Min 1, Max ?
-	// @inject_tag: params:"job_cu" default:"" binding:"gte=1"
+	// @inject_tag: params:"job_cu" json:"job_cu" default:"" binding:"gte=1"
 	int32 job_cu = 3 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Flink TaskManager. 1CU = 1C + 2GB. Is required, Min 1, Max ?
-	// @inject_tag: params:"job_cu" default:"" binding:"gte=1"
+	// @inject_tag: params:"job_cu" json:"task_cu" default:"" binding:"gte=1"
 	int32 task_cu = 4 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Flink task number for TaskManager. Is required, Min 1, Max ?
-	// @inject_tag: params:"task_num" default:"" binding:"gte=1"
+	// @inject_tag: params:"task_num" json:"task_num" default:"" binding:"gte=1"
 	int32 task_num = 5 [ (validator.field) = { int_gt: 0 } ];
 	
 	// The user-defined env parameters.
-	// @inject_tag: params:"custom" default:"" binding:"-"
+	// @inject_tag: params:"custom" json:"custom" default:"" binding:"-"
 	map<string, string> custom = 6 [ (validator.field) = { } ];
 }
 
@@ -148,14 +150,16 @@ enum ScheduleRetryPolicy {
 
 // StreamFlowSchedule represents a workflow schedule info.
 message StreamFlowSchedule {
+	option (gosql.serialize) = { json: {} };
+	
 	// Timestamp of start time of the validity period, unit in seconds.
 	// Not required, default 0, means no limit.
-	// @inject_tag: params:"started" default:"0" binding:"gte=0"
+	// @inject_tag: params:"started" json:"started" default:"0" binding:"gte=0"
 	int64 started = 1 [ (validator.field) = { int_gt: -1  } ];
 	
 	// Timestamp of end time of the validity period, unit in seconds.
 	// Not required, default 0, means no limit.
-	// @inject_tag: params:"task_num" default:"0" binding:"gte=0"
+	// @inject_tag: params:"ended" json:"ended" default:"0" binding:"gte=0"
 	int64 ended = 2 [ (validator.field) = { int_gt: -1 } ];
 	
 	// Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace"
@@ -163,39 +167,55 @@ message StreamFlowSchedule {
 	// - forbid: No new instances will be created, and this schedule cycle will be skipped,
 	// - replace: Force stop the old running instances and create new.
 	// Is required.
-	// @inject_tag: params:"concurrency_policy" default:"" binding:"gte=1,lte=3"
+	// @inject_tag: params:"concurrency_policy" json:"concurrency_policy" default:"" binding:"gte=1,lte=3"
 	ScheduleConcurrencyPolicy concurrency_policy = 3 [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
 	
 	// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
 	// Is required.
-	// @inject_tag: params:"retry_policy" default:"" binding:"gte=1,lte=2"
+	// @inject_tag: params:"retry_policy" json:"retry_policy" default:"" binding:"gte=1,lte=2"
 	ScheduleRetryPolicy retry_policy = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 	
 	// FIXME: test binding.
 	// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-	// @inject_tag: params:"task_num" default:"" binding:"required_with=retry_policy=2,gte=1,lte=99"
+	// @inject_tag: params:"retry_limit" json:"retry_limit" default:"" binding:"required_with=retry_policy=2,gte=1,lte=99"
 	int32 retry_limit = 5 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
 	
 	// Retry interval,  Is required with retry_policy = 2, Min 1, Max 30.
-	// @inject_tag: params:"task_num" default:"" binding:"required_with=retry_policy=2,gte=1,lte=30"
+	// @inject_tag: params:"retry_interval" json:"retry_interval" default:"" binding:"required_with=retry_policy=2,gte=1,lte=30"
 	int32 retry_interval = 6 [ (validator.field) = { int_gt: -1, int_lt: 31 } ];
 	
 	// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 4320min.
-	// @inject_tag: params:"timeout" default:"0" binding:"gte=0"
+	// @inject_tag: params:"timeout" json:"timeout" default:"0" binding:"gte=0"
 	int32 timeout = 7 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
 	
 	// Crontab Express. Is required.
 	// FIXME: check binding.
-	// @inject_tag: params:"express" default:"" binding:"gte=5,lte=128"
+	// @inject_tag: params:"express" json:"express" default:"" binding:"gte=5,lte=128"
 	string express = 8 [ (validator.field) = { msg_exists: true } ];
 }
 
-// FlowMeta represents a full workflow metadata where are FlowInfo, FlowNodeInfo, FlowEnvInfo, FlowSchInfo
-message StreamFlowMeta {
-	StreamFlow         flow =  1    [ (validator.field) = { msg_exists: true } ];
-	string             nodes =  2    [ (validator.field) = { msg_exists: true } ];
-	StreamFlowEnv      env = 3      [ (validator.field) = { msg_exists: true } ];
-	StreamFlowSchedule schedule = 4 [ (validator.field) = { msg_exists: true } ];
+// StreamFlowProperty represents property of workflow.
+message StreamFlowProperty {
+	// Workspace ID it belongs to.
+	// @inject_tag: gorm:"column:space_id;"
+	string space_id = 1 [ (validator.field) = { } ];
+	
+	// Workflow ID, unique within a region.
+	// @inject_tag: gorm:"column:flow_id;primarykey;"
+	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The release version.
+	// @inject_tag: gorm:"column:version;primarykey"
+	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
+	
+	// @inject_tag: gorm:"column:nodes;type:json"
+	string nodes = 4 [ (validator.field) = { } ];
+	
+	// @inject_tag: gorm:"column:env;type:json"
+	StreamFlowEnv env = 5 [ (validator.field) = { } ];
+	
+	// @inject_tag: gorm:"column:schedule;type:json"
+	StreamFlowSchedule schedule = 6 [ (validator.field) = { } ];
 }
 
 // The release stream workflow info.
@@ -215,7 +235,7 @@ message StreamFlowRelease {
 	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
-	// @inject_tag: gorm:"column:version;
+	// @inject_tag: gorm:"column:version;"
 	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Workflow Name, Unique within a workspace.
@@ -427,10 +447,10 @@ message MonitorRule {
 // The message in inst queue..
 message QueueMessage {
 	// The request id of beginning.
-	string req_id = 1 [ (validator.field) = { } ];
+	string trace_id = 1 [ (validator.field) = { } ];
 	
-	// The meta of stream workflow.
-	StreamFlowMeta meta = 2  [ (validator.field) = { } ];
+	// The property of stream workflow.
+	StreamFlowProperty property = 2  [ (validator.field) = { } ];
 	
 	// The operation that you will execute.
 	// 1 => "run"  2 => "retry" 3 => "terminate" 4 => "delete"
