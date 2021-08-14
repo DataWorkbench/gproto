@@ -5,7 +5,7 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/model";
 package model;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
-import "github.com/yu31/proto-go-plugin/gosql.proto";
+import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
 
 // EmptyStruct represents no value with a message.
 message EmptyStruct {}

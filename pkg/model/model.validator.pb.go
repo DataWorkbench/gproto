@@ -7,7 +7,7 @@ import (
 	fmt "fmt"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
-	_ "github.com/yu31/proto-go-plugin/gosql/pb"
+	_ "github.com/yu31/proto-go-plugin/pb/gosqlpb"
 	proto "google.golang.org/protobuf/proto"
 	math "math"
 )
