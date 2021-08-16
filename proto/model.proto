@@ -201,8 +201,8 @@ message StreamFlowProperty {
 	string space_id = 1 [ (validator.field) = { } ];
 	
 	// Workflow ID, unique within a region.
-	// @inject_tag: gorm:"column:flow_id;primarykey;"
-	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: gorm:"column:id;primarykey;"
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
 	// @inject_tag: gorm:"column:version;primarykey"
@@ -231,8 +231,8 @@ message StreamFlowRelease {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// Workflow ID, unique within a region.
-	// @inject_tag: gorm:"column:flow_id;primarykey;"
-	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: gorm:"column:id;primarykey;"
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
 	// @inject_tag: gorm:"column:version;"

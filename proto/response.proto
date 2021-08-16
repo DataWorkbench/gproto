@@ -42,14 +42,14 @@ message ListMembers {
 message ListSystemRoles {
 	repeated model.Role infos = 1 [ (validator.field) = { } ];
 	bool has_more = 2 [ (validator.field) = { } ];
-	int64  total = 3 [ (validator.field) = { } ];
+	int64 total = 3 [ (validator.field) = { } ];
 }
 
 // ListStreamFlows used as reply parameters in RPC or response body in HTTP.
 message ListStreamFlows {
 	repeated model.StreamFlow infos = 1 [ (validator.field) = { msg_exists: false } ];
 	bool has_more = 2 [ (validator.field) = { } ];
-	int64  total = 3 [ (validator.field) = { } ];
+	int64 total = 3 [ (validator.field) = { } ];
 }
 
 // CreateStreamFlow used as reply parameters in RPC.
