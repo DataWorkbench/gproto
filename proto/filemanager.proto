@@ -8,61 +8,95 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
 service FileManager{
-  rpc UploadFile(stream UploadFileRequest) returns (FileInfoResponse){}
+  rpc UploadFile(stream UploadFileRequest) returns (model.EmptyStruct){}
   rpc DownloadFile(DownloadRequest) returns (stream DownloadResponse){}
-  rpc ListFiles(FilesFilterRequest) returns (FileListResponse){}
+  rpc DescribeFile(DescribeRequest) returns (FileInfoResponse){}
+  rpc ListFiles(ListRequest) returns (ListResponse){}
   rpc UpdateFile(UpdateFileRequest) returns(model.EmptyStruct){}
-  rpc DeleteFile(DeleteFileRequest) returns(model.EmptyStruct){}
+  rpc DeleteFiles(DeleteFilesRequest) returns(model.EmptyStruct){}
+  rpc DeleteAllFiles(DeleteAllFilesRequest) returns(model.EmptyStruct){}
 }
 
 message UploadFileRequest{
-  string SpaceID = 1 [(validator.field) = {length_eq: 20}];
-  string FileName = 2 [(validator.field) = {msg_exists: true}];
-  string FilePath = 3 [(validator.field) = {msg_exists: true}];
-  int32 FileType = 4 [(validator.field) = {int_lt:3}];
-  bytes Data = 5;
+  string id = 1 [(validator.field) = {length_lt: 25}];
+  string space_id = 2 [(validator.field) = {length_eq: 20}];
+  string file_name = 3 [(validator.field) = {msg_exists: true}];
+  string file_path = 4 [(validator.field) = {msg_exists: true}];
+  int32 file_type = 5 [(validator.field) = {int_lt:3}];
+  bytes data = 6;
 }
 
 message DownloadRequest{
-  string ID = 1 [(validator.field) = {length_lt: 25}];
+  // The file id in HTTP Request_URI.
+  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=21" swaggerignore:"true"
+  string file_id = 1 [(validator.field) = {length_eq: 21}];
 }
 
-message FilesFilterRequest{
-  string ID = 1;
-  int32 Type = 2;
-  string Name = 3;
-  string Path = 4;
-  string SpaceID = 5 [(validator.field) = {length_eq: 20}];
+message ListRequest{
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [(validator.field) = {length_eq: 20}];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+  int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: params:"offset" form:"offset" default:"100" binding:"gt=0,lte=100"
+  int32  offset = 3   [(validator.field) = {int_gt: -1}];
 }
 
 message UpdateFileRequest{
-  string ID = 1 [(validator.field) = {length_eq: 21}];
-  string Name = 2 [(validator.field) = {msg_exists: true}];
-  string Path = 3 [(validator.field) = {msg_exists: true}];
-  int32 Type = 4 [(validator.field) = {int_lt:3}];
+  // The file id in HTTP Request_URI.
+  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=21" swaggerignore:"true"
+  string file_id = 1 [(validator.field) = {length_eq: 21}];
+
+  // The file name. required.
+  // @inject_tag: params:"file_name" binding:"required,lte=65"
+  string file_name = 2 [(validator.field) = {msg_exists: true}];
+
+  // The file path. required.
+  // @inject_tag: params:"file_path" binding:"required,lte=200"
+  string file_path = 3 [(validator.field) = {msg_exists: true}];
+
+  // The file type. required.
+  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  int32 file_type = 4 [(validator.field) = {int_lt:3}];
 }
 
-message DeleteFileRequest{
-  repeated string IDS = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];;
-  string SpaceID = 2 [(validator.field) = {length_eq: 20}];
+message DeleteFilesRequest{
+  // The list of file id. Is required, Min 1 Max 100.
+  // @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
+  repeated string ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
 }
 
-message FileInfoResponse{
-  string ID = 1;
-  string SpaceID = 2;
-  string FileName = 3;
-  string FilePath = 4;
-  int32  FileType = 5;
-  string HdfsAddress = 6;
-  string URL = 7;
+message DeleteAllFilesRequest{
+  // The list of space id. Is required, Min 1 Max 100
+  // @inject_tag: param:"space_ids" default:"" binding:"gte=1,lte=100"
+  repeated string space_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
 }
 
 message DownloadResponse{
-  bytes Data = 1;
+  bytes data = 1;
 }
 
-message FileListResponse {
-  int32 total = 1;
-  repeated FileInfoResponse Data = 2;
+message DescribeRequest{
+  string id = 1 [(validator.field) = {length_lt: 25}];
+}
+
+message FileInfoResponse{
+  string id = 1;
+  string space_id = 2;
+  string file_name = 3;
+  string file_path = 4;
+  int32  file_type = 5;
+  string url = 6;
+}
+
+message ListResponse {
+  repeated FileInfoResponse infos = 1;
+  bool has_more = 2 [(validator.field) = {}];
+  int64  total = 3 [(validator.field) = {}];
 }
 

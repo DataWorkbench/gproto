@@ -20,9 +20,11 @@ const _ = grpc.SupportPackageIsVersion7
 type FileManagerClient interface {
 	UploadFile(ctx context.Context, opts ...grpc.CallOption) (FileManager_UploadFileClient, error)
 	DownloadFile(ctx context.Context, in *DownloadRequest, opts ...grpc.CallOption) (FileManager_DownloadFileClient, error)
-	ListFiles(ctx context.Context, in *FilesFilterRequest, opts ...grpc.CallOption) (*FileListResponse, error)
+	DescribeFile(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*FileInfoResponse, error)
+	ListFiles(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (*ListResponse, error)
 	UpdateFile(ctx context.Context, in *UpdateFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DeleteFile(ctx context.Context, in *DeleteFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteFiles(ctx context.Context, in *DeleteFilesRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteAllFiles(ctx context.Context, in *DeleteAllFilesRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type fileManagerClient struct {
@@ -44,7 +46,7 @@ func (c *fileManagerClient) UploadFile(ctx context.Context, opts ...grpc.CallOpt
 
 type FileManager_UploadFileClient interface {
 	Send(*UploadFileRequest) error
-	CloseAndRecv() (*FileInfoResponse, error)
+	CloseAndRecv() (*model.EmptyStruct, error)
 	grpc.ClientStream
 }
 
@@ -56,11 +58,11 @@ func (x *fileManagerUploadFileClient) Send(m *UploadFileRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *fileManagerUploadFileClient) CloseAndRecv() (*FileInfoResponse, error) {
+func (x *fileManagerUploadFileClient) CloseAndRecv() (*model.EmptyStruct, error) {
 	if err := x.ClientStream.CloseSend(); err != nil {
 		return nil, err
 	}
-	m := new(FileInfoResponse)
+	m := new(model.EmptyStruct)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -99,8 +101,17 @@ func (x *fileManagerDownloadFileClient) Recv() (*DownloadResponse, error) {
 	return m, nil
 }
 
-func (c *fileManagerClient) ListFiles(ctx context.Context, in *FilesFilterRequest, opts ...grpc.CallOption) (*FileListResponse, error) {
-	out := new(FileListResponse)
+func (c *fileManagerClient) DescribeFile(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*FileInfoResponse, error) {
+	out := new(FileInfoResponse)
+	err := c.cc.Invoke(ctx, "/fmpb.FileManager/DescribeFile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *fileManagerClient) ListFiles(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (*ListResponse, error) {
+	out := new(ListResponse)
 	err := c.cc.Invoke(ctx, "/fmpb.FileManager/ListFiles", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -117,9 +128,18 @@ func (c *fileManagerClient) UpdateFile(ctx context.Context, in *UpdateFileReques
 	return out, nil
 }
 
-func (c *fileManagerClient) DeleteFile(ctx context.Context, in *DeleteFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *fileManagerClient) DeleteFiles(ctx context.Context, in *DeleteFilesRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/fmpb.FileManager/DeleteFile", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fmpb.FileManager/DeleteFiles", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *fileManagerClient) DeleteAllFiles(ctx context.Context, in *DeleteAllFilesRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/fmpb.FileManager/DeleteAllFiles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -132,9 +152,11 @@ func (c *fileManagerClient) DeleteFile(ctx context.Context, in *DeleteFileReques
 type FileManagerServer interface {
 	UploadFile(FileManager_UploadFileServer) error
 	DownloadFile(*DownloadRequest, FileManager_DownloadFileServer) error
-	ListFiles(context.Context, *FilesFilterRequest) (*FileListResponse, error)
+	DescribeFile(context.Context, *DescribeRequest) (*FileInfoResponse, error)
+	ListFiles(context.Context, *ListRequest) (*ListResponse, error)
 	UpdateFile(context.Context, *UpdateFileRequest) (*model.EmptyStruct, error)
-	DeleteFile(context.Context, *DeleteFileRequest) (*model.EmptyStruct, error)
+	DeleteFiles(context.Context, *DeleteFilesRequest) (*model.EmptyStruct, error)
+	DeleteAllFiles(context.Context, *DeleteAllFilesRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedFileManagerServer()
 }
 
@@ -148,14 +170,20 @@ func (UnimplementedFileManagerServer) UploadFile(FileManager_UploadFileServer) e
 func (UnimplementedFileManagerServer) DownloadFile(*DownloadRequest, FileManager_DownloadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method DownloadFile not implemented")
 }
-func (UnimplementedFileManagerServer) ListFiles(context.Context, *FilesFilterRequest) (*FileListResponse, error) {
+func (UnimplementedFileManagerServer) DescribeFile(context.Context, *DescribeRequest) (*FileInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeFile not implemented")
+}
+func (UnimplementedFileManagerServer) ListFiles(context.Context, *ListRequest) (*ListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFiles not implemented")
 }
 func (UnimplementedFileManagerServer) UpdateFile(context.Context, *UpdateFileRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFile not implemented")
 }
-func (UnimplementedFileManagerServer) DeleteFile(context.Context, *DeleteFileRequest) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteFile not implemented")
+func (UnimplementedFileManagerServer) DeleteFiles(context.Context, *DeleteFilesRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFiles not implemented")
+}
+func (UnimplementedFileManagerServer) DeleteAllFiles(context.Context, *DeleteAllFilesRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAllFiles not implemented")
 }
 func (UnimplementedFileManagerServer) mustEmbedUnimplementedFileManagerServer() {}
 
@@ -175,7 +203,7 @@ func _FileManager_UploadFile_Handler(srv interface{}, stream grpc.ServerStream) 
 }
 
 type FileManager_UploadFileServer interface {
-	SendAndClose(*FileInfoResponse) error
+	SendAndClose(*model.EmptyStruct) error
 	Recv() (*UploadFileRequest, error)
 	grpc.ServerStream
 }
@@ -184,7 +212,7 @@ type fileManagerUploadFileServer struct {
 	grpc.ServerStream
 }
 
-func (x *fileManagerUploadFileServer) SendAndClose(m *FileInfoResponse) error {
+func (x *fileManagerUploadFileServer) SendAndClose(m *model.EmptyStruct) error {
 	return x.ServerStream.SendMsg(m)
 }
 
@@ -217,8 +245,26 @@ func (x *fileManagerDownloadFileServer) Send(m *DownloadResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _FileManager_DescribeFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DescribeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FileManagerServer).DescribeFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fmpb.FileManager/DescribeFile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FileManagerServer).DescribeFile(ctx, req.(*DescribeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _FileManager_ListFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FilesFilterRequest)
+	in := new(ListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -230,7 +276,7 @@ func _FileManager_ListFiles_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: "/fmpb.FileManager/ListFiles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FileManagerServer).ListFiles(ctx, req.(*FilesFilterRequest))
+		return srv.(FileManagerServer).ListFiles(ctx, req.(*ListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -253,20 +299,38 @@ func _FileManager_UpdateFile_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FileManager_DeleteFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteFileRequest)
+func _FileManager_DeleteFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteFilesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FileManagerServer).DeleteFile(ctx, in)
+		return srv.(FileManagerServer).DeleteFiles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fmpb.FileManager/DeleteFile",
+		FullMethod: "/fmpb.FileManager/DeleteFiles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FileManagerServer).DeleteFile(ctx, req.(*DeleteFileRequest))
+		return srv.(FileManagerServer).DeleteFiles(ctx, req.(*DeleteFilesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FileManager_DeleteAllFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAllFilesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FileManagerServer).DeleteAllFiles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fmpb.FileManager/DeleteAllFiles",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FileManagerServer).DeleteAllFiles(ctx, req.(*DeleteAllFilesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -276,6 +340,10 @@ var _FileManager_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*FileManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "DescribeFile",
+			Handler:    _FileManager_DescribeFile_Handler,
+		},
+		{
 			MethodName: "ListFiles",
 			Handler:    _FileManager_ListFiles_Handler,
 		},
@@ -284,8 +352,12 @@ var _FileManager_serviceDesc = grpc.ServiceDesc{
 			Handler:    _FileManager_UpdateFile_Handler,
 		},
 		{
-			MethodName: "DeleteFile",
-			Handler:    _FileManager_DeleteFile_Handler,
+			MethodName: "DeleteFiles",
+			Handler:    _FileManager_DeleteFiles_Handler,
+		},
+		{
+			MethodName: "DeleteAllFiles",
+			Handler:    _FileManager_DeleteAllFiles_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
