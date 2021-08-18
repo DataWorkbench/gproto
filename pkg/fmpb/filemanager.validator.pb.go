@@ -18,9 +18,6 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *UploadFileRequest) Validate() error {
-	if !(len(this.Id) < 25) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.Id))
-	}
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -30,8 +27,8 @@ func (this *UploadFileRequest) Validate() error {
 	return nil
 }
 func (this *DownloadRequest) Validate() error {
-	if !(len(this.FileId) == 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '21'`, this.FileId))
+	if !(len(this.FileId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
 	}
 	return nil
 }

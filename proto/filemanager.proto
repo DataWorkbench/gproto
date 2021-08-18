@@ -18,18 +18,29 @@ service FileManager{
 }
 
 message UploadFileRequest{
-  string id = 1 [(validator.field) = {length_lt: 25}];
+  // The file id for test. Not required.
+  string file_id = 1;
+
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
   string space_id = 2 [(validator.field) = {length_eq: 20}];
+
+  // The file name. required.
+  // @inject_tag: params:"file_name" binding:"required,lte=500"
   string file_name = 3 [(validator.field) = {msg_exists: true}];
-  string file_path = 4 [(validator.field) = {msg_exists: true}];
-  int32 file_type = 5 [(validator.field) = {int_lt:3}];
-  bytes data = 6;
+
+  // The file type. required.
+  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  int32 file_type = 4 [(validator.field) = {int_lt:3}];
+
+  // The data for file. required.
+  bytes data = 5 [(validator.field) = {msg_exists: true}];;
 }
 
 message DownloadRequest{
   // The file id in HTTP Request_URI.
   // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=21" swaggerignore:"true"
-  string file_id = 1 [(validator.field) = {length_eq: 21}];
+  string file_id = 1 [(validator.field) = {length_eq: 20}];
 }
 
 message ListRequest{
@@ -53,16 +64,12 @@ message UpdateFileRequest{
   string file_id = 1 [(validator.field) = {length_eq: 21}];
 
   // The file name. required.
-  // @inject_tag: params:"file_name" binding:"required,lte=65"
+  // @inject_tag: params:"file_name" binding:"required,lte=500"
   string file_name = 2 [(validator.field) = {msg_exists: true}];
-
-  // The file path. required.
-  // @inject_tag: params:"file_path" binding:"required,lte=200"
-  string file_path = 3 [(validator.field) = {msg_exists: true}];
 
   // The file type. required.
   // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
-  int32 file_type = 4 [(validator.field) = {int_lt:3}];
+  int32 file_type = 3 [(validator.field) = {int_lt:3}];
 }
 
 message DeleteFilesRequest{
