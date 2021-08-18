@@ -35,20 +35,20 @@ type ListWorkspaces struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The field list used to sorted query results.
 	// Optional values: {id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
 	// Not required, default: id.
-	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty" params:"sort_by" form:"sort_by" binding:"-"`
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
 	// Reverse order results. Not required, default: false.
-	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse,omitempty" params:"reverse" form:"reverse" binding:"-"`
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
 	// The used_id fixed to request user id.
-	UserId string `protobuf:"bytes,5,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" params:"-" form:"-" binding:"-" swaggerignore:"true"`
+	UserId string `protobuf:"bytes,5,opt,name=user_id,json=userId,proto3" json:"user_id" form:"-" binding:"-" swaggerignore:"true"`
 	// Search with workspace name; Not required.
-	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search,omitempty" params:"search" form:"search" binding:"-"`
+	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
 }
 
 func (x *ListWorkspaces) Reset() {
@@ -132,7 +132,7 @@ type DeleteWorkspaces struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The list of workspace id. Is required, Min 1, Max 100.
-	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids,omitempty" params:"space_ids" binding:"gte=1,lte=100"`
+	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *DeleteWorkspaces) Reset() {
@@ -182,7 +182,7 @@ type DisableWorkspaces struct {
 
 	// The list of workspace id. Is required, Contains at least one.
 	// Disable workspace will suspend all release workflow and stop all running instances.
-	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids,omitempty" params:"space_ids" binding:"gte=1,lte=100"`
+	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *DisableWorkspaces) Reset() {
@@ -231,9 +231,9 @@ type EnableWorkspaces struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The list of workspace id. Is required, Contains at least one.
-	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids,omitempty" params:"space_ids" binding:"gte=1,lte=100"`
+	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids" binding:"gte=1,lte=100"`
 	// Whether resume all suspended workflow. Not required, default false.
-	ResumeWorkflow bool `protobuf:"varint,2,opt,name=resume_workflow,json=resumeWorkflow,proto3" json:"resume_workflow,omitempty" params:"resume_workflow" default:"false" binding:"-"`
+	ResumeWorkflow bool `protobuf:"varint,2,opt,name=resume_workflow,json=resumeWorkflow,proto3" json:"resume_workflow" default:"false" binding:"-"`
 }
 
 func (x *EnableWorkspaces) Reset() {
@@ -289,12 +289,12 @@ type CreateWorkspace struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The owner fixed to request user id.
-	Owner string `protobuf:"bytes,1,opt,name=owner,proto3" json:"owner,omitempty" params:"-" binding:"-" swaggerignore:"true"`
+	Owner string `protobuf:"bytes,1,opt,name=owner,proto3" json:"owner" binding:"-" swaggerignore:"true"`
 	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
 	// Description of the workspace, Not required, Max 1024 char.
-	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
 }
 
 func (x *CreateWorkspace) Reset() {
@@ -357,12 +357,12 @@ type UpdateWorkspace struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
 	// Description of the workspace, Not required, Max length 1024.
-	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
 }
 
 func (x *UpdateWorkspace) Reset() {
@@ -425,7 +425,7 @@ type DescribeWorkspace struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *DescribeWorkspace) Reset() {
@@ -523,32 +523,32 @@ type ListAudits struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The field list used to sorted query results.
 	// Optional values: {id, created}.
 	// Multiple fields are separated by commas(","), eg: sort_by="created".
 	// Not required, default: id.
-	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty" params:"sort_by" form:"sort_by" binding:"-"`
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
 	// Reverse order results. Not required, default: false.
-	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse,omitempty" params:"reverse" form:"reverse" binding:"-"`
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
 	// The used_id fixed to request user id.
-	UserId string `protobuf:"bytes,5,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" params:"-" form:"-" binding:"-" swaggerignore:"true"`
+	UserId string `protobuf:"bytes,5,opt,name=user_id,json=userId,proto3" json:"user_id" form:"-" binding:"-" swaggerignore:"true"`
 	// Querying conditions. Not required.
-	SpaceId string `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" form:"space_id" binding:"-"`
+	SpaceId string `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id" form:"space_id" binding:"-"`
 	// Querying conditions. Not required.
-	Type model.OpAudit_Type `protobuf:"varint,7,opt,name=type,proto3,enum=model.OpAudit_Type" json:"type,omitempty" params:"type" form:"type" binding:"-"`
+	Type model.OpAudit_Type `protobuf:"varint,7,opt,name=type,proto3,enum=model.OpAudit_Type" json:"type" form:"type" binding:"-"`
 	// Querying conditions. Not required.
-	Action string `protobuf:"bytes,8,opt,name=action,proto3" json:"action,omitempty" params:"action" form:"action" binding:"-"`
+	Action string `protobuf:"bytes,8,opt,name=action,proto3" json:"action" form:"action" binding:"-"`
 	// Querying conditions. Not required.
-	State model.OpAudit_State `protobuf:"varint,9,opt,name=state,proto3,enum=model.OpAudit_State" json:"state,omitempty" params:"state" form:"state" binding:"-"`
+	State model.OpAudit_State `protobuf:"varint,9,opt,name=state,proto3,enum=model.OpAudit_State" json:"state" form:"state" binding:"-"`
 	// Querying conditions. Not required.
 	// Desc: Timestamp of start time.
-	Started int64 `protobuf:"varint,10,opt,name=started,proto3" json:"started,omitempty" params:"started" form:"started" binding:"-"`
+	Started int64 `protobuf:"varint,10,opt,name=started,proto3" json:"started" form:"started" binding:"-"`
 	// Querying conditions. Not required.
 	// Desc: Timestamp of end time.
-	Ended int64 `protobuf:"varint,11,opt,name=ended,proto3" json:"ended,omitempty" params:"ended" form:"ended" binding:"-"`
+	Ended int64 `protobuf:"varint,11,opt,name=ended,proto3" json:"ended" form:"ended" binding:"-"`
 }
 
 func (x *ListAudits) Reset() {
@@ -674,7 +674,7 @@ type ListSystemRoles struct {
 	//	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
 	//
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *ListSystemRoles) Reset() {
@@ -724,11 +724,11 @@ type ListMembers struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *ListMembers) Reset() {
@@ -791,9 +791,9 @@ type UpsertMembers struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of pair to user_id => role_ids. Min: 1, Max: 100
-	Users []*UpsertMembers_Pair `protobuf:"bytes,2,rep,name=users,proto3" json:"users,omitempty" params:"users" binding:"gte=1,lte=100"`
+	Users []*UpsertMembers_Pair `protobuf:"bytes,2,rep,name=users,proto3" json:"users" binding:"gte=1,lte=100"`
 }
 
 func (x *UpsertMembers) Reset() {
@@ -849,9 +849,9 @@ type DeleteMembers struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The user(member) id. Is required, Min: 1, Max 100.
-	UserIds []string `protobuf:"bytes,2,rep,name=user_ids,json=userIds,proto3" json:"user_ids,omitempty" params:"user_ids" binding:"-"`
+	UserIds []string `protobuf:"bytes,2,rep,name=user_ids,json=userIds,proto3" json:"user_ids" binding:"-"`
 }
 
 func (x *DeleteMembers) Reset() {
@@ -988,20 +988,20 @@ type ListStreamFlows struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The field list used to sorted query results.
 	// Optional values: {id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
 	// Not required, default: id.
-	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty" params:"sort_by" form:"sort_by" binding:"-"`
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
 	// Reverse order results. Not required, default: false.
-	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse,omitempty" params:"reverse" form:"reverse" binding:"-"`
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// Search with workflow name; Not required.
-	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search,omitempty" params:"search" form:"search" binding:"-"`
+	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
 }
 
 func (x *ListStreamFlows) Reset() {
@@ -1085,15 +1085,15 @@ type CreateStreamFlow struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The workflow name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128"`
 	// Description of the workspace, Not required, Max length 1024.
-	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
 	// Workflow Type. Is Required, Optional Value: 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator".
 	// Desc: Cannot be modified after creation.
-	Type model.StreamFlow_Type `protobuf:"varint,4,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type,omitempty" params:"type" binding:"gte=1,lte=3"`
+	Type model.StreamFlow_Type `protobuf:"varint,4,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type" binding:"gte=1,lte=3"`
 }
 
 func (x *CreateStreamFlow) Reset() {
@@ -1163,9 +1163,9 @@ type DeleteStreamFlows struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of workflow id. Is required, Min 1, Max 100.
-	FlowIds []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids,omitempty" params:"flow_ids" binding:"gte=1,lte=100"`
+	FlowIds []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *DeleteStreamFlows) Reset() {
@@ -1221,12 +1221,12 @@ type UpdateStreamFlow struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// The workflow name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128"`
 	// Description of the workspace, Not required, Max length 1024.
-	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
 }
 
 func (x *UpdateStreamFlow) Reset() {
@@ -1289,9 +1289,9 @@ type DescribeStreamFlow struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// The workflow version id in HTTP Request-URI
-	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
 }
 
 func (x *DescribeStreamFlow) Reset() {
@@ -1347,9 +1347,9 @@ type SetStreamFlowNode struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// Workflow ID it belongs to.
-	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// The node info of JSON format.
 	Nodes string `protobuf:"bytes,3,opt,name=nodes,proto3" json:"nodes,omitempty"`
 }
@@ -1414,9 +1414,9 @@ type SetStreamFlowSchedule struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// Workflow ID it belongs to.
-	FlowId string                    `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string                    `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	Info   *model.StreamFlowSchedule `protobuf:"bytes,3,opt,name=info,proto3" json:"info,omitempty"`
 }
 
@@ -1480,9 +1480,9 @@ type SetStreamFlowEnv struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// Workflow ID it belongs to.
-	FlowId string               `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string               `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	Info   *model.StreamFlowEnv `protobuf:"bytes,3,opt,name=info,proto3" json:"info,omitempty"`
 }
 
@@ -1546,9 +1546,9 @@ type GetStreamFlowNode struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// The workflow version id in HTTP Request-URI
-	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
 }
 
 func (x *GetStreamFlowNode) Reset() {
@@ -1604,9 +1604,9 @@ type GetStreamFlowSchedule struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// The workflow version id in HTTP Request-URI
-	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
 }
 
 func (x *GetStreamFlowSchedule) Reset() {
@@ -1662,9 +1662,9 @@ type GetStreamFlowEnv struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// The workflow version id in HTTP Request-URI
-	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" uri:"ver_id" binding:"-" swaggerignore:"true"`
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
 }
 
 func (x *GetStreamFlowEnv) Reset() {
@@ -1720,7 +1720,7 @@ type ExecuteStreamFlow struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// Only used for flowmanager -> scheduler.
 	// FIXME: review it.
 	Property *model.StreamFlowProperty `protobuf:"bytes,2,opt,name=property,proto3" json:"property,omitempty"`
@@ -1780,20 +1780,20 @@ type ListReleaseStreamFlows struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The field list used to sorted query results.
 	// Optional values: {flow_id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
 	// Not required, default: flow_id.
-	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty" params:"sort_by" form:"sort_by" binding:"-"`
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
 	// Reverse order results. Not required, default: false.
-	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse,omitempty" params:"reverse" form:"reverse" binding:"-"`
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// Search with workflow name; Not required.
-	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search,omitempty" params:"search" form:"search" binding:"-"`
+	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
 }
 
 func (x *ListReleaseStreamFlows) Reset() {
@@ -1877,10 +1877,10 @@ type ReleaseStreamFlow struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 	// Description for this releases. Not required, Max length 1024.
-	Desc        string `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
-	StopRunning bool   `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running,omitempty" params:"stop_running" binding:"-"`
+	Desc        string `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
+	StopRunning bool   `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running" binding:"-"`
 }
 
 func (x *ReleaseStreamFlow) Reset() {
@@ -1943,10 +1943,10 @@ type SuspendReleaseStreamFlows struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of workflow id. Is Required. Min: 1, Max: 100
-	FlowIds     []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids,omitempty" params:"flow_ids" binding:"gte=1,lte=100"`
-	StopRunning bool     `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running,omitempty" params:"stop_running" binding:"-"`
+	FlowIds     []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids" binding:"gte=1,lte=100"`
+	StopRunning bool     `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running" binding:"-"`
 }
 
 func (x *SuspendReleaseStreamFlows) Reset() {
@@ -2009,9 +2009,9 @@ type ResumeReleaseStreamFlows struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of workflow id. Is Required. Min: 1, Max: 100
-	FlowIds []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids,omitempty" params:"flow_ids" binding:"gte=1,lte=100"`
+	FlowIds []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *ResumeReleaseStreamFlows) Reset() {
@@ -2068,18 +2068,18 @@ type ListStreamFlowVersions struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The field list used to sorted query results.
 	// Optional values: {version, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="version,updated".
 	// Not required, default: version.
-	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty" params:"sort_by" form:"sort_by" binding:"-"`
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
 	// Reverse order results. Not required, default: false.
-	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse,omitempty" params:"reverse" form:"reverse" binding:"-"`
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
 	// The workflow id in HTTP Request-URI
-	FlowId string `protobuf:"bytes,5,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	FlowId string `protobuf:"bytes,5,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *ListStreamFlowVersions) Reset() {
@@ -2157,11 +2157,11 @@ type ListMonitorRules struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *ListMonitorRules) Reset() {
@@ -2272,7 +2272,7 @@ type DeleteMonitorRules struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The list of monitor rule id. Is required, Min 1, Max 100.
-	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids,omitempty" params:"rule_ids" binding:"gte=1,lte=100"`
+	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *DeleteMonitorRules) Reset() {
@@ -2321,7 +2321,7 @@ type EnableMonitorRules struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The list of monitor rule id. Is required, Min 1, Max 100.
-	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids,omitempty" params:"rule_ids" binding:"gte=1,lte=100"`
+	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *EnableMonitorRules) Reset() {
@@ -2370,7 +2370,7 @@ type DisableMonitorRules struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The list of monitor rule id. Is required, Min 1, Max 100.
-	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids,omitempty" params:"rule_ids" binding:"gte=1,lte=100"`
+	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *DisableMonitorRules) Reset() {
@@ -2467,7 +2467,7 @@ type DescribeMonitorRule struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The monitor rule id in HTTP Request-URI. Is Required.
-	RuleId string `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id,omitempty" params:"rule_id" uri:"rule_id" binding:"len=20" swaggerignore:"true"`
+	RuleId string `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id" uri:"rule_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *DescribeMonitorRule) Reset() {
@@ -2639,15 +2639,15 @@ type ListStreamInsts struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI. Is Required.
-	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The workflow id. Not required.
-	FlowId string `protobuf:"bytes,4,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" form:"flow_id" binding:"-"`
+	FlowId string `protobuf:"bytes,4,opt,name=flow_id,json=flowId,proto3" json:"flow_id" form:"flow_id" binding:"-"`
 	// The workflow version id. Not required.
-	Version int64 `protobuf:"varint,5,opt,name=version,proto3" json:"version,omitempty" params:"ver_id" form:"ver_id" binding:"-"`
+	Version int64 `protobuf:"varint,5,opt,name=version,proto3" json:"version" form:"ver_id" binding:"-"`
 }
 
 func (x *ListStreamInsts) Reset() {
@@ -2724,9 +2724,9 @@ type FlowInstIdPair struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workflow id. Is Required.
-	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" params:"flow_id" binding:"len=20"`
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" binding:"len=20"`
 	// The instance id. Is Required.
-	InstId string `protobuf:"bytes,3,opt,name=inst_id,json=instId,proto3" json:"inst_id,omitempty" params:"inst_id" binding:"len=20"`
+	InstId string `protobuf:"bytes,3,opt,name=inst_id,json=instId,proto3" json:"inst_id" binding:"len=20"`
 }
 
 func (x *FlowInstIdPair) Reset() {
@@ -2783,9 +2783,9 @@ type TerminateStreamInsts struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI. Is Required.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
-	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids,omitempty" params:"inst_ids" binding:"gte=1,lte=100"`
+	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *TerminateStreamInsts) Reset() {
@@ -2842,9 +2842,9 @@ type SuspendStreamInsts struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI. Is Required.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
-	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids,omitempty" params:"inst_ids" binding:"gte=1,lte=100"`
+	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *SuspendStreamInsts) Reset() {
@@ -2901,9 +2901,9 @@ type ResumeStreamInsts struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI. Is Required.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
-	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids,omitempty" params:"inst_ids" binding:"gte=1,lte=100"`
+	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *ResumeStreamInsts) Reset() {
@@ -2958,9 +2958,9 @@ type UpsertMembers_Pair struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The account user_id. Is Required.
-	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" params:"user_id" binding:"required"`
+	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id" binding:"required"`
 	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
-	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids,omitempty" params:"role_ids" binding:"get=1,lte=100"`
+	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" binding:"get=1,lte=100"`
 }
 
 func (x *UpsertMembers_Pair) Reset() {

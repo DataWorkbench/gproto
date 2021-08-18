@@ -672,19 +672,19 @@ type Workspace struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID, unique within a region.
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primaryKey;"`
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id" gorm:"column:id;primaryKey;"`
 	// User id of workspace owner.
-	Owner string `protobuf:"bytes,2,opt,name=owner,proto3" json:"owner,omitempty" gorm:"column:owner;"`
+	Owner string `protobuf:"bytes,2,opt,name=owner,proto3" json:"owner" gorm:"column:owner;"`
 	// Workspace Name, unique within a region.
-	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
 	// Workspace Description.
-	Desc string `protobuf:"bytes,4,opt,name=desc,proto3" json:"desc,omitempty" gorm:"column:desc;"`
+	Desc string `protobuf:"bytes,4,opt,name=desc,proto3" json:"desc" gorm:"column:desc;"`
 	// Workspace status, 1 => "enabled", 2 => "disabled".
-	Status Workspace_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.Workspace_Status" json:"status,omitempty" gorm:"column:status;"`
+	Status Workspace_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.Workspace_Status" json:"status" gorm:"column:status;"`
 	// Timestamp of create time.
-	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
+	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
-	Updated int64 `protobuf:"varint,8,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
+	Updated int64 `protobuf:"varint,8,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
 
 func (x *Workspace) Reset() {
@@ -775,22 +775,22 @@ type StreamFlow struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Workflow ID, unique within a region.
-	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// The workflow version id, only used for Published workflows.
 	// Only used in published workflow.
-	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey;"`
+	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version" gorm:"column:version;primarykey;"`
 	// Workflow Name, Unique within a workspace.
-	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
+	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name" gorm:"column:name;"`
 	// Workflow Description.
-	Desc string `protobuf:"bytes,5,opt,name=desc,proto3" json:"desc,omitempty" gorm:"column:desc;"`
+	Desc string `protobuf:"bytes,5,opt,name=desc,proto3" json:"desc" gorm:"column:desc;"`
 	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
-	Type StreamFlow_Type `protobuf:"varint,6,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type,omitempty" gorm:"column:type;"`
+	Type StreamFlow_Type `protobuf:"varint,6,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type" gorm:"column:type;"`
 	// Timestamp of create time.
-	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
+	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
-	Updated int64 `protobuf:"varint,8,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
+	Updated int64 `protobuf:"varint,8,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
 
 func (x *StreamFlow) Reset() {
@@ -889,17 +889,17 @@ type StreamFlowEnv struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The engine id.
-	EngineId string `protobuf:"bytes,1,opt,name=engine_id,json=engineId,proto3" json:"engine_id" params:"engine_id" binding:"len=20"`
+	EngineId string `protobuf:"bytes,1,opt,name=engine_id,json=engineId,proto3" json:"engine_id" binding:"len=20"`
 	// Flink parallelism. Is required, Min 1, Max ?
-	Parallelism int32 `protobuf:"varint,2,opt,name=parallelism,proto3" json:"parallelism" params:"parallelism" binding:"gte=1"`
+	Parallelism int32 `protobuf:"varint,2,opt,name=parallelism,proto3" json:"parallelism" binding:"gte=1"`
 	// Flink JobManager.  1CU = 1C + 2GB. Is required, Min 1, Max ?
-	JobCu int32 `protobuf:"varint,3,opt,name=job_cu,json=jobCu,proto3" json:"job_cu" params:"job_cu" binding:"gte=1"`
+	JobCu int32 `protobuf:"varint,3,opt,name=job_cu,json=jobCu,proto3" json:"job_cu" binding:"gte=1"`
 	// Flink TaskManager. 1CU = 1C + 2GB. Is required, Min 1, Max ?
-	TaskCu int32 `protobuf:"varint,4,opt,name=task_cu,json=taskCu,proto3" json:"task_cu" params:"job_cu" binding:"gte=1"`
+	TaskCu int32 `protobuf:"varint,4,opt,name=task_cu,json=taskCu,proto3" json:"task_cu" binding:"gte=1"`
 	// Flink task number for TaskManager. Is required, Min 1, Max ?
-	TaskNum int32 `protobuf:"varint,5,opt,name=task_num,json=taskNum,proto3" json:"task_num" params:"task_num" binding:"gte=1"`
+	TaskNum int32 `protobuf:"varint,5,opt,name=task_num,json=taskNum,proto3" json:"task_num" binding:"gte=1"`
 	// The user-defined env parameters.
-	Custom map[string]string `protobuf:"bytes,6,rep,name=custom,proto3" json:"custom" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" params:"custom" binding:"-"`
+	Custom map[string]string `protobuf:"bytes,6,rep,name=custom,proto3" json:"custom" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" binding:"-"`
 }
 
 func (x *StreamFlowEnv) Reset() {
@@ -984,29 +984,29 @@ type StreamFlowSchedule struct {
 
 	// Timestamp of start time of the validity period, unit in seconds.
 	// Not required, default 0, means no limit.
-	Started int64 `protobuf:"varint,1,opt,name=started,proto3" json:"started" params:"started" default:"0" binding:"gte=0"`
+	Started int64 `protobuf:"varint,1,opt,name=started,proto3" json:"started" default:"0" binding:"gte=0"`
 	// Timestamp of end time of the validity period, unit in seconds.
 	// Not required, default 0, means no limit.
-	Ended int64 `protobuf:"varint,2,opt,name=ended,proto3" json:"ended" params:"ended" default:"0" binding:"gte=0"`
+	Ended int64 `protobuf:"varint,2,opt,name=ended,proto3" json:"ended" default:"0" binding:"gte=0"`
 	// Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace"
 	// - allow: Multiple task instances are allowed at the same time.
 	// - forbid: No new instances will be created, and this schedule cycle will be skipped,
 	// - replace: Force stop the old running instances and create new.
 	// Is required.
-	ConcurrencyPolicy ScheduleConcurrencyPolicy `protobuf:"varint,3,opt,name=concurrency_policy,json=concurrencyPolicy,proto3,enum=model.ScheduleConcurrencyPolicy" json:"concurrency_policy" params:"concurrency_policy" binding:"gte=1,lte=3"`
+	ConcurrencyPolicy ScheduleConcurrencyPolicy `protobuf:"varint,3,opt,name=concurrency_policy,json=concurrencyPolicy,proto3,enum=model.ScheduleConcurrencyPolicy" json:"concurrency_policy" binding:"gte=1,lte=3"`
 	// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
 	// Is required.
-	RetryPolicy ScheduleRetryPolicy `protobuf:"varint,4,opt,name=retry_policy,json=retryPolicy,proto3,enum=model.ScheduleRetryPolicy" json:"retry_policy" params:"retry_policy" binding:"gte=1,lte=2"`
+	RetryPolicy ScheduleRetryPolicy `protobuf:"varint,4,opt,name=retry_policy,json=retryPolicy,proto3,enum=model.ScheduleRetryPolicy" json:"retry_policy" binding:"gte=1,lte=2"`
 	// FIXME: test binding.
 	// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-	RetryLimit int32 `protobuf:"varint,5,opt,name=retry_limit,json=retryLimit,proto3" json:"retry_limit" params:"retry_limit" binding:"required_with=retry_policy=2,gte=1,lte=99"`
+	RetryLimit int32 `protobuf:"varint,5,opt,name=retry_limit,json=retryLimit,proto3" json:"retry_limit" binding:"required_with=retry_policy=2,gte=1,lte=99"`
 	// Retry interval,  Is required with retry_policy = 2, Min 1, Max 30.
-	RetryInterval int32 `protobuf:"varint,6,opt,name=retry_interval,json=retryInterval,proto3" json:"retry_interval" params:"retry_interval" binding:"required_with=retry_policy=2,gte=1,lte=30"`
+	RetryInterval int32 `protobuf:"varint,6,opt,name=retry_interval,json=retryInterval,proto3" json:"retry_interval" binding:"required_with=retry_policy=2,gte=1,lte=30"`
 	// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 4320min.
-	Timeout int32 `protobuf:"varint,7,opt,name=timeout,proto3" json:"timeout" params:"timeout" default:"0" binding:"gte=0"`
+	Timeout int32 `protobuf:"varint,7,opt,name=timeout,proto3" json:"timeout" default:"0" binding:"gte=0"`
 	// Crontab Express. Is required.
 	// FIXME: check binding.
-	Express string `protobuf:"bytes,8,opt,name=express,proto3" json:"express" params:"express" binding:"gte=5,lte=128"`
+	Express string `protobuf:"bytes,8,opt,name=express,proto3" json:"express" binding:"gte=5,lte=128"`
 }
 
 func (x *StreamFlowSchedule) Reset() {
@@ -1104,14 +1104,14 @@ type StreamFlowProperty struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Workflow ID, unique within a region.
-	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// The release version.
-	Version  int64               `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;primarykey"`
-	Nodes    string              `protobuf:"bytes,4,opt,name=nodes,proto3" json:"nodes,omitempty" gorm:"column:nodes;type:json"`
-	Env      *StreamFlowEnv      `protobuf:"bytes,5,opt,name=env,proto3" json:"env,omitempty" gorm:"column:env;type:json"`
-	Schedule *StreamFlowSchedule `protobuf:"bytes,6,opt,name=schedule,proto3" json:"schedule,omitempty" gorm:"column:schedule;type:json"`
+	Version  int64               `protobuf:"varint,3,opt,name=version,proto3" json:"version" gorm:"column:version;primarykey"`
+	Nodes    string              `protobuf:"bytes,4,opt,name=nodes,proto3" json:"nodes" gorm:"column:nodes;type:json"`
+	Env      *StreamFlowEnv      `protobuf:"bytes,5,opt,name=env,proto3" json:"env" gorm:"column:env;type:json"`
+	Schedule *StreamFlowSchedule `protobuf:"bytes,6,opt,name=schedule,proto3" json:"schedule" gorm:"column:schedule;type:json"`
 }
 
 func (x *StreamFlowProperty) Reset() {
@@ -1195,23 +1195,23 @@ type StreamFlowRelease struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Workflow ID, unique within a region.
-	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// The release version.
-	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty" gorm:"column:version;"`
+	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version" gorm:"column:version;"`
 	// Workflow Name, Unique within a workspace.
-	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
+	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name" gorm:"column:name;"`
 	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
-	Type StreamFlow_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type,omitempty" gorm:"column:type;"`
+	Type StreamFlow_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type" gorm:"column:type;"`
 	// Release status, 1 => "active", 2 => "suspended"
-	Status StreamFlowRelease_Status `protobuf:"varint,6,opt,name=status,proto3,enum=model.StreamFlowRelease_Status" json:"status,omitempty" gorm:"column:status;"`
+	Status StreamFlowRelease_Status `protobuf:"varint,6,opt,name=status,proto3,enum=model.StreamFlowRelease_Status" json:"status" gorm:"column:status;"`
 	// Workflow release description.
-	Desc string `protobuf:"bytes,7,opt,name=desc,proto3" json:"desc,omitempty" gorm:"column:desc;"`
+	Desc string `protobuf:"bytes,7,opt,name=desc,proto3" json:"desc" gorm:"column:desc;"`
 	// Timestamp of create time.
-	Created int64 `protobuf:"varint,8,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
+	Created int64 `protobuf:"varint,8,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
-	Updated int64 `protobuf:"varint,9,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
+	Updated int64 `protobuf:"varint,9,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
 
 func (x *StreamFlowRelease) Reset() {
@@ -1316,18 +1316,18 @@ type StreamFlowInst struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Workflow ID it belongs to.
-	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty" gorm:"column:flow_id;"`
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" gorm:"column:flow_id;"`
 	// The release version.
-	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
+	Version int64 `protobuf:"varint,3,opt,name=version,proto3" json:"version"`
 	// Workflow instance ID, unique.
-	Id string `protobuf:"bytes,4,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
+	Id string `protobuf:"bytes,4,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// The instance state.
-	State   StreamFlowInst_State `protobuf:"varint,5,opt,name=state,proto3,enum=model.StreamFlowInst_State" json:"state,omitempty" gorm:"column:state;"`
-	Created int64                `protobuf:"varint,6,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
+	State   StreamFlowInst_State `protobuf:"varint,5,opt,name=state,proto3,enum=model.StreamFlowInst_State" json:"state" gorm:"column:state;"`
+	Created int64                `protobuf:"varint,6,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
-	Updated int64 `protobuf:"varint,7,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
+	Updated int64 `protobuf:"varint,7,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
 
 func (x *StreamFlowInst) Reset() {
@@ -1418,16 +1418,16 @@ type OpAudit struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The user id of who execute this operation.
-	UserId  string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" gorm:"column:user_id;primaryKey;"`
-	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;primaryKey;"`
+	UserId  string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primaryKey;"`
+	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;primaryKey;"`
 	// -- The type of operation, 2 => "Create",  3 => "Delete", 4 => "Update"
-	Type OpAudit_Type `protobuf:"varint,3,opt,name=type,proto3,enum=model.OpAudit_Type" json:"type,omitempty" gorm:"column:type;"`
+	Type OpAudit_Type `protobuf:"varint,3,opt,name=type,proto3,enum=model.OpAudit_Type" json:"type" gorm:"column:type;"`
 	//	-- The operation of user behavior.
-	Action string `protobuf:"bytes,4,opt,name=action,proto3" json:"action,omitempty" gorm:"column:action;"`
+	Action string `protobuf:"bytes,4,opt,name=action,proto3" json:"action" gorm:"column:action;"`
 	// -- The result of operation, 1 => "Success", 2 => "Failed".
-	State OpAudit_State `protobuf:"varint,5,opt,name=state,proto3,enum=model.OpAudit_State" json:"state,omitempty" gorm:"column:state;"`
+	State OpAudit_State `protobuf:"varint,5,opt,name=state,proto3,enum=model.OpAudit_State" json:"state" gorm:"column:state;"`
 	// Timestamp of time of when accessed.
-	Created int64 `protobuf:"varint,6,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
+	Created int64 `protobuf:"varint,6,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 }
 
 func (x *OpAudit) Reset() {
@@ -1510,11 +1510,11 @@ type Role struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SpaceId string    `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
-	Id      string    `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;"`
-	Code    string    `protobuf:"bytes,3,opt,name=code,proto3" json:"code,omitempty" gorm:"column:code;"`
-	Name    string    `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
-	Type    Role_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.Role_Type" json:"type,omitempty" gorm:"column:type;"`
+	SpaceId string    `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
+	Id      string    `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;"`
+	Code    string    `protobuf:"bytes,3,opt,name=code,proto3" json:"code" gorm:"column:code;"`
+	Name    string    `protobuf:"bytes,4,opt,name=name,proto3" json:"name" gorm:"column:name;"`
+	Type    Role_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.Role_Type" json:"type" gorm:"column:type;"`
 }
 
 func (x *Role) Reset() {
@@ -1590,13 +1590,13 @@ type Member struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;primaryKey;"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;primaryKey;"`
 	// The user id in account-server.
-	UserId  string `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" gorm:"column:user_id;primaryKey;"`
-	RoleIds string `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids,omitempty" gorm:"column:role_ids;"`
-	Created int64  `protobuf:"varint,5,opt,name=created,proto3" json:"created,omitempty" gorm:"column:created;autoCreateTime;"`
+	UserId  string `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primaryKey;"`
+	RoleIds string `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" gorm:"column:role_ids;"`
+	Created int64  `protobuf:"varint,5,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
-	Updated int64 `protobuf:"varint,6,opt,name=updated,proto3" json:"updated,omitempty" gorm:"column:updated;autoUpdateTime;"`
+	Updated int64 `protobuf:"varint,6,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
 
 func (x *Member) Reset() {
@@ -1673,29 +1673,29 @@ type MonitorRule struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Workspace ID it belongs to.
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" gorm:"column:space_id;"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Rule ID, unique within a region.
-	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty" gorm:"column:id;primarykey;"`
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// Rule Name.
-	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name;"`
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
 	// Rule status, 1 => "enabled", 2 => "disabled".
-	Status MonitorRule_Status `protobuf:"varint,4,opt,name=status,proto3,enum=model.MonitorRule_Status" json:"status,omitempty" gorm:"column:status;"`
+	Status MonitorRule_Status `protobuf:"varint,4,opt,name=status,proto3,enum=model.MonitorRule_Status" json:"status" gorm:"column:status;"`
 	// The object unit, 1 => "workspace" 2 => "workflow'
-	Unit int32 `protobuf:"varint,5,opt,name=unit,proto3" json:"unit,omitempty" gorm:"column:unit;"`
+	Unit int32 `protobuf:"varint,5,opt,name=unit,proto3" json:"unit" gorm:"column:unit;"`
 	// The object text.
-	Text string `protobuf:"bytes,6,opt,name=text,proto3" json:"text,omitempty" gorm:"column:text;"`
+	Text string `protobuf:"bytes,6,opt,name=text,proto3" json:"text" gorm:"column:text;"`
 	// The trigger conditions. 3 => "retrying" 6 => "timeout"  7 => "succeed", 8 => "failed",
-	Trigger int32 `protobuf:"varint,7,opt,name=trigger,proto3" json:"trigger,omitempty" gorm:"column:trigger;"`
+	Trigger int32 `protobuf:"varint,7,opt,name=trigger,proto3" json:"trigger" gorm:"column:trigger;"`
 	// The alarm times. 1 ~ 99
-	AlarmTimes int32 `protobuf:"varint,8,opt,name=alarm_times,json=alarmTimes,proto3" json:"alarm_times,omitempty" gorm:"column:alarm_times;"`
+	AlarmTimes int32 `protobuf:"varint,8,opt,name=alarm_times,json=alarmTimes,proto3" json:"alarm_times" gorm:"column:alarm_times;"`
 	// The alarm interval. 1 ~ 30
-	AlarmInterval int32 `protobuf:"varint,9,opt,name=alarm_interval,json=alarmInterval,proto3" json:"alarm_interval,omitempty" gorm:"column:alarm_interval;"`
+	AlarmInterval int32 `protobuf:"varint,9,opt,name=alarm_interval,json=alarmInterval,proto3" json:"alarm_interval" gorm:"column:alarm_interval;"`
 	// The alarm type. "sms, email"
-	AlarmType string `protobuf:"bytes,10,opt,name=alarm_type,json=alarmType,proto3" json:"alarm_type,omitempty" gorm:"column:alarm_type;"`
+	AlarmType string `protobuf:"bytes,10,opt,name=alarm_type,json=alarmType,proto3" json:"alarm_type" gorm:"column:alarm_type;"`
 	// The free time. "00:01,03:00".
-	FreeTime string `protobuf:"bytes,11,opt,name=free_time,json=freeTime,proto3" json:"free_time,omitempty" gorm:"column:free_time;"`
+	FreeTime string `protobuf:"bytes,11,opt,name=free_time,json=freeTime,proto3" json:"free_time" gorm:"column:free_time;"`
 	// The alarm receiver. "usr-111111,usr-22222".
-	Receiver string `protobuf:"bytes,12,opt,name=receiver,proto3" json:"receiver,omitempty" gorm:"column:receiver;"`
+	Receiver string `protobuf:"bytes,12,opt,name=receiver,proto3" json:"receiver" gorm:"column:receiver;"`
 }
 
 func (x *MonitorRule) Reset() {
