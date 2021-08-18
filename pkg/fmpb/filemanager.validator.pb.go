@@ -48,8 +48,8 @@ func (this *ListRequest) Validate() error {
 	return nil
 }
 func (this *UpdateFileRequest) Validate() error {
-	if !(len(this.FileId) == 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '21'`, this.FileId))
+	if !(len(this.FileId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
 	}
 	if !(this.FileType < 3) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be less than '3'`, this.FileType))
@@ -78,13 +78,13 @@ func (this *DeleteAllFilesRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DownloadResponse) Validate() error {
+func (this *DescribeRequest) Validate() error {
+	if !(len(this.FileId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
+	}
 	return nil
 }
-func (this *DescribeRequest) Validate() error {
-	if !(len(this.Id) < 25) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length smaller than '25'`, this.Id))
-	}
+func (this *DownloadResponse) Validate() error {
 	return nil
 }
 func (this *FileInfoResponse) Validate() error {

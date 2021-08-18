@@ -39,7 +39,7 @@ message UploadFileRequest{
 
 message DownloadRequest{
   // The file id in HTTP Request_URI.
-  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=21" swaggerignore:"true"
+  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=20" swaggerignore:"true"
   string file_id = 1 [(validator.field) = {length_eq: 20}];
 }
 
@@ -60,8 +60,8 @@ message ListRequest{
 
 message UpdateFileRequest{
   // The file id in HTTP Request_URI.
-  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=21" swaggerignore:"true"
-  string file_id = 1 [(validator.field) = {length_eq: 21}];
+  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=20" swaggerignore:"true"
+  string file_id = 1 [(validator.field) = {length_eq: 20}];
 
   // The file name. required.
   // @inject_tag: params:"file_name" binding:"required,lte=500"
@@ -84,13 +84,16 @@ message DeleteAllFilesRequest{
   repeated string space_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
 }
 
+message DescribeRequest{
+  // The file id in HTTP Request_URI.
+  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=20" swaggerignore:"true"
+  string file_id = 1 [(validator.field) = {length_eq: 20}];
+}
+
 message DownloadResponse{
   bytes data = 1;
 }
 
-message DescribeRequest{
-  string id = 1 [(validator.field) = {length_lt: 25}];
-}
 
 message FileInfoResponse{
   string id = 1;
