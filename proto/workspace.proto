@@ -14,25 +14,30 @@ service Workspace {
     
     // API of workspace manager.
     rpc ListWorkspaces(request.ListWorkspaces)       returns (response.ListWorkspaces)    {}
+    
+    // DeleteWorkspaces delete the specified workspaces and its resources;
+    // Resources includes
+    //  - Members.
+    //  - Audit(Operation Records).
+    rpc DeleteWorkspaces(request.DeleteWorkspaces)   returns (model.EmptyStruct)          {}
+    rpc DisableWorkspaces(request.DisableWorkspaces) returns (model.EmptyStruct)          {}
+    rpc EnableWorkspaces(request.EnableWorkspaces)   returns (model.EmptyStruct)          {}
+    
     rpc CreateWorkspace(request.CreateWorkspace)     returns (response.CreateWorkspace)   {}
-    rpc DeleteWorkspace(request.DeleteWorkspace)     returns (model.EmptyStruct)          {}
     rpc UpdateWorkspace(request.UpdateWorkspace)     returns (model.EmptyStruct)          {}
     rpc DescribeWorkspace(request.DescribeWorkspace) returns (response.DescribeWorkspace) {}
-    rpc DisableWorkspace(request.DisableWorkspace)   returns (model.EmptyStruct)          {}
-    rpc EnableWorkspace(request.EnableWorkspace)     returns (model.EmptyStruct)          {}
     
     // API of workspace operation audit log.
     rpc AddAudit(request.AddAudit)     returns (model.EmptyStruct) {}
     rpc ListAudits(request.ListAudits) returns (response.ListAudits) {}
     
     // API of workspace role.
-    rpc ListSystemRoles(model.EmptyStruct) returns (response.ListSystemRoles) {}
+    rpc ListSystemRoles(request.ListSystemRoles) returns (response.ListSystemRoles) {}
     
     // API of workspace member.
-    rpc ListMembers(request.ListMembers)   returns (response.ListMembers)  {}
-    rpc AddMember(request.AddMember)       returns (model.EmptyStruct) {}
-    rpc RemoveMember(request.RemoveMember) returns (model.EmptyStruct) {}
-    rpc UpdateMember(request.UpdateMember) returns (model.EmptyStruct) {}
+    rpc ListMembers(request.ListMembers)    returns (response.ListMembers)  {}
+    rpc UpsertMembers(request.UpsertMembers) returns (model.EmptyStruct) {}
+    rpc DeleteMembers(request.DeleteMembers) returns (model.EmptyStruct) {}
     
     // Permission Auth.
     rpc CheckPermission(request.CheckPermission) returns (model.EmptyStruct) {}

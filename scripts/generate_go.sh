@@ -66,15 +66,38 @@ for f in proto/*.proto;do
   package=$(echo "${package}"|sed 's/"//g; s/;//g')
   dir=${package//"$MODULE"/}
 
-  protoc -I=. -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --govalidators_opt=paths=source_relative --govalidators_out=. --go_out=. --go-grpc_out=. "$f"
+  # Generate go struct and grpc.
+  protoc -I=. -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --go_out=. --go-grpc_out=. "$f"
 
-  protoc-go-inject-tag -input=".${dir}/${name}.pb.go"
+  # Generate validator code.
+  if grep "validator.proto" "$f" >/dev/null 2>&1; then
+    protoc -I=. -I="${GOPATH}"/src  -I=./proto --govalidators_opt=paths=source_relative --govalidators_out=. "$f"
+    mv -f proto/"${name}".validator.pb.go ".${dir}/"
+    sed -i "" 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
+  else
+    /bin/rm -f ".${dir}/${name}.validator.pb.go"
+  fi
 
-  sed -i "" '/\@inject_tag/d' ".${dir}/${name}.pb.go"
+    # Generate gosql code.
+  if grep 'gosql.proto' "$f"  >/dev/null 2>&1; then
+     protoc -I=. -I="${GOPATH}"/src  -I=./proto --gosql_opt=paths=source_relative --gosql_out=. "$f"
+     mv -f proto/"${name}".sql.pb.go ".${dir}/"
+  else
+    /bin/rm -f ".${dir}/${name}.sql.pb.go"
+  fi
 
-  mv -f proto/"${name}".validator.pb.go ".${dir}/"
+  # Inject tag to struct and remove comments.
+  pbgo=".${dir}/${name}.pb.go"
+  if grep "\@inject_tag" "${pbgo}" >/dev/null 2>&1; then
+    protoc-go-inject-tag -input="${pbgo}"
+    sed -i "" '/\@inject_tag/d' "${pbgo}"
+  fi
 done
 
 go fmt ./... >/dev/null 2>&1;
+
+make tidy || exit $?
+make vet || exit $?
+make lint || exit $?
 
 exit $?

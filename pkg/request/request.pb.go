@@ -35,11 +35,25 @@ type ListWorkspaces struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+	// Not required, default: id.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
+	// Search with workspace name; Not required.
+	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
 	// The used_id fixed to request user id.
-	UserId string `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" params:"-" form:"-" binding:"-" swaggerignore:"true"`
+	UserId string `protobuf:"bytes,6,opt,name=user_id,json=userId,proto3" json:"user_id" form:"-" binding:"-" swaggerignore:"true"`
+	// Filter by workspace status;  Not required.
+	// Valid optional: 1 => "enabled", 2 => "disabled".
+	Status model.Workspace_Status `protobuf:"varint,7,opt,name=status,proto3,enum=model.Workspace_Status" json:"status" form:"status" binding:"oneof=0 1 2"`
+	// Filter by workspace name; valid if `search` is empty; Not required.
+	Name string `protobuf:"bytes,8,opt,name=name,proto3" json:"name" form:"name" binding:"-"`
 }
 
 func (x *ListWorkspaces) Reset() {
@@ -88,11 +102,203 @@ func (x *ListWorkspaces) GetOffset() int32 {
 	return 0
 }
 
+func (x *ListWorkspaces) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListWorkspaces) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListWorkspaces) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
 func (x *ListWorkspaces) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
+}
+
+func (x *ListWorkspaces) GetStatus() model.Workspace_Status {
+	if x != nil {
+		return x.Status
+	}
+	return model.Workspace__
+}
+
+func (x *ListWorkspaces) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+// DeleteWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+type DeleteWorkspaces struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of workspace id. Is required, Min 1, Max 100.
+	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *DeleteWorkspaces) Reset() {
+	*x = DeleteWorkspaces{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteWorkspaces) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteWorkspaces) ProtoMessage() {}
+
+func (x *DeleteWorkspaces) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteWorkspaces.ProtoReflect.Descriptor instead.
+func (*DeleteWorkspaces) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *DeleteWorkspaces) GetSpaceIds() []string {
+	if x != nil {
+		return x.SpaceIds
+	}
+	return nil
+}
+
+// DisableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+type DisableWorkspaces struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of workspace id. Is required, Contains at least one.
+	// Disable workspace will suspend all release workflow and stop all running instances.
+	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *DisableWorkspaces) Reset() {
+	*x = DisableWorkspaces{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DisableWorkspaces) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisableWorkspaces) ProtoMessage() {}
+
+func (x *DisableWorkspaces) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisableWorkspaces.ProtoReflect.Descriptor instead.
+func (*DisableWorkspaces) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DisableWorkspaces) GetSpaceIds() []string {
+	if x != nil {
+		return x.SpaceIds
+	}
+	return nil
+}
+
+// EnableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+type EnableWorkspaces struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of workspace id. Is required, Contains at least one.
+	SpaceIds []string `protobuf:"bytes,1,rep,name=space_ids,json=spaceIds,proto3" json:"space_ids" binding:"gte=1,lte=100"`
+	// Whether resume all suspended workflow. Not required, default false.
+	ResumeWorkflow bool `protobuf:"varint,2,opt,name=resume_workflow,json=resumeWorkflow,proto3" json:"resume_workflow" default:"false" binding:"-"`
+}
+
+func (x *EnableWorkspaces) Reset() {
+	*x = EnableWorkspaces{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EnableWorkspaces) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnableWorkspaces) ProtoMessage() {}
+
+func (x *EnableWorkspaces) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnableWorkspaces.ProtoReflect.Descriptor instead.
+func (*EnableWorkspaces) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *EnableWorkspaces) GetSpaceIds() []string {
+	if x != nil {
+		return x.SpaceIds
+	}
+	return nil
+}
+
+func (x *EnableWorkspaces) GetResumeWorkflow() bool {
+	if x != nil {
+		return x.ResumeWorkflow
+	}
+	return false
 }
 
 // CreateWorkspace used as a request parameters for RPC and HTTP(based on Body)
@@ -102,18 +308,18 @@ type CreateWorkspace struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The owner fixed to request user id.
-	Owner string `protobuf:"bytes,1,opt,name=owner,proto3" json:"owner,omitempty" params:"-" binding:"-" swaggerignore:"true"`
-	// The space name of each account in each region is unique. Is required.
+	Owner string `protobuf:"bytes,1,opt,name=owner,proto3" json:"owner" binding:"-" swaggerignore:"true"`
+	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
 	// Description of the workspace, Not required, Max 1024 char.
-	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
 }
 
 func (x *CreateWorkspace) Reset() {
 	*x = CreateWorkspace{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[1]
+		mi := &file_proto_request_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -126,7 +332,7 @@ func (x *CreateWorkspace) String() string {
 func (*CreateWorkspace) ProtoMessage() {}
 
 func (x *CreateWorkspace) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[1]
+	mi := &file_proto_request_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -139,7 +345,7 @@ func (x *CreateWorkspace) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateWorkspace.ProtoReflect.Descriptor instead.
 func (*CreateWorkspace) Descriptor() ([]byte, []int) {
-	return file_proto_request_proto_rawDescGZIP(), []int{1}
+	return file_proto_request_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateWorkspace) GetOwner() string {
@@ -163,55 +369,6 @@ func (x *CreateWorkspace) GetDesc() string {
 	return ""
 }
 
-// DeleteWorkspace used as a request parameters for RPC.
-type DeleteWorkspace struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// The workspace id in HTTP Request-URI
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-}
-
-func (x *DeleteWorkspace) Reset() {
-	*x = DeleteWorkspace{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DeleteWorkspace) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteWorkspace) ProtoMessage() {}
-
-func (x *DeleteWorkspace) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteWorkspace.ProtoReflect.Descriptor instead.
-func (*DeleteWorkspace) Descriptor() ([]byte, []int) {
-	return file_proto_request_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *DeleteWorkspace) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
 // UpdateWorkspace used as a request parameters for RPC and HTTP(based on Body)
 type UpdateWorkspace struct {
 	state         protoimpl.MessageState
@@ -219,18 +376,18 @@ type UpdateWorkspace struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-	// The space name of each account in each region is unique. Is required.
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" params:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
-	// Description of the workspace, Not required, Max 1024 char.
-	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty" params:"desc" binding:"lte=1024"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"`
+	// Description of the workspace, Not required, Max length 1024.
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
 }
 
 func (x *UpdateWorkspace) Reset() {
 	*x = UpdateWorkspace{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[3]
+		mi := &file_proto_request_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -243,7 +400,7 @@ func (x *UpdateWorkspace) String() string {
 func (*UpdateWorkspace) ProtoMessage() {}
 
 func (x *UpdateWorkspace) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[3]
+	mi := &file_proto_request_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,12 +413,12 @@ func (x *UpdateWorkspace) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateWorkspace.ProtoReflect.Descriptor instead.
 func (*UpdateWorkspace) Descriptor() ([]byte, []int) {
-	return file_proto_request_proto_rawDescGZIP(), []int{3}
+	return file_proto_request_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *UpdateWorkspace) GetId() string {
+func (x *UpdateWorkspace) GetSpaceId() string {
 	if x != nil {
-		return x.Id
+		return x.SpaceId
 	}
 	return ""
 }
@@ -287,13 +444,13 @@ type DescribeWorkspace struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *DescribeWorkspace) Reset() {
 	*x = DescribeWorkspace{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[4]
+		mi := &file_proto_request_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -306,7 +463,7 @@ func (x *DescribeWorkspace) String() string {
 func (*DescribeWorkspace) ProtoMessage() {}
 
 func (x *DescribeWorkspace) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[4]
+	mi := &file_proto_request_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -319,121 +476,14 @@ func (x *DescribeWorkspace) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DescribeWorkspace.ProtoReflect.Descriptor instead.
 func (*DescribeWorkspace) Descriptor() ([]byte, []int) {
-	return file_proto_request_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *DescribeWorkspace) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-// DisableWorkspace used as a request parameters for RPC.
-type DisableWorkspace struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// The workspace id in HTTP Request-URI
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-}
-
-func (x *DisableWorkspace) Reset() {
-	*x = DisableWorkspace{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *DisableWorkspace) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DisableWorkspace) ProtoMessage() {}
-
-func (x *DisableWorkspace) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DisableWorkspace.ProtoReflect.Descriptor instead.
-func (*DisableWorkspace) Descriptor() ([]byte, []int) {
-	return file_proto_request_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *DisableWorkspace) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-// EnableWorkspace used as a request parameters for RPC.
-type EnableWorkspace struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// The workspace id in HTTP Request-URI
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-	// Whether resume all suspended workflow.
-	ResumeWorkflow bool `protobuf:"varint,2,opt,name=resume_workflow,json=resumeWorkflow,proto3" json:"resume_workflow,omitempty" params:"resume_workflow" default:"false" binding:"-"`
-}
-
-func (x *EnableWorkspace) Reset() {
-	*x = EnableWorkspace{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *EnableWorkspace) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*EnableWorkspace) ProtoMessage() {}
-
-func (x *EnableWorkspace) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use EnableWorkspace.ProtoReflect.Descriptor instead.
-func (*EnableWorkspace) Descriptor() ([]byte, []int) {
 	return file_proto_request_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *EnableWorkspace) GetId() string {
+func (x *DescribeWorkspace) GetSpaceId() string {
 	if x != nil {
-		return x.Id
+		return x.SpaceId
 	}
 	return ""
-}
-
-func (x *EnableWorkspace) GetResumeWorkflow() bool {
-	if x != nil {
-		return x.ResumeWorkflow
-	}
-	return false
 }
 
 // AddAudit used as a request parameters for RPC.
@@ -492,25 +542,32 @@ type ListAudits struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The field list used to sorted query results.
+	// Optional values: {id, created}.
+	// Multiple fields are separated by commas(","), eg: sort_by="created".
+	// Not required, default: id.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
 	// The used_id fixed to request user id.
-	UserId string `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty" params:"-" form:"-" binding:"-" swaggerignore:"true"`
+	UserId string `protobuf:"bytes,5,opt,name=user_id,json=userId,proto3" json:"user_id" form:"-" binding:"-" swaggerignore:"true"`
 	// Querying conditions. Not required.
-	SpaceId string `protobuf:"bytes,4,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" form:"space_id" binding:"-"`
+	SpaceId string `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id" form:"space_id" binding:"-"`
 	// Querying conditions. Not required.
-	Type model.OpAudit_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.OpAudit_Type" json:"type,omitempty" params:"type" form:"type" binding:"-"`
+	Type model.OpAudit_Type `protobuf:"varint,7,opt,name=type,proto3,enum=model.OpAudit_Type" json:"type" form:"type" binding:"-"`
 	// Querying conditions. Not required.
-	Action string `protobuf:"bytes,6,opt,name=action,proto3" json:"action,omitempty" params:"action" form:"action" binding:"-"`
+	Action string `protobuf:"bytes,8,opt,name=action,proto3" json:"action" form:"action" binding:"-"`
 	// Querying conditions. Not required.
-	State model.OpAudit_State `protobuf:"varint,7,opt,name=state,proto3,enum=model.OpAudit_State" json:"state,omitempty" params:"state" form:"state" binding:"-"`
+	State model.OpAudit_State `protobuf:"varint,9,opt,name=state,proto3,enum=model.OpAudit_State" json:"state" form:"state" binding:"-"`
 	// Querying conditions. Not required.
 	// Desc: Timestamp of start time.
-	Started int64 `protobuf:"varint,8,opt,name=started,proto3" json:"started,omitempty" params:"started" form:"started" binding:"-"`
+	Started int64 `protobuf:"varint,10,opt,name=started,proto3" json:"started" form:"started" binding:"-"`
 	// Querying conditions. Not required.
 	// Desc: Timestamp of end time.
-	Ended int64 `protobuf:"varint,9,opt,name=ended,proto3" json:"ended,omitempty" params:"ended" form:"ended" binding:"-"`
+	Ended int64 `protobuf:"varint,11,opt,name=ended,proto3" json:"ended" form:"ended" binding:"-"`
 }
 
 func (x *ListAudits) Reset() {
@@ -557,6 +614,20 @@ func (x *ListAudits) GetOffset() int32 {
 		return x.Offset
 	}
 	return 0
+}
+
+func (x *ListAudits) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListAudits) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
 }
 
 func (x *ListAudits) GetUserId() string {
@@ -608,6 +679,62 @@ func (x *ListAudits) GetEnded() int64 {
 	return 0
 }
 
+// ListSystemRoles used as reply parameters in RPC or response body in HTTP.
+type ListSystemRoles struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	//	// Limit the maximum number of entries returned this time.
+	//	// Not required, Max 100, default 100.
+	//	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+	//
+	//	// The offset position. Not required, default 0.
+	//	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+	//
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ListSystemRoles) Reset() {
+	*x = ListSystemRoles{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListSystemRoles) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSystemRoles) ProtoMessage() {}
+
+func (x *ListSystemRoles) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSystemRoles.ProtoReflect.Descriptor instead.
+func (*ListSystemRoles) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *ListSystemRoles) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
 // ListMembers used as a request parameters for RPC and HTTP(based on URL-Query)
 type ListMembers struct {
 	state         protoimpl.MessageState
@@ -616,17 +743,17 @@ type ListMembers struct {
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" minimum:"0" maximum:"100"`
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0"`
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *ListMembers) Reset() {
 	*x = ListMembers{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[9]
+		mi := &file_proto_request_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +766,7 @@ func (x *ListMembers) String() string {
 func (*ListMembers) ProtoMessage() {}
 
 func (x *ListMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[9]
+	mi := &file_proto_request_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +779,7 @@ func (x *ListMembers) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMembers.ProtoReflect.Descriptor instead.
 func (*ListMembers) Descriptor() ([]byte, []int) {
-	return file_proto_request_proto_rawDescGZIP(), []int{9}
+	return file_proto_request_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListMembers) GetLimit() int32 {
@@ -676,87 +803,20 @@ func (x *ListMembers) GetSpaceId() string {
 	return ""
 }
 
-// AddMember used as a request parameters for RPC and HTTP(based on Body).
-type AddMember struct {
+// UpsertMembers used as a request parameters for RPC and HTTP(based on Body).
+type UpsertMembers struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-	// The account user_id. Is Required.
-	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id" params:"user_id" binding:"required"`
-	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required.
-	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids,omitempty" params:"role_ids" binding:"required"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The list of pair to user_id => role_ids. Min: 1, Max: 100
+	Users []*UpsertMembers_Pair `protobuf:"bytes,2,rep,name=users,proto3" json:"users" binding:"gte=1,lte=100"`
 }
 
-func (x *AddMember) Reset() {
-	*x = AddMember{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *AddMember) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*AddMember) ProtoMessage() {}
-
-func (x *AddMember) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use AddMember.ProtoReflect.Descriptor instead.
-func (*AddMember) Descriptor() ([]byte, []int) {
-	return file_proto_request_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *AddMember) GetSpaceId() string {
-	if x != nil {
-		return x.SpaceId
-	}
-	return ""
-}
-
-func (x *AddMember) GetUserId() string {
-	if x != nil {
-		return x.UserId
-	}
-	return ""
-}
-
-func (x *AddMember) GetRoleIds() string {
-	if x != nil {
-		return x.RoleIds
-	}
-	return ""
-}
-
-// RemoveMember used as a request parameters for RPC and HTTP(based on Body).
-type RemoveMember struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-	// The member(user) id in HTTP Request-URI
-	MemberId string `protobuf:"bytes,2,opt,name=member_id,json=memberId,proto3" json:"member_id,omitempty" params:"member_id" uri:"member_id" binding:"-" swaggerignore:"true"`
-}
-
-func (x *RemoveMember) Reset() {
-	*x = RemoveMember{}
+func (x *UpsertMembers) Reset() {
+	*x = UpsertMembers{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_request_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -764,13 +824,13 @@ func (x *RemoveMember) Reset() {
 	}
 }
 
-func (x *RemoveMember) String() string {
+func (x *UpsertMembers) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RemoveMember) ProtoMessage() {}
+func (*UpsertMembers) ProtoMessage() {}
 
-func (x *RemoveMember) ProtoReflect() protoreflect.Message {
+func (x *UpsertMembers) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_request_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -782,41 +842,39 @@ func (x *RemoveMember) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RemoveMember.ProtoReflect.Descriptor instead.
-func (*RemoveMember) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpsertMembers.ProtoReflect.Descriptor instead.
+func (*UpsertMembers) Descriptor() ([]byte, []int) {
 	return file_proto_request_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *RemoveMember) GetSpaceId() string {
+func (x *UpsertMembers) GetSpaceId() string {
 	if x != nil {
 		return x.SpaceId
 	}
 	return ""
 }
 
-func (x *RemoveMember) GetMemberId() string {
+func (x *UpsertMembers) GetUsers() []*UpsertMembers_Pair {
 	if x != nil {
-		return x.MemberId
+		return x.Users
 	}
-	return ""
+	return nil
 }
 
-// UpdateMember used as a request parameters for RPC and HTTP(based on Body).
-type UpdateMember struct {
+// DeleteMembers used as a request parameters for RPC and HTTP(based on Body).
+type DeleteMembers struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// The workspace id in HTTP Request-URI
-	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-	// The member(user) id in HTTP Request-URI
-	MemberId string `protobuf:"bytes,2,opt,name=member_id,json=memberId,proto3" json:"member_id,omitempty" params:"member_id" uri:"member_id" binding:"-" swaggerignore:"true"`
-	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required.
-	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids,omitempty" params:"role_ids" binding:"required"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The user(member) id. Is required, Min: 1, Max 100.
+	UserIds []string `protobuf:"bytes,2,rep,name=user_ids,json=userIds,proto3" json:"user_ids" binding:"-"`
 }
 
-func (x *UpdateMember) Reset() {
-	*x = UpdateMember{}
+func (x *DeleteMembers) Reset() {
+	*x = DeleteMembers{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_request_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -824,13 +882,13 @@ func (x *UpdateMember) Reset() {
 	}
 }
 
-func (x *UpdateMember) String() string {
+func (x *DeleteMembers) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateMember) ProtoMessage() {}
+func (*DeleteMembers) ProtoMessage() {}
 
-func (x *UpdateMember) ProtoReflect() protoreflect.Message {
+func (x *DeleteMembers) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_request_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -842,30 +900,23 @@ func (x *UpdateMember) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateMember.ProtoReflect.Descriptor instead.
-func (*UpdateMember) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteMembers.ProtoReflect.Descriptor instead.
+func (*DeleteMembers) Descriptor() ([]byte, []int) {
 	return file_proto_request_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *UpdateMember) GetSpaceId() string {
+func (x *DeleteMembers) GetSpaceId() string {
 	if x != nil {
 		return x.SpaceId
 	}
 	return ""
 }
 
-func (x *UpdateMember) GetMemberId() string {
+func (x *DeleteMembers) GetUserIds() []string {
 	if x != nil {
-		return x.MemberId
+		return x.UserIds
 	}
-	return ""
-}
-
-func (x *UpdateMember) GetRoleIds() string {
-	if x != nil {
-		return x.RoleIds
-	}
-	return ""
+	return nil
 }
 
 // CheckPermission used as a request parameters for RPC.
@@ -948,6 +999,2035 @@ func (x *CheckPermission) GetOpType() model.OpAudit_Type {
 	return model.OpAudit__
 }
 
+// ListStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
+	// Not required, default: id.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// Search with workflow name; Not required.
+	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
+}
+
+func (x *ListStreamFlows) Reset() {
+	*x = ListStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStreamFlows) ProtoMessage() {}
+
+func (x *ListStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStreamFlows.ProtoReflect.Descriptor instead.
+func (*ListStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ListStreamFlows) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListStreamFlows) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListStreamFlows) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListStreamFlows) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ListStreamFlows) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+// CreateStreamFlow used as a request parameters for RPC and HTTP(based on Body)
+type CreateStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow name in each workspace is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128"`
+	// Description of the workspace, Not required, Max length 1024.
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
+	// Workflow Type. Is Required, Optional Value: 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator".
+	// Desc: Cannot be modified after creation.
+	Type model.StreamFlow_Type `protobuf:"varint,4,opt,name=type,proto3,enum=model.StreamFlow_Type" json:"type" binding:"gte=1,lte=3"`
+}
+
+func (x *CreateStreamFlow) Reset() {
+	*x = CreateStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateStreamFlow) ProtoMessage() {}
+
+func (x *CreateStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateStreamFlow.ProtoReflect.Descriptor instead.
+func (*CreateStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *CreateStreamFlow) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *CreateStreamFlow) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateStreamFlow) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+func (x *CreateStreamFlow) GetType() model.StreamFlow_Type {
+	if x != nil {
+		return x.Type
+	}
+	return model.StreamFlow__
+}
+
+// DeleteStreamFlows used as a request parameters for RPC and HTTP(based on Body)
+type DeleteStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The list of workflow id. Is required, Min 1, Max 100.
+	FlowIds []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *DeleteStreamFlows) Reset() {
+	*x = DeleteStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteStreamFlows) ProtoMessage() {}
+
+func (x *DeleteStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteStreamFlows.ProtoReflect.Descriptor instead.
+func (*DeleteStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *DeleteStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *DeleteStreamFlows) GetFlowIds() []string {
+	if x != nil {
+		return x.FlowIds
+	}
+	return nil
+}
+
+// UpdateStreamFlow used as a request parameters for RPC and HTTP(based on Body).
+type UpdateStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow name in each workspace is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" binding:"gte=2,lte=128"`
+	// Description of the workspace, Not required, Max length 1024.
+	Desc string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
+}
+
+func (x *UpdateStreamFlow) Reset() {
+	*x = UpdateStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateStreamFlow) ProtoMessage() {}
+
+func (x *UpdateStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateStreamFlow.ProtoReflect.Descriptor instead.
+func (*UpdateStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *UpdateStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *UpdateStreamFlow) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateStreamFlow) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+// DescribeStreamFlow used as a request parameters for RPC.
+type DescribeStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version id in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *DescribeStreamFlow) Reset() {
+	*x = DescribeStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeStreamFlow) ProtoMessage() {}
+
+func (x *DescribeStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeStreamFlow.ProtoReflect.Descriptor instead.
+func (*DescribeStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *DescribeStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *DescribeStreamFlow) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// SetStreamFlowNode used as a request parameters for RPC.
+type SetStreamFlowNode struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// Workflow ID it belongs to.
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The node info of JSON format.
+	Nodes string `protobuf:"bytes,3,opt,name=nodes,proto3" json:"nodes,omitempty"`
+}
+
+func (x *SetStreamFlowNode) Reset() {
+	*x = SetStreamFlowNode{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SetStreamFlowNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetStreamFlowNode) ProtoMessage() {}
+
+func (x *SetStreamFlowNode) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetStreamFlowNode.ProtoReflect.Descriptor instead.
+func (*SetStreamFlowNode) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *SetStreamFlowNode) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *SetStreamFlowNode) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *SetStreamFlowNode) GetNodes() string {
+	if x != nil {
+		return x.Nodes
+	}
+	return ""
+}
+
+// SetStreamFlowSchedule used as a request parameters for RPC.
+type SetStreamFlowSchedule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// Workflow ID it belongs to.
+	FlowId string                    `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	Info   *model.StreamFlowSchedule `protobuf:"bytes,3,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *SetStreamFlowSchedule) Reset() {
+	*x = SetStreamFlowSchedule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SetStreamFlowSchedule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetStreamFlowSchedule) ProtoMessage() {}
+
+func (x *SetStreamFlowSchedule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetStreamFlowSchedule.ProtoReflect.Descriptor instead.
+func (*SetStreamFlowSchedule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *SetStreamFlowSchedule) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *SetStreamFlowSchedule) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *SetStreamFlowSchedule) GetInfo() *model.StreamFlowSchedule {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// SetStreamFlowEnv used as a request parameters for RPC.
+type SetStreamFlowEnv struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// Workflow ID it belongs to.
+	FlowId string               `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	Info   *model.StreamFlowEnv `protobuf:"bytes,3,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *SetStreamFlowEnv) Reset() {
+	*x = SetStreamFlowEnv{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SetStreamFlowEnv) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetStreamFlowEnv) ProtoMessage() {}
+
+func (x *SetStreamFlowEnv) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetStreamFlowEnv.ProtoReflect.Descriptor instead.
+func (*SetStreamFlowEnv) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *SetStreamFlowEnv) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *SetStreamFlowEnv) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *SetStreamFlowEnv) GetInfo() *model.StreamFlowEnv {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// GetStreamFlowNode used as a request parameters for RPC.
+type GetStreamFlowNode struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version id in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowNode) Reset() {
+	*x = GetStreamFlowNode{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowNode) ProtoMessage() {}
+
+func (x *GetStreamFlowNode) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowNode.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowNode) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *GetStreamFlowNode) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *GetStreamFlowNode) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// GetStreamFlowSchedule used as a request parameters for RPC.
+type GetStreamFlowSchedule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version id in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowSchedule) Reset() {
+	*x = GetStreamFlowSchedule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowSchedule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowSchedule) ProtoMessage() {}
+
+func (x *GetStreamFlowSchedule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowSchedule.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowSchedule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *GetStreamFlowSchedule) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *GetStreamFlowSchedule) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// GetStreamFlowEnv used as a request parameters for RPC.
+type GetStreamFlowEnv struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow version id in HTTP Request-URI
+	Version int64 `protobuf:"varint,2,opt,name=version,proto3" json:"version" uri:"ver_id" binding:"-" swaggerignore:"true"`
+}
+
+func (x *GetStreamFlowEnv) Reset() {
+	*x = GetStreamFlowEnv{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetStreamFlowEnv) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetStreamFlowEnv) ProtoMessage() {}
+
+func (x *GetStreamFlowEnv) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetStreamFlowEnv.ProtoReflect.Descriptor instead.
+func (*GetStreamFlowEnv) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *GetStreamFlowEnv) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *GetStreamFlowEnv) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// ExecuteStreamFlow used as a request parameters for RPC.
+type ExecuteStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// Only used for flowmanager -> scheduler.
+	// FIXME: review it.
+	Property *model.StreamFlowProperty `protobuf:"bytes,2,opt,name=property,proto3" json:"property,omitempty"`
+}
+
+func (x *ExecuteStreamFlow) Reset() {
+	*x = ExecuteStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ExecuteStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExecuteStreamFlow) ProtoMessage() {}
+
+func (x *ExecuteStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExecuteStreamFlow.ProtoReflect.Descriptor instead.
+func (*ExecuteStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ExecuteStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *ExecuteStreamFlow) GetProperty() *model.StreamFlowProperty {
+	if x != nil {
+		return x.Property
+	}
+	return nil
+}
+
+// ListReleaseStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query).
+type ListReleaseStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The field list used to sorted query results.
+	// Optional values: {flow_id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
+	// Not required, default: flow_id.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// Search with workflow name; Not required.
+	Search string `protobuf:"bytes,6,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
+}
+
+func (x *ListReleaseStreamFlows) Reset() {
+	*x = ListReleaseStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListReleaseStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListReleaseStreamFlows) ProtoMessage() {}
+
+func (x *ListReleaseStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListReleaseStreamFlows.ProtoReflect.Descriptor instead.
+func (*ListReleaseStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ListReleaseStreamFlows) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListReleaseStreamFlows) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListReleaseStreamFlows) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListReleaseStreamFlows) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListReleaseStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ListReleaseStreamFlows) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+// ReleaseStreamFlow used as a request parameters for RPC and HTTP(based on Body.)
+type ReleaseStreamFlow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+	// Description for this releases. Not required, Max length 1024.
+	Desc        string `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
+	StopRunning bool   `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running" binding:"-"`
+}
+
+func (x *ReleaseStreamFlow) Reset() {
+	*x = ReleaseStreamFlow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[27]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReleaseStreamFlow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReleaseStreamFlow) ProtoMessage() {}
+
+func (x *ReleaseStreamFlow) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[27]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReleaseStreamFlow.ProtoReflect.Descriptor instead.
+func (*ReleaseStreamFlow) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ReleaseStreamFlow) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *ReleaseStreamFlow) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+func (x *ReleaseStreamFlow) GetStopRunning() bool {
+	if x != nil {
+		return x.StopRunning
+	}
+	return false
+}
+
+// SuspendReleaseStreamFlows used as a request parameters for RPC and HTTP(based on Body).
+type SuspendReleaseStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The list of workflow id. Is Required. Min: 1, Max: 100
+	FlowIds     []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids" binding:"gte=1,lte=100"`
+	StopRunning bool     `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running" binding:"-"`
+}
+
+func (x *SuspendReleaseStreamFlows) Reset() {
+	*x = SuspendReleaseStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[28]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SuspendReleaseStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SuspendReleaseStreamFlows) ProtoMessage() {}
+
+func (x *SuspendReleaseStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[28]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SuspendReleaseStreamFlows.ProtoReflect.Descriptor instead.
+func (*SuspendReleaseStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *SuspendReleaseStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *SuspendReleaseStreamFlows) GetFlowIds() []string {
+	if x != nil {
+		return x.FlowIds
+	}
+	return nil
+}
+
+func (x *SuspendReleaseStreamFlows) GetStopRunning() bool {
+	if x != nil {
+		return x.StopRunning
+	}
+	return false
+}
+
+// ResumeReleaseStreamFlows used as a request parameters for RPC.
+type ResumeReleaseStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The list of workflow id. Is Required. Min: 1, Max: 100
+	FlowIds []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *ResumeReleaseStreamFlows) Reset() {
+	*x = ResumeReleaseStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[29]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResumeReleaseStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResumeReleaseStreamFlows) ProtoMessage() {}
+
+func (x *ResumeReleaseStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[29]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResumeReleaseStreamFlows.ProtoReflect.Descriptor instead.
+func (*ResumeReleaseStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *ResumeReleaseStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ResumeReleaseStreamFlows) GetFlowIds() []string {
+	if x != nil {
+		return x.FlowIds
+	}
+	return nil
+}
+
+// ListStreamFlowVersions used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListStreamFlowVersions struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The field list used to sorted query results.
+	// Optional values: {version, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="version,updated".
+	// Not required, default: version.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
+	// The workflow id in HTTP Request-URI
+	FlowId string `protobuf:"bytes,5,opt,name=flow_id,json=flowId,proto3" json:"flow_id" uri:"flow_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ListStreamFlowVersions) Reset() {
+	*x = ListStreamFlowVersions{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[30]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStreamFlowVersions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStreamFlowVersions) ProtoMessage() {}
+
+func (x *ListStreamFlowVersions) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[30]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStreamFlowVersions.ProtoReflect.Descriptor instead.
+func (*ListStreamFlowVersions) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *ListStreamFlowVersions) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListStreamFlowVersions) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListStreamFlowVersions) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListStreamFlowVersions) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListStreamFlowVersions) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListMonitorRules struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *ListMonitorRules) Reset() {
+	*x = ListMonitorRules{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[31]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListMonitorRules) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMonitorRules) ProtoMessage() {}
+
+func (x *ListMonitorRules) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[31]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMonitorRules.ProtoReflect.Descriptor instead.
+func (*ListMonitorRules) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *ListMonitorRules) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListMonitorRules) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListMonitorRules) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+// CreateMonitorRule used as a request parameters for RPC and HTTP(based on Body).
+type CreateMonitorRule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.MonitorRule `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *CreateMonitorRule) Reset() {
+	*x = CreateMonitorRule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[32]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateMonitorRule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateMonitorRule) ProtoMessage() {}
+
+func (x *CreateMonitorRule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[32]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateMonitorRule.ProtoReflect.Descriptor instead.
+func (*CreateMonitorRule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *CreateMonitorRule) GetInfo() *model.MonitorRule {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// DeleteMonitorRules used as a request parameters for RPC and HTTP(based on Body).
+type DeleteMonitorRules struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *DeleteMonitorRules) Reset() {
+	*x = DeleteMonitorRules{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteMonitorRules) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteMonitorRules) ProtoMessage() {}
+
+func (x *DeleteMonitorRules) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteMonitorRules.ProtoReflect.Descriptor instead.
+func (*DeleteMonitorRules) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *DeleteMonitorRules) GetRuleIds() []string {
+	if x != nil {
+		return x.RuleIds
+	}
+	return nil
+}
+
+// EnableMonitorRules used as a request parameters for RPC and HTTP(based on Body).
+type EnableMonitorRules struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *EnableMonitorRules) Reset() {
+	*x = EnableMonitorRules{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EnableMonitorRules) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnableMonitorRules) ProtoMessage() {}
+
+func (x *EnableMonitorRules) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnableMonitorRules.ProtoReflect.Descriptor instead.
+func (*EnableMonitorRules) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *EnableMonitorRules) GetRuleIds() []string {
+	if x != nil {
+		return x.RuleIds
+	}
+	return nil
+}
+
+// DisableMonitorRules used as a request parameters for RPC and HTTP(based on Body).
+type DisableMonitorRules struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	RuleIds []string `protobuf:"bytes,1,rep,name=rule_ids,json=ruleIds,proto3" json:"rule_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *DisableMonitorRules) Reset() {
+	*x = DisableMonitorRules{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[35]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DisableMonitorRules) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisableMonitorRules) ProtoMessage() {}
+
+func (x *DisableMonitorRules) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[35]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisableMonitorRules.ProtoReflect.Descriptor instead.
+func (*DisableMonitorRules) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *DisableMonitorRules) GetRuleIds() []string {
+	if x != nil {
+		return x.RuleIds
+	}
+	return nil
+}
+
+// UpdateMonitorRule used as a request parameters for RPC.
+type UpdateMonitorRule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Info *model.MonitorRule `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+}
+
+func (x *UpdateMonitorRule) Reset() {
+	*x = UpdateMonitorRule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[36]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateMonitorRule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateMonitorRule) ProtoMessage() {}
+
+func (x *UpdateMonitorRule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[36]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateMonitorRule.ProtoReflect.Descriptor instead.
+func (*UpdateMonitorRule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *UpdateMonitorRule) GetInfo() *model.MonitorRule {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+// DescribeMonitorRule used as a request parameters for RPC.
+type DescribeMonitorRule struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The monitor rule id in HTTP Request-URI. Is Required.
+	RuleId string `protobuf:"bytes,1,opt,name=rule_id,json=ruleId,proto3" json:"rule_id" uri:"rule_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *DescribeMonitorRule) Reset() {
+	*x = DescribeMonitorRule{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[37]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeMonitorRule) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeMonitorRule) ProtoMessage() {}
+
+func (x *DescribeMonitorRule) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[37]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeMonitorRule.ProtoReflect.Descriptor instead.
+func (*DescribeMonitorRule) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *DescribeMonitorRule) GetRuleId() string {
+	if x != nil {
+		return x.RuleId
+	}
+	return ""
+}
+
+// SubmitStreamFlows used as a request parameters for RPC.
+// FIXME: review it.
+type SubmitStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Properties  []*model.StreamFlowProperty `protobuf:"bytes,1,rep,name=properties,proto3" json:"properties,omitempty"`
+	StopRunning bool                        `protobuf:"varint,2,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running,omitempty"`
+}
+
+func (x *SubmitStreamFlows) Reset() {
+	*x = SubmitStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[38]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SubmitStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitStreamFlows) ProtoMessage() {}
+
+func (x *SubmitStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[38]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitStreamFlows.ProtoReflect.Descriptor instead.
+func (*SubmitStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *SubmitStreamFlows) GetProperties() []*model.StreamFlowProperty {
+	if x != nil {
+		return x.Properties
+	}
+	return nil
+}
+
+func (x *SubmitStreamFlows) GetStopRunning() bool {
+	if x != nil {
+		return x.StopRunning
+	}
+	return false
+}
+
+// OfflineStreamFlows used as a request parameters for RPC.
+type OfflineStreamFlows struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId     string   `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty"`
+	FlowIds     []string `protobuf:"bytes,2,rep,name=flow_ids,json=flowIds,proto3" json:"flow_ids,omitempty"`
+	StopRunning bool     `protobuf:"varint,3,opt,name=stop_running,json=stopRunning,proto3" json:"stop_running,omitempty"`
+}
+
+func (x *OfflineStreamFlows) Reset() {
+	*x = OfflineStreamFlows{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[39]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *OfflineStreamFlows) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OfflineStreamFlows) ProtoMessage() {}
+
+func (x *OfflineStreamFlows) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[39]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OfflineStreamFlows.ProtoReflect.Descriptor instead.
+func (*OfflineStreamFlows) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *OfflineStreamFlows) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *OfflineStreamFlows) GetFlowIds() []string {
+	if x != nil {
+		return x.FlowIds
+	}
+	return nil
+}
+
+func (x *OfflineStreamFlows) GetStopRunning() bool {
+	if x != nil {
+		return x.StopRunning
+	}
+	return false
+}
+
+// ListStreamInsts used as a request parameters for RPC and HTTP(based on URL-Query).
+// This struct can used for ListStreamInsts and ListStreamInsts
+type ListStreamInsts struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The workspace id in HTTP Request-URI. Is Required.
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The workflow id. Not required.
+	FlowId string `protobuf:"bytes,4,opt,name=flow_id,json=flowId,proto3" json:"flow_id" form:"flow_id" binding:"-"`
+	// The workflow version id. Not required.
+	Version int64 `protobuf:"varint,5,opt,name=version,proto3" json:"version" form:"ver_id" binding:"-"`
+}
+
+func (x *ListStreamInsts) Reset() {
+	*x = ListStreamInsts{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[40]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStreamInsts) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStreamInsts) ProtoMessage() {}
+
+func (x *ListStreamInsts) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[40]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStreamInsts.ProtoReflect.Descriptor instead.
+func (*ListStreamInsts) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *ListStreamInsts) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListStreamInsts) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListStreamInsts) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ListStreamInsts) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *ListStreamInsts) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+// FlowInstIdPair is the k/v pair of flowId => instId.
+type FlowInstIdPair struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workflow id. Is Required.
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id" binding:"len=20"`
+	// The instance id. Is Required.
+	InstId string `protobuf:"bytes,3,opt,name=inst_id,json=instId,proto3" json:"inst_id" binding:"len=20"`
+}
+
+func (x *FlowInstIdPair) Reset() {
+	*x = FlowInstIdPair{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[41]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FlowInstIdPair) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlowInstIdPair) ProtoMessage() {}
+
+func (x *FlowInstIdPair) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[41]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlowInstIdPair.ProtoReflect.Descriptor instead.
+func (*FlowInstIdPair) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *FlowInstIdPair) GetFlowId() string {
+	if x != nil {
+		return x.FlowId
+	}
+	return ""
+}
+
+func (x *FlowInstIdPair) GetInstId() string {
+	if x != nil {
+		return x.InstId
+	}
+	return ""
+}
+
+// TerminateStreamInsts used as a request parameters for RPC.
+// This struct can used for TerminateStreamCycleInst and TerminateStreamTestInst.
+type TerminateStreamInsts struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI. Is Required.
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *TerminateStreamInsts) Reset() {
+	*x = TerminateStreamInsts{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[42]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TerminateStreamInsts) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TerminateStreamInsts) ProtoMessage() {}
+
+func (x *TerminateStreamInsts) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[42]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TerminateStreamInsts.ProtoReflect.Descriptor instead.
+func (*TerminateStreamInsts) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *TerminateStreamInsts) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *TerminateStreamInsts) GetInstIds() []*FlowInstIdPair {
+	if x != nil {
+		return x.InstIds
+	}
+	return nil
+}
+
+// SuspendStreamInsts used as a request parameters for RPC.
+// This struct can used for SuspendStreamCycleInst and SuspendStreamTestInst.
+type SuspendStreamInsts struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI. Is Required.
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *SuspendStreamInsts) Reset() {
+	*x = SuspendStreamInsts{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[43]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SuspendStreamInsts) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SuspendStreamInsts) ProtoMessage() {}
+
+func (x *SuspendStreamInsts) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[43]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SuspendStreamInsts.ProtoReflect.Descriptor instead.
+func (*SuspendStreamInsts) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *SuspendStreamInsts) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *SuspendStreamInsts) GetInstIds() []*FlowInstIdPair {
+	if x != nil {
+		return x.InstIds
+	}
+	return nil
+}
+
+// ResumeStreamInsts used as a request parameters for RPC.
+// This struct can used for ResumeStreamCycleInst and SuspendStreamTestInst.
+type ResumeStreamInsts struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI. Is Required.
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	InstIds []*FlowInstIdPair `protobuf:"bytes,2,rep,name=inst_ids,json=instIds,proto3" json:"inst_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *ResumeStreamInsts) Reset() {
+	*x = ResumeStreamInsts{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[44]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResumeStreamInsts) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResumeStreamInsts) ProtoMessage() {}
+
+func (x *ResumeStreamInsts) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[44]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResumeStreamInsts.ProtoReflect.Descriptor instead.
+func (*ResumeStreamInsts) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *ResumeStreamInsts) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ResumeStreamInsts) GetInstIds() []*FlowInstIdPair {
+	if x != nil {
+		return x.InstIds
+	}
+	return nil
+}
+
+type UpsertMembers_Pair struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The account user_id. Is Required.
+	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id" binding:"required"`
+	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
+	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" binding:"get=1,lte=100"`
+}
+
+func (x *UpsertMembers_Pair) Reset() {
+	*x = UpsertMembers_Pair{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[45]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpsertMembers_Pair) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertMembers_Pair) ProtoMessage() {}
+
+func (x *UpsertMembers_Pair) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[45]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertMembers_Pair.ProtoReflect.Descriptor instead.
+func (*UpsertMembers_Pair) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{11, 0}
+}
+
+func (x *UpsertMembers_Pair) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *UpsertMembers_Pair) GetRoleIds() string {
+	if x != nil {
+		return x.RoleIds
+	}
+	return ""
+}
+
 var File_proto_request_proto protoreflect.FileDescriptor
 
 var file_proto_request_proto_rawDesc = []byte{
@@ -957,112 +3037,361 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x6f, 0x77, 0x2f, 0x67, 0x6f, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2d, 0x76, 0x61, 0x6c, 0x69,
 	0x64, 0x61, 0x74, 0x6f, 0x72, 0x73, 0x2f, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x6f, 0x72,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x0b, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x22, 0x7a, 0x0a, 0x0e, 0x4c, 0x69, 0x73, 0x74, 0x57, 0x6f, 0x72, 0x6b, 0x73,
-	0x70, 0x61, 0x63, 0x65, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05,
-	0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff,
-	0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x1f,
-	0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
-	0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x41, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x22,
+	0x6f, 0x74, 0x6f, 0x22, 0xa8, 0x02, 0x0a, 0x0e, 0x4c, 0x69, 0x73, 0x74, 0x57, 0x6f, 0x72, 0x6b,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52,
+	0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12,
+	0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74, 0x5f, 0x62, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x6f, 0x72, 0x74, 0x42, 0x79, 0x12, 0x1e,
+	0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x42,
+	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x12, 0x1c,
+	0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x12, 0x1f, 0x0a, 0x07,
+	0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2,
+	0xdf, 0x1f, 0x02, 0x78, 0x41, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x35, 0x0a,
+	0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x17, 0x2e,
+	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x2e,
+	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x12, 0x18, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x08, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x39,
+	0x0a, 0x10, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x73, 0x12, 0x25, 0x0a, 0x09, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52,
+	0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x73, 0x22, 0x3a, 0x0a, 0x11, 0x44, 0x69, 0x73,
+	0x61, 0x62, 0x6c, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12, 0x25,
+	0x0a, 0x09, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
+	0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x08, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x49, 0x64, 0x73, 0x22, 0x68, 0x0a, 0x10, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x57,
+	0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x12, 0x25, 0x0a, 0x09, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf,
+	0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x73,
+	0x12, 0x2d, 0x0a, 0x0f, 0x72, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x5f, 0x77, 0x6f, 0x72, 0x6b, 0x66,
+	0x6c, 0x6f, 0x77, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
+	0x0e, 0x72, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x66, 0x6c, 0x6f, 0x77, 0x22,
 	0x6d, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61,
 	0x63, 0x65, 0x12, 0x1e, 0x0a, 0x05, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x0a, 0x78, 0x41, 0x52, 0x05, 0x6f, 0x77, 0x6e,
 	0x65, 0x72, 0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
 	0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d,
 	0x65, 0x12, 0x1b, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
-	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x22, 0x2a,
-	0x0a, 0x0f, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63,
-	0x65, 0x12, 0x17, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
-	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x02, 0x69, 0x64, 0x22, 0x64, 0x0a, 0x0f, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x17, 0x0a,
-	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
-	0x01, 0x14, 0x52, 0x02, 0x69, 0x64, 0x12, 0x1b, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x12, 0x1b, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63,
-	0x22, 0x2c, 0x0a, 0x11, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x57, 0x6f, 0x72, 0x6b,
-	0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x17, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x02, 0x69, 0x64, 0x22, 0x2b,
-	0x0a, 0x10, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61,
-	0x63, 0x65, 0x12, 0x17, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
-	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x02, 0x69, 0x64, 0x22, 0x59, 0x0a, 0x0f, 0x45,
-	0x6e, 0x61, 0x62, 0x6c, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x17,
-	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
-	0x80, 0x01, 0x14, 0x52, 0x02, 0x69, 0x64, 0x12, 0x2d, 0x0a, 0x0f, 0x72, 0x65, 0x73, 0x75, 0x6d,
-	0x65, 0x5f, 0x77, 0x6f, 0x72, 0x6b, 0x66, 0x6c, 0x6f, 0x77, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08,
-	0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0e, 0x72, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x57, 0x6f,
-	0x72, 0x6b, 0x66, 0x6c, 0x6f, 0x77, 0x22, 0x36, 0x0a, 0x08, 0x41, 0x64, 0x64, 0x41, 0x75, 0x64,
-	0x69, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x0e, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f, 0x70, 0x41, 0x75, 0x64, 0x69, 0x74,
-	0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0xd2,
-	0x02, 0x0a, 0x0a, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x75, 0x64, 0x69, 0x74, 0x73, 0x12, 0x1e, 0x0a,
-	0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf,
-	0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a,
-	0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2,
-	0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06,
-	0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x1f, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69,
-	0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x41, 0x52,
-	0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1f, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
-	0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2d, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65,
-	0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f,
-	0x70, 0x41, 0x75, 0x64, 0x69, 0x74, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
-	0x00, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x61,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x30, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x07,
-	0x20, 0x01, 0x28, 0x0e, 0x32, 0x14, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f, 0x70, 0x41,
-	0x75, 0x64, 0x69, 0x74, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
-	0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x1e, 0x0a, 0x07, 0x73, 0x74, 0x61, 0x72, 0x74,
-	0x65, 0x64, 0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07,
-	0x73, 0x74, 0x61, 0x72, 0x74, 0x65, 0x64, 0x12, 0x1a, 0x0a, 0x05, 0x65, 0x6e, 0x64, 0x65, 0x64,
-	0x18, 0x09, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x65, 0x6e,
-	0x64, 0x65, 0x64, 0x22, 0x7a, 0x0a, 0x0b, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x65, 0x6d, 0x62, 0x65,
-	0x72, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d,
-	0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-	0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x22, 0x0a, 0x08, 0x73,
-	0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
-	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22,
-	0x74, 0x0a, 0x09, 0x41, 0x64, 0x64, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x22, 0x0a, 0x08,
-	0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
-	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x22, 0x6f,
+	0x0a, 0x0f, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x1b, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61,
+	0x6d, 0x65, 0x12, 0x1b, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x22,
+	0x37, 0x0a, 0x11, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x57, 0x6f, 0x72, 0x6b, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52,
+	0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x36, 0x0a, 0x08, 0x41, 0x64, 0x64, 0x41,
+	0x75, 0x64, 0x69, 0x74, 0x12, 0x2a, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f, 0x70, 0x41, 0x75, 0x64,
+	0x69, 0x74, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f,
+	0x22, 0x91, 0x03, 0x0a, 0x0a, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x75, 0x64, 0x69, 0x74, 0x73, 0x12,
+	0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08,
+	0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12,
+	0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42,
+	0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01,
+	0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74,
+	0x5f, 0x62, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
+	0x06, 0x73, 0x6f, 0x72, 0x74, 0x42, 0x79, 0x12, 0x1e, 0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72,
+	0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07,
+	0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f,
+	0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x41,
+	0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1f, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2d, 0x0a, 0x04, 0x74, 0x79, 0x70,
+	0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e,
+	0x4f, 0x70, 0x41, 0x75, 0x64, 0x69, 0x74, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x42, 0x04, 0xe2, 0xdf,
+	0x1f, 0x00, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a, 0x06, 0x61, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06,
+	0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x30, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18,
+	0x09, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x14, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f, 0x70,
+	0x41, 0x75, 0x64, 0x69, 0x74, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
+	0x00, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x1e, 0x0a, 0x07, 0x73, 0x74, 0x61, 0x72,
+	0x74, 0x65, 0x64, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
+	0x07, 0x73, 0x74, 0x61, 0x72, 0x74, 0x65, 0x64, 0x12, 0x1a, 0x0a, 0x05, 0x65, 0x6e, 0x64, 0x65,
+	0x64, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x65,
+	0x6e, 0x64, 0x65, 0x64, 0x22, 0x35, 0x0a, 0x0f, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x7a, 0x0a, 0x0b, 0x4c,
+	0x69, 0x73, 0x74, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69,
+	0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10,
+	0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66,
+	0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b,
+	0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0xba, 0x01, 0x0a, 0x0d, 0x55, 0x70, 0x73, 0x65,
+	0x72, 0x74, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f,
+	0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x39, 0x0a,
+	0x05, 0x75, 0x73, 0x65, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x72,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x55, 0x70, 0x73, 0x65, 0x72, 0x74, 0x4d, 0x65, 0x6d,
+	0x62, 0x65, 0x72, 0x73, 0x2e, 0x50, 0x61, 0x69, 0x72, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78,
+	0x65, 0x52, 0x05, 0x75, 0x73, 0x65, 0x72, 0x73, 0x1a, 0x4a, 0x0a, 0x04, 0x50, 0x61, 0x69, 0x72,
 	0x12, 0x1f, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x41, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49,
-	0x64, 0x12, 0x22, 0x0a, 0x08, 0x72, 0x6f, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x03, 0x20,
-	0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x80, 0x02, 0x52, 0x07, 0x72, 0x6f,
-	0x6c, 0x65, 0x49, 0x64, 0x73, 0x22, 0x57, 0x0a, 0x0c, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4d,
-	0x65, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69,
+	0x64, 0x12, 0x21, 0x0a, 0x08, 0x72, 0x6f, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x65, 0x52, 0x07, 0x72, 0x6f, 0x6c,
+	0x65, 0x49, 0x64, 0x73, 0x22, 0x56, 0x0a, 0x0d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x65,
+	0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69,
 	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
-	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x23, 0x0a, 0x09, 0x6d, 0x65, 0x6d,
-	0x62, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf,
-	0x1f, 0x02, 0x78, 0x41, 0x52, 0x08, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x64, 0x22, 0x7b,
-	0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x22,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x08, 0x75, 0x73, 0x65,
+	0x72, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
+	0x02, 0x78, 0x64, 0x52, 0x07, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x73, 0x22, 0xd5, 0x01, 0x0a,
+	0x0f, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x50, 0x65, 0x72, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e,
+	0x12, 0x26, 0x0a, 0x0b, 0x72, 0x65, 0x71, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x41, 0x52, 0x09, 0x72,
+	0x65, 0x71, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
+	0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x08,
+	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x08, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x1c,
+	0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x36, 0x0a, 0x07,
+	0x6f, 0x70, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e,
+	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f, 0x70, 0x41, 0x75, 0x64, 0x69, 0x74, 0x2e, 0x54, 0x79,
+	0x70, 0x65, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x05, 0x52, 0x06, 0x6f, 0x70,
+	0x54, 0x79, 0x70, 0x65, 0x22, 0xdb, 0x01, 0x0a, 0x0f, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x72,
+	0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69,
+	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18,
+	0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73,
+	0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65,
+	0x74, 0x12, 0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74, 0x5f, 0x62, 0x79, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x6f, 0x72, 0x74, 0x42, 0x79,
+	0x12, 0x1e, 0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65,
+	0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x49, 0x64, 0x12, 0x1c, 0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18, 0x06,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x65, 0x61, 0x72,
+	0x63, 0x68, 0x22, 0xa6, 0x01, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x74, 0x72,
+	0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70,
+	0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1b, 0x0a, 0x04, 0x64, 0x65,
+	0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81,
+	0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x32, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74,
+	0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x42, 0x06, 0xe2,
+	0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x5c, 0x0a, 0x11, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73,
+	0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x49, 0x64, 0x12, 0x23, 0x0a, 0x08, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x73,
+	0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65,
+	0x52, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x73, 0x22, 0x70, 0x0a, 0x10, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x20, 0x0a,
+	0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
+	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12,
+	0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2,
+	0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1b,
+	0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x78, 0x81, 0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x22, 0x58, 0x0a, 0x12, 0x44,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f,
+	0x77, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f,
+	0x77, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x76, 0x65,
+	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x77, 0x0a, 0x11, 0x53, 0x65, 0x74, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x20,
+	0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64,
+	0x12, 0x1c, 0x0a, 0x05, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x00, 0x52, 0x05, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x22, 0x94,
+	0x01, 0x0a, 0x15, 0x53, 0x65, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77,
+	0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
+	0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07,
+	0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
+	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x35,
+	0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x53,
+	0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x00, 0x52,
+	0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x8a, 0x01, 0x0a, 0x10, 0x53, 0x65, 0x74, 0x53, 0x74, 0x72,
+	0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x20,
+	0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64,
+	0x12, 0x30, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f,
+	0x77, 0x45, 0x6e, 0x76, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x00, 0x52, 0x04, 0x69, 0x6e,
+	0x66, 0x6f, 0x22, 0x55, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46,
+	0x6c, 0x6f, 0x77, 0x4e, 0x6f, 0x64, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01,
+	0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x07, 0x76, 0x65, 0x72,
+	0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
+	0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x59, 0x0a, 0x15, 0x47, 0x65, 0x74,
+	0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75,
+	0x6c, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c,
+	0x6f, 0x77, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65, 0x72,
+	0x73, 0x69, 0x6f, 0x6e, 0x22, 0x54, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61,
+	0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x45, 0x6e, 0x76, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x07, 0x76, 0x65,
+	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
+	0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x72, 0x0a, 0x11, 0x45, 0x78,
+	0x65, 0x63, 0x75, 0x74, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12,
+	0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49,
+	0x64, 0x12, 0x3b, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x79, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x50, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x79, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x79, 0x22, 0xe2,
+	0x01, 0x0a, 0x16, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x6c, 0x65, 0x61, 0x73, 0x65, 0x53, 0x74,
+	0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d,
+	0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00,
+	0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73,
+	0x65, 0x74, 0x12, 0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74, 0x5f, 0x62, 0x79, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x6f, 0x72, 0x74, 0x42,
+	0x79, 0x12, 0x1e, 0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73,
+	0x65, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x1c, 0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18,
+	0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x65, 0x61,
+	0x72, 0x63, 0x68, 0x22, 0x7b, 0x0a, 0x11, 0x52, 0x65, 0x6c, 0x65, 0x61, 0x73, 0x65, 0x53, 0x74,
+	0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1b, 0x0a, 0x04, 0x64, 0x65,
+	0x73, 0x63, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81,
+	0x08, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x27, 0x0a, 0x0c, 0x73, 0x74, 0x6f, 0x70, 0x5f,
+	0x72, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2,
+	0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x70, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67,
+	0x22, 0x8d, 0x01, 0x0a, 0x19, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x52, 0x65, 0x6c, 0x65,
+	0x61, 0x73, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x22,
 	0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x49, 0x64, 0x12, 0x23, 0x0a, 0x09, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x41, 0x52, 0x08, 0x6d,
-	0x65, 0x6d, 0x62, 0x65, 0x72, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x08, 0x72, 0x6f, 0x6c, 0x65, 0x5f,
-	0x69, 0x64, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78,
-	0x80, 0x02, 0x52, 0x07, 0x72, 0x6f, 0x6c, 0x65, 0x49, 0x64, 0x73, 0x22, 0xd5, 0x01, 0x0a, 0x0f,
-	0x43, 0x68, 0x65, 0x63, 0x6b, 0x50, 0x65, 0x72, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12,
-	0x26, 0x0a, 0x0b, 0x72, 0x65, 0x71, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x41, 0x52, 0x09, 0x72, 0x65,
-	0x71, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
-	0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x08, 0x72,
-	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2,
-	0xdf, 0x1f, 0x00, 0x52, 0x08, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x1c, 0x0a,
-	0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2,
-	0xdf, 0x1f, 0x00, 0x52, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x36, 0x0a, 0x07, 0x6f,
-	0x70, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x13, 0x2e, 0x6d,
-	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4f, 0x70, 0x41, 0x75, 0x64, 0x69, 0x74, 0x2e, 0x54, 0x79, 0x70,
-	0x65, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x05, 0x52, 0x06, 0x6f, 0x70, 0x54,
-	0x79, 0x70, 0x65, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f,
-	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x49, 0x64, 0x12, 0x23, 0x0a, 0x08, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x02,
+	0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x07,
+	0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x73, 0x12, 0x27, 0x0a, 0x0c, 0x73, 0x74, 0x6f, 0x70, 0x5f,
+	0x72, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2,
+	0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x70, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67,
+	0x22, 0x63, 0x0a, 0x18, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x52, 0x65, 0x6c, 0x65, 0x61, 0x73,
+	0x65, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x22, 0x0a, 0x08,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
+	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64,
+	0x12, 0x23, 0x0a, 0x08, 0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03,
+	0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x07, 0x66, 0x6c,
+	0x6f, 0x77, 0x49, 0x64, 0x73, 0x22, 0xc2, 0x01, 0x0a, 0x16, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74,
+	0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73,
+	0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42,
+	0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74,
+	0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05,
+	0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72,
+	0x74, 0x5f, 0x62, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
+	0x52, 0x06, 0x73, 0x6f, 0x72, 0x74, 0x42, 0x79, 0x12, 0x1e, 0x0a, 0x07, 0x72, 0x65, 0x76, 0x65,
+	0x72, 0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
+	0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77,
+	0x5f, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x22, 0x7f, 0x0a, 0x10, 0x4c, 0x69,
+	0x73, 0x74, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x73, 0x12, 0x1e,
+	0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2,
+	0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27,
+	0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f,
+	0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52,
+	0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x22, 0x43, 0x0a, 0x11, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65,
+	0x12, 0x2e, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75,
+	0x6c, 0x65, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f,
+	0x22, 0x39, 0x0a, 0x12, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f,
+	0x72, 0x52, 0x75, 0x6c, 0x65, 0x73, 0x12, 0x23, 0x0a, 0x08, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69,
+	0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00,
+	0x78, 0x65, 0x52, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x49, 0x64, 0x73, 0x22, 0x39, 0x0a, 0x12, 0x45,
+	0x6e, 0x61, 0x62, 0x6c, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65,
+	0x73, 0x12, 0x23, 0x0a, 0x08, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20,
+	0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x07, 0x72,
+	0x75, 0x6c, 0x65, 0x49, 0x64, 0x73, 0x22, 0x3a, 0x0a, 0x13, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c,
+	0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x73, 0x12, 0x23, 0x0a,
+	0x08, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42,
+	0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x49,
+	0x64, 0x73, 0x22, 0x43, 0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x6e, 0x69,
+	0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x12, 0x2e, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x6f,
+	0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20,
+	0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x22, 0x37, 0x0a, 0x13, 0x44, 0x65, 0x73, 0x63, 0x72,
+	0x69, 0x62, 0x65, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x12, 0x20,
+	0x0a, 0x07, 0x72, 0x75, 0x6c, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x72, 0x75, 0x6c, 0x65, 0x49, 0x64,
+	0x22, 0x7d, 0x0a, 0x11, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d,
+	0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x3f, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74,
+	0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x50, 0x72, 0x6f, 0x70,
+	0x65, 0x72, 0x74, 0x79, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0a, 0x70, 0x72, 0x6f, 0x70,
+	0x65, 0x72, 0x74, 0x69, 0x65, 0x73, 0x12, 0x27, 0x0a, 0x0c, 0x73, 0x74, 0x6f, 0x70, 0x5f, 0x72,
+	0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf,
+	0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x70, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x22,
+	0x85, 0x01, 0x0a, 0x12, 0x4f, 0x66, 0x66, 0x6c, 0x69, 0x6e, 0x65, 0x53, 0x74, 0x72, 0x65, 0x61,
+	0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01,
+	0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x08, 0x66, 0x6c,
+	0x6f, 0x77, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x73, 0x12, 0x27,
+	0x0a, 0x0c, 0x73, 0x74, 0x6f, 0x70, 0x5f, 0x72, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x6f, 0x70,
+	0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x22, 0xc0, 0x01, 0x0a, 0x0f, 0x4c, 0x69, 0x73, 0x74,
+	0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x73, 0x74, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c,
+	0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04,
+	0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f,
+	0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f,
+	0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66,
+	0x66, 0x73, 0x65, 0x74, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52,
+	0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x6c, 0x6f, 0x77,
+	0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x07, 0x76, 0x65,
+	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
+	0x00, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x54, 0x0a, 0x0e, 0x46, 0x6c,
+	0x6f, 0x77, 0x49, 0x6e, 0x73, 0x74, 0x49, 0x64, 0x50, 0x61, 0x69, 0x72, 0x12, 0x20, 0x0a, 0x07,
+	0x66, 0x6c, 0x6f, 0x77, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
+	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x66, 0x6c, 0x6f, 0x77, 0x49, 0x64, 0x12, 0x20,
+	0x0a, 0x07, 0x69, 0x6e, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x06, 0x69, 0x6e, 0x73, 0x74, 0x49, 0x64,
+	0x22, 0x78, 0x0a, 0x14, 0x54, 0x65, 0x72, 0x6d, 0x69, 0x6e, 0x61, 0x74, 0x65, 0x53, 0x74, 0x72,
+	0x65, 0x61, 0x6d, 0x49, 0x6e, 0x73, 0x74, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
+	0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x3c, 0x0a, 0x08,
+	0x69, 0x6e, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17,
+	0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x46, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x73,
+	0x74, 0x49, 0x64, 0x50, 0x61, 0x69, 0x72, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78,
+	0x65, 0x52, 0x07, 0x69, 0x6e, 0x73, 0x74, 0x49, 0x64, 0x73, 0x22, 0x76, 0x0a, 0x12, 0x53, 0x75,
+	0x73, 0x70, 0x65, 0x6e, 0x64, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x73, 0x74, 0x73,
+	0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x49, 0x64, 0x12, 0x3c, 0x0a, 0x08, 0x69, 0x6e, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x73,
+	0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x2e, 0x46, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x73, 0x74, 0x49, 0x64, 0x50, 0x61, 0x69, 0x72, 0x42,
+	0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x07, 0x69, 0x6e, 0x73, 0x74, 0x49,
+	0x64, 0x73, 0x22, 0x75, 0x0a, 0x11, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x49, 0x6e, 0x73, 0x74, 0x73, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x3c, 0x0a, 0x08, 0x69,
+	0x6e, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e,
+	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x46, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x73, 0x74,
+	0x49, 0x64, 0x50, 0x61, 0x69, 0x72, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65,
+	0x52, 0x07, 0x69, 0x6e, 0x73, 0x74, 0x49, 0x64, 0x73, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b,
+	0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67,
+	0x2f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1077,36 +3406,86 @@ func file_proto_request_proto_rawDescGZIP() []byte {
 	return file_proto_request_proto_rawDescData
 }
 
-var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_proto_request_proto_goTypes = []interface{}{
-	(*ListWorkspaces)(nil),    // 0: request.ListWorkspaces
-	(*CreateWorkspace)(nil),   // 1: request.CreateWorkspace
-	(*DeleteWorkspace)(nil),   // 2: request.DeleteWorkspace
-	(*UpdateWorkspace)(nil),   // 3: request.UpdateWorkspace
-	(*DescribeWorkspace)(nil), // 4: request.DescribeWorkspace
-	(*DisableWorkspace)(nil),  // 5: request.DisableWorkspace
-	(*EnableWorkspace)(nil),   // 6: request.EnableWorkspace
-	(*AddAudit)(nil),          // 7: request.AddAudit
-	(*ListAudits)(nil),        // 8: request.ListAudits
-	(*ListMembers)(nil),       // 9: request.ListMembers
-	(*AddMember)(nil),         // 10: request.AddMember
-	(*RemoveMember)(nil),      // 11: request.RemoveMember
-	(*UpdateMember)(nil),      // 12: request.UpdateMember
-	(*CheckPermission)(nil),   // 13: request.CheckPermission
-	(*model.OpAudit)(nil),     // 14: model.OpAudit
-	(model.OpAudit_Type)(0),   // 15: model.OpAudit.Type
-	(model.OpAudit_State)(0),  // 16: model.OpAudit.State
+	(*ListWorkspaces)(nil),            // 0: request.ListWorkspaces
+	(*DeleteWorkspaces)(nil),          // 1: request.DeleteWorkspaces
+	(*DisableWorkspaces)(nil),         // 2: request.DisableWorkspaces
+	(*EnableWorkspaces)(nil),          // 3: request.EnableWorkspaces
+	(*CreateWorkspace)(nil),           // 4: request.CreateWorkspace
+	(*UpdateWorkspace)(nil),           // 5: request.UpdateWorkspace
+	(*DescribeWorkspace)(nil),         // 6: request.DescribeWorkspace
+	(*AddAudit)(nil),                  // 7: request.AddAudit
+	(*ListAudits)(nil),                // 8: request.ListAudits
+	(*ListSystemRoles)(nil),           // 9: request.ListSystemRoles
+	(*ListMembers)(nil),               // 10: request.ListMembers
+	(*UpsertMembers)(nil),             // 11: request.UpsertMembers
+	(*DeleteMembers)(nil),             // 12: request.DeleteMembers
+	(*CheckPermission)(nil),           // 13: request.CheckPermission
+	(*ListStreamFlows)(nil),           // 14: request.ListStreamFlows
+	(*CreateStreamFlow)(nil),          // 15: request.CreateStreamFlow
+	(*DeleteStreamFlows)(nil),         // 16: request.DeleteStreamFlows
+	(*UpdateStreamFlow)(nil),          // 17: request.UpdateStreamFlow
+	(*DescribeStreamFlow)(nil),        // 18: request.DescribeStreamFlow
+	(*SetStreamFlowNode)(nil),         // 19: request.SetStreamFlowNode
+	(*SetStreamFlowSchedule)(nil),     // 20: request.SetStreamFlowSchedule
+	(*SetStreamFlowEnv)(nil),          // 21: request.SetStreamFlowEnv
+	(*GetStreamFlowNode)(nil),         // 22: request.GetStreamFlowNode
+	(*GetStreamFlowSchedule)(nil),     // 23: request.GetStreamFlowSchedule
+	(*GetStreamFlowEnv)(nil),          // 24: request.GetStreamFlowEnv
+	(*ExecuteStreamFlow)(nil),         // 25: request.ExecuteStreamFlow
+	(*ListReleaseStreamFlows)(nil),    // 26: request.ListReleaseStreamFlows
+	(*ReleaseStreamFlow)(nil),         // 27: request.ReleaseStreamFlow
+	(*SuspendReleaseStreamFlows)(nil), // 28: request.SuspendReleaseStreamFlows
+	(*ResumeReleaseStreamFlows)(nil),  // 29: request.ResumeReleaseStreamFlows
+	(*ListStreamFlowVersions)(nil),    // 30: request.ListStreamFlowVersions
+	(*ListMonitorRules)(nil),          // 31: request.ListMonitorRules
+	(*CreateMonitorRule)(nil),         // 32: request.CreateMonitorRule
+	(*DeleteMonitorRules)(nil),        // 33: request.DeleteMonitorRules
+	(*EnableMonitorRules)(nil),        // 34: request.EnableMonitorRules
+	(*DisableMonitorRules)(nil),       // 35: request.DisableMonitorRules
+	(*UpdateMonitorRule)(nil),         // 36: request.UpdateMonitorRule
+	(*DescribeMonitorRule)(nil),       // 37: request.DescribeMonitorRule
+	(*SubmitStreamFlows)(nil),         // 38: request.SubmitStreamFlows
+	(*OfflineStreamFlows)(nil),        // 39: request.OfflineStreamFlows
+	(*ListStreamInsts)(nil),           // 40: request.ListStreamInsts
+	(*FlowInstIdPair)(nil),            // 41: request.FlowInstIdPair
+	(*TerminateStreamInsts)(nil),      // 42: request.TerminateStreamInsts
+	(*SuspendStreamInsts)(nil),        // 43: request.SuspendStreamInsts
+	(*ResumeStreamInsts)(nil),         // 44: request.ResumeStreamInsts
+	(*UpsertMembers_Pair)(nil),        // 45: request.UpsertMembers.Pair
+	(model.Workspace_Status)(0),       // 46: model.Workspace.Status
+	(*model.OpAudit)(nil),             // 47: model.OpAudit
+	(model.OpAudit_Type)(0),           // 48: model.OpAudit.Type
+	(model.OpAudit_State)(0),          // 49: model.OpAudit.State
+	(model.StreamFlow_Type)(0),        // 50: model.StreamFlow.Type
+	(*model.StreamFlowSchedule)(nil),  // 51: model.StreamFlowSchedule
+	(*model.StreamFlowEnv)(nil),       // 52: model.StreamFlowEnv
+	(*model.StreamFlowProperty)(nil),  // 53: model.StreamFlowProperty
+	(*model.MonitorRule)(nil),         // 54: model.MonitorRule
 }
 var file_proto_request_proto_depIdxs = []int32{
-	14, // 0: request.AddAudit.info:type_name -> model.OpAudit
-	15, // 1: request.ListAudits.type:type_name -> model.OpAudit.Type
-	16, // 2: request.ListAudits.state:type_name -> model.OpAudit.State
-	15, // 3: request.CheckPermission.op_type:type_name -> model.OpAudit.Type
-	4,  // [4:4] is the sub-list for method output_type
-	4,  // [4:4] is the sub-list for method input_type
-	4,  // [4:4] is the sub-list for extension type_name
-	4,  // [4:4] is the sub-list for extension extendee
-	0,  // [0:4] is the sub-list for field type_name
+	46, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
+	47, // 1: request.AddAudit.info:type_name -> model.OpAudit
+	48, // 2: request.ListAudits.type:type_name -> model.OpAudit.Type
+	49, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
+	45, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
+	48, // 5: request.CheckPermission.op_type:type_name -> model.OpAudit.Type
+	50, // 6: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
+	51, // 7: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	52, // 8: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	53, // 9: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
+	54, // 10: request.CreateMonitorRule.info:type_name -> model.MonitorRule
+	54, // 11: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
+	53, // 12: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
+	41, // 13: request.TerminateStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
+	41, // 14: request.SuspendStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
+	41, // 15: request.ResumeStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
+	16, // [16:16] is the sub-list for method output_type
+	16, // [16:16] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_proto_request_proto_init() }
@@ -1128,7 +3507,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateWorkspace); i {
+			switch v := v.(*DeleteWorkspaces); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1140,7 +3519,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteWorkspace); i {
+			switch v := v.(*DisableWorkspaces); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1152,7 +3531,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateWorkspace); i {
+			switch v := v.(*EnableWorkspaces); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1164,7 +3543,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DescribeWorkspace); i {
+			switch v := v.(*CreateWorkspace); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1176,7 +3555,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DisableWorkspace); i {
+			switch v := v.(*UpdateWorkspace); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1188,7 +3567,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EnableWorkspace); i {
+			switch v := v.(*DescribeWorkspace); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1224,7 +3603,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListMembers); i {
+			switch v := v.(*ListSystemRoles); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1236,7 +3615,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AddMember); i {
+			switch v := v.(*ListMembers); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1248,7 +3627,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RemoveMember); i {
+			switch v := v.(*UpsertMembers); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1260,7 +3639,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateMember); i {
+			switch v := v.(*DeleteMembers); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1283,6 +3662,390 @@ func file_proto_request_proto_init() {
 				return nil
 			}
 		}
+		file_proto_request_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetStreamFlowNode); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetStreamFlowSchedule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SetStreamFlowEnv); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowNode); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowSchedule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetStreamFlowEnv); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ExecuteStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListReleaseStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReleaseStreamFlow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SuspendReleaseStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResumeReleaseStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStreamFlowVersions); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListMonitorRules); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateMonitorRule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteMonitorRules); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*EnableMonitorRules); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DisableMonitorRules); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateMonitorRule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeMonitorRule); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SubmitStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*OfflineStreamFlows); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStreamInsts); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*FlowInstIdPair); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TerminateStreamInsts); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SuspendStreamInsts); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResumeStreamInsts); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpsertMembers_Pair); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1290,7 +4053,7 @@ func file_proto_request_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_request_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   46,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

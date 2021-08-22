@@ -4,266 +4,93 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/wfpb";
 
 package wfpb;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
+import "request.proto";
+import "response.proto";
 
 // Workflow Service
 service Workflow {
-	// DeleteAllFlows delete all workflow that specified workspace id.
-	// And removed all workflow task from schedule system.
-	rpc DeleteAllFlows(DeleteAllFlowsRequest) returns(model.EmptyStruct) {}
+	// DeleteFlowsBySpaceIds delete the specified workspaces and its resources;
+	// This Interface called by apiserver(DeleteWorkspaces).
+	// Resources includes:
+	//   - Workflow of stream and batch and them's history version.
+	//   - Node, env schedule and them's history version.
+	//   - Released's workflow.
+	//   - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//   - All instances records. (By Scheduler-Server)
+	rpc DeleteFlowsBySpaceIds(request.DeleteWorkspaces) returns(model.EmptyStruct) {}
 	
 	// Interface for stream workflow.
 	//
 	// ListStreamFlows to get a list of stream workflow of the workspace.
-	rpc ListStreamFlows(ListStreamFlowsRequest) returns (ListStreamFlowsReply) {}
+	rpc ListStreamFlows(request.ListStreamFlows) returns (response.ListStreamFlows) {}
+
+	// DeleteStreamFlows delete stream workflow ant its related resources where in ids.
+	// Resources includes:
+	//  - History version and Released's workflow.
+	//  - Node, env schedule and its history version.
+	//  - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//  - All instances records. (By Scheduler-Server)
+	rpc DeleteStreamFlows(request.DeleteStreamFlows) returns (model.EmptyStruct) {}
 	
 	// CreateStreamFlow to create a new stream workflow.
-	rpc CreateStreamFlow(CreateStreamFlowRequest) returns (model.EmptyStruct) {}
-	
-	// DeleteStreamFlow to delete the specified stream workflow.
-	rpc DeleteStreamFlow(DeleteStreamFlowRequest) returns (model.EmptyStruct) {}
+	rpc CreateStreamFlow(request.CreateStreamFlow) returns (response.CreateStreamFlow) {}
 	
 	// UpdateStreamFlow to update the info for the specified stream workflow.
-	rpc UpdateStreamFlow(UpdateStreamFlowRequest) returns (model.EmptyStruct) {}
+	rpc UpdateStreamFlow(request.UpdateStreamFlow) returns (model.EmptyStruct) {}
 	
 	// DescribeStreamFlow to get the info of the specified stream workflow.
-	rpc DescribeStreamFlow(DescribeStreamFlowRequest) returns (DescribeStreamFlowReply) {}
+	rpc DescribeStreamFlow(request.DescribeStreamFlow) returns (response.DescribeStreamFlow) {}
 	
 	// SetStreamFlowNode to set the node properties of the specified stream workflow.
-	rpc SetStreamFlowNode(SetStreamFlowNodeRequest) returns (model.EmptyStruct)  {}
+	rpc SetStreamFlowNode(request.SetStreamFlowNode) returns (model.EmptyStruct)  {}
 	
 	// GetStreamFlowNode to get the node properties of the specified stream workflow.
-	rpc GetStreamFlowNode(GetStreamFlowNodeRequest) returns (GetStreamFlowNodeReply) {}
+	rpc GetStreamFlowNode(request.GetStreamFlowNode) returns (response.GetStreamFlowNode) {}
 	
 	// SetStreamFlowEnv to set the environmental parameters of the specified stream workflow.
-	rpc SetStreamFlowEnv(SetStreamFlowEnvRequest) returns (model.EmptyStruct) {}
+	rpc SetStreamFlowEnv(request.SetStreamFlowEnv) returns (model.EmptyStruct) {}
 	
 	// GetStreamFlowEnv to get the environmental parameters of the specified stream workflow.
-	rpc GetStreamFlowEnv(GetStreamFlowEnvRequest) returns (GetStreamFlowEnvReply) {}
+	rpc GetStreamFlowEnv(request.GetStreamFlowEnv) returns (response.GetStreamFlowEnv) {}
 	
 	// SetStreamFlowSchedule to set the schedule properties of the specified stream workflow.
-	rpc SetStreamFlowSchedule(SetStreamFlowScheduleRequest) returns (model.EmptyStruct) {}
+	rpc SetStreamFlowSchedule(request.SetStreamFlowSchedule) returns (model.EmptyStruct) {}
 	
 	// GetStreamFlowSchedule to get the schedule properties of the specified stream workflow.
-	rpc GetStreamFlowSchedule(GetStreamFlowScheduleRequest) returns (GetStreamFlowScheduleReply) {}
+	rpc GetStreamFlowSchedule(request.GetStreamFlowSchedule) returns (response.GetStreamFlowSchedule) {}
 	
 	// ExecuteStreamFlow to manual execution a stream workflow task.
-	rpc ExecuteStreamFlow(ExecuteStreamFlowRequest) returns (model.EmptyStruct) {}
+	rpc ExecuteStreamFlow(request.ExecuteStreamFlow) returns (model.EmptyStruct) {}
 	
 	// Interface for stream workflow release.
 	//
 	// ReleaseStreamFlow to publish the specified workflow to schedule system with a new version.
-	rpc ReleaseStreamFlow(ReleaseStreamFlowRequest) returns (model.EmptyStruct) {}
+	rpc ReleaseStreamFlow(request.ReleaseStreamFlow) returns (model.EmptyStruct) {}
 	
-	// SuspendStreamFlow to suspend the specified workflow in schedule system.
-	rpc SuspendReleaseStreamFlow(SuspendReleaseStreamFlowRequest) returns (model.EmptyStruct) {}
+	// SuspendReleaseStreamFlows to suspend the specified workflow list in schedule system.
+	rpc SuspendReleaseStreamFlows(request.SuspendReleaseStreamFlows) returns (model.EmptyStruct) {}
 	
-	// ResumeStreamFlow to resume the suspended workflow in schedule system.
-	rpc ResumeReleaseStreamFlow(ResumeReleaseStreamFlowRequest) returns (model.EmptyStruct) {}
+	// ResumeReleaseStreamFlows to resume the suspended workflow list in schedule system.
+	rpc ResumeReleaseStreamFlows(request.ResumeReleaseStreamFlows) returns (model.EmptyStruct) {}
 	
 	// ListReleaseStreamFlows for gets a list of all published workflow in the workspace.
-	rpc ListReleaseStreamFlows(ListReleaseStreamFlowsRequest) returns (ListReleaseStreamFlowsReply) {}
+	rpc ListReleaseStreamFlows(request.ListReleaseStreamFlows) returns (response.ListReleaseStreamFlows) {}
 	
 	// Interface for stream workflow versions.
 	//
 	// ListStreamVersions for gets a list of all versions of the specified workflow.
-	rpc ListStreamFlowVersions(ListStreamFlowVersionsRequest) returns (ListStreamFlowVersionsReply) {}
+	rpc ListStreamFlowVersions(request.ListStreamFlowVersions) returns (response.ListStreamFlowVersions) {}
 	
 	// DescribeStreamVersion for get the info of the workflow of the specified version.
-	rpc DescribeStreamFlowVersion(DescribeStreamFlowVersionRequest) returns (DescribeStreamFlowVersionReply) {}
+	rpc DescribeStreamFlowVersion(request.DescribeStreamFlow) returns (response.DescribeStreamFlow) {}
 	
 	// GetStreamVersionNode for get the node properties of the workflow of the specified version.
-	rpc GetStreamFlowVersionNode(GetStreamFlowVersionNodeRequest) returns (GetStreamFlowVersionNodeReply) {}
+	rpc GetStreamFlowVersionNode(request.GetStreamFlowNode) returns (response.GetStreamFlowNode) {}
 	
 	// GetStreamVersionEnv for get the environmental parameters of the workflow of the specified version.
-	rpc GetStreamFlowVersionEnv(GetStreamFlowVersionEnvRequest) returns (GetStreamFlowVersionEnvReply) {}
+	rpc GetStreamFlowVersionEnv(request.GetStreamFlowEnv) returns (response.GetStreamFlowEnv) {}
 	
 	// GetStreamReleaseSchedule for get the schedule properties of the workflow of the specified version.
-	rpc GetStreamFlowVersionSchedule(GetStreamFlowVersionScheduleRequest) returns (GetStreamFlowVersionScheduleReply) {}
-}
-
-// Request parameters used to PurgeAllFlow.
-message DeleteAllFlowsRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Operation of workflow.
-//
-// Request parameters used to Lists
-message ListStreamFlowsRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to Lists
-message ListStreamFlowsReply {
-	repeated model.StreamFlowInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to Create
-message CreateStreamFlowRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string name = 2     [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	string desc = 3     [ (validator.field) = { length_lt: 1025 } ];
-	int32  type = 4     [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Request parameters used to DeleteStreamFlow.
-message DeleteStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to Update
-message UpdateStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20} ];
-	string name = 2    [ (validator.field) = { length_lt: 129 } ];
-	string desc = 3    [ (validator.field) = { length_lt: 1025 } ];
-}
-
-// Request parameters used to Describe
-message DescribeStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = {length_eq: 20} ];
-}
-
-// Reply parameters used to Describe
-message DescribeStreamFlowReply {
-	model.StreamFlowInfo info = 1;
-}
-
-// Request parameters used to SetNode.
-message SetStreamFlowNodeRequest {
-	model.StreamFlowNode info = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to GetNode
-message GetStreamFlowNodeRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Reply parameters used to GetNodes
-message GetStreamFlowNodeReply {
-	model.StreamFlowNode info = 1;
-}
-
-// Request parameters used to SetSchedule
-message SetStreamFlowScheduleRequest {
-	model.StreamFlowSchedule info = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to GetSchedule
-message GetStreamFlowScheduleRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to GetEnv
-message GetStreamFlowEnvRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Reply parameters used to GetEnv
-message GetStreamFlowEnvReply {
-	model.StreamFlowEnv info = 1;
-}
-
-// Reply parameters used to GetSchedule
-message GetStreamFlowScheduleReply {
-	model.StreamFlowSchedule info = 1;
-}
-
-// Request parameters used to SetEnv
-message SetStreamFlowEnvRequest {
-	model.StreamFlowEnv info = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to Execute
-message ExecuteStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to ListReleases.
-message ListReleaseStreamFlowsRequest {
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 3    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 4   [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to ListReleases.
-message ListReleaseStreamFlowsReply {
-	repeated model.StreamFlowReleaseInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to Release
-message ReleaseStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	string desc = 2 [ (validator.field) = { length_lt: 1025 } ];
-	int32 stop_running = 3 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
-}
-
-// Request parameters used to Suspend.
-message SuspendReleaseStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32 stop_running = 3 [ (validator.field) = { int_gt: -1, int_lt: 2 } ];
-}
-
-// Request parameters used to Resume.
-message ResumeReleaseStreamFlowRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Request parameters used to ListVersions
-message ListStreamFlowVersionsRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int32  limit = 2   [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	int32  offset = 3  [ (validator.field) = { int_gt: -1 } ];
-}
-
-// Reply parameters used to ListVersions
-message ListStreamFlowVersionsReply {
-	repeated model.StreamFlowInfo infos = 1 [ (validator.field) = { msg_exists: false } ];
-}
-
-// Request parameters used to DescribeVersion
-message DescribeStreamFlowVersionRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to DescribeVersion
-message DescribeStreamFlowVersionReply {
-	model.StreamFlowInfo info = 1;
-}
-
-// Request parameters used to GetNode
-message GetStreamFlowVersionNodeRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to GetNode
-message GetStreamFlowVersionNodeReply {
-	model.StreamFlowNode info = 1;
-}
-
-// Request parameters used to GetEnv
-message GetStreamFlowVersionEnvRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to GetEnv
-message GetStreamFlowVersionEnvReply {
-	model.StreamFlowEnv info = 1;
-}
-
-// Request parameters used to GetSchedule
-message GetStreamFlowVersionScheduleRequest {
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	int64  version = 2 [ (validator.field) = { int_gt: 0 } ];
-}
-
-// Reply parameters used to GetSchedule
-message GetStreamFlowVersionScheduleReply {
-	model.StreamFlowSchedule info = 1;
+	rpc GetStreamFlowVersionSchedule(request.GetStreamFlowSchedule) returns (response.GetStreamFlowSchedule) {}
 }

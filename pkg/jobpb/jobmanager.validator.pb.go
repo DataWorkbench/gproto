@@ -6,9 +6,9 @@ package jobpb
 import (
 	fmt "fmt"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
-	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	proto "google.golang.org/protobuf/proto"
 	math "math"
 )
 
