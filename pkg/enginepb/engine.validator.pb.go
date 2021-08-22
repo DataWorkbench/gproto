@@ -5,10 +5,10 @@ package enginepb
 
 import (
 	fmt "fmt"
+	math "math"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -31,9 +31,21 @@ func (this *Engine) Validate() error {
 	}
 	return nil
 }
-func (this *EngineInBuildInfo) Validate() error {
+func (this *InbuiltEngineInfo) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	if !(this.JobCu > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.JobCu))
+	}
+	if !(this.JobCu < 4) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be less than '4'`, this.JobCu))
+	}
+	if !(this.TaskCu > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskCu))
+	}
+	if !(this.TaskCu < 16) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be less than '16'`, this.TaskCu))
 	}
 	return nil
 }
@@ -50,6 +62,18 @@ func (this *CreateRequest) Validate() error {
 	return nil
 }
 func (this *CreateResponse) Validate() error {
+	return nil
+}
+func (this *StatusRequest) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	if this.Owner == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must not be an empty string`, this.Owner))
+	}
+	return nil
+}
+func (this *StatusResponse) Validate() error {
 	return nil
 }
 func (this *DescribeRequest) Validate() error {
@@ -120,10 +144,8 @@ func (this *ModifyResponse) Validate() error {
 	return nil
 }
 func (this *DeleteRequest) Validate() error {
-	for _, item := range this.Id {
-		if !(len(item) == 20) {
-			return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, item))
-		}
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	return nil
 }

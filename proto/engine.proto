@@ -17,18 +17,19 @@ message Engine{
     string transition_status = 7;
     string status = 8;
     bool is_inbuilt = 9; // inbuilt, external
-    uint64 create_time = 10;
-    uint64 update_time = 11;
+    int64 create_time = 10;
+    int64 update_time = 11;
 }
 
-message EngineInBuildInfo{
+message InbuiltEngineInfo{
     string id = 1 [ (validator.field) = {length_eq: 20} ];
-    uint32 job_cu = 2;
-    uint32 task_cu = 3;
-    uint32 task_num = 4;
-    string extension = 5; // {accessKey: xxx, hbaseHost: {xx: xx, ..}, ..}
-    uint64 create_time = 6;
-    uint64 update_time = 7;
+    string engine_id = 2 [ (validator.field) = {length_eq: 20} ];
+    uint32 job_cu = 3 [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
+    uint32 task_cu = 4 [ (validator.field) = { int_gt: 0, int_lt: 16 } ];
+    uint32 task_num = 5;
+    string extension = 6; // {accessKey: xxx, hbaseHost: {ip: hostname, ..}, ..}
+    int64 create_time = 7;
+    int64 update_time = 8;
 }
 
 message CreateRequest {
@@ -40,28 +41,54 @@ message CreateRequest {
     uint32 task_cu = 6;
     uint32 task_num = 7;
     string extension = 8; // {accessKey: xxx, hbaseHost: {xx: xx, ..}, ..}
+    bool wait_ready = 9;
+    uint32 wait_timeout = 10;
 }
 
 message CreateResponse {
-    uint32 status_code = 1;
-    string id = 2;
-    string url = 3;
-    string message = 4;
+    string id = 1;
+    string url = 2;
+}
+
+message StatusRequest {
+    string id = 1 [ (validator.field) = {length_eq: 20} ];
+    string owner = 2 [ (validator.field) = { string_not_empty: true } ];
+    string name = 3;
+    bool wait_ready = 4;
+    uint32 wait_timeout = 5;
+}
+
+message StatusResponse {
+    string id = 1;
+    string name = 2;
+    string status = 3;
+}
+
+enum IsInbuiltType {
+    ALL = 0;
+    Yes = 1;
+    No  = 2;
+}
+
+enum VerboseType {
+    OnlyEngine = 0;
+    WithInbuiltInfo = 1;
 }
 
 message DescribeRequest {
     string id = 1 [ (validator.field) = {length_eq: 20} ];
     string owner = 2 [ (validator.field) = { string_not_empty: true } ];
     string type = 3;
-    uint32 limit = 4 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    uint32 offset = 5 [ (validator.field) = { msg_exists: true } ];
+    IsInbuiltType is_inbuilt = 4;
+    repeated string status = 5;
+    uint32 limit = 6 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    uint32 offset = 7 [ (validator.field) = { msg_exists: true } ];
+    VerboseType verbose = 8; // 0: only engine, 1: include inbuilt_engine_info
 }
 
 message DescribeResponse {
     repeated Engine engines = 1 [ (validator.field) = { msg_exists: false } ];
     uint32 total = 2;
-    uint32 Status_code = 3;
-    string message = 4;
 }
 
 message RegisterRequest {
@@ -75,8 +102,7 @@ message RegisterRequest {
 
 message RegisterResponse {
     string id = 1;
-    uint32 status_code = 2;
-    string message = 3;
+    string url = 2;
 }
 
 message DeregisterRequest {
@@ -97,17 +123,15 @@ message ModifyRequest {
 }
 
 message ModifyResponse {
-    uint32 status_code = 1;
-    string message = 2;
+    string id = 1;
 }
 
 message DeleteRequest {
-    repeated string id = 1 [ (validator.field) = {length_eq: 20} ];
+    string id = 1 [ (validator.field) = {length_eq: 20} ];
 }
 
 message DeleteResponse {
-    uint32 status_code = 1;
-    string message = 2;
+    string id = 1;
 }
 
 // Engine Service
