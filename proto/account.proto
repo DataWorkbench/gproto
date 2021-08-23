@@ -44,6 +44,8 @@ message User {
     string currency = 8;
     string gravatar_email = 9;
     int32 privilege = 10;
+    repeated string zones = 11;
+    repeated string regions = 12;
 }
 
 message DescribeUsersReply {
