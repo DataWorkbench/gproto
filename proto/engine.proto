@@ -22,14 +22,13 @@ message Engine{
 }
 
 message InbuiltEngineInfo{
-    string id = 1 [ (validator.field) = {length_eq: 20} ];
-    string engine_id = 2 [ (validator.field) = {length_eq: 20} ];
-    uint32 job_cu = 3 [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
-    uint32 task_cu = 4 [ (validator.field) = { int_gt: 0, int_lt: 16 } ];
-    uint32 task_num = 5;
-    string extension = 6; // {accessKey: xxx, hbaseHost: {ip: hostname, ..}, ..}
-    int64 create_time = 7;
-    int64 update_time = 8;
+    string engine_id = 1 [ (validator.field) = {length_eq: 20} ];
+    uint32 job_cu = 2 [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
+    uint32 task_cu = 3 [ (validator.field) = { int_gt: 0, int_lt: 16 } ];
+    uint32 task_num = 4;
+    string extension = 5; // {accessKey: xxx, hbaseHost: {ip: hostname, ..}, ..}
+    int64 create_time = 6;
+    int64 update_time = 7;
 }
 
 message CreateRequest {
@@ -87,8 +86,9 @@ message DescribeRequest {
 }
 
 message DescribeResponse {
-    repeated Engine engines = 1 [ (validator.field) = { msg_exists: false } ];
-    uint32 total = 2;
+    uint32 total = 1;
+    repeated Engine engines = 2 [ (validator.field) = { msg_exists: false } ];
+    repeated InbuiltEngineInfo inbuilt_engine_info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
 message RegisterRequest {
