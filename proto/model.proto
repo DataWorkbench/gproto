@@ -134,11 +134,18 @@ message StreamFlow {
 //message StreamFlowNode {
 //}
 
-// FlinkConfig
-message FlinkConfig {
-	// Flink parallelism. Is required, Min 1, Max ?
-	// @inject_tag: json:"parallelism" default:"" binding:"gte=1"
-	int32 parallelism = 1 [ (validator.field) = { int_gt: 0 } ];
+// HBaseConfig
+message HBaseConfig {
+	message Host {
+		// @inject_tag: json:"domain" default:"" binding:"email"
+		string domain = 1 [ (validator.field) = { } ];
+		
+		// @inject_tag: json:"ip_address" default:"" binding:"ipv4"
+		string ip_address = 2 [ (validator.field) = { } ];
+	}
+	// The host lists of HBase.
+	// @inject_tag: json:"hosts" default:"" binding:"-"
+	repeated Host hosts = 1 [ (validator.field) = { } ];
 }
 
 // S3Config
@@ -156,18 +163,15 @@ message S3Config {
 	string secret_key = 3 [ (validator.field) = { } ];
 }
 
-// HBaseConfig
-message HBaseConfig {
-	message Host {
-		// @inject_tag: json:"domain" default:"" binding:"email"
-		string domain = 1;
-		
-		// @inject_tag: json:"ip_address" default:"" binding:"ipv4"
-		string ip_address = 2;
-	}
-	// The host lists of HBase.
-	// @inject_tag: json:"hosts" default:"" binding:"-"
-	repeated Host hosts = 1;
+// FlinkConfig
+message FlinkConfig {
+	// Flink parallelism. Is required, Min 1, Max ?
+	// @inject_tag: json:"parallelism" default:"" binding:"gte=1"
+	int32 parallelism = 1 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Config of s3. Not required.
+	// @inject_tag: json:"s3" default:"" binding:"-"
+	S3Config s3 = 2 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // StreamFlowEnv represents a workflow environmental parameters info.
@@ -196,17 +200,13 @@ message StreamFlowEnv {
 	// @inject_tag: json:"task_num" default:"" binding:"gte=1"
 	int32 task_num = 5 [ (validator.field) = { int_gt: 0 } ];
 	
-	// Config of s3. Not required.
-	// @inject_tag: json:"s3" default:"" binding:"-"
-	S3Config s3 = 6 [ (validator.field) = { int_gt: 0 } ];
-	
 	// Config of HBase. Not required.
 	// @inject_tag: json:"hbase" default:"" binding:"-"
-	HBaseConfig hbase = 7 [ (validator.field) = { int_gt: 0 } ];
+	HBaseConfig hbase = 6 [ (validator.field) = { int_gt: 0 } ];
 	
 	// The config for flink. Is required
 	// @inject_tag: json:"flink" default:"" binding:"required"
-	FlinkConfig flink = 8 [ (validator.field) = { msg_exists: true } ];
+	FlinkConfig flink = 7 [ (validator.field) = { msg_exists: true } ];
 }
 
 // StreamFlowSchedule represents a workflow schedule info.
