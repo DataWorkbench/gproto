@@ -5,10 +5,10 @@ package enginepb
 
 import (
 	fmt "fmt"
-	math "math"
-	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	proto "google.golang.org/protobuf/proto"
+	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -32,8 +32,8 @@ func (this *Engine) Validate() error {
 	return nil
 }
 func (this *InbuiltEngineInfo) Validate() error {
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	if !(len(this.EngineId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("EngineId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.EngineId))
 	}
 	if !(this.JobCu > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.JobCu))
@@ -96,6 +96,13 @@ func (this *DescribeResponse) Validate() error {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
 				return github_com_mwitkow_go_proto_validators.FieldError("Engines", err)
+			}
+		}
+	}
+	for _, item := range this.InbuiltEngineInfo {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("InbuiltEngineInfo", err)
 			}
 		}
 	}
