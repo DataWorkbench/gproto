@@ -71,15 +71,6 @@ func (this *StreamFlow) Validate() error {
 	}
 	return nil
 }
-func (this *FlinkConfig) Validate() error {
-	if !(this.Parallelism > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Parallelism", fmt.Errorf(`value '%v' must be greater than '0'`, this.Parallelism))
-	}
-	return nil
-}
-func (this *S3Config) Validate() error {
-	return nil
-}
 func (this *HBaseConfig) Validate() error {
 	for _, item := range this.Hosts {
 		if item != nil {
@@ -93,6 +84,20 @@ func (this *HBaseConfig) Validate() error {
 func (this *HBaseConfig_Host) Validate() error {
 	return nil
 }
+func (this *S3Config) Validate() error {
+	return nil
+}
+func (this *FlinkConfig) Validate() error {
+	if !(this.Parallelism > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Parallelism", fmt.Errorf(`value '%v' must be greater than '0'`, this.Parallelism))
+	}
+	if this.S3 != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.S3); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
+		}
+	}
+	return nil
+}
 func (this *StreamFlowEnv) Validate() error {
 	if !(this.JobCu > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.JobCu))
@@ -102,11 +107,6 @@ func (this *StreamFlowEnv) Validate() error {
 	}
 	if !(this.TaskNum > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("TaskNum", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskNum))
-	}
-	if this.S3 != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.S3); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
-		}
 	}
 	if this.Hbase != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hbase); err != nil {
