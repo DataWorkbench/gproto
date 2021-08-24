@@ -7,6 +7,33 @@ package model;
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
 
+//
+// --------- Declares enum ---------
+//
+
+enum EngineType {
+	_ = 0;
+	BuildIn = 1;
+	External = 2;
+}
+
+enum ScheduleConcurrencyPolicy {
+	__ = 0;
+	Allow = 1;
+	Forbid = 2;
+	Replace = 3;
+}
+
+enum ScheduleRetryPolicy {
+	___ = 0;
+	None = 1;
+	Auto = 2;
+}
+
+//
+// --------- Declares message ---------
+//
+
 // EmptyStruct represents no value with a message.
 message EmptyStruct {}
 
@@ -107,17 +134,55 @@ message StreamFlow {
 //message StreamFlowNode {
 //}
 
+// FlinkConfig
+message FlinkConfig {
+	// Flink parallelism. Is required, Min 1, Max ?
+	// @inject_tag: json:"parallelism" default:"" binding:"gte=1"
+	int32 parallelism = 1 [ (validator.field) = { int_gt: 0 } ];
+}
+
+// S3Config
+message S3Config {
+	// S3 endpoints, eg: "http://s3.gd2.qingstor.com".
+	// @inject_tag: json:"endpoint" default:"" binding:"url"
+	string endpoint = 1 [ (validator.field) = { } ];
+	
+	// User's access key.
+	// @inject_tag: json:"access_key" default:"" binding:"-"
+	string access_key = 2 [ (validator.field) = { } ];
+	
+	// User's secret key.
+	// @inject_tag: json:"secret_key" default:"" binding:"-"
+	string secret_key = 3 [ (validator.field) = { } ];
+}
+
+// HBaseConfig
+message HBaseConfig {
+	message Host {
+		// @inject_tag: json:"domain" default:"" binding:"email"
+		string domain = 1;
+		
+		// @inject_tag: json:"ip_address" default:"" binding:"ipv4"
+		string ip_address = 2;
+	}
+	// The host lists of HBase.
+	// @inject_tag: json:"hosts" default:"" binding:"-"
+	repeated Host hosts = 1;
+}
+
 // StreamFlowEnv represents a workflow environmental parameters info.
 // Not use with gorm.
 message StreamFlowEnv {
 	option (gosql.serialize) = { json: {} };
-	// The engine id.
-	// @inject_tag: json:"engine_id" default:"" binding:"len=20"
-	string engine_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Flink parallelism. Is required, Min 1, Max ?
-	// @inject_tag: json:"parallelism" default:"" binding:"gte=1"
-	int32 parallelism = 2 [ (validator.field) = { int_gt: 0 } ];
+	// The engine type. 1 => "BuildIn" 2 => "External". Is Required.
+	// Notice: Only support 1 on present.
+	// @inject_tag: json:"engine_type" default:"" binding:"gte=1,lte=1"
+	EngineType engine_type = 1 [ (validator.field) = { int_gt: 0, int_lt: 2 } ];
+	
+	// The engine id. Is required if engine_type == 2.
+	// @inject_tag: json:"engine_id" default:"" binding:"required_if=engine_type 2"
+	string engine_id = 2 [ (validator.field) = { } ];
 	
 	// Flink JobManager.  1CU = 1C + 2GB. Is required, Min 1, Max ?
 	// @inject_tag: json:"job_cu" default:"" binding:"gte=1"
@@ -131,21 +196,17 @@ message StreamFlowEnv {
 	// @inject_tag: json:"task_num" default:"" binding:"gte=1"
 	int32 task_num = 5 [ (validator.field) = { int_gt: 0 } ];
 	
-	// The user-defined env parameters.
-	// @inject_tag: json:"custom" default:"" binding:"-"
-	map<string, string> custom = 6 [ (validator.field) = { } ];
-}
-
-enum ScheduleConcurrencyPolicy {
-	_ = 0;
-	Allow = 1;
-	Forbid = 2;
-	Replace = 3;
-}
-enum ScheduleRetryPolicy {
-	__= 0;
-	None = 1;
-	Auto = 2;
+	// Config of s3. Not required.
+	// @inject_tag: json:"s3" default:"" binding:"-"
+	S3Config s3 = 6 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Config of HBase. Not required.
+	// @inject_tag: json:"hbase" default:"" binding:"-"
+	HBaseConfig hbase = 7 [ (validator.field) = { int_gt: 0 } ];
+	
+	// The config for flink. Is required
+	// @inject_tag: json:"flink" default:"" binding:"required"
+	FlinkConfig flink = 8 [ (validator.field) = { msg_exists: true } ];
 }
 
 // StreamFlowSchedule represents a workflow schedule info.
