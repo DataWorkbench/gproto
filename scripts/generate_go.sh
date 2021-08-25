@@ -73,7 +73,11 @@ for f in proto/*.proto;do
   if grep "validator.proto" "$f" >/dev/null 2>&1; then
     protoc -I=. -I="${GOPATH}"/src  -I=./proto --govalidators_opt=paths=source_relative --govalidators_out=. "$f"
     mv -f proto/"${name}".validator.pb.go ".${dir}/"
-    sed -i "" 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
+    if [ "$(uname -s)" == "Darwin" ] && ! sed --version >/dev/null 2>&1; then
+      sed -i "" 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
+    else
+      sed -i 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
+    fi
   else
     /bin/rm -f ".${dir}/${name}.validator.pb.go"
   fi
@@ -90,7 +94,11 @@ for f in proto/*.proto;do
   pbgo=".${dir}/${name}.pb.go"
   if grep "\@inject_tag" "${pbgo}" >/dev/null 2>&1; then
     protoc-go-inject-tag -input="${pbgo}"
-    sed -i "" '/\@inject_tag/d' "${pbgo}"
+    if [ "$(uname -s)" == "Darwin" ] && ! sed --version >/dev/null 2>&1; then
+      sed -i "" '/\@inject_tag/d' "${pbgo}"
+    else
+      sed -i '/\@inject_tag/d' "${pbgo}"
+    fi
   fi
 done
 
