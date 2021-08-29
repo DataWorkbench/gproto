@@ -5,6 +5,7 @@ package enginepb
 
 import (
 	fmt "fmt"
+	_ "github.com/DataWorkbench/gproto/pkg/model"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 	proto "google.golang.org/protobuf/proto"
@@ -16,94 +17,70 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *Engine) Validate() error {
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
-	}
-	if !(len(this.Name) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
-	}
-	if !(len(this.Name) < 128) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
-	return nil
-}
-func (this *InbuiltEngineInfo) Validate() error {
-	if !(len(this.EngineId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("EngineId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.EngineId))
-	}
-	if !(this.JobCu > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.JobCu))
-	}
-	if !(this.JobCu < 4) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be less than '4'`, this.JobCu))
-	}
-	if !(this.TaskCu > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskCu))
-	}
-	if !(this.TaskCu < 16) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be less than '16'`, this.TaskCu))
-	}
-	return nil
-}
-func (this *CreateRequest) Validate() error {
-	if !(len(this.Name) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
-	}
-	if !(len(this.Name) < 128) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
-	}
-	if !(len(this.Owner) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
-	}
-	return nil
-}
-func (this *CreateResponse) Validate() error {
-	return nil
-}
-func (this *StatusRequest) Validate() error {
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
-	}
-	if this.Owner == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must not be an empty string`, this.Owner))
-	}
-	return nil
-}
-func (this *StatusResponse) Validate() error {
-	return nil
-}
-func (this *DescribeRequest) Validate() error {
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
-	}
-	if this.Owner == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must not be an empty string`, this.Owner))
-	}
-	if !(this.Limit > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
-	}
-	if !(this.Limit < 101) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
-	}
-	return nil
-}
-func (this *DescribeResponse) Validate() error {
-	for _, item := range this.Engines {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Engines", err)
-			}
+func (this *FlinkEngine) Validate() error {
+	if this.HbaseConf != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.HbaseConf); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("HbaseConf", err)
 		}
 	}
-	for _, item := range this.InbuiltEngineInfo {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("InbuiltEngineInfo", err)
-			}
+	if this.FlinkConf != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.FlinkConf); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("FlinkConf", err)
+		}
+	}
+	return nil
+}
+func (this *CreateFlinkRequest) Validate() error {
+	if this.Name == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must not be an empty string`, this.Name))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '20'`, this.Name))
+	}
+	if !(len(this.Namespace) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Namespace", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Namespace))
+	}
+	if !(len(this.Namespace) < 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Namespace", fmt.Errorf(`value '%v' must have a length smaller than '20'`, this.Namespace))
+	}
+	if this.Conf != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Conf); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Conf", err)
+		}
+	}
+	return nil
+}
+func (this *CreateFlinkResponse) Validate() error {
+	return nil
+}
+func (this *DeleteFlinkRequest) Validate() error {
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '20'`, this.Name))
+	}
+	return nil
+}
+func (this *DeleteFlinkResponse) Validate() error {
+	return nil
+}
+func (this *DescribeFlinkRequest) Validate() error {
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '20'`, this.Name))
+	}
+	return nil
+}
+func (this *DescribeFlinkResponse) Validate() error {
+	if this.Engine != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Engine); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Engine", err)
 		}
 	}
 	return nil
@@ -133,29 +110,5 @@ func (this *DeregisterRequest) Validate() error {
 	return nil
 }
 func (this *DeregisterResponse) Validate() error {
-	return nil
-}
-func (this *ModifyRequest) Validate() error {
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
-	}
-	if !(len(this.Name) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
-	}
-	if !(len(this.Name) < 128) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '128'`, this.Name))
-	}
-	return nil
-}
-func (this *ModifyResponse) Validate() error {
-	return nil
-}
-func (this *DeleteRequest) Validate() error {
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
-	}
-	return nil
-}
-func (this *DeleteResponse) Validate() error {
 	return nil
 }

@@ -5,90 +5,54 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/enginepb";
 package enginepb;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
 
-
-message Engine{
-    string id = 1 [ (validator.field) = {length_eq: 20} ];
-    string name = 2 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string owner = 3 [ (validator.field) = { length_lt: 65 } ];
-    string desc = 4;
-    string url = 5;
-    string type = 6; //spark, flink
-    string transition_status = 7;
-    string status = 8;
-    bool is_inbuilt = 9; // inbuilt, external
-    int64 create_time = 10;
-    int64 update_time = 11;
+message FlinkEngine {
+    // release name of flink(same as job_id in job manager and instance_id in workspace manager)
+    string name = 1;
+    // namespace of flink(same as workspace_id)
+    string namespace = 2;
+    string url = 3;
+    uint32 job_cu = 4;
+    uint32 task_cu = 5;
+    uint32 task_num = 6;
+    model.HBaseConfig hbase_conf = 7;
+    model.FlinkConfig flink_conf = 8;
+    string transaction_status = 9;
+    string status = 10;
+    int64 created = 11;
+    int64 updated = 12;
 }
 
-message InbuiltEngineInfo{
-    string engine_id = 1 [ (validator.field) = {length_eq: 20} ];
-    uint32 job_cu = 2 [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
-    uint32 task_cu = 3 [ (validator.field) = { int_gt: 0, int_lt: 16 } ];
-    uint32 task_num = 4;
-    string extension = 5; // {accessKey: xxx, hbaseHost: {ip: hostname, ..}, ..}
-    int64 create_time = 6;
-    int64 update_time = 7;
+message CreateFlinkRequest {
+    string name = 1 [ (validator.field) = { length_gt: 1, length_lt: 20, string_not_empty: true } ]; // job_id ( instance_id )
+    // owner 改成 namespace （workspaceId）
+    string namespace = 2 [ (validator.field) = { length_gt: 1, length_lt: 20 } ]; // (外部引擎表)
+    bool waiting_ready = 3;
+    uint64 waiting_timeout = 4; // default
+    model.StreamFlowEnv conf = 5;
 }
 
-message CreateRequest {
-    string name = 1 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string owner = 2 [ (validator.field) = { length_lt: 65 } ];
-    string type = 3; // flink and other type in the future
-    string desc = 4;
-    uint32 job_cu = 5;
-    uint32 task_cu = 6;
-    uint32 task_num = 7;
-    string extension = 8; // {accessKey: xxx, hbaseHost: {xx: xx, ..}, ..}
-    bool wait_ready = 9;
-    uint32 wait_timeout = 10;
-}
-
-message CreateResponse {
-    string id = 1;
+message CreateFlinkResponse {
+    string name = 1;
     string url = 2;
 }
 
-message StatusRequest {
-    string id = 1 [ (validator.field) = {length_eq: 20} ];
-    string owner = 2 [ (validator.field) = { string_not_empty: true } ];
-    string name = 3;
-    bool wait_ready = 4;
-    uint32 wait_timeout = 5;
+message DeleteFlinkRequest {
+    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 20} ];
 }
 
-message StatusResponse {
-    string id = 1;
-    string name = 2;
-    string status = 3;
+message DeleteFlinkResponse {
+    string name = 1;
 }
 
-enum IsInbuiltType {
-    ALL = 0;
-    Yes = 1;
-    No  = 2;
+message DescribeFlinkRequest {
+    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 20} ];
+    bool with_config = 4;
 }
 
-enum VerboseType {
-    OnlyEngine = 0;
-    WithInbuiltInfo = 1;
-}
-
-message DescribeRequest {
-    string id = 1 [ (validator.field) = {length_eq: 20} ];
-    string owner = 2 [ (validator.field) = { string_not_empty: true } ];
-    string type = 3;
-    IsInbuiltType is_inbuilt = 4;
-    repeated string status = 5;
-    uint32 limit = 6 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    uint32 offset = 7 [ (validator.field) = { msg_exists: true } ];
-    VerboseType verbose = 8; // 0: only engine, 1: include inbuilt_engine_info
-}
-
-message DescribeResponse {
-    uint32 total = 1;
-    repeated Engine engines = 2 [ (validator.field) = { msg_exists: false } ];
-    repeated InbuiltEngineInfo inbuilt_engine_info = 3 [ (validator.field) = { msg_exists: false } ];
+message DescribeFlinkResponse {
+    FlinkEngine engine = 1;
 }
 
 message RegisterRequest {
@@ -96,8 +60,6 @@ message RegisterRequest {
     string owner = 2 [ (validator.field) = { length_lt: 65 } ];
     string desc = 3;
     string url = 4;
-    string type = 5; //spark, flink
-    string extension = 6;
 }
 
 message RegisterResponse {
@@ -115,31 +77,16 @@ message DeregisterResponse {
     string message = 3;
 }
 
-message ModifyRequest {
-    string id = 1 [ (validator.field) = {length_eq: 20} ];
-    string name = 2 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string desc = 3;
-    string url = 4;
+// Flink Engine Service
+service FlinkEngineService {
+    rpc Create(CreateFlinkRequest) returns (CreateFlinkResponse) {}
+    rpc Describe(DescribeFlinkRequest) returns (DescribeFlinkResponse) {}
+    rpc Delete(DeleteFlinkRequest) returns (DeleteFlinkResponse) {}
 }
 
-message ModifyResponse {
-    string id = 1;
-}
-
-message DeleteRequest {
-    string id = 1 [ (validator.field) = {length_eq: 20} ];
-}
-
-message DeleteResponse {
-    string id = 1;
-}
-
-// Engine Service
-service EngineService {
-    rpc Describe(DescribeRequest) returns (DescribeResponse) {}
-    rpc Create(CreateRequest) returns (CreateResponse) {}
-    rpc Modify(ModifyRequest) returns (ModifyResponse) {}
-    rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+// TODO: impl
+// External Engine Service
+service ExternalService {
     rpc Register(RegisterRequest) returns (RegisterResponse) {}
-    rpc DeRegister(DescribeRequest) returns (DeregisterResponse) {}
+    rpc DeRegister(DeregisterRequest) returns (DeregisterResponse) {}
 }
