@@ -526,44 +526,58 @@ message QueueMessage {
 
 message InstanceStatusStat {
   // instance status
+  // @inject_tag: json:"state"
   int32 state = 1 [ (validator.field) = { int_gt: -1 } ];
   // instance count with the status
+  // @inject_tag: json:"count"
   int64 count = 2 [ (validator.field) = { int_gt: -1 } ];
 }
 
 message InstanceRuntimeRankInfo {
   // instance id
+  // @inject_tag: json:"id"
   string id = 1 [ (validator.field) = { } ];
   // flow_id
+  // @inject_tag: json:"flow_id"
   string flow_id = 2 [ (validator.field) = { } ];
   // running time
+  // @inject_tag: json:"running_time"
   int64 running_time = 3 [ (validator.field) = { int_gt: -1 } ];
   // version
+  // @inject_tag: json:"version"
   string version = 4 [ (validator.field) = { } ];
 }
 
 message InstanceErrorRankInfo {
   // flow_id
+  // @inject_tag: json:"flow_id"
   string flow_id = 1 [ (validator.field) = { } ];
   // version
+  // @inject_tag: json:"version"
   string version = 2 [ (validator.field) = { } ];
   // running time
+  // @inject_tag: json:"error_count"
   int64 error_count = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
 message DispatchTaskCountInfo {
   // flow_count
+  // @inject_tag: json:"flow_count"
   int32 flow_count = 1 [ (validator.field) = { int_gt: -1 } ];
   // instance count
+  // @inject_tag: json:"instance_id"
   int32 instance_count = 2 [ (validator.field) = { int_gt: -1 } ];
   // updated time
+  // @inject_tag: json:"updated"
   int64 updated = 6 [ (validator.field) = { int_gt: 0 } ];
 }
 
 message InstanceTaskExecStat {
   // hour
+  // @inject_tag: json:"hour"
   int32 hour = 1 [ (validator.field) = { int_gt: -1, int_lt: 25 } ];
-  // success count
+  // instance success count
+  // @inject_tag: json:"instance_count"
   int64 instance_count = 2 [ (validator.field) = { int_gt: -1 } ];
 }
 

@@ -4,6 +4,8 @@ package obpb
 
 import (
 	context "context"
+	request "github.com/DataWorkbench/gproto/pkg/request"
+	response "github.com/DataWorkbench/gproto/pkg/response"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -17,11 +19,11 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ObserverClient interface {
-	GetPeriodicTasksStatusStatistics(ctx context.Context, in *PTasksStatusStatRequest, opts ...grpc.CallOption) (*PTasksStatusStatReply, error)
-	GetPeriodicTasksExecutingStatistics(ctx context.Context, in *PTasksExecStatRequest, opts ...grpc.CallOption) (*PTasksExecStatReply, error)
-	GetPeriodicTasksDispatchCount(ctx context.Context, in *PTaskDispatchCountRequest, opts ...grpc.CallOption) (*PTaskDispatchCountReply, error)
-	GetPeriodicTasksRuntimeRanking(ctx context.Context, in *PTaskRuntimeRankingRequest, opts ...grpc.CallOption) (*PTaskRuntimeRankingReply, error)
-	GetPeriodicTasksErrorRanking(ctx context.Context, in *PTaskErrorRankingRequest, opts ...grpc.CallOption) (*PTaskErrorRankingReply, error)
+	GetPeriodicTasksStatusStatistics(ctx context.Context, in *request.PTasksStatusStat, opts ...grpc.CallOption) (*response.PTasksStatusStat, error)
+	GetPeriodicTasksExecutingStatistics(ctx context.Context, in *request.PTasksExecStat, opts ...grpc.CallOption) (*response.PTasksExecStat, error)
+	GetPeriodicTasksDispatchCount(ctx context.Context, in *request.PTaskDispatchCount, opts ...grpc.CallOption) (*response.PTaskDispatchCount, error)
+	GetPeriodicTasksRuntimeRanking(ctx context.Context, in *request.PTaskRuntimeRanking, opts ...grpc.CallOption) (*response.PTaskRuntimeRanking, error)
+	GetPeriodicTasksErrorRanking(ctx context.Context, in *request.PTaskErrorRanking, opts ...grpc.CallOption) (*response.PTaskErrorRanking, error)
 }
 
 type observerClient struct {
@@ -32,8 +34,8 @@ func NewObserverClient(cc grpc.ClientConnInterface) ObserverClient {
 	return &observerClient{cc}
 }
 
-func (c *observerClient) GetPeriodicTasksStatusStatistics(ctx context.Context, in *PTasksStatusStatRequest, opts ...grpc.CallOption) (*PTasksStatusStatReply, error) {
-	out := new(PTasksStatusStatReply)
+func (c *observerClient) GetPeriodicTasksStatusStatistics(ctx context.Context, in *request.PTasksStatusStat, opts ...grpc.CallOption) (*response.PTasksStatusStat, error) {
+	out := new(response.PTasksStatusStat)
 	err := c.cc.Invoke(ctx, "/Observer/GetPeriodicTasksStatusStatistics", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -41,8 +43,8 @@ func (c *observerClient) GetPeriodicTasksStatusStatistics(ctx context.Context, i
 	return out, nil
 }
 
-func (c *observerClient) GetPeriodicTasksExecutingStatistics(ctx context.Context, in *PTasksExecStatRequest, opts ...grpc.CallOption) (*PTasksExecStatReply, error) {
-	out := new(PTasksExecStatReply)
+func (c *observerClient) GetPeriodicTasksExecutingStatistics(ctx context.Context, in *request.PTasksExecStat, opts ...grpc.CallOption) (*response.PTasksExecStat, error) {
+	out := new(response.PTasksExecStat)
 	err := c.cc.Invoke(ctx, "/Observer/GetPeriodicTasksExecutingStatistics", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -50,8 +52,8 @@ func (c *observerClient) GetPeriodicTasksExecutingStatistics(ctx context.Context
 	return out, nil
 }
 
-func (c *observerClient) GetPeriodicTasksDispatchCount(ctx context.Context, in *PTaskDispatchCountRequest, opts ...grpc.CallOption) (*PTaskDispatchCountReply, error) {
-	out := new(PTaskDispatchCountReply)
+func (c *observerClient) GetPeriodicTasksDispatchCount(ctx context.Context, in *request.PTaskDispatchCount, opts ...grpc.CallOption) (*response.PTaskDispatchCount, error) {
+	out := new(response.PTaskDispatchCount)
 	err := c.cc.Invoke(ctx, "/Observer/GetPeriodicTasksDispatchCount", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -59,8 +61,8 @@ func (c *observerClient) GetPeriodicTasksDispatchCount(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *observerClient) GetPeriodicTasksRuntimeRanking(ctx context.Context, in *PTaskRuntimeRankingRequest, opts ...grpc.CallOption) (*PTaskRuntimeRankingReply, error) {
-	out := new(PTaskRuntimeRankingReply)
+func (c *observerClient) GetPeriodicTasksRuntimeRanking(ctx context.Context, in *request.PTaskRuntimeRanking, opts ...grpc.CallOption) (*response.PTaskRuntimeRanking, error) {
+	out := new(response.PTaskRuntimeRanking)
 	err := c.cc.Invoke(ctx, "/Observer/GetPeriodicTasksRuntimeRanking", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -68,8 +70,8 @@ func (c *observerClient) GetPeriodicTasksRuntimeRanking(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *observerClient) GetPeriodicTasksErrorRanking(ctx context.Context, in *PTaskErrorRankingRequest, opts ...grpc.CallOption) (*PTaskErrorRankingReply, error) {
-	out := new(PTaskErrorRankingReply)
+func (c *observerClient) GetPeriodicTasksErrorRanking(ctx context.Context, in *request.PTaskErrorRanking, opts ...grpc.CallOption) (*response.PTaskErrorRanking, error) {
+	out := new(response.PTaskErrorRanking)
 	err := c.cc.Invoke(ctx, "/Observer/GetPeriodicTasksErrorRanking", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -81,11 +83,11 @@ func (c *observerClient) GetPeriodicTasksErrorRanking(ctx context.Context, in *P
 // All implementations must embed UnimplementedObserverServer
 // for forward compatibility
 type ObserverServer interface {
-	GetPeriodicTasksStatusStatistics(context.Context, *PTasksStatusStatRequest) (*PTasksStatusStatReply, error)
-	GetPeriodicTasksExecutingStatistics(context.Context, *PTasksExecStatRequest) (*PTasksExecStatReply, error)
-	GetPeriodicTasksDispatchCount(context.Context, *PTaskDispatchCountRequest) (*PTaskDispatchCountReply, error)
-	GetPeriodicTasksRuntimeRanking(context.Context, *PTaskRuntimeRankingRequest) (*PTaskRuntimeRankingReply, error)
-	GetPeriodicTasksErrorRanking(context.Context, *PTaskErrorRankingRequest) (*PTaskErrorRankingReply, error)
+	GetPeriodicTasksStatusStatistics(context.Context, *request.PTasksStatusStat) (*response.PTasksStatusStat, error)
+	GetPeriodicTasksExecutingStatistics(context.Context, *request.PTasksExecStat) (*response.PTasksExecStat, error)
+	GetPeriodicTasksDispatchCount(context.Context, *request.PTaskDispatchCount) (*response.PTaskDispatchCount, error)
+	GetPeriodicTasksRuntimeRanking(context.Context, *request.PTaskRuntimeRanking) (*response.PTaskRuntimeRanking, error)
+	GetPeriodicTasksErrorRanking(context.Context, *request.PTaskErrorRanking) (*response.PTaskErrorRanking, error)
 	mustEmbedUnimplementedObserverServer()
 }
 
@@ -93,19 +95,19 @@ type ObserverServer interface {
 type UnimplementedObserverServer struct {
 }
 
-func (UnimplementedObserverServer) GetPeriodicTasksStatusStatistics(context.Context, *PTasksStatusStatRequest) (*PTasksStatusStatReply, error) {
+func (UnimplementedObserverServer) GetPeriodicTasksStatusStatistics(context.Context, *request.PTasksStatusStat) (*response.PTasksStatusStat, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPeriodicTasksStatusStatistics not implemented")
 }
-func (UnimplementedObserverServer) GetPeriodicTasksExecutingStatistics(context.Context, *PTasksExecStatRequest) (*PTasksExecStatReply, error) {
+func (UnimplementedObserverServer) GetPeriodicTasksExecutingStatistics(context.Context, *request.PTasksExecStat) (*response.PTasksExecStat, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPeriodicTasksExecutingStatistics not implemented")
 }
-func (UnimplementedObserverServer) GetPeriodicTasksDispatchCount(context.Context, *PTaskDispatchCountRequest) (*PTaskDispatchCountReply, error) {
+func (UnimplementedObserverServer) GetPeriodicTasksDispatchCount(context.Context, *request.PTaskDispatchCount) (*response.PTaskDispatchCount, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPeriodicTasksDispatchCount not implemented")
 }
-func (UnimplementedObserverServer) GetPeriodicTasksRuntimeRanking(context.Context, *PTaskRuntimeRankingRequest) (*PTaskRuntimeRankingReply, error) {
+func (UnimplementedObserverServer) GetPeriodicTasksRuntimeRanking(context.Context, *request.PTaskRuntimeRanking) (*response.PTaskRuntimeRanking, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPeriodicTasksRuntimeRanking not implemented")
 }
-func (UnimplementedObserverServer) GetPeriodicTasksErrorRanking(context.Context, *PTaskErrorRankingRequest) (*PTaskErrorRankingReply, error) {
+func (UnimplementedObserverServer) GetPeriodicTasksErrorRanking(context.Context, *request.PTaskErrorRanking) (*response.PTaskErrorRanking, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPeriodicTasksErrorRanking not implemented")
 }
 func (UnimplementedObserverServer) mustEmbedUnimplementedObserverServer() {}
@@ -122,7 +124,7 @@ func RegisterObserverServer(s grpc.ServiceRegistrar, srv ObserverServer) {
 }
 
 func _Observer_GetPeriodicTasksStatusStatistics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PTasksStatusStatRequest)
+	in := new(request.PTasksStatusStat)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -134,13 +136,13 @@ func _Observer_GetPeriodicTasksStatusStatistics_Handler(srv interface{}, ctx con
 		FullMethod: "/Observer/GetPeriodicTasksStatusStatistics",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObserverServer).GetPeriodicTasksStatusStatistics(ctx, req.(*PTasksStatusStatRequest))
+		return srv.(ObserverServer).GetPeriodicTasksStatusStatistics(ctx, req.(*request.PTasksStatusStat))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Observer_GetPeriodicTasksExecutingStatistics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PTasksExecStatRequest)
+	in := new(request.PTasksExecStat)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -152,13 +154,13 @@ func _Observer_GetPeriodicTasksExecutingStatistics_Handler(srv interface{}, ctx 
 		FullMethod: "/Observer/GetPeriodicTasksExecutingStatistics",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObserverServer).GetPeriodicTasksExecutingStatistics(ctx, req.(*PTasksExecStatRequest))
+		return srv.(ObserverServer).GetPeriodicTasksExecutingStatistics(ctx, req.(*request.PTasksExecStat))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Observer_GetPeriodicTasksDispatchCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PTaskDispatchCountRequest)
+	in := new(request.PTaskDispatchCount)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -170,13 +172,13 @@ func _Observer_GetPeriodicTasksDispatchCount_Handler(srv interface{}, ctx contex
 		FullMethod: "/Observer/GetPeriodicTasksDispatchCount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObserverServer).GetPeriodicTasksDispatchCount(ctx, req.(*PTaskDispatchCountRequest))
+		return srv.(ObserverServer).GetPeriodicTasksDispatchCount(ctx, req.(*request.PTaskDispatchCount))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Observer_GetPeriodicTasksRuntimeRanking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PTaskRuntimeRankingRequest)
+	in := new(request.PTaskRuntimeRanking)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -188,13 +190,13 @@ func _Observer_GetPeriodicTasksRuntimeRanking_Handler(srv interface{}, ctx conte
 		FullMethod: "/Observer/GetPeriodicTasksRuntimeRanking",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObserverServer).GetPeriodicTasksRuntimeRanking(ctx, req.(*PTaskRuntimeRankingRequest))
+		return srv.(ObserverServer).GetPeriodicTasksRuntimeRanking(ctx, req.(*request.PTaskRuntimeRanking))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Observer_GetPeriodicTasksErrorRanking_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PTaskErrorRankingRequest)
+	in := new(request.PTaskErrorRanking)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -206,7 +208,7 @@ func _Observer_GetPeriodicTasksErrorRanking_Handler(srv interface{}, ctx context
 		FullMethod: "/Observer/GetPeriodicTasksErrorRanking",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObserverServer).GetPeriodicTasksErrorRanking(ctx, req.(*PTaskErrorRankingRequest))
+		return srv.(ObserverServer).GetPeriodicTasksErrorRanking(ctx, req.(*request.PTaskErrorRanking))
 	}
 	return interceptor(ctx, in, info, handler)
 }

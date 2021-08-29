@@ -1085,3 +1085,46 @@ message UDFCommonFunc {
 	// @inject_tag: json:"spaceid" default:"" binding:"lte=20" swaggerignore:"true"
     string SpaceID = 1 [ (validator.field) = { length_eq: 20 } ];
 }
+
+message PTasksStatusStat {
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  // @inject_tag: params:"start_time" form:"start_time" default="0" binding:"gte=0"
+  int64 start_time = 2 [ (validator.field) = { int_gt: -1 } ];
+  // @inject_tag: params:"end_time" form:"end_time" default="0" binding:"gte=0"
+  int64 end_time = 3 [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTasksExecStat {
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  // @inject_tag: params:"state" form:"state"
+  int32 state = 2 [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTaskRuntimeRanking {
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+  int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
+  int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTaskErrorRanking {
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+  int32  limit = 2    [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
+  int32  offset = 3   [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTaskDispatchCount {
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [(validator.field) = { string_not_empty: true } ];
+  // @inject_tag: params:"start_time" form:"start_time" default="0" binding:"gte=0"
+  int64 start_time = 2 [ (validator.field) = { int_gt: -1 } ];
+  // @inject_tag: params:"end_time" form:"end_time" default="0" binding:"gte=0"
+  int64 end_time = 3 [ (validator.field) = { int_gt: -1 } ];
+}

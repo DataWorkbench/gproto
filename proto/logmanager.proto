@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/logpb";
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+service LogManager {
+  rpc ListJMHistoryLogFiles(ListHistLogsRequest) returns (ListJMHistLogsReply) {}
+  rpc ListTMHistoryLogFiles(ListHistLogsRequest) returns (ListTMHistLogsReply) {}
+  rpc DownloadJobMgrLogFile(DownloadJobMgrRequest) returns (stream FileContent) {}
+  rpc DownloadTaskMgrLogFile(DownloadTaskMgrRequest) returns (stream FileContent) {}
+  rpc UploadLogFile(UploadFileRequest) returns (UploadFileReply) {}
+  rpc GetUploadingTaskStat(TaskStatRequest) returns (TaskStatReply) {}
+}
+
+message ListHistLogsRequest {
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
+}
+
+message ListJMHistLogsReply {
+  repeated FileState stat = 1;
+}
+
+message ListTMHistLogsReply {
+  map<string, TaskLogFiles> task_logs = 1;
+}
+
+message TaskLogFiles {
+  repeated FileState stat = 1;
+}
+
+message FileState {
+  int64 file_size = 1 [ (validator.field) = { int_gt: -1 } ];
+  string file_name = 2 [ (validator.field) = { string_not_empty: true } ];
+}
+
+message DownloadJobMgrRequest {
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
+  string file_name = 4 [ (validator.field) = { string_not_empty: true } ];
+}
+
+message DownloadTaskMgrRequest {
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
+  string file_name = 4 [ (validator.field) = { string_not_empty: true } ];
+  string task_manager_id = 5 [ (validator.field) = { string_not_empty: true } ];
+}
+
+message FileContent {
+  bytes file_data = 1;
+  int64 file_size = 2 [ (validator.field) = { int_gt: -1 } ];
+}
+
+message UploadFileRequest {
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
+  string server_url = 4 [ (validator.field) = { string_not_empty: true } ];
+}
+
+enum TaskStatus {
+  Started = 0;
+  NotStarted = 1;
+}
+
+message UploadFileReply {
+  TaskStatus status = 1 ;
+}
+
+message TaskStatRequest {
+  string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
+  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
+  string server_url = 4 [ (validator.field) = { string_not_empty: true } ];
+}
+
+message TaskStatReply {
+  bool completed = 1 ;
+}

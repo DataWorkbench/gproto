@@ -326,3 +326,73 @@ func (this *DescribeUDF) Validate() error {
 	}
 	return nil
 }
+func (this *PTasksStatusStat) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *PTasksExecStat) Validate() error {
+	for _, item := range this.Today {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Today", err)
+			}
+		}
+	}
+	for _, item := range this.Yesterday {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Yesterday", err)
+			}
+		}
+	}
+	for _, item := range this.History {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("History", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *PTaskRuntimeRanking) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	if !(this.Total > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Total", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Total))
+	}
+	return nil
+}
+func (this *PTaskErrorRanking) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	if !(this.Total > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Total", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Total))
+	}
+	return nil
+}
+func (this *PTaskDispatchCount) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}

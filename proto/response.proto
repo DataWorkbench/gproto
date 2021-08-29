@@ -291,3 +291,37 @@ message DescribeUDF {
   // @inject_tag: json:"infos"
   model.UDFInfo info = 1 [(validator.field) = {}];
 }
+
+
+message PTasksStatusStat {
+  // @inject_tag: json:"infos"
+  repeated model.InstanceStatusStat infos = 1 [ (validator.field) = { } ];
+}
+
+message PTasksExecStat {
+  // @inject_tag: json:"today"
+  repeated model.InstanceTaskExecStat today = 1 [ (validator.field) = { } ];
+  // @inject_tag: json:"yesterday"
+  repeated model.InstanceTaskExecStat yesterday = 2 [ (validator.field) = { } ];
+  // @inject_tag: json:"history"
+  repeated model.InstanceTaskExecStat history = 3 [ (validator.field) = { } ];
+}
+
+message PTaskRuntimeRanking {
+  // @inject_tag: json:"infos"
+  repeated model.InstanceRuntimeRankInfo infos = 1 [ (validator.field) = { } ];
+  // @inject_tag: json:"total"
+  int64 total = 2 [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTaskErrorRanking {
+  // @inject_tag: json:"infos"
+  repeated model.InstanceErrorRankInfo infos = 1 [ (validator.field) = { } ];
+  // @inject_tag: json:"total"
+  int64 total = 2 [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTaskDispatchCount {
+  // @inject_tag: json:"infos"
+  repeated model.DispatchTaskCountInfo infos = 1 [ (validator.field) = { } ];
+}

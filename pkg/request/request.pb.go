@@ -4833,6 +4833,313 @@ func (x *UDFCommonFunc) GetSpaceID() string {
 	return ""
 }
 
+type PTasksStatusStat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	StartTime int64  `protobuf:"varint,2,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty" params:"start_time" form:"start_time" binding:"gte=0"`
+	EndTime   int64  `protobuf:"varint,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty" params:"end_time" form:"end_time" binding:"gte=0"`
+}
+
+func (x *PTasksStatusStat) Reset() {
+	*x = PTasksStatusStat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[72]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PTasksStatusStat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PTasksStatusStat) ProtoMessage() {}
+
+func (x *PTasksStatusStat) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[72]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PTasksStatusStat.ProtoReflect.Descriptor instead.
+func (*PTasksStatusStat) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *PTasksStatusStat) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *PTasksStatusStat) GetStartTime() int64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *PTasksStatusStat) GetEndTime() int64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+type PTasksExecStat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	State   int32  `protobuf:"varint,2,opt,name=state,proto3" json:"state,omitempty" params:"state" form:"state"`
+}
+
+func (x *PTasksExecStat) Reset() {
+	*x = PTasksExecStat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[73]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PTasksExecStat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PTasksExecStat) ProtoMessage() {}
+
+func (x *PTasksExecStat) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[73]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PTasksExecStat.ProtoReflect.Descriptor instead.
+func (*PTasksExecStat) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *PTasksExecStat) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *PTasksExecStat) GetState() int32 {
+	if x != nil {
+		return x.State
+	}
+	return 0
+}
+
+type PTaskRuntimeRanking struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	Limit   int32  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Offset  int32  `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"`
+}
+
+func (x *PTaskRuntimeRanking) Reset() {
+	*x = PTaskRuntimeRanking{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[74]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PTaskRuntimeRanking) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PTaskRuntimeRanking) ProtoMessage() {}
+
+func (x *PTaskRuntimeRanking) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[74]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PTaskRuntimeRanking.ProtoReflect.Descriptor instead.
+func (*PTaskRuntimeRanking) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *PTaskRuntimeRanking) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *PTaskRuntimeRanking) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *PTaskRuntimeRanking) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type PTaskErrorRanking struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	Limit   int32  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	Offset  int32  `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"`
+}
+
+func (x *PTaskErrorRanking) Reset() {
+	*x = PTaskErrorRanking{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[75]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PTaskErrorRanking) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PTaskErrorRanking) ProtoMessage() {}
+
+func (x *PTaskErrorRanking) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[75]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PTaskErrorRanking.ProtoReflect.Descriptor instead.
+func (*PTaskErrorRanking) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *PTaskErrorRanking) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *PTaskErrorRanking) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *PTaskErrorRanking) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type PTaskDispatchCount struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	StartTime int64  `protobuf:"varint,2,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty" params:"start_time" form:"start_time" binding:"gte=0"`
+	EndTime   int64  `protobuf:"varint,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty" params:"end_time" form:"end_time" binding:"gte=0"`
+}
+
+func (x *PTaskDispatchCount) Reset() {
+	*x = PTaskDispatchCount{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[76]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PTaskDispatchCount) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PTaskDispatchCount) ProtoMessage() {}
+
+func (x *PTaskDispatchCount) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[76]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PTaskDispatchCount.ProtoReflect.Descriptor instead.
+func (*PTaskDispatchCount) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *PTaskDispatchCount) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *PTaskDispatchCount) GetStartTime() int64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *PTaskDispatchCount) GetEndTime() int64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
 type UpsertMembers_Pair struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -4847,7 +5154,7 @@ type UpsertMembers_Pair struct {
 func (x *UpsertMembers_Pair) Reset() {
 	*x = UpsertMembers_Pair{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[72]
+		mi := &file_proto_request_proto_msgTypes[77]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4860,7 +5167,7 @@ func (x *UpsertMembers_Pair) String() string {
 func (*UpsertMembers_Pair) ProtoMessage() {}
 
 func (x *UpsertMembers_Pair) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[72]
+	mi := &file_proto_request_proto_msgTypes[77]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5481,10 +5788,51 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x65, 0x49, 0x44, 0x22, 0x32, 0x0a, 0x0d, 0x55, 0x44, 0x46, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
 	0x46, 0x75, 0x6e, 0x63, 0x12, 0x21, 0x0a, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07,
-	0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65,
-	0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x22, 0x91, 0x01, 0x0a, 0x10, 0x50, 0x54, 0x61, 0x73,
+	0x6b, 0x73, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x53, 0x74, 0x61, 0x74, 0x12, 0x21, 0x0a, 0x08,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06,
+	0xe2, 0xdf, 0x1f, 0x02, 0x58, 0x01, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12,
+	0x2e, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0x01, 0x52, 0x09, 0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x12,
+	0x2a, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0x01, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x5a, 0x0a, 0x0e, 0x50,
+	0x54, 0x61, 0x73, 0x6b, 0x73, 0x45, 0x78, 0x65, 0x63, 0x53, 0x74, 0x61, 0x74, 0x12, 0x21, 0x0a,
+	0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x58, 0x01, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64,
+	0x12, 0x25, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42,
+	0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01,
+	0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x22, 0x82, 0x01, 0x0a, 0x13, 0x50, 0x54, 0x61, 0x73,
+	0x6b, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x52, 0x61, 0x6e, 0x6b, 0x69, 0x6e, 0x67, 0x12,
+	0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69,
+	0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x22, 0x80, 0x01, 0x0a,
+	0x11, 0x50, 0x54, 0x61, 0x73, 0x6b, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x61, 0x6e, 0x6b, 0x69,
+	0x6e, 0x67, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73,
+	0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52,
+	0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x22,
+	0x93, 0x01, 0x0a, 0x12, 0x50, 0x54, 0x61, 0x73, 0x6b, 0x44, 0x69, 0x73, 0x70, 0x61, 0x74, 0x63,
+	0x68, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x21, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x58, 0x01,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2e, 0x0a, 0x0a, 0x73, 0x74, 0x61,
+	0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2,
+	0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x09,
+	0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x2a, 0x0a, 0x08, 0x65, 0x6e, 0x64,
+	0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0f, 0xe2, 0xdf, 0x1f,
+	0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x07, 0x65, 0x6e,
+	0x64, 0x54, 0x69, 0x6d, 0x65, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63,
+	0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -5499,7 +5847,7 @@ func file_proto_request_proto_rawDescGZIP() []byte {
 	return file_proto_request_proto_rawDescData
 }
 
-var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 74)
+var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 79)
 var file_proto_request_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),            // 0: request.ListWorkspaces
 	(*DeleteWorkspaces)(nil),          // 1: request.DeleteWorkspaces
@@ -5573,45 +5921,50 @@ var file_proto_request_proto_goTypes = []interface{}{
 	(*DescribeUDF)(nil),               // 69: request.DescribeUDF
 	(*ListUDF)(nil),                   // 70: request.ListUDF
 	(*UDFCommonFunc)(nil),             // 71: request.UDFCommonFunc
-	(*UpsertMembers_Pair)(nil),        // 72: request.UpsertMembers.Pair
-	nil,                               // 73: request.CheckPermission.RolesEntry
-	(model.Workspace_Status)(0),       // 74: model.Workspace.Status
-	(*model.OpAudit)(nil),             // 75: model.OpAudit
-	(model.OpType)(0),                 // 76: model.OpType
-	(model.OpAudit_State)(0),          // 77: model.OpAudit.State
-	(model.StreamFlow_Type)(0),        // 78: model.StreamFlow.Type
-	(*model.StreamFlowSchedule)(nil),  // 79: model.StreamFlowSchedule
-	(*model.StreamFlowEnv)(nil),       // 80: model.StreamFlowEnv
-	(*model.StreamFlowProperty)(nil),  // 81: model.StreamFlowProperty
-	(*model.MonitorRule)(nil),         // 82: model.MonitorRule
-	(*model.SourceUrl)(nil),           // 83: model.SourceUrl
-	(*model.TableUrl)(nil),            // 84: model.TableUrl
-	(model.Resource_Type)(0),          // 85: model.Resource.Type
+	(*PTasksStatusStat)(nil),          // 72: request.PTasksStatusStat
+	(*PTasksExecStat)(nil),            // 73: request.PTasksExecStat
+	(*PTaskRuntimeRanking)(nil),       // 74: request.PTaskRuntimeRanking
+	(*PTaskErrorRanking)(nil),         // 75: request.PTaskErrorRanking
+	(*PTaskDispatchCount)(nil),        // 76: request.PTaskDispatchCount
+	(*UpsertMembers_Pair)(nil),        // 77: request.UpsertMembers.Pair
+	nil,                               // 78: request.CheckPermission.RolesEntry
+	(model.Workspace_Status)(0),       // 79: model.Workspace.Status
+	(*model.OpAudit)(nil),             // 80: model.OpAudit
+	(model.OpType)(0),                 // 81: model.OpType
+	(model.OpAudit_State)(0),          // 82: model.OpAudit.State
+	(model.StreamFlow_Type)(0),        // 83: model.StreamFlow.Type
+	(*model.StreamFlowSchedule)(nil),  // 84: model.StreamFlowSchedule
+	(*model.StreamFlowEnv)(nil),       // 85: model.StreamFlowEnv
+	(*model.StreamFlowProperty)(nil),  // 86: model.StreamFlowProperty
+	(*model.MonitorRule)(nil),         // 87: model.MonitorRule
+	(*model.SourceUrl)(nil),           // 88: model.SourceUrl
+	(*model.TableUrl)(nil),            // 89: model.TableUrl
+	(model.Resource_Type)(0),          // 90: model.Resource.Type
 }
 var file_proto_request_proto_depIdxs = []int32{
-	74, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
-	75, // 1: request.AddAudit.info:type_name -> model.OpAudit
-	76, // 2: request.ListAudits.type:type_name -> model.OpType
-	77, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
-	72, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
-	76, // 5: request.CheckPermission.op_type:type_name -> model.OpType
-	73, // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
-	78, // 7: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
-	79, // 8: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
-	80, // 9: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
-	81, // 10: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
-	82, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
-	82, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
-	81, // 13: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
+	79, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
+	80, // 1: request.AddAudit.info:type_name -> model.OpAudit
+	81, // 2: request.ListAudits.type:type_name -> model.OpType
+	82, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
+	77, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
+	81, // 5: request.CheckPermission.op_type:type_name -> model.OpType
+	78, // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
+	83, // 7: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
+	84, // 8: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	85, // 9: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	86, // 10: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
+	87, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
+	87, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
+	86, // 13: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
 	41, // 14: request.TerminateStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
 	41, // 15: request.SuspendStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
 	41, // 16: request.ResumeStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
-	83, // 17: request.CreateSource.Url:type_name -> model.SourceUrl
-	83, // 18: request.UpdateSource.Url:type_name -> model.SourceUrl
-	83, // 19: request.PingSource.Url:type_name -> model.SourceUrl
-	84, // 20: request.CreateTable.Url:type_name -> model.TableUrl
-	84, // 21: request.UpdateTable.Url:type_name -> model.TableUrl
-	85, // 22: request.UpdateResource.resource_type:type_name -> model.Resource.Type
+	88, // 17: request.CreateSource.Url:type_name -> model.SourceUrl
+	88, // 18: request.UpdateSource.Url:type_name -> model.SourceUrl
+	88, // 19: request.PingSource.Url:type_name -> model.SourceUrl
+	89, // 20: request.CreateTable.Url:type_name -> model.TableUrl
+	89, // 21: request.UpdateTable.Url:type_name -> model.TableUrl
+	90, // 22: request.UpdateResource.resource_type:type_name -> model.Resource.Type
 	23, // [23:23] is the sub-list for method output_type
 	23, // [23:23] is the sub-list for method input_type
 	23, // [23:23] is the sub-list for extension type_name
@@ -6490,6 +6843,66 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PTasksStatusStat); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PTasksExecStat); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PTaskRuntimeRanking); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PTaskErrorRanking); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PTaskDispatchCount); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpsertMembers_Pair); i {
 			case 0:
 				return &v.state
@@ -6508,7 +6921,7 @@ func file_proto_request_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_request_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   74,
+			NumMessages:   79,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

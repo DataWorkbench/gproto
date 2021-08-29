@@ -2177,9 +2177,9 @@ type InstanceStatusStat struct {
 	unknownFields protoimpl.UnknownFields
 
 	// instance status
-	State int32 `protobuf:"varint,1,opt,name=state,proto3" json:"state,omitempty"`
+	State int32 `protobuf:"varint,1,opt,name=state,proto3" json:"state"`
 	// instance count with the status
-	Count int64 `protobuf:"varint,2,opt,name=count,proto3" json:"count,omitempty"`
+	Count int64 `protobuf:"varint,2,opt,name=count,proto3" json:"count"`
 }
 
 func (x *InstanceStatusStat) Reset() {
@@ -2234,13 +2234,13 @@ type InstanceRuntimeRankInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// instance id
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
 	// flow_id
-	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty"`
+	FlowId string `protobuf:"bytes,2,opt,name=flow_id,json=flowId,proto3" json:"flow_id"`
 	// running time
-	RunningTime int64 `protobuf:"varint,3,opt,name=running_time,json=runningTime,proto3" json:"running_time,omitempty"`
+	RunningTime int64 `protobuf:"varint,3,opt,name=running_time,json=runningTime,proto3" json:"running_time"`
 	// version
-	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty"`
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version"`
 }
 
 func (x *InstanceRuntimeRankInfo) Reset() {
@@ -2309,11 +2309,11 @@ type InstanceErrorRankInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// flow_id
-	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id,omitempty"`
+	FlowId string `protobuf:"bytes,1,opt,name=flow_id,json=flowId,proto3" json:"flow_id"`
 	// version
-	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version"`
 	// running time
-	ErrorCount int64 `protobuf:"varint,3,opt,name=error_count,json=errorCount,proto3" json:"error_count,omitempty"`
+	ErrorCount int64 `protobuf:"varint,3,opt,name=error_count,json=errorCount,proto3" json:"error_count"`
 }
 
 func (x *InstanceErrorRankInfo) Reset() {
@@ -2375,11 +2375,11 @@ type DispatchTaskCountInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	// flow_count
-	FlowCount int32 `protobuf:"varint,1,opt,name=flow_count,json=flowCount,proto3" json:"flow_count,omitempty"`
+	FlowCount int32 `protobuf:"varint,1,opt,name=flow_count,json=flowCount,proto3" json:"flow_count"`
 	// instance count
-	InstanceCount int32 `protobuf:"varint,2,opt,name=instance_count,json=instanceCount,proto3" json:"instance_count,omitempty"`
+	InstanceCount int32 `protobuf:"varint,2,opt,name=instance_count,json=instanceCount,proto3" json:"instance_id"`
 	// updated time
-	Updated int64 `protobuf:"varint,6,opt,name=updated,proto3" json:"updated,omitempty"`
+	Updated int64 `protobuf:"varint,6,opt,name=updated,proto3" json:"updated"`
 }
 
 func (x *DispatchTaskCountInfo) Reset() {
@@ -2441,9 +2441,9 @@ type InstanceTaskExecStat struct {
 	unknownFields protoimpl.UnknownFields
 
 	// hour
-	Hour int32 `protobuf:"varint,1,opt,name=hour,proto3" json:"hour,omitempty"`
-	// success count
-	InstanceCount int64 `protobuf:"varint,2,opt,name=instance_count,json=instanceCount,proto3" json:"instance_count,omitempty"`
+	Hour int32 `protobuf:"varint,1,opt,name=hour,proto3" json:"hour"`
+	// instance success count
+	InstanceCount int64 `protobuf:"varint,2,opt,name=instance_count,json=instanceCount,proto3" json:"instance_count"`
 }
 
 func (x *InstanceTaskExecStat) Reset() {
