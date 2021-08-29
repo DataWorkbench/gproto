@@ -328,11 +328,11 @@ message JobParser {
 	// ZeppelinPythonUDF
     // @inject_tag: json:"pythonudf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
 	string ZeppelinPythonUDF = 4 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
-	
+
 	// ZeppelinMainRun
     // @inject_tag: json:"mainrun" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
 	string ZeppelinMainRun = 5 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
-	
+
 	// JobResources
     // @inject_tag: json:"resources" binding:"-"
 	model.JobResources Resources = 6 [ (validator.field) = { } ];
@@ -351,4 +351,38 @@ message JobFree {
 	// delete jar.
     // @inject_tag: json:"zeppelindeletejar" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
 	string ZeppelinDeleteJar = 1 [ (validator.field) = { length_gt: 0, length_lt: 20000 } ];
+}
+
+
+message PTasksStatusStat {
+  // @inject_tag: json:"infos"
+  repeated model.InstanceStatusStat infos = 1 [ (validator.field) = { } ];
+}
+
+message PTasksExecStat {
+  // @inject_tag: json:"today"
+  repeated model.InstanceTaskExecStat today = 1 [ (validator.field) = { } ];
+  // @inject_tag: json:"yesterday"
+  repeated model.InstanceTaskExecStat yesterday = 2 [ (validator.field) = { } ];
+  // @inject_tag: json:"history"
+  repeated model.InstanceTaskExecStat history = 3 [ (validator.field) = { } ];
+}
+
+message PTaskRuntimeRanking {
+  // @inject_tag: json:"infos"
+  repeated model.InstanceRuntimeRankInfo infos = 1 [ (validator.field) = { } ];
+  // @inject_tag: json:"total"
+  int64 total = 2 [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTaskErrorRanking {
+  // @inject_tag: json:"infos"
+  repeated model.InstanceErrorRankInfo infos = 1 [ (validator.field) = { } ];
+  // @inject_tag: json:"total"
+  int64 total = 2 [ (validator.field) = { int_gt: -1 } ];
+}
+
+message PTaskDispatchCount {
+  // @inject_tag: json:"infos"
+  repeated model.DispatchTaskCountInfo infos = 1 [ (validator.field) = { } ];
 }

@@ -1003,3 +1003,66 @@ func (this *JobParser) Validate() error {
 	}
 	return nil
 }
+func (this *PTasksStatusStat) Validate() error {
+	if this.SpaceId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
+	}
+	if !(this.StartTime > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("StartTime", fmt.Errorf(`value '%v' must be greater than '-1'`, this.StartTime))
+	}
+	if !(this.EndTime > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("EndTime", fmt.Errorf(`value '%v' must be greater than '-1'`, this.EndTime))
+	}
+	return nil
+}
+func (this *PTasksExecStat) Validate() error {
+	if this.SpaceId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
+	}
+	if !(this.State > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must be greater than '-1'`, this.State))
+	}
+	return nil
+}
+func (this *PTaskRuntimeRanking) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	return nil
+}
+func (this *PTaskErrorRanking) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	return nil
+}
+func (this *PTaskDispatchCount) Validate() error {
+	if this.SpaceId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
+	}
+	if !(this.StartTime > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("StartTime", fmt.Errorf(`value '%v' must be greater than '-1'`, this.StartTime))
+	}
+	if !(this.EndTime > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("EndTime", fmt.Errorf(`value '%v' must be greater than '-1'`, this.EndTime))
+	}
+	return nil
+}
