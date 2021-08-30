@@ -17,6 +17,7 @@ message ValidateRequestSignatureRequest {
     string req_signature = 5;
     string req_access_key_id = 6;
     string req_source = 7;
+    string req_user_agent = 8;
 }
 
 message ValidateRequestSignatureReply {
