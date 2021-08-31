@@ -8,13 +8,33 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 
 service FileManager{
+  rpc CreateDir(CreateDirRequest) returns (model.EmptyStruct){}
+  rpc DeleteDir(DeleteDirRequest) returns (model.EmptyStruct){}
   rpc UploadFile(stream UploadFileRequest) returns (model.EmptyStruct){}
   rpc DownloadFile(DownloadRequest) returns (stream DownloadResponse){}
   rpc DescribeFile(DescribeRequest) returns (FileInfoResponse){}
   rpc ListFiles(ListRequest) returns (ListResponse){}
+  rpc ListFilesByDir(ListByDirRequest) returns (ListResponse){}
   rpc UpdateFile(UpdateFileRequest) returns(model.EmptyStruct){}
   rpc DeleteFiles(DeleteFilesRequest) returns(model.EmptyStruct){}
   rpc DeleteAllFiles(DeleteAllFilesRequest) returns(model.EmptyStruct){}
+}
+
+message CreateDirRequest{
+  string file_id = 1;
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 2 [(validator.field) = {length_eq: 20}];
+
+  // The dir name. required.
+  // @inject_tag: params:"dir_name" binding:"required,lte=500"
+  string dir_name = 3 [(validator.field) = {msg_exists: true}];
+}
+
+message DeleteDirRequest{
+  // The file id in HTTP Request_URI.
+  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=20" swaggerignore:"true"
+  string file_id = 1 [(validator.field) = {length_eq: 20}];
 }
 
 message UploadFileRequest{
@@ -31,7 +51,7 @@ message UploadFileRequest{
 
   // The file type. required.
   // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
-  int32 file_type = 4 [(validator.field) = {int_lt:3}];
+  int32 file_type = 4 [(validator.field) = {int_gt:0; int_lt:3}];
 
   // The data for file. required.
   bytes data = 5 [(validator.field) = {msg_exists: true}];;
@@ -56,6 +76,33 @@ message ListRequest{
   // The offset position. Not required, default 0.
   // @inject_tag: params:"offset" form:"offset" default:"100" binding:"gt=0,lte=100"
   int32  offset = 3   [(validator.field) = {int_gt: -1}];
+
+  // The file type. required.
+  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  int32  file_type = 4 [(validator.field) = {int_gt:0,int_lt:3}];
+}
+
+message ListByDirRequest{
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [(validator.field) = {length_eq: 20}];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+  int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: params:"offset" form:"offset" default:"100" binding:"gt=0,lte=100"
+  int32  offset = 3   [(validator.field) = {int_gt: -1}];
+
+  // The dir name. required.
+  // @inject_tag: params:"dir_name" binding:"required,lte=500"
+  string dir_name = 4 [(validator.field) = {msg_exists: true}];
+
+  // The file type. required.
+  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  int32  file_type = 5 [(validator.field) = {int_gt:0,int_lt:3}];
 }
 
 message UpdateFileRequest{
@@ -102,6 +149,7 @@ message FileInfoResponse{
   string file_path = 4;
   int32  file_type = 5;
   string url = 6;
+  bool isDir = 7;
 }
 
 message ListResponse {
