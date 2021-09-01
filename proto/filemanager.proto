@@ -21,13 +21,15 @@ service FileManager{
 }
 
 message CreateDirRequest{
+  // The file id in HTTP Request_URI.
   string file_id = 1;
+
   // The workspace id in HTTP Request-URI
   // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
   string space_id = 2 [(validator.field) = {length_eq: 20}];
 
   // The dir name. required.
-  // @inject_tag: params:"dir_name" binding:"required,lte=500"
+  // @inject_tag: params:"dir_name" form:"dir_name" binding:"required,lte=500"
   string dir_name = 3 [(validator.field) = {msg_exists: true}];
 }
 
@@ -74,11 +76,11 @@ message ListRequest{
   int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
 
   // The offset position. Not required, default 0.
-  // @inject_tag: params:"offset" form:"offset" default:"100" binding:"gt=0,lte=100"
+  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
   int32  offset = 3   [(validator.field) = {int_gt: -1}];
 
   // The file type. required.
-  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  // @inject_tag: params:"file_type" form:"file_type" binding:"required,oneof=1 2"
   int32  file_type = 4 [(validator.field) = {int_gt:0,int_lt:3}];
 }
 
@@ -93,15 +95,15 @@ message ListByDirRequest{
   int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
 
   // The offset position. Not required, default 0.
-  // @inject_tag: params:"offset" form:"offset" default:"100" binding:"gt=0,lte=100"
+  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
   int32  offset = 3   [(validator.field) = {int_gt: -1}];
 
   // The dir name. required.
-  // @inject_tag: params:"dir_name" binding:"required,lte=500"
+  // @inject_tag: params:"dir_name" form:"dir_name" binding:"required,lte=500"
   string dir_name = 4 [(validator.field) = {msg_exists: true}];
 
   // The file type. required.
-  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  // @inject_tag: params:"file_type" form:"file_type" binding:"required,oneof=1 2"
   int32  file_type = 5 [(validator.field) = {int_gt:0,int_lt:3}];
 }
 

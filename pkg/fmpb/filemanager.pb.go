@@ -32,11 +32,12 @@ type CreateDirRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// The file id in HTTP Request_URI.
 	FileId string `protobuf:"bytes,1,opt,name=file_id,json=fileId,proto3" json:"file_id,omitempty"`
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The dir name. required.
-	DirName string `protobuf:"bytes,3,opt,name=dir_name,json=dirName,proto3" json:"dir_name,omitempty" params:"dir_name" binding:"required,lte=500"`
+	DirName string `protobuf:"bytes,3,opt,name=dir_name,json=dirName,proto3" json:"dir_name,omitempty" params:"dir_name" form:"dir_name" binding:"required,lte=500"`
 }
 
 func (x *CreateDirRequest) Reset() {
@@ -283,9 +284,9 @@ type ListRequest struct {
 	// Not required, Max 100, default 100.
 	Limit int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"100" binding:"gt=0,lte=100"`
+	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"`
 	// The file type. required.
-	FileType int32 `protobuf:"varint,4,opt,name=file_type,json=fileType,proto3" json:"file_type,omitempty" params:"file_type" binding:"required,oneof=1 2"`
+	FileType int32 `protobuf:"varint,4,opt,name=file_type,json=fileType,proto3" json:"file_type,omitempty" params:"file_type" form:"file_type" binding:"required,oneof=1 2"`
 }
 
 func (x *ListRequest) Reset() {
@@ -359,11 +360,11 @@ type ListByDirRequest struct {
 	// Not required, Max 100, default 100.
 	Limit int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"100" binding:"gt=0,lte=100"`
+	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"`
 	// The dir name. required.
-	DirName string `protobuf:"bytes,4,opt,name=dir_name,json=dirName,proto3" json:"dir_name,omitempty" params:"dir_name" binding:"required,lte=500"`
+	DirName string `protobuf:"bytes,4,opt,name=dir_name,json=dirName,proto3" json:"dir_name,omitempty" params:"dir_name" form:"dir_name" binding:"required,lte=500"`
 	// The file type. required.
-	FileType int32 `protobuf:"varint,5,opt,name=file_type,json=fileType,proto3" json:"file_type,omitempty" params:"file_type" binding:"required,oneof=1 2"`
+	FileType int32 `protobuf:"varint,5,opt,name=file_type,json=fileType,proto3" json:"file_type,omitempty" params:"file_type" form:"file_type" binding:"required,oneof=1 2"`
 }
 
 func (x *ListByDirRequest) Reset() {
