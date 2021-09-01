@@ -149,7 +149,7 @@ message ListAudits {
 	
 	// Querying conditions. Not required.
 	// @inject_tag: json:"type" form:"type" default:"" binding:"-"
-	model.OpAudit.Type type = 7 [ (validator.field) = { } ];
+	model.OpType type = 7 [ (validator.field) = { } ];
 	
 	// Querying conditions. Not required.
 	// @inject_tag: json:"action" form:"action" default:"" binding:"-"
@@ -240,7 +240,7 @@ message CheckPermission {
 	string space_id            = 2 [ (validator.field) = { length_eq: 20 } ];
 	string resource            = 3 [ (validator.field) = { } ];
 	string action              = 4 [ (validator.field) = { } ];
-	model.OpAudit.Type op_type = 5 [ (validator.field) = { int_gt: 0, int_lt: 5 } ];
+	model.OpType op_type = 5 [ (validator.field) = { int_gt: 0, int_lt: 5 } ];
 }
 
 // ListStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query)

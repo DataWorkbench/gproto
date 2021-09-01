@@ -12,22 +12,32 @@ import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
 //
 
 enum EngineType {
-	_ = 0;
+	_EngineType = 0; // Is useless.
 	BuildIn = 1;
 	External = 2;
 }
 
 enum ScheduleConcurrencyPolicy {
-	__ = 0;
+	_ScheduleConcurrencyPolicy = 0; // Is useless.
 	Allow = 1;
 	Forbid = 2;
 	Replace = 3;
 }
 
 enum ScheduleRetryPolicy {
-	___ = 0;
+	_ScheduleRetryPolicy = 0; // Is useless.
 	None = 1;
 	Auto = 2;
+}
+
+// OpType declares the API operation type.
+enum OpType {
+	_OpType = 0; // Is useless.
+	Unknown = 1;
+	Create = 2;
+	Delete = 3;
+	Update = 4;
+	Read = 5;
 }
 
 //
@@ -367,15 +377,6 @@ message StreamFlowInst {
 
 // The workspace operation audit log record.
 message OpAudit {
-	enum Type {
-		_ = 0;
-		Unknown = 1;
-		Create = 2;
-		Delete = 3;
-		Update = 4;
-		Read = 5;
-	}
-	
 	enum State {
 		__ = 0;
 		Success = 1;
@@ -391,7 +392,7 @@ message OpAudit {
 	
 	// -- The type of operation, 2 => "Create",  3 => "Delete", 4 => "Update"
 	// @inject_tag: json:"type" gorm:"column:type;"
-	Type type = 3 [ (validator.field) = { int_gt: 0 } ];
+	OpType type = 3 [ (validator.field) = { int_gt: 0 } ];
 	
 	//	-- The operation of user behavior.
 	// @inject_tag: json:"action" gorm:"column:action;"
@@ -413,20 +414,19 @@ message Role {
 		System = 1;
 		Custom = 2;
 	}
+
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// @inject_tag: json:"id" gorm:"column:id;"
+	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
 	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
-	// @inject_tag: json:"code" gorm:"column:code;"
-	string code = 3 [ (validator.field) = { length_lt: 64 } ];
-	
+	// The name of role. unique in a workspace.
 	// @inject_tag: json:"name" gorm:"column:name;"
-	string name = 4 [ (validator.field) = { length_lt: 128 } ];
-	
+	string name = 3 [ (validator.field) = { length_lt: 128 } ];
+
 	// @inject_tag: json:"type" gorm:"column:type;" 1 => "System" 2 => "Custom"
-	Type type = 5 [ (validator.field) = { int_gt: 0 } ];
+	Type type = 4 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The workspace member info.
