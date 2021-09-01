@@ -33,7 +33,7 @@ type CreateDirRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The file id in HTTP Request_URI.
-	FileId string `protobuf:"bytes,1,opt,name=file_id,json=fileId,proto3" json:"file_id,omitempty"`
+	FileId string `protobuf:"bytes,1,opt,name=file_id,json=fileId,proto3" json:"file_id,omitempty" params:"file_id" uri:"file_id" swaggerignore:"true"`
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The dir name. required.

@@ -22,6 +22,7 @@ service FileManager{
 
 message CreateDirRequest{
   // The file id in HTTP Request_URI.
+  // @inject_tag: params:"file_id" uri:"file_id" default:"" swaggerignore:"true"
   string file_id = 1;
 
   // The workspace id in HTTP Request-URI
