@@ -177,6 +177,72 @@ func (x *UploadFileRequest) GetData() []byte {
 	return nil
 }
 
+type CheckRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The file name. required.
+	FileName string `protobuf:"bytes,2,opt,name=file_name,json=fileName,proto3" json:"file_name,omitempty" params:"file_name" binding:"required,lte=500"`
+	// The file type. required.
+	FileType int32 `protobuf:"varint,3,opt,name=file_type,json=fileType,proto3" json:"file_type,omitempty" params:"file_type" binding:"required,oneof=1 2"`
+}
+
+func (x *CheckRequest) Reset() {
+	*x = CheckRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_filemanager_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CheckRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CheckRequest) ProtoMessage() {}
+
+func (x *CheckRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_filemanager_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CheckRequest.ProtoReflect.Descriptor instead.
+func (*CheckRequest) Descriptor() ([]byte, []int) {
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CheckRequest) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *CheckRequest) GetFileName() string {
+	if x != nil {
+		return x.FileName
+	}
+	return ""
+}
+
+func (x *CheckRequest) GetFileType() int32 {
+	if x != nil {
+		return x.FileType
+	}
+	return 0
+}
+
 type DownloadRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -189,7 +255,7 @@ type DownloadRequest struct {
 func (x *DownloadRequest) Reset() {
 	*x = DownloadRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[2]
+		mi := &file_proto_filemanager_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -202,7 +268,7 @@ func (x *DownloadRequest) String() string {
 func (*DownloadRequest) ProtoMessage() {}
 
 func (x *DownloadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[2]
+	mi := &file_proto_filemanager_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -215,7 +281,7 @@ func (x *DownloadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadRequest.ProtoReflect.Descriptor instead.
 func (*DownloadRequest) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{2}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DownloadRequest) GetFileId() string {
@@ -246,7 +312,7 @@ type ListRequest struct {
 func (x *ListRequest) Reset() {
 	*x = ListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[3]
+		mi := &file_proto_filemanager_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -259,7 +325,7 @@ func (x *ListRequest) String() string {
 func (*ListRequest) ProtoMessage() {}
 
 func (x *ListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[3]
+	mi := &file_proto_filemanager_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -272,7 +338,7 @@ func (x *ListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRequest.ProtoReflect.Descriptor instead.
 func (*ListRequest) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{3}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ListRequest) GetSpaceId() string {
@@ -326,7 +392,7 @@ type UpdateFileRequest struct {
 func (x *UpdateFileRequest) Reset() {
 	*x = UpdateFileRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[4]
+		mi := &file_proto_filemanager_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -339,7 +405,7 @@ func (x *UpdateFileRequest) String() string {
 func (*UpdateFileRequest) ProtoMessage() {}
 
 func (x *UpdateFileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[4]
+	mi := &file_proto_filemanager_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -352,7 +418,7 @@ func (x *UpdateFileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFileRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFileRequest) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{4}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateFileRequest) GetFileId() string {
@@ -388,7 +454,7 @@ type DeleteRequest struct {
 func (x *DeleteRequest) Reset() {
 	*x = DeleteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[5]
+		mi := &file_proto_filemanager_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -401,7 +467,7 @@ func (x *DeleteRequest) String() string {
 func (*DeleteRequest) ProtoMessage() {}
 
 func (x *DeleteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[5]
+	mi := &file_proto_filemanager_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -414,7 +480,7 @@ func (x *DeleteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRequest) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{5}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DeleteRequest) GetIds() []string {
@@ -436,7 +502,7 @@ type DeleteSpaceRequest struct {
 func (x *DeleteSpaceRequest) Reset() {
 	*x = DeleteSpaceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[6]
+		mi := &file_proto_filemanager_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -449,7 +515,7 @@ func (x *DeleteSpaceRequest) String() string {
 func (*DeleteSpaceRequest) ProtoMessage() {}
 
 func (x *DeleteSpaceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[6]
+	mi := &file_proto_filemanager_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -462,7 +528,7 @@ func (x *DeleteSpaceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteSpaceRequest.ProtoReflect.Descriptor instead.
 func (*DeleteSpaceRequest) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{6}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *DeleteSpaceRequest) GetSpaceIds() []string {
@@ -484,7 +550,7 @@ type DescribeRequest struct {
 func (x *DescribeRequest) Reset() {
 	*x = DescribeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[7]
+		mi := &file_proto_filemanager_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -497,7 +563,7 @@ func (x *DescribeRequest) String() string {
 func (*DescribeRequest) ProtoMessage() {}
 
 func (x *DescribeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[7]
+	mi := &file_proto_filemanager_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -510,7 +576,7 @@ func (x *DescribeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DescribeRequest.ProtoReflect.Descriptor instead.
 func (*DescribeRequest) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{7}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DescribeRequest) GetFileId() string {
@@ -531,7 +597,7 @@ type DownloadResponse struct {
 func (x *DownloadResponse) Reset() {
 	*x = DownloadResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[8]
+		mi := &file_proto_filemanager_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -544,7 +610,7 @@ func (x *DownloadResponse) String() string {
 func (*DownloadResponse) ProtoMessage() {}
 
 func (x *DownloadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[8]
+	mi := &file_proto_filemanager_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -557,7 +623,7 @@ func (x *DownloadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DownloadResponse.ProtoReflect.Descriptor instead.
 func (*DownloadResponse) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{8}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DownloadResponse) GetData() []byte {
@@ -584,7 +650,7 @@ type FileInfoResponse struct {
 func (x *FileInfoResponse) Reset() {
 	*x = FileInfoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[9]
+		mi := &file_proto_filemanager_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -597,7 +663,7 @@ func (x *FileInfoResponse) String() string {
 func (*FileInfoResponse) ProtoMessage() {}
 
 func (x *FileInfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[9]
+	mi := &file_proto_filemanager_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -610,7 +676,7 @@ func (x *FileInfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileInfoResponse.ProtoReflect.Descriptor instead.
 func (*FileInfoResponse) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{9}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *FileInfoResponse) GetId() string {
@@ -675,7 +741,7 @@ type ListResponse struct {
 func (x *ListResponse) Reset() {
 	*x = ListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_filemanager_proto_msgTypes[10]
+		mi := &file_proto_filemanager_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -688,7 +754,7 @@ func (x *ListResponse) String() string {
 func (*ListResponse) ProtoMessage() {}
 
 func (x *ListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_filemanager_proto_msgTypes[10]
+	mi := &file_proto_filemanager_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -701,7 +767,7 @@ func (x *ListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResponse.ProtoReflect.Descriptor instead.
 func (*ListResponse) Descriptor() ([]byte, []int) {
-	return file_proto_filemanager_proto_rawDescGZIP(), []int{10}
+	return file_proto_filemanager_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListResponse) GetInfos() []*FileInfoResponse {
@@ -753,7 +819,15 @@ var file_proto_filemanager_proto_rawDesc = []byte{
 	0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x03, 0x52, 0x08, 0x66,
 	0x69, 0x6c, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18,
 	0x05, 0x20, 0x01, 0x28, 0x0c, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x04, 0x64,
-	0x61, 0x74, 0x61, 0x22, 0x33, 0x0a, 0x0f, 0x44, 0x6f, 0x77, 0x6e, 0x6c, 0x6f, 0x61, 0x64, 0x52,
+	0x61, 0x74, 0x61, 0x22, 0x7e, 0x0a, 0x0c, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x23, 0x0a, 0x09, 0x66, 0x69, 0x6c, 0x65, 0x5f,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02,
+	0x20, 0x01, 0x52, 0x08, 0x66, 0x69, 0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x25, 0x0a, 0x09,
+	0x66, 0x69, 0x6c, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x42,
+	0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x03, 0x52, 0x08, 0x66, 0x69, 0x6c, 0x65, 0x54,
+	0x79, 0x70, 0x65, 0x22, 0x33, 0x0a, 0x0f, 0x44, 0x6f, 0x77, 0x6e, 0x6c, 0x6f, 0x61, 0x64, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x07, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x69,
 	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
 	0x52, 0x06, 0x66, 0x69, 0x6c, 0x65, 0x49, 0x64, 0x22, 0xbc, 0x01, 0x0a, 0x0b, 0x4c, 0x69, 0x73,
@@ -808,7 +882,7 @@ var file_proto_filemanager_proto_rawDesc = []byte{
 	0x68, 0x61, 0x73, 0x5f, 0x6d, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04,
 	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d, 0x6f, 0x72, 0x65, 0x12, 0x1a, 0x0a,
 	0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf,
-	0x1f, 0x00, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xf2, 0x03, 0x0a, 0x0b, 0x46, 0x69,
+	0x1f, 0x00, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x32, 0xaa, 0x04, 0x0a, 0x0b, 0x46, 0x69,
 	0x6c, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x12, 0x39, 0x0a, 0x09, 0x43, 0x72, 0x65,
 	0x61, 0x74, 0x65, 0x44, 0x69, 0x72, 0x12, 0x16, 0x2e, 0x66, 0x6d, 0x70, 0x62, 0x2e, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x44, 0x69, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12,
@@ -839,11 +913,14 @@ var file_proto_filemanager_proto_rawDesc = []byte{
 	0x3d, 0x0a, 0x0b, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x70, 0x61, 0x63, 0x65, 0x12, 0x18,
 	0x2e, 0x66, 0x6d, 0x70, 0x62, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x70, 0x61, 0x63,
 	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42, 0x2a,
-	0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
-	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x66, 0x6d, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12, 0x36,
+	0x0a, 0x0a, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x45, 0x78, 0x69, 0x73, 0x74, 0x12, 0x12, 0x2e, 0x66,
+	0x6d, 0x70, 0x62, 0x2e, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74,
+	0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42, 0x2a, 0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
+	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x66, 0x6d,
+	0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -858,41 +935,44 @@ func file_proto_filemanager_proto_rawDescGZIP() []byte {
 	return file_proto_filemanager_proto_rawDescData
 }
 
-var file_proto_filemanager_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_proto_filemanager_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_proto_filemanager_proto_goTypes = []interface{}{
 	(*CreateDirRequest)(nil),   // 0: fmpb.CreateDirRequest
 	(*UploadFileRequest)(nil),  // 1: fmpb.UploadFileRequest
-	(*DownloadRequest)(nil),    // 2: fmpb.DownloadRequest
-	(*ListRequest)(nil),        // 3: fmpb.ListRequest
-	(*UpdateFileRequest)(nil),  // 4: fmpb.UpdateFileRequest
-	(*DeleteRequest)(nil),      // 5: fmpb.DeleteRequest
-	(*DeleteSpaceRequest)(nil), // 6: fmpb.DeleteSpaceRequest
-	(*DescribeRequest)(nil),    // 7: fmpb.DescribeRequest
-	(*DownloadResponse)(nil),   // 8: fmpb.DownloadResponse
-	(*FileInfoResponse)(nil),   // 9: fmpb.FileInfoResponse
-	(*ListResponse)(nil),       // 10: fmpb.ListResponse
-	(*model.EmptyStruct)(nil),  // 11: model.EmptyStruct
+	(*CheckRequest)(nil),       // 2: fmpb.CheckRequest
+	(*DownloadRequest)(nil),    // 3: fmpb.DownloadRequest
+	(*ListRequest)(nil),        // 4: fmpb.ListRequest
+	(*UpdateFileRequest)(nil),  // 5: fmpb.UpdateFileRequest
+	(*DeleteRequest)(nil),      // 6: fmpb.DeleteRequest
+	(*DeleteSpaceRequest)(nil), // 7: fmpb.DeleteSpaceRequest
+	(*DescribeRequest)(nil),    // 8: fmpb.DescribeRequest
+	(*DownloadResponse)(nil),   // 9: fmpb.DownloadResponse
+	(*FileInfoResponse)(nil),   // 10: fmpb.FileInfoResponse
+	(*ListResponse)(nil),       // 11: fmpb.ListResponse
+	(*model.EmptyStruct)(nil),  // 12: model.EmptyStruct
 }
 var file_proto_filemanager_proto_depIdxs = []int32{
-	9,  // 0: fmpb.ListResponse.infos:type_name -> fmpb.FileInfoResponse
+	10, // 0: fmpb.ListResponse.infos:type_name -> fmpb.FileInfoResponse
 	0,  // 1: fmpb.FileManager.CreateDir:input_type -> fmpb.CreateDirRequest
 	1,  // 2: fmpb.FileManager.UploadFile:input_type -> fmpb.UploadFileRequest
-	2,  // 3: fmpb.FileManager.DownloadFile:input_type -> fmpb.DownloadRequest
-	7,  // 4: fmpb.FileManager.DescribeFile:input_type -> fmpb.DescribeRequest
-	3,  // 5: fmpb.FileManager.ListFiles:input_type -> fmpb.ListRequest
-	4,  // 6: fmpb.FileManager.UpdateFile:input_type -> fmpb.UpdateFileRequest
-	5,  // 7: fmpb.FileManager.Delete:input_type -> fmpb.DeleteRequest
-	6,  // 8: fmpb.FileManager.DeleteSpace:input_type -> fmpb.DeleteSpaceRequest
-	11, // 9: fmpb.FileManager.CreateDir:output_type -> model.EmptyStruct
-	11, // 10: fmpb.FileManager.UploadFile:output_type -> model.EmptyStruct
-	8,  // 11: fmpb.FileManager.DownloadFile:output_type -> fmpb.DownloadResponse
-	9,  // 12: fmpb.FileManager.DescribeFile:output_type -> fmpb.FileInfoResponse
-	10, // 13: fmpb.FileManager.ListFiles:output_type -> fmpb.ListResponse
-	11, // 14: fmpb.FileManager.UpdateFile:output_type -> model.EmptyStruct
-	11, // 15: fmpb.FileManager.Delete:output_type -> model.EmptyStruct
-	11, // 16: fmpb.FileManager.DeleteSpace:output_type -> model.EmptyStruct
-	9,  // [9:17] is the sub-list for method output_type
-	1,  // [1:9] is the sub-list for method input_type
+	3,  // 3: fmpb.FileManager.DownloadFile:input_type -> fmpb.DownloadRequest
+	8,  // 4: fmpb.FileManager.DescribeFile:input_type -> fmpb.DescribeRequest
+	4,  // 5: fmpb.FileManager.ListFiles:input_type -> fmpb.ListRequest
+	5,  // 6: fmpb.FileManager.UpdateFile:input_type -> fmpb.UpdateFileRequest
+	6,  // 7: fmpb.FileManager.Delete:input_type -> fmpb.DeleteRequest
+	7,  // 8: fmpb.FileManager.DeleteSpace:input_type -> fmpb.DeleteSpaceRequest
+	2,  // 9: fmpb.FileManager.CheckExist:input_type -> fmpb.CheckRequest
+	12, // 10: fmpb.FileManager.CreateDir:output_type -> model.EmptyStruct
+	12, // 11: fmpb.FileManager.UploadFile:output_type -> model.EmptyStruct
+	9,  // 12: fmpb.FileManager.DownloadFile:output_type -> fmpb.DownloadResponse
+	10, // 13: fmpb.FileManager.DescribeFile:output_type -> fmpb.FileInfoResponse
+	11, // 14: fmpb.FileManager.ListFiles:output_type -> fmpb.ListResponse
+	12, // 15: fmpb.FileManager.UpdateFile:output_type -> model.EmptyStruct
+	12, // 16: fmpb.FileManager.Delete:output_type -> model.EmptyStruct
+	12, // 17: fmpb.FileManager.DeleteSpace:output_type -> model.EmptyStruct
+	12, // 18: fmpb.FileManager.CheckExist:output_type -> model.EmptyStruct
+	10, // [10:19] is the sub-list for method output_type
+	1,  // [1:10] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name
 	1,  // [1:1] is the sub-list for extension extendee
 	0,  // [0:1] is the sub-list for field type_name
@@ -929,7 +1009,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DownloadRequest); i {
+			switch v := v.(*CheckRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -941,7 +1021,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListRequest); i {
+			switch v := v.(*DownloadRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -953,7 +1033,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateFileRequest); i {
+			switch v := v.(*ListRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -965,7 +1045,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteRequest); i {
+			switch v := v.(*UpdateFileRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -977,7 +1057,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteSpaceRequest); i {
+			switch v := v.(*DeleteRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -989,7 +1069,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DescribeRequest); i {
+			switch v := v.(*DeleteSpaceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1001,7 +1081,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DownloadResponse); i {
+			switch v := v.(*DescribeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1013,7 +1093,7 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FileInfoResponse); i {
+			switch v := v.(*DownloadResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1025,6 +1105,18 @@ func file_proto_filemanager_proto_init() {
 			}
 		}
 		file_proto_filemanager_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*FileInfoResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_filemanager_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListResponse); i {
 			case 0:
 				return &v.state
@@ -1043,7 +1135,7 @@ func file_proto_filemanager_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_filemanager_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

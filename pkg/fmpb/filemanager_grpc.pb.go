@@ -26,6 +26,7 @@ type FileManagerClient interface {
 	UpdateFile(ctx context.Context, in *UpdateFileRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteSpace(ctx context.Context, in *DeleteSpaceRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	CheckExist(ctx context.Context, in *CheckRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type fileManagerClient struct {
@@ -156,6 +157,15 @@ func (c *fileManagerClient) DeleteSpace(ctx context.Context, in *DeleteSpaceRequ
 	return out, nil
 }
 
+func (c *fileManagerClient) CheckExist(ctx context.Context, in *CheckRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/fmpb.FileManager/CheckExist", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FileManagerServer is the server API for FileManager service.
 // All implementations must embed UnimplementedFileManagerServer
 // for forward compatibility
@@ -168,6 +178,7 @@ type FileManagerServer interface {
 	UpdateFile(context.Context, *UpdateFileRequest) (*model.EmptyStruct, error)
 	Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error)
 	DeleteSpace(context.Context, *DeleteSpaceRequest) (*model.EmptyStruct, error)
+	CheckExist(context.Context, *CheckRequest) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedFileManagerServer()
 }
 
@@ -198,6 +209,9 @@ func (UnimplementedFileManagerServer) Delete(context.Context, *DeleteRequest) (*
 }
 func (UnimplementedFileManagerServer) DeleteSpace(context.Context, *DeleteSpaceRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSpace not implemented")
+}
+func (UnimplementedFileManagerServer) CheckExist(context.Context, *CheckRequest) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckExist not implemented")
 }
 func (UnimplementedFileManagerServer) mustEmbedUnimplementedFileManagerServer() {}
 
@@ -367,6 +381,24 @@ func _FileManager_DeleteSpace_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FileManager_CheckExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CheckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FileManagerServer).CheckExist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fmpb.FileManager/CheckExist",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FileManagerServer).CheckExist(ctx, req.(*CheckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _FileManager_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "fmpb.FileManager",
 	HandlerType: (*FileManagerServer)(nil),
@@ -394,6 +426,10 @@ var _FileManager_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSpace",
 			Handler:    _FileManager_DeleteSpace_Handler,
+		},
+		{
+			MethodName: "CheckExist",
+			Handler:    _FileManager_CheckExist_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

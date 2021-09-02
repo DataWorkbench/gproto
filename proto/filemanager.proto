@@ -16,6 +16,7 @@ service FileManager{
   rpc UpdateFile(UpdateFileRequest) returns(model.EmptyStruct){}
   rpc Delete(DeleteRequest) returns(model.EmptyStruct){}
   rpc DeleteSpace(DeleteSpaceRequest) returns(model.EmptyStruct){}
+  rpc CheckExist(CheckRequest) returns (model.EmptyStruct){}
 }
 
 message CreateDirRequest{
@@ -50,6 +51,20 @@ message UploadFileRequest{
 
   // The data for file. required.
   bytes data = 5 [(validator.field) = {msg_exists: true}];;
+}
+
+message CheckRequest{
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [(validator.field) = {length_eq: 20}];
+
+  // The file name. required.
+  // @inject_tag: params:"file_name" binding:"required,lte=500"
+  string file_name = 2 [(validator.field) = {msg_exists: true}];
+
+  // The file type. required.
+  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  int32 file_type = 3 [(validator.field) = {int_gt:0; int_lt:3}];
 }
 
 message DownloadRequest{

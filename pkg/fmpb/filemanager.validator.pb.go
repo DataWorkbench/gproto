@@ -35,6 +35,18 @@ func (this *UploadFileRequest) Validate() error {
 	}
 	return nil
 }
+func (this *CheckRequest) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(this.FileType > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be greater than '0'`, this.FileType))
+	}
+	if !(this.FileType < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be less than '3'`, this.FileType))
+	}
+	return nil
+}
 func (this *DownloadRequest) Validate() error {
 	if !(len(this.FileId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
