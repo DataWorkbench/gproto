@@ -388,13 +388,13 @@ message OpAudit {
 	// @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
 	string space_id = 2 [ (validator.field) = {} ];
 	
-	// -- The type of operation, 2 => "Create",  3 => "Delete", 4 => "Update"
-	// @inject_tag: json:"type" gorm:"column:type;"
-	OpType type = 3 [ (validator.field) = { int_gt: 0 } ];
+	// -- The type of operation, 2 => "Write",  3 => "Read".
+	// @inject_tag: json:"op_type" gorm:"column:op_type;"
+	OpType op_type = 3 [ (validator.field) = { int_gt: 0 } ];
 	
 	//	-- The operation of user behavior.
-	// @inject_tag: json:"action" gorm:"column:action;"
-	string action = 4 [ (validator.field) = { length_gt: 0} ];
+	// @inject_tag: json:"op_name" gorm:"column:op_name;"
+	string op_name = 4 [ (validator.field) = { length_gt: 0} ];
 	
 	// -- The result of operation, 1 => "Success", 2 => "Failed".
 	// @inject_tag: json:"state" gorm:"column:state;"
