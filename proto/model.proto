@@ -35,7 +35,7 @@ enum OpType {
 	_OpType = 0; // Is useless.
 	Unknown = 1;
 	Write = 2; // Include Operation: create/update/delete.
-	Read = 5; // Include Operation: read.
+	Read = 3; // Include Operation: read.
 }
 
 //
