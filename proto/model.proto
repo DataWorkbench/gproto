@@ -34,10 +34,8 @@ enum ScheduleRetryPolicy {
 enum OpType {
 	_OpType = 0; // Is useless.
 	Unknown = 1;
-	Create = 2;
-	Delete = 3;
-	Update = 4;
-	Read = 5;
+	Write = 2; // Include Operation: create/update/delete.
+	Read = 5; // Include Operation: read.
 }
 
 //
