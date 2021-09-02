@@ -221,8 +221,8 @@ func (this *OpAudit) Validate() error {
 	if !(len(this.UserId) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UserId))
 	}
-	if !(len(this.Action) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Action", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Action))
+	if !(len(this.OpName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("OpName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.OpName))
 	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
