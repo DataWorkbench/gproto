@@ -1813,7 +1813,8 @@ type Member struct {
 
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;primaryKey;"`
 	// The user id in account-server.
-	UserId  string `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primaryKey;"`
+	UserId string `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primaryKey;"`
+	// The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
 	RoleIds string `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" gorm:"column:role_ids;"`
 	Created int64  `protobuf:"varint,5,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
