@@ -9,15 +9,13 @@ import "model.proto";
 
 service FileManager{
   rpc CreateDir(CreateDirRequest) returns (model.EmptyStruct){}
-  rpc DeleteDir(DeleteDirRequest) returns (model.EmptyStruct){}
   rpc UploadFile(stream UploadFileRequest) returns (model.EmptyStruct){}
   rpc DownloadFile(DownloadRequest) returns (stream DownloadResponse){}
   rpc DescribeFile(DescribeRequest) returns (FileInfoResponse){}
   rpc ListFiles(ListRequest) returns (ListResponse){}
-  rpc ListFilesByDir(ListByDirRequest) returns (ListResponse){}
   rpc UpdateFile(UpdateFileRequest) returns(model.EmptyStruct){}
-  rpc DeleteFiles(DeleteFilesRequest) returns(model.EmptyStruct){}
-  rpc DeleteAllFiles(DeleteAllFilesRequest) returns(model.EmptyStruct){}
+  rpc Delete(DeleteRequest) returns(model.EmptyStruct){}
+  rpc DeleteSpace(DeleteSpaceRequest) returns(model.EmptyStruct){}
 }
 
 message CreateDirRequest{
@@ -32,12 +30,6 @@ message CreateDirRequest{
   // The dir name. required.
   // @inject_tag: params:"dir_name" form:"dir_name" binding:"required,lte=500"
   string dir_name = 3 [(validator.field) = {msg_exists: true}];
-}
-
-message DeleteDirRequest{
-  // The file id in HTTP Request_URI.
-  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=20" swaggerignore:"true"
-  string file_id = 1 [(validator.field) = {length_eq: 20}];
 }
 
 message UploadFileRequest{
@@ -80,28 +72,9 @@ message ListRequest{
   // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
   int32  offset = 3   [(validator.field) = {int_gt: -1}];
 
-  // The file type. required.
-  // @inject_tag: params:"file_type" form:"file_type" binding:"required,oneof=1 2"
-  int32  file_type = 4 [(validator.field) = {int_gt:0,int_lt:3}];
-}
-
-message ListByDirRequest{
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
-
-  // The offset position. Not required, default 0.
-  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
-  int32  offset = 3   [(validator.field) = {int_gt: -1}];
-
-  // The dir name. required.
-  // @inject_tag: params:"dir_name" form:"dir_name" binding:"required,lte=500"
-  string dir_name = 4 [(validator.field) = {msg_exists: true}];
+  // The dir name. not required ,default "".
+  // @inject_tag: params:"dir_name" form:"dir_name" default:"" binding:"lte=500"
+  string dir_name = 4;
 
   // The file type. required.
   // @inject_tag: params:"file_type" form:"file_type" binding:"required,oneof=1 2"
@@ -122,13 +95,13 @@ message UpdateFileRequest{
   int32 file_type = 3 [(validator.field) = {int_lt:3}];
 }
 
-message DeleteFilesRequest{
+message DeleteRequest{
   // The list of file id. Is required, Min 1 Max 100.
   // @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
   repeated string ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
 }
 
-message DeleteAllFilesRequest{
+message DeleteSpaceRequest{
   // The list of space id. Is required, Min 1 Max 100
   // @inject_tag: param:"space_ids" default:"" binding:"gte=1,lte=100"
   repeated string space_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];

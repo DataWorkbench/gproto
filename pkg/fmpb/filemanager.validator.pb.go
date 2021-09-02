@@ -23,12 +23,6 @@ func (this *CreateDirRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DeleteDirRequest) Validate() error {
-	if !(len(this.FileId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
-	}
-	return nil
-}
 func (this *UploadFileRequest) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
@@ -68,27 +62,6 @@ func (this *ListRequest) Validate() error {
 	}
 	return nil
 }
-func (this *ListByDirRequest) Validate() error {
-	if !(len(this.SpaceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	if !(this.Limit > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
-	}
-	if !(this.Limit < 101) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
-	}
-	if !(this.Offset > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
-	}
-	if !(this.FileType > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be greater than '0'`, this.FileType))
-	}
-	if !(this.FileType < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be less than '3'`, this.FileType))
-	}
-	return nil
-}
 func (this *UpdateFileRequest) Validate() error {
 	if !(len(this.FileId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
@@ -98,7 +71,7 @@ func (this *UpdateFileRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DeleteFilesRequest) Validate() error {
+func (this *DeleteRequest) Validate() error {
 	for _, item := range this.Ids {
 		if !(len(item) > 0) {
 			return github_com_mwitkow_go_proto_validators.FieldError("Ids", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
@@ -109,7 +82,7 @@ func (this *DeleteFilesRequest) Validate() error {
 	}
 	return nil
 }
-func (this *DeleteAllFilesRequest) Validate() error {
+func (this *DeleteSpaceRequest) Validate() error {
 	for _, item := range this.SpaceIds {
 		if !(len(item) > 0) {
 			return github_com_mwitkow_go_proto_validators.FieldError("SpaceIds", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
