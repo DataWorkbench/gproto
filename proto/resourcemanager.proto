@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/fmpb";
+option go_package = "github.com/DataWorkbench/gproto/pkg/resource";
 
 package fmpb;
 

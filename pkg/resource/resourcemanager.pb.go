@@ -4,7 +4,7 @@
 // 	protoc        v3.14.0
 // source: proto/resourcemanager.proto
 
-package fmpb
+package resource
 
 import (
 	model "github.com/DataWorkbench/gproto/pkg/model"
@@ -929,37 +929,37 @@ func file_proto_resourcemanager_proto_rawDescGZIP() []byte {
 
 var file_proto_resourcemanager_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_proto_resourcemanager_proto_goTypes = []interface{}{
-	(*CreateDirRequest)(nil),   // 0: fmpb.CreateDirRequest
-	(*UploadFileRequest)(nil),  // 1: fmpb.UploadFileRequest
-	(*DownloadRequest)(nil),    // 2: fmpb.DownloadRequest
-	(*ListRequest)(nil),        // 3: fmpb.ListRequest
-	(*UpdateFileRequest)(nil),  // 4: fmpb.UpdateFileRequest
-	(*DeleteRequest)(nil),      // 5: fmpb.DeleteRequest
-	(*DeleteSpaceRequest)(nil), // 6: fmpb.DeleteSpaceRequest
-	(*DescribeRequest)(nil),    // 7: fmpb.DescribeRequest
-	(*DownloadResponse)(nil),   // 8: fmpb.DownloadResponse
-	(*ResourceResponse)(nil),   // 9: fmpb.ResourceResponse
-	(*ListResponse)(nil),       // 10: fmpb.ListResponse
+	(*CreateDirRequest)(nil),   // 0: resource.CreateDirRequest
+	(*UploadFileRequest)(nil),  // 1: resource.UploadFileRequest
+	(*DownloadRequest)(nil),    // 2: resource.DownloadRequest
+	(*ListRequest)(nil),        // 3: resource.ListRequest
+	(*UpdateFileRequest)(nil),  // 4: resource.UpdateFileRequest
+	(*DeleteRequest)(nil),      // 5: resource.DeleteRequest
+	(*DeleteSpaceRequest)(nil), // 6: resource.DeleteSpaceRequest
+	(*DescribeRequest)(nil),    // 7: resource.DescribeRequest
+	(*DownloadResponse)(nil),   // 8: resource.DownloadResponse
+	(*ResourceResponse)(nil),   // 9: resource.ResourceResponse
+	(*ListResponse)(nil),       // 10: resource.ListResponse
 	(*model.EmptyStruct)(nil),  // 11: model.EmptyStruct
 }
 var file_proto_resourcemanager_proto_depIdxs = []int32{
-	9,  // 0: fmpb.ListResponse.infos:type_name -> fmpb.ResourceResponse
-	0,  // 1: fmpb.ResourceManager.CreateDir:input_type -> fmpb.CreateDirRequest
-	1,  // 2: fmpb.ResourceManager.UploadFile:input_type -> fmpb.UploadFileRequest
-	2,  // 3: fmpb.ResourceManager.DownloadFile:input_type -> fmpb.DownloadRequest
-	7,  // 4: fmpb.ResourceManager.DescribeFile:input_type -> fmpb.DescribeRequest
-	3,  // 5: fmpb.ResourceManager.ListFiles:input_type -> fmpb.ListRequest
-	4,  // 6: fmpb.ResourceManager.UpdateFile:input_type -> fmpb.UpdateFileRequest
-	5,  // 7: fmpb.ResourceManager.Delete:input_type -> fmpb.DeleteRequest
-	6,  // 8: fmpb.ResourceManager.DeleteSpace:input_type -> fmpb.DeleteSpaceRequest
-	11, // 9: fmpb.ResourceManager.CreateDir:output_type -> model.EmptyStruct
-	11, // 10: fmpb.ResourceManager.UploadFile:output_type -> model.EmptyStruct
-	8,  // 11: fmpb.ResourceManager.DownloadFile:output_type -> fmpb.DownloadResponse
-	9,  // 12: fmpb.ResourceManager.DescribeFile:output_type -> fmpb.ResourceResponse
-	10, // 13: fmpb.ResourceManager.ListFiles:output_type -> fmpb.ListResponse
-	11, // 14: fmpb.ResourceManager.UpdateFile:output_type -> model.EmptyStruct
-	11, // 15: fmpb.ResourceManager.Delete:output_type -> model.EmptyStruct
-	11, // 16: fmpb.ResourceManager.DeleteSpace:output_type -> model.EmptyStruct
+	9,  // 0: resource.ListResponse.infos:type_name -> resource.ResourceResponse
+	0,  // 1: resource.ResourceManager.CreateDir:input_type -> resource.CreateDirRequest
+	1,  // 2: resource.ResourceManager.UploadFile:input_type -> resource.UploadFileRequest
+	2,  // 3: resource.ResourceManager.DownloadFile:input_type -> resource.DownloadRequest
+	7,  // 4: resource.ResourceManager.DescribeFile:input_type -> resource.DescribeRequest
+	3,  // 5: resource.ResourceManager.ListFiles:input_type -> resource.ListRequest
+	4,  // 6: resource.ResourceManager.UpdateFile:input_type -> resource.UpdateFileRequest
+	5,  // 7: resource.ResourceManager.Delete:input_type -> resource.DeleteRequest
+	6,  // 8: resource.ResourceManager.DeleteSpace:input_type -> resource.DeleteSpaceRequest
+	11, // 9: resource.ResourceManager.CreateDir:output_type -> model.EmptyStruct
+	11, // 10: resource.ResourceManager.UploadFile:output_type -> model.EmptyStruct
+	8,  // 11: resource.ResourceManager.DownloadFile:output_type -> resource.DownloadResponse
+	9,  // 12: resource.ResourceManager.DescribeFile:output_type -> resource.ResourceResponse
+	10, // 13: resource.ResourceManager.ListFiles:output_type -> resource.ListResponse
+	11, // 14: resource.ResourceManager.UpdateFile:output_type -> model.EmptyStruct
+	11, // 15: resource.ResourceManager.Delete:output_type -> model.EmptyStruct
+	11, // 16: resource.ResourceManager.DeleteSpace:output_type -> model.EmptyStruct
 	9,  // [9:17] is the sub-list for method output_type
 	1,  // [1:9] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name
