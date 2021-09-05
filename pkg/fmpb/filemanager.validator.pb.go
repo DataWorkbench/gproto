@@ -27,29 +27,17 @@ func (this *UploadFileRequest) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
-	if !(this.FileType > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be greater than '0'`, this.FileType))
+	if !(this.ResourceType > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be greater than '0'`, this.ResourceType))
 	}
-	if !(this.FileType < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be less than '3'`, this.FileType))
-	}
-	return nil
-}
-func (this *CheckRequest) Validate() error {
-	if !(len(this.SpaceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	if !(this.FileType > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be greater than '0'`, this.FileType))
-	}
-	if !(this.FileType < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be less than '3'`, this.FileType))
+	if !(this.ResourceType < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '3'`, this.ResourceType))
 	}
 	return nil
 }
 func (this *DownloadRequest) Validate() error {
-	if !(len(this.FileId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
+	if !(len(this.ResourceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
 	}
 	return nil
 }
@@ -66,20 +54,20 @@ func (this *ListRequest) Validate() error {
 	if !(this.Offset > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
 	}
-	if !(this.FileType > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be greater than '0'`, this.FileType))
+	if !(this.ResourceType > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ResourceType))
 	}
-	if !(this.FileType < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be less than '3'`, this.FileType))
+	if !(this.ResourceType < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '3'`, this.ResourceType))
 	}
 	return nil
 }
 func (this *UpdateFileRequest) Validate() error {
-	if !(len(this.FileId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
+	if !(len(this.ResourceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
 	}
-	if !(this.FileType < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileType", fmt.Errorf(`value '%v' must be less than '3'`, this.FileType))
+	if !(this.ResourceType < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '3'`, this.ResourceType))
 	}
 	return nil
 }
@@ -106,15 +94,15 @@ func (this *DeleteSpaceRequest) Validate() error {
 	return nil
 }
 func (this *DescribeRequest) Validate() error {
-	if !(len(this.FileId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FileId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FileId))
+	if !(len(this.ResourceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
 	}
 	return nil
 }
 func (this *DownloadResponse) Validate() error {
 	return nil
 }
-func (this *FileInfoResponse) Validate() error {
+func (this *ResourceResponse) Validate() error {
 	return nil
 }
 func (this *ListResponse) Validate() error {
