@@ -19,7 +19,7 @@ service ResourceManager{
 }
 
 message CreateDirRequest{
-  // The file id in HTTP Request_URI.
+  // The resource id in HTTP Request_URI.
   // @inject_tag: params:"resource_id" uri:"resource_id" default:"" swaggerignore:"true"
   string resource_id = 1;
 
@@ -31,47 +31,48 @@ message CreateDirRequest{
   // @inject_tag: params:"dir_name" form:"dir_name" binding:"required,lte=500"
   string dir_name = 3 [(validator.field) = {msg_exists: true}];
 
-  // The file parent id in HTTP Request_URI.
+  // The resource parent id. not required. default -1.
   // @inject_tag: params:"parent_id" form:"parent_id" default:"-1" binding:"gte=-1,lte=20"
   string parent_id = 4 [(validator.field) = {msg_exists: true}];
 }
 
 message UploadFileRequest{
-  // The file id for test. Not required.
+  // The resource id for test. Not required.
   string resource_id = 1;
 
   // The workspace id in HTTP Request-URI
   // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
   string space_id = 2 [(validator.field) = {length_eq: 20}];
 
-  // The file name. required.
-  // @inject_tag: params:"file_name" binding:"required,lte=500"
+  // The resource name. required.
+  // @inject_tag: params:"resource_name" binding:"required,lte=500"
   string resource_name = 3 [(validator.field) = {msg_exists: true}];
 
-  // The file type. required.
-  // @inject_tag: params:"file_type" binding:"required,oneof=1 2"
+  // The resource type. required.
+  // @inject_tag: params:"resource_type" binding:"required,oneof=1 2"
   int32 resource_type = 4 [(validator.field) = {int_gt:0; int_lt:3}];
 
-  // The file parent id in HTTP Request_URI.
+  // The resource parent id. Not required. default -1.
   // @inject_tag: params:"parent_id" form:"parent_id" default:"-1"
   string parent_id = 5 [(validator.field) = {msg_exists: true}];
 
-  // The data for file. required.
+  // The data for resource. required.
   bytes data = 6 [(validator.field) = {msg_exists: true}];
 
+  //The resource Size. prevent data missing.
   int64 size = 7 [(validator.field) = {msg_exists: true}];
 
   string md5_message = 8;
 }
 
 message DownloadRequest{
-  // The file id in HTTP Request_URI.
+  // The resource id in HTTP Request_URI.
   // @inject_tag: params:"resource_id" uri:"resource_id" default:"" binding:"len=20" swaggerignore:"true"
   string resource_id = 1 [(validator.field) = {length_eq: 20}];
 }
 
 message ListRequest{
-  // The workspace id in HTTP Request-URI
+  // The resource parent id. Not required. default -1.
   // @inject_tag: params:"resource_id" uri:"resource_id" form:"resource_id" default:"-1"
   string resource_id = 1;
 
@@ -88,27 +89,27 @@ message ListRequest{
   // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
   int32  offset = 4   [(validator.field) = {int_gt: -1}];
 
-  // The file type. required.
+  // The resource type. required.
   // @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=2"
   int32  resource_type = 5 [(validator.field) = {int_gt:-1,int_lt:3}];
 }
 
 message UpdateFileRequest{
-  // The file id in HTTP Request_URI.
+  // The resource id in HTTP Request_URI.
   // @inject_tag: params:"resource_id" uri:"resource_id" default:"" binding:"len=20" swaggerignore:"true"
   string resource_id = 1 [(validator.field) = {length_eq: 20}];
 
-  // The file name. required.
+  // The resource name. required.
   // @inject_tag: params:"resource_name" binding:"required,lte=500"
   string resource_name = 2 [(validator.field) = {msg_exists: true}];
 
-  // The file type. required.
+  // The resource type. required.
   // @inject_tag: params:"resource_type" binding:"required,oneof=1 2"
   int32 resource_type = 3 [(validator.field) = {int_lt:3}];
 }
 
 message DeleteRequest{
-  // The list of file id. Is required, Min 1 Max 100.
+  // The list of resource id. Is required, Min 1 Max 100.
   // @inject_tag: params:"ids" default:"" binding:"gte=1,lte=100"
   repeated string ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
 }
@@ -120,8 +121,8 @@ message DeleteSpaceRequest{
 }
 
 message DescribeRequest{
-  // The file id in HTTP Request_URI.
-  // @inject_tag: params:"file_id" uri:"file_id" default:"" binding:"len=20" swaggerignore:"true"
+  // The resource id in HTTP Request_URI.
+  // @inject_tag: params:"resource_id" uri:"resource_id" default:"" binding:"len=20" swaggerignore:"true"
   string resource_id = 1 [(validator.field) = {length_eq: 20}];
 }
 

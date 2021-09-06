@@ -32,13 +32,13 @@ type CreateDirRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The file id in HTTP Request_URI.
+	// The resource id in HTTP Request_URI.
 	ResourceId string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty" params:"resource_id" uri:"resource_id" swaggerignore:"true"`
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The dir name. required.
 	DirName string `protobuf:"bytes,3,opt,name=dir_name,json=dirName,proto3" json:"dir_name,omitempty" params:"dir_name" form:"dir_name" binding:"required,lte=500"`
-	// The file parent id in HTTP Request_URI.
+	// The resource parent id. not required. default -1.
 	ParentId string `protobuf:"bytes,4,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" params:"parent_id" form:"parent_id" default:"-1" binding:"gte=-1,lte=20"`
 }
 
@@ -107,18 +107,19 @@ type UploadFileRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The file id for test. Not required.
+	// The resource id for test. Not required.
 	ResourceId string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"`
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
-	// The file name. required.
-	ResourceName string `protobuf:"bytes,3,opt,name=resource_name,json=resourceName,proto3" json:"resource_name,omitempty" params:"file_name" binding:"required,lte=500"`
-	// The file type. required.
-	ResourceType int32 `protobuf:"varint,4,opt,name=resource_type,json=resourceType,proto3" json:"resource_type,omitempty" params:"file_type" binding:"required,oneof=1 2"`
-	// The file parent id in HTTP Request_URI.
+	// The resource name. required.
+	ResourceName string `protobuf:"bytes,3,opt,name=resource_name,json=resourceName,proto3" json:"resource_name,omitempty" params:"resource_name" binding:"required,lte=500"`
+	// The resource type. required.
+	ResourceType int32 `protobuf:"varint,4,opt,name=resource_type,json=resourceType,proto3" json:"resource_type,omitempty" params:"resource_type" binding:"required,oneof=1 2"`
+	// The resource parent id. Not required. default -1.
 	ParentId string `protobuf:"bytes,5,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" params:"parent_id" form:"parent_id" default:"-1"`
-	// The data for file. required.
-	Data       []byte `protobuf:"bytes,6,opt,name=data,proto3" json:"data,omitempty"`
+	// The data for resource. required.
+	Data []byte `protobuf:"bytes,6,opt,name=data,proto3" json:"data,omitempty"`
+	//The resource Size. prevent data missing.
 	Size       int64  `protobuf:"varint,7,opt,name=size,proto3" json:"size,omitempty"`
 	Md5Message string `protobuf:"bytes,8,opt,name=md5_message,json=md5Message,proto3" json:"md5_message,omitempty"`
 }
@@ -216,7 +217,7 @@ type DownloadRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The file id in HTTP Request_URI.
+	// The resource id in HTTP Request_URI.
 	ResourceId string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty" params:"resource_id" uri:"resource_id" binding:"len=20" swaggerignore:"true"`
 }
 
@@ -264,7 +265,7 @@ type ListRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The workspace id in HTTP Request-URI
+	// The resource parent id. Not required. default -1.
 	ResourceId string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty" params:"resource_id" uri:"resource_id" form:"resource_id" default:"-1"`
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
@@ -273,7 +274,7 @@ type ListRequest struct {
 	Limit int32 `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty" params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"`
-	// The file type. required.
+	// The resource type. required.
 	ResourceType int32 `protobuf:"varint,5,opt,name=resource_type,json=resourceType,proto3" json:"resource_type,omitempty" params:"resource_type" form:"resource_type" binding:"gte=0,lte=2"`
 }
 
@@ -349,11 +350,11 @@ type UpdateFileRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The file id in HTTP Request_URI.
+	// The resource id in HTTP Request_URI.
 	ResourceId string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty" params:"resource_id" uri:"resource_id" binding:"len=20" swaggerignore:"true"`
-	// The file name. required.
+	// The resource name. required.
 	ResourceName string `protobuf:"bytes,2,opt,name=resource_name,json=resourceName,proto3" json:"resource_name,omitempty" params:"resource_name" binding:"required,lte=500"`
-	// The file type. required.
+	// The resource type. required.
 	ResourceType int32 `protobuf:"varint,3,opt,name=resource_type,json=resourceType,proto3" json:"resource_type,omitempty" params:"resource_type" binding:"required,oneof=1 2"`
 }
 
@@ -415,7 +416,7 @@ type DeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The list of file id. Is required, Min 1 Max 100.
+	// The list of resource id. Is required, Min 1 Max 100.
 	Ids []string `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty" params:"ids" binding:"gte=1,lte=100"`
 }
 
@@ -511,8 +512,8 @@ type DescribeRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The file id in HTTP Request_URI.
-	ResourceId string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty" params:"file_id" uri:"file_id" binding:"len=20" swaggerignore:"true"`
+	// The resource id in HTTP Request_URI.
+	ResourceId string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty" params:"resource_id" uri:"resource_id" binding:"len=20" swaggerignore:"true"`
 }
 
 func (x *DescribeRequest) Reset() {
@@ -908,11 +909,11 @@ var file_proto_resourcemanager_proto_rawDesc = []byte{
 	0x3d, 0x0a, 0x0b, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x70, 0x61, 0x63, 0x65, 0x12, 0x18,
 	0x2e, 0x66, 0x6d, 0x70, 0x62, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x70, 0x61, 0x63,
 	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42, 0x2a,
-	0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42, 0x2e,
+	0x5a, 0x2c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
 	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x66, 0x6d, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -929,37 +930,37 @@ func file_proto_resourcemanager_proto_rawDescGZIP() []byte {
 
 var file_proto_resourcemanager_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_proto_resourcemanager_proto_goTypes = []interface{}{
-	(*CreateDirRequest)(nil),   // 0: resource.CreateDirRequest
-	(*UploadFileRequest)(nil),  // 1: resource.UploadFileRequest
-	(*DownloadRequest)(nil),    // 2: resource.DownloadRequest
-	(*ListRequest)(nil),        // 3: resource.ListRequest
-	(*UpdateFileRequest)(nil),  // 4: resource.UpdateFileRequest
-	(*DeleteRequest)(nil),      // 5: resource.DeleteRequest
-	(*DeleteSpaceRequest)(nil), // 6: resource.DeleteSpaceRequest
-	(*DescribeRequest)(nil),    // 7: resource.DescribeRequest
-	(*DownloadResponse)(nil),   // 8: resource.DownloadResponse
-	(*ResourceResponse)(nil),   // 9: resource.ResourceResponse
-	(*ListResponse)(nil),       // 10: resource.ListResponse
+	(*CreateDirRequest)(nil),   // 0: fmpb.CreateDirRequest
+	(*UploadFileRequest)(nil),  // 1: fmpb.UploadFileRequest
+	(*DownloadRequest)(nil),    // 2: fmpb.DownloadRequest
+	(*ListRequest)(nil),        // 3: fmpb.ListRequest
+	(*UpdateFileRequest)(nil),  // 4: fmpb.UpdateFileRequest
+	(*DeleteRequest)(nil),      // 5: fmpb.DeleteRequest
+	(*DeleteSpaceRequest)(nil), // 6: fmpb.DeleteSpaceRequest
+	(*DescribeRequest)(nil),    // 7: fmpb.DescribeRequest
+	(*DownloadResponse)(nil),   // 8: fmpb.DownloadResponse
+	(*ResourceResponse)(nil),   // 9: fmpb.ResourceResponse
+	(*ListResponse)(nil),       // 10: fmpb.ListResponse
 	(*model.EmptyStruct)(nil),  // 11: model.EmptyStruct
 }
 var file_proto_resourcemanager_proto_depIdxs = []int32{
-	9,  // 0: resource.ListResponse.infos:type_name -> resource.ResourceResponse
-	0,  // 1: resource.ResourceManager.CreateDir:input_type -> resource.CreateDirRequest
-	1,  // 2: resource.ResourceManager.UploadFile:input_type -> resource.UploadFileRequest
-	2,  // 3: resource.ResourceManager.DownloadFile:input_type -> resource.DownloadRequest
-	7,  // 4: resource.ResourceManager.DescribeFile:input_type -> resource.DescribeRequest
-	3,  // 5: resource.ResourceManager.ListFiles:input_type -> resource.ListRequest
-	4,  // 6: resource.ResourceManager.UpdateFile:input_type -> resource.UpdateFileRequest
-	5,  // 7: resource.ResourceManager.Delete:input_type -> resource.DeleteRequest
-	6,  // 8: resource.ResourceManager.DeleteSpace:input_type -> resource.DeleteSpaceRequest
-	11, // 9: resource.ResourceManager.CreateDir:output_type -> model.EmptyStruct
-	11, // 10: resource.ResourceManager.UploadFile:output_type -> model.EmptyStruct
-	8,  // 11: resource.ResourceManager.DownloadFile:output_type -> resource.DownloadResponse
-	9,  // 12: resource.ResourceManager.DescribeFile:output_type -> resource.ResourceResponse
-	10, // 13: resource.ResourceManager.ListFiles:output_type -> resource.ListResponse
-	11, // 14: resource.ResourceManager.UpdateFile:output_type -> model.EmptyStruct
-	11, // 15: resource.ResourceManager.Delete:output_type -> model.EmptyStruct
-	11, // 16: resource.ResourceManager.DeleteSpace:output_type -> model.EmptyStruct
+	9,  // 0: fmpb.ListResponse.infos:type_name -> fmpb.ResourceResponse
+	0,  // 1: fmpb.ResourceManager.CreateDir:input_type -> fmpb.CreateDirRequest
+	1,  // 2: fmpb.ResourceManager.UploadFile:input_type -> fmpb.UploadFileRequest
+	2,  // 3: fmpb.ResourceManager.DownloadFile:input_type -> fmpb.DownloadRequest
+	7,  // 4: fmpb.ResourceManager.DescribeFile:input_type -> fmpb.DescribeRequest
+	3,  // 5: fmpb.ResourceManager.ListFiles:input_type -> fmpb.ListRequest
+	4,  // 6: fmpb.ResourceManager.UpdateFile:input_type -> fmpb.UpdateFileRequest
+	5,  // 7: fmpb.ResourceManager.Delete:input_type -> fmpb.DeleteRequest
+	6,  // 8: fmpb.ResourceManager.DeleteSpace:input_type -> fmpb.DeleteSpaceRequest
+	11, // 9: fmpb.ResourceManager.CreateDir:output_type -> model.EmptyStruct
+	11, // 10: fmpb.ResourceManager.UploadFile:output_type -> model.EmptyStruct
+	8,  // 11: fmpb.ResourceManager.DownloadFile:output_type -> fmpb.DownloadResponse
+	9,  // 12: fmpb.ResourceManager.DescribeFile:output_type -> fmpb.ResourceResponse
+	10, // 13: fmpb.ResourceManager.ListFiles:output_type -> fmpb.ListResponse
+	11, // 14: fmpb.ResourceManager.UpdateFile:output_type -> model.EmptyStruct
+	11, // 15: fmpb.ResourceManager.Delete:output_type -> model.EmptyStruct
+	11, // 16: fmpb.ResourceManager.DeleteSpace:output_type -> model.EmptyStruct
 	9,  // [9:17] is the sub-list for method output_type
 	1,  // [1:9] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name
