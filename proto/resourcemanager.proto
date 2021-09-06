@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/resource";
 
-package fmpb;
+package resource;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
