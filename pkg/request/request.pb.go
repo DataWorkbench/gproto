@@ -2979,6 +2979,1076 @@ func (x *ResumeStreamInsts) GetInstIds() []*FlowInstIdPair {
 	return nil
 }
 
+// CreateSource used as request parameters for RPC and HTTP(based on Body)
+type CreateSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The source id.
+	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"lte=20" swaggerignore:"true"`
+	// The space id.
+	SpaceID string `protobuf:"bytes,2,opt,name=SpaceID,proto3" json:"spaceid" binding:"len=20" swaggerignore:"true"`
+	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
+	SourceType string `protobuf:"bytes,3,opt,name=SourceType,proto3" json:"sourcetype" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+	// Source name unique within a space.
+	Name string `protobuf:"bytes,4,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	// describe this source.
+	Comment string `protobuf:"bytes,5,opt,name=Comment,proto3" json:"comment" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"`
+	// this source connection info
+	Url *model.SourceUrl `protobuf:"bytes,6,opt,name=Url,proto3" json:"url" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"`
+}
+
+func (x *CreateSource) Reset() {
+	*x = CreateSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[45]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSource) ProtoMessage() {}
+
+func (x *CreateSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[45]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSource.ProtoReflect.Descriptor instead.
+func (*CreateSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *CreateSource) GetSourceID() string {
+	if x != nil {
+		return x.SourceID
+	}
+	return ""
+}
+
+func (x *CreateSource) GetSpaceID() string {
+	if x != nil {
+		return x.SpaceID
+	}
+	return ""
+}
+
+func (x *CreateSource) GetSourceType() string {
+	if x != nil {
+		return x.SourceType
+	}
+	return ""
+}
+
+func (x *CreateSource) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateSource) GetComment() string {
+	if x != nil {
+		return x.Comment
+	}
+	return ""
+}
+
+func (x *CreateSource) GetUrl() *model.SourceUrl {
+	if x != nil {
+		return x.Url
+	}
+	return nil
+}
+
+// UpdateSource used as request parameters for RPC and HTTP(based on Body)
+type UpdateSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The source id.
+	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" swaggerignore:"true"`
+	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
+	SourceType string `protobuf:"bytes,2,opt,name=SourceType,proto3" json:"sourcetype" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+	// Source name unique within a space.
+	Name string `protobuf:"bytes,3,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	// describe this source.
+	Comment string `protobuf:"bytes,4,opt,name=Comment,proto3" json:"comment" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"`
+	// this source connection info
+	Url *model.SourceUrl `protobuf:"bytes,5,opt,name=Url,proto3" json:"url" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"`
+}
+
+func (x *UpdateSource) Reset() {
+	*x = UpdateSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[46]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSource) ProtoMessage() {}
+
+func (x *UpdateSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[46]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSource.ProtoReflect.Descriptor instead.
+func (*UpdateSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *UpdateSource) GetSourceID() string {
+	if x != nil {
+		return x.SourceID
+	}
+	return ""
+}
+
+func (x *UpdateSource) GetSourceType() string {
+	if x != nil {
+		return x.SourceType
+	}
+	return ""
+}
+
+func (x *UpdateSource) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateSource) GetComment() string {
+	if x != nil {
+		return x.Comment
+	}
+	return ""
+}
+
+func (x *UpdateSource) GetUrl() *model.SourceUrl {
+	if x != nil {
+		return x.Url
+	}
+	return nil
+}
+
+// DeleteSource used as request parameters for RPC and HTTP(based on Body)
+type DeleteSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// delete these SourceIDs
+	SourceIDs []string `protobuf:"bytes,1,rep,name=SourceIDs,proto3" json:"sourceids" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"`
+}
+
+func (x *DeleteSource) Reset() {
+	*x = DeleteSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[47]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteSource) ProtoMessage() {}
+
+func (x *DeleteSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[47]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteSource.ProtoReflect.Descriptor instead.
+func (*DeleteSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *DeleteSource) GetSourceIDs() []string {
+	if x != nil {
+		return x.SourceIDs
+	}
+	return nil
+}
+
+// DescribeSource used as request parameters for RPC and HTTP(based on Body)
+type DescribeSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// SourceIDs
+	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+}
+
+func (x *DescribeSource) Reset() {
+	*x = DescribeSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[48]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeSource) ProtoMessage() {}
+
+func (x *DescribeSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[48]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeSource.ProtoReflect.Descriptor instead.
+func (*DescribeSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *DescribeSource) GetSourceID() string {
+	if x != nil {
+		return x.SourceID
+	}
+	return ""
+}
+
+// EnableSource used as request parameters for RPC and HTTP(based on Body)
+type EnableSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// enable these SourceIDs
+	SourceIDs []string `protobuf:"bytes,1,rep,name=SourceIDs,proto3" json:"sourceids" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"`
+}
+
+func (x *EnableSource) Reset() {
+	*x = EnableSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[49]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EnableSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnableSource) ProtoMessage() {}
+
+func (x *EnableSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[49]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnableSource.ProtoReflect.Descriptor instead.
+func (*EnableSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *EnableSource) GetSourceIDs() []string {
+	if x != nil {
+		return x.SourceIDs
+	}
+	return nil
+}
+
+// DeleteSource used as request parameters for RPC and HTTP(based on Body)
+type DisableSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// delete these SourceIDs
+	SourceIDs []string `protobuf:"bytes,1,rep,name=SourceIDs,proto3" json:"sourceids" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"`
+}
+
+func (x *DisableSource) Reset() {
+	*x = DisableSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[50]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DisableSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisableSource) ProtoMessage() {}
+
+func (x *DisableSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[50]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisableSource.ProtoReflect.Descriptor instead.
+func (*DisableSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *DisableSource) GetSourceIDs() []string {
+	if x != nil {
+		return x.SourceIDs
+	}
+	return nil
+}
+
+// DeleteAllSource used as request parameters for RPC and HTTP(based on Body)
+type DeleteAllSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	//TODO
+	// delete these spaceid's Source
+	SpaceIDs []string `protobuf:"bytes,1,rep,name=SpaceIDs,proto3" json:"spaceids" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"`
+}
+
+func (x *DeleteAllSource) Reset() {
+	*x = DeleteAllSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[51]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAllSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAllSource) ProtoMessage() {}
+
+func (x *DeleteAllSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[51]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAllSource.ProtoReflect.Descriptor instead.
+func (*DeleteAllSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *DeleteAllSource) GetSpaceIDs() []string {
+	if x != nil {
+		return x.SpaceIDs
+	}
+	return nil
+}
+
+// PingSource used as request parameters for RPC and HTTP(based on Body)
+type PingSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
+	SourceType string `protobuf:"bytes,1,opt,name=SourceType,proto3" json:"sourcetype" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+	// this source connection info
+	Url *model.SourceUrl `protobuf:"bytes,2,opt,name=Url,proto3" json:"url" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"`
+}
+
+func (x *PingSource) Reset() {
+	*x = PingSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[52]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PingSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PingSource) ProtoMessage() {}
+
+func (x *PingSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[52]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PingSource.ProtoReflect.Descriptor instead.
+func (*PingSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *PingSource) GetSourceType() string {
+	if x != nil {
+		return x.SourceType
+	}
+	return ""
+}
+
+func (x *PingSource) GetUrl() *model.SourceUrl {
+	if x != nil {
+		return x.Url
+	}
+	return nil
+}
+
+// SourceTables used as request parameters for RPC and HTTP(based on Body)
+type SourceTables struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// SourceID
+	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+}
+
+func (x *SourceTables) Reset() {
+	*x = SourceTables{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[53]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SourceTables) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SourceTables) ProtoMessage() {}
+
+func (x *SourceTables) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[53]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SourceTables.ProtoReflect.Descriptor instead.
+func (*SourceTables) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *SourceTables) GetSourceID() string {
+	if x != nil {
+		return x.SourceID
+	}
+	return ""
+}
+
+// TableColumns used as request parameters for RPC and HTTP(based on Body)
+type TableColumns struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// tablename
+	TableName string `protobuf:"bytes,1,opt,name=TableName,proto3" json:"tablename" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"`
+	// tablename
+	SourceID string `protobuf:"bytes,2,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+}
+
+func (x *TableColumns) Reset() {
+	*x = TableColumns{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[54]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TableColumns) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TableColumns) ProtoMessage() {}
+
+func (x *TableColumns) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[54]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TableColumns.ProtoReflect.Descriptor instead.
+func (*TableColumns) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *TableColumns) GetTableName() string {
+	if x != nil {
+		return x.TableName
+	}
+	return ""
+}
+
+func (x *TableColumns) GetSourceID() string {
+	if x != nil {
+		return x.SourceID
+	}
+	return ""
+}
+
+// CreateTable used as request parameters for RPC and HTTP(based on Body)
+type CreateTable struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The table id.
+	TableID string `protobuf:"bytes,1,opt,name=TableID,proto3" json:"tableid" binding:"lte=20" swaggerignore:"true"`
+	// The source id.
+	SourceID string `protobuf:"bytes,2,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" swaggerignore:"true"`
+	// The space id.
+	SpaceID string `protobuf:"bytes,3,opt,name=SpaceID,proto3" json:"spaceid" binding:"len=20" swaggerignore:"true"`
+	// Source name unique within a space.
+	Name string `protobuf:"bytes,4,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	// describe this source.
+	Comment string `protobuf:"bytes,5,opt,name=Comment,proto3" json:"comment" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"`
+	// this source connection info
+	Url *model.TableUrl `protobuf:"bytes,6,opt,name=Url,proto3" json:"url" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"`
+	// source direction one of source/destination/dimension
+	Direction string `protobuf:"bytes,7,opt,name=Direction,proto3" json:"direction" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+}
+
+func (x *CreateTable) Reset() {
+	*x = CreateTable{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[55]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateTable) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTable) ProtoMessage() {}
+
+func (x *CreateTable) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[55]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTable.ProtoReflect.Descriptor instead.
+func (*CreateTable) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *CreateTable) GetTableID() string {
+	if x != nil {
+		return x.TableID
+	}
+	return ""
+}
+
+func (x *CreateTable) GetSourceID() string {
+	if x != nil {
+		return x.SourceID
+	}
+	return ""
+}
+
+func (x *CreateTable) GetSpaceID() string {
+	if x != nil {
+		return x.SpaceID
+	}
+	return ""
+}
+
+func (x *CreateTable) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateTable) GetComment() string {
+	if x != nil {
+		return x.Comment
+	}
+	return ""
+}
+
+func (x *CreateTable) GetUrl() *model.TableUrl {
+	if x != nil {
+		return x.Url
+	}
+	return nil
+}
+
+func (x *CreateTable) GetDirection() string {
+	if x != nil {
+		return x.Direction
+	}
+	return ""
+}
+
+// UpdateTable used as request parameters for RPC and HTTP(based on Body)
+type UpdateTable struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The table id.
+	TableID string `protobuf:"bytes,1,opt,name=TableID,proto3" json:"tableid" binding:"lte=20" swaggerignore:"true"`
+	// Source name unique within a space.
+	Name string `protobuf:"bytes,2,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	// describe this source.
+	Comment string `protobuf:"bytes,3,opt,name=Comment,proto3" json:"comment" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"`
+	// this source connection info
+	Url *model.TableUrl `protobuf:"bytes,4,opt,name=Url,proto3" json:"url" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"`
+	// source direction one of source/destination/dimension
+	Direction string `protobuf:"bytes,5,opt,name=Direction,proto3" json:"direction" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+}
+
+func (x *UpdateTable) Reset() {
+	*x = UpdateTable{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[56]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateTable) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateTable) ProtoMessage() {}
+
+func (x *UpdateTable) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[56]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateTable.ProtoReflect.Descriptor instead.
+func (*UpdateTable) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *UpdateTable) GetTableID() string {
+	if x != nil {
+		return x.TableID
+	}
+	return ""
+}
+
+func (x *UpdateTable) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateTable) GetComment() string {
+	if x != nil {
+		return x.Comment
+	}
+	return ""
+}
+
+func (x *UpdateTable) GetUrl() *model.TableUrl {
+	if x != nil {
+		return x.Url
+	}
+	return nil
+}
+
+func (x *UpdateTable) GetDirection() string {
+	if x != nil {
+		return x.Direction
+	}
+	return ""
+}
+
+// DeleteTable used as request parameters for RPC and HTTP(based on Body)
+type DeleteTable struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// delete these tableIDs
+	TableIDs []string `protobuf:"bytes,1,rep,name=TableIDs,proto3" json:"tableids" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"`
+}
+
+func (x *DeleteTable) Reset() {
+	*x = DeleteTable{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[57]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteTable) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTable) ProtoMessage() {}
+
+func (x *DeleteTable) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[57]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTable.ProtoReflect.Descriptor instead.
+func (*DeleteTable) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *DeleteTable) GetTableIDs() []string {
+	if x != nil {
+		return x.TableIDs
+	}
+	return nil
+}
+
+// DescribeTable used as request parameters for RPC and HTTP(based on Body)
+type DescribeTable struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// SourceIDs
+	TableID string `protobuf:"bytes,1,opt,name=TableID,proto3" json:"tableid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+}
+
+func (x *DescribeTable) Reset() {
+	*x = DescribeTable{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[58]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeTable) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeTable) ProtoMessage() {}
+
+func (x *DescribeTable) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[58]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeTable.ProtoReflect.Descriptor instead.
+func (*DescribeTable) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *DescribeTable) GetTableID() string {
+	if x != nil {
+		return x.TableID
+	}
+	return ""
+}
+
+// ListSource used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"`
+	// The field list used to sorted query results.
+	// Optional values: {sourceid, name, createtime, updatetime}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+	// Not required, default: updatetime.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-" minLength:"0" maxLength:"100"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" default:"false" form:"reverse" binding:"-"`
+	// Search with name; Not required.
+	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-" minLength:"0" maxLength:"100"`
+	// SpaceID; required.
+	SpaceID string `protobuf:"bytes,6,opt,name=SpaceID,proto3" json:"spaceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+}
+
+func (x *ListSource) Reset() {
+	*x = ListSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[59]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSource) ProtoMessage() {}
+
+func (x *ListSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[59]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSource.ProtoReflect.Descriptor instead.
+func (*ListSource) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *ListSource) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListSource) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListSource) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListSource) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListSource) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+func (x *ListSource) GetSpaceID() string {
+	if x != nil {
+		return x.SpaceID
+	}
+	return ""
+}
+
+// ListTable used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListTable struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"`
+	// The field list used to sorted query results.
+	// Optional values: {tableid, name, createtime, updatetime}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+	// Not required, default: updatetime.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-" minLength:"0" maxLength:"100"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" default:"false" form:"reverse" binding:"-"`
+	// Search with name; Not required.
+	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-" minLength:"0" maxLength:"100"`
+	// get this source table
+	SourceID string `protobuf:"bytes,6,opt,name=SourceID,proto3" json:"sourceid" required:"true" binding:"len=20" minLength:"20" maxLength:"20"`
+}
+
+func (x *ListTable) Reset() {
+	*x = ListTable{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[60]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListTable) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTable) ProtoMessage() {}
+
+func (x *ListTable) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[60]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTable.ProtoReflect.Descriptor instead.
+func (*ListTable) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *ListTable) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListTable) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListTable) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListTable) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListTable) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+func (x *ListTable) GetSourceID() string {
+	if x != nil {
+		return x.SourceID
+	}
+	return ""
+}
+
 type UpsertMembers_Pair struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2993,7 +4063,7 @@ type UpsertMembers_Pair struct {
 func (x *UpsertMembers_Pair) Reset() {
 	*x = UpsertMembers_Pair{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[45]
+		mi := &file_proto_request_proto_msgTypes[61]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3006,7 +4076,7 @@ func (x *UpsertMembers_Pair) String() string {
 func (*UpsertMembers_Pair) ProtoMessage() {}
 
 func (x *UpsertMembers_Pair) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[45]
+	mi := &file_proto_request_proto_msgTypes[61]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3403,11 +4473,135 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x08, 0x69, 0x6e, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x17, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x46, 0x6c, 0x6f, 0x77, 0x49, 0x6e,
 	0x73, 0x74, 0x49, 0x64, 0x50, 0x61, 0x69, 0x72, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00,
-	0x78, 0x65, 0x52, 0x07, 0x69, 0x6e, 0x73, 0x74, 0x49, 0x64, 0x73, 0x42, 0x2d, 0x5a, 0x2b, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f,
-	0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70,
-	0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x78, 0x65, 0x52, 0x07, 0x69, 0x6e, 0x73, 0x74, 0x49, 0x64, 0x73, 0x22, 0xef, 0x01, 0x0a, 0x0c,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x22, 0x0a, 0x08,
+	0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06,
+	0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x15, 0x52, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44,
+	0x12, 0x21, 0x0a, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x53, 0x70, 0x61, 0x63,
+	0x65, 0x49, 0x44, 0x12, 0x28, 0x0a, 0x0a, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x79, 0x70,
+	0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x01, 0x78,
+	0x15, 0x52, 0x0a, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a,
+	0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f,
+	0x04, 0x70, 0x01, 0x78, 0x41, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x07, 0x43,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x78, 0x81, 0x02, 0x52, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2d,
+	0x0a, 0x03, 0x55, 0x72, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x2e, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x55, 0x72, 0x6c, 0x42, 0x09, 0xe2,
+	0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xc1, 0x3e, 0x52, 0x03, 0x55, 0x72, 0x6c, 0x22, 0xcd, 0x01,
+	0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x23,
+	0x0a, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x49, 0x44, 0x12, 0x28, 0x0a, 0x0a, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x79, 0x70,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78,
+	0x15, 0x52, 0x0a, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a,
+	0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f,
+	0x04, 0x70, 0x00, 0x78, 0x41, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x07, 0x43,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x78, 0x81, 0x02, 0x52, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2d,
+	0x0a, 0x03, 0x55, 0x72, 0x6c, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x2e, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x55, 0x72, 0x6c, 0x42, 0x09, 0xe2,
+	0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xc1, 0x3e, 0x52, 0x03, 0x55, 0x72, 0x6c, 0x22, 0x37, 0x0a,
+	0x0c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x27, 0x0a,
+	0x09, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09,
+	0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xcc, 0x08, 0x52, 0x09, 0x53, 0x6f, 0x75,
+	0x72, 0x63, 0x65, 0x49, 0x44, 0x73, 0x22, 0x35, 0x0a, 0x0e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69,
+	0x62, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x23, 0x0a, 0x08, 0x53, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
+	0x80, 0x01, 0x14, 0x52, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x22, 0x37, 0x0a,
+	0x0c, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x27, 0x0a,
+	0x09, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09,
+	0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xcc, 0x08, 0x52, 0x09, 0x53, 0x6f, 0x75,
+	0x72, 0x63, 0x65, 0x49, 0x44, 0x73, 0x22, 0x38, 0x0a, 0x0d, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c,
+	0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x27, 0x0a, 0x09, 0x53, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x49, 0x44, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05,
+	0x70, 0x01, 0x78, 0xcc, 0x08, 0x52, 0x09, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x73,
+	0x22, 0x38, 0x0a, 0x0f, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x6c, 0x6c, 0x53, 0x6f, 0x75,
+	0x72, 0x63, 0x65, 0x12, 0x25, 0x0a, 0x08, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xcc, 0x08,
+	0x52, 0x08, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x73, 0x22, 0x65, 0x0a, 0x0a, 0x50, 0x69,
+	0x6e, 0x67, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x28, 0x0a, 0x0a, 0x53, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf,
+	0x1f, 0x04, 0x70, 0x00, 0x78, 0x15, 0x52, 0x0a, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x2d, 0x0a, 0x03, 0x55, 0x72, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x10, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x55, 0x72,
+	0x6c, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xc1, 0x3e, 0x52, 0x03, 0x55, 0x72,
+	0x6c, 0x22, 0x33, 0x0a, 0x0c, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65,
+	0x73, 0x12, 0x23, 0x0a, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x08, 0x53, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x22, 0x5b, 0x0a, 0x0c, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43,
+	0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x73, 0x12, 0x26, 0x0a, 0x09, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x4e,
+	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70,
+	0x01, 0x78, 0x41, 0x52, 0x09, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x23,
+	0x0a, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x49, 0x44, 0x22, 0x8e, 0x02, 0x0a, 0x0b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x61,
+	0x62, 0x6c, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x49, 0x44, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x15, 0x52, 0x07, 0x54, 0x61,
+	0x62, 0x6c, 0x65, 0x49, 0x44, 0x12, 0x23, 0x0a, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49,
+	0x44, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x12, 0x21, 0x0a, 0x07, 0x53, 0x70,
+	0x61, 0x63, 0x65, 0x49, 0x44, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f,
+	0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x12, 0x1c, 0x0a,
+	0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f,
+	0x04, 0x70, 0x01, 0x78, 0x41, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x07, 0x43,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x78, 0x81, 0x02, 0x52, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2c,
+	0x0a, 0x03, 0x55, 0x72, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x2e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x55, 0x72, 0x6c, 0x42, 0x09, 0xe2, 0xdf,
+	0x1f, 0x05, 0x70, 0x01, 0x78, 0xc1, 0x3e, 0x52, 0x03, 0x55, 0x72, 0x6c, 0x12, 0x26, 0x0a, 0x09,
+	0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x01, 0x78, 0x15, 0x52, 0x09, 0x44, 0x69, 0x72, 0x65, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x22, 0xc6, 0x01, 0x0a, 0x0b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54,
+	0x61, 0x62, 0x6c, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x49, 0x44, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x15, 0x52, 0x07, 0x54,
+	0x61, 0x62, 0x6c, 0x65, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x01, 0x78, 0x41, 0x52, 0x04,
+	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x02, 0x52, 0x07,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2c, 0x0a, 0x03, 0x55, 0x72, 0x6c, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x54, 0x61, 0x62,
+	0x6c, 0x65, 0x55, 0x72, 0x6c, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xc1, 0x3e,
+	0x52, 0x03, 0x55, 0x72, 0x6c, 0x12, 0x26, 0x0a, 0x09, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x01,
+	0x78, 0x15, 0x52, 0x09, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x34, 0x0a,
+	0x0b, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x25, 0x0a, 0x08,
+	0x54, 0x61, 0x62, 0x6c, 0x65, 0x49, 0x44, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x09,
+	0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0xcc, 0x08, 0x52, 0x08, 0x54, 0x61, 0x62, 0x6c, 0x65,
+	0x49, 0x44, 0x73, 0x22, 0x32, 0x0a, 0x0d, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x54,
+	0x61, 0x62, 0x6c, 0x65, 0x12, 0x21, 0x0a, 0x07, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x49, 0x44, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07,
+	0x54, 0x61, 0x62, 0x6c, 0x65, 0x49, 0x44, 0x22, 0xd5, 0x01, 0x0a, 0x0a, 0x4c, 0x69, 0x73, 0x74,
+	0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52,
+	0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12,
+	0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74, 0x5f, 0x62, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x6f, 0x72, 0x74, 0x42, 0x79, 0x12, 0x1e,
+	0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x42,
+	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x12, 0x1c,
+	0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x12, 0x21, 0x0a, 0x07,
+	0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
+	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x22,
+	0xd6, 0x01, 0x0a, 0x09, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x1e, 0x0a,
+	0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf,
+	0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a,
+	0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2,
+	0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06,
+	0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74, 0x5f, 0x62,
+	0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73,
+	0x6f, 0x72, 0x74, 0x42, 0x79, 0x12, 0x1e, 0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x72, 0x65,
+	0x76, 0x65, 0x72, 0x73, 0x65, 0x12, 0x1c, 0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x65, 0x61,
+	0x72, 0x63, 0x68, 0x12, 0x23, 0x0a, 0x08, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x18,
+	0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x08,
+	0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x44, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62,
+	0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f,
+	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3422,7 +4616,7 @@ func file_proto_request_proto_rawDescGZIP() []byte {
 	return file_proto_request_proto_rawDescData
 }
 
-var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 47)
+var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 63)
 var file_proto_request_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),            // 0: request.ListWorkspaces
 	(*DeleteWorkspaces)(nil),          // 1: request.DeleteWorkspaces
@@ -3469,41 +4663,64 @@ var file_proto_request_proto_goTypes = []interface{}{
 	(*TerminateStreamInsts)(nil),      // 42: request.TerminateStreamInsts
 	(*SuspendStreamInsts)(nil),        // 43: request.SuspendStreamInsts
 	(*ResumeStreamInsts)(nil),         // 44: request.ResumeStreamInsts
-	(*UpsertMembers_Pair)(nil),        // 45: request.UpsertMembers.Pair
-	nil,                               // 46: request.CheckPermission.RolesEntry
-	(model.Workspace_Status)(0),       // 47: model.Workspace.Status
-	(*model.OpAudit)(nil),             // 48: model.OpAudit
-	(model.OpType)(0),                 // 49: model.OpType
-	(model.OpAudit_State)(0),          // 50: model.OpAudit.State
-	(model.StreamFlow_Type)(0),        // 51: model.StreamFlow.Type
-	(*model.StreamFlowSchedule)(nil),  // 52: model.StreamFlowSchedule
-	(*model.StreamFlowEnv)(nil),       // 53: model.StreamFlowEnv
-	(*model.StreamFlowProperty)(nil),  // 54: model.StreamFlowProperty
-	(*model.MonitorRule)(nil),         // 55: model.MonitorRule
+	(*CreateSource)(nil),              // 45: request.CreateSource
+	(*UpdateSource)(nil),              // 46: request.UpdateSource
+	(*DeleteSource)(nil),              // 47: request.DeleteSource
+	(*DescribeSource)(nil),            // 48: request.DescribeSource
+	(*EnableSource)(nil),              // 49: request.EnableSource
+	(*DisableSource)(nil),             // 50: request.DisableSource
+	(*DeleteAllSource)(nil),           // 51: request.DeleteAllSource
+	(*PingSource)(nil),                // 52: request.PingSource
+	(*SourceTables)(nil),              // 53: request.SourceTables
+	(*TableColumns)(nil),              // 54: request.TableColumns
+	(*CreateTable)(nil),               // 55: request.CreateTable
+	(*UpdateTable)(nil),               // 56: request.UpdateTable
+	(*DeleteTable)(nil),               // 57: request.DeleteTable
+	(*DescribeTable)(nil),             // 58: request.DescribeTable
+	(*ListSource)(nil),                // 59: request.ListSource
+	(*ListTable)(nil),                 // 60: request.ListTable
+	(*UpsertMembers_Pair)(nil),        // 61: request.UpsertMembers.Pair
+	nil,                               // 62: request.CheckPermission.RolesEntry
+	(model.Workspace_Status)(0),       // 63: model.Workspace.Status
+	(*model.OpAudit)(nil),             // 64: model.OpAudit
+	(model.OpType)(0),                 // 65: model.OpType
+	(model.OpAudit_State)(0),          // 66: model.OpAudit.State
+	(model.StreamFlow_Type)(0),        // 67: model.StreamFlow.Type
+	(*model.StreamFlowSchedule)(nil),  // 68: model.StreamFlowSchedule
+	(*model.StreamFlowEnv)(nil),       // 69: model.StreamFlowEnv
+	(*model.StreamFlowProperty)(nil),  // 70: model.StreamFlowProperty
+	(*model.MonitorRule)(nil),         // 71: model.MonitorRule
+	(*model.SourceUrl)(nil),           // 72: model.SourceUrl
+	(*model.TableUrl)(nil),            // 73: model.TableUrl
 }
 var file_proto_request_proto_depIdxs = []int32{
-	47, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
-	48, // 1: request.AddAudit.info:type_name -> model.OpAudit
-	49, // 2: request.ListAudits.type:type_name -> model.OpType
-	50, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
-	45, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
-	49, // 5: request.CheckPermission.op_type:type_name -> model.OpType
-	46, // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
-	51, // 7: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
-	52, // 8: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
-	53, // 9: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
-	54, // 10: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
-	55, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
-	55, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
-	54, // 13: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
+	63, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
+	64, // 1: request.AddAudit.info:type_name -> model.OpAudit
+	65, // 2: request.ListAudits.type:type_name -> model.OpType
+	66, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
+	61, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
+	65, // 5: request.CheckPermission.op_type:type_name -> model.OpType
+	62, // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
+	67, // 7: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
+	68, // 8: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	69, // 9: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	70, // 10: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
+	71, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
+	71, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
+	70, // 13: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
 	41, // 14: request.TerminateStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
 	41, // 15: request.SuspendStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
 	41, // 16: request.ResumeStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
-	17, // [17:17] is the sub-list for method output_type
-	17, // [17:17] is the sub-list for method input_type
-	17, // [17:17] is the sub-list for extension type_name
-	17, // [17:17] is the sub-list for extension extendee
-	0,  // [0:17] is the sub-list for field type_name
+	72, // 17: request.CreateSource.Url:type_name -> model.SourceUrl
+	72, // 18: request.UpdateSource.Url:type_name -> model.SourceUrl
+	72, // 19: request.PingSource.Url:type_name -> model.SourceUrl
+	73, // 20: request.CreateTable.Url:type_name -> model.TableUrl
+	73, // 21: request.UpdateTable.Url:type_name -> model.TableUrl
+	22, // [22:22] is the sub-list for method output_type
+	22, // [22:22] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_proto_request_proto_init() }
@@ -4053,6 +5270,198 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*EnableSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DisableSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteAllSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PingSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SourceTables); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TableColumns); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateTable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateTable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteTable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeTable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListTable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpsertMembers_Pair); i {
 			case 0:
 				return &v.state
@@ -4071,7 +5480,7 @@ func file_proto_request_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_request_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   47,
+			NumMessages:   63,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

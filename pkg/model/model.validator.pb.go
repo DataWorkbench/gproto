@@ -372,3 +372,599 @@ func (this *InstanceTaskExecStat) Validate() error {
 	}
 	return nil
 }
+func (this *SourceInfo) Validate() error {
+	if !(len(this.SourceID) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceID))
+	}
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
+	if !(len(this.SourceType) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SourceType))
+	}
+	if !(len(this.SourceType) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceType))
+	}
+	if !(len(this.Name) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
+	}
+	if !(len(this.Name) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
+	}
+	if !(len(this.Comment) < 257) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
+	}
+	if this.Url != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Url); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
+		}
+	}
+	if !(len(this.State) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.State))
+	}
+	if !(len(this.CreateTime) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("CreateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.CreateTime))
+	}
+	if !(len(this.UpdateTime) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UpdateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UpdateTime))
+	}
+	return nil
+}
+func (this *TableInfo) Validate() error {
+	if !(len(this.TableID) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TableID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.TableID))
+	}
+	if !(len(this.SourceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SourceID))
+	}
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
+	if !(len(this.Name) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
+	}
+	if !(len(this.Name) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
+	}
+	if !(len(this.Comment) < 257) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
+	}
+	if this.Url != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Url); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
+		}
+	}
+	if !(len(this.CreateTime) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("CreateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.CreateTime))
+	}
+	if !(len(this.UpdateTime) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UpdateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UpdateTime))
+	}
+	if !(len(this.Direction) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Direction", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.Direction))
+	}
+	return nil
+}
+func (this *SqlColumnType) Validate() error {
+	if !(len(this.Column) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Column", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Column))
+	}
+	if !(len(this.Column) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Column", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Column))
+	}
+	if !(len(this.Type) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Type))
+	}
+	if !(len(this.Type) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Type))
+	}
+	if !(len(this.Comment) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Comment))
+	}
+	if !(len(this.Comment) < 257) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
+	}
+	if !(len(this.PrimaryKey) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PrimaryKey", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.PrimaryKey))
+	}
+	if !(len(this.PrimaryKey) < 9) {
+		return github_com_mwitkow_go_proto_validators.FieldError("PrimaryKey", fmt.Errorf(`value '%v' must have a length smaller than '9'`, this.PrimaryKey))
+	}
+	if !(len(this.Length) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Length", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Length))
+	}
+	if !(len(this.Length) < 11) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Length", fmt.Errorf(`value '%v' must have a length smaller than '11'`, this.Length))
+	}
+	return nil
+}
+func (this *ConnectorOption) Validate() error {
+	if !(len(this.Name) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
+	}
+	if !(len(this.Name) < 257) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Name))
+	}
+	if !(len(this.Value) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Value))
+	}
+	if !(len(this.Value) < 4097) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length smaller than '4097'`, this.Value))
+	}
+	return nil
+}
+func (this *MySQLUrl) Validate() error {
+	if !(len(this.User) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.User))
+	}
+	if !(len(this.User) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.User))
+	}
+	if !(len(this.Password) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Password))
+	}
+	if !(len(this.Password) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Password))
+	}
+	if !(len(this.Host) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Host))
+	}
+	if !(len(this.Host) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Host))
+	}
+	if !(len(this.Database) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Database))
+	}
+	if !(len(this.Database) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Database))
+	}
+	return nil
+}
+func (this *PostgreSQLUrl) Validate() error {
+	if !(len(this.User) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.User))
+	}
+	if !(len(this.User) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.User))
+	}
+	if !(len(this.Password) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Password))
+	}
+	if !(len(this.Password) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Password))
+	}
+	if !(len(this.Host) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Host))
+	}
+	if !(len(this.Host) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Host))
+	}
+	if !(len(this.Database) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Database))
+	}
+	if !(len(this.Database) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Database))
+	}
+	return nil
+}
+func (this *ClickHouseUrl) Validate() error {
+	if !(len(this.User) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.User))
+	}
+	if !(len(this.User) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.User))
+	}
+	if !(len(this.Password) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Password))
+	}
+	if !(len(this.Password) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Password))
+	}
+	if !(len(this.Host) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Host))
+	}
+	if !(len(this.Host) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Host))
+	}
+	if !(len(this.Database) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Database))
+	}
+	if !(len(this.Database) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Database))
+	}
+	return nil
+}
+func (this *KafkaUrl) Validate() error {
+	if !(len(this.KafkaBrokers) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KafkaBrokers", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.KafkaBrokers))
+	}
+	if !(len(this.KafkaBrokers) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("KafkaBrokers", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.KafkaBrokers))
+	}
+	return nil
+}
+func (this *S3Url) Validate() error {
+	if !(len(this.AccessKey) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AccessKey", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.AccessKey))
+	}
+	if !(len(this.AccessKey) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("AccessKey", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.AccessKey))
+	}
+	if !(len(this.SecretKey) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SecretKey", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SecretKey))
+	}
+	if !(len(this.SecretKey) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SecretKey", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.SecretKey))
+	}
+	if !(len(this.EndPoint) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("EndPoint", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.EndPoint))
+	}
+	if !(len(this.EndPoint) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("EndPoint", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.EndPoint))
+	}
+	return nil
+}
+func (this *HbaseUrl) Validate() error {
+	if !(len(this.Zookeeper) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Zookeeper", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Zookeeper))
+	}
+	if !(len(this.Zookeeper) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Zookeeper", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Zookeeper))
+	}
+	if !(len(this.Znode) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Znode", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Znode))
+	}
+	if !(len(this.Znode) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Znode", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Znode))
+	}
+	if this.Hosts != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hosts); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Hosts", err)
+		}
+	}
+	return nil
+}
+func (this *FtpUrl) Validate() error {
+	if !(len(this.Host) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Host))
+	}
+	if !(len(this.Host) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Host))
+	}
+	return nil
+}
+func (this *HDFSUrl) Validate() error {
+	if !(len(this.Host) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Host))
+	}
+	if !(len(this.Host) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Host))
+	}
+	return nil
+}
+func (this *SourceUrl) Validate() error {
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_MySQL); ok {
+		if oneOfNester.MySQL != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.MySQL); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("MySQL", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_PostgreSQL); ok {
+		if oneOfNester.PostgreSQL != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.PostgreSQL); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("PostgreSQL", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_ClickHouse); ok {
+		if oneOfNester.ClickHouse != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ClickHouse); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ClickHouse", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_Kafka); ok {
+		if oneOfNester.Kafka != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Kafka); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Kafka", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_S3); ok {
+		if oneOfNester.S3 != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.S3); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_Hbase); ok {
+		if oneOfNester.Hbase != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Hbase); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_Ftp); ok {
+		if oneOfNester.Ftp != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Ftp); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Ftp", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetSource().(*SourceUrl_HDFS); ok {
+		if oneOfNester.HDFS != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.HDFS); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("HDFS", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *MySQLTableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.MappingName) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.MappingName))
+	}
+	if !(len(this.MappingName) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.MappingName))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *PostgreSQLTableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.MappingName) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.MappingName))
+	}
+	if !(len(this.MappingName) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.MappingName))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *ClickHouseTableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.MappingName) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.MappingName))
+	}
+	if !(len(this.MappingName) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.MappingName))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *HbaseTableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.MappingName) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.MappingName))
+	}
+	if !(len(this.MappingName) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("MappingName", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.MappingName))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *HDFSTableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.Format) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Format))
+	}
+	if !(len(this.Format) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Format))
+	}
+	if !(len(this.Path) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Path", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Path))
+	}
+	if !(len(this.Path) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Path", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Path))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *S3TableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.Format) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Format))
+	}
+	if !(len(this.Format) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Format))
+	}
+	if !(len(this.Path) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Path", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Path))
+	}
+	if !(len(this.Path) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Path", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Path))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *FtpTableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.Format) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Format))
+	}
+	if !(len(this.Format) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Format))
+	}
+	if !(len(this.Path) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Path", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Path))
+	}
+	if !(len(this.Path) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Path", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Path))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *KafkaTableUrl) Validate() error {
+	for _, item := range this.SqlColumn {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("SqlColumn", err)
+			}
+		}
+	}
+	if !(len(this.Format) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Format))
+	}
+	if !(len(this.Format) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Format", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Format))
+	}
+	if !(len(this.Topic) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Topic", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Topic))
+	}
+	if !(len(this.Topic) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Topic", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Topic))
+	}
+	for _, item := range this.ConnectorOptions {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ConnectorOptions", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *TableUrl) Validate() error {
+	if oneOfNester, ok := this.GetTable().(*TableUrl_MySQL); ok {
+		if oneOfNester.MySQL != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.MySQL); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("MySQL", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTable().(*TableUrl_PostgreSQL); ok {
+		if oneOfNester.PostgreSQL != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.PostgreSQL); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("PostgreSQL", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTable().(*TableUrl_ClickHouse); ok {
+		if oneOfNester.ClickHouse != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ClickHouse); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ClickHouse", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTable().(*TableUrl_Hbase); ok {
+		if oneOfNester.Hbase != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Hbase); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTable().(*TableUrl_Kafka); ok {
+		if oneOfNester.Kafka != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Kafka); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Kafka", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTable().(*TableUrl_S3); ok {
+		if oneOfNester.S3 != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.S3); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTable().(*TableUrl_Ftp); ok {
+		if oneOfNester.Ftp != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Ftp); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Ftp", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetTable().(*TableUrl_HDFS); ok {
+		if oneOfNester.HDFS != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.HDFS); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("HDFS", err)
+			}
+		}
+	}
+	return nil
+}

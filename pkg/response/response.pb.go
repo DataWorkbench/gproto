@@ -966,6 +966,511 @@ func (x *ListStreamInsts) GetHasMore() bool {
 	return false
 }
 
+// DescribeSource used as reply parameters in RPC or response body in HTTP.
+type DescribeSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// this source info
+	Info *model.SourceInfo `protobuf:"bytes,1,opt,name=info,proto3" json:"info"`
+	// Connected statue, one of successful/failed.
+	Connected string `protobuf:"bytes,2,opt,name=Connected,proto3" json:"connected" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"`
+}
+
+func (x *DescribeSource) Reset() {
+	*x = DescribeSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeSource) ProtoMessage() {}
+
+func (x *DescribeSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeSource.ProtoReflect.Descriptor instead.
+func (*DescribeSource) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *DescribeSource) GetInfo() *model.SourceInfo {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+func (x *DescribeSource) GetConnected() string {
+	if x != nil {
+		return x.Connected
+	}
+	return ""
+}
+
+// ListSource used as reply parameters in RPC or response body in HTTP.
+type ListSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos []*DescribeSource `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos"`
+	Total int64             `protobuf:"varint,2,opt,name=total,proto3" json:"total"`
+}
+
+func (x *ListSource) Reset() {
+	*x = ListSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSource) ProtoMessage() {}
+
+func (x *ListSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSource.ProtoReflect.Descriptor instead.
+func (*ListSource) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ListSource) GetInfos() []*DescribeSource {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *ListSource) GetTotal() int64 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+// SourceKind used as reply parameters in RPC or response body in HTTP.
+type SourceKind struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Kinds []*SourceKind_Kind `protobuf:"bytes,1,rep,name=Kinds,proto3" json:"kinds" required:"true" minLength:"0" maxLength:"10485760"`
+}
+
+func (x *SourceKind) Reset() {
+	*x = SourceKind{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SourceKind) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SourceKind) ProtoMessage() {}
+
+func (x *SourceKind) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SourceKind.ProtoReflect.Descriptor instead.
+func (*SourceKind) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *SourceKind) GetKinds() []*SourceKind_Kind {
+	if x != nil {
+		return x.Kinds
+	}
+	return nil
+}
+
+// JsonStringList used as reply parameters in RPC or response body in HTTP.
+type JsonList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	JsonList []string `protobuf:"bytes,1,rep,name=JsonList,proto3" json:"jsonlist" required:"true" minLength:"0" maxLength:"10485760"`
+}
+
+func (x *JsonList) Reset() {
+	*x = JsonList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *JsonList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JsonList) ProtoMessage() {}
+
+func (x *JsonList) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JsonList.ProtoReflect.Descriptor instead.
+func (*JsonList) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *JsonList) GetJsonList() []string {
+	if x != nil {
+		return x.JsonList
+	}
+	return nil
+}
+
+// TableColumns used as reply parameters in RPC or response body in HTTP.
+type TableColumns struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// columns
+	Columns []*TableColumns_Column `protobuf:"bytes,1,rep,name=Columns,proto3" json:"columns" minLength:"0" maxLength:"100000"`
+}
+
+func (x *TableColumns) Reset() {
+	*x = TableColumns{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TableColumns) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TableColumns) ProtoMessage() {}
+
+func (x *TableColumns) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TableColumns.ProtoReflect.Descriptor instead.
+func (*TableColumns) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *TableColumns) GetColumns() []*TableColumns_Column {
+	if x != nil {
+		return x.Columns
+	}
+	return nil
+}
+
+// DescribeTable used as reply parameters in RPC or response body in HTTP.
+type DescribeTable struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// this source info
+	Info *model.TableInfo `protobuf:"bytes,1,opt,name=info,proto3" json:"info"`
+}
+
+func (x *DescribeTable) Reset() {
+	*x = DescribeTable{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeTable) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeTable) ProtoMessage() {}
+
+func (x *DescribeTable) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeTable.ProtoReflect.Descriptor instead.
+func (*DescribeTable) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *DescribeTable) GetInfo() *model.TableInfo {
+	if x != nil {
+		return x.Info
+	}
+	return nil
+}
+
+type ListTable struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// this source info
+	Infos []*model.TableInfo `protobuf:"bytes,1,rep,name=infos,proto3" json:"info"`
+	Total int64              `protobuf:"varint,2,opt,name=total,proto3" json:"total"`
+}
+
+func (x *ListTable) Reset() {
+	*x = ListTable{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListTable) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTable) ProtoMessage() {}
+
+func (x *ListTable) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTable.ProtoReflect.Descriptor instead.
+func (*ListTable) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ListTable) GetInfos() []*model.TableInfo {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *ListTable) GetTotal() int64 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type SourceKind_Kind struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// this kind name
+	Name string `protobuf:"bytes,1,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	// this source image
+	Image string `protobuf:"bytes,2,opt,name=Image,proto3" json:"image" binding:"gte=1,lte=10485760" required:"true" minLength:"1" maxLength:"10485760"`
+	// comment
+	Desc string `protobuf:"bytes,3,opt,name=Desc,proto3" json:"desc" binding:"gte=1,lte=512" required:"true" minLength:"1" maxLength:"512"`
+}
+
+func (x *SourceKind_Kind) Reset() {
+	*x = SourceKind_Kind{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SourceKind_Kind) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SourceKind_Kind) ProtoMessage() {}
+
+func (x *SourceKind_Kind) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SourceKind_Kind.ProtoReflect.Descriptor instead.
+func (*SourceKind_Kind) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{19, 0}
+}
+
+func (x *SourceKind_Kind) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *SourceKind_Kind) GetImage() string {
+	if x != nil {
+		return x.Image
+	}
+	return ""
+}
+
+func (x *SourceKind_Kind) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+type TableColumns_Column struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// column name
+	Name string `protobuf:"bytes,1,opt,name=Name,proto3" json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	// column type
+	Type string `protobuf:"bytes,2,opt,name=Type,proto3" json:"type" gorm:"column:type;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	// type length
+	Length string `protobuf:"bytes,3,opt,name=Length,proto3" json:"length" gorm:"column:length;" required:"true" binding:"gte=0,lte=64" minLength:"0" maxLength:"64"`
+	// primary key, one of true/false
+	IsPrkey string `protobuf:"bytes,4,opt,name=IsPrkey,proto3" json:"isprkey" gorm:"column:isprkey;" binding:"gte=0,lte=8" required:"true" minLength:"0" maxLength:"8"`
+}
+
+func (x *TableColumns_Column) Reset() {
+	*x = TableColumns_Column{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_response_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TableColumns_Column) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TableColumns_Column) ProtoMessage() {}
+
+func (x *TableColumns_Column) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_response_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TableColumns_Column.ProtoReflect.Descriptor instead.
+func (*TableColumns_Column) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{21, 0}
+}
+
+func (x *TableColumns_Column) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TableColumns_Column) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
+func (x *TableColumns_Column) GetLength() string {
+	if x != nil {
+		return x.Length
+	}
+	return ""
+}
+
+func (x *TableColumns_Column) GetIsPrkey() string {
+	if x != nil {
+		return x.IsPrkey
+	}
+	return ""
+}
+
 var File_proto_response_proto protoreflect.FileDescriptor
 
 var file_proto_response_proto_rawDesc = []byte{
@@ -1070,11 +1575,63 @@ var file_proto_response_proto_rawDesc = []byte{
 	0x74, 0x72, 0x65, 0x61, 0x6d, 0x46, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x73, 0x74, 0x42, 0x04, 0xe2,
 	0xdf, 0x1f, 0x00, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x1f, 0x0a, 0x08, 0x68, 0x61,
 	0x73, 0x5f, 0x6d, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf,
-	0x1f, 0x00, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d, 0x6f, 0x72, 0x65, 0x42, 0x2e, 0x5a, 0x2c, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f,
-	0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70,
-	0x6b, 0x67, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x1f, 0x00, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d, 0x6f, 0x72, 0x65, 0x22, 0x65, 0x0a, 0x0e, 0x44,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x2b, 0x0a,
+	0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x2e, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x12, 0x26, 0x0a, 0x09, 0x43, 0x6f,
+	0x6e, 0x6e, 0x65, 0x63, 0x74, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2,
+	0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x11, 0x52, 0x09, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74,
+	0x65, 0x64, 0x22, 0x5e, 0x0a, 0x0a, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x12, 0x34, 0x0a, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x18, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72,
+	0x69, 0x62, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
+	0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x1a, 0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x74, 0x6f, 0x74,
+	0x61, 0x6c, 0x22, 0xbb, 0x01, 0x0a, 0x0a, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e,
+	0x64, 0x12, 0x45, 0x0a, 0x05, 0x4b, 0x69, 0x6e, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x19, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x53, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64, 0x2e, 0x4b, 0x69, 0x6e, 0x64, 0x42, 0x14, 0xe2, 0xdf, 0x1f,
+	0x10, 0x70, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x78, 0x81, 0x80, 0x80,
+	0x05, 0x52, 0x05, 0x4b, 0x69, 0x6e, 0x64, 0x73, 0x1a, 0x66, 0x0a, 0x04, 0x4b, 0x69, 0x6e, 0x64,
+	0x12, 0x1c, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08,
+	0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x01, 0x78, 0x41, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x21,
+	0x0a, 0x05, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x0b, 0xe2,
+	0xdf, 0x1f, 0x07, 0x70, 0x01, 0x78, 0x81, 0x80, 0x80, 0x05, 0x52, 0x05, 0x49, 0x6d, 0x61, 0x67,
+	0x65, 0x12, 0x1d, 0x0a, 0x04, 0x44, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x04, 0x52, 0x04, 0x44, 0x65, 0x73, 0x63,
+	0x22, 0x3c, 0x0a, 0x08, 0x4a, 0x73, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x30, 0x0a, 0x08,
+	0x4a, 0x73, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x14,
+	0xe2, 0xdf, 0x1f, 0x10, 0x70, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x78,
+	0x81, 0x80, 0x80, 0x05, 0x52, 0x08, 0x4a, 0x73, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x22, 0xe5,
+	0x01, 0x0a, 0x0c, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x73, 0x12,
+	0x41, 0x0a, 0x07, 0x43, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x1d, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x54, 0x61, 0x62, 0x6c,
+	0x65, 0x43, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x73, 0x2e, 0x43, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x42,
+	0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x78, 0xa1, 0x8d, 0x06, 0x52, 0x07, 0x43, 0x6f, 0x6c, 0x75, 0x6d,
+	0x6e, 0x73, 0x1a, 0x91, 0x01, 0x0a, 0x06, 0x43, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x12, 0x1c, 0x0a,
+	0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f,
+	0x04, 0x70, 0x01, 0x78, 0x41, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x1c, 0x0a, 0x04, 0x54,
+	0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70,
+	0x01, 0x78, 0x41, 0x52, 0x04, 0x54, 0x79, 0x70, 0x65, 0x12, 0x29, 0x0a, 0x06, 0x4c, 0x65, 0x6e,
+	0x67, 0x74, 0x68, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x11, 0xe2, 0xdf, 0x1f, 0x0d, 0x70,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x78, 0x41, 0x52, 0x06, 0x4c, 0x65,
+	0x6e, 0x67, 0x74, 0x68, 0x12, 0x20, 0x0a, 0x07, 0x49, 0x73, 0x50, 0x72, 0x6b, 0x65, 0x79, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x78, 0x08, 0x52, 0x07, 0x49,
+	0x73, 0x50, 0x72, 0x6b, 0x65, 0x79, 0x22, 0x3b, 0x0a, 0x0d, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69,
+	0x62, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x2a, 0x0a, 0x04, 0x69, 0x6e, 0x66, 0x6f, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x54, 0x61,
+	0x62, 0x6c, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x04, 0x69,
+	0x6e, 0x66, 0x6f, 0x22, 0x55, 0x0a, 0x09, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x62, 0x6c, 0x65,
+	0x12, 0x2c, 0x0a, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x10, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x49, 0x6e, 0x66,
+	0x6f, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x1a,
+	0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x42, 0x04, 0xe2,
+	0xdf, 0x1f, 0x00, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x42, 0x2e, 0x5a, 0x2c, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72,
+	0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b,
+	0x67, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -1089,7 +1646,7 @@ func file_proto_response_proto_rawDescGZIP() []byte {
 	return file_proto_response_proto_rawDescData
 }
 
-var file_proto_response_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_proto_response_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
 var file_proto_response_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),           // 0: response.ListWorkspaces
 	(*ListAudits)(nil),               // 1: response.ListAudits
@@ -1108,37 +1665,54 @@ var file_proto_response_proto_goTypes = []interface{}{
 	(*ListMonitorRules)(nil),         // 14: response.ListMonitorRules
 	(*DescribeMonitorRule)(nil),      // 15: response.DescribeMonitorRule
 	(*ListStreamInsts)(nil),          // 16: response.ListStreamInsts
-	(*model.Workspace)(nil),          // 17: model.Workspace
-	(*model.OpAudit)(nil),            // 18: model.OpAudit
-	(*model.Member)(nil),             // 19: model.Member
-	(*model.Role)(nil),               // 20: model.Role
-	(*model.StreamFlow)(nil),         // 21: model.StreamFlow
-	(*model.StreamFlowEnv)(nil),      // 22: model.StreamFlowEnv
-	(*model.StreamFlowSchedule)(nil), // 23: model.StreamFlowSchedule
-	(*model.StreamFlowRelease)(nil),  // 24: model.StreamFlowRelease
-	(*model.MonitorRule)(nil),        // 25: model.MonitorRule
-	(*model.StreamFlowInst)(nil),     // 26: model.StreamFlowInst
+	(*DescribeSource)(nil),           // 17: response.DescribeSource
+	(*ListSource)(nil),               // 18: response.ListSource
+	(*SourceKind)(nil),               // 19: response.SourceKind
+	(*JsonList)(nil),                 // 20: response.JsonList
+	(*TableColumns)(nil),             // 21: response.TableColumns
+	(*DescribeTable)(nil),            // 22: response.DescribeTable
+	(*ListTable)(nil),                // 23: response.ListTable
+	(*SourceKind_Kind)(nil),          // 24: response.SourceKind.Kind
+	(*TableColumns_Column)(nil),      // 25: response.TableColumns.Column
+	(*model.Workspace)(nil),          // 26: model.Workspace
+	(*model.OpAudit)(nil),            // 27: model.OpAudit
+	(*model.Member)(nil),             // 28: model.Member
+	(*model.Role)(nil),               // 29: model.Role
+	(*model.StreamFlow)(nil),         // 30: model.StreamFlow
+	(*model.StreamFlowEnv)(nil),      // 31: model.StreamFlowEnv
+	(*model.StreamFlowSchedule)(nil), // 32: model.StreamFlowSchedule
+	(*model.StreamFlowRelease)(nil),  // 33: model.StreamFlowRelease
+	(*model.MonitorRule)(nil),        // 34: model.MonitorRule
+	(*model.StreamFlowInst)(nil),     // 35: model.StreamFlowInst
+	(*model.SourceInfo)(nil),         // 36: model.SourceInfo
+	(*model.TableInfo)(nil),          // 37: model.TableInfo
 }
 var file_proto_response_proto_depIdxs = []int32{
-	17, // 0: response.ListWorkspaces.infos:type_name -> model.Workspace
-	18, // 1: response.ListAudits.infos:type_name -> model.OpAudit
-	17, // 2: response.DescribeWorkspace.info:type_name -> model.Workspace
-	19, // 3: response.ListMembers.infos:type_name -> model.Member
-	20, // 4: response.ListSystemRoles.infos:type_name -> model.Role
-	21, // 5: response.ListStreamFlows.infos:type_name -> model.StreamFlow
-	21, // 6: response.DescribeStreamFlow.info:type_name -> model.StreamFlow
-	22, // 7: response.GetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
-	23, // 8: response.GetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
-	24, // 9: response.ListReleaseStreamFlows.infos:type_name -> model.StreamFlowRelease
-	21, // 10: response.ListStreamFlowVersions.infos:type_name -> model.StreamFlow
-	25, // 11: response.ListMonitorRules.infos:type_name -> model.MonitorRule
-	25, // 12: response.DescribeMonitorRule.info:type_name -> model.MonitorRule
-	26, // 13: response.ListStreamInsts.infos:type_name -> model.StreamFlowInst
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	26, // 0: response.ListWorkspaces.infos:type_name -> model.Workspace
+	27, // 1: response.ListAudits.infos:type_name -> model.OpAudit
+	26, // 2: response.DescribeWorkspace.info:type_name -> model.Workspace
+	28, // 3: response.ListMembers.infos:type_name -> model.Member
+	29, // 4: response.ListSystemRoles.infos:type_name -> model.Role
+	30, // 5: response.ListStreamFlows.infos:type_name -> model.StreamFlow
+	30, // 6: response.DescribeStreamFlow.info:type_name -> model.StreamFlow
+	31, // 7: response.GetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	32, // 8: response.GetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	33, // 9: response.ListReleaseStreamFlows.infos:type_name -> model.StreamFlowRelease
+	30, // 10: response.ListStreamFlowVersions.infos:type_name -> model.StreamFlow
+	34, // 11: response.ListMonitorRules.infos:type_name -> model.MonitorRule
+	34, // 12: response.DescribeMonitorRule.info:type_name -> model.MonitorRule
+	35, // 13: response.ListStreamInsts.infos:type_name -> model.StreamFlowInst
+	36, // 14: response.DescribeSource.info:type_name -> model.SourceInfo
+	17, // 15: response.ListSource.infos:type_name -> response.DescribeSource
+	24, // 16: response.SourceKind.Kinds:type_name -> response.SourceKind.Kind
+	25, // 17: response.TableColumns.Columns:type_name -> response.TableColumns.Column
+	37, // 18: response.DescribeTable.info:type_name -> model.TableInfo
+	37, // 19: response.ListTable.infos:type_name -> model.TableInfo
+	20, // [20:20] is the sub-list for method output_type
+	20, // [20:20] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_proto_response_proto_init() }
@@ -1351,6 +1925,114 @@ func file_proto_response_proto_init() {
 				return nil
 			}
 		}
+		file_proto_response_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SourceKind); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*JsonList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TableColumns); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeTable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListTable); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SourceKind_Kind); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_response_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TableColumns_Column); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1358,7 +2040,7 @@ func file_proto_response_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_response_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   17,
+			NumMessages:   26,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

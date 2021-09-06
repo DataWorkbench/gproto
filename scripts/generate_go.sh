@@ -108,4 +108,162 @@ make tidy || exit $?
 make vet || exit $?
 make lint || exit $?
 
+if [ "$(uname -s)" == "Darwin" ] && ! sed --version >/dev/null 2>&1; then
+	sed -i "" '/import (/a\"database/sql/driver"\n"encoding/json"\n"fmt"\n"strings"' ./pkg/model/model.pb.go
+else
+	sed -i '/import (/a\"database/sql/driver"\n"encoding/json"\n"fmt"\n"strings"' ./pkg/model/model.pb.go
+fi
+cat <<EOF >> ./pkg/model/model.pb.go
+func (r *SourceUrl) Scan(in interface{}) error {
+    var (
+        out        SourceUrl
+        mysql      SourceUrl_MySQL
+        postgresql SourceUrl_PostgreSQL
+        clickhouse SourceUrl_ClickHouse
+        kafka      SourceUrl_Kafka
+        s3         SourceUrl_S3
+        hbase      SourceUrl_Hbase
+        ftp        SourceUrl_Ftp
+        hdfs       SourceUrl_HDFS
+        err        error
+    )
+
+    bytes, _ := in.([]byte)
+    header := strings.ToLower(strings.Split(string(bytes), ":")[0])
+
+    if strings.Index(header, "mysql") != -1 {
+        if err = json.Unmarshal(bytes, &mysql); err != nil {
+            return err
+        }
+        out.Source = &mysql
+    } else if strings.Index(header, "postgresql") != -1 {
+        if err = json.Unmarshal(bytes, &postgresql); err != nil {
+            return err
+        }
+        out.Source = &postgresql
+    } else if strings.Index(header, "clickhouse") != -1 {
+        if err = json.Unmarshal(bytes, &clickhouse); err != nil {
+            return err
+        }
+        out.Source = &clickhouse
+    } else if strings.Index(header, "kafka") != -1 {
+        if err = json.Unmarshal(bytes, &kafka); err != nil {
+            return err
+        }
+        out.Source = &kafka
+    } else if strings.Index(header, "s3") != -1 {
+        if err = json.Unmarshal(bytes, &s3); err != nil {
+            return err
+        }
+        out.Source = &s3
+    } else if strings.Index(header, "hbase") != -1 {
+        if err = json.Unmarshal(bytes, &hbase); err != nil {
+            return err
+        }
+        out.Source = &hbase
+    } else if strings.Index(header, "ftp") != -1 {
+        if err = json.Unmarshal(bytes, &ftp); err != nil {
+            return err
+        }
+        out.Source = &ftp
+    } else if strings.Index(header, "hdfs") != -1 {
+        if err = json.Unmarshal(bytes, &hdfs); err != nil {
+            return err
+        }
+        out.Source = &hdfs
+    } else {
+        err = fmt.Errorf("Unknown header", header)
+        return err
+    }
+
+    *r = out
+    return nil
+}
+
+func (in SourceUrl) Value() (driver.Value, error) {
+    r, _ := json.Marshal(&in.Source)
+    return string(r), nil
+}
+
+func (r *TableUrl) Scan(in interface{}) error {
+    var (
+        out        TableUrl
+        mysql      TableUrl_MySQL
+        postgresql TableUrl_PostgreSQL
+        clickhouse TableUrl_ClickHouse
+        kafka      TableUrl_Kafka
+        s3         TableUrl_S3
+        hbase      TableUrl_Hbase
+        ftp        TableUrl_Ftp
+        hdfs       TableUrl_HDFS
+        err        error
+    )
+
+    bytes, _ := in.([]byte)
+    header := strings.ToLower(strings.Split(string(bytes), ":")[0])
+
+    if strings.Index(header, "mysql") != -1 {
+        if err = json.Unmarshal(bytes, &mysql); err != nil {
+            return err
+        }
+        out.Table = &mysql
+    } else if strings.Index(header, "postgresql") != -1 {
+        if err = json.Unmarshal(bytes, &postgresql); err != nil {
+            return err
+        }
+        out.Table = &postgresql
+    } else if strings.Index(header, "clickhouse") != -1 {
+        if err = json.Unmarshal(bytes, &clickhouse); err != nil {
+            return err
+        }
+        out.Table = &clickhouse
+    } else if strings.Index(header, "kafka") != -1 {
+        if err = json.Unmarshal(bytes, &kafka); err != nil {
+            return err
+        }
+        out.Table = &kafka
+    } else if strings.Index(header, "s3") != -1 {
+        if err = json.Unmarshal(bytes, &s3); err != nil {
+            return err
+        }
+        out.Table = &s3
+    } else if strings.Index(header, "hbase") != -1 {
+        if err = json.Unmarshal(bytes, &hbase); err != nil {
+            return err
+        }
+        out.Table = &hbase
+    } else if strings.Index(header, "ftp") != -1 {
+        if err = json.Unmarshal(bytes, &ftp); err != nil {
+            return err
+        }
+        out.Table = &ftp
+    } else if strings.Index(header, "hdfs") != -1 {
+        if err = json.Unmarshal(bytes, &hdfs); err != nil {
+            return err
+        }
+        out.Table = &hdfs
+    } else {
+        err = fmt.Errorf("Unknown header", header)
+        return err
+    }
+
+    *r = out
+    return nil
+}
+
+func (in TableUrl) Value() (driver.Value, error) {
+    r, _ := json.Marshal(&in.Table)
+    return string(r), nil
+}
+
+
+//func (date Date) MarshalJSON() ([]byte, error) {
+//  return time.Time(date).MarshalJSON()
+//}
+//
+//func (date *Date) UnmarshalJSON(b []byte) error {
+//  return (*time.Time)(date).UnmarshalJSON(b)
+//}
+EOF
+
 exit $?

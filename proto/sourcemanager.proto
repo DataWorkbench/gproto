@@ -1,156 +1,37 @@
 syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/smpb";
-
 package smpb;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "model.proto";
+import "request.proto";
+import "response.proto";
 
-// Sourcemanager Service
 service Sourcemanager {
-    rpc Create(CreateRequest) returns (EmptyReply) {}
-    rpc Update(UpdateRequest) returns (EmptyReply) {}
-    rpc Delete(DeleteRequest) returns(EmptyReply) {}
-    rpc List(ListsRequest) returns (ListsReply) {}
-    rpc Describe(DescribeRequest) returns (InfoReply) {}
-    rpc PingSource(PingSourceRequest) returns (EmptyReply) {}
-    rpc Enable(StateRequest) returns (EmptyReply) {}
-    rpc Disable(StateRequest) returns (EmptyReply) {}
-    
-    rpc SotCreate(SotCreateRequest) returns (EmptyReply) {}
-    rpc SotUpdate(SotUpdateRequest) returns (EmptyReply) {}
-    rpc SotDelete(SotDeleteRequest) returns (EmptyReply) {}
-    rpc SotList(SotListsRequest) returns (SotListsReply) {}
-    rpc SotDescribe(SotDescribeRequest) returns (SotInfoReply) {}
-    
-    rpc EngineMap(EngingMapRequest) returns (EngineMapReply) {}
-    rpc DeleteAll(DeleteAllRequest) returns (EmptyReply) {}
-}
+	//source
+    rpc Create(request.CreateSource) returns (model.EmptyStruct) {}
+    rpc Update(request.UpdateSource) returns (model.EmptyStruct) {}
+    rpc Describe(request.DescribeSource) returns (response.DescribeSource) {}
+    rpc Enable(request.EnableSource) returns (model.EmptyStruct) {}
+    rpc Disable(request.DisableSource) returns (model.EmptyStruct) {}
+    rpc List(request.ListSource) returns (response.ListSource) {}
+    rpc Delete(request.DeleteSource) returns(model.EmptyStruct) {}
+    rpc DeleteAll(request.DeleteAllSource) returns (model.EmptyStruct) {}
 
-message DeleteAllRequest {
-    string SpaceID  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
+	//source utile
+    rpc PingSource(request.PingSource) returns (model.EmptyStruct) {}
+    rpc SourceKind(model.EmptyStruct) returns (response.SourceKind) {}
+    rpc DataFormat(model.EmptyStruct) returns (response.JsonList) {}
+    rpc DataType(model.EmptyStruct) returns (response.JsonList) {}
 
-message EngingMapRequest {
-    string EngineType = 1  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-}
+	//table
+    rpc CreateTable(request.CreateTable) returns (model.EmptyStruct) {}
+    rpc DescribeTable(request.DescribeTable) returns (response.DescribeTable) {}
+    rpc UpdateTable(request.UpdateTable) returns (model.EmptyStruct) {}
+    rpc DeleteTable(request.DeleteTable) returns (model.EmptyStruct) {}
+    rpc ListTable(request.ListTable) returns (response.ListTable) {}
 
-message EngineMapReply {
-    string EngineType = 1  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string SourceType = 2  [ (validator.field) = { length_gt: 0} ];
-}
-    
-// The Sourcemanager Info
-message InfoReply {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
-    string SourceType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-    string Creator = 6    [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-    string Url = 7    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-    string CreateTime = 8   [ (validator.field) = { length_lt: 65 } ];
-    string UpdateTime = 9  [ (validator.field) = { length_lt: 65 } ];
-    string EngineType = 10  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string Direction = 11 [ (validator.field) = { length_lt: 17 } ];
-    string Connected = 12 [ (validator.field) = { length_eq: 1 } ]; // t f
-    string State = 13 [ (validator.field) = { length_lt: 17 } ];
-}
-
-// Reply parameters used to DescribeWorkspace
-message CreateRequest {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
-    string SourceType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-    string Creator = 6    [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-    string Url = 7 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-    string EngineType = 8  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-}
-
-message UpdateRequest {
-    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
-    string SourceType = 2  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 5   [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-}
-
-message DeleteRequest {
-    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// EmptyReply represents no value returned
-message EmptyReply {
-}
-
-message ListsRequest {
-    int32 Limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 Offset = 2 [ (validator.field) = { int_gt: -1 } ];
-    string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Reply parameters used to ListWorkspaces
-message ListsReply {
-	int32 total = 1 [ (validator.field) = { int_gt: -1 } ];
-    repeated InfoReply Infos = 2 [ (validator.field) = { msg_exists: false } ];
-}
-
-message DescribeRequest {
-    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-message StateRequest {
-    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-message PingSourceRequest {
-    string SourceType = 1 [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-    string Url = 2 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-    string EngineType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-}
-
-message SotInfoReply {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
-    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-    string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
-    string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
-}
-
-message SotCreateRequest {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
-    string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 5 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-}
-
-message SotUpdateRequest {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string Name = 2   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 3    [ (validator.field) = {  length_lt: 257 } ];
-    string Url = 4 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-}
-
-message SotDeleteRequest {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-}
-
-message SotListsReply {
-	int32 total = 1 [ (validator.field) = { int_gt: -1 } ];
-    repeated SotInfoReply Infos = 2 [ (validator.field) = { msg_exists: false } ];
-}
-
-message SotListsRequest {
-    string SourceID  = 1 [ (validator.field) = { length_eq: 20 } ];
-    int32 Limit = 2 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 Offset = 3 [ (validator.field) = { int_gt: -1 } ];
-}
-
-message SotDescribeRequest {
-    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
+	//source utile
+    rpc SourceTables(request.SourceTables) returns (response.JsonList) {}
+    rpc TableColumns(request.TableColumns) returns (response.TableColumns) {}
 }

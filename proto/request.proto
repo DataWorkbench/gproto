@@ -655,3 +655,246 @@ message ResumeStreamInsts {
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
 	repeated FlowInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
 }
+
+// CreateSource used as request parameters for RPC and HTTP(based on Body)
+message CreateSource {
+	// The source id.
+	// @inject_tag: json:"sourceid" default:"" binding:"lte=20" swaggerignore:"true"
+    string SourceID  = 1 [ (validator.field) = { length_lt: 21 } ];
+
+	// The space id.
+	// @inject_tag: json:"spaceid" default:"" binding:"len=20" swaggerignore:"true"
+    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
+	// @inject_tag: json:"sourcetype" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string SourceType = 3  [ (validator.field) = { length_gt: 1, length_lt: 21 } ];
+
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string Name = 4   [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
+
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+    model.SourceUrl Url = 6 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
+}
+
+// UpdateSource used as request parameters for RPC and HTTP(based on Body)
+message UpdateSource {
+	// The source id.
+	// @inject_tag: json:"sourceid" default:"" binding:"len=20" swaggerignore:"true"
+    string SourceID  = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
+	// @inject_tag: json:"sourcetype" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string SourceType = 2  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+    string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
+
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+    model.SourceUrl Url = 5 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
+}
+
+// DeleteSource used as request parameters for RPC and HTTP(based on Body)
+message DeleteSource {
+	// delete these SourceIDs
+	// @inject_tag: json:"sourceids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+    repeated string SourceIDs = 1 [ (validator.field) = { length_gt: 1, length_lt: 1100 } ];
+}
+
+// DescribeSource used as request parameters for RPC and HTTP(based on Body)
+message DescribeSource {
+	// SourceIDs
+	// @inject_tag: json:"sourceid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string SourceID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// EnableSource used as request parameters for RPC and HTTP(based on Body)
+message EnableSource {
+	// enable these SourceIDs
+	// @inject_tag: json:"sourceids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+    repeated string SourceIDs = 1 [ (validator.field) = { length_gt: 1, length_lt: 1100 } ];
+}
+
+// DeleteSource used as request parameters for RPC and HTTP(based on Body)
+message DisableSource {
+	// delete these SourceIDs
+	// @inject_tag: json:"sourceids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+    repeated string SourceIDs = 1 [ (validator.field) = { length_gt: 1, length_lt: 1100 } ];
+}
+
+// DeleteAllSource used as request parameters for RPC and HTTP(based on Body)
+message DeleteAllSource {
+	//TODO
+	// delete these spaceid's Source
+	// @inject_tag: json:"spaceids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+    repeated string SpaceIDs = 1 [ (validator.field) = { length_gt: 1, length_lt: 1100 } ];
+}
+
+// PingSource used as request parameters for RPC and HTTP(based on Body)
+message PingSource {
+	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
+	// @inject_tag: json:"sourcetype" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string SourceType = 1  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+    model.SourceUrl Url = 2 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
+}
+
+// SourceTables used as request parameters for RPC and HTTP(based on Body)
+message SourceTables {
+	// SourceID
+	// @inject_tag: json:"sourceid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string SourceID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// TableColumns used as request parameters for RPC and HTTP(based on Body)
+message TableColumns {
+	// tablename
+	// @inject_tag: json:"tablename" default:"" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"
+    string TableName  = 1 [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
+
+	// tablename
+	// @inject_tag: json:"sourceid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// CreateTable used as request parameters for RPC and HTTP(based on Body)
+message CreateTable {
+	// The table id.
+	// @inject_tag: json:"tableid" default:"" binding:"lte=20" swaggerignore:"true"
+    string TableID  = 1 [ (validator.field) = { length_lt: 21 } ];
+
+	// The source id.
+	// @inject_tag: json:"sourceid" default:"" binding:"len=20" swaggerignore:"true"
+    string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// The space id.
+	// @inject_tag: json:"spaceid" default:"" binding:"len=20" swaggerignore:"true"
+    string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
+
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string Name = 4   [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
+
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+    model.TableUrl Url = 6 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
+
+	// source direction one of source/destination/dimension
+	// @inject_tag: json:"direction" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string Direction = 7  [ (validator.field) = { length_gt: 1, length_lt: 21 } ];
+}
+
+// UpdateTable used as request parameters for RPC and HTTP(based on Body)
+message UpdateTable {
+	// The table id.
+	// @inject_tag: json:"tableid" default:"" binding:"lte=20" swaggerignore:"true"
+    string TableID  = 1 [ (validator.field) = { length_lt: 21 } ];
+
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string Name = 2   [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
+
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+    string Comment = 3    [ (validator.field) = {  length_lt: 257 } ];
+
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+    model.TableUrl Url = 4 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
+
+	// source direction one of source/destination/dimension
+	// @inject_tag: json:"direction" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string Direction = 5  [ (validator.field) = { length_gt: 1, length_lt: 21 } ];
+}
+
+// DeleteTable used as request parameters for RPC and HTTP(based on Body)
+message DeleteTable {
+	// delete these tableIDs
+	// @inject_tag: json:"tableids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+    repeated string TableIDs = 1 [ (validator.field) = { length_gt: 1, length_lt: 1100 } ];
+}
+
+// DescribeTable used as request parameters for RPC and HTTP(based on Body)
+message DescribeTable {
+	// SourceIDs
+	// @inject_tag: json:"tableid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string TableID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// ListSource used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListSource {
+    // Limit the maximum number of entries returned this time.
+    // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
+    int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+
+    // The offset position. Not required, default 0.
+    // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
+    int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+
+    // The field list used to sorted query results.
+    // Optional values: {sourceid, name, createtime, updatetime}.
+    // Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+    // Not required, default: updatetime.
+    // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
+    string sort_by = 3 [ (validator.field) = {} ];
+
+    // Reverse order results. Not required, default: false.
+    // @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
+    bool reverse = 4 [ (validator.field) = { } ];
+
+    // Search with name; Not required.
+    // @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
+    string search = 5 [ (validator.field) = { } ];
+
+    // SpaceID; required.
+    // @inject_tag: json:"spaceid"  default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string SpaceID  = 6 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// ListTable used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListTable {
+    // Limit the maximum number of entries returned this time.
+    // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
+    int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+
+    // The offset position. Not required, default 0.
+    // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
+    int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+
+    // The field list used to sorted query results.
+    // Optional values: {tableid, name, createtime, updatetime}.
+    // Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+    // Not required, default: updatetime.
+    // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
+    string sort_by = 3 [ (validator.field) = {} ];
+
+    // Reverse order results. Not required, default: false.
+    // @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
+    bool reverse = 4 [ (validator.field) = { } ];
+
+    // Search with name; Not required.
+    // @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
+    string search = 5 [ (validator.field) = { } ];
+
+    // get this source table
+    // @inject_tag: json:"sourceid"  default:"" required:"true" binding:"len=20" minLength:"20" maxLength:"20"
+    string SourceID  = 6 [ (validator.field) = { length_eq: 20 } ];
+}

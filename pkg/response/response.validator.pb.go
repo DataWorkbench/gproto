@@ -165,3 +165,121 @@ func (this *ListStreamInsts) Validate() error {
 	}
 	return nil
 }
+func (this *DescribeSource) Validate() error {
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	if !(len(this.Connected) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Connected", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Connected))
+	}
+	if !(len(this.Connected) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Connected", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.Connected))
+	}
+	return nil
+}
+func (this *ListSource) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *SourceKind) Validate() error {
+	for _, item := range this.Kinds {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Kinds", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *SourceKind_Kind) Validate() error {
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
+	}
+	if !(len(this.Image) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Image", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Image))
+	}
+	if !(len(this.Image) < 10485761) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Image", fmt.Errorf(`value '%v' must have a length smaller than '10485761'`, this.Image))
+	}
+	if !(len(this.Desc) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Desc))
+	}
+	if !(len(this.Desc) < 513) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '513'`, this.Desc))
+	}
+	return nil
+}
+func (this *JsonList) Validate() error {
+	for _, item := range this.JsonList {
+		if !(len(item) > -1) {
+			return github_com_mwitkow_go_proto_validators.FieldError("JsonList", fmt.Errorf(`value '%v' must have a length greater than '-1'`, item))
+		}
+		if !(len(item) < 10485761) {
+			return github_com_mwitkow_go_proto_validators.FieldError("JsonList", fmt.Errorf(`value '%v' must have a length smaller than '10485761'`, item))
+		}
+	}
+	return nil
+}
+func (this *TableColumns) Validate() error {
+	for _, item := range this.Columns {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Columns", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *TableColumns_Column) Validate() error {
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
+	}
+	if !(len(this.Type) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Type))
+	}
+	if !(len(this.Type) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Type))
+	}
+	if !(len(this.Length) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Length", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Length))
+	}
+	if !(len(this.Length) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Length", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Length))
+	}
+	if !(len(this.IsPrkey) < 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("IsPrkey", fmt.Errorf(`value '%v' must have a length smaller than '8'`, this.IsPrkey))
+	}
+	return nil
+}
+func (this *DescribeTable) Validate() error {
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
+func (this *ListTable) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}

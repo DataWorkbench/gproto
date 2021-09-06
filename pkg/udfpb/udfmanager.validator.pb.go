@@ -75,14 +75,24 @@ func (this *UpdateRequest) Validate() error {
 	return nil
 }
 func (this *DeleteRequest) Validate() error {
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
+	for _, item := range this.IDs {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("IDs", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("IDs", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
 	}
 	return nil
 }
 func (this *DeleteAllRequest) Validate() error {
-	if !(len(this.SpaceID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	for _, item := range this.SpaceIDs {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("SpaceIDs", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("SpaceIDs", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
 	}
 	return nil
 }
