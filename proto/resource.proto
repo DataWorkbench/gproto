@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/respb";
+
+package resource;
+import "model.proto";
+import "request.proto";
+import "response.proto";
+
+service Resource{
+  rpc CreateDir(request.CreateDirectory) returns (response.CreateDir){}
+  rpc UploadFile(stream UploadFileRequest) returns (response.UploadFile){}
+  rpc DownloadFile(request.DownloadFile) returns (stream response.DownloadFile){}
+  rpc DescribeFile(request.DescribeFile) returns (model.Resource){}
+  rpc ListFiles(request.ListResources) returns (response.ListResources){}
+  rpc UpdateResource(request.UpdateResource) returns(model.EmptyStruct){}
+  rpc DeleteResources(request.DeleteResources) returns(model.EmptyStruct){}
+  rpc DeleteSpaces(request.DeleteWorkspaces) returns(model.EmptyStruct){}
+}
+
+// UploadFile used as a request parameters for RPC and HTTP(based on URL-Query).
+message UploadFileRequest{
+  // The workspace id in HTTP Request-URI
+  string space_id = 1;
+
+  // The resource name. required.
+  string resource_name = 2;
+
+  // The resource type. required.
+  model.Resource.Type resource_type = 3;
+
+  // The resource parent id. Not required. default -1.
+  string parent_id = 4;
+
+  // The data for resource. required.
+  bytes data = 5;
+
+  // The resource Size. prevent data missing.
+  int64 size = 6;
+
+  // The resource MD5. prevent data missing and falsify.
+  string md5_message = 7;
+}

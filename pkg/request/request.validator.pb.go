@@ -803,3 +803,65 @@ func (this *ListTable) Validate() error {
 	}
 	return nil
 }
+func (this *DownloadFile) Validate() error {
+	if !(len(this.ResourceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
+	}
+	return nil
+}
+func (this *DescribeFile) Validate() error {
+	if !(len(this.ResourceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
+	}
+	return nil
+}
+func (this *ListResources) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	if !(this.ResourceType > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ResourceType))
+	}
+	if !(this.ResourceType < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '3'`, this.ResourceType))
+	}
+	return nil
+}
+func (this *UpdateResource) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.ResourceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
+	}
+	return nil
+}
+func (this *DeleteResources) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	for _, item := range this.ResourceIds {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ResourceIds", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ResourceIds", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
+	}
+	return nil
+}
+func (this *CreateDirectory) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	return nil
+}

@@ -968,3 +968,6 @@ func (this *TableUrl) Validate() error {
 	}
 	return nil
 }
+func (this *Resource) Validate() error {
+	return nil
+}

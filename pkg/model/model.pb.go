@@ -7,17 +7,18 @@
 package model
 
 import (
-"database/sql/driver"
-"encoding/json"
-"fmt"
-"strings"
-	proto "github.com/golang/protobuf/proto"
+	"database/sql/driver"
+	"encoding/json"
+	"fmt"
+	"reflect"
+	"strings"
+	"sync"
+
+	"github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	_ "github.com/yu31/proto-go-plugin/pb/gosqlpb"
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
+	"google.golang.org/protobuf/reflect/protoreflect"
+	"google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -596,6 +597,55 @@ func (x MonitorRule_Status) Number() protoreflect.EnumNumber {
 // Deprecated: Use MonitorRule_Status.Descriptor instead.
 func (MonitorRule_Status) EnumDescriptor() ([]byte, []int) {
 	return file_proto_model_proto_rawDescGZIP(), []int{15, 0}
+}
+
+type Resource_Type int32
+
+const (
+	Resource__   Resource_Type = 0
+	Resource_Jar Resource_Type = 1
+	Resource_Udf Resource_Type = 2
+)
+
+// Enum value maps for Resource_Type.
+var (
+	Resource_Type_name = map[int32]string{
+		0: "_",
+		1: "Jar",
+		2: "Udf",
+	}
+	Resource_Type_value = map[string]int32{
+		"_":   0,
+		"Jar": 1,
+		"Udf": 2,
+	}
+)
+
+func (x Resource_Type) Enum() *Resource_Type {
+	p := new(Resource_Type)
+	*p = x
+	return p
+}
+
+func (x Resource_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Resource_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_model_proto_enumTypes[11].Descriptor()
+}
+
+func (Resource_Type) Type() protoreflect.EnumType {
+	return &file_proto_model_proto_enumTypes[11]
+}
+
+func (x Resource_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Resource_Type.Descriptor instead.
+func (Resource_Type) EnumDescriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{44, 0}
 }
 
 // EmptyStruct represents no value with a message.
@@ -4303,6 +4353,126 @@ func (*TableUrl_Ftp) isTableUrl_Table() {}
 
 func (*TableUrl_HDFS) isTableUrl_Table() {}
 
+type Resource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Resource ID, unique within a region.
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id" gorm:"column:id;primaryKey;"`
+	// Resource Parent ID, default "".
+	Pid string `protobuf:"bytes,2,opt,name=pid,proto3" json:"pid" gorm:"column:pid;"`
+	// Workspace ID it belongs to.
+	SpaceId string `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
+	// Resource Name, unique within a region of same space_id and pid.
+	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name" gorm:"column:name;"`
+	// Resource type, default 0,  0 => "directory", 1 => "jar", 2 => "udf".
+	Type Resource_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.Resource_Type" json:"type" gorm:"column:type;"`
+	// Resource size, Byte.
+	Size int64 `protobuf:"varint,6,opt,name=size,proto3" json:"size" gorm:"size;"`
+	// Resource kind.
+	IsDirectory bool `protobuf:"varint,7,opt,name=is_directory,json=isDirectory,proto3" json:"is_directory" gorm:"is_directory;"`
+	// Timestamp of create time.
+	Created int64 `protobuf:"varint,8,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
+	// Timestamp of update time.
+	Updated int64 `protobuf:"varint,9,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
+}
+
+func (x *Resource) Reset() {
+	*x = Resource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[44]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Resource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Resource) ProtoMessage() {}
+
+func (x *Resource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[44]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Resource.ProtoReflect.Descriptor instead.
+func (*Resource) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *Resource) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Resource) GetPid() string {
+	if x != nil {
+		return x.Pid
+	}
+	return ""
+}
+
+func (x *Resource) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *Resource) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Resource) GetType() Resource_Type {
+	if x != nil {
+		return x.Type
+	}
+	return Resource__
+}
+
+func (x *Resource) GetSize() int64 {
+	if x != nil {
+		return x.Size
+	}
+	return 0
+}
+
+func (x *Resource) GetIsDirectory() bool {
+	if x != nil {
+		return x.IsDirectory
+	}
+	return false
+}
+
+func (x *Resource) GetCreated() int64 {
+	if x != nil {
+		return x.Created
+	}
+	return 0
+}
+
+func (x *Resource) GetUpdated() int64 {
+	if x != nil {
+		return x.Updated
+	}
+	return 0
+}
+
 type HBaseConfig_Host struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -4315,7 +4485,7 @@ type HBaseConfig_Host struct {
 func (x *HBaseConfig_Host) Reset() {
 	*x = HBaseConfig_Host{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[44]
+		mi := &file_proto_model_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4328,7 +4498,7 @@ func (x *HBaseConfig_Host) String() string {
 func (*HBaseConfig_Host) ProtoMessage() {}
 
 func (x *HBaseConfig_Host) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[44]
+	mi := &file_proto_model_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4961,28 +5131,45 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x70, 0x12, 0x29, 0x0a, 0x04, 0x48, 0x44, 0x46, 0x53, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x48, 0x44, 0x46, 0x53, 0x54, 0x61, 0x62, 0x6c,
 	0x65, 0x55, 0x72, 0x6c, 0x48, 0x00, 0x52, 0x04, 0x48, 0x44, 0x46, 0x53, 0x42, 0x07, 0x0a, 0x05,
-	0x54, 0x61, 0x62, 0x6c, 0x65, 0x2a, 0x38, 0x0a, 0x0a, 0x45, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x54,
-	0x79, 0x70, 0x65, 0x12, 0x0f, 0x0a, 0x0b, 0x5f, 0x45, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x54, 0x79,
-	0x70, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x49, 0x6e, 0x10,
-	0x01, 0x12, 0x0c, 0x0a, 0x08, 0x45, 0x78, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x10, 0x02, 0x2a,
-	0x5f, 0x0a, 0x19, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x63, 0x75,
-	0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x1e, 0x0a, 0x1a,
-	0x5f, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x63, 0x75, 0x72, 0x72,
-	0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05,
-	0x41, 0x6c, 0x6c, 0x6f, 0x77, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x46, 0x6f, 0x72, 0x62, 0x69,
-	0x64, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x65, 0x70, 0x6c, 0x61, 0x63, 0x65, 0x10, 0x03,
-	0x2a, 0x43, 0x0a, 0x13, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x74, 0x72,
-	0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x18, 0x0a, 0x14, 0x5f, 0x53, 0x63, 0x68, 0x65,
-	0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x10,
-	0x00, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x6f, 0x6e, 0x65, 0x10, 0x01, 0x12, 0x08, 0x0a, 0x04, 0x41,
-	0x75, 0x74, 0x6f, 0x10, 0x02, 0x2a, 0x37, 0x0a, 0x06, 0x4f, 0x70, 0x54, 0x79, 0x70, 0x65, 0x12,
-	0x0b, 0x0a, 0x07, 0x5f, 0x4f, 0x70, 0x54, 0x79, 0x70, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07,
-	0x55, 0x6e, 0x6b, 0x6e, 0x6f, 0x77, 0x6e, 0x10, 0x01, 0x12, 0x09, 0x0a, 0x05, 0x57, 0x72, 0x69,
-	0x74, 0x65, 0x10, 0x02, 0x12, 0x08, 0x0a, 0x04, 0x52, 0x65, 0x61, 0x64, 0x10, 0x03, 0x42, 0x2b,
-	0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
-	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x54, 0x61, 0x62, 0x6c, 0x65, 0x22, 0x91, 0x02, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02,
+	0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x70, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x03, 0x70, 0x69, 0x64, 0x12, 0x19, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12,
+	0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x12, 0x28, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x0e, 0x32, 0x14, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x12, 0x0a,
+	0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x73, 0x69, 0x7a,
+	0x65, 0x12, 0x21, 0x0a, 0x0c, 0x69, 0x73, 0x5f, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x6f, 0x72,
+	0x79, 0x18, 0x07, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0b, 0x69, 0x73, 0x44, 0x69, 0x72, 0x65, 0x63,
+	0x74, 0x6f, 0x72, 0x79, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x18,
+	0x08, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x18,
+	0x0a, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x22, 0x1f, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65,
+	0x12, 0x05, 0x0a, 0x01, 0x5f, 0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x4a, 0x61, 0x72, 0x10, 0x01,
+	0x12, 0x07, 0x0a, 0x03, 0x55, 0x64, 0x66, 0x10, 0x02, 0x2a, 0x38, 0x0a, 0x0a, 0x45, 0x6e, 0x67,
+	0x69, 0x6e, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0f, 0x0a, 0x0b, 0x5f, 0x45, 0x6e, 0x67, 0x69,
+	0x6e, 0x65, 0x54, 0x79, 0x70, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x42, 0x75, 0x69, 0x6c,
+	0x64, 0x49, 0x6e, 0x10, 0x01, 0x12, 0x0c, 0x0a, 0x08, 0x45, 0x78, 0x74, 0x65, 0x72, 0x6e, 0x61,
+	0x6c, 0x10, 0x02, 0x2a, 0x5f, 0x0a, 0x19, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43,
+	0x6f, 0x6e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79,
+	0x12, 0x1e, 0x0a, 0x1a, 0x5f, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e,
+	0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x10, 0x00,
+	0x12, 0x09, 0x0a, 0x05, 0x41, 0x6c, 0x6c, 0x6f, 0x77, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x46,
+	0x6f, 0x72, 0x62, 0x69, 0x64, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x65, 0x70, 0x6c, 0x61,
+	0x63, 0x65, 0x10, 0x03, 0x2a, 0x43, 0x0a, 0x13, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65,
+	0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x18, 0x0a, 0x14, 0x5f,
+	0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f, 0x6c,
+	0x69, 0x63, 0x79, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x6f, 0x6e, 0x65, 0x10, 0x01, 0x12,
+	0x08, 0x0a, 0x04, 0x41, 0x75, 0x74, 0x6f, 0x10, 0x02, 0x2a, 0x37, 0x0a, 0x06, 0x4f, 0x70, 0x54,
+	0x79, 0x70, 0x65, 0x12, 0x0b, 0x0a, 0x07, 0x5f, 0x4f, 0x70, 0x54, 0x79, 0x70, 0x65, 0x10, 0x00,
+	0x12, 0x0b, 0x0a, 0x07, 0x55, 0x6e, 0x6b, 0x6e, 0x6f, 0x77, 0x6e, 0x10, 0x01, 0x12, 0x09, 0x0a,
+	0x05, 0x57, 0x72, 0x69, 0x74, 0x65, 0x10, 0x02, 0x12, 0x08, 0x0a, 0x04, 0x52, 0x65, 0x61, 0x64,
+	0x10, 0x03, 0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4997,8 +5184,8 @@ func file_proto_model_proto_rawDescGZIP() []byte {
 	return file_proto_model_proto_rawDescData
 }
 
-var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 11)
-var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 45)
+var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 12)
+var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_proto_model_proto_goTypes = []interface{}{
 	(EngineType)(0),                 // 0: model.EngineType
 	(ScheduleConcurrencyPolicy)(0),  // 1: model.ScheduleConcurrencyPolicy
@@ -5011,64 +5198,66 @@ var file_proto_model_proto_goTypes = []interface{}{
 	(OpAudit_State)(0),              // 8: model.OpAudit.State
 	(Role_Type)(0),                  // 9: model.Role.Type
 	(MonitorRule_Status)(0),         // 10: model.MonitorRule.Status
-	(*EmptyStruct)(nil),             // 11: model.EmptyStruct
-	(*Error)(nil),                   // 12: model.Error
-	(*Workspace)(nil),               // 13: model.Workspace
-	(*StreamFlow)(nil),              // 14: model.StreamFlow
-	(*HBaseConfig)(nil),             // 15: model.HBaseConfig
-	(*S3Config)(nil),                // 16: model.S3Config
-	(*FlinkConfig)(nil),             // 17: model.FlinkConfig
-	(*StreamFlowEnv)(nil),           // 18: model.StreamFlowEnv
-	(*StreamFlowSchedule)(nil),      // 19: model.StreamFlowSchedule
-	(*StreamFlowProperty)(nil),      // 20: model.StreamFlowProperty
-	(*StreamFlowRelease)(nil),       // 21: model.StreamFlowRelease
-	(*StreamFlowInst)(nil),          // 22: model.StreamFlowInst
-	(*OpAudit)(nil),                 // 23: model.OpAudit
-	(*Role)(nil),                    // 24: model.Role
-	(*Member)(nil),                  // 25: model.Member
-	(*MonitorRule)(nil),             // 26: model.MonitorRule
-	(*QueueMessage)(nil),            // 27: model.QueueMessage
-	(*InstanceStatusStat)(nil),      // 28: model.InstanceStatusStat
-	(*InstanceRuntimeRankInfo)(nil), // 29: model.InstanceRuntimeRankInfo
-	(*InstanceErrorRankInfo)(nil),   // 30: model.InstanceErrorRankInfo
-	(*DispatchTaskCountInfo)(nil),   // 31: model.DispatchTaskCountInfo
-	(*InstanceTaskExecStat)(nil),    // 32: model.InstanceTaskExecStat
-	(*SourceInfo)(nil),              // 33: model.SourceInfo
-	(*TableInfo)(nil),               // 34: model.TableInfo
-	(*SqlColumnType)(nil),           // 35: model.SqlColumnType
-	(*ConnectorOption)(nil),         // 36: model.ConnectorOption
-	(*MySQLUrl)(nil),                // 37: model.MySQLUrl
-	(*PostgreSQLUrl)(nil),           // 38: model.PostgreSQLUrl
-	(*ClickHouseUrl)(nil),           // 39: model.ClickHouseUrl
-	(*KafkaUrl)(nil),                // 40: model.KafkaUrl
-	(*S3Url)(nil),                   // 41: model.S3Url
-	(*HbaseUrl)(nil),                // 42: model.HbaseUrl
-	(*FtpUrl)(nil),                  // 43: model.FtpUrl
-	(*HDFSUrl)(nil),                 // 44: model.HDFSUrl
-	(*SourceUrl)(nil),               // 45: model.SourceUrl
-	(*MySQLTableUrl)(nil),           // 46: model.MySQLTableUrl
-	(*PostgreSQLTableUrl)(nil),      // 47: model.PostgreSQLTableUrl
-	(*ClickHouseTableUrl)(nil),      // 48: model.ClickHouseTableUrl
-	(*HbaseTableUrl)(nil),           // 49: model.HbaseTableUrl
-	(*HDFSTableUrl)(nil),            // 50: model.HDFSTableUrl
-	(*S3TableUrl)(nil),              // 51: model.S3TableUrl
-	(*FtpTableUrl)(nil),             // 52: model.FtpTableUrl
-	(*KafkaTableUrl)(nil),           // 53: model.KafkaTableUrl
-	(*TableUrl)(nil),                // 54: model.TableUrl
-	(*HBaseConfig_Host)(nil),        // 55: model.HBaseConfig.Host
+	(Resource_Type)(0),              // 11: model.Resource.Type
+	(*EmptyStruct)(nil),             // 12: model.EmptyStruct
+	(*Error)(nil),                   // 13: model.Error
+	(*Workspace)(nil),               // 14: model.Workspace
+	(*StreamFlow)(nil),              // 15: model.StreamFlow
+	(*HBaseConfig)(nil),             // 16: model.HBaseConfig
+	(*S3Config)(nil),                // 17: model.S3Config
+	(*FlinkConfig)(nil),             // 18: model.FlinkConfig
+	(*StreamFlowEnv)(nil),           // 19: model.StreamFlowEnv
+	(*StreamFlowSchedule)(nil),      // 20: model.StreamFlowSchedule
+	(*StreamFlowProperty)(nil),      // 21: model.StreamFlowProperty
+	(*StreamFlowRelease)(nil),       // 22: model.StreamFlowRelease
+	(*StreamFlowInst)(nil),          // 23: model.StreamFlowInst
+	(*OpAudit)(nil),                 // 24: model.OpAudit
+	(*Role)(nil),                    // 25: model.Role
+	(*Member)(nil),                  // 26: model.Member
+	(*MonitorRule)(nil),             // 27: model.MonitorRule
+	(*QueueMessage)(nil),            // 28: model.QueueMessage
+	(*InstanceStatusStat)(nil),      // 29: model.InstanceStatusStat
+	(*InstanceRuntimeRankInfo)(nil), // 30: model.InstanceRuntimeRankInfo
+	(*InstanceErrorRankInfo)(nil),   // 31: model.InstanceErrorRankInfo
+	(*DispatchTaskCountInfo)(nil),   // 32: model.DispatchTaskCountInfo
+	(*InstanceTaskExecStat)(nil),    // 33: model.InstanceTaskExecStat
+	(*SourceInfo)(nil),              // 34: model.SourceInfo
+	(*TableInfo)(nil),               // 35: model.TableInfo
+	(*SqlColumnType)(nil),           // 36: model.SqlColumnType
+	(*ConnectorOption)(nil),         // 37: model.ConnectorOption
+	(*MySQLUrl)(nil),                // 38: model.MySQLUrl
+	(*PostgreSQLUrl)(nil),           // 39: model.PostgreSQLUrl
+	(*ClickHouseUrl)(nil),           // 40: model.ClickHouseUrl
+	(*KafkaUrl)(nil),                // 41: model.KafkaUrl
+	(*S3Url)(nil),                   // 42: model.S3Url
+	(*HbaseUrl)(nil),                // 43: model.HbaseUrl
+	(*FtpUrl)(nil),                  // 44: model.FtpUrl
+	(*HDFSUrl)(nil),                 // 45: model.HDFSUrl
+	(*SourceUrl)(nil),               // 46: model.SourceUrl
+	(*MySQLTableUrl)(nil),           // 47: model.MySQLTableUrl
+	(*PostgreSQLTableUrl)(nil),      // 48: model.PostgreSQLTableUrl
+	(*ClickHouseTableUrl)(nil),      // 49: model.ClickHouseTableUrl
+	(*HbaseTableUrl)(nil),           // 50: model.HbaseTableUrl
+	(*HDFSTableUrl)(nil),            // 51: model.HDFSTableUrl
+	(*S3TableUrl)(nil),              // 52: model.S3TableUrl
+	(*FtpTableUrl)(nil),             // 53: model.FtpTableUrl
+	(*KafkaTableUrl)(nil),           // 54: model.KafkaTableUrl
+	(*TableUrl)(nil),                // 55: model.TableUrl
+	(*Resource)(nil),                // 56: model.Resource
+	(*HBaseConfig_Host)(nil),        // 57: model.HBaseConfig.Host
 }
 var file_proto_model_proto_depIdxs = []int32{
 	4,  // 0: model.Workspace.status:type_name -> model.Workspace.Status
 	5,  // 1: model.StreamFlow.type:type_name -> model.StreamFlow.Type
-	55, // 2: model.HBaseConfig.hosts:type_name -> model.HBaseConfig.Host
-	16, // 3: model.FlinkConfig.s3:type_name -> model.S3Config
+	57, // 2: model.HBaseConfig.hosts:type_name -> model.HBaseConfig.Host
+	17, // 3: model.FlinkConfig.s3:type_name -> model.S3Config
 	0,  // 4: model.StreamFlowEnv.engine_type:type_name -> model.EngineType
-	15, // 5: model.StreamFlowEnv.hbase:type_name -> model.HBaseConfig
-	17, // 6: model.StreamFlowEnv.flink:type_name -> model.FlinkConfig
+	16, // 5: model.StreamFlowEnv.hbase:type_name -> model.HBaseConfig
+	18, // 6: model.StreamFlowEnv.flink:type_name -> model.FlinkConfig
 	1,  // 7: model.StreamFlowSchedule.concurrency_policy:type_name -> model.ScheduleConcurrencyPolicy
 	2,  // 8: model.StreamFlowSchedule.retry_policy:type_name -> model.ScheduleRetryPolicy
-	18, // 9: model.StreamFlowProperty.env:type_name -> model.StreamFlowEnv
-	19, // 10: model.StreamFlowProperty.schedule:type_name -> model.StreamFlowSchedule
+	19, // 9: model.StreamFlowProperty.env:type_name -> model.StreamFlowEnv
+	20, // 10: model.StreamFlowProperty.schedule:type_name -> model.StreamFlowSchedule
 	5,  // 11: model.StreamFlowRelease.type:type_name -> model.StreamFlow.Type
 	6,  // 12: model.StreamFlowRelease.status:type_name -> model.StreamFlowRelease.Status
 	7,  // 13: model.StreamFlowInst.state:type_name -> model.StreamFlowInst.State
@@ -5076,47 +5265,48 @@ var file_proto_model_proto_depIdxs = []int32{
 	8,  // 15: model.OpAudit.state:type_name -> model.OpAudit.State
 	9,  // 16: model.Role.type:type_name -> model.Role.Type
 	10, // 17: model.MonitorRule.status:type_name -> model.MonitorRule.Status
-	20, // 18: model.QueueMessage.property:type_name -> model.StreamFlowProperty
-	45, // 19: model.SourceInfo.Url:type_name -> model.SourceUrl
-	54, // 20: model.TableInfo.Url:type_name -> model.TableUrl
-	15, // 21: model.HbaseUrl.Hosts:type_name -> model.HBaseConfig
-	37, // 22: model.SourceUrl.MySQL:type_name -> model.MySQLUrl
-	38, // 23: model.SourceUrl.PostgreSQL:type_name -> model.PostgreSQLUrl
-	39, // 24: model.SourceUrl.ClickHouse:type_name -> model.ClickHouseUrl
-	40, // 25: model.SourceUrl.Kafka:type_name -> model.KafkaUrl
-	41, // 26: model.SourceUrl.S3:type_name -> model.S3Url
-	42, // 27: model.SourceUrl.Hbase:type_name -> model.HbaseUrl
-	43, // 28: model.SourceUrl.Ftp:type_name -> model.FtpUrl
-	44, // 29: model.SourceUrl.HDFS:type_name -> model.HDFSUrl
-	35, // 30: model.MySQLTableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 31: model.MySQLTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	35, // 32: model.PostgreSQLTableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 33: model.PostgreSQLTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	35, // 34: model.ClickHouseTableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 35: model.ClickHouseTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	35, // 36: model.HbaseTableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 37: model.HbaseTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	35, // 38: model.HDFSTableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 39: model.HDFSTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	35, // 40: model.S3TableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 41: model.S3TableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	35, // 42: model.FtpTableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 43: model.FtpTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	35, // 44: model.KafkaTableUrl.SqlColumn:type_name -> model.SqlColumnType
-	36, // 45: model.KafkaTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
-	46, // 46: model.TableUrl.MySQL:type_name -> model.MySQLTableUrl
-	47, // 47: model.TableUrl.PostgreSQL:type_name -> model.PostgreSQLTableUrl
-	48, // 48: model.TableUrl.ClickHouse:type_name -> model.ClickHouseTableUrl
-	49, // 49: model.TableUrl.Hbase:type_name -> model.HbaseTableUrl
-	53, // 50: model.TableUrl.Kafka:type_name -> model.KafkaTableUrl
-	51, // 51: model.TableUrl.S3:type_name -> model.S3TableUrl
-	52, // 52: model.TableUrl.Ftp:type_name -> model.FtpTableUrl
-	50, // 53: model.TableUrl.HDFS:type_name -> model.HDFSTableUrl
-	54, // [54:54] is the sub-list for method output_type
-	54, // [54:54] is the sub-list for method input_type
-	54, // [54:54] is the sub-list for extension type_name
-	54, // [54:54] is the sub-list for extension extendee
-	0,  // [0:54] is the sub-list for field type_name
+	21, // 18: model.QueueMessage.property:type_name -> model.StreamFlowProperty
+	46, // 19: model.SourceInfo.Url:type_name -> model.SourceUrl
+	55, // 20: model.TableInfo.Url:type_name -> model.TableUrl
+	16, // 21: model.HbaseUrl.Hosts:type_name -> model.HBaseConfig
+	38, // 22: model.SourceUrl.MySQL:type_name -> model.MySQLUrl
+	39, // 23: model.SourceUrl.PostgreSQL:type_name -> model.PostgreSQLUrl
+	40, // 24: model.SourceUrl.ClickHouse:type_name -> model.ClickHouseUrl
+	41, // 25: model.SourceUrl.Kafka:type_name -> model.KafkaUrl
+	42, // 26: model.SourceUrl.S3:type_name -> model.S3Url
+	43, // 27: model.SourceUrl.Hbase:type_name -> model.HbaseUrl
+	44, // 28: model.SourceUrl.Ftp:type_name -> model.FtpUrl
+	45, // 29: model.SourceUrl.HDFS:type_name -> model.HDFSUrl
+	36, // 30: model.MySQLTableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 31: model.MySQLTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	36, // 32: model.PostgreSQLTableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 33: model.PostgreSQLTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	36, // 34: model.ClickHouseTableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 35: model.ClickHouseTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	36, // 36: model.HbaseTableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 37: model.HbaseTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	36, // 38: model.HDFSTableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 39: model.HDFSTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	36, // 40: model.S3TableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 41: model.S3TableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	36, // 42: model.FtpTableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 43: model.FtpTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	36, // 44: model.KafkaTableUrl.SqlColumn:type_name -> model.SqlColumnType
+	37, // 45: model.KafkaTableUrl.ConnectorOptions:type_name -> model.ConnectorOption
+	47, // 46: model.TableUrl.MySQL:type_name -> model.MySQLTableUrl
+	48, // 47: model.TableUrl.PostgreSQL:type_name -> model.PostgreSQLTableUrl
+	49, // 48: model.TableUrl.ClickHouse:type_name -> model.ClickHouseTableUrl
+	50, // 49: model.TableUrl.Hbase:type_name -> model.HbaseTableUrl
+	54, // 50: model.TableUrl.Kafka:type_name -> model.KafkaTableUrl
+	52, // 51: model.TableUrl.S3:type_name -> model.S3TableUrl
+	53, // 52: model.TableUrl.Ftp:type_name -> model.FtpTableUrl
+	51, // 53: model.TableUrl.HDFS:type_name -> model.HDFSTableUrl
+	11, // 54: model.Resource.type:type_name -> model.Resource.Type
+	55, // [55:55] is the sub-list for method output_type
+	55, // [55:55] is the sub-list for method input_type
+	55, // [55:55] is the sub-list for extension type_name
+	55, // [55:55] is the sub-list for extension extendee
+	0,  // [0:55] is the sub-list for field type_name
 }
 
 func init() { file_proto_model_proto_init() }
@@ -5654,6 +5844,18 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Resource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_model_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HBaseConfig_Host); i {
 			case 0:
 				return &v.state
@@ -5691,8 +5893,8 @@ func file_proto_model_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_model_proto_rawDesc,
-			NumEnums:      11,
-			NumMessages:   45,
+			NumEnums:      12,
+			NumMessages:   46,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
@@ -5707,80 +5909,80 @@ func file_proto_model_proto_init() {
 	file_proto_model_proto_depIdxs = nil
 }
 func (r *SourceUrl) JsonToSourceUrl(bytes []byte) (out SourceUrl, err error) {
-    var (
-        mysql      SourceUrl_MySQL
-        postgresql SourceUrl_PostgreSQL
-        clickhouse SourceUrl_ClickHouse
-        kafka      SourceUrl_Kafka
-        s3         SourceUrl_S3
-        hbase      SourceUrl_Hbase
-        ftp        SourceUrl_Ftp
-        hdfs       SourceUrl_HDFS
-    )
+	var (
+		mysql      SourceUrl_MySQL
+		postgresql SourceUrl_PostgreSQL
+		clickhouse SourceUrl_ClickHouse
+		kafka      SourceUrl_Kafka
+		s3         SourceUrl_S3
+		hbase      SourceUrl_Hbase
+		ftp        SourceUrl_Ftp
+		hdfs       SourceUrl_HDFS
+	)
 
-    header := strings.ToLower(strings.Split(string(bytes), ":")[0])
+	header := strings.ToLower(strings.Split(string(bytes), ":")[0])
 
-    if strings.Index(header, "mysql") != -1 {
-        if err = json.Unmarshal(bytes, &mysql); err != nil {
-            return
-        }
-        out.Source = &mysql
-    } else if strings.Index(header, "postgresql") != -1 {
-        if err = json.Unmarshal(bytes, &postgresql); err != nil {
-            return
-        }
-        out.Source = &postgresql
-    } else if strings.Index(header, "clickhouse") != -1 {
-        if err = json.Unmarshal(bytes, &clickhouse); err != nil {
-            return
-        }
-        out.Source = &clickhouse
-    } else if strings.Index(header, "kafka") != -1 {
-        if err = json.Unmarshal(bytes, &kafka); err != nil {
-            return
-        }
-        out.Source = &kafka
-    } else if strings.Index(header, "s3") != -1 {
-        if err = json.Unmarshal(bytes, &s3); err != nil {
-            return
-        }
-        out.Source = &s3
-    } else if strings.Index(header, "hbase") != -1 {
-        if err = json.Unmarshal(bytes, &hbase); err != nil {
-            return
-        }
-        out.Source = &hbase
-    } else if strings.Index(header, "ftp") != -1 {
-        if err = json.Unmarshal(bytes, &ftp); err != nil {
-            return
-        }
-        out.Source = &ftp
-    } else if strings.Index(header, "hdfs") != -1 {
-        if err = json.Unmarshal(bytes, &hdfs); err != nil {
-            return
-        }
-        out.Source = &hdfs
-    } else {
-        err = fmt.Errorf("Unknown header", header)
-        return
-    }
+	if strings.Index(header, "mysql") != -1 {
+		if err = json.Unmarshal(bytes, &mysql); err != nil {
+			return
+		}
+		out.Source = &mysql
+	} else if strings.Index(header, "postgresql") != -1 {
+		if err = json.Unmarshal(bytes, &postgresql); err != nil {
+			return
+		}
+		out.Source = &postgresql
+	} else if strings.Index(header, "clickhouse") != -1 {
+		if err = json.Unmarshal(bytes, &clickhouse); err != nil {
+			return
+		}
+		out.Source = &clickhouse
+	} else if strings.Index(header, "kafka") != -1 {
+		if err = json.Unmarshal(bytes, &kafka); err != nil {
+			return
+		}
+		out.Source = &kafka
+	} else if strings.Index(header, "s3") != -1 {
+		if err = json.Unmarshal(bytes, &s3); err != nil {
+			return
+		}
+		out.Source = &s3
+	} else if strings.Index(header, "hbase") != -1 {
+		if err = json.Unmarshal(bytes, &hbase); err != nil {
+			return
+		}
+		out.Source = &hbase
+	} else if strings.Index(header, "ftp") != -1 {
+		if err = json.Unmarshal(bytes, &ftp); err != nil {
+			return
+		}
+		out.Source = &ftp
+	} else if strings.Index(header, "hdfs") != -1 {
+		if err = json.Unmarshal(bytes, &hdfs); err != nil {
+			return
+		}
+		out.Source = &hdfs
+	} else {
+		err = fmt.Errorf("Unknown header", header)
+		return
+	}
 
-    return
+	return
 }
 
 func (r *SourceUrl) SourceUrlToJson(in SourceUrl) ([]byte, error) {
-    outbytes, err := json.Marshal(&in.Source)
+	outbytes, err := json.Marshal(&in.Source)
 	return outbytes, err
 }
 
 func (r *SourceUrl) Scan(in interface{}) error {
 	out, err := r.JsonToSourceUrl(in.([]byte))
-    *r = out
-    return err
+	*r = out
+	return err
 }
 func (r *SourceUrl) UnmarshalJSON(in []byte) error {
 	out, err := r.JsonToSourceUrl(in)
-    *r = out
+	*r = out
 	return err
 }
 func (in SourceUrl) Value() (driver.Value, error) {
@@ -5790,85 +5992,85 @@ func (in SourceUrl) Value() (driver.Value, error) {
 
 func (in SourceUrl) MarshalJSON() ([]byte, error) {
 	r, err := in.SourceUrlToJson(in)
-    return r, err
+	return r, err
 }
 
 func (r *TableUrl) JsonToTableUrl(bytes []byte) (out TableUrl, err error) {
-    var (
-        mysql      TableUrl_MySQL
-        postgresql TableUrl_PostgreSQL
-        clickhouse TableUrl_ClickHouse
-        kafka      TableUrl_Kafka
-        s3         TableUrl_S3
-        hbase      TableUrl_Hbase
-        ftp        TableUrl_Ftp
-        hdfs       TableUrl_HDFS
-    )
+	var (
+		mysql      TableUrl_MySQL
+		postgresql TableUrl_PostgreSQL
+		clickhouse TableUrl_ClickHouse
+		kafka      TableUrl_Kafka
+		s3         TableUrl_S3
+		hbase      TableUrl_Hbase
+		ftp        TableUrl_Ftp
+		hdfs       TableUrl_HDFS
+	)
 
-    header := strings.ToLower(strings.Split(string(bytes), ":")[0])
+	header := strings.ToLower(strings.Split(string(bytes), ":")[0])
 
-    if strings.Index(header, "mysql") != -1 {
-        if err = json.Unmarshal(bytes, &mysql); err != nil {
-            return
-        }
-        out.Table = &mysql
-    } else if strings.Index(header, "postgresql") != -1 {
-        if err = json.Unmarshal(bytes, &postgresql); err != nil {
-            return
-        }
-        out.Table = &postgresql
-    } else if strings.Index(header, "clickhouse") != -1 {
-        if err = json.Unmarshal(bytes, &clickhouse); err != nil {
-            return
-        }
-        out.Table = &clickhouse
-    } else if strings.Index(header, "kafka") != -1 {
-        if err = json.Unmarshal(bytes, &kafka); err != nil {
-            return
-        }
-        out.Table = &kafka
-    } else if strings.Index(header, "s3") != -1 {
-        if err = json.Unmarshal(bytes, &s3); err != nil {
-            return
-        }
-        out.Table = &s3
-    } else if strings.Index(header, "hbase") != -1 {
-        if err = json.Unmarshal(bytes, &hbase); err != nil {
-            return
-        }
-        out.Table = &hbase
-    } else if strings.Index(header, "ftp") != -1 {
-        if err = json.Unmarshal(bytes, &ftp); err != nil {
-            return
-        }
-        out.Table = &ftp
-    } else if strings.Index(header, "hdfs") != -1 {
-        if err = json.Unmarshal(bytes, &hdfs); err != nil {
-            return
-        }
-        out.Table = &hdfs
-    } else {
-        err = fmt.Errorf("Unknown header", header)
-        return
-    }
+	if strings.Index(header, "mysql") != -1 {
+		if err = json.Unmarshal(bytes, &mysql); err != nil {
+			return
+		}
+		out.Table = &mysql
+	} else if strings.Index(header, "postgresql") != -1 {
+		if err = json.Unmarshal(bytes, &postgresql); err != nil {
+			return
+		}
+		out.Table = &postgresql
+	} else if strings.Index(header, "clickhouse") != -1 {
+		if err = json.Unmarshal(bytes, &clickhouse); err != nil {
+			return
+		}
+		out.Table = &clickhouse
+	} else if strings.Index(header, "kafka") != -1 {
+		if err = json.Unmarshal(bytes, &kafka); err != nil {
+			return
+		}
+		out.Table = &kafka
+	} else if strings.Index(header, "s3") != -1 {
+		if err = json.Unmarshal(bytes, &s3); err != nil {
+			return
+		}
+		out.Table = &s3
+	} else if strings.Index(header, "hbase") != -1 {
+		if err = json.Unmarshal(bytes, &hbase); err != nil {
+			return
+		}
+		out.Table = &hbase
+	} else if strings.Index(header, "ftp") != -1 {
+		if err = json.Unmarshal(bytes, &ftp); err != nil {
+			return
+		}
+		out.Table = &ftp
+	} else if strings.Index(header, "hdfs") != -1 {
+		if err = json.Unmarshal(bytes, &hdfs); err != nil {
+			return
+		}
+		out.Table = &hdfs
+	} else {
+		err = fmt.Errorf("Unknown header", header)
+		return
+	}
 
-    *r = out
-    return
+	*r = out
+	return
 }
 
 func (r *TableUrl) TableUrlToJson(in TableUrl) ([]byte, error) {
-    outbytes, err := json.Marshal(&in.Table)
+	outbytes, err := json.Marshal(&in.Table)
 	return outbytes, err
 }
 
 func (r *TableUrl) Scan(in interface{}) error {
 	out, err := r.JsonToTableUrl(in.([]byte))
-    *r = out
-    return err
+	*r = out
+	return err
 }
 func (r *TableUrl) UnmarshalJSON(in []byte) error {
 	out, err := r.JsonToTableUrl(in)
-    *r = out
+	*r = out
 	return err
 }
 func (in TableUrl) Value() (driver.Value, error) {
@@ -5878,6 +6080,5 @@ func (in TableUrl) Value() (driver.Value, error) {
 
 func (in TableUrl) MarshalJSON() ([]byte, error) {
 	r, err := in.TableUrlToJson(in)
-    return r, err
+	return r, err
 }
-

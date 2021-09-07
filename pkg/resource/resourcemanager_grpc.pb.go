@@ -408,5 +408,5 @@ var _ResourceManager_serviceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "proto/resourcemanager.proto",
+	Metadata: "proto/resource.proto",
 }

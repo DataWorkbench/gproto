@@ -283,3 +283,28 @@ func (this *ListTable) Validate() error {
 	}
 	return nil
 }
+func (this *ListResources) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *CreateDir) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *UploadFile) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	return nil
+}
+func (this *DownloadFile) Validate() error {
+	return nil
+}
