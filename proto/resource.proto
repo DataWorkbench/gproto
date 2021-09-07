@@ -12,7 +12,7 @@ service Resource{
   rpc UploadFile(stream UploadFileRequest) returns (response.UploadFile){}
   rpc DownloadFile(request.DownloadFile) returns (stream response.DownloadFile){}
   rpc DescribeFile(request.DescribeFile) returns (model.Resource){}
-  rpc ListFiles(request.ListResources) returns (response.ListResources){}
+  rpc ListResources(request.ListResources) returns (response.ListResources){}
   rpc UpdateResource(request.UpdateResource) returns(model.EmptyStruct){}
   rpc DeleteResources(request.DeleteResources) returns(model.EmptyStruct){}
   rpc DeleteSpaces(request.DeleteWorkspaces) returns(model.EmptyStruct){}

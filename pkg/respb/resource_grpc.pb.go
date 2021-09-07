@@ -24,7 +24,7 @@ type ResourceClient interface {
 	UploadFile(ctx context.Context, opts ...grpc.CallOption) (Resource_UploadFileClient, error)
 	DownloadFile(ctx context.Context, in *request.DownloadFile, opts ...grpc.CallOption) (Resource_DownloadFileClient, error)
 	DescribeFile(ctx context.Context, in *request.DescribeFile, opts ...grpc.CallOption) (*model.Resource, error)
-	ListFiles(ctx context.Context, in *request.ListResources, opts ...grpc.CallOption) (*response.ListResources, error)
+	ListResources(ctx context.Context, in *request.ListResources, opts ...grpc.CallOption) (*response.ListResources, error)
 	UpdateResource(ctx context.Context, in *request.UpdateResource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteResources(ctx context.Context, in *request.DeleteResources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteSpaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
@@ -122,9 +122,9 @@ func (c *resourceClient) DescribeFile(ctx context.Context, in *request.DescribeF
 	return out, nil
 }
 
-func (c *resourceClient) ListFiles(ctx context.Context, in *request.ListResources, opts ...grpc.CallOption) (*response.ListResources, error) {
+func (c *resourceClient) ListResources(ctx context.Context, in *request.ListResources, opts ...grpc.CallOption) (*response.ListResources, error) {
 	out := new(response.ListResources)
-	err := c.cc.Invoke(ctx, "/resource.Resource/ListFiles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/resource.Resource/ListResources", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -166,7 +166,7 @@ type ResourceServer interface {
 	UploadFile(Resource_UploadFileServer) error
 	DownloadFile(*request.DownloadFile, Resource_DownloadFileServer) error
 	DescribeFile(context.Context, *request.DescribeFile) (*model.Resource, error)
-	ListFiles(context.Context, *request.ListResources) (*response.ListResources, error)
+	ListResources(context.Context, *request.ListResources) (*response.ListResources, error)
 	UpdateResource(context.Context, *request.UpdateResource) (*model.EmptyStruct, error)
 	DeleteResources(context.Context, *request.DeleteResources) (*model.EmptyStruct, error)
 	DeleteSpaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
@@ -189,8 +189,8 @@ func (UnimplementedResourceServer) DownloadFile(*request.DownloadFile, Resource_
 func (UnimplementedResourceServer) DescribeFile(context.Context, *request.DescribeFile) (*model.Resource, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeFile not implemented")
 }
-func (UnimplementedResourceServer) ListFiles(context.Context, *request.ListResources) (*response.ListResources, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFiles not implemented")
+func (UnimplementedResourceServer) ListResources(context.Context, *request.ListResources) (*response.ListResources, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListResources not implemented")
 }
 func (UnimplementedResourceServer) UpdateResource(context.Context, *request.UpdateResource) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateResource not implemented")
@@ -297,20 +297,20 @@ func _Resource_DescribeFile_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Resource_ListFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Resource_ListResources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ListResources)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ResourceServer).ListFiles(ctx, in)
+		return srv.(ResourceServer).ListResources(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/resource.Resource/ListFiles",
+		FullMethod: "/resource.Resource/ListResources",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ResourceServer).ListFiles(ctx, req.(*request.ListResources))
+		return srv.(ResourceServer).ListResources(ctx, req.(*request.ListResources))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -382,8 +382,8 @@ var _Resource_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Resource_DescribeFile_Handler,
 		},
 		{
-			MethodName: "ListFiles",
-			Handler:    _Resource_ListFiles_Handler,
+			MethodName: "ListResources",
+			Handler:    _Resource_ListResources_Handler,
 		},
 		{
 			MethodName: "UpdateResource",
