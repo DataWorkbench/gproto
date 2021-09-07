@@ -5706,9 +5706,8 @@ func file_proto_model_proto_init() {
 	file_proto_model_proto_goTypes = nil
 	file_proto_model_proto_depIdxs = nil
 }
-func (r *SourceUrl) Scan(in interface{}) error {
+func (r *SourceUrl) JsonToSourceUrl(bytes []byte) (out SourceUrl, err error) {
     var (
-        out        SourceUrl
         mysql      SourceUrl_MySQL
         postgresql SourceUrl_PostgreSQL
         clickhouse SourceUrl_ClickHouse
@@ -5717,69 +5716,85 @@ func (r *SourceUrl) Scan(in interface{}) error {
         hbase      SourceUrl_Hbase
         ftp        SourceUrl_Ftp
         hdfs       SourceUrl_HDFS
-        err        error
     )
 
-    bytes, _ := in.([]byte)
     header := strings.ToLower(strings.Split(string(bytes), ":")[0])
 
     if strings.Index(header, "mysql") != -1 {
         if err = json.Unmarshal(bytes, &mysql); err != nil {
-            return err
+            return
         }
         out.Source = &mysql
     } else if strings.Index(header, "postgresql") != -1 {
         if err = json.Unmarshal(bytes, &postgresql); err != nil {
-            return err
+            return
         }
         out.Source = &postgresql
     } else if strings.Index(header, "clickhouse") != -1 {
         if err = json.Unmarshal(bytes, &clickhouse); err != nil {
-            return err
+            return
         }
         out.Source = &clickhouse
     } else if strings.Index(header, "kafka") != -1 {
         if err = json.Unmarshal(bytes, &kafka); err != nil {
-            return err
+            return
         }
         out.Source = &kafka
     } else if strings.Index(header, "s3") != -1 {
         if err = json.Unmarshal(bytes, &s3); err != nil {
-            return err
+            return
         }
         out.Source = &s3
     } else if strings.Index(header, "hbase") != -1 {
         if err = json.Unmarshal(bytes, &hbase); err != nil {
-            return err
+            return
         }
         out.Source = &hbase
     } else if strings.Index(header, "ftp") != -1 {
         if err = json.Unmarshal(bytes, &ftp); err != nil {
-            return err
+            return
         }
         out.Source = &ftp
     } else if strings.Index(header, "hdfs") != -1 {
         if err = json.Unmarshal(bytes, &hdfs); err != nil {
-            return err
+            return
         }
         out.Source = &hdfs
     } else {
         err = fmt.Errorf("Unknown header", header)
-        return err
+        return
     }
 
+    return
+}
+
+func (r *SourceUrl) SourceUrlToJson(in SourceUrl) ([]byte, error) {
+    outbytes, err := json.Marshal(&in.Source)
+	return outbytes, err
+}
+
+func (r *SourceUrl) Scan(in interface{}) error {
+	out, err := r.JsonToSourceUrl(in.([]byte))
     *r = out
-    return nil
+    return err
 }
-
+func (r *SourceUrl) UnmarshalJSON(in []byte) error {
+	out, err := r.JsonToSourceUrl(in)
+    *r = out
+	return err
+}
 func (in SourceUrl) Value() (driver.Value, error) {
-    r, _ := json.Marshal(&in.Source)
-    return string(r), nil
+	r, err := in.SourceUrlToJson(in)
+	return string(r), err
 }
 
-func (r *TableUrl) Scan(in interface{}) error {
+func (in SourceUrl) MarshalJSON() ([]byte, error) {
+	r, err := in.SourceUrlToJson(in)
+    return r, err
+}
+
+func (r *TableUrl) JsonToTableUrl(bytes []byte) (out TableUrl, err error) {
     var (
-        out        TableUrl
         mysql      TableUrl_MySQL
         postgresql TableUrl_PostgreSQL
         clickhouse TableUrl_ClickHouse
@@ -5788,71 +5803,81 @@ func (r *TableUrl) Scan(in interface{}) error {
         hbase      TableUrl_Hbase
         ftp        TableUrl_Ftp
         hdfs       TableUrl_HDFS
-        err        error
     )
 
-    bytes, _ := in.([]byte)
     header := strings.ToLower(strings.Split(string(bytes), ":")[0])
 
     if strings.Index(header, "mysql") != -1 {
         if err = json.Unmarshal(bytes, &mysql); err != nil {
-            return err
+            return
         }
         out.Table = &mysql
     } else if strings.Index(header, "postgresql") != -1 {
         if err = json.Unmarshal(bytes, &postgresql); err != nil {
-            return err
+            return
         }
         out.Table = &postgresql
     } else if strings.Index(header, "clickhouse") != -1 {
         if err = json.Unmarshal(bytes, &clickhouse); err != nil {
-            return err
+            return
         }
         out.Table = &clickhouse
     } else if strings.Index(header, "kafka") != -1 {
         if err = json.Unmarshal(bytes, &kafka); err != nil {
-            return err
+            return
         }
         out.Table = &kafka
     } else if strings.Index(header, "s3") != -1 {
         if err = json.Unmarshal(bytes, &s3); err != nil {
-            return err
+            return
         }
         out.Table = &s3
     } else if strings.Index(header, "hbase") != -1 {
         if err = json.Unmarshal(bytes, &hbase); err != nil {
-            return err
+            return
         }
         out.Table = &hbase
     } else if strings.Index(header, "ftp") != -1 {
         if err = json.Unmarshal(bytes, &ftp); err != nil {
-            return err
+            return
         }
         out.Table = &ftp
     } else if strings.Index(header, "hdfs") != -1 {
         if err = json.Unmarshal(bytes, &hdfs); err != nil {
-            return err
+            return
         }
         out.Table = &hdfs
     } else {
         err = fmt.Errorf("Unknown header", header)
-        return err
+        return
     }
 
     *r = out
-    return nil
+    return
 }
 
+func (r *TableUrl) TableUrlToJson(in TableUrl) ([]byte, error) {
+    outbytes, err := json.Marshal(&in.Table)
+	return outbytes, err
+}
+
+func (r *TableUrl) Scan(in interface{}) error {
+	out, err := r.JsonToTableUrl(in.([]byte))
+    *r = out
+    return err
+}
+func (r *TableUrl) UnmarshalJSON(in []byte) error {
+	out, err := r.JsonToTableUrl(in)
+    *r = out
+	return err
+}
 func (in TableUrl) Value() (driver.Value, error) {
-    r, _ := json.Marshal(&in.Table)
-    return string(r), nil
+	r, err := in.TableUrlToJson(in)
+	return string(r), err
 }
 
+func (in TableUrl) MarshalJSON() ([]byte, error) {
+	r, err := in.TableUrlToJson(in)
+    return r, err
+}
 
-//func (date Date) MarshalJSON() ([]byte, error) {
-//  return time.Time(date).MarshalJSON()
-//}
-//
-//func (date *Date) UnmarshalJSON(b []byte) error {
-//  return (*time.Time)(date).UnmarshalJSON(b)
-//}
