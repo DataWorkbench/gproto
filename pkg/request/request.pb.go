@@ -2988,7 +2988,7 @@ type CreateSource struct {
 	// The source id.
 	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"lte=20" swaggerignore:"true"`
 	// The space id.
-	SpaceID string `protobuf:"bytes,2,opt,name=SpaceID,proto3" json:"spaceid" binding:"len=20" swaggerignore:"true"`
+	SpaceID string `protobuf:"bytes,2,opt,name=SpaceID,proto3" json:"spaceid" binding:"lte=20" swaggerignore:"true"`
 	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
 	SourceType string `protobuf:"bytes,3,opt,name=SourceType,proto3" json:"sourcetype" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
 	// Source name unique within a space.

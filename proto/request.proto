@@ -663,7 +663,7 @@ message CreateSource {
     string SourceID  = 1 [ (validator.field) = { length_lt: 21 } ];
 
 	// The space id.
-	// @inject_tag: json:"spaceid" default:"" binding:"len=20" swaggerignore:"true"
+	// @inject_tag: json:"spaceid" default:"" binding:"lte=20" swaggerignore:"true"
     string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
 
 	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
