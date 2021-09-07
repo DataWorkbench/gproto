@@ -37,3 +37,237 @@ func (t *StreamFlowSchedule) Value() (driver.Value, error) {
 	}
 	return json.Marshal(t)
 }
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *MySQLUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *MySQLUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *PostgreSQLUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *PostgreSQLUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *ClickHouseUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *ClickHouseUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *KafkaUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *KafkaUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *S3Url) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *S3Url) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *HbaseUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *HbaseUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *FtpUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *FtpUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *HDFSUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *HDFSUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *SourceUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *SourceUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *MySQLTableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *MySQLTableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *PostgreSQLTableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *PostgreSQLTableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *ClickHouseTableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *ClickHouseTableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *HbaseTableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *HbaseTableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *HDFSTableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *HDFSTableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *S3TableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *S3TableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *FtpTableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *FtpTableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *KafkaTableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *KafkaTableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}
+
+// Scan for implements sql.Scanner (- database/sql).
+func (t *TableUrl) Scan(val interface{}) error {
+	return json.Unmarshal(val.([]byte), t)
+}
+
+// Value for implements driver.Valuer (- database/sql/driver)
+func (t *TableUrl) Value() (driver.Value, error) {
+	if t == nil {
+		return nil, nil
+	}
+	return json.Marshal(t)
+}

@@ -3080,7 +3080,7 @@ type UpdateSource struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The source id.
-	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" swaggerignore:"true"`
+	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"lte=20" swaggerignore:"true"`
 	// Source Type one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
 	SourceType string `protobuf:"bytes,2,opt,name=SourceType,proto3" json:"sourcetype" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
 	// Source name unique within a space.
@@ -3469,7 +3469,7 @@ type SourceTables struct {
 	unknownFields protoimpl.UnknownFields
 
 	// SourceID
-	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"`
 }
 
 func (x *SourceTables) Reset() {
@@ -3520,7 +3520,7 @@ type TableColumns struct {
 	// tablename
 	TableName string `protobuf:"bytes,1,opt,name=TableName,proto3" json:"tablename" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"`
 	// tablename
-	SourceID string `protobuf:"bytes,2,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+	SourceID string `protobuf:"bytes,2,opt,name=SourceID,proto3" json:"sourceid" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"`
 }
 
 func (x *TableColumns) Reset() {
@@ -3578,9 +3578,9 @@ type CreateTable struct {
 	// The table id.
 	TableID string `protobuf:"bytes,1,opt,name=TableID,proto3" json:"tableid" binding:"lte=20" swaggerignore:"true"`
 	// The source id.
-	SourceID string `protobuf:"bytes,2,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" swaggerignore:"true"`
+	SourceID string `protobuf:"bytes,2,opt,name=SourceID,proto3" json:"sourceid" binding:"lte=20" swaggerignore:"true"`
 	// The space id.
-	SpaceID string `protobuf:"bytes,3,opt,name=SpaceID,proto3" json:"spaceid" binding:"len=20" swaggerignore:"true"`
+	SpaceID string `protobuf:"bytes,3,opt,name=SpaceID,proto3" json:"spaceid" binding:"lte=20" swaggerignore:"true"`
 	// Source name unique within a space.
 	Name string `protobuf:"bytes,4,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
 	// describe this source.
@@ -3875,7 +3875,7 @@ type ListSource struct {
 	// Search with name; Not required.
 	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-" minLength:"0" maxLength:"100"`
 	// SpaceID; required.
-	SpaceID string `protobuf:"bytes,6,opt,name=SpaceID,proto3" json:"spaceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+	SpaceID string `protobuf:"bytes,6,opt,name=SpaceID,proto3" json:"spaceid" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"`
 }
 
 func (x *ListSource) Reset() {
@@ -3972,7 +3972,7 @@ type ListTable struct {
 	// Search with name; Not required.
 	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-" minLength:"0" maxLength:"100"`
 	// get this source table
-	SourceID string `protobuf:"bytes,6,opt,name=SourceID,proto3" json:"sourceid" required:"true" binding:"len=20" minLength:"20" maxLength:"20"`
+	SourceID string `protobuf:"bytes,6,opt,name=SourceID,proto3" json:"sourceid" required:"true" binding:"lte=20" minLength:"20" maxLength:"20" swaggerignore:"true"`
 }
 
 func (x *ListTable) Reset() {

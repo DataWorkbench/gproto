@@ -681,6 +681,8 @@ message ConnectorOption {
 
 // MySQLUrl used as request parameters for RPC and HTTP(based on Body)
 message MySQLUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// The username
 	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string User = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
@@ -704,6 +706,8 @@ message MySQLUrl {
 
 // PostgreSQLUrl used as request parameters for RPC and HTTP(based on Body)
 message PostgreSQLUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// The username
 	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string User = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
@@ -727,6 +731,8 @@ message PostgreSQLUrl {
 
 // ClickHouseUrl used as request parameters for RPC and HTTP(based on Body)
 message ClickHouseUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// The username
 	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string User = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
@@ -750,6 +756,8 @@ message ClickHouseUrl {
 
 // KafkaUrl used as request parameters for RPC and HTTP(based on Body)
 message KafkaUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// The kafak brokers.
 	// @inject_tag: json:"kafkabrokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
 	string KafkaBrokers = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
@@ -757,6 +765,8 @@ message KafkaUrl {
 
 // S3Url used as request parameters for RPC and HTTP(based on Body)
 message S3Url {
+	option (gosql.serialize) = { json: {} };
+	
 	// The s3 AccessKey
 	// @inject_tag: json:"accesskey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
 	string AccessKey = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
@@ -772,6 +782,8 @@ message S3Url {
 
 // HbaseUrl used as request parameters for RPC and HTTP(based on Body)
 message HbaseUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// The hbase Zookeeper
 	// @inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
 	string Zookeeper = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
@@ -787,6 +799,8 @@ message HbaseUrl {
 
 // FtpUrl used as request parameters for RPC and HTTP(based on Body)
 message FtpUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// The host
 	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string Host = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
@@ -798,6 +812,8 @@ message FtpUrl {
 
 // FtpUrl used as request parameters for RPC and HTTP(based on Body)
 message HDFSUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// The host
 	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string Host = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
@@ -809,43 +825,45 @@ message HDFSUrl {
 
 // SourceUrl used as request parameters for RPC and HTTP(based on Body)
 message SourceUrl {
-	oneof Source {
-		// MySQL Source Connection Info.
-		// @inject_tag: json:"mysql"
-		MySQLUrl MySQL = 1;
+	option (gosql.serialize) = { json: {} };
+	
+	// MySQL Source Connection Info.
+	// @inject_tag: json:"mysql"
+	MySQLUrl MySQL = 1;
 
-		// PostgreSQL Source Connection Info.
-		// @inject_tag: json:"postgresql"
-		PostgreSQLUrl PostgreSQL = 2;
+	// PostgreSQL Source Connection Info.
+	// @inject_tag: json:"postgresql"
+	PostgreSQLUrl PostgreSQL = 2;
 
-		// ClickHouse Source Connection Info.
-		// @inject_tag: json:"clickhouse"
-		ClickHouseUrl ClickHouse = 3;
+	// ClickHouse Source Connection Info.
+	// @inject_tag: json:"clickhouse"
+	ClickHouseUrl ClickHouse = 3;
 
-		// Kafka Source Connection Info.
-		// @inject_tag: json:"kafka"
-		KafkaUrl Kafka = 4;
+	// Kafka Source Connection Info.
+	// @inject_tag: json:"kafka"
+	KafkaUrl Kafka = 4;
 
-		// S3 Source Connection Info.
-		// @inject_tag: json:"s3"
-		S3Url S3 = 5;
+	// S3 Source Connection Info.
+	// @inject_tag: json:"s3"
+	S3Url S3 = 5;
 
-		// Hbase Source Connection Info.
-		// @inject_tag: json:"hbase"
-		HbaseUrl Hbase = 6;
+	// Hbase Source Connection Info.
+	// @inject_tag: json:"hbase"
+	HbaseUrl Hbase = 6;
 
-		// Ftp Source Connection Info.
-		// @inject_tag: json:"ftp"
-		FtpUrl Ftp = 7;
+	// Ftp Source Connection Info.
+	// @inject_tag: json:"ftp"
+	FtpUrl Ftp = 7;
 
-		// HDFS Source Connection Info.
-		// @inject_tag: json:"hdfs"
-		HDFSUrl HDFS = 8;
-	}
+	// HDFS Source Connection Info.
+	// @inject_tag: json:"hdfs"
+	HDFSUrl HDFS = 8;
 }
 
 // MySQLTableUrl used as request parameters for RPC and HTTP(based on Body)
 message MySQLTableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -861,6 +879,8 @@ message MySQLTableUrl {
 
 // PostgreSQLTableUrl used as request parameters for RPC and HTTP(based on Body)
 message PostgreSQLTableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -876,6 +896,8 @@ message PostgreSQLTableUrl {
 
 // ClickHouseTableUrl used as request parameters for RPC and HTTP(based on Body)
 message ClickHouseTableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -891,6 +913,8 @@ message ClickHouseTableUrl {
 
 // HbaseTableUrl used as request parameters for RPC and HTTP(based on Body)
 message HbaseTableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -907,6 +931,8 @@ message HbaseTableUrl {
 
 // HDFSTableUrl used as request parameters for RPC and HTTP(based on Body)
 message HDFSTableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -926,6 +952,8 @@ message HDFSTableUrl {
 
 // S3TableUrl used as request parameters for RPC and HTTP(based on Body)
 message S3TableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -945,6 +973,8 @@ message S3TableUrl {
 
 // FtpTableUrl used as request parameters for RPC and HTTP(based on Body)
 message FtpTableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -964,6 +994,8 @@ message FtpTableUrl {
 
 // KafkaTableUrl used as request parameters for RPC and HTTP(based on Body)
 message KafkaTableUrl {
+	option (gosql.serialize) = { json: {} };
+	
 	// columns info.
 	// @inject_tag: json:"sqlcolumn"
 	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
@@ -982,39 +1014,39 @@ message KafkaTableUrl {
 }
 
 message TableUrl {
-	oneof Table {
-		// MySQL Table Info.
-		// @inject_tag: json:"mysql"
-		MySQLTableUrl MySQL = 1;
+	option (gosql.serialize) = { json: {} };
+	
+	// MySQL Table Info.
+	// @inject_tag: json:"mysql"
+	MySQLTableUrl MySQL = 1;
 
-		// PostgreSQL Table Info.
-		// @inject_tag: json:"postgresql"
-		PostgreSQLTableUrl PostgreSQL = 2;
+	// PostgreSQL Table Info.
+	// @inject_tag: json:"postgresql"
+	PostgreSQLTableUrl PostgreSQL = 2;
 
-		// ClickHouse Table Info.
-		// @inject_tag: json:"clickhouse"
-		ClickHouseTableUrl ClickHouse = 3;
+	// ClickHouse Table Info.
+	// @inject_tag: json:"clickhouse"
+	ClickHouseTableUrl ClickHouse = 3;
 
-		// Hbase Table Info.
-		// @inject_tag: json:"hbase"
-		HbaseTableUrl Hbase = 4;
+	// Hbase Table Info.
+	// @inject_tag: json:"hbase"
+	HbaseTableUrl Hbase = 4;
 
-		// Kafka Table Info.
-		// @inject_tag: json:"kafka"
-		KafkaTableUrl Kafka = 5;
+	// Kafka Table Info.
+	// @inject_tag: json:"kafka"
+	KafkaTableUrl Kafka = 5;
 
-		// S3 Table Info.
-		// @inject_tag: json:"s3"
-		S3TableUrl S3 = 6;
+	// S3 Table Info.
+	// @inject_tag: json:"s3"
+	S3TableUrl S3 = 6;
 
-		// Ftp Table Info.
-		// @inject_tag: json:"ftp"
-		FtpTableUrl Ftp = 7;
+	// Ftp Table Info.
+	// @inject_tag: json:"ftp"
+	FtpTableUrl Ftp = 7;
 
-		// HDFS Table Info.
-		// @inject_tag: json:"hdfs"
-		HDFSTableUrl HDFS = 8;
-	}
+	// HDFS Table Info.
+	// @inject_tag: json:"hdfs"
+	HDFSTableUrl HDFS = 8;
 }
 
 message Resource{

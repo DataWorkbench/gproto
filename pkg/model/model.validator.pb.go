@@ -643,60 +643,44 @@ func (this *HDFSUrl) Validate() error {
 	return nil
 }
 func (this *SourceUrl) Validate() error {
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_MySQL); ok {
-		if oneOfNester.MySQL != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.MySQL); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("MySQL", err)
-			}
+	if this.MySQL != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.MySQL); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("MySQL", err)
 		}
 	}
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_PostgreSQL); ok {
-		if oneOfNester.PostgreSQL != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.PostgreSQL); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("PostgreSQL", err)
-			}
+	if this.PostgreSQL != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.PostgreSQL); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("PostgreSQL", err)
 		}
 	}
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_ClickHouse); ok {
-		if oneOfNester.ClickHouse != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ClickHouse); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("ClickHouse", err)
-			}
+	if this.ClickHouse != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.ClickHouse); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClickHouse", err)
 		}
 	}
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_Kafka); ok {
-		if oneOfNester.Kafka != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Kafka); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Kafka", err)
-			}
+	if this.Kafka != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Kafka); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Kafka", err)
 		}
 	}
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_S3); ok {
-		if oneOfNester.S3 != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.S3); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
-			}
+	if this.S3 != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.S3); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
 		}
 	}
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_Hbase); ok {
-		if oneOfNester.Hbase != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Hbase); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
-			}
+	if this.Hbase != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hbase); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
 		}
 	}
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_Ftp); ok {
-		if oneOfNester.Ftp != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Ftp); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Ftp", err)
-			}
+	if this.Ftp != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Ftp); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Ftp", err)
 		}
 	}
-	if oneOfNester, ok := this.GetSource().(*SourceUrl_HDFS); ok {
-		if oneOfNester.HDFS != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.HDFS); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("HDFS", err)
-			}
+	if this.HDFS != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.HDFS); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("HDFS", err)
 		}
 	}
 	return nil
@@ -910,60 +894,44 @@ func (this *KafkaTableUrl) Validate() error {
 	return nil
 }
 func (this *TableUrl) Validate() error {
-	if oneOfNester, ok := this.GetTable().(*TableUrl_MySQL); ok {
-		if oneOfNester.MySQL != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.MySQL); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("MySQL", err)
-			}
+	if this.MySQL != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.MySQL); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("MySQL", err)
 		}
 	}
-	if oneOfNester, ok := this.GetTable().(*TableUrl_PostgreSQL); ok {
-		if oneOfNester.PostgreSQL != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.PostgreSQL); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("PostgreSQL", err)
-			}
+	if this.PostgreSQL != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.PostgreSQL); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("PostgreSQL", err)
 		}
 	}
-	if oneOfNester, ok := this.GetTable().(*TableUrl_ClickHouse); ok {
-		if oneOfNester.ClickHouse != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ClickHouse); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("ClickHouse", err)
-			}
+	if this.ClickHouse != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.ClickHouse); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClickHouse", err)
 		}
 	}
-	if oneOfNester, ok := this.GetTable().(*TableUrl_Hbase); ok {
-		if oneOfNester.Hbase != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Hbase); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
-			}
+	if this.Hbase != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hbase); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
 		}
 	}
-	if oneOfNester, ok := this.GetTable().(*TableUrl_Kafka); ok {
-		if oneOfNester.Kafka != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Kafka); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Kafka", err)
-			}
+	if this.Kafka != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Kafka); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Kafka", err)
 		}
 	}
-	if oneOfNester, ok := this.GetTable().(*TableUrl_S3); ok {
-		if oneOfNester.S3 != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.S3); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
-			}
+	if this.S3 != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.S3); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
 		}
 	}
-	if oneOfNester, ok := this.GetTable().(*TableUrl_Ftp); ok {
-		if oneOfNester.Ftp != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Ftp); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Ftp", err)
-			}
+	if this.Ftp != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Ftp); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Ftp", err)
 		}
 	}
-	if oneOfNester, ok := this.GetTable().(*TableUrl_HDFS); ok {
-		if oneOfNester.HDFS != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.HDFS); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("HDFS", err)
-			}
+	if this.HDFS != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.HDFS); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("HDFS", err)
 		}
 	}
 	return nil
