@@ -16,6 +16,7 @@ service Resource{
   rpc UpdateResource(request.UpdateResource) returns(model.EmptyStruct){}
   rpc DeleteResources(request.DeleteResources) returns(model.EmptyStruct){}
   rpc DeleteSpaces(request.DeleteWorkspaces) returns(model.EmptyStruct){}
+  rpc CheckResourceExist(request.CreateDirectory) returns (model.EmptyStruct){}
 }
 
 // UploadFile used as a request parameters for RPC and HTTP(based on URL-Query).

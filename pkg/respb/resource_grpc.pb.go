@@ -28,6 +28,7 @@ type ResourceClient interface {
 	UpdateResource(ctx context.Context, in *request.UpdateResource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteResources(ctx context.Context, in *request.DeleteResources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteSpaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	CheckResourceExist(ctx context.Context, in *request.CreateDirectory, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type resourceClient struct {
@@ -158,6 +159,15 @@ func (c *resourceClient) DeleteSpaces(ctx context.Context, in *request.DeleteWor
 	return out, nil
 }
 
+func (c *resourceClient) CheckResourceExist(ctx context.Context, in *request.CreateDirectory, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/resource.Resource/CheckResourceExist", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ResourceServer is the server API for Resource service.
 // All implementations must embed UnimplementedResourceServer
 // for forward compatibility
@@ -170,6 +180,7 @@ type ResourceServer interface {
 	UpdateResource(context.Context, *request.UpdateResource) (*model.EmptyStruct, error)
 	DeleteResources(context.Context, *request.DeleteResources) (*model.EmptyStruct, error)
 	DeleteSpaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
+	CheckResourceExist(context.Context, *request.CreateDirectory) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedResourceServer()
 }
 
@@ -200,6 +211,9 @@ func (UnimplementedResourceServer) DeleteResources(context.Context, *request.Del
 }
 func (UnimplementedResourceServer) DeleteSpaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSpaces not implemented")
+}
+func (UnimplementedResourceServer) CheckResourceExist(context.Context, *request.CreateDirectory) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckResourceExist not implemented")
 }
 func (UnimplementedResourceServer) mustEmbedUnimplementedResourceServer() {}
 
@@ -369,6 +383,24 @@ func _Resource_DeleteSpaces_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Resource_CheckResourceExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.CreateDirectory)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ResourceServer).CheckResourceExist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/resource.Resource/CheckResourceExist",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ResourceServer).CheckResourceExist(ctx, req.(*request.CreateDirectory))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Resource_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "resource.Resource",
 	HandlerType: (*ResourceServer)(nil),
@@ -396,6 +428,10 @@ var _Resource_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSpaces",
 			Handler:    _Resource_DeleteSpaces_Handler,
+		},
+		{
+			MethodName: "CheckResourceExist",
+			Handler:    _Resource_CheckResourceExist_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
