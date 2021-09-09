@@ -28,7 +28,7 @@ type SourcemanagerClient interface {
 	Disable(ctx context.Context, in *request.DisableSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	List(ctx context.Context, in *request.ListSource, opts ...grpc.CallOption) (*response.ListSource, error)
 	Delete(ctx context.Context, in *request.DeleteSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DeleteAll(ctx context.Context, in *request.DeleteAllSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteAll(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	//source utile
 	PingSource(ctx context.Context, in *request.PingSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	SourceKind(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.SourceKind, error)
@@ -116,7 +116,7 @@ func (c *sourcemanagerClient) Delete(ctx context.Context, in *request.DeleteSour
 	return out, nil
 }
 
-func (c *sourcemanagerClient) DeleteAll(ctx context.Context, in *request.DeleteAllSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *sourcemanagerClient) DeleteAll(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DeleteAll", in, out, opts...)
 	if err != nil {
@@ -236,7 +236,7 @@ type SourcemanagerServer interface {
 	Disable(context.Context, *request.DisableSource) (*model.EmptyStruct, error)
 	List(context.Context, *request.ListSource) (*response.ListSource, error)
 	Delete(context.Context, *request.DeleteSource) (*model.EmptyStruct, error)
-	DeleteAll(context.Context, *request.DeleteAllSource) (*model.EmptyStruct, error)
+	DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
 	//source utile
 	PingSource(context.Context, *request.PingSource) (*model.EmptyStruct, error)
 	SourceKind(context.Context, *model.EmptyStruct) (*response.SourceKind, error)
@@ -279,7 +279,7 @@ func (UnimplementedSourcemanagerServer) List(context.Context, *request.ListSourc
 func (UnimplementedSourcemanagerServer) Delete(context.Context, *request.DeleteSource) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedSourcemanagerServer) DeleteAll(context.Context, *request.DeleteAllSource) (*model.EmptyStruct, error) {
+func (UnimplementedSourcemanagerServer) DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAll not implemented")
 }
 func (UnimplementedSourcemanagerServer) PingSource(context.Context, *request.PingSource) (*model.EmptyStruct, error) {
@@ -455,7 +455,7 @@ func _Sourcemanager_Delete_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 func _Sourcemanager_DeleteAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DeleteAllSource)
+	in := new(request.DeleteWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -467,7 +467,7 @@ func _Sourcemanager_DeleteAll_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/smpb.Sourcemanager/DeleteAll",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).DeleteAll(ctx, req.(*request.DeleteAllSource))
+		return srv.(SourcemanagerServer).DeleteAll(ctx, req.(*request.DeleteWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }

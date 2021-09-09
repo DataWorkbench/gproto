@@ -5,6 +5,7 @@ package udfpb
 import (
 	context "context"
 	model "github.com/DataWorkbench/gproto/pkg/model"
+	request "github.com/DataWorkbench/gproto/pkg/request"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -21,7 +22,7 @@ type UdfmanagerClient interface {
 	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DeleteAll(ctx context.Context, in *DeleteAllRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteAll(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*InfoReply, error)
 	List(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error)
 }
@@ -61,7 +62,7 @@ func (c *udfmanagerClient) Delete(ctx context.Context, in *DeleteRequest, opts .
 	return out, nil
 }
 
-func (c *udfmanagerClient) DeleteAll(ctx context.Context, in *DeleteAllRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *udfmanagerClient) DeleteAll(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/DeleteAll", in, out, opts...)
 	if err != nil {
@@ -95,7 +96,7 @@ type UdfmanagerServer interface {
 	Create(context.Context, *CreateRequest) (*model.EmptyStruct, error)
 	Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error)
 	Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error)
-	DeleteAll(context.Context, *DeleteAllRequest) (*model.EmptyStruct, error)
+	DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
 	Describe(context.Context, *DescribeRequest) (*InfoReply, error)
 	List(context.Context, *ListsRequest) (*ListsReply, error)
 	mustEmbedUnimplementedUdfmanagerServer()
@@ -114,7 +115,7 @@ func (UnimplementedUdfmanagerServer) Update(context.Context, *UpdateRequest) (*m
 func (UnimplementedUdfmanagerServer) Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedUdfmanagerServer) DeleteAll(context.Context, *DeleteAllRequest) (*model.EmptyStruct, error) {
+func (UnimplementedUdfmanagerServer) DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAll not implemented")
 }
 func (UnimplementedUdfmanagerServer) Describe(context.Context, *DescribeRequest) (*InfoReply, error) {
@@ -191,7 +192,7 @@ func _Udfmanager_Delete_Handler(srv interface{}, ctx context.Context, dec func(i
 }
 
 func _Udfmanager_DeleteAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteAllRequest)
+	in := new(request.DeleteWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -203,7 +204,7 @@ func _Udfmanager_DeleteAll_Handler(srv interface{}, ctx context.Context, dec fun
 		FullMethod: "/udfpb.Udfmanager/DeleteAll",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UdfmanagerServer).DeleteAll(ctx, req.(*DeleteAllRequest))
+		return srv.(UdfmanagerServer).DeleteAll(ctx, req.(*request.DeleteWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }

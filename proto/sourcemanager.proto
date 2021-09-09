@@ -16,7 +16,7 @@ service Sourcemanager {
     rpc Disable(request.DisableSource) returns (model.EmptyStruct) {}
     rpc List(request.ListSource) returns (response.ListSource) {}
     rpc Delete(request.DeleteSource) returns(model.EmptyStruct) {}
-    rpc DeleteAll(request.DeleteAllSource) returns (model.EmptyStruct) {}
+    rpc DeleteAll(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
 
 	//source utile
     rpc PingSource(request.PingSource) returns (model.EmptyStruct) {}

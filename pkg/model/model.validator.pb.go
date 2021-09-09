@@ -402,12 +402,6 @@ func (this *SourceInfo) Validate() error {
 	if !(len(this.State) < 17) {
 		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.State))
 	}
-	if !(len(this.CreateTime) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("CreateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.CreateTime))
-	}
-	if !(len(this.UpdateTime) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("UpdateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UpdateTime))
-	}
 	return nil
 }
 func (this *TableInfo) Validate() error {
@@ -433,12 +427,6 @@ func (this *TableInfo) Validate() error {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Url); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
 		}
-	}
-	if !(len(this.CreateTime) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("CreateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.CreateTime))
-	}
-	if !(len(this.UpdateTime) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("UpdateTime", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.UpdateTime))
 	}
 	if !(len(this.Direction) < 17) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Direction", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.Direction))

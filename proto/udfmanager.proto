@@ -6,12 +6,13 @@ package udfpb;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
+import "request.proto";
 
 service Udfmanager {
     rpc Create(CreateRequest) returns (model.EmptyStruct) {}
     rpc Update(UpdateRequest) returns (model.EmptyStruct) {}
     rpc Delete(DeleteRequest) returns (model.EmptyStruct) {}
-	rpc DeleteAll(DeleteAllRequest) returns (model.EmptyStruct) {}
+	rpc DeleteAll(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
     rpc Describe(DescribeRequest) returns (InfoReply) {}
     rpc List(ListsRequest) returns (ListsReply) {}
 }

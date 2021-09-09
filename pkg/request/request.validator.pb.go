@@ -655,17 +655,6 @@ func (this *DisableSource) Validate() error {
 	}
 	return nil
 }
-func (this *DeleteAllSource) Validate() error {
-	for _, item := range this.SpaceIDs {
-		if !(len(item) > 1) {
-			return github_com_mwitkow_go_proto_validators.FieldError("SpaceIDs", fmt.Errorf(`value '%v' must have a length greater than '1'`, item))
-		}
-		if !(len(item) < 1100) {
-			return github_com_mwitkow_go_proto_validators.FieldError("SpaceIDs", fmt.Errorf(`value '%v' must have a length smaller than '1100'`, item))
-		}
-	}
-	return nil
-}
 func (this *PingSource) Validate() error {
 	if !(len(this.SourceType) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SourceType))

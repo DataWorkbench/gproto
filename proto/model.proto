@@ -599,11 +599,11 @@ message SourceInfo {
 
 	// Create Time, this Source create time.
 	// @inject_tag: json:"createtime" gorm:"column:createtime;"
-    string CreateTime = 8   [ (validator.field) = { length_lt: 65 } ];
+    int64 CreateTime = 8   [ (validator.field) = { length_lt: 0 } ];
 
 	// Update Time, this Source last update time.
 	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
-    string UpdateTime = 9  [ (validator.field) = { length_lt: 65 } ];
+    int64 UpdateTime = 9  [ (validator.field) = { length_lt: 0 } ];
 }
 
 // Table Info
@@ -634,11 +634,11 @@ message TableInfo {
 
 	// Create Time, this Source create time.
 	// @inject_tag: json:"createtime" gorm:"column:createtime;"
-    string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
+    int64 CreateTime = 7   [ (validator.field) = { length_gt: 0 } ];
 
 	// Update Time, this Source last update time.
 	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
-    string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
+    int64 UpdateTime = 8  [ (validator.field) = { length_lt: 0 } ];
 
 	// Direction, one of source/destination/dimension
 	// @inject_tag: json:"direction" gorm:"column:direction;"

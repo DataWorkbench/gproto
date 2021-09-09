@@ -6,6 +6,7 @@ package udfpb
 import (
 	fmt "fmt"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
+	_ "github.com/DataWorkbench/gproto/pkg/request"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 	proto "google.golang.org/protobuf/proto"
