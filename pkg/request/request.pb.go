@@ -3213,7 +3213,7 @@ type DescribeSource struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// SourceIDs
+	// SourceID
 	SourceID string `protobuf:"bytes,1,opt,name=SourceID,proto3" json:"sourceid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
 }
 
@@ -4383,6 +4383,456 @@ func (x *CreateDirectory) GetParentId() string {
 	return ""
 }
 
+// CreateUDF used as request parameters for RPC and HTTP(based on Body)
+type CreateUDF struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The udf id.
+	UDFID string `protobuf:"bytes,1,opt,name=UDFID,proto3" json:"udfid" binding:"lte=20" required:"true" swaggerignore:"true"`
+	// The space id.
+	SpaceID string `protobuf:"bytes,2,opt,name=SpaceID,proto3" json:"spaceid" binding:"lte=20" required:"true" swaggerignore:"true"`
+	// UDF Type one of ScalaUDF/ScalaUDTF/ScalaUDTTF/JarUDF/JarUDTF/JarUDTTF/PythonUDF/PythonUDTF/Dir
+	UDFType string `protobuf:"bytes,3,opt,name=UDFType,proto3" json:"udftype" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+	// UDF name unique within a space.
+	Name string `protobuf:"bytes,4,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=1025" required:"true" minLength:"1" maxLength:"1025"`
+	// describe this udf.
+	Comment string `protobuf:"bytes,5,opt,name=Comment,proto3" json:"comment" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"`
+	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+	Define string `protobuf:"bytes,6,opt,name=Define,proto3" json:"define" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"`
+	// usage for this udf
+	UsageSample string `protobuf:"bytes,7,opt,name=UsageSample,proto3" json:"usagesample" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"`
+}
+
+func (x *CreateUDF) Reset() {
+	*x = CreateUDF{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[66]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateUDF) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateUDF) ProtoMessage() {}
+
+func (x *CreateUDF) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[66]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateUDF.ProtoReflect.Descriptor instead.
+func (*CreateUDF) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *CreateUDF) GetUDFID() string {
+	if x != nil {
+		return x.UDFID
+	}
+	return ""
+}
+
+func (x *CreateUDF) GetSpaceID() string {
+	if x != nil {
+		return x.SpaceID
+	}
+	return ""
+}
+
+func (x *CreateUDF) GetUDFType() string {
+	if x != nil {
+		return x.UDFType
+	}
+	return ""
+}
+
+func (x *CreateUDF) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateUDF) GetComment() string {
+	if x != nil {
+		return x.Comment
+	}
+	return ""
+}
+
+func (x *CreateUDF) GetDefine() string {
+	if x != nil {
+		return x.Define
+	}
+	return ""
+}
+
+func (x *CreateUDF) GetUsageSample() string {
+	if x != nil {
+		return x.UsageSample
+	}
+	return ""
+}
+
+// UpdateUDF used as request parameters for RPC and HTTP(based on Body)
+type UpdateUDF struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The udf id.
+	UDFID string `protobuf:"bytes,1,opt,name=UDFID,proto3" json:"udfid" binding:"lte=20" swaggerignore:"true"`
+	// UDF Type one of "ScalaUDF", "ScalaUDTF", "ScalaUDTTF", "JarUDF", "JarUDTF", "JarUDTTF", "PythonUDF", "PythonUDTF" , "Dir"
+	UDFType string `protobuf:"bytes,2,opt,name=UDFType,proto3" json:"udftype" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+	// UDF name unique within a space.
+	Name string `protobuf:"bytes,3,opt,name=Name,proto3" json:"name" binding:"gte=1,lte=1025" required:"true" minLength:"1" maxLength:"1025"`
+	// describe this udf.
+	Comment string `protobuf:"bytes,4,opt,name=Comment,proto3" json:"comment" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"`
+	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+	Define string `protobuf:"bytes,5,opt,name=Define,proto3" json:"define" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"`
+	// usage for this udf
+	UsageSample string `protobuf:"bytes,6,opt,name=UsageSample,proto3" json:"usagesample" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"`
+}
+
+func (x *UpdateUDF) Reset() {
+	*x = UpdateUDF{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[67]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateUDF) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateUDF) ProtoMessage() {}
+
+func (x *UpdateUDF) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[67]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateUDF.ProtoReflect.Descriptor instead.
+func (*UpdateUDF) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *UpdateUDF) GetUDFID() string {
+	if x != nil {
+		return x.UDFID
+	}
+	return ""
+}
+
+func (x *UpdateUDF) GetUDFType() string {
+	if x != nil {
+		return x.UDFType
+	}
+	return ""
+}
+
+func (x *UpdateUDF) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateUDF) GetComment() string {
+	if x != nil {
+		return x.Comment
+	}
+	return ""
+}
+
+func (x *UpdateUDF) GetDefine() string {
+	if x != nil {
+		return x.Define
+	}
+	return ""
+}
+
+func (x *UpdateUDF) GetUsageSample() string {
+	if x != nil {
+		return x.UsageSample
+	}
+	return ""
+}
+
+// DeleteUDF used as request parameters for RPC and HTTP(based on Body)
+type DeleteUDF struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The space id.
+	SpaceID string `protobuf:"bytes,1,opt,name=SpaceID,proto3" json:"spaceid" binding:"lte=20" swaggerignore:"true"`
+	// delete these UDF Name. eg: ['/a/b/c.jar', '/a/c/' ]
+	Names []string `protobuf:"bytes,2,rep,name=Names,proto3" json:"names" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"`
+}
+
+func (x *DeleteUDF) Reset() {
+	*x = DeleteUDF{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[68]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteUDF) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteUDF) ProtoMessage() {}
+
+func (x *DeleteUDF) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[68]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteUDF.ProtoReflect.Descriptor instead.
+func (*DeleteUDF) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *DeleteUDF) GetSpaceID() string {
+	if x != nil {
+		return x.SpaceID
+	}
+	return ""
+}
+
+func (x *DeleteUDF) GetNames() []string {
+	if x != nil {
+		return x.Names
+	}
+	return nil
+}
+
+// DescribeUDF used as request parameters for RPC and HTTP(based on Body)
+type DescribeUDF struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// UDFID
+	UDFID string `protobuf:"bytes,1,opt,name=UDFID,proto3" json:"udfid" binding:"len=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"`
+}
+
+func (x *DescribeUDF) Reset() {
+	*x = DescribeUDF{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[69]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeUDF) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeUDF) ProtoMessage() {}
+
+func (x *DescribeUDF) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[69]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeUDF.ProtoReflect.Descriptor instead.
+func (*DescribeUDF) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *DescribeUDF) GetUDFID() string {
+	if x != nil {
+		return x.UDFID
+	}
+	return ""
+}
+
+// ListUDF used as a request parameters for RPC and HTTP(based on URL-Query)
+type ListUDF struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"`
+	// The field list used to sorted query results.
+	// Optional values: {sourceid, name, createtime, updatetime}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+	// Not required, default: updatetime.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-" minLength:"0" maxLength:"100"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" default:"false" form:"reverse" binding:"-"`
+	// Search with name; Not required.
+	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-" minLength:"0" maxLength:"100"`
+	// SpaceID; required.
+	SpaceID string `protobuf:"bytes,6,opt,name=SpaceID,proto3" json:"spaceid" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"`
+}
+
+func (x *ListUDF) Reset() {
+	*x = ListUDF{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[70]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListUDF) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListUDF) ProtoMessage() {}
+
+func (x *ListUDF) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[70]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListUDF.ProtoReflect.Descriptor instead.
+func (*ListUDF) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *ListUDF) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListUDF) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListUDF) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListUDF) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListUDF) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+func (x *ListUDF) GetSpaceID() string {
+	if x != nil {
+		return x.SpaceID
+	}
+	return ""
+}
+
+// UDFCommonFunc used as request parameters for RPC and HTTP(based on Body)
+type UDFCommonFunc struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The space id.
+	SpaceID string `protobuf:"bytes,1,opt,name=SpaceID,proto3" json:"spaceid" binding:"lte=20" swaggerignore:"true"`
+}
+
+func (x *UDFCommonFunc) Reset() {
+	*x = UDFCommonFunc{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[71]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UDFCommonFunc) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UDFCommonFunc) ProtoMessage() {}
+
+func (x *UDFCommonFunc) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[71]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UDFCommonFunc.ProtoReflect.Descriptor instead.
+func (*UDFCommonFunc) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *UDFCommonFunc) GetSpaceID() string {
+	if x != nil {
+		return x.SpaceID
+	}
+	return ""
+}
+
 type UpsertMembers_Pair struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -4391,13 +4841,13 @@ type UpsertMembers_Pair struct {
 	// The account user_id. Is Required.
 	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id" binding:"required"`
 	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
-	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" binding:"get=1,lte=100"`
+	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" binding:"gte=1,lte=100"`
 }
 
 func (x *UpsertMembers_Pair) Reset() {
 	*x = UpsertMembers_Pair{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[66]
+		mi := &file_proto_request_proto_msgTypes[72]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4410,7 +4860,7 @@ func (x *UpsertMembers_Pair) String() string {
 func (*UpsertMembers_Pair) ProtoMessage() {}
 
 func (x *UpsertMembers_Pair) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[66]
+	mi := &file_proto_request_proto_msgTypes[72]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4976,11 +5426,65 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01,
 	0x52, 0x07, 0x64, 0x69, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x23, 0x0a, 0x09, 0x70, 0x61, 0x72,
 	0x65, 0x6e, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf,
-	0x1f, 0x02, 0x20, 0x01, 0x52, 0x08, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x42, 0x2d,
-	0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
-	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x1f, 0x02, 0x20, 0x01, 0x52, 0x08, 0x70, 0x61, 0x72, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x22, 0xff,
+	0x01, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x44, 0x46, 0x12, 0x1c, 0x0a, 0x05,
+	0x55, 0x44, 0x46, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
+	0x02, 0x78, 0x15, 0x52, 0x05, 0x55, 0x44, 0x46, 0x49, 0x44, 0x12, 0x21, 0x0a, 0x07, 0x53, 0x70,
+	0x61, 0x63, 0x65, 0x49, 0x44, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f,
+	0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x12, 0x22, 0x0a,
+	0x07, 0x55, 0x44, 0x46, 0x54, 0x79, 0x70, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08,
+	0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x15, 0x52, 0x07, 0x55, 0x44, 0x46, 0x54, 0x79, 0x70,
+	0x65, 0x12, 0x1d, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x00, 0x78, 0x80, 0x08, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65,
+	0x12, 0x21, 0x0a, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x02, 0x52, 0x07, 0x43, 0x6f, 0x6d, 0x6d,
+	0x65, 0x6e, 0x74, 0x12, 0x20, 0x0a, 0x06, 0x44, 0x65, 0x66, 0x69, 0x6e, 0x65, 0x18, 0x06, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x78, 0xa1, 0x9c, 0x01, 0x52, 0x06, 0x44,
+	0x65, 0x66, 0x69, 0x6e, 0x65, 0x12, 0x29, 0x0a, 0x0b, 0x55, 0x73, 0x61, 0x67, 0x65, 0x53, 0x61,
+	0x6d, 0x70, 0x6c, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
+	0x78, 0xd1, 0x0f, 0x52, 0x0b, 0x55, 0x73, 0x61, 0x67, 0x65, 0x53, 0x61, 0x6d, 0x70, 0x6c, 0x65,
+	0x22, 0xdc, 0x01, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x44, 0x46, 0x12, 0x1c,
+	0x0a, 0x05, 0x55, 0x44, 0x46, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2,
+	0xdf, 0x1f, 0x02, 0x78, 0x15, 0x52, 0x05, 0x55, 0x44, 0x46, 0x49, 0x44, 0x12, 0x22, 0x0a, 0x07,
+	0x55, 0x44, 0x46, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xe2,
+	0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x15, 0x52, 0x07, 0x55, 0x44, 0x46, 0x54, 0x79, 0x70, 0x65,
+	0x12, 0x1d, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09,
+	0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x00, 0x78, 0x80, 0x08, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12,
+	0x21, 0x0a, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78, 0x81, 0x02, 0x52, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x65,
+	0x6e, 0x74, 0x12, 0x20, 0x0a, 0x06, 0x44, 0x65, 0x66, 0x69, 0x6e, 0x65, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x78, 0xa1, 0x9c, 0x01, 0x52, 0x06, 0x44, 0x65,
+	0x66, 0x69, 0x6e, 0x65, 0x12, 0x29, 0x0a, 0x0b, 0x55, 0x73, 0x61, 0x67, 0x65, 0x53, 0x61, 0x6d,
+	0x70, 0x6c, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x78,
+	0xd1, 0x0f, 0x52, 0x0b, 0x55, 0x73, 0x61, 0x67, 0x65, 0x53, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x22,
+	0x4f, 0x0a, 0x09, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x55, 0x44, 0x46, 0x12, 0x21, 0x0a, 0x07,
+	0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
+	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x12,
+	0x1f, 0x0a, 0x05, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x42, 0x09,
+	0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x00, 0x78, 0xcc, 0x08, 0x52, 0x05, 0x4e, 0x61, 0x6d, 0x65, 0x73,
+	0x22, 0x2c, 0x0a, 0x0b, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x55, 0x44, 0x46, 0x12,
+	0x1d, 0x0a, 0x05, 0x55, 0x44, 0x46, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
+	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x05, 0x55, 0x44, 0x46, 0x49, 0x44, 0x22, 0xd2,
+	0x01, 0x0a, 0x07, 0x4c, 0x69, 0x73, 0x74, 0x55, 0x44, 0x46, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69,
+	0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10,
+	0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66,
+	0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b,
+	0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x12, 0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74, 0x5f, 0x62, 0x79, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x6f, 0x72, 0x74,
+	0x42, 0x79, 0x12, 0x1e, 0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72,
+	0x73, 0x65, 0x12, 0x1c, 0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68,
+	0x12, 0x21, 0x0a, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x18, 0x06, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x53, 0x70, 0x61, 0x63,
+	0x65, 0x49, 0x44, 0x22, 0x32, 0x0a, 0x0d, 0x55, 0x44, 0x46, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x46, 0x75, 0x6e, 0x63, 0x12, 0x21, 0x0a, 0x07, 0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07,
+	0x53, 0x70, 0x61, 0x63, 0x65, 0x49, 0x44, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65,
+	0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4995,7 +5499,7 @@ func file_proto_request_proto_rawDescGZIP() []byte {
 	return file_proto_request_proto_rawDescData
 }
 
-var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 68)
+var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 74)
 var file_proto_request_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),            // 0: request.ListWorkspaces
 	(*DeleteWorkspaces)(nil),          // 1: request.DeleteWorkspaces
@@ -5063,45 +5567,51 @@ var file_proto_request_proto_goTypes = []interface{}{
 	(*UpdateResource)(nil),            // 63: request.UpdateResource
 	(*DeleteResources)(nil),           // 64: request.DeleteResources
 	(*CreateDirectory)(nil),           // 65: request.CreateDirectory
-	(*UpsertMembers_Pair)(nil),        // 66: request.UpsertMembers.Pair
-	nil,                               // 67: request.CheckPermission.RolesEntry
-	(model.Workspace_Status)(0),       // 68: model.Workspace.Status
-	(*model.OpAudit)(nil),             // 69: model.OpAudit
-	(model.OpType)(0),                 // 70: model.OpType
-	(model.OpAudit_State)(0),          // 71: model.OpAudit.State
-	(model.StreamFlow_Type)(0),        // 72: model.StreamFlow.Type
-	(*model.StreamFlowSchedule)(nil),  // 73: model.StreamFlowSchedule
-	(*model.StreamFlowEnv)(nil),       // 74: model.StreamFlowEnv
-	(*model.StreamFlowProperty)(nil),  // 75: model.StreamFlowProperty
-	(*model.MonitorRule)(nil),         // 76: model.MonitorRule
-	(*model.SourceUrl)(nil),           // 77: model.SourceUrl
-	(*model.TableUrl)(nil),            // 78: model.TableUrl
-	(model.Resource_Type)(0),          // 79: model.Resource.Type
+	(*CreateUDF)(nil),                 // 66: request.CreateUDF
+	(*UpdateUDF)(nil),                 // 67: request.UpdateUDF
+	(*DeleteUDF)(nil),                 // 68: request.DeleteUDF
+	(*DescribeUDF)(nil),               // 69: request.DescribeUDF
+	(*ListUDF)(nil),                   // 70: request.ListUDF
+	(*UDFCommonFunc)(nil),             // 71: request.UDFCommonFunc
+	(*UpsertMembers_Pair)(nil),        // 72: request.UpsertMembers.Pair
+	nil,                               // 73: request.CheckPermission.RolesEntry
+	(model.Workspace_Status)(0),       // 74: model.Workspace.Status
+	(*model.OpAudit)(nil),             // 75: model.OpAudit
+	(model.OpType)(0),                 // 76: model.OpType
+	(model.OpAudit_State)(0),          // 77: model.OpAudit.State
+	(model.StreamFlow_Type)(0),        // 78: model.StreamFlow.Type
+	(*model.StreamFlowSchedule)(nil),  // 79: model.StreamFlowSchedule
+	(*model.StreamFlowEnv)(nil),       // 80: model.StreamFlowEnv
+	(*model.StreamFlowProperty)(nil),  // 81: model.StreamFlowProperty
+	(*model.MonitorRule)(nil),         // 82: model.MonitorRule
+	(*model.SourceUrl)(nil),           // 83: model.SourceUrl
+	(*model.TableUrl)(nil),            // 84: model.TableUrl
+	(model.Resource_Type)(0),          // 85: model.Resource.Type
 }
 var file_proto_request_proto_depIdxs = []int32{
-	68, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
-	69, // 1: request.AddAudit.info:type_name -> model.OpAudit
-	70, // 2: request.ListAudits.type:type_name -> model.OpType
-	71, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
-	66, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
-	70, // 5: request.CheckPermission.op_type:type_name -> model.OpType
-	67, // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
-	72, // 7: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
-	73, // 8: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
-	74, // 9: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
-	75, // 10: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
-	76, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
-	76, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
-	75, // 13: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
+	74, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
+	75, // 1: request.AddAudit.info:type_name -> model.OpAudit
+	76, // 2: request.ListAudits.type:type_name -> model.OpType
+	77, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
+	72, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
+	76, // 5: request.CheckPermission.op_type:type_name -> model.OpType
+	73, // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
+	78, // 7: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
+	79, // 8: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	80, // 9: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	81, // 10: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
+	82, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
+	82, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
+	81, // 13: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
 	41, // 14: request.TerminateStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
 	41, // 15: request.SuspendStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
 	41, // 16: request.ResumeStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
-	77, // 17: request.CreateSource.Url:type_name -> model.SourceUrl
-	77, // 18: request.UpdateSource.Url:type_name -> model.SourceUrl
-	77, // 19: request.PingSource.Url:type_name -> model.SourceUrl
-	78, // 20: request.CreateTable.Url:type_name -> model.TableUrl
-	78, // 21: request.UpdateTable.Url:type_name -> model.TableUrl
-	79, // 22: request.UpdateResource.resource_type:type_name -> model.Resource.Type
+	83, // 17: request.CreateSource.Url:type_name -> model.SourceUrl
+	83, // 18: request.UpdateSource.Url:type_name -> model.SourceUrl
+	83, // 19: request.PingSource.Url:type_name -> model.SourceUrl
+	84, // 20: request.CreateTable.Url:type_name -> model.TableUrl
+	84, // 21: request.UpdateTable.Url:type_name -> model.TableUrl
+	85, // 22: request.UpdateResource.resource_type:type_name -> model.Resource.Type
 	23, // [23:23] is the sub-list for method output_type
 	23, // [23:23] is the sub-list for method input_type
 	23, // [23:23] is the sub-list for extension type_name
@@ -5908,6 +6418,78 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateUDF); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateUDF); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteUDF); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeUDF); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListUDF); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UDFCommonFunc); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpsertMembers_Pair); i {
 			case 0:
 				return &v.state
@@ -5926,7 +6508,7 @@ func file_proto_request_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_request_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   68,
+			NumMessages:   74,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

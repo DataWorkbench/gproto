@@ -308,3 +308,21 @@ func (this *UploadFile) Validate() error {
 func (this *DownloadFile) Validate() error {
 	return nil
 }
+func (this *ListUDF) Validate() error {
+	for _, item := range this.Infos {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *DescribeUDF) Validate() error {
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}

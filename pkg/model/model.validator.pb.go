@@ -927,3 +927,33 @@ func (this *TableUrl) Validate() error {
 func (this *Resource) Validate() error {
 	return nil
 }
+func (this *UDFInfo) Validate() error {
+	if !(len(this.UDFID) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UDFID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.UDFID))
+	}
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
+	if !(len(this.UDFType) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UDFType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.UDFType))
+	}
+	if !(len(this.UDFType) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UDFType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.UDFType))
+	}
+	if !(len(this.Name) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
+	}
+	if !(len(this.Name) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
+	}
+	if !(len(this.Comment) < 257) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
+	}
+	if !(len(this.Define) < 20001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Define", fmt.Errorf(`value '%v' must have a length smaller than '20001'`, this.Define))
+	}
+	if !(len(this.UsageSample) < 2001) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UsageSample", fmt.Errorf(`value '%v' must have a length smaller than '2001'`, this.UsageSample))
+	}
+	return nil
+}

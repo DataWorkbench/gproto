@@ -4,75 +4,16 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/udfpb";
 
 package udfpb;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 import "request.proto";
+import "response.proto";
 
 service Udfmanager {
-    rpc Create(CreateRequest) returns (model.EmptyStruct) {}
-    rpc Update(UpdateRequest) returns (model.EmptyStruct) {}
-    rpc Delete(DeleteRequest) returns (model.EmptyStruct) {}
+    rpc Create(request.CreateUDF) returns (model.EmptyStruct) {}
+    rpc Update(request.UpdateUDF) returns (model.EmptyStruct) {}
+    rpc Describe(request.DescribeUDF) returns (response.DescribeUDF) {}
+    rpc Delete(request.DeleteUDF) returns (model.EmptyStruct) {}
 	rpc DeleteAll(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
-    rpc Describe(DescribeRequest) returns (InfoReply) {}
-    rpc List(ListsRequest) returns (ListsReply) {}
-}
-
-message CreateRequest {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
-    string UdfType = 3  [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-    string Define = 6    [ (validator.field) = { length_gt: 0 } ];
-    string UsageSample = 7    [ (validator.field) = { length_gt: -1 } ];
-}
-
-message UpdateRequest {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string UdfType = 2  [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-    string Name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 4    [ (validator.field) = {  length_lt: 257 } ];
-    string Define = 5    [ (validator.field) = { length_gt: 0 } ];
-    string UsageSample = 6    [ (validator.field) = { length_gt: -1 } ];
-}
-
-message DeleteRequest {
-    // The list of workspace id. Is required, Min 1, Max 100.
-    // @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
-    repeated string IDs = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
-
-}
-
-message DeleteAllRequest {
-    // The list of workspace id. Is required, Min 1, Max 100.
-    // @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
-    repeated string SpaceIDs = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
-}
-
-message InfoReply {
-    string ID  = 1 [ (validator.field) = { length_lt: 21 } ];
-    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
-    string UdfType = 3  [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-    string Define = 6    [ (validator.field) = { length_gt: 0 } ];
-    string CreateTime = 7   [ (validator.field) = { length_lt: 65 } ];
-    string UpdateTime = 8  [ (validator.field) = { length_lt: 65 } ];
-    string UsageSample = 9  [ (validator.field) = { length_gt: -1 } ];
-}
-
-message DescribeRequest {
-    string ID  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-message ListsRequest {
-    int32 Limit = 1 [ (validator.field) = { int_gt: 0 } ];
-    int32 Offset = 2 [ (validator.field) = { int_gt: -1 } ];
-    string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
-}
-
-// Reply parameters used to ListWorkspaces
-message ListsReply {
-	int32 total = 1 [ (validator.field) = { int_gt: -1 } ];
-    repeated InfoReply Infos = 2 [ (validator.field) = { msg_exists: false } ];
+    rpc List(request.ListUDF) returns (response.ListUDF) {}
+    rpc CommonFunc(request.UDFCommonFunc) returns (response.JsonList) {}
 }

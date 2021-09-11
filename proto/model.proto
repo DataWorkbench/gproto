@@ -570,31 +570,31 @@ message InstanceTaskExecStat {
 // Source Info
 message SourceInfo {
 	// Source ID, unique within a region.
-	// @inject_tag: json:"sourceid" gorm:"column:sourceid;primaryKey;"
+	// @inject_tag: json:"sourceid" gorm:"column:sourceid;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
     string SourceID  = 1 [ (validator.field) = { length_lt: 21 } ];
 
 	// Space ID, workspace ID.
-	// @inject_tag: json:"spaceid" gorm:"column:spaceid;"
+	// @inject_tag: json:"spaceid" gorm:"column:spaceid;" binding:"len=20" minLength:"20" maxLength:"20"
     string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
 
-	// Source Type, one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS
+	// Source Type, one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
 	// @inject_tag: json:"sourcetype" gorm:"column:sourcetype;"
     string SourceType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
 
 	// Source Name, unique within a space.
-	// @inject_tag: json:"name" gorm:"column:name;"
+	// @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
     string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// Comment, describe this source.
-	// @inject_tag: json:"comment" gorm:"column:comment;"
+	// @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
     string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
 
 	// Url, this source connection info.
-	// @inject_tag: json:"url" gorm:"column:url;"
+	// @inject_tag: json:"url" gorm:"column:url;" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
     SourceUrl Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
 
 	// State, one of enable/disable.
-	// @inject_tag: json:"state" gorm:"column:state;"
+	// @inject_tag: json:"state" gorm:"column:state;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
     string State = 7 [ (validator.field) = { length_lt: 17 } ];
 
 	// Create Time, this Source create time.
@@ -609,27 +609,27 @@ message SourceInfo {
 // Table Info
 message TableInfo {
 	// Table ID, unique within a region.
-	// @inject_tag: json:"tableid" gorm:"column:tableid;primaryKey;"
+	// @inject_tag: json:"tableid" gorm:"column:tableid;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
     string TableID  = 1 [ (validator.field) = { length_lt: 21 } ];
 
 	// Source ID
-	// @inject_tag: json:"sourceid" gorm:"column:sourceid;"
+	// @inject_tag: json:"sourceid" gorm:"column:sourceid;" binding:"len=20" minLength:"20" maxLength:"20"
     string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
 
 	// Space ID, workspace ID.
-	// @inject_tag: json:"spaceid" gorm:"column:spaceid;"
+	// @inject_tag: json:"spaceid" gorm:"column:spaceid;" binding:"len=20" minLength:"20" maxLength:"20"
     string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
 
 	// Source Name, unique within a space.
-	// @inject_tag: json:"name" gorm:"column:name;"
+	// @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
     string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// Comment, describe this source.
-	// @inject_tag: json:"comment" gorm:"column:comment;"
+	// @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
     string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
 
 	// Url, this source connection info.
-	// @inject_tag: json:"url" gorm:"column:url;"
+	// @inject_tag: json:"url" gorm:"column:url;"  binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
     TableUrl Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
 
 	// Create Time, this Source create time.
@@ -641,7 +641,7 @@ message TableInfo {
     int64 UpdateTime = 8  [ (validator.field) = { length_lt: 0 } ];
 
 	// Direction, one of source/destination/dimension
-	// @inject_tag: json:"direction" gorm:"column:direction;"
+	// @inject_tag: json:"direction" gorm:"column:direction;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
     string Direction = 9 [ (validator.field) = { length_lt: 17 } ];
 }
 
@@ -1091,4 +1091,43 @@ message Resource{
 	// Timestamp of update time.
 	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
 	int64 updated = 9;
+}
+
+// UDF Info
+message UDFInfo {
+	// ID, unique within a region.
+	// @inject_tag: json:"udfid" gorm:"column:udfid;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
+    string UDFID  = 1 [ (validator.field) = { length_lt: 21 } ];
+
+	// Space ID, workspace ID.
+	// @inject_tag: json:"spaceid" gorm:"column:spaceid;" binding:"len=20" minLength:"20" maxLength:"20"
+    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// UDF Type one of "ScalaUDF", "ScalaUDTF", "ScalaUDTTF", "JarUDF", "JarUDTF", "JarUDTTF", "PythonUDF", "PythonUDTF" , "Dir"
+	// @inject_tag: json:"udftype" gorm:"column:udftype;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string UDFType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+
+	// Source Name, unique within a space.
+	// @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// Comment, describe this source.
+	// @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
+    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+
+    // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+    // @inject_tag: json:"define" gorm:"column:define;" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
+    string Define = 6 [ (validator.field) = {  length_lt: 20001 } ];
+
+    // usage for this udf
+    // @inject_tag: json:"usagesample" gorm:"column:usagesample;" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
+    string UsageSample = 7 [ (validator.field) = {  length_lt: 2001 } ];
+
+	// Create Time, this Source create time.
+	// @inject_tag: json:"createtime" gorm:"column:createtime;"
+    int64 CreateTime = 8   [ (validator.field) = { length_lt: 0 } ];
+
+	// Update Time, this Source last update time.
+	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
+    int64 UpdateTime = 9  [ (validator.field) = { length_lt: 0 } ];
 }

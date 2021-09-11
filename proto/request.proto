@@ -210,7 +210,7 @@ message UpsertMembers {
 		string user_id = 2 [ (validator.field) = { length_lt: 65 } ];
 		
 		// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
-		// @inject_tag: json:"role_ids" default:"" binding:"get=1,lte=100"
+		// @inject_tag: json:"role_ids" default:"" binding:"gte=1,lte=100"
 		string role_ids = 3 [ (validator.field) = { length_lt: 101 } ];
 	}
 	
@@ -715,7 +715,7 @@ message DeleteSource {
 
 // DescribeSource used as request parameters for RPC and HTTP(based on Body)
 message DescribeSource {
-	// SourceIDs
+	// SourceID
 	// @inject_tag: json:"sourceid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
     string SourceID  = 1 [ (validator.field) = { length_eq: 20 } ];
 }
@@ -971,4 +971,117 @@ message CreateDirectory{
 	// The resource parent id. not required. default -1.
 	// @inject_tag: params:"parent_id" form:"parent_id" default:""
 	string parent_id = 3 [(validator.field) = {msg_exists: true}];
+}
+
+// CreateUDF used as request parameters for RPC and HTTP(based on Body)
+message CreateUDF {
+	// The udf id.
+	// @inject_tag: json:"udfid" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
+    string UDFID = 1 [ (validator.field) = { length_lt: 21 } ];
+
+	// The space id.
+	// @inject_tag: json:"spaceid" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
+    string SpaceID = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// UDF Type one of ScalaUDF/ScalaUDTF/ScalaUDTTF/JarUDF/JarUDTF/JarUDTTF/PythonUDF/PythonUDTF/Dir
+	// @inject_tag: json:"udftype" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string UDFType = 3 [ (validator.field) = {length_gt:0, length_lt: 21 } ];
+
+	// UDF name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=1025" required:"true" minLength:"1" maxLength:"1025"
+    string Name = 4 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+
+	// describe this udf.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+    string Comment = 5 [ (validator.field) = {  length_lt: 257 } ];
+
+	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+	// @inject_tag: json:"define" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
+    string Define = 6 [ (validator.field) = {  length_lt: 20001 } ];
+
+	// usage for this udf
+	// @inject_tag: json:"usagesample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
+    string UsageSample = 7 [ (validator.field) = {  length_lt: 2001 } ];
+}
+
+// UpdateUDF used as request parameters for RPC and HTTP(based on Body)
+message UpdateUDF {
+	// The udf id.
+	// @inject_tag: json:"udfid" default:"" binding:"lte=20" swaggerignore:"true"
+    string UDFID = 1 [ (validator.field) = { length_lt: 21 } ];
+
+	// UDF Type one of "ScalaUDF", "ScalaUDTF", "ScalaUDTTF", "JarUDF", "JarUDTF", "JarUDTTF", "PythonUDF", "PythonUDTF" , "Dir"
+	// @inject_tag: json:"udftype" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+    string UDFType = 2 [ (validator.field) = {length_gt:0, length_lt: 21 } ];
+
+	// UDF name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=1025" required:"true" minLength:"1" maxLength:"1025"
+    string Name = 3 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+
+	// describe this udf.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+    string Comment = 4 [ (validator.field) = {  length_lt: 257 } ];
+
+	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+	// @inject_tag: json:"define" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
+    string Define = 5 [ (validator.field) = {  length_lt: 20001 } ];
+
+	// usage for this udf
+	// @inject_tag: json:"usagesample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
+    string UsageSample = 6 [ (validator.field) = {  length_lt: 2001 } ];
+}
+
+// DeleteUDF used as request parameters for RPC and HTTP(based on Body)
+message DeleteUDF {
+	// The space id.
+	// @inject_tag: json:"spaceid" default:"" binding:"lte=20" swaggerignore:"true"
+    string SpaceID = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// delete these UDF Name. eg: ['/a/b/c.jar', '/a/c/' ]
+	// @inject_tag: json:"names" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+    repeated string Names = 2 [ (validator.field) = { length_gt: 0, length_lt: 1100 } ];
+}
+
+// DescribeUDF used as request parameters for RPC and HTTP(based on Body)
+message DescribeUDF {
+	// UDFID
+	// @inject_tag: json:"udfid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
+    string UDFID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// ListUDF used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListUDF {
+    // Limit the maximum number of entries returned this time.
+    // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
+    int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+
+    // The offset position. Not required, default 0.
+    // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
+    int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+
+    // The field list used to sorted query results.
+    // Optional values: {sourceid, name, createtime, updatetime}.
+    // Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+    // Not required, default: updatetime.
+    // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
+    string sort_by = 3 [ (validator.field) = {} ];
+
+    // Reverse order results. Not required, default: false.
+    // @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
+    bool reverse = 4 [ (validator.field) = { } ];
+
+    // Search with name; Not required.
+    // @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
+    string search = 5 [ (validator.field) = { } ];
+
+    // SpaceID; required.
+    // @inject_tag: json:"spaceid"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
+    string SpaceID  = 6 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// UDFCommonFunc used as request parameters for RPC and HTTP(based on Body)
+message UDFCommonFunc {
+	// The space id.
+	// @inject_tag: json:"spaceid" default:"" binding:"lte=20" swaggerignore:"true"
+    string SpaceID = 1 [ (validator.field) = { length_eq: 20 } ];
 }

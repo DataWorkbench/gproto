@@ -6,6 +6,7 @@ import (
 	context "context"
 	model "github.com/DataWorkbench/gproto/pkg/model"
 	request "github.com/DataWorkbench/gproto/pkg/request"
+	response "github.com/DataWorkbench/gproto/pkg/response"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,12 +20,13 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UdfmanagerClient interface {
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Create(ctx context.Context, in *request.CreateUDF, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Update(ctx context.Context, in *request.UpdateUDF, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	Describe(ctx context.Context, in *request.DescribeUDF, opts ...grpc.CallOption) (*response.DescribeUDF, error)
+	Delete(ctx context.Context, in *request.DeleteUDF, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteAll(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*InfoReply, error)
-	List(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error)
+	List(ctx context.Context, in *request.ListUDF, opts ...grpc.CallOption) (*response.ListUDF, error)
+	CommonFunc(ctx context.Context, in *request.UDFCommonFunc, opts ...grpc.CallOption) (*response.JsonList, error)
 }
 
 type udfmanagerClient struct {
@@ -35,7 +37,7 @@ func NewUdfmanagerClient(cc grpc.ClientConnInterface) UdfmanagerClient {
 	return &udfmanagerClient{cc}
 }
 
-func (c *udfmanagerClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *udfmanagerClient) Create(ctx context.Context, in *request.CreateUDF, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/Create", in, out, opts...)
 	if err != nil {
@@ -44,7 +46,7 @@ func (c *udfmanagerClient) Create(ctx context.Context, in *CreateRequest, opts .
 	return out, nil
 }
 
-func (c *udfmanagerClient) Update(ctx context.Context, in *UpdateRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *udfmanagerClient) Update(ctx context.Context, in *request.UpdateUDF, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/Update", in, out, opts...)
 	if err != nil {
@@ -53,7 +55,16 @@ func (c *udfmanagerClient) Update(ctx context.Context, in *UpdateRequest, opts .
 	return out, nil
 }
 
-func (c *udfmanagerClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *udfmanagerClient) Describe(ctx context.Context, in *request.DescribeUDF, opts ...grpc.CallOption) (*response.DescribeUDF, error) {
+	out := new(response.DescribeUDF)
+	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/Describe", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *udfmanagerClient) Delete(ctx context.Context, in *request.DeleteUDF, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/Delete", in, out, opts...)
 	if err != nil {
@@ -71,18 +82,18 @@ func (c *udfmanagerClient) DeleteAll(ctx context.Context, in *request.DeleteWork
 	return out, nil
 }
 
-func (c *udfmanagerClient) Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*InfoReply, error) {
-	out := new(InfoReply)
-	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/Describe", in, out, opts...)
+func (c *udfmanagerClient) List(ctx context.Context, in *request.ListUDF, opts ...grpc.CallOption) (*response.ListUDF, error) {
+	out := new(response.ListUDF)
+	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/List", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *udfmanagerClient) List(ctx context.Context, in *ListsRequest, opts ...grpc.CallOption) (*ListsReply, error) {
-	out := new(ListsReply)
-	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/List", in, out, opts...)
+func (c *udfmanagerClient) CommonFunc(ctx context.Context, in *request.UDFCommonFunc, opts ...grpc.CallOption) (*response.JsonList, error) {
+	out := new(response.JsonList)
+	err := c.cc.Invoke(ctx, "/udfpb.Udfmanager/CommonFunc", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -93,12 +104,13 @@ func (c *udfmanagerClient) List(ctx context.Context, in *ListsRequest, opts ...g
 // All implementations must embed UnimplementedUdfmanagerServer
 // for forward compatibility
 type UdfmanagerServer interface {
-	Create(context.Context, *CreateRequest) (*model.EmptyStruct, error)
-	Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error)
-	Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error)
+	Create(context.Context, *request.CreateUDF) (*model.EmptyStruct, error)
+	Update(context.Context, *request.UpdateUDF) (*model.EmptyStruct, error)
+	Describe(context.Context, *request.DescribeUDF) (*response.DescribeUDF, error)
+	Delete(context.Context, *request.DeleteUDF) (*model.EmptyStruct, error)
 	DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
-	Describe(context.Context, *DescribeRequest) (*InfoReply, error)
-	List(context.Context, *ListsRequest) (*ListsReply, error)
+	List(context.Context, *request.ListUDF) (*response.ListUDF, error)
+	CommonFunc(context.Context, *request.UDFCommonFunc) (*response.JsonList, error)
 	mustEmbedUnimplementedUdfmanagerServer()
 }
 
@@ -106,23 +118,26 @@ type UdfmanagerServer interface {
 type UnimplementedUdfmanagerServer struct {
 }
 
-func (UnimplementedUdfmanagerServer) Create(context.Context, *CreateRequest) (*model.EmptyStruct, error) {
+func (UnimplementedUdfmanagerServer) Create(context.Context, *request.CreateUDF) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedUdfmanagerServer) Update(context.Context, *UpdateRequest) (*model.EmptyStruct, error) {
+func (UnimplementedUdfmanagerServer) Update(context.Context, *request.UpdateUDF) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedUdfmanagerServer) Delete(context.Context, *DeleteRequest) (*model.EmptyStruct, error) {
+func (UnimplementedUdfmanagerServer) Describe(context.Context, *request.DescribeUDF) (*response.DescribeUDF, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Describe not implemented")
+}
+func (UnimplementedUdfmanagerServer) Delete(context.Context, *request.DeleteUDF) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
 func (UnimplementedUdfmanagerServer) DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAll not implemented")
 }
-func (UnimplementedUdfmanagerServer) Describe(context.Context, *DescribeRequest) (*InfoReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Describe not implemented")
-}
-func (UnimplementedUdfmanagerServer) List(context.Context, *ListsRequest) (*ListsReply, error) {
+func (UnimplementedUdfmanagerServer) List(context.Context, *request.ListUDF) (*response.ListUDF, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedUdfmanagerServer) CommonFunc(context.Context, *request.UDFCommonFunc) (*response.JsonList, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CommonFunc not implemented")
 }
 func (UnimplementedUdfmanagerServer) mustEmbedUnimplementedUdfmanagerServer() {}
 
@@ -138,7 +153,7 @@ func RegisterUdfmanagerServer(s grpc.ServiceRegistrar, srv UdfmanagerServer) {
 }
 
 func _Udfmanager_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRequest)
+	in := new(request.CreateUDF)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -150,13 +165,13 @@ func _Udfmanager_Create_Handler(srv interface{}, ctx context.Context, dec func(i
 		FullMethod: "/udfpb.Udfmanager/Create",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UdfmanagerServer).Create(ctx, req.(*CreateRequest))
+		return srv.(UdfmanagerServer).Create(ctx, req.(*request.CreateUDF))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Udfmanager_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateRequest)
+	in := new(request.UpdateUDF)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -168,13 +183,31 @@ func _Udfmanager_Update_Handler(srv interface{}, ctx context.Context, dec func(i
 		FullMethod: "/udfpb.Udfmanager/Update",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UdfmanagerServer).Update(ctx, req.(*UpdateRequest))
+		return srv.(UdfmanagerServer).Update(ctx, req.(*request.UpdateUDF))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Udfmanager_Describe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeUDF)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UdfmanagerServer).Describe(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/udfpb.Udfmanager/Describe",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UdfmanagerServer).Describe(ctx, req.(*request.DescribeUDF))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Udfmanager_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteRequest)
+	in := new(request.DeleteUDF)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -186,7 +219,7 @@ func _Udfmanager_Delete_Handler(srv interface{}, ctx context.Context, dec func(i
 		FullMethod: "/udfpb.Udfmanager/Delete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UdfmanagerServer).Delete(ctx, req.(*DeleteRequest))
+		return srv.(UdfmanagerServer).Delete(ctx, req.(*request.DeleteUDF))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -209,26 +242,8 @@ func _Udfmanager_DeleteAll_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Udfmanager_Describe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DescribeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UdfmanagerServer).Describe(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/udfpb.Udfmanager/Describe",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UdfmanagerServer).Describe(ctx, req.(*DescribeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Udfmanager_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListsRequest)
+	in := new(request.ListUDF)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -240,7 +255,25 @@ func _Udfmanager_List_Handler(srv interface{}, ctx context.Context, dec func(int
 		FullMethod: "/udfpb.Udfmanager/List",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UdfmanagerServer).List(ctx, req.(*ListsRequest))
+		return srv.(UdfmanagerServer).List(ctx, req.(*request.ListUDF))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Udfmanager_CommonFunc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.UDFCommonFunc)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UdfmanagerServer).CommonFunc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/udfpb.Udfmanager/CommonFunc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UdfmanagerServer).CommonFunc(ctx, req.(*request.UDFCommonFunc))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -258,6 +291,10 @@ var _Udfmanager_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Udfmanager_Update_Handler,
 		},
 		{
+			MethodName: "Describe",
+			Handler:    _Udfmanager_Describe_Handler,
+		},
+		{
 			MethodName: "Delete",
 			Handler:    _Udfmanager_Delete_Handler,
 		},
@@ -266,12 +303,12 @@ var _Udfmanager_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Udfmanager_DeleteAll_Handler,
 		},
 		{
-			MethodName: "Describe",
-			Handler:    _Udfmanager_Describe_Handler,
-		},
-		{
 			MethodName: "List",
 			Handler:    _Udfmanager_List_Handler,
+		},
+		{
+			MethodName: "CommonFunc",
+			Handler:    _Udfmanager_CommonFunc_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
