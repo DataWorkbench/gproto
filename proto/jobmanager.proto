@@ -4,41 +4,19 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/jobpb";
 
 package jobpb;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
+import "request.proto";
+import "response.proto";
 
 service Jobmanager {
-    rpc Run(RunJobRequest) returns (JobReply) {}
-    rpc Syntax(RunJobRequest) returns (JobReply) {}
-    rpc Preview(RunJobRequest) returns (JobReply) {}
-    rpc Explain(RunJobRequest) returns (JobReply) {}
-    rpc GetJobState(GetJobStateRequest) returns (JobReply) {}
-    rpc CancelJob(CancelJobRequest) returns (model.EmptyStruct) {}
-    rpc PickupAloneJobs(model.EmptyStruct) returns (model.EmptyStruct) {}
-    rpc CancelAllJob(CancelAllJobRequest) returns (model.EmptyStruct) {}
-}
+    rpc Run(request.JobInfo) returns (response.JobState) {}
+    rpc Syntax(request.JobInfo) returns (response.JobState) {}
+    rpc Preview(request.JobInfo) returns (response.JobState) {}
+    rpc Explain(request.JobInfo) returns (response.JobState) {}
 
-message RunJobRequest {
-    string ID = 1  [ (validator.field) = { length_eq: 20 } ];
-    string SpaceID = 2  [ (validator.field) = { length_eq: 20 } ];
-    string EngineID = 3  [ (validator.field) = { length_eq: 20 } ]; //if EngineID equal "", engine is serverless.
-    string EngineType = 4  [ (validator.field) = { length_gt: 1 } ]; // Fixed to "flink"
-    string JobInfo = 5  [ (validator.field) = { length_gt: 1 } ];
-}
-
-message JobReply {
-    int32 state = 1  [ (validator.field) = { int_gt: 0 } ];
-    string Message = 2 ;
-}
-
-message GetJobStateRequest {
-    string ID = 1  [ (validator.field) = { length_eq: 20 } ];
-}
-
-message CancelJobRequest {
-    string ID = 1  [ (validator.field) = { length_eq: 20 } ];
-}
-
-message CancelAllJobRequest {
-    string SpaceID = 1  [ (validator.field) = { length_eq: 20 } ];
+    rpc GetState(request.JobGetState) returns (response.JobState) {}
+    rpc CancelJob(request.JobCancel) returns (model.EmptyStruct) {}
+    rpc CleanJob(request.JobClean) returns (model.EmptyStruct) {}
+    rpc CancelAllJob(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+	rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
 }

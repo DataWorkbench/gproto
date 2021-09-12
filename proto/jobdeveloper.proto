@@ -6,20 +6,12 @@ package jobdevpb;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
+import "request.proto";
 
 service Jobdeveloper {
-	rpc JobParser(JobParserRequest) returns(JobElement) {}
+	rpc JobParser(request.JobParserInfo) returns(JobElement) {}
 	rpc JobFree(JobFreeRequest) returns(JobFreeAction) {}
 	rpc NodeRelations(model.EmptyStruct) returns(Relations) {}
-}
-
-message JobParserRequest {
-	string ID = 1  [ (validator.field) = { length_eq: 20 } ];
-    string WorkspaceID = 2  [ (validator.field) = { length_eq: 20 } ];
-    string EngineID = 3  [ (validator.field) = { length_eq: 20 } ]; //if EngineID equal "", engine is serverless.
-	string EngineType = 4  [ (validator.field) = { length_gt: 1 } ];
-	string Command = 5  [ (validator.field) = { length_gt: 1 } ];
-	string JobInfo = 6  [ (validator.field) = { length_gt: 1 } ];
 }
 
 message JobFreeRequest {

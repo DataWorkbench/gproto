@@ -288,6 +288,25 @@ message ListUDF {
 
 // DescribeUDF used as reply parameters in RPC or response body in HTTP.
 message DescribeUDF {
+  // UDF info
   // @inject_tag: json:"infos"
   model.UDFInfo info = 1 [(validator.field) = {}];
+}
+
+// JobState
+message JobState {
+    // job state, model.StreamFlowInst_State
+	// @inject_tag: json:"state"
+    int32 State = 1 [(validator.field) = {}];
+
+    // job Message
+	// @inject_tag: json:"message"
+    string Message = 2 [(validator.field) = {}];
+}
+
+// NodeRelations
+message NodeRelations {
+	// node relations
+    // @inject_tag: json:"relations" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
+	string Relations  = 1 [ (validator.field) = { length_gt: 0, length_lt: 20000 } ];
 }

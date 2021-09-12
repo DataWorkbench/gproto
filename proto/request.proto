@@ -1085,3 +1085,54 @@ message UDFCommonFunc {
 	// @inject_tag: json:"spaceid" default:"" binding:"lte=20" swaggerignore:"true"
     string SpaceID = 1 [ (validator.field) = { length_eq: 20 } ];
 }
+
+// JobInfo
+message JobInfo {
+	// JobID
+	// @inject_tag: json:"jobid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string JobID  = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// workspace id
+	// @inject_tag: json:"spaceid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string SpaceID = 2  [ (validator.field) = { length_eq: 20 } ];
+
+	// ENV
+	// @inject_tag: json:"env" default:"" binding:"-"
+	model.StreamFlowEnv Env = 3  [ (validator.field) = { } ];
+
+	// Nodes
+	// @inject_tag: json:"nodes" default:"" binding:"-"
+	model.FlinkJobNodes Nodes = 4  [ (validator.field) = { } ];
+}
+
+
+// JobGetState
+message JobGetState {
+	// JobID
+	// @inject_tag: json:"jobid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string JobID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// JobCancel
+message JobCancel {
+	// JobID
+	// @inject_tag: json:"jobid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string JobID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// JobClean
+message JobClean {
+	// JobID
+	// @inject_tag: json:"jobid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+    string JobID  = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message JobParserInfo {
+	// command oneof 'run' 'syntax' 'preview' 'explain'
+	// @inject_tag: json:"command" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+	string command = 1  [ (validator.field) = { length_gt: 0 ,length_lt: 21} ];
+	
+	// jobinfo
+	// @inject_tag: json:"job" default:"" binding:"-"
+	JobInfo Job = 2 [ (validator.field) = { } ];
+}

@@ -952,3 +952,54 @@ func (this *UDFCommonFunc) Validate() error {
 	}
 	return nil
 }
+func (this *JobInfo) Validate() error {
+	if !(len(this.JobID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobID))
+	}
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
+	if this.Env != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Env); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Env", err)
+		}
+	}
+	if this.Nodes != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Nodes); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
+		}
+	}
+	return nil
+}
+func (this *JobGetState) Validate() error {
+	if !(len(this.JobID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobID))
+	}
+	return nil
+}
+func (this *JobCancel) Validate() error {
+	if !(len(this.JobID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobID))
+	}
+	return nil
+}
+func (this *JobClean) Validate() error {
+	if !(len(this.JobID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobID))
+	}
+	return nil
+}
+func (this *JobParserInfo) Validate() error {
+	if !(len(this.Command) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Command))
+	}
+	if !(len(this.Command) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Command))
+	}
+	if this.Job != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Job); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Job", err)
+		}
+	}
+	return nil
+}

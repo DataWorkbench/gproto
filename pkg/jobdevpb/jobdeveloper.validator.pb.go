@@ -6,6 +6,7 @@ package jobdevpb
 import (
 	fmt "fmt"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
+	_ "github.com/DataWorkbench/gproto/pkg/request"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 	proto "google.golang.org/protobuf/proto"
@@ -17,27 +18,6 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *JobParserRequest) Validate() error {
-	if !(len(this.ID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ID))
-	}
-	if !(len(this.WorkspaceID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("WorkspaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.WorkspaceID))
-	}
-	if !(len(this.EngineID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("EngineID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.EngineID))
-	}
-	if !(len(this.EngineType) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.EngineType))
-	}
-	if !(len(this.Command) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Command))
-	}
-	if !(len(this.JobInfo) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobInfo", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.JobInfo))
-	}
-	return nil
-}
 func (this *JobFreeRequest) Validate() error {
 	if !(len(this.EngineType) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EngineType", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.EngineType))
