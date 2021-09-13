@@ -6,6 +6,7 @@ import (
 	context "context"
 	model "github.com/DataWorkbench/gproto/pkg/model"
 	request "github.com/DataWorkbench/gproto/pkg/request"
+	response "github.com/DataWorkbench/gproto/pkg/response"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -19,9 +20,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type JobdeveloperClient interface {
-	JobParser(ctx context.Context, in *request.JobParserInfo, opts ...grpc.CallOption) (*JobElement, error)
-	JobFree(ctx context.Context, in *JobFreeRequest, opts ...grpc.CallOption) (*JobFreeAction, error)
-	NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*Relations, error)
+	JobParser(ctx context.Context, in *request.JobParser, opts ...grpc.CallOption) (*response.JobParser, error)
+	JobFree(ctx context.Context, in *model.JobResources, opts ...grpc.CallOption) (*response.JobFree, error)
+	NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.NodeRelations, error)
 }
 
 type jobdeveloperClient struct {
@@ -32,8 +33,8 @@ func NewJobdeveloperClient(cc grpc.ClientConnInterface) JobdeveloperClient {
 	return &jobdeveloperClient{cc}
 }
 
-func (c *jobdeveloperClient) JobParser(ctx context.Context, in *request.JobParserInfo, opts ...grpc.CallOption) (*JobElement, error) {
-	out := new(JobElement)
+func (c *jobdeveloperClient) JobParser(ctx context.Context, in *request.JobParser, opts ...grpc.CallOption) (*response.JobParser, error) {
+	out := new(response.JobParser)
 	err := c.cc.Invoke(ctx, "/jobdevpb.Jobdeveloper/JobParser", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -41,8 +42,8 @@ func (c *jobdeveloperClient) JobParser(ctx context.Context, in *request.JobParse
 	return out, nil
 }
 
-func (c *jobdeveloperClient) JobFree(ctx context.Context, in *JobFreeRequest, opts ...grpc.CallOption) (*JobFreeAction, error) {
-	out := new(JobFreeAction)
+func (c *jobdeveloperClient) JobFree(ctx context.Context, in *model.JobResources, opts ...grpc.CallOption) (*response.JobFree, error) {
+	out := new(response.JobFree)
 	err := c.cc.Invoke(ctx, "/jobdevpb.Jobdeveloper/JobFree", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -50,8 +51,8 @@ func (c *jobdeveloperClient) JobFree(ctx context.Context, in *JobFreeRequest, op
 	return out, nil
 }
 
-func (c *jobdeveloperClient) NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*Relations, error) {
-	out := new(Relations)
+func (c *jobdeveloperClient) NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.NodeRelations, error) {
+	out := new(response.NodeRelations)
 	err := c.cc.Invoke(ctx, "/jobdevpb.Jobdeveloper/NodeRelations", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -63,9 +64,9 @@ func (c *jobdeveloperClient) NodeRelations(ctx context.Context, in *model.EmptyS
 // All implementations must embed UnimplementedJobdeveloperServer
 // for forward compatibility
 type JobdeveloperServer interface {
-	JobParser(context.Context, *request.JobParserInfo) (*JobElement, error)
-	JobFree(context.Context, *JobFreeRequest) (*JobFreeAction, error)
-	NodeRelations(context.Context, *model.EmptyStruct) (*Relations, error)
+	JobParser(context.Context, *request.JobParser) (*response.JobParser, error)
+	JobFree(context.Context, *model.JobResources) (*response.JobFree, error)
+	NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error)
 	mustEmbedUnimplementedJobdeveloperServer()
 }
 
@@ -73,13 +74,13 @@ type JobdeveloperServer interface {
 type UnimplementedJobdeveloperServer struct {
 }
 
-func (UnimplementedJobdeveloperServer) JobParser(context.Context, *request.JobParserInfo) (*JobElement, error) {
+func (UnimplementedJobdeveloperServer) JobParser(context.Context, *request.JobParser) (*response.JobParser, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method JobParser not implemented")
 }
-func (UnimplementedJobdeveloperServer) JobFree(context.Context, *JobFreeRequest) (*JobFreeAction, error) {
+func (UnimplementedJobdeveloperServer) JobFree(context.Context, *model.JobResources) (*response.JobFree, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method JobFree not implemented")
 }
-func (UnimplementedJobdeveloperServer) NodeRelations(context.Context, *model.EmptyStruct) (*Relations, error) {
+func (UnimplementedJobdeveloperServer) NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NodeRelations not implemented")
 }
 func (UnimplementedJobdeveloperServer) mustEmbedUnimplementedJobdeveloperServer() {}
@@ -96,7 +97,7 @@ func RegisterJobdeveloperServer(s grpc.ServiceRegistrar, srv JobdeveloperServer)
 }
 
 func _Jobdeveloper_JobParser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.JobParserInfo)
+	in := new(request.JobParser)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -108,13 +109,13 @@ func _Jobdeveloper_JobParser_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: "/jobdevpb.Jobdeveloper/JobParser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobdeveloperServer).JobParser(ctx, req.(*request.JobParserInfo))
+		return srv.(JobdeveloperServer).JobParser(ctx, req.(*request.JobParser))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Jobdeveloper_JobFree_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(JobFreeRequest)
+	in := new(model.JobResources)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -126,7 +127,7 @@ func _Jobdeveloper_JobFree_Handler(srv interface{}, ctx context.Context, dec fun
 		FullMethod: "/jobdevpb.Jobdeveloper/JobFree",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobdeveloperServer).JobFree(ctx, req.(*JobFreeRequest))
+		return srv.(JobdeveloperServer).JobFree(ctx, req.(*model.JobResources))
 	}
 	return interceptor(ctx, in, info, handler)
 }

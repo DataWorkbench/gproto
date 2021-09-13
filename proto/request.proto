@@ -1127,7 +1127,7 @@ message JobClean {
     string JobID  = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-message JobParserInfo {
+message JobParser {
 	// command oneof 'run' 'syntax' 'preview' 'explain'
 	// @inject_tag: json:"command" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
 	string command = 1  [ (validator.field) = { length_gt: 0 ,length_lt: 21} ];

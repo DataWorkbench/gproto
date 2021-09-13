@@ -4,29 +4,12 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/jobdevpb";
 
 package jobdevpb;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 import "request.proto";
+import "response.proto";
 
 service Jobdeveloper {
-	rpc JobParser(request.JobParserInfo) returns(JobElement) {}
-	rpc JobFree(JobFreeRequest) returns(JobFreeAction) {}
-	rpc NodeRelations(model.EmptyStruct) returns(Relations) {}
+	rpc JobParser(request.JobParser) returns(response.JobParser) {}
+	rpc JobFree(model.JobResources) returns(response.JobFree) {}
+	rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
 }
-
-message JobFreeRequest {
-	string EngineType = 1  [ (validator.field) = { length_gt: 1 } ];
-	string JobResources = 2;
-}
-
-message JobFreeAction {
-	string JobResources = 1;
-}
-
-message Relations {
-    string Relations  = 1 [ (validator.field) = { length_gt: 1 } ];
-}
-
-message JobElement {
-    string JobElement  = 1 [ (validator.field) = { length_gt: 1 } ];
-} // this is json. different engine have different element

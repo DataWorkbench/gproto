@@ -1609,3 +1609,14 @@ message FlinkJobNodes {
     // @inject_tag: json:"jobnodes" default:""
 	repeated FlinkDagNode JobNodes = 1 [ (validator.field) = { } ];
 }
+
+// JobResources
+message JobResources {
+	// jobid
+    // @inject_tag: json:"jobid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string JobID = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// Jar
+    // @inject_tag: json:"jar" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
+    string Jar = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+}

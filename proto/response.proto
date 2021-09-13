@@ -310,3 +310,45 @@ message NodeRelations {
     // @inject_tag: json:"relations" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
 	string Relations  = 1 [ (validator.field) = { length_gt: 0, length_lt: 20000 } ];
 }
+
+// JobParser
+message JobParser {
+	// ZeppelinConf
+    // @inject_tag: json:"conf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+	string ZeppelinConf = 1 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+
+	// ZeppelinDepends
+    // @inject_tag: json:"depends" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+	string ZeppelinDepends = 2 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+
+	// ZeppelinScalaUDF
+    // @inject_tag: json:"scalaudf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+	string ZeppelinScalaUDF = 3 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+
+	// ZeppelinPythonUDF
+    // @inject_tag: json:"pythonudf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+	string ZeppelinPythonUDF = 4 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+	
+	// ZeppelinMainRun
+    // @inject_tag: json:"mainrun" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+	string ZeppelinMainRun = 5 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+	
+	// JobResources
+    // @inject_tag: json:"resources" binding:"-"
+	model.JobResources Resources = 6 [ (validator.field) = { } ];
+
+	// Hbase
+    // @inject_tag: json:"hbase" binding:"-"
+	model.HBaseConfig Hbase = 7 [ (validator.field) = { } ];
+
+	// S3
+    // @inject_tag: json:"s3" binding:"-"
+	model.S3Config S3 = 8 [ (validator.field) = { } ];
+}
+
+// JobFree
+message JobFree {
+	// delete jar.
+    // @inject_tag: json:"zeppelindeletejar" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
+	string ZeppelinDeleteJar = 1 [ (validator.field) = { length_gt: 0, length_lt: 20000 } ];
+}

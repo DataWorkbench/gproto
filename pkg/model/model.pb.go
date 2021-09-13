@@ -6346,6 +6346,64 @@ func (x *FlinkJobNodes) GetJobNodes() []*FlinkDagNode {
 	return nil
 }
 
+// JobResources
+type JobResources struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// jobid
+	JobID string `protobuf:"bytes,1,opt,name=JobID,proto3" json:"jobid" binding:"len=20" required:"true" minLength:"20" maxLength:"20"`
+	// Jar
+	Jar string `protobuf:"bytes,2,opt,name=Jar,proto3" json:"jar" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"`
+}
+
+func (x *JobResources) Reset() {
+	*x = JobResources{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_model_proto_msgTypes[73]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *JobResources) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JobResources) ProtoMessage() {}
+
+func (x *JobResources) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_model_proto_msgTypes[73]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JobResources.ProtoReflect.Descriptor instead.
+func (*JobResources) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *JobResources) GetJobID() string {
+	if x != nil {
+		return x.JobID
+	}
+	return ""
+}
+
+func (x *JobResources) GetJar() string {
+	if x != nil {
+		return x.Jar
+	}
+	return ""
+}
+
 type HBaseConfig_Host struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -6358,7 +6416,7 @@ type HBaseConfig_Host struct {
 func (x *HBaseConfig_Host) Reset() {
 	*x = HBaseConfig_Host{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[73]
+		mi := &file_proto_model_proto_msgTypes[74]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6371,7 +6429,7 @@ func (x *HBaseConfig_Host) String() string {
 func (*HBaseConfig_Host) ProtoMessage() {}
 
 func (x *HBaseConfig_Host) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[73]
+	mi := &file_proto_model_proto_msgTypes[74]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6413,7 +6471,7 @@ type FlinkConfig_FlinkConf struct {
 func (x *FlinkConfig_FlinkConf) Reset() {
 	*x = FlinkConfig_FlinkConf{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[74]
+		mi := &file_proto_model_proto_msgTypes[75]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6426,7 +6484,7 @@ func (x *FlinkConfig_FlinkConf) String() string {
 func (*FlinkConfig_FlinkConf) ProtoMessage() {}
 
 func (x *FlinkConfig_FlinkConf) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[74]
+	mi := &file_proto_model_proto_msgTypes[75]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6468,7 +6526,7 @@ type ValuesNodeProperty_ValuesType struct {
 func (x *ValuesNodeProperty_ValuesType) Reset() {
 	*x = ValuesNodeProperty_ValuesType{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[75]
+		mi := &file_proto_model_proto_msgTypes[76]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6481,7 +6539,7 @@ func (x *ValuesNodeProperty_ValuesType) String() string {
 func (*ValuesNodeProperty_ValuesType) ProtoMessage() {}
 
 func (x *ValuesNodeProperty_ValuesType) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[75]
+	mi := &file_proto_model_proto_msgTypes[76]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6518,7 +6576,7 @@ type OrderByNodeProperty_OrderByColumn struct {
 func (x *OrderByNodeProperty_OrderByColumn) Reset() {
 	*x = OrderByNodeProperty_OrderByColumn{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[76]
+		mi := &file_proto_model_proto_msgTypes[77]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6531,7 +6589,7 @@ func (x *OrderByNodeProperty_OrderByColumn) String() string {
 func (*OrderByNodeProperty_OrderByColumn) ProtoMessage() {}
 
 func (x *OrderByNodeProperty_OrderByColumn) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[76]
+	mi := &file_proto_model_proto_msgTypes[77]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6575,7 +6633,7 @@ type WindowNodeProperty_WindowNodeItem struct {
 func (x *WindowNodeProperty_WindowNodeItem) Reset() {
 	*x = WindowNodeProperty_WindowNodeItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[77]
+		mi := &file_proto_model_proto_msgTypes[78]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6588,7 +6646,7 @@ func (x *WindowNodeProperty_WindowNodeItem) String() string {
 func (*WindowNodeProperty_WindowNodeItem) ProtoMessage() {}
 
 func (x *WindowNodeProperty_WindowNodeItem) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[77]
+	mi := &file_proto_model_proto_msgTypes[78]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7580,28 +7638,33 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x0a, 0x08, 0x4a, 0x6f, 0x62, 0x4e, 0x6f, 0x64, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x44, 0x61,
 	0x67, 0x4e, 0x6f, 0x64, 0x65, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x08, 0x4a, 0x6f, 0x62,
-	0x4e, 0x6f, 0x64, 0x65, 0x73, 0x2a, 0x38, 0x0a, 0x0a, 0x45, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x54,
-	0x79, 0x70, 0x65, 0x12, 0x0f, 0x0a, 0x0b, 0x5f, 0x45, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x54, 0x79,
-	0x70, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x42, 0x75, 0x69, 0x6c, 0x64, 0x49, 0x6e, 0x10,
-	0x01, 0x12, 0x0c, 0x0a, 0x08, 0x45, 0x78, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x10, 0x02, 0x2a,
-	0x5f, 0x0a, 0x19, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x63, 0x75,
-	0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x1e, 0x0a, 0x1a,
-	0x5f, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f, 0x6e, 0x63, 0x75, 0x72, 0x72,
-	0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05,
-	0x41, 0x6c, 0x6c, 0x6f, 0x77, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x46, 0x6f, 0x72, 0x62, 0x69,
-	0x64, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x65, 0x70, 0x6c, 0x61, 0x63, 0x65, 0x10, 0x03,
-	0x2a, 0x43, 0x0a, 0x13, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x74, 0x72,
-	0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x18, 0x0a, 0x14, 0x5f, 0x53, 0x63, 0x68, 0x65,
-	0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x10,
-	0x00, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x6f, 0x6e, 0x65, 0x10, 0x01, 0x12, 0x08, 0x0a, 0x04, 0x41,
-	0x75, 0x74, 0x6f, 0x10, 0x02, 0x2a, 0x37, 0x0a, 0x06, 0x4f, 0x70, 0x54, 0x79, 0x70, 0x65, 0x12,
-	0x0b, 0x0a, 0x07, 0x5f, 0x4f, 0x70, 0x54, 0x79, 0x70, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07,
-	0x55, 0x6e, 0x6b, 0x6e, 0x6f, 0x77, 0x6e, 0x10, 0x01, 0x12, 0x09, 0x0a, 0x05, 0x57, 0x72, 0x69,
-	0x74, 0x65, 0x10, 0x02, 0x12, 0x08, 0x0a, 0x04, 0x52, 0x65, 0x61, 0x64, 0x10, 0x03, 0x42, 0x2b,
-	0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
-	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x4e, 0x6f, 0x64, 0x65, 0x73, 0x22, 0x53, 0x0a, 0x0c, 0x4a, 0x6f, 0x62, 0x52, 0x65, 0x73, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x73, 0x12, 0x1d, 0x0a, 0x05, 0x4a, 0x6f, 0x62, 0x49, 0x44, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x05, 0x4a,
+	0x6f, 0x62, 0x49, 0x44, 0x12, 0x24, 0x0a, 0x03, 0x4a, 0x61, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x12, 0xe2, 0xdf, 0x1f, 0x0e, 0x70, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0x01, 0x78, 0x81, 0x08, 0x52, 0x03, 0x4a, 0x61, 0x72, 0x2a, 0x38, 0x0a, 0x0a, 0x45, 0x6e,
+	0x67, 0x69, 0x6e, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0f, 0x0a, 0x0b, 0x5f, 0x45, 0x6e, 0x67,
+	0x69, 0x6e, 0x65, 0x54, 0x79, 0x70, 0x65, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x42, 0x75, 0x69,
+	0x6c, 0x64, 0x49, 0x6e, 0x10, 0x01, 0x12, 0x0c, 0x0a, 0x08, 0x45, 0x78, 0x74, 0x65, 0x72, 0x6e,
+	0x61, 0x6c, 0x10, 0x02, 0x2a, 0x5f, 0x0a, 0x19, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65,
+	0x43, 0x6f, 0x6e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63,
+	0x79, 0x12, 0x1e, 0x0a, 0x1a, 0x5f, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x43, 0x6f,
+	0x6e, 0x63, 0x75, 0x72, 0x72, 0x65, 0x6e, 0x63, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x10,
+	0x00, 0x12, 0x09, 0x0a, 0x05, 0x41, 0x6c, 0x6c, 0x6f, 0x77, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06,
+	0x46, 0x6f, 0x72, 0x62, 0x69, 0x64, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x65, 0x70, 0x6c,
+	0x61, 0x63, 0x65, 0x10, 0x03, 0x2a, 0x43, 0x0a, 0x13, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c,
+	0x65, 0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x12, 0x18, 0x0a, 0x14,
+	0x5f, 0x53, 0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x52, 0x65, 0x74, 0x72, 0x79, 0x50, 0x6f,
+	0x6c, 0x69, 0x63, 0x79, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x6f, 0x6e, 0x65, 0x10, 0x01,
+	0x12, 0x08, 0x0a, 0x04, 0x41, 0x75, 0x74, 0x6f, 0x10, 0x02, 0x2a, 0x37, 0x0a, 0x06, 0x4f, 0x70,
+	0x54, 0x79, 0x70, 0x65, 0x12, 0x0b, 0x0a, 0x07, 0x5f, 0x4f, 0x70, 0x54, 0x79, 0x70, 0x65, 0x10,
+	0x00, 0x12, 0x0b, 0x0a, 0x07, 0x55, 0x6e, 0x6b, 0x6e, 0x6f, 0x77, 0x6e, 0x10, 0x01, 0x12, 0x09,
+	0x0a, 0x05, 0x57, 0x72, 0x69, 0x74, 0x65, 0x10, 0x02, 0x12, 0x08, 0x0a, 0x04, 0x52, 0x65, 0x61,
+	0x64, 0x10, 0x03, 0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f,
+	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -7617,7 +7680,7 @@ func file_proto_model_proto_rawDescGZIP() []byte {
 }
 
 var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 12)
-var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 78)
+var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 79)
 var file_proto_model_proto_goTypes = []interface{}{
 	(EngineType)(0),                           // 0: model.EngineType
 	(ScheduleConcurrencyPolicy)(0),            // 1: model.ScheduleConcurrencyPolicy
@@ -7704,18 +7767,19 @@ var file_proto_model_proto_goTypes = []interface{}{
 	(*FlinkNodeProperty)(nil),                 // 82: model.FlinkNodeProperty
 	(*FlinkDagNode)(nil),                      // 83: model.FlinkDagNode
 	(*FlinkJobNodes)(nil),                     // 84: model.FlinkJobNodes
-	(*HBaseConfig_Host)(nil),                  // 85: model.HBaseConfig.Host
-	(*FlinkConfig_FlinkConf)(nil),             // 86: model.FlinkConfig.FlinkConf
-	(*ValuesNodeProperty_ValuesType)(nil),     // 87: model.ValuesNodeProperty.ValuesType
-	(*OrderByNodeProperty_OrderByColumn)(nil), // 88: model.OrderByNodeProperty.OrderByColumn
-	(*WindowNodeProperty_WindowNodeItem)(nil), // 89: model.WindowNodeProperty.WindowNodeItem
+	(*JobResources)(nil),                      // 85: model.JobResources
+	(*HBaseConfig_Host)(nil),                  // 86: model.HBaseConfig.Host
+	(*FlinkConfig_FlinkConf)(nil),             // 87: model.FlinkConfig.FlinkConf
+	(*ValuesNodeProperty_ValuesType)(nil),     // 88: model.ValuesNodeProperty.ValuesType
+	(*OrderByNodeProperty_OrderByColumn)(nil), // 89: model.OrderByNodeProperty.OrderByColumn
+	(*WindowNodeProperty_WindowNodeItem)(nil), // 90: model.WindowNodeProperty.WindowNodeItem
 }
 var file_proto_model_proto_depIdxs = []int32{
 	4,  // 0: model.Workspace.status:type_name -> model.Workspace.Status
 	5,  // 1: model.StreamFlow.type:type_name -> model.StreamFlow.Type
-	85, // 2: model.HBaseConfig.hosts:type_name -> model.HBaseConfig.Host
+	86, // 2: model.HBaseConfig.hosts:type_name -> model.HBaseConfig.Host
 	17, // 3: model.FlinkConfig.s3:type_name -> model.S3Config
-	86, // 4: model.FlinkConfig.conf:type_name -> model.FlinkConfig.FlinkConf
+	87, // 4: model.FlinkConfig.conf:type_name -> model.FlinkConfig.FlinkConf
 	0,  // 5: model.StreamFlowEnv.engine_type:type_name -> model.EngineType
 	16, // 6: model.StreamFlowEnv.hbase:type_name -> model.HBaseConfig
 	18, // 7: model.StreamFlowEnv.flink:type_name -> model.FlinkConfig
@@ -7767,8 +7831,8 @@ var file_proto_model_proto_depIdxs = []int32{
 	53, // 53: model.TableUrl.Ftp:type_name -> model.FtpTableUrl
 	51, // 54: model.TableUrl.HDFS:type_name -> model.HDFSTableUrl
 	11, // 55: model.Resource.type:type_name -> model.Resource.Type
-	87, // 56: model.ValuesNodeProperty.Rows:type_name -> model.ValuesNodeProperty.ValuesType
-	88, // 57: model.OrderByNodeProperty.Column:type_name -> model.OrderByNodeProperty.OrderByColumn
+	88, // 56: model.ValuesNodeProperty.Rows:type_name -> model.ValuesNodeProperty.ValuesType
+	89, // 57: model.OrderByNodeProperty.Column:type_name -> model.OrderByNodeProperty.OrderByColumn
 	70, // 58: model.ConstNodeProperty.Column:type_name -> model.ColumnAs
 	70, // 59: model.SourceNodeProperty.Column:type_name -> model.ColumnAs
 	70, // 60: model.SourceNodeProperty.CustomColumn:type_name -> model.ColumnAs
@@ -7781,7 +7845,7 @@ var file_proto_model_proto_depIdxs = []int32{
 	70, // 67: model.UDTFNodeProperty.Column:type_name -> model.ColumnAs
 	70, // 68: model.UDTFNodeProperty.SelectColumn:type_name -> model.ColumnAs
 	70, // 69: model.UDTTFNodeProperty.Column:type_name -> model.ColumnAs
-	89, // 70: model.WindowNodeProperty.Window:type_name -> model.WindowNodeProperty.WindowNodeItem
+	90, // 70: model.WindowNodeProperty.Window:type_name -> model.WindowNodeProperty.WindowNodeItem
 	58, // 71: model.FlinkNodeProperty.Dest:type_name -> model.DestNodeProperty
 	59, // 72: model.FlinkNodeProperty.Values:type_name -> model.ValuesNodeProperty
 	59, // 73: model.FlinkNodeProperty.OrderBy:type_name -> model.ValuesNodeProperty
@@ -8697,7 +8761,7 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HBaseConfig_Host); i {
+			switch v := v.(*JobResources); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8709,7 +8773,7 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FlinkConfig_FlinkConf); i {
+			switch v := v.(*HBaseConfig_Host); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8721,7 +8785,7 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ValuesNodeProperty_ValuesType); i {
+			switch v := v.(*FlinkConfig_FlinkConf); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8733,7 +8797,7 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OrderByNodeProperty_OrderByColumn); i {
+			switch v := v.(*ValuesNodeProperty_ValuesType); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8745,6 +8809,18 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*OrderByNodeProperty_OrderByColumn); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_model_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WindowNodeProperty_WindowNodeItem); i {
 			case 0:
 				return &v.state
@@ -8763,7 +8839,7 @@ func file_proto_model_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_model_proto_rawDesc,
 			NumEnums:      12,
-			NumMessages:   78,
+			NumMessages:   79,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

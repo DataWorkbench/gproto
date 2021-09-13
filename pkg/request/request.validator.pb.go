@@ -989,7 +989,7 @@ func (this *JobClean) Validate() error {
 	}
 	return nil
 }
-func (this *JobParserInfo) Validate() error {
+func (this *JobParser) Validate() error {
 	if !(len(this.Command) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Command))
 	}
