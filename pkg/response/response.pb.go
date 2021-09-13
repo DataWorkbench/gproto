@@ -1930,16 +1930,30 @@ func (x *JobFree) GetZeppelinDeleteJar() string {
 	return ""
 }
 
+<<<<<<< HEAD
 type PTasksStatusStat struct {
+=======
+// ZeppelinAddress
+type ZeppelinAddress struct {
+>>>>>>> d722286 (update zeppelinscale)
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 	Infos []*model.InstanceStatusStat `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos"`
 }
 
 func (x *PTasksStatusStat) Reset() {
 	*x = PTasksStatusStat{}
+=======
+	// serveraddress
+	ServerAddress string `protobuf:"bytes,1,opt,name=ServerAddress,proto3" json:"serveraddress" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"`
+}
+
+func (x *ZeppelinAddress) Reset() {
+	*x = ZeppelinAddress{}
+>>>>>>> d722286 (update zeppelinscale)
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_response_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1947,6 +1961,7 @@ func (x *PTasksStatusStat) Reset() {
 	}
 }
 
+<<<<<<< HEAD
 func (x *PTasksStatusStat) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -1954,6 +1969,15 @@ func (x *PTasksStatusStat) String() string {
 func (*PTasksStatusStat) ProtoMessage() {}
 
 func (x *PTasksStatusStat) ProtoReflect() protoreflect.Message {
+=======
+func (x *ZeppelinAddress) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZeppelinAddress) ProtoMessage() {}
+
+func (x *ZeppelinAddress) ProtoReflect() protoreflect.Message {
+>>>>>>> d722286 (update zeppelinscale)
 	mi := &file_proto_response_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1965,6 +1989,7 @@ func (x *PTasksStatusStat) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use PTasksStatusStat.ProtoReflect.Descriptor instead.
 func (*PTasksStatusStat) Descriptor() ([]byte, []int) {
 	return file_proto_response_proto_rawDescGZIP(), []int{34}
@@ -2195,6 +2220,18 @@ func (x *PTaskDispatchCount) GetInfos() []*model.DispatchTaskCountInfo {
 		return x.Infos
 	}
 	return nil
+=======
+// Deprecated: Use ZeppelinAddress.ProtoReflect.Descriptor instead.
+func (*ZeppelinAddress) Descriptor() ([]byte, []int) {
+	return file_proto_response_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *ZeppelinAddress) GetServerAddress() string {
+	if x != nil {
+		return x.ServerAddress
+	}
+	return ""
+>>>>>>> d722286 (update zeppelinscale)
 }
 
 type SourceKind_Kind struct {
@@ -2213,7 +2250,11 @@ type SourceKind_Kind struct {
 func (x *SourceKind_Kind) Reset() {
 	*x = SourceKind_Kind{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD
 		mi := &file_proto_response_proto_msgTypes[39]
+=======
+		mi := &file_proto_response_proto_msgTypes[35]
+>>>>>>> d722286 (update zeppelinscale)
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2226,7 +2267,11 @@ func (x *SourceKind_Kind) String() string {
 func (*SourceKind_Kind) ProtoMessage() {}
 
 func (x *SourceKind_Kind) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 	mi := &file_proto_response_proto_msgTypes[39]
+=======
+	mi := &file_proto_response_proto_msgTypes[35]
+>>>>>>> d722286 (update zeppelinscale)
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2281,7 +2326,11 @@ type TableColumns_Column struct {
 func (x *TableColumns_Column) Reset() {
 	*x = TableColumns_Column{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD
 		mi := &file_proto_response_proto_msgTypes[40]
+=======
+		mi := &file_proto_response_proto_msgTypes[36]
+>>>>>>> d722286 (update zeppelinscale)
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2294,7 +2343,11 @@ func (x *TableColumns_Column) String() string {
 func (*TableColumns_Column) ProtoMessage() {}
 
 func (x *TableColumns_Column) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 	mi := &file_proto_response_proto_msgTypes[40]
+=======
+	mi := &file_proto_response_proto_msgTypes[36]
+>>>>>>> d722286 (update zeppelinscale)
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2562,6 +2615,7 @@ var file_proto_response_proto_rawDesc = []byte{
 	0x65, 0x70, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4a, 0x61, 0x72,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x0a, 0xe2, 0xdf, 0x1f, 0x06, 0x70, 0x00, 0x78, 0xa0,
 	0x9c, 0x01, 0x52, 0x11, 0x5a, 0x65, 0x70, 0x70, 0x65, 0x6c, 0x69, 0x6e, 0x44, 0x65, 0x6c, 0x65,
+<<<<<<< HEAD
 	0x74, 0x65, 0x4a, 0x61, 0x72, 0x22, 0x49, 0x0a, 0x10, 0x50, 0x54, 0x61, 0x73, 0x6b, 0x73, 0x53,
 	0x74, 0x61, 0x74, 0x75, 0x73, 0x53, 0x74, 0x61, 0x74, 0x12, 0x35, 0x0a, 0x05, 0x69, 0x6e, 0x66,
 	0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
@@ -2604,6 +2658,17 @@ var file_proto_response_proto_rawDesc = []byte{
 	0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b,
 	0x67, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x33,
+=======
+	0x74, 0x65, 0x4a, 0x61, 0x72, 0x22, 0x42, 0x0a, 0x0f, 0x5a, 0x65, 0x70, 0x70, 0x65, 0x6c, 0x69,
+	0x6e, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x2f, 0x0a, 0x0d, 0x53, 0x65, 0x72, 0x76,
+	0x65, 0x72, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x00, 0x78, 0x81, 0x08, 0x52, 0x0d, 0x53, 0x65, 0x72, 0x76,
+	0x65, 0x72, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x42, 0x2e, 0x5a, 0x2c, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b,
+	0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67,
+	0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
+>>>>>>> d722286 (update zeppelinscale)
 }
 
 var (
@@ -2618,6 +2683,7 @@ func file_proto_response_proto_rawDescGZIP() []byte {
 	return file_proto_response_proto_rawDescData
 }
 
+<<<<<<< HEAD
 var file_proto_response_proto_msgTypes = make([]protoimpl.MessageInfo, 41)
 var file_proto_response_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),                // 0: response.ListWorkspaces
@@ -2723,6 +2789,97 @@ var file_proto_response_proto_depIdxs = []int32{
 	33, // [33:33] is the sub-list for extension type_name
 	33, // [33:33] is the sub-list for extension extendee
 	0,  // [0:33] is the sub-list for field type_name
+=======
+var file_proto_response_proto_msgTypes = make([]protoimpl.MessageInfo, 37)
+var file_proto_response_proto_goTypes = []interface{}{
+	(*ListWorkspaces)(nil),           // 0: response.ListWorkspaces
+	(*ListAudits)(nil),               // 1: response.ListAudits
+	(*CreateWorkspace)(nil),          // 2: response.CreateWorkspace
+	(*DescribeWorkspace)(nil),        // 3: response.DescribeWorkspace
+	(*ListMembers)(nil),              // 4: response.ListMembers
+	(*ListSystemRoles)(nil),          // 5: response.ListSystemRoles
+	(*ListStreamFlows)(nil),          // 6: response.ListStreamFlows
+	(*CreateStreamFlow)(nil),         // 7: response.CreateStreamFlow
+	(*DescribeStreamFlow)(nil),       // 8: response.DescribeStreamFlow
+	(*GetStreamFlowNode)(nil),        // 9: response.GetStreamFlowNode
+	(*GetStreamFlowEnv)(nil),         // 10: response.GetStreamFlowEnv
+	(*GetStreamFlowSchedule)(nil),    // 11: response.GetStreamFlowSchedule
+	(*ListReleaseStreamFlows)(nil),   // 12: response.ListReleaseStreamFlows
+	(*ListStreamFlowVersions)(nil),   // 13: response.ListStreamFlowVersions
+	(*ListMonitorRules)(nil),         // 14: response.ListMonitorRules
+	(*DescribeMonitorRule)(nil),      // 15: response.DescribeMonitorRule
+	(*ListStreamInsts)(nil),          // 16: response.ListStreamInsts
+	(*DescribeSource)(nil),           // 17: response.DescribeSource
+	(*ListSource)(nil),               // 18: response.ListSource
+	(*SourceKind)(nil),               // 19: response.SourceKind
+	(*JsonList)(nil),                 // 20: response.JsonList
+	(*TableColumns)(nil),             // 21: response.TableColumns
+	(*DescribeTable)(nil),            // 22: response.DescribeTable
+	(*ListTable)(nil),                // 23: response.ListTable
+	(*ListResources)(nil),            // 24: response.ListResources
+	(*CreateDir)(nil),                // 25: response.CreateDir
+	(*UploadFile)(nil),               // 26: response.UploadFile
+	(*DownloadFile)(nil),             // 27: response.DownloadFile
+	(*ListUDF)(nil),                  // 28: response.ListUDF
+	(*DescribeUDF)(nil),              // 29: response.DescribeUDF
+	(*JobState)(nil),                 // 30: response.JobState
+	(*NodeRelations)(nil),            // 31: response.NodeRelations
+	(*JobParser)(nil),                // 32: response.JobParser
+	(*JobFree)(nil),                  // 33: response.JobFree
+	(*ZeppelinAddress)(nil),          // 34: response.ZeppelinAddress
+	(*SourceKind_Kind)(nil),          // 35: response.SourceKind.Kind
+	(*TableColumns_Column)(nil),      // 36: response.TableColumns.Column
+	(*model.Workspace)(nil),          // 37: model.Workspace
+	(*model.OpAudit)(nil),            // 38: model.OpAudit
+	(*model.Member)(nil),             // 39: model.Member
+	(*model.Role)(nil),               // 40: model.Role
+	(*model.StreamFlow)(nil),         // 41: model.StreamFlow
+	(*model.StreamFlowEnv)(nil),      // 42: model.StreamFlowEnv
+	(*model.StreamFlowSchedule)(nil), // 43: model.StreamFlowSchedule
+	(*model.StreamFlowRelease)(nil),  // 44: model.StreamFlowRelease
+	(*model.MonitorRule)(nil),        // 45: model.MonitorRule
+	(*model.StreamFlowInst)(nil),     // 46: model.StreamFlowInst
+	(*model.SourceInfo)(nil),         // 47: model.SourceInfo
+	(*model.TableInfo)(nil),          // 48: model.TableInfo
+	(*model.Resource)(nil),           // 49: model.Resource
+	(*model.UDFInfo)(nil),            // 50: model.UDFInfo
+	(*model.JobResources)(nil),       // 51: model.JobResources
+	(*model.HBaseConfig)(nil),        // 52: model.HBaseConfig
+	(*model.S3Config)(nil),           // 53: model.S3Config
+}
+var file_proto_response_proto_depIdxs = []int32{
+	37, // 0: response.ListWorkspaces.infos:type_name -> model.Workspace
+	38, // 1: response.ListAudits.infos:type_name -> model.OpAudit
+	37, // 2: response.DescribeWorkspace.info:type_name -> model.Workspace
+	39, // 3: response.ListMembers.infos:type_name -> model.Member
+	40, // 4: response.ListSystemRoles.infos:type_name -> model.Role
+	41, // 5: response.ListStreamFlows.infos:type_name -> model.StreamFlow
+	41, // 6: response.DescribeStreamFlow.info:type_name -> model.StreamFlow
+	42, // 7: response.GetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	43, // 8: response.GetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	44, // 9: response.ListReleaseStreamFlows.infos:type_name -> model.StreamFlowRelease
+	41, // 10: response.ListStreamFlowVersions.infos:type_name -> model.StreamFlow
+	45, // 11: response.ListMonitorRules.infos:type_name -> model.MonitorRule
+	45, // 12: response.DescribeMonitorRule.info:type_name -> model.MonitorRule
+	46, // 13: response.ListStreamInsts.infos:type_name -> model.StreamFlowInst
+	47, // 14: response.DescribeSource.info:type_name -> model.SourceInfo
+	17, // 15: response.ListSource.infos:type_name -> response.DescribeSource
+	35, // 16: response.SourceKind.Kinds:type_name -> response.SourceKind.Kind
+	36, // 17: response.TableColumns.Columns:type_name -> response.TableColumns.Column
+	48, // 18: response.DescribeTable.info:type_name -> model.TableInfo
+	48, // 19: response.ListTable.infos:type_name -> model.TableInfo
+	49, // 20: response.ListResources.infos:type_name -> model.Resource
+	50, // 21: response.ListUDF.infos:type_name -> model.UDFInfo
+	50, // 22: response.DescribeUDF.info:type_name -> model.UDFInfo
+	51, // 23: response.JobParser.Resources:type_name -> model.JobResources
+	52, // 24: response.JobParser.Hbase:type_name -> model.HBaseConfig
+	53, // 25: response.JobParser.S3:type_name -> model.S3Config
+	26, // [26:26] is the sub-list for method output_type
+	26, // [26:26] is the sub-list for method input_type
+	26, // [26:26] is the sub-list for extension type_name
+	26, // [26:26] is the sub-list for extension extendee
+	0,  // [0:26] is the sub-list for field type_name
+>>>>>>> d722286 (update zeppelinscale)
 }
 
 func init() { file_proto_response_proto_init() }
@@ -3140,7 +3297,11 @@ func file_proto_response_proto_init() {
 			}
 		}
 		file_proto_response_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*PTasksStatusStat); i {
+=======
+			switch v := v.(*ZeppelinAddress); i {
+>>>>>>> d722286 (update zeppelinscale)
 			case 0:
 				return &v.state
 			case 1:
@@ -3152,6 +3313,7 @@ func file_proto_response_proto_init() {
 			}
 		}
 		file_proto_response_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*PTasksExecStat); i {
 			case 0:
 				return &v.state
@@ -3200,6 +3362,8 @@ func file_proto_response_proto_init() {
 			}
 		}
 		file_proto_response_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+=======
+>>>>>>> d722286 (update zeppelinscale)
 			switch v := v.(*SourceKind_Kind); i {
 			case 0:
 				return &v.state
@@ -3211,7 +3375,11 @@ func file_proto_response_proto_init() {
 				return nil
 			}
 		}
+<<<<<<< HEAD
 		file_proto_response_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+=======
+		file_proto_response_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+>>>>>>> d722286 (update zeppelinscale)
 			switch v := v.(*TableColumns_Column); i {
 			case 0:
 				return &v.state
@@ -3230,7 +3398,11 @@ func file_proto_response_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_response_proto_rawDesc,
 			NumEnums:      0,
+<<<<<<< HEAD
 			NumMessages:   41,
+=======
+			NumMessages:   37,
+>>>>>>> d722286 (update zeppelinscale)
 			NumExtensions: 0,
 			NumServices:   0,
 		},

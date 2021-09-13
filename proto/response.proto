@@ -349,10 +349,9 @@ message JobParser {
 // JobFree
 message JobFree {
 	// delete jar.
-    // @inject_tag: json:"zeppelindeletejar" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
+	// @inject_tag: json:"zeppelindeletejar" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
 	string ZeppelinDeleteJar = 1 [ (validator.field) = { length_gt: 0, length_lt: 20000 } ];
 }
-
 
 message PTasksStatusStat {
   // @inject_tag: json:"infos"
@@ -386,3 +385,12 @@ message PTaskDispatchCount {
   // @inject_tag: json:"infos"
   repeated model.DispatchTaskCountInfo infos = 1 [ (validator.field) = { } ];
 }
+
+// ZeppelinAddress
+message ZeppelinAddress {
+	// serveraddress
+	// @inject_tag: json:"serveraddress" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string ServerAddress = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025} ];
+}
+
+

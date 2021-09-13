@@ -1178,4 +1178,9 @@ message PTaskDispatchCount {
   int64 start_time = 2 [ (validator.field) = { int_gt: -1 } ];
   // @inject_tag: params:"end_time" form:"end_time" default="0" binding:"gte=0"
   int64 end_time = 3 [ (validator.field) = { int_gt: -1 } ];
+
+message JobFree {
+    // JobResources
+    // @inject_tag: json:"resources" binding:"-"
+    model.JobResources Resources = 1 [ (validator.field) = { } ];
 }

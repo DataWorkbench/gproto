@@ -10,6 +10,6 @@ import "response.proto";
 
 service Jobdeveloper {
 	rpc JobParser(request.JobParser) returns(response.JobParser) {}
-	rpc JobFree(model.JobResources) returns(response.JobFree) {}
+	rpc JobFree(request.JobFree) returns(response.JobFree) {}
 	rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
 }

@@ -5113,11 +5113,16 @@ func (x *JobParser) GetJob() *JobInfo {
 	return nil
 }
 
+<<<<<<< HEAD
 type PTasksStatusStat struct {
+=======
+type JobFree struct {
+>>>>>>> d722286 (update zeppelinscale)
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+<<<<<<< HEAD
 	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty" params:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	StartTime int64  `protobuf:"varint,2,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty" params:"start_time" form:"start_time" binding:"gte=0"`
 	EndTime   int64  `protobuf:"varint,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty" params:"end_time" form:"end_time" binding:"gte=0"`
@@ -5125,6 +5130,14 @@ type PTasksStatusStat struct {
 
 func (x *PTasksStatusStat) Reset() {
 	*x = PTasksStatusStat{}
+=======
+	// JobResources
+	Resources *model.JobResources `protobuf:"bytes,1,opt,name=Resources,proto3" json:"resources" binding:"-"`
+}
+
+func (x *JobFree) Reset() {
+	*x = JobFree{}
+>>>>>>> d722286 (update zeppelinscale)
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_request_proto_msgTypes[77]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5132,6 +5145,7 @@ func (x *PTasksStatusStat) Reset() {
 	}
 }
 
+<<<<<<< HEAD
 func (x *PTasksStatusStat) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
@@ -5139,6 +5153,15 @@ func (x *PTasksStatusStat) String() string {
 func (*PTasksStatusStat) ProtoMessage() {}
 
 func (x *PTasksStatusStat) ProtoReflect() protoreflect.Message {
+=======
+func (x *JobFree) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JobFree) ProtoMessage() {}
+
+func (x *JobFree) ProtoReflect() protoreflect.Message {
+>>>>>>> d722286 (update zeppelinscale)
 	mi := &file_proto_request_proto_msgTypes[77]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5150,6 +5173,7 @@ func (x *PTasksStatusStat) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
+<<<<<<< HEAD
 // Deprecated: Use PTasksStatusStat.ProtoReflect.Descriptor instead.
 func (*PTasksStatusStat) Descriptor() ([]byte, []int) {
 	return file_proto_request_proto_rawDescGZIP(), []int{77}
@@ -5418,6 +5442,18 @@ func (x *PTaskDispatchCount) GetEndTime() int64 {
 		return x.EndTime
 	}
 	return 0
+=======
+// Deprecated: Use JobFree.ProtoReflect.Descriptor instead.
+func (*JobFree) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *JobFree) GetResources() *model.JobResources {
+	if x != nil {
+		return x.Resources
+	}
+	return nil
+>>>>>>> d722286 (update zeppelinscale)
 }
 
 type UpsertMembers_Pair struct {
@@ -5434,7 +5470,11 @@ type UpsertMembers_Pair struct {
 func (x *UpsertMembers_Pair) Reset() {
 	*x = UpsertMembers_Pair{}
 	if protoimpl.UnsafeEnabled {
+<<<<<<< HEAD
 		mi := &file_proto_request_proto_msgTypes[82]
+=======
+		mi := &file_proto_request_proto_msgTypes[78]
+>>>>>>> d722286 (update zeppelinscale)
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5447,7 +5487,11 @@ func (x *UpsertMembers_Pair) String() string {
 func (*UpsertMembers_Pair) ProtoMessage() {}
 
 func (x *UpsertMembers_Pair) ProtoReflect() protoreflect.Message {
+<<<<<<< HEAD
 	mi := &file_proto_request_proto_msgTypes[82]
+=======
+	mi := &file_proto_request_proto_msgTypes[78]
+>>>>>>> d722286 (update zeppelinscale)
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6093,6 +6137,7 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x78, 0x15, 0x52, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x28, 0x0a, 0x03, 0x4a,
 	0x6f, 0x62, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x2e, 0x4a, 0x6f, 0x62, 0x49, 0x6e, 0x66, 0x6f, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
+<<<<<<< HEAD
 	0x52, 0x03, 0x4a, 0x6f, 0x62, 0x22, 0x91, 0x01, 0x0a, 0x10, 0x50, 0x54, 0x61, 0x73, 0x6b, 0x73,
 	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x53, 0x74, 0x61, 0x74, 0x12, 0x21, 0x0a, 0x08, 0x73, 0x70,
 	0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf,
@@ -6138,6 +6183,16 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f,
 	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+=======
+	0x52, 0x03, 0x4a, 0x6f, 0x62, 0x22, 0x42, 0x0a, 0x07, 0x4a, 0x6f, 0x62, 0x46, 0x72, 0x65, 0x65,
+	0x12, 0x37, 0x0a, 0x09, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4a, 0x6f, 0x62, 0x52,
+	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x09,
+	0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b,
+	0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67,
+	0x2f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+>>>>>>> d722286 (update zeppelinscale)
 }
 
 var (
@@ -6152,7 +6207,11 @@ func file_proto_request_proto_rawDescGZIP() []byte {
 	return file_proto_request_proto_rawDescData
 }
 
+<<<<<<< HEAD
 var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 84)
+=======
+var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 80)
+>>>>>>> d722286 (update zeppelinscale)
 var file_proto_request_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),            // 0: request.ListWorkspaces
 	(*DeleteWorkspaces)(nil),          // 1: request.DeleteWorkspaces
@@ -6231,6 +6290,7 @@ var file_proto_request_proto_goTypes = []interface{}{
 	(*JobCancel)(nil),                 // 74: request.JobCancel
 	(*JobClean)(nil),                  // 75: request.JobClean
 	(*JobParser)(nil),                 // 76: request.JobParser
+<<<<<<< HEAD
 	(*PTasksStatusStat)(nil),          // 77: request.PTasksStatusStat
 	(*PTasksExecStat)(nil),            // 78: request.PTasksExecStat
 	(*PTaskRuntimeRanking)(nil),       // 79: request.PTaskRuntimeRanking
@@ -6278,12 +6338,59 @@ var file_proto_request_proto_depIdxs = []int32{
 	95, // 22: request.UpdateResource.resource_type:type_name -> model.Resource.Type
 	90, // 23: request.JobInfo.Env:type_name -> model.StreamFlowEnv
 	96, // 24: request.JobInfo.Nodes:type_name -> model.FlinkJobNodes
+=======
+	(*JobFree)(nil),                   // 77: request.JobFree
+	(*UpsertMembers_Pair)(nil),        // 78: request.UpsertMembers.Pair
+	nil,                               // 79: request.CheckPermission.RolesEntry
+	(model.Workspace_Status)(0),       // 80: model.Workspace.Status
+	(*model.OpAudit)(nil),             // 81: model.OpAudit
+	(model.OpType)(0),                 // 82: model.OpType
+	(model.OpAudit_State)(0),          // 83: model.OpAudit.State
+	(model.StreamFlow_Type)(0),        // 84: model.StreamFlow.Type
+	(*model.StreamFlowSchedule)(nil),  // 85: model.StreamFlowSchedule
+	(*model.StreamFlowEnv)(nil),       // 86: model.StreamFlowEnv
+	(*model.StreamFlowProperty)(nil),  // 87: model.StreamFlowProperty
+	(*model.MonitorRule)(nil),         // 88: model.MonitorRule
+	(*model.SourceUrl)(nil),           // 89: model.SourceUrl
+	(*model.TableUrl)(nil),            // 90: model.TableUrl
+	(model.Resource_Type)(0),          // 91: model.Resource.Type
+	(*model.FlinkJobNodes)(nil),       // 92: model.FlinkJobNodes
+	(*model.JobResources)(nil),        // 93: model.JobResources
+}
+var file_proto_request_proto_depIdxs = []int32{
+	80, // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
+	81, // 1: request.AddAudit.info:type_name -> model.OpAudit
+	82, // 2: request.ListAudits.type:type_name -> model.OpType
+	83, // 3: request.ListAudits.state:type_name -> model.OpAudit.State
+	78, // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
+	82, // 5: request.CheckPermission.op_type:type_name -> model.OpType
+	79, // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
+	84, // 7: request.CreateStreamFlow.type:type_name -> model.StreamFlow.Type
+	85, // 8: request.SetStreamFlowSchedule.info:type_name -> model.StreamFlowSchedule
+	86, // 9: request.SetStreamFlowEnv.info:type_name -> model.StreamFlowEnv
+	87, // 10: request.ExecuteStreamFlow.property:type_name -> model.StreamFlowProperty
+	88, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
+	88, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
+	87, // 13: request.SubmitStreamFlows.properties:type_name -> model.StreamFlowProperty
+	41, // 14: request.TerminateStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
+	41, // 15: request.SuspendStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
+	41, // 16: request.ResumeStreamInsts.inst_ids:type_name -> request.FlowInstIdPair
+	89, // 17: request.CreateSource.Url:type_name -> model.SourceUrl
+	89, // 18: request.UpdateSource.Url:type_name -> model.SourceUrl
+	89, // 19: request.PingSource.Url:type_name -> model.SourceUrl
+	90, // 20: request.CreateTable.Url:type_name -> model.TableUrl
+	90, // 21: request.UpdateTable.Url:type_name -> model.TableUrl
+	91, // 22: request.UpdateResource.resource_type:type_name -> model.Resource.Type
+	86, // 23: request.JobInfo.Env:type_name -> model.StreamFlowEnv
+	92, // 24: request.JobInfo.Nodes:type_name -> model.FlinkJobNodes
+>>>>>>> d722286 (update zeppelinscale)
 	72, // 25: request.JobParser.Job:type_name -> request.JobInfo
-	26, // [26:26] is the sub-list for method output_type
-	26, // [26:26] is the sub-list for method input_type
-	26, // [26:26] is the sub-list for extension type_name
-	26, // [26:26] is the sub-list for extension extendee
-	0,  // [0:26] is the sub-list for field type_name
+	93, // 26: request.JobFree.Resources:type_name -> model.JobResources
+	27, // [27:27] is the sub-list for method output_type
+	27, // [27:27] is the sub-list for method input_type
+	27, // [27:27] is the sub-list for extension type_name
+	27, // [27:27] is the sub-list for extension extendee
+	0,  // [0:27] is the sub-list for field type_name
 }
 
 func init() { file_proto_request_proto_init() }
@@ -7217,7 +7324,11 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*PTasksStatusStat); i {
+=======
+			switch v := v.(*JobFree); i {
+>>>>>>> d722286 (update zeppelinscale)
 			case 0:
 				return &v.state
 			case 1:
@@ -7229,6 +7340,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
+<<<<<<< HEAD
 			switch v := v.(*PTasksExecStat); i {
 			case 0:
 				return &v.state
@@ -7277,6 +7389,8 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
+=======
+>>>>>>> d722286 (update zeppelinscale)
 			switch v := v.(*UpsertMembers_Pair); i {
 			case 0:
 				return &v.state
@@ -7295,7 +7409,11 @@ func file_proto_request_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_request_proto_rawDesc,
 			NumEnums:      0,
+<<<<<<< HEAD
 			NumMessages:   84,
+=======
+			NumMessages:   80,
+>>>>>>> d722286 (update zeppelinscale)
 			NumExtensions: 0,
 			NumServices:   0,
 		},

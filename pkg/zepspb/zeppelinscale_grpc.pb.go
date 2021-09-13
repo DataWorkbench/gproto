@@ -5,6 +5,7 @@ package zepspb
 import (
 	context "context"
 	model "github.com/DataWorkbench/gproto/pkg/model"
+	response "github.com/DataWorkbench/gproto/pkg/response"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -18,7 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ZeppelinScaleClient interface {
-	GetZeppelinAddress(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*ZeppelinInfo, error)
+	GetZeppelinAddress(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ZeppelinAddress, error)
 }
 
 type zeppelinScaleClient struct {
@@ -29,8 +30,8 @@ func NewZeppelinScaleClient(cc grpc.ClientConnInterface) ZeppelinScaleClient {
 	return &zeppelinScaleClient{cc}
 }
 
-func (c *zeppelinScaleClient) GetZeppelinAddress(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*ZeppelinInfo, error) {
-	out := new(ZeppelinInfo)
+func (c *zeppelinScaleClient) GetZeppelinAddress(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ZeppelinAddress, error) {
+	out := new(response.ZeppelinAddress)
 	err := c.cc.Invoke(ctx, "/zepspb.ZeppelinScale/GetZeppelinAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -42,7 +43,7 @@ func (c *zeppelinScaleClient) GetZeppelinAddress(ctx context.Context, in *model.
 // All implementations must embed UnimplementedZeppelinScaleServer
 // for forward compatibility
 type ZeppelinScaleServer interface {
-	GetZeppelinAddress(context.Context, *model.EmptyStruct) (*ZeppelinInfo, error)
+	GetZeppelinAddress(context.Context, *model.EmptyStruct) (*response.ZeppelinAddress, error)
 	mustEmbedUnimplementedZeppelinScaleServer()
 }
 
@@ -50,7 +51,7 @@ type ZeppelinScaleServer interface {
 type UnimplementedZeppelinScaleServer struct {
 }
 
-func (UnimplementedZeppelinScaleServer) GetZeppelinAddress(context.Context, *model.EmptyStruct) (*ZeppelinInfo, error) {
+func (UnimplementedZeppelinScaleServer) GetZeppelinAddress(context.Context, *model.EmptyStruct) (*response.ZeppelinAddress, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetZeppelinAddress not implemented")
 }
 func (UnimplementedZeppelinScaleServer) mustEmbedUnimplementedZeppelinScaleServer() {}
