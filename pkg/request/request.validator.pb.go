@@ -1003,7 +1003,6 @@ func (this *JobParser) Validate() error {
 	}
 	return nil
 }
-<<<<<<< HEAD
 func (this *PTasksStatusStat) Validate() error {
 	if this.SpaceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
@@ -1064,13 +1063,14 @@ func (this *PTaskDispatchCount) Validate() error {
 	}
 	if !(this.EndTime > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EndTime", fmt.Errorf(`value '%v' must be greater than '-1'`, this.EndTime))
-=======
+	}
+	return nil
+}
 func (this *JobFree) Validate() error {
 	if this.Resources != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Resources); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Resources", err)
 		}
->>>>>>> d722286 (update zeppelinscale)
 	}
 	return nil
 }

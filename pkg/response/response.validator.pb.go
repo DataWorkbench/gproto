@@ -395,7 +395,6 @@ func (this *JobFree) Validate() error {
 	}
 	return nil
 }
-<<<<<<< HEAD
 func (this *PTasksStatusStat) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
@@ -463,14 +462,15 @@ func (this *PTaskDispatchCount) Validate() error {
 				return github_com_mwitkow_go_proto_validators.FieldError("Infos", err)
 			}
 		}
-=======
+	}
+	return nil
+}
 func (this *ZeppelinAddress) Validate() error {
 	if !(len(this.ServerAddress) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ServerAddress", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ServerAddress))
 	}
 	if !(len(this.ServerAddress) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ServerAddress", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.ServerAddress))
->>>>>>> d722286 (update zeppelinscale)
 	}
 	return nil
 }
