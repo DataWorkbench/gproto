@@ -1141,11 +1141,11 @@ func (this *ColumnAs) Validate() error {
 	if !(len(this.Type) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Type))
 	}
-	if !(len(this.AS) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("AS", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.AS))
+	if !(len(this.As) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("As", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.As))
 	}
-	if !(len(this.AS) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("AS", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.AS))
+	if !(len(this.As) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("As", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.As))
 	}
 	return nil
 }

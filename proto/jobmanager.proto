@@ -13,11 +13,9 @@ service Jobmanager {
     rpc Syntax(request.JobInfo) returns (response.JobState) {}
     rpc Preview(request.JobInfo) returns (response.JobState) {}
     rpc Explain(request.JobInfo) returns (response.JobState) {}
-
     rpc GetState(request.JobGetState) returns (response.JobState) {}
     rpc CancelJob(request.JobCancel) returns (model.EmptyStruct) {}
-    rpc CleanJob(request.JobClean) returns (model.EmptyStruct) {}
-
     rpc CancelAllJob(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
 	rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
+    rpc CleanJob(request.JobClean) returns (model.EmptyStruct) {}
 }

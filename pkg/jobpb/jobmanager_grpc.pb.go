@@ -26,9 +26,9 @@ type JobmanagerClient interface {
 	Explain(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (*response.JobState, error)
 	GetState(ctx context.Context, in *request.JobGetState, opts ...grpc.CallOption) (*response.JobState, error)
 	CancelJob(ctx context.Context, in *request.JobCancel, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	CleanJob(ctx context.Context, in *request.JobClean, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	CancelAllJob(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.NodeRelations, error)
+	CleanJob(ctx context.Context, in *request.JobClean, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
 type jobmanagerClient struct {
@@ -93,15 +93,6 @@ func (c *jobmanagerClient) CancelJob(ctx context.Context, in *request.JobCancel,
 	return out, nil
 }
 
-func (c *jobmanagerClient) CleanJob(ctx context.Context, in *request.JobClean, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CleanJob", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *jobmanagerClient) CancelAllJob(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelAllJob", in, out, opts...)
@@ -120,6 +111,15 @@ func (c *jobmanagerClient) NodeRelations(ctx context.Context, in *model.EmptyStr
 	return out, nil
 }
 
+func (c *jobmanagerClient) CleanJob(ctx context.Context, in *request.JobClean, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CleanJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // JobmanagerServer is the server API for Jobmanager service.
 // All implementations must embed UnimplementedJobmanagerServer
 // for forward compatibility
@@ -130,9 +130,9 @@ type JobmanagerServer interface {
 	Explain(context.Context, *request.JobInfo) (*response.JobState, error)
 	GetState(context.Context, *request.JobGetState) (*response.JobState, error)
 	CancelJob(context.Context, *request.JobCancel) (*model.EmptyStruct, error)
-	CleanJob(context.Context, *request.JobClean) (*model.EmptyStruct, error)
 	CancelAllJob(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
 	NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error)
+	CleanJob(context.Context, *request.JobClean) (*model.EmptyStruct, error)
 	mustEmbedUnimplementedJobmanagerServer()
 }
 
@@ -158,14 +158,14 @@ func (UnimplementedJobmanagerServer) GetState(context.Context, *request.JobGetSt
 func (UnimplementedJobmanagerServer) CancelJob(context.Context, *request.JobCancel) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelJob not implemented")
 }
-func (UnimplementedJobmanagerServer) CleanJob(context.Context, *request.JobClean) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CleanJob not implemented")
-}
 func (UnimplementedJobmanagerServer) CancelAllJob(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelAllJob not implemented")
 }
 func (UnimplementedJobmanagerServer) NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NodeRelations not implemented")
+}
+func (UnimplementedJobmanagerServer) CleanJob(context.Context, *request.JobClean) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CleanJob not implemented")
 }
 func (UnimplementedJobmanagerServer) mustEmbedUnimplementedJobmanagerServer() {}
 
@@ -288,24 +288,6 @@ func _Jobmanager_CancelJob_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_CleanJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.JobClean)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JobmanagerServer).CleanJob(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/CleanJob",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).CleanJob(ctx, req.(*request.JobClean))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Jobmanager_CancelAllJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DeleteWorkspaces)
 	if err := dec(in); err != nil {
@@ -342,6 +324,24 @@ func _Jobmanager_NodeRelations_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Jobmanager_CleanJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.JobClean)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobmanagerServer).CleanJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/jobpb.Jobmanager/CleanJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobmanagerServer).CleanJob(ctx, req.(*request.JobClean))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "jobpb.Jobmanager",
 	HandlerType: (*JobmanagerServer)(nil),
@@ -371,16 +371,16 @@ var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Jobmanager_CancelJob_Handler,
 		},
 		{
-			MethodName: "CleanJob",
-			Handler:    _Jobmanager_CleanJob_Handler,
-		},
-		{
 			MethodName: "CancelAllJob",
 			Handler:    _Jobmanager_CancelAllJob_Handler,
 		},
 		{
 			MethodName: "NodeRelations",
 			Handler:    _Jobmanager_NodeRelations_Handler,
+		},
+		{
+			MethodName: "CleanJob",
+			Handler:    _Jobmanager_CleanJob_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

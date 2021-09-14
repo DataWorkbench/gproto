@@ -1053,7 +1053,7 @@ message DescribeUDF {
 message ListUDF {
     // Limit the maximum number of entries returned this time.
     // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
-    int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+    int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 1001 } ];
 
     // The offset position. Not required, default 0.
     // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
@@ -1130,7 +1130,7 @@ message JobClean {
 message JobParser {
 	// command oneof 'run' 'syntax' 'preview' 'explain'
 	// @inject_tag: json:"command" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	string command = 1  [ (validator.field) = { length_gt: 0 ,length_lt: 21} ];
+	string Command = 1  [ (validator.field) = { length_gt: 0 ,length_lt: 21} ];
 
 	// jobinfo
 	// @inject_tag: json:"job" default:"" binding:"-"

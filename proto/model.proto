@@ -1283,7 +1283,7 @@ message ColumnAs {
 
 	// Column AS
     // @inject_tag: json:"as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string AS = 5 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+    string As = 5 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
 }
 
 // ConstNodeProperty
@@ -1493,7 +1493,7 @@ message FlinkNodeProperty {
 
 	// OrderBy
     // @inject_tag: json:"OrderBy" default:"" binding:"-"
-	ValuesNodeProperty OrderBy = 3  [ (validator.field) = { } ];
+	OrderByNodeProperty OrderBy = 3  [ (validator.field) = { } ];
 
 	// Limit
     // @inject_tag: json:"Limit" default:"" binding:"-"
