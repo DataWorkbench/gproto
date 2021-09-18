@@ -665,11 +665,21 @@ func (this *FtpUrl) Validate() error {
 	return nil
 }
 func (this *HDFSUrl) Validate() error {
-	if !(len(this.Host) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Host))
+	for _, item := range this.Nodes {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
+			}
+		}
 	}
-	if !(len(this.Host) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Host))
+	return nil
+}
+func (this *HDFSUrl_HDFSNodeUrl) Validate() error {
+	if !(len(this.NameNode) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NameNode", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.NameNode))
+	}
+	if !(len(this.NameNode) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NameNode", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.NameNode))
 	}
 	return nil
 }
