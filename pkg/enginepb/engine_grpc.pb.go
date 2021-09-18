@@ -165,7 +165,7 @@ var _FlinkEngineService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/engine.proto",
+	Metadata: "engine.proto",
 }
 
 // ExternalServiceClient is the client API for ExternalService service.
@@ -284,5 +284,5 @@ var _ExternalService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/engine.proto",
+	Metadata: "engine.proto",
 }

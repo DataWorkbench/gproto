@@ -25,9 +25,9 @@ message FlinkEngine {
 }
 
 message CreateFlinkRequest {
-    string name = 1 [ (validator.field) = { length_gt: 1, length_lt: 20, string_not_empty: true } ]; // job_id ( instance_id )
+    string name = 1 [ (validator.field) = { length_gt: 1, length_lt: 21, string_not_empty: true } ]; // job_id ( instance_id )
     // owner 改成 namespace （workspaceId）
-    string namespace = 2 [ (validator.field) = { length_gt: 1, length_lt: 20 } ]; // (外部引擎表)
+    string namespace = 2 [ (validator.field) = { length_gt: 1, length_lt: 21 } ]; // (外部引擎表)
     bool waiting_ready = 3;
     uint64 waiting_timeout = 4; // default
     model.StreamFlowEnv conf = 5;
@@ -39,7 +39,7 @@ message CreateFlinkResponse {
 }
 
 message DeleteFlinkRequest {
-    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 20} ];
+    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 21} ];
 }
 
 message DeleteFlinkResponse {
@@ -47,7 +47,7 @@ message DeleteFlinkResponse {
 }
 
 message DescribeFlinkRequest {
-    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 20} ];
+    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 21} ];
     bool with_config = 4;
 }
 
