@@ -921,7 +921,7 @@ message ListResources{
 	int32  offset = 3   [(validator.field) = {int_gt: -1}];
 
 	// The resource type. required.
-	// @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=2"
+	// @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gt=0,lte=3"
 	int32  resource_type = 4 [(validator.field) = {int_gt:-1,int_lt:3}];
 
 	// The field list used to sorted query results.

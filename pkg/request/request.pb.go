@@ -4111,7 +4111,7 @@ type ListResources struct {
 	// The offset position. Not required, default 0.
 	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty" params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"`
 	// The resource type. required.
-	ResourceType int32 `protobuf:"varint,4,opt,name=resource_type,json=resourceType,proto3" json:"resource_type,omitempty" params:"resource_type" form:"resource_type" binding:"gte=0,lte=2"`
+	ResourceType int32 `protobuf:"varint,4,opt,name=resource_type,json=resourceType,proto3" json:"resource_type,omitempty" params:"resource_type" form:"resource_type" binding:"gt=0,lte=3"`
 	// The field list used to sorted query results.
 	// Optional values: {id, created, updated, name, size}.
 	// Not required, default: id.
