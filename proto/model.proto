@@ -1085,6 +1085,7 @@ message Resource{
 		_ = 0;
 		Jar = 1;
 		Udf = 2;
+		CONNECTOR = 3;
 	}
 
 	// Resource ID, unique within a region.
@@ -1111,17 +1112,13 @@ message Resource{
 	// @inject_tag: json:"size" gorm:"size;"
 	int64  size = 6;
 
-	// Resource kind.
-	// @inject_tag: json:"is_directory" gorm:"is_directory;"
-	bool is_directory = 7;
-
 	// Timestamp of create time.
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-	int64 created = 8;
+	int64 created = 7;
 
 	// Timestamp of update time.
 	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 9;
+	int64 updated = 8;
 }
 
 // UDF Info

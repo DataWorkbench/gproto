@@ -907,26 +907,32 @@ message DescribeFile{
 
 // ListResources used as a request parameters for RPC and HTTP(based on URL-Query).
 message ListResources{
-	// The resource parent id. Not required. default -1.
-	// @inject_tag: params:"resource_id" uri:"resource_id" form:"resource_id"
-	string resource_id = 1;
-
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string space_id = 2 [(validator.field) = {length_eq: 20}];
+	string space_id = 1 [(validator.field) = {length_eq: 20}];
 
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
 	// @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-	int32  limit = 3    [(validator.field) = {int_gt: 0, int_lt: 101}];
+	int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
 
 	// The offset position. Not required, default 0.
 	// @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
-	int32  offset = 4   [(validator.field) = {int_gt: -1}];
+	int32  offset = 3   [(validator.field) = {int_gt: -1}];
 
 	// The resource type. required.
 	// @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=2"
-	int32  resource_type = 5 [(validator.field) = {int_gt:-1,int_lt:3}];
+	int32  resource_type = 4 [(validator.field) = {int_gt:-1,int_lt:3}];
+
+	// The field list used to sorted query results.
+	// Optional values: {id, created, updated, name, size}.
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"updated" binding:"-"
+	string sort_by = 5 [ (validator.field) = {} ];
+
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 6 [ (validator.field) = {} ];
 }
 
 // UpdateResource used as a request parameters for RPC and HTTP(based on URL-Query).
@@ -942,10 +948,6 @@ message UpdateResource{
 	// The resource name. required.
 	// @inject_tag: params:"resource_name" binding:"required,lte=500"
 	string resource_name = 3 [(validator.field) = {msg_exists: true}];
-
-	// The resource type. required.
-	// @inject_tag: params:"resource_type" binding:"required,oneof=0 1 2"
-	model.Resource.Type resource_type = 4 [(validator.field) = {int_lt:3}];
 }
 
 message DeleteResources{
@@ -956,21 +958,6 @@ message DeleteResources{
 	// The list of resource id. Is required, Min 1 Max 100.
 	// @inject_tag: json:"resource_ids" default:"" binding:"gte=1,lte=100"
 	repeated string resource_ids = 2 [(validator.field) = {length_gt: 0, length_lt: 101}];
-}
-
-// CreateDirectory used as a request parameters for RPC and HTTP(based on URL-Query).
-message CreateDirectory{
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string space_id = 1 [(validator.field) = {length_eq: 20}];
-
-	// The dir name. required.
-	// @inject_tag: params:"dir_name" form:"dir_name" binding:"required,lte=500"
-	string dir_name = 2 [(validator.field) = {msg_exists: true}];
-
-	// The resource parent id. not required. default -1.
-	// @inject_tag: params:"parent_id" form:"parent_id" default:""
-	string parent_id = 3 [(validator.field) = {msg_exists: true}];
 }
 
 // CreateUDF used as request parameters for RPC and HTTP(based on Body)

@@ -8,7 +8,6 @@ import "request.proto";
 import "response.proto";
 
 service Resource{
-  rpc CreateDir(request.CreateDirectory) returns (response.CreateDir){}
   rpc UploadFile(stream UploadFileRequest) returns (response.UploadFile){}
   rpc DownloadFile(request.DownloadFile) returns (stream response.DownloadFile){}
   rpc DescribeFile(request.DescribeFile) returns (model.Resource){}
@@ -16,7 +15,6 @@ service Resource{
   rpc UpdateResource(request.UpdateResource) returns(model.EmptyStruct){}
   rpc DeleteResources(request.DeleteResources) returns(model.EmptyStruct){}
   rpc DeleteSpaces(request.DeleteWorkspaces) returns(model.EmptyStruct){}
-  rpc CheckResourceExist(request.CreateDirectory) returns (model.EmptyStruct){}
 }
 
 // UploadFile used as a request parameters for RPC and HTTP(based on URL-Query).
@@ -30,15 +28,9 @@ message UploadFileRequest{
   // The resource type. required.
   model.Resource.Type resource_type = 3;
 
-  // The resource parent id. Not required. default -1.
-  string parent_id = 4;
-
   // The data for resource. required.
-  bytes data = 5;
+  bytes data = 4;
 
   // The resource Size. prevent data missing.
-  int64 size = 6;
-
-  // The resource MD5. prevent data missing and falsify.
-  string md5_message = 7;
+  int64 size = 5;
 }
