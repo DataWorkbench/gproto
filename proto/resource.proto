@@ -8,6 +8,7 @@ import "request.proto";
 import "response.proto";
 
 service Resource{
+  rpc ReUploadFile(stream ReUploadFileRequest) returns (model.EmptyStruct){}
   rpc UploadFile(stream UploadFileRequest) returns (response.UploadFile){}
   rpc DownloadFile(request.DownloadFile) returns (stream response.DownloadFile){}
   rpc DescribeFile(request.DescribeFile) returns (model.Resource){}
@@ -33,4 +34,20 @@ message UploadFileRequest{
 
   // The resource Size. prevent data missing.
   int64 size = 5;
+}
+
+// ReUploadFile used as a request parameters for RPC and HTTP(based on URL-Query).
+message ReUploadFileRequest{
+
+  // The resource id in HTTP Request-URI
+  string resource_id = 1;
+
+  // The workspace id in HTTP Request-URI
+  string space_id = 2;
+
+  // The data for resource. required.
+  bytes data = 3;
+
+  // The resource Size. prevent data missing.
+  int64 size = 4;
 }

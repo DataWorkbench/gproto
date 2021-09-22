@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ResourceClient interface {
+	ReUploadFile(ctx context.Context, opts ...grpc.CallOption) (Resource_ReUploadFileClient, error)
 	UploadFile(ctx context.Context, opts ...grpc.CallOption) (Resource_UploadFileClient, error)
 	DownloadFile(ctx context.Context, in *request.DownloadFile, opts ...grpc.CallOption) (Resource_DownloadFileClient, error)
 	DescribeFile(ctx context.Context, in *request.DescribeFile, opts ...grpc.CallOption) (*model.Resource, error)
@@ -37,8 +38,42 @@ func NewResourceClient(cc grpc.ClientConnInterface) ResourceClient {
 	return &resourceClient{cc}
 }
 
+func (c *resourceClient) ReUploadFile(ctx context.Context, opts ...grpc.CallOption) (Resource_ReUploadFileClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Resource_serviceDesc.Streams[0], "/resource.Resource/ReUploadFile", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &resourceReUploadFileClient{stream}
+	return x, nil
+}
+
+type Resource_ReUploadFileClient interface {
+	Send(*ReUploadFileRequest) error
+	CloseAndRecv() (*model.EmptyStruct, error)
+	grpc.ClientStream
+}
+
+type resourceReUploadFileClient struct {
+	grpc.ClientStream
+}
+
+func (x *resourceReUploadFileClient) Send(m *ReUploadFileRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *resourceReUploadFileClient) CloseAndRecv() (*model.EmptyStruct, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(model.EmptyStruct)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 func (c *resourceClient) UploadFile(ctx context.Context, opts ...grpc.CallOption) (Resource_UploadFileClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Resource_serviceDesc.Streams[0], "/resource.Resource/UploadFile", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Resource_serviceDesc.Streams[1], "/resource.Resource/UploadFile", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +107,7 @@ func (x *resourceUploadFileClient) CloseAndRecv() (*response.UploadFile, error) 
 }
 
 func (c *resourceClient) DownloadFile(ctx context.Context, in *request.DownloadFile, opts ...grpc.CallOption) (Resource_DownloadFileClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Resource_serviceDesc.Streams[1], "/resource.Resource/DownloadFile", opts...)
+	stream, err := c.cc.NewStream(ctx, &_Resource_serviceDesc.Streams[2], "/resource.Resource/DownloadFile", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -152,6 +187,7 @@ func (c *resourceClient) DeleteSpaces(ctx context.Context, in *request.DeleteWor
 // All implementations must embed UnimplementedResourceServer
 // for forward compatibility
 type ResourceServer interface {
+	ReUploadFile(Resource_ReUploadFileServer) error
 	UploadFile(Resource_UploadFileServer) error
 	DownloadFile(*request.DownloadFile, Resource_DownloadFileServer) error
 	DescribeFile(context.Context, *request.DescribeFile) (*model.Resource, error)
@@ -166,6 +202,9 @@ type ResourceServer interface {
 type UnimplementedResourceServer struct {
 }
 
+func (UnimplementedResourceServer) ReUploadFile(Resource_ReUploadFileServer) error {
+	return status.Errorf(codes.Unimplemented, "method ReUploadFile not implemented")
+}
 func (UnimplementedResourceServer) UploadFile(Resource_UploadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method UploadFile not implemented")
 }
@@ -198,6 +237,32 @@ type UnsafeResourceServer interface {
 
 func RegisterResourceServer(s grpc.ServiceRegistrar, srv ResourceServer) {
 	s.RegisterService(&_Resource_serviceDesc, srv)
+}
+
+func _Resource_ReUploadFile_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(ResourceServer).ReUploadFile(&resourceReUploadFileServer{stream})
+}
+
+type Resource_ReUploadFileServer interface {
+	SendAndClose(*model.EmptyStruct) error
+	Recv() (*ReUploadFileRequest, error)
+	grpc.ServerStream
+}
+
+type resourceReUploadFileServer struct {
+	grpc.ServerStream
+}
+
+func (x *resourceReUploadFileServer) SendAndClose(m *model.EmptyStruct) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *resourceReUploadFileServer) Recv() (*ReUploadFileRequest, error) {
+	m := new(ReUploadFileRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
 }
 
 func _Resource_UploadFile_Handler(srv interface{}, stream grpc.ServerStream) error {
@@ -363,6 +428,11 @@ var _Resource_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "ReUploadFile",
+			Handler:       _Resource_ReUploadFile_Handler,
+			ClientStreams: true,
+		},
 		{
 			StreamName:    "UploadFile",
 			Handler:       _Resource_UploadFile_Handler,
