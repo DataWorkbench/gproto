@@ -28,6 +28,7 @@ type ResourceClient interface {
 	UpdateResource(ctx context.Context, in *request.UpdateResource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteResources(ctx context.Context, in *request.DeleteResources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteSpaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	SelectResourceByCondition(ctx context.Context, in *request.ResourceConditions, opts ...grpc.CallOption) (*response.ListResources, error)
 }
 
 type resourceClient struct {
@@ -183,6 +184,15 @@ func (c *resourceClient) DeleteSpaces(ctx context.Context, in *request.DeleteWor
 	return out, nil
 }
 
+func (c *resourceClient) SelectResourceByCondition(ctx context.Context, in *request.ResourceConditions, opts ...grpc.CallOption) (*response.ListResources, error) {
+	out := new(response.ListResources)
+	err := c.cc.Invoke(ctx, "/resource.Resource/SelectResourceByCondition", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ResourceServer is the server API for Resource service.
 // All implementations must embed UnimplementedResourceServer
 // for forward compatibility
@@ -195,6 +205,7 @@ type ResourceServer interface {
 	UpdateResource(context.Context, *request.UpdateResource) (*model.EmptyStruct, error)
 	DeleteResources(context.Context, *request.DeleteResources) (*model.EmptyStruct, error)
 	DeleteSpaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
+	SelectResourceByCondition(context.Context, *request.ResourceConditions) (*response.ListResources, error)
 	mustEmbedUnimplementedResourceServer()
 }
 
@@ -225,6 +236,9 @@ func (UnimplementedResourceServer) DeleteResources(context.Context, *request.Del
 }
 func (UnimplementedResourceServer) DeleteSpaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteSpaces not implemented")
+}
+func (UnimplementedResourceServer) SelectResourceByCondition(context.Context, *request.ResourceConditions) (*response.ListResources, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SelectResourceByCondition not implemented")
 }
 func (UnimplementedResourceServer) mustEmbedUnimplementedResourceServer() {}
 
@@ -402,6 +416,24 @@ func _Resource_DeleteSpaces_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Resource_SelectResourceByCondition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ResourceConditions)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ResourceServer).SelectResourceByCondition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/resource.Resource/SelectResourceByCondition",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ResourceServer).SelectResourceByCondition(ctx, req.(*request.ResourceConditions))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Resource_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "resource.Resource",
 	HandlerType: (*ResourceServer)(nil),
@@ -425,6 +457,10 @@ var _Resource_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteSpaces",
 			Handler:    _Resource_DeleteSpaces_Handler,
+		},
+		{
+			MethodName: "SelectResourceByCondition",
+			Handler:    _Resource_SelectResourceByCondition_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
