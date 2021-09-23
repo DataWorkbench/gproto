@@ -200,23 +200,11 @@ func (this *SourceKind) Validate() error {
 	return nil
 }
 func (this *SourceKind_Kind) Validate() error {
-	if !(len(this.Name) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	if !(len(this.Name) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
 	}
 	if !(len(this.Name) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
-	}
-	if !(len(this.Image) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Image", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Image))
-	}
-	if !(len(this.Image) < 10485761) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Image", fmt.Errorf(`value '%v' must have a length smaller than '10485761'`, this.Image))
-	}
-	if !(len(this.Desc) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Desc))
-	}
-	if !(len(this.Desc) < 513) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '513'`, this.Desc))
 	}
 	return nil
 }
