@@ -832,6 +832,12 @@ func (this *UpdateResource) Validate() error {
 	if !(len(this.ResourceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
 	}
+	if !(this.ResourceType > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ResourceType))
+	}
+	if !(this.ResourceType < 3) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '3'`, this.ResourceType))
+	}
 	return nil
 }
 func (this *DeleteResources) Validate() error {

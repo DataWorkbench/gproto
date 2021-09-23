@@ -35,6 +35,9 @@ message UploadFileRequest{
 
   // The resource Size. prevent data missing.
   int64 size = 5;
+
+  // The resource description. not required.
+  string description = 6;
 }
 
 // ReUploadFile used as a request parameters for RPC and HTTP(based on URL-Query).

@@ -1112,13 +1112,17 @@ message Resource{
 	// @inject_tag: json:"size" gorm:"size;"
 	int64  size = 6;
 
+	// Resource description
+	// @inject_tag: json:"description" gorm:"description;"
+	string description = 7;
+
 	// Timestamp of create time.
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-	int64 created = 7;
+	int64 created = 8;
 
 	// Timestamp of update time.
 	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 8;
+	int64 updated = 9;
 }
 
 // UDF Info
