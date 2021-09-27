@@ -100,8 +100,10 @@ message StreamFlow {
 	enum Type {
 		_ = 0;
 		SQL = 1;
-		JAR = 2;
-		Operator = 3;
+		Operator = 2;
+		CodeJava = 3;
+		CodePython = 4;
+		CodeScala = 5;
 	}
 	
 	// Workspace ID it belongs to.
@@ -138,19 +140,14 @@ message StreamFlow {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// StreamFlowNode represents a workflow environmental parameters info.
-// TODO: Defines the struct of node.
-//message StreamFlowNode {
-//}
-
 // HBaseConfig
 message HBaseConfig {
 	message Host {
 		// @inject_tag: json:"domain" default:"" binding:"email"
 		string domain = 1 [ (validator.field) = { } ];
 		
-		// @inject_tag: json:"ip_address" default:"" binding:"ipv4"
-		string ip_address = 2 [ (validator.field) = { } ];
+		// @inject_tag: json:"ip" default:"" binding:"ipv4"
+		string ip = 2 [ (validator.field) = { } ];
 	}
 	// The host lists of HBase.
 	// @inject_tag: json:"hosts" default:"" binding:"-"
@@ -174,10 +171,12 @@ message S3Config {
 
 // FlinkConfig
 message FlinkConfig {
-	message FlinkConf {
-		// @inject_tag: json:"name" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
-		string name = 1 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+	message Item {
+		// The key in key/value item, Is required, Min: 1, Max: 1024.
+		// @inject_tag: json:"key" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+		string key = 1 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
 		
+		// The value in key/value item, Is required, Min: 1, Max: 1024.
 		// @inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
 		string value = 2 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
 	}
@@ -192,7 +191,14 @@ message FlinkConfig {
 
 	// Config of flink
 	// @inject_tag: json:"conf" default:"" binding:"-"
-	repeated FlinkConf conf = 3  [ (validator.field) = { } ];
+	repeated Item items = 3  [ (validator.field) = { } ];
+}
+
+// FuncConfig represents the function node config for stream workflow.
+message FuncConfig {
+	repeated string udf = 1   [ (validator.field) = { } ];
+	repeated string udtf = 2  [ (validator.field) = { } ];
+	repeated string udttf = 3 [ (validator.field) = { } ];
 }
 
 // StreamFlowEnv represents a workflow environmental parameters info.
@@ -209,25 +215,29 @@ message StreamFlowEnv {
 	// @inject_tag: json:"engine_id" default:"" binding:"required_if=engine_type 2"
 	string engine_id = 2 [ (validator.field) = { } ];
 	
-	// Flink JobManager.  1CU = 1C + 2GB. Is required, Min 1, Max ?
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
 	// @inject_tag: json:"job_cu" default:"" binding:"gte=1"
-	uint32 job_cu = 3 [ (validator.field) = { int_gt: 0 } ];
+	uint32 job_cu = 3 [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
 	
-	// Flink TaskManager. 1CU = 1C + 2GB. Is required, Min 1, Max ?
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
 	// @inject_tag: json:"task_cu" default:"" binding:"gte=1"
-	uint32 task_cu = 4 [ (validator.field) = { int_gt: 0 } ];
+	uint32 task_cu = 4 [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
 	
 	// Flink task number for TaskManager. Is required, Min 1, Max ?
 	// @inject_tag: json:"task_num" default:"" binding:"gte=1"
 	uint32 task_num = 5 [ (validator.field) = { int_gt: 0 } ];
 	
-	// Config of HBase. Not required.
-	// @inject_tag: json:"hbase" default:"" binding:"-"
-	HBaseConfig hbase = 6 [ (validator.field) = { int_gt: 0 } ];
-	
 	// The config for flink. Is required
 	// @inject_tag: json:"flink" default:"" binding:"required"
-	FlinkConfig flink = 7 [ (validator.field) = { msg_exists: true } ];
+	FlinkConfig flink = 6 [ (validator.field) = { msg_exists: true } ];
+	
+	// Config of HBase. Not required.
+	// @inject_tag: json:"hbase" default:"" binding:"-"
+	HBaseConfig hbase = 7 [ (validator.field) = { } ];
+	
+	// The config for function. Not required
+	// @inject_tag: json:"function" default:"" binding:"-"
+	FuncConfig function = 8 [ (validator.field) = { } ];
 }
 
 // StreamFlowSchedule represents a workflow schedule info.
@@ -291,7 +301,7 @@ message StreamFlowProperty {
 	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
 	
 	// @inject_tag: json:"nodes" gorm:"column:nodes;type:json"
-	string nodes = 4 [ (validator.field) = { } ];
+	FlinkJobNodes nodes = 4 [ (validator.field) = { } ];
 	
 	// @inject_tag: json:"env" gorm:"column:env;type:json"
 	StreamFlowEnv env = 5 [ (validator.field) = { } ];
@@ -1625,6 +1635,7 @@ message FlinkDagNode {
 
 // FlinkJobNodes
 message FlinkJobNodes {
+	option (gosql.serialize) = { json: {} };
 	// this flink job nodes
     // @inject_tag: json:"jobnodes" default:""
 	repeated FlinkDagNode JobNodes = 1 [ (validator.field) = { } ];

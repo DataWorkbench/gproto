@@ -90,7 +90,7 @@ message DescribeStreamFlow {
 
 // GetStreamFlowNode used as reply parameters in RPC.
 message GetStreamFlowNode {
-  string nodes = 1;
+  model.FlinkJobNodes nodes = 1;
 }
 
 // GetStreamFlowEnv used as reply parameters in RPC.

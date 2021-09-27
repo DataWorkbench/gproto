@@ -117,21 +117,21 @@ func (this *FlinkConfig) Validate() error {
 			return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
 		}
 	}
-	for _, item := range this.Conf {
+	for _, item := range this.Items {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Conf", err)
+				return github_com_mwitkow_go_proto_validators.FieldError("Items", err)
 			}
 		}
 	}
 	return nil
 }
-func (this *FlinkConfig_FlinkConf) Validate() error {
-	if !(len(this.Name) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
+func (this *FlinkConfig_Item) Validate() error {
+	if !(len(this.Key) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Key))
 	}
-	if !(len(this.Name) < 1024) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Name))
+	if !(len(this.Key) < 1024) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Key))
 	}
 	if !(len(this.Value) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Value))
@@ -141,20 +141,24 @@ func (this *FlinkConfig_FlinkConf) Validate() error {
 	}
 	return nil
 }
+func (this *FuncConfig) Validate() error {
+	return nil
+}
 func (this *StreamFlowEnv) Validate() error {
 	if !(this.JobCu > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.JobCu))
 	}
+	if !(this.JobCu < 9) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be less than '9'`, this.JobCu))
+	}
 	if !(this.TaskCu > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskCu))
 	}
+	if !(this.TaskCu < 9) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be less than '9'`, this.TaskCu))
+	}
 	if !(this.TaskNum > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("TaskNum", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskNum))
-	}
-	if this.Hbase != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hbase); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
-		}
 	}
 	if nil == this.Flink {
 		return github_com_mwitkow_go_proto_validators.FieldError("Flink", fmt.Errorf("message must exist"))
@@ -162,6 +166,16 @@ func (this *StreamFlowEnv) Validate() error {
 	if this.Flink != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Flink); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Flink", err)
+		}
+	}
+	if this.Hbase != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hbase); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
+		}
+	}
+	if this.Function != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Function); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Function", err)
 		}
 	}
 	return nil
@@ -199,6 +213,11 @@ func (this *StreamFlowProperty) Validate() error {
 	}
 	if !(this.Version > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
+	}
+	if this.Nodes != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Nodes); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
+		}
 	}
 	if this.Env != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Env); err != nil {
