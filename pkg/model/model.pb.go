@@ -1252,7 +1252,7 @@ type StreamFlowEnv struct {
 	Flink *FlinkConfig `protobuf:"bytes,6,opt,name=flink,proto3" json:"flink" binding:"required"`
 	// Config of HBase. Not required.
 	Hbase *HBaseConfig `protobuf:"bytes,7,opt,name=hbase,proto3" json:"hbase" binding:"-"`
-	// The config for function. Not required.
+	// The config for function. Not required
 	Function *FuncConfig `protobuf:"bytes,8,opt,name=function,proto3" json:"function" binding:"-"`
 }
 
