@@ -853,18 +853,7 @@ func (this *DeleteResources) Validate() error {
 	}
 	return nil
 }
-func (this *ResourceConditions) Validate() error {
-	if !(len(this.SpaceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	if !(this.ResourceType > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ResourceType))
-	}
-	if !(this.ResourceType < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '3'`, this.ResourceType))
-	}
-	return nil
-}
+
 func (this *CreateUDF) Validate() error {
 	if !(len(this.UDFID) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UDFID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.UDFID))
