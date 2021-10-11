@@ -1071,6 +1071,12 @@ func (this *UDFInfo) Validate() error {
 	if !(len(this.UDFType) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UDFType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.UDFType))
 	}
+	if !(len(this.UDFLanguage) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UDFLanguage", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.UDFLanguage))
+	}
+	if !(len(this.UDFLanguage) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("UDFLanguage", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.UDFLanguage))
+	}
 	if !(len(this.Name) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
 	}
