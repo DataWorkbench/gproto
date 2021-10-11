@@ -156,12 +156,12 @@ func (t *SourceUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *MySQLTableUrl) Scan(val interface{}) error {
+func (t *MySQLTableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *MySQLTableUrl) Value() (driver.Value, error) {
+func (t *MySQLTableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -169,12 +169,12 @@ func (t *MySQLTableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *PostgreSQLTableUrl) Scan(val interface{}) error {
+func (t *PostgreSQLTableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *PostgreSQLTableUrl) Value() (driver.Value, error) {
+func (t *PostgreSQLTableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -182,12 +182,12 @@ func (t *PostgreSQLTableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *ClickHouseTableUrl) Scan(val interface{}) error {
+func (t *ClickHouseTableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *ClickHouseTableUrl) Value() (driver.Value, error) {
+func (t *ClickHouseTableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -195,12 +195,12 @@ func (t *ClickHouseTableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *HbaseTableUrl) Scan(val interface{}) error {
+func (t *HbaseTableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *HbaseTableUrl) Value() (driver.Value, error) {
+func (t *HbaseTableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -208,12 +208,12 @@ func (t *HbaseTableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *HDFSTableUrl) Scan(val interface{}) error {
+func (t *HDFSTableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *HDFSTableUrl) Value() (driver.Value, error) {
+func (t *HDFSTableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -221,12 +221,12 @@ func (t *HDFSTableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *S3TableUrl) Scan(val interface{}) error {
+func (t *S3TableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *S3TableUrl) Value() (driver.Value, error) {
+func (t *S3TableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -234,12 +234,12 @@ func (t *S3TableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *FtpTableUrl) Scan(val interface{}) error {
+func (t *FtpTableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *FtpTableUrl) Value() (driver.Value, error) {
+func (t *FtpTableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -247,12 +247,12 @@ func (t *FtpTableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *KafkaTableUrl) Scan(val interface{}) error {
+func (t *KafkaTableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *KafkaTableUrl) Value() (driver.Value, error) {
+func (t *KafkaTableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -260,12 +260,12 @@ func (t *KafkaTableUrl) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *TableUrl) Scan(val interface{}) error {
+func (t *TableDefine) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *TableUrl) Value() (driver.Value, error) {
+func (t *TableDefine) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}

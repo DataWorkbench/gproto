@@ -711,16 +711,16 @@ func (this *CreateTable) Validate() error {
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
 	}
-	if this.Url != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Url); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
+	if this.Define != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Define); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Define", err)
 		}
 	}
-	if !(len(this.Direction) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Direction", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Direction))
+	if !(len(this.TableKind) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.TableKind))
 	}
-	if !(len(this.Direction) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Direction", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Direction))
+	if !(len(this.TableKind) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.TableKind))
 	}
 	return nil
 }
@@ -737,16 +737,16 @@ func (this *UpdateTable) Validate() error {
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
 	}
-	if this.Url != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Url); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
+	if this.Define != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Define); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Define", err)
 		}
 	}
-	if !(len(this.Direction) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Direction", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Direction))
+	if !(len(this.TableKind) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.TableKind))
 	}
-	if !(len(this.Direction) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Direction", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Direction))
+	if !(len(this.TableKind) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.TableKind))
 	}
 	return nil
 }
@@ -792,8 +792,17 @@ func (this *ListTable) Validate() error {
 	if !(this.Offset > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
 	}
-	if !(len(this.SourceID) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SourceID))
+	if !(len(this.SpaceID) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceID", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceID))
+	}
+	if !(len(this.SourceID) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceID))
+	}
+	if !(len(this.TableKind) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.TableKind))
+	}
+	if !(len(this.TableKind) < 17) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.TableKind))
 	}
 	return nil
 }
@@ -853,7 +862,6 @@ func (this *DeleteResources) Validate() error {
 	}
 	return nil
 }
-
 func (this *CreateUDF) Validate() error {
 	if !(len(this.UDFID) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UDFID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.UDFID))

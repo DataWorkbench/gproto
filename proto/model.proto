@@ -664,11 +664,11 @@ message TableInfo {
 	// @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
     string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
 
-	// Url, this source connection info.
-	// @inject_tag: json:"url" gorm:"column:url;"  binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-    TableUrl Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
+	// Define this table info.
+	// @inject_tag: json:"define" gorm:"column:define;"  binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+    TableDefine Define = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
 
-	// Create Time, this Source create time.
+	// Create Time, this create time.
 	// @inject_tag: json:"createtime" gorm:"column:createtime;"
     int64 CreateTime = 7   [ (validator.field) = { length_gt: 0 } ];
 
@@ -676,9 +676,9 @@ message TableInfo {
 	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
     int64 UpdateTime = 8  [ (validator.field) = { length_lt: 0 } ];
 
-	// Direction, one of source/destination/dimension
-	// @inject_tag: json:"direction" gorm:"column:direction;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
-    string Direction = 9 [ (validator.field) = { length_lt: 17 } ];
+	// Tablekind, one of source/destination/dimension
+	// @inject_tag: json:"tablekind" gorm:"column:tablekind;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
+    string TableKind = 9 [ (validator.field) = { length_lt: 17 } ];
 }
 
 // SqlColumnType used as request parameters for RPC and HTTP(based on Body)
@@ -692,7 +692,7 @@ message SqlColumnType {
 	string Type = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// The column comment
-	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"1" maxLength:"256"
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string Comment = 3 [ (validator.field) = { length_gt: -1, length_lt: 257 } ];
 
 	// if it is primary key column, one of true/false
@@ -702,6 +702,21 @@ message SqlColumnType {
 	// the column type length
 	// @inject_tag: json:"length" default:"" binding:"gte=0,lte=10" required:"false" minLength:"0" maxLength:"10"
 	string Length = 5 [ (validator.field) = { length_gt: -1, length_lt: 11 } ];
+}
+
+// SqlTimeColumnType used as request parameters for RPC and HTTP(based on Body)
+message SqlTimeColumnType {
+	// The column name
+	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string Column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// The column type. oneof proctime/watermark
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
+	string Type = 2 [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+
+	// The column expression
+	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"false" minLength:"0" maxLength:"1024"
+	string Expression = 3 [ (validator.field) = { length_gt: -1, length_lt: 1025 } ];
 }
 
 // ConnectorOption used as request parameters for RPC and HTTP(based on Body)
@@ -774,8 +789,8 @@ message ClickHouseUrl {
 	string User = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// The password
-	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Password = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	// @inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string Password = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
 
 	// The host
 	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
@@ -803,17 +818,19 @@ message KafkaUrl {
 message S3Url {
 	option (gosql.serialize) = { json: {} };
 	
-	// The s3 AccessKey
-	// @inject_tag: json:"accesskey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string AccessKey = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	/*
+	////////--// The s3 AccessKey
+	////////--// @inject_tag: json:"accesskey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	////////--string AccessKey = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
 
-	// The s3 SecretKey
-	// @inject_tag: json:"secretkey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string SecretKey = 2 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	////////--// The s3 SecretKey
+	////////--// @inject_tag: json:"secretkey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	////////--string SecretKey = 2 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
 
-	// The s3 EndPoint
-	// @inject_tag: json:"endpoint" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string EndPoint = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	////////--// The s3 EndPoint
+	////////--// @inject_tag: json:"endpoint" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	////////--string EndPoint = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	*/
 }
 
 // HbaseUrl used as request parameters for RPC and HTTP(based on Body)
@@ -901,8 +918,8 @@ message SourceUrl {
 	HDFSUrl HDFS = 8;
 }
 
-// MySQLTableUrl used as request parameters for RPC and HTTP(based on Body)
-message MySQLTableUrl {
+// MySQLTableDefine used as request parameters for RPC and HTTP(based on Body)
+message MySQLTableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -916,10 +933,14 @@ message MySQLTableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
 }
 
-// PostgreSQLTableUrl used as request parameters for RPC and HTTP(based on Body)
-message PostgreSQLTableUrl {
+// PostgreSQLTableDefine used as request parameters for RPC and HTTP(based on Body)
+message PostgreSQLTableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -933,10 +954,14 @@ message PostgreSQLTableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
 }
 
-// ClickHouseTableUrl used as request parameters for RPC and HTTP(based on Body)
-message ClickHouseTableUrl {
+// ClickHouseTableDefine used as request parameters for RPC and HTTP(based on Body)
+message ClickHouseTableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -950,10 +975,14 @@ message ClickHouseTableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
 }
 
-// HbaseTableUrl used as request parameters for RPC and HTTP(based on Body)
-message HbaseTableUrl {
+// HbaseTableDefine used as request parameters for RPC and HTTP(based on Body)
+message HbaseTableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -967,11 +996,15 @@ message HbaseTableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
 }
 
 
-// HDFSTableUrl used as request parameters for RPC and HTTP(based on Body)
-message HDFSTableUrl {
+// HDFSTableDefine used as request parameters for RPC and HTTP(based on Body)
+message HDFSTableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -989,10 +1022,14 @@ message HDFSTableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
 }
 
-// S3TableUrl used as request parameters for RPC and HTTP(based on Body)
-message S3TableUrl {
+// S3TableDefine used as request parameters for RPC and HTTP(based on Body)
+message S3TableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -1010,10 +1047,14 @@ message S3TableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
 }
 
-// FtpTableUrl used as request parameters for RPC and HTTP(based on Body)
-message FtpTableUrl {
+// FtpTableDefine used as request parameters for RPC and HTTP(based on Body)
+message FtpTableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -1031,10 +1072,14 @@ message FtpTableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
 }
 
-// KafkaTableUrl used as request parameters for RPC and HTTP(based on Body)
-message KafkaTableUrl {
+// KafkaTableDefine used as request parameters for RPC and HTTP(based on Body)
+message KafkaTableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// columns info.
@@ -1052,42 +1097,46 @@ message KafkaTableUrl {
 	// connection config values.
 	// @inject_tag: json:"connectoroptions"
 	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
+
+	// timecolumns info.
+	// @inject_tag: json:"timecolumn"
+	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
 }
 
-message TableUrl {
+message TableDefine {
 	option (gosql.serialize) = { json: {} };
 	
 	// MySQL Table Info.
 	// @inject_tag: json:"mysql"
-	MySQLTableUrl MySQL = 1;
+	MySQLTableDefine MySQL = 1;
 
 	// PostgreSQL Table Info.
 	// @inject_tag: json:"postgresql"
-	PostgreSQLTableUrl PostgreSQL = 2;
+	PostgreSQLTableDefine PostgreSQL = 2;
 
 	// ClickHouse Table Info.
 	// @inject_tag: json:"clickhouse"
-	ClickHouseTableUrl ClickHouse = 3;
+	ClickHouseTableDefine ClickHouse = 3;
 
 	// Hbase Table Info.
 	// @inject_tag: json:"hbase"
-	HbaseTableUrl Hbase = 4;
+	HbaseTableDefine Hbase = 4;
 
 	// Kafka Table Info.
 	// @inject_tag: json:"kafka"
-	KafkaTableUrl Kafka = 5;
+	KafkaTableDefine Kafka = 5;
 
 	// S3 Table Info.
 	// @inject_tag: json:"s3"
-	S3TableUrl S3 = 6;
+	S3TableDefine S3 = 6;
 
 	// Ftp Table Info.
 	// @inject_tag: json:"ftp"
-	FtpTableUrl Ftp = 7;
+	FtpTableDefine Ftp = 7;
 
 	// HDFS Table Info.
 	// @inject_tag: json:"hdfs"
-	HDFSTableUrl HDFS = 8;
+	HDFSTableDefine HDFS = 8;
 }
 
 message Resource{
@@ -1267,7 +1316,7 @@ message UnionNodeProperty {
 
 // GroupByNodeProperty
 message GroupByNodeProperty {
-    // Groupby column
+    // Groupby column or expression
     // @inject_tag: json:"groupby" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
     repeated string Groupby = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
 }
@@ -1288,10 +1337,6 @@ message ColumnAs {
 	// func
     // @inject_tag: json:"func" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
     string Func = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// WindowsName
-    // @inject_tag: json:"windowsname" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string WindowsName = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
 
 	// Type
     // @inject_tag: json:"type" default:"" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
@@ -1334,10 +1379,6 @@ message SourceNodeProperty {
 	// column define.
     // @inject_tag: json:"customcolumn" default:"" binding:"-"
 	repeated ColumnAs CustomColumn = 5 [(validator.field) = { } ];
-
-	// column define.
-    // @inject_tag: json:"timecolumn" default:"" binding:"-"
-	repeated ColumnAs TimeColumn = 6 [(validator.field) = { } ];
 }
 
 // DimensionNodeProperty
@@ -1363,8 +1404,8 @@ message DimensionNodeProperty {
 	repeated ColumnAs CustomColumn = 5 [(validator.field) = { } ];
 
 	// column define.
-    // @inject_tag: json:"timecolumn" default:"" binding:"-"
-	repeated ColumnAs TimeColumn = 6 [(validator.field) = { } ];
+    // @inject_tag: json:"timecolumn" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string TimeColumn = 6 [(validator.field) = { length_gt: 0, length_lt: 65} ];
 }
 
 // ExceptNodeProperty
@@ -1381,13 +1422,17 @@ message FilterNodeProperty {
     // @inject_tag: json:"where" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
     string Where = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
 
-	// in: if upstreamright is not null. this is columnname, if upstreamright is null is in express  eg in(1, 2, 3)
+	// in: columnname
     // @inject_tag: json:"in" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
     string In = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
 
-	// Exists: if upstreamright is not null. this is columnname, if upstreamright is null is in express  eg in(1, 2, 3)
+	// Exists: columnname
     // @inject_tag: json:"exists" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
     string Exists = 3 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+
+	// The column expression
+	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"false" minLength:"0" maxLength:"1024"
+	string Expression = 4 [ (validator.field) = { length_gt: -1, length_lt: 1025 } ];
 }
 
 // JarNodeProperty
@@ -1571,7 +1616,6 @@ message FlinkNodeProperty {
     // @inject_tag: json:"Filter" default:"" binding:"-"
 	FilterNodeProperty Filter = 18 [ (validator.field) = { } ];
 
-
 	// Jar
     // @inject_tag: json:"Jar" default:"" binding:"-"
 	JarNodeProperty Jar = 19 [ (validator.field) = { } ];
@@ -1583,10 +1627,6 @@ message FlinkNodeProperty {
 	// UDTTF
     // @inject_tag: json:"UDTTF" default:"" binding:"-"
 	UDTTFNodeProperty UDTTF = 21 [ (validator.field) = { } ];
-
-	// Window
-    // @inject_tag: json:"Window" default:"" binding:"-"
-	WindowNodeProperty Window = 22 [ (validator.field) = { } ];
 
 	// Join
     // @inject_tag: json:"Join" default:"" binding:"-"

@@ -194,11 +194,11 @@ message TableColumns {
   message Column {
     // column name
     // @inject_tag: json:"name" default:"" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Name = 1 [(validator.field) = {length_gt: 1, length_lt: 65}];
+    string Name = 1 [(validator.field) = {length_gt: 0, length_lt: 65}];
 
     // column type
     // @inject_tag: json:"type" gorm:"column:type;" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Type = 2 [(validator.field) = {length_gt:1,  length_lt: 65}];
+    string Type = 2 [(validator.field) = {length_gt:0,  length_lt: 65}];
 
     // type length
     // @inject_tag: json:"length" gorm:"column:length;" default:"" required:"true" binding:"gte=0,lte=64" minLength:"0" maxLength:"64"
