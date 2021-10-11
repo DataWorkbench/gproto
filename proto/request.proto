@@ -892,11 +892,11 @@ message ListTable {
     string SpaceID  = 6 [ (validator.field) = { length_eq: 20 } ];
 
     // get this source tables.
-    // @inject_tag: json:"sourceid"  default:"" required:"true" binding:"lte=20" minLength:"0" maxLength:"20"  swaggerignore:"true"
+    // @inject_tag: json:"sourceid" form:"sourceid"  default:"" required:"true" binding:"lte=20" minLength:"0" maxLength:"20"  swaggerignore:"true"
     string SourceID  = 7 [ (validator.field) = { length_lt: 21 } ];
 
     // Tablekind oneof source/destination/dimension, default is empty. list all.
-    // @inject_tag: json:"tablekind"  default:"source" binding:"gte=0,lte=16" required:"true" minLength:"0" maxLength:"16"
+    // @inject_tag: json:"tablekind"  default:"source" form:"tablekind" binding:"gte=0,lte=16" required:"true" minLength:"0" maxLength:"16"
     string TableKind  = 8 [ (validator.field) = { length_gt: -1,  length_lt: 17 } ];
 }
 

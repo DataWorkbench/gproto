@@ -3924,9 +3924,9 @@ type ListTable struct {
 	// get this spaceid tables.
 	SpaceID string `protobuf:"bytes,6,opt,name=SpaceID,proto3" json:"spaceid" required:"true" binding:"lte=20" minLength:"20" maxLength:"20" swaggerignore:"true"`
 	// get this source tables.
-	SourceID string `protobuf:"bytes,7,opt,name=SourceID,proto3" json:"sourceid" required:"true" binding:"lte=20" minLength:"0" maxLength:"20" swaggerignore:"true"`
+	SourceID string `protobuf:"bytes,7,opt,name=SourceID,proto3" json:"sourceid" form:"sourceid" required:"true" binding:"lte=20" minLength:"0" maxLength:"20" swaggerignore:"true"`
 	// Tablekind oneof source/destination/dimension, default is empty. list all.
-	TableKind string `protobuf:"bytes,8,opt,name=TableKind,proto3" json:"tablekind" default:"source" binding:"gte=0,lte=16" required:"true" minLength:"0" maxLength:"16"`
+	TableKind string `protobuf:"bytes,8,opt,name=TableKind,proto3" json:"tablekind" default:"source" form:"tablekind" binding:"gte=0,lte=16" required:"true" minLength:"0" maxLength:"16"`
 }
 
 func (x *ListTable) Reset() {
