@@ -640,6 +640,10 @@ message SourceInfo {
 	// Update Time, this Source last update time.
 	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
     int64 UpdateTime = 9  [ (validator.field) = { length_lt: 0 } ];
+
+	// connecte status oneof success/partialsuccess/failed
+	// @inject_tag: json:"connecte" gorm:"column:connecte;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string Connecte = 10  [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 }
 
 // Table Info
@@ -679,6 +683,14 @@ message TableInfo {
 	// Tablekind, one of source/destination/dimension
 	// @inject_tag: json:"tablekind" gorm:"column:tablekind;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
     string TableKind = 9 [ (validator.field) = { length_lt: 17 } ];
+
+	// SourceName
+	// @inject_tag: json:"sourcename" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string SourceName = 10 [ (validator.field) = { length_gt:0, length_lt: 65 } ];
+
+	// Connecte state
+	// @inject_tag: json:"connecte" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+    string Connecte = 11 [ (validator.field) = { length_gt:0, length_lt: 65 } ];
 }
 
 // SqlColumnType used as request parameters for RPC and HTTP(based on Body)
@@ -880,7 +892,7 @@ message HDFSUrl {
 	}
 
 	// @inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
-	repeated HDFSNodeUrl Nodes = 1 [ (validator.field) = {length_gt:0, length_lt:1025 } ];
+	HDFSNodeUrl Nodes = 1 [ (validator.field) = {length_gt:0, length_lt:1025 } ];
 }
 
 // SourceUrl used as request parameters for RPC and HTTP(based on Body)

@@ -176,12 +176,6 @@ func (this *DescribeSource) Validate() error {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
 		}
 	}
-	if !(len(this.Connected) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Connected", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Connected))
-	}
-	if !(len(this.Connected) < 17) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Connected", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.Connected))
-	}
 	return nil
 }
 func (this *ListSource) Validate() error {

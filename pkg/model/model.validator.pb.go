@@ -464,6 +464,12 @@ func (this *SourceInfo) Validate() error {
 	if !(len(this.State) < 17) {
 		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.State))
 	}
+	if !(len(this.Connecte) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Connecte))
+	}
+	if !(len(this.Connecte) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Connecte))
+	}
 	return nil
 }
 func (this *TableInfo) Validate() error {
@@ -492,6 +498,18 @@ func (this *TableInfo) Validate() error {
 	}
 	if !(len(this.TableKind) < 17) {
 		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.TableKind))
+	}
+	if !(len(this.SourceName) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceName", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SourceName))
+	}
+	if !(len(this.SourceName) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceName", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.SourceName))
+	}
+	if !(len(this.Connecte) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Connecte))
+	}
+	if !(len(this.Connecte) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Connecte))
 	}
 	return nil
 }
@@ -682,11 +700,9 @@ func (this *FtpUrl) Validate() error {
 	return nil
 }
 func (this *HDFSUrl) Validate() error {
-	for _, item := range this.Nodes {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
-			}
+	if this.Nodes != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Nodes); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
 		}
 	}
 	return nil

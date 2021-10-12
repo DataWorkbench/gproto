@@ -157,16 +157,12 @@ message DescribeSource {
   // this source info
   // @inject_tag: json:"info"
   model.SourceInfo info = 1 [(validator.field) = {}];
-
-  // Connected statue, one of successful/failed.
-  // @inject_tag: json:"connected"  binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
-  string Connected = 2 [(validator.field) = {length_gt: 0, length_lt:17}];
 }
 
 // ListSource used as reply parameters in RPC or response body in HTTP.
 message ListSource {
   // @inject_tag: json:"infos"
-  repeated DescribeSource infos = 1 [(validator.field) = {}];
+  repeated model.SourceInfo infos = 1 [(validator.field) = {}];
 
   // @inject_tag: json:"total"
   int64 total = 2 [(validator.field) = {}];
