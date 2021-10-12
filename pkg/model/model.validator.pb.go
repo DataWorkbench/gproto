@@ -670,11 +670,6 @@ func (this *HbaseUrl) Validate() error {
 	if !(len(this.Znode) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Znode", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Znode))
 	}
-	if this.Hosts != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hosts); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Hosts", err)
-		}
-	}
 	return nil
 }
 func (this *FtpUrl) Validate() error {
