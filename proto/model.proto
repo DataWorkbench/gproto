@@ -1199,7 +1199,7 @@ message UDFInfo {
     string UDFType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
 
 	// UDF language one of Scala/Java/Python
-	// @inject_tag: json:"udflanguage" gorm:"column:udftype;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+	// @inject_tag: json:"udflanguage" gorm:"column:udflanguage;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
     string UDFLanguage = 4  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
 
 	// Source Name, unique within a space.

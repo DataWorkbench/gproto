@@ -4551,7 +4551,7 @@ type UDFInfo struct {
 	// UDF Type one of UDF/UDTF/UDTTF
 	UDFType string `protobuf:"bytes,3,opt,name=UDFType,proto3" json:"udftype" gorm:"column:udftype;" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
 	// UDF language one of Scala/Java/Python
-	UDFLanguage string `protobuf:"bytes,4,opt,name=UDFLanguage,proto3" json:"udflanguage" gorm:"column:udftype;" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
+	UDFLanguage string `protobuf:"bytes,4,opt,name=UDFLanguage,proto3" json:"udflanguage" gorm:"column:udflanguage;" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"`
 	// Source Name, unique within a space.
 	Name string `protobuf:"bytes,5,opt,name=Name,proto3" json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
 	// Comment, describe this source.
