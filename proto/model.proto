@@ -7,41 +7,8 @@ package model;
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
 
-
-//
-// --------- Declares enum ---------
-//
-
-enum EngineType {
-	_EngineType = 0; // Is useless.
-	BuildIn = 1;
-	External = 2;
-}
-
-enum ScheduleConcurrencyPolicy {
-	_ScheduleConcurrencyPolicy = 0; // Is useless.
-	Allow = 1;
-	Forbid = 2;
-	Replace = 3;
-}
-
-enum ScheduleRetryPolicy {
-	_ScheduleRetryPolicy = 0; // Is useless.
-	None = 1;
-	Auto = 2;
-}
-
-// OpType declares the API operation type.
-enum OpType {
-	_OpType = 0; // Is useless.
-	Unknown = 1;
-	Write = 2; // Include Operation: create/update/delete.
-	Read = 3; // Include Operation: read.
-}
-
-//
-// --------- Declares message ---------
-//
+import "flink.proto";
+import "datasource.proto";
 
 // EmptyStruct represents no value with a message.
 message EmptyStruct {}
@@ -65,7 +32,6 @@ message Workspace {
 		Enabled = 1;
 		Disabled = 2;
 	}
-	
 	// Workspace ID, unique within a region.
 	// @inject_tag: json:"id" gorm:"column:id;primaryKey;"
 	string id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -98,12 +64,12 @@ message Workspace {
 // The stream workflow info
 message StreamFlow {
 	enum Type {
-		_ = 0;
-		SQL = 1;
-		Operator = 2;
-		CodeJava = 3;
-		CodePython = 4;
-		CodeScala = 5;
+		_ = 0; // is useless.
+		Operator = 1;
+		SQL = 2;
+		Jar = 3;
+		Python = 4;
+		Scala = 5;
 	}
 	
 	// Workspace ID it belongs to.
@@ -140,109 +106,80 @@ message StreamFlow {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// HBaseConfig
-message HBaseConfig {
-	message Host {
-		// @inject_tag: json:"domain" default:"" binding:"email"
-		string domain = 1 [ (validator.field) = { } ];
-		
-		// @inject_tag: json:"ip" default:"" binding:"ipv4"
-		string ip = 2 [ (validator.field) = { } ];
-	}
-	// The host lists of HBase.
-	// @inject_tag: json:"hosts" default:"" binding:"-"
-	repeated Host hosts = 1 [ (validator.field) = { } ];
-}
-
-// S3Config
-message S3Config {
-	// S3 endpoints, eg: "http://s3.gd2.qingstor.com".
-	// @inject_tag: json:"endpoint" default:"" binding:"url" minLength:"1" maxLength:"1024"
-	string endpoint = 1 [ (validator.field) = {length_gt: 0, length_lt: 1024} ];
-	
-	// User's access key.
-	// @inject_tag: json:"access_key" default:"" binding:"gte=1,lte=1024" minLength:"1" maxLength:"1024"
-	string access_key = 2 [ (validator.field) = {length_gt: 0, length_lt: 1024} ];
-	
-	// User's secret key.
-	// @inject_tag: json:"secret_key" default:"" binding:"gte=1,lte=1024" minLength:"1" maxLength:"1024"
-	string secret_key = 3 [ (validator.field) = {length_gt: 0, length_lt: 1024} ];
-}
-
-// FlinkConfig
-message FlinkConfig {
-	message Item {
-		// The key in key/value item, Is required, Min: 1, Max: 1024.
-		// @inject_tag: json:"key" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
-		string key = 1 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
-		
-		// The value in key/value item, Is required, Min: 1, Max: 1024.
-		// @inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
-		string value = 2 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
-	}
-
-	// Flink parallelism. Is required, Min 0, 0 is default setting.
-	// @inject_tag: json:"parallelism" default:"" binding:"gte=0,lte=10000" mininum:"0" maximum:"10000"
-	int32 parallelism = 1 [ (validator.field) = { int_gt: -1, int_lt: 10001 } ];
-	
-	// Config of s3. Not required.
-	// @inject_tag: json:"s3" default:"" binding:"-"
-	S3Config s3 = 2 [ (validator.field) = { length_gt: -1 } ];
-
-	// Config of flink
-	// @inject_tag: json:"conf" default:"" binding:"-"
-	repeated Item items = 3  [ (validator.field) = { } ];
-}
-
-// FuncConfig represents the function node config for stream workflow.
-message FuncConfig {
-	repeated string udf = 1   [ (validator.field) = { } ];
-	repeated string udtf = 2  [ (validator.field) = { } ];
-	repeated string udttf = 3 [ (validator.field) = { } ];
-}
-
-// StreamFlowEnv represents a workflow environmental parameters info.
+// StreamFlowNode represents a workflow node info.
 // Not use with gorm.
-message StreamFlowEnv {
+message StreamFlowNode {
+	option (gosql.serialize) = { json: {} };
+
+	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
+	// @inject_tag: json:"type"
+	StreamFlow.Type type = 1 [ (validator.field) = { } ];
+	
+	// The flink operator nodes. Is useless on present.
+	// @inject_tag: json:"operators" default:""
+	repeated flink.FlinkOperator operators = 2 [ (validator.field) = { } ];
+	
+	// @inject_tag: json:"sql" default:"" binding:"-"
+	flink.FlinkSQL sql = 3  [ (validator.field) = { } ];
+
+	// Jar
+	// @inject_tag: json:"jar" default:"" binding:"-"
+	flink.FlinkJar jar = 4 [ (validator.field) = { } ];
+	
+	// Scala
+	// @inject_tag: json:"scala" default:"" binding:"-"
+	flink.FlinkScala scala = 5  [ (validator.field) = { } ];
+	
+	// Python
+	// @inject_tag: json:"python" default:"" binding:"-"
+	flink.FlinkPython python = 6  [ (validator.field) = { } ];
+}
+
+// StreamFlowArgs represents a workflow running parameters.
+// Not use with gorm.
+message StreamFlowArgs {
 	option (gosql.serialize) = { json: {} };
 	
-	// The engine type. 1 => "BuildIn" 2 => "External". Is Required.
-	// Notice: Only support 1 on present.
-	// @inject_tag: json:"engine_type" default:"" binding:"gte=1,lte=1"
-	EngineType engine_type = 1 [ (validator.field) = { int_gt: 0, int_lt: 2 } ];
+	// Function represents the function node config for stream workflow.
+	message Function {
+		// @inject_tag: json:"udf_ids" binding:"-"
+		repeated string udf_ids = 1   [ (validator.field) = { } ];
+		// @inject_tag: json:"udtf_ids" binding:"-"
+		repeated string udtf_ids = 2  [ (validator.field) = { } ];
+		// @inject_tag: json:"udttf_ids" binding:"-"
+		repeated string udttf_ids = 3 [ (validator.field) = { } ];
+	}
 	
-	// The engine id. Is required if engine_type == 2.
-	// @inject_tag: json:"engine_id" default:"" binding:"required_if=engine_type 2"
-	string engine_id = 2 [ (validator.field) = { } ];
+	// The flink cluster id. Is required.
+	// @inject_tag: json:"cluster_id" default:"" binding:"required_if=engine_type 2"
+	string cluster_id = 1 [ (validator.field) = { } ];
 	
-	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
-	// @inject_tag: json:"job_cu" default:"" binding:"gte=1"
-	uint32 job_cu = 3 [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
-	
-	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
-	// @inject_tag: json:"task_cu" default:"" binding:"gte=1"
-	uint32 task_cu = 4 [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
-	
-	// Flink task number for TaskManager. Is required, Min 1, Max ?
-	// @inject_tag: json:"task_num" default:"" binding:"gte=1"
-	uint32 task_num = 5 [ (validator.field) = { int_gt: 0 } ];
-	
-	// The config for flink. Is required
-	// @inject_tag: json:"flink" default:"" binding:"required"
-	FlinkConfig flink = 6 [ (validator.field) = { msg_exists: true } ];
-	
-	// Config of HBase. Not required.
-	// @inject_tag: json:"hbase" default:"" binding:"-"
-	HBaseConfig hbase = 7 [ (validator.field) = { } ];
+	// Flink parallelism. Is required, Min 0, Max 100. default is 0.
+	// @inject_tag: json:"parallelism" default:"" binding:"gte=0,lte=100" mininum:"0" maximum:"10000"
+	int32 parallelism = 2 [ (validator.field) = { int_gt: -1, int_lt: 101 } ];
 	
 	// The config for function. Not required
 	// @inject_tag: json:"function" default:"" binding:"-"
-	FuncConfig function = 8 [ (validator.field) = { } ];
+	Function function = 3 [ (validator.field) = { } ];
 }
 
 // StreamFlowSchedule represents a workflow schedule info.
+// Not use with gorm.
 message StreamFlowSchedule {
 	option (gosql.serialize) = { json: {} };
+	
+	enum ConcurrencyPolicy {
+		_ = 0; // Is useless.
+		Allow = 1;
+		Forbid = 2;
+		Replace = 3;
+	}
+	
+	enum RetryPolicy {
+		__ = 0; // Is useless.
+		None = 1;
+		Auto = 2;
+	}
 	
 	// Timestamp of start time of the validity period, unit in seconds.
 	// Not required, default 0, means no limit.
@@ -260,12 +197,12 @@ message StreamFlowSchedule {
 	// - replace: Force stop the old running instances and create new.
 	// Is required.
 	// @inject_tag: json:"concurrency_policy" default:"" binding:"gte=1,lte=3"
-	ScheduleConcurrencyPolicy concurrency_policy = 3 [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
+	ConcurrencyPolicy concurrency_policy = 3 [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
 	
 	// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
 	// Is required.
 	// @inject_tag: json:"retry_policy" default:"" binding:"gte=1,lte=2"
-	ScheduleRetryPolicy retry_policy = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+	RetryPolicy retry_policy = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 	
 	// FIXME: test binding.
 	// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
@@ -300,11 +237,11 @@ message StreamFlowProperty {
 	// @inject_tag: json:"version" gorm:"column:version;primarykey"
 	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
 	
-	// @inject_tag: json:"nodes" gorm:"column:nodes;type:json"
-	FlinkJobNodes nodes = 4 [ (validator.field) = { } ];
+	// @inject_tag: json:"node" gorm:"column:node;type:json"
+	StreamFlowNode node = 4 [ (validator.field) = { } ];
 	
-	// @inject_tag: json:"env" gorm:"column:env;type:json"
-	StreamFlowEnv env = 5 [ (validator.field) = { } ];
+	// @inject_tag: json:"args" gorm:"column:args;type:json"
+	StreamFlowArgs args = 5 [ (validator.field) = { } ];
 	
 	// @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
 	StreamFlowSchedule schedule = 6 [ (validator.field) = { } ];
@@ -368,6 +305,7 @@ message StreamFlowInst {
 		Succeed = 7;
 		Failed = 8;
 	}
+	
 	// Workspace ID it belongs to.
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -397,7 +335,15 @@ message StreamFlowInst {
 }
 
 // The workspace operation audit log record.
-message OpAudit {
+message Operation {
+	// Type declares the API operation type.
+	enum Type {
+		_ = 0; // Is useless.
+		Write = 1; // Include Operation: create/update/delete.
+		Read = 2; // Include Operation: read.
+	}
+	
+	// State declares the API operation result.
 	enum State {
 		__ = 0;
 		Success = 1;
@@ -411,13 +357,13 @@ message OpAudit {
 	// @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
 	string space_id = 2 [ (validator.field) = {} ];
 	
-	// -- The type of operation, 2 => "Write",  3 => "Read".
-	// @inject_tag: json:"op_type" gorm:"column:op_type;"
-	OpType op_type = 3 [ (validator.field) = { int_gt: 0 } ];
-	
 	//	-- The operation of user behavior.
 	// @inject_tag: json:"op_name" gorm:"column:op_name;"
-	string op_name = 4 [ (validator.field) = { length_gt: 0} ];
+	string op_name = 3 [ (validator.field) = { length_gt: 0} ];
+	
+	// -- The type of operation, 2 => "Write",  3 => "Read".
+	// @inject_tag: json:"op_type" gorm:"column:op_type;"
+	Type op_type = 4 [ (validator.field) = { int_gt: 0 } ];
 	
 	// -- The result of operation, 1 => "Success", 2 => "Failed".
 	// @inject_tag: json:"state" gorm:"column:state;"
@@ -435,7 +381,7 @@ message Role {
 		System = 1;
 		Custom = 2;
 	}
-
+	
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
@@ -478,6 +424,7 @@ message MonitorRule {
 		Enabled = 1;
 		Disabled = 2;
 	}
+	
 	// Workspace ID it belongs to.
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -604,556 +551,121 @@ message InstanceTaskExecStat {
 }
 
 // Source Info
-message SourceInfo {
+message DataSource {
+	enum Status {
+		_ = 0;
+		Enabled = 1;
+		Disabled = 2;
+	}
+	
+	enum Type {
+		__ = 0;
+		MySQL = 1;
+		PostgreSQL = 2;
+		Kafka = 3;
+		S3 = 4;
+		ClickHouse = 5;
+		HBase = 6;
+		Ftp = 7;
+		HDFS = 8;
+	}
+	
 	// Source ID, unique within a region.
-	// @inject_tag: json:"sourceid" gorm:"column:sourceid;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
-    string SourceID  = 1 [ (validator.field) = { length_lt: 21 } ];
-
+	// @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
+	string source_id  = 1 [ (validator.field) = { length_lt: 21 } ];
+	
 	// Space ID, workspace ID.
-	// @inject_tag: json:"spaceid" gorm:"column:spaceid;" binding:"len=20" minLength:"20" maxLength:"20"
-    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
-
+	// @inject_tag: json:"space_id" gorm:"column:space_id;" binding:"len=20" minLength:"20" maxLength:"20"
+	string space_id  = 2 [ (validator.field) = { length_eq: 20 } ];
+	
 	// Source Type, one of MySQL/PostgreSQL/Kafka/S3/ClickHouse/Hbase/Ftp/HDFS binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	// @inject_tag: json:"sourcetype" gorm:"column:sourcetype;"
-    string SourceType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
-
+	// @inject_tag: json:"source_type" gorm:"column:source_type;"
+	Type source_type = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+	
 	// Source Name, unique within a space.
 	// @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
+	string name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
 	// Comment, describe this source.
 	// @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-
+	string comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+	
 	// Url, this source connection info.
 	// @inject_tag: json:"url" gorm:"column:url;" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-    SourceUrl Url = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
-
+	datasource.DataSourceURL url = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
+	
 	// State, one of enable/disable.
-	// @inject_tag: json:"state" gorm:"column:state;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
-    string State = 7 [ (validator.field) = { length_lt: 17 } ];
-
+	// @inject_tag: json:"status" gorm:"column:status;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
+	Status status = 7 [ (validator.field) = { length_lt: 17 } ];
+	
 	// Create Time, this Source create time.
-	// @inject_tag: json:"createtime" gorm:"column:createtime;"
-    int64 CreateTime = 8   [ (validator.field) = { length_lt: 0 } ];
-
+	// @inject_tag: json:"created" gorm:"column:update_time;"
+	int64 created = 8   [ (validator.field) = { length_lt: 0 } ];
+	
 	// Update Time, this Source last update time.
-	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
-    int64 UpdateTime = 9  [ (validator.field) = { length_lt: 0 } ];
-
+	// @inject_tag: json:"updated" gorm:"column:update_time;"
+	int64 updated = 9  [ (validator.field) = { length_lt: 0 } ];
+	
 	// connecte status oneof success/partialsuccess/failed
 	// @inject_tag: json:"connecte" gorm:"column:connecte;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Connecte = 10  [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string connecte = 10  [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 }
 
 // Table Info
 message TableInfo {
+	enum Kind {
+		_ = 0;
+		Source = 1;
+		Destination = 2;
+		Dimension  = 3;
+	}
+	
 	// Table ID, unique within a region.
-	// @inject_tag: json:"tableid" gorm:"column:tableid;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
-    string TableID  = 1 [ (validator.field) = { length_lt: 21 } ];
+	// @inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
+	string table_id  = 1 [ (validator.field) = { length_lt: 21 } ];
 
 	// Source ID
-	// @inject_tag: json:"sourceid" gorm:"column:sourceid;" binding:"len=20" minLength:"20" maxLength:"20"
-    string SourceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: json:"source_id" gorm:"column:source_id;" binding:"len=20" minLength:"20" maxLength:"20"
+	string source_id  = 2 [ (validator.field) = { length_eq: 20 } ];
 
 	// Space ID, workspace ID.
-	// @inject_tag: json:"spaceid" gorm:"column:spaceid;" binding:"len=20" minLength:"20" maxLength:"20"
-    string SpaceID  = 3 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: json:"space_id" gorm:"column:spaceid;" binding:"len=20" minLength:"20" maxLength:"20"
+	string space_id  = 3 [ (validator.field) = { length_eq: 20 } ];
 
 	// Source Name, unique within a space.
 	// @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string name = 4   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// Comment, describe this source.
 	// @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-    string Comment = 5    [ (validator.field) = {  length_lt: 257 } ];
+	string comment = 5    [ (validator.field) = {  length_lt: 257 } ];
 
 	// Define this table info.
-	// @inject_tag: json:"define" gorm:"column:define;"  binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-    TableDefine Define = 6    [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
+	// @inject_tag: json:"schema" gorm:"column:define;"  binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+	flink.TableSchema schema = 6 [ (validator.field) = { length_gt: 0, length_lt: 8001 } ];
+	
+	// Timestamp of create time.
+	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+	int64 created = 7 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Timestamp of update time.
+	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 
-	// Create Time, this create time.
-	// @inject_tag: json:"createtime" gorm:"column:createtime;"
-    int64 CreateTime = 7   [ (validator.field) = { length_gt: 0 } ];
-
-	// Update Time, this Source last update time.
-	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
-    int64 UpdateTime = 8  [ (validator.field) = { length_lt: 0 } ];
-
-	// Tablekind, one of source/destination/dimension
-	// @inject_tag: json:"tablekind" gorm:"column:tablekind;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
-    string TableKind = 9 [ (validator.field) = { length_lt: 17 } ];
+	// TableKind, one of source/destination/dimension
+	// @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
+	Kind table_kind = 9 [ (validator.field) = { length_lt: 17 } ];
 
 	// SourceName
-	// @inject_tag: json:"sourcename" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string SourceName = 10 [ (validator.field) = { length_gt:0, length_lt: 65 } ];
+	// @inject_tag: json:"source_name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string source_name = 10 [ (validator.field) = { length_gt:0, length_lt: 65 } ];
 
 	// Connecte state
 	// @inject_tag: json:"connecte" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Connecte = 11 [ (validator.field) = { length_gt:0, length_lt: 65 } ];
+	string connecte = 11 [ (validator.field) = { length_gt:0, length_lt: 65 } ];
 }
 
-// SqlColumnType used as request parameters for RPC and HTTP(based on Body)
-message SqlColumnType {
-	// The column name
-	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The column type
-	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Type = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The column comment
-	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-	string Comment = 3 [ (validator.field) = { length_gt: -1, length_lt: 257 } ];
-
-	// if it is primary key column, one of true/false
-	// @inject_tag: json:"primarykey" default:"" binding:"gte=1,lte=8" required:"true" minLength:"1" maxLength:"8"
-	string PrimaryKey = 4 [ (validator.field) = { length_gt: 0, length_lt: 9 } ];
-
-	// the column type length
-	// @inject_tag: json:"length" default:"" binding:"gte=0,lte=10" required:"false" minLength:"0" maxLength:"10"
-	string Length = 5 [ (validator.field) = { length_gt: -1, length_lt: 11 } ];
-}
-
-// SqlTimeColumnType used as request parameters for RPC and HTTP(based on Body)
-message SqlTimeColumnType {
-	// The column name
-	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The column type. oneof proctime/watermark
-	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
-	string Type = 2 [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
-
-	// The column expression
-	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"false" minLength:"0" maxLength:"1024"
-	string Expression = 3 [ (validator.field) = { length_gt: -1, length_lt: 1025 } ];
-}
-
-// ConnectorOption used as request parameters for RPC and HTTP(based on Body)
-message ConnectorOption {
-	// The config name.
-	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=256" required:"true" minLength:"1" maxLength:"256"
-	string Name = 1 [ (validator.field) = { length_gt: 0, length_lt: 257 } ];
-
-	// The config value.
-	// @inject_tag: json:"value" default:"" binding:"gte=1,lte=4096" required:"true" minLength:"1" maxLength:"4096"
-	string Value = 2 [ (validator.field) = { length_gt: 0, length_lt: 4097 } ];
-}
-
-// MySQLUrl used as request parameters for RPC and HTTP(based on Body)
-message MySQLUrl {
-	option (gosql.serialize) = { json: {} };
-	
-	// The username
-	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string User = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The password
-	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Password = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The host
-	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The database
-	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Database = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The port
-	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 Port = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-}
-
-// PostgreSQLUrl used as request parameters for RPC and HTTP(based on Body)
-message PostgreSQLUrl {
-	option (gosql.serialize) = { json: {} };
-	
-	// The username
-	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string User = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The password
-	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Password = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The host
-	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The database
-	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Database = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The port
-	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 Port = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-}
-
-// ClickHouseUrl used as request parameters for RPC and HTTP(based on Body)
-message ClickHouseUrl {
-	option (gosql.serialize) = { json: {} };
-	
-	// The username
-	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string User = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The password
-	// @inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string Password = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
-
-	// The host
-	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The database
-	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Database = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The port
-	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 Port = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-}
-
-// KafkaUrl used as request parameters for RPC and HTTP(based on Body)
-message KafkaUrl {
-	option (gosql.serialize) = { json: {} };
-	
-	// The kafak brokers.
-	// @inject_tag: json:"kafkabrokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string KafkaBrokers = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-}
-
-// S3Url used as request parameters for RPC and HTTP(based on Body)
-message S3Url {
-	option (gosql.serialize) = { json: {} };
-	
-	/*
-	////////--// The s3 AccessKey
-	////////--// @inject_tag: json:"accesskey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	////////--string AccessKey = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	////////--// The s3 SecretKey
-	////////--// @inject_tag: json:"secretkey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	////////--string SecretKey = 2 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	////////--// The s3 EndPoint
-	////////--// @inject_tag: json:"endpoint" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	////////--string EndPoint = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-	*/
-}
-
-// HbaseUrl used as request parameters for RPC and HTTP(based on Body)
-message HbaseUrl {
-	option (gosql.serialize) = { json: {} };
-	
-	// The hbase Zookeeper
-	// @inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string Zookeeper = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	// The hbase Zookeeper Node
-	// @inject_tag: json:"znode" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string Znode = 2 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	/*
-	//////----// The hbase Hosts config
-	//////----// @inject_tag: json:"hosts" default:""
-	//////----//HBaseConfig Hosts = 3 [ (validator.field) = { } ];
-	*/
-}
-
-// FtpUrl used as request parameters for RPC and HTTP(based on Body)
-message FtpUrl {
-	option (gosql.serialize) = { json: {} };
-	
-	// The host
-	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Host = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// The port
-	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 Port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-}
-
-// FtpUrl used as request parameters for RPC and HTTP(based on Body)
-message HDFSUrl {
-	option (gosql.serialize) = { json: {} };
-
-	message HDFSNodeUrl {
-		// The host
-		// @inject_tag: json:"namenode" default:"" binding:"gte=1,lte=64" required:"true"
-		string NameNode = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-		// The port
-		// @inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
-		int32 Port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-	}
-
-	// @inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
-	HDFSNodeUrl Nodes = 1 [ (validator.field) = {length_gt:0, length_lt:1025 } ];
-}
-
-// SourceUrl used as request parameters for RPC and HTTP(based on Body)
-message SourceUrl {
-	option (gosql.serialize) = { json: {} };
-	
-	// MySQL Source Connection Info.
-	// @inject_tag: json:"mysql"
-	MySQLUrl MySQL = 1;
-
-	// PostgreSQL Source Connection Info.
-	// @inject_tag: json:"postgresql"
-	PostgreSQLUrl PostgreSQL = 2;
-
-	// ClickHouse Source Connection Info.
-	// @inject_tag: json:"clickhouse"
-	ClickHouseUrl ClickHouse = 3;
-
-	// Kafka Source Connection Info.
-	// @inject_tag: json:"kafka"
-	KafkaUrl Kafka = 4;
-
-	// S3 Source Connection Info.
-	// @inject_tag: json:"s3"
-	S3Url S3 = 5;
-
-	// Hbase Source Connection Info.
-	// @inject_tag: json:"hbase"
-	HbaseUrl Hbase = 6;
-
-	// Ftp Source Connection Info.
-	// @inject_tag: json:"ftp"
-	FtpUrl Ftp = 7;
-
-	// HDFS Source Connection Info.
-	// @inject_tag: json:"hdfs"
-	HDFSUrl HDFS = 8;
-}
-
-// MySQLTableDefine used as request parameters for RPC and HTTP(based on Body)
-message MySQLTableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the table name in origin upstream node.
-	// @inject_tag: json:"mappingname" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string MappingName = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
-}
-
-// PostgreSQLTableDefine used as request parameters for RPC and HTTP(based on Body)
-message PostgreSQLTableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the table name in origin upstream node.
-	// @inject_tag: json:"mappingname" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string MappingName = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
-}
-
-// ClickHouseTableDefine used as request parameters for RPC and HTTP(based on Body)
-message ClickHouseTableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the table name in origin upstream node.
-	// @inject_tag: json:"mappingname" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string MappingName = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
-}
-
-// HbaseTableDefine used as request parameters for RPC and HTTP(based on Body)
-message HbaseTableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the table name in origin upstream node.
-	// @inject_tag: json:"mappingname" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string MappingName = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 3 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 4 [ (validator.field) = { } ];
-}
-
-
-// HDFSTableDefine used as request parameters for RPC and HTTP(based on Body)
-message HDFSTableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
-	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// the data path
-	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string Path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
-}
-
-// S3TableDefine used as request parameters for RPC and HTTP(based on Body)
-message S3TableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
-	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// the data path
-	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string Path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
-}
-
-// FtpTableDefine used as request parameters for RPC and HTTP(based on Body)
-message FtpTableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
-	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// the data path
-	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string Path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
-}
-
-// KafkaTableDefine used as request parameters for RPC and HTTP(based on Body)
-message KafkaTableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// columns info.
-	// @inject_tag: json:"sqlcolumn"
-	repeated SqlColumnType SqlColumn = 1 [ (validator.field) = { } ];
-
-	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
-	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string Format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-
-	// the data path
-	// @inject_tag: json:"topic" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string Topic = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
-
-	// connection config values.
-	// @inject_tag: json:"connectoroptions"
-	repeated ConnectorOption ConnectorOptions = 4 [ (validator.field) = { } ];
-
-	// timecolumns info.
-	// @inject_tag: json:"timecolumn"
-	repeated SqlTimeColumnType TimeColumn = 5 [ (validator.field) = { } ];
-}
-
-message TableDefine {
-	option (gosql.serialize) = { json: {} };
-	
-	// MySQL Table Info.
-	// @inject_tag: json:"mysql"
-	MySQLTableDefine MySQL = 1;
-
-	// PostgreSQL Table Info.
-	// @inject_tag: json:"postgresql"
-	PostgreSQLTableDefine PostgreSQL = 2;
-
-	// ClickHouse Table Info.
-	// @inject_tag: json:"clickhouse"
-	ClickHouseTableDefine ClickHouse = 3;
-
-	// Hbase Table Info.
-	// @inject_tag: json:"hbase"
-	HbaseTableDefine Hbase = 4;
-
-	// Kafka Table Info.
-	// @inject_tag: json:"kafka"
-	KafkaTableDefine Kafka = 5;
-
-	// S3 Table Info.
-	// @inject_tag: json:"s3"
-	S3TableDefine S3 = 6;
-
-	// Ftp Table Info.
-	// @inject_tag: json:"ftp"
-	FtpTableDefine Ftp = 7;
-
-	// HDFS Table Info.
-	// @inject_tag: json:"hdfs"
-	HDFSTableDefine HDFS = 8;
-}
-
-message Resource{
+message Resource {
 	enum Type {
 		_ = 0;
 		Jar = 1;
@@ -1183,7 +695,7 @@ message Resource{
 
 	// Resource size, Byte.
 	// @inject_tag: json:"size" gorm:"size;"
-	int64  size = 6;
+	int64 size = 6;
 
 	// Resource description
 	// @inject_tag: json:"description" gorm:"description;"
@@ -1200,512 +712,167 @@ message Resource{
 
 // UDF Info
 message UDFInfo {
+	enum Type {
+		_ = 0;
+		UDF = 1;
+		UDTF = 2;
+		UDTTF = 3;
+	}
+	
+	enum Language {
+		__ = 0;
+		Scala = 1;
+		Java = 2;
+		Python = 3;
+	}
+	
 	// ID, unique within a region.
-	// @inject_tag: json:"udfid" gorm:"column:udfid;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
-    string UDFID  = 1 [ (validator.field) = { length_lt: 21 } ];
+	// @inject_tag: json:"udf_id" gorm:"column:udf_id;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
+	string udf_id  = 1 [ (validator.field) = { length_lt: 21 } ];
 
 	// Space ID, workspace ID.
-	// @inject_tag: json:"spaceid" gorm:"column:spaceid;" binding:"len=20" minLength:"20" maxLength:"20"
-    string SpaceID  = 2 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: json:"space_id" gorm:"column:space_id;" binding:"len=20" minLength:"20" maxLength:"20"
+	string space_id  = 2 [ (validator.field) = { length_eq: 20 } ];
 
 	// UDF Type one of UDF/UDTF/UDTTF
-	// @inject_tag: json:"udftype" gorm:"column:udftype;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-    string UDFType = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+	// @inject_tag: json:"udf_type" gorm:"column:udf_type;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+	Type udf_type = 3  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
 
 	// UDF language one of Scala/Java/Python
-	// @inject_tag: json:"udflanguage" gorm:"column:udflanguage;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-    string UDFLanguage = 4  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
+	// @inject_tag: json:"udf_language" gorm:"column:udf_language;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+	Language udf_language = 4  [ (validator.field) = { length_gt: 0, length_lt: 21 } ];
 
 	// Source Name, unique within a space.
 	// @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Name = 5   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string name = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// Comment, describe this source.
 	// @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
-    string Comment = 6    [ (validator.field) = {  length_lt: 257 } ];
-
-    // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
-    // @inject_tag: json:"define" gorm:"column:define;" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
-    string Define = 7 [ (validator.field) = {  length_lt: 20001 } ];
-
-    // usage for this udf
-    // @inject_tag: json:"usagesample" gorm:"column:usagesample;" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
-    string UsageSample = 8 [ (validator.field) = {  length_lt: 2001 } ];
-
-	// Create Time, this Source create time.
-	// @inject_tag: json:"createtime" gorm:"column:createtime;"
-    int64 CreateTime = 9   [ (validator.field) = { length_lt: 0 } ];
-
-	// Update Time, this Source last update time.
-	// @inject_tag: json:"updatetime" gorm:"column:updatetime;"
-    int64 UpdateTime = 10  [ (validator.field) = { length_lt: 0 } ];
-}
-
-// DestNodeProperty
-message DestNodeProperty {
-    // insert into these columns
-    // @inject_tag: json:"columns" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
-    repeated string Columns = 1 [ (validator.field) = { length_gt: 0 , length_lt: 20001} ];
-
-    // tableid
-    // @inject_tag: json:"tableid" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
-    string TableID = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-
-// ValuesNodeProperty
-message ValuesNodeProperty {
-	message ValuesType  {
-		// this is one row.
-		// @inject_tag: json:"values" default:"" binding:"gte=1" required:"false" minLength:"1"
-		repeated string Values = 1 [ (validator.field) = { length_gt: 0 } ];
-	}
-
-	// all rows.
-	// @inject_tag: json:"rows" default:"" binding:"gte=1" required:"true" minLength:"1"
-	repeated ValuesType Rows = 1 [ (validator.field) = { length_gt: 0 } ];
-}
-
-// OrderByNodeProperty
-message OrderByNodeProperty {
-	message OrderByColumn  {
-		// Column name
-    	// @inject_tag: json:"field" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    	string Field = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-		// order oneof 'asc' 'desc'
-    	// @inject_tag: json:"order" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    	string Order = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-	}
-
-	// OrderBy
-    // @inject_tag: json:"column" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1026"
-	repeated OrderByColumn Column = 1  [ (validator.field) = { length_gt: 0, length_lt: 1025} ];
-}
-
-// LimitNodeProperty
-message LimitNodeProperty {
-	// The limit
-	// @inject_tag: json:"limit" default:"" binding:"gte=1,lte=100" required:"true" mininum:"1" maximum:"100"
-	int32 Limit = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
-}
-
-// OffsetNodeProperty
-message OffsetNodeProperty {
-	// The limit
-	// @inject_tag: json:"offset" default:"" binding:"gte=0,lte=100" required:"true" mininum:"0" maximum:"100"
-	int32 Offset = 1 [ (validator.field) = { length_gt: -1, length_lt: 101 } ];
-}
-
-// FetchNodeProperty
-message FetchNodeProperty {
-	// The limit
-	// @inject_tag: json:"fetch" default:"" binding:"gte=1,lte=100" required:"true" mininum:"1" maximum:"100"
-	int32 Fetch = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
-}
-
-// SqlNodeProperty
-message SqlNodeProperty {
-    // sql code.
-    // @inject_tag: json:"sql" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
-    string Sql = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
-}
-
-// ScalaNodeProperty
-message ScalaNodeProperty {
-    // code.
-    // @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
-    string Code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
-}
-
-// PythonNodeProperty
-message PythonNodeProperty {
-    // code.
-    // @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
-    string Code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
-}
-
-// UnionNodeProperty
-message UnionNodeProperty {
-    // bool true or false
-    // @inject_tag: json:"all" default:""
-    bool All = 1 [(validator.field) = {}];
-}
-
-// GroupByNodeProperty
-message GroupByNodeProperty {
-    // Groupby column or expression
-    // @inject_tag: json:"groupby" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    repeated string Groupby = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-}
-
-// HavingNodeProperty
-message HavingNodeProperty {
-    // having code
-    // @inject_tag: json:"having" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string Having = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-}
-
-// ColumnAs
-message ColumnAs {
-	// Column name
-    // @inject_tag: json:"field" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string Field = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// func
-    // @inject_tag: json:"func" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string Func = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// Type
-    // @inject_tag: json:"type" default:"" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
-    string Type = 4 [ (validator.field) = { length_gt: -1 , length_lt: 257} ];
-
-	// Column AS
-    // @inject_tag: json:"as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string As = 5 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-}
-
-// ConstNodeProperty
-message ConstNodeProperty {
-	// table name
-    // @inject_tag: json:"table" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string Table = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// column define.
-    // @inject_tag: json:"column" default:"" binding:"-"
-	repeated ColumnAs Column = 2 [(validator.field) = { } ];
-}
-
-// SourceNodeProperty
-message SourceNodeProperty {
-    // tableid
-    // @inject_tag: json:"tableid" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
-    string TableID = 1 [ (validator.field) = { length_eq: 20 } ];
-
-	// table name
-    // @inject_tag: json:"tableas" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string TableAS = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// distinct or all, oneof ''(empty string) 'distinct'
-    // @inject_tag: json:"distinct" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string Distinct = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// column define.
-    // @inject_tag: json:"column" default:"" binding:"-"
-	repeated ColumnAs Column = 4 [(validator.field) = { } ];
-
-	// column define.
-    // @inject_tag: json:"customcolumn" default:"" binding:"-"
-	repeated ColumnAs CustomColumn = 5 [(validator.field) = { } ];
-}
-
-// DimensionNodeProperty
-message DimensionNodeProperty {
-    // tableid
-    // @inject_tag: json:"tableid" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
-    string TableID = 1 [ (validator.field) = { length_eq: 20 } ];
-
-	// table name
-    // @inject_tag: json:"tableas" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string TableAS = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// distinct or all, oneof 'all' 'distinct'
-    // @inject_tag: json:"distinct" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string Distinct = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// column define.
-    // @inject_tag: json:"column" default:"" binding:"-"
-	repeated ColumnAs Column = 4 [(validator.field) = { } ];
-
-	// column define.
-    // @inject_tag: json:"customcolumn" default:"" binding:"-"
-	repeated ColumnAs CustomColumn = 5 [(validator.field) = { } ];
-
-	// column define.
-    // @inject_tag: json:"timecolumn" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string TimeColumn = 6 [(validator.field) = { length_gt: 0, length_lt: 65} ];
-}
-
-// ExceptNodeProperty
-message ExceptNodeProperty {
-}
-
-// IntersectNodeProperty
-message IntersectNodeProperty {
-}
-
-// FilterNodeProperty
-message FilterNodeProperty {
-	// Where eg: a.id = 10
-    // @inject_tag: json:"where" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string Where = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// in: columnname
-    // @inject_tag: json:"in" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string In = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// Exists: columnname
-    // @inject_tag: json:"exists" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string Exists = 3 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// The column expression
-	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"false" minLength:"0" maxLength:"1024"
-	string Expression = 4 [ (validator.field) = { length_gt: -1, length_lt: 1025 } ];
-}
-
-// JarNodeProperty
-message JarNodeProperty {
-	// jarid in resource manager.
-    // @inject_tag: json:"jarid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string JarID = 1 [ (validator.field) = { length_eq: 20 } ];
-
-	// JarArgs
-    // @inject_tag: json:"jarargs" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string JarArgs = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// JarEntry
-    // @inject_tag: json:"jarentry" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string JarEntry = 3 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-}
-
-// JoinNodeProperty
-message JoinNodeProperty {
-	// Join oneof "JOIN" "LEFT JOIN" "RIGHT JOIN" "FULL OUTER JOIN" "CROSS JOIN" "INTERVAL JOIN"
-    // @inject_tag: json:"join" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Join = 1 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
-
-	// Expression
-    // @inject_tag: json:"expression" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string Expression = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// table name
-    // @inject_tag: json:"tableas" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string TableAS = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// table name
-    // @inject_tag: json:"tableasright" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string TableAsRight = 4 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// Args
-    // @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string Args = 5 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// column define.
-    // @inject_tag: json:"column" default:"" binding:"-"
-	repeated ColumnAs Column = 6 [(validator.field) = { } ];
-
-	// column define.
-    // @inject_tag: json:"generatecolumn" default:"" binding:"-"
-	repeated ColumnAs GenerateColumn = 7 [(validator.field) = { } ];
-}
-
-
-
-// UDTFNodeProperty
-message UDTFNodeProperty {
-	// udfid in udfmanager
-    // @inject_tag: json:"udfid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string UDFID = 1 [ (validator.field) = { length_eq: 20 } ];
-
-	// Args
-    // @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string Args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// table name
-    // @inject_tag: json:"tableas" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string TableAS = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// column define.
-    // @inject_tag: json:"column" default:"" binding:"-"
-	repeated ColumnAs Column = 4 [(validator.field) = { } ];
-
-	// selectcolumn define.
-    // @inject_tag: json:"selectcolumn" default:"" binding:"-"
-	repeated ColumnAs SelectColumn = 5 [(validator.field) = { } ];
-}
-
-// UDTTFNodeProperty
-message UDTTFNodeProperty {
-	// udfid in udfmanager
-    // @inject_tag: json:"udfid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string UDFID = 1 [ (validator.field) = { length_eq: 20 } ];
-
-	// Args
-    // @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    string Args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
-
-	// func name
-    // @inject_tag: json:"funcname" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string FuncName = 3 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
-
-	// column define.
-    // @inject_tag: json:"column" default:"" binding:"-"
-	repeated ColumnAs Column = 4 [(validator.field) = { } ];
-}
-
-// WindowNodeProperty
-message WindowNodeProperty {
-	message WindowNodeItem {
-		// name
-    	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    	string Name = 1 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
-
-		// Spec
-	    // @inject_tag: json:"spec" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-    	string Spec = 2 [ (validator.field) = { length_gt: 0 , length_lt: 1025} ];
-	}
-
-	// Window
-    // @inject_tag: json:"window" default:"" binding:"-"
-	repeated WindowNodeItem Window = 1 [(validator.field) = { } ];
-}
-
-// FlinkNodeProperty
-message FlinkNodeProperty {
-    // dest node
-    // @inject_tag: json:"Dest" default:"" binding:"-"
-	DestNodeProperty Dest = 1  [ (validator.field) = { } ];
-
-	// values node
-    // @inject_tag: json:"Values" default:"" binding:"-"
-	ValuesNodeProperty Values = 2  [ (validator.field) = { } ];
-
-	// OrderBy
-    // @inject_tag: json:"OrderBy" default:"" binding:"-"
-	OrderByNodeProperty OrderBy = 3  [ (validator.field) = { } ];
-
-	// Limit
-    // @inject_tag: json:"Limit" default:"" binding:"-"
-	LimitNodeProperty Limit = 4  [ (validator.field) = { } ];
-
-	// Offset
-    // @inject_tag: json:"Offset" default:"" binding:"-"
-	OffsetNodeProperty Offset = 5  [ (validator.field) = { } ];
-
-	// Fetch
-    // @inject_tag: json:"Fetch" default:"" binding:"-"
-	FetchNodeProperty Fetch = 6  [ (validator.field) = { } ];
-
-	// Sql
-    // @inject_tag: json:"Sql" default:"" binding:"-"
-	SqlNodeProperty Sql = 7  [ (validator.field) = { } ];
-
-	// Scala
-    // @inject_tag: json:"Scala" default:"" binding:"-"
-	ScalaNodeProperty Scala = 8  [ (validator.field) = { } ];
-
-	// Python
-    // @inject_tag: json:"Python" default:"" binding:"-"
-	PythonNodeProperty Python = 9  [ (validator.field) = { } ];
-
-	// Union
-    // @inject_tag: json:"Union" default:"" binding:"-"
-	UnionNodeProperty Union = 10  [ (validator.field) = { } ];
-
-	// GroupBy
-    // @inject_tag: json:"GroupBy" default:"" binding:"-"
-	GroupByNodeProperty GroupBy = 11 [ (validator.field) = { } ];
-
-	// Having
-    // @inject_tag: json:"Having" default:"" binding:"-"
-	HavingNodeProperty Having = 12 [ (validator.field) = { } ];
-
-	// Const
-    // @inject_tag: json:"Const" default:"" binding:"-"
-	ConstNodeProperty Const = 13 [ (validator.field) = { } ];
-
-	// Source
-    // @inject_tag: json:"Source" default:"" binding:"-"
-	SourceNodeProperty Source = 14 [ (validator.field) = { } ];
-
-	// Dimension
-    // @inject_tag: json:"Dimension" default:"" binding:"-"
-	DimensionNodeProperty Dimension = 15 [ (validator.field) = { } ];
-
-	// Except
-    // @inject_tag: json:"Except" default:"" binding:"-"
-	ExceptNodeProperty Except = 16 [ (validator.field) = { } ];
-
-	// Intersect
-    // @inject_tag: json:"Intersect" default:"" binding:"-"
-	IntersectNodeProperty Intersect = 17 [ (validator.field) = { } ];
-
-	// Filter
-    // @inject_tag: json:"Filter" default:"" binding:"-"
-	FilterNodeProperty Filter = 18 [ (validator.field) = { } ];
-
-	// Jar
-    // @inject_tag: json:"Jar" default:"" binding:"-"
-	JarNodeProperty Jar = 19 [ (validator.field) = { } ];
-
-	// UDTF
-    // @inject_tag: json:"UDTF" default:"" binding:"-"
-	UDTFNodeProperty UDTF = 20 [ (validator.field) = { } ];
-
-	// UDTTF
-    // @inject_tag: json:"UDTTF" default:"" binding:"-"
-	UDTTFNodeProperty UDTTF = 21 [ (validator.field) = { } ];
-
-	// Join
-    // @inject_tag: json:"Join" default:"" binding:"-"
-	JoinNodeProperty Join = 23 [ (validator.field) = { } ];
-}
-
-// FlinkDagNode
-message FlinkDagNode {
-    // NodeType one of "Values" "Const" "Source" "Dimension" "Dest" "OrderBy" "Limit" "Offset" "Fetch" "Filter" "Union" "Except" "Intersect" "GroupBy" "Having" "Window" "Join" "Sql" "UDTF" "UDTTF" "Jar" "Scala" "Python"
-    // @inject_tag: json:"nodetype" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-    string NodeType = 1 [ (validator.field) = { length_gt: 0 , length_lt: 21} ];
-
-	// nodeid is unique in this flow.
-    // @inject_tag: json:"nodeid" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-    string NodeID = 2 [ (validator.field) = { length_gt: 0 , length_lt: 21} ];
-
-	// this node name
-    // @inject_tag: json:"nodename" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-    string NodeName = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-
-	// the upstream node id
-    // @inject_tag: json:"upstream" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-    string UpStream = 4 [ (validator.field) = { length_gt: -1 , length_lt: 21} ];
-
-	// the right upstream node id
-    // @inject_tag: json:"upstreamright" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-    string UpStreamRight = 5 [ (validator.field) = { length_gt: -1, length_lt: 21} ];
-
-	// the downstream node id
-    // @inject_tag: json:"downstream" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-    string DownStream = 6 [ (validator.field) = { length_gt: -1, length_lt: 21} ];
-
-	// the PointX
-    // @inject_tag: json:"pointx" default:"" binding:"gte=1,lte=200" required:"true" minLength:"1" maxLength:"200"
-    string PointX = 7 [ (validator.field) = { length_gt: 0 , length_lt: 201} ];
-
-	// the PointY
-    // @inject_tag: json:"pointy" default:"" binding:"gte=1,lte=200" required:"true" minLength:"1" maxLength:"200"
-    string PointY = 8 [ (validator.field) = { length_gt: 0 , length_lt: 201} ];
-
-	// this nodetype property
-    // @inject_tag: json:"property" default:""
-	FlinkNodeProperty Property = 9 [ (validator.field) = { } ];
-}
-
-
-// FlinkJobNodes
-message FlinkJobNodes {
-	option (gosql.serialize) = { json: {} };
-	// this flink job nodes
-    // @inject_tag: json:"jobnodes" default:""
-	repeated FlinkDagNode JobNodes = 1 [ (validator.field) = { } ];
+	string comment = 6 [ (validator.field) = {  length_lt: 257 } ];
+
+	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+	// @inject_tag: json:"define" gorm:"column:define;" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
+	string define = 7 [ (validator.field) = {  length_lt: 20001 } ];
+
+	// usage for this udf
+	// @inject_tag: json:"usage_sample" gorm:"column:usage_sample;" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
+	string usage_sample = 8 [ (validator.field) = {  length_lt: 2001 } ];
+	
+	// Timestamp of create time.
+	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+	int64 created = 9 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Timestamp of update time.
+	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+	int64 updated = 10 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // JobResources
 message JobResources {
 	// jobid
-    // @inject_tag: json:"jobid" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string JobID = 1 [ (validator.field) = { length_eq: 20 } ];
+    // @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
 	// Jar
-    // @inject_tag: json:"jar" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
-    string Jar = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+	// @inject_tag: json:"jar" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
+	string jar = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 }
+
+// HBaseConfig
+// FIXME: review it. removed it?
+message HBaseConfig {
+	option (gosql.serialize) = { json: {} };
+	message Host {
+		// @inject_tag: json:"domain" default:"" binding:"email"
+		string domain = 1 [ (validator.field) = { } ];
+		
+		// @inject_tag: json:"ip" default:"" binding:"ipv4"
+		string ip = 2 [ (validator.field) = { } ];
+	}
+	// The host lists of HBase.
+	// @inject_tag: json:"hosts" default:"" binding:"-"
+	repeated Host hosts = 1 [ (validator.field) = { } ];
+}
+
+// FlinkConfig
+// FIXME: review it. removed it?
+message FlinkConfig {
+	option (gosql.serialize) = { json: {} };
+	
+	message Item {
+		// The key in key/value item, Is required, Min: 1, Max: 1024.
+		// @inject_tag: json:"key" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+		string key = 1 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+		
+		// The value in key/value item, Is required, Min: 1, Max: 1024.
+		// @inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+		string value = 2 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+	}
+	
+	// Config of flink
+	// @inject_tag: json:"conf" default:"" binding:"-"
+	repeated Item items = 3  [ (validator.field) = { } ];
+}
+
+// FlinkCluster is schema for flink (session) cluster.
+// FIXME: review it. removed it?
+message FlinkCluster {
+	enum Status {
+		_ = 0;
+		Running = 1;
+		Stopped = 2;
+	}
+	
+	enum LogLevel {
+		__ = 0;
+		TRACE = 1;
+		DEBUG = 2;
+		INFO = 3;
+		WARN = 4;
+		ERROR = 5;
+	}
+	
+	string id = 1 [ (validator.field) = {  } ];
+	
+	string name = 2 [ (validator.field) = { } ];
+	
+	Status statue = 3 [ (validator.field) = { } ];
+	
+	string version = 4 [ (validator.field) = { } ];
+	
+	// resource config.
+	
+	// Flink task number for TaskManager. Is required, Min 1, Max ?
+	// @inject_tag: json:"task_num" default:"" binding:"gte=1"
+	int32 task_num = 5 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
+	// @inject_tag: json:"job_cu" default:"" binding:"gte=1"
+	int32 job_cu = 6 [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
+	
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
+	// @inject_tag: json:"task_cu" default:"" binding:"gte=1"
+	int32 task_cu = 7 [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
+	
+	LogLevel root_log_level = 8 [ (validator.field) = { } ];
+	
+	// The config for flink. Is required
+	// @inject_tag: json:"flink" default:"" binding:"required"
+	FlinkConfig flink = 9 [ (validator.field) = { msg_exists: true } ];
+	
+	// Config of HBase. Not required.
+	// @inject_tag: json:"hbase" default:"" binding:"-"
+	HBaseConfig hbase = 10 [ (validator.field) = { } ];
+	
+	// Timestamp of create time.
+	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+	int64 created = 11 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Timestamp of update time.
+	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+	int64 updated = 12 [ (validator.field) = { int_gt: 0 } ];
+
+	// xxx.xxx.xxx.xxx:8080
+	string url = 13;
+}
+

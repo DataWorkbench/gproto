@@ -30,7 +30,7 @@ message CreateFlinkRequest {
     string namespace = 2 [ (validator.field) = { length_gt: 1, length_lt: 21 } ]; // (外部引擎表)
     bool waiting_ready = 3;
     uint64 waiting_timeout = 4; // default
-    model.StreamFlowEnv conf = 5;
+    model.StreamFlowArgs conf = 5;
 }
 
 message CreateFlinkResponse {

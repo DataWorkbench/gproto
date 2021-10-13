@@ -5,6 +5,7 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/response";
 package response;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+
 import "model.proto";
 
 // ListWorkspaces used as reply parameters in RPC or response body in HTTP.
@@ -22,7 +23,7 @@ message ListWorkspaces {
 // ListAudits used as reply parameters in RPC or response body in HTTP.
 message ListAudits {
   // @inject_tag: json:"infos"
-  repeated model.OpAudit infos = 1 [(validator.field) = {}];
+  repeated model.Operation infos = 1 [(validator.field) = {}];
 
   // @inject_tag: json:"has_more"
   bool has_more = 2 [(validator.field) = {}];
@@ -90,12 +91,12 @@ message DescribeStreamFlow {
 
 // GetStreamFlowNode used as reply parameters in RPC.
 message GetStreamFlowNode {
-  model.FlinkJobNodes nodes = 1;
+  model.StreamFlowNode node = 1;
 }
 
-// GetStreamFlowEnv used as reply parameters in RPC.
-message GetStreamFlowEnv {
-  model.StreamFlowEnv info = 1;
+// GetStreamFlowArgs used as reply parameters in RPC.
+message GetStreamFlowArgs {
+  model.StreamFlowArgs info = 1;
 }
 
 // GetStreamFlowSchedule used as reply parameters in RPC.
@@ -156,13 +157,13 @@ message ListStreamInsts {
 message DescribeSource {
   // this source info
   // @inject_tag: json:"info"
-  model.SourceInfo info = 1 [(validator.field) = {}];
+  model.DataSource info = 1 [(validator.field) = {}];
 }
 
 // ListSource used as reply parameters in RPC or response body in HTTP.
 message ListSource {
   // @inject_tag: json:"infos"
-  repeated model.SourceInfo infos = 1 [(validator.field) = {}];
+  repeated model.DataSource infos = 1 [(validator.field) = {}];
 
   // @inject_tag: json:"total"
   int64 total = 2 [(validator.field) = {}];
@@ -181,33 +182,34 @@ message SourceKind {
 
 // JsonStringList used as reply parameters in RPC or response body in HTTP.
 message JsonList {
-  // @inject_tag: json:"jsonlist" required:"true" minLength:"0" maxLength:"10485760"
-  repeated string JsonList = 1 [(validator.field) = {length_gt: -1, length_lt: 10485761}];
+  // @inject_tag: json:"json_list" required:"true" minLength:"0" maxLength:"10485760"
+  repeated string json_list = 1 [(validator.field) = {length_gt: -1, length_lt: 10485761}];
 }
 
 // TableColumns used as reply parameters in RPC or response body in HTTP.
+// FIXME: Move it to datasource.proto ?
 message TableColumns {
   message Column {
     // column name
     // @inject_tag: json:"name" default:"" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Name = 1 [(validator.field) = {length_gt: 0, length_lt: 65}];
+    string name = 1 [(validator.field) = {length_gt: 0, length_lt: 65}];
 
     // column type
     // @inject_tag: json:"type" gorm:"column:type;" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-    string Type = 2 [(validator.field) = {length_gt:0,  length_lt: 65}];
+    string type = 2 [(validator.field) = {length_gt:0,  length_lt: 65}];
 
     // type length
     // @inject_tag: json:"length" gorm:"column:length;" default:"" required:"true" binding:"gte=0,lte=64" minLength:"0" maxLength:"64"
-    string Length = 3 [(validator.field) = {length_gt:-1,  length_lt: 65}];
+    string length = 3 [(validator.field) = {length_gt:-1,  length_lt: 65}];
 
     // primary key, one of true/false
-    // @inject_tag: json:"isprkey" gorm:"column:isprkey;" default:"" binding:"gte=0,lte=8" required:"true" minLength:"0" maxLength:"8"
-    string IsPrkey = 4 [(validator.field) = {length_lt: 8}];
+    // @inject_tag: json:"is_primary_key" gorm:"column:isprkey;" default:"" binding:"gte=0,lte=8" required:"true" minLength:"0" maxLength:"8"
+    string is_primary_key = 4 [(validator.field) = {length_lt: 8}];
   }
 
   // columns
   // @inject_tag: json:"columns" minLength:"0" maxLength:"100000"
-  repeated Column Columns = 1 [(validator.field) = {length_lt: 100001}];
+  repeated Column columns = 1 [(validator.field) = {length_lt: 100001}];
 }
 
 // DescribeTable used as reply parameters in RPC or response body in HTTP.
@@ -327,11 +329,11 @@ message JobParser {
 
 	// Hbase
     // @inject_tag: json:"hbase" binding:"-"
-	model.HBaseConfig Hbase = 7 [ (validator.field) = { } ];
+//	model.HBaseConfig Hbase = 7 [ (validator.field) = { } ];
 
 	// S3
     // @inject_tag: json:"s3" binding:"-"
-	model.S3Config S3 = 8 [ (validator.field) = { } ];
+//	model.S3Config S3 = 8 [ (validator.field) = { } ];
 }
 
 // JobFree

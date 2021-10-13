@@ -1,0 +1,753 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/flinkpb";
+
+package flink;
+
+import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+// ----------------------------- Flink Operator ----------------------------------------- //
+
+// ColumnAs
+message ColumnAs {
+	// Column name
+	// @inject_tag: json:"field" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string field = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// func
+	// @inject_tag: json:"func" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string func = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// WindowsName
+	// @inject_tag: json:"windows_name" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string windows_name = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// Type
+	// @inject_tag: json:"type" default:"" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
+	string type = 4 [ (validator.field) = { length_gt: -1 , length_lt: 257} ];
+	
+	// Column AS
+	// @inject_tag: json:"as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string as = 5 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+}
+
+// DestOperatorProperty
+message DestOperator {
+	// insert into these columns
+	// @inject_tag: json:"columns" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
+	repeated string columns = 1 [ (validator.field) = { length_gt: 0 , length_lt: 20001} ];
+	
+	// tableid
+	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
+	string table_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// ValuesOperatorProperty
+message ValuesOperator {
+	message ValuesType  {
+		// this is one row.
+		// @inject_tag: json:"values" default:"" binding:"gte=1" required:"false" minLength:"1"
+		repeated string values = 1 [ (validator.field) = { length_gt: 0 } ];
+	}
+	
+	// all rows.
+	// @inject_tag: json:"rows" default:"" binding:"gte=1" required:"true" minLength:"1"
+	repeated ValuesType rows = 1 [ (validator.field) = { length_gt: 0 } ];
+}
+
+// OrderByOperatorProperty
+message OrderByOperator {
+	message OrderByColumn  {
+		// Column name
+		// @inject_tag: json:"field" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+		string field = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+		
+		// order oneof 'asc' 'desc'
+		// @inject_tag: json:"order" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+		string order = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	}
+	
+	// OrderBy
+	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1026"
+	repeated OrderByColumn column = 1  [ (validator.field) = { length_gt: 0, length_lt: 1025} ];
+}
+
+// LimitOperatorProperty
+message LimitOperator {
+	// The limit
+	// @inject_tag: json:"limit" default:"" binding:"gte=1,lte=100" required:"true" mininum:"1" maximum:"100"
+	int32 limit = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+// OffsetOperatorProperty
+message OffsetOperator {
+	// The limit
+	// @inject_tag: json:"offset" default:"" binding:"gte=0,lte=100" required:"true" mininum:"0" maximum:"100"
+	int32 offset = 1 [ (validator.field) = { length_gt: -1, length_lt: 101 } ];
+}
+
+// FetchOperatorProperty
+message FetchOperator {
+	// The limit
+	// @inject_tag: json:"fetch" default:"" binding:"gte=1,lte=100" required:"true" mininum:"1" maximum:"100"
+	int32 fetch = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+// UnionOperatorProperty
+message UnionOperator {
+	// bool true or false
+	// @inject_tag: json:"all" default:""
+	bool all = 1 [(validator.field) = {}];
+}
+
+// GroupByOperatorProperty
+message GroupByOperator {
+	// Groupby column
+	// @inject_tag: json:"group_by" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	repeated string group_by = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+}
+
+// HavingOperatorProperty
+message HavingOperator {
+	// having code
+	// @inject_tag: json:"having" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string having = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+}
+
+// ConstOperatorProperty
+message ConstOperator {
+	// table name
+	// @inject_tag: json:"table" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string table = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// column define.
+	// @inject_tag: json:"column" default:"" binding:"-"
+	repeated ColumnAs column = 2 [(validator.field) = { } ];
+}
+
+// SourceOperatorProperty
+message SourceOperator {
+	// tableid
+	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
+	string table_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// table name
+	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string table_as = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// distinct or all, oneof ''(empty string) 'distinct'
+	// @inject_tag: json:"distinct" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string distinct = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// column define.
+	// @inject_tag: json:"column" default:"" binding:"-"
+	repeated ColumnAs column = 4 [(validator.field) = { } ];
+	
+	// column define.
+	// @inject_tag: json:"custom_column" default:"" binding:"-"
+	repeated ColumnAs custom_column = 5 [(validator.field) = { } ];
+	
+	// column define.
+	// @inject_tag: json:"time_column" default:"" binding:"-"
+	repeated ColumnAs time_column = 6 [(validator.field) = { } ];
+}
+
+// DimensionOperatorProperty
+message DimensionOperator {
+	// tableid
+	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
+	string table_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// table name
+	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string table_as = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// distinct or all, oneof 'all' 'distinct'
+	// @inject_tag: json:"distinct" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string distinct = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// column define.
+	// @inject_tag: json:"column" default:"" binding:"-"
+	repeated ColumnAs column = 4 [(validator.field) = { } ];
+	
+	// column define.
+	// @inject_tag: json:"custom_column" default:"" binding:"-"
+	repeated ColumnAs custom_column = 5 [(validator.field) = { } ];
+	
+	// column define.
+	// @inject_tag: json:"time_column" default:"" binding:"-"
+	repeated ColumnAs time_column = 6 [(validator.field) = { } ];
+}
+
+// ExceptOperatorProperty
+message ExceptOperator {
+}
+
+// IntersectOperatorProperty
+message IntersectOperator {
+}
+
+// FilterOperatorProperty
+message FilterOperator {
+	// Where eg: a.id = 10
+	// @inject_tag: json:"where" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string where = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	
+	// in: if upstreamright is not null. this is columnname, if upstreamright is null is in express  eg in(1, 2, 3)
+	// @inject_tag: json:"in" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string in = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	
+	// Exists: if upstreamright is not null. this is columnname, if upstreamright is null is in express  eg in(1, 2, 3)
+	// @inject_tag: json:"exists" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string exists = 3 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+}
+
+// JoinOperatorProperty
+message JoinOperator {
+	// Join oneof "JOIN" "LEFT JOIN" "RIGHT JOIN" "FULL OUTER JOIN" "CROSS JOIN" "INTERVAL JOIN"
+	// @inject_tag: json:"join" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string join = 1 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
+	
+	// Expression
+	// @inject_tag: json:"expression" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string expression = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	
+	// table name
+	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string table_as = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// table name
+	// @inject_tag: json:"table_as_right" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string table_as_right = 4 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// Args
+	// @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string args = 5 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	
+	// column define.
+	// @inject_tag: json:"column" default:"" binding:"-"
+	repeated ColumnAs column = 6 [(validator.field) = { } ];
+	
+	// column define.
+	// @inject_tag: json:"generate_column" default:"" binding:"-"
+	repeated ColumnAs generate_column = 7 [(validator.field) = { } ];
+}
+
+// UDTFOperatorProperty
+message UDTFOperator {
+	// udfid in udfmanager
+	// @inject_tag: json:"udf_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string udf_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Args
+	// @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	
+	// table name
+	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string table_as = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// column define.
+	// @inject_tag: json:"column" default:"" binding:"-"
+	repeated ColumnAs column = 4 [(validator.field) = { } ];
+	
+	// selectcolumn define.
+	// @inject_tag: json:"select_column" default:"" binding:"-"
+	repeated ColumnAs select_column = 5 [(validator.field) = { } ];
+}
+
+// UDTTFOperatorProperty
+message UDTTFOperator {
+	// udfid in udfmanager
+	// @inject_tag: json:"udf_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string udf_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// Args
+	// @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	
+	// func name
+	// @inject_tag: json:"funcname" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string funcname = 3 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
+	
+	// column define.
+	// @inject_tag: json:"column" default:"" binding:"-"
+	repeated ColumnAs column = 4 [(validator.field) = { } ];
+}
+
+// WindowOperatorProperty
+message WindowOperator {
+	message WindowOperatorItem {
+		// name
+		// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+		string name = 1 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
+		
+		// Spec
+		// @inject_tag: json:"spec" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+		string spec = 2 [ (validator.field) = { length_gt: 0 , length_lt: 1025} ];
+	}
+	
+	// Window
+	// @inject_tag: json:"window" default:"" binding:"-"
+	repeated WindowOperatorItem window = 1 [(validator.field) = { } ];
+}
+
+// FlinkOperatorProperty
+message OperatorProperty {
+	// Source
+	// @inject_tag: json:"source" default:"" binding:"-"
+	SourceOperator source = 1 [ (validator.field) = { } ];
+	
+	// dest node
+	// @inject_tag: json:"dest" default:"" binding:"-"
+	DestOperator dest = 2  [ (validator.field) = { } ];
+	
+	// values node
+	// @inject_tag: json:"values" default:"" binding:"-"
+	ValuesOperator values = 3  [ (validator.field) = { } ];
+	
+	// OrderBy
+	// @inject_tag: json:"order_by" default:"" binding:"-"
+	OrderByOperator order_by = 4  [ (validator.field) = { } ];
+	
+	// Limit
+	// @inject_tag: json:"limit" default:"" binding:"-"
+	LimitOperator limit = 5  [ (validator.field) = { } ];
+	
+	// Offset
+	// @inject_tag: json:offset" default:"" binding:"-"
+	OffsetOperator offset = 6  [ (validator.field) = { } ];
+	
+	// Fetch
+	// @inject_tag: json:"fetch" default:"" binding:"-"
+	FetchOperator fetch = 7  [ (validator.field) = { } ];
+	
+	// Union
+	// @inject_tag: json:"union" default:"" binding:"-"
+	UnionOperator union = 8  [ (validator.field) = { } ];
+	
+	// GroupBy
+	// @inject_tag: json:"group_by" default:"" binding:"-"
+	GroupByOperator group_by = 9 [ (validator.field) = { } ];
+	
+	// Having
+	// @inject_tag: json:"having" default:"" binding:"-"
+	HavingOperator having = 10 [ (validator.field) = { } ];
+	
+	// Const
+	// @inject_tag: json:"const" default:"" binding:"-"
+	ConstOperator const = 11 [ (validator.field) = { } ];
+	
+	// Dimension
+	// @inject_tag: json:"dimension" default:"" binding:"-"
+	DimensionOperator dimension = 12 [ (validator.field) = { } ];
+	
+	// Except
+	// @inject_tag: json:"except" default:"" binding:"-"
+	ExceptOperator except = 13 [ (validator.field) = { } ];
+	
+	// Intersect
+	// @inject_tag: json:"intersect" default:"" binding:"-"
+	IntersectOperator intersect = 14 [ (validator.field) = { } ];
+	
+	// Filter
+	// @inject_tag: json:"filter" default:"" binding:"-"
+	FilterOperator filter = 15 [ (validator.field) = { } ];
+	
+	// UDTF
+	// @inject_tag: json:"udtf" default:"" binding:"-"
+	UDTFOperator udtf = 16 [ (validator.field) = { } ];
+	
+	// UDTTF
+	// @inject_tag: json:"udttf" default:"" binding:"-"
+	UDTTFOperator udttf = 17 [ (validator.field) = { } ];
+	
+	// Window
+	// @inject_tag: json:"window" default:"" binding:"-"
+	WindowOperator window = 18 [ (validator.field) = { } ];
+	
+	// Join
+	// @inject_tag: json:"join" default:"" binding:"-"
+	JoinOperator join = 19 [ (validator.field) = { } ];
+}
+
+// FlinkOperator
+message FlinkOperator {
+	enum Type {
+		_Type = 0;
+		Values = 1;
+		Const = 2;
+		Source = 3;
+		Dimension = 4;
+		Dest = 5;
+		OrderBy = 6;
+		Limit = 7;
+		Offset = 8;
+		Fetch = 9;
+		Filter = 10;
+		Union = 11;
+		Except = 12;
+		Intersect = 13;
+		GroupBy = 14;
+		Having = 15;
+		Window = 16;
+		Join = 17;
+		UDTF = 18;
+		UDTTF = 19;
+	}
+	// OperatorType one of "Values" "Const" "Source" "Dimension" "Dest" "OrderBy" "Limit" "Offset" "Fetch" "Filter" "Union" "Except" "Intersect" "GroupBy" "Having" "Window" "Join" "UDTF" "UDTTF"
+	// @inject_tag: json:"node_type" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+	Type type = 1 [ (validator.field) = { length_gt: 0 , length_lt: 21} ];
+	
+	// nodeid is unique in this flow.
+	// @inject_tag: json:"id" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+	string id = 2 [ (validator.field) = { length_gt: 0 , length_lt: 21} ];
+	
+	// this node name
+	// @inject_tag: json:"name" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string name = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	
+	// the upstream node id
+	// @inject_tag: json:"upstream" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
+	string upstream = 4 [ (validator.field) = { length_gt: -1 , length_lt: 21} ];
+	
+	// the right upstream node id
+	// @inject_tag: json:"upstream_right" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
+	string upstream_right = 5 [ (validator.field) = { length_gt: -1, length_lt: 21} ];
+	
+	// the downstream node id
+	// @inject_tag: json:"down_stream" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
+	string down_stream = 6 [ (validator.field) = { length_gt: -1, length_lt: 21} ];
+	
+	// the PointX
+	// @inject_tag: json:"point_x" default:"" binding:"gte=1,lte=200" required:"true" minLength:"1" maxLength:"200"
+	int32 point_x = 7 [ (validator.field) = { length_gt: 0 , length_lt: 201} ];
+	
+	// the PointY
+	// @inject_tag: json:"point_y" default:"" binding:"gte=1,lte=200" required:"true" minLength:"1" maxLength:"200"
+	int32 point_y = 8 [ (validator.field) = { length_gt: 0 , length_lt: 201} ];
+	
+	// this operator's property
+	// @inject_tag: json:"property" default:""
+	OperatorProperty property = 9 [ (validator.field) = { } ];
+}
+
+// FlinkJar
+message FlinkJar {
+	// jarid in resource manager. Is resource_id.
+	// @inject_tag: json:"resource_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string resource_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	
+	// JarArgs
+	// @inject_tag: json:"jar_args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string jar_args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	
+	// JarEntry
+	// @inject_tag: json:"jar_entry" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string jar_entry = 3 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+}
+
+// ScalaOperatorProperty
+message FlinkScala {
+	// code.
+	// @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
+	string code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
+}
+
+// PythonOperatorProperty
+message FlinkPython {
+	// code.
+	// @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
+	string code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
+}
+
+// FlinkSQL
+message FlinkSQL {
+	// sql code.
+	// @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
+	string code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
+}
+
+// ----------------------------- Flink Operator ----------------------------------------- //
+
+
+// ----------------------------- Flink Table ----------------------------------------- //
+
+// SqlColumnType used as request parameters for RPC and HTTP(based on Body)
+message SqlColumnType {
+	// The column name
+	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The column type
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string type = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The column comment
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+	string comment = 3 [ (validator.field) = { length_gt: -1, length_lt: 257 } ];
+	
+	// if it is primary key column, one of true/false
+	// @inject_tag: json:"primary_key" default:"" binding:"gte=1,lte=8" required:"true" minLength:"1" maxLength:"8"
+	string primary_key = 4 [ (validator.field) = { length_gt: 0, length_lt: 9 } ];
+	
+	// the column type length
+	// @inject_tag: json:"length" default:"" binding:"gte=0,lte=10" required:"false" minLength:"0" maxLength:"10"
+	string Length = 5 [ (validator.field) = { length_gt: -1, length_lt: 11 } ];
+}
+
+// SqlTimeColumnType used as request parameters for RPC and HTTP(based on Body)
+message SqlTimeColumnType {
+	// The column name
+	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The column type. oneof proctime/watermark
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
+	string type = 2 [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+	
+	// The column expression
+	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"false" minLength:"0" maxLength:"1024"
+	string expression = 3 [ (validator.field) = { length_gt: -1, length_lt: 1025 } ];
+}
+
+// ConnectorOption used as request parameters for RPC and HTTP(based on Body)
+message ConnectorOption {
+	// The config name.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=256" required:"true" minLength:"1" maxLength:"256"
+	string name = 1 [ (validator.field) = { length_gt: 0, length_lt: 257 } ];
+	
+	// The config value.
+	// @inject_tag: json:"value" default:"" binding:"gte=1,lte=4096" required:"true" minLength:"1" maxLength:"4096"
+	string value = 2 [ (validator.field) = { length_gt: 0, length_lt: 4097 } ];
+}
+
+// MySQLTableDefine used as request parameters for RPC and HTTP(based on Body)
+message MySQLTable {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the table name in origin upstream node.
+	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
+	string mapping_name = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 3 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 4 [ (validator.field) = { } ];
+}
+
+// PostgreSQLTableDefine used as request parameters for RPC and HTTP(based on Body)
+message PostgreSQLTable {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the table name in origin upstream node.
+	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
+	string mapping_name = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 3 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 4 [ (validator.field) = { } ];
+}
+
+// ClickHouseTableDefine used as request parameters for RPC and HTTP(based on Body)
+message ClickHouseTable {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the table name in origin upstream node.
+	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
+	string MappingName = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 3 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 4 [ (validator.field) = { } ];
+}
+
+// HbaseTableDefine used as request parameters for RPC and HTTP(based on Body)
+message HBaseTable {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the table name in origin upstream node.
+	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
+	string mapping_name = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 3 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 4 [ (validator.field) = { } ];
+}
+
+// HDFSTableDefine used as request parameters for RPC and HTTP(based on Body)
+message HDFSTable {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
+	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// the data path
+	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 4 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 5 [ (validator.field) = { } ];
+}
+
+// S3TableDefine used as request parameters for RPC and HTTP(based on Body)
+message S3Table {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
+	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// the data path
+	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 4 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 5 [ (validator.field) = { } ];
+}
+
+// FtpTableDefine used as request parameters for RPC and HTTP(based on Body)
+message FtpTable {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
+	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// the data path
+	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 4 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 5 [ (validator.field) = { } ];
+}
+
+// KafkaTableDefine used as request parameters for RPC and HTTP(based on Body)
+message KafkaTable {
+	option (gosql.serialize) = { json: {} };
+	
+	// columns info.
+	// @inject_tag: json:"sql_column"
+	repeated SqlColumnType sql_column = 1 [ (validator.field) = { } ];
+	
+	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
+	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// the data path
+	// @inject_tag: json:"topic" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string topic = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	
+	// connection config values.
+	// @inject_tag: json:"connector_options"
+	repeated ConnectorOption connector_options = 4 [ (validator.field) = { } ];
+	
+	// timecolumns info.
+	// @inject_tag: json:"time_column"
+	repeated SqlTimeColumnType time_column = 5 [ (validator.field) = { } ];
+}
+
+message TableSchema {
+	option (gosql.serialize) = { json: {} };
+	
+	// MySQL Table Info.
+	// @inject_tag: json:"mysql"
+	MySQLTable mysql = 1;
+	
+	// PostgreSQL Table Info.
+	// @inject_tag: json:"postgresql"
+	PostgreSQLTable postgresql = 2;
+	
+	// ClickHouse Table Info.
+	// @inject_tag: json:"clickhouse"
+	ClickHouseTable clickhouse = 3;
+	
+	// Hbase Table Info.
+	// @inject_tag: json:"hbase"
+	HBaseTable Hbase = 4;
+	
+	// Kafka Table Info.
+	// @inject_tag: json:"kafka"
+	KafkaTable kafka = 5;
+	
+	// S3 Table Info.
+	// @inject_tag: json:"s3"
+	S3Table s3 = 6;
+	
+	// Ftp Table Info.
+	// @inject_tag: json:"ftp"
+	FtpTable ftp = 7;
+	
+	// HDFS Table Info.
+	// @inject_tag: json:"hdfs"
+	HDFSTable hdfs = 8;
+}
+
+// ----------------------------- Flink Table ----------------------------------------- //
+
+
+// ----------------------------- Flink Cluster ----------------------------------------- //
+
+
+// ----------------------------- Flink Cluster ----------------------------------------- //
+

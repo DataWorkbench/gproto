@@ -48,11 +48,11 @@ service Workflow {
 	// GetStreamFlowNode to get the node properties of the specified stream workflow.
 	rpc GetStreamFlowNode(request.GetStreamFlowNode) returns (response.GetStreamFlowNode) {}
 	
-	// SetStreamFlowEnv to set the environmental parameters of the specified stream workflow.
-	rpc SetStreamFlowEnv(request.SetStreamFlowEnv) returns (model.EmptyStruct) {}
+	// SetStreamFlowArgs to set the run parameters of the specified stream workflow.
+	rpc SetStreamFlowArgs(request.SetStreamFlowArgs) returns (model.EmptyStruct) {}
 	
-	// GetStreamFlowEnv to get the environmental parameters of the specified stream workflow.
-	rpc GetStreamFlowEnv(request.GetStreamFlowEnv) returns (response.GetStreamFlowEnv) {}
+	// GetStreamFlowArgs to get the run parameters of the specified stream workflow.
+	rpc GetStreamFlowArgs(request.GetStreamFlowArgs) returns (response.GetStreamFlowArgs) {}
 	
 	// SetStreamFlowSchedule to set the schedule properties of the specified stream workflow.
 	rpc SetStreamFlowSchedule(request.SetStreamFlowSchedule) returns (model.EmptyStruct) {}
@@ -88,8 +88,8 @@ service Workflow {
 	// GetStreamVersionNode for get the node properties of the workflow of the specified version.
 	rpc GetStreamFlowVersionNode(request.GetStreamFlowNode) returns (response.GetStreamFlowNode) {}
 	
-	// GetStreamVersionEnv for get the environmental parameters of the workflow of the specified version.
-	rpc GetStreamFlowVersionEnv(request.GetStreamFlowEnv) returns (response.GetStreamFlowEnv) {}
+	// GetStreamFlowVersionArgs for get the run parameters of the workflow of the specified version.
+	rpc GetStreamFlowVersionArgs(request.GetStreamFlowArgs) returns (response.GetStreamFlowArgs) {}
 	
 	// GetStreamReleaseSchedule for get the schedule properties of the workflow of the specified version.
 	rpc GetStreamFlowVersionSchedule(request.GetStreamFlowSchedule) returns (response.GetStreamFlowSchedule) {}

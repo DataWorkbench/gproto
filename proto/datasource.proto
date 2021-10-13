@@ -1,0 +1,195 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/datasourcepb";
+
+package datasource;
+
+import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+// MySQLURL used as request parameters for RPC and HTTP(based on Body)
+message MySQLURL {
+	option (gosql.serialize) = { json: {} };
+	
+	// The username
+	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string user = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The password
+	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string password = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The host
+	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The port
+	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+	int32 port = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The database
+	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+}
+
+// PostgreSQLURL used as request parameters for RPC and HTTP(based on Body)
+message PostgreSQLURL {
+	option (gosql.serialize) = { json: {} };
+	
+	// The username
+	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string user = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The password
+	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string password = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The host
+	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The port
+	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+	int32 port = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The database
+	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+}
+
+// ClickHouseURL used as request parameters for RPC and HTTP(based on Body)
+message ClickHouseURL {
+	option (gosql.serialize) = { json: {} };
+	
+	// The username
+	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string user = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The password
+	// @inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
+	string password = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	
+	// The host
+	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The port
+	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+	int32 port = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The database
+	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+}
+
+// KafkaURL used as request parameters for RPC and HTTP(based on Body)
+message KafkaURL {
+	option (gosql.serialize) = { json: {} };
+	
+	// The kafak brokers.
+	// @inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string kafka_brokers = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+}
+
+// S3Url used as request parameters for RPC and HTTP(based on Body)
+message S3URL {
+	option (gosql.serialize) = { json: {} };
+	
+//	// The s3 AccessKey
+//	// @inject_tag: json:"accesskey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+//	string AccessKey = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+//
+//	// The s3 SecretKey
+//	// @inject_tag: json:"secretkey" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+//	string SecretKey = 2 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+//
+//	// The s3 EndPoint
+//	// @inject_tag: json:"endpoint" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+//	string EndPoint = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+}
+
+// HBaseURL used as request parameters for RPC and HTTP(based on Body)
+message HBaseURL {
+	option (gosql.serialize) = { json: {} };
+	
+	// The hbase Zookeeper
+	// @inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string zookeeper = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	
+	// The hbase Zookeeper Node
+	// @inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+	string z_node = 2 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	
+	//----// The hbase Hosts config
+	//----// @inject_tag: json:"hosts" default:""
+	//----//HBaseConfig Hosts = 3 [ (validator.field) = { } ];
+}
+
+// FtpURL used as request parameters for RPC and HTTP(based on Body)
+message FtpURL {
+	option (gosql.serialize) = { json: {} };
+	
+	// The host
+	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string host = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	
+	// The port
+	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+	int32 port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+}
+
+// HDFSURL used as request parameters for RPC and HTTP(based on Body)
+message HDFSURL {
+	option (gosql.serialize) = { json: {} };
+	
+	message HDFSNodeURL {
+		// The host
+		// @inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+		string name_node = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+		
+		// The port
+		// @inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
+		int32 port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	}
+	
+	// @inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+	HDFSNodeURL nodes = 1 [ (validator.field) = {length_gt:0, length_lt:1025 } ];
+}
+
+// SourceUrl used as request parameters for RPC and HTTP(based on Body)
+message DataSourceURL {
+	option (gosql.serialize) = { json: {} };
+	
+	// MySQL Source Connection Info.
+	// @inject_tag: json:"mysql"
+	MySQLURL mysql = 1;
+	
+	// PostgreSQL Source Connection Info.
+	// @inject_tag: json:"postgresql"
+	PostgreSQLURL postgresql = 2;
+	
+	// ClickHouse Source Connection Info.
+	// @inject_tag: json:"clickhouse"
+	ClickHouseURL clickhouse = 3;
+	
+	// Kafka Source Connection Info.
+	// @inject_tag: json:"kafka"
+	KafkaURL kafka = 4;
+	
+	// S3 Source Connection Info.
+	// @inject_tag: json:"s3"
+	S3URL s3 = 5;
+	
+	// Hbase Source Connection Info.
+	// @inject_tag: json:"hbase"
+	HBaseURL hbase = 6;
+	
+	// Ftp Source Connection Info.
+	// @inject_tag: json:"ftp"
+	FtpURL ftp = 7;
+	
+	// HDFS Source Connection Info.
+	// @inject_tag: json:"hdfs"
+	HDFSURL hdfs = 8;
+}

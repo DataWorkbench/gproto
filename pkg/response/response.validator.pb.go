@@ -96,14 +96,14 @@ func (this *DescribeStreamFlow) Validate() error {
 	return nil
 }
 func (this *GetStreamFlowNode) Validate() error {
-	if this.Nodes != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Nodes); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
+	if this.Node != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Node); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Node", err)
 		}
 	}
 	return nil
 }
-func (this *GetStreamFlowEnv) Validate() error {
+func (this *GetStreamFlowArgs) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -247,8 +247,8 @@ func (this *TableColumns_Column) Validate() error {
 	if !(len(this.Length) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Length", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Length))
 	}
-	if !(len(this.IsPrkey) < 8) {
-		return github_com_mwitkow_go_proto_validators.FieldError("IsPrkey", fmt.Errorf(`value '%v' must have a length smaller than '8'`, this.IsPrkey))
+	if !(len(this.IsPrimaryKey) < 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("IsPrimaryKey", fmt.Errorf(`value '%v' must have a length smaller than '8'`, this.IsPrimaryKey))
 	}
 	return nil
 }
@@ -359,16 +359,6 @@ func (this *JobParser) Validate() error {
 	if this.Resources != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Resources); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Resources", err)
-		}
-	}
-	if this.Hbase != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hbase); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
-		}
-	}
-	if this.S3 != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.S3); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("S3", err)
 		}
 	}
 	return nil
