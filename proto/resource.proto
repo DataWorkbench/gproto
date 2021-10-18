@@ -16,6 +16,8 @@ service Resource{
   rpc UpdateResource(request.UpdateResource) returns(model.EmptyStruct){}
   rpc DeleteResources(request.DeleteResources) returns(model.EmptyStruct){}
   rpc DeleteSpaces(request.DeleteWorkspaces) returns(model.EmptyStruct){}
+  rpc RenameFlinkStatePath(request.RenameFlinkStatePath) returns(model.EmptyStruct){}
+  rpc DeleteFlinkState(request.DeleteFlinkState) returns(model.EmptyStruct){}
 }
 
 // UploadFile used as a request parameters for RPC and HTTP(based on URL-Query).

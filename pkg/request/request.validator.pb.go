@@ -45,6 +45,30 @@ func (this *DeleteWorkspaces) Validate() error {
 	}
 	return nil
 }
+func (this *RenameFlinkStatePath) Validate() error {
+	if !(len(this.SrcPath) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SrcPath", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SrcPath))
+	}
+	if !(len(this.SrcPath) < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SrcPath", fmt.Errorf(`value '%v' must have a length smaller than '101'`, this.SrcPath))
+	}
+	if !(len(this.DstPath) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DstPath", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.DstPath))
+	}
+	if !(len(this.DstPath) < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DstPath", fmt.Errorf(`value '%v' must have a length smaller than '101'`, this.DstPath))
+	}
+	return nil
+}
+func (this *DeleteFlinkState) Validate() error {
+	if !(len(this.DeletePath) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DeletePath", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.DeletePath))
+	}
+	if !(len(this.DeletePath) < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("DeletePath", fmt.Errorf(`value '%v' must have a length smaller than '101'`, this.DeletePath))
+	}
+	return nil
+}
 func (this *DisableWorkspaces) Validate() error {
 	for _, item := range this.SpaceIds {
 		if !(len(item) > 0) {
