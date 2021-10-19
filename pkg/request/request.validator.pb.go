@@ -593,17 +593,11 @@ func (this *ResumeStreamInsts) Validate() error {
 	return nil
 }
 func (this *CreateSource) Validate() error {
-	if !(len(this.SourceID) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceID", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceID))
+	if !(len(this.SourceId) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SourceId", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceId))
 	}
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	if !(len(this.SourceType) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.SourceType))
-	}
-	if !(len(this.SourceType) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceType))
 	}
 	if !(len(this.Name) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
@@ -624,12 +618,6 @@ func (this *CreateSource) Validate() error {
 func (this *UpdateSource) Validate() error {
 	if !(len(this.SourceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SourceId))
-	}
-	if !(len(this.SourceType) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SourceType))
-	}
-	if !(len(this.SourceType) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceType))
 	}
 	if !(len(this.Name) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
@@ -687,12 +675,6 @@ func (this *DisableSource) Validate() error {
 	return nil
 }
 func (this *PingSource) Validate() error {
-	if !(len(this.SourceType) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.SourceType))
-	}
-	if !(len(this.SourceType) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SourceType", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceType))
-	}
 	if this.Url != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Url); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
@@ -737,16 +719,10 @@ func (this *CreateTable) Validate() error {
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
 	}
-	if this.Schema != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schema); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Schema", err)
+	if this.TableSchema != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.TableSchema); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("TableSchema", err)
 		}
-	}
-	if !(len(this.TableKind) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.TableKind))
-	}
-	if !(len(this.TableKind) < 17) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.TableKind))
 	}
 	return nil
 }
@@ -763,16 +739,10 @@ func (this *UpdateTable) Validate() error {
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
 	}
-	if this.Schema != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schema); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Schema", err)
+	if this.TableSchema != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.TableSchema); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("TableSchema", err)
 		}
-	}
-	if !(len(this.TableKind) > 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.TableKind))
-	}
-	if !(len(this.TableKind) < 17) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.TableKind))
 	}
 	return nil
 }
@@ -823,12 +793,6 @@ func (this *ListTable) Validate() error {
 	}
 	if !(len(this.SourceId) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceId", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceId))
-	}
-	if !(len(this.TableKind) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.TableKind))
-	}
-	if !(len(this.TableKind) < 17) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TableKind", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.TableKind))
 	}
 	return nil
 }

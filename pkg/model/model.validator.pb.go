@@ -395,12 +395,6 @@ func (this *DataSource) Validate() error {
 			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
 		}
 	}
-	if !(len(this.Connecte) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Connecte))
-	}
-	if !(len(this.Connecte) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Connecte))
-	}
 	return nil
 }
 func (this *TableInfo) Validate() error {
@@ -422,9 +416,9 @@ func (this *TableInfo) Validate() error {
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
 	}
-	if this.Schema != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schema); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Schema", err)
+	if this.TableSchema != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.TableSchema); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("TableSchema", err)
 		}
 	}
 	if !(this.Created > 0) {
@@ -438,12 +432,6 @@ func (this *TableInfo) Validate() error {
 	}
 	if !(len(this.SourceName) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceName", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.SourceName))
-	}
-	if !(len(this.Connecte) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Connecte))
-	}
-	if !(len(this.Connecte) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Connecte", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Connecte))
 	}
 	return nil
 }
