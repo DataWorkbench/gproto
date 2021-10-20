@@ -920,8 +920,8 @@ message ListTable {
 	string source_id  = 7 [ (validator.field) = { length_lt: 21 } ];
 	
     // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
-    // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-	model.TableInfo.Kind table_kind = 8  [ (validator.field) = { length_gt: 1, length_lt: 17 } ];
+    // @inject_tag: json:"table_kind" form:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+	model.TableInfo.Kind table_kind = 8  [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
 }
 
 // DownloadFile used as a request parameters for RPC and HTTP(based on URL-Query).
