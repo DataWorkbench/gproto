@@ -354,17 +354,6 @@ func (this *GetStreamJobArgs) Validate() error {
 	}
 	return nil
 }
-func (this *RunStreamJob) Validate() error {
-	if !(len(this.JobId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
-	}
-	if this.Property != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Property); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Property", err)
-		}
-	}
-	return nil
-}
 func (this *ListReleaseStreamJobs) Validate() error {
 	if !(this.Limit > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))

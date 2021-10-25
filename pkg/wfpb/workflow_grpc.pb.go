@@ -58,9 +58,6 @@ type WorkflowClient interface {
 	SetStreamJobSchedule(ctx context.Context, in *request.SetStreamJobSchedule, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// GetStreamJobSchedule to get the schedule properties of the specified stream job.
 	GetStreamJobSchedule(ctx context.Context, in *request.GetStreamJobSchedule, opts ...grpc.CallOption) (*response.GetStreamJobSchedule, error)
-	// ExecuteStreamJob to manual execution a stream job.
-	// FIXME: Refactor it.
-	RunStreamJob(ctx context.Context, in *request.RunStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Interface for stream job release.
 	//
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
@@ -201,15 +198,6 @@ func (c *workflowClient) GetStreamJobSchedule(ctx context.Context, in *request.G
 	return out, nil
 }
 
-func (c *workflowClient) RunStreamJob(ctx context.Context, in *request.RunStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/RunStreamJob", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *workflowClient) ReleaseStreamJob(ctx context.Context, in *request.ReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ReleaseStreamJob", in, out, opts...)
@@ -333,9 +321,6 @@ type WorkflowServer interface {
 	SetStreamJobSchedule(context.Context, *request.SetStreamJobSchedule) (*model.EmptyStruct, error)
 	// GetStreamJobSchedule to get the schedule properties of the specified stream job.
 	GetStreamJobSchedule(context.Context, *request.GetStreamJobSchedule) (*response.GetStreamJobSchedule, error)
-	// ExecuteStreamJob to manual execution a stream job.
-	// FIXME: Refactor it.
-	RunStreamJob(context.Context, *request.RunStreamJob) (*model.EmptyStruct, error)
 	// Interface for stream job release.
 	//
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
@@ -400,9 +385,6 @@ func (UnimplementedWorkflowServer) SetStreamJobSchedule(context.Context, *reques
 }
 func (UnimplementedWorkflowServer) GetStreamJobSchedule(context.Context, *request.GetStreamJobSchedule) (*response.GetStreamJobSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobSchedule not implemented")
-}
-func (UnimplementedWorkflowServer) RunStreamJob(context.Context, *request.RunStreamJob) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RunStreamJob not implemented")
 }
 func (UnimplementedWorkflowServer) ReleaseStreamJob(context.Context, *request.ReleaseStreamJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReleaseStreamJob not implemented")
@@ -660,24 +642,6 @@ func _Workflow_GetStreamJobSchedule_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_RunStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.RunStreamJob)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkflowServer).RunStreamJob(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wfpb.Workflow/RunStreamJob",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).RunStreamJob(ctx, req.(*request.RunStreamJob))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Workflow_ReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ReleaseStreamJob)
 	if err := dec(in); err != nil {
@@ -891,10 +855,6 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStreamJobSchedule",
 			Handler:    _Workflow_GetStreamJobSchedule_Handler,
-		},
-		{
-			MethodName: "RunStreamJob",
-			Handler:    _Workflow_RunStreamJob_Handler,
 		},
 		{
 			MethodName: "ReleaseStreamJob",

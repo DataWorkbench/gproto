@@ -33,9 +33,6 @@ type SchedulerClient interface {
 	//  - Offline job and force stop all running instances.
 	//  - All instances records.
 	DeleteStreamJobs(ctx context.Context, in *request.DeleteStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// FIXME: Review it.
-	// Execute execute immediately a job task. It trigger by user on console.
-	ExecuteStreamJob(ctx context.Context, in *request.RunStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Submit submit a job task to scheduler system, It will
 	// be cover if old job exists.
 	// FIXME: Review it.
@@ -79,15 +76,6 @@ func (c *schedulerClient) DeleteJobsBySpaceIds(ctx context.Context, in *request.
 func (c *schedulerClient) DeleteStreamJobs(ctx context.Context, in *request.DeleteStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/shpb.Scheduler/DeleteStreamJobs", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *schedulerClient) ExecuteStreamJob(ctx context.Context, in *request.RunStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ExecuteStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -228,9 +216,6 @@ type SchedulerServer interface {
 	//  - Offline job and force stop all running instances.
 	//  - All instances records.
 	DeleteStreamJobs(context.Context, *request.DeleteStreamJobs) (*model.EmptyStruct, error)
-	// FIXME: Review it.
-	// Execute execute immediately a job task. It trigger by user on console.
-	ExecuteStreamJob(context.Context, *request.RunStreamJob) (*model.EmptyStruct, error)
 	// Submit submit a job task to scheduler system, It will
 	// be cover if old job exists.
 	// FIXME: Review it.
@@ -264,9 +249,6 @@ func (UnimplementedSchedulerServer) DeleteJobsBySpaceIds(context.Context, *reque
 }
 func (UnimplementedSchedulerServer) DeleteStreamJobs(context.Context, *request.DeleteStreamJobs) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamJobs not implemented")
-}
-func (UnimplementedSchedulerServer) ExecuteStreamJob(context.Context, *request.RunStreamJob) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExecuteStreamJob not implemented")
 }
 func (UnimplementedSchedulerServer) SubmitStreamJobs(context.Context, *request.SubmitStreamJobs) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitStreamJobs not implemented")
@@ -352,24 +334,6 @@ func _Scheduler_DeleteStreamJobs_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SchedulerServer).DeleteStreamJobs(ctx, req.(*request.DeleteStreamJobs))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Scheduler_ExecuteStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.RunStreamJob)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SchedulerServer).ExecuteStreamJob(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/shpb.Scheduler/ExecuteStreamJob",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).ExecuteStreamJob(ctx, req.(*request.RunStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -619,10 +583,6 @@ var _Scheduler_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteStreamJobs",
 			Handler:    _Scheduler_DeleteStreamJobs_Handler,
-		},
-		{
-			MethodName: "ExecuteStreamJob",
-			Handler:    _Scheduler_ExecuteStreamJob_Handler,
 		},
 		{
 			MethodName: "SubmitStreamJobs",
