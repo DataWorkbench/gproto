@@ -1625,10 +1625,10 @@ type StreamJobSchedule struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Timestamp of start time of the validity period, unit in seconds.
-	// Not required, default 0, means no limit.
+	// Not required, default 31507200(1971-01-01 00:00:00), means no limit.
 	Started int64 `protobuf:"varint,1,opt,name=started,proto3" json:"started" default:"0" binding:"gte=0"`
 	// Timestamp of end time of the validity period, unit in seconds.
-	// Not required, default 0, means no limit.
+	// Not required, default 31588502400(2971-01-01 00:00:00), means no limit.
 	Ended int64 `protobuf:"varint,2,opt,name=ended,proto3" json:"ended" default:"0" binding:"gte=0"`
 	// Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace"
 	// - allow: Multiple task instances are allowed at the same time.
@@ -1642,7 +1642,7 @@ type StreamJobSchedule struct {
 	// FIXME: test binding.
 	// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
 	RetryLimit int32 `protobuf:"varint,5,opt,name=retry_limit,json=retryLimit,proto3" json:"retry_limit" binding:"required_with=retry_policy=2,gte=1,lte=99"`
-	// Retry interval,  Is required with retry_policy = 2, Min 1, Max 30.
+	// Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
 	RetryInterval int32 `protobuf:"varint,6,opt,name=retry_interval,json=retryInterval,proto3" json:"retry_interval" binding:"required_with=retry_policy=2,gte=1,lte=30"`
 	// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 4320min.
 	Timeout int32 `protobuf:"varint,7,opt,name=timeout,proto3" json:"timeout" default:"0" binding:"gte=0"`
