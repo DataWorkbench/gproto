@@ -239,11 +239,15 @@ message StreamJobSchedule {
 	// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 4320min.
 	// @inject_tag: json:"timeout" default:"0" binding:"gte=0"
 	int32 timeout = 7 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
-	
+
+	// Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
+	// @inject_tag: json:"period_type" default:"" binding:"oneof=minute hour day week month year"
+	string period_type = 8 [ (validator.field) = {  } ];
+
 	// Crontab Express. Is required.
 	// FIXME: check binding.
 	// @inject_tag: json:"express" default:"" binding:"gte=5,lte=128"
-	string express = 8 [ (validator.field) = { msg_exists: true } ];
+	string express = 9 [ (validator.field) = { msg_exists: true } ];
 }
 
 // The release stream job info.
