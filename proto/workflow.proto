@@ -59,11 +59,8 @@ service Workflow {
 	
 	// GetStreamJobSchedule to get the schedule properties of the specified stream job.
 	rpc GetStreamJobSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
-	
-	// ExecuteStreamJob to manual execution a stream job.
-	// FIXME: Refactor it.
-	rpc RunStreamJob(request.RunStreamJob) returns (model.EmptyStruct) {}
-	
+
+
 	// Interface for stream job release.
 	//
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.

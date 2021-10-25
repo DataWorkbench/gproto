@@ -24,11 +24,7 @@ service Scheduler {
 	//  - Offline job and force stop all running instances.
 	//  - All instances records.
 	rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
-	
-	// FIXME: Review it.
-	// Execute execute immediately a job task. It trigger by user on console.
-	rpc ExecuteStreamJob(request.RunStreamJob) returns (model.EmptyStruct) {}
-	
+
 	// Submit submit a job task to scheduler system, It will
 	// be cover if old job exists.
 	// FIXME: Review it.
@@ -38,7 +34,7 @@ service Scheduler {
 	// FIXME: Review it.
 	rpc OfflineStreamJobs(request.OfflineStreamJobs) returns (model.EmptyStruct) {}
 
-	
+
 	// Interface for stream job cycle instance.
 	//
 	rpc ListStreamCycleInsts(request.ListStreamInsts)         returns (response.ListStreamInsts) {}

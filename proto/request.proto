@@ -436,16 +436,6 @@ message GetStreamJobArgs {
 	int64 version = 2 [ (validator.field) = { } ];
 }
 
-// RunStreamJob used as a request parameters for RPC.
-message RunStreamJob {
-	// The stream job id in HTTP Request-URI
-	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// Only used for flowmanager -> scheduler.
-	model.StreamJobProperty property = 2 [ (validator.field) = { } ];
-}
-
 // ListReleaseStreamJobs used as a request parameters for RPC and HTTP(based on URL-Query).
 message ListReleaseStreamJobs {
 	// Limit the maximum number of entries returned this time.
