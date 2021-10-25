@@ -205,12 +205,12 @@ message StreamJobSchedule {
 	}
 	
 	// Timestamp of start time of the validity period, unit in seconds.
-	// Not required, default 0, means no limit.
+	// Not required, default 31507200(1971-01-01 00:00:00), means no limit.
 	// @inject_tag: json:"started" default:"0" binding:"gte=0"
 	int64 started = 1 [ (validator.field) = { int_gt: -1  } ];
 	
 	// Timestamp of end time of the validity period, unit in seconds.
-	// Not required, default 0, means no limit.
+	// Not required, default 31588502400(2971-01-01 00:00:00), means no limit.
 	// @inject_tag: json:"ended" default:"0" binding:"gte=0"
 	int64 ended = 2 [ (validator.field) = { int_gt: -1 } ];
 	
@@ -232,7 +232,7 @@ message StreamJobSchedule {
 	// @inject_tag: json:"retry_limit" default:"" binding:"required_with=retry_policy=2,gte=1,lte=99"
 	int32 retry_limit = 5 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
 	
-	// Retry interval,  Is required with retry_policy = 2, Min 1, Max 30.
+	// Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
 	// @inject_tag: json:"retry_interval" default:"" binding:"required_with=retry_policy=2,gte=1,lte=30"
 	int32 retry_interval = 6 [ (validator.field) = { int_gt: -1, int_lt: 31 } ];
 	
