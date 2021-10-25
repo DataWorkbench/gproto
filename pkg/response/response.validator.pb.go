@@ -71,7 +71,7 @@ func (this *ListSystemRoles) Validate() error {
 	}
 	return nil
 }
-func (this *ListStreamFlows) Validate() error {
+func (this *ListStreamJobs) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -81,13 +81,13 @@ func (this *ListStreamFlows) Validate() error {
 	}
 	return nil
 }
-func (this *CreateStreamFlow) Validate() error {
+func (this *CreateStreamJob) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
 	return nil
 }
-func (this *DescribeStreamFlow) Validate() error {
+func (this *DescribeStreamJob) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -95,15 +95,15 @@ func (this *DescribeStreamFlow) Validate() error {
 	}
 	return nil
 }
-func (this *GetStreamFlowNode) Validate() error {
-	if this.Node != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Node); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Node", err)
+func (this *GetStreamJobCode) Validate() error {
+	if this.Code != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Code); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Code", err)
 		}
 	}
 	return nil
 }
-func (this *GetStreamFlowArgs) Validate() error {
+func (this *GetStreamJobArgs) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -111,7 +111,7 @@ func (this *GetStreamFlowArgs) Validate() error {
 	}
 	return nil
 }
-func (this *GetStreamFlowSchedule) Validate() error {
+func (this *GetStreamJobSchedule) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
@@ -119,7 +119,7 @@ func (this *GetStreamFlowSchedule) Validate() error {
 	}
 	return nil
 }
-func (this *ListReleaseStreamFlows) Validate() error {
+func (this *ListReleaseStreamJobs) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -129,7 +129,7 @@ func (this *ListReleaseStreamFlows) Validate() error {
 	}
 	return nil
 }
-func (this *ListStreamFlowVersions) Validate() error {
+func (this *ListStreamJobVersions) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {

@@ -15,12 +15,12 @@ import (
 )
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *StreamFlowNode) Scan(val interface{}) error {
+func (t *StreamJobCode) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *StreamFlowNode) Value() (driver.Value, error) {
+func (t *StreamJobCode) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -28,12 +28,12 @@ func (t *StreamFlowNode) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *StreamFlowArgs) Scan(val interface{}) error {
+func (t *StreamJobArgs) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *StreamFlowArgs) Value() (driver.Value, error) {
+func (t *StreamJobArgs) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -41,12 +41,12 @@ func (t *StreamFlowArgs) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *StreamFlowSchedule) Scan(val interface{}) error {
+func (t *StreamJobSchedule) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *StreamFlowSchedule) Value() (driver.Value, error) {
+func (t *StreamJobSchedule) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}

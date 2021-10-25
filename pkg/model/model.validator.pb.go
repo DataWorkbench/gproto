@@ -49,7 +49,7 @@ func (this *Workspace) Validate() error {
 	}
 	return nil
 }
-func (this *StreamFlow) Validate() error {
+func (this *StreamJob) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -73,7 +73,31 @@ func (this *StreamFlow) Validate() error {
 	}
 	return nil
 }
-func (this *StreamFlowNode) Validate() error {
+func (this *StreamJobProperty) Validate() error {
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	if !(this.Version > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
+	}
+	if this.Code != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Code); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Code", err)
+		}
+	}
+	if this.Args != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Args); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Args", err)
+		}
+	}
+	if this.Schedule != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schedule); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Schedule", err)
+		}
+	}
+	return nil
+}
+func (this *StreamJobCode) Validate() error {
 	for _, item := range this.Operators {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -103,7 +127,7 @@ func (this *StreamFlowNode) Validate() error {
 	}
 	return nil
 }
-func (this *StreamFlowArgs) Validate() error {
+func (this *StreamJobArgs) Validate() error {
 	if !(this.Parallelism > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Parallelism", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Parallelism))
 	}
@@ -117,10 +141,10 @@ func (this *StreamFlowArgs) Validate() error {
 	}
 	return nil
 }
-func (this *StreamFlowArgs_Function) Validate() error {
+func (this *StreamJobArgs_Function) Validate() error {
 	return nil
 }
-func (this *StreamFlowSchedule) Validate() error {
+func (this *StreamJobSchedule) Validate() error {
 	if !(this.Started > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Started", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Started))
 	}
@@ -147,31 +171,7 @@ func (this *StreamFlowSchedule) Validate() error {
 	}
 	return nil
 }
-func (this *StreamFlowProperty) Validate() error {
-	if !(len(this.Id) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
-	if this.Node != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Node); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Node", err)
-		}
-	}
-	if this.Args != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Args); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Args", err)
-		}
-	}
-	if this.Schedule != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Schedule); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Schedule", err)
-		}
-	}
-	return nil
-}
-func (this *StreamFlowRelease) Validate() error {
+func (this *StreamJobRelease) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
@@ -198,12 +198,12 @@ func (this *StreamFlowRelease) Validate() error {
 	}
 	return nil
 }
-func (this *StreamFlowInst) Validate() error {
+func (this *StreamJobInst) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
-	if !(len(this.FlowId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.FlowId))
+	if !(len(this.JobId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
 	}
 	if !(this.Version > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))

@@ -20,8 +20,8 @@ func (this *ListHistLogsRequest) Validate() error {
 	if this.SpaceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
 	}
-	if this.FlowId == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must not be an empty string`, this.FlowId))
+	if this.JobId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must not be an empty string`, this.JobId))
 	}
 	if this.InstanceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must not be an empty string`, this.InstanceId))
@@ -65,8 +65,8 @@ func (this *DownloadJobMgrRequest) Validate() error {
 	if this.SpaceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
 	}
-	if this.FlowId == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must not be an empty string`, this.FlowId))
+	if this.JobId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must not be an empty string`, this.JobId))
 	}
 	if this.InstanceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must not be an empty string`, this.InstanceId))
@@ -80,8 +80,8 @@ func (this *DownloadTaskMgrRequest) Validate() error {
 	if this.SpaceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
 	}
-	if this.FlowId == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must not be an empty string`, this.FlowId))
+	if this.JobId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must not be an empty string`, this.JobId))
 	}
 	if this.InstanceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must not be an empty string`, this.InstanceId))
@@ -104,8 +104,8 @@ func (this *UploadFileRequest) Validate() error {
 	if this.SpaceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
 	}
-	if this.FlowId == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must not be an empty string`, this.FlowId))
+	if this.JobId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must not be an empty string`, this.JobId))
 	}
 	if this.InstanceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must not be an empty string`, this.InstanceId))
@@ -122,8 +122,8 @@ func (this *TaskStatRequest) Validate() error {
 	if this.SpaceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must not be an empty string`, this.SpaceId))
 	}
-	if this.FlowId == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("FlowId", fmt.Errorf(`value '%v' must not be an empty string`, this.FlowId))
+	if this.JobId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must not be an empty string`, this.JobId))
 	}
 	if this.InstanceId == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must not be an empty string`, this.InstanceId))
