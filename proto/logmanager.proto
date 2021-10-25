@@ -15,7 +15,7 @@ service LogManager {
 
 message ListHistLogsRequest {
   string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
-  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string job_id = 2 [ (validator.field) = { string_not_empty: true } ];
   string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
 }
 
@@ -38,14 +38,14 @@ message FileState {
 
 message DownloadJobMgrRequest {
   string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
-  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string job_id = 2 [ (validator.field) = { string_not_empty: true } ];
   string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
   string file_name = 4 [ (validator.field) = { string_not_empty: true } ];
 }
 
 message DownloadTaskMgrRequest {
   string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
-  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string job_id = 2 [ (validator.field) = { string_not_empty: true } ];
   string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
   string file_name = 4 [ (validator.field) = { string_not_empty: true } ];
   string task_manager_id = 5 [ (validator.field) = { string_not_empty: true } ];
@@ -58,7 +58,7 @@ message FileContent {
 
 message UploadFileRequest {
   string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
-  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string job_id = 2 [ (validator.field) = { string_not_empty: true } ];
   string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
   string server_url = 4 [ (validator.field) = { string_not_empty: true } ];
 }
@@ -74,7 +74,7 @@ message UploadFileReply {
 
 message TaskStatRequest {
   string space_id = 1 [ (validator.field) = { string_not_empty: true } ];
-  string flow_id = 2 [ (validator.field) = { string_not_empty: true } ];
+  string job_id = 2 [ (validator.field) = { string_not_empty: true } ];
   string instance_id = 3 [ (validator.field) = { string_not_empty: true } ];
   string server_url = 4 [ (validator.field) = { string_not_empty: true } ];
 }

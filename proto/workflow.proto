@@ -10,87 +10,88 @@ import "response.proto";
 
 // Workflow Service
 service Workflow {
-	// DeleteFlowsBySpaceIds delete the specified workspaces and its resources;
+	// DeleteJobsBySpaceIds delete the specified workspaces and its resources;
 	// This Interface called by apiserver(DeleteWorkspaces).
 	// Resources includes:
 	//   - Workflow of stream and batch and them's history version.
 	//   - Node, env schedule and them's history version.
-	//   - Released's workflow.
-	//   - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//   - Released's job.
+	//   - Offline job and force stop all running instances. (By Scheduler-Server)
 	//   - All instances records. (By Scheduler-Server)
-	rpc DeleteFlowsBySpaceIds(request.DeleteWorkspaces) returns(model.EmptyStruct) {}
+	rpc DeleteJobsBySpaceIds(request.DeleteWorkspaces) returns(model.EmptyStruct) {}
 	
-	// Interface for stream workflow.
+	// Interface for stream job.
 	//
-	// ListStreamFlows to get a list of stream workflow of the workspace.
-	rpc ListStreamFlows(request.ListStreamFlows) returns (response.ListStreamFlows) {}
+	// ListStreamJobs to get a list of stream job of the workspace.
+	rpc ListStreamJobs(request.ListStreamJobs) returns (response.ListStreamJobs) {}
 
-	// DeleteStreamFlows delete stream workflow ant its related resources where in ids.
+	// DeleteStreamJobs delete stream job ant its related resources where in ids.
 	// Resources includes:
-	//  - History version and Released's workflow.
+	//  - History version and Released's job.
 	//  - Node, env schedule and its history version.
-	//  - Offline workflow and force stop all running instances. (By Scheduler-Server)
+	//  - Offline job and force stop all running instances. (By Scheduler-Server)
 	//  - All instances records. (By Scheduler-Server)
-	rpc DeleteStreamFlows(request.DeleteStreamFlows) returns (model.EmptyStruct) {}
+	rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
 	
-	// CreateStreamFlow to create a new stream workflow.
-	rpc CreateStreamFlow(request.CreateStreamFlow) returns (response.CreateStreamFlow) {}
+	// CreateStreamJob to create a new stream job.
+	rpc CreateStreamJob(request.CreateStreamJob) returns (response.CreateStreamJob) {}
 	
-	// UpdateStreamFlow to update the info for the specified stream workflow.
-	rpc UpdateStreamFlow(request.UpdateStreamFlow) returns (model.EmptyStruct) {}
+	// UpdateStreamJob to update the info for the specified stream job.
+	rpc UpdateStreamJob(request.UpdateStreamJob) returns (model.EmptyStruct) {}
 	
-	// DescribeStreamFlow to get the info of the specified stream workflow.
-	rpc DescribeStreamFlow(request.DescribeStreamFlow) returns (response.DescribeStreamFlow) {}
+	// DescribeStreamJob to get the info of the specified stream job.
+	rpc DescribeStreamJob(request.DescribeStreamJob) returns (response.DescribeStreamJob) {}
 	
-	// SetStreamFlowNode to set the node properties of the specified stream workflow.
-	rpc SetStreamFlowNode(request.SetStreamFlowNode) returns (model.EmptyStruct)  {}
+	// SetStreamJobCode to set the code properties of the specified stream job.
+	rpc SetStreamJobCode(request.SetStreamJobCode) returns (model.EmptyStruct)  {}
 	
-	// GetStreamFlowNode to get the node properties of the specified stream workflow.
-	rpc GetStreamFlowNode(request.GetStreamFlowNode) returns (response.GetStreamFlowNode) {}
+	// GetStreamJobCode to get the code properties of the specified stream job.
+	rpc GetStreamJobCode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
 	
-	// SetStreamFlowArgs to set the run parameters of the specified stream workflow.
-	rpc SetStreamFlowArgs(request.SetStreamFlowArgs) returns (model.EmptyStruct) {}
+	// SetStreamJobArgs to set the run parameters of the specified stream job.
+	rpc SetStreamJobArgs(request.SetStreamJobArgs) returns (model.EmptyStruct) {}
 	
-	// GetStreamFlowArgs to get the run parameters of the specified stream workflow.
-	rpc GetStreamFlowArgs(request.GetStreamFlowArgs) returns (response.GetStreamFlowArgs) {}
+	// GetStreamJobArgs to get the run parameters of the specified stream job.
+	rpc GetStreamJobArgs(request.GetStreamJobArgs) returns (response.GetStreamJobArgs) {}
 	
-	// SetStreamFlowSchedule to set the schedule properties of the specified stream workflow.
-	rpc SetStreamFlowSchedule(request.SetStreamFlowSchedule) returns (model.EmptyStruct) {}
+	// SetStreamJobSchedule to set the schedule properties of the specified stream job.
+	rpc SetStreamJobSchedule(request.SetStreamJobSchedule) returns (model.EmptyStruct) {}
 	
-	// GetStreamFlowSchedule to get the schedule properties of the specified stream workflow.
-	rpc GetStreamFlowSchedule(request.GetStreamFlowSchedule) returns (response.GetStreamFlowSchedule) {}
+	// GetStreamJobSchedule to get the schedule properties of the specified stream job.
+	rpc GetStreamJobSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
 	
-	// ExecuteStreamFlow to manual execution a stream workflow task.
-	rpc ExecuteStreamFlow(request.ExecuteStreamFlow) returns (model.EmptyStruct) {}
+	// ExecuteStreamJob to manual execution a stream job.
+	// FIXME: Refactor it.
+	rpc RunStreamJob(request.RunStreamJob) returns (model.EmptyStruct) {}
 	
-	// Interface for stream workflow release.
+	// Interface for stream job release.
 	//
-	// ReleaseStreamFlow to publish the specified workflow to schedule system with a new version.
-	rpc ReleaseStreamFlow(request.ReleaseStreamFlow) returns (model.EmptyStruct) {}
+	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
+	rpc ReleaseStreamJob(request.ReleaseStreamJob) returns (model.EmptyStruct) {}
 	
-	// SuspendReleaseStreamFlows to suspend the specified workflow list in schedule system.
-	rpc SuspendReleaseStreamFlows(request.SuspendReleaseStreamFlows) returns (model.EmptyStruct) {}
+	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
+	rpc SuspendReleaseStreamJobs(request.SuspendReleaseStreamJobs) returns (model.EmptyStruct) {}
 	
-	// ResumeReleaseStreamFlows to resume the suspended workflow list in schedule system.
-	rpc ResumeReleaseStreamFlows(request.ResumeReleaseStreamFlows) returns (model.EmptyStruct) {}
+	// ResumeReleaseStreamJobs to resume the suspended job list in schedule system.
+	rpc ResumeReleaseStreamJobs(request.ResumeReleaseStreamJobs) returns (model.EmptyStruct) {}
 	
-	// ListReleaseStreamFlows for gets a list of all published workflow in the workspace.
-	rpc ListReleaseStreamFlows(request.ListReleaseStreamFlows) returns (response.ListReleaseStreamFlows) {}
+	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
+	rpc ListReleaseStreamJobs(request.ListReleaseStreamJobs) returns (response.ListReleaseStreamJobs) {}
 	
-	// Interface for stream workflow versions.
+	// Interface for stream job versions.
 	//
-	// ListStreamVersions for gets a list of all versions of the specified workflow.
-	rpc ListStreamFlowVersions(request.ListStreamFlowVersions) returns (response.ListStreamFlowVersions) {}
+	// ListStreamJobVersions for gets a list of all versions of the specified job.
+	rpc ListStreamJobVersions(request.ListStreamJobVersions) returns (response.ListStreamJobVersions) {}
 	
-	// DescribeStreamVersion for get the info of the workflow of the specified version.
-	rpc DescribeStreamFlowVersion(request.DescribeStreamFlow) returns (response.DescribeStreamFlow) {}
+	// DescribeStreamJobVersion for get the info of the job of the specified version.
+	rpc DescribeStreamJobVersion(request.DescribeStreamJob) returns (response.DescribeStreamJob) {}
 	
-	// GetStreamVersionNode for get the node properties of the workflow of the specified version.
-	rpc GetStreamFlowVersionNode(request.GetStreamFlowNode) returns (response.GetStreamFlowNode) {}
+	// GetStreamJobVersionNode for get the node properties of the job of the specified version.
+	rpc GetStreamJobVersionNode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
 	
-	// GetStreamFlowVersionArgs for get the run parameters of the workflow of the specified version.
-	rpc GetStreamFlowVersionArgs(request.GetStreamFlowArgs) returns (response.GetStreamFlowArgs) {}
+	// GetStreamJobVersionArgs for get the run parameters of the job of the specified version.
+	rpc GetStreamJobVersionArgs(request.GetStreamJobArgs) returns (response.GetStreamJobArgs) {}
 	
-	// GetStreamReleaseSchedule for get the schedule properties of the workflow of the specified version.
-	rpc GetStreamFlowVersionSchedule(request.GetStreamFlowSchedule) returns (response.GetStreamFlowSchedule) {}
+	// GetStreamJobVersionSchedule for get the schedule properties of the job of the specified version.
+	rpc GetStreamJobVersionSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
 }

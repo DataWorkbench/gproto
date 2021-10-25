@@ -10,48 +10,41 @@ import "response.proto";
 
 // Scheduler Service
 service Scheduler {
-	// Interface for stream workflow task.
+	// Interface for stream job task.
 	//
-	// DeleteFlowsBySpaceIds delete the specified workspaces and its resources;
-	// This Interface called by flowmanager(DeleteFlowsBySpaceIds).
+	// DeleteJobsBySpaceIds delete the specified workspaces and its resources;
+	// This Interface called by flowmanager(DeleteJobsBySpaceIds).
 	// Resources Includes:
-	//   - Offline workflow and force stop all running instances.
+	//   - Offline stream job and force stop all running instances.
 	//   - All instances records.
-	rpc DeleteFlowsBySpaceIds(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+	rpc DeleteJobsBySpaceIds(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
 	
-	// DeleteStreamFlows delete stream workflow ant its related resources where in ids.
+	// DeleteStreamJobs delete stream job ant its related resources where in ids.
 	// Resources includes:
-	//  - Offline workflow and force stop all running instances.
+	//  - Offline job and force stop all running instances.
 	//  - All instances records.
-	rpc DeleteStreamFlows(request.DeleteStreamFlows) returns (model.EmptyStruct) {}
+	rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
 	
 	// FIXME: Review it.
-	// Execute execute immediately a workflow task. It trigger by user on console.
-	rpc ExecuteStreamFlow(request.ExecuteStreamFlow) returns (model.EmptyStruct) {}
+	// Execute execute immediately a job task. It trigger by user on console.
+	rpc ExecuteStreamJob(request.RunStreamJob) returns (model.EmptyStruct) {}
 	
-	// Submit submit a workflow task to scheduler system, It will
+	// Submit submit a job task to scheduler system, It will
 	// be cover if old job exists.
 	// FIXME: Review it.
-	rpc SubmitStreamFlows(request.SubmitStreamFlows) returns (model.EmptyStruct) {}
+	rpc SubmitStreamJobs(request.SubmitStreamJobs) returns (model.EmptyStruct) {}
 	
-	// Remove remove specific workflow task from scheduler system.
+	// Remove remove specific job task from scheduler system.
 	// FIXME: Review it.
-	rpc OfflineStreamFlows(request.OfflineStreamFlows) returns (model.EmptyStruct) {}
+	rpc OfflineStreamJobs(request.OfflineStreamJobs) returns (model.EmptyStruct) {}
 
 	
-	// Interface for stream workflow cycle instance.
+	// Interface for stream job cycle instance.
 	//
 	rpc ListStreamCycleInsts(request.ListStreamInsts)         returns (response.ListStreamInsts) {}
 	rpc TerminateStreamCycleInsts(request.TerminateStreamInsts) returns (model.EmptyStruct)       {}
 	rpc SuspendStreamCycleInsts(request.SuspendStreamInsts)     returns (model.EmptyStruct)       {}
 	rpc ResumeStreamCycleInsts(request.ResumeStreamInsts)       returns (model.EmptyStruct)       {}
-	
-	// Interface for stream workflow test instance.
-	//
-	rpc ListStreamTestInsts(request.ListStreamInsts)         returns (response.ListStreamInsts) {}
-	rpc TerminateStreamTestInsts(request.TerminateStreamInsts) returns (model.EmptyStruct)       {}
-	rpc SuspendStreamTestInsts(request.SuspendStreamInsts)     returns (model.EmptyStruct)       {}
-	rpc ResumeStreamTestInsts(request.ResumeStreamInsts)       returns (model.EmptyStruct)       {}
 	
 	// Interface for monitor.
 	rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}

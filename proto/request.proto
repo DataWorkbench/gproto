@@ -82,7 +82,7 @@ message DeleteFlinkState{
 // DisableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
 message DisableWorkspaces {
 	// The list of workspace id. Is required, Contains at least one.
-	// Disable workspace will suspend all release workflow and stop all running instances.
+	// Disable workspace will suspend all release stream job and stop all running instances.
 	// @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
 	repeated string space_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 }
@@ -93,9 +93,9 @@ message EnableWorkspaces {
 	// @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
 	repeated string space_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 	
-	// Whether resume all suspended workflow. Not required, default false.
-	// @inject_tag: `json:"resume_workflow" default:"false" binding:"-"`
-	bool resume_workflow = 2 [ (validator.field) = { } ];
+	// Whether resume all suspended job. Not required, default false.
+	// @inject_tag: `json:"resume_job" default:"false" binding:"-"`
+	bool resume_job = 2 [ (validator.field) = { } ];
 }
 
 // CreateWorkspace used as a request parameters for RPC and HTTP(based on Body)
@@ -269,8 +269,8 @@ message CheckPermission {
 	map<string, bool> roles = 6 [ (validator.field) = { length_gt: 0  } ];
 }
 
-// ListStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query)
-message ListStreamFlows {
+// ListStreamJobs used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListStreamJobs {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
@@ -295,49 +295,53 @@ message ListStreamFlows {
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 5 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Search with workflow name; Not required.
+	// Search with stream job name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
 	string search = 6 [ (validator.field) = { } ];
 }
 
-// CreateStreamFlow used as a request parameters for RPC and HTTP(based on Body)
-message CreateStreamFlow {
+// CreateStreamJob used as a request parameters for RPC and HTTP(based on Body)
+message CreateStreamJob {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow name in each workspace is unique. Is required, Max Length 128.
+	// The job name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	// @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
 	string name = 2 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	
-	// Description of the workspace, Not required, Max length 1024.
+	// Description of the job, Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
 	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
 	
-	// Workflow Type. Is Required, Optional Value: 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator".
+	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// Desc: Cannot be modified after creation.
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=3"
-	model.StreamFlow.Type type = 4  [ (validator.field) = { int_gt: 0 } ];
+	model.StreamJob.Type type = 4  [ (validator.field) = { int_gt: 0 } ];
+
+	// The flink compute cluster id. Is required.
+	// @inject_tag: json:"cluster_id" default:"" binding:"len=20"
+	string cluster_id = 5 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// DeleteStreamFlows used as a request parameters for RPC and HTTP(based on Body)
-message DeleteStreamFlows {
+// DeleteStreamJobs used as a request parameters for RPC and HTTP(based on Body)
+message DeleteStreamJobs {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	// The list of workflow id. Is required, Min 1, Max 100.
-	// @inject_tag: json:"flow_ids" default:"" binding:"gte=1,lte=100"
-	repeated string flow_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+	// The list of stream job id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"job_ids" default:"" binding:"gte=1,lte=100"
+	repeated string job_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 }
 
-// UpdateStreamFlow used as a request parameters for RPC and HTTP(based on Body).
-message UpdateStreamFlow {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20} ];
+// UpdateStreamJob used as a request parameters for RPC and HTTP(based on Body).
+message UpdateStreamJob {
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field) = { length_eq: 20} ];
 	
-	// The workflow name in each workspace is unique. Is required, Max Length 128.
+	// The stream job name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	// @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
 	string name = 2     [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
@@ -347,103 +351,103 @@ message UpdateStreamFlow {
 	string desc = 3     [ (validator.field) = { length_lt: 1025 } ];
 }
 
-// DescribeStreamFlow used as a request parameters for RPC.
-message DescribeStreamFlow {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = {length_eq: 20} ];
+// DescribeStreamJob used as a request parameters for RPC.
+message DescribeStreamJob {
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field) = {length_eq: 20} ];
 	
-	// The workflow version id in HTTP Request-URI
+	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64 version = 2 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// SetStreamFlowNode used as a request parameters for RPC.
-message SetStreamFlowNode {
+// SetStreamJobCode used as a request parameters for RPC.
+message SetStreamJobCode {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Workflow ID it belongs to.
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// The stream job id it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 
-	// The node info of JSON format.
-	// @inject_tag: json:"node" default:"" binding:"-"
-	model.StreamFlowNode node = 3 [ (validator.field) = { msg_exists: false } ];
+	// The code info of JSON format.
+	// @inject_tag: json:"code" default:"" binding:"-"
+	model.StreamJobCode code = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
-// SetStreamFlowSchedule used as a request parameters for RPC.
-message SetStreamFlowSchedule {
+// SetStreamJobSchedule used as a request parameters for RPC.
+message SetStreamJobSchedule {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Workflow ID it belongs to.
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// The stream job id it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
-	model.StreamFlowSchedule info = 3 [ (validator.field) = { msg_exists: false } ];
+	model.StreamJobSchedule info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
-// SetStreamFlowArgs used as a request parameters for RPC.
-message SetStreamFlowArgs {
+// SetStreamJobArgs used as a request parameters for RPC.
+message SetStreamJobArgs {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Workflow ID it belongs to.
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// The stream job ID it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
-	model.StreamFlowArgs info = 3 [ (validator.field) = { msg_exists: false } ];
+	model.StreamJobArgs info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
-// GetStreamFlowNode used as a request parameters for RPC.
-message GetStreamFlowNode {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// GetStreamJobCode used as a request parameters for RPC.
+message GetStreamJobCode {
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version id in HTTP Request-URI
+	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64  version = 2 [ (validator.field) = { } ];
 }
 
-// GetStreamFlowSchedule used as a request parameters for RPC.
-message GetStreamFlowSchedule {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// GetStreamJobSchedule used as a request parameters for RPC.
+message GetStreamJobSchedule {
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version id in HTTP Request-URI
+	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64  version = 2 [ (validator.field) = { } ];
 }
 
-// GetStreamFlowArgs used as a request parameters for RPC.
-message GetStreamFlowArgs {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// GetStreamJobArgs used as a request parameters for RPC.
+message GetStreamJobArgs {
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version id in HTTP Request-URI
+	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64 version = 2 [ (validator.field) = { } ];
 }
 
-// ExecuteStreamFlow used as a request parameters for RPC.
-message ExecuteStreamFlow {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// RunStreamJob used as a request parameters for RPC.
+message RunStreamJob {
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// Only used for flowmanager -> scheduler.
-	model.StreamFlowProperty property = 2 [ (validator.field) = { } ];
+	model.StreamJobProperty property = 2 [ (validator.field) = { } ];
 }
 
-// ListReleaseStreamFlows used as a request parameters for RPC and HTTP(based on URL-Query).
-message ListReleaseStreamFlows {
+// ListReleaseStreamJobs used as a request parameters for RPC and HTTP(based on URL-Query).
+message ListReleaseStreamJobs {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
@@ -454,9 +458,9 @@ message ListReleaseStreamFlows {
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
 	
 	// The field list used to sorted query results.
-	// Optional values: {flow_id, name, created, updated}.
+	// Optional values: {job_id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
-	// Not required, default: flow_id.
+	// Not required, default: job_id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
 	string sort_by = 3 [ (validator.field) = {} ];
 	
@@ -468,16 +472,16 @@ message ListReleaseStreamFlows {
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 5 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Search with workflow name; Not required.
+	// Search with stream job name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
 	string search = 6 [ (validator.field) = { } ];
 }
 
-// ReleaseStreamFlow used as a request parameters for RPC and HTTP(based on Body.)
-message ReleaseStreamFlow {
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 1 [ (validator.field) = { length_eq: 20 } ];
+// ReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body.)
+message ReleaseStreamJob {
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
 	// Description for this releases. Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
@@ -487,33 +491,33 @@ message ReleaseStreamFlow {
 	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
-// SuspendReleaseStreamFlows used as a request parameters for RPC and HTTP(based on Body).
-message SuspendReleaseStreamFlows {
+// SuspendReleaseStreamJobs used as a request parameters for RPC and HTTP(based on Body).
+message SuspendReleaseStreamJobs {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The list of workflow id. Is Required. Min: 1, Max: 100
-	// @inject_tag: json:"flow_ids" default:"" binding:"gte=1,lte=100"
-	repeated string flow_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+	// The list of stream job id. Is Required. Min: 1, Max: 100
+	// @inject_tag: json:"job_ids" default:"" binding:"gte=1,lte=100"
+	repeated string job_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 	
 	// @inject_tag: json:"stop_running" default:"" binding:"-"
 	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
-// ResumeReleaseStreamFlows used as a request parameters for RPC.
-message ResumeReleaseStreamFlows {
+// ResumeReleaseStreamJobs used as a request parameters for RPC.
+message ResumeReleaseStreamJobs {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The list of workflow id. Is Required. Min: 1, Max: 100
-	// @inject_tag: json:"flow_ids" default:"" binding:"gte=1,lte=100"
-	repeated string flow_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+	// The list of stream job id. Is Required. Min: 1, Max: 100
+	// @inject_tag: json:"job_ids" default:"" binding:"gte=1,lte=100"
+	repeated string job_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
 }
 
-// ListStreamFlowVersions used as a request parameters for RPC and HTTP(based on URL-Query)
-message ListStreamFlowVersions {
+// ListStreamJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListStreamJobVersions {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
@@ -534,9 +538,9 @@ message ListStreamFlowVersions {
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
 	
-	// The workflow id in HTTP Request-URI
-	// @inject_tag: json:"flow_id" uri:"flow_id" default:"" binding:"len=20" swaggerignore:"true"
-	string flow_id = 5 [ (validator.field) = { length_eq: 20 } ];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 5 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
@@ -595,17 +599,17 @@ message DescribeMonitorRule {
 
 //
 
-// SubmitStreamFlows used as a request parameters for RPC.
+// SubmitStreamJobs used as a request parameters for RPC.
 // FIXME: review it.
-message SubmitStreamFlows {
-	repeated model.StreamFlowProperty properties = 1 [ (validator.field) = { } ];
+message SubmitStreamJobs {
+	repeated model.StreamJobProperty properties = 1 [ (validator.field) = { } ];
 	bool stop_running = 2 [ (validator.field) = { } ];
 }
 
-// OfflineStreamFlows used as a request parameters for RPC.
-message OfflineStreamFlows {
+// OfflineStreamJobs used as a request parameters for RPC.
+message OfflineStreamJobs {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	repeated string flow_ids = 2 [ (validator.field) = { length_eq: 20 } ];
+	repeated string job_ids = 2 [ (validator.field) = { length_eq: 20 } ];
 	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
@@ -625,20 +629,20 @@ message ListStreamInsts {
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow id. Not required.
-	// @inject_tag: json:"flow_id" form:"flow_id" default:"" binding:"-"
-	string flow_id = 4 [ (validator.field) = { length_eq: 20 } ];
+	// The stream job id. Not required.
+	// @inject_tag: json:"job_id" form:"job_id" default:"" binding:"-"
+	string job_id = 4 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version id. Not required.
+	// The stream job version id. Not required.
 	// @inject_tag: json:"version" form:"ver_id" default:"" binding:"-"
 	int64 version = 5 [ (validator.field) = { } ];
 }
 
-// FlowInstIdPair is the k/v pair of flowId => instId.
-message FlowInstIdPair {
-	// The workflow id. Is Required.
-	// @inject_tag: json:"flow_id" default:"" binding:"len=20""
-	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+// JobInstIdPair is the k/v pair of jobId => instId.
+message JobInstIdPair {
+	// The stream job id. Is Required.
+	// @inject_tag: json:"job_id" default:"" binding:"len=20""
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 
 	// The instance id. Is Required.
 	// @inject_tag: json:"inst_id" default:"" binding:"len=20"
@@ -652,9 +656,9 @@ message TerminateStreamInsts {
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
-	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated FlowInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
 }
 
 // SuspendStreamInsts used as a request parameters for RPC.
@@ -664,9 +668,9 @@ message SuspendStreamInsts {
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated FlowInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
 }
 
 // ResumeStreamInsts used as a request parameters for RPC.
@@ -676,9 +680,9 @@ message ResumeStreamInsts {
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The list of instance id and its workflow id. Is Required. Min: 1, Max: 100
+	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated FlowInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
 }
 
 // CreateSource used as request parameters for RPC and HTTP(based on Body)
@@ -1135,11 +1139,11 @@ message JobInfo {
 
 	// ENV
 	// @inject_tag: json:"args" default:"" binding:"-"
-	model.StreamFlowArgs args = 3  [ (validator.field) = { } ];
+	model.StreamJobArgs args = 3  [ (validator.field) = { } ];
 
-	// Nodes
-	// @inject_tag: json:"node" default:"" binding:"-"
-	model.StreamFlowNode node = 4  [ (validator.field) = { } ];
+	// code
+	// @inject_tag: json:"code" default:"" binding:"-"
+	model.StreamJobCode code = 4  [ (validator.field) = { } ];
 }
 
 // JobGetState

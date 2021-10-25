@@ -61,8 +61,8 @@ message Workspace {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// The stream workflow info
-message StreamFlow {
+// The stream job info
+message StreamJob {
 	enum Type {
 		_ = 0; // is useless.
 		Operator = 1;
@@ -76,26 +76,26 @@ message StreamFlow {
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Workflow ID, unique within a region.
+	// Job ID, unique within a region.
 	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
 	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
-	// The workflow version id, only used for Published workflows.
-	// Only used in published workflow.
+	// The job version id, only used for Published job.
+	// Only used in published job.
 	// @inject_tag: json:"version" gorm:"column:version;primarykey;"
 	int64 version = 3 [ (validator.field) = { } ];
 	
-	// Workflow Name, Unique within a workspace.
+	// Job Name, Unique within a workspace.
 	// @inject_tag: json:"name" gorm:"column:name;"
 	string name = 4 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	
-	// Workflow Description.
+	// Job Description.
 	// @inject_tag: json:"desc" gorm:"column:desc;"
 	string desc = 5 [ (validator.field) = { length_lt: 1025 } ];
 	
-	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
+	// Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// @inject_tag: json:"type" gorm:"column:type;"
-	Type type = 6 [ (validator.field) = { int_gt: 0 } ];
+	Type type = 6 [ (validator.field) = { int_gt: 0, int_lt: 6 } ];
 	
 	// Timestamp of create time.
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
@@ -106,14 +106,37 @@ message StreamFlow {
 	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// StreamFlowNode represents a workflow node info.
-// Not use with gorm.
-message StreamFlowNode {
+// StreamJobProperty represents property of job.
+message StreamJobProperty {
+	// Workspace ID it belongs to.
+	// @inject_tag: json:"space_id" gorm:"column:space_id;"
+	string space_id = 1 [ (validator.field) = { } ];
+	
+	// Job Id, unique within a region.
+	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
+	string id = 2 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The release version.
+	// @inject_tag: json:"version" gorm:"column:version;primarykey"
+	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
+	
+	// @inject_tag: json:"code" gorm:"column:code;type:json"
+	StreamJobCode code = 4 [ (validator.field) = { } ];
+	
+	// @inject_tag: json:"args" gorm:"column:args;type:json"
+	StreamJobArgs args = 5 [ (validator.field) = { } ];
+	
+	// @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
+	StreamJobSchedule schedule = 6 [ (validator.field) = { } ];
+}
+
+// StreamJobCode represents a job code info.
+message StreamJobCode {
 	option (gosql.serialize) = { json: {} };
 
-	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
+	// Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// @inject_tag: json:"type"
-	StreamFlow.Type type = 1 [ (validator.field) = { } ];
+	StreamJob.Type type = 1 [ (validator.field) = { int_gt: 0, int_lt: 6 } ];
 	
 	// The flink operator nodes. Is useless on present.
 	// @inject_tag: json:"operators" default:""
@@ -135,12 +158,12 @@ message StreamFlowNode {
 	flink.FlinkPython python = 6  [ (validator.field) = { } ];
 }
 
-// StreamFlowArgs represents a workflow running parameters.
+// StreamJobArgs represents a job running parameters.
 // Not use with gorm.
-message StreamFlowArgs {
+message StreamJobArgs {
 	option (gosql.serialize) = { json: {} };
 	
-	// Function represents the function node config for stream workflow.
+	// Function represents the function node config for stream job.
 	message Function {
 		// @inject_tag: json:"udf_ids" binding:"-"
 		repeated string udf_ids = 1   [ (validator.field) = { } ];
@@ -163,9 +186,9 @@ message StreamFlowArgs {
 	Function function = 3 [ (validator.field) = { } ];
 }
 
-// StreamFlowSchedule represents a workflow schedule info.
+// StreamJobSchedule represents a job schedule info.
 // Not use with gorm.
-message StreamFlowSchedule {
+message StreamJobSchedule {
 	option (gosql.serialize) = { json: {} };
 	
 	enum ConcurrencyPolicy {
@@ -223,32 +246,8 @@ message StreamFlowSchedule {
 	string express = 8 [ (validator.field) = { msg_exists: true } ];
 }
 
-// StreamFlowProperty represents property of workflow.
-message StreamFlowProperty {
-	// Workspace ID it belongs to.
-	// @inject_tag: json:"space_id" gorm:"column:space_id;"
-	string space_id = 1 [ (validator.field) = { } ];
-	
-	// Workflow ID, unique within a region.
-	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
-	string id = 2 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The release version.
-	// @inject_tag: json:"version" gorm:"column:version;primarykey"
-	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
-	
-	// @inject_tag: json:"node" gorm:"column:node;type:json"
-	StreamFlowNode node = 4 [ (validator.field) = { } ];
-	
-	// @inject_tag: json:"args" gorm:"column:args;type:json"
-	StreamFlowArgs args = 5 [ (validator.field) = { } ];
-	
-	// @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
-	StreamFlowSchedule schedule = 6 [ (validator.field) = { } ];
-}
-
-// The release stream workflow info.
-message StreamFlowRelease {
+// The release stream job info.
+message StreamJobRelease {
 	enum Status {
 		_ = 0;
 		Active = 1;
@@ -259,7 +258,7 @@ message StreamFlowRelease {
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
-	// Workflow ID, unique within a region.
+	// Job ID, unique within a region.
 	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
 	string id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
@@ -267,19 +266,19 @@ message StreamFlowRelease {
 	// @inject_tag: json:"version" gorm:"column:version;"
 	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
 	
-	// Workflow Name, Unique within a workspace.
+	// Job Name, Unique within a workspace.
 	// @inject_tag: json:"name" gorm:"column:name;"
 	string name = 4 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	
-	// Workflow type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
+	// Job type. 1 => "StreamSQL" 2 => "StreamJAR" 3 => "StreamOperator"
 	// @inject_tag: json:"type" gorm:"column:type;"
-	StreamFlow.Type type = 5 [ (validator.field) = { int_gt: 0 } ];
+	StreamJob.Type type = 5 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Release status, 1 => "active", 2 => "suspended"
 	// @inject_tag: json:"status" gorm:"column:status;"
 	Status status = 6 [ (validator.field) = { length_lt: 1025 } ];
 	
-	// Workflow release description.
+	// Job release description.
 	// @inject_tag: json:"desc" gorm:"column:desc;"
 	string desc = 7 [ (validator.field) = { length_lt: 1025 } ];
 	
@@ -292,8 +291,8 @@ message StreamFlowRelease {
 	int64 updated = 9 [ (validator.field) = { int_gt: 0 } ];
 }
 
-// The instance info of stream workflow.
-message StreamFlowInst {
+// The instance info of stream job.
+message StreamJobInst {
 	enum State {
 		_ = 0;
 		Pending = 1;
@@ -310,15 +309,15 @@ message StreamFlowInst {
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
-	// Workflow ID it belongs to.
-	// @inject_tag: json:"flow_id" gorm:"column:flow_id;"
-	string flow_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// Job ID it belongs to.
+	// @inject_tag: json:"job_id" gorm:"column:job_id;"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
 	// The release version.
 	// @inject_tag: json:"version" gorm:"column:version;
 	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
 	
-	// Workflow instance ID, unique.
+	// Job instance ID, unique.
 	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
 	string id = 4 [ (validator.field) = { length_eq: 20 } ];
 	
@@ -441,7 +440,7 @@ message MonitorRule {
 	// @inject_tag: json:"status" gorm:"column:status;"
 	Status status = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 
-	// The object unit, 1 => "workspace" 2 => "workflow'
+	// The object unit, 1 => "workspace" 2 => "job'
 	// @inject_tag: json:"unit" gorm:"column:unit;"
 	int32 unit = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 
@@ -479,8 +478,8 @@ message QueueMessage {
 	// The request id of beginning.
 	string trace_id = 1 [ (validator.field) = { } ];
 	
-	// The property of stream workflow.
-	StreamFlowProperty property = 2  [ (validator.field) = { } ];
+	// The property of stream job.
+	StreamJobProperty property = 2  [ (validator.field) = { } ];
 	
 	// The operation that you will execute.
 	// 1 => "run"  2 => "retry" 3 => "terminate" 4 => "delete"
@@ -506,9 +505,9 @@ message InstanceRuntimeRankInfo {
   // instance id
   // @inject_tag: json:"id"
   string id = 1 [ (validator.field) = { } ];
-  // flow_id
-  // @inject_tag: json:"flow_id"
-  string flow_id = 2 [ (validator.field) = { } ];
+  // job_id
+  // @inject_tag: json:"job_id"
+  string job_id = 2 [ (validator.field) = { } ];
   // running time
   // @inject_tag: json:"running_time"
   int64 running_time = 3 [ (validator.field) = { int_gt: -1 } ];
@@ -518,9 +517,9 @@ message InstanceRuntimeRankInfo {
 }
 
 message InstanceErrorRankInfo {
-  // flow_id
-  // @inject_tag: json:"flow_id"
-  string flow_id = 1 [ (validator.field) = { } ];
+  // job_id
+  // @inject_tag: json:"job_id"
+  string job_id = 1 [ (validator.field) = { } ];
   // version
   // @inject_tag: json:"version"
   string version = 2 [ (validator.field) = { } ];
