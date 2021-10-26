@@ -1013,14 +1013,14 @@ message CreateUDF {
 	// The space id.
 	// @inject_tag: json:"space_id" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
 	string space_id = 2 [ (validator.field) = { length_eq: 20 } ];
-	
-	// UDF Type one of UDF/UDTF/UDTTF
-	// @inject_tag: json:"udf_type" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	string udf_type = 3 [ (validator.field) = {length_gt:0, length_lt: 21 } ];
-	
-	// UDF language one of Scala/Java/Python
-	// @inject_tag: json:"udf_language" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	string udf_language = 4 [ (validator.field) = {length_gt:0, length_lt: 21 } ];
+
+    // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF
+    // @inject_tag: json:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+    model.UDFInfo.Type udf_type = 3 [ (validator.field) = {int_gt:0, int_lt: 4 } ];
+
+    // UDF language one of 1/2/3 1=>Scala/2=>Java/3=>Python
+    // @inject_tag: json:"udf_language" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+    model.UDFInfo.Language udf_language = 4 [ (validator.field) = {int_gt:0, int_lt: 4 } ];
 	
 	// UDF name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=1025" required:"true" minLength:"1" maxLength:"1025"
@@ -1030,7 +1030,7 @@ message CreateUDF {
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string comment = 6 [ (validator.field) = {  length_lt: 257 } ];
 	
-	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+	// define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
 	// @inject_tag: json:"define" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
 	string define = 7 [ (validator.field) = {  length_lt: 20001 } ];
 	
@@ -1105,9 +1105,9 @@ message ListUDF {
 	// @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
 	string space_id  = 6 [ (validator.field) = { length_eq: 20 } ];
 
-	// UDF Type one of UDF/UDTF/UDTTF, default is UDF
-	// @inject_tag: json:"udf_type" default:"UDF" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	string udf_type = 7 [ (validator.field) = {length_gt:0, length_lt: 21 } ];
+    // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
+    // @inject_tag: json:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+    model.UDFInfo.Type udf_type = 7 [ (validator.field) = {int_gt:0, int_lt: 4 } ];
 }
 
 // UDFCommonFunc used as request parameters for RPC and HTTP(based on Body)
