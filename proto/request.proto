@@ -1106,7 +1106,7 @@ message ListUDF {
 	string space_id  = 6 [ (validator.field) = { length_eq: 20 } ];
 
     // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
-    // @inject_tag: json:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+    // @inject_tag: json:"udf_type" form:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
     model.UDFInfo.Type udf_type = 7 [ (validator.field) = {int_gt:0, int_lt: 4 } ];
 }
 

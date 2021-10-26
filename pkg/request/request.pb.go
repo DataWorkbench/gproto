@@ -4757,8 +4757,8 @@ type ListUDF struct {
 	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-" minLength:"0" maxLength:"100"`
 	// SpaceID; required.
 	SpaceId string `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"`
-	// UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF
-	UdfType model.UDFInfo_Type `protobuf:"varint,7,opt,name=udf_type,json=udfType,proto3,enum=model.UDFInfo_Type" json:"udf_type" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"`
+	// UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
+	UdfType model.UDFInfo_Type `protobuf:"varint,7,opt,name=udf_type,json=udfType,proto3,enum=model.UDFInfo_Type" json:"udf_type" form:"udf_type" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"`
 }
 
 func (x *ListUDF) Reset() {
