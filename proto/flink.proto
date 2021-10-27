@@ -436,37 +436,37 @@ message FlinkOperator {
 // FlinkJar
 message FlinkJar {
 	// jarid in resource manager. Is resource_id.
-	// @inject_tag: json:"resource_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string resource_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: json:"resource_id" default:"" binding:"len=20" minLength:"20" maxLength:"20"
+	string resource_id = 1 [ (validator.field) = { } ];
 	
 	// JarArgs
-	// @inject_tag: json:"jar_args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string jar_args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	// @inject_tag: json:"jar_args" default:"" binding:"gte=1,lte=1024" minLength:"0" maxLength:"1024"
+	string jar_args = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 	
 	// JarEntry
-	// @inject_tag: json:"jar_entry" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string jar_entry = 3 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	// @inject_tag: json:"jar_entry" default:"" binding:"gte=1,lte=1024" minLength:"0" maxLength:"1024"
+	string jar_entry = 3 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 }
 
 // ScalaOperatorProperty
 message FlinkScala {
 	// code.
-	// @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
-	string code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
+	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" minLength:"0" maxLength:"40000"
+	string code = 1 [ (validator.field) = {length_gt: -1, length_lt: 40001 } ];
 }
 
 // PythonOperatorProperty
 message FlinkPython {
 	// code.
-	// @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
-	string code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
+	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" minLength:"0" maxLength:"40000"
+	string code = 1 [ (validator.field) = {length_gt: -1, length_lt: 40001 } ];
 }
 
 // FlinkSQL
 message FlinkSQL {
 	// sql code.
-	// @inject_tag: json:"code" default:"" binding:"gte=1,lte=40000" required:"false" minLength:"1" maxLength:"40000"
-	string code = 1 [ (validator.field) = {length_gt: 0, length_lt: 40001 } ];
+	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" required:"false" minLength:"0" maxLength:"40000"
+	string code = 1 [ (validator.field) = {length_gt: -1, length_lt: 40001 } ];
 }
 
 // ----------------------------- Flink Operator ----------------------------------------- //
