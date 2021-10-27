@@ -526,17 +526,14 @@ func (this *FlinkOperator) Validate() error {
 	return nil
 }
 func (this *FlinkJar) Validate() error {
-	if !(len(this.ResourceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ResourceId))
-	}
-	if !(len(this.JarArgs) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JarArgs", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.JarArgs))
+	if !(len(this.JarArgs) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JarArgs", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.JarArgs))
 	}
 	if !(len(this.JarArgs) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JarArgs", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.JarArgs))
 	}
-	if !(len(this.JarEntry) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JarEntry", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.JarEntry))
+	if !(len(this.JarEntry) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JarEntry", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.JarEntry))
 	}
 	if !(len(this.JarEntry) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JarEntry", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.JarEntry))
@@ -544,8 +541,8 @@ func (this *FlinkJar) Validate() error {
 	return nil
 }
 func (this *FlinkScala) Validate() error {
-	if !(len(this.Code) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Code))
+	if !(len(this.Code) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Code))
 	}
 	if !(len(this.Code) < 40001) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length smaller than '40001'`, this.Code))
@@ -553,8 +550,8 @@ func (this *FlinkScala) Validate() error {
 	return nil
 }
 func (this *FlinkPython) Validate() error {
-	if !(len(this.Code) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Code))
+	if !(len(this.Code) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Code))
 	}
 	if !(len(this.Code) < 40001) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length smaller than '40001'`, this.Code))
@@ -562,8 +559,8 @@ func (this *FlinkPython) Validate() error {
 	return nil
 }
 func (this *FlinkSQL) Validate() error {
-	if !(len(this.Code) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Code))
+	if !(len(this.Code) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Code))
 	}
 	if !(len(this.Code) < 40001) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Code", fmt.Errorf(`value '%v' must have a length smaller than '40001'`, this.Code))
