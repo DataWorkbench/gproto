@@ -748,6 +748,66 @@ message TableSchema {
 
 // ----------------------------- Flink Cluster ----------------------------------------- //
 
+// FlinkConfig
+message FlinkConfig {
+	option (gosql.serialize) = { json: {} };
+
+	// Item for uses-defined config.
+	message Item {
+		// The key in key/value item, Is required, Min: 1, Max: 1024.
+		// @inject_tag: json:"key" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+		string key = 1 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+
+		// The value in key/value item, Is required, Min: 1, Max: 1024.
+		// @inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+		string value = 2 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+	}
+
+	// Config for flink restart strategy.
+	message RestartStrategy {
+		// Flink restart_strategy, Optional value: "none | fixed-delay | failure-rate"
+		// @inject_tag: json:"restart_strategy" default:"1" binding:"oneof=none fixed-delay failure-rate"
+		string restart_strategy = 1 [ (validator.field) = { } ];
+
+		// Affect when restart_strategy == "fixed-delay". Default 1.
+		// @inject_tag: json:"fixed_delay_attempts" default:"1" binding:"-"
+		int32 fixed_delay_attempts = 2;
+
+		// Affect when restart_strategy == "fixed-delay". Default 1, unit is second.
+		// @inject_tag: json:"fixed_delay_delay" default:"1" binding:"-"
+		int32 fixed_delay_delay = 3;
+
+		// Affect when restart_strategy == "failure-rate". Default 1.
+		// @inject_tag: json:"failure_rate_max_failures_per_interval" default:"1" binding:"-"
+		int32 failure_rate_max_failures_per_interval = 4;
+
+		// Affect when restart_strategy == "failure-rate". Default 1. unit is second.
+		// @inject_tag: json:"failure_rate_delay" default:"1" binding:"-"
+		int32 failure_rate_delay = 5;
+
+		// Affect when restart_strategy == "failure-rate". Default 3, unit is minute.
+		// @inject_tag: json:"failure_rate_failure_rate_interval" default:"3" binding:"-"
+		int32 failure_rate_failure_rate_interval = 6;
+	}
+
+	// Log config.
+	message Logger {
+		// Root log level. Optional Value: "TRACE | DEBUG | INFO | WARN | ERROR", Default is "INFO".
+		// @inject_tag: json:"root_log_level" default:"INFO" binding:"TRACE DEBUG INFO WARN ERROR"
+		string root_log_level = 1 [ (validator.field) = { } ];
+	}
+
+	// @inject_tag: json:"custom" default:"" binding:"-"
+	repeated Item custom = 1  [ (validator.field) = { } ];
+
+	// Is required.
+	// @inject_tag: json:"restart_strategy" default:"" binding:"-"
+	RestartStrategy restart_strategy = 2 ;
+
+	// Is required.
+	// @inject_tag: json:"logger" default:"" binding:"-"
+	Logger logger = 3;
+}
 
 // ----------------------------- Flink Cluster ----------------------------------------- //
 

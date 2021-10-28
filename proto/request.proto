@@ -1215,3 +1215,253 @@ message JobFree {
     // @inject_tag: json:"resources" binding:"-"
     model.JobResources Resources = 1 [ (validator.field) = { } ];
 }
+
+message DescribeFlickClusterAPI {
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string cluster_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message ListFlinkClusters {
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
+	string sort_by = 3 [ (validator.field) = {} ];
+
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 4 [ (validator.field) = { } ];
+
+	// Search with workspace name; Not required.
+	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
+	string search = 5 [ (validator.field) = { } ];
+
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 6 [ (validator.field) = { length_eq: 20 } ];
+
+	// Filter by Flink cluster status;  Not required.
+	// Valid optional: 1 => "enabled", 2 => "disabled".
+	// @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
+	model.FlinkCluster.Status status = 7 [ (validator.field) = { } ];
+
+	// Filter by Flink cluster name; valid if `search` is empty; Not required.
+	// @inject_tag: json:"name" form:"name" default:"" binding:"-"
+	string name = 8 [ (validator.field) = { } ];
+}
+
+message DeleteFlinkClusters {
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
+	repeated string cluster_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+message StartFlinkClusters {
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
+	repeated string cluster_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+message StopFlinkClusters {
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
+	repeated string cluster_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+message CreateFlinkCluster {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The user-id of created this cluster. It fixed to request user id.
+	// @inject_tag: json:"create_by" swaggerignore:"true"
+	string create_by = 2 [ (validator.field) = { msg_exists: true } ];
+
+	// Cluster Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+
+	// Flink Version. Is required. Optional value: "flink-v1.12.4_scala-1.11"
+	// @inject_tag: json:"version" binding:"oneof=flink-v1.12.4_scala-1.11"
+	string version = 4 [ (validator.field) = { msg_exists: true } ];
+
+	// resource config.
+	//
+	// Flink task number for TaskManager. Is required, Min 1, Max ?
+	// @inject_tag: json:"task_num" binding:"gte=1"
+	int32 task_num = 6 [ (validator.field) = { int_gt: 0 } ];
+
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"job_cu" binding:"gte=0.5,lte=8"
+	float job_cu = 7 [ (validator.field) = { float_gte: 0.5, float_lte: 8 } ];
+
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"task_cu" binding:"gte=0.5,lte=8"
+	float task_cu = 8 [ (validator.field) = { float_gte: 0.5, float_lte: 8 } ];
+
+	// Network config. Is required.
+	// @inject_tag: json:"network_id" binding:"-"
+	string network_id = 9 [ (validator.field) = { } ];
+
+	// Config of host aliases. Not required.
+	// @inject_tag: json:"host_aliases" binding:"-"
+	model.HostAliases host_aliases = 11 [ (validator.field) = { } ];
+
+	// Flink config. Not required.
+	// @inject_tag: json:"config" binding:"-"
+	flink.FlinkConfig config = 10 [ (validator.field) = { } ];
+}
+
+message UpdateFlinkCluster {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The flink cluster id in HTTP Request-URI
+	// @inject_tag: json:"cluster_id" uri:"cluster_id" default:"" binding:"len=20" swaggerignore:"true"
+	string cluster_id = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// Cluster Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+
+	// Flink Version. Is required. Optional value: "flink-v1.12.4_scala-1.11"
+	// @inject_tag: json:"version" binding:"oneof=flink-v1.12.4_scala-1.11"
+	string version = 4 [ (validator.field) = { msg_exists: true } ];
+
+	// resource config.
+	//
+	// Flink task number for TaskManager. Is required, Min 1, Max ?
+	// @inject_tag: json:"task_num" binding:"gte=1"
+	int32 task_num = 6 [ (validator.field) = { int_gt: 0 } ];
+
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"job_cu" binding:"gte=0.5,lte=8"
+	float job_cu = 7 [ (validator.field) = { float_gte: 0.5, float_lte: 8 } ];
+
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"task_cu" binding:"gte=0.5,lte=8"
+	float task_cu = 8 [ (validator.field) = { float_gte: 0.5, float_lte: 8 } ];
+
+	// Network config. Is required.
+	// @inject_tag: json:"network_id" binding:"-"
+	string network_id = 9 [ (validator.field) = { } ];
+
+	// Config of host aliases. Not required.
+	// @inject_tag: json:"host_aliases" binding:"-"
+	model.HostAliases host_aliases = 10 [ (validator.field) = { } ];
+
+	// Flink config, Is required.
+	// @inject_tag: json:"config" binding:"-"
+	flink.FlinkConfig config = 11 [ (validator.field) = { } ];
+}
+
+message DescribeFlinkCluster {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"cluster_id" uri:"cluster_id" default:"" binding:"len=20" swaggerignore:"true"
+	string cluster_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message ListNetworks {
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
+
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
+
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
+	string sort_by = 3 [ (validator.field) = {} ];
+
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 4 [ (validator.field) = { } ];
+
+	// Search with workspace name; Not required.
+	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
+	string search = 5 [ (validator.field) = { } ];
+
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 6 [ (validator.field) = { length_eq: 20 } ];
+
+	// Filter by network name; valid if `search` is empty; Not required.
+	// @inject_tag: json:"name" form:"name" default:"" binding:"-"
+	string name = 7 [ (validator.field) = { } ];
+}
+
+message DeleteNetworks {
+	// The list of network id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"network_ids" default:"" binding:"gte=1,lte=100"
+	repeated string network_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+}
+
+message CreateNetwork {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The user-id of created this cluster. It fixed to request user id.
+	// @inject_tag: json:"create_by" swaggerignore:"true"
+	string create_by = 2 [ (validator.field) = { msg_exists: true } ];
+
+	// Network Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+
+	// FIXME: Confirm the length.
+	// VPC's route id, Is required.
+	// @inject_tag: json:"router_id"
+	string router_id = 4 [ (validator.field) = { length_gt: 1 } ];;
+
+	// FIXME: Confirm the length.
+	// vxnet id. Is required.
+	// @inject_tag: json:"vxnet_id"
+	string vxnet_id = 5 [ (validator.field) = { length_gt: 1 } ];
+}
+
+message UpdateNetwork {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The flink cluster id in HTTP Request-URI
+	// @inject_tag: json:"network_id" uri:"network_id" default:"" binding:"len=20" swaggerignore:"true"
+	string network_id = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// Network Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+
+	// FIXME: Confirm the length.
+	// VPC's route id. Is required.
+	// @inject_tag: json:"router_id"
+	string router_id = 4 [ (validator.field) = { length_gt: 1 } ];;
+
+	// FIXME: Confirm the length.
+	// vxnet id. Is required.
+	// @inject_tag: json:"vxnet_id"
+	string vxnet_id = 5 [ (validator.field) = { length_gt: 1 } ];
+}
+
+message DescribeNetwork {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"network_id" uri:"network_id" default:"" binding:"len=20" swaggerignore:"true"
+	string network_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
