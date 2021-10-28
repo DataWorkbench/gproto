@@ -1049,3 +1049,214 @@ func (this *JobFree) Validate() error {
 	}
 	return nil
 }
+func (this *DescribeFlickClusterAPI) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.ClusterId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ClusterId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ClusterId))
+	}
+	return nil
+}
+func (this *ListFlinkClusters) Validate() error {
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	return nil
+}
+func (this *DeleteFlinkClusters) Validate() error {
+	for _, item := range this.ClusterIds {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClusterIds", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClusterIds", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
+	}
+	return nil
+}
+func (this *StartFlinkClusters) Validate() error {
+	for _, item := range this.ClusterIds {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClusterIds", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClusterIds", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
+	}
+	return nil
+}
+func (this *StopFlinkClusters) Validate() error {
+	for _, item := range this.ClusterIds {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClusterIds", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("ClusterIds", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
+	}
+	return nil
+}
+func (this *CreateFlinkCluster) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(this.TaskNum > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskNum", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskNum))
+	}
+	if !(this.JobCu >= 0.5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than or equal to '0.5'`, this.JobCu))
+	}
+	if !(this.JobCu <= 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be lower than or equal to '8'`, this.JobCu))
+	}
+	if !(this.TaskCu >= 0.5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be greater than or equal to '0.5'`, this.TaskCu))
+	}
+	if !(this.TaskCu <= 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be lower than or equal to '8'`, this.TaskCu))
+	}
+	if this.HostAliases != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.HostAliases); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("HostAliases", err)
+		}
+	}
+	if this.Config != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Config); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Config", err)
+		}
+	}
+	return nil
+}
+func (this *UpdateFlinkCluster) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.ClusterId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ClusterId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ClusterId))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(this.TaskNum > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskNum", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskNum))
+	}
+	if !(this.JobCu >= 0.5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than or equal to '0.5'`, this.JobCu))
+	}
+	if !(this.JobCu <= 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be lower than or equal to '8'`, this.JobCu))
+	}
+	if !(this.TaskCu >= 0.5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be greater than or equal to '0.5'`, this.TaskCu))
+	}
+	if !(this.TaskCu <= 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be lower than or equal to '8'`, this.TaskCu))
+	}
+	if this.HostAliases != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.HostAliases); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("HostAliases", err)
+		}
+	}
+	if this.Config != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Config); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Config", err)
+		}
+	}
+	return nil
+}
+func (this *DescribeFlinkCluster) Validate() error {
+	if !(len(this.ClusterId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ClusterId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ClusterId))
+	}
+	return nil
+}
+func (this *ListNetworks) Validate() error {
+	if !(this.Limit > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be greater than '0'`, this.Limit))
+	}
+	if !(this.Limit < 101) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Limit", fmt.Errorf(`value '%v' must be less than '101'`, this.Limit))
+	}
+	if !(this.Offset > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Offset", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Offset))
+	}
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	return nil
+}
+func (this *DeleteNetworks) Validate() error {
+	for _, item := range this.NetworkIds {
+		if !(len(item) > 0) {
+			return github_com_mwitkow_go_proto_validators.FieldError("NetworkIds", fmt.Errorf(`value '%v' must have a length greater than '0'`, item))
+		}
+		if !(len(item) < 101) {
+			return github_com_mwitkow_go_proto_validators.FieldError("NetworkIds", fmt.Errorf(`value '%v' must have a length smaller than '101'`, item))
+		}
+	}
+	return nil
+}
+func (this *CreateNetwork) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(len(this.RouterId) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RouterId", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.RouterId))
+	}
+	if !(len(this.VxnetId) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("VxnetId", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.VxnetId))
+	}
+	return nil
+}
+func (this *UpdateNetwork) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.NetworkId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NetworkId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.NetworkId))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(len(this.RouterId) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RouterId", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.RouterId))
+	}
+	if !(len(this.VxnetId) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("VxnetId", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.VxnetId))
+	}
+	return nil
+}
+func (this *DescribeNetwork) Validate() error {
+	if !(len(this.NetworkId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NetworkId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.NetworkId))
+	}
+	return nil
+}

@@ -5526,6 +5526,1005 @@ func (x *JobFree) GetResources() *model.JobResources {
 	return nil
 }
 
+type DescribeFlickClusterAPI struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id,omitempty"`
+	ClusterId string `protobuf:"bytes,2,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id,omitempty"`
+}
+
+func (x *DescribeFlickClusterAPI) Reset() {
+	*x = DescribeFlickClusterAPI{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[83]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeFlickClusterAPI) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeFlickClusterAPI) ProtoMessage() {}
+
+func (x *DescribeFlickClusterAPI) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[83]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeFlickClusterAPI.ProtoReflect.Descriptor instead.
+func (*DescribeFlickClusterAPI) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *DescribeFlickClusterAPI) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *DescribeFlickClusterAPI) GetClusterId() string {
+	if x != nil {
+		return x.ClusterId
+	}
+	return ""
+}
+
+type ListFlinkClusters struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+	// Not required, default: id.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
+	// Search with workspace name; Not required.
+	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
+	// The workspace id in HTTP Request-URI. Is Required.
+	SpaceId string `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// Filter by Flink cluster status;  Not required.
+	// Valid optional: 1 => "enabled", 2 => "disabled".
+	Status model.FlinkCluster_Status `protobuf:"varint,7,opt,name=status,proto3,enum=model.FlinkCluster_Status" json:"status" form:"status" binding:"oneof=0 1 2"`
+	// Filter by Flink cluster name; valid if `search` is empty; Not required.
+	Name string `protobuf:"bytes,8,opt,name=name,proto3" json:"name" form:"name" binding:"-"`
+}
+
+func (x *ListFlinkClusters) Reset() {
+	*x = ListFlinkClusters{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[84]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListFlinkClusters) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListFlinkClusters) ProtoMessage() {}
+
+func (x *ListFlinkClusters) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[84]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListFlinkClusters.ProtoReflect.Descriptor instead.
+func (*ListFlinkClusters) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *ListFlinkClusters) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListFlinkClusters) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListFlinkClusters) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListFlinkClusters) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListFlinkClusters) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+func (x *ListFlinkClusters) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ListFlinkClusters) GetStatus() model.FlinkCluster_Status {
+	if x != nil {
+		return x.Status
+	}
+	return model.FlinkCluster__
+}
+
+func (x *ListFlinkClusters) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type DeleteFlinkClusters struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	ClusterIds []string `protobuf:"bytes,1,rep,name=cluster_ids,json=clusterIds,proto3" json:"cluster_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *DeleteFlinkClusters) Reset() {
+	*x = DeleteFlinkClusters{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[85]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteFlinkClusters) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteFlinkClusters) ProtoMessage() {}
+
+func (x *DeleteFlinkClusters) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[85]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteFlinkClusters.ProtoReflect.Descriptor instead.
+func (*DeleteFlinkClusters) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *DeleteFlinkClusters) GetClusterIds() []string {
+	if x != nil {
+		return x.ClusterIds
+	}
+	return nil
+}
+
+type StartFlinkClusters struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	ClusterIds []string `protobuf:"bytes,1,rep,name=cluster_ids,json=clusterIds,proto3" json:"cluster_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *StartFlinkClusters) Reset() {
+	*x = StartFlinkClusters{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[86]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StartFlinkClusters) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StartFlinkClusters) ProtoMessage() {}
+
+func (x *StartFlinkClusters) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[86]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StartFlinkClusters.ProtoReflect.Descriptor instead.
+func (*StartFlinkClusters) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *StartFlinkClusters) GetClusterIds() []string {
+	if x != nil {
+		return x.ClusterIds
+	}
+	return nil
+}
+
+type StopFlinkClusters struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	ClusterIds []string `protobuf:"bytes,1,rep,name=cluster_ids,json=clusterIds,proto3" json:"cluster_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *StopFlinkClusters) Reset() {
+	*x = StopFlinkClusters{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[87]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StopFlinkClusters) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StopFlinkClusters) ProtoMessage() {}
+
+func (x *StopFlinkClusters) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[87]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StopFlinkClusters.ProtoReflect.Descriptor instead.
+func (*StopFlinkClusters) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *StopFlinkClusters) GetClusterIds() []string {
+	if x != nil {
+		return x.ClusterIds
+	}
+	return nil
+}
+
+type CreateFlinkCluster struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The user-id of created this cluster. It fixed to request user id.
+	CreateBy string `protobuf:"bytes,2,opt,name=create_by,json=createBy,proto3" json:"create_by" swaggerignore:"true"`
+	// Cluster Name. Is required.
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name"`
+	// Flink Version. Is required. Optional value: "flink-v1.12.4_scala-1.11"
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" binding:"oneof=flink-v1.12.4_scala-1.11"`
+	// resource config.
+	//
+	// Flink task number for TaskManager. Is required, Min 1, Max ?
+	TaskNum int32 `protobuf:"varint,6,opt,name=task_num,json=taskNum,proto3" json:"task_num" binding:"gte=1"`
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	JobCu float32 `protobuf:"fixed32,7,opt,name=job_cu,json=jobCu,proto3" json:"job_cu" binding:"gte=0.5,lte=8"`
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	TaskCu float32 `protobuf:"fixed32,8,opt,name=task_cu,json=taskCu,proto3" json:"task_cu" binding:"gte=0.5,lte=8"`
+	// Network config. Is required.
+	NetworkId string `protobuf:"bytes,9,opt,name=network_id,json=networkId,proto3" json:"network_id" binding:"-"`
+	// Config of host aliases. Not required.
+	HostAliases *model.HostAliases `protobuf:"bytes,11,opt,name=host_aliases,json=hostAliases,proto3" json:"host_aliases" binding:"-"`
+	// Flink config. Not required.
+	Config *flinkpb.FlinkConfig `protobuf:"bytes,10,opt,name=config,proto3" json:"config" binding:"-"`
+}
+
+func (x *CreateFlinkCluster) Reset() {
+	*x = CreateFlinkCluster{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[88]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateFlinkCluster) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateFlinkCluster) ProtoMessage() {}
+
+func (x *CreateFlinkCluster) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[88]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateFlinkCluster.ProtoReflect.Descriptor instead.
+func (*CreateFlinkCluster) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *CreateFlinkCluster) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *CreateFlinkCluster) GetCreateBy() string {
+	if x != nil {
+		return x.CreateBy
+	}
+	return ""
+}
+
+func (x *CreateFlinkCluster) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateFlinkCluster) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
+func (x *CreateFlinkCluster) GetTaskNum() int32 {
+	if x != nil {
+		return x.TaskNum
+	}
+	return 0
+}
+
+func (x *CreateFlinkCluster) GetJobCu() float32 {
+	if x != nil {
+		return x.JobCu
+	}
+	return 0
+}
+
+func (x *CreateFlinkCluster) GetTaskCu() float32 {
+	if x != nil {
+		return x.TaskCu
+	}
+	return 0
+}
+
+func (x *CreateFlinkCluster) GetNetworkId() string {
+	if x != nil {
+		return x.NetworkId
+	}
+	return ""
+}
+
+func (x *CreateFlinkCluster) GetHostAliases() *model.HostAliases {
+	if x != nil {
+		return x.HostAliases
+	}
+	return nil
+}
+
+func (x *CreateFlinkCluster) GetConfig() *flinkpb.FlinkConfig {
+	if x != nil {
+		return x.Config
+	}
+	return nil
+}
+
+type UpdateFlinkCluster struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The flink cluster id in HTTP Request-URI
+	ClusterId string `protobuf:"bytes,2,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id" uri:"cluster_id" binding:"len=20" swaggerignore:"true"`
+	// Cluster Name. Is required.
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name"`
+	// Flink Version. Is required. Optional value: "flink-v1.12.4_scala-1.11"
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" binding:"oneof=flink-v1.12.4_scala-1.11"`
+	// resource config.
+	//
+	// Flink task number for TaskManager. Is required, Min 1, Max ?
+	TaskNum int32 `protobuf:"varint,6,opt,name=task_num,json=taskNum,proto3" json:"task_num" binding:"gte=1"`
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	JobCu float32 `protobuf:"fixed32,7,opt,name=job_cu,json=jobCu,proto3" json:"job_cu" binding:"gte=0.5,lte=8"`
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	TaskCu float32 `protobuf:"fixed32,8,opt,name=task_cu,json=taskCu,proto3" json:"task_cu" binding:"gte=0.5,lte=8"`
+	// Network config. Is required.
+	NetworkId string `protobuf:"bytes,9,opt,name=network_id,json=networkId,proto3" json:"network_id" binding:"-"`
+	// Config of host aliases. Not required.
+	HostAliases *model.HostAliases `protobuf:"bytes,10,opt,name=host_aliases,json=hostAliases,proto3" json:"host_aliases" binding:"-"`
+	// Flink config, Is required.
+	Config *flinkpb.FlinkConfig `protobuf:"bytes,11,opt,name=config,proto3" json:"config" binding:"-"`
+}
+
+func (x *UpdateFlinkCluster) Reset() {
+	*x = UpdateFlinkCluster{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[89]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateFlinkCluster) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateFlinkCluster) ProtoMessage() {}
+
+func (x *UpdateFlinkCluster) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[89]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateFlinkCluster.ProtoReflect.Descriptor instead.
+func (*UpdateFlinkCluster) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *UpdateFlinkCluster) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *UpdateFlinkCluster) GetClusterId() string {
+	if x != nil {
+		return x.ClusterId
+	}
+	return ""
+}
+
+func (x *UpdateFlinkCluster) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateFlinkCluster) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
+func (x *UpdateFlinkCluster) GetTaskNum() int32 {
+	if x != nil {
+		return x.TaskNum
+	}
+	return 0
+}
+
+func (x *UpdateFlinkCluster) GetJobCu() float32 {
+	if x != nil {
+		return x.JobCu
+	}
+	return 0
+}
+
+func (x *UpdateFlinkCluster) GetTaskCu() float32 {
+	if x != nil {
+		return x.TaskCu
+	}
+	return 0
+}
+
+func (x *UpdateFlinkCluster) GetNetworkId() string {
+	if x != nil {
+		return x.NetworkId
+	}
+	return ""
+}
+
+func (x *UpdateFlinkCluster) GetHostAliases() *model.HostAliases {
+	if x != nil {
+		return x.HostAliases
+	}
+	return nil
+}
+
+func (x *UpdateFlinkCluster) GetConfig() *flinkpb.FlinkConfig {
+	if x != nil {
+		return x.Config
+	}
+	return nil
+}
+
+type DescribeFlinkCluster struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	ClusterId string `protobuf:"bytes,1,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id" uri:"cluster_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *DescribeFlinkCluster) Reset() {
+	*x = DescribeFlinkCluster{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[90]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeFlinkCluster) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeFlinkCluster) ProtoMessage() {}
+
+func (x *DescribeFlinkCluster) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[90]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeFlinkCluster.ProtoReflect.Descriptor instead.
+func (*DescribeFlinkCluster) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{90}
+}
+
+func (x *DescribeFlinkCluster) GetClusterId() string {
+	if x != nil {
+		return x.ClusterId
+	}
+	return ""
+}
+
+type ListNetworks struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	Limit int32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"`
+	// The offset position. Not required, default 0.
+	Offset int32 `protobuf:"varint,2,opt,name=offset,proto3" json:"offset" form:"offset" default:"0" binding:"gte=0"`
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+	// Not required, default: id.
+	SortBy string `protobuf:"bytes,3,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by" binding:"-"`
+	// Reverse order results. Not required, default: false.
+	Reverse bool `protobuf:"varint,4,opt,name=reverse,proto3" json:"reverse" form:"reverse" binding:"-"`
+	// Search with workspace name; Not required.
+	Search string `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search" binding:"-"`
+	// The workspace id in HTTP Request-URI. Is Required.
+	SpaceId string `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// Filter by network name; valid if `search` is empty; Not required.
+	Name string `protobuf:"bytes,7,opt,name=name,proto3" json:"name" form:"name" binding:"-"`
+}
+
+func (x *ListNetworks) Reset() {
+	*x = ListNetworks{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[91]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListNetworks) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListNetworks) ProtoMessage() {}
+
+func (x *ListNetworks) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[91]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListNetworks.ProtoReflect.Descriptor instead.
+func (*ListNetworks) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{91}
+}
+
+func (x *ListNetworks) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListNetworks) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListNetworks) GetSortBy() string {
+	if x != nil {
+		return x.SortBy
+	}
+	return ""
+}
+
+func (x *ListNetworks) GetReverse() bool {
+	if x != nil {
+		return x.Reverse
+	}
+	return false
+}
+
+func (x *ListNetworks) GetSearch() string {
+	if x != nil {
+		return x.Search
+	}
+	return ""
+}
+
+func (x *ListNetworks) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *ListNetworks) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type DeleteNetworks struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The list of network id. Is required, Min 1, Max 100.
+	NetworkIds []string `protobuf:"bytes,1,rep,name=network_ids,json=networkIds,proto3" json:"network_ids" binding:"gte=1,lte=100"`
+}
+
+func (x *DeleteNetworks) Reset() {
+	*x = DeleteNetworks{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[92]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteNetworks) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteNetworks) ProtoMessage() {}
+
+func (x *DeleteNetworks) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[92]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteNetworks.ProtoReflect.Descriptor instead.
+func (*DeleteNetworks) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{92}
+}
+
+func (x *DeleteNetworks) GetNetworkIds() []string {
+	if x != nil {
+		return x.NetworkIds
+	}
+	return nil
+}
+
+type CreateNetwork struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The user-id of created this cluster. It fixed to request user id.
+	CreateBy string `protobuf:"bytes,2,opt,name=create_by,json=createBy,proto3" json:"create_by" swaggerignore:"true"`
+	// Network Name. Is required.
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name"`
+	// FIXME: Confirm the length.
+	// VPC's route id, Is required.
+	RouterId string `protobuf:"bytes,4,opt,name=router_id,json=routerId,proto3" json:"router_id"`
+	// FIXME: Confirm the length.
+	// vxnet id. Is required.
+	VxnetId string `protobuf:"bytes,5,opt,name=vxnet_id,json=vxnetId,proto3" json:"vxnet_id"`
+}
+
+func (x *CreateNetwork) Reset() {
+	*x = CreateNetwork{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[93]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateNetwork) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateNetwork) ProtoMessage() {}
+
+func (x *CreateNetwork) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[93]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateNetwork.ProtoReflect.Descriptor instead.
+func (*CreateNetwork) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *CreateNetwork) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *CreateNetwork) GetCreateBy() string {
+	if x != nil {
+		return x.CreateBy
+	}
+	return ""
+}
+
+func (x *CreateNetwork) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *CreateNetwork) GetRouterId() string {
+	if x != nil {
+		return x.RouterId
+	}
+	return ""
+}
+
+func (x *CreateNetwork) GetVxnetId() string {
+	if x != nil {
+		return x.VxnetId
+	}
+	return ""
+}
+
+type UpdateNetwork struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
+	// The flink cluster id in HTTP Request-URI
+	NetworkId string `protobuf:"bytes,2,opt,name=network_id,json=networkId,proto3" json:"network_id" uri:"network_id" binding:"len=20" swaggerignore:"true"`
+	// Network Name. Is required.
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name"`
+	// FIXME: Confirm the length.
+	// VPC's route id. Is required.
+	RouterId string `protobuf:"bytes,4,opt,name=router_id,json=routerId,proto3" json:"router_id"`
+	// FIXME: Confirm the length.
+	// vxnet id. Is required.
+	VxnetId string `protobuf:"bytes,5,opt,name=vxnet_id,json=vxnetId,proto3" json:"vxnet_id"`
+}
+
+func (x *UpdateNetwork) Reset() {
+	*x = UpdateNetwork{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[94]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateNetwork) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateNetwork) ProtoMessage() {}
+
+func (x *UpdateNetwork) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[94]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateNetwork.ProtoReflect.Descriptor instead.
+func (*UpdateNetwork) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *UpdateNetwork) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *UpdateNetwork) GetNetworkId() string {
+	if x != nil {
+		return x.NetworkId
+	}
+	return ""
+}
+
+func (x *UpdateNetwork) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UpdateNetwork) GetRouterId() string {
+	if x != nil {
+		return x.RouterId
+	}
+	return ""
+}
+
+func (x *UpdateNetwork) GetVxnetId() string {
+	if x != nil {
+		return x.VxnetId
+	}
+	return ""
+}
+
+type DescribeNetwork struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	NetworkId string `protobuf:"bytes,1,opt,name=network_id,json=networkId,proto3" json:"network_id" uri:"network_id" binding:"len=20" swaggerignore:"true"`
+}
+
+func (x *DescribeNetwork) Reset() {
+	*x = DescribeNetwork{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_request_proto_msgTypes[95]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeNetwork) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeNetwork) ProtoMessage() {}
+
+func (x *DescribeNetwork) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_request_proto_msgTypes[95]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeNetwork.ProtoReflect.Descriptor instead.
+func (*DescribeNetwork) Descriptor() ([]byte, []int) {
+	return file_proto_request_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *DescribeNetwork) GetNetworkId() string {
+	if x != nil {
+		return x.NetworkId
+	}
+	return ""
+}
+
 type UpsertMembers_Pair struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -5540,7 +6539,7 @@ type UpsertMembers_Pair struct {
 func (x *UpsertMembers_Pair) Reset() {
 	*x = UpsertMembers_Pair{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_request_proto_msgTypes[83]
+		mi := &file_proto_request_proto_msgTypes[96]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5553,7 +6552,7 @@ func (x *UpsertMembers_Pair) String() string {
 func (*UpsertMembers_Pair) ProtoMessage() {}
 
 func (x *UpsertMembers_Pair) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_request_proto_msgTypes[83]
+	mi := &file_proto_request_proto_msgTypes[96]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6280,10 +7279,154 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4a, 0x6f, 0x62, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
 	0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x09, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
-	0x65, 0x73, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x73, 0x22, 0x65, 0x0a, 0x17, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x46, 0x6c,
+	0x69, 0x63, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x41, 0x50, 0x49, 0x12, 0x22, 0x0a,
+	0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49,
+	0x64, 0x12, 0x26, 0x0a, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x09,
+	0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x22, 0xb1, 0x02, 0x0a, 0x11, 0x4c, 0x69,
+	0x73, 0x74, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x73, 0x12,
+	0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08,
+	0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12,
+	0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x42,
+	0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01,
+	0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x1d, 0x0a, 0x07, 0x73, 0x6f, 0x72, 0x74,
+	0x5f, 0x62, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52,
+	0x06, 0x73, 0x6f, 0x72, 0x74, 0x42, 0x79, 0x12, 0x1e, 0x0a, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72,
+	0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07,
+	0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x12, 0x1c, 0x0a, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63,
+	0x68, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73,
+	0x65, 0x61, 0x72, 0x63, 0x68, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69,
+	0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x38, 0x0a, 0x06, 0x73, 0x74, 0x61,
+	0x74, 0x75, 0x73, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x2e, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x2e, 0x53,
+	0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x74, 0x61,
+	0x74, 0x75, 0x73, 0x12, 0x18, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x40, 0x0a,
+	0x13, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73,
+	0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x0b, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f,
+	0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70,
+	0x00, 0x78, 0x65, 0x52, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x73, 0x22,
+	0x3f, 0x0a, 0x12, 0x53, 0x74, 0x61, 0x72, 0x74, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75,
+	0x73, 0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x0b, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72,
+	0x5f, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04,
+	0x70, 0x00, 0x78, 0x65, 0x52, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x73,
+	0x22, 0x3e, 0x0a, 0x11, 0x53, 0x74, 0x6f, 0x70, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75,
+	0x73, 0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x0b, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72,
+	0x5f, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04,
+	0x70, 0x00, 0x78, 0x65, 0x52, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x73,
+	0x22, 0xb5, 0x03, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x46, 0x6c, 0x69, 0x6e, 0x6b,
+	0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x23, 0x0a, 0x09, 0x63,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x62, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06,
+	0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x08, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x79,
+	0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09,
+	0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
+	0x20, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
+	0x6e, 0x12, 0x21, 0x0a, 0x08, 0x74, 0x61, 0x73, 0x6b, 0x5f, 0x6e, 0x75, 0x6d, 0x18, 0x06, 0x20,
+	0x01, 0x28, 0x05, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x74, 0x61, 0x73,
+	0x6b, 0x4e, 0x75, 0x6d, 0x12, 0x2d, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x63, 0x75, 0x18, 0x07,
+	0x20, 0x01, 0x28, 0x02, 0x42, 0x16, 0xe2, 0xdf, 0x1f, 0x12, 0x49, 0x00, 0x00, 0x00, 0x00, 0x00,
+	0x00, 0xe0, 0x3f, 0x51, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x40, 0x52, 0x05, 0x6a, 0x6f,
+	0x62, 0x43, 0x75, 0x12, 0x2f, 0x0a, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x5f, 0x63, 0x75, 0x18, 0x08,
+	0x20, 0x01, 0x28, 0x02, 0x42, 0x16, 0xe2, 0xdf, 0x1f, 0x12, 0x49, 0x00, 0x00, 0x00, 0x00, 0x00,
+	0x00, 0xe0, 0x3f, 0x51, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x40, 0x52, 0x06, 0x74, 0x61,
+	0x73, 0x6b, 0x43, 0x75, 0x12, 0x23, 0x0a, 0x0a, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f,
+	0x69, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x09,
+	0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x49, 0x64, 0x12, 0x3b, 0x0a, 0x0c, 0x68, 0x6f, 0x73,
+	0x74, 0x5f, 0x61, 0x6c, 0x69, 0x61, 0x73, 0x65, 0x73, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x48, 0x6f, 0x73, 0x74, 0x41, 0x6c, 0x69, 0x61,
+	0x73, 0x65, 0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x68, 0x6f, 0x73, 0x74, 0x41,
+	0x6c, 0x69, 0x61, 0x73, 0x65, 0x73, 0x12, 0x30, 0x0a, 0x06, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67,
+	0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x2e, 0x46,
+	0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
+	0x52, 0x06, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x22, 0xb8, 0x03, 0x0a, 0x12, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x12,
+	0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x49, 0x64, 0x12, 0x26, 0x0a, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x09, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70,
+	0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x76, 0x65,
+	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
+	0x02, 0x20, 0x01, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x21, 0x0a, 0x08,
+	0x74, 0x61, 0x73, 0x6b, 0x5f, 0x6e, 0x75, 0x6d, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x42, 0x06,
+	0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x4e, 0x75, 0x6d, 0x12,
+	0x2d, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x63, 0x75, 0x18, 0x07, 0x20, 0x01, 0x28, 0x02, 0x42,
+	0x16, 0xe2, 0xdf, 0x1f, 0x12, 0x49, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x3f, 0x51, 0x00,
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x40, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x43, 0x75, 0x12, 0x2f,
+	0x0a, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x5f, 0x63, 0x75, 0x18, 0x08, 0x20, 0x01, 0x28, 0x02, 0x42,
+	0x16, 0xe2, 0xdf, 0x1f, 0x12, 0x49, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x3f, 0x51, 0x00,
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x40, 0x52, 0x06, 0x74, 0x61, 0x73, 0x6b, 0x43, 0x75, 0x12,
+	0x23, 0x0a, 0x0a, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f, 0x69, 0x64, 0x18, 0x09, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x09, 0x6e, 0x65, 0x74, 0x77, 0x6f,
+	0x72, 0x6b, 0x49, 0x64, 0x12, 0x3b, 0x0a, 0x0c, 0x68, 0x6f, 0x73, 0x74, 0x5f, 0x61, 0x6c, 0x69,
+	0x61, 0x73, 0x65, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x2e, 0x48, 0x6f, 0x73, 0x74, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x65, 0x73, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x68, 0x6f, 0x73, 0x74, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x65,
+	0x73, 0x12, 0x30, 0x0a, 0x06, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x18, 0x0b, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x12, 0x2e, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x2e, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43,
+	0x6f, 0x6e, 0x66, 0x69, 0x67, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x63, 0x6f, 0x6e,
+	0x66, 0x69, 0x67, 0x22, 0x3e, 0x0a, 0x14, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x46,
+	0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x26, 0x0a, 0x0a, 0x63,
+	0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x09, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65,
+	0x72, 0x49, 0x64, 0x22, 0xf2, 0x01, 0x0a, 0x0c, 0x4c, 0x69, 0x73, 0x74, 0x4e, 0x65, 0x74, 0x77,
+	0x6f, 0x72, 0x6b, 0x73, 0x12, 0x1e, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00, 0x18, 0x65, 0x52, 0x05, 0x6c,
+	0x69, 0x6d, 0x69, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x05, 0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x10, 0xff, 0xff, 0xff, 0xff, 0xff,
+	0xff, 0xff, 0xff, 0xff, 0x01, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x1d, 0x0a,
+	0x07, 0x73, 0x6f, 0x72, 0x74, 0x5f, 0x62, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04,
+	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x6f, 0x72, 0x74, 0x42, 0x79, 0x12, 0x1e, 0x0a, 0x07,
+	0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2,
+	0xdf, 0x1f, 0x00, 0x52, 0x07, 0x72, 0x65, 0x76, 0x65, 0x72, 0x73, 0x65, 0x12, 0x1c, 0x0a, 0x06,
+	0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf,
+	0x1f, 0x00, 0x52, 0x06, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x18,
+	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf,
+	0x1f, 0x00, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x3b, 0x0a, 0x0e, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x73, 0x12, 0x29, 0x0a, 0x0b, 0x6e, 0x65,
+	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x42,
+	0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x70, 0x00, 0x78, 0x65, 0x52, 0x0a, 0x6e, 0x65, 0x74, 0x77, 0x6f,
+	0x72, 0x6b, 0x49, 0x64, 0x73, 0x22, 0xbf, 0x01, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
+	0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x23, 0x0a, 0x09, 0x63,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x62, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06,
+	0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x08, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x79,
+	0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09,
+	0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
+	0x23, 0x0a, 0x09, 0x72, 0x6f, 0x75, 0x74, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x70, 0x01, 0x52, 0x08, 0x72, 0x6f, 0x75, 0x74,
+	0x65, 0x72, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x08, 0x76, 0x78, 0x6e, 0x65, 0x74, 0x5f, 0x69, 0x64,
+	0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x70, 0x01, 0x52, 0x07,
+	0x76, 0x78, 0x6e, 0x65, 0x74, 0x49, 0x64, 0x22, 0xc2, 0x01, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f,
+	0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x26, 0x0a,
+	0x0a, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x09, 0x6e, 0x65, 0x74, 0x77,
+	0x6f, 0x72, 0x6b, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04,
+	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x23, 0x0a, 0x09, 0x72, 0x6f, 0x75, 0x74, 0x65, 0x72, 0x5f, 0x69,
+	0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x70, 0x01, 0x52,
+	0x08, 0x72, 0x6f, 0x75, 0x74, 0x65, 0x72, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x08, 0x76, 0x78, 0x6e,
+	0x65, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
+	0x02, 0x70, 0x01, 0x52, 0x07, 0x76, 0x78, 0x6e, 0x65, 0x74, 0x49, 0x64, 0x22, 0x39, 0x0a, 0x0f,
+	0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x12,
+	0x26, 0x0a, 0x0a, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x09, 0x6e, 0x65,
+	0x74, 0x77, 0x6f, 0x72, 0x6b, 0x49, 0x64, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65,
+	0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -6298,7 +7441,7 @@ func file_proto_request_proto_rawDescGZIP() []byte {
 	return file_proto_request_proto_rawDescData
 }
 
-var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 85)
+var file_proto_request_proto_msgTypes = make([]protoimpl.MessageInfo, 98)
 var file_proto_request_proto_goTypes = []interface{}{
 	(*ListWorkspaces)(nil),             // 0: request.ListWorkspaces
 	(*DeleteWorkspaces)(nil),           // 1: request.DeleteWorkspaces
@@ -6383,69 +7526,90 @@ var file_proto_request_proto_goTypes = []interface{}{
 	(*PTaskErrorRanking)(nil),          // 80: request.PTaskErrorRanking
 	(*PTaskDispatchCount)(nil),         // 81: request.PTaskDispatchCount
 	(*JobFree)(nil),                    // 82: request.JobFree
-	(*UpsertMembers_Pair)(nil),         // 83: request.UpsertMembers.Pair
-	nil,                                // 84: request.CheckPermission.RolesEntry
-	(model.Workspace_Status)(0),        // 85: model.Workspace.Status
-	(*model.Operation)(nil),            // 86: model.Operation
-	(model.Operation_Type)(0),          // 87: model.Operation.Type
-	(model.Operation_State)(0),         // 88: model.Operation.State
-	(model.StreamJob_Type)(0),          // 89: model.StreamJob.Type
-	(*model.StreamJobCode)(nil),        // 90: model.StreamJobCode
-	(*model.StreamJobSchedule)(nil),    // 91: model.StreamJobSchedule
-	(*model.StreamJobArgs)(nil),        // 92: model.StreamJobArgs
-	(*model.MonitorRule)(nil),          // 93: model.MonitorRule
-	(*model.StreamJobProperty)(nil),    // 94: model.StreamJobProperty
-	(model.DataSource_Type)(0),         // 95: model.DataSource.Type
-	(*datasourcepb.DataSourceURL)(nil), // 96: datasource.DataSourceURL
-	(*flinkpb.TableSchema)(nil),        // 97: flink.TableSchema
-	(model.TableInfo_Kind)(0),          // 98: model.TableInfo.Kind
-	(model.Resource_Type)(0),           // 99: model.Resource.Type
-	(model.UDFInfo_Type)(0),            // 100: model.UDFInfo.Type
-	(model.UDFInfo_Language)(0),        // 101: model.UDFInfo.Language
-	(*model.JobResources)(nil),         // 102: model.JobResources
+	(*DescribeFlickClusterAPI)(nil),    // 83: request.DescribeFlickClusterAPI
+	(*ListFlinkClusters)(nil),          // 84: request.ListFlinkClusters
+	(*DeleteFlinkClusters)(nil),        // 85: request.DeleteFlinkClusters
+	(*StartFlinkClusters)(nil),         // 86: request.StartFlinkClusters
+	(*StopFlinkClusters)(nil),          // 87: request.StopFlinkClusters
+	(*CreateFlinkCluster)(nil),         // 88: request.CreateFlinkCluster
+	(*UpdateFlinkCluster)(nil),         // 89: request.UpdateFlinkCluster
+	(*DescribeFlinkCluster)(nil),       // 90: request.DescribeFlinkCluster
+	(*ListNetworks)(nil),               // 91: request.ListNetworks
+	(*DeleteNetworks)(nil),             // 92: request.DeleteNetworks
+	(*CreateNetwork)(nil),              // 93: request.CreateNetwork
+	(*UpdateNetwork)(nil),              // 94: request.UpdateNetwork
+	(*DescribeNetwork)(nil),            // 95: request.DescribeNetwork
+	(*UpsertMembers_Pair)(nil),         // 96: request.UpsertMembers.Pair
+	nil,                                // 97: request.CheckPermission.RolesEntry
+	(model.Workspace_Status)(0),        // 98: model.Workspace.Status
+	(*model.Operation)(nil),            // 99: model.Operation
+	(model.Operation_Type)(0),          // 100: model.Operation.Type
+	(model.Operation_State)(0),         // 101: model.Operation.State
+	(model.StreamJob_Type)(0),          // 102: model.StreamJob.Type
+	(*model.StreamJobCode)(nil),        // 103: model.StreamJobCode
+	(*model.StreamJobSchedule)(nil),    // 104: model.StreamJobSchedule
+	(*model.StreamJobArgs)(nil),        // 105: model.StreamJobArgs
+	(*model.MonitorRule)(nil),          // 106: model.MonitorRule
+	(*model.StreamJobProperty)(nil),    // 107: model.StreamJobProperty
+	(model.DataSource_Type)(0),         // 108: model.DataSource.Type
+	(*datasourcepb.DataSourceURL)(nil), // 109: datasource.DataSourceURL
+	(*flinkpb.TableSchema)(nil),        // 110: flink.TableSchema
+	(model.TableInfo_Kind)(0),          // 111: model.TableInfo.Kind
+	(model.Resource_Type)(0),           // 112: model.Resource.Type
+	(model.UDFInfo_Type)(0),            // 113: model.UDFInfo.Type
+	(model.UDFInfo_Language)(0),        // 114: model.UDFInfo.Language
+	(*model.JobResources)(nil),         // 115: model.JobResources
+	(model.FlinkCluster_Status)(0),     // 116: model.FlinkCluster.Status
+	(*model.HostAliases)(nil),          // 117: model.HostAliases
+	(*flinkpb.FlinkConfig)(nil),        // 118: flink.FlinkConfig
 }
 var file_proto_request_proto_depIdxs = []int32{
-	85,  // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
-	86,  // 1: request.AddAudit.info:type_name -> model.Operation
-	87,  // 2: request.ListAudits.type:type_name -> model.Operation.Type
-	88,  // 3: request.ListAudits.state:type_name -> model.Operation.State
-	83,  // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
-	87,  // 5: request.CheckPermission.op_type:type_name -> model.Operation.Type
-	84,  // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
-	89,  // 7: request.CreateStreamJob.type:type_name -> model.StreamJob.Type
-	90,  // 8: request.SetStreamJobCode.code:type_name -> model.StreamJobCode
-	91,  // 9: request.SetStreamJobSchedule.info:type_name -> model.StreamJobSchedule
-	92,  // 10: request.SetStreamJobArgs.info:type_name -> model.StreamJobArgs
-	93,  // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
-	93,  // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
-	94,  // 13: request.SubmitStreamJobs.properties:type_name -> model.StreamJobProperty
+	98,  // 0: request.ListWorkspaces.status:type_name -> model.Workspace.Status
+	99,  // 1: request.AddAudit.info:type_name -> model.Operation
+	100, // 2: request.ListAudits.type:type_name -> model.Operation.Type
+	101, // 3: request.ListAudits.state:type_name -> model.Operation.State
+	96,  // 4: request.UpsertMembers.users:type_name -> request.UpsertMembers.Pair
+	100, // 5: request.CheckPermission.op_type:type_name -> model.Operation.Type
+	97,  // 6: request.CheckPermission.roles:type_name -> request.CheckPermission.RolesEntry
+	102, // 7: request.CreateStreamJob.type:type_name -> model.StreamJob.Type
+	103, // 8: request.SetStreamJobCode.code:type_name -> model.StreamJobCode
+	104, // 9: request.SetStreamJobSchedule.info:type_name -> model.StreamJobSchedule
+	105, // 10: request.SetStreamJobArgs.info:type_name -> model.StreamJobArgs
+	106, // 11: request.CreateMonitorRule.info:type_name -> model.MonitorRule
+	106, // 12: request.UpdateMonitorRule.info:type_name -> model.MonitorRule
+	107, // 13: request.SubmitStreamJobs.properties:type_name -> model.StreamJobProperty
 	42,  // 14: request.TerminateStreamInsts.inst_ids:type_name -> request.JobInstIdPair
 	42,  // 15: request.SuspendStreamInsts.inst_ids:type_name -> request.JobInstIdPair
 	42,  // 16: request.ResumeStreamInsts.inst_ids:type_name -> request.JobInstIdPair
-	95,  // 17: request.CreateSource.source_type:type_name -> model.DataSource.Type
-	96,  // 18: request.CreateSource.url:type_name -> datasource.DataSourceURL
-	95,  // 19: request.UpdateSource.source_type:type_name -> model.DataSource.Type
-	96,  // 20: request.UpdateSource.url:type_name -> datasource.DataSourceURL
-	95,  // 21: request.PingSource.source_type:type_name -> model.DataSource.Type
-	96,  // 22: request.PingSource.url:type_name -> datasource.DataSourceURL
-	97,  // 23: request.CreateTable.table_schema:type_name -> flink.TableSchema
-	98,  // 24: request.CreateTable.table_kind:type_name -> model.TableInfo.Kind
-	97,  // 25: request.UpdateTable.table_schema:type_name -> flink.TableSchema
-	98,  // 26: request.UpdateTable.table_kind:type_name -> model.TableInfo.Kind
-	98,  // 27: request.ListTable.table_kind:type_name -> model.TableInfo.Kind
-	99,  // 28: request.UpdateResource.resource_type:type_name -> model.Resource.Type
-	100, // 29: request.CreateUDF.udf_type:type_name -> model.UDFInfo.Type
-	101, // 30: request.CreateUDF.udf_language:type_name -> model.UDFInfo.Language
-	100, // 31: request.ListUDF.udf_type:type_name -> model.UDFInfo.Type
-	92,  // 32: request.JobInfo.args:type_name -> model.StreamJobArgs
-	90,  // 33: request.JobInfo.code:type_name -> model.StreamJobCode
+	108, // 17: request.CreateSource.source_type:type_name -> model.DataSource.Type
+	109, // 18: request.CreateSource.url:type_name -> datasource.DataSourceURL
+	108, // 19: request.UpdateSource.source_type:type_name -> model.DataSource.Type
+	109, // 20: request.UpdateSource.url:type_name -> datasource.DataSourceURL
+	108, // 21: request.PingSource.source_type:type_name -> model.DataSource.Type
+	109, // 22: request.PingSource.url:type_name -> datasource.DataSourceURL
+	110, // 23: request.CreateTable.table_schema:type_name -> flink.TableSchema
+	111, // 24: request.CreateTable.table_kind:type_name -> model.TableInfo.Kind
+	110, // 25: request.UpdateTable.table_schema:type_name -> flink.TableSchema
+	111, // 26: request.UpdateTable.table_kind:type_name -> model.TableInfo.Kind
+	111, // 27: request.ListTable.table_kind:type_name -> model.TableInfo.Kind
+	112, // 28: request.UpdateResource.resource_type:type_name -> model.Resource.Type
+	113, // 29: request.CreateUDF.udf_type:type_name -> model.UDFInfo.Type
+	114, // 30: request.CreateUDF.udf_language:type_name -> model.UDFInfo.Language
+	113, // 31: request.ListUDF.udf_type:type_name -> model.UDFInfo.Type
+	105, // 32: request.JobInfo.args:type_name -> model.StreamJobArgs
+	103, // 33: request.JobInfo.code:type_name -> model.StreamJobCode
 	72,  // 34: request.JobParser.Job:type_name -> request.JobInfo
-	102, // 35: request.JobFree.Resources:type_name -> model.JobResources
-	36,  // [36:36] is the sub-list for method output_type
-	36,  // [36:36] is the sub-list for method input_type
-	36,  // [36:36] is the sub-list for extension type_name
-	36,  // [36:36] is the sub-list for extension extendee
-	0,   // [0:36] is the sub-list for field type_name
+	115, // 35: request.JobFree.Resources:type_name -> model.JobResources
+	116, // 36: request.ListFlinkClusters.status:type_name -> model.FlinkCluster.Status
+	117, // 37: request.CreateFlinkCluster.host_aliases:type_name -> model.HostAliases
+	118, // 38: request.CreateFlinkCluster.config:type_name -> flink.FlinkConfig
+	117, // 39: request.UpdateFlinkCluster.host_aliases:type_name -> model.HostAliases
+	118, // 40: request.UpdateFlinkCluster.config:type_name -> flink.FlinkConfig
+	41,  // [41:41] is the sub-list for method output_type
+	41,  // [41:41] is the sub-list for method input_type
+	41,  // [41:41] is the sub-list for extension type_name
+	41,  // [41:41] is the sub-list for extension extendee
+	0,   // [0:41] is the sub-list for field type_name
 }
 
 func init() { file_proto_request_proto_init() }
@@ -7451,6 +8615,162 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeFlickClusterAPI); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListFlinkClusters); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteFlinkClusters); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StartFlinkClusters); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StopFlinkClusters); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateFlinkCluster); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateFlinkCluster); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeFlinkCluster); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListNetworks); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteNetworks); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateNetwork); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateNetwork); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeNetwork); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_request_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpsertMembers_Pair); i {
 			case 0:
 				return &v.state
@@ -7469,7 +8789,7 @@ func file_proto_request_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_request_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   85,
+			NumMessages:   98,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -943,3 +943,44 @@ func (this *TableSchema) Validate() error {
 	}
 	return nil
 }
+func (this *FlinkConfig) Validate() error {
+	for _, item := range this.Custom {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Custom", err)
+			}
+		}
+	}
+	if this.RestartStrategy != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.RestartStrategy); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("RestartStrategy", err)
+		}
+	}
+	if this.Logger != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Logger); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Logger", err)
+		}
+	}
+	return nil
+}
+func (this *FlinkConfig_Item) Validate() error {
+	if !(len(this.Key) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Key))
+	}
+	if !(len(this.Key) < 1024) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Key))
+	}
+	if !(len(this.Value) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Value))
+	}
+	if !(len(this.Value) < 1024) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Value))
+	}
+	return nil
+}
+func (this *FlinkConfig_RestartStrategy) Validate() error {
+	return nil
+}
+func (this *FlinkConfig_Logger) Validate() error {
+	return nil
+}

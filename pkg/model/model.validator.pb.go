@@ -480,20 +480,34 @@ func (this *JobResources) Validate() error {
 	}
 	return nil
 }
-func (this *HBaseConfig) Validate() error {
-	for _, item := range this.Hosts {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Hosts", err)
-			}
-		}
+func (this *Network) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
+	if !(len(this.RouterId) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("RouterId", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.RouterId))
+	}
+	if !(len(this.VxnetId) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("VxnetId", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.VxnetId))
+	}
+	if !(this.Created > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
+	}
+	if !(this.Updated > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
 	}
 	return nil
 }
-func (this *HBaseConfig_Host) Validate() error {
-	return nil
-}
-func (this *FlinkConfig) Validate() error {
+func (this *HostAliases) Validate() error {
 	for _, item := range this.Items {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
@@ -503,48 +517,45 @@ func (this *FlinkConfig) Validate() error {
 	}
 	return nil
 }
-func (this *FlinkConfig_Item) Validate() error {
-	if !(len(this.Key) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Key))
-	}
-	if !(len(this.Key) < 1024) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Key", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Key))
-	}
-	if !(len(this.Value) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Value))
-	}
-	if !(len(this.Value) < 1024) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must have a length smaller than '1024'`, this.Value))
-	}
+func (this *HostAliases_Item) Validate() error {
 	return nil
 }
 func (this *FlinkCluster) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.Id) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
+	}
+	if !(len(this.Name) > 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
+	}
+	if !(len(this.Name) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.Name))
+	}
 	if !(this.TaskNum > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("TaskNum", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskNum))
 	}
-	if !(this.JobCu > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.JobCu))
+	if !(this.JobCu >= 0.5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be greater than or equal to '0.5'`, this.JobCu))
 	}
-	if !(this.JobCu < 9) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be less than '9'`, this.JobCu))
+	if !(this.JobCu <= 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobCu", fmt.Errorf(`value '%v' must be lower than or equal to '8'`, this.JobCu))
 	}
-	if !(this.TaskCu > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be greater than '0'`, this.TaskCu))
+	if !(this.TaskCu >= 0.5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be greater than or equal to '0.5'`, this.TaskCu))
 	}
-	if !(this.TaskCu < 9) {
-		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be less than '9'`, this.TaskCu))
+	if !(this.TaskCu <= 8) {
+		return github_com_mwitkow_go_proto_validators.FieldError("TaskCu", fmt.Errorf(`value '%v' must be lower than or equal to '8'`, this.TaskCu))
 	}
-	if nil == this.Flink {
-		return github_com_mwitkow_go_proto_validators.FieldError("Flink", fmt.Errorf("message must exist"))
-	}
-	if this.Flink != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Flink); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Flink", err)
+	if this.HostAliases != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.HostAliases); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("HostAliases", err)
 		}
 	}
-	if this.Hbase != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Hbase); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Hbase", err)
+	if this.Config != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Config); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Config", err)
 		}
 	}
 	if !(this.Created > 0) {

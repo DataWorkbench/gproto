@@ -6,6 +6,8 @@ package enginepb
 import (
 	fmt "fmt"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
+	_ "github.com/DataWorkbench/gproto/pkg/request"
+	_ "github.com/DataWorkbench/gproto/pkg/response"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 	proto "google.golang.org/protobuf/proto"
@@ -21,11 +23,6 @@ func (this *FlinkEngine) Validate() error {
 	if this.HbaseConf != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.HbaseConf); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("HbaseConf", err)
-		}
-	}
-	if this.FlinkConf != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.FlinkConf); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("FlinkConf", err)
 		}
 	}
 	return nil

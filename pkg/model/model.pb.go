@@ -930,9 +930,11 @@ func (UDFInfo_Language) EnumDescriptor() ([]byte, []int) {
 type FlinkCluster_Status int32
 
 const (
-	FlinkCluster__       FlinkCluster_Status = 0
-	FlinkCluster_Running FlinkCluster_Status = 1
-	FlinkCluster_Stopped FlinkCluster_Status = 2
+	FlinkCluster__         FlinkCluster_Status = 0
+	FlinkCluster_Running   FlinkCluster_Status = 1
+	FlinkCluster_Stopped   FlinkCluster_Status = 2
+	FlinkCluster_Starting  FlinkCluster_Status = 3
+	FlinkCluster_Exception FlinkCluster_Status = 4
 )
 
 // Enum value maps for FlinkCluster_Status.
@@ -941,11 +943,15 @@ var (
 		0: "_",
 		1: "Running",
 		2: "Stopped",
+		3: "Starting",
+		4: "Exception",
 	}
 	FlinkCluster_Status_value = map[string]int32{
-		"_":       0,
-		"Running": 1,
-		"Stopped": 2,
+		"_":         0,
+		"Running":   1,
+		"Stopped":   2,
+		"Starting":  3,
+		"Exception": 4,
 	}
 )
 
@@ -974,64 +980,6 @@ func (x FlinkCluster_Status) Number() protoreflect.EnumNumber {
 // Deprecated: Use FlinkCluster_Status.Descriptor instead.
 func (FlinkCluster_Status) EnumDescriptor() ([]byte, []int) {
 	return file_proto_model_proto_rawDescGZIP(), []int{27, 0}
-}
-
-type FlinkCluster_LogLevel int32
-
-const (
-	FlinkCluster___    FlinkCluster_LogLevel = 0
-	FlinkCluster_TRACE FlinkCluster_LogLevel = 1
-	FlinkCluster_DEBUG FlinkCluster_LogLevel = 2
-	FlinkCluster_INFO  FlinkCluster_LogLevel = 3
-	FlinkCluster_WARN  FlinkCluster_LogLevel = 4
-	FlinkCluster_ERROR FlinkCluster_LogLevel = 5
-)
-
-// Enum value maps for FlinkCluster_LogLevel.
-var (
-	FlinkCluster_LogLevel_name = map[int32]string{
-		0: "__",
-		1: "TRACE",
-		2: "DEBUG",
-		3: "INFO",
-		4: "WARN",
-		5: "ERROR",
-	}
-	FlinkCluster_LogLevel_value = map[string]int32{
-		"__":    0,
-		"TRACE": 1,
-		"DEBUG": 2,
-		"INFO":  3,
-		"WARN":  4,
-		"ERROR": 5,
-	}
-)
-
-func (x FlinkCluster_LogLevel) Enum() *FlinkCluster_LogLevel {
-	p := new(FlinkCluster_LogLevel)
-	*p = x
-	return p
-}
-
-func (x FlinkCluster_LogLevel) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (FlinkCluster_LogLevel) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[18].Descriptor()
-}
-
-func (FlinkCluster_LogLevel) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[18]
-}
-
-func (x FlinkCluster_LogLevel) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use FlinkCluster_LogLevel.Descriptor instead.
-func (FlinkCluster_LogLevel) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{27, 1}
 }
 
 // EmptyStruct represents no value with a message.
@@ -3352,19 +3300,32 @@ func (x *JobResources) GetJar() string {
 	return ""
 }
 
-// HBaseConfig
-// FIXME: review it. removed it?
-type HBaseConfig struct {
+// Network config.
+type Network struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The host lists of HBase.
-	Hosts []*HBaseConfig_Host `protobuf:"bytes,1,rep,name=hosts,proto3" json:"hosts" binding:"-"`
+	// Workspace ID it belongs to.
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
+	// Network Id, unique within a region.
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
+	// Network Name.
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
+	// VPC's route id
+	RouterId string `protobuf:"bytes,4,opt,name=router_id,json=routerId,proto3" json:"router_id" gorm:"column:router_id;"`
+	// vxnet id.
+	VxnetId string `protobuf:"bytes,5,opt,name=vxnet_id,json=vxnetId,proto3" json:"vxnet_id" gorm:"column:vxnet_id;"`
+	// The user-id of created this network.
+	CreateBy string `protobuf:"bytes,6,opt,name=create_by,json=createBy,proto3" json:"create_by" gorm:"column:create_by;"`
+	// Timestamp of create time.
+	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
+	// Timestamp of update time.
+	Updated int64 `protobuf:"varint,8,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
 
-func (x *HBaseConfig) Reset() {
-	*x = HBaseConfig{}
+func (x *Network) Reset() {
+	*x = Network{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_model_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3372,13 +3333,13 @@ func (x *HBaseConfig) Reset() {
 	}
 }
 
-func (x *HBaseConfig) String() string {
+func (x *Network) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*HBaseConfig) ProtoMessage() {}
+func (*Network) ProtoMessage() {}
 
-func (x *HBaseConfig) ProtoReflect() protoreflect.Message {
+func (x *Network) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_model_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3390,31 +3351,79 @@ func (x *HBaseConfig) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HBaseConfig.ProtoReflect.Descriptor instead.
-func (*HBaseConfig) Descriptor() ([]byte, []int) {
+// Deprecated: Use Network.ProtoReflect.Descriptor instead.
+func (*Network) Descriptor() ([]byte, []int) {
 	return file_proto_model_proto_rawDescGZIP(), []int{25}
 }
 
-func (x *HBaseConfig) GetHosts() []*HBaseConfig_Host {
+func (x *Network) GetSpaceId() string {
 	if x != nil {
-		return x.Hosts
+		return x.SpaceId
 	}
-	return nil
+	return ""
 }
 
-// FlinkConfig
-// FIXME: review it. removed it?
-type FlinkConfig struct {
+func (x *Network) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Network) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Network) GetRouterId() string {
+	if x != nil {
+		return x.RouterId
+	}
+	return ""
+}
+
+func (x *Network) GetVxnetId() string {
+	if x != nil {
+		return x.VxnetId
+	}
+	return ""
+}
+
+func (x *Network) GetCreateBy() string {
+	if x != nil {
+		return x.CreateBy
+	}
+	return ""
+}
+
+func (x *Network) GetCreated() int64 {
+	if x != nil {
+		return x.Created
+	}
+	return 0
+}
+
+func (x *Network) GetUpdated() int64 {
+	if x != nil {
+		return x.Updated
+	}
+	return 0
+}
+
+// HostAliases
+type HostAliases struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Config of flink
-	Items []*FlinkConfig_Item `protobuf:"bytes,3,rep,name=items,proto3" json:"conf" binding:"-"`
+	// The hostname aliases.
+	Items []*HostAliases_Item `protobuf:"bytes,1,rep,name=items,proto3" json:"items" binding:"-"`
 }
 
-func (x *FlinkConfig) Reset() {
-	*x = FlinkConfig{}
+func (x *HostAliases) Reset() {
+	*x = HostAliases{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_model_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3422,13 +3431,13 @@ func (x *FlinkConfig) Reset() {
 	}
 }
 
-func (x *FlinkConfig) String() string {
+func (x *HostAliases) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FlinkConfig) ProtoMessage() {}
+func (*HostAliases) ProtoMessage() {}
 
-func (x *FlinkConfig) ProtoReflect() protoreflect.Message {
+func (x *HostAliases) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_model_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3440,12 +3449,12 @@ func (x *FlinkConfig) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FlinkConfig.ProtoReflect.Descriptor instead.
-func (*FlinkConfig) Descriptor() ([]byte, []int) {
+// Deprecated: Use HostAliases.ProtoReflect.Descriptor instead.
+func (*HostAliases) Descriptor() ([]byte, []int) {
 	return file_proto_model_proto_rawDescGZIP(), []int{26}
 }
 
-func (x *FlinkConfig) GetItems() []*FlinkConfig_Item {
+func (x *HostAliases) GetItems() []*HostAliases_Item {
 	if x != nil {
 		return x.Items
 	}
@@ -3453,33 +3462,44 @@ func (x *FlinkConfig) GetItems() []*FlinkConfig_Item {
 }
 
 // FlinkCluster is schema for flink (session) cluster.
-// FIXME: review it. removed it?
 type FlinkCluster struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id      string              `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name    string              `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Statue  FlinkCluster_Status `protobuf:"varint,3,opt,name=statue,proto3,enum=model.FlinkCluster_Status" json:"statue,omitempty"`
-	Version string              `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty"`
+	// Workspace ID it belongs to.
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
+	// Review it.
+	// Cluster ID, unique within a region. generated by server.
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
+	// Cluster Name.
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
+	// Flink Version. Optional value: "flink-v1.12.4_scala-1.11"
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" gorm:"column:version;"`
+	// Cluster Status. 1 => "running" 2 => "stopped" 3 => "starting" 4 => "exception"
+	Status FlinkCluster_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.FlinkCluster_Status" json:"status" gorm:"column:status;"`
+	// resource config.
+	//
 	// Flink task number for TaskManager. Is required, Min 1, Max ?
-	TaskNum int32 `protobuf:"varint,5,opt,name=task_num,json=taskNum,proto3" json:"task_num" binding:"gte=1"`
-	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
-	JobCu int32 `protobuf:"varint,6,opt,name=job_cu,json=jobCu,proto3" json:"job_cu" binding:"gte=1"`
-	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 1, Max 8
-	TaskCu       int32                 `protobuf:"varint,7,opt,name=task_cu,json=taskCu,proto3" json:"task_cu" binding:"gte=1"`
-	RootLogLevel FlinkCluster_LogLevel `protobuf:"varint,8,opt,name=root_log_level,json=rootLogLevel,proto3,enum=model.FlinkCluster_LogLevel" json:"root_log_level,omitempty"`
-	// The config for flink. Is required
-	Flink *FlinkConfig `protobuf:"bytes,9,opt,name=flink,proto3" json:"flink" binding:"required"`
-	// Config of HBase. Not required.
-	Hbase *HBaseConfig `protobuf:"bytes,10,opt,name=hbase,proto3" json:"hbase" binding:"-"`
+	TaskNum int32 `protobuf:"varint,6,opt,name=task_num,json=taskNum,proto3" json:"task_num" gorm:"column:task_num;"`
+	// Flink JobManager's cpu and memory. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	JobCu float32 `protobuf:"fixed32,7,opt,name=job_cu,json=jobCu,proto3" json:"job_cu" gorm:"column:job_cu;"`
+	// Flink TaskManager's cpu and memory. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	TaskCu float32 `protobuf:"fixed32,8,opt,name=task_cu,json=taskCu,proto3" json:"task_cu" gorm:"column:task_cu;"`
+	// Network config.
+	NetworkId string `protobuf:"bytes,9,opt,name=network_id,json=networkId,proto3" json:"network_id" gorm:"column:network_id;"`
+	// Config of host aliases. Not required.
+	HostAliases *HostAliases `protobuf:"bytes,10,opt,name=host_aliases,json=hostAliases,proto3" json:"host_aliases" gorm:"column:host_aliases;"`
+	// Flink config.
+	Config *flinkpb.FlinkConfig `protobuf:"bytes,11,opt,name=config,proto3" json:"config" gorm:"column:config;"`
+	// URL of Flink UI, generated by server.
+	WebUi string `protobuf:"bytes,12,opt,name=web_ui,json=webUi,proto3" json:"web_ui" gorm:"-;"`
+	// The user-id of created this cluster.
+	CreateBy string `protobuf:"bytes,13,opt,name=create_by,json=createBy,proto3" json:"create_by" gorm:"column:create_by;"`
 	// Timestamp of create time.
-	Created int64 `protobuf:"varint,11,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
+	Created int64 `protobuf:"varint,14,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
-	Updated int64 `protobuf:"varint,12,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
-	// xxx.xxx.xxx.xxx:8080
-	Url string `protobuf:"bytes,13,opt,name=url,proto3" json:"url,omitempty"`
+	Updated int64 `protobuf:"varint,15,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
 
 func (x *FlinkCluster) Reset() {
@@ -3514,6 +3534,13 @@ func (*FlinkCluster) Descriptor() ([]byte, []int) {
 	return file_proto_model_proto_rawDescGZIP(), []int{27}
 }
 
+func (x *FlinkCluster) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
 func (x *FlinkCluster) GetId() string {
 	if x != nil {
 		return x.Id
@@ -3528,18 +3555,18 @@ func (x *FlinkCluster) GetName() string {
 	return ""
 }
 
-func (x *FlinkCluster) GetStatue() FlinkCluster_Status {
-	if x != nil {
-		return x.Statue
-	}
-	return FlinkCluster__
-}
-
 func (x *FlinkCluster) GetVersion() string {
 	if x != nil {
 		return x.Version
 	}
 	return ""
+}
+
+func (x *FlinkCluster) GetStatus() FlinkCluster_Status {
+	if x != nil {
+		return x.Status
+	}
+	return FlinkCluster__
 }
 
 func (x *FlinkCluster) GetTaskNum() int32 {
@@ -3549,39 +3576,53 @@ func (x *FlinkCluster) GetTaskNum() int32 {
 	return 0
 }
 
-func (x *FlinkCluster) GetJobCu() int32 {
+func (x *FlinkCluster) GetJobCu() float32 {
 	if x != nil {
 		return x.JobCu
 	}
 	return 0
 }
 
-func (x *FlinkCluster) GetTaskCu() int32 {
+func (x *FlinkCluster) GetTaskCu() float32 {
 	if x != nil {
 		return x.TaskCu
 	}
 	return 0
 }
 
-func (x *FlinkCluster) GetRootLogLevel() FlinkCluster_LogLevel {
+func (x *FlinkCluster) GetNetworkId() string {
 	if x != nil {
-		return x.RootLogLevel
+		return x.NetworkId
 	}
-	return FlinkCluster___
+	return ""
 }
 
-func (x *FlinkCluster) GetFlink() *FlinkConfig {
+func (x *FlinkCluster) GetHostAliases() *HostAliases {
 	if x != nil {
-		return x.Flink
+		return x.HostAliases
 	}
 	return nil
 }
 
-func (x *FlinkCluster) GetHbase() *HBaseConfig {
+func (x *FlinkCluster) GetConfig() *flinkpb.FlinkConfig {
 	if x != nil {
-		return x.Hbase
+		return x.Config
 	}
 	return nil
+}
+
+func (x *FlinkCluster) GetWebUi() string {
+	if x != nil {
+		return x.WebUi
+	}
+	return ""
+}
+
+func (x *FlinkCluster) GetCreateBy() string {
+	if x != nil {
+		return x.CreateBy
+	}
+	return ""
 }
 
 func (x *FlinkCluster) GetCreated() int64 {
@@ -3596,13 +3637,6 @@ func (x *FlinkCluster) GetUpdated() int64 {
 		return x.Updated
 	}
 	return 0
-}
-
-func (x *FlinkCluster) GetUrl() string {
-	if x != nil {
-		return x.Url
-	}
-	return ""
 }
 
 // Function represents the function node config for stream job.
@@ -3669,17 +3703,17 @@ func (x *StreamJobArgs_Function) GetUdttfIds() []string {
 	return nil
 }
 
-type HBaseConfig_Host struct {
+type HostAliases_Item struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Domain string `protobuf:"bytes,1,opt,name=domain,proto3" json:"domain" binding:"email"`
-	Ip     string `protobuf:"bytes,2,opt,name=ip,proto3" json:"ip" binding:"ipv4"`
+	Ip       string `protobuf:"bytes,1,opt,name=ip,proto3" json:"ip" binding:"ipv4"`
+	Hostname string `protobuf:"bytes,2,opt,name=hostname,proto3" json:"hostname" binding:"hostname"`
 }
 
-func (x *HBaseConfig_Host) Reset() {
-	*x = HBaseConfig_Host{}
+func (x *HostAliases_Item) Reset() {
+	*x = HostAliases_Item{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_model_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3687,13 +3721,13 @@ func (x *HBaseConfig_Host) Reset() {
 	}
 }
 
-func (x *HBaseConfig_Host) String() string {
+func (x *HostAliases_Item) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*HBaseConfig_Host) ProtoMessage() {}
+func (*HostAliases_Item) ProtoMessage() {}
 
-func (x *HBaseConfig_Host) ProtoReflect() protoreflect.Message {
+func (x *HostAliases_Item) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_model_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3705,78 +3739,21 @@ func (x *HBaseConfig_Host) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use HBaseConfig_Host.ProtoReflect.Descriptor instead.
-func (*HBaseConfig_Host) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{25, 0}
+// Deprecated: Use HostAliases_Item.ProtoReflect.Descriptor instead.
+func (*HostAliases_Item) Descriptor() ([]byte, []int) {
+	return file_proto_model_proto_rawDescGZIP(), []int{26, 0}
 }
 
-func (x *HBaseConfig_Host) GetDomain() string {
-	if x != nil {
-		return x.Domain
-	}
-	return ""
-}
-
-func (x *HBaseConfig_Host) GetIp() string {
+func (x *HostAliases_Item) GetIp() string {
 	if x != nil {
 		return x.Ip
 	}
 	return ""
 }
 
-type FlinkConfig_Item struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// The key in key/value item, Is required, Min: 1, Max: 1024.
-	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"key" binding:"gte=1,lte=1024" minLength:"1" maxLength:"1024"`
-	// The value in key/value item, Is required, Min: 1, Max: 1024.
-	Value string `protobuf:"bytes,2,opt,name=value,proto3" json:"value" binding:"gte=1,lte=1024" minLength:"1" maxLength:"1024"`
-}
-
-func (x *FlinkConfig_Item) Reset() {
-	*x = FlinkConfig_Item{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_model_proto_msgTypes[30]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *FlinkConfig_Item) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FlinkConfig_Item) ProtoMessage() {}
-
-func (x *FlinkConfig_Item) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_model_proto_msgTypes[30]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FlinkConfig_Item.ProtoReflect.Descriptor instead.
-func (*FlinkConfig_Item) Descriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{26, 0}
-}
-
-func (x *FlinkConfig_Item) GetKey() string {
+func (x *HostAliases_Item) GetHostname() string {
 	if x != nil {
-		return x.Key
-	}
-	return ""
-}
-
-func (x *FlinkConfig_Item) GetValue() string {
-	if x != nil {
-		return x.Value
+		return x.Hostname
 	}
 	return ""
 }
@@ -4253,68 +4230,80 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01,
 	0x14, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x12, 0x24, 0x0a, 0x03, 0x6a, 0x61, 0x72, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x12, 0xe2, 0xdf, 0x1f, 0x0e, 0x70, 0xff, 0xff, 0xff, 0xff,
-	0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x78, 0x81, 0x08, 0x52, 0x03, 0x6a, 0x61, 0x72, 0x22, 0x86,
-	0x01, 0x0a, 0x0b, 0x48, 0x42, 0x61, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x33,
-	0x0a, 0x05, 0x68, 0x6f, 0x73, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e,
-	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x48, 0x42, 0x61, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x69,
-	0x67, 0x2e, 0x48, 0x6f, 0x73, 0x74, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x68, 0x6f,
-	0x73, 0x74, 0x73, 0x1a, 0x3a, 0x0a, 0x04, 0x48, 0x6f, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x06, 0x64,
-	0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
-	0x00, 0x52, 0x06, 0x64, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x14, 0x0a, 0x02, 0x69, 0x70, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x02, 0x69, 0x70, 0x3a,
-	0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x90, 0x01, 0x0a, 0x0b, 0x46, 0x6c, 0x69, 0x6e,
-	0x6b, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x33, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73,
-	0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x46,
-	0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2e, 0x49, 0x74, 0x65, 0x6d, 0x42,
-	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x1a, 0x44, 0x0a, 0x04,
-	0x49, 0x74, 0x65, 0x6d, 0x12, 0x1b, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x00, 0x78, 0x80, 0x08, 0x52, 0x03, 0x6b, 0x65,
-	0x79, 0x12, 0x1f, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x00, 0x78, 0x80, 0x08, 0x52, 0x05, 0x76, 0x61, 0x6c,
-	0x75, 0x65, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0xf5, 0x04, 0x0a, 0x0c, 0x46,
-	0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x14, 0x0a, 0x02, 0x69,
-	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x02, 0x69,
-	0x64, 0x12, 0x18, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42,
-	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x38, 0x0a, 0x06, 0x73,
-	0x74, 0x61, 0x74, 0x75, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x6d, 0x6f,
-	0x64, 0x65, 0x6c, 0x2e, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72,
-	0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73,
-	0x74, 0x61, 0x74, 0x75, 0x65, 0x12, 0x1e, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e,
-	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x76, 0x65,
-	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x21, 0x0a, 0x08, 0x74, 0x61, 0x73, 0x6b, 0x5f, 0x6e, 0x75,
-	0x6d, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52,
-	0x07, 0x74, 0x61, 0x73, 0x6b, 0x4e, 0x75, 0x6d, 0x12, 0x1f, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f,
-	0x63, 0x75, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04, 0x10, 0x00,
-	0x18, 0x09, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x43, 0x75, 0x12, 0x21, 0x0a, 0x07, 0x74, 0x61, 0x73,
-	0x6b, 0x5f, 0x63, 0x75, 0x18, 0x07, 0x20, 0x01, 0x28, 0x05, 0x42, 0x08, 0xe2, 0xdf, 0x1f, 0x04,
-	0x10, 0x00, 0x18, 0x09, 0x52, 0x06, 0x74, 0x61, 0x73, 0x6b, 0x43, 0x75, 0x12, 0x48, 0x0a, 0x0e,
-	0x72, 0x6f, 0x6f, 0x74, 0x5f, 0x6c, 0x6f, 0x67, 0x5f, 0x6c, 0x65, 0x76, 0x65, 0x6c, 0x18, 0x08,
-	0x20, 0x01, 0x28, 0x0e, 0x32, 0x1c, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x46, 0x6c, 0x69,
-	0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x2e, 0x4c, 0x6f, 0x67, 0x4c, 0x65, 0x76,
-	0x65, 0x6c, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0c, 0x72, 0x6f, 0x6f, 0x74, 0x4c, 0x6f,
-	0x67, 0x4c, 0x65, 0x76, 0x65, 0x6c, 0x12, 0x30, 0x0a, 0x05, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x18,
-	0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x46, 0x6c,
-	0x69, 0x6e, 0x6b, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20,
-	0x01, 0x52, 0x05, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x12, 0x2e, 0x0a, 0x05, 0x68, 0x62, 0x61, 0x73,
-	0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e,
-	0x48, 0x42, 0x61, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
-	0x00, 0x52, 0x05, 0x68, 0x62, 0x61, 0x73, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x64, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10,
-	0x00, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x75, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
-	0x02, 0x10, 0x00, 0x52, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x12, 0x10, 0x0a, 0x03,
-	0x75, 0x72, 0x6c, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x29,
-	0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x05, 0x0a, 0x01, 0x5f, 0x10, 0x00, 0x12,
-	0x0b, 0x0a, 0x07, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07,
-	0x53, 0x74, 0x6f, 0x70, 0x70, 0x65, 0x64, 0x10, 0x02, 0x22, 0x47, 0x0a, 0x08, 0x4c, 0x6f, 0x67,
-	0x4c, 0x65, 0x76, 0x65, 0x6c, 0x12, 0x06, 0x0a, 0x02, 0x5f, 0x5f, 0x10, 0x00, 0x12, 0x09, 0x0a,
-	0x05, 0x54, 0x52, 0x41, 0x43, 0x45, 0x10, 0x01, 0x12, 0x09, 0x0a, 0x05, 0x44, 0x45, 0x42, 0x55,
-	0x47, 0x10, 0x02, 0x12, 0x08, 0x0a, 0x04, 0x49, 0x4e, 0x46, 0x4f, 0x10, 0x03, 0x12, 0x08, 0x0a,
-	0x04, 0x57, 0x41, 0x52, 0x4e, 0x10, 0x04, 0x12, 0x09, 0x0a, 0x05, 0x45, 0x52, 0x52, 0x4f, 0x52,
-	0x10, 0x05, 0x42, 0x2b, 0x5a, 0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0x78, 0x81, 0x08, 0x52, 0x03, 0x6a, 0x61, 0x72, 0x22, 0x96,
+	0x02, 0x0a, 0x07, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70,
+	0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf,
+	0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x17,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03,
+	0x80, 0x01, 0x14, 0x52, 0x02, 0x69, 0x64, 0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01,
+	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x23, 0x0a, 0x09, 0x72, 0x6f, 0x75, 0x74, 0x65, 0x72,
+	0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x70,
+	0x01, 0x52, 0x08, 0x72, 0x6f, 0x75, 0x74, 0x65, 0x72, 0x49, 0x64, 0x12, 0x21, 0x0a, 0x08, 0x76,
+	0x78, 0x6e, 0x65, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2,
+	0xdf, 0x1f, 0x02, 0x70, 0x01, 0x52, 0x07, 0x76, 0x78, 0x6e, 0x65, 0x74, 0x49, 0x64, 0x12, 0x23,
+	0x0a, 0x09, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x62, 0x79, 0x18, 0x06, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x08, 0x63, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x42, 0x79, 0x12, 0x20, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x18, 0x07,
+	0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x63, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64,
+	0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07,
+	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x22, 0x8a, 0x01, 0x0a, 0x0b, 0x48, 0x6f, 0x73, 0x74,
+	0x41, 0x6c, 0x69, 0x61, 0x73, 0x65, 0x73, 0x12, 0x33, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x48,
+	0x6f, 0x73, 0x74, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x65, 0x73, 0x2e, 0x49, 0x74, 0x65, 0x6d, 0x42,
+	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x1a, 0x3e, 0x0a, 0x04,
+	0x49, 0x74, 0x65, 0x6d, 0x12, 0x14, 0x0a, 0x02, 0x69, 0x70, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x02, 0x69, 0x70, 0x12, 0x20, 0x0a, 0x08, 0x68, 0x6f,
+	0x73, 0x74, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf,
+	0x1f, 0x00, 0x52, 0x08, 0x68, 0x6f, 0x73, 0x74, 0x6e, 0x61, 0x6d, 0x65, 0x3a, 0x06, 0xca, 0xb2,
+	0x04, 0x02, 0x0a, 0x00, 0x22, 0xa5, 0x05, 0x0a, 0x0c, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c,
+	0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x17, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x02,
+	0x69, 0x64, 0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x01, 0x78, 0x81, 0x01, 0x52, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x12, 0x20, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73,
+	0x69, 0x6f, 0x6e, 0x12, 0x38, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x46, 0x6c, 0x69, 0x6e,
+	0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42,
+	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x21, 0x0a,
+	0x08, 0x74, 0x61, 0x73, 0x6b, 0x5f, 0x6e, 0x75, 0x6d, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x42,
+	0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x4e, 0x75, 0x6d,
+	0x12, 0x2d, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x63, 0x75, 0x18, 0x07, 0x20, 0x01, 0x28, 0x02,
+	0x42, 0x16, 0xe2, 0xdf, 0x1f, 0x12, 0x49, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x3f, 0x51,
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x40, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x43, 0x75, 0x12,
+	0x2f, 0x0a, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x5f, 0x63, 0x75, 0x18, 0x08, 0x20, 0x01, 0x28, 0x02,
+	0x42, 0x16, 0xe2, 0xdf, 0x1f, 0x12, 0x49, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x3f, 0x51,
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x40, 0x52, 0x06, 0x74, 0x61, 0x73, 0x6b, 0x43, 0x75,
+	0x12, 0x23, 0x0a, 0x0a, 0x6e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x5f, 0x69, 0x64, 0x18, 0x09,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x09, 0x6e, 0x65, 0x74, 0x77,
+	0x6f, 0x72, 0x6b, 0x49, 0x64, 0x12, 0x3b, 0x0a, 0x0c, 0x68, 0x6f, 0x73, 0x74, 0x5f, 0x61, 0x6c,
+	0x69, 0x61, 0x73, 0x65, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f,
+	0x64, 0x65, 0x6c, 0x2e, 0x48, 0x6f, 0x73, 0x74, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x65, 0x73, 0x42,
+	0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x68, 0x6f, 0x73, 0x74, 0x41, 0x6c, 0x69, 0x61, 0x73,
+	0x65, 0x73, 0x12, 0x30, 0x0a, 0x06, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x18, 0x0b, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x12, 0x2e, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x2e, 0x46, 0x6c, 0x69, 0x6e, 0x6b,
+	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x63, 0x6f,
+	0x6e, 0x66, 0x69, 0x67, 0x12, 0x15, 0x0a, 0x06, 0x77, 0x65, 0x62, 0x5f, 0x75, 0x69, 0x18, 0x0c,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x77, 0x65, 0x62, 0x55, 0x69, 0x12, 0x23, 0x0a, 0x09, 0x63,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x62, 0x79, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06,
+	0xe2, 0xdf, 0x1f, 0x02, 0x20, 0x01, 0x52, 0x08, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x79,
+	0x12, 0x20, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x18, 0x0e, 0x20, 0x01, 0x28,
+	0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x0f, 0x20,
+	0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x75, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x64, 0x22, 0x46, 0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x05,
+	0x0a, 0x01, 0x5f, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67,
+	0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x53, 0x74, 0x6f, 0x70, 0x70, 0x65, 0x64, 0x10, 0x02, 0x12,
+	0x0c, 0x0a, 0x08, 0x53, 0x74, 0x61, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x10, 0x03, 0x12, 0x0d, 0x0a,
+	0x09, 0x45, 0x78, 0x63, 0x65, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x10, 0x04, 0x42, 0x2b, 0x5a, 0x29,
+	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57,
+	0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
+	0x70, 0x6b, 0x67, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -4329,8 +4318,8 @@ func file_proto_model_proto_rawDescGZIP() []byte {
 	return file_proto_model_proto_rawDescData
 }
 
-var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 19)
-var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
+var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 18)
+var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
 var file_proto_model_proto_goTypes = []interface{}{
 	(Workspace_Status)(0),                    // 0: model.Workspace.Status
 	(StreamJob_Type)(0),                      // 1: model.StreamJob.Type
@@ -4350,59 +4339,58 @@ var file_proto_model_proto_goTypes = []interface{}{
 	(UDFInfo_Type)(0),                        // 15: model.UDFInfo.Type
 	(UDFInfo_Language)(0),                    // 16: model.UDFInfo.Language
 	(FlinkCluster_Status)(0),                 // 17: model.FlinkCluster.Status
-	(FlinkCluster_LogLevel)(0),               // 18: model.FlinkCluster.LogLevel
-	(*EmptyStruct)(nil),                      // 19: model.EmptyStruct
-	(*Error)(nil),                            // 20: model.Error
-	(*Workspace)(nil),                        // 21: model.Workspace
-	(*StreamJob)(nil),                        // 22: model.StreamJob
-	(*StreamJobProperty)(nil),                // 23: model.StreamJobProperty
-	(*StreamJobCode)(nil),                    // 24: model.StreamJobCode
-	(*StreamJobArgs)(nil),                    // 25: model.StreamJobArgs
-	(*StreamJobSchedule)(nil),                // 26: model.StreamJobSchedule
-	(*StreamJobRelease)(nil),                 // 27: model.StreamJobRelease
-	(*StreamJobInst)(nil),                    // 28: model.StreamJobInst
-	(*Operation)(nil),                        // 29: model.Operation
-	(*Role)(nil),                             // 30: model.Role
-	(*Member)(nil),                           // 31: model.Member
-	(*MonitorRule)(nil),                      // 32: model.MonitorRule
-	(*QueueMessage)(nil),                     // 33: model.QueueMessage
-	(*InstanceStatusStat)(nil),               // 34: model.InstanceStatusStat
-	(*InstanceRuntimeRankInfo)(nil),          // 35: model.InstanceRuntimeRankInfo
-	(*InstanceErrorRankInfo)(nil),            // 36: model.InstanceErrorRankInfo
-	(*DispatchTaskCountInfo)(nil),            // 37: model.DispatchTaskCountInfo
-	(*InstanceTaskExecStat)(nil),             // 38: model.InstanceTaskExecStat
-	(*DataSource)(nil),                       // 39: model.DataSource
-	(*TableInfo)(nil),                        // 40: model.TableInfo
-	(*Resource)(nil),                         // 41: model.Resource
-	(*UDFInfo)(nil),                          // 42: model.UDFInfo
-	(*JobResources)(nil),                     // 43: model.JobResources
-	(*HBaseConfig)(nil),                      // 44: model.HBaseConfig
-	(*FlinkConfig)(nil),                      // 45: model.FlinkConfig
-	(*FlinkCluster)(nil),                     // 46: model.FlinkCluster
-	(*StreamJobArgs_Function)(nil),           // 47: model.StreamJobArgs.Function
-	(*HBaseConfig_Host)(nil),                 // 48: model.HBaseConfig.Host
-	(*FlinkConfig_Item)(nil),                 // 49: model.FlinkConfig.Item
-	(*flinkpb.FlinkOperator)(nil),            // 50: flink.FlinkOperator
-	(*flinkpb.FlinkSQL)(nil),                 // 51: flink.FlinkSQL
-	(*flinkpb.FlinkJar)(nil),                 // 52: flink.FlinkJar
-	(*flinkpb.FlinkScala)(nil),               // 53: flink.FlinkScala
-	(*flinkpb.FlinkPython)(nil),              // 54: flink.FlinkPython
-	(*datasourcepb.DataSourceURL)(nil),       // 55: datasource.DataSourceURL
-	(*flinkpb.TableSchema)(nil),              // 56: flink.TableSchema
+	(*EmptyStruct)(nil),                      // 18: model.EmptyStruct
+	(*Error)(nil),                            // 19: model.Error
+	(*Workspace)(nil),                        // 20: model.Workspace
+	(*StreamJob)(nil),                        // 21: model.StreamJob
+	(*StreamJobProperty)(nil),                // 22: model.StreamJobProperty
+	(*StreamJobCode)(nil),                    // 23: model.StreamJobCode
+	(*StreamJobArgs)(nil),                    // 24: model.StreamJobArgs
+	(*StreamJobSchedule)(nil),                // 25: model.StreamJobSchedule
+	(*StreamJobRelease)(nil),                 // 26: model.StreamJobRelease
+	(*StreamJobInst)(nil),                    // 27: model.StreamJobInst
+	(*Operation)(nil),                        // 28: model.Operation
+	(*Role)(nil),                             // 29: model.Role
+	(*Member)(nil),                           // 30: model.Member
+	(*MonitorRule)(nil),                      // 31: model.MonitorRule
+	(*QueueMessage)(nil),                     // 32: model.QueueMessage
+	(*InstanceStatusStat)(nil),               // 33: model.InstanceStatusStat
+	(*InstanceRuntimeRankInfo)(nil),          // 34: model.InstanceRuntimeRankInfo
+	(*InstanceErrorRankInfo)(nil),            // 35: model.InstanceErrorRankInfo
+	(*DispatchTaskCountInfo)(nil),            // 36: model.DispatchTaskCountInfo
+	(*InstanceTaskExecStat)(nil),             // 37: model.InstanceTaskExecStat
+	(*DataSource)(nil),                       // 38: model.DataSource
+	(*TableInfo)(nil),                        // 39: model.TableInfo
+	(*Resource)(nil),                         // 40: model.Resource
+	(*UDFInfo)(nil),                          // 41: model.UDFInfo
+	(*JobResources)(nil),                     // 42: model.JobResources
+	(*Network)(nil),                          // 43: model.Network
+	(*HostAliases)(nil),                      // 44: model.HostAliases
+	(*FlinkCluster)(nil),                     // 45: model.FlinkCluster
+	(*StreamJobArgs_Function)(nil),           // 46: model.StreamJobArgs.Function
+	(*HostAliases_Item)(nil),                 // 47: model.HostAliases.Item
+	(*flinkpb.FlinkOperator)(nil),            // 48: flink.FlinkOperator
+	(*flinkpb.FlinkSQL)(nil),                 // 49: flink.FlinkSQL
+	(*flinkpb.FlinkJar)(nil),                 // 50: flink.FlinkJar
+	(*flinkpb.FlinkScala)(nil),               // 51: flink.FlinkScala
+	(*flinkpb.FlinkPython)(nil),              // 52: flink.FlinkPython
+	(*datasourcepb.DataSourceURL)(nil),       // 53: datasource.DataSourceURL
+	(*flinkpb.TableSchema)(nil),              // 54: flink.TableSchema
+	(*flinkpb.FlinkConfig)(nil),              // 55: flink.FlinkConfig
 }
 var file_proto_model_proto_depIdxs = []int32{
 	0,  // 0: model.Workspace.status:type_name -> model.Workspace.Status
 	1,  // 1: model.StreamJob.type:type_name -> model.StreamJob.Type
-	24, // 2: model.StreamJobProperty.code:type_name -> model.StreamJobCode
-	25, // 3: model.StreamJobProperty.args:type_name -> model.StreamJobArgs
-	26, // 4: model.StreamJobProperty.schedule:type_name -> model.StreamJobSchedule
+	23, // 2: model.StreamJobProperty.code:type_name -> model.StreamJobCode
+	24, // 3: model.StreamJobProperty.args:type_name -> model.StreamJobArgs
+	25, // 4: model.StreamJobProperty.schedule:type_name -> model.StreamJobSchedule
 	1,  // 5: model.StreamJobCode.type:type_name -> model.StreamJob.Type
-	50, // 6: model.StreamJobCode.operators:type_name -> flink.FlinkOperator
-	51, // 7: model.StreamJobCode.sql:type_name -> flink.FlinkSQL
-	52, // 8: model.StreamJobCode.jar:type_name -> flink.FlinkJar
-	53, // 9: model.StreamJobCode.scala:type_name -> flink.FlinkScala
-	54, // 10: model.StreamJobCode.python:type_name -> flink.FlinkPython
-	47, // 11: model.StreamJobArgs.function:type_name -> model.StreamJobArgs.Function
+	48, // 6: model.StreamJobCode.operators:type_name -> flink.FlinkOperator
+	49, // 7: model.StreamJobCode.sql:type_name -> flink.FlinkSQL
+	50, // 8: model.StreamJobCode.jar:type_name -> flink.FlinkJar
+	51, // 9: model.StreamJobCode.scala:type_name -> flink.FlinkScala
+	52, // 10: model.StreamJobCode.python:type_name -> flink.FlinkPython
+	46, // 11: model.StreamJobArgs.function:type_name -> model.StreamJobArgs.Function
 	2,  // 12: model.StreamJobSchedule.concurrency_policy:type_name -> model.StreamJobSchedule.ConcurrencyPolicy
 	3,  // 13: model.StreamJobSchedule.retry_policy:type_name -> model.StreamJobSchedule.RetryPolicy
 	1,  // 14: model.StreamJobRelease.type:type_name -> model.StreamJob.Type
@@ -4412,28 +4400,26 @@ var file_proto_model_proto_depIdxs = []int32{
 	7,  // 18: model.Operation.state:type_name -> model.Operation.State
 	8,  // 19: model.Role.type:type_name -> model.Role.Type
 	9,  // 20: model.MonitorRule.status:type_name -> model.MonitorRule.Status
-	23, // 21: model.QueueMessage.property:type_name -> model.StreamJobProperty
+	22, // 21: model.QueueMessage.property:type_name -> model.StreamJobProperty
 	12, // 22: model.DataSource.source_type:type_name -> model.DataSource.Type
-	55, // 23: model.DataSource.url:type_name -> datasource.DataSourceURL
+	53, // 23: model.DataSource.url:type_name -> datasource.DataSourceURL
 	10, // 24: model.DataSource.status:type_name -> model.DataSource.Status
 	11, // 25: model.DataSource.connection:type_name -> model.DataSource.ConnectionStatus
-	56, // 26: model.TableInfo.table_schema:type_name -> flink.TableSchema
+	54, // 26: model.TableInfo.table_schema:type_name -> flink.TableSchema
 	13, // 27: model.TableInfo.table_kind:type_name -> model.TableInfo.Kind
 	11, // 28: model.TableInfo.connection:type_name -> model.DataSource.ConnectionStatus
 	14, // 29: model.Resource.type:type_name -> model.Resource.Type
 	15, // 30: model.UDFInfo.udf_type:type_name -> model.UDFInfo.Type
 	16, // 31: model.UDFInfo.udf_language:type_name -> model.UDFInfo.Language
-	48, // 32: model.HBaseConfig.hosts:type_name -> model.HBaseConfig.Host
-	49, // 33: model.FlinkConfig.items:type_name -> model.FlinkConfig.Item
-	17, // 34: model.FlinkCluster.statue:type_name -> model.FlinkCluster.Status
-	18, // 35: model.FlinkCluster.root_log_level:type_name -> model.FlinkCluster.LogLevel
-	45, // 36: model.FlinkCluster.flink:type_name -> model.FlinkConfig
-	44, // 37: model.FlinkCluster.hbase:type_name -> model.HBaseConfig
-	38, // [38:38] is the sub-list for method output_type
-	38, // [38:38] is the sub-list for method input_type
-	38, // [38:38] is the sub-list for extension type_name
-	38, // [38:38] is the sub-list for extension extendee
-	0,  // [0:38] is the sub-list for field type_name
+	47, // 32: model.HostAliases.items:type_name -> model.HostAliases.Item
+	17, // 33: model.FlinkCluster.status:type_name -> model.FlinkCluster.Status
+	44, // 34: model.FlinkCluster.host_aliases:type_name -> model.HostAliases
+	55, // 35: model.FlinkCluster.config:type_name -> flink.FlinkConfig
+	36, // [36:36] is the sub-list for method output_type
+	36, // [36:36] is the sub-list for method input_type
+	36, // [36:36] is the sub-list for extension type_name
+	36, // [36:36] is the sub-list for extension extendee
+	0,  // [0:36] is the sub-list for field type_name
 }
 
 func init() { file_proto_model_proto_init() }
@@ -4743,7 +4729,7 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HBaseConfig); i {
+			switch v := v.(*Network); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -4755,7 +4741,7 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FlinkConfig); i {
+			switch v := v.(*HostAliases); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -4791,19 +4777,7 @@ func file_proto_model_proto_init() {
 			}
 		}
 		file_proto_model_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HBaseConfig_Host); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_proto_model_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FlinkConfig_Item); i {
+			switch v := v.(*HostAliases_Item); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -4820,8 +4794,8 @@ func file_proto_model_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_model_proto_rawDesc,
-			NumEnums:      19,
-			NumMessages:   31,
+			NumEnums:      18,
+			NumMessages:   30,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

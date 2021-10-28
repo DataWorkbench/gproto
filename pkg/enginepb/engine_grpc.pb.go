@@ -4,6 +4,9 @@ package enginepb
 
 import (
 	context "context"
+	model "github.com/DataWorkbench/gproto/pkg/model"
+	request "github.com/DataWorkbench/gproto/pkg/request"
+	response "github.com/DataWorkbench/gproto/pkg/response"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -281,6 +284,603 @@ var _ExternalService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeRegister",
 			Handler:    _ExternalService_DeRegister_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "proto/engine.proto",
+}
+
+// EngineClient is the client API for Engine service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type EngineClient interface {
+	// DeleteWorkspaces for all resource of specified space ids.
+	DeleteWorkspaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// Interface for manage flink cluster.
+	//
+	DescribeFlickClusterAPI(ctx context.Context, in *request.DescribeFlickClusterAPI, opts ...grpc.CallOption) (*response.DescribeFlickClusterAPI, error)
+	ListAvailableFlinkVersions(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListAvailableFlinkVersions, error)
+	ListFlinkClusters(ctx context.Context, in *request.ListFlinkClusters, opts ...grpc.CallOption) (*response.ListFlinkClusters, error)
+	DeleteFlinkClusters(ctx context.Context, in *request.DeleteFlinkClusters, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	StartFlinkClusters(ctx context.Context, in *request.StartFlinkClusters, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	StopFlinkClusters(ctx context.Context, in *request.StopFlinkClusters, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	CreateFlinkCluster(ctx context.Context, in *request.CreateFlinkCluster, opts ...grpc.CallOption) (*response.CreateFlinkCluster, error)
+	UpdateFlinkCluster(ctx context.Context, in *request.UpdateFlinkCluster, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DescribeFlinkCluster(ctx context.Context, in *request.DescribeFlinkCluster, opts ...grpc.CallOption) (*response.DescribeFlinkCluster, error)
+	// Interface for manage network config.
+	//
+	ListNetworks(ctx context.Context, in *request.ListNetworks, opts ...grpc.CallOption) (*response.ListNetworks, error)
+	DeleteNetworks(ctx context.Context, in *request.DeleteNetworks, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	CreateNetwork(ctx context.Context, in *request.CreateNetwork, opts ...grpc.CallOption) (*response.CreateNetwork, error)
+	UpdateNetwork(ctx context.Context, in *request.UpdateNetwork, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DescribeNetwork(ctx context.Context, in *request.DescribeNetwork, opts ...grpc.CallOption) (*response.DescribeNetwork, error)
+}
+
+type engineClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewEngineClient(cc grpc.ClientConnInterface) EngineClient {
+	return &engineClient{cc}
+}
+
+func (c *engineClient) DeleteWorkspaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/DeleteWorkspaces", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) DescribeFlickClusterAPI(ctx context.Context, in *request.DescribeFlickClusterAPI, opts ...grpc.CallOption) (*response.DescribeFlickClusterAPI, error) {
+	out := new(response.DescribeFlickClusterAPI)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/DescribeFlickClusterAPI", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) ListAvailableFlinkVersions(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListAvailableFlinkVersions, error) {
+	out := new(response.ListAvailableFlinkVersions)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/ListAvailableFlinkVersions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) ListFlinkClusters(ctx context.Context, in *request.ListFlinkClusters, opts ...grpc.CallOption) (*response.ListFlinkClusters, error) {
+	out := new(response.ListFlinkClusters)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/ListFlinkClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) DeleteFlinkClusters(ctx context.Context, in *request.DeleteFlinkClusters, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/DeleteFlinkClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) StartFlinkClusters(ctx context.Context, in *request.StartFlinkClusters, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/StartFlinkClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) StopFlinkClusters(ctx context.Context, in *request.StopFlinkClusters, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/StopFlinkClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) CreateFlinkCluster(ctx context.Context, in *request.CreateFlinkCluster, opts ...grpc.CallOption) (*response.CreateFlinkCluster, error) {
+	out := new(response.CreateFlinkCluster)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/CreateFlinkCluster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) UpdateFlinkCluster(ctx context.Context, in *request.UpdateFlinkCluster, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/UpdateFlinkCluster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) DescribeFlinkCluster(ctx context.Context, in *request.DescribeFlinkCluster, opts ...grpc.CallOption) (*response.DescribeFlinkCluster, error) {
+	out := new(response.DescribeFlinkCluster)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/DescribeFlinkCluster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) ListNetworks(ctx context.Context, in *request.ListNetworks, opts ...grpc.CallOption) (*response.ListNetworks, error) {
+	out := new(response.ListNetworks)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/ListNetworks", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) DeleteNetworks(ctx context.Context, in *request.DeleteNetworks, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/DeleteNetworks", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) CreateNetwork(ctx context.Context, in *request.CreateNetwork, opts ...grpc.CallOption) (*response.CreateNetwork, error) {
+	out := new(response.CreateNetwork)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/CreateNetwork", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) UpdateNetwork(ctx context.Context, in *request.UpdateNetwork, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/UpdateNetwork", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *engineClient) DescribeNetwork(ctx context.Context, in *request.DescribeNetwork, opts ...grpc.CallOption) (*response.DescribeNetwork, error) {
+	out := new(response.DescribeNetwork)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/DescribeNetwork", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// EngineServer is the server API for Engine service.
+// All implementations must embed UnimplementedEngineServer
+// for forward compatibility
+type EngineServer interface {
+	// DeleteWorkspaces for all resource of specified space ids.
+	DeleteWorkspaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
+	// Interface for manage flink cluster.
+	//
+	DescribeFlickClusterAPI(context.Context, *request.DescribeFlickClusterAPI) (*response.DescribeFlickClusterAPI, error)
+	ListAvailableFlinkVersions(context.Context, *model.EmptyStruct) (*response.ListAvailableFlinkVersions, error)
+	ListFlinkClusters(context.Context, *request.ListFlinkClusters) (*response.ListFlinkClusters, error)
+	DeleteFlinkClusters(context.Context, *request.DeleteFlinkClusters) (*model.EmptyStruct, error)
+	StartFlinkClusters(context.Context, *request.StartFlinkClusters) (*model.EmptyStruct, error)
+	StopFlinkClusters(context.Context, *request.StopFlinkClusters) (*model.EmptyStruct, error)
+	CreateFlinkCluster(context.Context, *request.CreateFlinkCluster) (*response.CreateFlinkCluster, error)
+	UpdateFlinkCluster(context.Context, *request.UpdateFlinkCluster) (*model.EmptyStruct, error)
+	DescribeFlinkCluster(context.Context, *request.DescribeFlinkCluster) (*response.DescribeFlinkCluster, error)
+	// Interface for manage network config.
+	//
+	ListNetworks(context.Context, *request.ListNetworks) (*response.ListNetworks, error)
+	DeleteNetworks(context.Context, *request.DeleteNetworks) (*model.EmptyStruct, error)
+	CreateNetwork(context.Context, *request.CreateNetwork) (*response.CreateNetwork, error)
+	UpdateNetwork(context.Context, *request.UpdateNetwork) (*model.EmptyStruct, error)
+	DescribeNetwork(context.Context, *request.DescribeNetwork) (*response.DescribeNetwork, error)
+	mustEmbedUnimplementedEngineServer()
+}
+
+// UnimplementedEngineServer must be embedded to have forward compatible implementations.
+type UnimplementedEngineServer struct {
+}
+
+func (UnimplementedEngineServer) DeleteWorkspaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteWorkspaces not implemented")
+}
+func (UnimplementedEngineServer) DescribeFlickClusterAPI(context.Context, *request.DescribeFlickClusterAPI) (*response.DescribeFlickClusterAPI, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlickClusterAPI not implemented")
+}
+func (UnimplementedEngineServer) ListAvailableFlinkVersions(context.Context, *model.EmptyStruct) (*response.ListAvailableFlinkVersions, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAvailableFlinkVersions not implemented")
+}
+func (UnimplementedEngineServer) ListFlinkClusters(context.Context, *request.ListFlinkClusters) (*response.ListFlinkClusters, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFlinkClusters not implemented")
+}
+func (UnimplementedEngineServer) DeleteFlinkClusters(context.Context, *request.DeleteFlinkClusters) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteFlinkClusters not implemented")
+}
+func (UnimplementedEngineServer) StartFlinkClusters(context.Context, *request.StartFlinkClusters) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StartFlinkClusters not implemented")
+}
+func (UnimplementedEngineServer) StopFlinkClusters(context.Context, *request.StopFlinkClusters) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopFlinkClusters not implemented")
+}
+func (UnimplementedEngineServer) CreateFlinkCluster(context.Context, *request.CreateFlinkCluster) (*response.CreateFlinkCluster, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFlinkCluster not implemented")
+}
+func (UnimplementedEngineServer) UpdateFlinkCluster(context.Context, *request.UpdateFlinkCluster) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFlinkCluster not implemented")
+}
+func (UnimplementedEngineServer) DescribeFlinkCluster(context.Context, *request.DescribeFlinkCluster) (*response.DescribeFlinkCluster, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlinkCluster not implemented")
+}
+func (UnimplementedEngineServer) ListNetworks(context.Context, *request.ListNetworks) (*response.ListNetworks, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListNetworks not implemented")
+}
+func (UnimplementedEngineServer) DeleteNetworks(context.Context, *request.DeleteNetworks) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNetworks not implemented")
+}
+func (UnimplementedEngineServer) CreateNetwork(context.Context, *request.CreateNetwork) (*response.CreateNetwork, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNetwork not implemented")
+}
+func (UnimplementedEngineServer) UpdateNetwork(context.Context, *request.UpdateNetwork) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNetwork not implemented")
+}
+func (UnimplementedEngineServer) DescribeNetwork(context.Context, *request.DescribeNetwork) (*response.DescribeNetwork, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeNetwork not implemented")
+}
+func (UnimplementedEngineServer) mustEmbedUnimplementedEngineServer() {}
+
+// UnsafeEngineServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to EngineServer will
+// result in compilation errors.
+type UnsafeEngineServer interface {
+	mustEmbedUnimplementedEngineServer()
+}
+
+func RegisterEngineServer(s grpc.ServiceRegistrar, srv EngineServer) {
+	s.RegisterService(&_Engine_serviceDesc, srv)
+}
+
+func _Engine_DeleteWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteWorkspaces)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).DeleteWorkspaces(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/DeleteWorkspaces",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).DeleteWorkspaces(ctx, req.(*request.DeleteWorkspaces))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_DescribeFlickClusterAPI_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeFlickClusterAPI)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).DescribeFlickClusterAPI(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/DescribeFlickClusterAPI",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).DescribeFlickClusterAPI(ctx, req.(*request.DescribeFlickClusterAPI))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_ListAvailableFlinkVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(model.EmptyStruct)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).ListAvailableFlinkVersions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/ListAvailableFlinkVersions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).ListAvailableFlinkVersions(ctx, req.(*model.EmptyStruct))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_ListFlinkClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListFlinkClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).ListFlinkClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/ListFlinkClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).ListFlinkClusters(ctx, req.(*request.ListFlinkClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_DeleteFlinkClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteFlinkClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).DeleteFlinkClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/DeleteFlinkClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).DeleteFlinkClusters(ctx, req.(*request.DeleteFlinkClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_StartFlinkClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.StartFlinkClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).StartFlinkClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/StartFlinkClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).StartFlinkClusters(ctx, req.(*request.StartFlinkClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_StopFlinkClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.StopFlinkClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).StopFlinkClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/StopFlinkClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).StopFlinkClusters(ctx, req.(*request.StopFlinkClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_CreateFlinkCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.CreateFlinkCluster)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).CreateFlinkCluster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/CreateFlinkCluster",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).CreateFlinkCluster(ctx, req.(*request.CreateFlinkCluster))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_UpdateFlinkCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.UpdateFlinkCluster)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).UpdateFlinkCluster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/UpdateFlinkCluster",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).UpdateFlinkCluster(ctx, req.(*request.UpdateFlinkCluster))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_DescribeFlinkCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeFlinkCluster)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).DescribeFlinkCluster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/DescribeFlinkCluster",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).DescribeFlinkCluster(ctx, req.(*request.DescribeFlinkCluster))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_ListNetworks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListNetworks)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).ListNetworks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/ListNetworks",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).ListNetworks(ctx, req.(*request.ListNetworks))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_DeleteNetworks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteNetworks)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).DeleteNetworks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/DeleteNetworks",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).DeleteNetworks(ctx, req.(*request.DeleteNetworks))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_CreateNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.CreateNetwork)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).CreateNetwork(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/CreateNetwork",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).CreateNetwork(ctx, req.(*request.CreateNetwork))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_UpdateNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.UpdateNetwork)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).UpdateNetwork(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/UpdateNetwork",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).UpdateNetwork(ctx, req.(*request.UpdateNetwork))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Engine_DescribeNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeNetwork)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineServer).DescribeNetwork(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginepb.Engine/DescribeNetwork",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineServer).DescribeNetwork(ctx, req.(*request.DescribeNetwork))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _Engine_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "enginepb.Engine",
+	HandlerType: (*EngineServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "DeleteWorkspaces",
+			Handler:    _Engine_DeleteWorkspaces_Handler,
+		},
+		{
+			MethodName: "DescribeFlickClusterAPI",
+			Handler:    _Engine_DescribeFlickClusterAPI_Handler,
+		},
+		{
+			MethodName: "ListAvailableFlinkVersions",
+			Handler:    _Engine_ListAvailableFlinkVersions_Handler,
+		},
+		{
+			MethodName: "ListFlinkClusters",
+			Handler:    _Engine_ListFlinkClusters_Handler,
+		},
+		{
+			MethodName: "DeleteFlinkClusters",
+			Handler:    _Engine_DeleteFlinkClusters_Handler,
+		},
+		{
+			MethodName: "StartFlinkClusters",
+			Handler:    _Engine_StartFlinkClusters_Handler,
+		},
+		{
+			MethodName: "StopFlinkClusters",
+			Handler:    _Engine_StopFlinkClusters_Handler,
+		},
+		{
+			MethodName: "CreateFlinkCluster",
+			Handler:    _Engine_CreateFlinkCluster_Handler,
+		},
+		{
+			MethodName: "UpdateFlinkCluster",
+			Handler:    _Engine_UpdateFlinkCluster_Handler,
+		},
+		{
+			MethodName: "DescribeFlinkCluster",
+			Handler:    _Engine_DescribeFlinkCluster_Handler,
+		},
+		{
+			MethodName: "ListNetworks",
+			Handler:    _Engine_ListNetworks_Handler,
+		},
+		{
+			MethodName: "DeleteNetworks",
+			Handler:    _Engine_DeleteNetworks_Handler,
+		},
+		{
+			MethodName: "CreateNetwork",
+			Handler:    _Engine_CreateNetwork_Handler,
+		},
+		{
+			MethodName: "UpdateNetwork",
+			Handler:    _Engine_UpdateNetwork_Handler,
+		},
+		{
+			MethodName: "DescribeNetwork",
+			Handler:    _Engine_DescribeNetwork_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
