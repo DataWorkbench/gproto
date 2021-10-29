@@ -1297,8 +1297,8 @@ message CreateFlinkCluster {
 
 	// resource config.
 	//
-	// Flink task number for TaskManager. Is required, Min 1, Max ?
-	// @inject_tag: json:"task_num" binding:"gte=1"
+	// Flink task number for TaskManager. Is required, Min 1, Max 24
+	// @inject_tag: json:"task_num" binding:"gte=1,lte=24"
 	int32 task_num = 6 [ (validator.field) = { int_gt: 0 } ];
 
 	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8

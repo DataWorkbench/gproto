@@ -847,6 +847,7 @@ message FlinkCluster {
 		Stopped = 2;
 		Starting = 3;
 		Exception = 4;
+		Arrears = 5;
 	}
 
 	// Workspace ID it belongs to.
@@ -866,7 +867,7 @@ message FlinkCluster {
 	// @inject_tag: json:"version" gorm:"column:version;"
 	string version = 4 [ (validator.field) = { msg_exists: true } ];
 
-	// Cluster Status. 1 => "running" 2 => "stopped" 3 => "starting" 4 => "exception"
+	// Cluster Status. 1 => "running" 2 => "stopped" 3 => "starting" 4 => "exception" 5 => "Arrears"
 	// @inject_tag: json:"status" gorm:"column:status;"
 	Status status = 5 [ (validator.field) = { } ];
 

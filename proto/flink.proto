@@ -769,24 +769,24 @@ message FlinkConfig {
 		// @inject_tag: json:"restart_strategy" default:"1" binding:"oneof=none fixed-delay failure-rate"
 		string restart_strategy = 1 [ (validator.field) = { } ];
 
-		// Affect when restart_strategy == "fixed-delay". Default 1.
-		// @inject_tag: json:"fixed_delay_attempts" default:"1" binding:"-"
+		// Affect when restart_strategy == "fixed-delay". Min: 1, Max: 1000. Default 1.
+		// @inject_tag: json:"fixed_delay_attempts" default:"1" binding:"gte=1, lte=1000"
 		int32 fixed_delay_attempts = 2;
 
-		// Affect when restart_strategy == "fixed-delay". Default 1, unit is second.
-		// @inject_tag: json:"fixed_delay_delay" default:"1" binding:"-"
+		// Affect when restart_strategy == "fixed-delay". Min: 1, Max: 86400. Default 1, unit is second.
+		// @inject_tag: json:"fixed_delay_delay" default:"1" binding:"gte=1, lte=86400"
 		int32 fixed_delay_delay = 3;
 
-		// Affect when restart_strategy == "failure-rate". Default 1.
-		// @inject_tag: json:"failure_rate_max_failures_per_interval" default:"1" binding:"-"
+		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 10080. Default 1.
+		// @inject_tag: json:"failure_rate_max_failures_per_interval" default:"1" binding:"gte=1, lte=10080"
 		int32 failure_rate_max_failures_per_interval = 4;
 
-		// Affect when restart_strategy == "failure-rate". Default 1. unit is second.
-		// @inject_tag: json:"failure_rate_delay" default:"1" binding:"-"
+		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 1. unit is second.
+		// @inject_tag: json:"failure_rate_delay" default:"1" binding:"gte=1, lte=86400"
 		int32 failure_rate_delay = 5;
 
-		// Affect when restart_strategy == "failure-rate". Default 3, unit is minute.
-		// @inject_tag: json:"failure_rate_failure_rate_interval" default:"3" binding:"-"
+		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 1440. Default 3, unit is minute.
+		// @inject_tag: json:"failure_rate_failure_rate_interval" default:"3" binding:"gte=1, lte=1440"
 		int32 failure_rate_failure_rate_interval = 6;
 	}
 
@@ -797,6 +797,7 @@ message FlinkConfig {
 		string root_log_level = 1 [ (validator.field) = { } ];
 	}
 
+	// Use-defined config. Not required.
 	// @inject_tag: json:"custom" default:"" binding:"-"
 	repeated Item custom = 1  [ (validator.field) = { } ];
 
