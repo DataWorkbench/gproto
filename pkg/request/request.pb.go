@@ -5856,8 +5856,8 @@ type CreateFlinkCluster struct {
 	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" binding:"oneof=flink-v1.12.4_scala-1.11"`
 	// resource config.
 	//
-	// Flink task number for TaskManager. Is required, Min 1, Max ?
-	TaskNum int32 `protobuf:"varint,6,opt,name=task_num,json=taskNum,proto3" json:"task_num" binding:"gte=1"`
+	// Flink task number for TaskManager. Is required, Min 1, Max 24
+	TaskNum int32 `protobuf:"varint,6,opt,name=task_num,json=taskNum,proto3" json:"task_num" binding:"gte=1,lte=24"`
 	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
 	JobCu float32 `protobuf:"fixed32,7,opt,name=job_cu,json=jobCu,proto3" json:"job_cu" binding:"gte=0.5,lte=8"`
 	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
