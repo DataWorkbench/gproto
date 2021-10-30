@@ -9,114 +9,41 @@ import "model.proto";
 import "request.proto";
 import "response.proto";
 
-message FlinkEngine {
-    // release name of flink(same as job_id in job manager and instance_id in workspace manager)
-    string name = 1;
-    // namespace of flink(same as workspace_id)
-    string namespace = 2;
-    string url = 3;
-    uint32 job_cu = 4;
-    uint32 task_cu = 5;
-    uint32 task_num = 6;
-    model.HostAliases hbase_conf = 7;
-//    model.CustomConfig flink_conf = 8;
-    string transaction_status = 9;
-    string status = 10;
-    int64 created = 11;
-    int64 updated = 12;
-}
-
-message CreateFlinkRequest {
-    string name = 1 [ (validator.field) = { length_gt: 1, length_lt: 21, string_not_empty: true } ]; // job_id ( instance_id )
-    // owner 改成 namespace （workspaceId）
-    string namespace = 2 [ (validator.field) = { length_gt: 1, length_lt: 21 } ]; // (外部引擎表)
-    bool waiting_ready = 3;
-    uint64 waiting_timeout = 4; // default
-    model.StreamJobArgs conf = 5;
-}
-
-message CreateFlinkResponse {
-    string name = 1;
-    string url = 2;
-}
-
-message DeleteFlinkRequest {
-    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 21} ];
-}
-
-message DeleteFlinkResponse {
-    string name = 1;
-}
-
-message DescribeFlinkRequest {
-    string name = 1 [ (validator.field) = {length_gt: 1, length_lt: 21} ];
-    bool with_config = 4;
-}
-
-message DescribeFlinkResponse {
-    FlinkEngine engine = 1;
-}
-
-message RegisterRequest {
-    string name = 1 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-    string owner = 2 [ (validator.field) = { length_lt: 65 } ];
-    string desc = 3;
-    string url = 4;
-}
-
-message RegisterResponse {
-    string id = 1;
-    string url = 2;
-}
-
-message DeregisterRequest {
-    string id = 1 [ (validator.field) = { length_gt: 1, length_lt: 128 } ];
-}
-
-message DeregisterResponse {
-    string id = 1;
-    uint32 status_code = 2;
-    string message = 3;
-}
-
-// Flink Engine Service
-service FlinkEngineService {
-    rpc Create(CreateFlinkRequest) returns (CreateFlinkResponse) {}
-    rpc Describe(DescribeFlinkRequest) returns (DescribeFlinkResponse) {}
-    rpc Delete(DeleteFlinkRequest) returns (DeleteFlinkResponse) {}
-}
-
-// TODO: impl
-// External Engine Service
-service ExternalService {
-    rpc Register(RegisterRequest) returns (RegisterResponse) {}
-    rpc DeRegister(DeregisterRequest) returns (DeregisterResponse) {}
-}
-
 // Engine Server.
-service Engine {
+service EngineService {
     // DeleteWorkspaces for all resource of specified space ids.
     rpc DeleteWorkspaces(request.DeleteWorkspaces) returns(model.EmptyStruct) {}
 
+}
+
+// Engine Server: FlinkCluster
+service FlinkService {
+
     // Interface for manage flink cluster.
     //
+    rpc ListAvailableFlinkVersions(model.EmptyStruct) returns (response.ListAvailableFlinkVersions) {}
+    // Describe flink cluster api that jobmanager commit job to
     rpc DescribeFlickClusterAPI(request.DescribeFlickClusterAPI) returns(response.DescribeFlickClusterAPI) {}
 
-    rpc ListAvailableFlinkVersions(model.EmptyStruct) returns (response.ListAvailableFlinkVersions) {}
-
+    rpc CreateFlinkCluster(request.CreateFlinkCluster) returns (response.CreateFlinkCluster) {}
     rpc ListFlinkClusters(request.ListFlinkClusters) returns (response.ListFlinkClusters) {}
+    rpc DescribeFlinkCluster(request.DescribeFlinkCluster) returns (response.DescribeFlinkCluster) {}
+    rpc UpdateFlinkCluster(request.UpdateFlinkCluster) returns (model.EmptyStruct) {}
     rpc DeleteFlinkClusters(request.DeleteFlinkClusters) returns (model.EmptyStruct) {}
+
     rpc StartFlinkClusters(request.StartFlinkClusters) returns (model.EmptyStruct) {}
     rpc StopFlinkClusters(request.StopFlinkClusters) returns (model.EmptyStruct) {}
-    rpc CreateFlinkCluster(request.CreateFlinkCluster) returns (response.CreateFlinkCluster) {}
-    rpc UpdateFlinkCluster(request.UpdateFlinkCluster) returns (model.EmptyStruct) {}
-    rpc DescribeFlinkCluster(request.DescribeFlinkCluster) returns (response.DescribeFlinkCluster) {}
+
+}
+
+// Network Manager
+service NetworkService {
 
     // Interface for manage network config.
     //
-    rpc ListNetworks(request.ListNetworks) returns (response.ListNetworks) {}
-    rpc DeleteNetworks(request.DeleteNetworks) returns (model.EmptyStruct) {}
     rpc CreateNetwork(request.CreateNetwork) returns (response.CreateNetwork) {}
-    rpc UpdateNetwork(request.UpdateNetwork) returns (model.EmptyStruct) {}
+    rpc ListNetworks(request.ListNetworks) returns (response.ListNetworks) {}
     rpc DescribeNetwork(request.DescribeNetwork) returns (response.DescribeNetwork) {}
+    rpc UpdateNetwork(request.UpdateNetwork) returns (model.EmptyStruct) {}
+    rpc DeleteNetworks(request.DeleteNetworks) returns (model.EmptyStruct) {}
 }
