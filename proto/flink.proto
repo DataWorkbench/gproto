@@ -19,10 +19,6 @@ message ColumnAs {
 	// @inject_tag: json:"func" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
 	string func = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
 	
-	// WindowsName
-	// @inject_tag: json:"windows_name" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string windows_name = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
-	
 	// Type
 	// @inject_tag: json:"type" default:"" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
 	string type = 4 [ (validator.field) = { length_gt: -1 , length_lt: 257} ];
@@ -177,7 +173,7 @@ message DimensionOperator {
 	
 	// column define.
 	// @inject_tag: json:"time_column" default:"" binding:"-"
-	repeated ColumnAs time_column = 6 [(validator.field) = { } ];
+	ColumnAs time_column = 6 [(validator.field) = { } ];
 }
 
 // ExceptOperatorProperty
@@ -191,16 +187,20 @@ message IntersectOperator {
 // FilterOperatorProperty
 message FilterOperator {
 	// Where eg: a.id = 10
-	// @inject_tag: json:"where" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string where = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	// @inject_tag: json:"where" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
+	string where = 1 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 	
-	// in: if upstreamright is not null. this is columnname, if upstreamright is null is in express  eg in(1, 2, 3)
-	// @inject_tag: json:"in" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string in = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	// in: this is columnname
+	// @inject_tag: json:"in" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
+	string in = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 	
-	// Exists: if upstreamright is not null. this is columnname, if upstreamright is null is in express  eg in(1, 2, 3)
-	// @inject_tag: json:"exists" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string exists = 3 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	// Exists: this is columnname
+	// @inject_tag: json:"exists" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
+	string exists = 3 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+
+	// expression: if upstreamright is null.  eg: "1, 2, 3"
+	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
+	string expression = 4 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 }
 
 // JoinOperatorProperty
@@ -267,30 +267,9 @@ message UDTTFOperator {
 	// @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
 	string args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
 	
-	// func name
-	// @inject_tag: json:"funcname" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string funcname = 3 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
-	
 	// column define.
 	// @inject_tag: json:"column" default:"" binding:"-"
-	repeated ColumnAs column = 4 [(validator.field) = { } ];
-}
-
-// WindowOperatorProperty
-message WindowOperator {
-	message WindowOperatorItem {
-		// name
-		// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-		string name = 1 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
-		
-		// Spec
-		// @inject_tag: json:"spec" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-		string spec = 2 [ (validator.field) = { length_gt: 0 , length_lt: 1025} ];
-	}
-	
-	// Window
-	// @inject_tag: json:"window" default:"" binding:"-"
-	repeated WindowOperatorItem window = 1 [(validator.field) = { } ];
+	repeated ColumnAs column = 3 [(validator.field) = { } ];
 }
 
 // FlinkOperatorProperty
@@ -363,19 +342,15 @@ message OperatorProperty {
 	// @inject_tag: json:"udttf" default:"" binding:"-"
 	UDTTFOperator udttf = 17 [ (validator.field) = { } ];
 	
-	// Window
-	// @inject_tag: json:"window" default:"" binding:"-"
-	WindowOperator window = 18 [ (validator.field) = { } ];
-	
 	// Join
 	// @inject_tag: json:"join" default:"" binding:"-"
-	JoinOperator join = 19 [ (validator.field) = { } ];
+	JoinOperator join = 18 [ (validator.field) = { } ];
 }
 
 // FlinkOperator
 message FlinkOperator {
 	enum Type {
-		_Type = 0;
+		Empty = 0;
 		Values = 1;
 		Const = 2;
 		Source = 3;
@@ -391,13 +366,12 @@ message FlinkOperator {
 		Intersect = 13;
 		GroupBy = 14;
 		Having = 15;
-		Window = 16;
-		Join = 17;
-		UDTF = 18;
-		UDTTF = 19;
+		Join = 16;
+		UDTF = 17;
+		UDTTF = 18;
 	}
-	// OperatorType one of "Values" "Const" "Source" "Dimension" "Dest" "OrderBy" "Limit" "Offset" "Fetch" "Filter" "Union" "Except" "Intersect" "GroupBy" "Having" "Window" "Join" "UDTF" "UDTTF"
-	// @inject_tag: json:"node_type" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
+	// OperatorType one of 1/2/3.../18 "1-Values" "2-Const" "3-Source" "4-Dimension" "5-Dest" "6-OrderBy" "7-Limit" "8-Offset" "9-Fetch" "10-Filter" "11-Union" "12-Except" "13-Intersect" "14-GroupBy" "15-Having" "16-Join" "17-UDTF" "18-UDTTF"
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
 	Type type = 1 [ (validator.field) = { length_gt: 0 , length_lt: 21} ];
 	
 	// nodeid is unique in this flow.
@@ -440,11 +414,11 @@ message FlinkJar {
 	string resource_id = 1 [ (validator.field) = { } ];
 	
 	// JarArgs
-	// @inject_tag: json:"jar_args" default:"" binding:"gte=1,lte=1024" minLength:"0" maxLength:"1024"
+	// @inject_tag: json:"jar_args" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
 	string jar_args = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 	
 	// JarEntry
-	// @inject_tag: json:"jar_entry" default:"" binding:"gte=1,lte=1024" minLength:"0" maxLength:"1024"
+	// @inject_tag: json:"jar_entry" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
 	string jar_entry = 3 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
 }
 
@@ -499,13 +473,19 @@ message SqlColumnType {
 
 // SqlTimeColumnType used as request parameters for RPC and HTTP(based on Body)
 message SqlTimeColumnType {
+	enum Type {
+        _ = 0;
+        Proctime = 1;
+        Watermark = 2;
+    }
+
 	// The column name
 	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 	
 	// The column type. oneof proctime/watermark
-	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=16" required:"true" minLength:"1" maxLength:"16"
-	string type = 2 [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" mininum:"1" maximum:"2"
+	Type type = 2 [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
 	
 	// The column expression
 	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"false" minLength:"0" maxLength:"1024"
