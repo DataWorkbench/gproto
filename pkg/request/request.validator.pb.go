@@ -958,12 +958,6 @@ func (this *JobCancel) Validate() error {
 	}
 	return nil
 }
-func (this *JobClean) Validate() error {
-	if !(len(this.JobId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
-	}
-	return nil
-}
 func (this *JobParser) Validate() error {
 	if !(len(this.Command) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Command))
