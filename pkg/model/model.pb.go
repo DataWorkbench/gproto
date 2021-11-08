@@ -1624,6 +1624,8 @@ type StreamJobSchedule struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Schedule Policy, Options Value: 1 => "Periodicity", 2 => "Once".
+	// Is Required.
 	SchedulePolicy StreamJobSchedule_SchedulePolicy `protobuf:"varint,1,opt,name=schedule_policy,json=schedulePolicy,proto3,enum=model.StreamJobSchedule_SchedulePolicy" json:"schedule_policy" default:"0" binding:"gte=1,lte=2"`
 	// ------ Once Options ------
 	//
@@ -1642,12 +1644,12 @@ type StreamJobSchedule struct {
 	// - allow: Multiple task instances are allowed at the same time.
 	// - forbid: No new instances will be created, and this schedule cycle will be skipped,
 	// - replace: Force stop the old running instances and create new.
-	// Is required.
+	// Is required with schedule_policy = 1.
 	ConcurrencyPolicy StreamJobSchedule_ConcurrencyPolicy `protobuf:"varint,5,opt,name=concurrency_policy,json=concurrencyPolicy,proto3,enum=model.StreamJobSchedule_ConcurrencyPolicy" json:"concurrency_policy" binding:"-"`
 	// Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
+	// Is required with with schedule_policy = 1.
 	PeriodType string `protobuf:"bytes,6,opt,name=period_type,json=periodType,proto3" json:"period_type" binding:"-"`
-	// Crontab Express. Is required.
-	// FIXME: check binding.
+	// Crontab Express. Is required with schedule_policy == 1
 	Express string `protobuf:"bytes,7,opt,name=express,proto3" json:"express" binding:"-"`
 	// ------ Advanced (Retry) options ------
 	//

@@ -210,6 +210,8 @@ message StreamJobSchedule {
 		Auto = 2;
 	}
 
+	// Schedule Policy, Options Value: 1 => "Periodicity", 2 => "Once".
+	// Is Required.
 	// @inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
 	SchedulePolicy schedule_policy = 1 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 
@@ -236,16 +238,16 @@ message StreamJobSchedule {
 	// - allow: Multiple task instances are allowed at the same time.
 	// - forbid: No new instances will be created, and this schedule cycle will be skipped,
 	// - replace: Force stop the old running instances and create new.
-	// Is required.
+	// Is required with schedule_policy = 1.
 	// @inject_tag: json:"concurrency_policy" default:"" binding:"-"
 	ConcurrencyPolicy concurrency_policy = 5 [ (validator.field) = { } ];
 
 	// Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
+	// Is required with with schedule_policy = 1.
 	// @inject_tag: json:"period_type" default:"" binding:"-"
 	string period_type = 6 [ (validator.field) = {  } ];
 
-	// Crontab Express. Is required.
-	// FIXME: check binding.
+	// Crontab Express. Is required with schedule_policy == 1
 	// @inject_tag: json:"express" default:"" binding:"-"
 	string express = 7 [ (validator.field) = { } ];
 
