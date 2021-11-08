@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 type AccountClient interface {
 	ValidateRequestSignature(ctx context.Context, in *ValidateRequestSignatureRequest, opts ...grpc.CallOption) (*ValidateRequestSignatureReply, error)
 	DescribeUsers(ctx context.Context, in *DescribeUsersRequest, opts ...grpc.CallOption) (*DescribeUsersReply, error)
+	DescribeAccessKey(ctx context.Context, in *DescribeAccessKeyRequest, opts ...grpc.CallOption) (*DescribeAccessKeyReply, error)
 }
 
 type accountClient struct {
@@ -47,12 +48,22 @@ func (c *accountClient) DescribeUsers(ctx context.Context, in *DescribeUsersRequ
 	return out, nil
 }
 
+func (c *accountClient) DescribeAccessKey(ctx context.Context, in *DescribeAccessKeyRequest, opts ...grpc.CallOption) (*DescribeAccessKeyReply, error) {
+	out := new(DescribeAccessKeyReply)
+	err := c.cc.Invoke(ctx, "/Account/DescribeAccessKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServer is the server API for Account service.
 // All implementations must embed UnimplementedAccountServer
 // for forward compatibility
 type AccountServer interface {
 	ValidateRequestSignature(context.Context, *ValidateRequestSignatureRequest) (*ValidateRequestSignatureReply, error)
 	DescribeUsers(context.Context, *DescribeUsersRequest) (*DescribeUsersReply, error)
+	DescribeAccessKey(context.Context, *DescribeAccessKeyRequest) (*DescribeAccessKeyReply, error)
 	mustEmbedUnimplementedAccountServer()
 }
 
@@ -65,6 +76,9 @@ func (UnimplementedAccountServer) ValidateRequestSignature(context.Context, *Val
 }
 func (UnimplementedAccountServer) DescribeUsers(context.Context, *DescribeUsersRequest) (*DescribeUsersReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeUsers not implemented")
+}
+func (UnimplementedAccountServer) DescribeAccessKey(context.Context, *DescribeAccessKeyRequest) (*DescribeAccessKeyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeAccessKey not implemented")
 }
 func (UnimplementedAccountServer) mustEmbedUnimplementedAccountServer() {}
 
@@ -115,6 +129,24 @@ func _Account_DescribeUsers_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Account_DescribeAccessKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DescribeAccessKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).DescribeAccessKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Account/DescribeAccessKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).DescribeAccessKey(ctx, req.(*DescribeAccessKeyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Account_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "Account",
 	HandlerType: (*AccountServer)(nil),
@@ -126,6 +158,10 @@ var _Account_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeUsers",
 			Handler:    _Account_DescribeUsers_Handler,
+		},
+		{
+			MethodName: "DescribeAccessKey",
+			Handler:    _Account_DescribeAccessKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

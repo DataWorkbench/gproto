@@ -7,6 +7,17 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 service Account {
     rpc ValidateRequestSignature(ValidateRequestSignatureRequest) returns (ValidateRequestSignatureReply) {}
     rpc DescribeUsers(DescribeUsersRequest) returns (DescribeUsersReply) {}
+    rpc DescribeAccessKey(DescribeAccessKeyRequest) returns (DescribeAccessKeyReply) {}
+}
+
+
+message DescribeAccessKeyRequest {
+    string access_key_id = 1;
+}
+
+message DescribeAccessKeyReply {
+    string owner = 1;
+    string secret_access_key = 2;
 }
 
 message ValidateRequestSignatureRequest {
