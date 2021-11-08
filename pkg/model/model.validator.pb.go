@@ -145,11 +145,20 @@ func (this *StreamJobArgs_Function) Validate() error {
 	return nil
 }
 func (this *StreamJobSchedule) Validate() error {
+	if !(this.Executed > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Executed", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Executed))
+	}
 	if !(this.Started > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Started", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Started))
 	}
 	if !(this.Ended > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Ended", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Ended))
+	}
+	if !(this.Timeout > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Timeout))
+	}
+	if !(this.Timeout < 100) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be less than '100'`, this.Timeout))
 	}
 	if !(this.RetryLimit > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("RetryLimit", fmt.Errorf(`value '%v' must be greater than '-1'`, this.RetryLimit))
@@ -162,12 +171,6 @@ func (this *StreamJobSchedule) Validate() error {
 	}
 	if !(this.RetryInterval < 31) {
 		return github_com_mwitkow_go_proto_validators.FieldError("RetryInterval", fmt.Errorf(`value '%v' must be less than '31'`, this.RetryInterval))
-	}
-	if !(this.Timeout > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be greater than '-1'`, this.Timeout))
-	}
-	if !(this.Timeout < 100) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Timeout", fmt.Errorf(`value '%v' must be less than '100'`, this.Timeout))
 	}
 	return nil
 }
