@@ -102,7 +102,7 @@ message EnableWorkspaces {
 message CreateWorkspace {
 	// The owner fixed to request user id.
 	// @inject_tag: json:"owner" default:"" binding:"-" swaggerignore:"true"
-	string owner = 1 [ (validator.field) = { length_gt: 10, length_lt: 65 } ];
+	string owner = 1 [ (validator.field) = { length_lt: 65 } ];
 	
 	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
