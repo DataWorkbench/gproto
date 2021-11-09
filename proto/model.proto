@@ -222,17 +222,22 @@ message StreamJobSchedule {
 	// @inject_tag: json:"executed" default:"0" binding:"gte=0"
 	int64 executed = 2 [ (validator.field) = { int_gt: -1} ];
 
+	// Whether execute immediately the job after release.
+	// Not required, default False. If immediately is True, the field executed will be ignore.
+	// @inject_tag: json:"immediately" binding:"-"
+	bool immediately = 3;
+
 	// ------ Period Options ------
 	//
 	// Timestamp of start time of the validity period, unit in seconds.
 	// Not required, default 31507200(1971-01-01 00:00:00), means no limit.
 	// @inject_tag: json:"started" default:"0" binding:"gte=0"
-	int64 started = 3 [ (validator.field) = { int_gt: -1  } ];
+	int64 started = 4 [ (validator.field) = { int_gt: -1  } ];
 
 	// Timestamp of end time of the validity period, unit in seconds.
 	// Not required, default 31588502400(2971-01-01 00:00:00), means no limit.
 	// @inject_tag: json:"ended" default:"0" binding:"gte=0"
-	int64 ended = 4 [ (validator.field) = { int_gt: -1 } ];
+	int64 ended = 5 [ (validator.field) = { int_gt: -1 } ];
 
 	// Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace"
 	// - allow: Multiple task instances are allowed at the same time.
@@ -240,35 +245,35 @@ message StreamJobSchedule {
 	// - replace: Force stop the old running instances and create new.
 	// Is required with schedule_policy = 1.
 	// @inject_tag: json:"concurrency_policy" default:"" binding:"-"
-	ConcurrencyPolicy concurrency_policy = 5 [ (validator.field) = { } ];
+	ConcurrencyPolicy concurrency_policy = 6 [ (validator.field) = { } ];
 
 	// Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
 	// Is required with with schedule_policy = 1.
 	// @inject_tag: json:"period_type" default:"" binding:"-"
-	string period_type = 6 [ (validator.field) = {  } ];
+	string period_type = 7 [ (validator.field) = {  } ];
 
 	// Crontab Express. Is required with schedule_policy == 1
 	// @inject_tag: json:"express" default:"" binding:"-"
-	string express = 7 [ (validator.field) = { } ];
+	string express = 8 [ (validator.field) = { } ];
 
 	// ------ Advanced (Retry) options ------
 	//
 	// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 4320min.
 	// @inject_tag: json:"timeout" default:"0" binding:"gte=0"
-	int32 timeout = 8 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
+	int32 timeout = 9 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
 
 	// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
 	// Is required.
 	// @inject_tag: json:"retry_policy" default:"" binding:"gte=0,lte=2"
-	RetryPolicy retry_policy = 9 [ (validator.field) = { int_gt: -1, int_lt: 3 } ];
+	RetryPolicy retry_policy = 10 [ (validator.field) = { int_gt: -1, int_lt: 3 } ];
 
 	// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
 	// @inject_tag: json:"retry_limit" default:"" binding:"gte=0,lte=99"
-	int32 retry_limit = 10 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
+	int32 retry_limit = 11 [ (validator.field) = { int_gt: -1, int_lt: 100 } ];
 
 	// Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
 	// @inject_tag: json:"retry_interval" default:"" binding:"gte=0,lte=30"
-	int32 retry_interval = 11 [ (validator.field) = { int_gt: -1, int_lt: 31 } ];
+	int32 retry_interval = 12 [ (validator.field) = { int_gt: -1, int_lt: 31 } ];
 }
 
 // The release stream job info.
