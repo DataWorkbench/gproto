@@ -285,9 +285,9 @@ message DescribeUDF {
 
 // JobState
 message JobState {
-    // job state, model.StreamFlowInst_State
+    // job state, model.StreamJobInst_State
 	// @inject_tag: json:"state"
-    int32 State = 1 [(validator.field) = {}];
+    model.StreamJobInst.State State = 1 [(validator.field) = {}];
 
     // job Message
 	// @inject_tag: json:"message"

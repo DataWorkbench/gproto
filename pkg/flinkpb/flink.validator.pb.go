@@ -30,12 +30,6 @@ func (this *ColumnAs) Validate() error {
 	if !(len(this.Func) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Func", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Func))
 	}
-	if !(len(this.WindowsName) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("WindowsName", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.WindowsName))
-	}
-	if !(len(this.WindowsName) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("WindowsName", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.WindowsName))
-	}
 	if !(len(this.Type) > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Type))
 	}
@@ -224,11 +218,9 @@ func (this *DimensionOperator) Validate() error {
 			}
 		}
 	}
-	for _, item := range this.TimeColumn {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("TimeColumn", err)
-			}
+	if this.TimeColumn != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.TimeColumn); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("TimeColumn", err)
 		}
 	}
 	return nil
@@ -240,23 +232,29 @@ func (this *IntersectOperator) Validate() error {
 	return nil
 }
 func (this *FilterOperator) Validate() error {
-	if !(len(this.Where) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Where", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Where))
+	if !(len(this.Where) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Where", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Where))
 	}
 	if !(len(this.Where) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Where", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Where))
 	}
-	if !(len(this.In) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("In", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.In))
+	if !(len(this.In) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("In", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.In))
 	}
 	if !(len(this.In) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("In", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.In))
 	}
-	if !(len(this.Exists) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Exists", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Exists))
+	if !(len(this.Exists) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Exists", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Exists))
 	}
 	if !(len(this.Exists) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Exists", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Exists))
+	}
+	if !(len(this.Expression) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Expression", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Expression))
+	}
+	if !(len(this.Expression) < 1025) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Expression", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Expression))
 	}
 	return nil
 }
@@ -349,43 +347,12 @@ func (this *UDTTFOperator) Validate() error {
 	if !(len(this.Args) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Args", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Args))
 	}
-	if !(len(this.Funcname) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Funcname", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Funcname))
-	}
-	if !(len(this.Funcname) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Funcname", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Funcname))
-	}
 	for _, item := range this.Column {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
 				return github_com_mwitkow_go_proto_validators.FieldError("Column", err)
 			}
 		}
-	}
-	return nil
-}
-func (this *WindowOperator) Validate() error {
-	for _, item := range this.Window {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("Window", err)
-			}
-		}
-	}
-	return nil
-}
-func (this *WindowOperator_WindowOperatorItem) Validate() error {
-	if !(len(this.Name) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
-	}
-	if !(len(this.Name) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
-	}
-	if !(len(this.Spec) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Spec", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Spec))
-	}
-	if !(len(this.Spec) < 1025) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Spec", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Spec))
 	}
 	return nil
 }
@@ -473,11 +440,6 @@ func (this *OperatorProperty) Validate() error {
 	if this.Udttf != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Udttf); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Udttf", err)
-		}
-	}
-	if this.Window != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Window); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Window", err)
 		}
 	}
 	if this.Join != nil {
@@ -606,12 +568,6 @@ func (this *SqlTimeColumnType) Validate() error {
 	}
 	if !(len(this.Column) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Column", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Column))
-	}
-	if !(len(this.Type) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Type))
-	}
-	if !(len(this.Type) < 17) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Type", fmt.Errorf(`value '%v' must have a length smaller than '17'`, this.Type))
 	}
 	if !(len(this.Expression) > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Expression", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.Expression))

@@ -92,9 +92,6 @@ func (this *EnableWorkspaces) Validate() error {
 	return nil
 }
 func (this *CreateWorkspace) Validate() error {
-	if !(len(this.Owner) > 10) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length greater than '10'`, this.Owner))
-	}
 	if !(len(this.Owner) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Owner", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Owner))
 	}
@@ -953,12 +950,6 @@ func (this *JobGetState) Validate() error {
 	return nil
 }
 func (this *JobCancel) Validate() error {
-	if !(len(this.JobId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
-	}
-	return nil
-}
-func (this *JobClean) Validate() error {
 	if !(len(this.JobId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
 	}
