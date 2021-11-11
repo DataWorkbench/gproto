@@ -765,7 +765,7 @@ message FlinkConfig {
 		// @inject_tag: json:"failure_rate_delay" default:"1" binding:"gte=1, lte=86400"
 		int32 failure_rate_delay = 5;
 
-		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 1440. Default 3, unit is minute.
+		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 60, unit is second.
 		// @inject_tag: json:"failure_rate_failure_rate_interval" default:"3" binding:"gte=1, lte=1440"
 		int32 failure_rate_failure_rate_interval = 6;
 	}

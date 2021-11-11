@@ -1235,7 +1235,7 @@ message ListFlinkClusters {
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
 
-	// Search with workspace name; Not required.
+	// Search with flink-cluster name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
 	string search = 5 [ (validator.field) = { } ];
 
@@ -1278,14 +1278,14 @@ message CreateFlinkCluster {
 
 	// The user-id of created this cluster. It fixed to request user id.
 	// @inject_tag: json:"create_by" swaggerignore:"true"
-	string create_by = 2 [ (validator.field) = { msg_exists: true } ];
+	string created_by = 2 [ (validator.field) = { msg_exists: true } ];
 
 	// Cluster Name. Is required.
 	// @inject_tag: json:"name"
 	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 
-	// Flink Version. Is required. Optional value: "flink-v1.12.4_scala-1.11"
-	// @inject_tag: json:"version" binding:"oneof=flink-v1.12.4_scala-1.11"
+	// Flink Version. Is required. Optional value: "flink-1.12.4-scala_2.11"
+	// @inject_tag: json:"version" binding:"oneof=flink-1.12.4-scala_2.11"
 	string version = 4 [ (validator.field) = { msg_exists: true } ];
 
 	// resource config.

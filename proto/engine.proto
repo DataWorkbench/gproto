@@ -4,25 +4,23 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/enginepb";
 
 package enginepb;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "model.proto";
 import "request.proto";
 import "response.proto";
 
-// Engine Server.
-service EngineService {
+// Engine Server
+// Interface for manage global apis of engine-manager
+service Engine {
     // DeleteWorkspaces for all resource of specified space ids.
     rpc DeleteWorkspaces(request.DeleteWorkspaces) returns(model.EmptyStruct) {}
-
 }
 
-// Engine Server: FlinkCluster
-service FlinkService {
+// Flink Server
+// Interface for manage flink cluster
+service Flink {
 
-    // Interface for manage flink cluster.
-    //
     rpc ListAvailableFlinkVersions(model.EmptyStruct) returns (response.ListAvailableFlinkVersions) {}
-    // Describe flink cluster api that jobmanager commit job to
+    // Describe flink cluster api that job-manager commit job to
     rpc DescribeFlickClusterAPI(request.DescribeFlickClusterAPI) returns(response.DescribeFlickClusterAPI) {}
 
     rpc CreateFlinkCluster(request.CreateFlinkCluster) returns (response.CreateFlinkCluster) {}
@@ -33,14 +31,11 @@ service FlinkService {
 
     rpc StartFlinkClusters(request.StartFlinkClusters) returns (model.EmptyStruct) {}
     rpc StopFlinkClusters(request.StopFlinkClusters) returns (model.EmptyStruct) {}
-
 }
 
-// Network Manager
-service NetworkService {
-
-    // Interface for manage network config.
-    //
+// Network Server
+// Interface for manage network configuration from iaas-pvc
+service Network {
     rpc CreateNetwork(request.CreateNetwork) returns (response.CreateNetwork) {}
     rpc ListNetworks(request.ListNetworks) returns (response.ListNetworks) {}
     rpc DescribeNetwork(request.DescribeNetwork) returns (response.DescribeNetwork) {}

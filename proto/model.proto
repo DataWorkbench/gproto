@@ -889,7 +889,7 @@ message FlinkCluster {
 	// @inject_tag: json:"name" gorm:"column:name;"
 	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 
-	// Flink Version. Optional value: "flink-v1.12.4_scala-1.11"
+	// Flink Version. Optional value: "flink-1.12.4-scala_2.11"
 	// @inject_tag: json:"version" gorm:"column:version;"
 	string version = 4 [ (validator.field) = { msg_exists: true } ];
 
@@ -928,8 +928,8 @@ message FlinkCluster {
 	string web_ui = 12;
 
 	// The user-id of created this cluster.
-	// @inject_tag: json:"create_by" gorm:"column:create_by;"
-	string create_by = 13 [ (validator.field) = { msg_exists: true } ];
+	// @inject_tag: json:"created_by" gorm:"column:created_by;"
+	string created_by = 13 [ (validator.field) = { msg_exists: true } ];
 
 	// Timestamp of create time.
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
