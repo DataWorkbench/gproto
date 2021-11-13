@@ -184,6 +184,10 @@ message StreamJobArgs {
 	// The config for function. Not required
 	// @inject_tag: json:"function" default:"" binding:"-"
 	Function function = 3 [ (validator.field) = { } ];
+
+	// runAsOne multi insert into run in one flink job. bool Not required
+	// @inject_tag: json:"run_as_one" default:"" binding:"-"
+	bool run_as_one = 4 [ (validator.field) = { } ];
 }
 
 // StreamJobSchedule represents a job schedule info.

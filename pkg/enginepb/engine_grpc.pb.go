@@ -98,7 +98,7 @@ var _Engine_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "engine.proto",
+	Metadata: "proto/engine.proto",
 }
 
 // FlinkClient is the client API for Flink service.
@@ -471,7 +471,7 @@ var _Flink_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "engine.proto",
+	Metadata: "proto/engine.proto",
 }
 
 // NetworkClient is the client API for Network service.
@@ -698,5 +698,5 @@ var _Network_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "engine.proto",
+	Metadata: "proto/engine.proto",
 }
