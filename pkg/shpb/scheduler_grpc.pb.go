@@ -33,19 +33,19 @@ type SchedulerClient interface {
 	//  - Offline job and force stop all running instances.
 	//  - All instances records.
 	DeleteStreamJobs(ctx context.Context, in *request.DeleteStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// Submit submit a job task to scheduler system, It will
+	// SubmitStreamJob Submit submit a job task to scheduler system, It will
 	// be cover if old job exists.
 	// FIXME: Review it.
-	SubmitStreamJobs(ctx context.Context, in *request.SubmitStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// Remove remove specific job task from scheduler system.
+	SubmitStreamJob(ctx context.Context, in *request.SubmitStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// RemoveStreamJob remove specific job from scheduler system.
 	// FIXME: Review it.
-	OfflineStreamJobs(ctx context.Context, in *request.OfflineStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	RemoveStreamJob(ctx context.Context, in *request.RemoveStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Interface for stream job cycle instance.
 	//
-	ListStreamCycleInsts(ctx context.Context, in *request.ListStreamInsts, opts ...grpc.CallOption) (*response.ListStreamInsts, error)
-	TerminateStreamCycleInsts(ctx context.Context, in *request.TerminateStreamInsts, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	SuspendStreamCycleInsts(ctx context.Context, in *request.SuspendStreamInsts, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	ResumeStreamCycleInsts(ctx context.Context, in *request.ResumeStreamInsts, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	ListStreamInstances(ctx context.Context, in *request.ListStreamInstances, opts ...grpc.CallOption) (*response.ListStreamInstances, error)
+	TerminateStreamInstances(ctx context.Context, in *request.TerminateStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	SuspendStreamInstances(ctx context.Context, in *request.SuspendStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	ResumeStreamInstances(ctx context.Context, in *request.ResumeStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Interface for monitor.
 	ListMonitorRules(ctx context.Context, in *request.ListMonitorRules, opts ...grpc.CallOption) (*response.ListMonitorRules, error)
 	DeleteMonitorRules(ctx context.Context, in *request.DeleteMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error)
@@ -82,54 +82,54 @@ func (c *schedulerClient) DeleteStreamJobs(ctx context.Context, in *request.Dele
 	return out, nil
 }
 
-func (c *schedulerClient) SubmitStreamJobs(ctx context.Context, in *request.SubmitStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) SubmitStreamJob(ctx context.Context, in *request.SubmitStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/SubmitStreamJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/SubmitStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) OfflineStreamJobs(ctx context.Context, in *request.OfflineStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) RemoveStreamJob(ctx context.Context, in *request.RemoveStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/OfflineStreamJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/RemoveStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) ListStreamCycleInsts(ctx context.Context, in *request.ListStreamInsts, opts ...grpc.CallOption) (*response.ListStreamInsts, error) {
-	out := new(response.ListStreamInsts)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ListStreamCycleInsts", in, out, opts...)
+func (c *schedulerClient) ListStreamInstances(ctx context.Context, in *request.ListStreamInstances, opts ...grpc.CallOption) (*response.ListStreamInstances, error) {
+	out := new(response.ListStreamInstances)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ListStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) TerminateStreamCycleInsts(ctx context.Context, in *request.TerminateStreamInsts, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) TerminateStreamInstances(ctx context.Context, in *request.TerminateStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/TerminateStreamCycleInsts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/TerminateStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) SuspendStreamCycleInsts(ctx context.Context, in *request.SuspendStreamInsts, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) SuspendStreamInstances(ctx context.Context, in *request.SuspendStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/SuspendStreamCycleInsts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/SuspendStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) ResumeStreamCycleInsts(ctx context.Context, in *request.ResumeStreamInsts, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *schedulerClient) ResumeStreamInstances(ctx context.Context, in *request.ResumeStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ResumeStreamCycleInsts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/shpb.Scheduler/ResumeStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -216,19 +216,19 @@ type SchedulerServer interface {
 	//  - Offline job and force stop all running instances.
 	//  - All instances records.
 	DeleteStreamJobs(context.Context, *request.DeleteStreamJobs) (*model.EmptyStruct, error)
-	// Submit submit a job task to scheduler system, It will
+	// SubmitStreamJob Submit submit a job task to scheduler system, It will
 	// be cover if old job exists.
 	// FIXME: Review it.
-	SubmitStreamJobs(context.Context, *request.SubmitStreamJobs) (*model.EmptyStruct, error)
-	// Remove remove specific job task from scheduler system.
+	SubmitStreamJob(context.Context, *request.SubmitStreamJob) (*model.EmptyStruct, error)
+	// RemoveStreamJob remove specific job from scheduler system.
 	// FIXME: Review it.
-	OfflineStreamJobs(context.Context, *request.OfflineStreamJobs) (*model.EmptyStruct, error)
+	RemoveStreamJob(context.Context, *request.RemoveStreamJob) (*model.EmptyStruct, error)
 	// Interface for stream job cycle instance.
 	//
-	ListStreamCycleInsts(context.Context, *request.ListStreamInsts) (*response.ListStreamInsts, error)
-	TerminateStreamCycleInsts(context.Context, *request.TerminateStreamInsts) (*model.EmptyStruct, error)
-	SuspendStreamCycleInsts(context.Context, *request.SuspendStreamInsts) (*model.EmptyStruct, error)
-	ResumeStreamCycleInsts(context.Context, *request.ResumeStreamInsts) (*model.EmptyStruct, error)
+	ListStreamInstances(context.Context, *request.ListStreamInstances) (*response.ListStreamInstances, error)
+	TerminateStreamInstances(context.Context, *request.TerminateStreamInstances) (*model.EmptyStruct, error)
+	SuspendStreamInstances(context.Context, *request.SuspendStreamInstances) (*model.EmptyStruct, error)
+	ResumeStreamInstances(context.Context, *request.ResumeStreamInstances) (*model.EmptyStruct, error)
 	// Interface for monitor.
 	ListMonitorRules(context.Context, *request.ListMonitorRules) (*response.ListMonitorRules, error)
 	DeleteMonitorRules(context.Context, *request.DeleteMonitorRules) (*model.EmptyStruct, error)
@@ -250,23 +250,23 @@ func (UnimplementedSchedulerServer) DeleteJobsBySpaceIds(context.Context, *reque
 func (UnimplementedSchedulerServer) DeleteStreamJobs(context.Context, *request.DeleteStreamJobs) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamJobs not implemented")
 }
-func (UnimplementedSchedulerServer) SubmitStreamJobs(context.Context, *request.SubmitStreamJobs) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SubmitStreamJobs not implemented")
+func (UnimplementedSchedulerServer) SubmitStreamJob(context.Context, *request.SubmitStreamJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitStreamJob not implemented")
 }
-func (UnimplementedSchedulerServer) OfflineStreamJobs(context.Context, *request.OfflineStreamJobs) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method OfflineStreamJobs not implemented")
+func (UnimplementedSchedulerServer) RemoveStreamJob(context.Context, *request.RemoveStreamJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveStreamJob not implemented")
 }
-func (UnimplementedSchedulerServer) ListStreamCycleInsts(context.Context, *request.ListStreamInsts) (*response.ListStreamInsts, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListStreamCycleInsts not implemented")
+func (UnimplementedSchedulerServer) ListStreamInstances(context.Context, *request.ListStreamInstances) (*response.ListStreamInstances, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListStreamInstances not implemented")
 }
-func (UnimplementedSchedulerServer) TerminateStreamCycleInsts(context.Context, *request.TerminateStreamInsts) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TerminateStreamCycleInsts not implemented")
+func (UnimplementedSchedulerServer) TerminateStreamInstances(context.Context, *request.TerminateStreamInstances) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TerminateStreamInstances not implemented")
 }
-func (UnimplementedSchedulerServer) SuspendStreamCycleInsts(context.Context, *request.SuspendStreamInsts) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SuspendStreamCycleInsts not implemented")
+func (UnimplementedSchedulerServer) SuspendStreamInstances(context.Context, *request.SuspendStreamInstances) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SuspendStreamInstances not implemented")
 }
-func (UnimplementedSchedulerServer) ResumeStreamCycleInsts(context.Context, *request.ResumeStreamInsts) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResumeStreamCycleInsts not implemented")
+func (UnimplementedSchedulerServer) ResumeStreamInstances(context.Context, *request.ResumeStreamInstances) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResumeStreamInstances not implemented")
 }
 func (UnimplementedSchedulerServer) ListMonitorRules(context.Context, *request.ListMonitorRules) (*response.ListMonitorRules, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListMonitorRules not implemented")
@@ -338,110 +338,110 @@ func _Scheduler_DeleteStreamJobs_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_SubmitStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.SubmitStreamJobs)
+func _Scheduler_SubmitStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.SubmitStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).SubmitStreamJobs(ctx, in)
+		return srv.(SchedulerServer).SubmitStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/SubmitStreamJobs",
+		FullMethod: "/shpb.Scheduler/SubmitStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).SubmitStreamJobs(ctx, req.(*request.SubmitStreamJobs))
+		return srv.(SchedulerServer).SubmitStreamJob(ctx, req.(*request.SubmitStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_OfflineStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.OfflineStreamJobs)
+func _Scheduler_RemoveStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.RemoveStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).OfflineStreamJobs(ctx, in)
+		return srv.(SchedulerServer).RemoveStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/OfflineStreamJobs",
+		FullMethod: "/shpb.Scheduler/RemoveStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).OfflineStreamJobs(ctx, req.(*request.OfflineStreamJobs))
+		return srv.(SchedulerServer).RemoveStreamJob(ctx, req.(*request.RemoveStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_ListStreamCycleInsts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ListStreamInsts)
+func _Scheduler_ListStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListStreamInstances)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).ListStreamCycleInsts(ctx, in)
+		return srv.(SchedulerServer).ListStreamInstances(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/ListStreamCycleInsts",
+		FullMethod: "/shpb.Scheduler/ListStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).ListStreamCycleInsts(ctx, req.(*request.ListStreamInsts))
+		return srv.(SchedulerServer).ListStreamInstances(ctx, req.(*request.ListStreamInstances))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_TerminateStreamCycleInsts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.TerminateStreamInsts)
+func _Scheduler_TerminateStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.TerminateStreamInstances)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).TerminateStreamCycleInsts(ctx, in)
+		return srv.(SchedulerServer).TerminateStreamInstances(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/TerminateStreamCycleInsts",
+		FullMethod: "/shpb.Scheduler/TerminateStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).TerminateStreamCycleInsts(ctx, req.(*request.TerminateStreamInsts))
+		return srv.(SchedulerServer).TerminateStreamInstances(ctx, req.(*request.TerminateStreamInstances))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_SuspendStreamCycleInsts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.SuspendStreamInsts)
+func _Scheduler_SuspendStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.SuspendStreamInstances)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).SuspendStreamCycleInsts(ctx, in)
+		return srv.(SchedulerServer).SuspendStreamInstances(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/SuspendStreamCycleInsts",
+		FullMethod: "/shpb.Scheduler/SuspendStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).SuspendStreamCycleInsts(ctx, req.(*request.SuspendStreamInsts))
+		return srv.(SchedulerServer).SuspendStreamInstances(ctx, req.(*request.SuspendStreamInstances))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_ResumeStreamCycleInsts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ResumeStreamInsts)
+func _Scheduler_ResumeStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ResumeStreamInstances)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).ResumeStreamCycleInsts(ctx, in)
+		return srv.(SchedulerServer).ResumeStreamInstances(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shpb.Scheduler/ResumeStreamCycleInsts",
+		FullMethod: "/shpb.Scheduler/ResumeStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).ResumeStreamCycleInsts(ctx, req.(*request.ResumeStreamInsts))
+		return srv.(SchedulerServer).ResumeStreamInstances(ctx, req.(*request.ResumeStreamInstances))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -585,28 +585,28 @@ var _Scheduler_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Scheduler_DeleteStreamJobs_Handler,
 		},
 		{
-			MethodName: "SubmitStreamJobs",
-			Handler:    _Scheduler_SubmitStreamJobs_Handler,
+			MethodName: "SubmitStreamJob",
+			Handler:    _Scheduler_SubmitStreamJob_Handler,
 		},
 		{
-			MethodName: "OfflineStreamJobs",
-			Handler:    _Scheduler_OfflineStreamJobs_Handler,
+			MethodName: "RemoveStreamJob",
+			Handler:    _Scheduler_RemoveStreamJob_Handler,
 		},
 		{
-			MethodName: "ListStreamCycleInsts",
-			Handler:    _Scheduler_ListStreamCycleInsts_Handler,
+			MethodName: "ListStreamInstances",
+			Handler:    _Scheduler_ListStreamInstances_Handler,
 		},
 		{
-			MethodName: "TerminateStreamCycleInsts",
-			Handler:    _Scheduler_TerminateStreamCycleInsts_Handler,
+			MethodName: "TerminateStreamInstances",
+			Handler:    _Scheduler_TerminateStreamInstances_Handler,
 		},
 		{
-			MethodName: "SuspendStreamCycleInsts",
-			Handler:    _Scheduler_SuspendStreamCycleInsts_Handler,
+			MethodName: "SuspendStreamInstances",
+			Handler:    _Scheduler_SuspendStreamInstances_Handler,
 		},
 		{
-			MethodName: "ResumeStreamCycleInsts",
-			Handler:    _Scheduler_ResumeStreamCycleInsts_Handler,
+			MethodName: "ResumeStreamInstances",
+			Handler:    _Scheduler_ResumeStreamInstances_Handler,
 		},
 		{
 			MethodName: "ListMonitorRules",

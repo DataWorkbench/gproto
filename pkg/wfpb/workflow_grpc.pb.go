@@ -63,9 +63,11 @@ type WorkflowClient interface {
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
 	ReleaseStreamJob(ctx context.Context, in *request.ReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
-	SuspendReleaseStreamJobs(ctx context.Context, in *request.SuspendReleaseStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// ResumeReleaseStreamJobs to resume the suspended job list in schedule system.
-	ResumeReleaseStreamJobs(ctx context.Context, in *request.ResumeReleaseStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	OfflineReleaseStreamJob(ctx context.Context, in *request.OfflineReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+	SuspendReleaseStreamJob(ctx context.Context, in *request.SuspendReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+	ResumeReleaseStreamJob(ctx context.Context, in *request.ResumeReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
 	ListReleaseStreamJobs(ctx context.Context, in *request.ListReleaseStreamJobs, opts ...grpc.CallOption) (*response.ListReleaseStreamJobs, error)
 	// Interface for stream job versions.
@@ -207,18 +209,27 @@ func (c *workflowClient) ReleaseStreamJob(ctx context.Context, in *request.Relea
 	return out, nil
 }
 
-func (c *workflowClient) SuspendReleaseStreamJobs(ctx context.Context, in *request.SuspendReleaseStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) OfflineReleaseStreamJob(ctx context.Context, in *request.OfflineReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SuspendReleaseStreamJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/OfflineReleaseStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ResumeReleaseStreamJobs(ctx context.Context, in *request.ResumeReleaseStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *workflowClient) SuspendReleaseStreamJob(ctx context.Context, in *request.SuspendReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ResumeReleaseStreamJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SuspendReleaseStreamJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workflowClient) ResumeReleaseStreamJob(ctx context.Context, in *request.ResumeReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ResumeReleaseStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -326,9 +337,11 @@ type WorkflowServer interface {
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
 	ReleaseStreamJob(context.Context, *request.ReleaseStreamJob) (*model.EmptyStruct, error)
 	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
-	SuspendReleaseStreamJobs(context.Context, *request.SuspendReleaseStreamJobs) (*model.EmptyStruct, error)
-	// ResumeReleaseStreamJobs to resume the suspended job list in schedule system.
-	ResumeReleaseStreamJobs(context.Context, *request.ResumeReleaseStreamJobs) (*model.EmptyStruct, error)
+	OfflineReleaseStreamJob(context.Context, *request.OfflineReleaseStreamJob) (*model.EmptyStruct, error)
+	// SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+	SuspendReleaseStreamJob(context.Context, *request.SuspendReleaseStreamJob) (*model.EmptyStruct, error)
+	// ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+	ResumeReleaseStreamJob(context.Context, *request.ResumeReleaseStreamJob) (*model.EmptyStruct, error)
 	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
 	ListReleaseStreamJobs(context.Context, *request.ListReleaseStreamJobs) (*response.ListReleaseStreamJobs, error)
 	// Interface for stream job versions.
@@ -389,11 +402,14 @@ func (UnimplementedWorkflowServer) GetStreamJobSchedule(context.Context, *reques
 func (UnimplementedWorkflowServer) ReleaseStreamJob(context.Context, *request.ReleaseStreamJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReleaseStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) SuspendReleaseStreamJobs(context.Context, *request.SuspendReleaseStreamJobs) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SuspendReleaseStreamJobs not implemented")
+func (UnimplementedWorkflowServer) OfflineReleaseStreamJob(context.Context, *request.OfflineReleaseStreamJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method OfflineReleaseStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) ResumeReleaseStreamJobs(context.Context, *request.ResumeReleaseStreamJobs) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseStreamJobs not implemented")
+func (UnimplementedWorkflowServer) SuspendReleaseStreamJob(context.Context, *request.SuspendReleaseStreamJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SuspendReleaseStreamJob not implemented")
+}
+func (UnimplementedWorkflowServer) ResumeReleaseStreamJob(context.Context, *request.ResumeReleaseStreamJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseStreamJob not implemented")
 }
 func (UnimplementedWorkflowServer) ListReleaseStreamJobs(context.Context, *request.ListReleaseStreamJobs) (*response.ListReleaseStreamJobs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListReleaseStreamJobs not implemented")
@@ -660,38 +676,56 @@ func _Workflow_ReleaseStreamJob_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_SuspendReleaseStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.SuspendReleaseStreamJobs)
+func _Workflow_OfflineReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.OfflineReleaseStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).SuspendReleaseStreamJobs(ctx, in)
+		return srv.(WorkflowServer).OfflineReleaseStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/SuspendReleaseStreamJobs",
+		FullMethod: "/wfpb.Workflow/OfflineReleaseStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).SuspendReleaseStreamJobs(ctx, req.(*request.SuspendReleaseStreamJobs))
+		return srv.(WorkflowServer).OfflineReleaseStreamJob(ctx, req.(*request.OfflineReleaseStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ResumeReleaseStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ResumeReleaseStreamJobs)
+func _Workflow_SuspendReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.SuspendReleaseStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ResumeReleaseStreamJobs(ctx, in)
+		return srv.(WorkflowServer).SuspendReleaseStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wfpb.Workflow/ResumeReleaseStreamJobs",
+		FullMethod: "/wfpb.Workflow/SuspendReleaseStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ResumeReleaseStreamJobs(ctx, req.(*request.ResumeReleaseStreamJobs))
+		return srv.(WorkflowServer).SuspendReleaseStreamJob(ctx, req.(*request.SuspendReleaseStreamJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Workflow_ResumeReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ResumeReleaseStreamJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkflowServer).ResumeReleaseStreamJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wfpb.Workflow/ResumeReleaseStreamJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkflowServer).ResumeReleaseStreamJob(ctx, req.(*request.ResumeReleaseStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -861,12 +895,16 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Workflow_ReleaseStreamJob_Handler,
 		},
 		{
-			MethodName: "SuspendReleaseStreamJobs",
-			Handler:    _Workflow_SuspendReleaseStreamJobs_Handler,
+			MethodName: "OfflineReleaseStreamJob",
+			Handler:    _Workflow_OfflineReleaseStreamJob_Handler,
 		},
 		{
-			MethodName: "ResumeReleaseStreamJobs",
-			Handler:    _Workflow_ResumeReleaseStreamJobs_Handler,
+			MethodName: "SuspendReleaseStreamJob",
+			Handler:    _Workflow_SuspendReleaseStreamJob_Handler,
+		},
+		{
+			MethodName: "ResumeReleaseStreamJob",
+			Handler:    _Workflow_ResumeReleaseStreamJob_Handler,
 		},
 		{
 			MethodName: "ListReleaseStreamJobs",

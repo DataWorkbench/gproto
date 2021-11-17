@@ -160,7 +160,7 @@ func (this *DescribeMonitorRule) Validate() error {
 	}
 	return nil
 }
-func (this *ListStreamInsts) Validate() error {
+func (this *ListStreamInstances) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
