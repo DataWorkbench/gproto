@@ -1287,7 +1287,7 @@ message CreateFlinkCluster {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
 	// The user-id of created this cluster. It fixed to request user id.
-	// @inject_tag: json:"create_by" swaggerignore:"true"
+	// @inject_tag: json:"created_by" swaggerignore:"true"
 	string created_by = 2 [ (validator.field) = { msg_exists: true } ];
 
 	// Cluster Name. Is required.
@@ -1421,8 +1421,8 @@ message CreateNetwork {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
 	// The user-id of created this cluster. It fixed to request user id.
-	// @inject_tag: json:"create_by" swaggerignore:"true"
-	string create_by = 2 [ (validator.field) = { msg_exists: true } ];
+	// @inject_tag: json:"created_by" swaggerignore:"true"
+	string created_by = 2 [ (validator.field) = { msg_exists: true } ];
 
 	// Network Name. Is required.
 	// @inject_tag: json:"name"

@@ -841,8 +841,8 @@ message Network {
 	string vxnet_id = 5 [ (validator.field) = { length_gt: 1} ];
 
 	// The user-id of created this network.
-	// @inject_tag: json:"create_by" gorm:"column:create_by;"
-	string create_by = 6 [ (validator.field) = { msg_exists: true } ];
+	// @inject_tag: json:"created_by" gorm:"column:created_by;"
+	string created_by = 6 [ (validator.field) = { msg_exists: true } ];
 
 	// Timestamp of create time.
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
