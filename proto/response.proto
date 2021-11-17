@@ -145,7 +145,7 @@ message DescribeMonitorRule {
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query).
 // This struct can used for ListStreamTestInst and ListStreamCycleInst
-message ListStreamInsts {
+message ListStreamInstances {
   // @inject_tag: json:"infos"
   repeated model.StreamJobInst infos = 1 [(validator.field) = {}];
 

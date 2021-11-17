@@ -481,29 +481,40 @@ message ReleaseStreamJob {
 	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
-// SuspendReleaseStreamJobs used as a request parameters for RPC and HTTP(based on Body).
-message SuspendReleaseStreamJobs {
+// OfflineReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
+message OfflineReleaseStreamJob {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The list of stream job id. Is Required. Min: 1, Max: 100
-	// @inject_tag: json:"job_ids" default:"" binding:"gte=1,lte=100"
-	repeated string job_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+// SuspendReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
+message SuspendReleaseStreamJob {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	
 	// @inject_tag: json:"stop_running" default:"" binding:"-"
 	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
 // ResumeReleaseStreamJobs used as a request parameters for RPC.
-message ResumeReleaseStreamJobs {
+message ResumeReleaseStreamJob {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The list of stream job id. Is Required. Min: 1, Max: 100
-	// @inject_tag: json:"job_ids" default:"" binding:"gte=1,lte=100"
-	repeated string job_ids = 2 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // ListStreamJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
@@ -590,22 +601,21 @@ message DescribeMonitorRule {
 //
 
 // SubmitStreamJobs used as a request parameters for RPC.
-// FIXME: review it.
-message SubmitStreamJobs {
-	repeated model.StreamJobProperty properties = 1 [ (validator.field) = { } ];
-	bool stop_running = 2 [ (validator.field) = { } ];
+message SubmitStreamJob {
+	model.StreamJobProperty property = 1 [ (validator.field) = { } ];
+	bool stop_running                = 2 [ (validator.field) = { } ];
 }
 
-// OfflineStreamJobs used as a request parameters for RPC.
-message OfflineStreamJobs {
+// RemoveStreamJob used as a request parameters for RPC.
+message RemoveStreamJob {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	repeated string job_ids = 2 [ (validator.field) = { length_eq: 20 } ];
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
 // ListStreamInsts used as a request parameters for RPC and HTTP(based on URL-Query).
 // This struct can used for ListStreamInsts and ListStreamInsts
-message ListStreamInsts {
+message ListStreamInstances {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
@@ -639,9 +649,9 @@ message JobInstIdPair {
 	string inst_id = 3 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// TerminateStreamInsts used as a request parameters for RPC.
+// TerminateStreamInstances used as a request parameters for RPC.
 // This struct can used for TerminateStreamCycleInst and TerminateStreamTestInst.
-message TerminateStreamInsts {
+message TerminateStreamInstances {
 	// The workspace id in HTTP Request-URI. Is Required.
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -651,9 +661,9 @@ message TerminateStreamInsts {
 	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
 }
 
-// SuspendStreamInsts used as a request parameters for RPC.
+// SuspendStreamInstances used as a request parameters for RPC.
 // This struct can used for SuspendStreamCycleInst and SuspendStreamTestInst.
-message SuspendStreamInsts {
+message SuspendStreamInstances {
 	// The workspace id in HTTP Request-URI. Is Required.
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -663,9 +673,9 @@ message SuspendStreamInsts {
 	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
 }
 
-// ResumeStreamInsts used as a request parameters for RPC.
+// ResumeStreamInstances used as a request parameters for RPC.
 // This struct can used for ResumeStreamCycleInst and SuspendStreamTestInst.
-message ResumeStreamInsts {
+message ResumeStreamInstances {
 	// The workspace id in HTTP Request-URI. Is Required.
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];

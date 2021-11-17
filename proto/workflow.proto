@@ -65,16 +65,20 @@ service Workflow {
 	//
 	// ReleaseStreamJob to publish the specified job to schedule system with a new version.
 	rpc ReleaseStreamJob(request.ReleaseStreamJob) returns (model.EmptyStruct) {}
-	
+
 	// SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
-	rpc SuspendReleaseStreamJobs(request.SuspendReleaseStreamJobs) returns (model.EmptyStruct) {}
+	rpc OfflineReleaseStreamJob(request.OfflineReleaseStreamJob) returns (model.EmptyStruct) {}
+
+	// SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+	rpc SuspendReleaseStreamJob(request.SuspendReleaseStreamJob) returns (model.EmptyStruct) {}
 	
-	// ResumeReleaseStreamJobs to resume the suspended job list in schedule system.
-	rpc ResumeReleaseStreamJobs(request.ResumeReleaseStreamJobs) returns (model.EmptyStruct) {}
+	// ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+	rpc ResumeReleaseStreamJob(request.ResumeReleaseStreamJob) returns (model.EmptyStruct) {}
 	
 	// ListReleaseStreamJobs for gets a list of all published job in the workspace.
 	rpc ListReleaseStreamJobs(request.ListReleaseStreamJobs) returns (response.ListReleaseStreamJobs) {}
-	
+
+
 	// Interface for stream job versions.
 	//
 	// ListStreamJobVersions for gets a list of all versions of the specified job.

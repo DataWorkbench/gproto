@@ -25,22 +25,22 @@ service Scheduler {
 	//  - All instances records.
 	rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
 
-	// Submit submit a job task to scheduler system, It will
+	// SubmitStreamJob Submit submit a job task to scheduler system, It will
 	// be cover if old job exists.
 	// FIXME: Review it.
-	rpc SubmitStreamJobs(request.SubmitStreamJobs) returns (model.EmptyStruct) {}
+	rpc SubmitStreamJob(request.SubmitStreamJob) returns (model.EmptyStruct) {}
 	
-	// Remove remove specific job task from scheduler system.
+	// RemoveStreamJob remove specific job from scheduler system.
 	// FIXME: Review it.
-	rpc OfflineStreamJobs(request.OfflineStreamJobs) returns (model.EmptyStruct) {}
+	rpc RemoveStreamJob(request.RemoveStreamJob) returns (model.EmptyStruct) {}
 
 
 	// Interface for stream job cycle instance.
 	//
-	rpc ListStreamCycleInsts(request.ListStreamInsts)         returns (response.ListStreamInsts) {}
-	rpc TerminateStreamCycleInsts(request.TerminateStreamInsts) returns (model.EmptyStruct)       {}
-	rpc SuspendStreamCycleInsts(request.SuspendStreamInsts)     returns (model.EmptyStruct)       {}
-	rpc ResumeStreamCycleInsts(request.ResumeStreamInsts)       returns (model.EmptyStruct)       {}
+	rpc ListStreamInstances(request.ListStreamInstances)           returns (response.ListStreamInstances) {}
+	rpc TerminateStreamInstances(request.TerminateStreamInstances) returns (model.EmptyStruct)       {}
+	rpc SuspendStreamInstances(request.SuspendStreamInstances)     returns (model.EmptyStruct)       {}
+	rpc ResumeStreamInstances(request.ResumeStreamInstances)       returns (model.EmptyStruct)       {}
 	
 	// Interface for monitor.
 	rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
