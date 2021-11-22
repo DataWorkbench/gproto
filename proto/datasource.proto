@@ -137,6 +137,14 @@ message FtpURL {
 	// The port
 	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
 	int32 port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// The username
+	// @inject_tag: json:"username" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string username = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// The password
+	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string password = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 }
 
 // HDFSURL used as request parameters for RPC and HTTP(based on Body)
