@@ -286,9 +286,6 @@ func (this *DescribeStreamJob) Validate() error {
 	if !(len(this.JobId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
 	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
 	return nil
 }
 func (this *SetStreamJobCode) Validate() error {
