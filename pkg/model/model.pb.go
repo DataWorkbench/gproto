@@ -2440,7 +2440,8 @@ type Member struct {
 	// The user id in account-server.
 	UserId string `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primaryKey;"`
 	// The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-	RoleIds string        `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" gorm:"column:role_ids;"`
+	RoleIds string `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" gorm:"column:role_ids;"`
+	// 1 => "Normal" 2 => "Deleted". Ignore it for client.
 	Status  Member_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.Member_Status" json:"status" gorm:"column:status;"`
 	Created int64         `protobuf:"varint,6,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
