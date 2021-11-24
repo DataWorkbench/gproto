@@ -359,7 +359,7 @@ message DescribeStreamJob {
 	
 	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
-	int64 version = 2 [ (validator.field) = { int_gt: 0 } ];
+	int64 version = 2 [ (validator.field) = { } ];
 }
 
 // SetStreamJobCode used as a request parameters for RPC.
@@ -465,6 +465,11 @@ message ListReleaseStreamJobs {
 	// Search with stream job name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
 	string search = 6 [ (validator.field) = { } ];
+
+	// Filter by release status;  Not required.
+	// Valid optional: 1 => "enabled", 2 => "disabled".
+	// @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
+	model.StreamJobRelease.Status status = 7 [ (validator.field) = { } ];
 }
 
 // ReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body.)

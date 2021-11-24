@@ -29,8 +29,9 @@ message Error {
 message Workspace {
 	enum Status {
 		_ = 0;
-		Enabled = 1;
+		Enabled  = 1;
 		Disabled = 2;
+		Deleted  = 3;
 	}
 	// Workspace ID, unique within a region.
 	// @inject_tag: json:"id" gorm:"column:id;primaryKey;"
@@ -48,7 +49,7 @@ message Workspace {
 	// @inject_tag: json:"desc" gorm:"column:desc;"
 	string desc = 4 [ (validator.field) = { length_lt: 1025 } ];
 	
-	// Workspace status, 1 => "enabled", 2 => "disabled".
+	// Workspace status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
 	// @inject_tag: json:"status" gorm:"column:status;"
 	Status status = 5 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 	
@@ -70,6 +71,12 @@ message StreamJob {
 		Jar = 3;
 		Python = 4;
 		Scala = 5;
+	}
+
+	enum Status {
+		__ = 0;
+		Normal  = 1;
+		Deleted = 2;
 	}
 	
 	// Workspace ID it belongs to.
@@ -96,14 +103,22 @@ message StreamJob {
 	// Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// @inject_tag: json:"type" gorm:"column:type;"
 	Type type = 6 [ (validator.field) = { int_gt: 0, int_lt: 6 } ];
+
+	// Job status, 1 => "Normal", 2 => "Deleted".
+	// @inject_tag: json:"status" gorm:"column:status;"
+	Status status = 7 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
+
+	// The user-id of created this job.
+	// @inject_tag: json:"created_by" gorm:"column:created_by;"
+	string created_by = 8 [ (validator.field) = { msg_exists: true } ];
 	
 	// Timestamp of create time.
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-	int64 created = 7 [ (validator.field) = { int_gt: 0 } ];
+	int64 created = 9 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of update time.
 	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
+	int64 updated = 10 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // StreamJobProperty represents property of job.
@@ -284,8 +299,9 @@ message StreamJobSchedule {
 message StreamJobRelease {
 	enum Status {
 		_ = 0;
-		Active = 1;
-		Suspended = 2;
+		Active     = 1;
+		Suspended  = 2;
+		Deleted    = 3;
 	}
 	
 	// Workspace ID it belongs to.
@@ -308,25 +324,35 @@ message StreamJobRelease {
 	// @inject_tag: json:"type" gorm:"column:type;"
 	StreamJob.Type type = 5 [ (validator.field) = { int_gt: 0 } ];
 	
-	// Release status, 1 => "active", 2 => "suspended"
+	// Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
 	// @inject_tag: json:"status" gorm:"column:status;"
 	Status status = 6 [ (validator.field) = { length_lt: 1025 } ];
 	
 	// Job release description.
 	// @inject_tag: json:"desc" gorm:"column:desc;"
 	string desc = 7 [ (validator.field) = { length_lt: 1025 } ];
-	
+
+	// The user-id of release this job.
+	// @inject_tag: json:"created_by" gorm:"column:created_by;"
+	string created_by = 8 [ (validator.field) = { msg_exists: true } ];
+
 	// Timestamp of create time.
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-	int64 created = 8 [ (validator.field) = { int_gt: 0 } ];
+	int64 created = 9 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of update time.
 	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 9 [ (validator.field) = { int_gt: 0 } ];
+	int64 updated = 10 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The instance info of stream job.
 message StreamJobInst {
+	enum Status {
+		__ = 0;
+		Normal   = 1;
+		Deleted = 2;
+	}
+
 	enum State {
 		_ = 0;
 		Pending = 1;
@@ -359,12 +385,16 @@ message StreamJobInst {
 	// @inject_tag: json:"state" gorm:"column:state;"
 	State state = 5 [ (validator.field) = { int_gt: 0 } ];
 
+	// Release status, 1 => "Normal ", 2 => "Deleted"
+	// @inject_tag: json:"status" gorm:"column:status;"
+	Status status = 6 [ (validator.field) = { length_lt: 1025 } ];
+
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-	int64 created = 6 [ (validator.field) = { int_gt: 0 } ];
+	int64 created = 7 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of update time
 	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 7 [ (validator.field) = { int_gt: 0 } ];
+	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The workspace operation audit log record.
@@ -414,7 +444,13 @@ message Role {
 		System = 1;
 		Custom = 2;
 	}
-	
+
+	enum Status {
+		__ = 0;
+		Normal  = 1;
+		Deleted = 2;
+	}
+
 	// @inject_tag: json:"space_id" gorm:"column:space_id;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
@@ -427,10 +463,19 @@ message Role {
 
 	// @inject_tag: json:"type" gorm:"column:type;" 1 => "System" 2 => "Custom"
 	Type type = 4 [ (validator.field) = { int_gt: 0 } ];
+
+	// @inject_tag: json:"status" gorm:"column:status;" 1 => "Normal" 2 => "Deleted"
+	Status status = 5 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The workspace member info.
 message Member {
+	enum Status {
+		__ = 0;
+		Normal  = 1;
+		Deleted = 2;
+	}
+
 	// @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	
@@ -441,21 +486,25 @@ message Member {
 	// The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
 	// @inject_tag: json:"role_ids" gorm:"column:role_ids;"
 	string role_ids = 4 [ (validator.field) = { length_lt: 256 } ];
-	
+
+	// @inject_tag: json:"status" gorm:"column:status;" 1 => "Normal" 2 => "Deleted"
+	Status status = 5 [ (validator.field) = { int_gt: 0 } ];
+
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-	int64 created = 5 [ (validator.field) = { int_gt: 0 } ];
+	int64 created = 6 [ (validator.field) = { int_gt: 0 } ];
 	
 	// Timestamp of update time
 	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 6 [ (validator.field) = { int_gt: 0 } ];
+	int64 updated = 7 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The monitor rule info
 message MonitorRule {
 	enum Status {
 		_ = 0;
-		Enabled = 1;
+		Enabled  = 1;
 		Disabled = 2;
+		Deleted  = 3;
 	}
 	
 	// Workspace ID it belongs to.
@@ -470,7 +519,7 @@ message MonitorRule {
 	// @inject_tag: json:"name" gorm:"column:name;"
 	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 
-	// Rule status, 1 => "enabled", 2 => "disabled".
+	// Rule status, 1 => "enabled", 2 => "disabled", 3 => "Deleted".
 	// @inject_tag: json:"status" gorm:"column:status;"
 	Status status = 4 [ (validator.field) = { int_gt: 0, int_lt: 3 } ];
 
