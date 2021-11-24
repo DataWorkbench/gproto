@@ -487,7 +487,8 @@ message Member {
 	// @inject_tag: json:"role_ids" gorm:"column:role_ids;"
 	string role_ids = 4 [ (validator.field) = { length_lt: 256 } ];
 
-	// @inject_tag: json:"status" gorm:"column:status;" 1 => "Normal" 2 => "Deleted"
+	// 1 => "Normal" 2 => "Deleted". Ignore it for client.
+	// @inject_tag: json:"status" gorm:"column:status;"
 	Status status = 5 [ (validator.field) = { int_gt: 0 } ];
 
 	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"

@@ -305,24 +305,28 @@ message CreateStreamJob {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
+	// The user-id of created this job. Fixed to the request user id.
+	// @inject_tag: json:"created_by" swaggerignore:"true"
+	string created_by = 2 [ (validator.field) = { msg_exists: true } ];
+
 	// The job name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	// @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
-	string name = 2 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
+	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
 	
 	// Description of the job, Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
-	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
+	string desc = 4 [ (validator.field) = { length_lt: 1025 } ];
 	
 	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// Desc: Cannot be modified after creation.
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=3"
-	model.StreamJob.Type type = 4  [ (validator.field) = { int_gt: 0 } ];
+	model.StreamJob.Type type = 5  [ (validator.field) = { int_gt: 0 } ];
 
 	// The flink compute cluster id. Is required.
 	// @inject_tag: json:"cluster_id" default:"" binding:"len=20"
-	string cluster_id = 5 [ (validator.field) = { length_eq: 20 } ];
+	string cluster_id = 6 [ (validator.field) = { length_eq: 20 } ];
 }
 
 // DeleteStreamJobs used as a request parameters for RPC and HTTP(based on Body)
@@ -477,13 +481,17 @@ message ReleaseStreamJob {
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
+	// The user-id of release this job. Fixed to the request user id.
+	// @inject_tag: json:"created_by" swaggerignore:"true"
+	string created_by = 2 [ (validator.field) = { msg_exists: true } ];
+
 	// Description for this releases. Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
-	string desc = 2 [ (validator.field) = { length_lt: 1025 } ];
+	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
 	
 	// @inject_tag: json:"stop_running" default:"" binding:"-"
-	bool stop_running = 3 [ (validator.field) = { } ];
+	bool stop_running = 4 [ (validator.field) = { } ];
 }
 
 // OfflineReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
