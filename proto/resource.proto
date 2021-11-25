@@ -35,10 +35,16 @@ message UploadFileRequest{
   bytes data = 4;
 
   // The resource Size. prevent data missing.
-  int64 size = 5;
+  int64 resource_size = 5;
 
   // The resource description. not required.
   string description = 6;
+
+  // Resource status, 1 => "enabled", 2 => "disabled", 3 => "deleted".
+  model.Resource.Status status = 7;
+
+  // The resource owner.
+  string create_by = 8;
 }
 
 // ReUploadFile used as a request parameters for RPC and HTTP(based on URL-Query).

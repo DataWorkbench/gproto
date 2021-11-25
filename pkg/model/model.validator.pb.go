@@ -439,6 +439,30 @@ func (this *TableInfo) Validate() error {
 	return nil
 }
 func (this *Resource) Validate() error {
+	if !(len(this.ResourceId) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceId", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.ResourceId))
+	}
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.Name) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
+	}
+	if !(len(this.Name) < 200) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '200'`, this.Name))
+	}
+	if !(this.ResourceSize > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceSize", fmt.Errorf(`value '%v' must be greater than '0'`, this.ResourceSize))
+	}
+	if !(len(this.Description) < 500) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '500'`, this.Description))
+	}
+	if !(this.Created > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
+	}
+	if !(this.Updated > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
+	}
 	return nil
 }
 func (this *UDFInfo) Validate() error {
