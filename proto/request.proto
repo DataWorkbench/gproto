@@ -1157,6 +1157,10 @@ message JobInfo {
 	// code
 	// @inject_tag: json:"code" default:"" binding:"-"
 	model.StreamJobCode code = 4  [ (validator.field) = { } ];
+
+	// JobType
+	// @inject_tag: json:"job_type" default:"" binding:"-"
+	int32 job_type = 5 [(validator.field) = {int_gt:0,int_lt:2}];
 }
 
 // JobGetState
