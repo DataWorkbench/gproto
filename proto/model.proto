@@ -884,6 +884,10 @@ message JobResources {
 
 // Network config.
 message Network {
+  enum Status {
+    Deleted = 0;
+    Active = 1;
+  }
   // Workspace ID it belongs to.
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
   string space_id = 1 [(validator.field) = {length_eq: 20}];
@@ -908,13 +912,17 @@ message Network {
   // @inject_tag: json:"created_by" gorm:"column:created_by;"
   string created_by = 6 [(validator.field) = {msg_exists: true}];
 
+  // Network Status. 0 => "deleted" 2 => "active"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 7 [(validator.field) = {}];
+
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 7 [(validator.field) = {int_gt: 0}];
+  int64 created = 8 [(validator.field) = {int_gt: 0}];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 8 [(validator.field) = {int_gt: 0}];
+  int64 updated = 9 [(validator.field) = {int_gt: 0}];
 }
 
 // HostAliases
