@@ -334,6 +334,10 @@ message JobParser {
 	// S3
     // @inject_tag: json:"s3" binding:"-"
 //	model.S3Config S3 = 8 [ (validator.field) = { } ];
+
+  // Savepoint
+  // @inject_tag: json:"savepoint" binding:"-"
+  string savepoint = 7 [(validator.field) = { } ];
 }
 
 // JobFree

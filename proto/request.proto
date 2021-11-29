@@ -17,35 +17,35 @@ message ListWorkspaces {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
 	// Not required, default: id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// Search with workspace name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
 	string search = 5 [ (validator.field) = { } ];
-	
+
 	// The used_id fixed to request user id.
 	// @inject_tag: json:"user_id" form:"-" default:"" binding:"-" swaggerignore:"true"
 	string user_id = 6 [ (validator.field) = { length_lt: 65 } ];
-	
+
 	// Filter by workspace status;  Not required.
 	// Valid optional: 1 => "enabled", 2 => "disabled".
 	// @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
 	model.Workspace.Status status = 7 [ (validator.field) = { } ];
-	
+
 	// Filter by workspace name; valid if `search` is empty; Not required.
 	// @inject_tag: json:"name" form:"name" default:"" binding:"-"
 	string name = 8 [ (validator.field) = { } ];
@@ -92,7 +92,7 @@ message EnableWorkspaces {
 	// The list of workspace id. Is required, Contains at least one.
 	// @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
 	repeated string space_ids = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
-	
+
 	// Whether resume all suspended job. Not required, default false.
 	// @inject_tag: `json:"resume_job" default:"false" binding:"-"`
 	bool resume_job = 2 [ (validator.field) = { } ];
@@ -103,12 +103,12 @@ message CreateWorkspace {
 	// The owner fixed to request user id.
 	// @inject_tag: json:"owner" default:"" binding:"-" swaggerignore:"true"
 	string owner = 1 [ (validator.field) = { length_lt: 65 } ];
-	
+
 	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	//@inject_tag: json:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
 	string name = 2 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	
+
 	// Description of the workspace, Not required, Max 1024 char.
 	//@inject_tag: json:"desc" default:"" binding:"lte=1024"
 	string desc = 3  [ (validator.field) = { length_lt: 1025 } ];
@@ -119,12 +119,12 @@ message UpdateWorkspace {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The space name of each account in each region is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	//@inject_tag: json:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
 	string name = 2 [ (validator.field) = { length_lt: 129 } ];
-	
+
 	// Description of the workspace, Not required, Max length 1024.
 	//@inject_tag: json:"desc" default:"" binding:"lte=1024"
 	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
@@ -148,47 +148,47 @@ message ListAudits {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {id, created}.
 	// Multiple fields are separated by commas(","), eg: sort_by="created".
 	// Not required, default: id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// The used_id fixed to request user id.
 	// @inject_tag: json:"user_id" form:"-" default:"" binding:"-" swaggerignore:"true"
 	string user_id = 5 [ (validator.field) = { length_lt: 65 } ];
-	
+
 	// Querying conditions. Not required.
 	// @inject_tag: json:"space_id" form:"space_id" default:"" binding:"-"
 	string space_id = 6 [ (validator.field) = { } ];
-	
+
 	// Querying conditions. Not required.
 	// @inject_tag: json:"type" form:"type" default:"" binding:"-"
 	model.Operation.Type type = 7 [ (validator.field) = { } ];
-	
+
 	// Querying conditions. Not required.
 	// @inject_tag: json:"action" form:"action" default:"" binding:"-"
 	string action = 8 [ (validator.field) = { } ];
-	
+
 	// Querying conditions. Not required.
 	// @inject_tag: json:"state" form:"state" default:"" binding:"-"
 	 model.Operation.State state = 9 [ (validator.field) = { } ];
-	
+
 	// Querying conditions. Not required.
 	// Desc: Timestamp of start time.
 	// @inject_tag: json:"started" form:"started" default:"" binding:"-"
 	int64 started = 10 [ (validator.field) = { } ];
-	
+
 	// Querying conditions. Not required.
 	// Desc: Timestamp of end time.
 	// @inject_tag: json:"ended" form:"ended" default:"" binding:"-"
@@ -217,11 +217,11 @@ message ListMembers {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
@@ -233,16 +233,16 @@ message UpsertMembers {
 		// The account user_id. Is Required.
 		// @inject_tag: json:"user_id" default:"" binding:"required"
 		string user_id = 2 [ (validator.field) = { length_lt: 65 } ];
-		
+
 		// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
 		// @inject_tag: json:"role_ids" default:"" binding:"gte=1,lte=100"
 		string role_ids = 3 [ (validator.field) = { length_lt: 101 } ];
 	}
-	
+
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The list of pair to user_id => role_ids. Min: 1, Max: 100
 	// @inject_tag: json:"users" default:"" binding:"gte=1,lte=100""
 	repeated Pair users = 2 [ (validator.field) = { length_lt: 101 } ];
@@ -253,7 +253,7 @@ message DeleteMembers {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The user(member) id. Is required, Min: 1, Max 100.
 	// @inject_tag: json:"user_ids" default:"" binding:"-""
 	repeated string user_ids = 2 [ (validator.field) = { length_lt: 100 } ];
@@ -275,26 +275,26 @@ message ListStreamJobs {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
 	// Not required, default: id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 5 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// Search with stream job name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
 	string search = 6 [ (validator.field) = { } ];
@@ -314,11 +314,11 @@ message CreateStreamJob {
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	// @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
 	string name = 3 [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	
+
 	// Description of the job, Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
 	string desc = 4 [ (validator.field) = { length_lt: 1025 } ];
-	
+
 	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// Desc: Cannot be modified after creation.
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=3"
@@ -344,12 +344,12 @@ message UpdateStreamJob {
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 1 [ (validator.field) = { length_eq: 20} ];
-	
+
 	// The stream job name in each workspace is unique. Is required, Max Length 128.
 	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
 	// @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
 	string name = 2     [ (validator.field) = { length_gt: 1, length_lt: 129 } ];
-	
+
 	// Description of the workspace, Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
 	string desc = 3     [ (validator.field) = { length_lt: 1025 } ];
@@ -360,7 +360,7 @@ message DescribeStreamJob {
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 1 [ (validator.field) = {length_eq: 20} ];
-	
+
 	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64 version = 2 [ (validator.field) = { } ];
@@ -371,7 +371,7 @@ message SetStreamJobCode {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job id it belongs to.
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
@@ -386,11 +386,11 @@ message SetStreamJobSchedule {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job id it belongs to.
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	model.StreamJobSchedule info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
@@ -399,11 +399,11 @@ message SetStreamJobArgs {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job ID it belongs to.
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	model.StreamJobArgs info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
@@ -412,7 +412,7 @@ message GetStreamJobCode {
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64  version = 2 [ (validator.field) = { } ];
@@ -423,7 +423,7 @@ message GetStreamJobSchedule {
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64  version = 2 [ (validator.field) = { } ];
@@ -434,7 +434,7 @@ message GetStreamJobArgs {
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job version id in HTTP Request-URI
 	// @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
 	int64 version = 2 [ (validator.field) = { } ];
@@ -446,26 +446,26 @@ message ListReleaseStreamJobs {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {job_id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
 	// Not required, default: job_id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 5 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// Search with stream job name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
 	string search = 6 [ (validator.field) = { } ];
@@ -489,7 +489,7 @@ message ReleaseStreamJob {
 	// Description for this releases. Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
 	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
-	
+
 	// @inject_tag: json:"stop_running" default:"" binding:"-"
 	bool stop_running = 4 [ (validator.field) = { } ];
 }
@@ -514,7 +514,7 @@ message SuspendReleaseStreamJob {
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// @inject_tag: json:"stop_running" default:"" binding:"-"
 	bool stop_running = 3 [ (validator.field) = { } ];
 }
@@ -536,22 +536,22 @@ message ListStreamJobVersions {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {version, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="version,updated".
 	// Not required, default: version.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// The stream job id in HTTP Request-URI
 	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
 	string job_id = 5 [ (validator.field) = { length_eq: 20 } ];
@@ -563,11 +563,11 @@ message ListMonitorRules {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
@@ -633,19 +633,19 @@ message ListStreamInstances {
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The workspace id in HTTP Request-URI. Is Required.
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 3 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job id. Not required.
 	// @inject_tag: json:"job_id" form:"job_id" default:"" binding:"-"
 	string job_id = 4 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The stream job version id. Not required.
 	// @inject_tag: json:"version" form:"ver_id" default:"" binding:"-"
 	int64 version = 5 [ (validator.field) = { } ];
@@ -680,7 +680,7 @@ message SuspendStreamInstances {
 	// The workspace id in HTTP Request-URI. Is Required.
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
 	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
@@ -692,7 +692,7 @@ message ResumeStreamInstances {
 	// The workspace id in HTTP Request-URI. Is Required.
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
 	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
@@ -703,11 +703,11 @@ message CreateSource {
 	// The source id.
 	// @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
 	string source_id  = 1 [ (validator.field) = { length_lt: 21 } ];
-	
+
 	// The space id.
 	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
 	string space_id  = 2 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
 	// @inject_tag: json:"source_type" binding:"gte=1,lte=8" required:"true" mininum:"1" maximum:"8"
 	model.DataSource.Type source_type = 3  [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
@@ -715,11 +715,11 @@ message CreateSource {
 	// Source name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string name = 4   [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
-	
+
 	// describe this source.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-	
+
 	// this source connection info
 	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
 	datasource.DataSourceURL url = 6 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
@@ -730,19 +730,19 @@ message UpdateSource {
 	// The source id.
 	// @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
 	string source_id  = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
 	// @inject_tag: json:"source_type" default:"" binding:"gte=1,lte=20" required:"true" mininum:"1" maximum:"8"
 	model.DataSource.Type source_type = 2  [ (validator.field) = { int_gt: 0, int_lt: 9 } ];
-	
+
 	// Source name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string name = 3   [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
-	
+
 	// describe this source.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string comment = 4    [ (validator.field) = {  length_lt: 257 } ];
-	
+
 	// this source connection info
 	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
 	datasource.DataSourceURL url = 5 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
@@ -799,7 +799,7 @@ message TableColumns {
 	// tablename
 	// @inject_tag: json:"table_name" default:"" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"
 	string table_name  = 1 [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
-	
+
 	// tablename
 	// @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
 	string source_id  = 2 [ (validator.field) = { length_eq: 20 } ];
@@ -810,27 +810,27 @@ message CreateTable {
 	// The table id.
 	// @inject_tag: json:"table_id" default:"" binding:"lte=20" swaggerignore:"true"
 	string table_id  = 1 [ (validator.field) = { length_lt: 21 } ];
-	
+
 	// The source id.
 	// @inject_tag: json:"source_id" default:"" binding:"len=20" minLength:"20" maxLength:"20"
 	string source_id  = 2 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// The space id.
 	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
 	string space_id  = 3 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// Source name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string name = 4   [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
-	
+
 	// describe this source.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string comment = 5    [ (validator.field) = {  length_lt: 257 } ];
-	
+
 	// this source connection info
 	// @inject_tag: json:"table_schema" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
 	flink.TableSchema table_schema = 6 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
-	
+
     // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
     // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
 	model.TableInfo.Kind table_kind = 7  [ (validator.field) = { length_gt: 1, length_lt: 17 } ];
@@ -841,19 +841,19 @@ message UpdateTable {
 	// The table id.
 	// @inject_tag: json:"table_id" default:"" binding:"lte=20" swaggerignore:"true"
 	string table_id  = 1 [ (validator.field) = { length_lt: 21 } ];
-	
+
 	// Source name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string name = 2   [ (validator.field) = { length_gt: 1, length_lt: 65 } ];
-	
+
 	// describe this source.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string Comment = 3    [ (validator.field) = {  length_lt: 257 } ];
-	
+
 	// this source connection info
 	// @inject_tag: json:"table_schema" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
 	flink.TableSchema table_schema = 4 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
-	
+
     // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
     // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
 	model.TableInfo.Kind table_kind = 5  [ (validator.field) = { length_gt: 1, length_lt: 17 } ];
@@ -878,26 +878,26 @@ message ListSource {
 	// Limit the maximum number of entries returned this time.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {sourceid, name, createtime, updatetime}.
 	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
 	// Not required, default: updatetime.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// Search with name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
 	string search = 5 [ (validator.field) = { } ];
-	
+
 	// SpaceID; required.
 	// @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
 	string space_id  = 6 [ (validator.field) = { length_eq: 20 } ];
@@ -908,34 +908,34 @@ message ListTable {
 	// Limit the maximum number of entries returned this time.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {tableid, name, createtime, updatetime}.
 	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
 	// Not required, default: updatetime.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// Search with name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
 	string search = 5 [ (validator.field) = { } ];
-	
+
 	// get this spaceid tables.
 	// @inject_tag: json:"space_id"  default:"" required:"true" binding:"lte=20" minLength:"20" maxLength:"20"  swaggerignore:"true"
 	string space_id  = 6 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// get this source tables.
 	// @inject_tag: json:"source_id" form:"source_id"  default:"" required:"true" binding:"lte=20" minLength:"0" maxLength:"20"  swaggerignore:"true"
 	string source_id  = 7 [ (validator.field) = { length_lt: 21 } ];
-	
+
     // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
     // @inject_tag: json:"table_kind" form:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
 	model.TableInfo.Kind table_kind = 8  [ (validator.field) = { int_gt: 0, int_lt: 4 } ];
@@ -1032,7 +1032,7 @@ message CreateUDF {
 	// The udf id.
 	// @inject_tag: json:"udf_id" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
 	string udf_id = 1 [ (validator.field) = { length_lt: 21 } ];
-	
+
 	// The space id.
 	// @inject_tag: json:"space_id" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
 	string space_id = 2 [ (validator.field) = { length_eq: 20 } ];
@@ -1044,19 +1044,19 @@ message CreateUDF {
     // UDF language one of 1/2/3 1=>Scala/2=>Java/3=>Python
     // @inject_tag: json:"udf_language" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
     model.UDFInfo.Language udf_language = 4 [ (validator.field) = {int_gt:0, int_lt: 4 } ];
-	
+
 	// UDF name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=1025" required:"true" minLength:"1" maxLength:"1025"
 	string name = 5 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
-	
+
 	// describe this udf.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string comment = 6 [ (validator.field) = {  length_lt: 257 } ];
-	
+
 	// define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
 	// @inject_tag: json:"define" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
 	string define = 7 [ (validator.field) = {  length_lt: 20001 } ];
-	
+
 	// usage for this udf
 	// @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
 	string usage_sample = 8 [ (validator.field) = {  length_lt: 2001 } ];
@@ -1067,19 +1067,19 @@ message UpdateUDF {
 	// The udf id.
 	// @inject_tag: json:"udf_id" default:"" binding:"lte=20" swaggerignore:"true"
 	string udf_id = 1 [ (validator.field) = { length_lt: 21 } ];
-	
+
 	// UDF name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=1025" required:"true" minLength:"1" maxLength:"1025"
 	string name = 2 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
-	
+
 	// describe this udf.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
 	string comment = 3 [ (validator.field) = {  length_lt: 257 } ];
-	
+
 	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
 	// @inject_tag: json:"define" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
 	string define = 4 [ (validator.field) = {  length_lt: 20001 } ];
-	
+
 	// usage for this udf
 	// @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
 	string usage_sample = 5 [ (validator.field) = {  length_lt: 2001 } ];
@@ -1104,26 +1104,26 @@ message ListUDF {
 	// Limit the maximum number of entries returned this time.
 	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
 	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 1001 } ];
-	
+
 	// The offset position. Not required, default 0.
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
 	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-	
+
 	// The field list used to sorted query results.
 	// Optional values: {sourceid, name, createtime, updatetime}.
 	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
 	// Not required, default: updatetime.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
 	string sort_by = 3 [ (validator.field) = {} ];
-	
+
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
-	
+
 	// Search with name; Not required.
 	// @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
 	string search = 5 [ (validator.field) = { } ];
-	
+
 	// SpaceID; required.
 	// @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
 	string space_id  = 6 [ (validator.field) = { length_eq: 20 } ];
@@ -1145,7 +1145,7 @@ message JobInfo {
 	// JobID
 	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
 	string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
-	
+
 	// workspace id
 	// @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
 	string space_id = 2  [ (validator.field) = { length_eq: 20 } ];
@@ -1161,6 +1161,10 @@ message JobInfo {
 	// JobType
 	// @inject_tag: json:"job_type" default:"" binding:"-"
 	int32 job_type = 5 [(validator.field) = {int_gt:0,int_lt:2}];
+
+  // Savepoint Path
+  // @inject_tag: json:"savepoint_path" default:"" binding:"-"
+	string savepoint_path = 6 [(validator.field) = {}];
 }
 
 // JobGetState
