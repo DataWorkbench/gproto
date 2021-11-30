@@ -944,7 +944,7 @@ message HostAliases {
 // FlinkCluster is schema for flink (session) cluster.
 message FlinkCluster {
   enum Status {
-    _ = 0;
+    Deleted = 0;
     Running = 1;
     Stopped = 2;
     Starting = 3;

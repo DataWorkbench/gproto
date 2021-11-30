@@ -5741,7 +5741,7 @@ func (x *ListFlinkClusters) GetStatus() model.FlinkCluster_Status {
 	if x != nil {
 		return x.Status
 	}
-	return model.FlinkCluster__
+	return model.FlinkCluster_Deleted
 }
 
 func (x *ListFlinkClusters) GetName() string {
