@@ -410,8 +410,8 @@ message FlinkOperator {
 // FlinkJar
 message FlinkJar {
 	// jarid in resource manager. Is resource_id.
-	// @inject_tag: json:"resource_id" default:"" binding:"len=20" minLength:"20" maxLength:"20"
-	string resource_id = 1 [ (validator.field) = { } ];
+	// @inject_tag: json:"resource_id" default:"" binding:"gte=20,lte=20" minLength:"20" maxLength:"20"
+	string resource_id = 1 [ (validator.field) = {length_eq: 20} ];
 	
 	// JarArgs
 	// @inject_tag: json:"jar_args" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
