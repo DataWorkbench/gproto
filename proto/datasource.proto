@@ -8,7 +8,27 @@ import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 
-// MySQLURL used as request parameters for RPC and HTTP(based on Body)
+// DatasourceNetwork
+message DatasourceNetwork {
+	option (gosql.serialize) = { json: {} };
+
+    enum Type {
+		_ = 0;
+		Eip = 1;
+     	Vpc = 2;
+    }
+
+	message VpcNetwork	{
+        // Network id
+        // @inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
+        string network_id = 1 [(validator.field) = {length_lt: 21}];
+	}
+
+	Type type = 1 [(validator.field) = {}];
+
+	VpcNetwork vpc_network = 2 [(validator.field) = {}];
+}
+
 message MySQLURL {
 	option (gosql.serialize) = { json: {} };
 	
@@ -31,6 +51,10 @@ message MySQLURL {
 	// The database
 	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// the Network
+	// @inject_tag: json:"network" default:""
+	DatasourceNetwork network = 6 [(validator.field) = {}];
 }
 
 // PostgreSQLURL used as request parameters for RPC and HTTP(based on Body)
@@ -56,6 +80,10 @@ message PostgreSQLURL {
 	// The database
 	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// the Network
+	// @inject_tag: json:"network" default:""
+	DatasourceNetwork network = 6 [(validator.field) = {}];
 }
 
 // ClickHouseURL used as request parameters for RPC and HTTP(based on Body)
@@ -81,6 +109,10 @@ message ClickHouseURL {
 	// The database
 	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// the Network
+	// @inject_tag: json:"network" default:""
+	DatasourceNetwork network = 6 [(validator.field) = {}];
 }
 
 // KafkaURL used as request parameters for RPC and HTTP(based on Body)
@@ -90,6 +122,10 @@ message KafkaURL {
 	// The kafak brokers.
 	// @inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
 	string kafka_brokers = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+
+	// the Network
+	// @inject_tag: json:"network" default:""
+	DatasourceNetwork network = 2 [(validator.field) = {}];
 }
 
 // S3Url used as request parameters for RPC and HTTP(based on Body)
@@ -124,6 +160,10 @@ message HBaseURL {
 	//----// The hbase Hosts config
 	//----// @inject_tag: json:"hosts" default:""
 	//----//HBaseConfig Hosts = 3 [ (validator.field) = { } ];
+
+	// the Network
+	// @inject_tag: json:"network" default:""
+	DatasourceNetwork network = 3 [(validator.field) = {}];
 }
 
 // FtpURL used as request parameters for RPC and HTTP(based on Body)
@@ -145,6 +185,10 @@ message FtpURL {
 	// The password
 	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string password = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+
+	// the Network
+	// @inject_tag: json:"network" default:""
+	DatasourceNetwork network = 5 [(validator.field) = {}];
 }
 
 // HDFSURL used as request parameters for RPC and HTTP(based on Body)
@@ -163,6 +207,10 @@ message HDFSURL {
 	
 	// @inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
 	HDFSNodeURL nodes = 1 [ (validator.field) = {length_gt:0, length_lt:1025 } ];
+
+	// the Network
+	// @inject_tag: json:"network" default:""
+	DatasourceNetwork network = 2 [(validator.field) = {}];
 }
 
 // SourceUrl used as request parameters for RPC and HTTP(based on Body)

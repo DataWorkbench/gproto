@@ -17,6 +17,20 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+func (this *DatasourceNetwork) Validate() error {
+	if this.VpcNetwork != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.VpcNetwork); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("VpcNetwork", err)
+		}
+	}
+	return nil
+}
+func (this *DatasourceNetwork_VpcNetwork) Validate() error {
+	if !(len(this.NetworkId) < 21) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NetworkId", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.NetworkId))
+	}
+	return nil
+}
 func (this *MySQLURL) Validate() error {
 	if !(len(this.User) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.User))
@@ -41,6 +55,11 @@ func (this *MySQLURL) Validate() error {
 	}
 	if !(len(this.Database) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Database))
+	}
+	if this.Network != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Network); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Network", err)
+		}
 	}
 	return nil
 }
@@ -69,6 +88,11 @@ func (this *PostgreSQLURL) Validate() error {
 	if !(len(this.Database) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Database))
 	}
+	if this.Network != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Network); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Network", err)
+		}
+	}
 	return nil
 }
 func (this *ClickHouseURL) Validate() error {
@@ -96,6 +120,11 @@ func (this *ClickHouseURL) Validate() error {
 	if !(len(this.Database) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Database", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Database))
 	}
+	if this.Network != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Network); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Network", err)
+		}
+	}
 	return nil
 }
 func (this *KafkaURL) Validate() error {
@@ -104,6 +133,11 @@ func (this *KafkaURL) Validate() error {
 	}
 	if !(len(this.KafkaBrokers) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("KafkaBrokers", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.KafkaBrokers))
+	}
+	if this.Network != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Network); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Network", err)
+		}
 	}
 	return nil
 }
@@ -122,6 +156,11 @@ func (this *HBaseURL) Validate() error {
 	}
 	if !(len(this.ZNode) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ZNode", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.ZNode))
+	}
+	if this.Network != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Network); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Network", err)
+		}
 	}
 	return nil
 }
@@ -144,12 +183,22 @@ func (this *FtpURL) Validate() error {
 	if !(len(this.Password) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Password))
 	}
+	if this.Network != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Network); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Network", err)
+		}
+	}
 	return nil
 }
 func (this *HDFSURL) Validate() error {
 	if this.Nodes != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Nodes); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Nodes", err)
+		}
+	}
+	if this.Network != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Network); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Network", err)
 		}
 	}
 	return nil
