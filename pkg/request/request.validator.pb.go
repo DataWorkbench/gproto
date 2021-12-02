@@ -873,6 +873,9 @@ func (this *UpdateUDF) Validate() error {
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
 	}
+	if !(len(this.Define) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Define", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Define))
+	}
 	if !(len(this.Define) < 20001) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Define", fmt.Errorf(`value '%v' must have a length smaller than '20001'`, this.Define))
 	}
