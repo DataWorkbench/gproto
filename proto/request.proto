@@ -1054,8 +1054,8 @@ message CreateUDF {
 	string comment = 6 [ (validator.field) = {  length_lt: 257 } ];
 
 	// define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-	// @inject_tag: json:"define" default:"" binding:"gte=0,lte=20000" required:"false" minLength:"0" maxLength:"20000"
-	string define = 7 [ (validator.field) = {  length_lt: 20001 } ];
+	// @inject_tag: json:"define" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
+	string define = 7 [ (validator.field) = { length_gt: 0, length_lt: 20001 } ];
 
 	// usage for this udf
 	// @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
