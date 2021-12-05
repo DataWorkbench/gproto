@@ -3953,7 +3953,7 @@ type FlinkCluster struct {
 	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// Cluster Name.
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
-	// Flink Version. Optional value: "flink-1.12.4-scala_2.11"
+	// Flink Version. Optional value: "flink-1.12.3-scala_2.11"
 	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" gorm:"column:version;"`
 	// Cluster Status. 1 => "running" 2 => "stopped" 3 => "starting" 4 => "exception" 5 => "Arrears"
 	Status FlinkCluster_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.FlinkCluster_Status" json:"status" gorm:"column:status;"`

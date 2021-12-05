@@ -965,7 +965,7 @@ message FlinkCluster {
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [(validator.field) = {length_gt: 1, length_lt: 129}];
 
-  // Flink Version. Optional value: "flink-1.12.4-scala_2.11"
+  // Flink Version. Optional value: "flink-1.12.3-scala_2.11"
   // @inject_tag: json:"version" gorm:"column:version;"
   string version = 4 [(validator.field) = {msg_exists: true}];
 

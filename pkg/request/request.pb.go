@@ -5906,8 +5906,8 @@ type CreateFlinkCluster struct {
 	CreatedBy string `protobuf:"bytes,2,opt,name=created_by,json=createdBy,proto3" json:"created_by" swaggerignore:"true"`
 	// Cluster Name. Is required.
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name"`
-	// Flink Version. Is required. Optional value: "flink-1.12.4-scala_2.11"
-	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" binding:"oneof=flink-1.12.4-scala_2.11"`
+	// Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" binding:"oneof=flink-1.12.3-scala_2.11"`
 	// resource config.
 	//
 	// Flink task number for TaskManager. Is required, Min 1, Max 24
@@ -6037,8 +6037,8 @@ type UpdateFlinkCluster struct {
 	ClusterId string `protobuf:"bytes,2,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id" uri:"cluster_id" binding:"len=20" swaggerignore:"true"`
 	// Cluster Name. Is required.
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name"`
-	// Flink Version. Is required. Optional value: "flink-1.12.4-scala_2.11"
-	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" binding:"oneof=flink-1.12.4-scala_2.11"`
+	// Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version" binding:"oneof=flink-1.12.3-scala_2.11"`
 	// resource config.
 	//
 	// Flink task number for TaskManager. Is required, Min 1, Max ?
