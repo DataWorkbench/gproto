@@ -347,54 +347,54 @@ message StreamJobRelease {
 
 // The instance info of stream job.
 message StreamJobInst {
-  enum Status {
-    __ = 0;
-    Normal = 1;
-    Deleted = 2;
-  }
+	enum Status {
+		__ = 0;
+		Normal   = 1;
+		Deleted = 2;
+	}
 
-  enum State {
-    _ = 0;
-    Pending = 1;
-    Running = 2;
-    Retrying = 3;
-    Suspended = 4;
-    Terminated = 5;
-    Timeout = 6;
-    Succeed = 7;
-    Failed = 8;
-  }
+	enum State {
+		_ = 0;
+		Pending = 1;
+		Running = 2;
+		Retrying = 3;
+		Suspended = 4;
+		Terminated = 5;
+		Succeed = 6;
+		Timeout = 7;
+		Failed = 8;
+	}
+	
+	// Workspace ID it belongs to.
+	// @inject_tag: json:"space_id" gorm:"column:space_id;"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
-  // Workspace ID it belongs to.
-  // @inject_tag: json:"space_id" gorm:"column:space_id;"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// Job ID it belongs to.
+	// @inject_tag: json:"job_id" gorm:"column:job_id;"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The release version.
+	// @inject_tag: json:"version" gorm:"column:version;
+	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Job instance ID, unique.
+	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
+	string id = 4 [ (validator.field) = { length_eq: 20 } ];
+	
+	// The instance state.
+	// @inject_tag: json:"state" gorm:"column:state;"
+	State state = 5 [ (validator.field) = { int_gt: 0 } ];
 
-  // Job ID it belongs to.
-  // @inject_tag: json:"job_id" gorm:"column:job_id;"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// Release status, 1 => "Normal ", 2 => "Deleted"
+	// @inject_tag: json:"status" gorm:"column:status;"
+	Status status = 6 [ (validator.field) = { length_lt: 1025 } ];
 
-  // The release version.
-  // @inject_tag: json:"version" gorm:"column:version;
-  int64 version = 3 [(validator.field) = {int_gt: 0}];
-
-  // Job instance ID, unique.
-  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 4 [(validator.field) = {length_eq: 20}];
-
-  // The instance state.
-  // @inject_tag: json:"state" gorm:"column:state;"
-  State state = 5 [(validator.field) = {int_gt: 0}];
-
-  // Release status, 1 => "Normal ", 2 => "Deleted"
-  // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 6 [(validator.field) = {length_lt: 1025}];
-
-  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 7 [(validator.field) = {int_gt: 0}];
-
-  // Timestamp of update time
-  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 8 [(validator.field) = {int_gt: 0}];
+	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+	int64 created = 7 [ (validator.field) = { int_gt: 0 } ];
+	
+	// Timestamp of update time
+	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
 }
 
 // The workspace operation audit log record.
@@ -559,21 +559,21 @@ message MonitorRule {
 
 // The message in inst queue..
 message QueueMessage {
-  // The request id of beginning.
-  string trace_id = 1 [(validator.field) = {}];
-
-  // The property of stream job.
-  StreamJobProperty property = 2  [(validator.field) = {}];
-
-  // The operation that you will execute.
-  // 1 => "run"  2 => "retry" 3 => "terminate" 4 => "delete"
-  int32 operation = 3 [(validator.field) = {}];
-
-  // The number of times the instance task was executed.
-  int32 times = 4 [(validator.field) = {}];
-
-  // The start execution time of the task instance.
-  int64 started = 5 [(validator.field) = {}];
+	enum Action {
+		_ = 0;
+		Create    = 1;
+		Run       = 2;
+		Retry     = 3;
+		Check     = 4;
+	}
+	// The property of stream job.
+	StreamJobProperty property = 1  [ (validator.field) = { } ];
+	
+	// The number of times the instance task was executed.
+	int32 retries = 2 [ (validator.field) = { } ];
+	
+	// The start execution time of the task instance.
+	int64 started = 3 [ (validator.field) = { } ];
 }
 
 message InstanceStatusStat {
