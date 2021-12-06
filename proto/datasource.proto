@@ -24,8 +24,12 @@ message DatasourceNetwork {
         string network_id = 1 [(validator.field) = {length_lt: 21}];
 	}
 
-	Type type = 1 [(validator.field) = {}];
+	// The Network type, 1 => eip, 2 => vpc(internal vpc)
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
+	Type type = 1 [(validator.field) = {int_gt: 0, int_lt:3}];
 
+	// The internal Network
+	// @inject_tag: json:"vpc_network" default:""
 	VpcNetwork vpc_network = 2 [(validator.field) = {}];
 }
 
