@@ -48,9 +48,9 @@ var file_proto_engine_proto_rawDesc = []byte{
 	0x6e, 0x73, 0x22, 0x00, 0x12, 0x60, 0x0a, 0x17, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65,
 	0x46, 0x6c, 0x69, 0x63, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x41, 0x50, 0x49, 0x12,
 	0x20, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69,
-	0x62, 0x65, 0x46, 0x6c, 0x69, 0x63, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x41, 0x50,
+	0x62, 0x65, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x41, 0x50,
 	0x49, 0x1a, 0x21, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x65, 0x73,
-	0x63, 0x72, 0x69, 0x62, 0x65, 0x46, 0x6c, 0x69, 0x63, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65,
+	0x63, 0x72, 0x69, 0x62, 0x65, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65,
 	0x72, 0x41, 0x50, 0x49, 0x22, 0x00, 0x12, 0x51, 0x0a, 0x12, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
 	0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x1b, 0x2e, 0x72,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x46, 0x6c, 0x69,
@@ -115,7 +115,7 @@ var file_proto_engine_proto_rawDesc = []byte{
 var file_proto_engine_proto_goTypes = []interface{}{
 	(*request.DeleteWorkspaces)(nil),            // 0: request.DeleteWorkspaces
 	(*model.EmptyStruct)(nil),                   // 1: model.EmptyStruct
-	(*request.DescribeFlickClusterAPI)(nil),     // 2: request.DescribeFlickClusterAPI
+	(*request.DescribeFlinkClusterAPI)(nil),     // 2: request.DescribeFlinkClusterAPI
 	(*request.CreateFlinkCluster)(nil),          // 3: request.CreateFlinkCluster
 	(*request.ListFlinkClusters)(nil),           // 4: request.ListFlinkClusters
 	(*request.DescribeFlinkCluster)(nil),        // 5: request.DescribeFlinkCluster
@@ -129,7 +129,7 @@ var file_proto_engine_proto_goTypes = []interface{}{
 	(*request.UpdateNetwork)(nil),               // 13: request.UpdateNetwork
 	(*request.DeleteNetworks)(nil),              // 14: request.DeleteNetworks
 	(*response.ListAvailableFlinkVersions)(nil), // 15: response.ListAvailableFlinkVersions
-	(*response.DescribeFlickClusterAPI)(nil),    // 16: response.DescribeFlickClusterAPI
+	(*response.DescribeFlinkClusterAPI)(nil),    // 16: response.DescribeFlinkClusterAPI
 	(*response.CreateFlinkCluster)(nil),         // 17: response.CreateFlinkCluster
 	(*response.ListFlinkClusters)(nil),          // 18: response.ListFlinkClusters
 	(*response.DescribeFlinkCluster)(nil),       // 19: response.DescribeFlinkCluster
@@ -140,7 +140,7 @@ var file_proto_engine_proto_goTypes = []interface{}{
 var file_proto_engine_proto_depIdxs = []int32{
 	0,  // 0: enginepb.Engine.DeleteWorkspaces:input_type -> request.DeleteWorkspaces
 	1,  // 1: enginepb.Engine.ListAvailableFlinkVersions:input_type -> model.EmptyStruct
-	2,  // 2: enginepb.Engine.DescribeFlickClusterAPI:input_type -> request.DescribeFlickClusterAPI
+	2,  // 2: enginepb.Engine.DescribeFlickClusterAPI:input_type -> request.DescribeFlinkClusterAPI
 	3,  // 3: enginepb.Engine.CreateFlinkCluster:input_type -> request.CreateFlinkCluster
 	4,  // 4: enginepb.Engine.ListFlinkClusters:input_type -> request.ListFlinkClusters
 	5,  // 5: enginepb.Engine.DescribeFlinkCluster:input_type -> request.DescribeFlinkCluster
@@ -155,7 +155,7 @@ var file_proto_engine_proto_depIdxs = []int32{
 	14, // 14: enginepb.Engine.DeleteNetworks:input_type -> request.DeleteNetworks
 	1,  // 15: enginepb.Engine.DeleteWorkspaces:output_type -> model.EmptyStruct
 	15, // 16: enginepb.Engine.ListAvailableFlinkVersions:output_type -> response.ListAvailableFlinkVersions
-	16, // 17: enginepb.Engine.DescribeFlickClusterAPI:output_type -> response.DescribeFlickClusterAPI
+	16, // 17: enginepb.Engine.DescribeFlickClusterAPI:output_type -> response.DescribeFlinkClusterAPI
 	17, // 18: enginepb.Engine.CreateFlinkCluster:output_type -> response.CreateFlinkCluster
 	18, // 19: enginepb.Engine.ListFlinkClusters:output_type -> response.ListFlinkClusters
 	19, // 20: enginepb.Engine.DescribeFlinkCluster:output_type -> response.DescribeFlinkCluster

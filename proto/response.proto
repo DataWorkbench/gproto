@@ -387,7 +387,7 @@ message ZeppelinAddress {
 	string ServerAddress = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025} ];
 }
 
-message DescribeFlickClusterAPI {
+message DescribeFlinkClusterAPI {
   string URL = 1;
 }
 

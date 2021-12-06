@@ -1236,7 +1236,7 @@ message JobFree {
     model.JobResources Resources = 1 [ (validator.field) = { } ];
 }
 
-message DescribeFlickClusterAPI {
+message DescribeFlinkClusterAPI {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	string cluster_id = 2 [ (validator.field) = { length_eq: 20 } ];
 }

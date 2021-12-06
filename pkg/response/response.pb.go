@@ -2229,7 +2229,7 @@ func (x *ZeppelinAddress) GetServerAddress() string {
 	return ""
 }
 
-type DescribeFlickClusterAPI struct {
+type DescribeFlinkClusterAPI struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2237,8 +2237,8 @@ type DescribeFlickClusterAPI struct {
 	URL string `protobuf:"bytes,1,opt,name=URL,proto3" json:"URL,omitempty"`
 }
 
-func (x *DescribeFlickClusterAPI) Reset() {
-	*x = DescribeFlickClusterAPI{}
+func (x *DescribeFlinkClusterAPI) Reset() {
+	*x = DescribeFlinkClusterAPI{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_response_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2246,13 +2246,13 @@ func (x *DescribeFlickClusterAPI) Reset() {
 	}
 }
 
-func (x *DescribeFlickClusterAPI) String() string {
+func (x *DescribeFlinkClusterAPI) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DescribeFlickClusterAPI) ProtoMessage() {}
+func (*DescribeFlinkClusterAPI) ProtoMessage() {}
 
-func (x *DescribeFlickClusterAPI) ProtoReflect() protoreflect.Message {
+func (x *DescribeFlinkClusterAPI) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_response_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2264,12 +2264,12 @@ func (x *DescribeFlickClusterAPI) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DescribeFlickClusterAPI.ProtoReflect.Descriptor instead.
-func (*DescribeFlickClusterAPI) Descriptor() ([]byte, []int) {
+// Deprecated: Use DescribeFlinkClusterAPI.ProtoReflect.Descriptor instead.
+func (*DescribeFlinkClusterAPI) Descriptor() ([]byte, []int) {
 	return file_proto_response_proto_rawDescGZIP(), []int{40}
 }
 
-func (x *DescribeFlickClusterAPI) GetURL() string {
+func (x *DescribeFlinkClusterAPI) GetURL() string {
 	if x != nil {
 		return x.URL
 	}
@@ -3022,7 +3022,7 @@ var file_proto_response_proto_rawDesc = []byte{
 	0x0a, 0x0d, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x70, 0x00, 0x78, 0x81, 0x08,
 	0x52, 0x0d, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x22,
-	0x2b, 0x0a, 0x17, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x46, 0x6c, 0x69, 0x63, 0x6b,
+	0x2b, 0x0a, 0x17, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x46, 0x6c, 0x69, 0x6e, 0x6b,
 	0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x41, 0x50, 0x49, 0x12, 0x10, 0x0a, 0x03, 0x55, 0x52,
 	0x4c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x55, 0x52, 0x4c, 0x22, 0x32, 0x0a, 0x1a,
 	0x4c, 0x69, 0x73, 0x74, 0x41, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x46, 0x6c, 0x69,
@@ -3116,7 +3116,7 @@ var file_proto_response_proto_goTypes = []interface{}{
 	(*PTaskErrorRanking)(nil),             // 37: response.PTaskErrorRanking
 	(*PTaskDispatchCount)(nil),            // 38: response.PTaskDispatchCount
 	(*ZeppelinAddress)(nil),               // 39: response.ZeppelinAddress
-	(*DescribeFlickClusterAPI)(nil),       // 40: response.DescribeFlickClusterAPI
+	(*DescribeFlinkClusterAPI)(nil),       // 40: response.DescribeFlinkClusterAPI
 	(*ListAvailableFlinkVersions)(nil),    // 41: response.ListAvailableFlinkVersions
 	(*ListFlinkClusters)(nil),             // 42: response.ListFlinkClusters
 	(*CreateFlinkCluster)(nil),            // 43: response.CreateFlinkCluster
@@ -3683,7 +3683,7 @@ func file_proto_response_proto_init() {
 			}
 		}
 		file_proto_response_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DescribeFlickClusterAPI); i {
+			switch v := v.(*DescribeFlinkClusterAPI); i {
 			case 0:
 				return &v.state
 			case 1:

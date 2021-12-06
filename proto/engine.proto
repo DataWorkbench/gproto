@@ -18,7 +18,7 @@ service Engine {
     // Interface for manage flink cluster
     rpc ListAvailableFlinkVersions(model.EmptyStruct) returns (response.ListAvailableFlinkVersions) {}
     // Describe flink cluster api that job-manager commit job to
-    rpc DescribeFlickClusterAPI(request.DescribeFlickClusterAPI) returns(response.DescribeFlickClusterAPI) {}
+    rpc DescribeFlickClusterAPI(request.DescribeFlinkClusterAPI) returns(response.DescribeFlinkClusterAPI) {}
 
     rpc CreateFlinkCluster(request.CreateFlinkCluster) returns (response.CreateFlinkCluster) {}
     rpc ListFlinkClusters(request.ListFlinkClusters) returns (response.ListFlinkClusters) {}

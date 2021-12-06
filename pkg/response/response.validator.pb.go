@@ -451,7 +451,7 @@ func (this *ZeppelinAddress) Validate() error {
 	}
 	return nil
 }
-func (this *DescribeFlickClusterAPI) Validate() error {
+func (this *DescribeFlinkClusterAPI) Validate() error {
 	return nil
 }
 func (this *ListAvailableFlinkVersions) Validate() error {

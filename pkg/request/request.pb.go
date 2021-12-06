@@ -5571,7 +5571,7 @@ func (x *JobFree) GetResources() *model.JobResources {
 	return nil
 }
 
-type DescribeFlickClusterAPI struct {
+type DescribeFlinkClusterAPI struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -5580,8 +5580,8 @@ type DescribeFlickClusterAPI struct {
 	ClusterId string `protobuf:"bytes,2,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id,omitempty"`
 }
 
-func (x *DescribeFlickClusterAPI) Reset() {
-	*x = DescribeFlickClusterAPI{}
+func (x *DescribeFlinkClusterAPI) Reset() {
+	*x = DescribeFlinkClusterAPI{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_request_proto_msgTypes[83]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5589,13 +5589,13 @@ func (x *DescribeFlickClusterAPI) Reset() {
 	}
 }
 
-func (x *DescribeFlickClusterAPI) String() string {
+func (x *DescribeFlinkClusterAPI) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DescribeFlickClusterAPI) ProtoMessage() {}
+func (*DescribeFlinkClusterAPI) ProtoMessage() {}
 
-func (x *DescribeFlickClusterAPI) ProtoReflect() protoreflect.Message {
+func (x *DescribeFlinkClusterAPI) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_request_proto_msgTypes[83]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5607,19 +5607,19 @@ func (x *DescribeFlickClusterAPI) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DescribeFlickClusterAPI.ProtoReflect.Descriptor instead.
-func (*DescribeFlickClusterAPI) Descriptor() ([]byte, []int) {
+// Deprecated: Use DescribeFlinkClusterAPI.ProtoReflect.Descriptor instead.
+func (*DescribeFlinkClusterAPI) Descriptor() ([]byte, []int) {
 	return file_proto_request_proto_rawDescGZIP(), []int{83}
 }
 
-func (x *DescribeFlickClusterAPI) GetSpaceId() string {
+func (x *DescribeFlinkClusterAPI) GetSpaceId() string {
 	if x != nil {
 		return x.SpaceId
 	}
 	return ""
 }
 
-func (x *DescribeFlickClusterAPI) GetClusterId() string {
+func (x *DescribeFlinkClusterAPI) GetClusterId() string {
 	if x != nil {
 		return x.ClusterId
 	}
@@ -7339,7 +7339,7 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4a, 0x6f,
 	0x62, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
 	0x52, 0x09, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x22, 0x65, 0x0a, 0x17, 0x44,
-	0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x46, 0x6c, 0x69, 0x63, 0x6b, 0x43, 0x6c, 0x75, 0x73,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73,
 	0x74, 0x65, 0x72, 0x41, 0x50, 0x49, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f,
 	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01,
 	0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x26, 0x0a, 0x0a, 0x63, 0x6c,
@@ -7586,7 +7586,7 @@ var file_proto_request_proto_goTypes = []interface{}{
 	(*PTaskErrorRanking)(nil),          // 80: request.PTaskErrorRanking
 	(*PTaskDispatchCount)(nil),         // 81: request.PTaskDispatchCount
 	(*JobFree)(nil),                    // 82: request.JobFree
-	(*DescribeFlickClusterAPI)(nil),    // 83: request.DescribeFlickClusterAPI
+	(*DescribeFlinkClusterAPI)(nil),    // 83: request.DescribeFlinkClusterAPI
 	(*ListFlinkClusters)(nil),          // 84: request.ListFlinkClusters
 	(*DeleteFlinkClusters)(nil),        // 85: request.DeleteFlinkClusters
 	(*StartFlinkClusters)(nil),         // 86: request.StartFlinkClusters
@@ -8677,7 +8677,7 @@ func file_proto_request_proto_init() {
 			}
 		}
 		file_proto_request_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DescribeFlickClusterAPI); i {
+			switch v := v.(*DescribeFlinkClusterAPI); i {
 			case 0:
 				return &v.state
 			case 1:
