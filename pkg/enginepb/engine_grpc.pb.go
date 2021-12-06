@@ -26,7 +26,7 @@ type EngineClient interface {
 	// Interface for manage flink cluster
 	ListAvailableFlinkVersions(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListAvailableFlinkVersions, error)
 	// Describe flink cluster api that job-manager commit job to
-	DescribeFlickClusterAPI(ctx context.Context, in *request.DescribeFlinkClusterAPI, opts ...grpc.CallOption) (*response.DescribeFlinkClusterAPI, error)
+	DescribeFlinkClusterAPI(ctx context.Context, in *request.DescribeFlinkClusterAPI, opts ...grpc.CallOption) (*response.DescribeFlinkClusterAPI, error)
 	CreateFlinkCluster(ctx context.Context, in *request.CreateFlinkCluster, opts ...grpc.CallOption) (*response.CreateFlinkCluster, error)
 	ListFlinkClusters(ctx context.Context, in *request.ListFlinkClusters, opts ...grpc.CallOption) (*response.ListFlinkClusters, error)
 	DescribeFlinkCluster(ctx context.Context, in *request.DescribeFlinkCluster, opts ...grpc.CallOption) (*response.DescribeFlinkCluster, error)
@@ -69,9 +69,9 @@ func (c *engineClient) ListAvailableFlinkVersions(ctx context.Context, in *model
 	return out, nil
 }
 
-func (c *engineClient) DescribeFlickClusterAPI(ctx context.Context, in *request.DescribeFlinkClusterAPI, opts ...grpc.CallOption) (*response.DescribeFlinkClusterAPI, error) {
+func (c *engineClient) DescribeFlinkClusterAPI(ctx context.Context, in *request.DescribeFlinkClusterAPI, opts ...grpc.CallOption) (*response.DescribeFlinkClusterAPI, error) {
 	out := new(response.DescribeFlinkClusterAPI)
-	err := c.cc.Invoke(ctx, "/enginepb.Engine/DescribeFlickClusterAPI", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/enginepb.Engine/DescribeFlinkClusterAPI", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -196,7 +196,7 @@ type EngineServer interface {
 	// Interface for manage flink cluster
 	ListAvailableFlinkVersions(context.Context, *model.EmptyStruct) (*response.ListAvailableFlinkVersions, error)
 	// Describe flink cluster api that job-manager commit job to
-	DescribeFlickClusterAPI(context.Context, *request.DescribeFlinkClusterAPI) (*response.DescribeFlinkClusterAPI, error)
+	DescribeFlinkClusterAPI(context.Context, *request.DescribeFlinkClusterAPI) (*response.DescribeFlinkClusterAPI, error)
 	CreateFlinkCluster(context.Context, *request.CreateFlinkCluster) (*response.CreateFlinkCluster, error)
 	ListFlinkClusters(context.Context, *request.ListFlinkClusters) (*response.ListFlinkClusters, error)
 	DescribeFlinkCluster(context.Context, *request.DescribeFlinkCluster) (*response.DescribeFlinkCluster, error)
@@ -224,8 +224,8 @@ func (UnimplementedEngineServer) DeleteWorkspaces(context.Context, *request.Dele
 func (UnimplementedEngineServer) ListAvailableFlinkVersions(context.Context, *model.EmptyStruct) (*response.ListAvailableFlinkVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAvailableFlinkVersions not implemented")
 }
-func (UnimplementedEngineServer) DescribeFlickClusterAPI(context.Context, *request.DescribeFlinkClusterAPI) (*response.DescribeFlinkClusterAPI, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlickClusterAPI not implemented")
+func (UnimplementedEngineServer) DescribeFlinkClusterAPI(context.Context, *request.DescribeFlinkClusterAPI) (*response.DescribeFlinkClusterAPI, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlinkClusterAPI not implemented")
 }
 func (UnimplementedEngineServer) CreateFlinkCluster(context.Context, *request.CreateFlinkCluster) (*response.CreateFlinkCluster, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFlinkCluster not implemented")
@@ -312,20 +312,20 @@ func _Engine_ListAvailableFlinkVersions_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Engine_DescribeFlickClusterAPI_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Engine_DescribeFlinkClusterAPI_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DescribeFlinkClusterAPI)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EngineServer).DescribeFlickClusterAPI(ctx, in)
+		return srv.(EngineServer).DescribeFlinkClusterAPI(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/enginepb.Engine/DescribeFlickClusterAPI",
+		FullMethod: "/enginepb.Engine/DescribeFlinkClusterAPI",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EngineServer).DescribeFlickClusterAPI(ctx, req.(*request.DescribeFlinkClusterAPI))
+		return srv.(EngineServer).DescribeFlinkClusterAPI(ctx, req.(*request.DescribeFlinkClusterAPI))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -559,8 +559,8 @@ var _Engine_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Engine_ListAvailableFlinkVersions_Handler,
 		},
 		{
-			MethodName: "DescribeFlickClusterAPI",
-			Handler:    _Engine_DescribeFlickClusterAPI_Handler,
+			MethodName: "DescribeFlinkClusterAPI",
+			Handler:    _Engine_DescribeFlinkClusterAPI_Handler,
 		},
 		{
 			MethodName: "CreateFlinkCluster",
