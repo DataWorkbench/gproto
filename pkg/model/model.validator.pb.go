@@ -398,6 +398,12 @@ func (this *DataSource) Validate() error {
 			return github_com_mwitkow_go_proto_validators.FieldError("Url", err)
 		}
 	}
+	if !(len(this.NetworkName) > -1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NetworkName", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.NetworkName))
+	}
+	if !(len(this.NetworkName) < 129) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NetworkName", fmt.Errorf(`value '%v' must have a length smaller than '129'`, this.NetworkName))
+	}
 	return nil
 }
 func (this *TableInfo) Validate() error {

@@ -699,6 +699,10 @@ message DataSource {
   // connection status oneof 1/2/3 1->success/2->partialsuccess/3->failed
   // @inject_tag: json:"connection" gorm:"column:connection;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
   ConnectionStatus connection = 10  [(validator.field) = {int_gt: 0, int_lt: 4}];
+
+  // internal network name.
+  // @inject_tag: json:"network_name" binding:"gte=0,lte=128" mininum:"0" maximum:"128"
+  string network_name = 11 [(validator.field) = {length_gt: -1, length_lt: 129}];
 }
 
 // Table Info
