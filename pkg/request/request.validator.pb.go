@@ -939,12 +939,6 @@ func (this *JobInfo) Validate() error {
 			return github_com_mwitkow_go_proto_validators.FieldError("Code", err)
 		}
 	}
-	if !(this.JobType > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobType", fmt.Errorf(`value '%v' must be greater than '0'`, this.JobType))
-	}
-	if !(this.JobType < 2) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobType", fmt.Errorf(`value '%v' must be less than '2'`, this.JobType))
-	}
 	return nil
 }
 func (this *JobGetState) Validate() error {

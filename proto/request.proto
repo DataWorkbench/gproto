@@ -1158,9 +1158,9 @@ message JobInfo {
 	// @inject_tag: json:"code" default:"" binding:"-"
 	model.StreamJobCode code = 4  [ (validator.field) = { } ];
 
-	// JobType
+	// Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// @inject_tag: json:"job_type" default:"" binding:"-"
-	int32 job_type = 5 [(validator.field) = {int_gt:0,int_lt:2}];
+	model.StreamJob.Type job_type = 5 [(validator.field) = {int_gt: 0, int_lt: 6}];
 
   // Savepoint Path
   // @inject_tag: json:"savepoint_path" default:"" binding:"-"
