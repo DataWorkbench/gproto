@@ -1008,7 +1008,7 @@ message UpdateResource{
 	string resource_name = 3 [(validator.field) = {msg_exists: true}];
 
 	// The resource description. Not required.
-	// @inject_tag: params:"resource_description" binding:"lte=500"
+	// @inject_tag: params:"description" binding:"lte=500"
 	string resource_description = 4 [(validator.field) = {}];
 
 	// The resource type. Not required.

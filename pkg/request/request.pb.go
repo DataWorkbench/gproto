@@ -4396,7 +4396,7 @@ type UpdateResource struct {
 	// The resource name. required.
 	ResourceName string `protobuf:"bytes,3,opt,name=resource_name,json=resourceName,proto3" json:"resource_name,omitempty" params:"resource_name" binding:"required,lte=500"`
 	// The resource description. Not required.
-	ResourceDescription string `protobuf:"bytes,4,opt,name=resource_description,json=resourceDescription,proto3" json:"resource_description,omitempty" params:"resource_description" binding:"lte=500"`
+	ResourceDescription string `protobuf:"bytes,4,opt,name=resource_description,json=resourceDescription,proto3" json:"resource_description,omitempty" params:"description" binding:"lte=500"`
 	// The resource type. Not required.
 	ResourceType model.Resource_Type `protobuf:"varint,5,opt,name=resource_type,json=resourceType,proto3,enum=model.Resource_Type" json:"resource_type,omitempty" params:"resource_type" form:"resource_type" binding:"gte=0,lte=3"`
 }
