@@ -1009,7 +1009,7 @@ message UpdateResource{
 
 	// The resource description. Not required.
 	// @inject_tag: params:"description" binding:"lte=500"
-	string resource_description = 4 [(validator.field) = {}];
+	string description = 4 [(validator.field) = {}];
 
 	// The resource type. Not required.
 	// @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=3"
