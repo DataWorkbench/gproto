@@ -810,12 +810,16 @@ message Resource {
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 9 [(validator.field) = {int_gt: 0}];
 
+  // Timestamp of delete time
+  // @inject_tag: json:"deleted" gorm:"column:deleted;"
+  int64 deleted = 10 [(validator.field) = {}];
+
   // Resource owner.
   // @inject_tag: json:"create_by" gorm:"column:create_by"
-  string create_by = 10;
+  string create_by = 11;
   // Resource status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 11 [(validator.field) = {int_gt: 0, int_lt: 3}];
+  Status status = 12 [(validator.field) = {int_gt: 0, int_lt: 3}];
 }
 
 // UDF Info
