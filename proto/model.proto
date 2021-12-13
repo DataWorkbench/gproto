@@ -347,54 +347,54 @@ message StreamJobRelease {
 
 // The instance info of stream job.
 message StreamJobInst {
-	enum Status {
-		__ = 0;
-		Normal   = 1;
-		Deleted = 2;
-	}
+  enum Status {
+    __ = 0;
+    Normal = 1;
+    Deleted = 2;
+  }
 
-	enum State {
-		_ = 0;
-		Pending = 1;
-		Running = 2;
-		Retrying = 3;
-		Suspended = 4;
-		Terminated = 5;
-		Succeed = 6;
-		Timeout = 7;
-		Failed = 8;
-	}
-	
-	// Workspace ID it belongs to.
-	// @inject_tag: json:"space_id" gorm:"column:space_id;"
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+  enum State {
+    _ = 0;
+    Pending = 1;
+    Running = 2;
+    Retrying = 3;
+    Suspended = 4;
+    Terminated = 5;
+    Succeed = 6;
+    Timeout = 7;
+    Failed = 8;
+  }
 
-	// Job ID it belongs to.
-	// @inject_tag: json:"job_id" gorm:"column:job_id;"
-	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The release version.
-	// @inject_tag: json:"version" gorm:"column:version;
-	int64 version = 3 [ (validator.field) = { int_gt: 0 } ];
-	
-	// Job instance ID, unique.
-	// @inject_tag: json:"id" gorm:"column:id;primarykey;"
-	string id = 4 [ (validator.field) = { length_eq: 20 } ];
-	
-	// The instance state.
-	// @inject_tag: json:"state" gorm:"column:state;"
-	State state = 5 [ (validator.field) = { int_gt: 0 } ];
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [(validator.field) = {length_eq: 20}];
 
-	// Release status, 1 => "Normal ", 2 => "Deleted"
-	// @inject_tag: json:"status" gorm:"column:status;"
-	Status status = 6 [ (validator.field) = { length_lt: 1025 } ];
+  // Job ID it belongs to.
+  // @inject_tag: json:"job_id" gorm:"column:job_id;"
+  string job_id = 2 [(validator.field) = {length_eq: 20}];
 
-	// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-	int64 created = 7 [ (validator.field) = { int_gt: 0 } ];
-	
-	// Timestamp of update time
-	// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-	int64 updated = 8 [ (validator.field) = { int_gt: 0 } ];
+  // The release version.
+  // @inject_tag: json:"version" gorm:"column:version;
+  int64 version = 3 [(validator.field) = {int_gt: 0}];
+
+  // Job instance ID, unique.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 4 [(validator.field) = {length_eq: 20}];
+
+  // The instance state.
+  // @inject_tag: json:"state" gorm:"column:state;"
+  State state = 5 [(validator.field) = {int_gt: 0}];
+
+  // Release status, 1 => "Normal ", 2 => "Deleted"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 6 [(validator.field) = {length_lt: 1025}];
+
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 7 [(validator.field) = {int_gt: 0}];
+
+  // Timestamp of update time
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 8 [(validator.field) = {int_gt: 0}];
 }
 
 // The workspace operation audit log record.
@@ -559,21 +559,21 @@ message MonitorRule {
 
 // The message in inst queue..
 message QueueMessage {
-	enum Action {
-		_ = 0;
-		Create    = 1;
-		Run       = 2;
-		Retry     = 3;
-		Check     = 4;
-	}
-	// The property of stream job.
-	StreamJobProperty property = 1  [ (validator.field) = { } ];
-	
-	// The number of times the instance task was executed.
-	int32 retries = 2 [ (validator.field) = { } ];
-	
-	// The start execution time of the task instance.
-	int64 started = 3 [ (validator.field) = { } ];
+  enum Action {
+    _ = 0;
+    Create = 1;
+    Run = 2;
+    Retry = 3;
+    Check = 4;
+  }
+  // The property of stream job.
+  StreamJobProperty property = 1  [(validator.field) = {}];
+
+  // The number of times the instance task was executed.
+  int32 retries = 2 [(validator.field) = {}];
+
+  // The start execution time of the task instance.
+  int64 started = 3 [(validator.field) = {}];
 }
 
 message InstanceStatusStat {
@@ -708,6 +708,10 @@ message DataSource {
   // internal network name.
   // @inject_tag: json:"network_name" binding:"gte=0,lte=128" mininum:"0" maximum:"128"
   string network_name = 12 [(validator.field) = {length_gt: -1, length_lt: 129}];
+
+  // DataSource owner.
+  // @inject_tag: json:"create_by" gorm:"column:create_by"
+  string create_by = 13[(validator.field) = {}];
 }
 
 // Table Info
@@ -777,6 +781,10 @@ message TableInfo {
   // connection status oneof 1/2/3 1->success/2->partialsuccess/3->failed
   // @inject_tag: json:"connection" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
   DataSource.ConnectionStatus connection = 13  [(validator.field) = {int_gt: 0, int_lt: 4}];
+
+  // Table owner.
+  // @inject_tag: json:"create_by" gorm:"column:create_by"
+  string create_by = 14   [(validator.field) = {}];
 }
 
 message Resource {
@@ -858,6 +866,13 @@ message UDFInfo {
     Python = 3;
   }
 
+  enum Status {
+    ___ = 0;
+    Enabled = 1;
+    Disabled = 2;
+    Deleted = 3;
+  }
+
   // ID, unique within a region.
   // @inject_tag: json:"udf_id" gorm:"column:udf_id;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
   string udf_id = 1 [(validator.field) = {length_lt: 21}];
@@ -897,6 +912,18 @@ message UDFInfo {
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 10 [(validator.field) = {int_gt: 0}];
+
+  // Timestamp of delete time.
+  // @inject_tag: json:"deleted" gorm:"column:deleted;"
+  int64 deleted = 11 [(validator.field) = {}];
+
+  // Udf status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 12 [(validator.field) = {int_gt: 0, int_lt: 3}];
+
+  // Udf owner.
+  // @inject_tag: json:"create_by" gorm:"column:create_by"
+  string create_by = 13[(validator.field) = {}];
 }
 
 // JobResources

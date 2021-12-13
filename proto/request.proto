@@ -723,6 +723,10 @@ message CreateSource {
 	// this source connection info
 	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
 	datasource.DataSourceURL url = 6 [ (validator.field) = { length_gt: 1, length_lt: 8001 } ];
+
+	// Source owner.
+	// @inject_tag: json:"create_by" gorm:"column:create_by"
+	string create_by = 7 [(validator.field) = {}];
 }
 
 // UpdateSource used as request parameters for RPC and HTTP(based on Body)
@@ -834,6 +838,10 @@ message CreateTable {
     // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
     // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
 	model.TableInfo.Kind table_kind = 7  [ (validator.field) = { length_gt: 1, length_lt: 17 } ];
+
+	// Table owner.
+	// @inject_tag: json:"create_by" default:"" binding:"-"
+	string create_by = 8   [(validator.field) = {}];
 }
 
 // UpdateTable used as request parameters for RPC and HTTP(based on Body)
@@ -1060,6 +1068,10 @@ message CreateUDF {
 	// usage for this udf
 	// @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
 	string usage_sample = 8 [ (validator.field) = {  length_lt: 2001 } ];
+
+	// Udf owner.
+	// @inject_tag: json:"create_by"
+	string create_by = 9 [(validator.field) = {}];
 }
 
 // UpdateUDF used as request parameters for RPC and HTTP(based on Body)
