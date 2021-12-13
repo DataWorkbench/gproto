@@ -248,9 +248,6 @@ func (this *CreateStreamJob) Validate() error {
 	if !(len(this.Desc) < 1025) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
 	}
-	if !(len(this.ClusterId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ClusterId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ClusterId))
-	}
 	return nil
 }
 func (this *DeleteStreamJobs) Validate() error {
