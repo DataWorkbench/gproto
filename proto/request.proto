@@ -980,7 +980,7 @@ message ListResources{
 
 	// The resource type. required.
 	// @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=3"
-	int32  resource_type = 4 [(validator.field) = {int_gt:-1,int_lt:3}];
+	int32  resource_type = 4 [(validator.field) = {int_gt:-1,int_lt:4}];
 
 	// The resource name. not required.
 	// @inject_tag: params:"resource_name" form:"resource_name" default="0" binding:"-"
@@ -1021,7 +1021,7 @@ message UpdateResource{
 
 	// The resource type. Not required.
 	// @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=3"
-	model.Resource.Type  resource_type = 5 [(validator.field) = {int_gt:-1,int_lt:3}];
+	model.Resource.Type  resource_type = 5 [(validator.field) = {int_gt:-1,int_lt:4}];
 }
 
 message DeleteResources{

@@ -802,8 +802,8 @@ func (this *ListResources) Validate() error {
 	if !(this.ResourceType > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be greater than '-1'`, this.ResourceType))
 	}
-	if !(this.ResourceType < 3) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '3'`, this.ResourceType))
+	if !(this.ResourceType < 4) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ResourceType", fmt.Errorf(`value '%v' must be less than '4'`, this.ResourceType))
 	}
 	return nil
 }
