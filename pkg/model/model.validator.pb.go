@@ -589,5 +589,10 @@ func (this *FlinkCluster) Validate() error {
 	if !(this.Updated > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Updated", fmt.Errorf(`value '%v' must be greater than '0'`, this.Updated))
 	}
+	if this.NetworkInfo != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.NetworkInfo); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("NetworkInfo", err)
+		}
+	}
 	return nil
 }

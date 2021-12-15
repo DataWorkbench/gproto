@@ -1290,6 +1290,11 @@ message ListFlinkClusters {
 	// Filter by Flink cluster name; valid if `search` is empty; Not required.
 	// @inject_tag: json:"name" form:"name" default:"" binding:"-"
 	string name = 8 [ (validator.field) = { } ];
+
+	// Verbose indicates the verbosity level.
+	// If the value greater than 1, The details of the associated information will be returned.
+	// @inject_tag: json:"verbose" form:"verbose" default:"" binding:"-"
+	int32 verbose = 9;
 }
 
 message DeleteFlinkClusters {
