@@ -202,6 +202,7 @@ message StreamJobSchedule {
   enum SchedulePolicy {
     ___ = 0;
     Periodicity = 1;
+    Once = 2;
   }
 
   enum ConcurrencyPolicy {
