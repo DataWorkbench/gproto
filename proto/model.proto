@@ -178,16 +178,6 @@ message StreamJobCode {
 message StreamJobArgs {
   option (gosql.serialize) = {json: {}};
 
-  // Function represents the function node config for stream job.
-  message Function {
-    // @inject_tag: json:"udf_ids" binding:"-"
-    repeated string udf_ids = 1   [(validator.field) = {}];
-    // @inject_tag: json:"udtf_ids" binding:"-"
-    repeated string udtf_ids = 2  [(validator.field) = {}];
-    // @inject_tag: json:"udttf_ids" binding:"-"
-    repeated string udttf_ids = 3 [(validator.field) = {}];
-  }
-
   // The flink cluster id. Is required.
   // @inject_tag: json:"cluster_id" default:"" binding:"required_if=engine_type 2"
   string cluster_id = 1 [(validator.field) = {}];
@@ -196,13 +186,12 @@ message StreamJobArgs {
   // @inject_tag: json:"parallelism" default:"" binding:"gte=0,lte=100" mininum:"0" maximum:"10000"
   int32 parallelism = 2 [(validator.field) = {int_gt: -1, int_lt: 101}];
 
-  // The config for function. Not required
-  // @inject_tag: json:"function" default:"" binding:"-"
-  Function function = 3 [(validator.field) = {}];
+  // The list of function(udf). Not required
+  // @inject_tag: json:"udfs" default:"" binding:"-"
+  repeated string udfs = 3 [(validator.field) = {}];
 
-  // runAsOne multi insert into run in one flink job. bool Not required
-  // @inject_tag: json:"run_as_one" default:"" binding:"-"
-  bool run_as_one = 4 [(validator.field) = {}];
+  // The list of connectors dependency package. Not required.
+  repeated string connectors = 4 ;
 }
 
 // StreamJobSchedule represents a job schedule info.
@@ -213,7 +202,6 @@ message StreamJobSchedule {
   enum SchedulePolicy {
     ___ = 0;
     Periodicity = 1;
-    Once = 2;
   }
 
   enum ConcurrencyPolicy {

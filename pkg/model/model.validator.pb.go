@@ -134,14 +134,6 @@ func (this *StreamJobArgs) Validate() error {
 	if !(this.Parallelism < 101) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Parallelism", fmt.Errorf(`value '%v' must be less than '101'`, this.Parallelism))
 	}
-	if this.Function != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Function); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Function", err)
-		}
-	}
-	return nil
-}
-func (this *StreamJobArgs_Function) Validate() error {
 	return nil
 }
 func (this *StreamJobSchedule) Validate() error {
