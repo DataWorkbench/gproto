@@ -517,9 +517,6 @@ func (this *ListStreamInstances) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
-	if !(len(this.JobId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
-	}
 	return nil
 }
 func (this *JobInstIdPair) Validate() error {

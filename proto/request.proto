@@ -644,7 +644,7 @@ message ListStreamInstances {
 
 	// The stream job id. Not required.
 	// @inject_tag: json:"job_id" form:"job_id" default:"" binding:"-"
-	string job_id = 4 [ (validator.field) = { length_eq: 20 } ];
+	string job_id = 4 [ (validator.field) = { } ];
 
 	// The stream job version id. Not required.
 	// @inject_tag: json:"version" form:"ver_id" default:"" binding:"-"
