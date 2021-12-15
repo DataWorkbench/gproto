@@ -801,7 +801,7 @@ message Resource {
 
   // Resource type, default 0,  0 => "directory", 1 => "jar", 2 => "udf" 3 => "connector".
   // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 5 [(validator.field) = {int_gt: 0,int_lt:3}];
+  Type type = 5 [(validator.field) = {int_gt: 0,int_lt:4}];
 
   // Resource size, Byte.
   // @inject_tag: json:"size" gorm:"size;"
