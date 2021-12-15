@@ -1240,7 +1240,7 @@ type CreateStreamJob struct {
 	Desc string `protobuf:"bytes,4,opt,name=desc,proto3" json:"desc" binding:"lte=1024"`
 	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// Desc: Cannot be modified after creation.
-	Type model.StreamJob_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.StreamJob_Type" json:"type" binding:"gte=1,lte=3"`
+	Type model.StreamJob_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.StreamJob_Type" json:"type" binding:"gte=1,lte=5"`
 	// The flink compute cluster id. Is required.
 	ClusterId string `protobuf:"bytes,6,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id" binding:"-"`
 }

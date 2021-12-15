@@ -321,7 +321,7 @@ message CreateStreamJob {
 
 	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// Desc: Cannot be modified after creation.
-	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=3"
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
 	model.StreamJob.Type type = 5  [ (validator.field) = { int_gt: 0 } ];
 
 	// The flink compute cluster id. Is required.
