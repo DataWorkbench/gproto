@@ -338,7 +338,7 @@ message StreamJobRelease {
 message StreamJobInst {
   enum Status {
     __ = 0;
-    Normal = 1;
+    Active = 1;
     Deleted = 2;
   }
 
@@ -378,12 +378,16 @@ message StreamJobInst {
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 6 [(validator.field) = {length_lt: 1025}];
 
+  // Message is the error message when task execute failed.
+  // @inject_tag: json:"message" gorm:"column:message;"
+  string message = 7;
+
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 7 [(validator.field) = {int_gt: 0}];
+  int64 created = 8 [(validator.field) = {int_gt: 0}];
 
   // Timestamp of update time
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 8 [(validator.field) = {int_gt: 0}];
+  int64 updated = 9 [(validator.field) = {int_gt: 0}];
 }
 
 // The workspace operation audit log record.
