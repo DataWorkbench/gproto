@@ -647,8 +647,12 @@ message ListStreamInstances {
 	string job_id = 4 [ (validator.field) = { } ];
 
 	// The stream job version id. Not required.
-	// @inject_tag: json:"version" form:"ver_id" default:"" binding:"-"
+	// @inject_tag: json:"version" form:"version" default:"" binding:"-"
 	int64 version = 5 [ (validator.field) = { } ];
+
+	// The stream instance state. Not required.
+	// @inject_tag: json:"state" form:"state" default:"" binding:"-"
+	int32 state = 6;
 }
 
 // JobInstIdPair is the k/v pair of jobId => instId.
