@@ -652,7 +652,7 @@ message ListStreamInstances {
 
 	// The stream instance state. Not required.
 	// @inject_tag: json:"state" form:"state" default:"" binding:"-"
-	int32 state = 6;
+	model.StreamJobInst.State state = 6;
 }
 
 // JobInstIdPair is the k/v pair of jobId => instId.
