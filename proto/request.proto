@@ -987,11 +987,11 @@ message ListResources{
 	int32  resource_type = 4 [(validator.field) = {int_gt:-1,int_lt:4}];
 
 	// The resource name. not required.
-	// @inject_tag: params:"resource_name" form:"resource_name" default="0" binding:"-"
+	// @inject_tag: params:"resource_name" form:"resource_name" binding:"-"
 	string resource_name = 5 [(validator.field) = {}];
 
 	// Search with resource name; not required.
-	// @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
+	// @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"500"
 	string search = 6 [(validator.field) = {}];
 
 	// The field list used to sorted query results.
@@ -1016,11 +1016,11 @@ message UpdateResource{
 	string resource_id = 2 [(validator.field) = {length_eq: 20}];
 
 	// The resource name. required.
-	// @inject_tag: params:"resource_name" binding:"required,lte=500"
-	string resource_name = 3 [(validator.field) = {msg_exists: true}];
+	// @inject_tag: params:"resource_name" binding:"lte=500"
+	string resource_name = 3 [(validator.field) = {}];
 
 	// The resource description. Not required.
-	// @inject_tag: params:"description" binding:"lte=500"
+	// @inject_tag: params:"description" binding:"lte=2500"
 	string description = 4 [(validator.field) = {}];
 
 	// The resource type. Not required.
