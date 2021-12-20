@@ -813,7 +813,7 @@ message Resource {
 
   // Resource description
   // @inject_tag: json:"description" gorm:"description;"
-  string description = 7 [(validator.field) = {length_lt:500}];
+  string description = 7 [(validator.field) = {length_lt:2500}];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"

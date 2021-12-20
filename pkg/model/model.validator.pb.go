@@ -452,8 +452,8 @@ func (this *Resource) Validate() error {
 	if !(this.ResourceSize > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("ResourceSize", fmt.Errorf(`value '%v' must be greater than '0'`, this.ResourceSize))
 	}
-	if !(len(this.Description) < 500) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '500'`, this.Description))
+	if !(len(this.Description) < 2500) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Description", fmt.Errorf(`value '%v' must have a length smaller than '2500'`, this.Description))
 	}
 	if !(this.Created > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Created", fmt.Errorf(`value '%v' must be greater than '0'`, this.Created))
