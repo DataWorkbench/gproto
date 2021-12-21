@@ -103,6 +103,9 @@ func (this *GetStreamJobCode) Validate() error {
 	}
 	return nil
 }
+func (this *StreamJobCodeSyntax) Validate() error {
+	return nil
+}
 func (this *GetStreamJobArgs) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
@@ -497,5 +500,8 @@ func (this *DescribeNetwork) Validate() error {
 			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
 		}
 	}
+	return nil
+}
+func (this *ListBuiltInConnectors) Validate() error {
 	return nil
 }

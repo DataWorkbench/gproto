@@ -313,6 +313,20 @@ func (this *SetStreamJobSchedule) Validate() error {
 	}
 	return nil
 }
+func (this *StreamJobCodeSyntax) Validate() error {
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.JobId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
+	}
+	if this.Code != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Code); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Code", err)
+		}
+	}
+	return nil
+}
 func (this *SetStreamJobArgs) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))

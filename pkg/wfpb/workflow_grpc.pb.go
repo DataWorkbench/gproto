@@ -50,10 +50,12 @@ type WorkflowClient interface {
 	SetStreamJobCode(ctx context.Context, in *request.SetStreamJobCode, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// GetStreamJobCode to get the code properties of the specified stream job.
 	GetStreamJobCode(ctx context.Context, in *request.GetStreamJobCode, opts ...grpc.CallOption) (*response.GetStreamJobCode, error)
+	StreamJobCodeSyntax(ctx context.Context, in *request.StreamJobCodeSyntax, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error)
 	// SetStreamJobArgs to set the run parameters of the specified stream job.
 	SetStreamJobArgs(ctx context.Context, in *request.SetStreamJobArgs, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// GetStreamJobArgs to get the run parameters of the specified stream job.
 	GetStreamJobArgs(ctx context.Context, in *request.GetStreamJobArgs, opts ...grpc.CallOption) (*response.GetStreamJobArgs, error)
+	ListBuiltInConnectors(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListBuiltInConnectors, error)
 	// SetStreamJobSchedule to set the schedule properties of the specified stream job.
 	SetStreamJobSchedule(ctx context.Context, in *request.SetStreamJobSchedule, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// GetStreamJobSchedule to get the schedule properties of the specified stream job.
@@ -164,6 +166,15 @@ func (c *workflowClient) GetStreamJobCode(ctx context.Context, in *request.GetSt
 	return out, nil
 }
 
+func (c *workflowClient) StreamJobCodeSyntax(ctx context.Context, in *request.StreamJobCodeSyntax, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error) {
+	out := new(response.StreamJobCodeSyntax)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/StreamJobCodeSyntax", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *workflowClient) SetStreamJobArgs(ctx context.Context, in *request.SetStreamJobArgs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/SetStreamJobArgs", in, out, opts...)
@@ -176,6 +187,15 @@ func (c *workflowClient) SetStreamJobArgs(ctx context.Context, in *request.SetSt
 func (c *workflowClient) GetStreamJobArgs(ctx context.Context, in *request.GetStreamJobArgs, opts ...grpc.CallOption) (*response.GetStreamJobArgs, error) {
 	out := new(response.GetStreamJobArgs)
 	err := c.cc.Invoke(ctx, "/wfpb.Workflow/GetStreamJobArgs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workflowClient) ListBuiltInConnectors(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListBuiltInConnectors, error) {
+	out := new(response.ListBuiltInConnectors)
+	err := c.cc.Invoke(ctx, "/wfpb.Workflow/ListBuiltInConnectors", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -324,10 +344,12 @@ type WorkflowServer interface {
 	SetStreamJobCode(context.Context, *request.SetStreamJobCode) (*model.EmptyStruct, error)
 	// GetStreamJobCode to get the code properties of the specified stream job.
 	GetStreamJobCode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error)
+	StreamJobCodeSyntax(context.Context, *request.StreamJobCodeSyntax) (*response.StreamJobCodeSyntax, error)
 	// SetStreamJobArgs to set the run parameters of the specified stream job.
 	SetStreamJobArgs(context.Context, *request.SetStreamJobArgs) (*model.EmptyStruct, error)
 	// GetStreamJobArgs to get the run parameters of the specified stream job.
 	GetStreamJobArgs(context.Context, *request.GetStreamJobArgs) (*response.GetStreamJobArgs, error)
+	ListBuiltInConnectors(context.Context, *model.EmptyStruct) (*response.ListBuiltInConnectors, error)
 	// SetStreamJobSchedule to set the schedule properties of the specified stream job.
 	SetStreamJobSchedule(context.Context, *request.SetStreamJobSchedule) (*model.EmptyStruct, error)
 	// GetStreamJobSchedule to get the schedule properties of the specified stream job.
@@ -387,11 +409,17 @@ func (UnimplementedWorkflowServer) SetStreamJobCode(context.Context, *request.Se
 func (UnimplementedWorkflowServer) GetStreamJobCode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobCode not implemented")
 }
+func (UnimplementedWorkflowServer) StreamJobCodeSyntax(context.Context, *request.StreamJobCodeSyntax) (*response.StreamJobCodeSyntax, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StreamJobCodeSyntax not implemented")
+}
 func (UnimplementedWorkflowServer) SetStreamJobArgs(context.Context, *request.SetStreamJobArgs) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetStreamJobArgs not implemented")
 }
 func (UnimplementedWorkflowServer) GetStreamJobArgs(context.Context, *request.GetStreamJobArgs) (*response.GetStreamJobArgs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobArgs not implemented")
+}
+func (UnimplementedWorkflowServer) ListBuiltInConnectors(context.Context, *model.EmptyStruct) (*response.ListBuiltInConnectors, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListBuiltInConnectors not implemented")
 }
 func (UnimplementedWorkflowServer) SetStreamJobSchedule(context.Context, *request.SetStreamJobSchedule) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetStreamJobSchedule not implemented")
@@ -586,6 +614,24 @@ func _Workflow_GetStreamJobCode_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Workflow_StreamJobCodeSyntax_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.StreamJobCodeSyntax)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkflowServer).StreamJobCodeSyntax(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wfpb.Workflow/StreamJobCodeSyntax",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkflowServer).StreamJobCodeSyntax(ctx, req.(*request.StreamJobCodeSyntax))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Workflow_SetStreamJobArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.SetStreamJobArgs)
 	if err := dec(in); err != nil {
@@ -618,6 +664,24 @@ func _Workflow_GetStreamJobArgs_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WorkflowServer).GetStreamJobArgs(ctx, req.(*request.GetStreamJobArgs))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Workflow_ListBuiltInConnectors_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(model.EmptyStruct)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkflowServer).ListBuiltInConnectors(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wfpb.Workflow/ListBuiltInConnectors",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkflowServer).ListBuiltInConnectors(ctx, req.(*model.EmptyStruct))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -875,12 +939,20 @@ var _Workflow_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Workflow_GetStreamJobCode_Handler,
 		},
 		{
+			MethodName: "StreamJobCodeSyntax",
+			Handler:    _Workflow_StreamJobCodeSyntax_Handler,
+		},
+		{
 			MethodName: "SetStreamJobArgs",
 			Handler:    _Workflow_SetStreamJobArgs_Handler,
 		},
 		{
 			MethodName: "GetStreamJobArgs",
 			Handler:    _Workflow_GetStreamJobArgs_Handler,
+		},
+		{
+			MethodName: "ListBuiltInConnectors",
+			Handler:    _Workflow_ListBuiltInConnectors_Handler,
 		},
 		{
 			MethodName: "SetStreamJobSchedule",
