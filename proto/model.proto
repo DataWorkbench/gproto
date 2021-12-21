@@ -192,6 +192,9 @@ message StreamJobArgs {
 
   // The list of connectors dependency package. Not required.
   repeated string connectors = 4 ;
+
+  // The list of built-in connectors. Not required.
+  repeated string built_in_connectors = 5;
 }
 
 // StreamJobSchedule represents a job schedule info.
