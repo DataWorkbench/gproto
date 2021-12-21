@@ -77,9 +77,6 @@ func (this *StreamJobProperty) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
 	if this.Code != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Code); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Code", err)
@@ -173,9 +170,6 @@ func (this *StreamJobRelease) Validate() error {
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))
 	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
-	}
 	if !(len(this.Name) > 1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '1'`, this.Name))
 	}
@@ -199,9 +193,6 @@ func (this *StreamJobInst) Validate() error {
 	}
 	if !(len(this.JobId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
-	}
-	if !(this.Version > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Version", fmt.Errorf(`value '%v' must be greater than '0'`, this.Version))
 	}
 	if !(len(this.Id) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Id", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Id))

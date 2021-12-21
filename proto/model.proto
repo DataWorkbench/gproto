@@ -90,7 +90,7 @@ message StreamJob {
   // The job version id, only used for Published job.
   // Only used in published job.
   // @inject_tag: json:"version" gorm:"column:version;primarykey;"
-  int64 version = 3 [(validator.field) = {}];
+  string version = 3 [(validator.field) = {}];
 
   // Job Name, Unique within a workspace.
   // @inject_tag: json:"name" gorm:"column:name;"
@@ -133,7 +133,7 @@ message StreamJobProperty {
 
   // The release version.
   // @inject_tag: json:"version" gorm:"column:version;primarykey"
-  int64 version = 3 [(validator.field) = {int_gt: 0}];
+  string version = 3 [(validator.field) = {int_gt: 0}];
 
   // @inject_tag: json:"code" gorm:"column:code;type:json"
   StreamJobCode code = 4 [(validator.field) = {}];
@@ -306,7 +306,7 @@ message StreamJobRelease {
 
   // The release version.
   // @inject_tag: json:"version" gorm:"column:version;"
-  int64 version = 3 [(validator.field) = {int_gt: 0}];
+  string version = 3 [(validator.field) = {int_gt: 0}];
 
   // Job Name, Unique within a workspace.
   // @inject_tag: json:"name" gorm:"column:name;"
@@ -367,7 +367,7 @@ message StreamJobInst {
 
   // The release version.
   // @inject_tag: json:"version" gorm:"column:version;
-  int64 version = 3 [(validator.field) = {int_gt: 0}];
+  string version = 3 [(validator.field) = {int_gt: 0}];
 
   // Job instance ID, unique.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
