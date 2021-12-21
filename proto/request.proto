@@ -394,6 +394,21 @@ message SetStreamJobSchedule {
 	model.StreamJobSchedule info = 3 [ (validator.field) = { msg_exists: false } ];
 }
 
+// SetStreamJobCode used as a request parameters for RPC.
+message StreamJobCodeSyntax {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// The stream job id it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
+
+	// The code info of JSON format.
+	// @inject_tag: json:"code" default:"" binding:"-"
+	model.StreamJobCode code = 3 [ (validator.field) = { msg_exists: false } ];
+}
+
 // SetStreamJobArgs used as a request parameters for RPC.
 message SetStreamJobArgs {
 	// The workspace id in HTTP Request-URI

@@ -94,6 +94,21 @@ message GetStreamJobCode {
   model.StreamJobCode code = 1;
 }
 
+// GetStreamJobCode used as reply parameters in RPC.
+message StreamJobCodeSyntax {
+  enum Result {
+    ResultUnset = 0;
+    Correct = 1;
+    Incorrect = 2;
+  }
+
+  // Result for check syntax of code. 1 => "Correct" 2 => "Incorrect".
+  Result result = 1;
+
+  // Message represents the error message when found syntax Incorrect.
+  string message = 2;
+}
+
 // GetStreamJobArgs used as reply parameters in RPC.
 message GetStreamJobArgs {
   model.StreamJobArgs info = 1;
@@ -438,4 +453,10 @@ message CreateNetwork {
 
 message DescribeNetwork {
   model.Network info = 1 ;
+}
+
+message ListBuiltInConnectors {
+  // Items store the available flink version lists.
+  // @inject_tag: json:"items"
+  repeated string items = 1;
 }

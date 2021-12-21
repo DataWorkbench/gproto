@@ -47,19 +47,22 @@ service Workflow {
 	
 	// GetStreamJobCode to get the code properties of the specified stream job.
 	rpc GetStreamJobCode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
+
+	rpc StreamJobCodeSyntax(request.StreamJobCodeSyntax) returns (response.StreamJobCodeSyntax) {}
 	
 	// SetStreamJobArgs to set the run parameters of the specified stream job.
 	rpc SetStreamJobArgs(request.SetStreamJobArgs) returns (model.EmptyStruct) {}
 	
 	// GetStreamJobArgs to get the run parameters of the specified stream job.
 	rpc GetStreamJobArgs(request.GetStreamJobArgs) returns (response.GetStreamJobArgs) {}
+
+	rpc ListBuiltInConnectors(model.EmptyStruct) returns (response.ListBuiltInConnectors) {}
 	
 	// SetStreamJobSchedule to set the schedule properties of the specified stream job.
 	rpc SetStreamJobSchedule(request.SetStreamJobSchedule) returns (model.EmptyStruct) {}
 	
 	// GetStreamJobSchedule to get the schedule properties of the specified stream job.
 	rpc GetStreamJobSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
-
 
 	// Interface for stream job release.
 	//
