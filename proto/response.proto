@@ -389,6 +389,7 @@ message ZeppelinAddress {
 
 message DescribeFlinkClusterAPI {
   string URL = 1;
+  string version = 2;
 }
 
 message ListAvailableFlinkVersions {
