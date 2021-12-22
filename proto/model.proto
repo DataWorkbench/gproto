@@ -874,8 +874,8 @@ message UDFInfo {
   Language udf_language = 4  [(validator.field) = {length_gt: 0, length_lt: 21}];
 
   // Source Name, unique within a space.
-  // @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-  string name = 5 [(validator.field) = {length_gt: 0, length_lt: 65}];
+  // @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
+  string name = 5 [(validator.field) = {length_gt: 0, length_lt: 66}];
 
   // Comment, describe this source.
   // @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
