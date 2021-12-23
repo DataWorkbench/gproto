@@ -860,8 +860,8 @@ func (this *CreateUDF) Validate() error {
 	if !(len(this.Name) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
 	}
-	if !(len(this.Name) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
+	if !(len(this.Name) < 66) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '66'`, this.Name))
 	}
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
@@ -884,8 +884,8 @@ func (this *UpdateUDF) Validate() error {
 	if !(len(this.Name) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Name))
 	}
-	if !(len(this.Name) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Name))
+	if !(len(this.Name) < 66) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Name", fmt.Errorf(`value '%v' must have a length smaller than '66'`, this.Name))
 	}
 	if !(len(this.Comment) < 257) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Comment", fmt.Errorf(`value '%v' must have a length smaller than '257'`, this.Comment))
