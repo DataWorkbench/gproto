@@ -1097,7 +1097,7 @@ message CreateUDF {
 
 	// UDF name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
-	string name = 5 [ (validator.field) = { length_gt: 0, length_lt: 64 } ];
+	string name = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// describe this udf.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
@@ -1124,7 +1124,7 @@ message UpdateUDF {
 
 	// UDF name unique within a space.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
-	string name = 2 [ (validator.field) = { length_gt: 0, length_lt: 64 } ];
+	string name = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// describe this udf.
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
