@@ -173,6 +173,9 @@ func (this *ListStreamInstances) Validate() error {
 	}
 	return nil
 }
+func (this *DescribeFlinkUIByInstanceId) Validate() error {
+	return nil
+}
 func (this *DescribeSource) Validate() error {
 	if this.Info != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {

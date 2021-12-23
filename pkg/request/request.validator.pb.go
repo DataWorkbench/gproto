@@ -581,6 +581,12 @@ func (this *ResumeStreamInstances) Validate() error {
 	}
 	return nil
 }
+func (this *DescribeFlinkUIByInstanceId) Validate() error {
+	if !(len(this.InstId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstId))
+	}
+	return nil
+}
 func (this *CreateSource) Validate() error {
 	if !(len(this.SourceId) < 21) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SourceId", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.SourceId))

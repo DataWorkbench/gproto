@@ -4,50 +4,51 @@ option go_package = "github.com/DataWorkbench/gproto/pkg/shpb";
 
 package shpb;
 
-import "model.proto";
-import "request.proto";
-import "response.proto";
+//import "model.proto";
+//import "request.proto";
+//import "response.proto";
 
+// Deprecated:
 // Scheduler Service
-service Scheduler {
-	// Interface for stream job task.
-	//
-	// DeleteJobsBySpaceIds delete the specified workspaces and its resources;
-	// This Interface called by flowmanager(DeleteJobsBySpaceIds).
-	// Resources Includes:
-	//   - Offline stream job and force stop all running instances.
-	//   - All instances records.
-	rpc DeleteJobsBySpaceIds(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
-	
-	// DeleteStreamJobs delete stream job ant its related resources where in ids.
-	// Resources includes:
-	//  - Offline job and force stop all running instances.
-	//  - All instances records.
-	rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
-
-	// SubmitStreamJob Submit submit a job task to scheduler system, It will
-	// be cover if old job exists.
-	// FIXME: Review it.
-	rpc SubmitStreamJob(request.SubmitStreamJob) returns (model.EmptyStruct) {}
-	
-	// RemoveStreamJob remove specific job from scheduler system.
-	// FIXME: Review it.
-	rpc RemoveStreamJob(request.RemoveStreamJob) returns (model.EmptyStruct) {}
-
-
-	// Interface for stream job cycle instance.
-	//
-	rpc ListStreamInstances(request.ListStreamInstances)           returns (response.ListStreamInstances) {}
-	rpc TerminateStreamInstances(request.TerminateStreamInstances) returns (model.EmptyStruct)       {}
-	rpc SuspendStreamInstances(request.SuspendStreamInstances)     returns (model.EmptyStruct)       {}
-	rpc ResumeStreamInstances(request.ResumeStreamInstances)       returns (model.EmptyStruct)       {}
-	
-	// Interface for monitor.
-	rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
-	rpc DeleteMonitorRules(request.DeleteMonitorRules)   returns (model.EmptyStruct)            {}
-	rpc EnableMonitorRules(request.EnableMonitorRules)   returns (model.EmptyStruct)            {}
-	rpc DisableMonitorRules(request.DisableMonitorRules) returns (model.EmptyStruct)            {}
-	rpc CreateMonitorRule(request.CreateMonitorRule)     returns (model.EmptyStruct)            {}
-	rpc UpdateMonitorRule(request.UpdateMonitorRule)     returns (model.EmptyStruct)            {}
-	rpc DescribeMonitorRule(request.DescribeMonitorRule) returns (response.DescribeMonitorRule) {}
-}
+//service Scheduler {
+//	// Interface for stream job task.
+//	//
+//	// DeleteJobsBySpaceIds delete the specified workspaces and its resources;
+//	// This Interface called by flowmanager(DeleteJobsBySpaceIds).
+//	// Resources Includes:
+//	//   - Offline stream job and force stop all running instances.
+//	//   - All instances records.
+//	rpc DeleteJobsBySpaceIds(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+//
+//	// DeleteStreamJobs delete stream job ant its related resources where in ids.
+//	// Resources includes:
+//	//  - Offline job and force stop all running instances.
+//	//  - All instances records.
+//	rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
+//
+//	// SubmitStreamJob Submit submit a job task to scheduler system, It will
+//	// be cover if old job exists.
+//	// FIXME: Review it.
+//	rpc SubmitStreamJob(request.SubmitStreamJob) returns (model.EmptyStruct) {}
+//
+//	// RemoveStreamJob remove specific job from scheduler system.
+//	// FIXME: Review it.
+//	rpc RemoveStreamJob(request.RemoveStreamJob) returns (model.EmptyStruct) {}
+//
+//
+//	// Interface for stream job cycle instance.
+//	//
+//	rpc ListStreamInstances(request.ListStreamInstances)           returns (response.ListStreamInstances) {}
+//	rpc TerminateStreamInstances(request.TerminateStreamInstances) returns (model.EmptyStruct)       {}
+//	rpc SuspendStreamInstances(request.SuspendStreamInstances)     returns (model.EmptyStruct)       {}
+//	rpc ResumeStreamInstances(request.ResumeStreamInstances)       returns (model.EmptyStruct)       {}
+//
+//	// Interface for monitor.
+//	rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
+//	rpc DeleteMonitorRules(request.DeleteMonitorRules)   returns (model.EmptyStruct)            {}
+//	rpc EnableMonitorRules(request.EnableMonitorRules)   returns (model.EmptyStruct)            {}
+//	rpc DisableMonitorRules(request.DisableMonitorRules) returns (model.EmptyStruct)            {}
+//	rpc CreateMonitorRule(request.CreateMonitorRule)     returns (model.EmptyStruct)            {}
+//	rpc UpdateMonitorRule(request.UpdateMonitorRule)     returns (model.EmptyStruct)            {}
+//	rpc DescribeMonitorRule(request.DescribeMonitorRule) returns (response.DescribeMonitorRule) {}
+//}

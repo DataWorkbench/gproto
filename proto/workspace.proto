@@ -42,3 +42,106 @@ service Workspace {
     // Permission Auth.
     rpc CheckPermission(request.CheckPermission) returns (model.EmptyStruct) {}
 }
+
+// Workflow Service
+service Workflow {
+    // Interface for stream job.
+    //
+    // ListStreamJobs to get a list of stream job of the workspace.
+    rpc ListStreamJobs(request.ListStreamJobs) returns (response.ListStreamJobs) {}
+
+    // DeleteStreamJobs delete stream job ant its related resources where in ids.
+    // Resources includes:
+    //  - History version and Released's job.
+    //  - Node, env schedule and its history version.
+    //  - Offline job and force stop all running instances. (By Scheduler-Server)
+    //  - All instances records. (By Scheduler-Server)
+    rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
+
+    // CreateStreamJob to create a new stream job.
+    rpc CreateStreamJob(request.CreateStreamJob) returns (response.CreateStreamJob) {}
+
+    // UpdateStreamJob to update the info for the specified stream job.
+    rpc UpdateStreamJob(request.UpdateStreamJob) returns (model.EmptyStruct) {}
+
+    // DescribeStreamJob to get the info of the specified stream job.
+    rpc DescribeStreamJob(request.DescribeStreamJob) returns (response.DescribeStreamJob) {}
+
+    // SetStreamJobCode to set the code properties of the specified stream job.
+    rpc SetStreamJobCode(request.SetStreamJobCode) returns (model.EmptyStruct)  {}
+
+    // GetStreamJobCode to get the code properties of the specified stream job.
+    rpc GetStreamJobCode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
+
+    rpc StreamJobCodeSyntax(request.StreamJobCodeSyntax) returns (response.StreamJobCodeSyntax) {}
+
+    // SetStreamJobArgs to set the run parameters of the specified stream job.
+    rpc SetStreamJobArgs(request.SetStreamJobArgs) returns (model.EmptyStruct) {}
+
+    // GetStreamJobArgs to get the run parameters of the specified stream job.
+    rpc GetStreamJobArgs(request.GetStreamJobArgs) returns (response.GetStreamJobArgs) {}
+
+    rpc ListBuiltInConnectors(model.EmptyStruct) returns (response.ListBuiltInConnectors) {}
+
+    // SetStreamJobSchedule to set the schedule properties of the specified stream job.
+    rpc SetStreamJobSchedule(request.SetStreamJobSchedule) returns (model.EmptyStruct) {}
+
+    // GetStreamJobSchedule to get the schedule properties of the specified stream job.
+    rpc GetStreamJobSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
+
+    // Interface for stream job release.
+    //
+    // ReleaseStreamJob to publish the specified job to schedule system with a new version.
+    rpc ReleaseStreamJob(request.ReleaseStreamJob) returns (model.EmptyStruct) {}
+
+    // SuspendReleaseStreamJobs to suspend the specified job list in schedule system.
+    rpc OfflineReleaseStreamJob(request.OfflineReleaseStreamJob) returns (model.EmptyStruct) {}
+
+    // SuspendReleaseStreamJob to suspend the specified job list in schedule system.
+    rpc SuspendReleaseStreamJob(request.SuspendReleaseStreamJob) returns (model.EmptyStruct) {}
+
+    // ResumeReleaseStreamJob to resume the suspended job list in schedule system.
+    rpc ResumeReleaseStreamJob(request.ResumeReleaseStreamJob) returns (model.EmptyStruct) {}
+
+    // ListReleaseStreamJobs for gets a list of all published job in the workspace.
+    rpc ListReleaseStreamJobs(request.ListReleaseStreamJobs) returns (response.ListReleaseStreamJobs) {}
+
+
+    // Interface for stream job versions.
+    //
+    // ListStreamJobVersions for gets a list of all versions of the specified job.
+    rpc ListStreamJobVersions(request.ListStreamJobVersions) returns (response.ListStreamJobVersions) {}
+
+    // DescribeStreamJobVersion for get the info of the job of the specified version.
+    rpc DescribeStreamJobVersion(request.DescribeStreamJob) returns (response.DescribeStreamJob) {}
+
+    // GetStreamJobVersionNode for get the node properties of the job of the specified version.
+    rpc GetStreamJobVersionNode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
+
+    // GetStreamJobVersionArgs for get the run parameters of the job of the specified version.
+    rpc GetStreamJobVersionArgs(request.GetStreamJobArgs) returns (response.GetStreamJobArgs) {}
+
+    // GetStreamJobVersionSchedule for get the schedule properties of the job of the specified version.
+    rpc GetStreamJobVersionSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
+}
+
+// Scheduler Service
+service Scheduler {
+    // Interface for stream job cycle instance.
+    //
+    rpc ListStreamInstances(request.ListStreamInstances)           returns (response.ListStreamInstances) {}
+    rpc TerminateStreamInstances(request.TerminateStreamInstances) returns (model.EmptyStruct)       {}
+    rpc SuspendStreamInstances(request.SuspendStreamInstances)     returns (model.EmptyStruct)       {}
+    rpc ResumeStreamInstances(request.ResumeStreamInstances)       returns (model.EmptyStruct)       {}
+
+    rpc DescribeFlinkUIByInstanceId(request.DescribeFlinkUIByInstanceId)  returns (response.DescribeFlinkUIByInstanceId) {}
+
+    // Interface for monitor.
+    rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
+    rpc DeleteMonitorRules(request.DeleteMonitorRules)   returns (model.EmptyStruct)            {}
+    rpc EnableMonitorRules(request.EnableMonitorRules)   returns (model.EmptyStruct)            {}
+    rpc DisableMonitorRules(request.DisableMonitorRules) returns (model.EmptyStruct)            {}
+    rpc CreateMonitorRule(request.CreateMonitorRule)     returns (model.EmptyStruct)            {}
+    rpc UpdateMonitorRule(request.UpdateMonitorRule)     returns (model.EmptyStruct)            {}
+    rpc DescribeMonitorRule(request.DescribeMonitorRule) returns (response.DescribeMonitorRule) {}
+}

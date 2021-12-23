@@ -3098,12 +3098,12 @@ type FlinkConfig_RestartStrategy struct {
 	FixedDelayAttempts int32 `protobuf:"varint,2,opt,name=fixed_delay_attempts,json=fixedDelayAttempts,proto3" json:"fixed_delay_attempts" default:"1" binding:"gte=1, lte=1000"`
 	// Affect when restart_strategy == "fixed-delay". Min: 1, Max: 86400. Default 1, unit is second.
 	FixedDelayDelay int32 `protobuf:"varint,3,opt,name=fixed_delay_delay,json=fixedDelayDelay,proto3" json:"fixed_delay_delay" default:"1" binding:"gte=1, lte=86400"`
-	// Affect when restart_strategy == "failure-rate". Min: 1, Max: 10080. Default 1.
-	FailureRateMaxFailuresPerInterval int32 `protobuf:"varint,4,opt,name=failure_rate_max_failures_per_interval,json=failureRateMaxFailuresPerInterval,proto3" json:"failure_rate_max_failures_per_interval" default:"1" binding:"gte=1, lte=10080"`
+	// Affect when restart_strategy == "failure-rate". Min: 1, Max: 1000. Default 1.
+	FailureRateMaxFailuresPerInterval int32 `protobuf:"varint,4,opt,name=failure_rate_max_failures_per_interval,json=failureRateMaxFailuresPerInterval,proto3" json:"failure_rate_max_failures_per_interval" default:"1" binding:"gte=1, lte=1000"`
 	// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 1. unit is second.
 	FailureRateDelay int32 `protobuf:"varint,5,opt,name=failure_rate_delay,json=failureRateDelay,proto3" json:"failure_rate_delay" default:"1" binding:"gte=1, lte=86400"`
 	// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 60, unit is second.
-	FailureRateFailureRateInterval int32 `protobuf:"varint,6,opt,name=failure_rate_failure_rate_interval,json=failureRateFailureRateInterval,proto3" json:"failure_rate_failure_rate_interval" default:"3" binding:"gte=1, lte=1440"`
+	FailureRateFailureRateInterval int32 `protobuf:"varint,6,opt,name=failure_rate_failure_rate_interval,json=failureRateFailureRateInterval,proto3" json:"failure_rate_failure_rate_interval" default:"3" binding:"gte=1, lte=86400"`
 }
 
 func (x *FlinkConfig_RestartStrategy) Reset() {

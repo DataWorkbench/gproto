@@ -757,8 +757,8 @@ message FlinkConfig {
 		// @inject_tag: json:"fixed_delay_delay" default:"1" binding:"gte=1, lte=86400"
 		int32 fixed_delay_delay = 3;
 
-		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 10080. Default 1.
-		// @inject_tag: json:"failure_rate_max_failures_per_interval" default:"1" binding:"gte=1, lte=10080"
+		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 1000. Default 1.
+		// @inject_tag: json:"failure_rate_max_failures_per_interval" default:"1" binding:"gte=1, lte=1000"
 		int32 failure_rate_max_failures_per_interval = 4;
 
 		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 1. unit is second.
@@ -766,7 +766,7 @@ message FlinkConfig {
 		int32 failure_rate_delay = 5;
 
 		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 60, unit is second.
-		// @inject_tag: json:"failure_rate_failure_rate_interval" default:"3" binding:"gte=1, lte=1440"
+		// @inject_tag: json:"failure_rate_failure_rate_interval" default:"3" binding:"gte=1, lte=86400"
 		int32 failure_rate_failure_rate_interval = 6;
 	}
 

@@ -166,6 +166,15 @@ message ListStreamInstances {
 
   // @inject_tag: json:"has_more"
   bool has_more = 2 [(validator.field) = {}];
+
+  // @inject_tag: json:"total"
+  int64 total = 3 [(validator.field) = {}];
+}
+
+// DescribeFlinkUIByInstanceId used as a request parameters for RPC and HTTP(based on URL-Query).
+message DescribeFlinkUIByInstanceId {
+  // @inject_tag: json:"web_ui"
+  string web_ui = 1;
 }
 
 // DescribeSource used as reply parameters in RPC or response body in HTTP.
