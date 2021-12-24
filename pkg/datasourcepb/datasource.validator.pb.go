@@ -171,11 +171,11 @@ func (this *FtpURL) Validate() error {
 	if !(len(this.Host) < 65) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Host", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Host))
 	}
-	if !(len(this.Username) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Username", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Username))
+	if !(len(this.User) > 0) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.User))
 	}
-	if !(len(this.Username) < 65) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Username", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.Username))
+	if !(len(this.User) < 65) {
+		return github_com_mwitkow_go_proto_validators.FieldError("User", fmt.Errorf(`value '%v' must have a length smaller than '65'`, this.User))
 	}
 	if !(len(this.Password) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Password", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Password))
