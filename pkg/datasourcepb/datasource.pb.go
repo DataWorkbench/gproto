@@ -590,7 +590,7 @@ type FtpURL struct {
 	// The port
 	Port int32 `protobuf:"varint,2,opt,name=port,proto3" json:"port" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"`
 	// The username
-	User string `protobuf:"bytes,3,opt,name=user,proto3" json:"username" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
+	User string `protobuf:"bytes,3,opt,name=user,proto3" json:"user" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
 	// The password
 	Password string `protobuf:"bytes,4,opt,name=password,proto3" json:"password" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"`
 	// the Network

@@ -183,7 +183,7 @@ message FtpURL {
 	int32 port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// The username
-	// @inject_tag: json:"username" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
 	string user = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
 
 	// The password
