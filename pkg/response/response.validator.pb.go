@@ -370,12 +370,6 @@ func (this *JobParser) Validate() error {
 	return nil
 }
 func (this *JobFree) Validate() error {
-	if !(len(this.ZeppelinDeleteJar) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinDeleteJar", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.ZeppelinDeleteJar))
-	}
-	if !(len(this.ZeppelinDeleteJar) < 20000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinDeleteJar", fmt.Errorf(`value '%v' must have a length smaller than '20000'`, this.ZeppelinDeleteJar))
-	}
 	return nil
 }
 func (this *PTasksStatusStat) Validate() error {
