@@ -367,7 +367,7 @@ message JobParser {
 // JobFree
 message JobFree {
 	// delete jar.
-	// @inject_tag: json:"zeppelindeletejar" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
+	// @inject_tag: json:"zeppelindeletejar" binding:"gte=0,lte=20001" required:"true" minLength:"0" maxLength:"20001"
 	string ZeppelinDeleteJar = 1 [ (validator.field) = { length_gt: 0, length_lt: 20000 } ];
 }
 

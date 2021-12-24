@@ -2034,7 +2034,7 @@ type JobFree struct {
 	unknownFields protoimpl.UnknownFields
 
 	// delete jar.
-	ZeppelinDeleteJar string `protobuf:"bytes,1,opt,name=ZeppelinDeleteJar,proto3" json:"zeppelindeletejar" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"`
+	ZeppelinDeleteJar string `protobuf:"bytes,1,opt,name=ZeppelinDeleteJar,proto3" json:"zeppelindeletejar" binding:"gte=0,lte=20001" required:"true" minLength:"0" maxLength:"20001"`
 }
 
 func (x *JobFree) Reset() {
