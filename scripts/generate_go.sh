@@ -49,12 +49,12 @@ if [[ $(protoc --version | cut -f2 -d' ') != "3.14.0" ]]; then
   exit 1
 fi
 
-if [[ $(protoc-gen-go --version 2>&1 | cut -f2 -d' ') != "v1.25.0" ]]; then
+if [[ $(protoc-gen-go --version 2>&1 | cut -f2 -d' ') != "v1.27.1" ]]; then
   echo "Error: could not find protoc-gen-go v1.25.0, is it installed in you PATH?"
   exit 1
 fi
 
-if [[ $(protoc-gen-go-grpc --version 2>&1 | cut -f2 -d' ') != "1.0.1" ]]; then
+if [[ $(protoc-gen-go-grpc --version 2>&1 | cut -f2 -d' ') != "1.2.0" ]]; then
   echo "Error: could not find protoc-gen-go-grpc 1.0.1, is it installed in you PATH?"
   exit 1
 fi

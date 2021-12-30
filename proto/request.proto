@@ -1544,3 +1544,34 @@ message DescribeNetwork {
 	// @inject_tag: json:"network_id" uri:"network_id" default:"" binding:"len=20" swaggerignore:"true"
 	string network_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
+
+
+message GetPriceComponents {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
+	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message CreateInstance {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
+	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message StopInstance {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
+	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"constance_id" uri:"constance_id" default:"" binding:"len=20" swaggerignore:"true"
+	string constance_id = 3 [ (validator.field) = { length_eq: 20 } ];
+}

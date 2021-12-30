@@ -7,7 +7,6 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "request.proto";
 import "response.proto";
 
-
 // newbilling Service
 service BillingManager {
     // API of newbilling manager.

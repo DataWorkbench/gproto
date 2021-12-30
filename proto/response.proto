@@ -469,3 +469,25 @@ message ListBuiltInConnectors {
   // @inject_tag: json:"items"
   repeated string items = 1;
 }
+
+
+
+// Reply parameters used to GetPriceComponents
+message GetPriceComponents {
+    float hour_price = 1
+    float month_price = 2
+}
+
+
+message CreateInstance {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string instance_id = 1 [ (validator.field) = { length_eq: 20 } ];
+}
+
+message StopInstance {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"message" uri:"message" default:"" binding:"len=20" swaggerignore:"true"
+	string message = 1 [ (validator.field) = { length_eq: 20 } ];
+
+}
