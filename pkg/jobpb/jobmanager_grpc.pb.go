@@ -27,6 +27,7 @@ type JobmanagerClient interface {
 	CancelJob(ctx context.Context, in *request.JobCancel, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	CancelAllJob(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.NodeRelations, error)
+	RunJob(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (Jobmanager_RunJobClient, error)
 }
 
 type jobmanagerClient struct {
@@ -100,6 +101,38 @@ func (c *jobmanagerClient) NodeRelations(ctx context.Context, in *model.EmptyStr
 	return out, nil
 }
 
+func (c *jobmanagerClient) RunJob(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (Jobmanager_RunJobClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Jobmanager_serviceDesc.Streams[0], "/jobpb.Jobmanager/RunJob", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &jobmanagerRunJobClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Jobmanager_RunJobClient interface {
+	Recv() (*response.JobInfo, error)
+	grpc.ClientStream
+}
+
+type jobmanagerRunJobClient struct {
+	grpc.ClientStream
+}
+
+func (x *jobmanagerRunJobClient) Recv() (*response.JobInfo, error) {
+	m := new(response.JobInfo)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // JobmanagerServer is the server API for Jobmanager service.
 // All implementations must embed UnimplementedJobmanagerServer
 // for forward compatibility
@@ -111,6 +144,7 @@ type JobmanagerServer interface {
 	CancelJob(context.Context, *request.JobCancel) (*model.EmptyStruct, error)
 	CancelAllJob(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
 	NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error)
+	RunJob(*request.JobInfo, Jobmanager_RunJobServer) error
 	mustEmbedUnimplementedJobmanagerServer()
 }
 
@@ -138,6 +172,9 @@ func (UnimplementedJobmanagerServer) CancelAllJob(context.Context, *request.Dele
 }
 func (UnimplementedJobmanagerServer) NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NodeRelations not implemented")
+}
+func (UnimplementedJobmanagerServer) RunJob(*request.JobInfo, Jobmanager_RunJobServer) error {
+	return status.Errorf(codes.Unimplemented, "method RunJob not implemented")
 }
 func (UnimplementedJobmanagerServer) mustEmbedUnimplementedJobmanagerServer() {}
 
@@ -278,6 +315,27 @@ func _Jobmanager_NodeRelations_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Jobmanager_RunJob_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(request.JobInfo)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(JobmanagerServer).RunJob(m, &jobmanagerRunJobServer{stream})
+}
+
+type Jobmanager_RunJobServer interface {
+	Send(*response.JobInfo) error
+	grpc.ServerStream
+}
+
+type jobmanagerRunJobServer struct {
+	grpc.ServerStream
+}
+
+func (x *jobmanagerRunJobServer) Send(m *response.JobInfo) error {
+	return x.ServerStream.SendMsg(m)
+}
+
 var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "jobpb.Jobmanager",
 	HandlerType: (*JobmanagerServer)(nil),
@@ -311,6 +369,12 @@ var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Jobmanager_NodeRelations_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "RunJob",
+			Handler:       _Jobmanager_RunJob_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "proto/jobmanager.proto",
 }

@@ -313,106 +313,120 @@ message DescribeUDF {
 
 // JobState
 message JobState {
-    // job state, model.StreamJobInst_State
-	// @inject_tag: json:"state"
-    model.StreamJobInst.State State = 1 [(validator.field) = {}];
+  // job state, model.StreamJobInst_State
+  // @inject_tag: json:"state"
+  model.StreamJobInst.State State = 1 [(validator.field) = {}];
 
-    // job Message
-	// @inject_tag: json:"message"
-    string Message = 2 [(validator.field) = {}];
+  // job Message
+  // @inject_tag: json:"message"
+  string Message = 2 [(validator.field) = {}];
+}
+
+message JobInfo {
+  // job info
+  // @inject_tag: json:"state"
+  model.StreamJobInst.State State = 1 [(validator.field) = {}];
+
+  // job url
+  // @inject_tag: json:"job_id"
+  string job_id = 2 [(validator.field) = {}];
+
+  // data
+  // @inject_tag: json:"data"
+  string data = 3 [(validator.field) = {}];
 }
 
 // NodeRelations
 message NodeRelations {
-	// node relations
-    // @inject_tag: json:"relations" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
-	string Relations  = 1 [ (validator.field) = { length_gt: 0, length_lt: 20000 } ];
+  // node relations
+  // @inject_tag: json:"relations" binding:"gte=1,lte=20001" required:"true" minLength:"1" maxLength:"20001"
+  string Relations = 1 [(validator.field) = {length_gt: 0, length_lt: 20000}];
 }
 
 // JobParser
 message JobParser {
-	// ZeppelinConf
-    // @inject_tag: json:"conf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
-	string ZeppelinConf = 1 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+  // ZeppelinConf
+  // @inject_tag: json:"conf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+  string ZeppelinConf = 1 [(validator.field) = {length_gt: -1, length_lt: 40000}];
 
-	// ZeppelinDepends
-    // @inject_tag: json:"depends" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
-	string ZeppelinDepends = 2 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+  // ZeppelinDepends
+  // @inject_tag: json:"depends" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+  string ZeppelinDepends = 2 [(validator.field) = {length_gt: -1, length_lt: 40000}];
 
-	// ZeppelinScalaUDF
-    // @inject_tag: json:"scalaudf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
-	string ZeppelinScalaUDF = 3 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+  // ZeppelinScalaUDF
+  // @inject_tag: json:"scalaudf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+  string ZeppelinScalaUDF = 3 [(validator.field) = {length_gt: -1, length_lt: 40000}];
 
-	// ZeppelinPythonUDF
-    // @inject_tag: json:"pythonudf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
-	string ZeppelinPythonUDF = 4 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+  // ZeppelinPythonUDF
+  // @inject_tag: json:"pythonudf" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+  string ZeppelinPythonUDF = 4 [(validator.field) = {length_gt: -1, length_lt: 40000}];
 
-	// ZeppelinMainRun
-    // @inject_tag: json:"mainrun" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
-	string ZeppelinMainRun = 5 [ (validator.field) = { length_gt: -1, length_lt: 40000 } ];
+  // ZeppelinMainRun
+  // @inject_tag: json:"mainrun" binding:"gte=0,lte=40001" required:"true" minLength:"0" maxLength:"40001"
+  string ZeppelinMainRun = 5 [(validator.field) = {length_gt: -1, length_lt: 40000}];
 
-	// JobResources
-    // @inject_tag: json:"resources" binding:"-"
-	model.JobResources Resources = 6 [ (validator.field) = { } ];
+  // JobResources
+  // @inject_tag: json:"resources" binding:"-"
+  model.JobResources Resources = 6 [(validator.field) = {}];
 
-	// Hbase
-    // @inject_tag: json:"hbase" binding:"-"
-//	model.HBaseConfig Hbase = 7 [ (validator.field) = { } ];
+  // Hbase
+  // @inject_tag: json:"hbase" binding:"-"
+  //	model.HBaseConfig Hbase = 7 [ (validator.field) = { } ];
 
-	// S3
-    // @inject_tag: json:"s3" binding:"-"
-//	model.S3Config S3 = 8 [ (validator.field) = { } ];
+  // S3
+  // @inject_tag: json:"s3" binding:"-"
+  //	model.S3Config S3 = 8 [ (validator.field) = { } ];
 
   // Savepoint
   // @inject_tag: json:"savepoint" binding:"-"
-  string savepoint = 7 [(validator.field) = { } ];
+  string savepoint = 7 [(validator.field) = {}];
 }
 
 // JobFree
 message JobFree {
-	// delete jar.
-	// @inject_tag: json:"zeppelindeletejar" binding:"gte=0,lte=20001" required:"true" minLength:"0" maxLength:"20001"
-	string ZeppelinDeleteJar = 1 [ (validator.field) = {} ];
+  // delete jar.
+  // @inject_tag: json:"zeppelindeletejar" binding:"gte=0,lte=20001" required:"true" minLength:"0" maxLength:"20001"
+  string ZeppelinDeleteJar = 1 [(validator.field) = {}];
 }
 
 message PTasksStatusStat {
   // @inject_tag: json:"infos"
-  repeated model.InstanceStatusStat infos = 1 [ (validator.field) = { } ];
+  repeated model.InstanceStatusStat infos = 1 [(validator.field) = {}];
 }
 
 message PTasksExecStat {
   // @inject_tag: json:"today"
-  repeated model.InstanceTaskExecStat today = 1 [ (validator.field) = { } ];
+  repeated model.InstanceTaskExecStat today = 1 [(validator.field) = {}];
   // @inject_tag: json:"yesterday"
-  repeated model.InstanceTaskExecStat yesterday = 2 [ (validator.field) = { } ];
+  repeated model.InstanceTaskExecStat yesterday = 2 [(validator.field) = {}];
   // @inject_tag: json:"history"
-  repeated model.InstanceTaskExecStat history = 3 [ (validator.field) = { } ];
+  repeated model.InstanceTaskExecStat history = 3 [(validator.field) = {}];
 }
 
 message PTaskRuntimeRanking {
   // @inject_tag: json:"infos"
-  repeated model.InstanceRuntimeRankInfo infos = 1 [ (validator.field) = { } ];
+  repeated model.InstanceRuntimeRankInfo infos = 1 [(validator.field) = {}];
   // @inject_tag: json:"total"
-  int64 total = 2 [ (validator.field) = { int_gt: -1 } ];
+  int64 total = 2 [(validator.field) = {int_gt: -1}];
 }
 
 message PTaskErrorRanking {
   // @inject_tag: json:"infos"
-  repeated model.InstanceErrorRankInfo infos = 1 [ (validator.field) = { } ];
+  repeated model.InstanceErrorRankInfo infos = 1 [(validator.field) = {}];
   // @inject_tag: json:"total"
-  int64 total = 2 [ (validator.field) = { int_gt: -1 } ];
+  int64 total = 2 [(validator.field) = {int_gt: -1}];
 }
 
 message PTaskDispatchCount {
   // @inject_tag: json:"infos"
-  repeated model.DispatchTaskCountInfo infos = 1 [ (validator.field) = { } ];
+  repeated model.DispatchTaskCountInfo infos = 1 [(validator.field) = {}];
 }
 
 // ZeppelinAddress
 message ZeppelinAddress {
-	// serveraddress
-	// @inject_tag: json:"serveraddress" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string ServerAddress = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025} ];
+  // serveraddress
+  // @inject_tag: json:"serveraddress" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+  string ServerAddress = 1 [(validator.field) = {length_gt: 0, length_lt: 1025}];
 }
 
 message DescribeFlinkClusterAPI {

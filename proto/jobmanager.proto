@@ -9,11 +9,12 @@ import "request.proto";
 import "response.proto";
 
 service Jobmanager {
-    rpc Run(request.JobInfo) returns (response.JobState) {}
-    rpc Syntax(request.JobInfo) returns (response.JobState) {}
-    rpc Preview(request.JobInfo) returns (response.JobState) {}
-    rpc GetState(request.JobGetState) returns (response.JobState) {}
-    rpc CancelJob(request.JobCancel) returns (model.EmptyStruct) {}
-    rpc CancelAllJob(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
-	rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
+  rpc Run(request.JobInfo) returns (response.JobState) {}
+  rpc Syntax(request.JobInfo) returns (response.JobState) {}
+  rpc Preview(request.JobInfo) returns (response.JobState) {}
+  rpc GetState(request.JobGetState) returns (response.JobState) {}
+  rpc CancelJob(request.JobCancel) returns (model.EmptyStruct) {}
+  rpc CancelAllJob(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+  rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
+  rpc RunJob(request.JobInfo) returns (stream response.JobInfo){}
 }

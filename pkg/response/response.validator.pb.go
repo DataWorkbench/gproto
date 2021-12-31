@@ -330,6 +330,9 @@ func (this *DescribeUDF) Validate() error {
 func (this *JobState) Validate() error {
 	return nil
 }
+func (this *JobInfo) Validate() error {
+	return nil
+}
 func (this *NodeRelations) Validate() error {
 	if !(len(this.Relations) > 0) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Relations", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Relations))
