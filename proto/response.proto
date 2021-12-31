@@ -65,6 +65,10 @@ message ListSystemRoles {
   int64 total = 3 [(validator.field) = {}];
 }
 
+message CheckPermission {
+  model.Workspace info = 1;
+}
+
 // ListStreamJobs used as reply parameters in RPC or response body in HTTP.
 message ListStreamJobs {
   // @inject_tag: json:"infos"

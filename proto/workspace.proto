@@ -40,7 +40,7 @@ service Workspace {
     rpc DeleteMembers(request.DeleteMembers) returns (model.EmptyStruct) {}
     
     // Permission Auth.
-    rpc CheckPermission(request.CheckPermission) returns (model.EmptyStruct) {}
+    rpc CheckPermission(request.CheckPermission) returns (response.CheckPermission) {}
 }
 
 // Workflow Service

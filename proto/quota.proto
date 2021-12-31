@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/quotapb";
+
+package quota;
+
+import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+message Workspace {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of workspace for every user. default 10.
+  int64 limit = 3;
+}
+
+message StreamJob {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of stream job for every user. default 500.
+  int64 limit = 3;
+}
+
+message DataSource {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of datasource for every user. default 500.
+  int64 limit = 3;
+}
+
+message UDF {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of datasource for every user. default 500.
+  int64 limit = 3;
+}
+
+message Resource {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of resource for every user. default 500.
+  int64 limit = 3;
+
+  // Size is the maximum size of every file. default is 100MB.
+  int64 size = 4;
+
+  // SizeTotal is the maximum size of every user. default 5GB.
+  int64 size_total = 5;
+}
+
+message FlinkCluster {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of clusters for every user. default 5.
+  int64 limit = 3;
+
+  // Cu is the maximum number of cu for every cluster. default 8.
+  int64 cu = 4;
+
+  // CuTotal is the maximum number of cu for every user. default 12.
+  int64 cu_total = 5;
+}
+
+message Network {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of datasource for every user. default 500.
+  int64 limit = 3;
+}
+
+// Quota for user.
+message UserQuota {
+  // The user id of owner.
+  // @inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
+  string user_id = 3;
+
+  // @inject_tag: json:"workspace" gorm:"column:workspace;"
+  Workspace workspace = 4;
+
+  // @inject_tag: json:"stream_job" gorm:"column:stream_job;"
+  StreamJob stream_job = 5;
+
+  // @inject_tag: json:"data_source" gorm:"column:data_source;"
+  DataSource data_source = 6;
+
+  // @inject_tag: json:"udf" gorm:"column:udf;"
+  UDF udf = 7;
+
+  // @inject_tag: json:"resource" gorm:"column:resource;"
+  Resource resource = 8;
+
+  // @inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
+  FlinkCluster flink_cluster = 9;
+
+  // @inject_tag: json:"network" gorm:"column:network;"
+  Network network = 10;
+}
