@@ -42,7 +42,7 @@ type WorkspaceClient interface {
 	UpsertMembers(ctx context.Context, in *request.UpsertMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DeleteMembers(ctx context.Context, in *request.DeleteMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	// Permission Auth.
-	CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*response.CheckPermission, error)
 }
 
 type workspaceClient struct {
@@ -170,8 +170,8 @@ func (c *workspaceClient) DeleteMembers(ctx context.Context, in *request.DeleteM
 	return out, nil
 }
 
-func (c *workspaceClient) CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
+func (c *workspaceClient) CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*response.CheckPermission, error) {
+	out := new(response.CheckPermission)
 	err := c.cc.Invoke(ctx, "/wspb.Workspace/CheckPermission", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -205,7 +205,7 @@ type WorkspaceServer interface {
 	UpsertMembers(context.Context, *request.UpsertMembers) (*model.EmptyStruct, error)
 	DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error)
 	// Permission Auth.
-	CheckPermission(context.Context, *request.CheckPermission) (*model.EmptyStruct, error)
+	CheckPermission(context.Context, *request.CheckPermission) (*response.CheckPermission, error)
 	mustEmbedUnimplementedWorkspaceServer()
 }
 
@@ -252,7 +252,7 @@ func (UnimplementedWorkspaceServer) UpsertMembers(context.Context, *request.Upse
 func (UnimplementedWorkspaceServer) DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteMembers not implemented")
 }
-func (UnimplementedWorkspaceServer) CheckPermission(context.Context, *request.CheckPermission) (*model.EmptyStruct, error) {
+func (UnimplementedWorkspaceServer) CheckPermission(context.Context, *request.CheckPermission) (*response.CheckPermission, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckPermission not implemented")
 }
 func (UnimplementedWorkspaceServer) mustEmbedUnimplementedWorkspaceServer() {}

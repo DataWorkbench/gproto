@@ -71,6 +71,14 @@ func (this *ListSystemRoles) Validate() error {
 	}
 	return nil
 }
+func (this *CheckPermission) Validate() error {
+	if this.Info != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Info); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Info", err)
+		}
+	}
+	return nil
+}
 func (this *ListStreamJobs) Validate() error {
 	for _, item := range this.Infos {
 		if item != nil {
