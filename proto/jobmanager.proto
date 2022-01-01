@@ -16,5 +16,8 @@ service Jobmanager {
   rpc CancelJob(request.JobCancel) returns (model.EmptyStruct) {}
   rpc CancelAllJob(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
   rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
-  rpc RunJob(request.JobInfo) returns (stream response.JobInfo){}
+
+  rpc RunJob(request.JobInfo) returns (response.JobInfo){}
+  rpc GetJobInfo(request.JobMsg) returns (response.JobInfo){}
+  rpc Cancel(request.JobMsg) returns(model.EmptyStruct){}
 }
