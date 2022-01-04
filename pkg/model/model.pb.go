@@ -390,79 +390,6 @@ func (StreamJobRelease_Status) EnumDescriptor() ([]byte, []int) {
 	return file_proto_model_proto_rawDescGZIP(), []int{8, 0}
 }
 
-type JobInfo_Status int32
-
-const (
-	JobInfo__            JobInfo_Status = 0
-	JobInfo_Initializing JobInfo_Status = 1
-	JobInfo_Running      JobInfo_Status = 2
-	JobInfo_Reconciling  JobInfo_Status = 3
-	JobInfo_Suspended    JobInfo_Status = 4
-	JobInfo_Restarting   JobInfo_Status = 5
-	JobInfo_Canceled     JobInfo_Status = 6
-	JobInfo_Failed       JobInfo_Status = 7
-	JobInfo_Finished     JobInfo_Status = 8
-	JobInfo_Created      JobInfo_Status = 9
-	JobInfo_Failing      JobInfo_Status = 10
-)
-
-// Enum value maps for JobInfo_Status.
-var (
-	JobInfo_Status_name = map[int32]string{
-		0:  "_",
-		1:  "Initializing",
-		2:  "Running",
-		3:  "Reconciling",
-		4:  "Suspended",
-		5:  "Restarting",
-		6:  "Canceled",
-		7:  "Failed",
-		8:  "Finished",
-		9:  "Created",
-		10: "Failing",
-	}
-	JobInfo_Status_value = map[string]int32{
-		"_":            0,
-		"Initializing": 1,
-		"Running":      2,
-		"Reconciling":  3,
-		"Suspended":    4,
-		"Restarting":   5,
-		"Canceled":     6,
-		"Failed":       7,
-		"Finished":     8,
-		"Created":      9,
-		"Failing":      10,
-	}
-)
-
-func (x JobInfo_Status) Enum() *JobInfo_Status {
-	p := new(JobInfo_Status)
-	*p = x
-	return p
-}
-
-func (x JobInfo_Status) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (JobInfo_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[7].Descriptor()
-}
-
-func (JobInfo_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[7]
-}
-
-func (x JobInfo_Status) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use JobInfo_Status.Descriptor instead.
-func (JobInfo_Status) EnumDescriptor() ([]byte, []int) {
-	return file_proto_model_proto_rawDescGZIP(), []int{9, 0}
-}
-
 type StreamJobInst_Status int32
 
 const (
@@ -496,11 +423,11 @@ func (x StreamJobInst_Status) String() string {
 }
 
 func (StreamJobInst_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[8].Descriptor()
+	return file_proto_model_proto_enumTypes[7].Descriptor()
 }
 
 func (StreamJobInst_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[8]
+	return &file_proto_model_proto_enumTypes[7]
 }
 
 func (x StreamJobInst_Status) Number() protoreflect.EnumNumber {
@@ -563,11 +490,11 @@ func (x StreamJobInst_State) String() string {
 }
 
 func (StreamJobInst_State) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[9].Descriptor()
+	return file_proto_model_proto_enumTypes[8].Descriptor()
 }
 
 func (StreamJobInst_State) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[9]
+	return &file_proto_model_proto_enumTypes[8]
 }
 
 func (x StreamJobInst_State) Number() protoreflect.EnumNumber {
@@ -613,11 +540,11 @@ func (x Operation_Type) String() string {
 }
 
 func (Operation_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[10].Descriptor()
+	return file_proto_model_proto_enumTypes[9].Descriptor()
 }
 
 func (Operation_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[10]
+	return &file_proto_model_proto_enumTypes[9]
 }
 
 func (x Operation_Type) Number() protoreflect.EnumNumber {
@@ -663,11 +590,11 @@ func (x Operation_State) String() string {
 }
 
 func (Operation_State) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[11].Descriptor()
+	return file_proto_model_proto_enumTypes[10].Descriptor()
 }
 
 func (Operation_State) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[11]
+	return &file_proto_model_proto_enumTypes[10]
 }
 
 func (x Operation_State) Number() protoreflect.EnumNumber {
@@ -712,11 +639,11 @@ func (x Role_Type) String() string {
 }
 
 func (Role_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[12].Descriptor()
+	return file_proto_model_proto_enumTypes[11].Descriptor()
 }
 
 func (Role_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[12]
+	return &file_proto_model_proto_enumTypes[11]
 }
 
 func (x Role_Type) Number() protoreflect.EnumNumber {
@@ -761,11 +688,11 @@ func (x Role_Status) String() string {
 }
 
 func (Role_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[13].Descriptor()
+	return file_proto_model_proto_enumTypes[12].Descriptor()
 }
 
 func (Role_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[13]
+	return &file_proto_model_proto_enumTypes[12]
 }
 
 func (x Role_Status) Number() protoreflect.EnumNumber {
@@ -810,11 +737,11 @@ func (x Member_Status) String() string {
 }
 
 func (Member_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[14].Descriptor()
+	return file_proto_model_proto_enumTypes[13].Descriptor()
 }
 
 func (Member_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[14]
+	return &file_proto_model_proto_enumTypes[13]
 }
 
 func (x Member_Status) Number() protoreflect.EnumNumber {
@@ -862,11 +789,11 @@ func (x MonitorRule_Status) String() string {
 }
 
 func (MonitorRule_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[15].Descriptor()
+	return file_proto_model_proto_enumTypes[14].Descriptor()
 }
 
 func (MonitorRule_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[15]
+	return &file_proto_model_proto_enumTypes[14]
 }
 
 func (x MonitorRule_Status) Number() protoreflect.EnumNumber {
@@ -917,11 +844,11 @@ func (x QueueMessage_Action) String() string {
 }
 
 func (QueueMessage_Action) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[16].Descriptor()
+	return file_proto_model_proto_enumTypes[15].Descriptor()
 }
 
 func (QueueMessage_Action) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[16]
+	return &file_proto_model_proto_enumTypes[15]
 }
 
 func (x QueueMessage_Action) Number() protoreflect.EnumNumber {
@@ -969,11 +896,11 @@ func (x DataSource_Status) String() string {
 }
 
 func (DataSource_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[17].Descriptor()
+	return file_proto_model_proto_enumTypes[16].Descriptor()
 }
 
 func (DataSource_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[17]
+	return &file_proto_model_proto_enumTypes[16]
 }
 
 func (x DataSource_Status) Number() protoreflect.EnumNumber {
@@ -1021,11 +948,11 @@ func (x DataSource_ConnectionStatus) String() string {
 }
 
 func (DataSource_ConnectionStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[18].Descriptor()
+	return file_proto_model_proto_enumTypes[17].Descriptor()
 }
 
 func (DataSource_ConnectionStatus) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[18]
+	return &file_proto_model_proto_enumTypes[17]
 }
 
 func (x DataSource_ConnectionStatus) Number() protoreflect.EnumNumber {
@@ -1088,11 +1015,11 @@ func (x DataSource_Type) String() string {
 }
 
 func (DataSource_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[19].Descriptor()
+	return file_proto_model_proto_enumTypes[18].Descriptor()
 }
 
 func (DataSource_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[19]
+	return &file_proto_model_proto_enumTypes[18]
 }
 
 func (x DataSource_Type) Number() protoreflect.EnumNumber {
@@ -1140,11 +1067,11 @@ func (x TableInfo_Kind) String() string {
 }
 
 func (TableInfo_Kind) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[20].Descriptor()
+	return file_proto_model_proto_enumTypes[19].Descriptor()
 }
 
 func (TableInfo_Kind) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[20]
+	return &file_proto_model_proto_enumTypes[19]
 }
 
 func (x TableInfo_Kind) Number() protoreflect.EnumNumber {
@@ -1192,11 +1119,11 @@ func (x TableInfo_Status) String() string {
 }
 
 func (TableInfo_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[21].Descriptor()
+	return file_proto_model_proto_enumTypes[20].Descriptor()
 }
 
 func (TableInfo_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[21]
+	return &file_proto_model_proto_enumTypes[20]
 }
 
 func (x TableInfo_Status) Number() protoreflect.EnumNumber {
@@ -1244,11 +1171,11 @@ func (x Resource_Type) String() string {
 }
 
 func (Resource_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[22].Descriptor()
+	return file_proto_model_proto_enumTypes[21].Descriptor()
 }
 
 func (Resource_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[22]
+	return &file_proto_model_proto_enumTypes[21]
 }
 
 func (x Resource_Type) Number() protoreflect.EnumNumber {
@@ -1296,11 +1223,11 @@ func (x Resource_Status) String() string {
 }
 
 func (Resource_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[23].Descriptor()
+	return file_proto_model_proto_enumTypes[22].Descriptor()
 }
 
 func (Resource_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[23]
+	return &file_proto_model_proto_enumTypes[22]
 }
 
 func (x Resource_Status) Number() protoreflect.EnumNumber {
@@ -1348,11 +1275,11 @@ func (x UDFInfo_Type) String() string {
 }
 
 func (UDFInfo_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[24].Descriptor()
+	return file_proto_model_proto_enumTypes[23].Descriptor()
 }
 
 func (UDFInfo_Type) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[24]
+	return &file_proto_model_proto_enumTypes[23]
 }
 
 func (x UDFInfo_Type) Number() protoreflect.EnumNumber {
@@ -1400,11 +1327,11 @@ func (x UDFInfo_Language) String() string {
 }
 
 func (UDFInfo_Language) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[25].Descriptor()
+	return file_proto_model_proto_enumTypes[24].Descriptor()
 }
 
 func (UDFInfo_Language) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[25]
+	return &file_proto_model_proto_enumTypes[24]
 }
 
 func (x UDFInfo_Language) Number() protoreflect.EnumNumber {
@@ -1452,11 +1379,11 @@ func (x UDFInfo_Status) String() string {
 }
 
 func (UDFInfo_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[26].Descriptor()
+	return file_proto_model_proto_enumTypes[25].Descriptor()
 }
 
 func (UDFInfo_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[26]
+	return &file_proto_model_proto_enumTypes[25]
 }
 
 func (x UDFInfo_Status) Number() protoreflect.EnumNumber {
@@ -1501,11 +1428,11 @@ func (x Network_Status) String() string {
 }
 
 func (Network_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[27].Descriptor()
+	return file_proto_model_proto_enumTypes[26].Descriptor()
 }
 
 func (Network_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[27]
+	return &file_proto_model_proto_enumTypes[26]
 }
 
 func (x Network_Status) Number() protoreflect.EnumNumber {
@@ -1562,11 +1489,11 @@ func (x FlinkCluster_Status) String() string {
 }
 
 func (FlinkCluster_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_model_proto_enumTypes[28].Descriptor()
+	return file_proto_model_proto_enumTypes[27].Descriptor()
 }
 
 func (FlinkCluster_Status) Type() protoreflect.EnumType {
-	return &file_proto_model_proto_enumTypes[28]
+	return &file_proto_model_proto_enumTypes[27]
 }
 
 func (x FlinkCluster_Status) Number() protoreflect.EnumNumber {
@@ -2501,7 +2428,7 @@ type JobInfo struct {
 	// Workspace ID it belongs to.
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Job ID it belongs to.
-	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" gorm:"column:job_id;"`
+	InstanceId string `protobuf:"bytes,2,opt,name=instance_id,json=instanceId,proto3" json:"instance_id" gorm:"column:instance_id;"`
 	// Session ID
 	NoteId string `protobuf:"bytes,3,opt,name=note_id,json=noteId,proto3" json:"note_id" gorm:"column:note_id;"`
 	// Session ID
@@ -2511,9 +2438,9 @@ type JobInfo struct {
 	// Flink Job ID
 	FlinkId string `protobuf:"bytes,6,opt,name=flink_id,json=flinkId,proto3" json:"flink_id" gorm:"column:flink_id;"`
 	// Data
-	Data string `protobuf:"bytes,7,opt,name=data,proto3" json:"data" gorm:"column:data;"`
+	Message string `protobuf:"bytes,7,opt,name=message,proto3" json:"message" gorm:"column:message;"`
 	// Job status
-	Status JobInfo_Status `protobuf:"varint,8,opt,name=status,proto3,enum=model.JobInfo_Status" json:"status" gorm:"column:status;"`
+	State StreamJobInst_State `protobuf:"varint,8,opt,name=state,proto3,enum=model.StreamJobInst_State" json:"state" gorm:"column:state;"`
 	// Timestamp of create time.
 	Created int64 `protobuf:"varint,9,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time.
@@ -2559,9 +2486,9 @@ func (x *JobInfo) GetSpaceId() string {
 	return ""
 }
 
-func (x *JobInfo) GetJobId() string {
+func (x *JobInfo) GetInstanceId() string {
 	if x != nil {
-		return x.JobId
+		return x.InstanceId
 	}
 	return ""
 }
@@ -2594,18 +2521,18 @@ func (x *JobInfo) GetFlinkId() string {
 	return ""
 }
 
-func (x *JobInfo) GetData() string {
+func (x *JobInfo) GetMessage() string {
 	if x != nil {
-		return x.Data
+		return x.Message
 	}
 	return ""
 }
 
-func (x *JobInfo) GetStatus() JobInfo_Status {
+func (x *JobInfo) GetState() StreamJobInst_State {
 	if x != nil {
-		return x.Status
+		return x.State
 	}
-	return JobInfo__
+	return StreamJobInst__
 }
 
 func (x *JobInfo) GetCreated() int64 {
@@ -4807,40 +4734,31 @@ var file_proto_model_proto_rawDesc = []byte{
 	0x22, 0x37, 0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x05, 0x0a, 0x01, 0x5f, 0x10,
 	0x00, 0x12, 0x0a, 0x0a, 0x06, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x10, 0x01, 0x12, 0x0d, 0x0a,
 	0x09, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x64, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07,
-	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x64, 0x10, 0x03, 0x22, 0x91, 0x04, 0x0a, 0x07, 0x4a, 0x6f,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x64, 0x10, 0x03, 0x22, 0x81, 0x03, 0x0a, 0x07, 0x4a, 0x6f,
 	0x62, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69,
 	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14,
-	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x06, 0x6a, 0x6f, 0x62,
-	0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80,
-	0x01, 0x14, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x07, 0x6e, 0x6f, 0x74,
-	0x65, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00,
-	0x52, 0x06, 0x6e, 0x6f, 0x74, 0x65, 0x49, 0x64, 0x12, 0x23, 0x0a, 0x0a, 0x73, 0x65, 0x73, 0x73,
-	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf,
-	0x1f, 0x00, 0x52, 0x09, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x27, 0x0a,
-	0x0c, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20,
-	0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x61, 0x74, 0x65,
-	0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x12, 0x1f, 0x0a, 0x08, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x5f,
-	0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07,
-	0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x49, 0x64, 0x12, 0x18, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18,
-	0x07, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x04, 0x64, 0x61, 0x74,
-	0x61, 0x12, 0x33, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x08, 0x20, 0x01, 0x28,
-	0x0e, 0x32, 0x15, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4a, 0x6f, 0x62, 0x49, 0x6e, 0x66,
-	0x6f, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06,
-	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x20, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10, 0x00, 0x52,
-	0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x75, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x64, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x10,
-	0x00, 0x52, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x22, 0xa0, 0x01, 0x0a, 0x06, 0x53,
-	0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x05, 0x0a, 0x01, 0x5f, 0x10, 0x00, 0x12, 0x10, 0x0a, 0x0c,
-	0x49, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x69, 0x7a, 0x69, 0x6e, 0x67, 0x10, 0x01, 0x12, 0x0b,
-	0x0a, 0x07, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x10, 0x02, 0x12, 0x0f, 0x0a, 0x0b, 0x52,
-	0x65, 0x63, 0x6f, 0x6e, 0x63, 0x69, 0x6c, 0x69, 0x6e, 0x67, 0x10, 0x03, 0x12, 0x0d, 0x0a, 0x09,
-	0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x64, 0x10, 0x04, 0x12, 0x0e, 0x0a, 0x0a, 0x52,
-	0x65, 0x73, 0x74, 0x61, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x10, 0x05, 0x12, 0x0c, 0x0a, 0x08, 0x43,
-	0x61, 0x6e, 0x63, 0x65, 0x6c, 0x65, 0x64, 0x10, 0x06, 0x12, 0x0a, 0x0a, 0x06, 0x46, 0x61, 0x69,
-	0x6c, 0x65, 0x64, 0x10, 0x07, 0x12, 0x0c, 0x0a, 0x08, 0x46, 0x69, 0x6e, 0x69, 0x73, 0x68, 0x65,
-	0x64, 0x10, 0x08, 0x12, 0x0b, 0x0a, 0x07, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x10, 0x09,
-	0x12, 0x0b, 0x0a, 0x07, 0x46, 0x61, 0x69, 0x6c, 0x69, 0x6e, 0x67, 0x10, 0x0a, 0x22, 0x8c, 0x04,
+	0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x28, 0x0a, 0x0b, 0x69, 0x6e, 0x73,
+	0x74, 0x61, 0x6e, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07,
+	0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x0a, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63,
+	0x65, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x07, 0x6e, 0x6f, 0x74, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x06, 0x6e, 0x6f, 0x74, 0x65,
+	0x49, 0x64, 0x12, 0x23, 0x0a, 0x0a, 0x73, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x09, 0x73, 0x65,
+	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x27, 0x0a, 0x0c, 0x73, 0x74, 0x61, 0x74, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x04, 0xe2,
+	0xdf, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x74, 0x61, 0x74, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64,
+	0x12, 0x1f, 0x0a, 0x08, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x66, 0x6c, 0x69, 0x6e, 0x6b, 0x49,
+	0x64, 0x12, 0x1e, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x07, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x12, 0x36, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0e,
+	0x32, 0x1a, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x4a,
+	0x6f, 0x62, 0x49, 0x6e, 0x73, 0x74, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x42, 0x04, 0xe2, 0xdf,
+	0x1f, 0x00, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x20, 0x0a, 0x07, 0x63, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02,
+	0x10, 0x00, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x20, 0x0a, 0x07, 0x75,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x42, 0x06, 0xe2, 0xdf,
+	0x1f, 0x02, 0x10, 0x00, 0x52, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x22, 0x8c, 0x04,
 	0x0a, 0x0d, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x4a, 0x6f, 0x62, 0x49, 0x6e, 0x73, 0x74, 0x12,
 	0x22, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x09, 0x42, 0x07, 0xe2, 0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63,
@@ -5292,7 +5210,7 @@ func file_proto_model_proto_rawDescGZIP() []byte {
 	return file_proto_model_proto_rawDescData
 }
 
-var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 29)
+var file_proto_model_proto_enumTypes = make([]protoimpl.EnumInfo, 28)
 var file_proto_model_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
 var file_proto_model_proto_goTypes = []interface{}{
 	(Workspace_Status)(0),                    // 0: model.Workspace.Status
@@ -5302,114 +5220,113 @@ var file_proto_model_proto_goTypes = []interface{}{
 	(StreamJobSchedule_ConcurrencyPolicy)(0), // 4: model.StreamJobSchedule.ConcurrencyPolicy
 	(StreamJobSchedule_RetryPolicy)(0),       // 5: model.StreamJobSchedule.RetryPolicy
 	(StreamJobRelease_Status)(0),             // 6: model.StreamJobRelease.Status
-	(JobInfo_Status)(0),                      // 7: model.JobInfo.Status
-	(StreamJobInst_Status)(0),                // 8: model.StreamJobInst.Status
-	(StreamJobInst_State)(0),                 // 9: model.StreamJobInst.State
-	(Operation_Type)(0),                      // 10: model.Operation.Type
-	(Operation_State)(0),                     // 11: model.Operation.State
-	(Role_Type)(0),                           // 12: model.Role.Type
-	(Role_Status)(0),                         // 13: model.Role.Status
-	(Member_Status)(0),                       // 14: model.Member.Status
-	(MonitorRule_Status)(0),                  // 15: model.MonitorRule.Status
-	(QueueMessage_Action)(0),                 // 16: model.QueueMessage.Action
-	(DataSource_Status)(0),                   // 17: model.DataSource.Status
-	(DataSource_ConnectionStatus)(0),         // 18: model.DataSource.ConnectionStatus
-	(DataSource_Type)(0),                     // 19: model.DataSource.Type
-	(TableInfo_Kind)(0),                      // 20: model.TableInfo.Kind
-	(TableInfo_Status)(0),                    // 21: model.TableInfo.Status
-	(Resource_Type)(0),                       // 22: model.Resource.Type
-	(Resource_Status)(0),                     // 23: model.Resource.Status
-	(UDFInfo_Type)(0),                        // 24: model.UDFInfo.Type
-	(UDFInfo_Language)(0),                    // 25: model.UDFInfo.Language
-	(UDFInfo_Status)(0),                      // 26: model.UDFInfo.Status
-	(Network_Status)(0),                      // 27: model.Network.Status
-	(FlinkCluster_Status)(0),                 // 28: model.FlinkCluster.Status
-	(*EmptyStruct)(nil),                      // 29: model.EmptyStruct
-	(*Error)(nil),                            // 30: model.Error
-	(*Workspace)(nil),                        // 31: model.Workspace
-	(*StreamJob)(nil),                        // 32: model.StreamJob
-	(*StreamJobProperty)(nil),                // 33: model.StreamJobProperty
-	(*StreamJobCode)(nil),                    // 34: model.StreamJobCode
-	(*StreamJobArgs)(nil),                    // 35: model.StreamJobArgs
-	(*StreamJobSchedule)(nil),                // 36: model.StreamJobSchedule
-	(*StreamJobRelease)(nil),                 // 37: model.StreamJobRelease
-	(*JobInfo)(nil),                          // 38: model.JobInfo
-	(*StreamJobInst)(nil),                    // 39: model.StreamJobInst
-	(*Operation)(nil),                        // 40: model.Operation
-	(*Role)(nil),                             // 41: model.Role
-	(*Member)(nil),                           // 42: model.Member
-	(*MonitorRule)(nil),                      // 43: model.MonitorRule
-	(*QueueMessage)(nil),                     // 44: model.QueueMessage
-	(*InstanceStatusStat)(nil),               // 45: model.InstanceStatusStat
-	(*InstanceRuntimeRankInfo)(nil),          // 46: model.InstanceRuntimeRankInfo
-	(*InstanceErrorRankInfo)(nil),            // 47: model.InstanceErrorRankInfo
-	(*DispatchTaskCountInfo)(nil),            // 48: model.DispatchTaskCountInfo
-	(*InstanceTaskExecStat)(nil),             // 49: model.InstanceTaskExecStat
-	(*DataSource)(nil),                       // 50: model.DataSource
-	(*TableInfo)(nil),                        // 51: model.TableInfo
-	(*Resource)(nil),                         // 52: model.Resource
-	(*UDFInfo)(nil),                          // 53: model.UDFInfo
-	(*JobResources)(nil),                     // 54: model.JobResources
-	(*Network)(nil),                          // 55: model.Network
-	(*HostAliases)(nil),                      // 56: model.HostAliases
-	(*FlinkCluster)(nil),                     // 57: model.FlinkCluster
-	(*HostAliases_Item)(nil),                 // 58: model.HostAliases.Item
-	(*flinkpb.FlinkOperator)(nil),            // 59: flink.FlinkOperator
-	(*flinkpb.FlinkSQL)(nil),                 // 60: flink.FlinkSQL
-	(*flinkpb.FlinkJar)(nil),                 // 61: flink.FlinkJar
-	(*flinkpb.FlinkScala)(nil),               // 62: flink.FlinkScala
-	(*flinkpb.FlinkPython)(nil),              // 63: flink.FlinkPython
-	(*datasourcepb.DataSourceURL)(nil),       // 64: datasource.DataSourceURL
-	(*flinkpb.TableSchema)(nil),              // 65: flink.TableSchema
-	(*flinkpb.FlinkConfig)(nil),              // 66: flink.FlinkConfig
+	(StreamJobInst_Status)(0),                // 7: model.StreamJobInst.Status
+	(StreamJobInst_State)(0),                 // 8: model.StreamJobInst.State
+	(Operation_Type)(0),                      // 9: model.Operation.Type
+	(Operation_State)(0),                     // 10: model.Operation.State
+	(Role_Type)(0),                           // 11: model.Role.Type
+	(Role_Status)(0),                         // 12: model.Role.Status
+	(Member_Status)(0),                       // 13: model.Member.Status
+	(MonitorRule_Status)(0),                  // 14: model.MonitorRule.Status
+	(QueueMessage_Action)(0),                 // 15: model.QueueMessage.Action
+	(DataSource_Status)(0),                   // 16: model.DataSource.Status
+	(DataSource_ConnectionStatus)(0),         // 17: model.DataSource.ConnectionStatus
+	(DataSource_Type)(0),                     // 18: model.DataSource.Type
+	(TableInfo_Kind)(0),                      // 19: model.TableInfo.Kind
+	(TableInfo_Status)(0),                    // 20: model.TableInfo.Status
+	(Resource_Type)(0),                       // 21: model.Resource.Type
+	(Resource_Status)(0),                     // 22: model.Resource.Status
+	(UDFInfo_Type)(0),                        // 23: model.UDFInfo.Type
+	(UDFInfo_Language)(0),                    // 24: model.UDFInfo.Language
+	(UDFInfo_Status)(0),                      // 25: model.UDFInfo.Status
+	(Network_Status)(0),                      // 26: model.Network.Status
+	(FlinkCluster_Status)(0),                 // 27: model.FlinkCluster.Status
+	(*EmptyStruct)(nil),                      // 28: model.EmptyStruct
+	(*Error)(nil),                            // 29: model.Error
+	(*Workspace)(nil),                        // 30: model.Workspace
+	(*StreamJob)(nil),                        // 31: model.StreamJob
+	(*StreamJobProperty)(nil),                // 32: model.StreamJobProperty
+	(*StreamJobCode)(nil),                    // 33: model.StreamJobCode
+	(*StreamJobArgs)(nil),                    // 34: model.StreamJobArgs
+	(*StreamJobSchedule)(nil),                // 35: model.StreamJobSchedule
+	(*StreamJobRelease)(nil),                 // 36: model.StreamJobRelease
+	(*JobInfo)(nil),                          // 37: model.JobInfo
+	(*StreamJobInst)(nil),                    // 38: model.StreamJobInst
+	(*Operation)(nil),                        // 39: model.Operation
+	(*Role)(nil),                             // 40: model.Role
+	(*Member)(nil),                           // 41: model.Member
+	(*MonitorRule)(nil),                      // 42: model.MonitorRule
+	(*QueueMessage)(nil),                     // 43: model.QueueMessage
+	(*InstanceStatusStat)(nil),               // 44: model.InstanceStatusStat
+	(*InstanceRuntimeRankInfo)(nil),          // 45: model.InstanceRuntimeRankInfo
+	(*InstanceErrorRankInfo)(nil),            // 46: model.InstanceErrorRankInfo
+	(*DispatchTaskCountInfo)(nil),            // 47: model.DispatchTaskCountInfo
+	(*InstanceTaskExecStat)(nil),             // 48: model.InstanceTaskExecStat
+	(*DataSource)(nil),                       // 49: model.DataSource
+	(*TableInfo)(nil),                        // 50: model.TableInfo
+	(*Resource)(nil),                         // 51: model.Resource
+	(*UDFInfo)(nil),                          // 52: model.UDFInfo
+	(*JobResources)(nil),                     // 53: model.JobResources
+	(*Network)(nil),                          // 54: model.Network
+	(*HostAliases)(nil),                      // 55: model.HostAliases
+	(*FlinkCluster)(nil),                     // 56: model.FlinkCluster
+	(*HostAliases_Item)(nil),                 // 57: model.HostAliases.Item
+	(*flinkpb.FlinkOperator)(nil),            // 58: flink.FlinkOperator
+	(*flinkpb.FlinkSQL)(nil),                 // 59: flink.FlinkSQL
+	(*flinkpb.FlinkJar)(nil),                 // 60: flink.FlinkJar
+	(*flinkpb.FlinkScala)(nil),               // 61: flink.FlinkScala
+	(*flinkpb.FlinkPython)(nil),              // 62: flink.FlinkPython
+	(*datasourcepb.DataSourceURL)(nil),       // 63: datasource.DataSourceURL
+	(*flinkpb.TableSchema)(nil),              // 64: flink.TableSchema
+	(*flinkpb.FlinkConfig)(nil),              // 65: flink.FlinkConfig
 }
 var file_proto_model_proto_depIdxs = []int32{
 	0,  // 0: model.Workspace.status:type_name -> model.Workspace.Status
 	1,  // 1: model.StreamJob.type:type_name -> model.StreamJob.Type
 	2,  // 2: model.StreamJob.status:type_name -> model.StreamJob.Status
-	34, // 3: model.StreamJobProperty.code:type_name -> model.StreamJobCode
-	35, // 4: model.StreamJobProperty.args:type_name -> model.StreamJobArgs
-	36, // 5: model.StreamJobProperty.schedule:type_name -> model.StreamJobSchedule
+	33, // 3: model.StreamJobProperty.code:type_name -> model.StreamJobCode
+	34, // 4: model.StreamJobProperty.args:type_name -> model.StreamJobArgs
+	35, // 5: model.StreamJobProperty.schedule:type_name -> model.StreamJobSchedule
 	1,  // 6: model.StreamJobCode.type:type_name -> model.StreamJob.Type
-	59, // 7: model.StreamJobCode.operators:type_name -> flink.FlinkOperator
-	60, // 8: model.StreamJobCode.sql:type_name -> flink.FlinkSQL
-	61, // 9: model.StreamJobCode.jar:type_name -> flink.FlinkJar
-	62, // 10: model.StreamJobCode.scala:type_name -> flink.FlinkScala
-	63, // 11: model.StreamJobCode.python:type_name -> flink.FlinkPython
+	58, // 7: model.StreamJobCode.operators:type_name -> flink.FlinkOperator
+	59, // 8: model.StreamJobCode.sql:type_name -> flink.FlinkSQL
+	60, // 9: model.StreamJobCode.jar:type_name -> flink.FlinkJar
+	61, // 10: model.StreamJobCode.scala:type_name -> flink.FlinkScala
+	62, // 11: model.StreamJobCode.python:type_name -> flink.FlinkPython
 	3,  // 12: model.StreamJobSchedule.schedule_policy:type_name -> model.StreamJobSchedule.SchedulePolicy
 	4,  // 13: model.StreamJobSchedule.concurrency_policy:type_name -> model.StreamJobSchedule.ConcurrencyPolicy
 	5,  // 14: model.StreamJobSchedule.retry_policy:type_name -> model.StreamJobSchedule.RetryPolicy
 	1,  // 15: model.StreamJobRelease.type:type_name -> model.StreamJob.Type
 	6,  // 16: model.StreamJobRelease.status:type_name -> model.StreamJobRelease.Status
-	7,  // 17: model.JobInfo.status:type_name -> model.JobInfo.Status
-	9,  // 18: model.StreamJobInst.state:type_name -> model.StreamJobInst.State
-	8,  // 19: model.StreamJobInst.status:type_name -> model.StreamJobInst.Status
-	10, // 20: model.Operation.op_type:type_name -> model.Operation.Type
-	11, // 21: model.Operation.state:type_name -> model.Operation.State
-	12, // 22: model.Role.type:type_name -> model.Role.Type
-	13, // 23: model.Role.status:type_name -> model.Role.Status
-	14, // 24: model.Member.status:type_name -> model.Member.Status
-	15, // 25: model.MonitorRule.status:type_name -> model.MonitorRule.Status
-	33, // 26: model.QueueMessage.property:type_name -> model.StreamJobProperty
-	19, // 27: model.DataSource.source_type:type_name -> model.DataSource.Type
-	64, // 28: model.DataSource.url:type_name -> datasource.DataSourceURL
-	17, // 29: model.DataSource.status:type_name -> model.DataSource.Status
-	18, // 30: model.DataSource.connection:type_name -> model.DataSource.ConnectionStatus
-	65, // 31: model.TableInfo.table_schema:type_name -> flink.TableSchema
-	21, // 32: model.TableInfo.status:type_name -> model.TableInfo.Status
-	20, // 33: model.TableInfo.table_kind:type_name -> model.TableInfo.Kind
-	18, // 34: model.TableInfo.connection:type_name -> model.DataSource.ConnectionStatus
-	22, // 35: model.Resource.type:type_name -> model.Resource.Type
-	23, // 36: model.Resource.status:type_name -> model.Resource.Status
-	24, // 37: model.UDFInfo.udf_type:type_name -> model.UDFInfo.Type
-	25, // 38: model.UDFInfo.udf_language:type_name -> model.UDFInfo.Language
-	26, // 39: model.UDFInfo.status:type_name -> model.UDFInfo.Status
-	27, // 40: model.Network.status:type_name -> model.Network.Status
-	58, // 41: model.HostAliases.items:type_name -> model.HostAliases.Item
-	28, // 42: model.FlinkCluster.status:type_name -> model.FlinkCluster.Status
-	56, // 43: model.FlinkCluster.host_aliases:type_name -> model.HostAliases
-	66, // 44: model.FlinkCluster.config:type_name -> flink.FlinkConfig
-	55, // 45: model.FlinkCluster.network_info:type_name -> model.Network
+	8,  // 17: model.JobInfo.state:type_name -> model.StreamJobInst.State
+	8,  // 18: model.StreamJobInst.state:type_name -> model.StreamJobInst.State
+	7,  // 19: model.StreamJobInst.status:type_name -> model.StreamJobInst.Status
+	9,  // 20: model.Operation.op_type:type_name -> model.Operation.Type
+	10, // 21: model.Operation.state:type_name -> model.Operation.State
+	11, // 22: model.Role.type:type_name -> model.Role.Type
+	12, // 23: model.Role.status:type_name -> model.Role.Status
+	13, // 24: model.Member.status:type_name -> model.Member.Status
+	14, // 25: model.MonitorRule.status:type_name -> model.MonitorRule.Status
+	32, // 26: model.QueueMessage.property:type_name -> model.StreamJobProperty
+	18, // 27: model.DataSource.source_type:type_name -> model.DataSource.Type
+	63, // 28: model.DataSource.url:type_name -> datasource.DataSourceURL
+	16, // 29: model.DataSource.status:type_name -> model.DataSource.Status
+	17, // 30: model.DataSource.connection:type_name -> model.DataSource.ConnectionStatus
+	64, // 31: model.TableInfo.table_schema:type_name -> flink.TableSchema
+	20, // 32: model.TableInfo.status:type_name -> model.TableInfo.Status
+	19, // 33: model.TableInfo.table_kind:type_name -> model.TableInfo.Kind
+	17, // 34: model.TableInfo.connection:type_name -> model.DataSource.ConnectionStatus
+	21, // 35: model.Resource.type:type_name -> model.Resource.Type
+	22, // 36: model.Resource.status:type_name -> model.Resource.Status
+	23, // 37: model.UDFInfo.udf_type:type_name -> model.UDFInfo.Type
+	24, // 38: model.UDFInfo.udf_language:type_name -> model.UDFInfo.Language
+	25, // 39: model.UDFInfo.status:type_name -> model.UDFInfo.Status
+	26, // 40: model.Network.status:type_name -> model.Network.Status
+	57, // 41: model.HostAliases.items:type_name -> model.HostAliases.Item
+	27, // 42: model.FlinkCluster.status:type_name -> model.FlinkCluster.Status
+	55, // 43: model.FlinkCluster.host_aliases:type_name -> model.HostAliases
+	65, // 44: model.FlinkCluster.config:type_name -> flink.FlinkConfig
+	54, // 45: model.FlinkCluster.network_info:type_name -> model.Network
 	46, // [46:46] is the sub-list for method output_type
 	46, // [46:46] is the sub-list for method input_type
 	46, // [46:46] is the sub-list for extension type_name
@@ -5789,7 +5706,7 @@ func file_proto_model_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_model_proto_rawDesc,
-			NumEnums:      29,
+			NumEnums:      28,
 			NumMessages:   30,
 			NumExtensions: 0,
 			NumServices:   0,
