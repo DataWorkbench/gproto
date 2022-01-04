@@ -312,15 +312,15 @@ message DescribeUDF {
 }
 
 // JobState
-message JobState {
-  // job state, model.StreamJobInst_State
-  // @inject_tag: json:"state"
-  model.StreamJobInst.State State = 1 [(validator.field) = {}];
-
-  // job Message
-  // @inject_tag: json:"message"
-  string Message = 2 [(validator.field) = {}];
-}
+//message JobState {
+//  // job state, model.StreamJobInst_State
+//  // @inject_tag: json:"state"
+//  model.StreamJobInst.State State = 1 [(validator.field) = {}];
+//
+//  // job Message
+//  // @inject_tag: json:"message"
+//  string Message = 2 [(validator.field) = {}];
+//}
 
 message RunJob {
   // job info

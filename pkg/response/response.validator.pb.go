@@ -327,9 +327,6 @@ func (this *DescribeUDF) Validate() error {
 	}
 	return nil
 }
-func (this *JobState) Validate() error {
-	return nil
-}
 func (this *RunJob) Validate() error {
 	return nil
 }

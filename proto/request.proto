@@ -1270,18 +1270,18 @@ message ValidateJob{
 }
 
 // JobGetState
-message JobGetState {
-	// JobID
-	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-    string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
+//message JobGetState {
+//	// JobID
+//	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+//    string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
+//}
 
 // JobCancel
-message JobCancel {
-	// JobID
-	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-    string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
+//message JobCancel {
+//	// JobID
+//	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+//    string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
+//}
 
 message PTasksStatusStat {
   // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
