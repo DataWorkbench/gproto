@@ -942,9 +942,9 @@ func (this *UDFCommonFunc) Validate() error {
 	}
 	return nil
 }
-func (this *JobInfo) Validate() error {
-	if !(len(this.JobId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
+func (this *RunJob) Validate() error {
+	if !(len(this.InstanceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
 	}
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
@@ -961,6 +961,38 @@ func (this *JobInfo) Validate() error {
 	}
 	return nil
 }
+func (this *GetJobInfo) Validate() error {
+	if !(len(this.InstanceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+	}
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.ClusterId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ClusterId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ClusterId))
+	}
+	return nil
+}
+func (this *CancelJob) Validate() error {
+	if !(len(this.InstanceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+	}
+	if !(len(this.SpaceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
+	}
+	if !(len(this.ClusterId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ClusterId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ClusterId))
+	}
+	return nil
+}
+func (this *ValidateJob) Validate() error {
+	if this.Code != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Code); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Code", err)
+		}
+	}
+	return nil
+}
 func (this *JobGetState) Validate() error {
 	if !(len(this.JobId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
@@ -970,20 +1002,6 @@ func (this *JobGetState) Validate() error {
 func (this *JobCancel) Validate() error {
 	if !(len(this.JobId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
-	}
-	return nil
-}
-func (this *JobParser) Validate() error {
-	if !(len(this.Command) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Command))
-	}
-	if !(len(this.Command) < 21) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Command", fmt.Errorf(`value '%v' must have a length smaller than '21'`, this.Command))
-	}
-	if this.Job != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Job); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Job", err)
-		}
 	}
 	return nil
 }
@@ -1047,14 +1065,6 @@ func (this *PTaskDispatchCount) Validate() error {
 	}
 	if !(this.EndTime > -1) {
 		return github_com_mwitkow_go_proto_validators.FieldError("EndTime", fmt.Errorf(`value '%v' must be greater than '-1'`, this.EndTime))
-	}
-	return nil
-}
-func (this *JobFree) Validate() error {
-	if this.Resources != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Resources); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Resources", err)
-		}
 	}
 	return nil
 }

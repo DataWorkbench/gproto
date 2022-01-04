@@ -330,57 +330,10 @@ func (this *DescribeUDF) Validate() error {
 func (this *JobState) Validate() error {
 	return nil
 }
-func (this *JobInfo) Validate() error {
+func (this *RunJob) Validate() error {
 	return nil
 }
-func (this *NodeRelations) Validate() error {
-	if !(len(this.Relations) > 0) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Relations", fmt.Errorf(`value '%v' must have a length greater than '0'`, this.Relations))
-	}
-	if !(len(this.Relations) < 20000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Relations", fmt.Errorf(`value '%v' must have a length smaller than '20000'`, this.Relations))
-	}
-	return nil
-}
-func (this *JobParser) Validate() error {
-	if !(len(this.ZeppelinConf) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinConf", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.ZeppelinConf))
-	}
-	if !(len(this.ZeppelinConf) < 40000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinConf", fmt.Errorf(`value '%v' must have a length smaller than '40000'`, this.ZeppelinConf))
-	}
-	if !(len(this.ZeppelinDepends) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinDepends", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.ZeppelinDepends))
-	}
-	if !(len(this.ZeppelinDepends) < 40000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinDepends", fmt.Errorf(`value '%v' must have a length smaller than '40000'`, this.ZeppelinDepends))
-	}
-	if !(len(this.ZeppelinScalaUDF) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinScalaUDF", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.ZeppelinScalaUDF))
-	}
-	if !(len(this.ZeppelinScalaUDF) < 40000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinScalaUDF", fmt.Errorf(`value '%v' must have a length smaller than '40000'`, this.ZeppelinScalaUDF))
-	}
-	if !(len(this.ZeppelinPythonUDF) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinPythonUDF", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.ZeppelinPythonUDF))
-	}
-	if !(len(this.ZeppelinPythonUDF) < 40000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinPythonUDF", fmt.Errorf(`value '%v' must have a length smaller than '40000'`, this.ZeppelinPythonUDF))
-	}
-	if !(len(this.ZeppelinMainRun) > -1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinMainRun", fmt.Errorf(`value '%v' must have a length greater than '-1'`, this.ZeppelinMainRun))
-	}
-	if !(len(this.ZeppelinMainRun) < 40000) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ZeppelinMainRun", fmt.Errorf(`value '%v' must have a length smaller than '40000'`, this.ZeppelinMainRun))
-	}
-	if this.Resources != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Resources); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Resources", err)
-		}
-	}
-	return nil
-}
-func (this *JobFree) Validate() error {
+func (this *GetJobInfo) Validate() error {
 	return nil
 }
 func (this *PTasksStatusStat) Validate() error {

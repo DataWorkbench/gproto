@@ -1202,11 +1202,11 @@ message UDFCommonFunc {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-// JobInfo
-message JobInfo {
+// RunJob
+message RunJob {
 	// JobID
-	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
+	// @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string instance_id  = 1 [ (validator.field) = { length_eq: 20 } ];
 
 	// workspace id
 	// @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
@@ -1225,6 +1225,50 @@ message JobInfo {
 	string savepoint_path = 5 [(validator.field) = {}];
 }
 
+message GetJobInfo{
+	// instance id
+	// @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string instance_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+  // workspace id
+  // @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string space_id = 2[ (validator.field) = { length_eq: 20 } ];
+
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"cluster_id" default:"" binding:"len=20"
+  string cluster_id = 3 [ (validator.field) = { length_eq: 20 } ];
+
+	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+	// Desc: Cannot be modified after creation.
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
+	model.StreamJob.Type type = 4  [ (validator.field) = { int_gt: 0 } ];
+}
+
+message CancelJob{
+	// instance id
+	// @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string instance_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+	// workspace id
+	// @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string space_id = 2[ (validator.field) = { length_eq: 20 } ];
+
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"cluster_id" default:"" binding:"len=20"
+	string cluster_id = 3 [ (validator.field) = { length_eq: 20 } ];
+
+	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+	// Desc: Cannot be modified after creation.
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
+	model.StreamJob.Type type = 5  [ (validator.field) = { int_gt: 0 } ];
+}
+
+message ValidateJob{
+	// code
+	// @inject_tag: json:"code" default:"" binding:"-"
+	model.StreamJobCode code = 1  [ (validator.field) = { } ];
+}
+
 // JobGetState
 message JobGetState {
 	// JobID
@@ -1237,16 +1281,6 @@ message JobCancel {
 	// JobID
 	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
     string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
-}
-
-message JobParser {
-	// command oneof 'run' 'syntax' 'preview' 'explain'
-	// @inject_tag: json:"command" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	string command = 1  [ (validator.field) = { length_gt: 0 ,length_lt: 21} ];
-
-	// jobinfo
-	// @inject_tag: json:"job" default:"" binding:"-"
-	JobInfo Job = 2 [ (validator.field) = { } ];
 }
 
 message PTasksStatusStat {
@@ -1292,11 +1326,11 @@ message PTaskDispatchCount {
   int64 end_time = 3 [ (validator.field) = { int_gt: -1 } ];
 }
 
-message JobFree {
-    // JobResources
-    // @inject_tag: json:"resources" binding:"-"
-    model.JobResources Resources = 1 [ (validator.field) = { } ];
-}
+//message JobFree {
+//    // JobResources
+//    // @inject_tag: json:"resources" binding:"-"
+//    model.JobResources Resources = 1 [ (validator.field) = { } ];
+//}
 
 message DescribeFlinkClusterAPI {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];

@@ -3,13 +3,13 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/jobdevpb";
 
 package jobdevpb;
-
-import "model.proto";
-import "request.proto";
-import "response.proto";
-
-service Jobdeveloper {
-	rpc JobParser(request.JobParser) returns(response.JobParser) {}
-	rpc JobFree(request.JobFree) returns(response.JobFree) {}
-	rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
-}
+//
+//import "model.proto";
+//import "request.proto";
+//import "response.proto";
+//
+//service Jobdeveloper {
+////	rpc JobParser(request.JobParser) returns(response.JobParser) {}
+//	rpc JobFree(request.JobFree) returns(response.JobFree) {}
+//	rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
+//}

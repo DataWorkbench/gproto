@@ -20,14 +20,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type JobmanagerClient interface {
-	Run(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (*response.JobState, error)
-	Syntax(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (*response.JobState, error)
-	Preview(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (*response.JobState, error)
-	GetState(ctx context.Context, in *request.JobGetState, opts ...grpc.CallOption) (*response.JobState, error)
-	CancelJob(ctx context.Context, in *request.JobCancel, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	CancelAllJob(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.NodeRelations, error)
-	RunJob(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (Jobmanager_RunJobClient, error)
+	RunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*response.RunJob, error)
+	GetJobInfo(ctx context.Context, in *request.GetJobInfo, opts ...grpc.CallOption) (*response.GetJobInfo, error)
+	CancelJob(ctx context.Context, in *request.CancelJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	ValidateJob(ctx context.Context, in *request.ValidateJob, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error)
 }
 
 type jobmanagerClient struct {
@@ -38,43 +34,25 @@ func NewJobmanagerClient(cc grpc.ClientConnInterface) JobmanagerClient {
 	return &jobmanagerClient{cc}
 }
 
-func (c *jobmanagerClient) Run(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (*response.JobState, error) {
-	out := new(response.JobState)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/Run", in, out, opts...)
+func (c *jobmanagerClient) RunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*response.RunJob, error) {
+	out := new(response.RunJob)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/RunJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *jobmanagerClient) Syntax(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (*response.JobState, error) {
-	out := new(response.JobState)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/Syntax", in, out, opts...)
+func (c *jobmanagerClient) GetJobInfo(ctx context.Context, in *request.GetJobInfo, opts ...grpc.CallOption) (*response.GetJobInfo, error) {
+	out := new(response.GetJobInfo)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/GetJobInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *jobmanagerClient) Preview(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (*response.JobState, error) {
-	out := new(response.JobState)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/Preview", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *jobmanagerClient) GetState(ctx context.Context, in *request.JobGetState, opts ...grpc.CallOption) (*response.JobState, error) {
-	out := new(response.JobState)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/GetState", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *jobmanagerClient) CancelJob(ctx context.Context, in *request.JobCancel, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *jobmanagerClient) CancelJob(ctx context.Context, in *request.CancelJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelJob", in, out, opts...)
 	if err != nil {
@@ -83,68 +61,23 @@ func (c *jobmanagerClient) CancelJob(ctx context.Context, in *request.JobCancel,
 	return out, nil
 }
 
-func (c *jobmanagerClient) CancelAllJob(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelAllJob", in, out, opts...)
+func (c *jobmanagerClient) ValidateJob(ctx context.Context, in *request.ValidateJob, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error) {
+	out := new(response.StreamJobCodeSyntax)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/ValidateJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
-}
-
-func (c *jobmanagerClient) NodeRelations(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.NodeRelations, error) {
-	out := new(response.NodeRelations)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/NodeRelations", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *jobmanagerClient) RunJob(ctx context.Context, in *request.JobInfo, opts ...grpc.CallOption) (Jobmanager_RunJobClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Jobmanager_serviceDesc.Streams[0], "/jobpb.Jobmanager/RunJob", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &jobmanagerRunJobClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
-}
-
-type Jobmanager_RunJobClient interface {
-	Recv() (*response.JobInfo, error)
-	grpc.ClientStream
-}
-
-type jobmanagerRunJobClient struct {
-	grpc.ClientStream
-}
-
-func (x *jobmanagerRunJobClient) Recv() (*response.JobInfo, error) {
-	m := new(response.JobInfo)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
 }
 
 // JobmanagerServer is the server API for Jobmanager service.
 // All implementations must embed UnimplementedJobmanagerServer
 // for forward compatibility
 type JobmanagerServer interface {
-	Run(context.Context, *request.JobInfo) (*response.JobState, error)
-	Syntax(context.Context, *request.JobInfo) (*response.JobState, error)
-	Preview(context.Context, *request.JobInfo) (*response.JobState, error)
-	GetState(context.Context, *request.JobGetState) (*response.JobState, error)
-	CancelJob(context.Context, *request.JobCancel) (*model.EmptyStruct, error)
-	CancelAllJob(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
-	NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error)
-	RunJob(*request.JobInfo, Jobmanager_RunJobServer) error
+	RunJob(context.Context, *request.RunJob) (*response.RunJob, error)
+	GetJobInfo(context.Context, *request.GetJobInfo) (*response.GetJobInfo, error)
+	CancelJob(context.Context, *request.CancelJob) (*model.EmptyStruct, error)
+	ValidateJob(context.Context, *request.ValidateJob) (*response.StreamJobCodeSyntax, error)
 	mustEmbedUnimplementedJobmanagerServer()
 }
 
@@ -152,29 +85,17 @@ type JobmanagerServer interface {
 type UnimplementedJobmanagerServer struct {
 }
 
-func (UnimplementedJobmanagerServer) Run(context.Context, *request.JobInfo) (*response.JobState, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Run not implemented")
+func (UnimplementedJobmanagerServer) RunJob(context.Context, *request.RunJob) (*response.RunJob, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RunJob not implemented")
 }
-func (UnimplementedJobmanagerServer) Syntax(context.Context, *request.JobInfo) (*response.JobState, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Syntax not implemented")
+func (UnimplementedJobmanagerServer) GetJobInfo(context.Context, *request.GetJobInfo) (*response.GetJobInfo, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetJobInfo not implemented")
 }
-func (UnimplementedJobmanagerServer) Preview(context.Context, *request.JobInfo) (*response.JobState, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Preview not implemented")
-}
-func (UnimplementedJobmanagerServer) GetState(context.Context, *request.JobGetState) (*response.JobState, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetState not implemented")
-}
-func (UnimplementedJobmanagerServer) CancelJob(context.Context, *request.JobCancel) (*model.EmptyStruct, error) {
+func (UnimplementedJobmanagerServer) CancelJob(context.Context, *request.CancelJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelJob not implemented")
 }
-func (UnimplementedJobmanagerServer) CancelAllJob(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CancelAllJob not implemented")
-}
-func (UnimplementedJobmanagerServer) NodeRelations(context.Context, *model.EmptyStruct) (*response.NodeRelations, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NodeRelations not implemented")
-}
-func (UnimplementedJobmanagerServer) RunJob(*request.JobInfo, Jobmanager_RunJobServer) error {
-	return status.Errorf(codes.Unimplemented, "method RunJob not implemented")
+func (UnimplementedJobmanagerServer) ValidateJob(context.Context, *request.ValidateJob) (*response.StreamJobCodeSyntax, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ValidateJob not implemented")
 }
 func (UnimplementedJobmanagerServer) mustEmbedUnimplementedJobmanagerServer() {}
 
@@ -189,80 +110,44 @@ func RegisterJobmanagerServer(s grpc.ServiceRegistrar, srv JobmanagerServer) {
 	s.RegisterService(&_Jobmanager_serviceDesc, srv)
 }
 
-func _Jobmanager_Run_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.JobInfo)
+func _Jobmanager_RunJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.RunJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).Run(ctx, in)
+		return srv.(JobmanagerServer).RunJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/Run",
+		FullMethod: "/jobpb.Jobmanager/RunJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).Run(ctx, req.(*request.JobInfo))
+		return srv.(JobmanagerServer).RunJob(ctx, req.(*request.RunJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_Syntax_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.JobInfo)
+func _Jobmanager_GetJobInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.GetJobInfo)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).Syntax(ctx, in)
+		return srv.(JobmanagerServer).GetJobInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/Syntax",
+		FullMethod: "/jobpb.Jobmanager/GetJobInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).Syntax(ctx, req.(*request.JobInfo))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Jobmanager_Preview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.JobInfo)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JobmanagerServer).Preview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/Preview",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).Preview(ctx, req.(*request.JobInfo))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Jobmanager_GetState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.JobGetState)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JobmanagerServer).GetState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/GetState",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).GetState(ctx, req.(*request.JobGetState))
+		return srv.(JobmanagerServer).GetJobInfo(ctx, req.(*request.GetJobInfo))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Jobmanager_CancelJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.JobCancel)
+	in := new(request.CancelJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -274,66 +159,27 @@ func _Jobmanager_CancelJob_Handler(srv interface{}, ctx context.Context, dec fun
 		FullMethod: "/jobpb.Jobmanager/CancelJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).CancelJob(ctx, req.(*request.JobCancel))
+		return srv.(JobmanagerServer).CancelJob(ctx, req.(*request.CancelJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_CancelAllJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DeleteWorkspaces)
+func _Jobmanager_ValidateJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ValidateJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).CancelAllJob(ctx, in)
+		return srv.(JobmanagerServer).ValidateJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/CancelAllJob",
+		FullMethod: "/jobpb.Jobmanager/ValidateJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).CancelAllJob(ctx, req.(*request.DeleteWorkspaces))
+		return srv.(JobmanagerServer).ValidateJob(ctx, req.(*request.ValidateJob))
 	}
 	return interceptor(ctx, in, info, handler)
-}
-
-func _Jobmanager_NodeRelations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(model.EmptyStruct)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JobmanagerServer).NodeRelations(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/NodeRelations",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).NodeRelations(ctx, req.(*model.EmptyStruct))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Jobmanager_RunJob_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(request.JobInfo)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(JobmanagerServer).RunJob(m, &jobmanagerRunJobServer{stream})
-}
-
-type Jobmanager_RunJobServer interface {
-	Send(*response.JobInfo) error
-	grpc.ServerStream
-}
-
-type jobmanagerRunJobServer struct {
-	grpc.ServerStream
-}
-
-func (x *jobmanagerRunJobServer) Send(m *response.JobInfo) error {
-	return x.ServerStream.SendMsg(m)
 }
 
 var _Jobmanager_serviceDesc = grpc.ServiceDesc{
@@ -341,40 +187,22 @@ var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*JobmanagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Run",
-			Handler:    _Jobmanager_Run_Handler,
+			MethodName: "RunJob",
+			Handler:    _Jobmanager_RunJob_Handler,
 		},
 		{
-			MethodName: "Syntax",
-			Handler:    _Jobmanager_Syntax_Handler,
-		},
-		{
-			MethodName: "Preview",
-			Handler:    _Jobmanager_Preview_Handler,
-		},
-		{
-			MethodName: "GetState",
-			Handler:    _Jobmanager_GetState_Handler,
+			MethodName: "GetJobInfo",
+			Handler:    _Jobmanager_GetJobInfo_Handler,
 		},
 		{
 			MethodName: "CancelJob",
 			Handler:    _Jobmanager_CancelJob_Handler,
 		},
 		{
-			MethodName: "CancelAllJob",
-			Handler:    _Jobmanager_CancelAllJob_Handler,
-		},
-		{
-			MethodName: "NodeRelations",
-			Handler:    _Jobmanager_NodeRelations_Handler,
+			MethodName: "ValidateJob",
+			Handler:    _Jobmanager_ValidateJob_Handler,
 		},
 	},
-	Streams: []grpc.StreamDesc{
-		{
-			StreamName:    "RunJob",
-			Handler:       _Jobmanager_RunJob_Handler,
-			ServerStreams: true,
-		},
-	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "proto/jobmanager.proto",
 }

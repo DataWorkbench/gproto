@@ -337,6 +337,63 @@ message StreamJobRelease {
   int64 updated = 10 [(validator.field) = {int_gt: 0}];
 }
 
+message JobInfo{
+  enum Status{
+    _ = 0;
+    Initializing = 1;
+    Running = 2;
+    Reconciling = 3;
+    Suspended = 4;
+    Restarting = 5;
+    Canceled = 6;
+    Failed = 7;
+    Finished = 8;
+    Created = 9;
+    Failing = 10;
+  }
+
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [(validator.field) = {length_eq: 20}];
+
+  // Job ID it belongs to.
+  // @inject_tag: json:"job_id" gorm:"column:job_id;"
+  string job_id = 2 [(validator.field) = {length_eq: 20}];
+
+  // Session ID
+  // @inject_tag: json:"note_id" gorm:"column:note_id;"
+  string note_id =3[(validator.field) = {}];
+
+  // Session ID
+  // @inject_tag: json:"session_id" gorm:"column:session_id;"
+  string session_id = 4[(validator.field) = {}];
+
+  // Statement ID
+  // @inject_tag: json:"statement_id" gorm:"column:statement_id;"
+  string statement_id = 5[(validator.field) = {}];
+
+  // Flink Job ID
+  // @inject_tag: json:"flink_id" gorm:"column:flink_id;"
+  string flink_id = 6[(validator.field) = {}];
+
+  // Data
+  // @inject_tag: json:"data" gorm:"column:data;"
+  string data = 7[(validator.field) = {}];
+
+  // Job status
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 8[(validator.field) = {}];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 9 [(validator.field) = {int_gt: 0}];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 10 [(validator.field) = {int_gt: 0}];
+
+}
+
 // The instance info of stream job.
 message StreamJobInst {
   enum Status {
@@ -981,12 +1038,12 @@ message HostAliases {
 message FlinkCluster {
   enum Status {
     _ = 0;
-    Deleted   = 1;
-    Running   = 2;
-    Stopped   = 3;
-    Starting  = 4;
+    Deleted = 1;
+    Running = 2;
+    Stopped = 3;
+    Starting = 4;
     Exception = 5;
-    Arrears   = 6;
+    Arrears = 6;
   }
 
   // Workspace ID it belongs to.

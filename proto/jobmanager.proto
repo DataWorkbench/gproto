@@ -9,15 +9,16 @@ import "request.proto";
 import "response.proto";
 
 service Jobmanager {
-  rpc Run(request.JobInfo) returns (response.JobState) {}
-  rpc Syntax(request.JobInfo) returns (response.JobState) {}
-  rpc Preview(request.JobInfo) returns (response.JobState) {}
-  rpc GetState(request.JobGetState) returns (response.JobState) {}
-  rpc CancelJob(request.JobCancel) returns (model.EmptyStruct) {}
-  rpc CancelAllJob(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
-  rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
+//  rpc Run(request.JobInfo) returns (response.JobState) {}
+//  rpc Syntax(request.JobInfo) returns (response.JobState) {}
+//  rpc Preview(request.JobInfo) returns (response.JobState) {}
+//  rpc GetState(request.JobGetState) returns (response.JobState) {}
+//  rpc CancelJob(request.JobCancel) returns (model.EmptyStruct) {}
+//  rpc CancelAllJob(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+//  rpc NodeRelations(model.EmptyStruct) returns(response.NodeRelations) {}
 
-  rpc RunJob(request.JobInfo) returns (response.JobInfo){}
-  rpc GetJobInfo(request.JobMsg) returns (response.JobInfo){}
-  rpc Cancel(request.JobMsg) returns(model.EmptyStruct){}
+  rpc RunJob(request.RunJob) returns (response.RunJob){}
+  rpc GetJobInfo(request.GetJobInfo) returns (response.GetJobInfo){}
+  rpc CancelJob(request.CancelJob) returns(model.EmptyStruct){}
+  rpc ValidateJob(request.ValidateJob) returns(response.StreamJobCodeSyntax){}
 }
