@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/billing";
+package billing;
+
+import "request.proto";
+import "response.proto";
+
+
+// newbilling Service
+service BillingManager {
+    // API of newbilling manager.
+    rpc GetPriceComponents(request.GetPriceComponents) returns (response.GetPriceComponents)    {}
+    rpc CreateInstance(request.CreateInstance) returns (response.CreateInstance)    {}
+    rpc StopInstance(request.StopInstance) returns (response.StopInstance)    {}
+}
