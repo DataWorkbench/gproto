@@ -6,7 +6,6 @@ package billing;
 import "request.proto";
 import "response.proto";
 
-
 // newbilling Service
 service BillingManager {
     // API of newbilling manager.
