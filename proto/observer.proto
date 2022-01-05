@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/obpb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.obpb";
+// File name of class.
+option java_outer_classname = "Obpb";
+option java_multiple_files = true;
+
 import "request.proto";
 import "response.proto";
 

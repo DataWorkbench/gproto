@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/shpb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.shpb";
+// File name of class.
+option java_outer_classname = "Shpb";
+option java_multiple_files = true;
+
 package shpb;
 
 //import "model.proto";

@@ -136,7 +136,7 @@ func (x *ListWorkspaces) GetStatus() model.Workspace_Status {
 	if x != nil {
 		return x.Status
 	}
-	return model.Workspace__
+	return model.Workspace_StatusUnset
 }
 
 func (x *ListWorkspaces) GetName() string {
@@ -766,7 +766,7 @@ func (x *ListAudits) GetType() model.Operation_Type {
 	if x != nil {
 		return x.Type
 	}
-	return model.Operation__
+	return model.Operation_TypeUnset
 }
 
 func (x *ListAudits) GetAction() string {
@@ -780,7 +780,7 @@ func (x *ListAudits) GetState() model.Operation_State {
 	if x != nil {
 		return x.State
 	}
-	return model.Operation___
+	return model.Operation_StateUnset
 }
 
 func (x *ListAudits) GetStarted() int64 {
@@ -1108,7 +1108,7 @@ func (x *CheckPermission) GetOpType() model.Operation_Type {
 	if x != nil {
 		return x.OpType
 	}
-	return model.Operation__
+	return model.Operation_TypeUnset
 }
 
 func (x *CheckPermission) GetOpName() string {
@@ -1311,7 +1311,7 @@ func (x *CreateStreamJob) GetType() model.StreamJob_Type {
 	if x != nil {
 		return x.Type
 	}
-	return model.StreamJob__
+	return model.StreamJob_TypeUnset
 }
 
 func (x *CreateStreamJob) GetClusterId() string {
@@ -2066,7 +2066,7 @@ func (x *ListReleaseStreamJobs) GetStatus() model.StreamJobRelease_Status {
 	if x != nil {
 		return x.Status
 	}
-	return model.StreamJobRelease__
+	return model.StreamJobRelease_StatusUnset
 }
 
 // ReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body.)
@@ -2996,7 +2996,7 @@ func (x *ListStreamInstances) GetState() model.StreamJobInst_State {
 	if x != nil {
 		return x.State
 	}
-	return model.StreamJobInst__
+	return model.StreamJobInst_StateUnset
 }
 
 func (x *ListStreamInstances) GetSortBy() string {
@@ -3369,7 +3369,7 @@ func (x *CreateSource) GetSourceType() model.DataSource_Type {
 	if x != nil {
 		return x.SourceType
 	}
-	return model.DataSource____
+	return model.DataSource_TypeUnset
 }
 
 func (x *CreateSource) GetName() string {
@@ -3470,7 +3470,7 @@ func (x *UpdateSource) GetSourceType() model.DataSource_Type {
 	if x != nil {
 		return x.SourceType
 	}
-	return model.DataSource____
+	return model.DataSource_TypeUnset
 }
 
 func (x *UpdateSource) GetName() string {
@@ -3738,7 +3738,7 @@ func (x *PingSource) GetSourceType() model.DataSource_Type {
 	if x != nil {
 		return x.SourceType
 	}
-	return model.DataSource____
+	return model.DataSource_TypeUnset
 }
 
 func (x *PingSource) GetUrl() *datasourcepb.DataSourceURL {
@@ -3957,7 +3957,7 @@ func (x *CreateTable) GetTableKind() model.TableInfo_Kind {
 	if x != nil {
 		return x.TableKind
 	}
-	return model.TableInfo__
+	return model.TableInfo_KindUnset
 }
 
 func (x *CreateTable) GetCreateBy() string {
@@ -4049,7 +4049,7 @@ func (x *UpdateTable) GetTableKind() model.TableInfo_Kind {
 	if x != nil {
 		return x.TableKind
 	}
-	return model.TableInfo__
+	return model.TableInfo_KindUnset
 }
 
 // DeleteTable used as request parameters for RPC and HTTP(based on Body)
@@ -4359,7 +4359,7 @@ func (x *ListTable) GetTableKind() model.TableInfo_Kind {
 	if x != nil {
 		return x.TableKind
 	}
-	return model.TableInfo__
+	return model.TableInfo_KindUnset
 }
 
 // DownloadFile used as a request parameters for RPC and HTTP(based on URL-Query).
@@ -4657,7 +4657,7 @@ func (x *UpdateResource) GetResourceType() model.Resource_Type {
 	if x != nil {
 		return x.ResourceType
 	}
-	return model.Resource__
+	return model.Resource_ResourceUnset
 }
 
 type DeleteResources struct {
@@ -4794,14 +4794,14 @@ func (x *CreateUDF) GetUdfType() model.UDFInfo_Type {
 	if x != nil {
 		return x.UdfType
 	}
-	return model.UDFInfo__
+	return model.UDFInfo_TypeUnset
 }
 
 func (x *CreateUDF) GetUdfLanguage() model.UDFInfo_Language {
 	if x != nil {
 		return x.UdfLanguage
 	}
-	return model.UDFInfo___
+	return model.UDFInfo_LanguageUnset
 }
 
 func (x *CreateUDF) GetName() string {
@@ -5125,7 +5125,7 @@ func (x *ListUDF) GetUdfType() model.UDFInfo_Type {
 	if x != nil {
 		return x.UdfType
 	}
-	return model.UDFInfo__
+	return model.UDFInfo_TypeUnset
 }
 
 // UDFCommonFunc used as request parameters for RPC and HTTP(based on Body)
@@ -5335,7 +5335,7 @@ func (x *GetJobInfo) GetType() model.StreamJob_Type {
 	if x != nil {
 		return x.Type
 	}
-	return model.StreamJob__
+	return model.StreamJob_TypeUnset
 }
 
 type CancelJob struct {
@@ -5411,7 +5411,7 @@ func (x *CancelJob) GetType() model.StreamJob_Type {
 	if x != nil {
 		return x.Type
 	}
-	return model.StreamJob__
+	return model.StreamJob_TypeUnset
 }
 
 type ValidateJob struct {
@@ -5933,7 +5933,7 @@ func (x *ListFlinkClusters) GetStatus() model.FlinkCluster_Status {
 	if x != nil {
 		return x.Status
 	}
-	return model.FlinkCluster__
+	return model.FlinkCluster_StatusUnset
 }
 
 func (x *ListFlinkClusters) GetName() string {
@@ -7924,10 +7924,13 @@ var file_proto_request_proto_rawDesc = []byte{
 	0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x12, 0x2a, 0x0a, 0x0c, 0x63, 0x6f, 0x6e, 0x73, 0x74,
 	0x61, 0x6e, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x07, 0xe2,
 	0xdf, 0x1f, 0x03, 0x80, 0x01, 0x14, 0x52, 0x0b, 0x63, 0x6f, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63,
-	0x65, 0x49, 0x64, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f,
-	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x49, 0x64, 0x42, 0x55, 0x0a, 0x1b, 0x63, 0x6f, 0x6d, 0x2e, 0x77, 0x6f, 0x72, 0x6b, 0x62,
+	0x65, 0x6e, 0x63, 0x68, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x42, 0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x50, 0x01, 0x5a, 0x2b, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f,
+	0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70,
+	0x6b, 0x67, 0x2f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (

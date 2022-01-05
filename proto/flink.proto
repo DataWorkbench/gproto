@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/flinkpb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.flinkpb";
+// File name of class.
+option java_outer_classname = "Flink";
+option java_multiple_files = true;
+
 package flink;
 
 import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
@@ -474,9 +480,9 @@ message SqlColumnType {
 // SqlTimeColumnType used as request parameters for RPC and HTTP(based on Body)
 message SqlTimeColumnType {
 	enum Type {
-        _ = 0;
-        Proctime = 1;
-        Watermark = 2;
+		TypeUnset = 0;
+		Proctime = 1;
+		Watermark = 2;
     }
 
 	// The column name

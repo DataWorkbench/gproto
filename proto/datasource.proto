@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/datasourcepb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.datasourcepdb";
+// File name of class.
+option java_outer_classname = "DataSource";
+option java_multiple_files = true;
+
 package datasource;
 
 import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
@@ -13,8 +19,8 @@ message DatasourceNetwork {
 	option (gosql.serialize) = { json: {} };
 
     enum Type {
-		_ = 0;
-		Eip = 1;
+			TypeUnset = 0;
+			Eip = 1;
      	Vpc = 2;
     }
 

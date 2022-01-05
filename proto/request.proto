@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/request";
 
+// Package name of class.
+option java_package = "com.workbench.proto.request";
+// File name of class.
+option java_outer_classname = "Request";
+option java_multiple_files = true;
+
 package request;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";

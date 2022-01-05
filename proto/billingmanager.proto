@@ -1,6 +1,14 @@
 syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/billing";
+
+// Package name of class.
+option java_package = "com.workbench.proto.billing";
+// File name of class.
+option java_outer_classname = "Billing";
+option java_multiple_files = true;
+
+
 package billing;
 
 import "request.proto";

@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/response";
 
+// Package name of class.
+option java_package = "com.workbench.proto.response";
+// File name of class.
+option java_outer_classname = "Response";
+option java_multiple_files = true;
+
 package response;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";

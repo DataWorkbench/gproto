@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/wspb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.wspb";
+// File name of class.
+option java_outer_classname = "Wspb";
+option java_multiple_files = true;
+
 package wspb;
 
 import "model.proto";

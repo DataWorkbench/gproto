@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/nfpb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.nfpb";
+// File name of class.
+option java_outer_classname = "Nfpb";
+option java_multiple_files = true;
+
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 service Notification {

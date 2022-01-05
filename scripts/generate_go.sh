@@ -66,6 +66,9 @@ for f in proto/*.proto;do
   package=$(echo "${package}"|sed 's/"//g; s/;//g')
   dir=${package//"$MODULE"/}
 
+  # Generate java class and grpc
+#  protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src -I=./proto --java_out=./src/main/java  "$f"
+
   # Generate go struct and grpc.
   protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --go_out=. --go-grpc_out=. "$f"
 

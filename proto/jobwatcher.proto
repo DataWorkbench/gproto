@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/jobwpb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.jobwpb";
+// File name of class.
+option java_outer_classname = "Jobwpb";
+option java_multiple_files = true;
+
 package jobwpb;
 //
 //import "github.com/mwitkow/go-proto-validators/validator.proto";

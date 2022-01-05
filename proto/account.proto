@@ -2,6 +2,10 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/accountpb";
 
+option java_package = "com.workbench.proto.accountpb";
+option java_outer_classname = "AccountPB";
+option java_multiple_files = true;
+
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 service Account {

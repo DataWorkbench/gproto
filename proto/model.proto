@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/model";
 
+// Package name of class.
+option java_package = "com.workbench.proto.model";
+// File name of class.
+option java_outer_classname = "Model";
+option java_multiple_files = true;
+
 package model;
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
@@ -28,7 +34,7 @@ message Error {
 // The workspace info.
 message Workspace {
   enum Status {
-    _ = 0;
+    StatusUnset = 0;
     Enabled = 1;
     Disabled = 2;
     Deleted = 3;
@@ -65,7 +71,7 @@ message Workspace {
 // The stream job info
 message StreamJob {
   enum Type {
-    _ = 0; // is useless.
+    TypeUnset = 0; // is useless.
     Operator = 1;
     SQL = 2;
     Jar = 3;
@@ -74,7 +80,7 @@ message StreamJob {
   }
 
   enum Status {
-    __ = 0;
+    StatusUnset = 0;
     Normal = 1;
     Deleted = 2;
   }
@@ -203,20 +209,20 @@ message StreamJobSchedule {
   option (gosql.serialize) = {json: {}};
 
   enum SchedulePolicy {
-    ___ = 0;
+    SchedulePolicyUnset = 0;
     Periodicity = 1;
     Once = 2;
   }
 
   enum ConcurrencyPolicy {
-    _ = 0; // Is useless.
+    ConcurrencyPolicyUnset = 0; // Is useless.
     Allow = 1;
     Forbid = 2;
     Replace = 3;
   }
 
   enum RetryPolicy {
-    __ = 0; // Is useless.
+    RetryPolicyUnset = 0; // Is useless.
     None = 1;
     Auto = 2;
   }
@@ -290,7 +296,7 @@ message StreamJobSchedule {
 // The release stream job info.
 message StreamJobRelease {
   enum Status {
-    _ = 0;
+    StatusUnset = 0;
     Active = 1;
     Suspended = 2;
     Deleted = 3;
@@ -383,13 +389,13 @@ message JobInfo{
 // The instance info of stream job.
 message StreamJobInst {
   enum Status {
-    __ = 0;
+    StatusUnset = 0;
     Active = 1;
     Deleted = 2;
   }
 
   enum State {
-    _ = 0;
+    StateUnset = 0;
     Pending = 1;
     Running = 2;
     Retrying = 3;
@@ -440,14 +446,14 @@ message StreamJobInst {
 message Operation {
   // Type declares the API operation type.
   enum Type {
-    _ = 0; // Is useless.
+    TypeUnset = 0; // Is useless.
     Write = 1; // Include Operation: create/update/delete.
     Read = 2; // Include Operation: read.
   }
 
   // State declares the API operation result.
   enum State {
-    __ = 0;
+    StateUnset = 0;
     Success = 1;
     Failed = 2;
   }
@@ -479,13 +485,13 @@ message Operation {
 // The Role info.
 message Role {
   enum Type {
-    _ = 0;
+    TypeUnset = 0;
     System = 1;
     Custom = 2;
   }
 
   enum Status {
-    __ = 0;
+    StatusUnset = 0;
     Normal = 1;
     Deleted = 2;
   }
@@ -510,7 +516,7 @@ message Role {
 // The workspace member info.
 message Member {
   enum Status {
-    __ = 0;
+    StatusUnset = 0;
     Normal = 1;
     Deleted = 2;
   }
@@ -541,7 +547,7 @@ message Member {
 // The monitor rule info
 message MonitorRule {
   enum Status {
-    _ = 0;
+    StatusUnset = 0;
     Enabled = 1;
     Disabled = 2;
     Deleted = 3;
@@ -599,7 +605,7 @@ message MonitorRule {
 // The message in inst queue..
 message QueueMessage {
   enum Action {
-    _ = 0;
+    ActionUnset = 0;
     Create = 1;
     Run = 2;
     Retry = 3;
@@ -675,21 +681,21 @@ message InstanceTaskExecStat {
 // Source Info
 message DataSource {
   enum Status {
-    _ = 0;
+    StatusUnset = 0;
     Enabled = 1;
     Disabled = 2;
     Deleted = 3;
   }
 
   enum ConnectionStatus {
-    __ = 0;
+    ConnectionStatusUnset = 0;
     Success = 1;
     PartialSuccess = 2;
     Failed = 3;
   }
 
   enum Type {
-    ___ = 0;
+    TypeUnset = 0;
     MySQL = 1;
     PostgreSQL = 2;
     Kafka = 3;
@@ -752,14 +758,14 @@ message DataSource {
 // Table Info
 message TableInfo {
   enum Kind {
-    _ = 0;
+    KindUnset = 0;
     Source = 1;
     Destination = 2;
     Dimension = 3;
   }
 
   enum Status {
-    __ = 0;
+    StatusUnset = 0;
     Enabled = 1;
     Disabled = 2;
     Deleted = 3;
@@ -820,14 +826,14 @@ message TableInfo {
 
 message Resource {
   enum Type {
-    _ = 0;
+    ResourceUnset = 0;
     Jar = 1;
     Udf = 2;
     CONNECTOR = 3;
   }
 
   enum Status {
-    __ = 0;
+    StatusUnset = 0;
     Enabled = 1;
     Disabled = 2;
     Deleted = 3;
@@ -880,21 +886,21 @@ message Resource {
 // UDF Info
 message UDFInfo {
   enum Type {
-    _ = 0;
+    TypeUnset = 0;
     UDF = 1;
     UDTF = 2;
     UDTTF = 3;
   }
 
   enum Language {
-    __ = 0;
+    LanguageUnset = 0;
     Scala = 1;
     Java = 2;
     Python = 3;
   }
 
   enum Status {
-    ___ = 0;
+    StatusUnset = 0;
     Enabled = 1;
     Disabled = 2;
     Deleted = 3;
@@ -963,7 +969,7 @@ message JobResources {
 // Network config.
 message Network {
   enum Status {
-    _ = 0;
+    StatusUnset = 0;
     Deleted = 1;
     Active = 2;
   }
@@ -1023,7 +1029,7 @@ message HostAliases {
 // FlinkCluster is schema for flink (session) cluster.
 message FlinkCluster {
   enum Status {
-    _ = 0;
+    StatusUnset = 0;
     Deleted = 1;
     Running = 2;
     Stopped = 3;

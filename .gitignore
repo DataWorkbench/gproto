@@ -19,6 +19,9 @@
 *.tmp
 
 .idea
-build
 .editorconfig
+gproto.iml
+
+build
+target
 

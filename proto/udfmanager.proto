@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/udfpb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.udfpb";
+// File name of class.
+option java_outer_classname = "Udfpb";
+option java_multiple_files = true;
+
 package udfpb;
 
 import "model.proto";

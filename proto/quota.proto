@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/quotapb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.quotapb";
+// File name of class.
+option java_outer_classname = "Quotapb";
+option java_multiple_files = true;
+
 package quota;
 
 import "github.com/yu31/proto-go-plugin/proto/gosql.proto";

@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/jobpb";
 
+// Package name of class.
+option java_package = "com.workbench.proto.jobpb";
+// File name of class.
+option java_outer_classname = "Jobpb";
+option java_multiple_files = true;
+
 package jobpb;
 
 import "model.proto";
