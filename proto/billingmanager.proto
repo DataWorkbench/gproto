@@ -11,13 +11,15 @@ option java_multiple_files = true;
 
 package billing;
 
+import "model.proto";
 import "request.proto";
 import "response.proto";
 
 // newbilling Service
 service BillingManager {
     // API of newbilling manager.
-    rpc GetPriceComponents(request.GetPriceComponents) returns (response.GetPriceComponents)    {}
-    rpc CreateInstance(request.CreateInstance) returns (response.CreateInstance)    {}
-    rpc StopInstance(request.StopInstance) returns (response.StopInstance)    {}
+    rpc GetBillingPriceComponents(model.EmptyStruct) returns (response.GetPriceComponents)    {}
+    rpc CreateBillingInstance(request.CreateBillingInstance) returns (response.CreateBillingInstance)    {}
+    rpc StopBillingInstance(request.StopBillingInstance) returns (response.StopBillingInstance)    {}
+    rpc RecoveryBillingInstance(request.RecoveryBillingInstance) returns (response.RecoveryBillingInstance)    {}
 }

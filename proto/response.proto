@@ -503,15 +503,20 @@ message GetPriceComponents {
 }
 
 
-message CreateInstance {
+message CreateBillingInstance {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string instance_id = 1 [ (validator.field) = { length_eq: 20 } ];
+  string instance_id = 1 [ (validator.field) = { length_eq: 30 } ];
 }
 
-message StopInstance {
+message StopBillingInstance {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"message" uri:"message" default:"" binding:"len=20" swaggerignore:"true"
   string message = 1 [ (validator.field) = { length_eq: 20 } ];
+}
 
+message RecoveryBillingInstance {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"message" uri:"message" default:"" binding:"len=20" swaggerignore:"true"
+  string message = 1 [ (validator.field) = { length_eq: 20 } ];
 }

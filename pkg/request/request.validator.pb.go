@@ -1267,33 +1267,45 @@ func (this *DescribeNetwork) Validate() error {
 	}
 	return nil
 }
-func (this *GetPriceComponents) Validate() error {
+func (this *CreateBillingInstance) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
 	if !(len(this.UserId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.UserId))
+	}
+	if !(len(this.FeeType) == 1) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FeeType", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.FeeType))
+	}
+	if !(this.Cu >= 0.5) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Cu", fmt.Errorf(`value '%v' must be greater than or equal to '0.5'`, this.Cu))
+	}
+	if !(this.Cu <= 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Cu", fmt.Errorf(`value '%v' must be lower than or equal to '20'`, this.Cu))
 	}
 	return nil
 }
-func (this *CreateInstance) Validate() error {
+func (this *StopBillingInstance) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
 	if !(len(this.UserId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.UserId))
+	}
+	if !(len(this.ConstanceId) == 30) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ConstanceId", fmt.Errorf(`value '%v' must have a length equal to '30'`, this.ConstanceId))
 	}
 	return nil
 }
-func (this *StopInstance) Validate() error {
+func (this *RecoveryBillingInstance) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
 	if !(len(this.UserId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("UserId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.UserId))
 	}
-	if !(len(this.ConstanceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("ConstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.ConstanceId))
+	if !(len(this.ConstanceId) == 30) {
+		return github_com_mwitkow_go_proto_validators.FieldError("ConstanceId", fmt.Errorf(`value '%v' must have a length equal to '30'`, this.ConstanceId))
 	}
 	return nil
 }

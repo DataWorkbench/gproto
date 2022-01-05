@@ -4,6 +4,7 @@ package billing
 
 import (
 	context "context"
+	model "github.com/DataWorkbench/gproto/pkg/model"
 	request "github.com/DataWorkbench/gproto/pkg/request"
 	response "github.com/DataWorkbench/gproto/pkg/response"
 	grpc "google.golang.org/grpc"
@@ -20,9 +21,10 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type BillingManagerClient interface {
 	// API of newbilling manager.
-	GetPriceComponents(ctx context.Context, in *request.GetPriceComponents, opts ...grpc.CallOption) (*response.GetPriceComponents, error)
-	CreateInstance(ctx context.Context, in *request.CreateInstance, opts ...grpc.CallOption) (*response.CreateInstance, error)
-	StopInstance(ctx context.Context, in *request.StopInstance, opts ...grpc.CallOption) (*response.StopInstance, error)
+	GetBillingPriceComponents(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.GetPriceComponents, error)
+	CreateBillingInstance(ctx context.Context, in *request.CreateBillingInstance, opts ...grpc.CallOption) (*response.CreateBillingInstance, error)
+	StopBillingInstance(ctx context.Context, in *request.StopBillingInstance, opts ...grpc.CallOption) (*response.StopBillingInstance, error)
+	RecoveryBillingInstance(ctx context.Context, in *request.RecoveryBillingInstance, opts ...grpc.CallOption) (*response.RecoveryBillingInstance, error)
 }
 
 type billingManagerClient struct {
@@ -33,27 +35,36 @@ func NewBillingManagerClient(cc grpc.ClientConnInterface) BillingManagerClient {
 	return &billingManagerClient{cc}
 }
 
-func (c *billingManagerClient) GetPriceComponents(ctx context.Context, in *request.GetPriceComponents, opts ...grpc.CallOption) (*response.GetPriceComponents, error) {
+func (c *billingManagerClient) GetBillingPriceComponents(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.GetPriceComponents, error) {
 	out := new(response.GetPriceComponents)
-	err := c.cc.Invoke(ctx, "/billing.BillingManager/GetPriceComponents", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/billing.BillingManager/GetBillingPriceComponents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *billingManagerClient) CreateInstance(ctx context.Context, in *request.CreateInstance, opts ...grpc.CallOption) (*response.CreateInstance, error) {
-	out := new(response.CreateInstance)
-	err := c.cc.Invoke(ctx, "/billing.BillingManager/CreateInstance", in, out, opts...)
+func (c *billingManagerClient) CreateBillingInstance(ctx context.Context, in *request.CreateBillingInstance, opts ...grpc.CallOption) (*response.CreateBillingInstance, error) {
+	out := new(response.CreateBillingInstance)
+	err := c.cc.Invoke(ctx, "/billing.BillingManager/CreateBillingInstance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *billingManagerClient) StopInstance(ctx context.Context, in *request.StopInstance, opts ...grpc.CallOption) (*response.StopInstance, error) {
-	out := new(response.StopInstance)
-	err := c.cc.Invoke(ctx, "/billing.BillingManager/StopInstance", in, out, opts...)
+func (c *billingManagerClient) StopBillingInstance(ctx context.Context, in *request.StopBillingInstance, opts ...grpc.CallOption) (*response.StopBillingInstance, error) {
+	out := new(response.StopBillingInstance)
+	err := c.cc.Invoke(ctx, "/billing.BillingManager/StopBillingInstance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *billingManagerClient) RecoveryBillingInstance(ctx context.Context, in *request.RecoveryBillingInstance, opts ...grpc.CallOption) (*response.RecoveryBillingInstance, error) {
+	out := new(response.RecoveryBillingInstance)
+	err := c.cc.Invoke(ctx, "/billing.BillingManager/RecoveryBillingInstance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -65,9 +76,10 @@ func (c *billingManagerClient) StopInstance(ctx context.Context, in *request.Sto
 // for forward compatibility
 type BillingManagerServer interface {
 	// API of newbilling manager.
-	GetPriceComponents(context.Context, *request.GetPriceComponents) (*response.GetPriceComponents, error)
-	CreateInstance(context.Context, *request.CreateInstance) (*response.CreateInstance, error)
-	StopInstance(context.Context, *request.StopInstance) (*response.StopInstance, error)
+	GetBillingPriceComponents(context.Context, *model.EmptyStruct) (*response.GetPriceComponents, error)
+	CreateBillingInstance(context.Context, *request.CreateBillingInstance) (*response.CreateBillingInstance, error)
+	StopBillingInstance(context.Context, *request.StopBillingInstance) (*response.StopBillingInstance, error)
+	RecoveryBillingInstance(context.Context, *request.RecoveryBillingInstance) (*response.RecoveryBillingInstance, error)
 	mustEmbedUnimplementedBillingManagerServer()
 }
 
@@ -75,14 +87,17 @@ type BillingManagerServer interface {
 type UnimplementedBillingManagerServer struct {
 }
 
-func (UnimplementedBillingManagerServer) GetPriceComponents(context.Context, *request.GetPriceComponents) (*response.GetPriceComponents, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPriceComponents not implemented")
+func (UnimplementedBillingManagerServer) GetBillingPriceComponents(context.Context, *model.EmptyStruct) (*response.GetPriceComponents, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBillingPriceComponents not implemented")
 }
-func (UnimplementedBillingManagerServer) CreateInstance(context.Context, *request.CreateInstance) (*response.CreateInstance, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateInstance not implemented")
+func (UnimplementedBillingManagerServer) CreateBillingInstance(context.Context, *request.CreateBillingInstance) (*response.CreateBillingInstance, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateBillingInstance not implemented")
 }
-func (UnimplementedBillingManagerServer) StopInstance(context.Context, *request.StopInstance) (*response.StopInstance, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method StopInstance not implemented")
+func (UnimplementedBillingManagerServer) StopBillingInstance(context.Context, *request.StopBillingInstance) (*response.StopBillingInstance, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopBillingInstance not implemented")
+}
+func (UnimplementedBillingManagerServer) RecoveryBillingInstance(context.Context, *request.RecoveryBillingInstance) (*response.RecoveryBillingInstance, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RecoveryBillingInstance not implemented")
 }
 func (UnimplementedBillingManagerServer) mustEmbedUnimplementedBillingManagerServer() {}
 
@@ -97,56 +112,74 @@ func RegisterBillingManagerServer(s grpc.ServiceRegistrar, srv BillingManagerSer
 	s.RegisterService(&_BillingManager_serviceDesc, srv)
 }
 
-func _BillingManager_GetPriceComponents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.GetPriceComponents)
+func _BillingManager_GetBillingPriceComponents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(model.EmptyStruct)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BillingManagerServer).GetPriceComponents(ctx, in)
+		return srv.(BillingManagerServer).GetBillingPriceComponents(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/billing.BillingManager/GetPriceComponents",
+		FullMethod: "/billing.BillingManager/GetBillingPriceComponents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BillingManagerServer).GetPriceComponents(ctx, req.(*request.GetPriceComponents))
+		return srv.(BillingManagerServer).GetBillingPriceComponents(ctx, req.(*model.EmptyStruct))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BillingManager_CreateInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.CreateInstance)
+func _BillingManager_CreateBillingInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.CreateBillingInstance)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BillingManagerServer).CreateInstance(ctx, in)
+		return srv.(BillingManagerServer).CreateBillingInstance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/billing.BillingManager/CreateInstance",
+		FullMethod: "/billing.BillingManager/CreateBillingInstance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BillingManagerServer).CreateInstance(ctx, req.(*request.CreateInstance))
+		return srv.(BillingManagerServer).CreateBillingInstance(ctx, req.(*request.CreateBillingInstance))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BillingManager_StopInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.StopInstance)
+func _BillingManager_StopBillingInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.StopBillingInstance)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BillingManagerServer).StopInstance(ctx, in)
+		return srv.(BillingManagerServer).StopBillingInstance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/billing.BillingManager/StopInstance",
+		FullMethod: "/billing.BillingManager/StopBillingInstance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BillingManagerServer).StopInstance(ctx, req.(*request.StopInstance))
+		return srv.(BillingManagerServer).StopBillingInstance(ctx, req.(*request.StopBillingInstance))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BillingManager_RecoveryBillingInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.RecoveryBillingInstance)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BillingManagerServer).RecoveryBillingInstance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/billing.BillingManager/RecoveryBillingInstance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BillingManagerServer).RecoveryBillingInstance(ctx, req.(*request.RecoveryBillingInstance))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -156,16 +189,20 @@ var _BillingManager_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*BillingManagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetPriceComponents",
-			Handler:    _BillingManager_GetPriceComponents_Handler,
+			MethodName: "GetBillingPriceComponents",
+			Handler:    _BillingManager_GetBillingPriceComponents_Handler,
 		},
 		{
-			MethodName: "CreateInstance",
-			Handler:    _BillingManager_CreateInstance_Handler,
+			MethodName: "CreateBillingInstance",
+			Handler:    _BillingManager_CreateBillingInstance_Handler,
 		},
 		{
-			MethodName: "StopInstance",
-			Handler:    _BillingManager_StopInstance_Handler,
+			MethodName: "StopBillingInstance",
+			Handler:    _BillingManager_StopBillingInstance_Handler,
+		},
+		{
+			MethodName: "RecoveryBillingInstance",
+			Handler:    _BillingManager_RecoveryBillingInstance_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -1593,25 +1593,18 @@ message DescribeNetwork {
 	string network_id = 1 [ (validator.field) = { length_eq: 20 } ];
 }
 
-message GetPriceComponents {
+message CreateBillingInstance {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
 	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	string fee_type = 3 [ (validator.field) = { length_eq: 1 } ];
+	float cu = 4 [ (validator.field) = { float_gte: 0.5, float_lte: 20 } ];
 }
 
-message CreateInstance {
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
-	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
-}
-
-message StopInstance {
+message StopBillingInstance {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
@@ -1620,5 +1613,17 @@ message StopInstance {
 	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"constance_id" uri:"constance_id" default:"" binding:"len=20" swaggerignore:"true"
-	string constance_id = 3 [ (validator.field) = { length_eq: 20 } ];
+	string constance_id = 3 [ (validator.field) = { length_eq: 30 } ];
+}
+
+message RecoveryBillingInstance {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
+	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"constance_id" uri:"constance_id" default:"" binding:"len=20" swaggerignore:"true"
+	string constance_id = 3 [ (validator.field) = { length_eq: 30 } ];
 }

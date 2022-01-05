@@ -466,13 +466,19 @@ func (this *ListBuiltInConnectors) Validate() error {
 func (this *GetPriceComponents) Validate() error {
 	return nil
 }
-func (this *CreateInstance) Validate() error {
-	if !(len(this.InstanceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+func (this *CreateBillingInstance) Validate() error {
+	if !(len(this.InstanceId) == 30) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '30'`, this.InstanceId))
 	}
 	return nil
 }
-func (this *StopInstance) Validate() error {
+func (this *StopBillingInstance) Validate() error {
+	if !(len(this.Message) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("Message", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Message))
+	}
+	return nil
+}
+func (this *RecoveryBillingInstance) Validate() error {
 	if !(len(this.Message) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Message", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.Message))
 	}
