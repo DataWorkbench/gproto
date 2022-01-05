@@ -53,7 +53,7 @@ message Workspace {
 
   // Workspace Description.
   // @inject_tag: json:"desc" gorm:"column:desc;"
-  string desc = 4 [(validator.field) = {length_lt: 1025}];
+  string desc = 4;
 
   // Workspace status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
