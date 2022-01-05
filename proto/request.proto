@@ -517,7 +517,7 @@ message ReleaseStreamJob {
 
 	// Description for this releases. Not required, Max length 1024.
 	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
-	string desc = 3 [ (validator.field) = { length_lt: 1025 } ];
+	string desc = 3;
 
 	// @inject_tag: json:"stop_running" default:"" binding:"-"
 	bool stop_running = 4 [ (validator.field) = { } ];

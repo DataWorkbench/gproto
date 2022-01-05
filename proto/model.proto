@@ -324,11 +324,11 @@ message StreamJobRelease {
 
   // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 6 [(validator.field) = {length_lt: 1025}];
+  Status status = 6 ;
 
   // Job release description.
   // @inject_tag: json:"desc" gorm:"column:desc;"
-  string desc = 7 [(validator.field) = {length_lt: 1025}];
+  string desc = 7 ;
 
   // The user-id of release this job.
   // @inject_tag: json:"created_by" gorm:"column:created_by;"

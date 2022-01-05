@@ -375,9 +375,6 @@ func (this *ReleaseStreamJob) Validate() error {
 	if !(len(this.JobId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
 	}
-	if !(len(this.Desc) < 1025) {
-		return github_com_mwitkow_go_proto_validators.FieldError("Desc", fmt.Errorf(`value '%v' must have a length smaller than '1025'`, this.Desc))
-	}
 	return nil
 }
 func (this *OfflineReleaseStreamJob) Validate() error {
