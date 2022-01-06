@@ -704,8 +704,8 @@ message TerminateStreamInstances {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
-	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated string job_ids = 2;
+	// @inject_tag: json:"instance_ids" default:"" binding:"gte=1,lte=100"
+	repeated string instance_ids = 2;
 }
 
 // SuspendStreamInstances used as a request parameters for RPC.
@@ -716,8 +716,8 @@ message SuspendStreamInstances {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
-	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated string job_ids = 2;
+	// @inject_tag: json:"instance_ids" default:"" binding:"gte=1,lte=100"
+	repeated string instance_ids = 2;
 }
 
 // ResumeStreamInstances used as a request parameters for RPC.
@@ -728,8 +728,8 @@ message ResumeStreamInstances {
 	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
-	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated string job_ids = 2;
+	// @inject_tag: json:"instance_ids" default:"" binding:"gte=1,lte=100"
+	repeated string instance_ids = 2;
 }
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.
