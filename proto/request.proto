@@ -696,17 +696,6 @@ message ListStreamInstances {
 	bool reverse = 8 [ (validator.field) = { } ];
 }
 
-// JobInstIdPair is the k/v pair of jobId => instId.
-message JobInstIdPair {
-	// The stream job id. Is Required.
-	// @inject_tag: json:"job_id" default:"" binding:"len=20""
-	string job_id = 2 [ (validator.field) = { length_eq: 20 } ];
-
-	// The instance id. Is Required.
-	// @inject_tag: json:"inst_id" default:"" binding:"len=20"
-	string inst_id = 3 [ (validator.field) = { length_eq: 20 } ];
-}
-
 // TerminateStreamInstances used as a request parameters for RPC.
 // This struct can used for TerminateStreamCycleInst and TerminateStreamTestInst.
 message TerminateStreamInstances {
@@ -716,7 +705,7 @@ message TerminateStreamInstances {
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+	repeated string job_ids = 2;
 }
 
 // SuspendStreamInstances used as a request parameters for RPC.
@@ -728,7 +717,7 @@ message SuspendStreamInstances {
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+	repeated string job_ids = 2;
 }
 
 // ResumeStreamInstances used as a request parameters for RPC.
@@ -740,7 +729,7 @@ message ResumeStreamInstances {
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"inst_ids" default:"" binding:"gte=1,lte=100"
-	repeated JobInstIdPair inst_ids = 2 [ (validator.field) = { length_gt: 0 , length_lt: 101 } ];
+	repeated string job_ids = 2;
 }
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.

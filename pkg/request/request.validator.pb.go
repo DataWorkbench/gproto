@@ -527,25 +527,9 @@ func (this *ListStreamInstances) Validate() error {
 	}
 	return nil
 }
-func (this *JobInstIdPair) Validate() error {
-	if !(len(this.JobId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("JobId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.JobId))
-	}
-	if !(len(this.InstId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("InstId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstId))
-	}
-	return nil
-}
 func (this *TerminateStreamInstances) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	for _, item := range this.InstIds {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("InstIds", err)
-			}
-		}
 	}
 	return nil
 }
@@ -553,25 +537,11 @@ func (this *SuspendStreamInstances) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
 	}
-	for _, item := range this.InstIds {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("InstIds", err)
-			}
-		}
-	}
 	return nil
 }
 func (this *ResumeStreamInstances) Validate() error {
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
-	for _, item := range this.InstIds {
-		if item != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("InstIds", err)
-			}
-		}
 	}
 	return nil
 }
