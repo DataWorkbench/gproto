@@ -344,45 +344,37 @@ message StreamJobRelease {
 }
 
 message JobInfo{
-  // Workspace ID it belongs to.
-  // @inject_tag: json:"space_id" gorm:"column:space_id;"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-
   // Job ID it belongs to.
   // @inject_tag: json:"instance_id" gorm:"column:instance_id;"
-  string instance_id = 2 [(validator.field) = {length_eq: 20}];
+  string instance_id = 1 [(validator.field) = {length_eq: 20}];
 
   // Session ID
   // @inject_tag: json:"note_id" gorm:"column:note_id;"
-  string note_id = 3[(validator.field) = {}];
-
-  // Session ID
-  // @inject_tag: json:"session_id" gorm:"column:session_id;"
-  string session_id = 4[(validator.field) = {}];
+  string note_id = 2[(validator.field) = {}];
 
   // Statement ID
-  // @inject_tag: json:"statement_id" gorm:"column:statement_id;"
-  string statement_id = 5[(validator.field) = {}];
+  // @inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
+  string paragraph_id = 3[(validator.field) = {}];
 
   // Flink Job ID
   // @inject_tag: json:"flink_id" gorm:"column:flink_id;"
-  string flink_id = 6[(validator.field) = {}];
+  string flink_id = 4[(validator.field) = {}];
 
   // Data
   // @inject_tag: json:"message" gorm:"column:message;"
-  string message = 7[(validator.field) = {}];
+  string message = 5[(validator.field) = {}];
 
   // Job status
   // @inject_tag: json:"state" gorm:"column:state;"
-  model.StreamJobInst.State state = 8[(validator.field) = {}];
+  model.StreamJobInst.State state = 6[(validator.field) = {}];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 9 [(validator.field) = {int_gt: 0}];
+  int64 created = 7 [(validator.field) = {int_gt: 0}];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 10 [(validator.field) = {int_gt: 0}];
+  int64 updated = 8 [(validator.field) = {int_gt: 0}];
 
 }
 

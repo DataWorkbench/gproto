@@ -182,9 +182,6 @@ func (this *StreamJobRelease) Validate() error {
 	return nil
 }
 func (this *JobInfo) Validate() error {
-	if !(len(this.SpaceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
-	}
 	if !(len(this.InstanceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
 	}

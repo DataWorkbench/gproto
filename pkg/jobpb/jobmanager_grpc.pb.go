@@ -20,6 +20,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type JobmanagerClient interface {
+	ReleaseNote(ctx context.Context, in *request.ReleaseNote, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	PreRunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	RunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*response.RunJob, error)
 	GetJobInfo(ctx context.Context, in *request.GetJobInfo, opts ...grpc.CallOption) (*response.GetJobInfo, error)
 	CancelJob(ctx context.Context, in *request.CancelJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
@@ -32,6 +34,24 @@ type jobmanagerClient struct {
 
 func NewJobmanagerClient(cc grpc.ClientConnInterface) JobmanagerClient {
 	return &jobmanagerClient{cc}
+}
+
+func (c *jobmanagerClient) ReleaseNote(ctx context.Context, in *request.ReleaseNote, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/ReleaseNote", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *jobmanagerClient) PreRunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/PreRunJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *jobmanagerClient) RunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*response.RunJob, error) {
@@ -74,6 +94,8 @@ func (c *jobmanagerClient) ValidateJob(ctx context.Context, in *request.Validate
 // All implementations must embed UnimplementedJobmanagerServer
 // for forward compatibility
 type JobmanagerServer interface {
+	ReleaseNote(context.Context, *request.ReleaseNote) (*model.EmptyStruct, error)
+	PreRunJob(context.Context, *request.RunJob) (*model.EmptyStruct, error)
 	RunJob(context.Context, *request.RunJob) (*response.RunJob, error)
 	GetJobInfo(context.Context, *request.GetJobInfo) (*response.GetJobInfo, error)
 	CancelJob(context.Context, *request.CancelJob) (*model.EmptyStruct, error)
@@ -85,6 +107,12 @@ type JobmanagerServer interface {
 type UnimplementedJobmanagerServer struct {
 }
 
+func (UnimplementedJobmanagerServer) ReleaseNote(context.Context, *request.ReleaseNote) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReleaseNote not implemented")
+}
+func (UnimplementedJobmanagerServer) PreRunJob(context.Context, *request.RunJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PreRunJob not implemented")
+}
 func (UnimplementedJobmanagerServer) RunJob(context.Context, *request.RunJob) (*response.RunJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RunJob not implemented")
 }
@@ -108,6 +136,42 @@ type UnsafeJobmanagerServer interface {
 
 func RegisterJobmanagerServer(s grpc.ServiceRegistrar, srv JobmanagerServer) {
 	s.RegisterService(&_Jobmanager_serviceDesc, srv)
+}
+
+func _Jobmanager_ReleaseNote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ReleaseNote)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobmanagerServer).ReleaseNote(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/jobpb.Jobmanager/ReleaseNote",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobmanagerServer).ReleaseNote(ctx, req.(*request.ReleaseNote))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Jobmanager_PreRunJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.RunJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobmanagerServer).PreRunJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/jobpb.Jobmanager/PreRunJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobmanagerServer).PreRunJob(ctx, req.(*request.RunJob))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _Jobmanager_RunJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -186,6 +250,14 @@ var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "jobpb.Jobmanager",
 	HandlerType: (*JobmanagerServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "ReleaseNote",
+			Handler:    _Jobmanager_ReleaseNote_Handler,
+		},
+		{
+			MethodName: "PreRunJob",
+			Handler:    _Jobmanager_PreRunJob_Handler,
+		},
 		{
 			MethodName: "RunJob",
 			Handler:    _Jobmanager_RunJob_Handler,

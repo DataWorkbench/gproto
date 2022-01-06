@@ -1269,6 +1269,18 @@ message CancelJob{
 	model.StreamJob.Type type = 5  [ (validator.field) = { int_gt: 0 } ];
 }
 
+message ReleaseNote{
+	// instance id
+	// @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string instance_id = 1 [ (validator.field) = { length_eq: 20 } ];
+
+
+	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+	// Desc: Cannot be modified after creation.
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
+	model.StreamJob.Type type = 2  [ (validator.field) = { int_gt: 0 } ];
+}
+
 message ValidateJob{
 	// code
 	// @inject_tag: json:"code" default:"" binding:"-"

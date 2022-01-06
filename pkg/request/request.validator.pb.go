@@ -976,6 +976,12 @@ func (this *CancelJob) Validate() error {
 	}
 	return nil
 }
+func (this *ReleaseNote) Validate() error {
+	if !(len(this.InstanceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+	}
+	return nil
+}
 func (this *ValidateJob) Validate() error {
 	if this.Code != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Code); err != nil {
