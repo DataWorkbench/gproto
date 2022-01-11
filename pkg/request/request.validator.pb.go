@@ -1250,9 +1250,6 @@ func (this *CreateBillingInstance) Validate() error {
 	if !(this.Cu <= 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("Cu", fmt.Errorf(`value '%v' must be lower than or equal to '20'`, this.Cu))
 	}
-	if !(len(this.IsAutoRenew) == 1) {
-		return github_com_mwitkow_go_proto_validators.FieldError("IsAutoRenew", fmt.Errorf(`value '%v' must have a length equal to '1'`, this.IsAutoRenew))
-	}
 	return nil
 }
 func (this *StopBillingInstance) Validate() error {
