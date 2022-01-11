@@ -1603,7 +1603,7 @@ message CreateBillingInstance {
 	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
 	string fee_type = 3 [ (validator.field) = { length_eq: 1 } ];
 	double cu = 4 [ (validator.field) = { float_gte: 0.5, float_lte: 20 } ];
-	string is_auto_renew = 5 [ (validator.field) = { length_eq: 1 } ];
+	int32 is_auto_renew = 5 [ (validator.field) = { length_eq: 1 } ];
 }
 
 message StopBillingInstance {
