@@ -20,12 +20,12 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type JobmanagerClient interface {
-	ReleaseNote(ctx context.Context, in *request.ReleaseNote, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	PreRunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	RunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*response.RunJob, error)
-	GetJobInfo(ctx context.Context, in *request.GetJobInfo, opts ...grpc.CallOption) (*response.GetJobInfo, error)
-	CancelJob(ctx context.Context, in *request.CancelJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	ValidateJob(ctx context.Context, in *request.ValidateJob, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error)
+	FreeFlinkJob(ctx context.Context, in *request.FreeFlinkJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	InitFlinkJob(ctx context.Context, in *request.InitFlinkJob, opts ...grpc.CallOption) (*response.InitFlinkJob, error)
+	SubmitFlinkJob(ctx context.Context, in *request.SubmitFlinkJob, opts ...grpc.CallOption) (*response.SubmitFlinkJob, error)
+	GetFlinkJob(ctx context.Context, in *request.GetFlinkJob, opts ...grpc.CallOption) (*response.GetFlinkJob, error)
+	CancelFlinkJob(ctx context.Context, in *request.CancelFlinkJob, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	ValidateFlinkJob(ctx context.Context, in *request.ValidateFlinkJob, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error)
 }
 
 type jobmanagerClient struct {
@@ -36,54 +36,54 @@ func NewJobmanagerClient(cc grpc.ClientConnInterface) JobmanagerClient {
 	return &jobmanagerClient{cc}
 }
 
-func (c *jobmanagerClient) ReleaseNote(ctx context.Context, in *request.ReleaseNote, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *jobmanagerClient) FreeFlinkJob(ctx context.Context, in *request.FreeFlinkJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/ReleaseNote", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/FreeFlinkJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *jobmanagerClient) PreRunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *jobmanagerClient) InitFlinkJob(ctx context.Context, in *request.InitFlinkJob, opts ...grpc.CallOption) (*response.InitFlinkJob, error) {
+	out := new(response.InitFlinkJob)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/InitFlinkJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *jobmanagerClient) SubmitFlinkJob(ctx context.Context, in *request.SubmitFlinkJob, opts ...grpc.CallOption) (*response.SubmitFlinkJob, error) {
+	out := new(response.SubmitFlinkJob)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/SubmitFlinkJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *jobmanagerClient) GetFlinkJob(ctx context.Context, in *request.GetFlinkJob, opts ...grpc.CallOption) (*response.GetFlinkJob, error) {
+	out := new(response.GetFlinkJob)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/GetFlinkJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *jobmanagerClient) CancelFlinkJob(ctx context.Context, in *request.CancelFlinkJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/PreRunJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelFlinkJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *jobmanagerClient) RunJob(ctx context.Context, in *request.RunJob, opts ...grpc.CallOption) (*response.RunJob, error) {
-	out := new(response.RunJob)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/RunJob", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *jobmanagerClient) GetJobInfo(ctx context.Context, in *request.GetJobInfo, opts ...grpc.CallOption) (*response.GetJobInfo, error) {
-	out := new(response.GetJobInfo)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/GetJobInfo", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *jobmanagerClient) CancelJob(ctx context.Context, in *request.CancelJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/CancelJob", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *jobmanagerClient) ValidateJob(ctx context.Context, in *request.ValidateJob, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error) {
+func (c *jobmanagerClient) ValidateFlinkJob(ctx context.Context, in *request.ValidateFlinkJob, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error) {
 	out := new(response.StreamJobCodeSyntax)
-	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/ValidateJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/jobpb.Jobmanager/ValidateFlinkJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,12 +94,12 @@ func (c *jobmanagerClient) ValidateJob(ctx context.Context, in *request.Validate
 // All implementations must embed UnimplementedJobmanagerServer
 // for forward compatibility
 type JobmanagerServer interface {
-	ReleaseNote(context.Context, *request.ReleaseNote) (*model.EmptyStruct, error)
-	PreRunJob(context.Context, *request.RunJob) (*model.EmptyStruct, error)
-	RunJob(context.Context, *request.RunJob) (*response.RunJob, error)
-	GetJobInfo(context.Context, *request.GetJobInfo) (*response.GetJobInfo, error)
-	CancelJob(context.Context, *request.CancelJob) (*model.EmptyStruct, error)
-	ValidateJob(context.Context, *request.ValidateJob) (*response.StreamJobCodeSyntax, error)
+	FreeFlinkJob(context.Context, *request.FreeFlinkJob) (*model.EmptyStruct, error)
+	InitFlinkJob(context.Context, *request.InitFlinkJob) (*response.InitFlinkJob, error)
+	SubmitFlinkJob(context.Context, *request.SubmitFlinkJob) (*response.SubmitFlinkJob, error)
+	GetFlinkJob(context.Context, *request.GetFlinkJob) (*response.GetFlinkJob, error)
+	CancelFlinkJob(context.Context, *request.CancelFlinkJob) (*model.EmptyStruct, error)
+	ValidateFlinkJob(context.Context, *request.ValidateFlinkJob) (*response.StreamJobCodeSyntax, error)
 	mustEmbedUnimplementedJobmanagerServer()
 }
 
@@ -107,23 +107,23 @@ type JobmanagerServer interface {
 type UnimplementedJobmanagerServer struct {
 }
 
-func (UnimplementedJobmanagerServer) ReleaseNote(context.Context, *request.ReleaseNote) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReleaseNote not implemented")
+func (UnimplementedJobmanagerServer) FreeFlinkJob(context.Context, *request.FreeFlinkJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FreeFlinkJob not implemented")
 }
-func (UnimplementedJobmanagerServer) PreRunJob(context.Context, *request.RunJob) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PreRunJob not implemented")
+func (UnimplementedJobmanagerServer) InitFlinkJob(context.Context, *request.InitFlinkJob) (*response.InitFlinkJob, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InitFlinkJob not implemented")
 }
-func (UnimplementedJobmanagerServer) RunJob(context.Context, *request.RunJob) (*response.RunJob, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RunJob not implemented")
+func (UnimplementedJobmanagerServer) SubmitFlinkJob(context.Context, *request.SubmitFlinkJob) (*response.SubmitFlinkJob, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitFlinkJob not implemented")
 }
-func (UnimplementedJobmanagerServer) GetJobInfo(context.Context, *request.GetJobInfo) (*response.GetJobInfo, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetJobInfo not implemented")
+func (UnimplementedJobmanagerServer) GetFlinkJob(context.Context, *request.GetFlinkJob) (*response.GetFlinkJob, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFlinkJob not implemented")
 }
-func (UnimplementedJobmanagerServer) CancelJob(context.Context, *request.CancelJob) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CancelJob not implemented")
+func (UnimplementedJobmanagerServer) CancelFlinkJob(context.Context, *request.CancelFlinkJob) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CancelFlinkJob not implemented")
 }
-func (UnimplementedJobmanagerServer) ValidateJob(context.Context, *request.ValidateJob) (*response.StreamJobCodeSyntax, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ValidateJob not implemented")
+func (UnimplementedJobmanagerServer) ValidateFlinkJob(context.Context, *request.ValidateFlinkJob) (*response.StreamJobCodeSyntax, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ValidateFlinkJob not implemented")
 }
 func (UnimplementedJobmanagerServer) mustEmbedUnimplementedJobmanagerServer() {}
 
@@ -138,110 +138,110 @@ func RegisterJobmanagerServer(s grpc.ServiceRegistrar, srv JobmanagerServer) {
 	s.RegisterService(&_Jobmanager_serviceDesc, srv)
 }
 
-func _Jobmanager_ReleaseNote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ReleaseNote)
+func _Jobmanager_FreeFlinkJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.FreeFlinkJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).ReleaseNote(ctx, in)
+		return srv.(JobmanagerServer).FreeFlinkJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/ReleaseNote",
+		FullMethod: "/jobpb.Jobmanager/FreeFlinkJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).ReleaseNote(ctx, req.(*request.ReleaseNote))
+		return srv.(JobmanagerServer).FreeFlinkJob(ctx, req.(*request.FreeFlinkJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_PreRunJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.RunJob)
+func _Jobmanager_InitFlinkJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.InitFlinkJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).PreRunJob(ctx, in)
+		return srv.(JobmanagerServer).InitFlinkJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/PreRunJob",
+		FullMethod: "/jobpb.Jobmanager/InitFlinkJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).PreRunJob(ctx, req.(*request.RunJob))
+		return srv.(JobmanagerServer).InitFlinkJob(ctx, req.(*request.InitFlinkJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_RunJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.RunJob)
+func _Jobmanager_SubmitFlinkJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.SubmitFlinkJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).RunJob(ctx, in)
+		return srv.(JobmanagerServer).SubmitFlinkJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/RunJob",
+		FullMethod: "/jobpb.Jobmanager/SubmitFlinkJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).RunJob(ctx, req.(*request.RunJob))
+		return srv.(JobmanagerServer).SubmitFlinkJob(ctx, req.(*request.SubmitFlinkJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_GetJobInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.GetJobInfo)
+func _Jobmanager_GetFlinkJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.GetFlinkJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).GetJobInfo(ctx, in)
+		return srv.(JobmanagerServer).GetFlinkJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/GetJobInfo",
+		FullMethod: "/jobpb.Jobmanager/GetFlinkJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).GetJobInfo(ctx, req.(*request.GetJobInfo))
+		return srv.(JobmanagerServer).GetFlinkJob(ctx, req.(*request.GetFlinkJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_CancelJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.CancelJob)
+func _Jobmanager_CancelFlinkJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.CancelFlinkJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).CancelJob(ctx, in)
+		return srv.(JobmanagerServer).CancelFlinkJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/CancelJob",
+		FullMethod: "/jobpb.Jobmanager/CancelFlinkJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).CancelJob(ctx, req.(*request.CancelJob))
+		return srv.(JobmanagerServer).CancelFlinkJob(ctx, req.(*request.CancelFlinkJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Jobmanager_ValidateJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ValidateJob)
+func _Jobmanager_ValidateFlinkJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ValidateFlinkJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JobmanagerServer).ValidateJob(ctx, in)
+		return srv.(JobmanagerServer).ValidateFlinkJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/jobpb.Jobmanager/ValidateJob",
+		FullMethod: "/jobpb.Jobmanager/ValidateFlinkJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JobmanagerServer).ValidateJob(ctx, req.(*request.ValidateJob))
+		return srv.(JobmanagerServer).ValidateFlinkJob(ctx, req.(*request.ValidateFlinkJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -251,28 +251,28 @@ var _Jobmanager_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*JobmanagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ReleaseNote",
-			Handler:    _Jobmanager_ReleaseNote_Handler,
+			MethodName: "FreeFlinkJob",
+			Handler:    _Jobmanager_FreeFlinkJob_Handler,
 		},
 		{
-			MethodName: "PreRunJob",
-			Handler:    _Jobmanager_PreRunJob_Handler,
+			MethodName: "InitFlinkJob",
+			Handler:    _Jobmanager_InitFlinkJob_Handler,
 		},
 		{
-			MethodName: "RunJob",
-			Handler:    _Jobmanager_RunJob_Handler,
+			MethodName: "SubmitFlinkJob",
+			Handler:    _Jobmanager_SubmitFlinkJob_Handler,
 		},
 		{
-			MethodName: "GetJobInfo",
-			Handler:    _Jobmanager_GetJobInfo_Handler,
+			MethodName: "GetFlinkJob",
+			Handler:    _Jobmanager_GetFlinkJob_Handler,
 		},
 		{
-			MethodName: "CancelJob",
-			Handler:    _Jobmanager_CancelJob_Handler,
+			MethodName: "CancelFlinkJob",
+			Handler:    _Jobmanager_CancelFlinkJob_Handler,
 		},
 		{
-			MethodName: "ValidateJob",
-			Handler:    _Jobmanager_ValidateJob_Handler,
+			MethodName: "ValidateFlinkJob",
+			Handler:    _Jobmanager_ValidateFlinkJob_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

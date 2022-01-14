@@ -903,7 +903,13 @@ func (this *UDFCommonFunc) Validate() error {
 	}
 	return nil
 }
-func (this *RunJob) Validate() error {
+func (this *FreeFlinkJob) Validate() error {
+	if !(len(this.InstanceId) == 20) {
+		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+	}
+	return nil
+}
+func (this *InitFlinkJob) Validate() error {
 	if !(len(this.InstanceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
 	}
@@ -922,9 +928,18 @@ func (this *RunJob) Validate() error {
 	}
 	return nil
 }
-func (this *GetJobInfo) Validate() error {
+func (this *SubmitFlinkJob) Validate() error {
 	if !(len(this.InstanceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+	}
+	if !(len(this.NoteId) == 9) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NoteId", fmt.Errorf(`value '%v' must have a length equal to '9'`, this.NoteId))
+	}
+	return nil
+}
+func (this *GetFlinkJob) Validate() error {
+	if !(len(this.FlinkId) == 32) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlinkId", fmt.Errorf(`value '%v' must have a length equal to '32'`, this.FlinkId))
 	}
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
@@ -934,9 +949,9 @@ func (this *GetJobInfo) Validate() error {
 	}
 	return nil
 }
-func (this *CancelJob) Validate() error {
-	if !(len(this.InstanceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
+func (this *CancelFlinkJob) Validate() error {
+	if !(len(this.FlinkId) == 32) {
+		return github_com_mwitkow_go_proto_validators.FieldError("FlinkId", fmt.Errorf(`value '%v' must have a length equal to '32'`, this.FlinkId))
 	}
 	if !(len(this.SpaceId) == 20) {
 		return github_com_mwitkow_go_proto_validators.FieldError("SpaceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.SpaceId))
@@ -946,13 +961,7 @@ func (this *CancelJob) Validate() error {
 	}
 	return nil
 }
-func (this *ReleaseNote) Validate() error {
-	if !(len(this.InstanceId) == 20) {
-		return github_com_mwitkow_go_proto_validators.FieldError("InstanceId", fmt.Errorf(`value '%v' must have a length equal to '20'`, this.InstanceId))
-	}
-	return nil
-}
-func (this *ValidateJob) Validate() error {
+func (this *ValidateFlinkJob) Validate() error {
 	if this.Code != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Code); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Code", err)

@@ -328,7 +328,17 @@ message DescribeUDF {
 //  string Message = 2 [(validator.field) = {}];
 //}
 
-message RunJob {
+message InitFlinkJob{
+  // NoteID
+  // @inject_tag: json:"note_id" default:"" binding:"len=9" required:"true"
+  string note_id = 1 [(validator.field) = {length_eq: 9}];
+
+  // ParagraphID
+  // @inject_tag: json:"paragraph_id" default:"" binding:"-"
+  string paragraph_id = 2 [(validator.field) = {}];
+}
+
+message SubmitFlinkJob{
   // job info
   // @inject_tag: json:"state"
   model.StreamJobInst.State State = 1 [(validator.field) = {}];
@@ -336,13 +346,37 @@ message RunJob {
   // message
   // @inject_tag: json:"message"
   string message = 2 [(validator.field) = {}];
+
+  // flink job id
+  // @inject_tag: json:"flink_id"
+  string flink_id = 3 [(validator.field) = {}];
 }
 
-message GetJobInfo{
+message GetFlinkJob{
   // job info
   // @inject_tag: json:"state"
   model.StreamJobInst.State State = 1 [(validator.field) = {}];
+
+  // job message
+  // @inject_tag: json:"message"
+  string message = 2 [(validator.field) = {}];
 }
+
+//message RunJob {
+//  // job info
+//  // @inject_tag: json:"state"
+//  model.StreamJobInst.State State = 1 [(validator.field) = {}];
+//
+//  // message
+//  // @inject_tag: json:"message"
+//  string message = 2 [(validator.field) = {}];
+//}
+
+//message GetJobInfo{
+//  // job info
+//  // @inject_tag: json:"state"
+//  model.StreamJobInst.State State = 1 [(validator.field) = {}];
+//}
 
 // NodeRelations
 //message NodeRelations {
@@ -506,17 +540,17 @@ message GetPriceComponents {
 message CreateBillingInstance {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string instance_id = 1 [ (validator.field) = { length_eq: 30 } ];
+  string instance_id = 1 [(validator.field) = {length_eq: 30}];
 }
 
 message StopBillingInstance {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"message" uri:"message" default:"" binding:"len=20" swaggerignore:"true"
-  string message = 1 [ (validator.field) = { length_eq: 20 } ];
+  string message = 1 [(validator.field) = {length_eq: 20}];
 }
 
 message RecoveryBillingInstance {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"message" uri:"message" default:"" binding:"len=20" swaggerignore:"true"
-  string message = 1 [ (validator.field) = { length_eq: 20 } ];
+  string message = 1 [(validator.field) = {length_eq: 20}];
 }

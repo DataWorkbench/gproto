@@ -444,6 +444,7 @@ message FlinkPython {
 
 // FlinkSQL
 message FlinkSQL {
+
 	// sql code.
 	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" required:"false" minLength:"0" maxLength:"40000"
 	string code = 1 [ (validator.field) = {length_gt: -1, length_lt: 40001 } ];

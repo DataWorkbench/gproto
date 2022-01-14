@@ -327,10 +327,16 @@ func (this *DescribeUDF) Validate() error {
 	}
 	return nil
 }
-func (this *RunJob) Validate() error {
+func (this *InitFlinkJob) Validate() error {
+	if !(len(this.NoteId) == 9) {
+		return github_com_mwitkow_go_proto_validators.FieldError("NoteId", fmt.Errorf(`value '%v' must have a length equal to '9'`, this.NoteId))
+	}
 	return nil
 }
-func (this *GetJobInfo) Validate() error {
+func (this *SubmitFlinkJob) Validate() error {
+	return nil
+}
+func (this *GetFlinkJob) Validate() error {
 	return nil
 }
 func (this *PTasksStatusStat) Validate() error {
