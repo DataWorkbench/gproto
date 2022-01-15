@@ -52,7 +52,7 @@ message ListWorkspaces {
 	// Filter by workspace status;  Not required.
 	// Valid optional: 1 => "enabled", 2 => "disabled".
 	// @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
-	model.Workspace.Status status = 7 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+	model.Workspace.Status status = 7 [ (validator.field).tags.enum = { in_enums: true } ];
 
 	// Filter by workspace name; valid if `search` is empty; Not required.
 	// @inject_tag: json:"name" form:"name" default:"" binding:"-"
@@ -182,7 +182,7 @@ message ListAudits {
 
   // Querying conditions. Not required.
   // @inject_tag: json:"type" form:"type" default:"" binding:"-"
-  model.Operation.Type type = 7 [(validator.field) = {}];
+  model.Operation.Type type = 7 [(validator.field).tags.enum = { in_enums: true }];
 
   // Querying conditions. Not required.
   // @inject_tag: json:"action" form:"action" default:"" binding:"-"
@@ -505,7 +505,7 @@ message ListReleaseStreamJobs {
   // Filter by release status;  Not required.
   // Valid optional: 1 => "enabled", 2 => "disabled".
   // @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
-  model.StreamJobRelease.Status status = 7 [(validator.field) = {}];
+  model.StreamJobRelease.Status status = 7 [(validator.field).tags.enum = { in_enums: true }];
 }
 
 // ReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body.)
@@ -686,7 +686,7 @@ message ListStreamInstances {
 
   // The stream instance state. Not required.
   // @inject_tag: json:"state" form:"state" default:"" binding:"-"
-  model.StreamJobInst.State state = 6;
+  model.StreamJobInst.State state = 6 [ (validator.field).tags.enum = { in_enums: true }];
 
   // The field list used to sorted query results.
   // Optional values: {job_id, id, created, updated}.
@@ -994,7 +994,7 @@ message ListTable {
 
 	// TableKind, one of 1/2/3 1->source/2->destination/3->dimension
 	// @inject_tag: json:"table_kind" form:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-	model.TableInfo.Kind table_kind = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+	model.TableInfo.Kind table_kind = 8  [ (validator.field).tags.enum = { in_enums: true  } ];
 }
 
 // DownloadFile used as a request parameters for RPC and HTTP(based on URL-Query).
@@ -1190,7 +1190,7 @@ message ListUDF {
 
 	// UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
 	// @inject_tag: json:"udf_type" form:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-	model.UDFInfo.Type udf_type = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+	model.UDFInfo.Type udf_type = 7 [ (validator.field).tags.enum = { in_enums: true  } ];
 }
 
 // UDFCommonFunc used as request parameters for RPC and HTTP(based on Body)

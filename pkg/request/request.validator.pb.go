@@ -53,9 +53,6 @@ func (this *ListWorkspaces) _xxx_xxx_Validator_Validate_user_id() error {
 var _xxx_xxx_Validator_ListWorkspaces_InEnums_Status = map[model.Workspace_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *ListWorkspaces) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status > 0) {
-		return protovalidator.FieldError1("ListWorkspaces", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
-	}
 	if !(_xxx_xxx_Validator_ListWorkspaces_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("ListWorkspaces", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
 	}
@@ -371,6 +368,15 @@ func (this *ListAudits) _xxx_xxx_Validator_Validate_user_id() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListAudits_InEnums_Type = map[model.Operation_Type]bool{0: true, 1: true, 2: true}
+
+func (this *ListAudits) _xxx_xxx_Validator_Validate_type() error {
+	if !(_xxx_xxx_Validator_ListAudits_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("ListAudits", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	return nil
+}
+
 // Set default value for message request.ListAudits
 func (this *ListAudits) Validate() error {
 	if this == nil {
@@ -383,6 +389,9 @@ func (this *ListAudits) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	return nil
@@ -1101,6 +1110,15 @@ func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_space_id() error 
 	return nil
 }
 
+var _xxx_xxx_Validator_ListReleaseStreamJobs_InEnums_Status = map[model.StreamJobRelease_Status]bool{0: true, 1: true, 2: true, 3: true}
+
+func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_status() error {
+	if !(_xxx_xxx_Validator_ListReleaseStreamJobs_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("ListReleaseStreamJobs", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	return nil
+}
+
 // Set default value for message request.ListReleaseStreamJobs
 func (this *ListReleaseStreamJobs) Validate() error {
 	if this == nil {
@@ -1113,6 +1131,9 @@ func (this *ListReleaseStreamJobs) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
 	return nil
@@ -1529,6 +1550,15 @@ func (this *ListStreamInstances) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListStreamInstances_InEnums_State = map[model.StreamJobInst_State]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+
+func (this *ListStreamInstances) _xxx_xxx_Validator_Validate_state() error {
+	if !(_xxx_xxx_Validator_ListStreamInstances_InEnums_State[this.State]) {
+		return protovalidator.FieldError1("ListStreamInstances", "the value of field 'state' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.State)))
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_ListStreamInstances_In_SortBy = map[string]bool{"": true, "job_id": true, "id": true, "created": true, "updated": true}
 
 func (this *ListStreamInstances) _xxx_xxx_Validator_Validate_sort_by() error {
@@ -1550,6 +1580,9 @@ func (this *ListStreamInstances) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_state(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
@@ -2262,9 +2295,6 @@ func (this *ListTable) _xxx_xxx_Validator_Validate_space_id() error {
 var _xxx_xxx_Validator_ListTable_InEnums_TableKind = map[model.TableInfo_Kind]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *ListTable) _xxx_xxx_Validator_Validate_table_kind() error {
-	if !(this.TableKind > 0) {
-		return protovalidator.FieldError1("ListTable", "the value of field 'table_kind' must be greater than '0'", protovalidator.Int32ToString(int32(this.TableKind)))
-	}
 	if !(_xxx_xxx_Validator_ListTable_InEnums_TableKind[this.TableKind]) {
 		return protovalidator.FieldError1("ListTable", "the value of field 'table_kind' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.TableKind)))
 	}
@@ -2728,9 +2758,6 @@ func (this *ListUDF) _xxx_xxx_Validator_Validate_space_id() error {
 var _xxx_xxx_Validator_ListUDF_InEnums_UdfType = map[model.UDFInfo_Type]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *ListUDF) _xxx_xxx_Validator_Validate_udf_type() error {
-	if !(this.UdfType > 0) {
-		return protovalidator.FieldError1("ListUDF", "the value of field 'udf_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.UdfType)))
-	}
 	if !(_xxx_xxx_Validator_ListUDF_InEnums_UdfType[this.UdfType]) {
 		return protovalidator.FieldError1("ListUDF", "the value of field 'udf_type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfType)))
 	}
