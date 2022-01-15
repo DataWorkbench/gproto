@@ -73,25 +73,36 @@ for f in proto/*.proto;do
   protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --go_out=. --go-grpc_out=. "$f"
 
   # Generate validator code.
-  if grep "validator.proto" "$f" >/dev/null 2>&1; then
-    protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --govalidators_opt=paths=source_relative --govalidators_out=. "$f"
-    mv -f proto/"${name}".validator.pb.go ".${dir}/"
-    if [ "$(uname -s)" == "Darwin" ] && ! sed --version >/dev/null 2>&1; then
-      sed -i "" 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
-    else
-      sed -i 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
-    fi
-  else
-    /bin/rm -f ".${dir}/${name}.validator.pb.go"
-  fi
+  protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --govalidator_opt=module="${MODULE}" --govalidator_out=. "$f"
 
-    # Generate gosql code.
-  if grep 'gosql.proto' "$f"  >/dev/null 2>&1; then
-     protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=paths=source_relative --gosql_out=. "$f"
-     mv -f proto/"${name}".sql.pb.go ".${dir}/"
-  else
-    /bin/rm -f ".${dir}/${name}.sql.pb.go"
-  fi
+  # Generate defaults code.
+  protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --godefaults_opt=module="${MODULE}" --godefaults_out=. "$f"
+
+  # Generate gosql code.
+  protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=module="${MODULE}" --gosql_out=. "$f"
+
+
+#  if grep "validator.proto" "$f" >/dev/null 2>&1; then
+##    protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --govalidator_opt=paths=source_relative --govalidator_out=. "$f"
+#    protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --govalidator_opt=module="${MODULE}" --govalidator_out=. "$f"
+#    mv -f proto/"${name}".validator.pb.go ".${dir}/"
+#    if [ "$(uname -s)" == "Darwin" ] && ! sed --version >/dev/null 2>&1; then
+#      sed -i "" 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
+#    else
+#      sed -i 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
+#    fi
+#  else
+#    /bin/rm -f ".${dir}/${name}.validator.pb.go"
+#  fi
+
+
+#  if grep 'gosql.proto' "$f"  >/dev/null 2>&1; then
+##     protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=paths=source_relative --gosql_out=. "$f"
+#    protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=module="${MODULE}" --gosql_out=. "$f"
+#     mv -f proto/"${name}".sql.pb.go ".${dir}/"
+#  else
+#    /bin/rm -f ".${dir}/${name}.sql.pb.go"
+#  fi
 
   # Inject tag to struct and remove comments.
   pbgo=".${dir}/${name}.pb.go"

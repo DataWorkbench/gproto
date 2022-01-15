@@ -11,7 +11,9 @@ option java_multiple_files = true;
 package flink;
 
 import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
-import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+//import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 // ----------------------------- Flink Operator ----------------------------------------- //
 
@@ -19,30 +21,30 @@ import "github.com/mwitkow/go-proto-validators/validator.proto";
 message ColumnAs {
 	// Column name
 	// @inject_tag: json:"field" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string field = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string field = 1 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// func
 	// @inject_tag: json:"func" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string func = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string func = 2 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// Type
 	// @inject_tag: json:"type" default:"" binding:"gte=0,lte=256" required:"true" minLength:"0" maxLength:"256"
-	string type = 4 [ (validator.field) = { length_gt: -1 , length_lt: 257} ];
+	string type = 4 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 256 } ];
 	
 	// Column AS
 	// @inject_tag: json:"as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string as = 5 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string as = 5 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 }
 
 // DestOperatorProperty
 message DestOperator {
 	// insert into these columns
 	// @inject_tag: json:"columns" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
-	repeated string columns = 1 [ (validator.field) = { length_gt: 0 , length_lt: 20001} ];
+	repeated string columns = 1 [ (validator.field).tags.repeated = { len_gt: 0 , len_lte: 20000} ];
 	
 	// tableid
 	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
-	string table_id = 2 [ (validator.field) = { length_eq: 20 } ];
+	string table_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 // ValuesOperatorProperty
@@ -50,12 +52,12 @@ message ValuesOperator {
 	message ValuesType  {
 		// this is one row.
 		// @inject_tag: json:"values" default:"" binding:"gte=1" required:"false" minLength:"1"
-		repeated string values = 1 [ (validator.field) = { length_gt: 0 } ];
+		repeated string values = 1 [ (validator.field).tags.repeated = { len_gt: 0 } ];
 	}
 	
 	// all rows.
 	// @inject_tag: json:"rows" default:"" binding:"gte=1" required:"true" minLength:"1"
-	repeated ValuesType rows = 1 [ (validator.field) = { length_gt: 0 } ];
+	repeated ValuesType rows = 1 [ (validator.field).tags.repeated = { len_gt: 0 } ];
 }
 
 // OrderByOperatorProperty
@@ -63,37 +65,37 @@ message OrderByOperator {
 	message OrderByColumn  {
 		// Column name
 		// @inject_tag: json:"field" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-		string field = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+		string field = 1 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 		
 		// order oneof 'asc' 'desc'
 		// @inject_tag: json:"order" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-		string order = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+		string order = 2 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	}
 	
 	// OrderBy
 	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1026"
-	repeated OrderByColumn column = 1  [ (validator.field) = { length_gt: 0, length_lt: 1025} ];
+	repeated OrderByColumn column = 1  [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 1025} ];
 }
 
 // LimitOperatorProperty
 message LimitOperator {
 	// The limit
 	// @inject_tag: json:"limit" default:"" binding:"gte=1,lte=100" required:"true" mininum:"1" maximum:"100"
-	int32 limit = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+	int32 limit = 1 [ (validator.field).tags.int = { gt: 0, lte: 100 } ];
 }
 
 // OffsetOperatorProperty
 message OffsetOperator {
 	// The limit
 	// @inject_tag: json:"offset" default:"" binding:"gte=0,lte=100" required:"true" mininum:"0" maximum:"100"
-	int32 offset = 1 [ (validator.field) = { length_gt: -1, length_lt: 101 } ];
+	int32 offset = 1 [ (validator.field).tags.int = { gt: 0, lte: 100 } ];
 }
 
 // FetchOperatorProperty
 message FetchOperator {
 	// The limit
 	// @inject_tag: json:"fetch" default:"" binding:"gte=1,lte=100" required:"true" mininum:"1" maximum:"100"
-	int32 fetch = 1 [ (validator.field) = { length_gt: 0, length_lt: 101 } ];
+	int32 fetch = 1 [ (validator.field).tags.int = { gt: 0, lte: 100 } ];
 }
 
 // UnionOperatorProperty
@@ -107,21 +109,21 @@ message UnionOperator {
 message GroupByOperator {
 	// Groupby column
 	// @inject_tag: json:"group_by" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	repeated string group_by = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	repeated string group_by = 1 [ (validator.field).tags.repeated = {len_gt: 0, len_lte: 1024 } ];
 }
 
 // HavingOperatorProperty
 message HavingOperator {
 	// having code
 	// @inject_tag: json:"having" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string having = 1 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	string having = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 1024 } ];
 }
 
 // ConstOperatorProperty
 message ConstOperator {
 	// table name
 	// @inject_tag: json:"table" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string table = 1 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string table = 1 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64} ];
 	
 	// column define.
 	// @inject_tag: json:"column" default:"" binding:"-"
@@ -132,15 +134,15 @@ message ConstOperator {
 message SourceOperator {
 	// tableid
 	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
-	string table_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string table_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 	
 	// table name
 	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string table_as = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string table_as = 2 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// distinct or all, oneof ''(empty string) 'distinct'
 	// @inject_tag: json:"distinct" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string distinct = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string distinct = 3 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// column define.
 	// @inject_tag: json:"column" default:"" binding:"-"
@@ -159,15 +161,15 @@ message SourceOperator {
 message DimensionOperator {
 	// tableid
 	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"false" minLength:"20" maxLength:"20"
-	string table_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string table_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 	
 	// table name
 	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string table_as = 2 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string table_as = 2  [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// distinct or all, oneof 'all' 'distinct'
 	// @inject_tag: json:"distinct" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string distinct = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string distinct = 3  [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// column define.
 	// @inject_tag: json:"column" default:"" binding:"-"
@@ -194,42 +196,42 @@ message IntersectOperator {
 message FilterOperator {
 	// Where eg: a.id = 10
 	// @inject_tag: json:"where" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
-	string where = 1 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+	string where = 1 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 	
 	// in: this is columnname
 	// @inject_tag: json:"in" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
-	string in = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+	string in = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 	
 	// Exists: this is columnname
 	// @inject_tag: json:"exists" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
-	string exists = 3 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+	string exists = 3 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 
 	// expression: if upstreamright is null.  eg: "1, 2, 3"
 	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
-	string expression = 4 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+	string expression = 4 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 }
 
 // JoinOperatorProperty
 message JoinOperator {
 	// Join oneof "JOIN" "LEFT JOIN" "RIGHT JOIN" "FULL OUTER JOIN" "CROSS JOIN" "INTERVAL JOIN"
 	// @inject_tag: json:"join" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string join = 1 [ (validator.field) = { length_gt: 0 , length_lt: 65} ];
+	string join = 1 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// Expression
 	// @inject_tag: json:"expression" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string expression = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	string expression = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 	
 	// table name
 	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string table_as = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string table_as = 3 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// table name
 	// @inject_tag: json:"table_as_right" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string table_as_right = 4 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string table_as_right = 4 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// Args
 	// @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string args = 5 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	string args = 5 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 	
 	// column define.
 	// @inject_tag: json:"column" default:"" binding:"-"
@@ -244,15 +246,15 @@ message JoinOperator {
 message UDTFOperator {
 	// udfid in udfmanager
 	// @inject_tag: json:"udf_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string udf_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string udf_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 	
 	// Args
 	// @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	string args = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 	
 	// table name
 	// @inject_tag: json:"table_as" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string table_as = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string table_as = 3 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
 	
 	// column define.
 	// @inject_tag: json:"column" default:"" binding:"-"
@@ -267,11 +269,11 @@ message UDTFOperator {
 message UDTTFOperator {
 	// udfid in udfmanager
 	// @inject_tag: json:"udf_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-	string udf_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string udf_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 	
 	// Args
 	// @inject_tag: json:"args" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string args = 2 [ (validator.field) = {length_gt: 0, length_lt: 1025 } ];
+	string args = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
 	
 	// column define.
 	// @inject_tag: json:"column" default:"" binding:"-"
@@ -378,35 +380,35 @@ message FlinkOperator {
 	}
 	// OperatorType one of 1/2/3.../18 "1-Values" "2-Const" "3-Source" "4-Dimension" "5-Dest" "6-OrderBy" "7-Limit" "8-Offset" "9-Fetch" "10-Filter" "11-Union" "12-Except" "13-Intersect" "14-GroupBy" "15-Having" "16-Join" "17-UDTF" "18-UDTTF"
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	Type type = 1 [ (validator.field) = { length_gt: 0 , length_lt: 21} ];
+	Type type = 1 [ (validator.field).tags.enum = { gte: 1 , in_enums: true } ];
 	
 	// nodeid is unique in this flow.
 	// @inject_tag: json:"id" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	string id = 2 [ (validator.field) = { length_gt: 0 , length_lt: 21} ];
+	string id = 2 [ (validator.field).tags.string = { byte_len_lt: 21} ];
 	
 	// this node name
 	// @inject_tag: json:"name" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string name = 3 [ (validator.field) = { length_gt: -1 , length_lt: 65} ];
+	string name = 3 [ (validator.field).tags.string = { byte_len_lt: 65} ];
 	
 	// the upstream node id
 	// @inject_tag: json:"upstream" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-	string upstream = 4 [ (validator.field) = { length_gt: -1 , length_lt: 21} ];
+	string upstream = 4 [ (validator.field).tags.string = { byte_len_lt: 21} ];
 	
 	// the right upstream node id
 	// @inject_tag: json:"upstream_right" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-	string upstream_right = 5 [ (validator.field) = { length_gt: -1, length_lt: 21} ];
+	string upstream_right = 5 [ (validator.field).tags.string = { byte_len_lt: 21} ];
 	
 	// the downstream node id
 	// @inject_tag: json:"down_stream" default:"" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-	string down_stream = 6 [ (validator.field) = { length_gt: -1, length_lt: 21} ];
+	string down_stream = 6 [ (validator.field).tags.string = { byte_len_lt: 21} ];
 	
 	// the PointX
 	// @inject_tag: json:"point_x" default:"" binding:"gte=1,lte=200" required:"true" minLength:"1" maxLength:"200"
-	int32 point_x = 7 [ (validator.field) = { length_gt: 0 , length_lt: 201} ];
+	int32 point_x = 7 [ (validator.field).tags.int = { gte: 1 , lte: 200 } ];
 	
 	// the PointY
 	// @inject_tag: json:"point_y" default:"" binding:"gte=1,lte=200" required:"true" minLength:"1" maxLength:"200"
-	int32 point_y = 8 [ (validator.field) = { length_gt: 0 , length_lt: 201} ];
+	int32 point_y = 8 [ (validator.field).tags.int = { gte: 1 , lte: 200 } ];
 	
 	// this operator's property
 	// @inject_tag: json:"property" default:""
@@ -421,25 +423,25 @@ message FlinkJar {
 	
 	// JarArgs
 	// @inject_tag: json:"jar_args" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
-	string jar_args = 2 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+	string jar_args = 2 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 	
 	// JarEntry
 	// @inject_tag: json:"jar_entry" default:"" binding:"gte=0,lte=1024" required:"true" minLength:"0" maxLength:"1024"
-	string jar_entry = 3 [ (validator.field) = {length_gt: -1, length_lt: 1025 } ];
+	string jar_entry = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 }
 
 // ScalaOperatorProperty
 message FlinkScala {
 	// code.
 	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" minLength:"0" maxLength:"40000"
-	string code = 1 [ (validator.field) = {length_gt: -1, length_lt: 40001 } ];
+	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000 } ];
 }
 
 // PythonOperatorProperty
 message FlinkPython {
 	// code.
 	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" minLength:"0" maxLength:"40000"
-	string code = 1 [ (validator.field) = {length_gt: -1, length_lt: 40001 } ];
+	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000 } ];
 }
 
 // FlinkSQL
@@ -447,7 +449,7 @@ message FlinkSQL {
 
 	// sql code.
 	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" required:"false" minLength:"0" maxLength:"40000"
-	string code = 1 [ (validator.field) = {length_gt: -1, length_lt: 40001 } ];
+	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000 } ];
 }
 
 // ----------------------------- Flink Operator ----------------------------------------- //
@@ -459,23 +461,23 @@ message FlinkSQL {
 message SqlColumnType {
 	// The column name
 	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string column = 1 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// The column type
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string type = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string type = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// The column comment
 	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-	string comment = 3 [ (validator.field) = { length_gt: -1, length_lt: 257 } ];
+	string comment = 3 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
 	
 	// if it is primary key column, one of true/false
 	// @inject_tag: json:"primary_key" default:"" binding:"gte=1,lte=8" required:"true" minLength:"1" maxLength:"8"
-	string primary_key = 4 [ (validator.field) = { length_gt: 0, length_lt: 9 } ];
+	string primary_key = 4 [ (validator.field).tags.string = { byte_len_lte: 8 } ];
 	
 	// the column type length
 	// @inject_tag: json:"length" default:"" binding:"gte=0,lte=10" required:"false" minLength:"0" maxLength:"10"
-	string Length = 5 [ (validator.field) = { length_gt: -1, length_lt: 11 } ];
+	string Length = 5 [ (validator.field).tags.string = { byte_len_lte: 10 } ];
 }
 
 // SqlTimeColumnType used as request parameters for RPC and HTTP(based on Body)
@@ -488,26 +490,26 @@ message SqlTimeColumnType {
 
 	// The column name
 	// @inject_tag: json:"column" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string column = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string column = 1 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// The column type. oneof proctime/watermark
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" mininum:"1" maximum:"2"
-	Type type = 2 [ (validator.field) = { length_gt: 0, length_lt: 17 } ];
+	Type type = 2 [ (validator.field).tags.enum = { gte:1, in_enums: true } ];
 	
 	// The column expression
 	// @inject_tag: json:"expression" default:"" binding:"gte=0,lte=1024" required:"false" minLength:"0" maxLength:"1024"
-	string expression = 3 [ (validator.field) = { length_gt: -1, length_lt: 1025 } ];
+	string expression = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 }
 
 // ConnectorOption used as request parameters for RPC and HTTP(based on Body)
 message ConnectorOption {
 	// The config name.
 	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=256" required:"true" minLength:"1" maxLength:"256"
-	string name = 1 [ (validator.field) = { length_gt: 0, length_lt: 257 } ];
+	string name = 1 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
 	
 	// The config value.
 	// @inject_tag: json:"value" default:"" binding:"gte=1,lte=4096" required:"true" minLength:"1" maxLength:"4096"
-	string value = 2 [ (validator.field) = { length_gt: 0, length_lt: 4097 } ];
+	string value = 2 [ (validator.field).tags.string = { byte_len_lte: 4096 } ];
 }
 
 // MySQLTableDefine used as request parameters for RPC and HTTP(based on Body)
@@ -520,7 +522,7 @@ message MySQLTable {
 	
 	// the table name in origin upstream node.
 	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string mapping_name = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	string mapping_name = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -541,7 +543,7 @@ message PostgreSQLTable {
 	
 	// the table name in origin upstream node.
 	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string mapping_name = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	string mapping_name = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -562,7 +564,7 @@ message ClickHouseTable {
 	
 	// the table name in origin upstream node.
 	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string MappingName = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	string MappingName = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -583,7 +585,7 @@ message HBaseTable {
 	
 	// the table name in origin upstream node.
 	// @inject_tag: json:"mapping_name" default:"" binding:"gte=0,lte=64" required:"false" minLength:"0" maxLength:"64"
-	string mapping_name = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	string mapping_name = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -604,11 +606,11 @@ message HDFSTable {
 	
 	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
 	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string format = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// the data path
 	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	string path = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -629,11 +631,11 @@ message S3Table {
 	
 	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
 	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string format = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// the data path
 	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	string path = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -654,11 +656,11 @@ message FtpTable {
 	
 	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
 	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string format = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// the data path
 	// @inject_tag: json:"path" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string path = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	string path = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -679,11 +681,11 @@ message KafkaTable {
 	
 	// the data format one of csv/json/avro/debezium-json/canal-json/parquet/orc
 	// @inject_tag: json:"format" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string format = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string format = 2 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 	
 	// the data path
 	// @inject_tag: json:"topic" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string topic = 3 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	string topic = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 	
 	// connection config values.
 	// @inject_tag: json:"connector_options"
@@ -743,45 +745,61 @@ message FlinkConfig {
 	message Item {
 		// The key in key/value item, Is required, Min: 1, Max: 1024.
 		// @inject_tag: json:"key" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
-		string key = 1 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+		string key = 1 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 
 		// The value in key/value item, Is required, Min: 1, Max: 1024.
 		// @inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
-		string value = 2 [ (validator.field) = { length_gt: 0, length_lt: 1024 } ];
+		string value = 2 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 	}
 
 	// Config for flink restart strategy.
 	message RestartStrategy {
 		// Flink restart_strategy, Optional value: "none | fixed-delay | failure-rate"
-		// @inject_tag: json:"restart_strategy" default:"1" binding:"oneof=none fixed-delay failure-rate"
-		string restart_strategy = 1 [ (validator.field) = { } ];
+		// @inject_tag: json:"restart_strategy" binding:"oneof=none fixed-delay failure-rate"
+		string restart_strategy = 1 [ (validator.field).tags.string = { in: [ "none", "fixed-delay", "failure-rate" ] } ];
 
 		// Affect when restart_strategy == "fixed-delay". Min: 1, Max: 1000. Default 1.
-		// @inject_tag: json:"fixed_delay_attempts" default:"1" binding:"gte=1, lte=1000"
-		int32 fixed_delay_attempts = 2;
+		// @inject_tag: json:"fixed_delay_attempts" binding:"gte=1, lte=1000"
+		int32 fixed_delay_attempts = 2 [
+			(defaults.field).basic = "1",
+			(validator.field).tags.int = { gte: 1, lte: 1000 }
+		];
 
 		// Affect when restart_strategy == "fixed-delay". Min: 1, Max: 86400. Default 1, unit is second.
-		// @inject_tag: json:"fixed_delay_delay" default:"1" binding:"gte=1, lte=86400"
-		int32 fixed_delay_delay = 3;
+		// @inject_tag: json:"fixed_delay_delay binding:"gte=1, lte=86400"
+		int32 fixed_delay_delay = 3 [
+			(defaults.field).basic = "1"
+		];
 
 		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 1000. Default 1.
-		// @inject_tag: json:"failure_rate_max_failures_per_interval" default:"1" binding:"gte=1, lte=1000"
-		int32 failure_rate_max_failures_per_interval = 4;
+		// @inject_tag: json:"failure_rate_max_failures_per_interval" binding:"gte=1, lte=1000"
+		int32 failure_rate_max_failures_per_interval = 4 [
+			(defaults.field).basic = "1"
+		];
 
 		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 1. unit is second.
-		// @inject_tag: json:"failure_rate_delay" default:"1" binding:"gte=1, lte=86400"
-		int32 failure_rate_delay = 5;
+		// @inject_tag: json:"failure_rate_delay" binding:"gte=1, lte=86400"
+		int32 failure_rate_delay = 5 [
+			(defaults.field).basic = "1",
+			(validator.field).tags.int = { gte: 1, lte: 86400 }
+		];
 
 		// Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 60, unit is second.
-		// @inject_tag: json:"failure_rate_failure_rate_interval" default:"3" binding:"gte=1, lte=86400"
-		int32 failure_rate_failure_rate_interval = 6;
+		// @inject_tag: json:"failure_rate_failure_rate_interval" binding:"gte=1, lte=86400"
+		int32 failure_rate_failure_rate_interval = 6 [
+			(defaults.field).basic = "3",
+			(validator.field).tags.int = { gte: 1, lte: 86400 }
+		];
 	}
 
 	// Log config.
 	message Logger {
 		// Root log level. Optional Value: "TRACE | DEBUG | INFO | WARN | ERROR", Default is "INFO".
-		// @inject_tag: json:"root_log_level" default:"INFO" binding:"TRACE DEBUG INFO WARN ERROR"
-		string root_log_level = 1 [ (validator.field) = { } ];
+		// @inject_tag: json:"root_log_level" binding:"TRACE DEBUG INFO WARN ERROR"
+		string root_log_level = 1 [
+			(defaults.field).basic = "INFO",
+			(validator.field).tags.string = { in: ["TRACE", "DEBUG", "INFO", "WARN", "ERROR"] }
+		];
 	}
 
 	// Use-defined config. Not required.

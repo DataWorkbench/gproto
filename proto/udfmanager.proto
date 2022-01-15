@@ -19,7 +19,7 @@ service Udfmanager {
     rpc Update(request.UpdateUDF) returns (model.EmptyStruct) {}
     rpc Describe(request.DescribeUDF) returns (response.DescribeUDF) {}
     rpc Delete(request.DeleteUDF) returns (model.EmptyStruct) {}
-	rpc DeleteAll(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+	  rpc DeleteAll(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
     rpc List(request.ListUDF) returns (response.ListUDF) {}
     rpc CommonFunc(request.UDFCommonFunc) returns (response.JsonList) {}
 }

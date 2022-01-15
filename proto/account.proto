@@ -6,8 +6,6 @@ option java_package = "com.workbench.proto.accountpb";
 option java_outer_classname = "AccountPB";
 option java_multiple_files = true;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
-
 service Account {
     rpc ValidateRequestSignature(ValidateRequestSignatureRequest) returns (ValidateRequestSignatureReply) {}
     rpc DescribeUsers(DescribeUsersRequest) returns (DescribeUsersReply) {}
@@ -36,7 +34,7 @@ message ValidateRequestSignatureRequest {
 }
 
 message ValidateRequestSignatureReply {
-    int32 status = 1  [ (validator.field) = { int_gt: -1 } ];
+    int32 status = 1;
     string message = 2 ;
     string user_id = 3;
 }
@@ -44,8 +42,8 @@ message ValidateRequestSignatureReply {
 
 message DescribeUsersRequest {
     repeated string users = 1;
-    int32 limit = 2 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 offset = 3 [ (validator.field) = { msg_exists: true } ];
+    int32 limit = 2;
+    int32 offset = 3 ;
     string req_source = 4;
 }
 
@@ -65,8 +63,8 @@ message User {
 }
 
 message DescribeUsersReply {
-    repeated User user_set = 1 [ (validator.field) = { } ];
+    repeated User user_set = 1;
     int64 total_count = 2;
-    int32 status = 3  [ (validator.field) = { int_gt: -1 } ];
+    int32 status = 3;
     string message = 4 ;
 }

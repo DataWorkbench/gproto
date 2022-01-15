@@ -10,7 +10,9 @@ option java_multiple_files = true;
 
 package request;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
+//import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
 
 import "model.proto";
 
@@ -19,145 +21,145 @@ import "datasource.proto";
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListWorkspaces {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The field list used to sorted query results.
-  // Optional values: {id, name, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
-  // Not required, default: id.
-  // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-  string sort_by = 3 [(validator.field) = {}];
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id|name|updated".
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
+	string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"] } ];
 
-  // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
-  bool reverse = 4 [(validator.field) = {}];
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 4;
 
-  // Search with workspace name; Not required.
-  // @inject_tag: json:"search" form:"search" default:"" binding:"-"
-  string search = 5 [(validator.field) = {}];
+	// Search with workspace name; Not required.
+	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
+	string search = 5;
 
-  // The used_id fixed to request user id.
-  // @inject_tag: json:"user_id" form:"-" default:"" binding:"-" swaggerignore:"true"
-  string user_id = 6 [(validator.field) = {length_lt: 65}];
+	// The used_id fixed to request user id.
+	// @inject_tag: json:"user_id" form:"-" default:"" binding:"-" swaggerignore:"true"
+	string user_id = 6 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
-  // Filter by workspace status;  Not required.
-  // Valid optional: 1 => "enabled", 2 => "disabled".
-  // @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
-  model.Workspace.Status status = 7 [(validator.field) = {}];
+	// Filter by workspace status;  Not required.
+	// Valid optional: 1 => "enabled", 2 => "disabled".
+	// @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
+	model.Workspace.Status status = 7 [ (validator.field).tags.enum = { in_enums: true } ];
 
-  // Filter by workspace name; valid if `search` is empty; Not required.
-  // @inject_tag: json:"name" form:"name" default:"" binding:"-"
-  string name = 8 [(validator.field) = {}];
+	// Filter by workspace name; valid if `search` is empty; Not required.
+	// @inject_tag: json:"name" form:"name" default:"" binding:"-"
+	string name = 8;
 }
 
 // DeleteWorkspaces used as a request parameters for RPC and HTTP(based on Body).
 message DeleteWorkspaces {
-  // The list of workspace id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
-  repeated string space_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of workspace id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
+	repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
 }
 
 // RenameFlinkStatePath used as a request parameters for RPC.
 message RenameFlinkStatePath{
-  // The real path of flink job's savepoint or checkpoint.
-  // @inject_tag: json:"src_path" default:"" binding:"gte=1,lte=100"
-  string src_path = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
-  // The dest path of flink job's savepoint or checkpoint.
-  // @inject_tag: json:"dst_path" default:"" binding:"gte=1,lte=100"
-  string dst_path = 2 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The real path of flink job's savepoint or checkpoint.
+	// @inject_tag: json:"src_path" default:"" binding:"gte=1,lte=100"
+	string src_path = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 100 } ];
+	// The dest path of flink job's savepoint or checkpoint.
+	// @inject_tag: json:"dst_path" default:"" binding:"gte=1,lte=100"
+	string dst_path = 2 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 100 } ];
 }
 
 // DeleteFlinkState used as a request parameters for RPC.
 message DeleteFlinkState{
-  // The path of flink job's savepoint or checkpoint.
-  // @inject_tag: json:"delete_path" default:"" binding:"gte=1,lte=100"
-  string delete_path = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
-  // The type of flink state path.
-  // @inject_tag: json:"is_dir"
-  bool is_dir = 2 [(validator.field) = {msg_exists: true}];
-}
+	// The path of flink job's savepoint or checkpoint.
+	// @inject_tag: json:"delete_path" default:"" binding:"gte=1,lte=100"
+	string delete_path = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 100 } ];
 
+	// The type of flink state path.
+	// @inject_tag: json:"is_dir"
+	bool is_dir = 2;
+}
 
 // DisableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
 message DisableWorkspaces {
-  // The list of workspace id. Is required, Contains at least one.
-  // Disable workspace will suspend all release stream job and stop all running instances.
-  // @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
-  repeated string space_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of workspace id. Is required, Contains at least one.
+	// Disable workspace will suspend all release stream job and stop all running instances.
+	// @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
+	repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
 }
 
 // EnableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
 message EnableWorkspaces {
-  // The list of workspace id. Is required, Contains at least one.
-  // @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
-  repeated string space_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of workspace id. Is required, Contains at least one.
+	// @inject_tag: json:"space_ids" default:"" binding:"gte=1,lte=100"
+	repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
 
-  // Whether resume all suspended job. Not required, default false.
-  // @inject_tag: `json:"resume_job" default:"false" binding:"-"`
-  bool resume_job = 2 [(validator.field) = {}];
+	// Whether resume all suspended job. Not required, default false.
+	// @inject_tag: `json:"resume_job" default:"false" binding:"-"`
+	bool resume_job = 2;
 }
 
 // CreateWorkspace used as a request parameters for RPC and HTTP(based on Body)
 message CreateWorkspace {
-  // The owner fixed to request user id.
-  // @inject_tag: json:"owner" default:"" binding:"-" swaggerignore:"true"
-  string owner = 1 [(validator.field) = {length_lt: 65}];
+	// The owner fixed to request user id.
+	// @inject_tag: json:"owner" default:"" binding:"-" swaggerignore:"true"
+	string owner = 1 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
-  // The space name of each account in each region is unique. Is required, Max Length 128.
-  // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-  //@inject_tag: json:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
-  string name = 2 [(validator.field) = {length_gt: 1, length_lt: 129}];
+	// The space name of each account in each region is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	//@inject_tag: json:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
+	string name = 2 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128 } ];
 
-  // Description of the workspace, Not required, Max 1024 char.
-  //@inject_tag: json:"desc" default:"" binding:"lte=1024"
-  string desc = 3  [(validator.field) = {}];
+	// Description of the workspace, Not required, Max 1024 char.
+	//@inject_tag: json:"desc" default:"" binding:"lte=1024"
+	string desc = 3  [ (validator.field).tags.string = { char_len_lte: 1024 } ];
 }
 
 // UpdateWorkspace used as a request parameters for RPC and HTTP(based on Body)
 message UpdateWorkspace {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The space name of each account in each region is unique. Is required, Max Length 128.
-  // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-  //@inject_tag: json:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
-  string name = 2 [(validator.field) = {length_lt: 129}];
+	// The space name of each account in each region is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	//@inject_tag: json:"name" default:"" binding:"gte=2,lte=128" minLength:"2" maxLength:"128"
+	string name = 2 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
 
-  // Description of the workspace, Not required, Max length 1024.
-  //@inject_tag: json:"desc" default:"" binding:"lte=1024"
-  string desc = 3 [(validator.field) = {}];
+	// Description of the workspace, Not required, Max length 1024.
+	//@inject_tag: json:"desc" default:"" binding:"lte=1024"
+	string desc = 3  [ (validator.field).tags.string = { char_len_lte: 1024 } ];
 }
 
 // DescribeWorkspace used as a request parameters for RPC.
 message DescribeWorkspace {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
 // AddAudit used as a request parameters for RPC.
 message AddAudit {
-  model.Operation info = 1 [(validator.field) = {msg_exists: true}];
+	model.Operation info = 1 [ (validator.field) = { } ];
 }
 
 // ListAudits used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListAudits {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
   // Optional values: {id, created}.
@@ -170,9 +172,9 @@ message ListAudits {
   // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
   bool reverse = 4 [(validator.field) = {}];
 
-  // The used_id fixed to request user id.
-  // @inject_tag: json:"user_id" form:"-" default:"" binding:"-" swaggerignore:"true"
-  string user_id = 5 [(validator.field) = {length_lt: 65}];
+	// The used_id fixed to request user id.
+	// @inject_tag: json:"user_id" form:"-" default:"" binding:"-" swaggerignore:"true"
+	string user_id = 5 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
   // Querying conditions. Not required.
   // @inject_tag: json:"space_id" form:"space_id" default:"" binding:"-"
@@ -203,103 +205,104 @@ message ListAudits {
 
 // ListSystemRoles used as reply parameters in RPC or response body in HTTP.
 message ListSystemRoles {
-  //	// Limit the maximum number of entries returned this time.
-  //	// Not required, Max 100, default 100.
-  //	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  //	int32 limit = 1 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-  //
-  //	// The offset position. Not required, default 0.
-  //	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  //	int32 offset = 2 [ (validator.field) = { int_gt: -1 } ];
-  //
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 3 [(validator.field) = {length_eq: 20}];
+//	// Limit the maximum number of entries returned this time.
+//	// Not required, Max 100, default 100.
+//	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+//	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+//
+//	// The offset position. Not required, default 0.
+//	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+//	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
+//
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
 // ListMembers used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListMembers {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 3 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
 // UpsertMembers used as a request parameters for RPC and HTTP(based on Body).
 message UpsertMembers {
-  message Pair {
-    // The account user_id. Is Required.
-    // @inject_tag: json:"user_id" default:"" binding:"required"
-    string user_id = 2 [(validator.field) = {length_lt: 65}];
+	message Pair {
+		// The account user_id. Is Required.
+		// @inject_tag: json:"user_id" default:"" binding:"required"
+		string user_id = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
-    // The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
-    // @inject_tag: json:"role_ids" default:"" binding:"gte=1,lte=100"
-    string role_ids = 3 [(validator.field) = {length_lt: 101}];
-  }
+		// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
+		// @inject_tag: json:"role_ids" default:"" binding:"gte=1,lte=100"
+		// FIXME
+		string role_ids = 3;
+	}
 
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1[ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The list of pair to user_id => role_ids. Min: 1, Max: 100
-  // @inject_tag: json:"users" default:"" binding:"gte=1,lte=100""
-  repeated Pair users = 2 [(validator.field) = {length_lt: 101}];
+	// The list of pair to user_id => role_ids. Min: 1, Max: 100
+	// @inject_tag: json:"users" default:"" binding:"gte=1,lte=100""
+	repeated Pair users = 2 [ (validator.field).tags.repeated = { len_lte: 100 } ];
 }
 
 // DeleteMembers used as a request parameters for RPC and HTTP(based on Body).
 message DeleteMembers {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The user(member) id. Is required, Min: 1, Max 100.
-  // @inject_tag: json:"user_ids" default:"" binding:"-""
-  repeated string user_ids = 2 [(validator.field) = {length_lt: 100}];
+	// The user(member) id. Is required, Min: 1, Max 100.
+	// @inject_tag: json:"user_ids" default:"" binding:"-""
+	repeated string user_ids = 2 [ (validator.field).tags.repeated = { len_lte: 100 } ];
 }
 
 // CheckPermission used as a request parameters for RPC.
 message CheckPermission {
-  string req_user_id = 1 [(validator.field) = {length_lt: 65}];
-  string space_id = 2 [(validator.field) = {length_eq: 20}];
-  string module = 3 [(validator.field) = {length_gt: 0}];
-  model.Operation.Type op_type = 4 [(validator.field) = {int_gt: 1, int_lt: 4}];
-  string op_name = 5 [(validator.field) = {length_gt: 0}];
-  map<string, bool> roles = 6 [(validator.field) = {length_gt: 0}];
+	string req_user_id      = 1 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+	string space_id         = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	string module           = 3 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
+	model.Operation.Type op_type = 4 [ (validator.field).tags.enum = { gte: 1; in_enums: true } ];
+	string op_name          = 5 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
+	map<string, bool> roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
 }
 
 // ListStreamJobs used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListStreamJobs {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The field list used to sorted query results.
-  // Optional values: {id, name, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="name,crated".
-  // Not required, default: id.
-  // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-  string sort_by = 3 [(validator.field) = {}];
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
+	string sort_by = 3 [ (validator.field) = {} ];
 
-  // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
-  bool reverse = 4 [(validator.field) = {}];
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 4 [ (validator.field) = { } ];
 
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 5 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // Search with stream job name; Not required.
   // @inject_tag: json:"search" form:"search" default:"" binding:"-"
@@ -308,27 +311,27 @@ message ListStreamJobs {
 
 // CreateStreamJob used as a request parameters for RPC and HTTP(based on Body)
 message CreateStreamJob {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The user-id of created this job. Fixed to the request user id.
-  // @inject_tag: json:"created_by" swaggerignore:"true"
-  string created_by = 2 [(validator.field) = {msg_exists: true}];
+	// The user-id of created this job. Fixed to the request user id.
+	// @inject_tag: json:"created_by" swaggerignore:"true"
+	string created_by = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
-  // The job name in each workspace is unique. Is required, Max Length 128.
-  // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-  // @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
-  string name = 3 [(validator.field) = {length_gt: 1, length_lt: 129}];
+	// The job name in each workspace is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	// @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
+	string name = 3 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128 } ];
 
-  // Description of the job, Not required, Max length 1024.
-  // @inject_tag: json:"desc" default:"" binding:"lte=1024"
-  string desc = 4 [(validator.field) = {length_lt: 1025}];
+	// Description of the job, Not required, Max length 1024.
+	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
+	string desc = 4 [ (validator.field).tags.string = { char_len_lte: 1020 } ];
 
-  // The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
-  // Desc: Cannot be modified after creation.
-  // @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
-  model.StreamJob.Type type = 5  [(validator.field) = {int_gt: 0}];
+	// The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+	// Desc: Cannot be modified after creation.
+	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
+	model.StreamJob.Type type = 5  [ (validator.field).tags.enum = { gte: 1; in_enums: true  } ];
 
   // The flink compute cluster id. Is required.
   // @inject_tag: json:"cluster_id" default:"" binding:"-"
@@ -341,39 +344,39 @@ message CreateStreamJob {
 
 // DeleteStreamJobs used as a request parameters for RPC and HTTP(based on Body)
 message DeleteStreamJobs {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-  // The list of stream job id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"job_ids" default:"" binding:"gte=1,lte=100"
-  repeated string job_ids = 2 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	// The list of stream job id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"job_ids" default:"" binding:"gte=1,lte=100"
+	repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 // UpdateStreamJob used as a request parameters for RPC and HTTP(based on Body).
 message UpdateStreamJob {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
-  // The stream job name in each workspace is unique. Is required, Max Length 128.
-  // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-  // @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
-  string name = 3     [(validator.field) = {length_gt: 1, length_lt: 129}];
+	// The stream job name in each workspace is unique. Is required, Max Length 128.
+	// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+	// @inject_tag: json:"name" default:"" binding:"gte=2,lte=128"
+	string name = 3  [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128 } ];
 
-  // Description of the workspace, Not required, Max length 1024.
-  // @inject_tag: json:"desc" default:"" binding:"lte=1024"
-  string desc = 4     [(validator.field) = {length_lt: 1025}];
+	// Description of the workspace, Not required, Max length 1024.
+	// @inject_tag: json:"desc" default:"" binding:"lte=1024"
+	string desc = 4  [ (validator.field).tags.string = { char_len_lte: 1024 } ];
 }
 
 // DescribeStreamJob used as a request parameters for RPC.
 message DescribeStreamJob {
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 1 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
@@ -382,65 +385,65 @@ message DescribeStreamJob {
 
 // SetStreamJobCode used as a request parameters for RPC.
 message SetStreamJobCode {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job id it belongs to.
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job id it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
-  // The code info of JSON format.
-  // @inject_tag: json:"code" default:"" binding:"-"
-  model.StreamJobCode code = 3 [(validator.field) = {msg_exists: false}];
+	// The code info of JSON format.
+	// @inject_tag: json:"code" default:"" binding:"-"
+	model.StreamJobCode code = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // SetStreamJobSchedule used as a request parameters for RPC.
 message SetStreamJobSchedule {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job id it belongs to.
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job id it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
-  model.StreamJobSchedule info = 3 [(validator.field) = {msg_exists: false}];
+	model.StreamJobSchedule info = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // SetStreamJobCode used as a request parameters for RPC.
 message StreamJobCodeSyntax {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job id it belongs to.
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job id it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
-  // The code info of JSON format.
-  // @inject_tag: json:"code" default:"" binding:"-"
-  model.StreamJobCode code = 3 [(validator.field) = {msg_exists: false}];
+	// The code info of JSON format.
+	// @inject_tag: json:"code" default:"" binding:"-"
+	model.StreamJobCode code = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // SetStreamJobArgs used as a request parameters for RPC.
 message SetStreamJobArgs {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job ID it belongs to.
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job ID it belongs to.
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
-  model.StreamJobArgs info = 3 [(validator.field) = {msg_exists: false}];
+	model.StreamJobArgs info = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // GetStreamJobCode used as a request parameters for RPC.
 message GetStreamJobCode {
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 1 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
@@ -449,9 +452,9 @@ message GetStreamJobCode {
 
 // GetStreamJobSchedule used as a request parameters for RPC.
 message GetStreamJobSchedule {
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 1 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
@@ -460,9 +463,9 @@ message GetStreamJobSchedule {
 
 // GetStreamJobArgs used as a request parameters for RPC.
 message GetStreamJobArgs {
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 1 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" default:"" binding:"-" swaggerignore:"true"
@@ -471,29 +474,29 @@ message GetStreamJobArgs {
 
 // ListReleaseStreamJobs used as a request parameters for RPC and HTTP(based on URL-Query).
 message ListReleaseStreamJobs {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The field list used to sorted query results.
-  // Optional values: {job_id, name, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="name,crated".
-  // Not required, default: job_id.
-  // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-  string sort_by = 3 [(validator.field) = {}];
+	// The field list used to sorted query results.
+	// Optional values: {job_id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
+	// Not required, default: job_id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
+	string sort_by = 3 [ (validator.field) = {} ];
 
-  // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
-  bool reverse = 4 [(validator.field) = {}];
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 4 [ (validator.field) = { } ];
 
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 5 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // Search with stream job name; Not required.
   // @inject_tag: json:"search" form:"search" default:"" binding:"-"
@@ -507,13 +510,13 @@ message ListReleaseStreamJobs {
 
 // ReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body.)
 message ReleaseStreamJob {
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 1 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
-  // The user-id of release this job. Fixed to the request user id.
-  // @inject_tag: json:"created_by" swaggerignore:"true"
-  string created_by = 2 [(validator.field) = {msg_exists: true}];
+	// The user-id of release this job. Fixed to the request user id.
+	// @inject_tag: json:"created_by" swaggerignore:"true"
+	string created_by = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
   // Description for this releases. Not required, Max length 1024.
   // @inject_tag: json:"desc" default:"" binding:"lte=1024"
@@ -525,24 +528,24 @@ message ReleaseStreamJob {
 
 // OfflineReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
 message OfflineReleaseStreamJob {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 }
 
 // SuspendReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
 message SuspendReleaseStreamJob {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 
   // @inject_tag: json:"stop_running" default:"" binding:"-"
   bool stop_running = 3 [(validator.field) = {}];
@@ -550,25 +553,25 @@ message SuspendReleaseStreamJob {
 
 // ResumeReleaseStreamJobs used as a request parameters for RPC.
 message ResumeReleaseStreamJob {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 }
 
 // ListStreamJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListStreamJobVersions {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
   // Optional values: {version, created, updated}.
@@ -581,63 +584,63 @@ message ListStreamJobVersions {
   // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
   bool reverse = 4 [(validator.field) = {}];
 
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
-  string job_id = 5 [(validator.field) = {length_eq: 20}];
+	// The stream job id in HTTP Request-URI
+	// @inject_tag: json:"job_id" uri:"job_id" default:"" binding:"len=20" swaggerignore:"true"
+	string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 }
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListMonitorRules {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 3 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
 // CreateMonitorRule used as a request parameters for RPC and HTTP(based on Body).
 message CreateMonitorRule {
-  model.MonitorRule info = 1 [(validator.field) = {msg_exists: true}];
+	model.MonitorRule info = 1 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // DeleteMonitorRules used as a request parameters for RPC and HTTP(based on Body).
 message DeleteMonitorRules {
-  // The list of monitor rule id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"rule_ids" default:"" binding:"gte=1,lte=100"
-  repeated string rule_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"rule_ids" default:"" binding:"gte=1,lte=100"
+	repeated string rule_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 // EnableMonitorRules used as a request parameters for RPC and HTTP(based on Body).
 message EnableMonitorRules {
-  // The list of monitor rule id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"rule_ids" default:"" binding:"gte=1,lte=100"
-  repeated string rule_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"rule_ids" default:"" binding:"gte=1,lte=100"
+	repeated string rule_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 // DisableMonitorRules used as a request parameters for RPC and HTTP(based on Body).
 message DisableMonitorRules {
-  // The list of monitor rule id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"rule_ids" default:"" binding:"gte=1,lte=100"
-  repeated string rule_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of monitor rule id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"rule_ids" default:"" binding:"gte=1,lte=100"
+	repeated string rule_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 // UpdateMonitorRule used as a request parameters for RPC.
 message UpdateMonitorRule {
-  model.MonitorRule info = 1 [(validator.field) = {msg_exists: true}];
+	model.MonitorRule info = 1 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // DescribeMonitorRule used as a request parameters for RPC.
 message DescribeMonitorRule {
-  // The monitor rule id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"rule_id" uri:"rule_id" default:"" binding:"len=20" swaggerignore:"true"
-  string rule_id = 1 [(validator.field) = {length_eq: 20}];
+	// The monitor rule id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"rule_id" uri:"rule_id" default:"" binding:"len=20" swaggerignore:"true"
+	string rule_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 //
@@ -652,26 +655,26 @@ message SubmitStreamJob {
 // RemoveStreamJob used as a request parameters for RPC.
 // FIXME: delete it.
 message RemoveStreamJob {
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-  string job_id = 2 [(validator.field) = {length_eq: 20}];
-  bool stop_running = 3 [(validator.field) = {}];
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+	bool stop_running = 3 [ (validator.field) = { } ];
 }
 
 // ListStreamInsts used as a request parameters for RPC and HTTP(based on URL-Query).
 // This struct can used for ListStreamInsts and ListStreamInsts
 message ListStreamInstances {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The workspace id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 3 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // The stream job id. Not required.
   // @inject_tag: json:"job_id" form:"job_id" default:"" binding:"-"
@@ -689,7 +692,7 @@ message ListStreamInstances {
   // Optional values: {job_id, id, created, updated}.
   // Not required, default: id.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
-  string sort_by = 7;
+  string sort_by = 7 [ (validator.field).tags.string = { in: ["", "job_id", "id", "created", "updated"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
@@ -699,9 +702,9 @@ message ListStreamInstances {
 // TerminateStreamInstances used as a request parameters for RPC.
 // This struct can used for TerminateStreamCycleInst and TerminateStreamTestInst.
 message TerminateStreamInstances {
-  // The workspace id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"instance_ids" default:"" binding:"gte=1,lte=100"
@@ -711,9 +714,9 @@ message TerminateStreamInstances {
 // SuspendStreamInstances used as a request parameters for RPC.
 // This struct can used for SuspendStreamCycleInst and SuspendStreamTestInst.
 message SuspendStreamInstances {
-  // The workspace id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"instance_ids" default:"" binding:"gte=1,lte=100"
@@ -723,9 +726,9 @@ message SuspendStreamInstances {
 // ResumeStreamInstances used as a request parameters for RPC.
 // This struct can used for ResumeStreamCycleInst and SuspendStreamTestInst.
 message ResumeStreamInstances {
-  // The workspace id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
 	// The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
 	// @inject_tag: json:"instance_ids" default:"" binding:"gte=1,lte=100"
@@ -734,36 +737,36 @@ message ResumeStreamInstances {
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.
 message DescribeFlinkUIByInstanceId {
-  // The instance id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
-  string inst_id = 1 [(validator.field) = {length_eq: 20}];
+	// The instance id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"inst_id" uri:"inst_id" default:"" binding:"len=20" swaggerignore:"true"
+	string inst_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 // CreateSource used as request parameters for RPC and HTTP(based on Body)
 message CreateSource {
-  // The source id.
-  // @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string source_id = 1 [(validator.field) = {length_lt: 21}];
+	// The source id.
+	// @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string source_id  = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
 
-  // The space id.
-  // @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string space_id = 2 [(validator.field) = {length_eq: 20}];
+	// The space id.
+	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string space_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
-  // @inject_tag: json:"source_type" binding:"gte=1,lte=8" required:"true" mininum:"1" maximum:"8"
-  model.DataSource.Type source_type = 3  [(validator.field) = {int_gt: 0, int_lt: 9}];
+	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
+	// @inject_tag: json:"source_type" binding:"gte=1,lte=8" required:"true" mininum:"1" maximum:"8"
+	model.DataSource.Type source_type = 3  [ (validator.field).tags.enum = { gte: 1; in_enums: true } ];
 
-  // Source name unique within a space.
-  // @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-  string name = 4   [(validator.field) = {length_gt: 1, length_lt: 65}];
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 64 } ];
 
-  // describe this source.
-  // @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-  string comment = 5    [(validator.field) = {length_lt: 257}];
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+	string comment = 5 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
 
-  // this source connection info
-  // @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-  datasource.DataSourceURL url = 6 [(validator.field) = {length_gt: 1, length_lt: 8001}];
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+	datasource.DataSourceURL url = 6;
 
   // Source owner.
   // @inject_tag: json:"create_by" gorm:"column:create_by"
@@ -772,117 +775,117 @@ message CreateSource {
 
 // UpdateSource used as request parameters for RPC and HTTP(based on Body)
 message UpdateSource {
-  // The source id.
-  // @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string source_id = 1 [(validator.field) = {length_eq: 20}];
+	// The source id.
+	// @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string source_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // The space id.
-  // @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string space_id = 2 [(validator.field) = {length_eq: 20}];
+	// The space id.
+	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string space_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
-  // @inject_tag: json:"source_type" default:"" binding:"gte=1,lte=20" required:"true" mininum:"1" maximum:"8"
-  model.DataSource.Type source_type = 3  [(validator.field) = {int_gt: 0, int_lt: 9}];
+	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
+	// @inject_tag: json:"source_type" default:"" binding:"gte=1,lte=20" required:"true" mininum:"1" maximum:"8"
+	model.DataSource.Type source_type = 3  [ (validator.field).tags.enum = { gte: 1; in_enums: true } ];
 
-  // Source name unique within a space.
-  // @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-  string name = 4   [(validator.field) = {length_gt: 0, length_lt: 65}];
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string name = 4  [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
 
-  // describe this source.
-  // @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-  string comment = 5    [(validator.field) = {length_lt: 257}];
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+	string comment = 5    [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
 
-  // this source connection info
-  // @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-  datasource.DataSourceURL url = 6 [(validator.field) = {length_gt: 1, length_lt: 8001}];
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+	datasource.DataSourceURL url = 6 [ (validator.field) = { } ];
 }
 
 // DeleteSource used as request parameters for RPC and HTTP(based on Body)
 message DeleteSource {
-  // delete these SourceIDs
-  // @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
-  repeated string source_ids = 1 [(validator.field) = {length_gt: 1, length_lt: 1100}];
+	// delete these SourceIDs
+	// @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gt: 1, len_lte: 100 } ];
 }
 
 // DescribeSource used as request parameters for RPC and HTTP(based on Body)
 message DescribeSource {
-  // SourceID
-  // @inject_tag: json:"source_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string source_id = 1 [(validator.field) = {length_eq: 20}];
+	// SourceID
+	// @inject_tag: json:"source_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string source_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 // EnableSource used as request parameters for RPC and HTTP(based on Body)
 message EnableSource {
-  // enable these SourceIDs
-  // @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
-  repeated string source_ids = 1 [(validator.field) = {length_gt: 1, length_lt: 1100}];
+	// enable these SourceIDs
+	// @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"100"
+	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100 } ];
 }
 
 // DeleteSource used as request parameters for RPC and HTTP(based on Body)
 message DisableSource {
-  // delete these SourceIDs
-  // @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
-  repeated string source_ids = 1 [(validator.field) = {length_gt: 1, length_lt: 1100}];
+	// delete these SourceIDs
+	// @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100 } ];
 }
 
 // PingSource used as request parameters for RPC and HTTP(based on Body)
 message PingSource {
-  // Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
-  // @inject_tag: json:"source_type" default:"" binding:"gte=1,lte=20" required:"true" mininum:"1" maximum:"8"
-  model.DataSource.Type source_type = 1  [(validator.field) = {int_gt: 0, int_lt: 9}];
+	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
+	// @inject_tag: json:"source_type" default:"" binding:"gte=1,lte=20" required:"true" mininum:"1" maximum:"8"
+	model.DataSource.Type source_type = 1 [ (validator.field).tags.enum = { gte: 1; in_enums: true } ];
 
-  // this source connection info
-  // @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-  datasource.DataSourceURL url = 2 [(validator.field) = {length_gt: 1, length_lt: 8001}];
+	// this source connection info
+	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+	datasource.DataSourceURL url = 2;
 }
 
 // SourceTables used as request parameters for RPC and HTTP(based on Body)
 message SourceTables {
-  // SourceID
-  // @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
-  string source_id = 1 [(validator.field) = {length_eq: 20}];
+	// SourceID
+	// @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
+	string source_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 // TableColumns used as request parameters for RPC and HTTP(based on Body)
 message TableColumns {
-  // tablename
-  // @inject_tag: json:"table_name" default:"" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"
-  string table_name = 1 [(validator.field) = {length_gt: 1, length_lt: 65}];
+	// tablename
+	// @inject_tag: json:"table_name" default:"" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"
+	string table_name  = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 64 } ];
 
-  // tablename
-  // @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
-  string source_id = 2 [(validator.field) = {length_eq: 20}];
+	// tablename
+	// @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
+	string source_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 // CreateTable used as request parameters for RPC and HTTP(based on Body)
 message CreateTable {
-  // The table id.
-  // @inject_tag: json:"table_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string table_id = 1 [(validator.field) = {length_lt: 21}];
+	// The table id.
+	// @inject_tag: json:"table_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string table_id  = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
 
-  // The source id.
-  // @inject_tag: json:"source_id" default:"" binding:"len=20" minLength:"20" maxLength:"20"
-  string source_id = 2 [(validator.field) = {length_eq: 20}];
+	// The source id.
+	// @inject_tag: json:"source_id" default:"" binding:"len=20" minLength:"20" maxLength:"20"
+	string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // The space id.
-  // @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string space_id = 3 [(validator.field) = {length_eq: 20}];
+	// The space id.
+	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string space_id  = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // Source name unique within a space.
-  // @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-  string name = 4   [(validator.field) = {length_gt: 1, length_lt: 65}];
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string name = 4   [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
-  // describe this source.
-  // @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-  string comment = 5    [(validator.field) = {length_lt: 257}];
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+	string comment = 5    [ (validator.field).tags.string = { byte_len_lte: 256 } ];
 
-  // this source connection info
-  // @inject_tag: json:"table_schema" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-  flink.TableSchema table_schema = 6 [(validator.field) = {length_gt: 1, length_lt: 8001}];
+	// this source connection info
+	// @inject_tag: json:"table_schema" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+	flink.TableSchema table_schema = 6 ;
 
-  // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
-  // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  model.TableInfo.Kind table_kind = 7  [(validator.field) = {length_gt: 1, length_lt: 17}];
+    // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
+    // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+	model.TableInfo.Kind table_kind = 7  [ (validator.field).tags.enum = { gte: 1; in_enums: true } ];
 
   // Table owner.
   // @inject_tag: json:"create_by" default:"" binding:"-"
@@ -891,57 +894,57 @@ message CreateTable {
 
 // UpdateTable used as request parameters for RPC and HTTP(based on Body)
 message UpdateTable {
-  // The table id.
-  // @inject_tag: json:"table_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string table_id = 1 [(validator.field) = {length_lt: 21}];
+	// The table id.
+	// @inject_tag: json:"table_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string table_id  = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
 
-  // Source name unique within a space.
-  // @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-  string name = 2   [(validator.field) = {length_gt: 1, length_lt: 65}];
+	// Source name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+	string name = 2   [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
-  // describe this source.
-  // @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-  string Comment = 3    [(validator.field) = {length_lt: 257}];
+	// describe this source.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+	string Comment = 3    [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 256 } ];
 
-  // this source connection info
-  // @inject_tag: json:"table_schema" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-  flink.TableSchema table_schema = 4 [(validator.field) = {length_gt: 1, length_lt: 8001}];
+	// this source connection info
+	// @inject_tag: json:"table_schema" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+	flink.TableSchema table_schema = 4;
 
-  // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
-  // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  model.TableInfo.Kind table_kind = 5  [(validator.field) = {length_gt: 1, length_lt: 17}];
+    // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
+    // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+	model.TableInfo.Kind table_kind = 5  [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
 }
 
 // DeleteTable used as request parameters for RPC and HTTP(based on Body)
 message DeleteTable {
-  // delete these tableIDs
-  // @inject_tag: json:"table_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
-  repeated string table_ids = 1 [(validator.field) = {length_gt: 1, length_lt: 1100}];
+	// delete these tableIDs
+	// @inject_tag: json:"table_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+	repeated string table_ids = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 1100 } ];
 }
 
 // DescribeTable used as request parameters for RPC and HTTP(based on Body)
 message DescribeTable {
-  // SourceIDs
-  // @inject_tag: json:"table_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string table_id = 1 [(validator.field) = {length_eq: 20}];
+	// SourceIDs
+	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string table_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 // ListSource used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListSource {
-  // Limit the maximum number of entries returned this time.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
-  // Optional values: {sourceid, name, createtime, updatetime}.
-  // Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+  // Optional values: {"source_id", "name", "created", "updated"}.
+  // Multiple fields are separated by commas(","), eg: sort_by="created".
   // Not required, default: updatetime.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
-  string sort_by = 3 [(validator.field) = {}];
+  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "source_id", "name", "created", "updated"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
@@ -951,27 +954,27 @@ message ListSource {
   // @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
   string search = 5 [(validator.field) = {}];
 
-  // SpaceID; required.
-  // @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
-  string space_id = 6 [(validator.field) = {length_eq: 20}];
+	// SpaceID; required.
+	// @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
+	string space_id  = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
 // ListTable used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListTable {
-  // Limit the maximum number of entries returned this time.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
-  // Optional values: {tableid, name, createtime, updatetime}.
-  // Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
+  // Optional values: {table_id, name, created, updated}.
+  // Multiple fields are separated by commas(","), eg: sort_by="updated".
   // Not required, default: updatetime.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
-  string sort_by = 3 [(validator.field) = {}];
+  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "table_id", "name", "created", "updated"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
@@ -981,54 +984,54 @@ message ListTable {
   // @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
   string search = 5 [(validator.field) = {}];
 
-  // get this spaceid tables.
-  // @inject_tag: json:"space_id"  default:"" required:"true" binding:"lte=20" minLength:"20" maxLength:"20"  swaggerignore:"true"
-  string space_id = 6 [(validator.field) = {length_eq: 20}];
+	// get this spaceid tables.
+	// @inject_tag: json:"space_id"  default:"" required:"true" binding:"lte=20" minLength:"20" maxLength:"20"  swaggerignore:"true"
+	string space_id  = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // get this source tables.
-  // @inject_tag: json:"source_id" form:"source_id"  default:"" required:"true" binding:"lte=20" minLength:"0" maxLength:"20"  swaggerignore:"true"
-  string source_id = 7 [(validator.field) = {length_lt: 21}];
+	// get this source tables.
+	// @inject_tag: json:"source_id" form:"source_id"  default:"" required:"true" binding:"lte=20" minLength:"0" maxLength:"20"  swaggerignore:"true"
+	string source_id  = 7 ;
 
-  // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
-  // @inject_tag: json:"table_kind" form:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  model.TableInfo.Kind table_kind = 8  [(validator.field) = {int_gt: 0, int_lt: 4}];
+	// TableKind, one of 1/2/3 1->source/2->destination/3->dimension
+	// @inject_tag: json:"table_kind" form:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+	model.TableInfo.Kind table_kind = 8  [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
 }
 
 // DownloadFile used as a request parameters for RPC and HTTP(based on URL-Query).
 message DownloadFile{
-  // The resource id in HTTP Request_URI.
-  // @inject_tag: params:"resource_id" uri:"resource_id" default:"" swaggerignore:"true"
-  string resource_id = 1 [(validator.field) = {length_eq: 20}];
+	// The resource id in HTTP Request_URI.
+	// @inject_tag: josn:"resource_id" uri:"resource_id" default:"" swaggerignore:"true"
+	string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 }
 
 // DescribeFile used as a request parameters for RPC and HTTP(based on URL-Query).
 message DescribeFile{
-  // The resource id in HTTP Request_URI.
-  // @inject_tag: params:"resource_id" uri:"resource_id" default:"" binding:"len=20" swaggerignore:"true"
-  string resource_id = 1 [(validator.field) = {length_eq: 20}];
+	// The resource id in HTTP Request_URI.
+	// @inject_tag: josn:"resource_id" uri:"resource_id" default:"" binding:"len=20" swaggerignore:"true"
+	string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
 }
 
 // ListResources used as a request parameters for RPC and HTTP(based on URL-Query).
 message ListResources{
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: josn:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
-  int32  offset = 3   [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The resource type. required.
-  // @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=3"
-  int32  resource_type = 4 [(validator.field) = {int_gt:-1,int_lt:4}];
+	// The resource type. required.
+	// @inject_tag: josn:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=3"
+	int32  resource_type = 4 [(validator.field).tags.int = { gte:0, lte:3 }];
 
   // The resource name. not required.
-  // @inject_tag: params:"resource_name" form:"resource_name" binding:"-"
+  // @inject_tag: josn:"resource_name" form:"resource_name" binding:"-"
   string resource_name = 5 [(validator.field) = {}];
 
   // Search with resource name; not required.
@@ -1039,7 +1042,7 @@ message ListResources{
   // Optional values: {id, created, updated, name, size}.
   // Not required, default: id.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"updated" binding:"-"
-  string sort_by = 7 [(validator.field) = {}];
+  string sort_by = 7 [ (validator.field).tags.string = { in: ["", "id", "created", "updated", "name", "size"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
@@ -1048,71 +1051,71 @@ message ListResources{
 
 // UpdateResource used as a request parameters for RPC and HTTP(based on URL-Query).
 message UpdateResource{
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The resource id in HTTP Request_URI.
-  // @inject_tag: params:"resource_id" uri:"resource_id" default:"" binding:"len=20" swaggerignore:"true"
-  string resource_id = 2 [(validator.field) = {length_eq: 20}];
+	// The resource id in HTTP Request_URI.
+	// @inject_tag: josn:"resource_id" uri:"resource_id" default:"" binding:"len=20" swaggerignore:"true"
+	string resource_id = 2 [(validator.field).tags.string = { byte_len_eq: 20}];
 
   // The resource name. required.
-  // @inject_tag: params:"resource_name" binding:"lte=500"
+  // @inject_tag: josn:"resource_name" binding:"lte=500"
   string resource_name = 3 [(validator.field) = {}];
 
   // The resource description. Not required.
-  // @inject_tag: params:"description" binding:"lte=2500"
+  // @inject_tag: josn:"description" binding:"lte=2500"
   string description = 4 [(validator.field) = {}];
 
-  // The resource type. Not required.
-  // @inject_tag: params:"resource_type" form:"resource_type" default="0" binding:"gte=0,lte=3"
-  model.Resource.Type  resource_type = 5 [(validator.field) = {int_gt:-1,int_lt:4}];
+	// The resource type. Not required.
+	// @inject_tag: josn:"resource_type" form:"resource_type" default="0" binding:"gte=1,lte=3"
+	model.Resource.Type resource_type = 5 [(validator.field).tags.enum = { gte: 1, in_enums: true }];
 }
 
-message DeleteResources{
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+message DeleteResources {
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The list of resource id. Is required, Min 1 Max 100.
-  // @inject_tag: json:"resource_ids" default:"" binding:"gte=1,lte=100"
-  repeated string resource_ids = 2 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of resource id. Is required, Min 1 Max 100.
+	// @inject_tag: json:"resource_ids" default:"" binding:"gte=1,lte=100"
+	repeated string resource_ids = 2 [(validator.field).tags.repeated = { len_gt: 0, len_lte: 100 }];
 }
 
 // UDF is one of ScalaUDF/ScalaUDTF/ScalaUDTTF/JarUDF/JarUDTF/JarUDTTF/PythonUDF/PythonUDTF
 // CreateUDF used as request parameters for RPC and HTTP(based on Body)
 message CreateUDF {
-  // The udf id.
-  // @inject_tag: json:"udf_id" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
-  string udf_id = 1 [(validator.field) = {length_lt: 21}];
+	// The udf id.
+	// @inject_tag: json:"udf_id" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
+	string udf_id = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
 
-  // The space id.
-  // @inject_tag: json:"space_id" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
-  string space_id = 2 [(validator.field) = {length_eq: 20}];
+	// The space id.
+	// @inject_tag: json:"space_id" default:"" binding:"lte=20" required:"true" swaggerignore:"true"
+	string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF
-  // @inject_tag: json:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  model.UDFInfo.Type udf_type = 3 [(validator.field) = {int_gt:0, int_lt: 4}];
+	// UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF
+	// @inject_tag: json:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+	model.UDFInfo.Type udf_type = 3 [ (validator.field).tags.enum = { gte:1, in_enums: true } ];
 
-  // UDF language one of 1/2/3 1=>Scala/2=>Java/3=>Python
-  // @inject_tag: json:"udf_language" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  model.UDFInfo.Language udf_language = 4 [(validator.field) = {int_gt:0, int_lt: 4}];
+	// UDF language one of 1/2/3 1=>Scala/2=>Java/3=>Python
+	// @inject_tag: json:"udf_language" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+	model.UDFInfo.Language udf_language = 4 [ (validator.field).tags.enum = { gte:1, in_enums: true } ];
 
-  // UDF name unique within a space.
-  // @inject_tag: json:"name" default:"" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
-  string name = 5 [(validator.field) = {length_gt: 0, length_lt: 66}];
+	// UDF name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
+	string name = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 65 } ];
 
-  // describe this udf.
-  // @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-  string comment = 6 [(validator.field) = {length_lt: 257}];
+	// describe this udf.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+	string comment = 6 [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
 
-  // define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-  // @inject_tag: json:"define" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
-  string define = 7 [(validator.field) = {length_gt: 0, length_lt: 20001}];
+	// define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
+	// @inject_tag: json:"define" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
+	string define = 7 [ (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 } ];
 
-  // usage for this udf
-  // @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
-  string usage_sample = 8 [(validator.field) = {length_lt: 2001}];
+	// usage for this udf
+	// @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
+	string usage_sample = 8 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
 
   // Udf owner.
   // @inject_tag: json:"create_by"
@@ -1121,57 +1124,57 @@ message CreateUDF {
 
 // UpdateUDF used as request parameters for RPC and HTTP(based on Body)
 message UpdateUDF {
-  // The udf id.
-  // @inject_tag: json:"udf_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string udf_id = 1 [(validator.field) = {length_lt: 21}];
+	// The udf id.
+	// @inject_tag: json:"udf_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string udf_id = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
 
-  // UDF name unique within a space.
-  // @inject_tag: json:"name" default:"" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
-  string name = 2 [(validator.field) = {length_gt: 0, length_lt: 66}];
+	// UDF name unique within a space.
+	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
+	string name = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 65 } ];
 
-  // describe this udf.
-  // @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-  string comment = 3 [(validator.field) = {length_lt: 257}];
+	// describe this udf.
+	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
+	string comment = 3 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
 
-  // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
-  // @inject_tag: json:"define" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
-  string define = 4 [(validator.field) = {length_gt: 0, length_lt: 20001}];
+	// define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+	// @inject_tag: json:"define" default:"" binding:"gte=1,lte=20000" required:"false" minLength:"1" maxLength:"20000"
+	string define = 4 [ (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 } ];
 
-  // usage for this udf
-  // @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
-  string usage_sample = 5 [(validator.field) = {length_lt: 2001}];
+	// usage for this udf
+	// @inject_tag: json:"usage_sample" default:"" binding:"gte=0,lte=2000" required:"false" minLength:"0" maxLength:"2000"
+	string usage_sample = 5 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
 }
 
 // DeleteUDF used as request parameters for RPC and HTTP(based on Body)
 message DeleteUDF {
-  // delete these UDFIDs
-  // @inject_tag: json:"udf_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
-  repeated string udf_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 1100}];
+	// delete these UDFIDs
+	// @inject_tag: json:"udf_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"100"
+	repeated string udf_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lt: 100 } ];
 }
 
 // DescribeUDF used as request parameters for RPC and HTTP(based on Body)
 message DescribeUDF {
-  // UDFID
-  // @inject_tag: json:"udf_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
-  string udf_id = 1 [(validator.field) = {length_eq: 20}];
+	// UDFID
+	// @inject_tag: json:"udf_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
+	string udf_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 // ListUDF used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListUDF {
-  // Limit the maximum number of entries returned this time.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 1001}];
+	// Limit the maximum number of entries returned this time.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0" mininum:"0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
-  // Optional values: {sourceid, name, createtime, updatetime}.
-  // Multiple fields are separated by commas(","), eg: sort_by="id,name,updatetime,createtime".
-  // Not required, default: updatetime.
+  // Optional values: {udf_id, name, createtime, updatetime}.
+  // Multiple fields are separated by commas(","), eg: sort_by="updated".
+  // Not required, default: updated.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
-  string sort_by = 3 [(validator.field) = {}];
+  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "udf_id", "created", "updated", "name"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
@@ -1181,20 +1184,20 @@ message ListUDF {
   // @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
   string search = 5 [(validator.field) = {}];
 
-  // SpaceID; required.
-  // @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
-  string space_id = 6 [(validator.field) = {length_eq: 20}];
+	// SpaceID; required.
+	// @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
+	string space_id  = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
-  // @inject_tag: json:"udf_type" form:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  model.UDFInfo.Type udf_type = 7 [(validator.field) = {int_gt:0, int_lt: 4}];
+	// UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
+	// @inject_tag: json:"udf_type" form:"udf_type" default:"" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
+	model.UDFInfo.Type udf_type = 7 [ (validator.field).tags.enum = { gte:1, in_enums: true } ];
 }
 
 // UDFCommonFunc used as request parameters for RPC and HTTP(based on Body)
 message UDFCommonFunc {
-  // The space id.
-  // @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The space id.
+	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
 // RunJob
@@ -1223,7 +1226,7 @@ message UDFCommonFunc {
 message FreeFlinkJob{
   // instance id
   // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string instance_id = 1 [(validator.field) = {length_eq: 20}];
+  string instance_id = 1 [(validator.field).tags.string = { byte_len_eq: 20 }];
 
   // note id
   // @inject_tag: json:"note_id" default:"" binding:"len=9" required:"true"
@@ -1233,11 +1236,11 @@ message FreeFlinkJob{
 message InitFlinkJob{
   // JobID
   // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string instance_id = 1 [(validator.field) = {length_eq: 20}];
+  string instance_id = 1 [(validator.field).tags.string = { byte_len_eq: 20 }];
 
   // workspace id
   // @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string space_id = 2  [(validator.field) = {length_eq: 20}];
+  string space_id = 2  [(validator.field).tags.string = { byte_len_eq: 20 }];
 
   // Savepoint Path
   // @inject_tag: json:"savepoint_path" default:"" binding:"-"
@@ -1256,11 +1259,11 @@ message InitFlinkJob{
 message SubmitFlinkJob{
   // JobID
   // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string instance_id = 1 [(validator.field) = {length_eq: 20}];
+  string instance_id = 1  [(validator.field).tags.string = { byte_len_eq: 20 }];
 
   // NoteID
   // @inject_tag: json:"note_id" default:"" binding:"len=9" required:"true"
-  string note_id = 2 [(validator.field) = {length_eq: 9}];
+  string note_id = 2  [(validator.field).tags.string = { byte_len_eq: 9 }];
 
   // ParagraphID
   // @inject_tag: json:"paragraph_id" default:"" binding:""
@@ -1268,41 +1271,41 @@ message SubmitFlinkJob{
 
   // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
   // @inject_tag: json:"type"
-  model.StreamJob.Type type = 4 [(validator.field) = {int_gt: 0, int_lt: 6}];
+  model.StreamJob.Type type = 4 [(validator.field).tags.enum = {gt: 9, in_enums: true}];
 }
 
 message GetFlinkJob{
   // flink job id
   // @inject_tag: json:"flink_id" default:"" binding:"len=32" required:"true"
-  string flink_id = 1 [(validator.field) = {length_eq: 32}];
+  string flink_id = 1 [(validator.field).tags.string = {byte_len_eq: 32}];
 
   // workspace id
   // @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string space_id = 2  [(validator.field) = {length_eq: 20}];
+  string space_id = 2  [(validator.field).tags.string = {byte_len_eq: 20}];
 
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"cluster_id" default:"" binding:"len=20"
-  string cluster_id = 3 [(validator.field) = {length_eq: 20}];
+  string cluster_id = 3 [(validator.field).tags.string = {byte_len_eq: 20}];
 }
 
 message CancelFlinkJob{
-  // instance id
-  // @inject_tag: json:"flink_id" default:"" binding:"len=32" required:"true"
-  string flink_id = 1 [(validator.field) = {length_eq: 32}];
+	// flink job id
+	// @inject_tag: json:"flink_id" default:"" binding:"len=32" required:"true"
+	string flink_id = 1 [(validator.field).tags.string = {byte_len_eq: 32}];
 
-  // workspace id
-  // @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-  string space_id = 2  [(validator.field) = {length_eq: 20}];
+	// workspace id
+	// @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	string space_id = 2  [(validator.field).tags.string = {byte_len_eq: 20}];
 
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"cluster_id" default:"" binding:"len=20"
-  string cluster_id = 3 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"cluster_id" default:"" binding:"len=20"
+	string cluster_id = 3 [(validator.field).tags.string = {byte_len_eq: 20}];
 }
 
 message ValidateFlinkJob{
   // code
   // @inject_tag: json:"code" default:"" binding:"-"
-  model.StreamJobCode code = 1  [(validator.field) = {}];
+  model.StreamJobCode code = 1;
 }
 
 //message GetJobInfo{
@@ -1376,46 +1379,46 @@ message ValidateFlinkJob{
 //}
 
 message PTasksStatusStat {
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {string_not_empty: true}];
-  // @inject_tag: params:"start_time" form:"start_time" default="0" binding:"gte=0"
-  int64 start_time = 2 [(validator.field) = {int_gt: -1}];
-  // @inject_tag: params:"end_time" form:"end_time" default="0" binding:"gte=0"
-  int64 end_time = 3 [(validator.field) = {int_gt: -1}];
+  // @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: josn:"start_time" form:"start_time" default="0" binding:"gte=0"
+  int64 start_time = 2 [ (validator.field).tags.int = { gte: 0 } ];
+  // @inject_tag: josn:"end_time" form:"end_time" default="0" binding:"gte=0"
+  int64 end_time = 3 [ (validator.field).tags.int = { gte: 0 } ];
 }
 
 message PTasksExecStat {
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {string_not_empty: true}];
-  // @inject_tag: params:"state" form:"state"
-  int32 state = 2 [(validator.field) = {int_gt: -1}];
+  // @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: josn:"state" form:"state"
+  int32 state = 2 [ (validator.field).tags.int = { gte: 0 } ];
 }
 
 message PTaskRuntimeRanking {
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
-  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
-  int32  offset = 3   [(validator.field) = {int_gt: -1}];
+  // @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: josn:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+  // @inject_tag: josn:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
+  int32  offset = 3  [ (validator.field).tags.int = { gte: 0 } ];
 }
 
 message PTaskErrorRanking {
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-  // @inject_tag: params:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32  limit = 2    [(validator.field) = {int_gt: 0, int_lt: 101}];
-  // @inject_tag: params:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
-  int32  offset = 3   [(validator.field) = {int_gt: -1}];
+  // @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: josn:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+	// @inject_tag: josn:"offset" form:"offset" default:"0" binding:"gte=0,lte=100"
+	int32  offset = 3  [ (validator.field).tags.int = { gte: 0 } ];
 }
 
 message PTaskDispatchCount {
-  // @inject_tag: params:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {string_not_empty: true}];
-  // @inject_tag: params:"start_time" form:"start_time" default="0" binding:"gte=0"
-  int64 start_time = 2 [(validator.field) = {int_gt: -1}];
-  // @inject_tag: params:"end_time" form:"end_time" default="0" binding:"gte=0"
-  int64 end_time = 3 [(validator.field) = {int_gt: -1}];
+  // @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: josn:"start_time" form:"start_time" default="0" binding:"gte=0"
+	int64 start_time = 2 [ (validator.field).tags.int = { gte: 0 } ];
+	// @inject_tag: josn:"end_time" form:"end_time" default="0" binding:"gte=0"
+	int64 end_time = 3 [ (validator.field).tags.int = { gte: 0 } ];
 }
 
 //message JobFree {
@@ -1425,38 +1428,38 @@ message PTaskDispatchCount {
 //}
 
 message DescribeFlinkClusterAPI {
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-  string cluster_id = 2 [(validator.field) = {length_eq: 20}];
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 message ListFlinkClusters {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The field list used to sorted query results.
-  // Optional values: {id, name, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
-  // Not required, default: id.
-  // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-  string sort_by = 3 [(validator.field) = {}];
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="updated".
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
+	string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "created", "updated", "name"] } ];
 
-  // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
-  bool reverse = 4 [(validator.field) = {}];
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 4 [ (validator.field) = { } ];
 
-  // Search with flink-cluster name; Not required.
-  // @inject_tag: json:"search" form:"search" default:"" binding:"-"
-  string search = 5 [(validator.field) = {}];
+	// Search with flink-cluster name; Not required.
+	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
+	string search = 5 [ (validator.field) = { } ];
 
-  // The workspace id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 6 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // Filter by Flink cluster status;  Not required.
   // Valid optional: 1 => "deleted" 2 => "running" 3 => "stopped" 4 => "starting" 5 => "exception" 6 => "Arrears"
@@ -1474,53 +1477,53 @@ message ListFlinkClusters {
 }
 
 message DeleteFlinkClusters {
-  // The list of flink cluster id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
-  repeated string cluster_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
+	repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 message StartFlinkClusters {
-  // The list of flink cluster id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
-  repeated string cluster_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
+	repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 message StopFlinkClusters {
-  // The list of flink cluster id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
-  repeated string cluster_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of flink cluster id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"cluster_ids" default:"" binding:"gte=1,lte=100"
+	repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 message CreateFlinkCluster {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The user-id of created this cluster. It fixed to request user id.
-  // @inject_tag: json:"created_by" swaggerignore:"true"
-  string created_by = 2 [(validator.field) = {msg_exists: true}];
+	// The user-id of created this cluster. It fixed to request user id.
+	// @inject_tag: json:"created_by" swaggerignore:"true"
+	string created_by = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
-  // Cluster Name. Is required.
-  // @inject_tag: json:"name"
-  string name = 3 [(validator.field) = {length_gt: 1, length_lt: 129}];
+	// Cluster Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
-  // Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
-  // @inject_tag: json:"version" binding:"oneof=flink-1.12.3-scala_2.11"
-  string version = 4 [(validator.field) = {msg_exists: true}];
+	// Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
+	// @inject_tag: json:"version" binding:"oneof=flink-1.12.3-scala_2.11"
+	string version = 4 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11"] } ];
 
-  // resource config.
-  //
-  // Flink task number for TaskManager. Is required, Min 1, Max 24
-  // @inject_tag: json:"task_num" binding:"gte=1,lte=24"
-  int32 task_num = 6 [(validator.field) = {int_gt: 0}];
+	// resource config.
+	//
+	// Flink task number for TaskManager. Is required, Min 1, Max 24
+	// @inject_tag: json:"task_num" binding:"gte=1,lte=24"
+	int32 task_num = 6 [ (validator.field).tags.int = { gt: 0 } ];
 
-  // Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
-  // @inject_tag: json:"job_cu" binding:"gte=0.5,lte=8"
-  float job_cu = 7 [(validator.field) = {float_gte: 0.5, float_lte: 8}];
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"job_cu" binding:"gte=0.5,lte=8"
+	float job_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
-  // Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
-  // @inject_tag: json:"task_cu" binding:"gte=0.5,lte=8"
-  float task_cu = 8 [(validator.field) = {float_gte: 0.5, float_lte: 8}];
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"task_cu" binding:"gte=0.5,lte=8"
+	float task_cu = 8 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Network config. Is required.
   // @inject_tag: json:"network_id" binding:"-"
@@ -1536,35 +1539,35 @@ message CreateFlinkCluster {
 }
 
 message UpdateFlinkCluster {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The flink cluster id in HTTP Request-URI
-  // @inject_tag: json:"cluster_id" uri:"cluster_id" default:"" binding:"len=20" swaggerignore:"true"
-  string cluster_id = 2 [(validator.field) = {length_eq: 20}];
+	// The flink cluster id in HTTP Request-URI
+	// @inject_tag: json:"cluster_id" uri:"cluster_id" default:"" binding:"len=20" swaggerignore:"true"
+	string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // Cluster Name. Is required.
-  // @inject_tag: json:"name"
-  string name = 3 [(validator.field) = {length_gt: 1, length_lt: 129}];
+	// Cluster Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
   //	// Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
   //	// @inject_tag: json:"version" binding:"oneof=flink-1.12.3-scala_2.11"
   //	string version = 4 [ (validator.field) = { msg_exists: true } ];
 
-  // resource config.
-  //
-  // Flink task number for TaskManager. Is required, Min 1, Max ?
-  // @inject_tag: json:"task_num" binding:"gte=1"
-  int32 task_num = 6 [(validator.field) = {int_gt: 0}];
+	// resource config.
+	//
+	// Flink task number for TaskManager. Is required, Min 1, Max ?
+	// @inject_tag: json:"task_num" binding:"gte=1"
+	int32 task_num = 6 [ (validator.field).tags.int = { gt: 0 } ];
 
-  // Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
-  // @inject_tag: json:"job_cu" binding:"gte=0.5,lte=8"
-  float job_cu = 7 [(validator.field) = {float_gte: 0.5, float_lte: 8}];
+	// Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"job_cu" binding:"gte=0.5,lte=8"
+	float job_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
-  // Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
-  // @inject_tag: json:"task_cu" binding:"gte=0.5,lte=8"
-  float task_cu = 8 [(validator.field) = {float_gte: 0.5, float_lte: 8}];
+	// Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
+	// @inject_tag: json:"task_cu" binding:"gte=0.5,lte=8"
+	float task_cu = 8 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Network config. Is required.
   // @inject_tag: json:"network_id" binding:"-"
@@ -1580,39 +1583,39 @@ message UpdateFlinkCluster {
 }
 
 message DescribeFlinkCluster {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"cluster_id" uri:"cluster_id" default:"" binding:"len=20" swaggerignore:"true"
-  string cluster_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"cluster_id" uri:"cluster_id" default:"" binding:"len=20" swaggerignore:"true"
+	string cluster_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 message ListNetworks {
-  // Limit the maximum number of entries returned this time.
-  // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
-  int32 limit = 1 [(validator.field) = {int_gt: 0, int_lt: 101}];
+	// Limit the maximum number of entries returned this time.
+	// Not required, Max 100, default 100.
+	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100"
+	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-  int32 offset = 2 [(validator.field) = {int_gt: -1}];
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
+	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The field list used to sorted query results.
-  // Optional values: {id, name, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
-  // Not required, default: id.
-  // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-  string sort_by = 3 [(validator.field) = {}];
+	// The field list used to sorted query results.
+	// Optional values: {id, name, created, updated}.
+	// Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
+	string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "created", "updated", "name"] } ];
 
-  // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
-  bool reverse = 4 [(validator.field) = {}];
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
+	bool reverse = 4 [ (validator.field) = { } ];
 
-  // Search with workspace name; Not required.
-  // @inject_tag: json:"search" form:"search" default:"" binding:"-"
-  string search = 5 [(validator.field) = {}];
+	// Search with workspace name; Not required.
+	// @inject_tag: json:"search" form:"search" default:"" binding:"-"
+	string search = 5 [ (validator.field) = { } ];
 
-  // The workspace id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 6 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI. Is Required.
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // Filter by network name; valid if `search` is empty; Not required.
   // @inject_tag: json:"name" form:"name" default:"" binding:"-"
@@ -1620,97 +1623,97 @@ message ListNetworks {
 }
 
 message DeleteNetworks {
-  // The list of network id. Is required, Min 1, Max 100.
-  // @inject_tag: json:"network_ids" default:"" binding:"gte=1,lte=100"
-  repeated string network_ids = 1 [(validator.field) = {length_gt: 0, length_lt: 101}];
+	// The list of network id. Is required, Min 1, Max 100.
+	// @inject_tag: json:"network_ids" default:"" binding:"gte=1,lte=100"
+	repeated string network_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 message CreateNetwork {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The user-id of created this cluster. It fixed to request user id.
-  // @inject_tag: json:"created_by" swaggerignore:"true"
-  string created_by = 2 [(validator.field) = {msg_exists: true}];
+	// The user-id of created this cluster. It fixed to request user id.
+	// @inject_tag: json:"created_by" swaggerignore:"true"
+	string created_by = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
-  // Network Name. Is required.
-  // @inject_tag: json:"name"
-  string name = 3 [(validator.field) = {length_gt: 1, length_lt: 129}];
+	// Network Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 129 } ];
 
-  // FIXME: Confirm the length.
-  // VPC's route id, Is required.
-  // @inject_tag: json:"router_id"
-  string router_id = 4 [(validator.field) = {length_gt: 1}];;
+	// FIXME: Confirm the length.
+	// VPC's route id, Is required.
+	// @inject_tag: json:"router_id"
+	string router_id = 4 [ (validator.field).tags.string = { ne: "" } ];
 
-  // FIXME: Confirm the length.
-  // vxnet id. Is required.
-  // @inject_tag: json:"vxnet_id"
-  string vxnet_id = 5 [(validator.field) = {length_gt: 1}];
+	// FIXME: Confirm the length.
+	// vxnet id. Is required.
+	// @inject_tag: json:"vxnet_id"
+	string vxnet_id = 5 [ (validator.field).tags.string = { ne: "" } ];
 }
 
 message UpdateNetwork {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The flink cluster id in HTTP Request-URI
-  // @inject_tag: json:"network_id" uri:"network_id" default:"" binding:"len=20" swaggerignore:"true"
-  string network_id = 2 [(validator.field) = {length_eq: 20}];
+	// The flink cluster id in HTTP Request-URI
+	// @inject_tag: json:"network_id" uri:"network_id" default:"" binding:"len=20" swaggerignore:"true"
+	string network_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // Network Name. Is required.
-  // @inject_tag: json:"name"
-  string name = 3 [(validator.field) = {length_gt: 1, length_lt: 129}];
+	// Network Name. Is required.
+	// @inject_tag: json:"name"
+	string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
-  // FIXME: Confirm the length.
-  // VPC's route id. Is required.
-  // @inject_tag: json:"router_id"
-  string router_id = 4 [(validator.field) = {length_gt: 1}];;
+	// FIXME: Confirm the length.
+	// VPC's route id, Is required.
+	// @inject_tag: json:"router_id"
+	string router_id = 4 [ (validator.field).tags.string = { ne: "" } ];
 
-  // FIXME: Confirm the length.
-  // vxnet id. Is required.
-  // @inject_tag: json:"vxnet_id"
-  string vxnet_id = 5 [(validator.field) = {length_gt: 1}];
+	// FIXME: Confirm the length.
+	// vxnet id. Is required.
+	// @inject_tag: json:"vxnet_id"
+	string vxnet_id = 5 [ (validator.field).tags.string = { ne: "" } ];
 }
 
 message DescribeNetwork {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"network_id" uri:"network_id" default:"" binding:"len=20" swaggerignore:"true"
-  string network_id = 1 [(validator.field) = {length_eq: 20}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"network_id" uri:"network_id" default:"" binding:"len=20" swaggerignore:"true"
+	string network_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
 message CreateBillingInstance {
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string space_id = 1 [ (validator.field) = { length_eq: 20 } ];
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 	// The workspace id in HTTP Request-URI
 	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
-	string user_id = 2 [ (validator.field) = { length_eq: 20 } ];
-	string fee_type = 3 [ (validator.field) = { length_eq: 1 } ];
-	double cu = 4 [ (validator.field) = { float_gte: 0.5, float_lte: 20 } ];
-	int32 is_auto_renew = 5 [ (validator.field) = { length_eq: 1 } ];
+	string user_id = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+	string fee_type = 3 [ (validator.field).tags.string = { byte_len_eq: 1 } ];
+	double cu = 4 [ (validator.field).tags.float = { gte: 0.5, lte: 20 } ];
+	int32 is_auto_renew = 5 ;
 }
 
 message StopBillingInstance {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
-  string user_id = 2 [(validator.field) = {length_eq: 20}];
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"constance_id" uri:"constance_id" default:"" binding:"len=20" swaggerignore:"true"
-  string constance_id = 3 [(validator.field) = {length_eq: 30}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
+	string user_id = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"constance_id" uri:"constance_id" default:"" binding:"len=20" swaggerignore:"true"
+	string constance_id = 3 ;
 }
 
 message RecoveryBillingInstance {
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-  string space_id = 1 [(validator.field) = {length_eq: 20}];
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
-  string user_id = 2 [(validator.field) = {length_eq: 20}];
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"constance_id" uri:"constance_id" default:"" binding:"len=20" swaggerignore:"true"
-  string constance_id = 3 [(validator.field) = {length_eq: 30}];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"user_id" uri:"user_id" default:"" binding:"len=20" swaggerignore:"true"
+	string user_id = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"constance_id" uri:"constance_id" default:"" binding:"len=20" swaggerignore:"true"
+	string constance_id = 3;
 }

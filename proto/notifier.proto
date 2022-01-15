@@ -8,7 +8,7 @@ option java_package = "com.workbench.proto.nfpb";
 option java_outer_classname = "Nfpb";
 option java_multiple_files = true;
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
+//import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 service Notification {
     rpc SendInternalNotice(SendInternalNoticeRequest) returns (SendInternalNoticeReply) {}
@@ -16,7 +16,7 @@ service Notification {
 }
 
 message SendInternalNoticeRequest {
-    string user_id = 1 [ (validator.field) = { string_not_empty: true } ];
+    string user_id = 1 ;
     string title = 2;
     string content = 3;
     string short_content = 4;
@@ -24,12 +24,12 @@ message SendInternalNoticeRequest {
 }
 
 message SendInternalNoticeReply {
-    int32 status = 1  [ (validator.field) = { int_gt: -1 } ];
+    int32 status = 1 ;
     string message = 2 ;
 }
 
 message RecordEntry {
-    string notification_post_id = 1 [ (validator.field) = { length_eq: 20 } ];
+    string notification_post_id = 1;
     string owner = 2;
     string notify_type = 3;
     string title = 4;
@@ -44,14 +44,14 @@ message RecordEntry {
 message ListRequest {
     string notification_post_id = 1;
     string owner = 2 ;
-    repeated string status = 3 [ (validator.field) = { string_not_empty: true } ];
-    int32 limit = 4 [ (validator.field) = { int_gt: 0, int_lt: 101 } ];
-    int32 offset = 5 [ (validator.field) = { msg_exists: true } ];
+    repeated string status = 3;
+    int32 limit = 4 ;
+    int32 offset = 5 ;
 }
 
 message ListReply {
-    repeated RecordEntry records = 1 [ (validator.field) = { } ];
+    repeated RecordEntry records = 1 ;
     int64 total_count = 2;
-    int32 status = 3  [ (validator.field) = { int_gt: -1 } ];
+    int32 status = 3  ;
     string message = 4 ;
 }

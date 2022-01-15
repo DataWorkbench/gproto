@@ -12,7 +12,9 @@ package datasource;
 
 import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
 
-import "github.com/mwitkow/go-proto-validators/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+
+//import "github.com/mwitkow/go-proto-validators/validator.proto";
 
 // DatasourceNetwork
 message DatasourceNetwork {
@@ -27,12 +29,12 @@ message DatasourceNetwork {
 	message VpcNetwork	{
         // Network id
         // @inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-        string network_id = 1 [(validator.field) = {length_lt: 21}];
+        string network_id = 1 [(validator.field).tags.string = {byte_len_eq: 20}];
 	}
 
 	// The Network type, 1 => eip, 2 => vpc(internal vpc)
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-	Type type = 1 [(validator.field) = {int_gt: 0, int_lt:3}];
+	Type type = 1 [(validator.field).tags.enum = {gte: 1, in_enums: true}];
 
 	// The internal Network
 	// @inject_tag: json:"vpc_network" default:""
@@ -44,23 +46,23 @@ message MySQLURL {
 	
 	// The username
 	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string user = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string user = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The password
 	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string password = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string password = 2 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The host
 	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string host = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The port
 	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 port = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	int32 port = 4 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 	
 	// The database
 	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 
 	// the Network
 	// @inject_tag: json:"network" default:""
@@ -73,23 +75,23 @@ message PostgreSQLURL {
 	
 	// The username
 	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string user = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string user = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The password
 	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string password = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string password = 2 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The host
 	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string host = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The port
 	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 port = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	int32 port = 4 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 	
 	// The database
 	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 
 	// the Network
 	// @inject_tag: json:"network" default:""
@@ -102,23 +104,23 @@ message ClickHouseURL {
 	
 	// The username
 	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string user = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string user = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The password
 	// @inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-	string password = 2 [ (validator.field) = { length_gt: -1, length_lt: 65 } ];
+	string password = 2 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The host
 	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string host = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string host = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The port
 	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 port = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	int32 port = 4 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 	
 	// The database
 	// @inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string database = 5 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 
 	// the Network
 	// @inject_tag: json:"network" default:""
@@ -131,7 +133,7 @@ message KafkaURL {
 	
 	// The kafak brokers.
 	// @inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string kafka_brokers = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	string kafka_brokers = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
 
 	// the Network
 	// @inject_tag: json:"network" default:""
@@ -161,11 +163,11 @@ message HBaseURL {
 	
 	// The hbase Zookeeper
 	// @inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string zookeeper = 1 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	string zookeeper = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
 	
 	// The hbase Zookeeper Node
 	// @inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
-	string z_node = 2 [ (validator.field) = { length_gt: 0, length_lt: 1025 } ];
+	string z_node = 2 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
 	
 	//----// The hbase Hosts config
 	//----// @inject_tag: json:"hosts" default:""
@@ -182,19 +184,19 @@ message FtpURL {
 	
 	// The host
 	// @inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string host = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 	
 	// The port
 	// @inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
-	int32 port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 
 	// The username
 	// @inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string user = 3 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 
 	// The password
 	// @inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string password = 4 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+	string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 
 	// the Network
 	// @inject_tag: json:"network" default:""
@@ -208,19 +210,19 @@ message HDFSURL {
 	message HDFSNodeURL {
 		// The host
 		// @inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
-		string name_node = 1 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+		string name_node = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 		
 		// The port
 		// @inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
-		int32 port = 2 [ (validator.field) = { length_gt: 0, length_lt: 65 } ];
+		int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 	}
 	
 	// @inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
-	HDFSNodeURL nodes = 1 [ (validator.field) = {length_gt:0, length_lt:1025 } ];
+	HDFSNodeURL nodes = 1;
 
 	// the Network
 	// @inject_tag: json:"network" default:""
-	DatasourceNetwork network = 2 [(validator.field) = {}];
+	DatasourceNetwork network = 2;
 }
 
 // SourceUrl used as request parameters for RPC and HTTP(based on Body)
@@ -234,7 +236,7 @@ message DataSourceURL {
 	// PostgreSQL Source Connection Info.
 	// @inject_tag: json:"postgresql"
 	PostgreSQLURL postgresql = 2;
-	
+
 	// ClickHouse Source Connection Info.
 	// @inject_tag: json:"clickhouse"
 	ClickHouseURL clickhouse = 3;
