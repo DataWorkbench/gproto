@@ -380,7 +380,7 @@ message FlinkOperator {
 	}
 	// OperatorType one of 1/2/3.../18 "1-Values" "2-Const" "3-Source" "4-Dimension" "5-Dest" "6-OrderBy" "7-Limit" "8-Offset" "9-Fetch" "10-Filter" "11-Union" "12-Except" "13-Intersect" "14-GroupBy" "15-Having" "16-Join" "17-UDTF" "18-UDTTF"
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-	Type type = 1 [ (validator.field).tags.enum = { gte: 1 , in_enums: true } ];
+	Type type = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 	
 	// nodeid is unique in this flow.
 	// @inject_tag: json:"id" default:"" binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"

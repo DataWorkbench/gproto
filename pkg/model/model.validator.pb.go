@@ -61,8 +61,8 @@ func (this *Workspace) _xxx_xxx_Validator_Validate_name() error {
 var _xxx_xxx_Validator_Workspace_InEnums_Status = map[Workspace_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *Workspace) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("Workspace", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("Workspace", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_Workspace_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("Workspace", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -147,8 +147,8 @@ func (this *StreamJob) _xxx_xxx_Validator_Validate_desc() error {
 var _xxx_xxx_Validator_StreamJob_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *StreamJob) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type >= 1) {
-		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJob_InEnums_Type[this.Type]) {
 		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
@@ -159,8 +159,8 @@ func (this *StreamJob) _xxx_xxx_Validator_Validate_type() error {
 var _xxx_xxx_Validator_StreamJob_InEnums_Status = map[StreamJob_Status]bool{0: true, 1: true, 2: true}
 
 func (this *StreamJob) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("StreamJob", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("StreamJob", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_StreamJob_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("StreamJob", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -304,8 +304,8 @@ func (this *StreamJobProperty) Validate() error {
 var _xxx_xxx_Validator_StreamJobCode_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *StreamJobCode) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type >= 1) {
-		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobCode_InEnums_Type[this.Type]) {
 		return protovalidator.FieldError1("StreamJobCode", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
@@ -411,8 +411,8 @@ func (this *StreamJobArgs) Validate() error {
 var _xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy = map[StreamJobSchedule_SchedulePolicy]bool{0: true, 1: true, 2: true}
 
 func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_schedule_policy() error {
-	if !(this.SchedulePolicy >= 1) {
-		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
+	if !(this.SchedulePolicy > 0) {
+		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy[this.SchedulePolicy]) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
@@ -454,8 +454,8 @@ func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_concurrency_policy() 
 	if !this._xxx_xxx_Validator_CheckIf_concurrency_policy() {
 		return nil
 	}
-	if !(this.ConcurrencyPolicy >= 1) {
-		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'concurrency_policy' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.ConcurrencyPolicy)))
+	if !(this.ConcurrencyPolicy > 0) {
+		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'concurrency_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.ConcurrencyPolicy)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobSchedule_InEnums_ConcurrencyPolicy[this.ConcurrencyPolicy]) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'concurrency_policy' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.ConcurrencyPolicy)))
@@ -522,8 +522,8 @@ func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_retry_policy() error 
 	if !this._xxx_xxx_Validator_CheckIf_retry_policy() {
 		return nil
 	}
-	if !(this.RetryPolicy >= 1) {
-		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'retry_policy' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.RetryPolicy)))
+	if !(this.RetryPolicy > 0) {
+		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'retry_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.RetryPolicy)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobSchedule_InEnums_RetryPolicy[this.RetryPolicy]) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'retry_policy' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.RetryPolicy)))
@@ -649,8 +649,8 @@ func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_name() error {
 var _xxx_xxx_Validator_StreamJobRelease_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type >= 1) {
-		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobRelease_InEnums_Type[this.Type]) {
 		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
@@ -721,8 +721,8 @@ func (this *JobInfo) _xxx_xxx_Validator_Validate_instance_id() error {
 var _xxx_xxx_Validator_JobInfo_InEnums_State = map[StreamJobInst_State]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
 
 func (this *JobInfo) _xxx_xxx_Validator_Validate_state() error {
-	if !(this.State >= 1) {
-		return protovalidator.FieldError1("JobInfo", "the value of field 'state' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.State)))
+	if !(this.State > 0) {
+		return protovalidator.FieldError1("JobInfo", "the value of field 'state' must be greater than '0'", protovalidator.Int32ToString(int32(this.State)))
 	}
 	if !(_xxx_xxx_Validator_JobInfo_InEnums_State[this.State]) {
 		return protovalidator.FieldError1("JobInfo", "the value of field 'state' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.State)))
@@ -798,8 +798,8 @@ func (this *StreamJobInst) _xxx_xxx_Validator_Validate_id() error {
 var _xxx_xxx_Validator_StreamJobInst_InEnums_State = map[StreamJobInst_State]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
 
 func (this *StreamJobInst) _xxx_xxx_Validator_Validate_state() error {
-	if !(this.State >= 1) {
-		return protovalidator.FieldError1("StreamJobInst", "the value of field 'state' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.State)))
+	if !(this.State > 0) {
+		return protovalidator.FieldError1("StreamJobInst", "the value of field 'state' must be greater than '0'", protovalidator.Int32ToString(int32(this.State)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobInst_InEnums_State[this.State]) {
 		return protovalidator.FieldError1("StreamJobInst", "the value of field 'state' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.State)))
@@ -810,8 +810,8 @@ func (this *StreamJobInst) _xxx_xxx_Validator_Validate_state() error {
 var _xxx_xxx_Validator_StreamJobInst_InEnums_Status = map[StreamJobInst_Status]bool{0: true, 1: true, 2: true}
 
 func (this *StreamJobInst) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("StreamJobInst", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("StreamJobInst", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_StreamJobInst_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("StreamJobInst", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -885,8 +885,8 @@ func (this *Operation) _xxx_xxx_Validator_Validate_op_name() error {
 var _xxx_xxx_Validator_Operation_InEnums_OpType = map[Operation_Type]bool{0: true, 1: true, 2: true}
 
 func (this *Operation) _xxx_xxx_Validator_Validate_op_type() error {
-	if !(this.OpType >= 1) {
-		return protovalidator.FieldError1("Operation", "the value of field 'op_type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.OpType)))
+	if !(this.OpType > 0) {
+		return protovalidator.FieldError1("Operation", "the value of field 'op_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.OpType)))
 	}
 	if !(_xxx_xxx_Validator_Operation_InEnums_OpType[this.OpType]) {
 		return protovalidator.FieldError1("Operation", "the value of field 'op_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OpType)))
@@ -897,8 +897,8 @@ func (this *Operation) _xxx_xxx_Validator_Validate_op_type() error {
 var _xxx_xxx_Validator_Operation_InEnums_State = map[Operation_State]bool{0: true, 1: true, 2: true}
 
 func (this *Operation) _xxx_xxx_Validator_Validate_state() error {
-	if !(this.State >= 1) {
-		return protovalidator.FieldError1("Operation", "the value of field 'state' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.State)))
+	if !(this.State > 0) {
+		return protovalidator.FieldError1("Operation", "the value of field 'state' must be greater than '0'", protovalidator.Int32ToString(int32(this.State)))
 	}
 	if !(_xxx_xxx_Validator_Operation_InEnums_State[this.State]) {
 		return protovalidator.FieldError1("Operation", "the value of field 'state' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.State)))
@@ -966,8 +966,8 @@ func (this *Role) _xxx_xxx_Validator_Validate_name() error {
 var _xxx_xxx_Validator_Role_InEnums_Type = map[Role_Type]bool{0: true, 1: true, 2: true}
 
 func (this *Role) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type >= 1) {
-		return protovalidator.FieldError1("Role", "the value of field 'type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("Role", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_Role_InEnums_Type[this.Type]) {
 		return protovalidator.FieldError1("Role", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
@@ -978,8 +978,8 @@ func (this *Role) _xxx_xxx_Validator_Validate_type() error {
 var _xxx_xxx_Validator_Role_InEnums_Status = map[Role_Status]bool{0: true, 1: true, 2: true}
 
 func (this *Role) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("Role", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("Role", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_Role_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("Role", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -1030,8 +1030,8 @@ func (this *Member) _xxx_xxx_Validator_Validate_user_id() error {
 var _xxx_xxx_Validator_Member_InEnums_Status = map[Member_Status]bool{0: true, 1: true, 2: true}
 
 func (this *Member) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("Member", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("Member", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_Member_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("Member", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -1106,8 +1106,8 @@ func (this *MonitorRule) _xxx_xxx_Validator_Validate_name() error {
 var _xxx_xxx_Validator_MonitorRule_InEnums_Status = map[MonitorRule_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *MonitorRule) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("MonitorRule", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("MonitorRule", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_MonitorRule_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("MonitorRule", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -1347,8 +1347,8 @@ func (this *DataSource) _xxx_xxx_Validator_Validate_space_id() error {
 var _xxx_xxx_Validator_DataSource_InEnums_SourceType = map[DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
 
 func (this *DataSource) _xxx_xxx_Validator_Validate_source_type() error {
-	if !(this.SourceType >= 1) {
-		return protovalidator.FieldError1("DataSource", "the value of field 'source_type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.SourceType)))
+	if !(this.SourceType > 0) {
+		return protovalidator.FieldError1("DataSource", "the value of field 'source_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.SourceType)))
 	}
 	if !(_xxx_xxx_Validator_DataSource_InEnums_SourceType[this.SourceType]) {
 		return protovalidator.FieldError1("DataSource", "the value of field 'source_type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.SourceType)))
@@ -1385,8 +1385,8 @@ func (this *DataSource) _xxx_xxx_Validator_Validate_url() error {
 var _xxx_xxx_Validator_DataSource_InEnums_Status = map[DataSource_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *DataSource) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("DataSource", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("DataSource", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_DataSource_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("DataSource", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -1411,8 +1411,8 @@ func (this *DataSource) _xxx_xxx_Validator_Validate_updated() error {
 var _xxx_xxx_Validator_DataSource_InEnums_Connection = map[DataSource_ConnectionStatus]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *DataSource) _xxx_xxx_Validator_Validate_connection() error {
-	if !(this.Connection >= 1) {
-		return protovalidator.FieldError1("DataSource", "the value of field 'connection' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Connection)))
+	if !(this.Connection > 0) {
+		return protovalidator.FieldError1("DataSource", "the value of field 'connection' must be greater than '0'", protovalidator.Int32ToString(int32(this.Connection)))
 	}
 	if !(_xxx_xxx_Validator_DataSource_InEnums_Connection[this.Connection]) {
 		return protovalidator.FieldError1("DataSource", "the value of field 'connection' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Connection)))
@@ -1548,8 +1548,8 @@ func (this *TableInfo) _xxx_xxx_Validator_Validate_updated() error {
 var _xxx_xxx_Validator_TableInfo_InEnums_Status = map[TableInfo_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *TableInfo) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("TableInfo", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("TableInfo", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_TableInfo_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("TableInfo", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -1560,8 +1560,8 @@ func (this *TableInfo) _xxx_xxx_Validator_Validate_status() error {
 var _xxx_xxx_Validator_TableInfo_InEnums_TableKind = map[TableInfo_Kind]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *TableInfo) _xxx_xxx_Validator_Validate_table_kind() error {
-	if !(this.TableKind >= 1) {
-		return protovalidator.FieldError1("TableInfo", "the value of field 'table_kind' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.TableKind)))
+	if !(this.TableKind > 0) {
+		return protovalidator.FieldError1("TableInfo", "the value of field 'table_kind' must be greater than '0'", protovalidator.Int32ToString(int32(this.TableKind)))
 	}
 	if !(_xxx_xxx_Validator_TableInfo_InEnums_TableKind[this.TableKind]) {
 		return protovalidator.FieldError1("TableInfo", "the value of field 'table_kind' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.TableKind)))
@@ -1582,8 +1582,8 @@ func (this *TableInfo) _xxx_xxx_Validator_Validate_source_name() error {
 var _xxx_xxx_Validator_TableInfo_InEnums_Connection = map[DataSource_ConnectionStatus]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *TableInfo) _xxx_xxx_Validator_Validate_connection() error {
-	if !(this.Connection >= 1) {
-		return protovalidator.FieldError1("TableInfo", "the value of field 'connection' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Connection)))
+	if !(this.Connection > 0) {
+		return protovalidator.FieldError1("TableInfo", "the value of field 'connection' must be greater than '0'", protovalidator.Int32ToString(int32(this.Connection)))
 	}
 	if !(_xxx_xxx_Validator_TableInfo_InEnums_Connection[this.Connection]) {
 		return protovalidator.FieldError1("TableInfo", "the value of field 'connection' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Connection)))
@@ -1675,8 +1675,8 @@ func (this *Resource) _xxx_xxx_Validator_Validate_name() error {
 var _xxx_xxx_Validator_Resource_InEnums_Type = map[Resource_Type]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *Resource) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type >= 1) {
-		return protovalidator.FieldError1("Resource", "the value of field 'type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("Resource", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_Resource_InEnums_Type[this.Type]) {
 		return protovalidator.FieldError1("Resource", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
@@ -1722,8 +1722,8 @@ func (this *Resource) _xxx_xxx_Validator_Validate_create_by() error {
 var _xxx_xxx_Validator_Resource_InEnums_Status = map[Resource_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *Resource) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("Resource", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("Resource", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_Resource_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("Resource", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -1789,8 +1789,8 @@ func (this *UDFInfo) _xxx_xxx_Validator_Validate_space_id() error {
 var _xxx_xxx_Validator_UDFInfo_InEnums_UdfType = map[UDFInfo_Type]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *UDFInfo) _xxx_xxx_Validator_Validate_udf_type() error {
-	if !(this.UdfType >= 1) {
-		return protovalidator.FieldError1("UDFInfo", "the value of field 'udf_type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.UdfType)))
+	if !(this.UdfType > 0) {
+		return protovalidator.FieldError1("UDFInfo", "the value of field 'udf_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.UdfType)))
 	}
 	if !(_xxx_xxx_Validator_UDFInfo_InEnums_UdfType[this.UdfType]) {
 		return protovalidator.FieldError1("UDFInfo", "the value of field 'udf_type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfType)))
@@ -1801,8 +1801,8 @@ func (this *UDFInfo) _xxx_xxx_Validator_Validate_udf_type() error {
 var _xxx_xxx_Validator_UDFInfo_InEnums_UdfLanguage = map[UDFInfo_Language]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *UDFInfo) _xxx_xxx_Validator_Validate_udf_language() error {
-	if !(this.UdfLanguage >= 1) {
-		return protovalidator.FieldError1("UDFInfo", "the value of field 'udf_language' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.UdfLanguage)))
+	if !(this.UdfLanguage > 0) {
+		return protovalidator.FieldError1("UDFInfo", "the value of field 'udf_language' must be greater than '0'", protovalidator.Int32ToString(int32(this.UdfLanguage)))
 	}
 	if !(_xxx_xxx_Validator_UDFInfo_InEnums_UdfLanguage[this.UdfLanguage]) {
 		return protovalidator.FieldError1("UDFInfo", "the value of field 'udf_language' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfLanguage)))
@@ -1858,8 +1858,8 @@ func (this *UDFInfo) _xxx_xxx_Validator_Validate_updated() error {
 var _xxx_xxx_Validator_UDFInfo_InEnums_Status = map[UDFInfo_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *UDFInfo) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("UDFInfo", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("UDFInfo", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_UDFInfo_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("UDFInfo", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -2000,8 +2000,8 @@ func (this *Network) _xxx_xxx_Validator_Validate_created_by() error {
 var _xxx_xxx_Validator_Network_InEnums_Status = map[Network_Status]bool{0: true, 1: true, 2: true}
 
 func (this *Network) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("Network", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("Network", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_Network_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("Network", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
@@ -2128,8 +2128,8 @@ func (this *FlinkCluster) _xxx_xxx_Validator_Validate_version() error {
 var _xxx_xxx_Validator_FlinkCluster_InEnums_Status = map[FlinkCluster_Status]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true}
 
 func (this *FlinkCluster) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status >= 1) {
-		return protovalidator.FieldError1("FlinkCluster", "the value of field 'status' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Status)))
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("FlinkCluster", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_FlinkCluster_InEnums_Status[this.Status]) {
 		return protovalidator.FieldError1("FlinkCluster", "the value of field 'status' must in enums of '[0 1 2 3 4 5 6]'", protovalidator.Int32ToString(int32(this.Status)))

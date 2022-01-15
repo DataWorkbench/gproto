@@ -14,8 +14,8 @@ import (
 var _xxx_xxx_Validator_DatasourceNetwork_InEnums_Type = map[DatasourceNetwork_Type]bool{0: true, 1: true, 2: true}
 
 func (this *DatasourceNetwork) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type >= 1) {
-		return protovalidator.FieldError1("DatasourceNetwork", "the value of field 'type' must be greater than or equal to '1'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("DatasourceNetwork", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_DatasourceNetwork_InEnums_Type[this.Type]) {
 		return protovalidator.FieldError1("DatasourceNetwork", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))

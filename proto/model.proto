@@ -58,7 +58,7 @@ message Workspace {
 
   // Workspace status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 5 [(validator.field).tags.enum = { gte: 1, in_enums: true }];
+  Status status = 5 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
@@ -109,11 +109,11 @@ message StreamJob {
 
   // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
   // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 6 [(validator.field).tags.enum = { gte: 1, in_enums: true }];
+  Type type = 6 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
 
   // Job status, 1 => "Normal", 2 => "Deleted".
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 7 [(validator.field).tags.enum = { gte: 1, in_enums: true }];
+  Status status = 7 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
 
   // The user-id of created this job.
   // @inject_tag: json:"created_by" gorm:"column:created_by;"
@@ -158,7 +158,7 @@ message StreamJobCode {
 
   // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
   // @inject_tag: json:"type"
-  StreamJob.Type type = 1 [(validator.field).tags.enum = { gte: 1, in_enums: true }];
+  StreamJob.Type type = 1 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
 
   // The flink operator nodes. Is useless on present.
   // @inject_tag: json:"operators" default:""
@@ -231,7 +231,7 @@ message StreamJobSchedule {
   // Schedule Policy, Options Value: 1 => "Periodicity", 2 => "Once".
   // Is Required.
   // @inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
-  SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // ------ Once Options ------
   //
@@ -265,7 +265,7 @@ message StreamJobSchedule {
   // @inject_tag: json:"concurrency_policy" default:"" binding:"-"
   ConcurrencyPolicy concurrency_policy = 6 [
     (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
-    (validator.field).tags.enum = { gte: 1, in_enums: true }
+    (validator.field).tags.enum = { gt: 0; in_enums: true  }
   ];
 
   // Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
@@ -294,7 +294,7 @@ message StreamJobSchedule {
   // @inject_tag: json:"retry_policy" default:"" binding:"gte=0,lte=2"
   RetryPolicy retry_policy = 10 [
     (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
-    (validator.field).tags.enum = { gte: 1, in_enums: true }
+    (validator.field).tags.enum = { gt: 0; in_enums: true  }
   ];
 
   // Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
@@ -339,7 +339,7 @@ message StreamJobRelease {
 
   // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
   // @inject_tag: json:"type" gorm:"column:type;"
-  StreamJob.Type type = 5 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  StreamJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
@@ -385,7 +385,7 @@ message JobInfo{
 
   // Job status
   // @inject_tag: json:"state" gorm:"column:state;"
-  model.StreamJobInst.State state = 6 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  model.StreamJobInst.State state = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
@@ -435,11 +435,11 @@ message StreamJobInst {
 
   // The instance state.
   // @inject_tag: json:"state" gorm:"column:state;"
-  State state = 5 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  State state = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Release status, 1 => "Normal ", 2 => "Deleted"
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 6 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Message is the error message when task execute failed.
   // @inject_tag: json:"message" gorm:"column:message;"
@@ -483,11 +483,11 @@ message Operation {
 
   // -- The type of operation, 2 => "Write",  3 => "Read".
   // @inject_tag: json:"op_type" gorm:"column:op_type;"
-  Type op_type = 4 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Type op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // -- The result of operation, 1 => "Success", 2 => "Failed".
   // @inject_tag: json:"state" gorm:"column:state;"
-  State state = 5 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  State state = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Timestamp of time of when accessed.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
@@ -520,11 +520,11 @@ message Role {
 
   //  1 => "System" 2 => "Custom"
   // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 4 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Type type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // 1 => "Normal" 2 => "Deleted"
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 5 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 }
 
 // The workspace member info.
@@ -549,7 +549,7 @@ message Member {
 
   // 1 => "Normal" 2 => "Deleted". Ignore it for client.
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 5 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
   int64 created = 6 [ (validator.field).tags.int = { gt: 0 } ];
@@ -582,7 +582,7 @@ message MonitorRule {
 
   // Rule status, 1 => "enabled", 2 => "disabled", 3 => "Deleted".
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 4 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // The object unit, 1 => "workspace" 2 => "job'
   // FIXME: use enum
@@ -745,7 +745,7 @@ message DataSource {
 
   // Source Type, one of 1/2/3/4/5/6/7/8 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
   // @inject_tag: json:"source_type" gorm:"column:source_type;" binding:"gte=1,lte=8" required:"true" mininum:"1" maximum:"8"
-  Type source_type = 3  [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Type source_type = 3  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Source Name, unique within a space.
   // @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
@@ -761,7 +761,7 @@ message DataSource {
 
   // State, one of 1/2 1->enable/2->disable.
   // @inject_tag: json:"status" gorm:"column:status;" binding:"gte=1,lte=2" required:"true" mininum:"1" maximum:"2"
-  Status status = 7 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Create Time, this Source create time.
   // @inject_tag: json:"created" gorm:"column:created;"
@@ -773,7 +773,7 @@ message DataSource {
 
   // connection status oneof 1/2/3 1->success/2->partialsuccess/3->failed
   // @inject_tag: json:"connection" gorm:"column:connection;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  ConnectionStatus connection = 10 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  ConnectionStatus connection = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // internal network name.
   // @inject_tag: json:"network_name" binding:"gte=0,lte=128" mininum:"0" maximum:"128"
@@ -834,11 +834,11 @@ message TableInfo {
 
   // Table status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 9 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 9 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // TableKind, one of 1/2/3 1->source/2->destination/3->dimension
   // @inject_tag: json:"table_kind" gorm:"column:table_kind;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  Kind table_kind = 10 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Kind table_kind = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // SourceName
   // @inject_tag: json:"source_name" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
@@ -846,7 +846,7 @@ message TableInfo {
 
   // connection status oneof 1/2/3 1->success/2->partialsuccess/3->failed
   // @inject_tag: json:"connection" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  DataSource.ConnectionStatus connection = 12  [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  DataSource.ConnectionStatus connection = 12  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // Table owner.
   // @inject_tag: json:"create_by" gorm:"column:create_by"
@@ -886,7 +886,7 @@ message Resource {
 
   // Resource type, default 0,  0 => "directory", 1 => "jar", 2 => "udf" 3 => "connector".
   // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 5 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // Resource size, Byte.
   // @inject_tag: json:"size" gorm:"size;"
@@ -909,7 +909,7 @@ message Resource {
   string create_by = 10 [ (validator.field).tags.string = { byte_len_lte: 64} ];
   // Resource status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 11 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 11 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 }
 
 // UDF Info
@@ -945,11 +945,11 @@ message UDFInfo {
 
   // UDF Type one of UDF/UDTF/UDTTF
   // @inject_tag: json:"udf_type" gorm:"column:udf_type;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-  Type udf_type = 3  [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Type udf_type = 3  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // UDF language one of Scala/Java/Python
   // @inject_tag: json:"udf_language" gorm:"column:udf_language;"  binding:"gte=1,lte=20" required:"true" minLength:"1" maxLength:"20"
-  Language udf_language = 4  [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Language udf_language = 4  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // Source Name, unique within a space.
   // @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=65" required:"true" minLength:"1" maxLength:"65"
@@ -977,7 +977,7 @@ message UDFInfo {
 
   // Udf status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 11 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 11 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // Udf owner.
   // @inject_tag: json:"create_by" gorm:"column:create_by"
@@ -1028,7 +1028,7 @@ message Network {
 
   // Network Status. 1 => "deleted" 2 => "active"
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 7 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
@@ -1086,7 +1086,7 @@ message FlinkCluster {
 
   // Cluster Status. 1 => "deleted" 2 => "running" 3 => "stopped" 4 => "starting" 5 => "exception" 6 => "Arrears"
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 5 [ (validator.field).tags.enum = { gte: 1, in_enums: true } ];
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // resource config.
   //

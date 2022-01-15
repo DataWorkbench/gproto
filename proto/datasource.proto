@@ -34,7 +34,7 @@ message DatasourceNetwork {
 
 	// The Network type, 1 => eip, 2 => vpc(internal vpc)
 	// @inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-	Type type = 1 [(validator.field).tags.enum = {gte: 1, in_enums: true}];
+	Type type = 1 [(validator.field).tags.enum = { gt: 0; in_enums: true }];
 
 	// The internal Network
 	// @inject_tag: json:"vpc_network" default:""
