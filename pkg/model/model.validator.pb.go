@@ -411,9 +411,6 @@ func (this *StreamJobArgs) Validate() error {
 var _xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy = map[StreamJobSchedule_SchedulePolicy]bool{0: true, 1: true, 2: true}
 
 func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_schedule_policy() error {
-	if !(this.SchedulePolicy > 0) {
-		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
-	}
 	if !(_xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy[this.SchedulePolicy]) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
 	}

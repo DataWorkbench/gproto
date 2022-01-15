@@ -231,7 +231,7 @@ message StreamJobSchedule {
   // Schedule Policy, Options Value: 1 => "Periodicity", 2 => "Once".
   // Is Required.
   // @inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
-  SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { in_enums: true  } ];
 
   // ------ Once Options ------
   //
