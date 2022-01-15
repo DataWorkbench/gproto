@@ -1173,12 +1173,22 @@ func (this *QueueMessage) _xxx_xxx_Validator_Validate_property() error {
 	return nil
 }
 
+func (this *QueueMessage) _xxx_xxx_Validator_Validate_flink_id() error {
+	if !(len(this.FlinkId) == 32) {
+		return protovalidator.FieldError1("QueueMessage", "the byte length of field 'flink_id' must be equal to '32'", protovalidator.StringByteLenToString(this.FlinkId))
+	}
+	return nil
+}
+
 // Set default value for message model.QueueMessage
 func (this *QueueMessage) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_property(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_flink_id(); err != nil {
 		return err
 	}
 	return nil

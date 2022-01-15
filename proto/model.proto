@@ -624,9 +624,10 @@ message QueueMessage {
   enum Action {
     ActionUnset = 0;
     Create = 1;
-    Run = 2;
-    Retry = 3;
+    Init = 5;
+    Submit = 2;
     Check = 4;
+    Retry = 3;
   }
   // The property of stream job.
   StreamJobProperty property = 1 [ (validator.field).tags.message = { not_null: true } ];
@@ -636,6 +637,17 @@ message QueueMessage {
 
   // The start execution time of the task instance.
   int64 started = 3 [(validator.field) = {}];
+
+  // zeppelin notebook id
+  // @inject_tag: json:"note_id"
+  string note_id = 4 [(validator.field) = {}];
+
+  // zeppelin paragraphID
+  // @inject_tag: json:"paragraph_id"
+  string paragraph_id = 5 [(validator.field) = {}];
+
+  // @inject_tag: json:"flink_id"
+  string flink_id = 6 [(validator.field).tags.string = {byte_len_eq: 32}];
 }
 
 message InstanceStatusStat {
