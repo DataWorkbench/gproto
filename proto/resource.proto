@@ -13,7 +13,7 @@ import "model.proto";
 import "request.proto";
 import "response.proto";
 
-service Resource{
+service Resource {
   rpc ReUploadFile(stream ReUploadFileRequest) returns (model.EmptyStruct){}
   rpc UploadFile(stream UploadFileRequest) returns (response.UploadFile){}
   rpc DownloadFile(request.DownloadFile) returns (stream response.DownloadFile){}

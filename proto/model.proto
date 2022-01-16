@@ -445,6 +445,18 @@ message StreamJobInst {
   // @inject_tag: json:"message" gorm:"column:message;"
   string message = 7;
 
+  // NoteId is the zeppelin notebook id
+  // @inject_tag: json:"note_id" gorm:"column:note_id;"
+  string note_id = 10;
+
+  // ParagraphId is the zeppelin paragraph id where in notebook.
+  // @inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
+  string paragraph_id = 11;
+
+  // FlinkId is the job id in flink.
+  // @inject_tag: json:"flink_id" gorm:"column:flink_id;"
+  string flink_id = 12;
+
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
   int64 created = 8 [ (validator.field).tags.int = { gt: 0 } ];
 
@@ -640,14 +652,14 @@ message QueueMessage {
 
   // zeppelin notebook id
   // @inject_tag: json:"note_id"
-  string note_id = 4 [(validator.field) = {}];
+  string note_id = 4 [(validator.field) = { }];
 
   // zeppelin paragraphID
   // @inject_tag: json:"paragraph_id"
-  string paragraph_id = 5 [(validator.field) = {}];
+  string paragraph_id = 5 [(validator.field) = { }];
 
   // @inject_tag: json:"flink_id"
-  string flink_id = 6 [(validator.field).tags.string = {byte_len_eq: 32}];
+  string flink_id = 6 [(validator.field).tags.string = { }];
 }
 
 message InstanceStatusStat {
