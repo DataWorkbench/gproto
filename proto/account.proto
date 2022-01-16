@@ -2,9 +2,9 @@ syntax = "proto3";
 
 option go_package = "github.com/DataWorkbench/gproto/pkg/accountpb";
 
-option java_package = "com.workbench.proto.accountpb";
+option java_package = "com.github.dataomnis.accountpb";
 option java_outer_classname = "AccountPB";
-option java_multiple_files = true;
+option java_multiple_files = false;
 
 service Account {
     rpc ValidateRequestSignature(ValidateRequestSignatureRequest) returns (ValidateRequestSignatureReply) {}

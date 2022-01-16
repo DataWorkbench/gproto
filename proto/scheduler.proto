@@ -3,10 +3,10 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/shpb";
 
 // Package name of class.
-option java_package = "com.workbench.proto.shpb";
+option java_package = "com.github.dataomnis.shpb";
 // File name of class.
-option java_outer_classname = "Shpb";
-option java_multiple_files = true;
+option java_outer_classname = "ShPB";
+option java_multiple_files = false;
 
 package shpb;
 

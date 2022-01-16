@@ -3,10 +3,10 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/model";
 
 // Package name of class.
-option java_package = "com.workbench.proto.model";
+option java_package = "com.github.dataomnis.modelpb";
 // File name of class.
-option java_outer_classname = "Model";
-option java_multiple_files = true;
+option java_outer_classname = "ModelPB";
+option java_multiple_files = false;
 
 package model;
 

@@ -3,10 +3,10 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/wfpb";
 
 // Package name of class.
-option java_package = "com.workbench.proto.wfpb";
+option java_package = "com.github.dataomnis.wfpb";
 // File name of class.
-option java_outer_classname = "Wfpb";
-option java_multiple_files = true;
+option java_outer_classname = "WfPB";
+option java_multiple_files = false;
 
 package wfpb;
 
