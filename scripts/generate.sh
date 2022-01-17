@@ -72,13 +72,13 @@ for f in proto/*.proto;do
   # Generate go struct and grpc.
   protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --go_opt=module="${MODULE}" --go-grpc_opt=module="${MODULE}" --go_out=. --go-grpc_out=. "$f"
 
-  # Generate validator code.
+  # Generate go validator code.
   protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --govalidator_opt=module="${MODULE}" --govalidator_out=. "$f"
 
-  # Generate defaults code.
+  # Generate go defaults code.
   protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --godefaults_opt=module="${MODULE}" --godefaults_out=. "$f"
 
-  # Generate gosql code.
+  # Generate go gosql code.
   protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=module="${MODULE}" --gosql_out=. "$f"
 
 
@@ -114,6 +114,11 @@ for f in proto/*.proto;do
       sed -i '/\@inject_tag/d' "${pbgo}"
     fi
   fi
+
+  # generate java code and java grpc code
+  protoc -I. -I./proto -I"${GOPATH}"/pkg/mod -I"${GOPATH}"/src --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
+#  protoc -I. -I./proto -I"${GOPATH}"/pkg/mod -I"${GOPATH}"/src --plugin=protoc-gen-grpc-java="${HOME}"/tmp/protoc-gen-grpc-java-1.38.0-osx-x86_64.exe --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
+
 done
 
 go fmt ./... >/dev/null 2>&1;
