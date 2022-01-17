@@ -14,12 +14,12 @@ help:
 	@exit 0
 
 
-GENERATE_GO = _generate_go() {                     \
+GENERATE_CODE = _generate_code() {                     \
     args="$(filter-out $@,$(MAKECMDGOALS))"; \
     if [[ $(VERBOSE) = "yes" ]]; then        \
-        bash -x scripts/generate_go.sh $$args;  \
+        bash -x scripts/generate.sh $$args;  \
     else                                     \
-        bash scripts/generate_go.sh $$args;      \
+        bash scripts/generate.sh $$args;      \
     fi                                       \
 }
 
@@ -48,7 +48,7 @@ test:
 
 .PHONY: generate
 generate:
-	@$(GENERATE_GO); _generate_go
+	@$(GENERATE_CODE); _generate_code;
 
 .DEFAULT_GOAL = help
 

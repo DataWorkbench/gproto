@@ -6,7 +6,7 @@
 # go-proto-validators
 #
 
-if ! [[ "$0" =~ scripts/generate_go.sh ]]; then
+if ! [[ "$0" =~ scripts/generate.sh ]]; then
 	echo "must be run from repository root"
 	exit 255
 fi
@@ -16,11 +16,21 @@ current_path=$(cd "$(dirname "${0}")" || exit 1; pwd)
 # install dep package.
 sh "${current_path}/ensure_dep.sh"
 
-cd "${current_path}"/.. || exit 1
+# load project env.
+if [ -f "./project_env.sh" ]; then
+  . ./project_env.sh
+fi
 
+cd "${current_path}"/.. || exit 1
 
 MODULE="github.com/DataWorkbench/gproto"
 GOPATH=$(go env GOPATH)
+
+# check java version.
+if ! java -version 2>&1 |grep 'java version "11.' >/dev/null ; then
+  echo "Error: the java not install or version not 11"
+  exit 1
+fi
 
 if [ -z "${GOPATH}" ]; then
     echo "Error: the environment variable GOPATH is not set, please set it before running"
@@ -80,29 +90,7 @@ for f in proto/*.proto;do
 
   # Generate go gosql code.
   protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=module="${MODULE}" --gosql_out=. "$f"
-
-
-#  if grep "validator.proto" "$f" >/dev/null 2>&1; then
-##    protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --govalidator_opt=paths=source_relative --govalidator_out=. "$f"
-#    protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --govalidator_opt=module="${MODULE}" --govalidator_out=. "$f"
-#    mv -f proto/"${name}".validator.pb.go ".${dir}/"
-#    if [ "$(uname -s)" == "Darwin" ] && ! sed --version >/dev/null 2>&1; then
-#      sed -i "" 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
-#    else
-#      sed -i 's@github.com/golang/protobuf/proto@google.golang.org/protobuf/proto@g' ".${dir}/${name}.validator.pb.go"
-#    fi
-#  else
-#    /bin/rm -f ".${dir}/${name}.validator.pb.go"
-#  fi
-
-
-#  if grep 'gosql.proto' "$f"  >/dev/null 2>&1; then
-##     protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=paths=source_relative --gosql_out=. "$f"
-#    protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=module="${MODULE}" --gosql_out=. "$f"
-#     mv -f proto/"${name}".sql.pb.go ".${dir}/"
-#  else
-#    /bin/rm -f ".${dir}/${name}.sql.pb.go"
-#  fi
+#  protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src  -I=./proto --gosql_opt=paths=source_relative --gosql_out=. "$f"
 
   # Inject tag to struct and remove comments.
   pbgo=".${dir}/${name}.pb.go"
@@ -126,5 +114,7 @@ go fmt ./... >/dev/null 2>&1;
 make tidy || exit $?
 make vet || exit $?
 make lint || exit $?
+
+mvn clean package deploy >/dev/null 2>&1 || exit $?
 
 exit $?
