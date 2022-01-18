@@ -43,7 +43,11 @@ make tidy || exit $?
 make vet || exit $?
 make lint || exit $?
 
-echo "mvn clean package deploy"
-mvn clean package deploy >/dev/null 2>&1 || exit $?
+if git status |grep 'src/main/java' >/dev/null; then
+  echo "mvn clean package deploy"
+  mvn clean package deploy >/dev/null 2>&1 || exit $?
+else
+  echo "no java code generated, skip mvn deploy"
+fi
 
 exit $?
