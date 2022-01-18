@@ -1199,29 +1199,6 @@ message UDFCommonFunc {
 	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
-// RunJob
-//message RunJob {
-//  // JobID
-//  // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//  string instance_id = 1 [(validator.field) = {length_eq: 20}];
-//
-//  // workspace id
-//  // @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//  string space_id = 2  [(validator.field) = {length_eq: 20}];
-//
-//  // ENV
-//  // @inject_tag: json:"args" default:"" binding:"-"
-//  model.StreamJobArgs args = 3  [(validator.field) = {}];
-//
-//  // code
-//  // @inject_tag: json:"code" default:"" binding:"-"
-//  model.StreamJobCode code = 4  [(validator.field) = {}];
-//
-//  // Savepoint Path
-//  // @inject_tag: json:"savepoint_path" default:"" binding:"-"
-//  string savepoint_path = 5 [(validator.field) = {}];
-//}
-
 message FreeFlinkJob{
   // instance id
   // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
@@ -1307,76 +1284,6 @@ message ValidateFlinkJob{
   model.StreamJobCode code = 1;
 }
 
-//message GetJobInfo{
-//  // instance id
-//  // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//  string instance_id = 1 [(validator.field) = {length_eq: 20}];
-//
-//  // workspace id
-//  // @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//  string space_id = 2[(validator.field) = {length_eq: 20}];
-//
-//  // The workspace id in HTTP Request-URI
-//  // @inject_tag: json:"cluster_id" default:"" binding:"len=20"
-//  string cluster_id = 3 [(validator.field) = {length_eq: 20}];
-//
-//  // The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
-//  // Desc: Cannot be modified after creation.
-//  // @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
-//  model.StreamJob.Type type = 4  [(validator.field) = {int_gt: 0}];
-//}
-
-//message CancelJob{
-//  // instance id
-//  // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//  string instance_id = 1 [(validator.field) = {length_eq: 20}];
-//
-//  // workspace id
-//  // @inject_tag: json:"space_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//  string space_id = 2[(validator.field) = {length_eq: 20}];
-//
-//  // The workspace id in HTTP Request-URI
-//  // @inject_tag: json:"cluster_id" default:"" binding:"len=20"
-//  string cluster_id = 3 [(validator.field) = {length_eq: 20}];
-//
-//  // The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
-//  // Desc: Cannot be modified after creation.
-//  // @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
-//  model.StreamJob.Type type = 5  [(validator.field) = {int_gt: 0}];
-//}
-
-//message ReleaseNote{
-//  // instance id
-//  // @inject_tag: json:"instance_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//  string instance_id = 1 [(validator.field) = {length_eq: 20}];
-//
-//
-//  // The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
-//  // Desc: Cannot be modified after creation.
-//  // @inject_tag: json:"type" default:"" binding:"gte=1,lte=5"
-//  model.StreamJob.Type type = 2  [(validator.field) = {int_gt: 0}];
-//}
-
-//message ValidateJob{
-//  // code
-//  // @inject_tag: json:"code" default:"" binding:"-"
-//  model.StreamJobCode code = 1  [(validator.field) = {}];
-//}
-
-// JobGetState
-//message JobGetState {
-//	// JobID
-//	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//    string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
-//}
-
-// JobCancel
-//message JobCancel {
-//	// JobID
-//	// @inject_tag: json:"job_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
-//    string job_id  = 1 [ (validator.field) = { length_eq: 20 } ];
-//}
-
 message PTasksStatusStat {
   // @inject_tag: josn:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
@@ -1419,12 +1326,6 @@ message PTaskDispatchCount {
 	// @inject_tag: josn:"end_time" form:"end_time" default="0" binding:"gte=0"
 	int64 end_time = 3 [ (validator.field).tags.int = { gte: 0 } ];
 }
-
-//message JobFree {
-//    // JobResources
-//    // @inject_tag: json:"resources" binding:"-"
-//    model.JobResources Resources = 1 [ (validator.field) = { } ];
-//}
 
 message DescribeFlinkClusterAPI {
 	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
