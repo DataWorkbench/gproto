@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/request";
 
 // Package name of class.
-option java_package = "com.github.dataomnis.requestpb";
+option java_package = "com.dataomnis.gproto.requestpb";
 // File name of class.
 option java_outer_classname = "RequestPB";
 option java_multiple_files = false;

@@ -76,6 +76,8 @@ for f in proto/*.proto;do
   package=$(echo "${package}"|sed 's/"//g; s/;//g')
   dir=${package//"$MODULE"/}
 
+  echo "generate code for proto file {$f}"
+
   # Generate java class and grpc
 #  protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src -I=./proto --java_out=./src/main/java  "$f"
 
@@ -115,6 +117,7 @@ make tidy || exit $?
 make vet || exit $?
 make lint || exit $?
 
+echo "mvn clean package deploy"
 mvn clean package deploy >/dev/null 2>&1 || exit $?
 
 exit $?

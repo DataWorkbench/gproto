@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/quotapb";
 
 // Package name of class.
-option java_package = "com.github.dataomnis.quotapb";
+option java_package = "com.dataomnis.gproto.quotapb";
 // File name of class.
 option java_outer_classname = "QuotaPB";
 option java_multiple_files = false;

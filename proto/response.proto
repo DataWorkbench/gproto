@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/response";
 
 // Package name of class.
-option java_package = "com.github.dataomnis.responsepb";
+option java_package = "com.dataomnis.gproto.responsepb";
 // File name of class.
 option java_outer_classname = "ResponsePB";
 option java_multiple_files = false;

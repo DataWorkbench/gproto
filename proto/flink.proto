@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/flinkpb";
 
 // Package name of class.
-option java_package = "com.github.dataomnis.flinkpb";
+option java_package = "com.dataomnis.gproto.flinkpb";
 // File name of class.
 option java_outer_classname = "FlinkPB";
 option java_multiple_files = false;

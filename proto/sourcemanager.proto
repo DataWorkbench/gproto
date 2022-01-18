@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/smpb";
 
 // Package name of class.
-option java_package = "com.github.dataomnis.smpb";
+option java_package = "com.dataomnis.gproto.smpb";
 // File name of class.
 option java_outer_classname = "SmPB";
 option java_multiple_files = false;

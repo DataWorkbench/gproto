@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/DataWorkbench/gproto/pkg/datasourcepb";
 
 // Package name of class.
-option java_package = "com.github.dataomnis.datasourcepdb";
+option java_package = "com.dataomnis.gproto.datasourcepdb";
 // File name of class.
 option java_outer_classname = "DataSourcePB";
 option java_multiple_files = false;
