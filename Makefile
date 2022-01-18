@@ -10,16 +10,27 @@ help:
 	@echo "  lint    to run the staticcheck"
 	@echo "  check   to format, vet, lint"
 	@echo "  test    to run test case"
-	@echo "  generate to generate grpc code"
+	@echo "  generate to generate protobuf code"
+	@echo "  generate-go to generate protobuf code for go"
+	@echo "  generate-java to generate protobuf code for java"
 	@exit 0
 
 
-GENERATE_CODE = _generate_code() {                     \
+GENERATE_GO = _generate_go() {                     \
     args="$(filter-out $@,$(MAKECMDGOALS))"; \
     if [[ $(VERBOSE) = "yes" ]]; then        \
-        bash -x scripts/generate.sh $$args;  \
+        bash -x scripts/generate_go.sh $$args;  \
     else                                     \
-        bash scripts/generate.sh $$args;      \
+        bash scripts/generate_go.sh $$args;      \
+    fi                                       \
+}
+
+GENERATE_JAVA = _generate_java() {                     \
+    args="$(filter-out $@,$(MAKECMDGOALS))"; \
+    if [[ $(VERBOSE) = "yes" ]]; then        \
+        bash -x scripts/generate_java.sh $$args;  \
+    else                                     \
+        bash scripts/generate_java.sh $$args;      \
     fi                                       \
 }
 
@@ -46,9 +57,17 @@ check: tidy format vet lint
 test:
 	@[[ ${VERBOSE} = "yes" ]] && set -x; go test -race -v ./... -test.count=1 -failfast
 
+.PHONY: generate-go
+generate-go:
+	@$(GENERATE_GO); _generate_go;
+
+.PHONY: generate-java
+generate-java:
+	@$(GENERATE_JAVA); _generate_java;
+
 .PHONY: generate
-generate:
-	@$(GENERATE_CODE); _generate_code;
+generate: generate-go generate-java
+#	@$(GENERATE_CODE); _generate_code;
 
 .DEFAULT_GOAL = help
 

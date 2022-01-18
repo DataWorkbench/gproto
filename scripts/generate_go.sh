@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
-# Generate grpc code
+# Generate protobuf code for go
 
-# Required:
-# protobuf
-# go-proto-validators
-#
-
-if ! [[ "$0" =~ scripts/generate.sh ]]; then
+if ! [[ "$0" =~ scripts/generate_go.sh ]]; then
 	echo "must be run from repository root"
 	exit 255
 fi
@@ -26,11 +21,6 @@ cd "${current_path}"/.. || exit 1
 MODULE="github.com/DataWorkbench/gproto"
 GOPATH=$(go env GOPATH)
 
-# check java version.
-if ! java -version 2>&1 |grep 'java version "11.' >/dev/null ; then
-  echo "Error: the java not install or version not 11"
-  exit 1
-fi
 
 if [ -z "${GOPATH}" ]; then
     echo "Error: the environment variable GOPATH is not set, please set it before running"
@@ -76,7 +66,7 @@ for f in proto/*.proto;do
   package=$(echo "${package}"|sed 's/"//g; s/;//g')
   dir=${package//"$MODULE"/}
 
-  echo "generate code for proto file {$f}"
+  echo "generate golang code for proto file {$f}"
 
   # Generate java class and grpc
 #  protoc -I=. -I="${GOPATH}"/pkg/mod -I="${GOPATH}"/src -I=./proto --java_out=./src/main/java  "$f"
@@ -105,10 +95,6 @@ for f in proto/*.proto;do
     fi
   fi
 
-  # generate java code and java grpc code
-  protoc -I. -I./proto -I"${GOPATH}"/pkg/mod -I"${GOPATH}"/src --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
-#  protoc -I. -I./proto -I"${GOPATH}"/pkg/mod -I"${GOPATH}"/src --plugin=protoc-gen-grpc-java="${HOME}"/tmp/protoc-gen-grpc-java-1.38.0-osx-x86_64.exe --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
-
 done
 
 go fmt ./... >/dev/null 2>&1;
@@ -116,8 +102,5 @@ go fmt ./... >/dev/null 2>&1;
 make tidy || exit $?
 make vet || exit $?
 make lint || exit $?
-
-echo "mvn clean package deploy"
-mvn clean package deploy >/dev/null 2>&1 || exit $?
 
 exit $?
