@@ -388,13 +388,13 @@ public final class LogPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
       }
       unknownFields.writeTo(output);
@@ -406,13 +406,13 @@ public final class LogPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1957,7 +1957,7 @@ public final class LogPB {
     @java.lang.Override
     public boolean containsTaskLogs(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetTaskLogs().getMap().containsKey(key);
     }
     /**
@@ -1984,7 +1984,7 @@ public final class LogPB {
     public com.dataomnis.gproto.logpb.LogPB.TaskLogFiles getTaskLogsOrDefault(
         java.lang.String key,
         com.dataomnis.gproto.logpb.LogPB.TaskLogFiles defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.dataomnis.gproto.logpb.LogPB.TaskLogFiles> map =
           internalGetTaskLogs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1996,7 +1996,7 @@ public final class LogPB {
 
     public com.dataomnis.gproto.logpb.LogPB.TaskLogFiles getTaskLogsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, com.dataomnis.gproto.logpb.LogPB.TaskLogFiles> map =
           internalGetTaskLogs().getMap();
       if (!map.containsKey(key)) {
@@ -2374,7 +2374,7 @@ public final class LogPB {
       @java.lang.Override
       public boolean containsTaskLogs(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         return internalGetTaskLogs().getMap().containsKey(key);
       }
       /**
@@ -2401,7 +2401,7 @@ public final class LogPB {
       public com.dataomnis.gproto.logpb.LogPB.TaskLogFiles getTaskLogsOrDefault(
           java.lang.String key,
           com.dataomnis.gproto.logpb.LogPB.TaskLogFiles defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.dataomnis.gproto.logpb.LogPB.TaskLogFiles> map =
             internalGetTaskLogs().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2413,7 +2413,7 @@ public final class LogPB {
 
       public com.dataomnis.gproto.logpb.LogPB.TaskLogFiles getTaskLogsOrThrow(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, com.dataomnis.gproto.logpb.LogPB.TaskLogFiles> map =
             internalGetTaskLogs().getMap();
         if (!map.containsKey(key)) {
@@ -2433,7 +2433,7 @@ public final class LogPB {
 
       public Builder removeTaskLogs(
           java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableTaskLogs().getMutableMap()
             .remove(key);
         return this;
@@ -2452,8 +2452,11 @@ public final class LogPB {
       public Builder putTaskLogs(
           java.lang.String key,
           com.dataomnis.gproto.logpb.LogPB.TaskLogFiles value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
         internalGetMutableTaskLogs().getMutableMap()
             .put(key, value);
         return this;
@@ -3491,7 +3494,7 @@ public final class LogPB {
       if (fileSize_ != 0L) {
         output.writeInt64(1, fileSize_);
       }
-      if (!getFileNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileName_);
       }
       unknownFields.writeTo(output);
@@ -3507,7 +3510,7 @@ public final class LogPB {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, fileSize_);
       }
-      if (!getFileNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fileName_);
       }
       size += unknownFields.getSerializedSize();
@@ -4276,16 +4279,16 @@ public final class LogPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
       }
-      if (!getFileNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fileName_);
       }
       unknownFields.writeTo(output);
@@ -4297,16 +4300,16 @@ public final class LogPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
       }
-      if (!getFileNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fileName_);
       }
       size += unknownFields.getSerializedSize();
@@ -5351,19 +5354,19 @@ public final class LogPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
       }
-      if (!getFileNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fileName_);
       }
-      if (!getTaskManagerIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskManagerId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskManagerId_);
       }
       unknownFields.writeTo(output);
@@ -5375,19 +5378,19 @@ public final class LogPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
       }
-      if (!getFileNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fileName_);
       }
-      if (!getTaskManagerIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskManagerId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskManagerId_);
       }
       size += unknownFields.getSerializedSize();
@@ -7025,16 +7028,16 @@ public final class LogPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
       }
-      if (!getServerUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serverUrl_);
       }
       unknownFields.writeTo(output);
@@ -7046,16 +7049,16 @@ public final class LogPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
       }
-      if (!getServerUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serverUrl_);
       }
       size += unknownFields.getSerializedSize();
@@ -8568,16 +8571,16 @@ public final class LogPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
       }
-      if (!getServerUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serverUrl_);
       }
       unknownFields.writeTo(output);
@@ -8589,16 +8592,16 @@ public final class LogPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
       }
-      if (!getServerUrlBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serverUrl_);
       }
       size += unknownFields.getSerializedSize();

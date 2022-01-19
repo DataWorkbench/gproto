@@ -19,7 +19,6 @@ fi
 
 cd "${current_path}"/.. || exit 1
 
-#MODULE="github.com/DataWorkbench/gproto"
 GOPATH=$(go env GOPATH)
 
 # check java version.
@@ -32,16 +31,14 @@ fi
 for f in proto/*.proto;do
   echo "generate java code for proto file {$f}"
 
-  # generate java code and java grpc code
-  protoc -I. -I./proto -I"${GOPATH}"/pkg/mod -I"${GOPATH}"/src --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
-#  protoc -I. -I./proto -I"${GOPATH}"/pkg/mod -I"${GOPATH}"/src --plugin=protoc-gen-grpc-java="${HOME}"/tmp/protoc-gen-grpc-java-1.38.0-osx-x86_64.exe --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
+  # generate java code.
+  protoc -I. -I./proto -I"${GOPATH}"/src --java_out=src/main/java "$f"
+
+  # generate java grpc code.
+  protoc -I. -I./proto -I"${GOPATH}"/src --grpc-java_out=src/main/java  "$f"
+
+#  protoc -I. -I./proto -I"${GOPATH}"/src --plugin=protoc-gen-grpc-java="${HOME}"/tmp/protoc-gen-grpc-java-1.38.0-osx-x86_64.exe --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
 done
-
-go fmt ./... >/dev/null 2>&1;
-
-make tidy || exit $?
-make vet || exit $?
-make lint || exit $?
 
 if git status |grep 'src/main/java' >/dev/null; then
   echo "mvn clean package deploy"

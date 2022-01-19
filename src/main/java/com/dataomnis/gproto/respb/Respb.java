@@ -572,10 +572,10 @@ public final class Respb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceName_);
       }
       if (resourceType_ != com.dataomnis.gproto.modelpb.ModelPB.Resource.Type.ResourceUnset.getNumber()) {
@@ -587,13 +587,13 @@ public final class Respb {
       if (resourceSize_ != 0L) {
         output.writeInt64(5, resourceSize_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
       }
       if (status_ != com.dataomnis.gproto.modelpb.ModelPB.Resource.Status.StatusUnset.getNumber()) {
         output.writeEnum(7, status_);
       }
-      if (!getCreateByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createBy_);
       }
       unknownFields.writeTo(output);
@@ -605,10 +605,10 @@ public final class Respb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getResourceNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceName_);
       }
       if (resourceType_ != com.dataomnis.gproto.modelpb.ModelPB.Resource.Type.ResourceUnset.getNumber()) {
@@ -623,14 +623,14 @@ public final class Respb {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, resourceSize_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
       }
       if (status_ != com.dataomnis.gproto.modelpb.ModelPB.Resource.Status.StatusUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, status_);
       }
-      if (!getCreateByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createBy_);
       }
       size += unknownFields.getSerializedSize();
@@ -1961,10 +1961,10 @@ public final class Respb {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getResourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceId_);
       }
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
       }
       if (!data_.isEmpty()) {
@@ -1982,10 +1982,10 @@ public final class Respb {
       if (size != -1) return size;
 
       size = 0;
-      if (!getResourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceId_);
       }
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
       }
       if (!data_.isEmpty()) {

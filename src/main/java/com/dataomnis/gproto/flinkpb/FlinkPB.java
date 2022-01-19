@@ -421,16 +421,16 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, field_);
       }
-      if (!getFuncBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(func_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, func_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type_);
       }
-      if (!getAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(as_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, as_);
       }
       unknownFields.writeTo(output);
@@ -442,16 +442,16 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFieldBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, field_);
       }
-      if (!getFuncBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(func_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, func_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type_);
       }
-      if (!getAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(as_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, as_);
       }
       size += unknownFields.getSerializedSize();
@@ -1513,7 +1513,7 @@ public final class FlinkPB {
       for (int i = 0; i < columns_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columns_.getRaw(i));
       }
-      if (!getTableIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableId_);
       }
       unknownFields.writeTo(output);
@@ -1533,7 +1533,7 @@ public final class FlinkPB {
         size += dataSize;
         size += 1 * getColumnsList().size();
       }
-      if (!getTableIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableId_);
       }
       size += unknownFields.getSerializedSize();
@@ -4207,10 +4207,10 @@ public final class FlinkPB {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getFieldBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, field_);
         }
-        if (!getOrderBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(order_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, order_);
         }
         unknownFields.writeTo(output);
@@ -4222,10 +4222,10 @@ public final class FlinkPB {
         if (size != -1) return size;
 
         size = 0;
-        if (!getFieldBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, field_);
         }
-        if (!getOrderBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(order_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, order_);
         }
         size += unknownFields.getSerializedSize();
@@ -8551,7 +8551,7 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getHavingBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(having_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, having_);
       }
       unknownFields.writeTo(output);
@@ -8563,7 +8563,7 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getHavingBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(having_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, having_);
       }
       size += unknownFields.getSerializedSize();
@@ -9300,7 +9300,7 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTableBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, table_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -9315,7 +9315,7 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTableBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, table_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -10844,13 +10844,13 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTableIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableId_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableAs_);
       }
-      if (!getDistinctBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distinct_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, distinct_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -10871,13 +10871,13 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTableIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableId_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableAs_);
       }
-      if (!getDistinctBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distinct_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, distinct_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -13351,13 +13351,13 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTableIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableId_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableAs_);
       }
-      if (!getDistinctBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distinct_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, distinct_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -13378,13 +13378,13 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTableIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableId_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableAs_);
       }
-      if (!getDistinctBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distinct_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, distinct_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -16257,16 +16257,16 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getWhereBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(where_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, where_);
       }
-      if (!getInBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(in_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, in_);
       }
-      if (!getExistsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exists_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, exists_);
       }
-      if (!getExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, expression_);
       }
       unknownFields.writeTo(output);
@@ -16278,16 +16278,16 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getWhereBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(where_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, where_);
       }
-      if (!getInBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(in_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, in_);
       }
-      if (!getExistsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exists_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, exists_);
       }
-      if (!getExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, expression_);
       }
       size += unknownFields.getSerializedSize();
@@ -17795,19 +17795,19 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getJoinBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(join_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, join_);
       }
-      if (!getExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, expression_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableAs_);
       }
-      if (!getTableAsRightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAsRight_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tableAsRight_);
       }
-      if (!getArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(args_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, args_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -17825,19 +17825,19 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getJoinBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(join_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, join_);
       }
-      if (!getExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, expression_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableAs_);
       }
-      if (!getTableAsRightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAsRight_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tableAsRight_);
       }
-      if (!getArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(args_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, args_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -20069,13 +20069,13 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUdfIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(udfId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, udfId_);
       }
-      if (!getArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(args_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, args_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableAs_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -20093,13 +20093,13 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUdfIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(udfId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, udfId_);
       }
-      if (!getArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(args_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, args_);
       }
-      if (!getTableAsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableAs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableAs_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -21903,10 +21903,10 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUdfIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(udfId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, udfId_);
       }
-      if (!getArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(args_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, args_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -21921,10 +21921,10 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUdfIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(udfId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, udfId_);
       }
-      if (!getArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(args_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, args_);
       }
       for (int i = 0; i < column_.size(); i++) {
@@ -29236,19 +29236,19 @@ public final class FlinkPB {
       if (type_ != com.dataomnis.gproto.flinkpb.FlinkPB.FlinkOperator.Type.Empty.getNumber()) {
         output.writeEnum(1, type_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!getUpstreamBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstream_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, upstream_);
       }
-      if (!getUpstreamRightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamRight_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, upstreamRight_);
       }
-      if (!getDownStreamBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downStream_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, downStream_);
       }
       if (pointX_ != 0) {
@@ -29273,19 +29273,19 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!getUpstreamBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstream_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, upstream_);
       }
-      if (!getUpstreamRightBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamRight_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, upstreamRight_);
       }
-      if (!getDownStreamBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downStream_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, downStream_);
       }
       if (pointX_ != 0) {
@@ -30895,13 +30895,13 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getResourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceId_);
       }
-      if (!getJarArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarArgs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jarArgs_);
       }
-      if (!getJarEntryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarEntry_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jarEntry_);
       }
       unknownFields.writeTo(output);
@@ -30913,13 +30913,13 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getResourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceId_);
       }
-      if (!getJarArgsBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarArgs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jarArgs_);
       }
-      if (!getJarEntryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarEntry_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jarEntry_);
       }
       size += unknownFields.getSerializedSize();
@@ -31752,7 +31752,7 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
       }
       unknownFields.writeTo(output);
@@ -31764,7 +31764,7 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
       }
       size += unknownFields.getSerializedSize();
@@ -32373,7 +32373,7 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
       }
       unknownFields.writeTo(output);
@@ -32385,7 +32385,7 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
       }
       size += unknownFields.getSerializedSize();
@@ -32994,7 +32994,7 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
       }
       unknownFields.writeTo(output);
@@ -33006,7 +33006,7 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCodeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
       }
       size += unknownFields.getSerializedSize();
@@ -33923,19 +33923,19 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getColumnBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
       }
-      if (!getCommentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, comment_);
       }
-      if (!getPrimaryKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, primaryKey_);
       }
-      if (!getLengthBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, length_);
       }
       unknownFields.writeTo(output);
@@ -33947,19 +33947,19 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getColumnBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, column_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
       }
-      if (!getCommentBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, comment_);
       }
-      if (!getPrimaryKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, primaryKey_);
       }
-      if (!getLengthBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, length_);
       }
       size += unknownFields.getSerializedSize();
@@ -35267,13 +35267,13 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getColumnBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_);
       }
       if (type_ != com.dataomnis.gproto.flinkpb.FlinkPB.SqlTimeColumnType.Type.TypeUnset.getNumber()) {
         output.writeEnum(2, type_);
       }
-      if (!getExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, expression_);
       }
       unknownFields.writeTo(output);
@@ -35285,14 +35285,14 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getColumnBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, column_);
       }
       if (type_ != com.dataomnis.gproto.flinkpb.FlinkPB.SqlTimeColumnType.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
       }
-      if (!getExpressionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, expression_);
       }
       size += unknownFields.getSerializedSize();
@@ -36178,10 +36178,10 @@ public final class FlinkPB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
       unknownFields.writeTo(output);
@@ -36193,10 +36193,10 @@ public final class FlinkPB {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getValueBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
       size += unknownFields.getSerializedSize();
@@ -37302,7 +37302,7 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -37324,7 +37324,7 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -39462,7 +39462,7 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -39484,7 +39484,7 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -41622,7 +41622,7 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -41644,7 +41644,7 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -43782,7 +43782,7 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -43804,7 +43804,7 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getMappingNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -46019,10 +46019,10 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -46044,10 +46044,10 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -48374,10 +48374,10 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -48399,10 +48399,10 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -50729,10 +50729,10 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -50754,10 +50754,10 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!getPathBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -53084,10 +53084,10 @@ public final class FlinkPB {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topic_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -53109,10 +53109,10 @@ public final class FlinkPB {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!getFormatBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!getTopicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topic_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -57930,10 +57930,10 @@ public final class FlinkPB {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getKeyBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
         }
-        if (!getValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
         }
         unknownFields.writeTo(output);
@@ -57945,10 +57945,10 @@ public final class FlinkPB {
         if (size != -1) return size;
 
         size = 0;
-        if (!getKeyBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
         }
-        if (!getValueBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
         }
         size += unknownFields.getSerializedSize();
@@ -58829,7 +58829,7 @@ public final class FlinkPB {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getRestartStrategyBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(restartStrategy_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, restartStrategy_);
         }
         if (fixedDelayAttempts_ != 0) {
@@ -58856,7 +58856,7 @@ public final class FlinkPB {
         if (size != -1) return size;
 
         size = 0;
-        if (!getRestartStrategyBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(restartStrategy_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, restartStrategy_);
         }
         if (fixedDelayAttempts_ != 0) {
@@ -59765,7 +59765,7 @@ public final class FlinkPB {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getRootLogLevelBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootLogLevel_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rootLogLevel_);
         }
         unknownFields.writeTo(output);
@@ -59777,7 +59777,7 @@ public final class FlinkPB {
         if (size != -1) return size;
 
         size = 0;
-        if (!getRootLogLevelBytes().isEmpty()) {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootLogLevel_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rootLogLevel_);
         }
         size += unknownFields.getSerializedSize();
