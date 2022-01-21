@@ -18,10 +18,13 @@
 
     <distributionManagement>
         <repository>
-            <id>local-repo-release</id>
-            <name>GitHub Release</name>
-            <url>file://${project.basedir}/maven-repo</url>
+            <id>dataomnis-nexus-releases</id>
+            <url>http://nexus.139.198.106.118.nip.io/repository/maven-releases/</url>
         </repository>
+        <snapshotRepository>
+            <id>dataomnis-nexus-snapshots</id>
+            <url>http://nexus.139.198.106.118.nip.io/repository/maven-snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <repositories>

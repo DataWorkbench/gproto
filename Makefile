@@ -69,6 +69,10 @@ generate-java:
 generate: generate-go generate-java
 #	@$(GENERATE_CODE); _generate_code;
 
+.PHONY: mvn-deploy
+mvn-deploy:
+	@[[ ${VERBOSE} = "yes" ]] && set -x; mvn clean package deploy;
+
 .DEFAULT_GOAL = help
 
 # Target name % means that it is a rule that matches anything, @: is a recipe;

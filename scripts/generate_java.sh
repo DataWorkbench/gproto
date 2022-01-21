@@ -40,11 +40,11 @@ for f in proto/*.proto;do
 #  protoc -I. -I./proto -I"${GOPATH}"/src --plugin=protoc-gen-grpc-java="${HOME}"/tmp/protoc-gen-grpc-java-1.38.0-osx-x86_64.exe --java_out=src/main/java  --grpc-java_out=src/main/java "$f"
 done
 
-if git status |grep 'src/main/java' >/dev/null; then
-  echo "mvn clean package deploy"
-  mvn clean package deploy >/dev/null 2>&1 || exit $?
-else
-  echo "no java code generated, skip mvn deploy"
-fi
+#if git status |grep 'src/main/java' >/dev/null; then
+#  echo "mvn clean package deploy"
+#  mvn clean package deploy >/dev/null 2>&1 || exit $?
+#else
+#  echo "no java code generated, skip mvn deploy"
+#fi
 
 exit $?
