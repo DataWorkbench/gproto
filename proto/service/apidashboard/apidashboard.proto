@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package apidashboard;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcapidashboard";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcapidashboard";
+// File name of class.
+option java_outer_classname = "PBSvcApiDashboard";
+option java_multiple_files = false;
+
+import "proto/types/request/apidashboard.proto";
+import "proto/types/response/apidashboard.proto";
+import "proto/types/model/empty.proto";
+import "proto/types/model/apidashboard.proto";
+
+service ApiDashboard {
+  rpc CreateRoute(model.Route) returns (response.CreateRoute) {}
+  rpc DeleteRoute(request.DeleteRoute) returns (model.EmptyStruct) {}
+  rpc ListRoutes(request.ListRoutes) returns (response.ListRoutes) {}
+  rpc UpdateRoute(model.Route) returns (model.EmptyStruct) {}
+
+  rpc CreateUpstream(model.Upstream) returns (response.CreateUpstream) {}
+  rpc DeleteUpstream(request.DeleteUpstream) returns (model.EmptyStruct) {}
+  rpc UpdateUpstream(model.Upstream) returns (model.EmptyStruct) {}
+  rpc ListUpstreams(request.ListUpstreams) returns (response.ListUpstreams) {}
+
+  rpc CreateSSL(model.SSL) returns (response.CreateSSL) {}
+  rpc DeleteSSL(request.DeleteSSL) returns (model.EmptyStruct) {}
+  rpc ListSSLs(request.ListSSLs) returns (response.ListSSLs) {}
+
+  rpc CreateApiService(request.CreateApiService) returns (response.CreateApiService) {}
+  rpc DeleteApiService(request.DeleteApiService) returns (model.EmptyStruct) {}
+  rpc UpdateApiService(request.UpdateApiService) returns (model.EmptyStruct) {}
+  rpc ListApiServices(request.ListApiServices) returns (response.ListApiServices) {}
+  rpc AddSvcReqCount(request.AddSvcReqCount) returns (model.EmptyStruct) {}
+  rpc GetSvcReqCount(request.GetSvcReqCount) returns (response.GetSvcReqCount) {}
+
+  rpc CreateAuthKey(request.CreateAuthKey) returns (response.CreateAuthKey) {}
+  rpc DeleteAuthKey(request.DeleteAuthKey) returns (model.EmptyStruct) {}
+  rpc UpdateAuthKey(request.UpdateAuthKey) returns (model.EmptyStruct) {}
+  rpc ListAuthKeys(request.ListAuthKeys) returns (response.ListAuthKeys) {}
+
+  rpc BindAuthKey(request.BindAuthKey) returns (model.EmptyStruct) {}
+  rpc UnbindAuthKey(request.UnbindAuthKey) returns (model.EmptyStruct) {}
+
+}

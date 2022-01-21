@@ -1,0 +1,225 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelApiDashboard";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "google/protobuf/any.proto";
+
+message UpstreamEntity {
+  // @inject_tag: json:"type" gorm:"column:type;"
+  string type = 1;
+  // @inject_tag: json:"nodes" gorm:"column:nodes;"
+  string nodes = 2;
+  // @inject_tag: json:"retries" gorm:"column:retries;"
+  int32 retries = 3;
+  // @inject_tag: json:"pass_host" gorm:"column:pass_host;"
+  string pass_host = 4;
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 5;
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 6;
+  // @inject_tag: json:"schema" gorm:"column:schema;"
+  string schema = 7;
+  // @inject_tag: json:"client_cert" gorm:"column:client_cert;"
+  string client_cert = 8;
+  // @inject_tag: json:"client_key" gorm:"column:client_key;"
+  string client_key = 9;
+  // @inject_tag: json:"timeout_connect" gorm:"column:timeout_connect;"
+  float timeout_connect = 10;
+  // @inject_tag: json:"timeout_send" gorm:"column:timeout_send;"
+  float timeout_send = 11;
+  // @inject_tag: json:"timeout_read" gorm:"column:timeout_read;"
+  float timeout_read = 12;
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 13;
+  // @inject_tag: json:"create_time" gorm:"column:create_time;"
+  int64 create_time = 14;
+  // @inject_tag: json:"update_time" gorm:"column:update_time;"
+  int64 update_time = 15;
+  // @inject_tag: json:"version" gorm:"column:version;"
+  string version = 16;
+  // @inject_tag: json:"build" gorm:"column:build;"
+  string build = 17;
+  // @inject_tag: json:"env" gorm:"column:env;"
+  string env = 18;
+  // @inject_tag: json:"key" gorm:"column:key;"
+  string key = 19;
+}
+
+message RouteEntity {
+  // @inject_tag: json:"uri" gorm:"column:uri;"
+  string uri = 1;
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 2;
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 3;
+  // @inject_tag: json:"priority" gorm:"column:priority;"
+  int32 priority = 4;
+  // @inject_tag: json:"methods" gorm:"column:methods;"
+  string methods = 5;
+  // @inject_tag: json:"hosts" gorm:"column:hosts;"
+  string hosts = 6;
+  // @inject_tag: json:"remote_addrs" gorm:"column:remote_addrs;"
+  string remote_addrs = 7;
+  // @inject_tag: json:"upstream_id" gorm:"column:upstream_id;"
+  string upstream_id = 8;
+  // @inject_tag: json:"status" gorm:"column:status;"
+  int32 status = 9;
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 10;
+  // @inject_tag: json:"create_time" gorm:"column:create_time;"
+  int64 create_time = 11;
+  // @inject_tag: json:"update_time" gorm:"column:update_time;"
+  int64 update_time = 12;
+  // @inject_tag: json:"build" gorm:"column:build;"
+  string build = 13;
+  // @inject_tag: json:"env" gorm:"column:env;"
+  string env = 14;
+  // @inject_tag: json:"version" gorm:"column:version;"
+  string version = 15;
+  // @inject_tag: json:"plugins" gorm:"column:plugins;"
+  string plugins = 16;
+  // @inject_tag: json:"api_service_id" gorm:"column:api_service_id;"
+  string api_service_id = 17;
+}
+
+message SSLEntity {
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 1;
+  // @inject_tag: json:"create_time" gorm:"column:create_time;"
+  int64 create_time = 2;
+  // @inject_tag: json:"update_time" gorm:"column:update_time;"
+  int64 update_time = 3;
+  // @inject_tag: json:"snis" gorm:"column:snis;"
+  string snis = 4;
+  // @inject_tag: json:"cert" gorm:"column:cert;"
+  string cert = 5;
+  // @inject_tag: json:"key" gorm:"column:key;"
+  string key = 6;
+  // @inject_tag: json:"build" gorm:"column:build;"
+  string build = 7;
+  // @inject_tag: json:"env" gorm:"column:env;"
+  string env = 8;
+  // @inject_tag: json:"version" gorm:"column:version;"
+  string version = 9;
+}
+
+message ApiServiceEntity {
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 1;
+  // @inject_tag: json:"create_time" gorm:"column:create_time;"
+  int64 create_time = 2;
+  // @inject_tag: json:"update_time" gorm:"column:update_time;"
+  int64 update_time = 3;
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 4;
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 5;
+  // @inject_tag: json:"auth_key_id" gorm:"column:auth_key_id;"
+  string auth_key_id = 6;
+  // @inject_tag: json:"domain" gorm:"column:domain;"
+  string domain = 7;
+  // @inject_tag: json:"user_id" gorm:"column:user_id;"
+  string user_id = 8 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message AuthKeyEntity {
+  // AuthKey Primary Key, Generated by the program
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 1;
+  // @inject_tag: json:"create_time" gorm:"column:create_time;"
+  int64 create_time = 2;
+  // @inject_tag: json:"update_time" gorm:"column:update_time;"
+  int64 update_time = 3;
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 4;
+  // @inject_tag: json:"secret_key" gorm:"column:secret_key;"
+  string secret_key = 5;
+  // @inject_tag: json:"is_applied" gorm:"column:is_applied;"
+  bool is_applied = 6;
+}
+
+message Upstream {
+  // @inject_tag: json:"type"
+  string type = 1 [(validator.field).tags.string = { in: ["roundrobin", "chash", "ewma", "least_conn"] }];
+  // @inject_tag: json:"nodes"
+  repeated UpstreamNode nodes = 2 [ (validator.field).tags.repeated = { len_gte: 0 } ];
+  int32 retries = 3 [ (defaults.field).basic = "-1", (validator.field).tags.int = { gte: -1 } ];
+  string pass_host = 4 [(validator.field).tags.string = { in: ["pass", "node"] }];
+  string name = 5 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string desc = 6 [(validator.field) = { }];
+  string schema = 7 [(validator.field).tags.string = { in: ["http", "https"] }];
+  UpstreamTLS tls = 8 [(validator.field) = { }];
+  Timeout timeout = 9 [(validator.field) = { }];
+  // @inject_tag: json:"id"
+  string id = 10;
+  // @inject_tag: json:"key"
+  string key = 11;
+  int64 create_time = 12;
+  int64 update_time = 13;
+  string version = 14;
+  string build = 15;
+  string env = 16;
+}
+
+message Timeout {
+  float connect = 1;
+  float send = 2;
+  float read = 3;
+}
+
+message UpstreamNode {
+  string host = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  int32 port = 2 [ (validator.field).tags.int = { gt: 0 } ];
+  int32 weight = 3 [ (validator.field).tags.int = { gt: 0 } ];
+}
+
+message UpstreamTLS {
+  string client_cert = 1;
+  string client_key = 2;
+}
+
+message Route {
+  string uri = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"id"
+  string id = 2;
+  string desc = 3;
+  int32 priority = 4 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
+  repeated string methods = 5;
+  repeated string hosts = 6;
+  repeated string remote_addrs = 7 [ (validator.field).tags.repeated = { len_gte: 0 } ];
+  string upstream_id = 8 [(validator.field) = { }];
+  int32 status = 9 [ (validator.field).tags.int = { gte: 0, lte: 1 } ];
+  string name = 10 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  int64 create_time = 11;
+  int64 update_time = 12;
+  string version = 13;
+  string build = 14;
+  string env = 15;
+  string api_service_id = 16 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message SSL {
+  // @inject_tag: json:"cert"
+  string cert = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"key"
+  string key = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"snis"
+  repeated string snis = 3 [ (validator.field).tags.repeated = { len_gt: 0 } ];
+  // @inject_tag: json:"id"
+  string id = 4;
+  int64 create_time = 5;
+  int64 update_time = 6;
+  string version = 7;
+  string build = 8;
+  string env = 9;
+}

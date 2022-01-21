@@ -1,0 +1,276 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestApiDashboard";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+message DeleteRoute {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message ListRoutes {
+  // @inject_tag: json:"name"
+  string name = 1;
+  // @inject_tag: json:"uri"
+  string uri = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"status"
+  int32 status = 3;
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit"
+  int32 limit = 5 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset"
+  int32 offset = 6 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, name, create_time, create_time}.
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by"
+  string sort_by = 7 [ (validator.field).tags.string = { in: ["", "id", "name", "create_time", "update_time"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse"
+  bool reverse = 8;
+
+  // The id lists of resource query.
+  // @inject_tag: json:"ids" form:"ids"
+  repeated string ids  = 9 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+
+  // @inject_tag: json:"version"
+  string version = 10;
+
+  // @inject_tag: json:"build"
+  string build = 11;
+
+  // @inject_tag: json:"env"
+  string env = 12;
+
+  // @inject_tag: json:"api_service_id"
+  string api_service_id = 13;
+}
+
+message DeleteUpstream {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message ListUpstreams {
+  // @inject_tag: json:"name"
+  string name = 1;
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset"
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, name, create_time, create_time}.
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by"
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "name", "create_time", "update_time"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse"
+  bool reverse = 5;
+
+  // The id lists of resource query.
+  // @inject_tag: json:"ids" form:"ids"
+  repeated string ids  = 6 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+
+  // @inject_tag: json:"version"
+  string version = 7;
+
+  // @inject_tag: json:"build"
+  string build = 8;
+
+  // @inject_tag: json:"env"
+  string env = 9;
+}
+
+message DeleteSSL {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message ListSSLs {
+  // The id lists of resource query.
+  // @inject_tag: json:"ids" form:"ids"
+  repeated string ids  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+  // @inject_tag: json:"sni"
+  string sni = 2;
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit"
+  int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset"
+  int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, create_time, create_time}.
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by"
+  string sort_by = 5 [ (validator.field).tags.string = { in: ["", "id", "create_time", "update_time"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse"
+  bool reverse = 6;
+
+  // @inject_tag: json:"version"
+  string version = 7;
+
+  // @inject_tag: json:"build"
+  string build = 8;
+
+  // @inject_tag: json:"env"
+  string env = 9;
+
+}
+
+message CreateApiService {
+  // @inject_tag: json:"name"
+  string name = 1;
+  // @inject_tag: json:"desc"
+  string desc = 2;
+  // @inject_tag: json:"auth_key_id"
+  string auth_key_id = 3;
+  // @inject_tag: json:"user_id"
+  string user_id = 4 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message DeleteApiService {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message UpdateApiService {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+
+  string name = 2;
+
+  string desc = 3;
+}
+
+message ListApiServices {
+  // The id lists of resource query.
+  // @inject_tag: json:"ids"
+  repeated string ids  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset"
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, create_time, create_time}.
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by"
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "create_time", "update_time"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse"
+  bool reverse = 5;
+
+  // Reverse order results. Not required, default: "".
+  // @inject_tag: json:"auth_key_id"
+  string auth_key_id = 6;
+}
+
+message AddSvcReqCount {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // @inject_tag: json:"count"
+  int32 count = 2 [ (validator.field).tags.int = { gt: 0 } ];
+}
+
+message GetSvcReqCount {
+  // apiService ID
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message CreateAuthKey {
+  // @inject_tag: json:"name"
+  string name = 1;
+  // @inject_tag: json:"secret_key"
+  string secret_key = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message DeleteAuthKey {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message UpdateAuthKey {
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+
+  string name = 2;
+
+  string secret_key = 3;
+}
+
+message ListAuthKeys {
+  // The id lists of resource query.
+  // @inject_tag: json:"ids"
+  repeated string ids  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset"
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, create_time, create_time}.
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by"
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "create_time", "update_time"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse"
+  bool reverse = 5;
+
+  string user_id = 6;
+}
+
+message BindAuthKey {
+  // AuthKey ID
+  // @inject_tag: json:"auth_key_id"
+  string auth_key_id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  // ApiService ID
+  // @inject_tag: json:"api_service_id"
+  string api_service_id = 2 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
+
+message UnbindAuthKey {
+  // ApiService ID
+  // @inject_tag: json:"api_service_id"
+  string api_service_id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+}
