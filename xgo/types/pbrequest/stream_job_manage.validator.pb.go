@@ -142,7 +142,7 @@ func (this *CreateStreamJob) _xxx_xxx_Validator_CheckIf_type() bool {
 	return true
 }
 
-var _xxx_xxx_Validator_CreateStreamJob_InEnums_Type = map[pbmodel.StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+var _xxx_xxx_Validator_CreateStreamJob_InEnums_Type = map[pbmodel.StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_type() error {
 	if !this._xxx_xxx_Validator_CheckIf_type() {
@@ -152,7 +152,7 @@ func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_type() error {
 		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	if !(_xxx_xxx_Validator_CreateStreamJob_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
+		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }

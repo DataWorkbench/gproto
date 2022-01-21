@@ -94,6 +94,8 @@ message ProjectModule {
     SpaceManage = 2;
     PlatformManage = 3;
     IaaSProxy = 4;
+    NotifierManager = 5;
+    ApiGateway = 6;
 
     // Module In workspace;
     MemberManage = 101;
