@@ -506,7 +506,7 @@ message ListReleaseStreamJobs {
   model.StreamJobRelease.Status status = 7 [(validator.field).tags.enum = { in_enums: true }];
 
 	// The stream job id.
-	// @inject_tag: json:"job_id" 
+	// @inject_tag: json:"job_id"
 	string job_id = 8 [(validator.field) = { } ];
 }
 
