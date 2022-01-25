@@ -481,29 +481,33 @@ message ListReleaseStreamJobs {
 	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
 	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
 
+	// The workspace id in HTTP Request-URI
+	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
+	string space_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
 	// The field list used to sorted query results.
 	// Optional values: {job_id, name, created, updated}.
-	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
+	// Multiple fields are separated by commas(","), eg: sort_by="updated".
 	// Not required, default: job_id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-	string sort_by = 3 [ (validator.field) = {} ];
+	string sort_by = 3 [ (validator.field).tags.string = { in: ["", "job_id", "name", "created", "updated"]} ];
 
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
 	bool reverse = 4 [ (validator.field) = { } ];
 
-	// The workspace id in HTTP Request-URI
-	// @inject_tag: json:"space_id" uri:"space_id" default:"" binding:"len=20" swaggerignore:"true"
-	string space_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
   // Search with stream job name; Not required.
   // @inject_tag: json:"search" form:"search" default:"" binding:"-"
-  string search = 6 [(validator.field) = {}];
+  string search = 6 [(validator.field) = { } ];
 
   // Filter by release status;  Not required.
   // Valid optional: 1 => "enabled", 2 => "disabled".
   // @inject_tag: json:"status" form:"status" default:"" binding:"oneof=0 1 2"
   model.StreamJobRelease.Status status = 7 [(validator.field).tags.enum = { in_enums: true }];
+
+	// The stream job id.
+	// @inject_tag: json:"job_id" 
+	string job_id = 8 [(validator.field) = { } ];
 }
 
 // ReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body.)

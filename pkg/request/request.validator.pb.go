@@ -1109,6 +1109,15 @@ func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_space_id() error 
 	return nil
 }
 
+var _xxx_xxx_Validator_ListReleaseStreamJobs_In_SortBy = map[string]bool{"": true, "job_id": true, "name": true, "created": true, "updated": true}
+
+func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListReleaseStreamJobs_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListReleaseStreamJobs", "the value of field 'sort_by' must be one of '[ job_id name created updated]'", this.SortBy)
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_ListReleaseStreamJobs_InEnums_Status = map[model.StreamJobRelease_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_status() error {
@@ -1130,6 +1139,9 @@ func (this *ListReleaseStreamJobs) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
