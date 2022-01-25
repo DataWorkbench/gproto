@@ -11,55 +11,22 @@ import (
 	protovalidator "github.com/yu31/proto-go-plugin/pkg/protovalidator"
 )
 
-var _xxx_xxx_Validator_DatasourceNetwork_InEnums_Type = map[DatasourceNetwork_Type]bool{0: true, 1: true, 2: true}
-
-func (this *DatasourceNetwork) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type > 0) {
-		return protovalidator.FieldError1("DatasourceNetwork", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
+func (this *MySQLURL) _xxx_xxx_Validator_Validate_host() error {
+	if !(len(this.Host) >= 1) {
+		return protovalidator.FieldError1("MySQLURL", "the byte length of field 'host' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Host))
 	}
-	if !(_xxx_xxx_Validator_DatasourceNetwork_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("DatasourceNetwork", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
+	if !(len(this.Host) <= 64) {
+		return protovalidator.FieldError1("MySQLURL", "the byte length of field 'host' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Host))
 	}
 	return nil
 }
 
-func (this *DatasourceNetwork) _xxx_xxx_Validator_Validate_vpc_network() error {
-	if dt, ok := interface{}(this.VpcNetwork).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
+func (this *MySQLURL) _xxx_xxx_Validator_Validate_port() error {
+	if !(this.Port >= 0) {
+		return protovalidator.FieldError1("MySQLURL", "the value of field 'port' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Port))
 	}
-	return nil
-}
-
-// Set default value for message datasource.DatasourceNetwork
-func (this *DatasourceNetwork) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_vpc_network(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *DatasourceNetwork_VpcNetwork) _xxx_xxx_Validator_Validate_network_id() error {
-	if !(len(this.NetworkId) == 20) {
-		return protovalidator.FieldError1("DatasourceNetwork_VpcNetwork", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
-	}
-	return nil
-}
-
-// Set default value for message datasource.DatasourceNetwork.VpcNetwork
-func (this *DatasourceNetwork_VpcNetwork) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
-		return err
+	if !(this.Port <= 65536) {
+		return protovalidator.FieldError1("MySQLURL", "the value of field 'port' must be less than or equal to '65536'", protovalidator.Int32ToString(this.Port))
 	}
 	return nil
 }
@@ -84,26 +51,6 @@ func (this *MySQLURL) _xxx_xxx_Validator_Validate_password() error {
 	return nil
 }
 
-func (this *MySQLURL) _xxx_xxx_Validator_Validate_host() error {
-	if !(len(this.Host) >= 1) {
-		return protovalidator.FieldError1("MySQLURL", "the byte length of field 'host' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Host))
-	}
-	if !(len(this.Host) <= 64) {
-		return protovalidator.FieldError1("MySQLURL", "the byte length of field 'host' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Host))
-	}
-	return nil
-}
-
-func (this *MySQLURL) _xxx_xxx_Validator_Validate_port() error {
-	if !(this.Port >= 0) {
-		return protovalidator.FieldError1("MySQLURL", "the value of field 'port' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Port))
-	}
-	if !(this.Port <= 65536) {
-		return protovalidator.FieldError1("MySQLURL", "the value of field 'port' must be less than or equal to '65536'", protovalidator.Int32ToString(this.Port))
-	}
-	return nil
-}
-
 func (this *MySQLURL) _xxx_xxx_Validator_Validate_database() error {
 	if !(len(this.Database) >= 1) {
 		return protovalidator.FieldError1("MySQLURL", "the byte length of field 'database' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Database))
@@ -114,25 +61,10 @@ func (this *MySQLURL) _xxx_xxx_Validator_Validate_database() error {
 	return nil
 }
 
-func (this *MySQLURL) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message datasource.MySQLURL
 func (this *MySQLURL) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
-		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
 		return err
@@ -140,31 +72,14 @@ func (this *MySQLURL) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_port(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_database(); err != nil {
 		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_user() error {
-	if !(len(this.User) >= 1) {
-		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'user' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.User))
-	}
-	if !(len(this.User) <= 64) {
-		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'user' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.User))
-	}
-	return nil
-}
-
-func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_password() error {
-	if !(len(this.Password) >= 1) {
-		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'password' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Password))
-	}
-	if !(len(this.Password) <= 64) {
-		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'password' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Password))
 	}
 	return nil
 }
@@ -189,6 +104,26 @@ func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_port() error {
 	return nil
 }
 
+func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_user() error {
+	if !(len(this.User) >= 1) {
+		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'user' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.User))
+	}
+	if !(len(this.User) <= 64) {
+		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'user' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.User))
+	}
+	return nil
+}
+
+func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_password() error {
+	if !(len(this.Password) >= 1) {
+		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'password' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Password))
+	}
+	if !(len(this.Password) <= 64) {
+		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'password' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Password))
+	}
+	return nil
+}
+
 func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_database() error {
 	if !(len(this.Database) >= 1) {
 		return protovalidator.FieldError1("PostgreSQLURL", "the byte length of field 'database' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Database))
@@ -199,25 +134,10 @@ func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_database() error {
 	return nil
 }
 
-func (this *PostgreSQLURL) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message datasource.PostgreSQLURL
 func (this *PostgreSQLURL) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
-		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
 		return err
@@ -225,31 +145,14 @@ func (this *PostgreSQLURL) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_port(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_database(); err != nil {
 		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_user() error {
-	if !(len(this.User) >= 1) {
-		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'user' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.User))
-	}
-	if !(len(this.User) <= 64) {
-		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'user' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.User))
-	}
-	return nil
-}
-
-func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_password() error {
-	if !(len(this.Password) >= 1) {
-		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'password' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Password))
-	}
-	if !(len(this.Password) <= 64) {
-		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'password' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Password))
 	}
 	return nil
 }
@@ -274,6 +177,26 @@ func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_port() error {
 	return nil
 }
 
+func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_user() error {
+	if !(len(this.User) >= 1) {
+		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'user' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.User))
+	}
+	if !(len(this.User) <= 64) {
+		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'user' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.User))
+	}
+	return nil
+}
+
+func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_password() error {
+	if !(len(this.Password) >= 1) {
+		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'password' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Password))
+	}
+	if !(len(this.Password) <= 64) {
+		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'password' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Password))
+	}
+	return nil
+}
+
 func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_database() error {
 	if !(len(this.Database) >= 1) {
 		return protovalidator.FieldError1("ClickHouseURL", "the byte length of field 'database' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Database))
@@ -284,25 +207,10 @@ func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_database() error {
 	return nil
 }
 
-func (this *ClickHouseURL) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message datasource.ClickHouseURL
 func (this *ClickHouseURL) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
-		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
 		return err
@@ -310,10 +218,13 @@ func (this *ClickHouseURL) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_port(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_database(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_database(); err != nil {
 		return err
 	}
 	return nil
@@ -329,24 +240,12 @@ func (this *KafkaURL) _xxx_xxx_Validator_Validate_kafka_brokers() error {
 	return nil
 }
 
-func (this *KafkaURL) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message datasource.KafkaURL
 func (this *KafkaURL) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_kafka_brokers(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
 		return err
 	}
 	return nil
@@ -360,31 +259,22 @@ func (this *S3URL) Validate() error {
 	return nil
 }
 
-func (this *HBaseURL) _xxx_xxx_Validator_Validate_zookeeper() error {
-	if !(len(this.Zookeeper) >= 1) {
-		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zookeeper' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Zookeeper))
+func (this *HBaseURL) _xxx_xxx_Validator_Validate_zk_hosts() error {
+	if !(len(this.ZkHosts) >= 1) {
+		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zk_hosts' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.ZkHosts))
 	}
-	if !(len(this.Zookeeper) <= 1024) {
-		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zookeeper' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.Zookeeper))
-	}
-	return nil
-}
-
-func (this *HBaseURL) _xxx_xxx_Validator_Validate_z_node() error {
-	if !(len(this.ZNode) >= 1) {
-		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'z_node' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.ZNode))
-	}
-	if !(len(this.ZNode) <= 1024) {
-		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'z_node' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.ZNode))
+	if !(len(this.ZkHosts) <= 1024) {
+		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zk_hosts' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.ZkHosts))
 	}
 	return nil
 }
 
-func (this *HBaseURL) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
+func (this *HBaseURL) _xxx_xxx_Validator_Validate_zk_path() error {
+	if !(len(this.ZkPath) >= 1) {
+		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zk_path' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.ZkPath))
+	}
+	if !(len(this.ZkPath) <= 1024) {
+		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zk_path' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.ZkPath))
 	}
 	return nil
 }
@@ -394,13 +284,10 @@ func (this *HBaseURL) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_zookeeper(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_zk_hosts(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_z_node(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_zk_path(); err != nil {
 		return err
 	}
 	return nil
@@ -446,15 +333,6 @@ func (this *FtpURL) _xxx_xxx_Validator_Validate_password() error {
 	return nil
 }
 
-func (this *FtpURL) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message datasource.FtpURL
 func (this *FtpURL) Validate() error {
 	if this == nil {
@@ -472,23 +350,14 @@ func (this *FtpURL) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
-		return err
-	}
 	return nil
 }
 
 func (this *HDFSURL) _xxx_xxx_Validator_Validate_nodes() error {
-	if dt, ok := interface{}(this.Nodes).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
+	if !(this.Nodes != nil) {
+		return protovalidator.FieldError2("HDFSURL", "the value of field 'nodes' cannot be null")
 	}
-	return nil
-}
-
-func (this *HDFSURL) _xxx_xxx_Validator_Validate_network() error {
-	if dt, ok := interface{}(this.Network).(interface{ Validate() error }); ok {
+	if dt, ok := interface{}(this.Nodes).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -504,34 +373,31 @@ func (this *HDFSURL) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_nodes(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
-		return err
-	}
 	return nil
 }
 
-func (this *HDFSURL_HDFSNodeURL) _xxx_xxx_Validator_Validate_name_node() error {
+func (this *HDFSURL_NodeURL) _xxx_xxx_Validator_Validate_name_node() error {
 	if !(len(this.NameNode) >= 1) {
-		return protovalidator.FieldError1("HDFSURL_HDFSNodeURL", "the byte length of field 'name_node' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.NameNode))
+		return protovalidator.FieldError1("HDFSURL_NodeURL", "the byte length of field 'name_node' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.NameNode))
 	}
 	if !(len(this.NameNode) <= 64) {
-		return protovalidator.FieldError1("HDFSURL_HDFSNodeURL", "the byte length of field 'name_node' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.NameNode))
+		return protovalidator.FieldError1("HDFSURL_NodeURL", "the byte length of field 'name_node' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.NameNode))
 	}
 	return nil
 }
 
-func (this *HDFSURL_HDFSNodeURL) _xxx_xxx_Validator_Validate_port() error {
+func (this *HDFSURL_NodeURL) _xxx_xxx_Validator_Validate_port() error {
 	if !(this.Port >= 0) {
-		return protovalidator.FieldError1("HDFSURL_HDFSNodeURL", "the value of field 'port' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Port))
+		return protovalidator.FieldError1("HDFSURL_NodeURL", "the value of field 'port' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Port))
 	}
 	if !(this.Port <= 65536) {
-		return protovalidator.FieldError1("HDFSURL_HDFSNodeURL", "the value of field 'port' must be less than or equal to '65536'", protovalidator.Int32ToString(this.Port))
+		return protovalidator.FieldError1("HDFSURL_NodeURL", "the value of field 'port' must be less than or equal to '65536'", protovalidator.Int32ToString(this.Port))
 	}
 	return nil
 }
 
-// Set default value for message datasource.HDFSURL.HDFSNodeURL
-func (this *HDFSURL_HDFSNodeURL) Validate() error {
+// Set default value for message datasource.HDFSURL.NodeURL
+func (this *HDFSURL_NodeURL) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -544,106 +410,10 @@ func (this *HDFSURL_HDFSNodeURL) Validate() error {
 	return nil
 }
 
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_mysql() error {
-	if dt, ok := interface{}(this.Mysql).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_postgresql() error {
-	if dt, ok := interface{}(this.Postgresql).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_clickhouse() error {
-	if dt, ok := interface{}(this.Clickhouse).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_kafka() error {
-	if dt, ok := interface{}(this.Kafka).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_s3() error {
-	if dt, ok := interface{}(this.S3).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_hbase() error {
-	if dt, ok := interface{}(this.Hbase).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_ftp() error {
-	if dt, ok := interface{}(this.Ftp).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *DataSourceURL) _xxx_xxx_Validator_Validate_hdfs() error {
-	if dt, ok := interface{}(this.Hdfs).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message datasource.DataSourceURL
-func (this *DataSourceURL) Validate() error {
+// Set default value for message datasource.SourceKind
+func (this *SourceKind) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_mysql(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_postgresql(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_clickhouse(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_kafka(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_s3(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_hbase(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_ftp(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_hdfs(); err != nil {
-		return err
 	}
 	return nil
 }

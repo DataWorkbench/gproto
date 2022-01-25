@@ -16,7 +16,6 @@ import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
 
 import "model.proto";
 import "flink.proto";
-import "datasource.proto";
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListWorkspaces {
@@ -741,101 +740,206 @@ message DescribeFlinkUIByInstanceId {
 	string inst_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
-// CreateSource used as request parameters for RPC and HTTP(based on Body)
-message CreateSource {
-	// The source id.
-	// @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
-	string source_id  = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
+// ListDataSources used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListDataSources {
+	// SpaceID; required.
+	// @inject_tag: json:"space_id" swaggerignore:"true"
+	string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
+	// Limit the maximum number of entries returned this time.
+	// @inject_tag: json:"limit" form:"limit"
+	int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset"
+	int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+	// The field list used to sorted query results.
+	// Optional values: {"id", "name", "created", "updated"}.
+	// Multiple fields are separated by commas(","), eg: sort_by="created".
+	// Not required, default: id.
+	// @inject_tag: json:"sort_by" form:"sort_by"
+	string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"] } ];
+
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" default:"false" form:"reverse"
+	bool reverse = 5 [(validator.field) = {}];
+
+	// Search with name; Not required.
+	// @inject_tag: json:"search" form:"search"
+	string search = 6 [(validator.field) = {}];
+
+	// Filter by data source name; valid if `search` is empty; Not required.
+	// @inject_tag: json:"name" form:"name"
+	string name = 7;
+
+	// Verbose indicates the verbosity level.
+	// If the value greater than 1, The details of the associated information will be returned.
+	// @inject_tag: json:"verbose" form:"verbose"
+	int32 verbose = 8;
+}
+
+// CreateDataSource used as request parameters for RPC and HTTP(based on Body)
+message CreateDataSource {
 	// The space id.
-	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
-	string space_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
-	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
-	// @inject_tag: json:"source_type" binding:"gte=1,lte=8" required:"true" mininum:"1" maximum:"8"
-	model.DataSource.Type source_type = 3  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+	// @inject_tag: json:"space_id"swaggerignore:"true"
+	string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
 	// Source name unique within a space.
-	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 64 } ];
+	// @inject_tag: json:"name"
+	string name = 2 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 64 } ];
 
 	// describe this source.
-	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-	string comment = 5 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
+	// @inject_tag: json:"desc"
+	string desc = 3 [ (validator.field).tags.string = { char_len_lte: 256 } ];
+
+	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
+	// @inject_tag: json:"type"
+	model.DataSource.Type type = 4  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
 	// this source connection info
-	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-	datasource.DataSourceURL url = 6;
+	// @inject_tag: json:"url"
+	model.DataSource.URL url = 5 [ (validator.field).tags.message = { not_null: true, skip: true } ];
 
   // Source owner.
-  // @inject_tag: json:"create_by" gorm:"column:create_by"
-  string create_by = 7 [(validator.field) = {}];
+  // @inject_tag: json:"create_by"
+  string create_by = 6 [(validator.field).tags.string = { ne: "" }];
+
+	// The last connection record. The value is nil if never tested for usability.
+	// @inject_tag: json:"last_connection" gorm:"-"
+	model.DataSourceConnection last_connection = 11;
 }
 
-// UpdateSource used as request parameters for RPC and HTTP(based on Body)
-message UpdateSource {
-	// The source id.
-	// @inject_tag: json:"source_id" default:"" binding:"lte=20" swaggerignore:"true"
-	string source_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
+// UpdateDataSource used as request parameters for RPC and HTTP(based on Body)
+message UpdateDataSource {
 	// The space id.
-	// @inject_tag: json:"space_id" default:"" binding:"lte=20" swaggerignore:"true"
-	string space_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	// @inject_tag: json:"space_id" swaggerignore:"true"
+	string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
-	// @inject_tag: json:"source_type" default:"" binding:"gte=1,lte=20" required:"true" mininum:"1" maximum:"8"
-	model.DataSource.Type source_type = 3  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+	// The source id.
+	// @inject_tag: json:"source_id" swaggerignore:"true"
+	string source_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
 	// Source name unique within a space.
-	// @inject_tag: json:"name" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-	string name = 4  [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
+	// @inject_tag: json:"name"
+	string name = 3  [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
 
 	// describe this source.
-	// @inject_tag: json:"comment" default:"" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-	string comment = 5    [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
+	// @inject_tag: json:"desc"
+	string desc = 4  [ (validator.field).tags.string = {  char_len_lte: 256 } ];
+
+	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
+	// @inject_tag: json:"type"
+	model.DataSource.Type type = 5  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
 	// this source connection info
-	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-	datasource.DataSourceURL url = 6 [ (validator.field) = { } ];
+	// @inject_tag: json:"url"
+	model.DataSource.URL url = 6 [ (validator.field).tags.message = { not_null: true, skip: true } ];
 }
 
-// DeleteSource used as request parameters for RPC and HTTP(based on Body)
-message DeleteSource {
+// DeleteDataSources used as request parameters for RPC and HTTP(based on Body)
+message DeleteDataSources {
 	// delete these SourceIDs
-	// @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
-	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gt: 1, len_lte: 100 } ];
+	// @inject_tag: json:"source_ids"
+	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100 } ];
 }
 
-// DescribeSource used as request parameters for RPC and HTTP(based on Body)
-message DescribeSource {
+// DescribeDataSource used as request parameters for RPC and HTTP(based on Body)
+message DescribeDataSource {
 	// SourceID
-	// @inject_tag: json:"source_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
+	// @inject_tag: json:"source_id"
 	string source_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
-// EnableSource used as request parameters for RPC and HTTP(based on Body)
-message EnableSource {
+// EnableDataSources used as request parameters for RPC and HTTP(based on Body)
+message EnableDataSources {
 	// enable these SourceIDs
-	// @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"100"
+	// @inject_tag: json:"source_ids"
 	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100 } ];
 }
 
-// DeleteSource used as request parameters for RPC and HTTP(based on Body)
-message DisableSource {
+// DisableDataSources used as request parameters for RPC and HTTP(based on Body)
+message DisableDataSources {
 	// delete these SourceIDs
-	// @inject_tag: json:"source_ids" default:"" binding:"gte=1,lte=1101" required:"true" minLength:"1" maxLength:"1100"
+	// @inject_tag: json:"source_ids"
 	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100 } ];
 }
 
-// PingSource used as request parameters for RPC and HTTP(based on Body)
-message PingSource {
+// PingDataSource used as request parameters for RPC and HTTP(based on Body)
+message PingDataSourceConnection {
+	enum Stage {
+		PhaseUnset = 0;
+		BeforeCreate = 1;
+		AfterCreate = 2;
+	}
+
+	// The space id.
+	// @inject_tag: json:"space_id" swaggerignore:"true"
+	string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+	// The source id.
+	// @inject_tag: json:"network_id"
+	string network_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+	// Stage At what stage did the user perform the test.
+	// @inject_tag: json:"stage"
+	Stage stage = 3 [ (validator.field).tags.enum = { gt: 0; in_enums: true }  ];
+
+	// The source id.
+	// @inject_tag: json:"source_id"
+	string source_id  = 4 [
+		(validator.field).check_if = { field: "stage", tags: { enum: { eq: 2 } } },
+		(validator.field).tags.string = { byte_len_eq: 20 }
+	];
+
 	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
-	// @inject_tag: json:"source_type" default:"" binding:"gte=1,lte=20" required:"true" mininum:"1" maximum:"8"
-	model.DataSource.Type source_type = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+	// @inject_tag: json:"type"
+	model.DataSource.Type type = 5 [
+		(validator.field).check_if = { field: "stage", tags: { enum: { eq: 1 } } },
+		(validator.field).tags.enum = { gt: 0; in_enums: true }
+	];
 
 	// this source connection info
 	// @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-	datasource.DataSourceURL url = 2;
+	model.DataSource.URL url = 6 [
+		(validator.field).check_if = { field: "stage", tags: { enum: { eq: 1 } } },
+		(validator.field).tags.message = { not_null: true, skip: true } ]
+	;
+}
+
+// ListDataSourceConnections used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListDataSourceConnections {
+	// SpaceID; required.
+	// @inject_tag: json:"space_id" swaggerignore:"true"
+	string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+	// The source id.
+	// @inject_tag: json:"source_id" swaggerignore:"true"
+	string source_id  = 2 [(validator.field).tags.string = { byte_len_eq: 20 }];
+
+	// Limit the maximum number of entries returned this time.
+	// @inject_tag: json:"limit" form:"limit"
+	int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset"
+	int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
+
+	// The field list used to sorted query results.
+	// Optional values: {"source_id", "created"}.
+	// Multiple fields are separated by commas(","), eg: sort_by="created".
+	// Not required, default: source_id.
+	// @inject_tag: json:"sort_by" form:"sort_by"
+	string sort_by = 5 [ (validator.field).tags.string = { in: ["", "source_id", "created"] } ];
+
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" default:"false" form:"reverse"
+	bool reverse = 6 [(validator.field) = {}];
+
+	// Verbose indicates the verbosity level.
+	// If the value greater than 1, The details of the associated information will be returned.
+	// @inject_tag: json:"verbose" form:"verbose"
+	int32 verbose = 7;
 }
 
 // SourceTables used as request parameters for RPC and HTTP(based on Body)
@@ -926,36 +1030,6 @@ message DescribeTable {
 	// SourceIDs
 	// @inject_tag: json:"table_id" default:"" binding:"len=20" required:"true" minLength:"20" maxLength:"20"
 	string table_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-}
-
-// ListSource used as a request parameters for RPC and HTTP(based on URL-Query)
-message ListSource {
-	// Limit the maximum number of entries returned this time.
-	// @inject_tag: json:"limit" form:"limit" default:"100" binding:"gt=0,lte=100" mininum:"1" maximum:"100"
-	int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
-	// The offset position. Not required, default 0.
-	// @inject_tag: json:"offset" form:"offset" default:"0" binding:"gte=0"
-	int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
-
-  // The field list used to sorted query results.
-  // Optional values: {"source_id", "name", "created", "updated"}.
-  // Multiple fields are separated by commas(","), eg: sort_by="created".
-  // Not required, default: updatetime.
-  // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
-  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "source_id", "name", "created", "updated"] } ];
-
-  // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse" default:"false" form:"reverse" default:"" binding:"-"
-  bool reverse = 4 [(validator.field) = {}];
-
-  // Search with name; Not required.
-  // @inject_tag: json:"search" form:"search" default:"" binding:"-" minLength:"0" maxLength:"100"
-  string search = 5 [(validator.field) = {}];
-
-	// SpaceID; required.
-	// @inject_tag: json:"space_id"  default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20"  swaggerignore:"true"
-	string space_id  = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
 // ListTable used as a request parameters for RPC and HTTP(based on URL-Query)

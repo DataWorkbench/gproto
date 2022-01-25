@@ -6,6 +6,7 @@
 package response
 
 import (
+	_ "github.com/DataWorkbench/gproto/pkg/datasourcepb"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/validatorpb"
 )
@@ -205,8 +206,16 @@ func (this *DescribeFlinkUIByInstanceId) SetDefaults() {
 	return
 }
 
-// Set default value for message response.DescribeSource
-func (this *DescribeSource) SetDefaults() {
+// Set default value for message response.CreateDataSource
+func (this *CreateDataSource) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.DescribeDataSource
+func (this *DescribeDataSource) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -218,24 +227,37 @@ func (this *DescribeSource) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ListSource
-func (this *ListSource) SetDefaults() {
+// Set default value for message response.ListDataSources
+func (this *ListDataSources) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message response.SourceKind
-func (this *SourceKind) SetDefaults() {
+// Set default value for message response.DescribeDataSourceKinds
+func (this *DescribeDataSourceKinds) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message response.SourceKind.Kind
-func (this *SourceKind_Kind) SetDefaults() {
+// Set default value for message response.PingDataSourceConnection
+func (this *PingDataSourceConnection) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.ListDataSourceConnections
+func (this *ListDataSourceConnections) SetDefaults() {
 	if this == nil {
 		return
 	}

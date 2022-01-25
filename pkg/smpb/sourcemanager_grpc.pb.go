@@ -25,18 +25,19 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SourcemanagerClient interface {
-	//source
-	Create(ctx context.Context, in *request.CreateSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	Update(ctx context.Context, in *request.UpdateSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	Describe(ctx context.Context, in *request.DescribeSource, opts ...grpc.CallOption) (*response.DescribeSource, error)
-	Enable(ctx context.Context, in *request.EnableSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	Disable(ctx context.Context, in *request.DisableSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	List(ctx context.Context, in *request.ListSource, opts ...grpc.CallOption) (*response.ListSource, error)
-	Delete(ctx context.Context, in *request.DeleteSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DeleteAll(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	// datasource
+	ListDataSources(ctx context.Context, in *request.ListDataSources, opts ...grpc.CallOption) (*response.ListDataSources, error)
+	CreateDataSource(ctx context.Context, in *request.CreateDataSource, opts ...grpc.CallOption) (*response.CreateDataSource, error)
+	UpdateDataSource(ctx context.Context, in *request.UpdateDataSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DescribeDataSource(ctx context.Context, in *request.DescribeDataSource, opts ...grpc.CallOption) (*response.DescribeDataSource, error)
+	DisableDataSources(ctx context.Context, in *request.DisableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	EnableDataSources(ctx context.Context, in *request.EnableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteDataSources(ctx context.Context, in *request.DeleteDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteDataSourcesBySpaceId(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DescribeDataSourceKinds(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.DescribeDataSourceKinds, error)
+	PingDataSourceConnection(ctx context.Context, in *request.PingDataSourceConnection, opts ...grpc.CallOption) (*response.PingDataSourceConnection, error)
+	ListDataSourceConnections(ctx context.Context, in *request.ListDataSourceConnections, opts ...grpc.CallOption) (*response.ListDataSourceConnections, error)
 	//source utile
-	PingSource(ctx context.Context, in *request.PingSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	SourceKind(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.SourceKind, error)
 	DataFormat(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.JsonList, error)
 	DataType(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.JsonList, error)
 	//table
@@ -58,90 +59,99 @@ func NewSourcemanagerClient(cc grpc.ClientConnInterface) SourcemanagerClient {
 	return &sourcemanagerClient{cc}
 }
 
-func (c *sourcemanagerClient) Create(ctx context.Context, in *request.CreateSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *sourcemanagerClient) ListDataSources(ctx context.Context, in *request.ListDataSources, opts ...grpc.CallOption) (*response.ListDataSources, error) {
+	out := new(response.ListDataSources)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/ListDataSources", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourcemanagerClient) CreateDataSource(ctx context.Context, in *request.CreateDataSource, opts ...grpc.CallOption) (*response.CreateDataSource, error) {
+	out := new(response.CreateDataSource)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/CreateDataSource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourcemanagerClient) UpdateDataSource(ctx context.Context, in *request.UpdateDataSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Create", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/UpdateDataSource", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sourcemanagerClient) Update(ctx context.Context, in *request.UpdateSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *sourcemanagerClient) DescribeDataSource(ctx context.Context, in *request.DescribeDataSource, opts ...grpc.CallOption) (*response.DescribeDataSource, error) {
+	out := new(response.DescribeDataSource)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DescribeDataSource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sourcemanagerClient) DisableDataSources(ctx context.Context, in *request.DisableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Update", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DisableDataSources", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sourcemanagerClient) Describe(ctx context.Context, in *request.DescribeSource, opts ...grpc.CallOption) (*response.DescribeSource, error) {
-	out := new(response.DescribeSource)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Describe", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *sourcemanagerClient) Enable(ctx context.Context, in *request.EnableSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *sourcemanagerClient) EnableDataSources(ctx context.Context, in *request.EnableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Enable", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/EnableDataSources", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sourcemanagerClient) Disable(ctx context.Context, in *request.DisableSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *sourcemanagerClient) DeleteDataSources(ctx context.Context, in *request.DeleteDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Disable", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DeleteDataSources", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sourcemanagerClient) List(ctx context.Context, in *request.ListSource, opts ...grpc.CallOption) (*response.ListSource, error) {
-	out := new(response.ListSource)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/List", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *sourcemanagerClient) Delete(ctx context.Context, in *request.DeleteSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *sourcemanagerClient) DeleteDataSourcesBySpaceId(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/Delete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DeleteDataSourcesBySpaceId", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sourcemanagerClient) DeleteAll(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DeleteAll", in, out, opts...)
+func (c *sourcemanagerClient) DescribeDataSourceKinds(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.DescribeDataSourceKinds, error) {
+	out := new(response.DescribeDataSourceKinds)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/DescribeDataSourceKinds", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sourcemanagerClient) PingSource(ctx context.Context, in *request.PingSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/PingSource", in, out, opts...)
+func (c *sourcemanagerClient) PingDataSourceConnection(ctx context.Context, in *request.PingDataSourceConnection, opts ...grpc.CallOption) (*response.PingDataSourceConnection, error) {
+	out := new(response.PingDataSourceConnection)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/PingDataSourceConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sourcemanagerClient) SourceKind(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.SourceKind, error) {
-	out := new(response.SourceKind)
-	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/SourceKind", in, out, opts...)
+func (c *sourcemanagerClient) ListDataSourceConnections(ctx context.Context, in *request.ListDataSourceConnections, opts ...grpc.CallOption) (*response.ListDataSourceConnections, error) {
+	out := new(response.ListDataSourceConnections)
+	err := c.cc.Invoke(ctx, "/smpb.Sourcemanager/ListDataSourceConnections", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -233,18 +243,19 @@ func (c *sourcemanagerClient) TableColumns(ctx context.Context, in *request.Tabl
 // All implementations must embed UnimplementedSourcemanagerServer
 // for forward compatibility
 type SourcemanagerServer interface {
-	//source
-	Create(context.Context, *request.CreateSource) (*model.EmptyStruct, error)
-	Update(context.Context, *request.UpdateSource) (*model.EmptyStruct, error)
-	Describe(context.Context, *request.DescribeSource) (*response.DescribeSource, error)
-	Enable(context.Context, *request.EnableSource) (*model.EmptyStruct, error)
-	Disable(context.Context, *request.DisableSource) (*model.EmptyStruct, error)
-	List(context.Context, *request.ListSource) (*response.ListSource, error)
-	Delete(context.Context, *request.DeleteSource) (*model.EmptyStruct, error)
-	DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
+	// datasource
+	ListDataSources(context.Context, *request.ListDataSources) (*response.ListDataSources, error)
+	CreateDataSource(context.Context, *request.CreateDataSource) (*response.CreateDataSource, error)
+	UpdateDataSource(context.Context, *request.UpdateDataSource) (*model.EmptyStruct, error)
+	DescribeDataSource(context.Context, *request.DescribeDataSource) (*response.DescribeDataSource, error)
+	DisableDataSources(context.Context, *request.DisableDataSources) (*model.EmptyStruct, error)
+	EnableDataSources(context.Context, *request.EnableDataSources) (*model.EmptyStruct, error)
+	DeleteDataSources(context.Context, *request.DeleteDataSources) (*model.EmptyStruct, error)
+	DeleteDataSourcesBySpaceId(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
+	DescribeDataSourceKinds(context.Context, *model.EmptyStruct) (*response.DescribeDataSourceKinds, error)
+	PingDataSourceConnection(context.Context, *request.PingDataSourceConnection) (*response.PingDataSourceConnection, error)
+	ListDataSourceConnections(context.Context, *request.ListDataSourceConnections) (*response.ListDataSourceConnections, error)
 	//source utile
-	PingSource(context.Context, *request.PingSource) (*model.EmptyStruct, error)
-	SourceKind(context.Context, *model.EmptyStruct) (*response.SourceKind, error)
 	DataFormat(context.Context, *model.EmptyStruct) (*response.JsonList, error)
 	DataType(context.Context, *model.EmptyStruct) (*response.JsonList, error)
 	//table
@@ -263,35 +274,38 @@ type SourcemanagerServer interface {
 type UnimplementedSourcemanagerServer struct {
 }
 
-func (UnimplementedSourcemanagerServer) Create(context.Context, *request.CreateSource) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+func (UnimplementedSourcemanagerServer) ListDataSources(context.Context, *request.ListDataSources) (*response.ListDataSources, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListDataSources not implemented")
 }
-func (UnimplementedSourcemanagerServer) Update(context.Context, *request.UpdateSource) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
+func (UnimplementedSourcemanagerServer) CreateDataSource(context.Context, *request.CreateDataSource) (*response.CreateDataSource, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDataSource not implemented")
 }
-func (UnimplementedSourcemanagerServer) Describe(context.Context, *request.DescribeSource) (*response.DescribeSource, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Describe not implemented")
+func (UnimplementedSourcemanagerServer) UpdateDataSource(context.Context, *request.UpdateDataSource) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataSource not implemented")
 }
-func (UnimplementedSourcemanagerServer) Enable(context.Context, *request.EnableSource) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Enable not implemented")
+func (UnimplementedSourcemanagerServer) DescribeDataSource(context.Context, *request.DescribeDataSource) (*response.DescribeDataSource, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSource not implemented")
 }
-func (UnimplementedSourcemanagerServer) Disable(context.Context, *request.DisableSource) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Disable not implemented")
+func (UnimplementedSourcemanagerServer) DisableDataSources(context.Context, *request.DisableDataSources) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableDataSources not implemented")
 }
-func (UnimplementedSourcemanagerServer) List(context.Context, *request.ListSource) (*response.ListSource, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+func (UnimplementedSourcemanagerServer) EnableDataSources(context.Context, *request.EnableDataSources) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableDataSources not implemented")
 }
-func (UnimplementedSourcemanagerServer) Delete(context.Context, *request.DeleteSource) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
+func (UnimplementedSourcemanagerServer) DeleteDataSources(context.Context, *request.DeleteDataSources) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataSources not implemented")
 }
-func (UnimplementedSourcemanagerServer) DeleteAll(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteAll not implemented")
+func (UnimplementedSourcemanagerServer) DeleteDataSourcesBySpaceId(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataSourcesBySpaceId not implemented")
 }
-func (UnimplementedSourcemanagerServer) PingSource(context.Context, *request.PingSource) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PingSource not implemented")
+func (UnimplementedSourcemanagerServer) DescribeDataSourceKinds(context.Context, *model.EmptyStruct) (*response.DescribeDataSourceKinds, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSourceKinds not implemented")
 }
-func (UnimplementedSourcemanagerServer) SourceKind(context.Context, *model.EmptyStruct) (*response.SourceKind, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SourceKind not implemented")
+func (UnimplementedSourcemanagerServer) PingDataSourceConnection(context.Context, *request.PingDataSourceConnection) (*response.PingDataSourceConnection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PingDataSourceConnection not implemented")
+}
+func (UnimplementedSourcemanagerServer) ListDataSourceConnections(context.Context, *request.ListDataSourceConnections) (*response.ListDataSourceConnections, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListDataSourceConnections not implemented")
 }
 func (UnimplementedSourcemanagerServer) DataFormat(context.Context, *model.EmptyStruct) (*response.JsonList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DataFormat not implemented")
@@ -333,182 +347,200 @@ func RegisterSourcemanagerServer(s grpc.ServiceRegistrar, srv SourcemanagerServe
 	s.RegisterService(&Sourcemanager_ServiceDesc, srv)
 }
 
-func _Sourcemanager_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.CreateSource)
+func _Sourcemanager_ListDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListDataSources)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).Create(ctx, in)
+		return srv.(SourcemanagerServer).ListDataSources(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/Create",
+		FullMethod: "/smpb.Sourcemanager/ListDataSources",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).Create(ctx, req.(*request.CreateSource))
+		return srv.(SourcemanagerServer).ListDataSources(ctx, req.(*request.ListDataSources))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.UpdateSource)
+func _Sourcemanager_CreateDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.CreateDataSource)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).Update(ctx, in)
+		return srv.(SourcemanagerServer).CreateDataSource(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/Update",
+		FullMethod: "/smpb.Sourcemanager/CreateDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).Update(ctx, req.(*request.UpdateSource))
+		return srv.(SourcemanagerServer).CreateDataSource(ctx, req.(*request.CreateDataSource))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_Describe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DescribeSource)
+func _Sourcemanager_UpdateDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.UpdateDataSource)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).Describe(ctx, in)
+		return srv.(SourcemanagerServer).UpdateDataSource(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/Describe",
+		FullMethod: "/smpb.Sourcemanager/UpdateDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).Describe(ctx, req.(*request.DescribeSource))
+		return srv.(SourcemanagerServer).UpdateDataSource(ctx, req.(*request.UpdateDataSource))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_Enable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.EnableSource)
+func _Sourcemanager_DescribeDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeDataSource)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).Enable(ctx, in)
+		return srv.(SourcemanagerServer).DescribeDataSource(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/Enable",
+		FullMethod: "/smpb.Sourcemanager/DescribeDataSource",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).Enable(ctx, req.(*request.EnableSource))
+		return srv.(SourcemanagerServer).DescribeDataSource(ctx, req.(*request.DescribeDataSource))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_Disable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DisableSource)
+func _Sourcemanager_DisableDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DisableDataSources)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).Disable(ctx, in)
+		return srv.(SourcemanagerServer).DisableDataSources(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/Disable",
+		FullMethod: "/smpb.Sourcemanager/DisableDataSources",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).Disable(ctx, req.(*request.DisableSource))
+		return srv.(SourcemanagerServer).DisableDataSources(ctx, req.(*request.DisableDataSources))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ListSource)
+func _Sourcemanager_EnableDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.EnableDataSources)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).List(ctx, in)
+		return srv.(SourcemanagerServer).EnableDataSources(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/List",
+		FullMethod: "/smpb.Sourcemanager/EnableDataSources",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).List(ctx, req.(*request.ListSource))
+		return srv.(SourcemanagerServer).EnableDataSources(ctx, req.(*request.EnableDataSources))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DeleteSource)
+func _Sourcemanager_DeleteDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteDataSources)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).Delete(ctx, in)
+		return srv.(SourcemanagerServer).DeleteDataSources(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/Delete",
+		FullMethod: "/smpb.Sourcemanager/DeleteDataSources",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).Delete(ctx, req.(*request.DeleteSource))
+		return srv.(SourcemanagerServer).DeleteDataSources(ctx, req.(*request.DeleteDataSources))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_DeleteAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Sourcemanager_DeleteDataSourcesBySpaceId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DeleteWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).DeleteAll(ctx, in)
+		return srv.(SourcemanagerServer).DeleteDataSourcesBySpaceId(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/DeleteAll",
+		FullMethod: "/smpb.Sourcemanager/DeleteDataSourcesBySpaceId",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).DeleteAll(ctx, req.(*request.DeleteWorkspaces))
+		return srv.(SourcemanagerServer).DeleteDataSourcesBySpaceId(ctx, req.(*request.DeleteWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sourcemanager_PingSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.PingSource)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SourcemanagerServer).PingSource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/PingSource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).PingSource(ctx, req.(*request.PingSource))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Sourcemanager_SourceKind_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Sourcemanager_DescribeDataSourceKinds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(model.EmptyStruct)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SourcemanagerServer).SourceKind(ctx, in)
+		return srv.(SourcemanagerServer).DescribeDataSourceKinds(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/smpb.Sourcemanager/SourceKind",
+		FullMethod: "/smpb.Sourcemanager/DescribeDataSourceKinds",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SourcemanagerServer).SourceKind(ctx, req.(*model.EmptyStruct))
+		return srv.(SourcemanagerServer).DescribeDataSourceKinds(ctx, req.(*model.EmptyStruct))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Sourcemanager_PingDataSourceConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.PingDataSourceConnection)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourcemanagerServer).PingDataSourceConnection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smpb.Sourcemanager/PingDataSourceConnection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourcemanagerServer).PingDataSourceConnection(ctx, req.(*request.PingDataSourceConnection))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Sourcemanager_ListDataSourceConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListDataSourceConnections)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SourcemanagerServer).ListDataSourceConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/smpb.Sourcemanager/ListDataSourceConnections",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SourcemanagerServer).ListDataSourceConnections(ctx, req.(*request.ListDataSourceConnections))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -683,44 +715,48 @@ var Sourcemanager_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*SourcemanagerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Create",
-			Handler:    _Sourcemanager_Create_Handler,
+			MethodName: "ListDataSources",
+			Handler:    _Sourcemanager_ListDataSources_Handler,
 		},
 		{
-			MethodName: "Update",
-			Handler:    _Sourcemanager_Update_Handler,
+			MethodName: "CreateDataSource",
+			Handler:    _Sourcemanager_CreateDataSource_Handler,
 		},
 		{
-			MethodName: "Describe",
-			Handler:    _Sourcemanager_Describe_Handler,
+			MethodName: "UpdateDataSource",
+			Handler:    _Sourcemanager_UpdateDataSource_Handler,
 		},
 		{
-			MethodName: "Enable",
-			Handler:    _Sourcemanager_Enable_Handler,
+			MethodName: "DescribeDataSource",
+			Handler:    _Sourcemanager_DescribeDataSource_Handler,
 		},
 		{
-			MethodName: "Disable",
-			Handler:    _Sourcemanager_Disable_Handler,
+			MethodName: "DisableDataSources",
+			Handler:    _Sourcemanager_DisableDataSources_Handler,
 		},
 		{
-			MethodName: "List",
-			Handler:    _Sourcemanager_List_Handler,
+			MethodName: "EnableDataSources",
+			Handler:    _Sourcemanager_EnableDataSources_Handler,
 		},
 		{
-			MethodName: "Delete",
-			Handler:    _Sourcemanager_Delete_Handler,
+			MethodName: "DeleteDataSources",
+			Handler:    _Sourcemanager_DeleteDataSources_Handler,
 		},
 		{
-			MethodName: "DeleteAll",
-			Handler:    _Sourcemanager_DeleteAll_Handler,
+			MethodName: "DeleteDataSourcesBySpaceId",
+			Handler:    _Sourcemanager_DeleteDataSourcesBySpaceId_Handler,
 		},
 		{
-			MethodName: "PingSource",
-			Handler:    _Sourcemanager_PingSource_Handler,
+			MethodName: "DescribeDataSourceKinds",
+			Handler:    _Sourcemanager_DescribeDataSourceKinds_Handler,
 		},
 		{
-			MethodName: "SourceKind",
-			Handler:    _Sourcemanager_SourceKind_Handler,
+			MethodName: "PingDataSourceConnection",
+			Handler:    _Sourcemanager_PingDataSourceConnection_Handler,
+		},
+		{
+			MethodName: "ListDataSourceConnections",
+			Handler:    _Sourcemanager_ListDataSourceConnections_Handler,
 		},
 		{
 			MethodName: "DataFormat",

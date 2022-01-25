@@ -6,6 +6,7 @@
 package response
 
 import (
+	_ "github.com/DataWorkbench/gproto/pkg/datasourcepb"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/validatorpb"
 )

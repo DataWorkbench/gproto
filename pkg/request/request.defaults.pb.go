@@ -6,7 +6,6 @@
 package request
 
 import (
-	_ "github.com/DataWorkbench/gproto/pkg/datasourcepb"
 	_ "github.com/DataWorkbench/gproto/pkg/flinkpb"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/defaultspb"
@@ -469,8 +468,37 @@ func (this *DescribeFlinkUIByInstanceId) SetDefaults() {
 	return
 }
 
-// Set default value for message request.CreateSource
-func (this *CreateSource) SetDefaults() {
+// Set default value for message request.ListDataSources
+func (this *ListDataSources) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
+	}
+	return
+}
+
+// Set default value for message request.CreateDataSource
+func (this *CreateDataSource) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Url != nil {
+		if dt, ok := interface{}(this.Url).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.LastConnection != nil {
+		if dt, ok := interface{}(this.LastConnection).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.UpdateDataSource
+func (this *UpdateDataSource) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -482,8 +510,40 @@ func (this *CreateSource) SetDefaults() {
 	return
 }
 
-// Set default value for message request.UpdateSource
-func (this *UpdateSource) SetDefaults() {
+// Set default value for message request.DeleteDataSources
+func (this *DeleteDataSources) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DescribeDataSource
+func (this *DescribeDataSource) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.EnableDataSources
+func (this *EnableDataSources) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DisableDataSources
+func (this *DisableDataSources) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.PingDataSourceConnection
+func (this *PingDataSourceConnection) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -495,47 +555,13 @@ func (this *UpdateSource) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DeleteSource
-func (this *DeleteSource) SetDefaults() {
+// Set default value for message request.ListDataSourceConnections
+func (this *ListDataSourceConnections) SetDefaults() {
 	if this == nil {
 		return
 	}
-	return
-}
-
-// Set default value for message request.DescribeSource
-func (this *DescribeSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.EnableSource
-func (this *EnableSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.DisableSource
-func (this *DisableSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.PingSource
-func (this *PingSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Url != nil {
-		if dt, ok := interface{}(this.Url).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
+	if this.Limit == 0 {
+		this.Limit = 100
 	}
 	return
 }
@@ -594,17 +620,6 @@ func (this *DeleteTable) SetDefaults() {
 func (this *DescribeTable) SetDefaults() {
 	if this == nil {
 		return
-	}
-	return
-}
-
-// Set default value for message request.ListSource
-func (this *ListSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Limit == 0 {
-		this.Limit = 100
 	}
 	return
 }

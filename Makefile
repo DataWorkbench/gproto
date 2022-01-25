@@ -66,7 +66,7 @@ generate-java:
 	@$(GENERATE_JAVA); _generate_java;
 
 .PHONY: generate
-generate: generate-go generate-java
+generate: generate-go 
 #	@$(GENERATE_CODE); _generate_code;
 
 .PHONY: mvn-deploy

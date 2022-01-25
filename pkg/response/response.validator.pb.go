@@ -6,6 +6,7 @@
 package response
 
 import (
+	_ "github.com/DataWorkbench/gproto/pkg/datasourcepb"
 	_ "github.com/DataWorkbench/gproto/pkg/model"
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/validatorpb"
 	protovalidator "github.com/yu31/proto-go-plugin/pkg/protovalidator"
@@ -404,7 +405,15 @@ func (this *DescribeFlinkUIByInstanceId) Validate() error {
 	return nil
 }
 
-func (this *DescribeSource) _xxx_xxx_Validator_Validate_info() error {
+// Set default value for message response.CreateDataSource
+func (this *CreateDataSource) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+func (this *DescribeDataSource) _xxx_xxx_Validator_Validate_info() error {
 	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -413,8 +422,8 @@ func (this *DescribeSource) _xxx_xxx_Validator_Validate_info() error {
 	return nil
 }
 
-// Set default value for message response.DescribeSource
-func (this *DescribeSource) Validate() error {
+// Set default value for message response.DescribeDataSource
+func (this *DescribeDataSource) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -424,7 +433,7 @@ func (this *DescribeSource) Validate() error {
 	return nil
 }
 
-func (this *ListSource) _xxx_xxx_Validator_Validate_infos() error {
+func (this *ListDataSources) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -436,8 +445,8 @@ func (this *ListSource) _xxx_xxx_Validator_Validate_infos() error {
 	return nil
 }
 
-// Set default value for message response.ListSource
-func (this *ListSource) Validate() error {
+// Set default value for message response.ListDataSources
+func (this *ListDataSources) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -447,7 +456,7 @@ func (this *ListSource) Validate() error {
 	return nil
 }
 
-func (this *SourceKind) _xxx_xxx_Validator_Validate_Kinds() error {
+func (this *DescribeDataSourceKinds) _xxx_xxx_Validator_Validate_Kinds() error {
 	for _, item := range this.Kinds {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -459,8 +468,8 @@ func (this *SourceKind) _xxx_xxx_Validator_Validate_Kinds() error {
 	return nil
 }
 
-// Set default value for message response.SourceKind
-func (this *SourceKind) Validate() error {
+// Set default value for message response.DescribeDataSourceKinds
+func (this *DescribeDataSourceKinds) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -470,10 +479,45 @@ func (this *SourceKind) Validate() error {
 	return nil
 }
 
-// Set default value for message response.SourceKind.Kind
-func (this *SourceKind_Kind) Validate() error {
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_info() error {
+	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.PingDataSourceConnection
+func (this *PingDataSourceConnection) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_infos() error {
+	for _, item := range this.Infos {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.ListDataSourceConnections
+func (this *ListDataSourceConnections) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_infos(); err != nil {
+		return err
 	}
 	return nil
 }

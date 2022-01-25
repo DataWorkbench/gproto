@@ -10,36 +10,10 @@ import (
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/validatorpb"
 )
 
-// Set default value for message datasource.DatasourceNetwork
-func (this *DatasourceNetwork) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.VpcNetwork != nil {
-		if dt, ok := interface{}(this.VpcNetwork).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message datasource.DatasourceNetwork.VpcNetwork
-func (this *DatasourceNetwork_VpcNetwork) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message datasource.MySQLURL
 func (this *MySQLURL) SetDefaults() {
 	if this == nil {
 		return
-	}
-	if this.Network != nil {
-		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
 	}
 	return
 }
@@ -49,11 +23,6 @@ func (this *PostgreSQLURL) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Network != nil {
-		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 
@@ -62,11 +31,6 @@ func (this *ClickHouseURL) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Network != nil {
-		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 
@@ -74,11 +38,6 @@ func (this *ClickHouseURL) SetDefaults() {
 func (this *KafkaURL) SetDefaults() {
 	if this == nil {
 		return
-	}
-	if this.Network != nil {
-		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
 	}
 	return
 }
@@ -96,11 +55,6 @@ func (this *HBaseURL) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Network != nil {
-		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 
@@ -108,11 +62,6 @@ func (this *HBaseURL) SetDefaults() {
 func (this *FtpURL) SetDefaults() {
 	if this == nil {
 		return
-	}
-	if this.Network != nil {
-		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
 	}
 	return
 }
@@ -127,66 +76,21 @@ func (this *HDFSURL) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.Network != nil {
-		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 
-// Set default value for message datasource.HDFSURL.HDFSNodeURL
-func (this *HDFSURL_HDFSNodeURL) SetDefaults() {
+// Set default value for message datasource.HDFSURL.NodeURL
+func (this *HDFSURL_NodeURL) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message datasource.DataSourceURL
-func (this *DataSourceURL) SetDefaults() {
+// Set default value for message datasource.SourceKind
+func (this *SourceKind) SetDefaults() {
 	if this == nil {
 		return
-	}
-	if this.Mysql != nil {
-		if dt, ok := interface{}(this.Mysql).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Postgresql != nil {
-		if dt, ok := interface{}(this.Postgresql).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Clickhouse != nil {
-		if dt, ok := interface{}(this.Clickhouse).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Kafka != nil {
-		if dt, ok := interface{}(this.Kafka).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.S3 != nil {
-		if dt, ok := interface{}(this.S3).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Hbase != nil {
-		if dt, ok := interface{}(this.Hbase).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Ftp != nil {
-		if dt, ok := interface{}(this.Ftp).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	if this.Hdfs != nil {
-		if dt, ok := interface{}(this.Hdfs).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
 	}
 	return
 }

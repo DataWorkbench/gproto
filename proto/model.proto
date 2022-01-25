@@ -719,20 +719,13 @@ message InstanceTaskExecStat {
   int64 instance_count = 2 [ (validator.field).tags.int = { gte: 0 } ];
 }
 
-// Source Info
+// Data Source Schema
 message DataSource {
   enum Status {
     StatusUnset = 0;
-    Enabled = 1;
-    Disabled = 2;
-    Deleted = 3;
-  }
-
-  enum ConnectionStatus {
-    ConnectionStatusUnset = 0;
-    Success = 1;
-    PartialSuccess = 2;
-    Failed = 3;
+    Deleted = 1;
+    Enabled = 2;
+    Disabled = 3;
   }
 
   enum Type {
@@ -747,53 +740,166 @@ message DataSource {
     HDFS = 8;
   }
 
-  // Source ID, unique within a region.
-  // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;" binding:"len=20" minLength:"20" maxLength:"20"
-  string source_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // URL of datasource settings.
+  message URL {
+    option (gosql.serialize) = { json: {} };
+
+    // Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
+    // @inject_tag: json:"-"
+    Type type = 10  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+    // MySQL Source Connection Info.
+    // @inject_tag: json:"mysql"
+    datasource.MySQLURL mysql = 1 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 1 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // PostgreSQL Source Connection Info.
+    // @inject_tag: json:"postgresql"
+    datasource.PostgreSQLURL postgresql = 2 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 2 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // ClickHouse Source Connection Info.
+    // @inject_tag: json:"clickhouse"
+    datasource.ClickHouseURL clickhouse = 3 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 3 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // Kafka Source Connection Info.
+    // @inject_tag: json:"kafka"
+    datasource.KafkaURL kafka = 4 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 4 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // S3 Source Connection Info.
+    // @inject_tag: json:"s3"
+    datasource.S3URL s3 = 5 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 5 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // Hbase Source Connection Info.
+    // @inject_tag: json:"hbase"
+    datasource.HBaseURL hbase = 6 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 6 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // Ftp Source Connection Info.
+    // @inject_tag: json:"ftp"
+    datasource.FtpURL ftp = 7 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 7 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // HDFS Source Connection Info.
+    // @inject_tag: json:"hdfs"
+    datasource.HDFSURL hdfs = 8 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 8 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+  }
 
   // Space ID, workspace ID.
-  // @inject_tag: json:"space_id" gorm:"column:space_id;" binding:"len=20" minLength:"20" maxLength:"20"
-  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
-  // Source Type, one of 1/2/3/4/5/6/7/8 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
-  // @inject_tag: json:"source_type" gorm:"column:source_type;" binding:"gte=1,lte=8" required:"true" mininum:"1" maximum:"8"
-  Type source_type = 3  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  // Source ID, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primaryKey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // Source Name, unique within a space.
-  // @inject_tag: json:"name" gorm:"column:name;" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-  string name = 4  [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
+  // Data Source Name, unique within a space. Min characters 2. Max characters 64.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3  [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
 
   // Comment, describe this source.
-  // @inject_tag: json:"comment" gorm:"column:comment;" binding:"gte=0,lte=256" required:"false" minLength:"0" maxLength:"256"
-  string comment = 5    [(validator.field).tags.string = {char_len_lte: 256}];
+  // @inject_tag: json:"desc" gorm:"column:desc;" binding:"gte=0,lte=256"
+  string desc = 4 [(validator.field).tags.string = {char_len_lte: 256}];
+
+  // Source Type, 1->MySQL 2->PostgreSQL 3->Kafka 4->S3 5->ClickHouse 6->Hbase 7->Ftp 8->HDFS
+  // @inject_tag: json:"type" gorm:"column:type;"
+  Type type = 5  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Url, this source connection info.
-  // @inject_tag: json:"url" gorm:"column:url;" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
-  datasource.DataSourceURL url = 6 ;
+  // @inject_tag: json:"url" gorm:"column:url;"
+  URL url = 6 [ (validator.field).tags.message = { not_null: true, skip: true } ];
 
-  // State, one of 1/2 1->enable/2->disable.
-  // @inject_tag: json:"status" gorm:"column:status;" binding:"gte=1,lte=2" required:"true" mininum:"1" maximum:"2"
-  Status status = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  // Status, 1 => "Delete", 2 => "enabled", 3 => "disabled"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 7 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
+
+  // DataSource owner.
+  // @inject_tag: json:"created_by" gorm:"column:created_by"
+  string created_by = 8 [ (validator.field).tags.string = { byte_len_lte: 64} ];
 
   // Create Time, this Source create time.
   // @inject_tag: json:"created" gorm:"column:created;"
-  int64 created = 8  [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 9  [ (validator.field).tags.int = { gt: 0 } ];
 
   // Update Time, this Source last update time.
   // @inject_tag: json:"updated" gorm:"column:updated;"
-  int64 updated = 9  [ (validator.field).tags.int = { gt: 0 } ];
+  int64 updated = 10  [ (validator.field).tags.int = { gt: 0 } ];
 
-  // connection status oneof 1/2/3 1->success/2->partialsuccess/3->failed
-  // @inject_tag: json:"connection" gorm:"column:connection;" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  ConnectionStatus connection = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // The last connection record. The value is nil if never tested for usability.
+  // Notice: No in db.
+  // @inject_tag: json:"last_connection" gorm:"-"
+  DataSourceConnection last_connection = 11;
+}
 
-  // internal network name.
-  // @inject_tag: json:"network_name" binding:"gte=0,lte=128" mininum:"0" maximum:"128"
-  string network_name = 11 [(validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 129 }];
+// Data Source Connection state log.
+message DataSourceConnection {
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Active = 2;
+  }
 
-  // DataSource owner.
-  // @inject_tag: json:"create_by" gorm:"column:create_by"
-  string create_by = 12 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+  // Result connectivity test results
+  enum Result {
+    StateUnset = 0;
+    Success = 1;
+    Failed = 2;
+  }
+
+  // Space ID, workspace ID.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Source ID, unique within a region.
+  // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+  string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Source ID, unique within a region.
+  // @inject_tag: json:"network_id" gorm:"column:network_id;"
+  string network_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Status, 1 => Deleted, 2 => Active.
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 4 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
+
+  // Connection state  1 => success 2 => failed
+  // @inject_tag: json:"result" gorm:"column:result;"
+  Result result = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // Message is the reason when connection failure.
+  // @inject_tag: json:"message" gorm:"column:message;"
+  string message = 6 [ (validator.field).tags.string = { } ];
+
+  // Create Time, When start tested for usability..
+  // @inject_tag: json:"created" gorm:"column:created;"
+  int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Elapse is Used time of tested for usability. unit in ms.
+  // @inject_tag: json:"elapse" gorm:"column:elapse;"
+  int64 elapse = 8;
+
+  // @inject_tag: json:"network_info" gorm:"-"
+  Network network_info = 9;
 }
 
 // Table Info
@@ -858,7 +964,7 @@ message TableInfo {
 
   // connection status oneof 1/2/3 1->success/2->partialsuccess/3->failed
   // @inject_tag: json:"connection" binding:"gte=1,lte=3" required:"true" mininum:"1" maximum:"3"
-  DataSource.ConnectionStatus connection = 12  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  DataSourceConnection.Status connection = 12  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // Table owner.
   // @inject_tag: json:"create_by" gorm:"column:create_by"

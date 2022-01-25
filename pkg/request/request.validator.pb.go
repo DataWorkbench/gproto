@@ -6,7 +6,6 @@
 package request
 
 import (
-	_ "github.com/DataWorkbench/gproto/pkg/datasourcepb"
 	_ "github.com/DataWorkbench/gproto/pkg/flinkpb"
 	model "github.com/DataWorkbench/gproto/pkg/model"
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/defaultspb"
@@ -1672,54 +1671,117 @@ func (this *DescribeFlinkUIByInstanceId) Validate() error {
 	return nil
 }
 
-func (this *CreateSource) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) < 21) {
-		return protovalidator.FieldError1("CreateSource", "the byte length of field 'source_id' must be less than '21'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	return nil
-}
-
-func (this *CreateSource) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *ListDataSources) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("CreateSource", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("ListDataSources", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("CreateSource", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("ListDataSources", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_CreateSource_InEnums_SourceType = map[model.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
-
-func (this *CreateSource) _xxx_xxx_Validator_Validate_source_type() error {
-	if !(this.SourceType > 0) {
-		return protovalidator.FieldError1("CreateSource", "the value of field 'source_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.SourceType)))
+func (this *ListDataSources) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListDataSources", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
 	}
-	if !(_xxx_xxx_Validator_CreateSource_InEnums_SourceType[this.SourceType]) {
-		return protovalidator.FieldError1("CreateSource", "the value of field 'source_type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.SourceType)))
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListDataSources", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
 	}
 	return nil
 }
 
-func (this *CreateSource) _xxx_xxx_Validator_Validate_name() error {
+func (this *ListDataSources) _xxx_xxx_Validator_Validate_offset() error {
+	if !(this.Offset >= 0) {
+		return protovalidator.FieldError1("ListDataSources", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ListDataSources_In_SortBy = map[string]bool{"": true, "id": true, "name": true, "created": true, "updated": true}
+
+func (this *ListDataSources) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListDataSources_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListDataSources", "the value of field 'sort_by' must be one of '[ id name created updated]'", this.SortBy)
+	}
+	return nil
+}
+
+// Set default value for message request.ListDataSources
+func (this *ListDataSources) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("CreateDataSource", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_name() error {
 	if !(len(this.Name) > 1) {
-		return protovalidator.FieldError1("CreateSource", "the byte length of field 'name' must be greater than '1'", protovalidator.StringByteLenToString(this.Name))
+		return protovalidator.FieldError1("CreateDataSource", "the byte length of field 'name' must be greater than '1'", protovalidator.StringByteLenToString(this.Name))
 	}
 	if !(len(this.Name) <= 64) {
-		return protovalidator.FieldError1("CreateSource", "the byte length of field 'name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Name))
+		return protovalidator.FieldError1("CreateDataSource", "the byte length of field 'name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Name))
 	}
 	return nil
 }
 
-func (this *CreateSource) _xxx_xxx_Validator_Validate_comment() error {
-	if !(len(this.Comment) <= 256) {
-		return protovalidator.FieldError1("CreateSource", "the byte length of field 'comment' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Comment))
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 256) {
+		return protovalidator.FieldError1("CreateDataSource", "the character length of field 'desc' must be less than or equal to '256'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
 
-func (this *CreateSource) _xxx_xxx_Validator_Validate_url() error {
-	if dt, ok := interface{}(this.Url).(interface{ Validate() error }); ok {
+var _xxx_xxx_Validator_CreateDataSource_InEnums_Type = map[model.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	if !(_xxx_xxx_Validator_CreateDataSource_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	return nil
+}
+
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_url() error {
+	if !(this.Url != nil) {
+		return protovalidator.FieldError2("CreateDataSource", "the value of field 'url' cannot be null")
+	}
+	return nil
+}
+
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_create_by() error {
+	if !(this.CreateBy != "") {
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'create_by' must be not equal to ''", this.CreateBy)
+	}
+	return nil
+}
+
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_last_connection() error {
+	if dt, ok := interface{}(this.LastConnection).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -1727,105 +1789,106 @@ func (this *CreateSource) _xxx_xxx_Validator_Validate_url() error {
 	return nil
 }
 
-// Set default value for message request.CreateSource
-func (this *CreateSource) Validate() error {
+// Set default value for message request.CreateDataSource
+func (this *CreateDataSource) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_comment(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_url(); err != nil {
 		return err
 	}
-	return nil
-}
-
-func (this *UpdateSource) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("UpdateSource", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	if err := this._xxx_xxx_Validator_Validate_create_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_last_connection(); err != nil {
+		return err
 	}
 	return nil
 }
 
-func (this *UpdateSource) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("UpdateSource", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("UpdateDataSource", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("UpdateSource", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("UpdateDataSource", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_UpdateSource_InEnums_SourceType = map[model.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
-
-func (this *UpdateSource) _xxx_xxx_Validator_Validate_source_type() error {
-	if !(this.SourceType > 0) {
-		return protovalidator.FieldError1("UpdateSource", "the value of field 'source_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.SourceType)))
-	}
-	if !(_xxx_xxx_Validator_UpdateSource_InEnums_SourceType[this.SourceType]) {
-		return protovalidator.FieldError1("UpdateSource", "the value of field 'source_type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.SourceType)))
+func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_source_id() error {
+	if !(len(this.SourceId) == 20) {
+		return protovalidator.FieldError1("UpdateDataSource", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
 	return nil
 }
 
-func (this *UpdateSource) _xxx_xxx_Validator_Validate_name() error {
+func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_name() error {
 	if !(len(this.Name) > 0) {
-		return protovalidator.FieldError1("UpdateSource", "the byte length of field 'name' must be greater than '0'", protovalidator.StringByteLenToString(this.Name))
+		return protovalidator.FieldError1("UpdateDataSource", "the byte length of field 'name' must be greater than '0'", protovalidator.StringByteLenToString(this.Name))
 	}
 	if !(len(this.Name) <= 64) {
-		return protovalidator.FieldError1("UpdateSource", "the byte length of field 'name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Name))
+		return protovalidator.FieldError1("UpdateDataSource", "the byte length of field 'name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Name))
 	}
 	return nil
 }
 
-func (this *UpdateSource) _xxx_xxx_Validator_Validate_comment() error {
-	if !(len(this.Comment) <= 256) {
-		return protovalidator.FieldError1("UpdateSource", "the byte length of field 'comment' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Comment))
+func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 256) {
+		return protovalidator.FieldError1("UpdateDataSource", "the character length of field 'desc' must be less than or equal to '256'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
 
-func (this *UpdateSource) _xxx_xxx_Validator_Validate_url() error {
-	if dt, ok := interface{}(this.Url).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
+var _xxx_xxx_Validator_UpdateDataSource_InEnums_Type = map[model.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+
+func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("UpdateDataSource", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	if !(_xxx_xxx_Validator_UpdateDataSource_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("UpdateDataSource", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
 
-// Set default value for message request.UpdateSource
-func (this *UpdateSource) Validate() error {
+func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_url() error {
+	if !(this.Url != nil) {
+		return protovalidator.FieldError2("UpdateDataSource", "the value of field 'url' cannot be null")
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateDataSource
+func (this *UpdateDataSource) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_source_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_comment(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_url(); err != nil {
@@ -1834,18 +1897,18 @@ func (this *UpdateSource) Validate() error {
 	return nil
 }
 
-func (this *DeleteSource) _xxx_xxx_Validator_Validate_source_ids() error {
-	if !(len(this.SourceIds) > 1) {
-		return protovalidator.FieldError1("DeleteSource", "the length of field 'source_ids' must be greater than '1'", strconv.Itoa(len(this.SourceIds)))
+func (this *DeleteDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
+	if !(len(this.SourceIds) >= 1) {
+		return protovalidator.FieldError1("DeleteDataSources", "the length of field 'source_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.SourceIds)))
 	}
 	if !(len(this.SourceIds) <= 100) {
-		return protovalidator.FieldError1("DeleteSource", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
+		return protovalidator.FieldError1("DeleteDataSources", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
 	}
 	return nil
 }
 
-// Set default value for message request.DeleteSource
-func (this *DeleteSource) Validate() error {
+// Set default value for message request.DeleteDataSources
+func (this *DeleteDataSources) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1855,15 +1918,15 @@ func (this *DeleteSource) Validate() error {
 	return nil
 }
 
-func (this *DescribeSource) _xxx_xxx_Validator_Validate_source_id() error {
+func (this *DescribeDataSource) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("DescribeSource", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+		return protovalidator.FieldError1("DescribeDataSource", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
 	return nil
 }
 
-// Set default value for message request.DescribeSource
-func (this *DescribeSource) Validate() error {
+// Set default value for message request.DescribeDataSource
+func (this *DescribeDataSource) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1873,18 +1936,18 @@ func (this *DescribeSource) Validate() error {
 	return nil
 }
 
-func (this *EnableSource) _xxx_xxx_Validator_Validate_source_ids() error {
+func (this *EnableDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 	if !(len(this.SourceIds) >= 1) {
-		return protovalidator.FieldError1("EnableSource", "the length of field 'source_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.SourceIds)))
+		return protovalidator.FieldError1("EnableDataSources", "the length of field 'source_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.SourceIds)))
 	}
 	if !(len(this.SourceIds) <= 100) {
-		return protovalidator.FieldError1("EnableSource", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
+		return protovalidator.FieldError1("EnableDataSources", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
 	}
 	return nil
 }
 
-// Set default value for message request.EnableSource
-func (this *EnableSource) Validate() error {
+// Set default value for message request.EnableDataSources
+func (this *EnableDataSources) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1894,18 +1957,18 @@ func (this *EnableSource) Validate() error {
 	return nil
 }
 
-func (this *DisableSource) _xxx_xxx_Validator_Validate_source_ids() error {
+func (this *DisableDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 	if !(len(this.SourceIds) >= 1) {
-		return protovalidator.FieldError1("DisableSource", "the length of field 'source_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.SourceIds)))
+		return protovalidator.FieldError1("DisableDataSources", "the length of field 'source_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.SourceIds)))
 	}
 	if !(len(this.SourceIds) <= 100) {
-		return protovalidator.FieldError1("DisableSource", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
+		return protovalidator.FieldError1("DisableDataSources", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
 	}
 	return nil
 }
 
-// Set default value for message request.DisableSource
-func (this *DisableSource) Validate() error {
+// Set default value for message request.DisableDataSources
+func (this *DisableDataSources) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1915,36 +1978,178 @@ func (this *DisableSource) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_PingSource_InEnums_SourceType = map[model.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
-
-func (this *PingSource) _xxx_xxx_Validator_Validate_source_type() error {
-	if !(this.SourceType > 0) {
-		return protovalidator.FieldError1("PingSource", "the value of field 'source_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.SourceType)))
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
-	if !(_xxx_xxx_Validator_PingSource_InEnums_SourceType[this.SourceType]) {
-		return protovalidator.FieldError1("PingSource", "the value of field 'source_type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.SourceType)))
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *PingSource) _xxx_xxx_Validator_Validate_url() error {
-	if dt, ok := interface{}(this.Url).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_network_id() error {
+	if !(len(this.NetworkId) == 20) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
 	}
 	return nil
 }
 
-// Set default value for message request.PingSource
-func (this *PingSource) Validate() error {
+var _xxx_xxx_Validator_PingDataSourceConnection_InEnums_Stage = map[PingDataSourceConnection_Stage]bool{0: true, 1: true, 2: true}
+
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_stage() error {
+	if !(this.Stage > 0) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'stage' must be greater than '0'", protovalidator.Int32ToString(int32(this.Stage)))
+	}
+	if !(_xxx_xxx_Validator_PingDataSourceConnection_InEnums_Stage[this.Stage]) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'stage' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Stage)))
+	}
+	return nil
+}
+
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_CheckIf_source_id() bool {
+	if !(this.Stage == 2) {
+		return false
+	}
+	return true
+}
+
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_source_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_source_id() {
+		return nil
+	}
+	if !(len(this.SourceId) == 20) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	return nil
+}
+
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_CheckIf_type() bool {
+	if !(this.Stage == 1) {
+		return false
+	}
+	return true
+}
+
+var _xxx_xxx_Validator_PingDataSourceConnection_InEnums_Type = map[model.DataSource_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true}
+
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_type() error {
+	if !this._xxx_xxx_Validator_CheckIf_type() {
+		return nil
+	}
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	if !(_xxx_xxx_Validator_PingDataSourceConnection_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("PingDataSourceConnection", "the value of field 'type' must in enums of '[0 1 2 3 4 5 6 7 8]'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	return nil
+}
+
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_CheckIf_url() bool {
+	if !(this.Stage == 1) {
+		return false
+	}
+	return true
+}
+
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_url() error {
+	if !this._xxx_xxx_Validator_CheckIf_url() {
+		return nil
+	}
+	if !(this.Url != nil) {
+		return protovalidator.FieldError2("PingDataSourceConnection", "the value of field 'url' cannot be null")
+	}
+	return nil
+}
+
+// Set default value for message request.PingDataSourceConnection
+func (this *PingDataSourceConnection) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_source_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_stage(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_url(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_source_id() error {
+	if !(len(this.SourceId) == 20) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+	}
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_offset() error {
+	if !(this.Offset >= 0) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ListDataSourceConnections_In_SortBy = map[string]bool{"": true, "source_id": true, "created": true}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListDataSourceConnections_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'sort_by' must be one of '[ source_id created]'", this.SortBy)
+	}
+	return nil
+}
+
+// Set default value for message request.ListDataSourceConnections
+func (this *ListDataSourceConnections) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
 	return nil
@@ -2195,62 +2400,6 @@ func (this *DescribeTable) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_table_id(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *ListSource) _xxx_xxx_Validator_Validate_limit() error {
-	if !(this.Limit > 0) {
-		return protovalidator.FieldError1("ListSource", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
-	}
-	if !(this.Limit <= 100) {
-		return protovalidator.FieldError1("ListSource", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
-	}
-	return nil
-}
-
-func (this *ListSource) _xxx_xxx_Validator_Validate_offset() error {
-	if !(this.Offset >= 0) {
-		return protovalidator.FieldError1("ListSource", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_ListSource_In_SortBy = map[string]bool{"": true, "source_id": true, "name": true, "created": true, "updated": true}
-
-func (this *ListSource) _xxx_xxx_Validator_Validate_sort_by() error {
-	if !(_xxx_xxx_Validator_ListSource_In_SortBy[this.SortBy]) {
-		return protovalidator.FieldError1("ListSource", "the value of field 'sort_by' must be one of '[ source_id name created updated]'", this.SortBy)
-	}
-	return nil
-}
-
-func (this *ListSource) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("ListSource", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("ListSource", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-// Set default value for message request.ListSource
-func (this *ListSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
 	return nil
