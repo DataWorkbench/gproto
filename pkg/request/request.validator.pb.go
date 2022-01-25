@@ -360,6 +360,15 @@ func (this *ListAudits) _xxx_xxx_Validator_Validate_offset() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListAudits_In_SortBy = map[string]bool{"": true, "id": true, "created": true}
+
+func (this *ListAudits) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListAudits_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListAudits", "the value of field 'sort_by' must be one of '[ id created]'", this.SortBy)
+	}
+	return nil
+}
+
 func (this *ListAudits) _xxx_xxx_Validator_Validate_user_id() error {
 	if !(len(this.UserId) < 65) {
 		return protovalidator.FieldError1("ListAudits", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
@@ -385,6 +394,9 @@ func (this *ListAudits) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
@@ -642,6 +654,15 @@ func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_offset() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListStreamJobs_In_SortBy = map[string]bool{"": true, "id": true, "name": true, "created": true, "updated": true}
+
+func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListStreamJobs_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListStreamJobs", "the value of field 'sort_by' must be one of '[ id name created updated]'", this.SortBy)
+	}
+	return nil
+}
+
 func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("ListStreamJobs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
@@ -661,6 +682,9 @@ func (this *ListStreamJobs) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {

@@ -164,7 +164,7 @@ message ListAudits {
   // Multiple fields are separated by commas(","), eg: sort_by="created".
   // Not required, default: id.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-  string sort_by = 3 [(validator.field) = {}];
+  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "created"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
@@ -292,7 +292,7 @@ message ListStreamJobs {
 	// Multiple fields are separated by commas(","), eg: sort_by="name,crated".
 	// Not required, default: id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-	string sort_by = 3 [ (validator.field) = {} ];
+	string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"] } ];
 
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
@@ -506,7 +506,7 @@ message ListReleaseStreamJobs {
   model.StreamJobRelease.Status status = 7 [(validator.field).tags.enum = { in_enums: true }];
 
 	// The stream job id.
-	// @inject_tag: json:"job_id"
+	// @inject_tag: json:"job_id" form:"job_id"
 	string job_id = 8 [(validator.field) = { } ];
 }
 
