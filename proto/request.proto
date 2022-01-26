@@ -143,13 +143,13 @@ message DescribeWorkspace {
 	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }
 
-// AddAudit used as a request parameters for RPC.
-message AddAudit {
+// AddOpAudit used as a request parameters for RPC.
+message AddOpAudit {
 	model.Operation info = 1 [ (validator.field) = { } ];
 }
 
-// ListAudits used as a request parameters for RPC and HTTP(based on URL-Query)
-message ListAudits {
+// ListOpAudits used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListOpAudits {
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
 	// @inject_tag: json:"limit"  form:"limit"  default:"100" binding:"gt=0,lte=100"
@@ -488,9 +488,9 @@ message ListReleaseStreamJobs {
 	// The field list used to sorted query results.
 	// Optional values: {job_id, name, created, updated}.
 	// Multiple fields are separated by commas(","), eg: sort_by="updated".
-	// Not required, default: job_id.
+	// Not required, default: id.
 	// @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-	string sort_by = 3 [ (validator.field).tags.string = { in: ["", "job_id", "name", "created", "updated"]} ];
+	string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"]} ];
 
 	// Reverse order results. Not required, default: false.
 	// @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
@@ -577,10 +577,10 @@ message ListStreamJobVersions {
 
   // The field list used to sorted query results.
   // Optional values: {version, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="version,updated".
+  // Multiple fields are separated by commas(","), eg: sort_by="version".
   // Not required, default: version.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"
-  string sort_by = 3 [(validator.field) = {}];
+  string sort_by = 3  [ (validator.field).tags.string = { in: ["", "version", "created", "updated"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"
@@ -694,7 +694,7 @@ message ListStreamInstances {
   // Optional values: {job_id, id, created, updated}.
   // Not required, default: id.
   // @inject_tag: json:"sort_by" form:"sort_by" default:"" binding:"-"  minLength:"0" maxLength:"100"
-  string sort_by = 7 [ (validator.field).tags.string = { in: ["", "job_id", "id", "created", "updated"] } ];
+  string sort_by = 7 [ (validator.field).tags.string = { in: ["", "id", "job_id", "created", "updated"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse" default:"" binding:"-"

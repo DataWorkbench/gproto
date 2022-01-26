@@ -434,14 +434,14 @@ message FlinkJar {
 message FlinkScala {
 	// code.
 	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" minLength:"0" maxLength:"40000"
-	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000 } ];
+	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
 }
 
 // PythonOperatorProperty
 message FlinkPython {
 	// code.
 	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" minLength:"0" maxLength:"40000"
-	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000 } ];
+	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
 }
 
 // FlinkSQL
@@ -449,7 +449,7 @@ message FlinkSQL {
 
 	// sql code.
 	// @inject_tag: json:"code" default:"" binding:"gte=0,lte=40000" required:"false" minLength:"0" maxLength:"40000"
-	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000 } ];
+	string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
 }
 
 // ----------------------------- Flink Operator ----------------------------------------- //

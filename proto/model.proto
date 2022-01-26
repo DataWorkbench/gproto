@@ -162,22 +162,37 @@ message StreamJobCode {
 
   // The flink operator nodes. Is useless on present.
   // @inject_tag: json:"operators" default:""
-  repeated flink.FlinkOperator operators = 2 [(validator.field) = {}];
+  repeated flink.FlinkOperator operators = 2 [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 1 } }},
+    (validator.field).tags.repeated = {len_gt: 0}
+  ];
 
-  // @inject_tag: json:"sql" default:"" binding:"-"
-  flink.FlinkSQL sql = 3  [(validator.field) = {}];
+  // @inject_tag: json:"sql"
+  flink.FlinkSQL sql = 3  [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 2 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
 
   // Jar
-  // @inject_tag: json:"jar" default:"" binding:"-"
-  flink.FlinkJar jar = 4 [(validator.field) = {}];
-
-  // Scala
-  // @inject_tag: json:"scala" default:"" binding:"-"
-  flink.FlinkScala scala = 5  [(validator.field) = {}];
+  // @inject_tag: json:"jar"
+  flink.FlinkJar jar = 4 [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 3 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
 
   // Python
-  // @inject_tag: json:"python" default:"" binding:"-"
-  flink.FlinkPython python = 6  [(validator.field) = {}];
+  // @inject_tag: json:"python"
+  flink.FlinkPython python = 5  [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 4 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
+
+  // Scala
+  // @inject_tag: json:"scala"
+  flink.FlinkScala scala = 6  [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 5 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
 }
 
 // StreamJobArgs represents a job running parameters.
@@ -238,7 +253,7 @@ message StreamJobSchedule {
   // Timestamp of execute time for once. unit in seconds.
   // Not required, default the time of created job.
   // @inject_tag: json:"executed" default:"0" binding:"gte=0"
-  int64 executed = 2 [(validator.field).tags.int = { gte: 0 }];
+  int64 executed = 2;
 
   // Whether execute immediately the job after release.
   // Not required, default False. If immediately is True, the field executed will be ignore.
@@ -437,7 +452,7 @@ message StreamJobInst {
   // @inject_tag: json:"state" gorm:"column:state;"
   State state = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-  // Release status, 1 => "Normal ", 2 => "Deleted"
+  // Release status, 1 => "Active ", 2 => "Deleted"
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 

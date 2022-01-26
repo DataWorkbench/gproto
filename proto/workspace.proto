@@ -14,44 +14,41 @@ import "model.proto";
 import "request.proto";
 import "response.proto";
 
-// Workspace Service
-service Workspace {
-//    rpc OpenService(model.EmptyStruct) returns (model.EmptyStruct) {}
-    
+// SpaceManage declares API for manage workspace.
+service SpaceManage {
     // API of workspace manager.
     rpc ListWorkspaces(request.ListWorkspaces)       returns (response.ListWorkspaces)    {}
-    
-    // DeleteWorkspaces delete the specified workspaces and its resources;
-    // Resources includes
-    //  - Members.
-    //  - Audit(Operation Records).
+
     rpc DeleteWorkspaces(request.DeleteWorkspaces)   returns (model.EmptyStruct)          {}
     rpc DisableWorkspaces(request.DisableWorkspaces) returns (model.EmptyStruct)          {}
     rpc EnableWorkspaces(request.EnableWorkspaces)   returns (model.EmptyStruct)          {}
-    
+
     rpc CreateWorkspace(request.CreateWorkspace)     returns (response.CreateWorkspace)   {}
     rpc UpdateWorkspace(request.UpdateWorkspace)     returns (model.EmptyStruct)          {}
     rpc DescribeWorkspace(request.DescribeWorkspace) returns (response.DescribeWorkspace) {}
-    
+
+    // Permission Check.
+    // Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
+    rpc CheckPermission(request.CheckPermission) returns (response.CheckPermission) {}
+
     // API of workspace operation audit log.
-    rpc AddAudit(request.AddAudit)     returns (model.EmptyStruct) {}
-    rpc ListAudits(request.ListAudits) returns (response.ListAudits) {}
-    
+    rpc ListOpAudits(request.ListOpAudits) returns (response.ListOpAudits) {}
+    rpc AddOpAudit(request.AddOpAudit)     returns (model.EmptyStruct) {}
+}
+
+// MemberManage declares API for manage member and role of member.
+service MemberManage {
     // API of workspace role.
     rpc ListSystemRoles(request.ListSystemRoles) returns (response.ListSystemRoles) {}
-    
+
     // API of workspace member.
     rpc ListMembers(request.ListMembers)    returns (response.ListMembers)  {}
     rpc UpsertMembers(request.UpsertMembers) returns (model.EmptyStruct) {}
     rpc DeleteMembers(request.DeleteMembers) returns (model.EmptyStruct) {}
-    
-    // Permission Auth.
-    rpc CheckPermission(request.CheckPermission) returns (response.CheckPermission) {}
 }
 
-// Workflow Service
-service Workflow {
-    // Interface for stream job.
+service StreamJobManage {
+    // Interface for stream job dev.
     //
     // ListStreamJobs to get a list of stream job of the workspace.
     rpc ListStreamJobs(request.ListStreamJobs) returns (response.ListStreamJobs) {}
@@ -121,8 +118,8 @@ service Workflow {
     // DescribeStreamJobVersion for get the info of the job of the specified version.
     rpc DescribeStreamJobVersion(request.DescribeStreamJob) returns (response.DescribeStreamJob) {}
 
-    // GetStreamJobVersionNode for get the node properties of the job of the specified version.
-    rpc GetStreamJobVersionNode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
+    // GetStreamJobVersionCode for get the node properties of the job of the specified version.
+    rpc GetStreamJobVersionCode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
 
     // GetStreamJobVersionArgs for get the run parameters of the job of the specified version.
     rpc GetStreamJobVersionArgs(request.GetStreamJobArgs) returns (response.GetStreamJobArgs) {}
@@ -131,8 +128,7 @@ service Workflow {
     rpc GetStreamJobVersionSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
 }
 
-// Scheduler Service
-service Scheduler {
+service StreamInstanceManage {
     // Interface for stream job cycle instance.
     //
     rpc ListStreamInstances(request.ListStreamInstances)           returns (response.ListStreamInstances) {}
@@ -141,7 +137,9 @@ service Scheduler {
     rpc ResumeStreamInstances(request.ResumeStreamInstances)       returns (model.EmptyStruct)       {}
 
     rpc DescribeFlinkUIByInstanceId(request.DescribeFlinkUIByInstanceId)  returns (response.DescribeFlinkUIByInstanceId) {}
+}
 
+service MonitorManage {
     // Interface for monitor.
     rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
     rpc DeleteMonitorRules(request.DeleteMonitorRules)   returns (model.EmptyStruct)            {}

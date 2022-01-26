@@ -28,8 +28,8 @@ message ListWorkspaces {
   int64 total = 3;
 }
 
-// ListAudits used as reply parameters in RPC or response body in HTTP.
-message ListAudits {
+// ListOpAudits used as reply parameters in RPC or response body in HTTP.
+message ListOpAudits {
   // @inject_tag: json:"infos"
   repeated model.Operation infos = 1;
 
