@@ -14,1657 +14,27 @@ public final class DataSourcePB {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface DatasourceNetworkOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:datasource.DatasourceNetwork)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-     * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-     * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type getType();
-
-    /**
-     * <pre>
-     * The internal Network
-     * &#64;inject_tag: json:"vpc_network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-     * @return Whether the vpcNetwork field is set.
-     */
-    boolean hasVpcNetwork();
-    /**
-     * <pre>
-     * The internal Network
-     * &#64;inject_tag: json:"vpc_network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-     * @return The vpcNetwork.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork getVpcNetwork();
-    /**
-     * <pre>
-     * The internal Network
-     * &#64;inject_tag: json:"vpc_network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetworkOrBuilder getVpcNetworkOrBuilder();
-  }
-  /**
-   * <pre>
-   * DatasourceNetwork
-   * </pre>
-   *
-   * Protobuf type {@code datasource.DatasourceNetwork}
-   */
-  public static final class DatasourceNetwork extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:datasource.DatasourceNetwork)
-      DatasourceNetworkOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DatasourceNetwork.newBuilder() to construct.
-    private DatasourceNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DatasourceNetwork() {
-      type_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new DatasourceNetwork();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DatasourceNetwork(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 18: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder subBuilder = null;
-              if (vpcNetwork_ != null) {
-                subBuilder = vpcNetwork_.toBuilder();
-              }
-              vpcNetwork_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vpcNetwork_);
-                vpcNetwork_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code datasource.DatasourceNetwork.Type}
-     */
-    public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>TypeUnset = 0;</code>
-       */
-      TypeUnset(0),
-      /**
-       * <code>Eip = 1;</code>
-       */
-      Eip(1),
-      /**
-       * <code>Vpc = 2;</code>
-       */
-      Vpc(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>TypeUnset = 0;</code>
-       */
-      public static final int TypeUnset_VALUE = 0;
-      /**
-       * <code>Eip = 1;</code>
-       */
-      public static final int Eip_VALUE = 1;
-      /**
-       * <code>Vpc = 2;</code>
-       */
-      public static final int Vpc_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Type valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static Type forNumber(int value) {
-        switch (value) {
-          case 0: return TypeUnset;
-          case 1: return Eip;
-          case 2: return Vpc;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Type> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Type[] VALUES = values();
-
-      public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Type(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:datasource.DatasourceNetwork.Type)
-    }
-
-    public interface VpcNetworkOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:datasource.DatasourceNetwork.VpcNetwork)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <pre>
-       * Network id
-       * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-       * </pre>
-       *
-       * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-       * @return The networkId.
-       */
-      java.lang.String getNetworkId();
-      /**
-       * <pre>
-       * Network id
-       * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-       * </pre>
-       *
-       * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for networkId.
-       */
-      com.google.protobuf.ByteString
-          getNetworkIdBytes();
-    }
-    /**
-     * Protobuf type {@code datasource.DatasourceNetwork.VpcNetwork}
-     */
-    public static final class VpcNetwork extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:datasource.DatasourceNetwork.VpcNetwork)
-        VpcNetworkOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use VpcNetwork.newBuilder() to construct.
-      private VpcNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private VpcNetwork() {
-        networkId_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new VpcNetwork();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private VpcNetwork(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                networkId_ = s;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_VpcNetwork_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_VpcNetwork_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder.class);
-      }
-
-      public static final int NETWORK_ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object networkId_;
-      /**
-       * <pre>
-       * Network id
-       * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-       * </pre>
-       *
-       * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-       * @return The networkId.
-       */
-      @java.lang.Override
-      public java.lang.String getNetworkId() {
-        java.lang.Object ref = networkId_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          networkId_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * Network id
-       * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-       * </pre>
-       *
-       * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for networkId.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getNetworkIdBytes() {
-        java.lang.Object ref = networkId_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          networkId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, networkId_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, networkId_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork)) {
-          return super.equals(obj);
-        }
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork) obj;
-
-        if (!getNetworkId()
-            .equals(other.getNetworkId())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + NETWORK_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getNetworkId().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code datasource.DatasourceNetwork.VpcNetwork}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:datasource.DatasourceNetwork.VpcNetwork)
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetworkOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_VpcNetwork_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_VpcNetwork_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder.class);
-        }
-
-        // Construct using com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          networkId_ = "";
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_VpcNetwork_descriptor;
-        }
-
-        @java.lang.Override
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork getDefaultInstanceForType() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork build() {
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork buildPartial() {
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork(this);
-          result.networkId_ = networkId_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork) {
-            return mergeFrom((com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork other) {
-          if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.getDefaultInstance()) return this;
-          if (!other.getNetworkId().isEmpty()) {
-            networkId_ = other.networkId_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object networkId_ = "";
-        /**
-         * <pre>
-         * Network id
-         * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-         * </pre>
-         *
-         * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-         * @return The networkId.
-         */
-        public java.lang.String getNetworkId() {
-          java.lang.Object ref = networkId_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            networkId_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * Network id
-         * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-         * </pre>
-         *
-         * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-         * @return The bytes for networkId.
-         */
-        public com.google.protobuf.ByteString
-            getNetworkIdBytes() {
-          java.lang.Object ref = networkId_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            networkId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * Network id
-         * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-         * </pre>
-         *
-         * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-         * @param value The networkId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setNetworkId(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          networkId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * Network id
-         * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-         * </pre>
-         *
-         * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearNetworkId() {
-          
-          networkId_ = getDefaultInstance().getNetworkId();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * Network id
-         * &#64;inject_tag: json:"network_id" binding:"gte=0,lte=20" required:"true" minLength:"0" maxLength:"20"
-         * </pre>
-         *
-         * <code>string network_id = 1 [(.validator.field) = { ... }</code>
-         * @param value The bytes for networkId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setNetworkIdBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          networkId_ = value;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:datasource.DatasourceNetwork.VpcNetwork)
-      }
-
-      // @@protoc_insertion_point(class_scope:datasource.DatasourceNetwork.VpcNetwork)
-      private static final com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork();
-      }
-
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<VpcNetwork>
-          PARSER = new com.google.protobuf.AbstractParser<VpcNetwork>() {
-        @java.lang.Override
-        public VpcNetwork parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VpcNetwork(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<VpcNetwork> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<VpcNetwork> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
-    /**
-     * <pre>
-     * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-     * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-     * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type result = com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int VPC_NETWORK_FIELD_NUMBER = 2;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork vpcNetwork_;
-    /**
-     * <pre>
-     * The internal Network
-     * &#64;inject_tag: json:"vpc_network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-     * @return Whether the vpcNetwork field is set.
-     */
-    @java.lang.Override
-    public boolean hasVpcNetwork() {
-      return vpcNetwork_ != null;
-    }
-    /**
-     * <pre>
-     * The internal Network
-     * &#64;inject_tag: json:"vpc_network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-     * @return The vpcNetwork.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork getVpcNetwork() {
-      return vpcNetwork_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.getDefaultInstance() : vpcNetwork_;
-    }
-    /**
-     * <pre>
-     * The internal Network
-     * &#64;inject_tag: json:"vpc_network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetworkOrBuilder getVpcNetworkOrBuilder() {
-      return getVpcNetwork();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (type_ != com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type.TypeUnset.getNumber()) {
-        output.writeEnum(1, type_);
-      }
-      if (vpcNetwork_ != null) {
-        output.writeMessage(2, getVpcNetwork());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (type_ != com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type.TypeUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_);
-      }
-      if (vpcNetwork_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getVpcNetwork());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork) obj;
-
-      if (type_ != other.type_) return false;
-      if (hasVpcNetwork() != other.hasVpcNetwork()) return false;
-      if (hasVpcNetwork()) {
-        if (!getVpcNetwork()
-            .equals(other.getVpcNetwork())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-      if (hasVpcNetwork()) {
-        hash = (37 * hash) + VPC_NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getVpcNetwork().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * DatasourceNetwork
-     * </pre>
-     *
-     * Protobuf type {@code datasource.DatasourceNetwork}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:datasource.DatasourceNetwork)
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        type_ = 0;
-
-        if (vpcNetworkBuilder_ == null) {
-          vpcNetwork_ = null;
-        } else {
-          vpcNetwork_ = null;
-          vpcNetworkBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DatasourceNetwork_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getDefaultInstanceForType() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork build() {
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork buildPartial() {
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork(this);
-        result.type_ = type_;
-        if (vpcNetworkBuilder_ == null) {
-          result.vpcNetwork_ = vpcNetwork_;
-        } else {
-          result.vpcNetwork_ = vpcNetworkBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork) {
-          return mergeFrom((com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork other) {
-        if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance()) return this;
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
-        }
-        if (other.hasVpcNetwork()) {
-          mergeVpcNetwork(other.getVpcNetwork());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int type_ = 0;
-      /**
-       * <pre>
-       * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-       * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-       * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-       * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type result = com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-       * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The Network type, 1 =&gt; eip, 2 =&gt; vpc(internal vpc)
-       * &#64;inject_tag: json:"type" default:"" binding:"gte=1,lte=2" required:"true" minLength:"1" maxLength:"2"
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.Type type = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork vpcNetwork_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetworkOrBuilder> vpcNetworkBuilder_;
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       * @return Whether the vpcNetwork field is set.
-       */
-      public boolean hasVpcNetwork() {
-        return vpcNetworkBuilder_ != null || vpcNetwork_ != null;
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       * @return The vpcNetwork.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork getVpcNetwork() {
-        if (vpcNetworkBuilder_ == null) {
-          return vpcNetwork_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.getDefaultInstance() : vpcNetwork_;
-        } else {
-          return vpcNetworkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder setVpcNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork value) {
-        if (vpcNetworkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vpcNetwork_ = value;
-          onChanged();
-        } else {
-          vpcNetworkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder setVpcNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder builderForValue) {
-        if (vpcNetworkBuilder_ == null) {
-          vpcNetwork_ = builderForValue.build();
-          onChanged();
-        } else {
-          vpcNetworkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeVpcNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork value) {
-        if (vpcNetworkBuilder_ == null) {
-          if (vpcNetwork_ != null) {
-            vpcNetwork_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.newBuilder(vpcNetwork_).mergeFrom(value).buildPartial();
-          } else {
-            vpcNetwork_ = value;
-          }
-          onChanged();
-        } else {
-          vpcNetworkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearVpcNetwork() {
-        if (vpcNetworkBuilder_ == null) {
-          vpcNetwork_ = null;
-          onChanged();
-        } else {
-          vpcNetwork_ = null;
-          vpcNetworkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder getVpcNetworkBuilder() {
-        
-        onChanged();
-        return getVpcNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetworkOrBuilder getVpcNetworkOrBuilder() {
-        if (vpcNetworkBuilder_ != null) {
-          return vpcNetworkBuilder_.getMessageOrBuilder();
-        } else {
-          return vpcNetwork_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.getDefaultInstance() : vpcNetwork_;
-        }
-      }
-      /**
-       * <pre>
-       * The internal Network
-       * &#64;inject_tag: json:"vpc_network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork.VpcNetwork vpc_network = 2 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetworkOrBuilder> 
-          getVpcNetworkFieldBuilder() {
-        if (vpcNetworkBuilder_ == null) {
-          vpcNetworkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.VpcNetworkOrBuilder>(
-                  getVpcNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          vpcNetwork_ = null;
-        }
-        return vpcNetworkBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:datasource.DatasourceNetwork)
-    }
-
-    // @@protoc_insertion_point(class_scope:datasource.DatasourceNetwork)
-    private static final com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork();
-    }
-
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DatasourceNetwork>
-        PARSER = new com.google.protobuf.AbstractParser<DatasourceNetwork>() {
-      @java.lang.Override
-      public DatasourceNetwork parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DatasourceNetwork(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DatasourceNetwork> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DatasourceNetwork> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface MySQLURLOrBuilder extends
       // @@protoc_insertion_point(interface_extends:datasource.MySQLURL)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The user.
-     */
-    java.lang.String getUser();
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
-     */
-    com.google.protobuf.ByteString
-        getUserBytes();
-
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The password.
-     */
-    java.lang.String getPassword();
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for password.
-     */
-    com.google.protobuf.ByteString
-        getPasswordBytes();
-
-    /**
-     * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     java.lang.String getHost();
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     com.google.protobuf.ByteString
@@ -1672,19 +42,63 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     int getPort();
 
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    java.lang.String getUser();
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    com.google.protobuf.ByteString
+        getUserBytes();
+
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <pre>
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -1693,8 +107,8 @@ public final class DataSourcePB {
     java.lang.String getDatabase();
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -1702,36 +116,6 @@ public final class DataSourcePB {
      */
     com.google.protobuf.ByteString
         getDatabaseBytes();
-
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder();
   }
   /**
    * Protobuf type {@code datasource.MySQLURL}
@@ -1746,9 +130,9 @@ public final class DataSourcePB {
       super(builder);
     }
     private MySQLURL() {
+      host_ = "";
       user_ = "";
       password_ = "";
-      host_ = "";
       database_ = "";
     }
 
@@ -1785,43 +169,30 @@ public final class DataSourcePB {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              user_ = s;
+              host_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              password_ = s;
+              port_ = input.readInt32();
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              host_ = s;
+              user_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              port_ = input.readInt32();
+              password_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               database_ = s;
-              break;
-            }
-            case 50: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
               break;
             }
             default: {
@@ -1856,111 +227,15 @@ public final class DataSourcePB {
               com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.Builder.class);
     }
 
-    public static final int USER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object user_;
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The user.
-     */
-    @java.lang.Override
-    public java.lang.String getUser() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        user_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserBytes() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        user_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object password_;
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The password.
-     */
-    @java.lang.Override
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for password.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HOST_FIELD_NUMBER = 3;
+    public static final int HOST_FIELD_NUMBER = 1;
     private volatile java.lang.Object host_;
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     @java.lang.Override
@@ -1978,11 +253,11 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     @java.lang.Override
@@ -2000,15 +275,15 @@ public final class DataSourcePB {
       }
     }
 
-    public static final int PORT_FIELD_NUMBER = 4;
+    public static final int PORT_FIELD_NUMBER = 2;
     private int port_;
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     @java.lang.Override
@@ -2016,12 +291,108 @@ public final class DataSourcePB {
       return port_;
     }
 
+    public static final int USER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object user_;
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 4;
+    private volatile java.lang.Object password_;
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int DATABASE_FIELD_NUMBER = 5;
     private volatile java.lang.Object database_;
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -2042,8 +413,8 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -2064,47 +435,6 @@ public final class DataSourcePB {
       }
     }
 
-    public static final int NETWORK_FIELD_NUMBER = 6;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2119,23 +449,20 @@ public final class DataSourcePB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, user_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, host_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
       }
       if (port_ != 0) {
-        output.writeInt32(4, port_);
+        output.writeInt32(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, database_);
-      }
-      if (network_ != null) {
-        output.writeMessage(6, getNetwork());
       }
       unknownFields.writeTo(output);
     }
@@ -2146,25 +473,21 @@ public final class DataSourcePB {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, user_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, host_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
       }
       if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, port_);
+          .computeInt32Size(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, database_);
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getNetwork());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2181,21 +504,16 @@ public final class DataSourcePB {
       }
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL) obj;
 
-      if (!getUser()
-          .equals(other.getUser())) return false;
-      if (!getPassword()
-          .equals(other.getPassword())) return false;
       if (!getHost()
           .equals(other.getHost())) return false;
       if (getPort()
           != other.getPort()) return false;
+      if (!getUser()
+          .equals(other.getUser())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
       if (!getDatabase()
           .equals(other.getDatabase())) return false;
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2207,20 +525,16 @@ public final class DataSourcePB {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + DATABASE_FIELD_NUMBER;
       hash = (53 * hash) + getDatabase().hashCode();
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2354,22 +668,16 @@ public final class DataSourcePB {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        user_ = "";
-
-        password_ = "";
-
         host_ = "";
 
         port_ = 0;
 
+        user_ = "";
+
+        password_ = "";
+
         database_ = "";
 
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
         return this;
       }
 
@@ -2396,16 +704,11 @@ public final class DataSourcePB {
       @java.lang.Override
       public com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL buildPartial() {
         com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL(this);
-        result.user_ = user_;
-        result.password_ = password_;
         result.host_ = host_;
         result.port_ = port_;
+        result.user_ = user_;
+        result.password_ = password_;
         result.database_ = database_;
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -2454,6 +757,13 @@ public final class DataSourcePB {
 
       public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL other) {
         if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
         if (!other.getUser().isEmpty()) {
           user_ = other.user_;
           onChanged();
@@ -2462,19 +772,9 @@ public final class DataSourcePB {
           password_ = other.password_;
           onChanged();
         }
-        if (!other.getHost().isEmpty()) {
-          host_ = other.host_;
-          onChanged();
-        }
-        if (other.getPort() != 0) {
-          setPort(other.getPort());
-        }
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
           onChanged();
-        }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2505,216 +805,14 @@ public final class DataSourcePB {
         return this;
       }
 
-      private java.lang.Object user_ = "";
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return The user.
-       */
-      public java.lang.String getUser() {
-        java.lang.Object ref = user_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          user_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for user.
-       */
-      public com.google.protobuf.ByteString
-          getUserBytes() {
-        java.lang.Object ref = user_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          user_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @param value The user to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUser(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        user_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUser() {
-        
-        user_ = getDefaultInstance().getUser();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for user to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        user_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return The password.
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for password.
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @param value The password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        password_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object host_ = "";
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The host.
        */
       public java.lang.String getHost() {
@@ -2731,11 +829,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for host.
        */
       public com.google.protobuf.ByteString
@@ -2753,11 +851,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The host to set.
        * @return This builder for chaining.
        */
@@ -2773,11 +871,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearHost() {
@@ -2788,11 +886,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for host to set.
        * @return This builder for chaining.
        */
@@ -2811,11 +909,11 @@ public final class DataSourcePB {
       private int port_ ;
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return The port.
        */
       @java.lang.Override
@@ -2824,11 +922,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @param value The port to set.
        * @return This builder for chaining.
        */
@@ -2840,11 +938,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPort() {
@@ -2854,11 +952,213 @@ public final class DataSourcePB {
         return this;
       }
 
+      private java.lang.Object user_ = "";
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The user.
+       */
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          user_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for user.
+       */
+      public com.google.protobuf.ByteString
+          getUserBytes() {
+        java.lang.Object ref = user_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          user_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        user_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+        
+        user_ = getDefaultInstance().getUser();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        user_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object database_ = "";
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -2878,8 +1178,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -2900,8 +1200,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -2920,8 +1220,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -2935,8 +1235,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -2953,170 +1253,6 @@ public final class DataSourcePB {
         database_ = value;
         onChanged();
         return this;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3177,65 +1313,21 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The user.
-     */
-    java.lang.String getUser();
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
-     */
-    com.google.protobuf.ByteString
-        getUserBytes();
-
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The password.
-     */
-    java.lang.String getPassword();
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for password.
-     */
-    com.google.protobuf.ByteString
-        getPasswordBytes();
-
-    /**
-     * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     java.lang.String getHost();
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     com.google.protobuf.ByteString
@@ -3243,19 +1335,63 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     int getPort();
 
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    java.lang.String getUser();
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    com.google.protobuf.ByteString
+        getUserBytes();
+
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <pre>
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -3264,8 +1400,8 @@ public final class DataSourcePB {
     java.lang.String getDatabase();
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -3273,36 +1409,6 @@ public final class DataSourcePB {
      */
     com.google.protobuf.ByteString
         getDatabaseBytes();
-
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder();
   }
   /**
    * <pre>
@@ -3321,9 +1427,9 @@ public final class DataSourcePB {
       super(builder);
     }
     private PostgreSQLURL() {
+      host_ = "";
       user_ = "";
       password_ = "";
-      host_ = "";
       database_ = "";
     }
 
@@ -3360,43 +1466,30 @@ public final class DataSourcePB {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              user_ = s;
+              host_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              password_ = s;
+              port_ = input.readInt32();
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              host_ = s;
+              user_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              port_ = input.readInt32();
+              password_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               database_ = s;
-              break;
-            }
-            case 50: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
               break;
             }
             default: {
@@ -3431,111 +1524,15 @@ public final class DataSourcePB {
               com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.Builder.class);
     }
 
-    public static final int USER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object user_;
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The user.
-     */
-    @java.lang.Override
-    public java.lang.String getUser() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        user_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserBytes() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        user_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object password_;
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The password.
-     */
-    @java.lang.Override
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for password.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HOST_FIELD_NUMBER = 3;
+    public static final int HOST_FIELD_NUMBER = 1;
     private volatile java.lang.Object host_;
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     @java.lang.Override
@@ -3553,11 +1550,11 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     @java.lang.Override
@@ -3575,15 +1572,15 @@ public final class DataSourcePB {
       }
     }
 
-    public static final int PORT_FIELD_NUMBER = 4;
+    public static final int PORT_FIELD_NUMBER = 2;
     private int port_;
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     @java.lang.Override
@@ -3591,12 +1588,108 @@ public final class DataSourcePB {
       return port_;
     }
 
+    public static final int USER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object user_;
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 4;
+    private volatile java.lang.Object password_;
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int DATABASE_FIELD_NUMBER = 5;
     private volatile java.lang.Object database_;
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -3617,8 +1710,8 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -3639,47 +1732,6 @@ public final class DataSourcePB {
       }
     }
 
-    public static final int NETWORK_FIELD_NUMBER = 6;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3694,23 +1746,20 @@ public final class DataSourcePB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, user_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, host_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
       }
       if (port_ != 0) {
-        output.writeInt32(4, port_);
+        output.writeInt32(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, database_);
-      }
-      if (network_ != null) {
-        output.writeMessage(6, getNetwork());
       }
       unknownFields.writeTo(output);
     }
@@ -3721,25 +1770,21 @@ public final class DataSourcePB {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, user_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, host_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
       }
       if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, port_);
+          .computeInt32Size(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, database_);
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getNetwork());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3756,21 +1801,16 @@ public final class DataSourcePB {
       }
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL) obj;
 
-      if (!getUser()
-          .equals(other.getUser())) return false;
-      if (!getPassword()
-          .equals(other.getPassword())) return false;
       if (!getHost()
           .equals(other.getHost())) return false;
       if (getPort()
           != other.getPort()) return false;
+      if (!getUser()
+          .equals(other.getUser())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
       if (!getDatabase()
           .equals(other.getDatabase())) return false;
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3782,20 +1822,16 @@ public final class DataSourcePB {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + DATABASE_FIELD_NUMBER;
       hash = (53 * hash) + getDatabase().hashCode();
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3933,22 +1969,16 @@ public final class DataSourcePB {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        user_ = "";
-
-        password_ = "";
-
         host_ = "";
 
         port_ = 0;
 
+        user_ = "";
+
+        password_ = "";
+
         database_ = "";
 
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
         return this;
       }
 
@@ -3975,16 +2005,11 @@ public final class DataSourcePB {
       @java.lang.Override
       public com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL buildPartial() {
         com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL(this);
-        result.user_ = user_;
-        result.password_ = password_;
         result.host_ = host_;
         result.port_ = port_;
+        result.user_ = user_;
+        result.password_ = password_;
         result.database_ = database_;
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -4033,6 +2058,13 @@ public final class DataSourcePB {
 
       public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL other) {
         if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
         if (!other.getUser().isEmpty()) {
           user_ = other.user_;
           onChanged();
@@ -4041,19 +2073,9 @@ public final class DataSourcePB {
           password_ = other.password_;
           onChanged();
         }
-        if (!other.getHost().isEmpty()) {
-          host_ = other.host_;
-          onChanged();
-        }
-        if (other.getPort() != 0) {
-          setPort(other.getPort());
-        }
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
           onChanged();
-        }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4084,216 +2106,14 @@ public final class DataSourcePB {
         return this;
       }
 
-      private java.lang.Object user_ = "";
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return The user.
-       */
-      public java.lang.String getUser() {
-        java.lang.Object ref = user_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          user_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for user.
-       */
-      public com.google.protobuf.ByteString
-          getUserBytes() {
-        java.lang.Object ref = user_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          user_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @param value The user to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUser(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        user_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUser() {
-        
-        user_ = getDefaultInstance().getUser();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for user to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        user_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return The password.
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for password.
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @param value The password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        password_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object host_ = "";
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The host.
        */
       public java.lang.String getHost() {
@@ -4310,11 +2130,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for host.
        */
       public com.google.protobuf.ByteString
@@ -4332,11 +2152,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The host to set.
        * @return This builder for chaining.
        */
@@ -4352,11 +2172,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearHost() {
@@ -4367,11 +2187,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for host to set.
        * @return This builder for chaining.
        */
@@ -4390,11 +2210,11 @@ public final class DataSourcePB {
       private int port_ ;
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return The port.
        */
       @java.lang.Override
@@ -4403,11 +2223,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @param value The port to set.
        * @return This builder for chaining.
        */
@@ -4419,11 +2239,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPort() {
@@ -4433,11 +2253,213 @@ public final class DataSourcePB {
         return this;
       }
 
+      private java.lang.Object user_ = "";
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The user.
+       */
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          user_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for user.
+       */
+      public com.google.protobuf.ByteString
+          getUserBytes() {
+        java.lang.Object ref = user_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          user_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        user_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+        
+        user_ = getDefaultInstance().getUser();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        user_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object database_ = "";
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -4457,8 +2479,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -4479,8 +2501,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -4499,8 +2521,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -4514,8 +2536,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -4532,170 +2554,6 @@ public final class DataSourcePB {
         database_ = value;
         onChanged();
         return this;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4756,65 +2614,21 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The user.
-     */
-    java.lang.String getUser();
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
-     */
-    com.google.protobuf.ByteString
-        getUserBytes();
-
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The password.
-     */
-    java.lang.String getPassword();
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for password.
-     */
-    com.google.protobuf.ByteString
-        getPasswordBytes();
-
-    /**
-     * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     java.lang.String getHost();
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     com.google.protobuf.ByteString
@@ -4822,19 +2636,63 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     int getPort();
 
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    java.lang.String getUser();
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    com.google.protobuf.ByteString
+        getUserBytes();
+
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <pre>
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -4843,8 +2701,8 @@ public final class DataSourcePB {
     java.lang.String getDatabase();
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -4852,36 +2710,6 @@ public final class DataSourcePB {
      */
     com.google.protobuf.ByteString
         getDatabaseBytes();
-
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder();
   }
   /**
    * <pre>
@@ -4900,9 +2728,9 @@ public final class DataSourcePB {
       super(builder);
     }
     private ClickHouseURL() {
+      host_ = "";
       user_ = "";
       password_ = "";
-      host_ = "";
       database_ = "";
     }
 
@@ -4939,43 +2767,30 @@ public final class DataSourcePB {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              user_ = s;
+              host_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              password_ = s;
+              port_ = input.readInt32();
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              host_ = s;
+              user_ = s;
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              port_ = input.readInt32();
+              password_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               database_ = s;
-              break;
-            }
-            case 50: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
               break;
             }
             default: {
@@ -5010,111 +2825,15 @@ public final class DataSourcePB {
               com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder.class);
     }
 
-    public static final int USER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object user_;
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The user.
-     */
-    @java.lang.Override
-    public java.lang.String getUser() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        user_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-     * </pre>
-     *
-     * <code>string user = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for user.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserBytes() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        user_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object password_;
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The password.
-     */
-    @java.lang.Override
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-     * </pre>
-     *
-     * <code>string password = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for password.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HOST_FIELD_NUMBER = 3;
+    public static final int HOST_FIELD_NUMBER = 1;
     private volatile java.lang.Object host_;
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The host.
      */
     @java.lang.Override
@@ -5132,11 +2851,11 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
-     * <code>string host = 3 [(.validator.field) = { ... }</code>
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for host.
      */
     @java.lang.Override
@@ -5154,15 +2873,15 @@ public final class DataSourcePB {
       }
     }
 
-    public static final int PORT_FIELD_NUMBER = 4;
+    public static final int PORT_FIELD_NUMBER = 2;
     private int port_;
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
      * @return The port.
      */
     @java.lang.Override
@@ -5170,12 +2889,108 @@ public final class DataSourcePB {
       return port_;
     }
 
+    public static final int USER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object user_;
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
+     * </pre>
+     *
+     * <code>string user = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for user.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 4;
+    private volatile java.lang.Object password_;
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
+     * </pre>
+     *
+     * <code>string password = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int DATABASE_FIELD_NUMBER = 5;
     private volatile java.lang.Object database_;
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -5196,8 +3011,8 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The database
-     * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"database"
      * </pre>
      *
      * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -5218,47 +3033,6 @@ public final class DataSourcePB {
       }
     }
 
-    public static final int NETWORK_FIELD_NUMBER = 6;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5273,23 +3047,20 @@ public final class DataSourcePB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, user_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, host_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
       }
       if (port_ != 0) {
-        output.writeInt32(4, port_);
+        output.writeInt32(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, database_);
-      }
-      if (network_ != null) {
-        output.writeMessage(6, getNetwork());
       }
       unknownFields.writeTo(output);
     }
@@ -5300,25 +3071,21 @@ public final class DataSourcePB {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, user_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, host_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
       }
       if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, port_);
+          .computeInt32Size(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, database_);
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getNetwork());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5335,21 +3102,16 @@ public final class DataSourcePB {
       }
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL) obj;
 
-      if (!getUser()
-          .equals(other.getUser())) return false;
-      if (!getPassword()
-          .equals(other.getPassword())) return false;
       if (!getHost()
           .equals(other.getHost())) return false;
       if (getPort()
           != other.getPort()) return false;
+      if (!getUser()
+          .equals(other.getUser())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
       if (!getDatabase()
           .equals(other.getDatabase())) return false;
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5361,20 +3123,16 @@ public final class DataSourcePB {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + DATABASE_FIELD_NUMBER;
       hash = (53 * hash) + getDatabase().hashCode();
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5512,22 +3270,16 @@ public final class DataSourcePB {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        user_ = "";
-
-        password_ = "";
-
         host_ = "";
 
         port_ = 0;
 
+        user_ = "";
+
+        password_ = "";
+
         database_ = "";
 
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
         return this;
       }
 
@@ -5554,16 +3306,11 @@ public final class DataSourcePB {
       @java.lang.Override
       public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL buildPartial() {
         com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL(this);
-        result.user_ = user_;
-        result.password_ = password_;
         result.host_ = host_;
         result.port_ = port_;
+        result.user_ = user_;
+        result.password_ = password_;
         result.database_ = database_;
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -5612,6 +3359,13 @@ public final class DataSourcePB {
 
       public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL other) {
         if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
         if (!other.getUser().isEmpty()) {
           user_ = other.user_;
           onChanged();
@@ -5620,19 +3374,9 @@ public final class DataSourcePB {
           password_ = other.password_;
           onChanged();
         }
-        if (!other.getHost().isEmpty()) {
-          host_ = other.host_;
-          onChanged();
-        }
-        if (other.getPort() != 0) {
-          setPort(other.getPort());
-        }
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
           onChanged();
-        }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5663,216 +3407,14 @@ public final class DataSourcePB {
         return this;
       }
 
-      private java.lang.Object user_ = "";
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return The user.
-       */
-      public java.lang.String getUser() {
-        java.lang.Object ref = user_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          user_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for user.
-       */
-      public com.google.protobuf.ByteString
-          getUserBytes() {
-        java.lang.Object ref = user_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          user_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @param value The user to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUser(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        user_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUser() {
-        
-        user_ = getDefaultInstance().getUser();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
-       * </pre>
-       *
-       * <code>string user = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for user to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        user_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return The password.
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for password.
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @param value The password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=0,lte=64" required:"true" minLength:"0" maxLength:"64"
-       * </pre>
-       *
-       * <code>string password = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        password_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object host_ = "";
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The host.
        */
       public java.lang.String getHost() {
@@ -5889,11 +3431,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for host.
        */
       public com.google.protobuf.ByteString
@@ -5911,11 +3453,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The host to set.
        * @return This builder for chaining.
        */
@@ -5931,11 +3473,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearHost() {
@@ -5946,11 +3488,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
-       * <code>string host = 3 [(.validator.field) = { ... }</code>
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for host to set.
        * @return This builder for chaining.
        */
@@ -5969,11 +3511,11 @@ public final class DataSourcePB {
       private int port_ ;
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return The port.
        */
       @java.lang.Override
@@ -5982,11 +3524,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @param value The port to set.
        * @return This builder for chaining.
        */
@@ -5998,11 +3540,11 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
-       * <code>int32 port = 4 [(.validator.field) = { ... }</code>
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPort() {
@@ -6012,11 +3554,213 @@ public final class DataSourcePB {
         return this;
       }
 
+      private java.lang.Object user_ = "";
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The user.
+       */
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          user_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for user.
+       */
+      public com.google.protobuf.ByteString
+          getUserBytes() {
+        java.lang.Object ref = user_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          user_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        user_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+        
+        user_ = getDefaultInstance().getUser();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
+       * </pre>
+       *
+       * <code>string user = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        user_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
+       * </pre>
+       *
+       * <code>string password = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object database_ = "";
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -6036,8 +3780,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -6058,8 +3802,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -6078,8 +3822,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -6093,8 +3837,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The database
-       * &#64;inject_tag: json:"database" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"database"
        * </pre>
        *
        * <code>string database = 5 [(.validator.field) = { ... }</code>
@@ -6111,170 +3855,6 @@ public final class DataSourcePB {
         database_ = value;
         onChanged();
         return this;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 6 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6335,8 +3915,9 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The kafak brokers.
-     * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"kafka_brokers"
      * </pre>
      *
      * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6345,8 +3926,9 @@ public final class DataSourcePB {
     java.lang.String getKafkaBrokers();
     /**
      * <pre>
-     * The kafak brokers.
-     * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"kafka_brokers"
      * </pre>
      *
      * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6354,36 +3936,6 @@ public final class DataSourcePB {
      */
     com.google.protobuf.ByteString
         getKafkaBrokersBytes();
-
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder();
   }
   /**
    * <pre>
@@ -6441,19 +3993,6 @@ public final class DataSourcePB {
               kafkaBrokers_ = s;
               break;
             }
-            case 18: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6490,8 +4029,9 @@ public final class DataSourcePB {
     private volatile java.lang.Object kafkaBrokers_;
     /**
      * <pre>
-     * The kafak brokers.
-     * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"kafka_brokers"
      * </pre>
      *
      * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6512,8 +4052,9 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The kafak brokers.
-     * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"kafka_brokers"
      * </pre>
      *
      * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6534,47 +4075,6 @@ public final class DataSourcePB {
       }
     }
 
-    public static final int NETWORK_FIELD_NUMBER = 2;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6592,9 +4092,6 @@ public final class DataSourcePB {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaBrokers_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kafkaBrokers_);
       }
-      if (network_ != null) {
-        output.writeMessage(2, getNetwork());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -6606,10 +4103,6 @@ public final class DataSourcePB {
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaBrokers_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kafkaBrokers_);
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getNetwork());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6628,11 +4121,6 @@ public final class DataSourcePB {
 
       if (!getKafkaBrokers()
           .equals(other.getKafkaBrokers())) return false;
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6646,10 +4134,6 @@ public final class DataSourcePB {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KAFKA_BROKERS_FIELD_NUMBER;
       hash = (53 * hash) + getKafkaBrokers().hashCode();
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6789,12 +4273,6 @@ public final class DataSourcePB {
         super.clear();
         kafkaBrokers_ = "";
 
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
         return this;
       }
 
@@ -6822,11 +4300,6 @@ public final class DataSourcePB {
       public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL buildPartial() {
         com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL(this);
         result.kafkaBrokers_ = kafkaBrokers_;
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -6879,9 +4352,6 @@ public final class DataSourcePB {
           kafkaBrokers_ = other.kafkaBrokers_;
           onChanged();
         }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6914,8 +4384,9 @@ public final class DataSourcePB {
       private java.lang.Object kafkaBrokers_ = "";
       /**
        * <pre>
-       * The kafak brokers.
-       * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"kafka_brokers"
        * </pre>
        *
        * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6935,8 +4406,9 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The kafak brokers.
-       * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"kafka_brokers"
        * </pre>
        *
        * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6957,8 +4429,9 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The kafak brokers.
-       * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"kafka_brokers"
        * </pre>
        *
        * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6977,8 +4450,9 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The kafak brokers.
-       * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"kafka_brokers"
        * </pre>
        *
        * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -6992,8 +4466,9 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The kafak brokers.
-       * &#64;inject_tag: json:"kafka_brokers" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"kafka_brokers"
        * </pre>
        *
        * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
@@ -7010,170 +4485,6 @@ public final class DataSourcePB {
         kafkaBrokers_ = value;
         onChanged();
         return this;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7660,77 +4971,49 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The hbase Zookeeper
-     * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_hosts"
      * </pre>
      *
-     * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-     * @return The zookeeper.
+     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+     * @return The zkHosts.
      */
-    java.lang.String getZookeeper();
+    java.lang.String getZkHosts();
     /**
      * <pre>
-     * The hbase Zookeeper
-     * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_hosts"
      * </pre>
      *
-     * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for zookeeper.
+     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for zkHosts.
      */
     com.google.protobuf.ByteString
-        getZookeeperBytes();
+        getZkHostsBytes();
 
     /**
      * <pre>
-     * The hbase Zookeeper Node
-     * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
      * </pre>
      *
-     * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-     * @return The zNode.
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The zkPath.
      */
-    java.lang.String getZNode();
+    java.lang.String getZkPath();
     /**
      * <pre>
-     * The hbase Zookeeper Node
-     * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
      * </pre>
      *
-     * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for zNode.
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for zkPath.
      */
     com.google.protobuf.ByteString
-        getZNodeBytes();
-
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder();
+        getZkPathBytes();
   }
   /**
    * <pre>
@@ -7749,8 +5032,8 @@ public final class DataSourcePB {
       super(builder);
     }
     private HBaseURL() {
-      zookeeper_ = "";
-      zNode_ = "";
+      zkHosts_ = "";
+      zkPath_ = "";
     }
 
     @java.lang.Override
@@ -7786,26 +5069,13 @@ public final class DataSourcePB {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              zookeeper_ = s;
+              zkHosts_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              zNode_ = s;
-              break;
-            }
-            case 26: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
+              zkPath_ = s;
               break;
             }
             default: {
@@ -7840,141 +5110,102 @@ public final class DataSourcePB {
               com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.Builder.class);
     }
 
-    public static final int ZOOKEEPER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object zookeeper_;
+    public static final int ZK_HOSTS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object zkHosts_;
     /**
      * <pre>
-     * The hbase Zookeeper
-     * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_hosts"
      * </pre>
      *
-     * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-     * @return The zookeeper.
+     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+     * @return The zkHosts.
      */
     @java.lang.Override
-    public java.lang.String getZookeeper() {
-      java.lang.Object ref = zookeeper_;
+    public java.lang.String getZkHosts() {
+      java.lang.Object ref = zkHosts_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        zookeeper_ = s;
+        zkHosts_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The hbase Zookeeper
-     * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+     * Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_hosts"
      * </pre>
      *
-     * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for zookeeper.
+     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for zkHosts.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getZookeeperBytes() {
-      java.lang.Object ref = zookeeper_;
+        getZkHostsBytes() {
+      java.lang.Object ref = zkHosts_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        zookeeper_ = b;
+        zkHosts_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int Z_NODE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object zNode_;
+    public static final int ZK_PATH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object zkPath_;
     /**
      * <pre>
-     * The hbase Zookeeper Node
-     * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
      * </pre>
      *
-     * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-     * @return The zNode.
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The zkPath.
      */
     @java.lang.Override
-    public java.lang.String getZNode() {
-      java.lang.Object ref = zNode_;
+    public java.lang.String getZkPath() {
+      java.lang.Object ref = zkPath_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        zNode_ = s;
+        zkPath_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The hbase Zookeeper Node
-     * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
      * </pre>
      *
-     * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for zNode.
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for zkPath.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getZNodeBytes() {
-      java.lang.Object ref = zNode_;
+        getZkPathBytes() {
+      java.lang.Object ref = zkPath_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        zNode_ = b;
+        zkPath_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int NETWORK_FIELD_NUMBER = 3;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7991,14 +5222,11 @@ public final class DataSourcePB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zookeeper_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, zookeeper_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkHosts_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, zkHosts_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zNode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zNode_);
-      }
-      if (network_ != null) {
-        output.writeMessage(3, getNetwork());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zkPath_);
       }
       unknownFields.writeTo(output);
     }
@@ -8009,15 +5237,11 @@ public final class DataSourcePB {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zookeeper_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, zookeeper_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkHosts_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, zkHosts_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zNode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zNode_);
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getNetwork());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zkPath_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8034,15 +5258,10 @@ public final class DataSourcePB {
       }
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL) obj;
 
-      if (!getZookeeper()
-          .equals(other.getZookeeper())) return false;
-      if (!getZNode()
-          .equals(other.getZNode())) return false;
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
+      if (!getZkHosts()
+          .equals(other.getZkHosts())) return false;
+      if (!getZkPath()
+          .equals(other.getZkPath())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8054,14 +5273,10 @@ public final class DataSourcePB {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ZOOKEEPER_FIELD_NUMBER;
-      hash = (53 * hash) + getZookeeper().hashCode();
-      hash = (37 * hash) + Z_NODE_FIELD_NUMBER;
-      hash = (53 * hash) + getZNode().hashCode();
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
-      }
+      hash = (37 * hash) + ZK_HOSTS_FIELD_NUMBER;
+      hash = (53 * hash) + getZkHosts().hashCode();
+      hash = (37 * hash) + ZK_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getZkPath().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8199,16 +5414,10 @@ public final class DataSourcePB {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        zookeeper_ = "";
+        zkHosts_ = "";
 
-        zNode_ = "";
+        zkPath_ = "";
 
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
         return this;
       }
 
@@ -8235,13 +5444,8 @@ public final class DataSourcePB {
       @java.lang.Override
       public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL buildPartial() {
         com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL(this);
-        result.zookeeper_ = zookeeper_;
-        result.zNode_ = zNode_;
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
-        }
+        result.zkHosts_ = zkHosts_;
+        result.zkPath_ = zkPath_;
         onBuilt();
         return result;
       }
@@ -8290,16 +5494,13 @@ public final class DataSourcePB {
 
       public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL other) {
         if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.getDefaultInstance()) return this;
-        if (!other.getZookeeper().isEmpty()) {
-          zookeeper_ = other.zookeeper_;
+        if (!other.getZkHosts().isEmpty()) {
+          zkHosts_ = other.zkHosts_;
           onChanged();
         }
-        if (!other.getZNode().isEmpty()) {
-          zNode_ = other.zNode_;
+        if (!other.getZkPath().isEmpty()) {
+          zkPath_ = other.zkPath_;
           onChanged();
-        }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8330,23 +5531,24 @@ public final class DataSourcePB {
         return this;
       }
 
-      private java.lang.Object zookeeper_ = "";
+      private java.lang.Object zkHosts_ = "";
       /**
        * <pre>
-       * The hbase Zookeeper
-       * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_hosts"
        * </pre>
        *
-       * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-       * @return The zookeeper.
+       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+       * @return The zkHosts.
        */
-      public java.lang.String getZookeeper() {
-        java.lang.Object ref = zookeeper_;
+      public java.lang.String getZkHosts() {
+        java.lang.Object ref = zkHosts_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          zookeeper_ = s;
+          zkHosts_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8354,21 +5556,22 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The hbase Zookeeper
-       * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_hosts"
        * </pre>
        *
-       * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for zookeeper.
+       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for zkHosts.
        */
       public com.google.protobuf.ByteString
-          getZookeeperBytes() {
-        java.lang.Object ref = zookeeper_;
+          getZkHostsBytes() {
+        java.lang.Object ref = zkHosts_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          zookeeper_ = b;
+          zkHosts_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8376,78 +5579,81 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The hbase Zookeeper
-       * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_hosts"
        * </pre>
        *
-       * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-       * @param value The zookeeper to set.
+       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+       * @param value The zkHosts to set.
        * @return This builder for chaining.
        */
-      public Builder setZookeeper(
+      public Builder setZkHosts(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        zookeeper_ = value;
+        zkHosts_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The hbase Zookeeper
-       * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_hosts"
        * </pre>
        *
-       * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
+       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearZookeeper() {
+      public Builder clearZkHosts() {
         
-        zookeeper_ = getDefaultInstance().getZookeeper();
+        zkHosts_ = getDefaultInstance().getZkHosts();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The hbase Zookeeper
-       * &#64;inject_tag: json:"zookeeper" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+       * Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_hosts"
        * </pre>
        *
-       * <code>string zookeeper = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for zookeeper to set.
+       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for zkHosts to set.
        * @return This builder for chaining.
        */
-      public Builder setZookeeperBytes(
+      public Builder setZkHostsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        zookeeper_ = value;
+        zkHosts_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object zNode_ = "";
+      private java.lang.Object zkPath_ = "";
       /**
        * <pre>
-       * The hbase Zookeeper Node
-       * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
        * </pre>
        *
-       * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-       * @return The zNode.
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @return The zkPath.
        */
-      public java.lang.String getZNode() {
-        java.lang.Object ref = zNode_;
+      public java.lang.String getZkPath() {
+        java.lang.Object ref = zkPath_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          zNode_ = s;
+          zkPath_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8455,21 +5661,21 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The hbase Zookeeper Node
-       * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
        * </pre>
        *
-       * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for zNode.
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for zkPath.
        */
       public com.google.protobuf.ByteString
-          getZNodeBytes() {
-        java.lang.Object ref = zNode_;
+          getZkPathBytes() {
+        java.lang.Object ref = zkPath_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          zNode_ = b;
+          zkPath_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8477,223 +5683,59 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The hbase Zookeeper Node
-       * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
        * </pre>
        *
-       * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-       * @param value The zNode to set.
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @param value The zkPath to set.
        * @return This builder for chaining.
        */
-      public Builder setZNode(
+      public Builder setZkPath(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        zNode_ = value;
+        zkPath_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The hbase Zookeeper Node
-       * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
        * </pre>
        *
-       * <code>string z_node = 2 [(.validator.field) = { ... }</code>
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearZNode() {
+      public Builder clearZkPath() {
         
-        zNode_ = getDefaultInstance().getZNode();
+        zkPath_ = getDefaultInstance().getZkPath();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The hbase Zookeeper Node
-       * &#64;inject_tag: json:"z_node" default:"" binding:"gte=1,lte=1024" required:"true" minLength:"1" maxLength:"1024"
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
        * </pre>
        *
-       * <code>string z_node = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for zNode to set.
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for zkPath to set.
        * @return This builder for chaining.
        */
-      public Builder setZNodeBytes(
+      public Builder setZkPathBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        zNode_ = value;
+        zkPath_ = value;
         onChanged();
         return this;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 3 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8754,8 +5796,8 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -8764,8 +5806,8 @@ public final class DataSourcePB {
     java.lang.String getHost();
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -8776,8 +5818,8 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
      * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -8787,8 +5829,8 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
      * </pre>
      *
      * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -8797,8 +5839,8 @@ public final class DataSourcePB {
     java.lang.String getUser();
     /**
      * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
      * </pre>
      *
      * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -8809,8 +5851,8 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
      * </pre>
      *
      * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -8819,8 +5861,8 @@ public final class DataSourcePB {
     java.lang.String getPassword();
     /**
      * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
      * </pre>
      *
      * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -8828,36 +5870,6 @@ public final class DataSourcePB {
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
-
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder();
   }
   /**
    * <pre>
@@ -8934,19 +5946,6 @@ public final class DataSourcePB {
               password_ = s;
               break;
             }
-            case 42: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -8983,8 +5982,8 @@ public final class DataSourcePB {
     private volatile java.lang.Object host_;
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -9005,8 +6004,8 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The host
-     * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"host"
      * </pre>
      *
      * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -9031,8 +6030,8 @@ public final class DataSourcePB {
     private int port_;
     /**
      * <pre>
-     * The port
-     * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+     * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
      * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -9047,8 +6046,8 @@ public final class DataSourcePB {
     private volatile java.lang.Object user_;
     /**
      * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
      * </pre>
      *
      * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -9069,8 +6068,8 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The username
-     * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"user"
      * </pre>
      *
      * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -9095,8 +6094,8 @@ public final class DataSourcePB {
     private volatile java.lang.Object password_;
     /**
      * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
      * </pre>
      *
      * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -9117,8 +6116,8 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * The password
-     * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+     * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+     * &#64;inject_tag: json:"password"
      * </pre>
      *
      * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -9137,47 +6136,6 @@ public final class DataSourcePB {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int NETWORK_FIELD_NUMBER = 5;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9206,9 +6164,6 @@ public final class DataSourcePB {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
       }
-      if (network_ != null) {
-        output.writeMessage(5, getNetwork());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -9230,10 +6185,6 @@ public final class DataSourcePB {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getNetwork());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9258,11 +6209,6 @@ public final class DataSourcePB {
           .equals(other.getUser())) return false;
       if (!getPassword()
           .equals(other.getPassword())) return false;
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9282,10 +6228,6 @@ public final class DataSourcePB {
       hash = (53 * hash) + getUser().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9431,12 +6373,6 @@ public final class DataSourcePB {
 
         password_ = "";
 
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
         return this;
       }
 
@@ -9467,11 +6403,6 @@ public final class DataSourcePB {
         result.port_ = port_;
         result.user_ = user_;
         result.password_ = password_;
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -9535,9 +6466,6 @@ public final class DataSourcePB {
           password_ = other.password_;
           onChanged();
         }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9570,8 +6498,8 @@ public final class DataSourcePB {
       private java.lang.Object host_ = "";
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -9591,8 +6519,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -9613,8 +6541,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -9633,8 +6561,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -9648,8 +6576,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The host
-       * &#64;inject_tag: json:"host" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"host"
        * </pre>
        *
        * <code>string host = 1 [(.validator.field) = { ... }</code>
@@ -9671,8 +6599,8 @@ public final class DataSourcePB {
       private int port_ ;
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -9684,8 +6612,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -9700,8 +6628,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gt=0" required:"true" mininum:"1" maximum:"65536"
+       * Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -9717,8 +6645,8 @@ public final class DataSourcePB {
       private java.lang.Object user_ = "";
       /**
        * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
        * </pre>
        *
        * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -9738,8 +6666,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
        * </pre>
        *
        * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -9760,8 +6688,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
        * </pre>
        *
        * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -9780,8 +6708,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
        * </pre>
        *
        * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -9795,8 +6723,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The username
-       * &#64;inject_tag: json:"user" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"user"
        * </pre>
        *
        * <code>string user = 3 [(.validator.field) = { ... }</code>
@@ -9818,8 +6746,8 @@ public final class DataSourcePB {
       private java.lang.Object password_ = "";
       /**
        * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
        * </pre>
        *
        * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -9839,8 +6767,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
        * </pre>
        *
        * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -9861,8 +6789,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
        * </pre>
        *
        * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -9881,8 +6809,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
        * </pre>
        *
        * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -9896,8 +6824,8 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * The password
-       * &#64;inject_tag: json:"password" default:"" binding:"gte=1,lte=64" required:"true" minLength:"1" maxLength:"64"
+       * Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+       * &#64;inject_tag: json:"password"
        * </pre>
        *
        * <code>string password = 4 [(.validator.field) = { ... }</code>
@@ -9914,170 +6842,6 @@ public final class DataSourcePB {
         password_ = value;
         onChanged();
         return this;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 5 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10138,60 +6902,30 @@ public final class DataSourcePB {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+     * &#64;inject_tag: json:"nodes"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
      * @return Whether the nodes field is set.
      */
     boolean hasNodes();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+     * &#64;inject_tag: json:"nodes"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
      * @return The nodes.
      */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL getNodes();
+    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL getNodes();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+     * &#64;inject_tag: json:"nodes"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
      */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURLOrBuilder getNodesOrBuilder();
-
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2;</code>
-     * @return Whether the network field is set.
-     */
-    boolean hasNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2;</code>
-     * @return The network.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork();
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder();
+    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURLOrBuilder getNodesOrBuilder();
   }
   /**
    * <pre>
@@ -10243,27 +6977,14 @@ public final class DataSourcePB {
               done = true;
               break;
             case 10: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder subBuilder = null;
+              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder subBuilder = null;
               if (nodes_ != null) {
                 subBuilder = nodes_.toBuilder();
               }
-              nodes_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.parser(), extensionRegistry);
+              nodes_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(nodes_);
                 nodes_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10300,14 +7021,14 @@ public final class DataSourcePB {
               com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.Builder.class);
     }
 
-    public interface HDFSNodeURLOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:datasource.HDFSURL.HDFSNodeURL)
+    public interface NodeURLOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:datasource.HDFSURL.NodeURL)
         com.google.protobuf.MessageOrBuilder {
 
       /**
        * <pre>
        * The host
-       * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
        * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10317,7 +7038,7 @@ public final class DataSourcePB {
       /**
        * <pre>
        * The host
-       * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
        * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10329,7 +7050,7 @@ public final class DataSourcePB {
       /**
        * <pre>
        * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -10338,18 +7059,18 @@ public final class DataSourcePB {
       int getPort();
     }
     /**
-     * Protobuf type {@code datasource.HDFSURL.HDFSNodeURL}
+     * Protobuf type {@code datasource.HDFSURL.NodeURL}
      */
-    public static final class HDFSNodeURL extends
+    public static final class NodeURL extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:datasource.HDFSURL.HDFSNodeURL)
-        HDFSNodeURLOrBuilder {
+        // @@protoc_insertion_point(message_implements:datasource.HDFSURL.NodeURL)
+        NodeURLOrBuilder {
     private static final long serialVersionUID = 0L;
-      // Use HDFSNodeURL.newBuilder() to construct.
-      private HDFSNodeURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use NodeURL.newBuilder() to construct.
+      private NodeURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private HDFSNodeURL() {
+      private NodeURL() {
         nameNode_ = "";
       }
 
@@ -10357,7 +7078,7 @@ public final class DataSourcePB {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(
           UnusedPrivateParameter unused) {
-        return new HDFSNodeURL();
+        return new NodeURL();
       }
 
       @java.lang.Override
@@ -10365,7 +7086,7 @@ public final class DataSourcePB {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private HDFSNodeURL(
+      private NodeURL(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10415,15 +7136,15 @@ public final class DataSourcePB {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_HDFSNodeURL_descriptor;
+        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_NodeURL_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_HDFSNodeURL_fieldAccessorTable
+        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder.class);
+                com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder.class);
       }
 
       public static final int NAME_NODE_FIELD_NUMBER = 1;
@@ -10431,7 +7152,7 @@ public final class DataSourcePB {
       /**
        * <pre>
        * The host
-       * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
        * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10453,7 +7174,7 @@ public final class DataSourcePB {
       /**
        * <pre>
        * The host
-       * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
        * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10479,7 +7200,7 @@ public final class DataSourcePB {
       /**
        * <pre>
        * The port
-       * &#64;inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
+       * &#64;inject_tag: json:"port"
        * </pre>
        *
        * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -10536,10 +7257,10 @@ public final class DataSourcePB {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL)) {
+        if (!(obj instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL)) {
           return super.equals(obj);
         }
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL) obj;
+        com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL) obj;
 
         if (!getNameNode()
             .equals(other.getNameNode())) return false;
@@ -10565,69 +7286,69 @@ public final class DataSourcePB {
         return hash;
       }
 
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(byte[] data)
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(java.io.InputStream input)
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseDelimitedFrom(java.io.InputStream input)
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseDelimitedFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parseFrom(
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -10640,7 +7361,7 @@ public final class DataSourcePB {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL prototype) {
+      public static Builder newBuilder(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       @java.lang.Override
@@ -10656,26 +7377,26 @@ public final class DataSourcePB {
         return builder;
       }
       /**
-       * Protobuf type {@code datasource.HDFSURL.HDFSNodeURL}
+       * Protobuf type {@code datasource.HDFSURL.NodeURL}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:datasource.HDFSURL.HDFSNodeURL)
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURLOrBuilder {
+          // @@protoc_insertion_point(builder_implements:datasource.HDFSURL.NodeURL)
+          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURLOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_HDFSNodeURL_descriptor;
+          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_NodeURL_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_HDFSNodeURL_fieldAccessorTable
+          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder.class);
+                  com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder.class);
         }
 
-        // Construct using com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.newBuilder()
+        // Construct using com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -10703,17 +7424,17 @@ public final class DataSourcePB {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_HDFSNodeURL_descriptor;
+          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_HDFSURL_NodeURL_descriptor;
         }
 
         @java.lang.Override
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL getDefaultInstanceForType() {
-          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.getDefaultInstance();
+        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL getDefaultInstanceForType() {
+          return com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.getDefaultInstance();
         }
 
         @java.lang.Override
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL build() {
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL result = buildPartial();
+        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL build() {
+          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -10721,8 +7442,8 @@ public final class DataSourcePB {
         }
 
         @java.lang.Override
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL buildPartial() {
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL(this);
+        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL buildPartial() {
+          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL(this);
           result.nameNode_ = nameNode_;
           result.port_ = port_;
           onBuilt();
@@ -10763,16 +7484,16 @@ public final class DataSourcePB {
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL) {
-            return mergeFrom((com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL)other);
+          if (other instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL) {
+            return mergeFrom((com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL other) {
-          if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.getDefaultInstance()) return this;
+        public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL other) {
+          if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.getDefaultInstance()) return this;
           if (!other.getNameNode().isEmpty()) {
             nameNode_ = other.nameNode_;
             onChanged();
@@ -10795,11 +7516,11 @@ public final class DataSourcePB {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL parsedMessage = null;
+          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL) e.getUnfinishedMessage();
+            parsedMessage = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -10813,7 +7534,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The host
-         * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+         * &#64;inject_tag: json:"name_node"
          * </pre>
          *
          * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10834,7 +7555,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The host
-         * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+         * &#64;inject_tag: json:"name_node"
          * </pre>
          *
          * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10856,7 +7577,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The host
-         * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+         * &#64;inject_tag: json:"name_node"
          * </pre>
          *
          * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10876,7 +7597,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The host
-         * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+         * &#64;inject_tag: json:"name_node"
          * </pre>
          *
          * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10891,7 +7612,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The host
-         * &#64;inject_tag: json:"name_node" default:"" binding:"gte=1,lte=64" required:"true"
+         * &#64;inject_tag: json:"name_node"
          * </pre>
          *
          * <code>string name_node = 1 [(.validator.field) = { ... }</code>
@@ -10914,7 +7635,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The port
-         * &#64;inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
+         * &#64;inject_tag: json:"port"
          * </pre>
          *
          * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -10927,7 +7648,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The port
-         * &#64;inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
+         * &#64;inject_tag: json:"port"
          * </pre>
          *
          * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -10943,7 +7664,7 @@ public final class DataSourcePB {
         /**
          * <pre>
          * The port
-         * &#64;inject_tag: json:"port" default:"" binding:"gte=1" required:"true" mininum:"1" maximum:"65536"
+         * &#64;inject_tag: json:"port"
          * </pre>
          *
          * <code>int32 port = 2 [(.validator.field) = { ... }</code>
@@ -10968,54 +7689,54 @@ public final class DataSourcePB {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:datasource.HDFSURL.HDFSNodeURL)
+        // @@protoc_insertion_point(builder_scope:datasource.HDFSURL.NodeURL)
       }
 
-      // @@protoc_insertion_point(class_scope:datasource.HDFSURL.HDFSNodeURL)
-      private static final com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:datasource.HDFSURL.NodeURL)
+      private static final com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL();
+        DEFAULT_INSTANCE = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL();
       }
 
-      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL getDefaultInstance() {
+      public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<HDFSNodeURL>
-          PARSER = new com.google.protobuf.AbstractParser<HDFSNodeURL>() {
+      private static final com.google.protobuf.Parser<NodeURL>
+          PARSER = new com.google.protobuf.AbstractParser<NodeURL>() {
         @java.lang.Override
-        public HDFSNodeURL parsePartialFrom(
+        public NodeURL parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HDFSNodeURL(input, extensionRegistry);
+          return new NodeURL(input, extensionRegistry);
         }
       };
 
-      public static com.google.protobuf.Parser<HDFSNodeURL> parser() {
+      public static com.google.protobuf.Parser<NodeURL> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<HDFSNodeURL> getParserForType() {
+      public com.google.protobuf.Parser<NodeURL> getParserForType() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL getDefaultInstanceForType() {
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
     }
 
     public static final int NODES_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL nodes_;
+    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL nodes_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+     * &#64;inject_tag: json:"nodes"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
      * @return Whether the nodes field is set.
      */
     @java.lang.Override
@@ -11024,67 +7745,26 @@ public final class DataSourcePB {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+     * &#64;inject_tag: json:"nodes"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
      * @return The nodes.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL getNodes() {
-      return nodes_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.getDefaultInstance() : nodes_;
+    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL getNodes() {
+      return nodes_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.getDefaultInstance() : nodes_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+     * &#64;inject_tag: json:"nodes"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURLOrBuilder getNodesOrBuilder() {
+    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURLOrBuilder getNodesOrBuilder() {
       return getNodes();
-    }
-
-    public static final int NETWORK_FIELD_NUMBER = 2;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2;</code>
-     * @return Whether the network field is set.
-     */
-    @java.lang.Override
-    public boolean hasNetwork() {
-      return network_ != null;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2;</code>
-     * @return The network.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-      return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-    }
-    /**
-     * <pre>
-     * the Network
-     * &#64;inject_tag: json:"network" default:""
-     * </pre>
-     *
-     * <code>.datasource.DatasourceNetwork network = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-      return getNetwork();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11104,9 +7784,6 @@ public final class DataSourcePB {
       if (nodes_ != null) {
         output.writeMessage(1, getNodes());
       }
-      if (network_ != null) {
-        output.writeMessage(2, getNetwork());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -11119,10 +7796,6 @@ public final class DataSourcePB {
       if (nodes_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getNodes());
-      }
-      if (network_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getNetwork());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11144,11 +7817,6 @@ public final class DataSourcePB {
         if (!getNodes()
             .equals(other.getNodes())) return false;
       }
-      if (hasNetwork() != other.hasNetwork()) return false;
-      if (hasNetwork()) {
-        if (!getNetwork()
-            .equals(other.getNetwork())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11163,10 +7831,6 @@ public final class DataSourcePB {
       if (hasNodes()) {
         hash = (37 * hash) + NODES_FIELD_NUMBER;
         hash = (53 * hash) + getNodes().hashCode();
-      }
-      if (hasNetwork()) {
-        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
-        hash = (53 * hash) + getNetwork().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -11311,12 +7975,6 @@ public final class DataSourcePB {
           nodes_ = null;
           nodesBuilder_ = null;
         }
-        if (networkBuilder_ == null) {
-          network_ = null;
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
         return this;
       }
 
@@ -11347,11 +8005,6 @@ public final class DataSourcePB {
           result.nodes_ = nodes_;
         } else {
           result.nodes_ = nodesBuilder_.build();
-        }
-        if (networkBuilder_ == null) {
-          result.network_ = network_;
-        } else {
-          result.network_ = networkBuilder_.build();
         }
         onBuilt();
         return result;
@@ -11404,9 +8057,6 @@ public final class DataSourcePB {
         if (other.hasNodes()) {
           mergeNodes(other.getNodes());
         }
-        if (other.hasNetwork()) {
-          mergeNetwork(other.getNetwork());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11436,15 +8086,15 @@ public final class DataSourcePB {
         return this;
       }
 
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL nodes_;
+      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL nodes_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURLOrBuilder> nodesBuilder_;
+          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURLOrBuilder> nodesBuilder_;
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        * @return Whether the nodes field is set.
        */
       public boolean hasNodes() {
@@ -11452,27 +8102,27 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        * @return The nodes.
        */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL getNodes() {
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL getNodes() {
         if (nodesBuilder_ == null) {
-          return nodes_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.getDefaultInstance() : nodes_;
+          return nodes_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.getDefaultInstance() : nodes_;
         } else {
           return nodesBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setNodes(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL value) {
+      public Builder setNodes(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL value) {
         if (nodesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11487,13 +8137,13 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setNodes(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder builderForValue) {
+          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder builderForValue) {
         if (nodesBuilder_ == null) {
           nodes_ = builderForValue.build();
           onChanged();
@@ -11505,16 +8155,16 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder mergeNodes(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL value) {
+      public Builder mergeNodes(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL value) {
         if (nodesBuilder_ == null) {
           if (nodes_ != null) {
             nodes_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.newBuilder(nodes_).mergeFrom(value).buildPartial();
+              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.newBuilder(nodes_).mergeFrom(value).buildPartial();
           } else {
             nodes_ = value;
           }
@@ -11527,10 +8177,10 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        */
       public Builder clearNodes() {
         if (nodesBuilder_ == null) {
@@ -11545,214 +8195,50 @@ public final class DataSourcePB {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder getNodesBuilder() {
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder getNodesBuilder() {
         
         onChanged();
         return getNodesFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURLOrBuilder getNodesOrBuilder() {
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURLOrBuilder getNodesOrBuilder() {
         if (nodesBuilder_ != null) {
           return nodesBuilder_.getMessageOrBuilder();
         } else {
           return nodes_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.getDefaultInstance() : nodes_;
+              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.getDefaultInstance() : nodes_;
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes" default:"" binding:"gte=1,lte=1024" required:"true"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"nodes"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.HDFSNodeURL nodes = 1;</code>
+       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURLOrBuilder> 
+          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURLOrBuilder> 
           getNodesFieldBuilder() {
         if (nodesBuilder_ == null) {
           nodesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.HDFSNodeURLOrBuilder>(
+              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.NodeURLOrBuilder>(
                   getNodes(),
                   getParentForChildren(),
                   isClean());
           nodes_ = null;
         }
         return nodesBuilder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork network_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> networkBuilder_;
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       * @return Whether the network field is set.
-       */
-      public boolean hasNetwork() {
-        return networkBuilder_ != null || network_ != null;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       * @return The network.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork getNetwork() {
-        if (networkBuilder_ == null) {
-          return network_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        } else {
-          return networkBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       */
-      public Builder setNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          network_ = value;
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       */
-      public Builder setNetwork(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder builderForValue) {
-        if (networkBuilder_ == null) {
-          network_ = builderForValue.build();
-          onChanged();
-        } else {
-          networkBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       */
-      public Builder mergeNetwork(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork value) {
-        if (networkBuilder_ == null) {
-          if (network_ != null) {
-            network_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.newBuilder(network_).mergeFrom(value).buildPartial();
-          } else {
-            network_ = value;
-          }
-          onChanged();
-        } else {
-          networkBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       */
-      public Builder clearNetwork() {
-        if (networkBuilder_ == null) {
-          network_ = null;
-          onChanged();
-        } else {
-          network_ = null;
-          networkBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder getNetworkBuilder() {
-        
-        onChanged();
-        return getNetworkFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder getNetworkOrBuilder() {
-        if (networkBuilder_ != null) {
-          return networkBuilder_.getMessageOrBuilder();
-        } else {
-          return network_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.getDefaultInstance() : network_;
-        }
-      }
-      /**
-       * <pre>
-       * the Network
-       * &#64;inject_tag: json:"network" default:""
-       * </pre>
-       *
-       * <code>.datasource.DatasourceNetwork network = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder> 
-          getNetworkFieldBuilder() {
-        if (networkBuilder_ == null) {
-          networkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetwork.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DatasourceNetworkOrBuilder>(
-                  getNetwork(),
-                  getParentForChildren(),
-                  isClean());
-          network_ = null;
-        }
-        return networkBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11807,274 +8293,53 @@ public final class DataSourcePB {
 
   }
 
-  public interface DataSourceURLOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:datasource.DataSourceURL)
+  public interface SourceKindOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datasource.SourceKind)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * MySQL Source Connection Info.
-     * &#64;inject_tag: json:"mysql"
+     * this kind name
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>.datasource.MySQLURL mysql = 1;</code>
-     * @return Whether the mysql field is set.
+     * <code>string Name = 1;</code>
+     * @return The name.
      */
-    boolean hasMysql();
+    java.lang.String getName();
     /**
      * <pre>
-     * MySQL Source Connection Info.
-     * &#64;inject_tag: json:"mysql"
+     * this kind name
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>.datasource.MySQLURL mysql = 1;</code>
-     * @return The mysql.
+     * <code>string Name = 1;</code>
+     * @return The bytes for name.
      */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL getMysql();
-    /**
-     * <pre>
-     * MySQL Source Connection Info.
-     * &#64;inject_tag: json:"mysql"
-     * </pre>
-     *
-     * <code>.datasource.MySQLURL mysql = 1;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURLOrBuilder getMysqlOrBuilder();
-
-    /**
-     * <pre>
-     * PostgreSQL Source Connection Info.
-     * &#64;inject_tag: json:"postgresql"
-     * </pre>
-     *
-     * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-     * @return Whether the postgresql field is set.
-     */
-    boolean hasPostgresql();
-    /**
-     * <pre>
-     * PostgreSQL Source Connection Info.
-     * &#64;inject_tag: json:"postgresql"
-     * </pre>
-     *
-     * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-     * @return The postgresql.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL getPostgresql();
-    /**
-     * <pre>
-     * PostgreSQL Source Connection Info.
-     * &#64;inject_tag: json:"postgresql"
-     * </pre>
-     *
-     * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURLOrBuilder getPostgresqlOrBuilder();
-
-    /**
-     * <pre>
-     * ClickHouse Source Connection Info.
-     * &#64;inject_tag: json:"clickhouse"
-     * </pre>
-     *
-     * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-     * @return Whether the clickhouse field is set.
-     */
-    boolean hasClickhouse();
-    /**
-     * <pre>
-     * ClickHouse Source Connection Info.
-     * &#64;inject_tag: json:"clickhouse"
-     * </pre>
-     *
-     * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-     * @return The clickhouse.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse();
-    /**
-     * <pre>
-     * ClickHouse Source Connection Info.
-     * &#64;inject_tag: json:"clickhouse"
-     * </pre>
-     *
-     * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder();
-
-    /**
-     * <pre>
-     * Kafka Source Connection Info.
-     * &#64;inject_tag: json:"kafka"
-     * </pre>
-     *
-     * <code>.datasource.KafkaURL kafka = 4;</code>
-     * @return Whether the kafka field is set.
-     */
-    boolean hasKafka();
-    /**
-     * <pre>
-     * Kafka Source Connection Info.
-     * &#64;inject_tag: json:"kafka"
-     * </pre>
-     *
-     * <code>.datasource.KafkaURL kafka = 4;</code>
-     * @return The kafka.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL getKafka();
-    /**
-     * <pre>
-     * Kafka Source Connection Info.
-     * &#64;inject_tag: json:"kafka"
-     * </pre>
-     *
-     * <code>.datasource.KafkaURL kafka = 4;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder getKafkaOrBuilder();
-
-    /**
-     * <pre>
-     * S3 Source Connection Info.
-     * &#64;inject_tag: json:"s3"
-     * </pre>
-     *
-     * <code>.datasource.S3URL s3 = 5;</code>
-     * @return Whether the s3 field is set.
-     */
-    boolean hasS3();
-    /**
-     * <pre>
-     * S3 Source Connection Info.
-     * &#64;inject_tag: json:"s3"
-     * </pre>
-     *
-     * <code>.datasource.S3URL s3 = 5;</code>
-     * @return The s3.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL getS3();
-    /**
-     * <pre>
-     * S3 Source Connection Info.
-     * &#64;inject_tag: json:"s3"
-     * </pre>
-     *
-     * <code>.datasource.S3URL s3 = 5;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder getS3OrBuilder();
-
-    /**
-     * <pre>
-     * Hbase Source Connection Info.
-     * &#64;inject_tag: json:"hbase"
-     * </pre>
-     *
-     * <code>.datasource.HBaseURL hbase = 6;</code>
-     * @return Whether the hbase field is set.
-     */
-    boolean hasHbase();
-    /**
-     * <pre>
-     * Hbase Source Connection Info.
-     * &#64;inject_tag: json:"hbase"
-     * </pre>
-     *
-     * <code>.datasource.HBaseURL hbase = 6;</code>
-     * @return The hbase.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL getHbase();
-    /**
-     * <pre>
-     * Hbase Source Connection Info.
-     * &#64;inject_tag: json:"hbase"
-     * </pre>
-     *
-     * <code>.datasource.HBaseURL hbase = 6;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURLOrBuilder getHbaseOrBuilder();
-
-    /**
-     * <pre>
-     * Ftp Source Connection Info.
-     * &#64;inject_tag: json:"ftp"
-     * </pre>
-     *
-     * <code>.datasource.FtpURL ftp = 7;</code>
-     * @return Whether the ftp field is set.
-     */
-    boolean hasFtp();
-    /**
-     * <pre>
-     * Ftp Source Connection Info.
-     * &#64;inject_tag: json:"ftp"
-     * </pre>
-     *
-     * <code>.datasource.FtpURL ftp = 7;</code>
-     * @return The ftp.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL getFtp();
-    /**
-     * <pre>
-     * Ftp Source Connection Info.
-     * &#64;inject_tag: json:"ftp"
-     * </pre>
-     *
-     * <code>.datasource.FtpURL ftp = 7;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURLOrBuilder getFtpOrBuilder();
-
-    /**
-     * <pre>
-     * HDFS Source Connection Info.
-     * &#64;inject_tag: json:"hdfs"
-     * </pre>
-     *
-     * <code>.datasource.HDFSURL hdfs = 8;</code>
-     * @return Whether the hdfs field is set.
-     */
-    boolean hasHdfs();
-    /**
-     * <pre>
-     * HDFS Source Connection Info.
-     * &#64;inject_tag: json:"hdfs"
-     * </pre>
-     *
-     * <code>.datasource.HDFSURL hdfs = 8;</code>
-     * @return The hdfs.
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL getHdfs();
-    /**
-     * <pre>
-     * HDFS Source Connection Info.
-     * &#64;inject_tag: json:"hdfs"
-     * </pre>
-     *
-     * <code>.datasource.HDFSURL hdfs = 8;</code>
-     */
-    com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURLOrBuilder getHdfsOrBuilder();
+    com.google.protobuf.ByteString
+        getNameBytes();
   }
   /**
-   * <pre>
-   * SourceUrl used as request parameters for RPC and HTTP(based on Body)
-   * </pre>
-   *
-   * Protobuf type {@code datasource.DataSourceURL}
+   * Protobuf type {@code datasource.SourceKind}
    */
-  public static final class DataSourceURL extends
+  public static final class SourceKind extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:datasource.DataSourceURL)
-      DataSourceURLOrBuilder {
+      // @@protoc_insertion_point(message_implements:datasource.SourceKind)
+      SourceKindOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DataSourceURL.newBuilder() to construct.
-    private DataSourceURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SourceKind.newBuilder() to construct.
+    private SourceKind(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DataSourceURL() {
+    private SourceKind() {
+      name_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DataSourceURL();
+      return new SourceKind();
     }
 
     @java.lang.Override
@@ -12082,7 +8347,7 @@ public final class DataSourcePB {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DataSourceURL(
+    private SourceKind(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12101,107 +8366,9 @@ public final class DataSourcePB {
               done = true;
               break;
             case 10: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.Builder subBuilder = null;
-              if (mysql_ != null) {
-                subBuilder = mysql_.toBuilder();
-              }
-              mysql_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mysql_);
-                mysql_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
-              break;
-            }
-            case 18: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.Builder subBuilder = null;
-              if (postgresql_ != null) {
-                subBuilder = postgresql_.toBuilder();
-              }
-              postgresql_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(postgresql_);
-                postgresql_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder subBuilder = null;
-              if (clickhouse_ != null) {
-                subBuilder = clickhouse_.toBuilder();
-              }
-              clickhouse_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(clickhouse_);
-                clickhouse_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder subBuilder = null;
-              if (kafka_ != null) {
-                subBuilder = kafka_.toBuilder();
-              }
-              kafka_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(kafka_);
-                kafka_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder subBuilder = null;
-              if (s3_ != null) {
-                subBuilder = s3_.toBuilder();
-              }
-              s3_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(s3_);
-                s3_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.Builder subBuilder = null;
-              if (hbase_ != null) {
-                subBuilder = hbase_.toBuilder();
-              }
-              hbase_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hbase_);
-                hbase_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.Builder subBuilder = null;
-              if (ftp_ != null) {
-                subBuilder = ftp_.toBuilder();
-              }
-              ftp_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ftp_);
-                ftp_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.Builder subBuilder = null;
-              if (hdfs_ != null) {
-                subBuilder = hdfs_.toBuilder();
-              }
-              hdfs_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hdfs_);
-                hdfs_ = subBuilder.buildPartial();
-              }
-
+              name_ = s;
               break;
             }
             default: {
@@ -12225,343 +8392,63 @@ public final class DataSourcePB {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DataSourceURL_descriptor;
+      return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_SourceKind_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DataSourceURL_fieldAccessorTable
+      return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_SourceKind_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL.Builder.class);
+              com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind.Builder.class);
     }
 
-    public static final int MYSQL_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL mysql_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
     /**
      * <pre>
-     * MySQL Source Connection Info.
-     * &#64;inject_tag: json:"mysql"
+     * this kind name
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>.datasource.MySQLURL mysql = 1;</code>
-     * @return Whether the mysql field is set.
+     * <code>string Name = 1;</code>
+     * @return The name.
      */
     @java.lang.Override
-    public boolean hasMysql() {
-      return mysql_ != null;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * MySQL Source Connection Info.
-     * &#64;inject_tag: json:"mysql"
+     * this kind name
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>.datasource.MySQLURL mysql = 1;</code>
-     * @return The mysql.
+     * <code>string Name = 1;</code>
+     * @return The bytes for name.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL getMysql() {
-      return mysql_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.getDefaultInstance() : mysql_;
-    }
-    /**
-     * <pre>
-     * MySQL Source Connection Info.
-     * &#64;inject_tag: json:"mysql"
-     * </pre>
-     *
-     * <code>.datasource.MySQLURL mysql = 1;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURLOrBuilder getMysqlOrBuilder() {
-      return getMysql();
-    }
-
-    public static final int POSTGRESQL_FIELD_NUMBER = 2;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL postgresql_;
-    /**
-     * <pre>
-     * PostgreSQL Source Connection Info.
-     * &#64;inject_tag: json:"postgresql"
-     * </pre>
-     *
-     * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-     * @return Whether the postgresql field is set.
-     */
-    @java.lang.Override
-    public boolean hasPostgresql() {
-      return postgresql_ != null;
-    }
-    /**
-     * <pre>
-     * PostgreSQL Source Connection Info.
-     * &#64;inject_tag: json:"postgresql"
-     * </pre>
-     *
-     * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-     * @return The postgresql.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL getPostgresql() {
-      return postgresql_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.getDefaultInstance() : postgresql_;
-    }
-    /**
-     * <pre>
-     * PostgreSQL Source Connection Info.
-     * &#64;inject_tag: json:"postgresql"
-     * </pre>
-     *
-     * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURLOrBuilder getPostgresqlOrBuilder() {
-      return getPostgresql();
-    }
-
-    public static final int CLICKHOUSE_FIELD_NUMBER = 3;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL clickhouse_;
-    /**
-     * <pre>
-     * ClickHouse Source Connection Info.
-     * &#64;inject_tag: json:"clickhouse"
-     * </pre>
-     *
-     * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-     * @return Whether the clickhouse field is set.
-     */
-    @java.lang.Override
-    public boolean hasClickhouse() {
-      return clickhouse_ != null;
-    }
-    /**
-     * <pre>
-     * ClickHouse Source Connection Info.
-     * &#64;inject_tag: json:"clickhouse"
-     * </pre>
-     *
-     * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-     * @return The clickhouse.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse() {
-      return clickhouse_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
-    }
-    /**
-     * <pre>
-     * ClickHouse Source Connection Info.
-     * &#64;inject_tag: json:"clickhouse"
-     * </pre>
-     *
-     * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder() {
-      return getClickhouse();
-    }
-
-    public static final int KAFKA_FIELD_NUMBER = 4;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL kafka_;
-    /**
-     * <pre>
-     * Kafka Source Connection Info.
-     * &#64;inject_tag: json:"kafka"
-     * </pre>
-     *
-     * <code>.datasource.KafkaURL kafka = 4;</code>
-     * @return Whether the kafka field is set.
-     */
-    @java.lang.Override
-    public boolean hasKafka() {
-      return kafka_ != null;
-    }
-    /**
-     * <pre>
-     * Kafka Source Connection Info.
-     * &#64;inject_tag: json:"kafka"
-     * </pre>
-     *
-     * <code>.datasource.KafkaURL kafka = 4;</code>
-     * @return The kafka.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL getKafka() {
-      return kafka_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.getDefaultInstance() : kafka_;
-    }
-    /**
-     * <pre>
-     * Kafka Source Connection Info.
-     * &#64;inject_tag: json:"kafka"
-     * </pre>
-     *
-     * <code>.datasource.KafkaURL kafka = 4;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder getKafkaOrBuilder() {
-      return getKafka();
-    }
-
-    public static final int S3_FIELD_NUMBER = 5;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL s3_;
-    /**
-     * <pre>
-     * S3 Source Connection Info.
-     * &#64;inject_tag: json:"s3"
-     * </pre>
-     *
-     * <code>.datasource.S3URL s3 = 5;</code>
-     * @return Whether the s3 field is set.
-     */
-    @java.lang.Override
-    public boolean hasS3() {
-      return s3_ != null;
-    }
-    /**
-     * <pre>
-     * S3 Source Connection Info.
-     * &#64;inject_tag: json:"s3"
-     * </pre>
-     *
-     * <code>.datasource.S3URL s3 = 5;</code>
-     * @return The s3.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL getS3() {
-      return s3_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.getDefaultInstance() : s3_;
-    }
-    /**
-     * <pre>
-     * S3 Source Connection Info.
-     * &#64;inject_tag: json:"s3"
-     * </pre>
-     *
-     * <code>.datasource.S3URL s3 = 5;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder getS3OrBuilder() {
-      return getS3();
-    }
-
-    public static final int HBASE_FIELD_NUMBER = 6;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL hbase_;
-    /**
-     * <pre>
-     * Hbase Source Connection Info.
-     * &#64;inject_tag: json:"hbase"
-     * </pre>
-     *
-     * <code>.datasource.HBaseURL hbase = 6;</code>
-     * @return Whether the hbase field is set.
-     */
-    @java.lang.Override
-    public boolean hasHbase() {
-      return hbase_ != null;
-    }
-    /**
-     * <pre>
-     * Hbase Source Connection Info.
-     * &#64;inject_tag: json:"hbase"
-     * </pre>
-     *
-     * <code>.datasource.HBaseURL hbase = 6;</code>
-     * @return The hbase.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL getHbase() {
-      return hbase_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.getDefaultInstance() : hbase_;
-    }
-    /**
-     * <pre>
-     * Hbase Source Connection Info.
-     * &#64;inject_tag: json:"hbase"
-     * </pre>
-     *
-     * <code>.datasource.HBaseURL hbase = 6;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURLOrBuilder getHbaseOrBuilder() {
-      return getHbase();
-    }
-
-    public static final int FTP_FIELD_NUMBER = 7;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL ftp_;
-    /**
-     * <pre>
-     * Ftp Source Connection Info.
-     * &#64;inject_tag: json:"ftp"
-     * </pre>
-     *
-     * <code>.datasource.FtpURL ftp = 7;</code>
-     * @return Whether the ftp field is set.
-     */
-    @java.lang.Override
-    public boolean hasFtp() {
-      return ftp_ != null;
-    }
-    /**
-     * <pre>
-     * Ftp Source Connection Info.
-     * &#64;inject_tag: json:"ftp"
-     * </pre>
-     *
-     * <code>.datasource.FtpURL ftp = 7;</code>
-     * @return The ftp.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL getFtp() {
-      return ftp_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.getDefaultInstance() : ftp_;
-    }
-    /**
-     * <pre>
-     * Ftp Source Connection Info.
-     * &#64;inject_tag: json:"ftp"
-     * </pre>
-     *
-     * <code>.datasource.FtpURL ftp = 7;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURLOrBuilder getFtpOrBuilder() {
-      return getFtp();
-    }
-
-    public static final int HDFS_FIELD_NUMBER = 8;
-    private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL hdfs_;
-    /**
-     * <pre>
-     * HDFS Source Connection Info.
-     * &#64;inject_tag: json:"hdfs"
-     * </pre>
-     *
-     * <code>.datasource.HDFSURL hdfs = 8;</code>
-     * @return Whether the hdfs field is set.
-     */
-    @java.lang.Override
-    public boolean hasHdfs() {
-      return hdfs_ != null;
-    }
-    /**
-     * <pre>
-     * HDFS Source Connection Info.
-     * &#64;inject_tag: json:"hdfs"
-     * </pre>
-     *
-     * <code>.datasource.HDFSURL hdfs = 8;</code>
-     * @return The hdfs.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL getHdfs() {
-      return hdfs_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.getDefaultInstance() : hdfs_;
-    }
-    /**
-     * <pre>
-     * HDFS Source Connection Info.
-     * &#64;inject_tag: json:"hdfs"
-     * </pre>
-     *
-     * <code>.datasource.HDFSURL hdfs = 8;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURLOrBuilder getHdfsOrBuilder() {
-      return getHdfs();
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -12578,29 +8465,8 @@ public final class DataSourcePB {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (mysql_ != null) {
-        output.writeMessage(1, getMysql());
-      }
-      if (postgresql_ != null) {
-        output.writeMessage(2, getPostgresql());
-      }
-      if (clickhouse_ != null) {
-        output.writeMessage(3, getClickhouse());
-      }
-      if (kafka_ != null) {
-        output.writeMessage(4, getKafka());
-      }
-      if (s3_ != null) {
-        output.writeMessage(5, getS3());
-      }
-      if (hbase_ != null) {
-        output.writeMessage(6, getHbase());
-      }
-      if (ftp_ != null) {
-        output.writeMessage(7, getFtp());
-      }
-      if (hdfs_ != null) {
-        output.writeMessage(8, getHdfs());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
     }
@@ -12611,37 +8477,8 @@ public final class DataSourcePB {
       if (size != -1) return size;
 
       size = 0;
-      if (mysql_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getMysql());
-      }
-      if (postgresql_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getPostgresql());
-      }
-      if (clickhouse_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getClickhouse());
-      }
-      if (kafka_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getKafka());
-      }
-      if (s3_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getS3());
-      }
-      if (hbase_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getHbase());
-      }
-      if (ftp_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getFtp());
-      }
-      if (hdfs_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getHdfs());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12653,51 +8490,13 @@ public final class DataSourcePB {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL)) {
+      if (!(obj instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL) obj;
+      com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind other = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind) obj;
 
-      if (hasMysql() != other.hasMysql()) return false;
-      if (hasMysql()) {
-        if (!getMysql()
-            .equals(other.getMysql())) return false;
-      }
-      if (hasPostgresql() != other.hasPostgresql()) return false;
-      if (hasPostgresql()) {
-        if (!getPostgresql()
-            .equals(other.getPostgresql())) return false;
-      }
-      if (hasClickhouse() != other.hasClickhouse()) return false;
-      if (hasClickhouse()) {
-        if (!getClickhouse()
-            .equals(other.getClickhouse())) return false;
-      }
-      if (hasKafka() != other.hasKafka()) return false;
-      if (hasKafka()) {
-        if (!getKafka()
-            .equals(other.getKafka())) return false;
-      }
-      if (hasS3() != other.hasS3()) return false;
-      if (hasS3()) {
-        if (!getS3()
-            .equals(other.getS3())) return false;
-      }
-      if (hasHbase() != other.hasHbase()) return false;
-      if (hasHbase()) {
-        if (!getHbase()
-            .equals(other.getHbase())) return false;
-      }
-      if (hasFtp() != other.hasFtp()) return false;
-      if (hasFtp()) {
-        if (!getFtp()
-            .equals(other.getFtp())) return false;
-      }
-      if (hasHdfs() != other.hasHdfs()) return false;
-      if (hasHdfs()) {
-        if (!getHdfs()
-            .equals(other.getHdfs())) return false;
-      }
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12709,106 +8508,76 @@ public final class DataSourcePB {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasMysql()) {
-        hash = (37 * hash) + MYSQL_FIELD_NUMBER;
-        hash = (53 * hash) + getMysql().hashCode();
-      }
-      if (hasPostgresql()) {
-        hash = (37 * hash) + POSTGRESQL_FIELD_NUMBER;
-        hash = (53 * hash) + getPostgresql().hashCode();
-      }
-      if (hasClickhouse()) {
-        hash = (37 * hash) + CLICKHOUSE_FIELD_NUMBER;
-        hash = (53 * hash) + getClickhouse().hashCode();
-      }
-      if (hasKafka()) {
-        hash = (37 * hash) + KAFKA_FIELD_NUMBER;
-        hash = (53 * hash) + getKafka().hashCode();
-      }
-      if (hasS3()) {
-        hash = (37 * hash) + S3_FIELD_NUMBER;
-        hash = (53 * hash) + getS3().hashCode();
-      }
-      if (hasHbase()) {
-        hash = (37 * hash) + HBASE_FIELD_NUMBER;
-        hash = (53 * hash) + getHbase().hashCode();
-      }
-      if (hasFtp()) {
-        hash = (37 * hash) + FTP_FIELD_NUMBER;
-        hash = (53 * hash) + getFtp().hashCode();
-      }
-      if (hasHdfs()) {
-        hash = (37 * hash) + HDFS_FIELD_NUMBER;
-        hash = (53 * hash) + getHdfs().hashCode();
-      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(byte[] data)
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseDelimitedFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parseFrom(
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12821,7 +8590,7 @@ public final class DataSourcePB {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -12837,30 +8606,26 @@ public final class DataSourcePB {
       return builder;
     }
     /**
-     * <pre>
-     * SourceUrl used as request parameters for RPC and HTTP(based on Body)
-     * </pre>
-     *
-     * Protobuf type {@code datasource.DataSourceURL}
+     * Protobuf type {@code datasource.SourceKind}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:datasource.DataSourceURL)
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURLOrBuilder {
+        // @@protoc_insertion_point(builder_implements:datasource.SourceKind)
+        com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKindOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DataSourceURL_descriptor;
+        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_SourceKind_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DataSourceURL_fieldAccessorTable
+        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_SourceKind_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL.Builder.class);
+                com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind.class, com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL.newBuilder()
+      // Construct using com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12878,71 +8643,25 @@ public final class DataSourcePB {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (mysqlBuilder_ == null) {
-          mysql_ = null;
-        } else {
-          mysql_ = null;
-          mysqlBuilder_ = null;
-        }
-        if (postgresqlBuilder_ == null) {
-          postgresql_ = null;
-        } else {
-          postgresql_ = null;
-          postgresqlBuilder_ = null;
-        }
-        if (clickhouseBuilder_ == null) {
-          clickhouse_ = null;
-        } else {
-          clickhouse_ = null;
-          clickhouseBuilder_ = null;
-        }
-        if (kafkaBuilder_ == null) {
-          kafka_ = null;
-        } else {
-          kafka_ = null;
-          kafkaBuilder_ = null;
-        }
-        if (s3Builder_ == null) {
-          s3_ = null;
-        } else {
-          s3_ = null;
-          s3Builder_ = null;
-        }
-        if (hbaseBuilder_ == null) {
-          hbase_ = null;
-        } else {
-          hbase_ = null;
-          hbaseBuilder_ = null;
-        }
-        if (ftpBuilder_ == null) {
-          ftp_ = null;
-        } else {
-          ftp_ = null;
-          ftpBuilder_ = null;
-        }
-        if (hdfsBuilder_ == null) {
-          hdfs_ = null;
-        } else {
-          hdfs_ = null;
-          hdfsBuilder_ = null;
-        }
+        name_ = "";
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_DataSourceURL_descriptor;
+        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.internal_static_datasource_SourceKind_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL getDefaultInstanceForType() {
-        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL.getDefaultInstance();
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind getDefaultInstanceForType() {
+        return com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL build() {
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL result = buildPartial();
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind build() {
+        com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12950,48 +8669,9 @@ public final class DataSourcePB {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL buildPartial() {
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL(this);
-        if (mysqlBuilder_ == null) {
-          result.mysql_ = mysql_;
-        } else {
-          result.mysql_ = mysqlBuilder_.build();
-        }
-        if (postgresqlBuilder_ == null) {
-          result.postgresql_ = postgresql_;
-        } else {
-          result.postgresql_ = postgresqlBuilder_.build();
-        }
-        if (clickhouseBuilder_ == null) {
-          result.clickhouse_ = clickhouse_;
-        } else {
-          result.clickhouse_ = clickhouseBuilder_.build();
-        }
-        if (kafkaBuilder_ == null) {
-          result.kafka_ = kafka_;
-        } else {
-          result.kafka_ = kafkaBuilder_.build();
-        }
-        if (s3Builder_ == null) {
-          result.s3_ = s3_;
-        } else {
-          result.s3_ = s3Builder_.build();
-        }
-        if (hbaseBuilder_ == null) {
-          result.hbase_ = hbase_;
-        } else {
-          result.hbase_ = hbaseBuilder_.build();
-        }
-        if (ftpBuilder_ == null) {
-          result.ftp_ = ftp_;
-        } else {
-          result.ftp_ = ftpBuilder_.build();
-        }
-        if (hdfsBuilder_ == null) {
-          result.hdfs_ = hdfs_;
-        } else {
-          result.hdfs_ = hdfsBuilder_.build();
-        }
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind buildPartial() {
+        com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind result = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind(this);
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -13030,39 +8710,19 @@ public final class DataSourcePB {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL) {
-          return mergeFrom((com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL)other);
+        if (other instanceof com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind) {
+          return mergeFrom((com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL other) {
-        if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL.getDefaultInstance()) return this;
-        if (other.hasMysql()) {
-          mergeMysql(other.getMysql());
-        }
-        if (other.hasPostgresql()) {
-          mergePostgresql(other.getPostgresql());
-        }
-        if (other.hasClickhouse()) {
-          mergeClickhouse(other.getClickhouse());
-        }
-        if (other.hasKafka()) {
-          mergeKafka(other.getKafka());
-        }
-        if (other.hasS3()) {
-          mergeS3(other.getS3());
-        }
-        if (other.hasHbase()) {
-          mergeHbase(other.getHbase());
-        }
-        if (other.hasFtp()) {
-          mergeFtp(other.getFtp());
-        }
-        if (other.hasHdfs()) {
-          mergeHdfs(other.getHdfs());
+      public Builder mergeFrom(com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind other) {
+        if (other == com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13079,11 +8739,11 @@ public final class DataSourcePB {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL parsedMessage = null;
+        com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -13093,1316 +8753,105 @@ public final class DataSourcePB {
         return this;
       }
 
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL mysql_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURLOrBuilder> mysqlBuilder_;
+      private java.lang.Object name_ = "";
       /**
        * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
+       * this kind name
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
-       * @return Whether the mysql field is set.
+       * <code>string Name = 1;</code>
+       * @return The name.
        */
-      public boolean hasMysql() {
-        return mysqlBuilder_ != null || mysql_ != null;
-      }
-      /**
-       * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
-       * </pre>
-       *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
-       * @return The mysql.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL getMysql() {
-        if (mysqlBuilder_ == null) {
-          return mysql_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.getDefaultInstance() : mysql_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
         } else {
-          return mysqlBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
        * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
+       * this kind name
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
+       * <code>string Name = 1;</code>
+       * @return The bytes for name.
        */
-      public Builder setMysql(com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL value) {
-        if (mysqlBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          mysql_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
         } else {
-          mysqlBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
        * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
+       * this kind name
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
+       * <code>string Name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
-      public Builder setMysql(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.Builder builderForValue) {
-        if (mysqlBuilder_ == null) {
-          mysql_ = builderForValue.build();
-          onChanged();
-        } else {
-          mysqlBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
-       * </pre>
-       *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
-       */
-      public Builder mergeMysql(com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL value) {
-        if (mysqlBuilder_ == null) {
-          if (mysql_ != null) {
-            mysql_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.newBuilder(mysql_).mergeFrom(value).buildPartial();
-          } else {
-            mysql_ = value;
-          }
-          onChanged();
-        } else {
-          mysqlBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
-       * </pre>
-       *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
-       */
-      public Builder clearMysql() {
-        if (mysqlBuilder_ == null) {
-          mysql_ = null;
-          onChanged();
-        } else {
-          mysql_ = null;
-          mysqlBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
-       * </pre>
-       *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.Builder getMysqlBuilder() {
-        
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
         onChanged();
-        return getMysqlFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
-       * </pre>
-       *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURLOrBuilder getMysqlOrBuilder() {
-        if (mysqlBuilder_ != null) {
-          return mysqlBuilder_.getMessageOrBuilder();
-        } else {
-          return mysql_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.getDefaultInstance() : mysql_;
-        }
-      }
-      /**
-       * <pre>
-       * MySQL Source Connection Info.
-       * &#64;inject_tag: json:"mysql"
-       * </pre>
-       *
-       * <code>.datasource.MySQLURL mysql = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURLOrBuilder> 
-          getMysqlFieldBuilder() {
-        if (mysqlBuilder_ == null) {
-          mysqlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.MySQLURLOrBuilder>(
-                  getMysql(),
-                  getParentForChildren(),
-                  isClean());
-          mysql_ = null;
-        }
-        return mysqlBuilder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL postgresql_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURLOrBuilder> postgresqlBuilder_;
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       * @return Whether the postgresql field is set.
-       */
-      public boolean hasPostgresql() {
-        return postgresqlBuilder_ != null || postgresql_ != null;
-      }
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       * @return The postgresql.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL getPostgresql() {
-        if (postgresqlBuilder_ == null) {
-          return postgresql_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.getDefaultInstance() : postgresql_;
-        } else {
-          return postgresqlBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       */
-      public Builder setPostgresql(com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL value) {
-        if (postgresqlBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          postgresql_ = value;
-          onChanged();
-        } else {
-          postgresqlBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
        * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
+       * this kind name
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
+       * <code>string Name = 1;</code>
+       * @return This builder for chaining.
        */
-      public Builder setPostgresql(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.Builder builderForValue) {
-        if (postgresqlBuilder_ == null) {
-          postgresql_ = builderForValue.build();
-          onChanged();
-        } else {
-          postgresqlBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       */
-      public Builder mergePostgresql(com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL value) {
-        if (postgresqlBuilder_ == null) {
-          if (postgresql_ != null) {
-            postgresql_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.newBuilder(postgresql_).mergeFrom(value).buildPartial();
-          } else {
-            postgresql_ = value;
-          }
-          onChanged();
-        } else {
-          postgresqlBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       */
-      public Builder clearPostgresql() {
-        if (postgresqlBuilder_ == null) {
-          postgresql_ = null;
-          onChanged();
-        } else {
-          postgresql_ = null;
-          postgresqlBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.Builder getPostgresqlBuilder() {
+      public Builder clearName() {
         
+        name_ = getDefaultInstance().getName();
         onChanged();
-        return getPostgresqlFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURLOrBuilder getPostgresqlOrBuilder() {
-        if (postgresqlBuilder_ != null) {
-          return postgresqlBuilder_.getMessageOrBuilder();
-        } else {
-          return postgresql_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.getDefaultInstance() : postgresql_;
-        }
-      }
-      /**
-       * <pre>
-       * PostgreSQL Source Connection Info.
-       * &#64;inject_tag: json:"postgresql"
-       * </pre>
-       *
-       * <code>.datasource.PostgreSQLURL postgresql = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURLOrBuilder> 
-          getPostgresqlFieldBuilder() {
-        if (postgresqlBuilder_ == null) {
-          postgresqlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.PostgreSQLURLOrBuilder>(
-                  getPostgresql(),
-                  getParentForChildren(),
-                  isClean());
-          postgresql_ = null;
-        }
-        return postgresqlBuilder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL clickhouse_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder> clickhouseBuilder_;
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       * @return Whether the clickhouse field is set.
-       */
-      public boolean hasClickhouse() {
-        return clickhouseBuilder_ != null || clickhouse_ != null;
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       * @return The clickhouse.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse() {
-        if (clickhouseBuilder_ == null) {
-          return clickhouse_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
-        } else {
-          return clickhouseBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       */
-      public Builder setClickhouse(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL value) {
-        if (clickhouseBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          clickhouse_ = value;
-          onChanged();
-        } else {
-          clickhouseBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
        * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
+       * this kind name
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
+       * <code>string Name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
-      public Builder setClickhouse(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder builderForValue) {
-        if (clickhouseBuilder_ == null) {
-          clickhouse_ = builderForValue.build();
-          onChanged();
-        } else {
-          clickhouseBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       */
-      public Builder mergeClickhouse(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL value) {
-        if (clickhouseBuilder_ == null) {
-          if (clickhouse_ != null) {
-            clickhouse_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.newBuilder(clickhouse_).mergeFrom(value).buildPartial();
-          } else {
-            clickhouse_ = value;
-          }
-          onChanged();
-        } else {
-          clickhouseBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       */
-      public Builder clearClickhouse() {
-        if (clickhouseBuilder_ == null) {
-          clickhouse_ = null;
-          onChanged();
-        } else {
-          clickhouse_ = null;
-          clickhouseBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder getClickhouseBuilder() {
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
+        name_ = value;
         onChanged();
-        return getClickhouseFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder() {
-        if (clickhouseBuilder_ != null) {
-          return clickhouseBuilder_.getMessageOrBuilder();
-        } else {
-          return clickhouse_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
-        }
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder> 
-          getClickhouseFieldBuilder() {
-        if (clickhouseBuilder_ == null) {
-          clickhouseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder>(
-                  getClickhouse(),
-                  getParentForChildren(),
-                  isClean());
-          clickhouse_ = null;
-        }
-        return clickhouseBuilder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL kafka_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder> kafkaBuilder_;
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       * @return Whether the kafka field is set.
-       */
-      public boolean hasKafka() {
-        return kafkaBuilder_ != null || kafka_ != null;
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       * @return The kafka.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL getKafka() {
-        if (kafkaBuilder_ == null) {
-          return kafka_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.getDefaultInstance() : kafka_;
-        } else {
-          return kafkaBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       */
-      public Builder setKafka(com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL value) {
-        if (kafkaBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          kafka_ = value;
-          onChanged();
-        } else {
-          kafkaBuilder_.setMessage(value);
-        }
-
         return this;
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       */
-      public Builder setKafka(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder builderForValue) {
-        if (kafkaBuilder_ == null) {
-          kafka_ = builderForValue.build();
-          onChanged();
-        } else {
-          kafkaBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       */
-      public Builder mergeKafka(com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL value) {
-        if (kafkaBuilder_ == null) {
-          if (kafka_ != null) {
-            kafka_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.newBuilder(kafka_).mergeFrom(value).buildPartial();
-          } else {
-            kafka_ = value;
-          }
-          onChanged();
-        } else {
-          kafkaBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       */
-      public Builder clearKafka() {
-        if (kafkaBuilder_ == null) {
-          kafka_ = null;
-          onChanged();
-        } else {
-          kafka_ = null;
-          kafkaBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder getKafkaBuilder() {
-        
-        onChanged();
-        return getKafkaFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder getKafkaOrBuilder() {
-        if (kafkaBuilder_ != null) {
-          return kafkaBuilder_.getMessageOrBuilder();
-        } else {
-          return kafka_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.getDefaultInstance() : kafka_;
-        }
-      }
-      /**
-       * <pre>
-       * Kafka Source Connection Info.
-       * &#64;inject_tag: json:"kafka"
-       * </pre>
-       *
-       * <code>.datasource.KafkaURL kafka = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder> 
-          getKafkaFieldBuilder() {
-        if (kafkaBuilder_ == null) {
-          kafkaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder>(
-                  getKafka(),
-                  getParentForChildren(),
-                  isClean());
-          kafka_ = null;
-        }
-        return kafkaBuilder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL s3_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder> s3Builder_;
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       * @return Whether the s3 field is set.
-       */
-      public boolean hasS3() {
-        return s3Builder_ != null || s3_ != null;
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       * @return The s3.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL getS3() {
-        if (s3Builder_ == null) {
-          return s3_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.getDefaultInstance() : s3_;
-        } else {
-          return s3Builder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       */
-      public Builder setS3(com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL value) {
-        if (s3Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          s3_ = value;
-          onChanged();
-        } else {
-          s3Builder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       */
-      public Builder setS3(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder builderForValue) {
-        if (s3Builder_ == null) {
-          s3_ = builderForValue.build();
-          onChanged();
-        } else {
-          s3Builder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       */
-      public Builder mergeS3(com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL value) {
-        if (s3Builder_ == null) {
-          if (s3_ != null) {
-            s3_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.newBuilder(s3_).mergeFrom(value).buildPartial();
-          } else {
-            s3_ = value;
-          }
-          onChanged();
-        } else {
-          s3Builder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       */
-      public Builder clearS3() {
-        if (s3Builder_ == null) {
-          s3_ = null;
-          onChanged();
-        } else {
-          s3_ = null;
-          s3Builder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder getS3Builder() {
-        
-        onChanged();
-        return getS3FieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder getS3OrBuilder() {
-        if (s3Builder_ != null) {
-          return s3Builder_.getMessageOrBuilder();
-        } else {
-          return s3_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.getDefaultInstance() : s3_;
-        }
-      }
-      /**
-       * <pre>
-       * S3 Source Connection Info.
-       * &#64;inject_tag: json:"s3"
-       * </pre>
-       *
-       * <code>.datasource.S3URL s3 = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder> 
-          getS3FieldBuilder() {
-        if (s3Builder_ == null) {
-          s3Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder>(
-                  getS3(),
-                  getParentForChildren(),
-                  isClean());
-          s3_ = null;
-        }
-        return s3Builder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL hbase_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURLOrBuilder> hbaseBuilder_;
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       * @return Whether the hbase field is set.
-       */
-      public boolean hasHbase() {
-        return hbaseBuilder_ != null || hbase_ != null;
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       * @return The hbase.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL getHbase() {
-        if (hbaseBuilder_ == null) {
-          return hbase_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.getDefaultInstance() : hbase_;
-        } else {
-          return hbaseBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       */
-      public Builder setHbase(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL value) {
-        if (hbaseBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hbase_ = value;
-          onChanged();
-        } else {
-          hbaseBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       */
-      public Builder setHbase(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.Builder builderForValue) {
-        if (hbaseBuilder_ == null) {
-          hbase_ = builderForValue.build();
-          onChanged();
-        } else {
-          hbaseBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       */
-      public Builder mergeHbase(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL value) {
-        if (hbaseBuilder_ == null) {
-          if (hbase_ != null) {
-            hbase_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.newBuilder(hbase_).mergeFrom(value).buildPartial();
-          } else {
-            hbase_ = value;
-          }
-          onChanged();
-        } else {
-          hbaseBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       */
-      public Builder clearHbase() {
-        if (hbaseBuilder_ == null) {
-          hbase_ = null;
-          onChanged();
-        } else {
-          hbase_ = null;
-          hbaseBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.Builder getHbaseBuilder() {
-        
-        onChanged();
-        return getHbaseFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURLOrBuilder getHbaseOrBuilder() {
-        if (hbaseBuilder_ != null) {
-          return hbaseBuilder_.getMessageOrBuilder();
-        } else {
-          return hbase_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.getDefaultInstance() : hbase_;
-        }
-      }
-      /**
-       * <pre>
-       * Hbase Source Connection Info.
-       * &#64;inject_tag: json:"hbase"
-       * </pre>
-       *
-       * <code>.datasource.HBaseURL hbase = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURLOrBuilder> 
-          getHbaseFieldBuilder() {
-        if (hbaseBuilder_ == null) {
-          hbaseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURLOrBuilder>(
-                  getHbase(),
-                  getParentForChildren(),
-                  isClean());
-          hbase_ = null;
-        }
-        return hbaseBuilder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL ftp_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURLOrBuilder> ftpBuilder_;
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       * @return Whether the ftp field is set.
-       */
-      public boolean hasFtp() {
-        return ftpBuilder_ != null || ftp_ != null;
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       * @return The ftp.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL getFtp() {
-        if (ftpBuilder_ == null) {
-          return ftp_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.getDefaultInstance() : ftp_;
-        } else {
-          return ftpBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       */
-      public Builder setFtp(com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL value) {
-        if (ftpBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ftp_ = value;
-          onChanged();
-        } else {
-          ftpBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       */
-      public Builder setFtp(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.Builder builderForValue) {
-        if (ftpBuilder_ == null) {
-          ftp_ = builderForValue.build();
-          onChanged();
-        } else {
-          ftpBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       */
-      public Builder mergeFtp(com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL value) {
-        if (ftpBuilder_ == null) {
-          if (ftp_ != null) {
-            ftp_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.newBuilder(ftp_).mergeFrom(value).buildPartial();
-          } else {
-            ftp_ = value;
-          }
-          onChanged();
-        } else {
-          ftpBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       */
-      public Builder clearFtp() {
-        if (ftpBuilder_ == null) {
-          ftp_ = null;
-          onChanged();
-        } else {
-          ftp_ = null;
-          ftpBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.Builder getFtpBuilder() {
-        
-        onChanged();
-        return getFtpFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURLOrBuilder getFtpOrBuilder() {
-        if (ftpBuilder_ != null) {
-          return ftpBuilder_.getMessageOrBuilder();
-        } else {
-          return ftp_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.getDefaultInstance() : ftp_;
-        }
-      }
-      /**
-       * <pre>
-       * Ftp Source Connection Info.
-       * &#64;inject_tag: json:"ftp"
-       * </pre>
-       *
-       * <code>.datasource.FtpURL ftp = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURLOrBuilder> 
-          getFtpFieldBuilder() {
-        if (ftpBuilder_ == null) {
-          ftpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.FtpURLOrBuilder>(
-                  getFtp(),
-                  getParentForChildren(),
-                  isClean());
-          ftp_ = null;
-        }
-        return ftpBuilder_;
-      }
-
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL hdfs_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURLOrBuilder> hdfsBuilder_;
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       * @return Whether the hdfs field is set.
-       */
-      public boolean hasHdfs() {
-        return hdfsBuilder_ != null || hdfs_ != null;
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       * @return The hdfs.
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL getHdfs() {
-        if (hdfsBuilder_ == null) {
-          return hdfs_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.getDefaultInstance() : hdfs_;
-        } else {
-          return hdfsBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       */
-      public Builder setHdfs(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL value) {
-        if (hdfsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hdfs_ = value;
-          onChanged();
-        } else {
-          hdfsBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       */
-      public Builder setHdfs(
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.Builder builderForValue) {
-        if (hdfsBuilder_ == null) {
-          hdfs_ = builderForValue.build();
-          onChanged();
-        } else {
-          hdfsBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       */
-      public Builder mergeHdfs(com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL value) {
-        if (hdfsBuilder_ == null) {
-          if (hdfs_ != null) {
-            hdfs_ =
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.newBuilder(hdfs_).mergeFrom(value).buildPartial();
-          } else {
-            hdfs_ = value;
-          }
-          onChanged();
-        } else {
-          hdfsBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       */
-      public Builder clearHdfs() {
-        if (hdfsBuilder_ == null) {
-          hdfs_ = null;
-          onChanged();
-        } else {
-          hdfs_ = null;
-          hdfsBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.Builder getHdfsBuilder() {
-        
-        onChanged();
-        return getHdfsFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       */
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURLOrBuilder getHdfsOrBuilder() {
-        if (hdfsBuilder_ != null) {
-          return hdfsBuilder_.getMessageOrBuilder();
-        } else {
-          return hdfs_ == null ?
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.getDefaultInstance() : hdfs_;
-        }
-      }
-      /**
-       * <pre>
-       * HDFS Source Connection Info.
-       * &#64;inject_tag: json:"hdfs"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL hdfs = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURLOrBuilder> 
-          getHdfsFieldBuilder() {
-        if (hdfsBuilder_ == null) {
-          hdfsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.HDFSURLOrBuilder>(
-                  getHdfs(),
-                  getParentForChildren(),
-                  isClean());
-          hdfs_ = null;
-        }
-        return hdfsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14417,56 +8866,46 @@ public final class DataSourcePB {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:datasource.DataSourceURL)
+      // @@protoc_insertion_point(builder_scope:datasource.SourceKind)
     }
 
-    // @@protoc_insertion_point(class_scope:datasource.DataSourceURL)
-    private static final com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:datasource.SourceKind)
+    private static final com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind();
     }
 
-    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL getDefaultInstance() {
+    public static com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DataSourceURL>
-        PARSER = new com.google.protobuf.AbstractParser<DataSourceURL>() {
+    private static final com.google.protobuf.Parser<SourceKind>
+        PARSER = new com.google.protobuf.AbstractParser<SourceKind>() {
       @java.lang.Override
-      public DataSourceURL parsePartialFrom(
+      public SourceKind parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DataSourceURL(input, extensionRegistry);
+        return new SourceKind(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DataSourceURL> parser() {
+    public static com.google.protobuf.Parser<SourceKind> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DataSourceURL> getParserForType() {
+    public com.google.protobuf.Parser<SourceKind> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.DataSourceURL getDefaultInstanceForType() {
+    public com.dataomnis.gproto.datasourcepdb.DataSourcePB.SourceKind getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_datasource_DatasourceNetwork_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_datasource_DatasourceNetwork_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_datasource_DatasourceNetwork_VpcNetwork_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_datasource_DatasourceNetwork_VpcNetwork_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datasource_MySQLURL_descriptor;
   private static final 
@@ -14508,15 +8947,15 @@ public final class DataSourcePB {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datasource_HDFSURL_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_datasource_HDFSURL_HDFSNodeURL_descriptor;
+    internal_static_datasource_HDFSURL_NodeURL_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_datasource_HDFSURL_HDFSNodeURL_fieldAccessorTable;
+      internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_datasource_DataSourceURL_descriptor;
+    internal_static_datasource_SourceKind_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_datasource_DataSourceURL_fieldAccessorTable;
+      internal_static_datasource_SourceKind_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -14529,59 +8968,36 @@ public final class DataSourcePB {
       "\n\026proto/datasource.proto\022\ndatasource\0321gi" +
       "thub.com/yu31/proto-go-plugin/proto/gosq" +
       "l.proto\0325github.com/yu31/proto-go-plugin" +
-      "/proto/validator.proto\"\372\001\n\021DatasourceNet" +
-      "work\022?\n\004type\030\001 \001(\0162\".datasource.Datasour" +
-      "ceNetwork.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\013vpc_net" +
-      "work\030\002 \001(\0132(.datasource.DatasourceNetwor" +
-      "k.VpcNetworkB\004\342\337\037\000\032.\n\nVpcNetwork\022 \n\nnetw" +
-      "ork_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\'\n\004Type\022\r\n\tTy" +
-      "peUnset\020\000\022\007\n\003Eip\020\001\022\007\n\003Vpc\020\002:\006\312\262\004\002\n\000\"\353\001\n\010" +
-      "MySQLURL\022\035\n\004user\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022" +
-      "!\n\010password\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004ho" +
-      "st\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\004 \001(\005B" +
-      "\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022!\n\010database\030\005 \001(\tB\017\342\337\037\013" +
-      "\022\t\302\001\006\220\002\001\230\002@\0224\n\007network\030\006 \001(\0132\035.datasourc" +
-      "e.DatasourceNetworkB\004\342\337\037\000:\006\312\262\004\002\n\000\"\360\001\n\rPo" +
-      "stgreSQLURL\022\035\n\004user\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230" +
-      "\002@\022!\n\010password\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n" +
-      "\004host\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\004 \001" +
-      "(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022!\n\010database\030\005 \001(\tB\017\342" +
-      "\337\037\013\022\t\302\001\006\220\002\001\230\002@\0224\n\007network\030\006 \001(\0132\035.dataso" +
-      "urce.DatasourceNetworkB\004\342\337\037\000:\006\312\262\004\002\n\000\"\360\001\n" +
-      "\rClickHouseURL\022\035\n\004user\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220" +
-      "\002\001\230\002@\022!\n\010password\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
-      "\022\035\n\004host\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030" +
-      "\004 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022!\n\010database\030\005 \001(\t" +
-      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\0224\n\007network\030\006 \001(\0132\035.dat" +
-      "asource.DatasourceNetworkB\004\342\337\037\000:\006\312\262\004\002\n\000\"" +
-      "q\n\010KafkaURL\022\'\n\rkafka_brokers\030\001 \001(\tB\020\342\337\037\014" +
-      "\022\n\302\001\007\220\002\001\230\002\200\010\0224\n\007network\030\002 \001(\0132\035.datasour" +
-      "ce.DatasourceNetworkB\004\342\337\037\000:\006\312\262\004\002\n\000\"\017\n\005S3" +
-      "URL:\006\312\262\004\002\n\000\"\217\001\n\010HBaseURL\022#\n\tzookeeper\030\001 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010\022 \n\006z_node\030\002 \001(\tB\020\342" +
-      "\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010\0224\n\007network\030\003 \001(\0132\035.datas" +
-      "ource.DatasourceNetworkB\004\342\337\037\000:\006\312\262\004\002\n\000\"\306\001" +
-      "\n\006FtpURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022" +
-      "\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003" +
-      " \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB" +
-      "\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\0224\n\007network\030\005 \001(\0132\035.data" +
-      "source.DatasourceNetworkB\004\342\337\037\000:\006\312\262\004\002\n\000\"\303" +
-      "\001\n\007HDFSURL\022.\n\005nodes\030\001 \001(\0132\037.datasource.H" +
-      "DFSURL.HDFSNodeURL\022.\n\007network\030\002 \001(\0132\035.da" +
-      "tasource.DatasourceNetwork\032P\n\013HDFSNodeUR" +
-      "L\022\"\n\tname_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n" +
-      "\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000:\006\312\262\004\002\n\000\"\307\002\n" +
-      "\rDataSourceURL\022#\n\005mysql\030\001 \001(\0132\024.datasour" +
-      "ce.MySQLURL\022-\n\npostgresql\030\002 \001(\0132\031.dataso" +
-      "urce.PostgreSQLURL\022-\n\nclickhouse\030\003 \001(\0132\031" +
-      ".datasource.ClickHouseURL\022#\n\005kafka\030\004 \001(\013" +
-      "2\024.datasource.KafkaURL\022\035\n\002s3\030\005 \001(\0132\021.dat" +
-      "asource.S3URL\022#\n\005hbase\030\006 \001(\0132\024.datasourc" +
-      "e.HBaseURL\022\037\n\003ftp\030\007 \001(\0132\022.datasource.Ftp" +
-      "URL\022!\n\004hdfs\030\010 \001(\0132\023.datasource.HDFSURL:\006" +
-      "\312\262\004\002\n\000Bf\n\"com.dataomnis.gproto.datasourc" +
-      "epdbB\014DataSourcePBP\000Z0github.com/DataWor" +
-      "kbench/gproto/pkg/datasourcepbb\006proto3"
+      "/proto/validator.proto\"\265\001\n\010MySQLURL\022\035\n\004h" +
+      "ost\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005" +
+      "B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302" +
+      "\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001" +
+      "\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006" +
+      "\312\262\004\002\n\000\"\272\001\n\rPostgreSQLURL\022\035\n\004host\030\001 \001(\tB\017" +
+      "\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\006" +
+      "8\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n" +
+      "\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010data" +
+      "base\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\272\001\n\r" +
+      "ClickHouseURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002" +
+      "\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004u" +
+      "ser\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004" +
+      " \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\";\n\010KafkaURL\022\'\n\r" +
+      "kafka_brokers\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010:\006\312" +
+      "\262\004\002\n\000\"\017\n\005S3URL:\006\312\262\004\002\n\000\"Y\n\010HBaseURL\022\"\n\010zk" +
+      "_hosts\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010\022!\n\007zk_pat" +
+      "h\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010:\006\312\262\004\002\n\000\"\220\001\n\006Ft" +
+      "pURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004p" +
+      "ort\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\230\001\n\007HDFSURL\0227\n\005node" +
+      "s\030\001 \001(\0132\033.datasource.HDFSURL.NodeURLB\013\342\337" +
+      "\037\007\022\005\342\001\002\020\001\032L\n\007NodeURL\022\"\n\tname_node\030\001 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001" +
+      "\0068\200\200\004@\000:\006\312\262\004\002\n\000\"\032\n\nSourceKind\022\014\n\004Name\030\001 " +
+      "\001(\tBf\n\"com.dataomnis.gproto.datasourcepd" +
+      "bB\014DataSourcePBP\000Z0github.com/DataWorkbe" +
+      "nch/gproto/pkg/datasourcepbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14589,78 +9005,66 @@ public final class DataSourcePB {
           com.github.yu31.gosqlpb.GoSQLPB.getDescriptor(),
           com.github.yu31.validatorpb.ValidatorPB.getDescriptor(),
         });
-    internal_static_datasource_DatasourceNetwork_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_datasource_DatasourceNetwork_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_DatasourceNetwork_descriptor,
-        new java.lang.String[] { "Type", "VpcNetwork", });
-    internal_static_datasource_DatasourceNetwork_VpcNetwork_descriptor =
-      internal_static_datasource_DatasourceNetwork_descriptor.getNestedTypes().get(0);
-    internal_static_datasource_DatasourceNetwork_VpcNetwork_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_DatasourceNetwork_VpcNetwork_descriptor,
-        new java.lang.String[] { "NetworkId", });
     internal_static_datasource_MySQLURL_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_datasource_MySQLURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_MySQLURL_descriptor,
-        new java.lang.String[] { "User", "Password", "Host", "Port", "Database", "Network", });
+        new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
     internal_static_datasource_PostgreSQLURL_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_datasource_PostgreSQLURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_PostgreSQLURL_descriptor,
-        new java.lang.String[] { "User", "Password", "Host", "Port", "Database", "Network", });
+        new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
     internal_static_datasource_ClickHouseURL_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_datasource_ClickHouseURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_ClickHouseURL_descriptor,
-        new java.lang.String[] { "User", "Password", "Host", "Port", "Database", "Network", });
+        new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
     internal_static_datasource_KafkaURL_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_datasource_KafkaURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_KafkaURL_descriptor,
-        new java.lang.String[] { "KafkaBrokers", "Network", });
+        new java.lang.String[] { "KafkaBrokers", });
     internal_static_datasource_S3URL_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_datasource_S3URL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_S3URL_descriptor,
         new java.lang.String[] { });
     internal_static_datasource_HBaseURL_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_datasource_HBaseURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_HBaseURL_descriptor,
-        new java.lang.String[] { "Zookeeper", "ZNode", "Network", });
+        new java.lang.String[] { "ZkHosts", "ZkPath", });
     internal_static_datasource_FtpURL_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_datasource_FtpURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_FtpURL_descriptor,
-        new java.lang.String[] { "Host", "Port", "User", "Password", "Network", });
+        new java.lang.String[] { "Host", "Port", "User", "Password", });
     internal_static_datasource_HDFSURL_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_datasource_HDFSURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_HDFSURL_descriptor,
-        new java.lang.String[] { "Nodes", "Network", });
-    internal_static_datasource_HDFSURL_HDFSNodeURL_descriptor =
+        new java.lang.String[] { "Nodes", });
+    internal_static_datasource_HDFSURL_NodeURL_descriptor =
       internal_static_datasource_HDFSURL_descriptor.getNestedTypes().get(0);
-    internal_static_datasource_HDFSURL_HDFSNodeURL_fieldAccessorTable = new
+    internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_HDFSURL_HDFSNodeURL_descriptor,
+        internal_static_datasource_HDFSURL_NodeURL_descriptor,
         new java.lang.String[] { "NameNode", "Port", });
-    internal_static_datasource_DataSourceURL_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_datasource_DataSourceURL_fieldAccessorTable = new
+    internal_static_datasource_SourceKind_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_datasource_SourceKind_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_DataSourceURL_descriptor,
-        new java.lang.String[] { "Mysql", "Postgresql", "Clickhouse", "Kafka", "S3", "Hbase", "Ftp", "Hdfs", });
+        internal_static_datasource_SourceKind_descriptor,
+        new java.lang.String[] { "Name", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.yu31.gosqlpb.GoSQLPB.serialize);

@@ -15,314 +15,345 @@ public final class SourcemanagerGrpc {
   public static final String SERVICE_NAME = "smpb.Sourcemanager";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getCreateMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListDataSources,
+      com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources> getListDataSourcesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Create",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.CreateSource.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListDataSources",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.ListDataSources.class,
+      responseType = com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListDataSources,
+      com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources> getListDataSourcesMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListDataSources, com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources> getListDataSourcesMethod;
+    if ((getListDataSourcesMethod = SourcemanagerGrpc.getListDataSourcesMethod) == null) {
+      synchronized (SourcemanagerGrpc.class) {
+        if ((getListDataSourcesMethod = SourcemanagerGrpc.getListDataSourcesMethod) == null) {
+          SourcemanagerGrpc.getListDataSourcesMethod = getListDataSourcesMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListDataSources, com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDataSources"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.requestpb.RequestPB.ListDataSources.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources.getDefaultInstance()))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("ListDataSources"))
+              .build();
+        }
+      }
+    }
+    return getListDataSourcesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource,
+      com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource> getCreateDataSourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDataSource",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource.class,
+      responseType = com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource,
+      com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource> getCreateDataSourceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource, com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource> getCreateDataSourceMethod;
+    if ((getCreateDataSourceMethod = SourcemanagerGrpc.getCreateDataSourceMethod) == null) {
+      synchronized (SourcemanagerGrpc.class) {
+        if ((getCreateDataSourceMethod = SourcemanagerGrpc.getCreateDataSourceMethod) == null) {
+          SourcemanagerGrpc.getCreateDataSourceMethod = getCreateDataSourceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource, com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDataSource"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource.getDefaultInstance()))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("CreateDataSource"))
+              .build();
+        }
+      }
+    }
+    return getCreateDataSourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateDataSourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDataSource",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource.class,
       responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getCreateMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getCreateMethod;
-    if ((getCreateMethod = SourcemanagerGrpc.getCreateMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateDataSourceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateDataSourceMethod;
+    if ((getUpdateDataSourceMethod = SourcemanagerGrpc.getUpdateDataSourceMethod) == null) {
       synchronized (SourcemanagerGrpc.class) {
-        if ((getCreateMethod = SourcemanagerGrpc.getCreateMethod) == null) {
-          SourcemanagerGrpc.getCreateMethod = getCreateMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.CreateSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
+        if ((getUpdateDataSourceMethod = SourcemanagerGrpc.getUpdateDataSourceMethod) == null) {
+          SourcemanagerGrpc.getUpdateDataSourceMethod = getUpdateDataSourceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Create"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDataSource"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.CreateSource.getDefaultInstance()))
+                  com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("Create"))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("UpdateDataSource"))
               .build();
         }
       }
     }
-    return getCreateMethod;
+    return getUpdateDataSourceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource,
+      com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource> getDescribeDataSourceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Update",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.UpdateSource.class,
+      fullMethodName = SERVICE_NAME + '/' + "DescribeDataSource",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource.class,
+      responseType = com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource,
+      com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource> getDescribeDataSourceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource, com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource> getDescribeDataSourceMethod;
+    if ((getDescribeDataSourceMethod = SourcemanagerGrpc.getDescribeDataSourceMethod) == null) {
+      synchronized (SourcemanagerGrpc.class) {
+        if ((getDescribeDataSourceMethod = SourcemanagerGrpc.getDescribeDataSourceMethod) == null) {
+          SourcemanagerGrpc.getDescribeDataSourceMethod = getDescribeDataSourceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource, com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeDataSource"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource.getDefaultInstance()))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("DescribeDataSource"))
+              .build();
+        }
+      }
+    }
+    return getDescribeDataSourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableDataSourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableDataSources",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources.class,
       responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateMethod;
-    if ((getUpdateMethod = SourcemanagerGrpc.getUpdateMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableDataSourcesMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableDataSourcesMethod;
+    if ((getDisableDataSourcesMethod = SourcemanagerGrpc.getDisableDataSourcesMethod) == null) {
       synchronized (SourcemanagerGrpc.class) {
-        if ((getUpdateMethod = SourcemanagerGrpc.getUpdateMethod) == null) {
-          SourcemanagerGrpc.getUpdateMethod = getUpdateMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.UpdateSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
+        if ((getDisableDataSourcesMethod = SourcemanagerGrpc.getDisableDataSourcesMethod) == null) {
+          SourcemanagerGrpc.getDisableDataSourcesMethod = getDisableDataSourcesMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Update"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableDataSources"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.UpdateSource.getDefaultInstance()))
+                  com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("Update"))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("DisableDataSources"))
               .build();
         }
       }
     }
-    return getUpdateMethod;
+    return getDisableDataSourcesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeSource,
-      com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource> getDescribeMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableDataSourcesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Describe",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.DescribeSource.class,
-      responseType = com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeSource,
-      com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource> getDescribeMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeSource, com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource> getDescribeMethod;
-    if ((getDescribeMethod = SourcemanagerGrpc.getDescribeMethod) == null) {
-      synchronized (SourcemanagerGrpc.class) {
-        if ((getDescribeMethod = SourcemanagerGrpc.getDescribeMethod) == null) {
-          SourcemanagerGrpc.getDescribeMethod = getDescribeMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DescribeSource, com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Describe"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.DescribeSource.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("Describe"))
-              .build();
-        }
-      }
-    }
-    return getDescribeMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Enable",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.EnableSource.class,
+      fullMethodName = SERVICE_NAME + '/' + "EnableDataSources",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources.class,
       responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableMethod;
-    if ((getEnableMethod = SourcemanagerGrpc.getEnableMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableDataSourcesMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableDataSourcesMethod;
+    if ((getEnableDataSourcesMethod = SourcemanagerGrpc.getEnableDataSourcesMethod) == null) {
       synchronized (SourcemanagerGrpc.class) {
-        if ((getEnableMethod = SourcemanagerGrpc.getEnableMethod) == null) {
-          SourcemanagerGrpc.getEnableMethod = getEnableMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.EnableSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
+        if ((getEnableDataSourcesMethod = SourcemanagerGrpc.getEnableDataSourcesMethod) == null) {
+          SourcemanagerGrpc.getEnableDataSourcesMethod = getEnableDataSourcesMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Enable"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableDataSources"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.EnableSource.getDefaultInstance()))
+                  com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("Enable"))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("EnableDataSources"))
               .build();
         }
       }
     }
-    return getEnableMethod;
+    return getEnableDataSourcesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteDataSourcesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Disable",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.DisableSource.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDataSources",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources.class,
       responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableMethod;
-    if ((getDisableMethod = SourcemanagerGrpc.getDisableMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources,
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteDataSourcesMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteDataSourcesMethod;
+    if ((getDeleteDataSourcesMethod = SourcemanagerGrpc.getDeleteDataSourcesMethod) == null) {
       synchronized (SourcemanagerGrpc.class) {
-        if ((getDisableMethod = SourcemanagerGrpc.getDisableMethod) == null) {
-          SourcemanagerGrpc.getDisableMethod = getDisableMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DisableSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
+        if ((getDeleteDataSourcesMethod = SourcemanagerGrpc.getDeleteDataSourcesMethod) == null) {
+          SourcemanagerGrpc.getDeleteDataSourcesMethod = getDeleteDataSourcesMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Disable"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDataSources"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.DisableSource.getDefaultInstance()))
+                  com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("Disable"))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("DeleteDataSources"))
               .build();
         }
       }
     }
-    return getDisableMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListSource,
-      com.dataomnis.gproto.responsepb.ResponsePB.ListSource> getListMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "List",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.ListSource.class,
-      responseType = com.dataomnis.gproto.responsepb.ResponsePB.ListSource.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListSource,
-      com.dataomnis.gproto.responsepb.ResponsePB.ListSource> getListMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListSource, com.dataomnis.gproto.responsepb.ResponsePB.ListSource> getListMethod;
-    if ((getListMethod = SourcemanagerGrpc.getListMethod) == null) {
-      synchronized (SourcemanagerGrpc.class) {
-        if ((getListMethod = SourcemanagerGrpc.getListMethod) == null) {
-          SourcemanagerGrpc.getListMethod = getListMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListSource, com.dataomnis.gproto.responsepb.ResponsePB.ListSource>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "List"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.ListSource.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.responsepb.ResponsePB.ListSource.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("List"))
-              .build();
-        }
-      }
-    }
-    return getListMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Delete",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.DeleteSource.class,
-      responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteMethod;
-    if ((getDeleteMethod = SourcemanagerGrpc.getDeleteMethod) == null) {
-      synchronized (SourcemanagerGrpc.class) {
-        if ((getDeleteMethod = SourcemanagerGrpc.getDeleteMethod) == null) {
-          SourcemanagerGrpc.getDeleteMethod = getDeleteMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DeleteSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Delete"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.DeleteSource.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("Delete"))
-              .build();
-        }
-      }
-    }
-    return getDeleteMethod;
+    return getDeleteDataSourcesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteAllMethod;
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteDataSourcesBySpaceIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteAll",
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDataSourcesBySpaceId",
       requestType = com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces.class,
       responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteAllMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteAllMethod;
-    if ((getDeleteAllMethod = SourcemanagerGrpc.getDeleteAllMethod) == null) {
+      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteDataSourcesBySpaceIdMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteDataSourcesBySpaceIdMethod;
+    if ((getDeleteDataSourcesBySpaceIdMethod = SourcemanagerGrpc.getDeleteDataSourcesBySpaceIdMethod) == null) {
       synchronized (SourcemanagerGrpc.class) {
-        if ((getDeleteAllMethod = SourcemanagerGrpc.getDeleteAllMethod) == null) {
-          SourcemanagerGrpc.getDeleteAllMethod = getDeleteAllMethod =
+        if ((getDeleteDataSourcesBySpaceIdMethod = SourcemanagerGrpc.getDeleteDataSourcesBySpaceIdMethod) == null) {
+          SourcemanagerGrpc.getDeleteDataSourcesBySpaceIdMethod = getDeleteDataSourcesBySpaceIdMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAll"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDataSourcesBySpaceId"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("DeleteAll"))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("DeleteDataSourcesBySpaceId"))
               .build();
         }
       }
     }
-    return getDeleteAllMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.PingSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getPingSourceMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PingSource",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.PingSource.class,
-      responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.PingSource,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getPingSourceMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.PingSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getPingSourceMethod;
-    if ((getPingSourceMethod = SourcemanagerGrpc.getPingSourceMethod) == null) {
-      synchronized (SourcemanagerGrpc.class) {
-        if ((getPingSourceMethod = SourcemanagerGrpc.getPingSourceMethod) == null) {
-          SourcemanagerGrpc.getPingSourceMethod = getPingSourceMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.PingSource, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PingSource"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.PingSource.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("PingSource"))
-              .build();
-        }
-      }
-    }
-    return getPingSourceMethod;
+    return getDeleteDataSourcesBySpaceIdMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct,
-      com.dataomnis.gproto.responsepb.ResponsePB.SourceKind> getSourceKindMethod;
+      com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds> getDescribeDataSourceKindsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SourceKind",
+      fullMethodName = SERVICE_NAME + '/' + "DescribeDataSourceKinds",
       requestType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
-      responseType = com.dataomnis.gproto.responsepb.ResponsePB.SourceKind.class,
+      responseType = com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct,
-      com.dataomnis.gproto.responsepb.ResponsePB.SourceKind> getSourceKindMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct, com.dataomnis.gproto.responsepb.ResponsePB.SourceKind> getSourceKindMethod;
-    if ((getSourceKindMethod = SourcemanagerGrpc.getSourceKindMethod) == null) {
+      com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds> getDescribeDataSourceKindsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct, com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds> getDescribeDataSourceKindsMethod;
+    if ((getDescribeDataSourceKindsMethod = SourcemanagerGrpc.getDescribeDataSourceKindsMethod) == null) {
       synchronized (SourcemanagerGrpc.class) {
-        if ((getSourceKindMethod = SourcemanagerGrpc.getSourceKindMethod) == null) {
-          SourcemanagerGrpc.getSourceKindMethod = getSourceKindMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct, com.dataomnis.gproto.responsepb.ResponsePB.SourceKind>newBuilder()
+        if ((getDescribeDataSourceKindsMethod = SourcemanagerGrpc.getDescribeDataSourceKindsMethod) == null) {
+          SourcemanagerGrpc.getDescribeDataSourceKindsMethod = getDescribeDataSourceKindsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct, com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SourceKind"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeDataSourceKinds"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.responsepb.ResponsePB.SourceKind.getDefaultInstance()))
-              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("SourceKind"))
+                  com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds.getDefaultInstance()))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("DescribeDataSourceKinds"))
               .build();
         }
       }
     }
-    return getSourceKindMethod;
+    return getDescribeDataSourceKindsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection,
+      com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection> getPingDataSourceConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PingDataSourceConnection",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection.class,
+      responseType = com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection,
+      com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection> getPingDataSourceConnectionMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection, com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection> getPingDataSourceConnectionMethod;
+    if ((getPingDataSourceConnectionMethod = SourcemanagerGrpc.getPingDataSourceConnectionMethod) == null) {
+      synchronized (SourcemanagerGrpc.class) {
+        if ((getPingDataSourceConnectionMethod = SourcemanagerGrpc.getPingDataSourceConnectionMethod) == null) {
+          SourcemanagerGrpc.getPingDataSourceConnectionMethod = getPingDataSourceConnectionMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection, com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PingDataSourceConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection.getDefaultInstance()))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("PingDataSourceConnection"))
+              .build();
+        }
+      }
+    }
+    return getPingDataSourceConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections,
+      com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections> getListDataSourceConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDataSourceConnections",
+      requestType = com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections.class,
+      responseType = com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections,
+      com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections> getListDataSourceConnectionsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections, com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections> getListDataSourceConnectionsMethod;
+    if ((getListDataSourceConnectionsMethod = SourcemanagerGrpc.getListDataSourceConnectionsMethod) == null) {
+      synchronized (SourcemanagerGrpc.class) {
+        if ((getListDataSourceConnectionsMethod = SourcemanagerGrpc.getListDataSourceConnectionsMethod) == null) {
+          SourcemanagerGrpc.getListDataSourceConnectionsMethod = getListDataSourceConnectionsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections, com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDataSourceConnections"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections.getDefaultInstance()))
+              .setSchemaDescriptor(new SourcemanagerMethodDescriptorSupplier("ListDataSourceConnections"))
+              .build();
+        }
+      }
+    }
+    return getListDataSourceConnectionsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct,
@@ -654,81 +685,88 @@ public final class SourcemanagerGrpc {
 
     /**
      * <pre>
-     *source
+     * datasource
      * </pre>
      */
-    public void create(com.dataomnis.gproto.requestpb.RequestPB.CreateSource request,
+    public void listDataSources(com.dataomnis.gproto.requestpb.RequestPB.ListDataSources request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDataSourcesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void createDataSource(com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDataSourceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void updateDataSource(com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDataSourceMethod(), responseObserver);
     }
 
     /**
      */
-    public void update(com.dataomnis.gproto.requestpb.RequestPB.UpdateSource request,
+    public void describeDataSource(com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeDataSourceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void disableDataSources(com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableDataSourcesMethod(), responseObserver);
     }
 
     /**
      */
-    public void describe(com.dataomnis.gproto.requestpb.RequestPB.DescribeSource request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void enable(com.dataomnis.gproto.requestpb.RequestPB.EnableSource request,
+    public void enableDataSources(com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableDataSourcesMethod(), responseObserver);
     }
 
     /**
      */
-    public void disable(com.dataomnis.gproto.requestpb.RequestPB.DisableSource request,
+    public void deleteDataSources(com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDataSourcesMethod(), responseObserver);
     }
 
     /**
      */
-    public void list(com.dataomnis.gproto.requestpb.RequestPB.ListSource request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListSource> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void delete(com.dataomnis.gproto.requestpb.RequestPB.DeleteSource request,
+    public void deleteDataSourcesBySpaceId(com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDataSourcesBySpaceIdMethod(), responseObserver);
     }
 
     /**
      */
-    public void deleteAll(com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAllMethod(), responseObserver);
+    public void describeDataSourceKinds(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeDataSourceKindsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void pingDataSourceConnection(com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPingDataSourceConnectionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listDataSourceConnections(com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDataSourceConnectionsMethod(), responseObserver);
     }
 
     /**
      * <pre>
      *source utile
      * </pre>
-     */
-    public void pingSource(com.dataomnis.gproto.requestpb.RequestPB.PingSource request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPingSourceMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void sourceKind(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.SourceKind> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSourceKindMethod(), responseObserver);
-    }
-
-    /**
      */
     public void dataFormat(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.JsonList> responseObserver) {
@@ -800,75 +838,82 @@ public final class SourcemanagerGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getCreateMethod(),
+            getListDataSourcesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.CreateSource,
+                com.dataomnis.gproto.requestpb.RequestPB.ListDataSources,
+                com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources>(
+                  this, METHODID_LIST_DATA_SOURCES)))
+          .addMethod(
+            getCreateDataSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource,
+                com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource>(
+                  this, METHODID_CREATE_DATA_SOURCE)))
+          .addMethod(
+            getUpdateDataSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource,
                 com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_CREATE)))
+                  this, METHODID_UPDATE_DATA_SOURCE)))
           .addMethod(
-            getUpdateMethod(),
+            getDescribeDataSourceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.UpdateSource,
+                com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource,
+                com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource>(
+                  this, METHODID_DESCRIBE_DATA_SOURCE)))
+          .addMethod(
+            getDisableDataSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources,
                 com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_UPDATE)))
+                  this, METHODID_DISABLE_DATA_SOURCES)))
           .addMethod(
-            getDescribeMethod(),
+            getEnableDataSourcesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.DescribeSource,
-                com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource>(
-                  this, METHODID_DESCRIBE)))
-          .addMethod(
-            getEnableMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.EnableSource,
+                com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources,
                 com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_ENABLE)))
+                  this, METHODID_ENABLE_DATA_SOURCES)))
           .addMethod(
-            getDisableMethod(),
+            getDeleteDataSourcesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.DisableSource,
+                com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources,
                 com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_DISABLE)))
+                  this, METHODID_DELETE_DATA_SOURCES)))
           .addMethod(
-            getListMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.ListSource,
-                com.dataomnis.gproto.responsepb.ResponsePB.ListSource>(
-                  this, METHODID_LIST)))
-          .addMethod(
-            getDeleteMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.DeleteSource,
-                com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_DELETE)))
-          .addMethod(
-            getDeleteAllMethod(),
+            getDeleteDataSourcesBySpaceIdMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces,
                 com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_DELETE_ALL)))
+                  this, METHODID_DELETE_DATA_SOURCES_BY_SPACE_ID)))
           .addMethod(
-            getPingSourceMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.PingSource,
-                com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_PING_SOURCE)))
-          .addMethod(
-            getSourceKindMethod(),
+            getDescribeDataSourceKindsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct,
-                com.dataomnis.gproto.responsepb.ResponsePB.SourceKind>(
-                  this, METHODID_SOURCE_KIND)))
+                com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds>(
+                  this, METHODID_DESCRIBE_DATA_SOURCE_KINDS)))
+          .addMethod(
+            getPingDataSourceConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection,
+                com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection>(
+                  this, METHODID_PING_DATA_SOURCE_CONNECTION)))
+          .addMethod(
+            getListDataSourceConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections,
+                com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections>(
+                  this, METHODID_LIST_DATA_SOURCE_CONNECTIONS)))
           .addMethod(
             getDataFormatMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -952,91 +997,99 @@ public final class SourcemanagerGrpc {
 
     /**
      * <pre>
-     *source
+     * datasource
      * </pre>
      */
-    public void create(com.dataomnis.gproto.requestpb.RequestPB.CreateSource request,
+    public void listDataSources(com.dataomnis.gproto.requestpb.RequestPB.ListDataSources request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDataSourcesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createDataSource(com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDataSourceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateDataSource(com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateDataSourceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void update(com.dataomnis.gproto.requestpb.RequestPB.UpdateSource request,
+    public void describeDataSource(com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeDataSourceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void disableDataSources(com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDisableDataSourcesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void describe(com.dataomnis.gproto.requestpb.RequestPB.DescribeSource request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDescribeMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void enable(com.dataomnis.gproto.requestpb.RequestPB.EnableSource request,
+    public void enableDataSources(com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getEnableMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getEnableDataSourcesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void disable(com.dataomnis.gproto.requestpb.RequestPB.DisableSource request,
+    public void deleteDataSources(com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDisableMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteDataSourcesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void list(com.dataomnis.gproto.requestpb.RequestPB.ListSource request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListSource> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void delete(com.dataomnis.gproto.requestpb.RequestPB.DeleteSource request,
+    public void deleteDataSourcesBySpaceId(com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteDataSourcesBySpaceIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void deleteAll(com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
+    public void describeDataSourceKinds(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteAllMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDescribeDataSourceKindsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void pingDataSourceConnection(com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPingDataSourceConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listDataSourceConnections(com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDataSourceConnectionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
      *source utile
      * </pre>
-     */
-    public void pingSource(com.dataomnis.gproto.requestpb.RequestPB.PingSource request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPingSourceMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void sourceKind(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.SourceKind> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSourceKindMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
      */
     public void dataFormat(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.JsonList> responseObserver) {
@@ -1131,81 +1184,88 @@ public final class SourcemanagerGrpc {
 
     /**
      * <pre>
-     *source
+     * datasource
      * </pre>
      */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct create(com.dataomnis.gproto.requestpb.RequestPB.CreateSource request) {
+    public com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources listDataSources(com.dataomnis.gproto.requestpb.RequestPB.ListDataSources request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateMethod(), getCallOptions(), request);
+          getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct update(com.dataomnis.gproto.requestpb.RequestPB.UpdateSource request) {
+    public com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource createDataSource(com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateMethod(), getCallOptions(), request);
+          getChannel(), getCreateDataSourceMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource describe(com.dataomnis.gproto.requestpb.RequestPB.DescribeSource request) {
+    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct updateDataSource(com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDescribeMethod(), getCallOptions(), request);
+          getChannel(), getUpdateDataSourceMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct enable(com.dataomnis.gproto.requestpb.RequestPB.EnableSource request) {
+    public com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource describeDataSource(com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getEnableMethod(), getCallOptions(), request);
+          getChannel(), getDescribeDataSourceMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct disable(com.dataomnis.gproto.requestpb.RequestPB.DisableSource request) {
+    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct disableDataSources(com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDisableMethod(), getCallOptions(), request);
+          getChannel(), getDisableDataSourcesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.responsepb.ResponsePB.ListSource list(com.dataomnis.gproto.requestpb.RequestPB.ListSource request) {
+    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct enableDataSources(com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListMethod(), getCallOptions(), request);
+          getChannel(), getEnableDataSourcesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct delete(com.dataomnis.gproto.requestpb.RequestPB.DeleteSource request) {
+    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct deleteDataSources(com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteMethod(), getCallOptions(), request);
+          getChannel(), getDeleteDataSourcesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct deleteAll(com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces request) {
+    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct deleteDataSourcesBySpaceId(com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteAllMethod(), getCallOptions(), request);
+          getChannel(), getDeleteDataSourcesBySpaceIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds describeDataSourceKinds(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeDataSourceKindsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection pingDataSourceConnection(com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPingDataSourceConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections listDataSourceConnections(com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataSourceConnectionsMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
      *source utile
      * </pre>
-     */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct pingSource(com.dataomnis.gproto.requestpb.RequestPB.PingSource request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPingSourceMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.responsepb.ResponsePB.SourceKind sourceKind(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSourceKindMethod(), getCallOptions(), request);
-    }
-
-    /**
      */
     public com.dataomnis.gproto.responsepb.ResponsePB.JsonList dataFormat(com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1291,91 +1351,99 @@ public final class SourcemanagerGrpc {
 
     /**
      * <pre>
-     *source
+     * datasource
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> create(
-        com.dataomnis.gproto.requestpb.RequestPB.CreateSource request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources> listDataSources(
+        com.dataomnis.gproto.requestpb.RequestPB.ListDataSources request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateMethod(), getCallOptions()), request);
+          getChannel().newCall(getListDataSourcesMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> update(
-        com.dataomnis.gproto.requestpb.RequestPB.UpdateSource request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource> createDataSource(
+        com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateDataSourceMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource> describe(
-        com.dataomnis.gproto.requestpb.RequestPB.DescribeSource request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> updateDataSource(
+        com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDescribeMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateDataSourceMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> enable(
-        com.dataomnis.gproto.requestpb.RequestPB.EnableSource request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource> describeDataSource(
+        com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getEnableMethod(), getCallOptions()), request);
+          getChannel().newCall(getDescribeDataSourceMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> disable(
-        com.dataomnis.gproto.requestpb.RequestPB.DisableSource request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> disableDataSources(
+        com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDisableMethod(), getCallOptions()), request);
+          getChannel().newCall(getDisableDataSourcesMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.ListSource> list(
-        com.dataomnis.gproto.requestpb.RequestPB.ListSource request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> enableDataSources(
+        com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListMethod(), getCallOptions()), request);
+          getChannel().newCall(getEnableDataSourcesMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> delete(
-        com.dataomnis.gproto.requestpb.RequestPB.DeleteSource request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> deleteDataSources(
+        com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteDataSourcesMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> deleteAll(
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> deleteDataSourcesBySpaceId(
         com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteAllMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteDataSourcesBySpaceIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds> describeDataSourceKinds(
+        com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeDataSourceKindsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection> pingDataSourceConnection(
+        com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPingDataSourceConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections> listDataSourceConnections(
+        com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDataSourceConnectionsMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
      *source utile
      * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> pingSource(
-        com.dataomnis.gproto.requestpb.RequestPB.PingSource request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPingSourceMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.SourceKind> sourceKind(
-        com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSourceKindMethod(), getCallOptions()), request);
-    }
-
-    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.JsonList> dataFormat(
         com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct request) {
@@ -1454,25 +1522,26 @@ public final class SourcemanagerGrpc {
     }
   }
 
-  private static final int METHODID_CREATE = 0;
-  private static final int METHODID_UPDATE = 1;
-  private static final int METHODID_DESCRIBE = 2;
-  private static final int METHODID_ENABLE = 3;
-  private static final int METHODID_DISABLE = 4;
-  private static final int METHODID_LIST = 5;
-  private static final int METHODID_DELETE = 6;
-  private static final int METHODID_DELETE_ALL = 7;
-  private static final int METHODID_PING_SOURCE = 8;
-  private static final int METHODID_SOURCE_KIND = 9;
-  private static final int METHODID_DATA_FORMAT = 10;
-  private static final int METHODID_DATA_TYPE = 11;
-  private static final int METHODID_CREATE_TABLE = 12;
-  private static final int METHODID_DESCRIBE_TABLE = 13;
-  private static final int METHODID_UPDATE_TABLE = 14;
-  private static final int METHODID_DELETE_TABLE = 15;
-  private static final int METHODID_LIST_TABLE = 16;
-  private static final int METHODID_SOURCE_TABLES = 17;
-  private static final int METHODID_TABLE_COLUMNS = 18;
+  private static final int METHODID_LIST_DATA_SOURCES = 0;
+  private static final int METHODID_CREATE_DATA_SOURCE = 1;
+  private static final int METHODID_UPDATE_DATA_SOURCE = 2;
+  private static final int METHODID_DESCRIBE_DATA_SOURCE = 3;
+  private static final int METHODID_DISABLE_DATA_SOURCES = 4;
+  private static final int METHODID_ENABLE_DATA_SOURCES = 5;
+  private static final int METHODID_DELETE_DATA_SOURCES = 6;
+  private static final int METHODID_DELETE_DATA_SOURCES_BY_SPACE_ID = 7;
+  private static final int METHODID_DESCRIBE_DATA_SOURCE_KINDS = 8;
+  private static final int METHODID_PING_DATA_SOURCE_CONNECTION = 9;
+  private static final int METHODID_LIST_DATA_SOURCE_CONNECTIONS = 10;
+  private static final int METHODID_DATA_FORMAT = 11;
+  private static final int METHODID_DATA_TYPE = 12;
+  private static final int METHODID_CREATE_TABLE = 13;
+  private static final int METHODID_DESCRIBE_TABLE = 14;
+  private static final int METHODID_UPDATE_TABLE = 15;
+  private static final int METHODID_DELETE_TABLE = 16;
+  private static final int METHODID_LIST_TABLE = 17;
+  private static final int METHODID_SOURCE_TABLES = 18;
+  private static final int METHODID_TABLE_COLUMNS = 19;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1491,45 +1560,49 @@ public final class SourcemanagerGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_CREATE:
-          serviceImpl.create((com.dataomnis.gproto.requestpb.RequestPB.CreateSource) request,
+        case METHODID_LIST_DATA_SOURCES:
+          serviceImpl.listDataSources((com.dataomnis.gproto.requestpb.RequestPB.ListDataSources) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSources>) responseObserver);
+          break;
+        case METHODID_CREATE_DATA_SOURCE:
+          serviceImpl.createDataSource((com.dataomnis.gproto.requestpb.RequestPB.CreateDataSource) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.CreateDataSource>) responseObserver);
+          break;
+        case METHODID_UPDATE_DATA_SOURCE:
+          serviceImpl.updateDataSource((com.dataomnis.gproto.requestpb.RequestPB.UpdateDataSource) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
           break;
-        case METHODID_UPDATE:
-          serviceImpl.update((com.dataomnis.gproto.requestpb.RequestPB.UpdateSource) request,
+        case METHODID_DESCRIBE_DATA_SOURCE:
+          serviceImpl.describeDataSource((com.dataomnis.gproto.requestpb.RequestPB.DescribeDataSource) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSource>) responseObserver);
+          break;
+        case METHODID_DISABLE_DATA_SOURCES:
+          serviceImpl.disableDataSources((com.dataomnis.gproto.requestpb.RequestPB.DisableDataSources) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
           break;
-        case METHODID_DESCRIBE:
-          serviceImpl.describe((com.dataomnis.gproto.requestpb.RequestPB.DescribeSource) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeSource>) responseObserver);
-          break;
-        case METHODID_ENABLE:
-          serviceImpl.enable((com.dataomnis.gproto.requestpb.RequestPB.EnableSource) request,
+        case METHODID_ENABLE_DATA_SOURCES:
+          serviceImpl.enableDataSources((com.dataomnis.gproto.requestpb.RequestPB.EnableDataSources) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
           break;
-        case METHODID_DISABLE:
-          serviceImpl.disable((com.dataomnis.gproto.requestpb.RequestPB.DisableSource) request,
+        case METHODID_DELETE_DATA_SOURCES:
+          serviceImpl.deleteDataSources((com.dataomnis.gproto.requestpb.RequestPB.DeleteDataSources) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
           break;
-        case METHODID_LIST:
-          serviceImpl.list((com.dataomnis.gproto.requestpb.RequestPB.ListSource) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListSource>) responseObserver);
-          break;
-        case METHODID_DELETE:
-          serviceImpl.delete((com.dataomnis.gproto.requestpb.RequestPB.DeleteSource) request,
+        case METHODID_DELETE_DATA_SOURCES_BY_SPACE_ID:
+          serviceImpl.deleteDataSourcesBySpaceId((com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
           break;
-        case METHODID_DELETE_ALL:
-          serviceImpl.deleteAll((com.dataomnis.gproto.requestpb.RequestPB.DeleteWorkspaces) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
+        case METHODID_DESCRIBE_DATA_SOURCE_KINDS:
+          serviceImpl.describeDataSourceKinds((com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeDataSourceKinds>) responseObserver);
           break;
-        case METHODID_PING_SOURCE:
-          serviceImpl.pingSource((com.dataomnis.gproto.requestpb.RequestPB.PingSource) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
+        case METHODID_PING_DATA_SOURCE_CONNECTION:
+          serviceImpl.pingDataSourceConnection((com.dataomnis.gproto.requestpb.RequestPB.PingDataSourceConnection) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.PingDataSourceConnection>) responseObserver);
           break;
-        case METHODID_SOURCE_KIND:
-          serviceImpl.sourceKind((com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.SourceKind>) responseObserver);
+        case METHODID_LIST_DATA_SOURCE_CONNECTIONS:
+          serviceImpl.listDataSourceConnections((com.dataomnis.gproto.requestpb.RequestPB.ListDataSourceConnections) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListDataSourceConnections>) responseObserver);
           break;
         case METHODID_DATA_FORMAT:
           serviceImpl.dataFormat((com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct) request,
@@ -1628,16 +1701,17 @@ public final class SourcemanagerGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SourcemanagerFileDescriptorSupplier())
-              .addMethod(getCreateMethod())
-              .addMethod(getUpdateMethod())
-              .addMethod(getDescribeMethod())
-              .addMethod(getEnableMethod())
-              .addMethod(getDisableMethod())
-              .addMethod(getListMethod())
-              .addMethod(getDeleteMethod())
-              .addMethod(getDeleteAllMethod())
-              .addMethod(getPingSourceMethod())
-              .addMethod(getSourceKindMethod())
+              .addMethod(getListDataSourcesMethod())
+              .addMethod(getCreateDataSourceMethod())
+              .addMethod(getUpdateDataSourceMethod())
+              .addMethod(getDescribeDataSourceMethod())
+              .addMethod(getDisableDataSourcesMethod())
+              .addMethod(getEnableDataSourcesMethod())
+              .addMethod(getDeleteDataSourcesMethod())
+              .addMethod(getDeleteDataSourcesBySpaceIdMethod())
+              .addMethod(getDescribeDataSourceKindsMethod())
+              .addMethod(getPingDataSourceConnectionMethod())
+              .addMethod(getListDataSourceConnectionsMethod())
               .addMethod(getDataFormatMethod())
               .addMethod(getDataTypeMethod())
               .addMethod(getCreateTableMethod())

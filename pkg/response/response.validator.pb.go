@@ -36,7 +36,7 @@ func (this *ListWorkspaces) Validate() error {
 	return nil
 }
 
-func (this *ListAudits) _xxx_xxx_Validator_Validate_infos() error {
+func (this *ListOpAudits) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -48,8 +48,8 @@ func (this *ListAudits) _xxx_xxx_Validator_Validate_infos() error {
 	return nil
 }
 
-// Set default value for message response.ListAudits
-func (this *ListAudits) Validate() error {
+// Set default value for message response.ListOpAudits
+func (this *ListOpAudits) Validate() error {
 	if this == nil {
 		return nil
 	}

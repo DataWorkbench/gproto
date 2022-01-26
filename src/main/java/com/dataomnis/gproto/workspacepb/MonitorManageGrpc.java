@@ -3,176 +3,18 @@ package com.dataomnis.gproto.workspacepb;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- * Scheduler Service
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.43.2)",
     comments = "Source: proto/workspace.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-public final class SchedulerGrpc {
+public final class MonitorManageGrpc {
 
-  private SchedulerGrpc() {}
+  private MonitorManageGrpc() {}
 
-  public static final String SERVICE_NAME = "wspb.Scheduler";
+  public static final String SERVICE_NAME = "wspb.MonitorManage";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances,
-      com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances> getListStreamInstancesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListStreamInstances",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances.class,
-      responseType = com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances,
-      com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances> getListStreamInstancesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances, com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances> getListStreamInstancesMethod;
-    if ((getListStreamInstancesMethod = SchedulerGrpc.getListStreamInstancesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getListStreamInstancesMethod = SchedulerGrpc.getListStreamInstancesMethod) == null) {
-          SchedulerGrpc.getListStreamInstancesMethod = getListStreamInstancesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances, com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListStreamInstances"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("ListStreamInstances"))
-              .build();
-        }
-      }
-    }
-    return getListStreamInstancesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getTerminateStreamInstancesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "TerminateStreamInstances",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances.class,
-      responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getTerminateStreamInstancesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getTerminateStreamInstancesMethod;
-    if ((getTerminateStreamInstancesMethod = SchedulerGrpc.getTerminateStreamInstancesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getTerminateStreamInstancesMethod = SchedulerGrpc.getTerminateStreamInstancesMethod) == null) {
-          SchedulerGrpc.getTerminateStreamInstancesMethod = getTerminateStreamInstancesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TerminateStreamInstances"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("TerminateStreamInstances"))
-              .build();
-        }
-      }
-    }
-    return getTerminateStreamInstancesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSuspendStreamInstancesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SuspendStreamInstances",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances.class,
-      responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSuspendStreamInstancesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSuspendStreamInstancesMethod;
-    if ((getSuspendStreamInstancesMethod = SchedulerGrpc.getSuspendStreamInstancesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getSuspendStreamInstancesMethod = SchedulerGrpc.getSuspendStreamInstancesMethod) == null) {
-          SchedulerGrpc.getSuspendStreamInstancesMethod = getSuspendStreamInstancesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SuspendStreamInstances"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("SuspendStreamInstances"))
-              .build();
-        }
-      }
-    }
-    return getSuspendStreamInstancesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getResumeStreamInstancesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ResumeStreamInstances",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances.class,
-      responseType = com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances,
-      com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getResumeStreamInstancesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getResumeStreamInstancesMethod;
-    if ((getResumeStreamInstancesMethod = SchedulerGrpc.getResumeStreamInstancesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getResumeStreamInstancesMethod = SchedulerGrpc.getResumeStreamInstancesMethod) == null) {
-          SchedulerGrpc.getResumeStreamInstancesMethod = getResumeStreamInstancesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResumeStreamInstances"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("ResumeStreamInstances"))
-              .build();
-        }
-      }
-    }
-    return getResumeStreamInstancesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId,
-      com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DescribeFlinkUIByInstanceId",
-      requestType = com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId.class,
-      responseType = com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId,
-      com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId, com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod;
-    if ((getDescribeFlinkUIByInstanceIdMethod = SchedulerGrpc.getDescribeFlinkUIByInstanceIdMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getDescribeFlinkUIByInstanceIdMethod = SchedulerGrpc.getDescribeFlinkUIByInstanceIdMethod) == null) {
-          SchedulerGrpc.getDescribeFlinkUIByInstanceIdMethod = getDescribeFlinkUIByInstanceIdMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId, com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeFlinkUIByInstanceId"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("DescribeFlinkUIByInstanceId"))
-              .build();
-        }
-      }
-    }
-    return getDescribeFlinkUIByInstanceIdMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListMonitorRules,
       com.dataomnis.gproto.responsepb.ResponsePB.ListMonitorRules> getListMonitorRulesMethod;
 
@@ -184,10 +26,10 @@ public final class SchedulerGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListMonitorRules,
       com.dataomnis.gproto.responsepb.ResponsePB.ListMonitorRules> getListMonitorRulesMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListMonitorRules, com.dataomnis.gproto.responsepb.ResponsePB.ListMonitorRules> getListMonitorRulesMethod;
-    if ((getListMonitorRulesMethod = SchedulerGrpc.getListMonitorRulesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getListMonitorRulesMethod = SchedulerGrpc.getListMonitorRulesMethod) == null) {
-          SchedulerGrpc.getListMonitorRulesMethod = getListMonitorRulesMethod =
+    if ((getListMonitorRulesMethod = MonitorManageGrpc.getListMonitorRulesMethod) == null) {
+      synchronized (MonitorManageGrpc.class) {
+        if ((getListMonitorRulesMethod = MonitorManageGrpc.getListMonitorRulesMethod) == null) {
+          MonitorManageGrpc.getListMonitorRulesMethod = getListMonitorRulesMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListMonitorRules, com.dataomnis.gproto.responsepb.ResponsePB.ListMonitorRules>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMonitorRules"))
@@ -196,7 +38,7 @@ public final class SchedulerGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.ListMonitorRules.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.ListMonitorRules.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("ListMonitorRules"))
+              .setSchemaDescriptor(new MonitorManageMethodDescriptorSupplier("ListMonitorRules"))
               .build();
         }
       }
@@ -215,10 +57,10 @@ public final class SchedulerGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteMonitorRules,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteMonitorRulesMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteMonitorRules, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteMonitorRulesMethod;
-    if ((getDeleteMonitorRulesMethod = SchedulerGrpc.getDeleteMonitorRulesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getDeleteMonitorRulesMethod = SchedulerGrpc.getDeleteMonitorRulesMethod) == null) {
-          SchedulerGrpc.getDeleteMonitorRulesMethod = getDeleteMonitorRulesMethod =
+    if ((getDeleteMonitorRulesMethod = MonitorManageGrpc.getDeleteMonitorRulesMethod) == null) {
+      synchronized (MonitorManageGrpc.class) {
+        if ((getDeleteMonitorRulesMethod = MonitorManageGrpc.getDeleteMonitorRulesMethod) == null) {
+          MonitorManageGrpc.getDeleteMonitorRulesMethod = getDeleteMonitorRulesMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DeleteMonitorRules, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMonitorRules"))
@@ -227,7 +69,7 @@ public final class SchedulerGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.DeleteMonitorRules.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("DeleteMonitorRules"))
+              .setSchemaDescriptor(new MonitorManageMethodDescriptorSupplier("DeleteMonitorRules"))
               .build();
         }
       }
@@ -246,10 +88,10 @@ public final class SchedulerGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableMonitorRules,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableMonitorRulesMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.EnableMonitorRules, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getEnableMonitorRulesMethod;
-    if ((getEnableMonitorRulesMethod = SchedulerGrpc.getEnableMonitorRulesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getEnableMonitorRulesMethod = SchedulerGrpc.getEnableMonitorRulesMethod) == null) {
-          SchedulerGrpc.getEnableMonitorRulesMethod = getEnableMonitorRulesMethod =
+    if ((getEnableMonitorRulesMethod = MonitorManageGrpc.getEnableMonitorRulesMethod) == null) {
+      synchronized (MonitorManageGrpc.class) {
+        if ((getEnableMonitorRulesMethod = MonitorManageGrpc.getEnableMonitorRulesMethod) == null) {
+          MonitorManageGrpc.getEnableMonitorRulesMethod = getEnableMonitorRulesMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.EnableMonitorRules, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableMonitorRules"))
@@ -258,7 +100,7 @@ public final class SchedulerGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.EnableMonitorRules.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("EnableMonitorRules"))
+              .setSchemaDescriptor(new MonitorManageMethodDescriptorSupplier("EnableMonitorRules"))
               .build();
         }
       }
@@ -277,10 +119,10 @@ public final class SchedulerGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableMonitorRules,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableMonitorRulesMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DisableMonitorRules, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDisableMonitorRulesMethod;
-    if ((getDisableMonitorRulesMethod = SchedulerGrpc.getDisableMonitorRulesMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getDisableMonitorRulesMethod = SchedulerGrpc.getDisableMonitorRulesMethod) == null) {
-          SchedulerGrpc.getDisableMonitorRulesMethod = getDisableMonitorRulesMethod =
+    if ((getDisableMonitorRulesMethod = MonitorManageGrpc.getDisableMonitorRulesMethod) == null) {
+      synchronized (MonitorManageGrpc.class) {
+        if ((getDisableMonitorRulesMethod = MonitorManageGrpc.getDisableMonitorRulesMethod) == null) {
+          MonitorManageGrpc.getDisableMonitorRulesMethod = getDisableMonitorRulesMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DisableMonitorRules, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableMonitorRules"))
@@ -289,7 +131,7 @@ public final class SchedulerGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.DisableMonitorRules.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("DisableMonitorRules"))
+              .setSchemaDescriptor(new MonitorManageMethodDescriptorSupplier("DisableMonitorRules"))
               .build();
         }
       }
@@ -308,10 +150,10 @@ public final class SchedulerGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateMonitorRule,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getCreateMonitorRuleMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateMonitorRule, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getCreateMonitorRuleMethod;
-    if ((getCreateMonitorRuleMethod = SchedulerGrpc.getCreateMonitorRuleMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getCreateMonitorRuleMethod = SchedulerGrpc.getCreateMonitorRuleMethod) == null) {
-          SchedulerGrpc.getCreateMonitorRuleMethod = getCreateMonitorRuleMethod =
+    if ((getCreateMonitorRuleMethod = MonitorManageGrpc.getCreateMonitorRuleMethod) == null) {
+      synchronized (MonitorManageGrpc.class) {
+        if ((getCreateMonitorRuleMethod = MonitorManageGrpc.getCreateMonitorRuleMethod) == null) {
+          MonitorManageGrpc.getCreateMonitorRuleMethod = getCreateMonitorRuleMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.CreateMonitorRule, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMonitorRule"))
@@ -320,7 +162,7 @@ public final class SchedulerGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.CreateMonitorRule.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("CreateMonitorRule"))
+              .setSchemaDescriptor(new MonitorManageMethodDescriptorSupplier("CreateMonitorRule"))
               .build();
         }
       }
@@ -339,10 +181,10 @@ public final class SchedulerGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateMonitorRule,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateMonitorRuleMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateMonitorRule, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateMonitorRuleMethod;
-    if ((getUpdateMonitorRuleMethod = SchedulerGrpc.getUpdateMonitorRuleMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getUpdateMonitorRuleMethod = SchedulerGrpc.getUpdateMonitorRuleMethod) == null) {
-          SchedulerGrpc.getUpdateMonitorRuleMethod = getUpdateMonitorRuleMethod =
+    if ((getUpdateMonitorRuleMethod = MonitorManageGrpc.getUpdateMonitorRuleMethod) == null) {
+      synchronized (MonitorManageGrpc.class) {
+        if ((getUpdateMonitorRuleMethod = MonitorManageGrpc.getUpdateMonitorRuleMethod) == null) {
+          MonitorManageGrpc.getUpdateMonitorRuleMethod = getUpdateMonitorRuleMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.UpdateMonitorRule, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMonitorRule"))
@@ -351,7 +193,7 @@ public final class SchedulerGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.UpdateMonitorRule.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("UpdateMonitorRule"))
+              .setSchemaDescriptor(new MonitorManageMethodDescriptorSupplier("UpdateMonitorRule"))
               .build();
         }
       }
@@ -370,10 +212,10 @@ public final class SchedulerGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeMonitorRule,
       com.dataomnis.gproto.responsepb.ResponsePB.DescribeMonitorRule> getDescribeMonitorRuleMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeMonitorRule, com.dataomnis.gproto.responsepb.ResponsePB.DescribeMonitorRule> getDescribeMonitorRuleMethod;
-    if ((getDescribeMonitorRuleMethod = SchedulerGrpc.getDescribeMonitorRuleMethod) == null) {
-      synchronized (SchedulerGrpc.class) {
-        if ((getDescribeMonitorRuleMethod = SchedulerGrpc.getDescribeMonitorRuleMethod) == null) {
-          SchedulerGrpc.getDescribeMonitorRuleMethod = getDescribeMonitorRuleMethod =
+    if ((getDescribeMonitorRuleMethod = MonitorManageGrpc.getDescribeMonitorRuleMethod) == null) {
+      synchronized (MonitorManageGrpc.class) {
+        if ((getDescribeMonitorRuleMethod = MonitorManageGrpc.getDescribeMonitorRuleMethod) == null) {
+          MonitorManageGrpc.getDescribeMonitorRuleMethod = getDescribeMonitorRuleMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DescribeMonitorRule, com.dataomnis.gproto.responsepb.ResponsePB.DescribeMonitorRule>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeMonitorRule"))
@@ -382,7 +224,7 @@ public final class SchedulerGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.DescribeMonitorRule.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.DescribeMonitorRule.getDefaultInstance()))
-              .setSchemaDescriptor(new SchedulerMethodDescriptorSupplier("DescribeMonitorRule"))
+              .setSchemaDescriptor(new MonitorManageMethodDescriptorSupplier("DescribeMonitorRule"))
               .build();
         }
       }
@@ -393,91 +235,50 @@ public final class SchedulerGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static SchedulerStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SchedulerStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<SchedulerStub>() {
+  public static MonitorManageStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MonitorManageStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MonitorManageStub>() {
         @java.lang.Override
-        public SchedulerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new SchedulerStub(channel, callOptions);
+        public MonitorManageStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MonitorManageStub(channel, callOptions);
         }
       };
-    return SchedulerStub.newStub(factory, channel);
+    return MonitorManageStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static SchedulerBlockingStub newBlockingStub(
+  public static MonitorManageBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SchedulerBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<SchedulerBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<MonitorManageBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MonitorManageBlockingStub>() {
         @java.lang.Override
-        public SchedulerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new SchedulerBlockingStub(channel, callOptions);
+        public MonitorManageBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MonitorManageBlockingStub(channel, callOptions);
         }
       };
-    return SchedulerBlockingStub.newStub(factory, channel);
+    return MonitorManageBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static SchedulerFutureStub newFutureStub(
+  public static MonitorManageFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SchedulerFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<SchedulerFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<MonitorManageFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MonitorManageFutureStub>() {
         @java.lang.Override
-        public SchedulerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new SchedulerFutureStub(channel, callOptions);
+        public MonitorManageFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MonitorManageFutureStub(channel, callOptions);
         }
       };
-    return SchedulerFutureStub.newStub(factory, channel);
+    return MonitorManageFutureStub.newStub(factory, channel);
   }
 
   /**
-   * <pre>
-   * Scheduler Service
-   * </pre>
    */
-  public static abstract class SchedulerImplBase implements io.grpc.BindableService {
-
-    /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
-     */
-    public void listStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListStreamInstancesMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void terminateStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTerminateStreamInstancesMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void suspendStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSuspendStreamInstancesMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void resumeStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResumeStreamInstancesMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void describeFlinkUIByInstanceId(com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeFlinkUIByInstanceIdMethod(), responseObserver);
-    }
+  public static abstract class MonitorManageImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
@@ -534,41 +335,6 @@ public final class SchedulerGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getListStreamInstancesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances,
-                com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances>(
-                  this, METHODID_LIST_STREAM_INSTANCES)))
-          .addMethod(
-            getTerminateStreamInstancesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances,
-                com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_TERMINATE_STREAM_INSTANCES)))
-          .addMethod(
-            getSuspendStreamInstancesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances,
-                com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_SUSPEND_STREAM_INSTANCES)))
-          .addMethod(
-            getResumeStreamInstancesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances,
-                com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>(
-                  this, METHODID_RESUME_STREAM_INSTANCES)))
-          .addMethod(
-            getDescribeFlinkUIByInstanceIdMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId,
-                com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId>(
-                  this, METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID)))
-          .addMethod(
             getListMonitorRulesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -622,63 +388,17 @@ public final class SchedulerGrpc {
   }
 
   /**
-   * <pre>
-   * Scheduler Service
-   * </pre>
    */
-  public static final class SchedulerStub extends io.grpc.stub.AbstractAsyncStub<SchedulerStub> {
-    private SchedulerStub(
+  public static final class MonitorManageStub extends io.grpc.stub.AbstractAsyncStub<MonitorManageStub> {
+    private MonitorManageStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected SchedulerStub build(
+    protected MonitorManageStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SchedulerStub(channel, callOptions);
-    }
-
-    /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
-     */
-    public void listStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListStreamInstancesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void terminateStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getTerminateStreamInstancesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void suspendStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSuspendStreamInstancesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void resumeStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getResumeStreamInstancesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void describeFlinkUIByInstanceId(com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDescribeFlinkUIByInstanceIdMethod(), getCallOptions()), request, responseObserver);
+      return new MonitorManageStub(channel, callOptions);
     }
 
     /**
@@ -742,58 +462,17 @@ public final class SchedulerGrpc {
   }
 
   /**
-   * <pre>
-   * Scheduler Service
-   * </pre>
    */
-  public static final class SchedulerBlockingStub extends io.grpc.stub.AbstractBlockingStub<SchedulerBlockingStub> {
-    private SchedulerBlockingStub(
+  public static final class MonitorManageBlockingStub extends io.grpc.stub.AbstractBlockingStub<MonitorManageBlockingStub> {
+    private MonitorManageBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected SchedulerBlockingStub build(
+    protected MonitorManageBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SchedulerBlockingStub(channel, callOptions);
-    }
-
-    /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
-     */
-    public com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances listStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListStreamInstancesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct terminateStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getTerminateStreamInstancesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct suspendStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSuspendStreamInstancesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct resumeStreamInstances(com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getResumeStreamInstancesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId describeFlinkUIByInstanceId(com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDescribeFlinkUIByInstanceIdMethod(), getCallOptions(), request);
+      return new MonitorManageBlockingStub(channel, callOptions);
     }
 
     /**
@@ -850,63 +529,17 @@ public final class SchedulerGrpc {
   }
 
   /**
-   * <pre>
-   * Scheduler Service
-   * </pre>
    */
-  public static final class SchedulerFutureStub extends io.grpc.stub.AbstractFutureStub<SchedulerFutureStub> {
-    private SchedulerFutureStub(
+  public static final class MonitorManageFutureStub extends io.grpc.stub.AbstractFutureStub<MonitorManageFutureStub> {
+    private MonitorManageFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected SchedulerFutureStub build(
+    protected MonitorManageFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SchedulerFutureStub(channel, callOptions);
-    }
-
-    /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances> listStreamInstances(
-        com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListStreamInstancesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> terminateStreamInstances(
-        com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getTerminateStreamInstancesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> suspendStreamInstances(
-        com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSuspendStreamInstancesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> resumeStreamInstances(
-        com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getResumeStreamInstancesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId> describeFlinkUIByInstanceId(
-        com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDescribeFlinkUIByInstanceIdMethod(), getCallOptions()), request);
+      return new MonitorManageFutureStub(channel, callOptions);
     }
 
     /**
@@ -969,28 +602,23 @@ public final class SchedulerGrpc {
     }
   }
 
-  private static final int METHODID_LIST_STREAM_INSTANCES = 0;
-  private static final int METHODID_TERMINATE_STREAM_INSTANCES = 1;
-  private static final int METHODID_SUSPEND_STREAM_INSTANCES = 2;
-  private static final int METHODID_RESUME_STREAM_INSTANCES = 3;
-  private static final int METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID = 4;
-  private static final int METHODID_LIST_MONITOR_RULES = 5;
-  private static final int METHODID_DELETE_MONITOR_RULES = 6;
-  private static final int METHODID_ENABLE_MONITOR_RULES = 7;
-  private static final int METHODID_DISABLE_MONITOR_RULES = 8;
-  private static final int METHODID_CREATE_MONITOR_RULE = 9;
-  private static final int METHODID_UPDATE_MONITOR_RULE = 10;
-  private static final int METHODID_DESCRIBE_MONITOR_RULE = 11;
+  private static final int METHODID_LIST_MONITOR_RULES = 0;
+  private static final int METHODID_DELETE_MONITOR_RULES = 1;
+  private static final int METHODID_ENABLE_MONITOR_RULES = 2;
+  private static final int METHODID_DISABLE_MONITOR_RULES = 3;
+  private static final int METHODID_CREATE_MONITOR_RULE = 4;
+  private static final int METHODID_UPDATE_MONITOR_RULE = 5;
+  private static final int METHODID_DESCRIBE_MONITOR_RULE = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SchedulerImplBase serviceImpl;
+    private final MonitorManageImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SchedulerImplBase serviceImpl, int methodId) {
+    MethodHandlers(MonitorManageImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -999,26 +627,6 @@ public final class SchedulerGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_LIST_STREAM_INSTANCES:
-          serviceImpl.listStreamInstances((com.dataomnis.gproto.requestpb.RequestPB.ListStreamInstances) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListStreamInstances>) responseObserver);
-          break;
-        case METHODID_TERMINATE_STREAM_INSTANCES:
-          serviceImpl.terminateStreamInstances((com.dataomnis.gproto.requestpb.RequestPB.TerminateStreamInstances) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
-          break;
-        case METHODID_SUSPEND_STREAM_INSTANCES:
-          serviceImpl.suspendStreamInstances((com.dataomnis.gproto.requestpb.RequestPB.SuspendStreamInstances) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
-          break;
-        case METHODID_RESUME_STREAM_INSTANCES:
-          serviceImpl.resumeStreamInstances((com.dataomnis.gproto.requestpb.RequestPB.ResumeStreamInstances) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>) responseObserver);
-          break;
-        case METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID:
-          serviceImpl.describeFlinkUIByInstanceId((com.dataomnis.gproto.requestpb.RequestPB.DescribeFlinkUIByInstanceId) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeFlinkUIByInstanceId>) responseObserver);
-          break;
         case METHODID_LIST_MONITOR_RULES:
           serviceImpl.listMonitorRules((com.dataomnis.gproto.requestpb.RequestPB.ListMonitorRules) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.ListMonitorRules>) responseObserver);
@@ -1063,9 +671,9 @@ public final class SchedulerGrpc {
     }
   }
 
-  private static abstract class SchedulerBaseDescriptorSupplier
+  private static abstract class MonitorManageBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    SchedulerBaseDescriptorSupplier() {}
+    MonitorManageBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -1074,21 +682,21 @@ public final class SchedulerGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("Scheduler");
+      return getFileDescriptor().findServiceByName("MonitorManage");
     }
   }
 
-  private static final class SchedulerFileDescriptorSupplier
-      extends SchedulerBaseDescriptorSupplier {
-    SchedulerFileDescriptorSupplier() {}
+  private static final class MonitorManageFileDescriptorSupplier
+      extends MonitorManageBaseDescriptorSupplier {
+    MonitorManageFileDescriptorSupplier() {}
   }
 
-  private static final class SchedulerMethodDescriptorSupplier
-      extends SchedulerBaseDescriptorSupplier
+  private static final class MonitorManageMethodDescriptorSupplier
+      extends MonitorManageBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    SchedulerMethodDescriptorSupplier(String methodName) {
+    MonitorManageMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -1103,16 +711,11 @@ public final class SchedulerGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (SchedulerGrpc.class) {
+      synchronized (MonitorManageGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new SchedulerFileDescriptorSupplier())
-              .addMethod(getListStreamInstancesMethod())
-              .addMethod(getTerminateStreamInstancesMethod())
-              .addMethod(getSuspendStreamInstancesMethod())
-              .addMethod(getResumeStreamInstancesMethod())
-              .addMethod(getDescribeFlinkUIByInstanceIdMethod())
+              .setSchemaDescriptor(new MonitorManageFileDescriptorSupplier())
               .addMethod(getListMonitorRulesMethod())
               .addMethod(getDeleteMonitorRulesMethod())
               .addMethod(getEnableMonitorRulesMethod())

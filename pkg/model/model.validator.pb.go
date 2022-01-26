@@ -11,6 +11,7 @@ import (
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/gosqlpb"
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/validatorpb"
 	protovalidator "github.com/yu31/proto-go-plugin/pkg/protovalidator"
+	strconv "strconv"
 	strings "strings"
 	utf8 "unicode/utf8"
 )
@@ -313,7 +314,20 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_type() error {
 	return nil
 }
 
+func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_operators() bool {
+	if !(this.Type == 1) {
+		return false
+	}
+	return true
+}
+
 func (this *StreamJobCode) _xxx_xxx_Validator_Validate_operators() error {
+	if !this._xxx_xxx_Validator_CheckIf_operators() {
+		return nil
+	}
+	if !(len(this.Operators) > 0) {
+		return protovalidator.FieldError1("StreamJobCode", "the length of field 'operators' must be greater than '0'", strconv.Itoa(len(this.Operators)))
+	}
 	for _, item := range this.Operators {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -325,7 +339,20 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_operators() error {
 	return nil
 }
 
+func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_sql() bool {
+	if !(this.Type == 2) {
+		return false
+	}
+	return true
+}
+
 func (this *StreamJobCode) _xxx_xxx_Validator_Validate_sql() error {
+	if !this._xxx_xxx_Validator_CheckIf_sql() {
+		return nil
+	}
+	if !(this.Sql != nil) {
+		return protovalidator.FieldError2("StreamJobCode", "the value of field 'sql' cannot be null")
+	}
 	if dt, ok := interface{}(this.Sql).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -334,7 +361,20 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_sql() error {
 	return nil
 }
 
+func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_jar() bool {
+	if !(this.Type == 3) {
+		return false
+	}
+	return true
+}
+
 func (this *StreamJobCode) _xxx_xxx_Validator_Validate_jar() error {
+	if !this._xxx_xxx_Validator_CheckIf_jar() {
+		return nil
+	}
+	if !(this.Jar != nil) {
+		return protovalidator.FieldError2("StreamJobCode", "the value of field 'jar' cannot be null")
+	}
 	if dt, ok := interface{}(this.Jar).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -343,8 +383,21 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_jar() error {
 	return nil
 }
 
-func (this *StreamJobCode) _xxx_xxx_Validator_Validate_scala() error {
-	if dt, ok := interface{}(this.Scala).(interface{ Validate() error }); ok {
+func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_python() bool {
+	if !(this.Type == 4) {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobCode) _xxx_xxx_Validator_Validate_python() error {
+	if !this._xxx_xxx_Validator_CheckIf_python() {
+		return nil
+	}
+	if !(this.Python != nil) {
+		return protovalidator.FieldError2("StreamJobCode", "the value of field 'python' cannot be null")
+	}
+	if dt, ok := interface{}(this.Python).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -352,8 +405,21 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_scala() error {
 	return nil
 }
 
-func (this *StreamJobCode) _xxx_xxx_Validator_Validate_python() error {
-	if dt, ok := interface{}(this.Python).(interface{ Validate() error }); ok {
+func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_scala() bool {
+	if !(this.Type == 5) {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobCode) _xxx_xxx_Validator_Validate_scala() error {
+	if !this._xxx_xxx_Validator_CheckIf_scala() {
+		return nil
+	}
+	if !(this.Scala != nil) {
+		return protovalidator.FieldError2("StreamJobCode", "the value of field 'scala' cannot be null")
+	}
+	if dt, ok := interface{}(this.Scala).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -378,10 +444,10 @@ func (this *StreamJobCode) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_jar(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_scala(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_python(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_python(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_scala(); err != nil {
 		return err
 	}
 	return nil
@@ -413,13 +479,6 @@ var _xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy = map[StreamJobS
 func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_schedule_policy() error {
 	if !(_xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy[this.SchedulePolicy]) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
-	}
-	return nil
-}
-
-func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_executed() error {
-	if !(this.Executed >= 0) {
-		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'executed' must be greater than or equal to '0'", protovalidator.Int64ToString(this.Executed))
 	}
 	return nil
 }
@@ -574,9 +633,6 @@ func (this *StreamJobSchedule) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_schedule_policy(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_executed(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_started(); err != nil {

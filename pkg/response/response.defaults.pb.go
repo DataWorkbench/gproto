@@ -19,8 +19,8 @@ func (this *ListWorkspaces) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ListAudits
-func (this *ListAudits) SetDefaults() {
+// Set default value for message response.ListOpAudits
+func (this *ListOpAudits) SetDefaults() {
 	if this == nil {
 		return
 	}

@@ -11,6 +11,7 @@ import (
 	_ "github.com/yu31/proto-go-plugin/pkg/pb/validatorpb"
 	protovalidator "github.com/yu31/proto-go-plugin/pkg/protovalidator"
 	strconv "strconv"
+	utf8 "unicode/utf8"
 )
 
 func (this *ColumnAs) _xxx_xxx_Validator_Validate_field() error {
@@ -1201,6 +1202,9 @@ func (this *FlinkScala) _xxx_xxx_Validator_Validate_code() error {
 	if !(len(this.Code) <= 40000) {
 		return protovalidator.FieldError1("FlinkScala", "the byte length of field 'code' must be less than or equal to '40000'", protovalidator.StringByteLenToString(this.Code))
 	}
+	if !(utf8.ValidString(this.Code)) {
+		return protovalidator.FieldError1("FlinkScala", "the value of field 'code' must be a UTF8 string", this.Code)
+	}
 	return nil
 }
 
@@ -1219,6 +1223,9 @@ func (this *FlinkPython) _xxx_xxx_Validator_Validate_code() error {
 	if !(len(this.Code) <= 40000) {
 		return protovalidator.FieldError1("FlinkPython", "the byte length of field 'code' must be less than or equal to '40000'", protovalidator.StringByteLenToString(this.Code))
 	}
+	if !(utf8.ValidString(this.Code)) {
+		return protovalidator.FieldError1("FlinkPython", "the value of field 'code' must be a UTF8 string", this.Code)
+	}
 	return nil
 }
 
@@ -1236,6 +1243,9 @@ func (this *FlinkPython) Validate() error {
 func (this *FlinkSQL) _xxx_xxx_Validator_Validate_code() error {
 	if !(len(this.Code) <= 40000) {
 		return protovalidator.FieldError1("FlinkSQL", "the byte length of field 'code' must be less than or equal to '40000'", protovalidator.StringByteLenToString(this.Code))
+	}
+	if !(utf8.ValidString(this.Code)) {
+		return protovalidator.FieldError1("FlinkSQL", "the value of field 'code' must be a UTF8 string", this.Code)
 	}
 	return nil
 }

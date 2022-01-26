@@ -82,13 +82,13 @@ func (this *StreamJobCode) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.Scala != nil {
-		if dt, ok := interface{}(this.Scala).(interface{ SetDefaults() }); ok {
+	if this.Python != nil {
+		if dt, ok := interface{}(this.Python).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
-	if this.Python != nil {
-		if dt, ok := interface{}(this.Python).(interface{ SetDefaults() }); ok {
+	if this.Scala != nil {
+		if dt, ok := interface{}(this.Scala).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

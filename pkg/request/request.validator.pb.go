@@ -323,7 +323,7 @@ func (this *DescribeWorkspace) Validate() error {
 	return nil
 }
 
-func (this *AddAudit) _xxx_xxx_Validator_Validate_info() error {
+func (this *AddOpAudit) _xxx_xxx_Validator_Validate_info() error {
 	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
@@ -332,8 +332,8 @@ func (this *AddAudit) _xxx_xxx_Validator_Validate_info() error {
 	return nil
 }
 
-// Set default value for message request.AddAudit
-func (this *AddAudit) Validate() error {
+// Set default value for message request.AddOpAudit
+func (this *AddOpAudit) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -343,50 +343,50 @@ func (this *AddAudit) Validate() error {
 	return nil
 }
 
-func (this *ListAudits) _xxx_xxx_Validator_Validate_limit() error {
+func (this *ListOpAudits) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
-		return protovalidator.FieldError1("ListAudits", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+		return protovalidator.FieldError1("ListOpAudits", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
 	}
 	if !(this.Limit <= 100) {
-		return protovalidator.FieldError1("ListAudits", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+		return protovalidator.FieldError1("ListOpAudits", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
 	}
 	return nil
 }
 
-func (this *ListAudits) _xxx_xxx_Validator_Validate_offset() error {
+func (this *ListOpAudits) _xxx_xxx_Validator_Validate_offset() error {
 	if !(this.Offset >= 0) {
-		return protovalidator.FieldError1("ListAudits", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+		return protovalidator.FieldError1("ListOpAudits", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_ListAudits_In_SortBy = map[string]bool{"": true, "id": true, "created": true}
+var _xxx_xxx_Validator_ListOpAudits_In_SortBy = map[string]bool{"": true, "id": true, "created": true}
 
-func (this *ListAudits) _xxx_xxx_Validator_Validate_sort_by() error {
-	if !(_xxx_xxx_Validator_ListAudits_In_SortBy[this.SortBy]) {
-		return protovalidator.FieldError1("ListAudits", "the value of field 'sort_by' must be one of '[ id created]'", this.SortBy)
+func (this *ListOpAudits) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListOpAudits_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListOpAudits", "the value of field 'sort_by' must be one of '[ id created]'", this.SortBy)
 	}
 	return nil
 }
 
-func (this *ListAudits) _xxx_xxx_Validator_Validate_user_id() error {
+func (this *ListOpAudits) _xxx_xxx_Validator_Validate_user_id() error {
 	if !(len(this.UserId) < 65) {
-		return protovalidator.FieldError1("ListAudits", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
+		return protovalidator.FieldError1("ListOpAudits", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_ListAudits_InEnums_Type = map[model.Operation_Type]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_ListOpAudits_InEnums_Type = map[model.Operation_Type]bool{0: true, 1: true, 2: true}
 
-func (this *ListAudits) _xxx_xxx_Validator_Validate_type() error {
-	if !(_xxx_xxx_Validator_ListAudits_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("ListAudits", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
+func (this *ListOpAudits) _xxx_xxx_Validator_Validate_type() error {
+	if !(_xxx_xxx_Validator_ListOpAudits_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("ListOpAudits", "the value of field 'type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
 
-// Set default value for message request.ListAudits
-func (this *ListAudits) Validate() error {
+// Set default value for message request.ListOpAudits
+func (this *ListOpAudits) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1133,11 +1133,11 @@ func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_space_id() error 
 	return nil
 }
 
-var _xxx_xxx_Validator_ListReleaseStreamJobs_In_SortBy = map[string]bool{"": true, "job_id": true, "name": true, "created": true, "updated": true}
+var _xxx_xxx_Validator_ListReleaseStreamJobs_In_SortBy = map[string]bool{"": true, "id": true, "name": true, "created": true, "updated": true}
 
 func (this *ListReleaseStreamJobs) _xxx_xxx_Validator_Validate_sort_by() error {
 	if !(_xxx_xxx_Validator_ListReleaseStreamJobs_In_SortBy[this.SortBy]) {
-		return protovalidator.FieldError1("ListReleaseStreamJobs", "the value of field 'sort_by' must be one of '[ job_id name created updated]'", this.SortBy)
+		return protovalidator.FieldError1("ListReleaseStreamJobs", "the value of field 'sort_by' must be one of '[ id name created updated]'", this.SortBy)
 	}
 	return nil
 }
@@ -1312,6 +1312,15 @@ func (this *ListStreamJobVersions) _xxx_xxx_Validator_Validate_offset() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ListStreamJobVersions_In_SortBy = map[string]bool{"": true, "version": true, "created": true, "updated": true}
+
+func (this *ListStreamJobVersions) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListStreamJobVersions_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListStreamJobVersions", "the value of field 'sort_by' must be one of '[ version created updated]'", this.SortBy)
+	}
+	return nil
+}
+
 func (this *ListStreamJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("ListStreamJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
@@ -1328,6 +1337,9 @@ func (this *ListStreamJobVersions) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
@@ -1594,11 +1606,11 @@ func (this *ListStreamInstances) _xxx_xxx_Validator_Validate_state() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ListStreamInstances_In_SortBy = map[string]bool{"": true, "job_id": true, "id": true, "created": true, "updated": true}
+var _xxx_xxx_Validator_ListStreamInstances_In_SortBy = map[string]bool{"": true, "id": true, "job_id": true, "created": true, "updated": true}
 
 func (this *ListStreamInstances) _xxx_xxx_Validator_Validate_sort_by() error {
 	if !(_xxx_xxx_Validator_ListStreamInstances_In_SortBy[this.SortBy]) {
-		return protovalidator.FieldError1("ListStreamInstances", "the value of field 'sort_by' must be one of '[ job_id id created updated]'", this.SortBy)
+		return protovalidator.FieldError1("ListStreamInstances", "the value of field 'sort_by' must be one of '[ id job_id created updated]'", this.SortBy)
 	}
 	return nil
 }

@@ -87,8 +87,8 @@ func (this *DescribeWorkspace) SetDefaults() {
 	return
 }
 
-// Set default value for message request.AddAudit
-func (this *AddAudit) SetDefaults() {
+// Set default value for message request.AddOpAudit
+func (this *AddOpAudit) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -100,8 +100,8 @@ func (this *AddAudit) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ListAudits
-func (this *ListAudits) SetDefaults() {
+// Set default value for message request.ListOpAudits
+func (this *ListOpAudits) SetDefaults() {
 	if this == nil {
 		return
 	}

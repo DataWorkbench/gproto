@@ -3,19 +3,16 @@ package com.dataomnis.gproto.workspacepb;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- * Workflow Service
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.43.2)",
     comments = "Source: proto/workspace.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-public final class WorkflowGrpc {
+public final class StreamJobManageGrpc {
 
-  private WorkflowGrpc() {}
+  private StreamJobManageGrpc() {}
 
-  public static final String SERVICE_NAME = "wspb.Workflow";
+  public static final String SERVICE_NAME = "wspb.StreamJobManage";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobs,
@@ -29,10 +26,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobs,
       com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobs> getListStreamJobsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobs, com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobs> getListStreamJobsMethod;
-    if ((getListStreamJobsMethod = WorkflowGrpc.getListStreamJobsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getListStreamJobsMethod = WorkflowGrpc.getListStreamJobsMethod) == null) {
-          WorkflowGrpc.getListStreamJobsMethod = getListStreamJobsMethod =
+    if ((getListStreamJobsMethod = StreamJobManageGrpc.getListStreamJobsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getListStreamJobsMethod = StreamJobManageGrpc.getListStreamJobsMethod) == null) {
+          StreamJobManageGrpc.getListStreamJobsMethod = getListStreamJobsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobs, com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobs>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListStreamJobs"))
@@ -41,7 +38,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobs.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("ListStreamJobs"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ListStreamJobs"))
               .build();
         }
       }
@@ -60,10 +57,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteStreamJobs,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteStreamJobsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DeleteStreamJobs, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getDeleteStreamJobsMethod;
-    if ((getDeleteStreamJobsMethod = WorkflowGrpc.getDeleteStreamJobsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getDeleteStreamJobsMethod = WorkflowGrpc.getDeleteStreamJobsMethod) == null) {
-          WorkflowGrpc.getDeleteStreamJobsMethod = getDeleteStreamJobsMethod =
+    if ((getDeleteStreamJobsMethod = StreamJobManageGrpc.getDeleteStreamJobsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getDeleteStreamJobsMethod = StreamJobManageGrpc.getDeleteStreamJobsMethod) == null) {
+          StreamJobManageGrpc.getDeleteStreamJobsMethod = getDeleteStreamJobsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DeleteStreamJobs, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteStreamJobs"))
@@ -72,7 +69,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.DeleteStreamJobs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("DeleteStreamJobs"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("DeleteStreamJobs"))
               .build();
         }
       }
@@ -91,10 +88,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateStreamJob,
       com.dataomnis.gproto.responsepb.ResponsePB.CreateStreamJob> getCreateStreamJobMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.CreateStreamJob, com.dataomnis.gproto.responsepb.ResponsePB.CreateStreamJob> getCreateStreamJobMethod;
-    if ((getCreateStreamJobMethod = WorkflowGrpc.getCreateStreamJobMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getCreateStreamJobMethod = WorkflowGrpc.getCreateStreamJobMethod) == null) {
-          WorkflowGrpc.getCreateStreamJobMethod = getCreateStreamJobMethod =
+    if ((getCreateStreamJobMethod = StreamJobManageGrpc.getCreateStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getCreateStreamJobMethod = StreamJobManageGrpc.getCreateStreamJobMethod) == null) {
+          StreamJobManageGrpc.getCreateStreamJobMethod = getCreateStreamJobMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.CreateStreamJob, com.dataomnis.gproto.responsepb.ResponsePB.CreateStreamJob>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateStreamJob"))
@@ -103,7 +100,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.CreateStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.CreateStreamJob.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("CreateStreamJob"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("CreateStreamJob"))
               .build();
         }
       }
@@ -122,10 +119,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateStreamJob,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateStreamJobMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.UpdateStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getUpdateStreamJobMethod;
-    if ((getUpdateStreamJobMethod = WorkflowGrpc.getUpdateStreamJobMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getUpdateStreamJobMethod = WorkflowGrpc.getUpdateStreamJobMethod) == null) {
-          WorkflowGrpc.getUpdateStreamJobMethod = getUpdateStreamJobMethod =
+    if ((getUpdateStreamJobMethod = StreamJobManageGrpc.getUpdateStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getUpdateStreamJobMethod = StreamJobManageGrpc.getUpdateStreamJobMethod) == null) {
+          StreamJobManageGrpc.getUpdateStreamJobMethod = getUpdateStreamJobMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.UpdateStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateStreamJob"))
@@ -134,7 +131,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.UpdateStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("UpdateStreamJob"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("UpdateStreamJob"))
               .build();
         }
       }
@@ -153,10 +150,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob,
       com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob> getDescribeStreamJobMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob, com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob> getDescribeStreamJobMethod;
-    if ((getDescribeStreamJobMethod = WorkflowGrpc.getDescribeStreamJobMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getDescribeStreamJobMethod = WorkflowGrpc.getDescribeStreamJobMethod) == null) {
-          WorkflowGrpc.getDescribeStreamJobMethod = getDescribeStreamJobMethod =
+    if ((getDescribeStreamJobMethod = StreamJobManageGrpc.getDescribeStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getDescribeStreamJobMethod = StreamJobManageGrpc.getDescribeStreamJobMethod) == null) {
+          StreamJobManageGrpc.getDescribeStreamJobMethod = getDescribeStreamJobMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob, com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeStreamJob"))
@@ -165,7 +162,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("DescribeStreamJob"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("DescribeStreamJob"))
               .build();
         }
       }
@@ -184,10 +181,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobCode,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSetStreamJobCodeMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobCode, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSetStreamJobCodeMethod;
-    if ((getSetStreamJobCodeMethod = WorkflowGrpc.getSetStreamJobCodeMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getSetStreamJobCodeMethod = WorkflowGrpc.getSetStreamJobCodeMethod) == null) {
-          WorkflowGrpc.getSetStreamJobCodeMethod = getSetStreamJobCodeMethod =
+    if ((getSetStreamJobCodeMethod = StreamJobManageGrpc.getSetStreamJobCodeMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getSetStreamJobCodeMethod = StreamJobManageGrpc.getSetStreamJobCodeMethod) == null) {
+          StreamJobManageGrpc.getSetStreamJobCodeMethod = getSetStreamJobCodeMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobCode, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetStreamJobCode"))
@@ -196,7 +193,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobCode.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("SetStreamJobCode"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("SetStreamJobCode"))
               .build();
         }
       }
@@ -215,10 +212,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode,
       com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobCodeMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobCodeMethod;
-    if ((getGetStreamJobCodeMethod = WorkflowGrpc.getGetStreamJobCodeMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getGetStreamJobCodeMethod = WorkflowGrpc.getGetStreamJobCodeMethod) == null) {
-          WorkflowGrpc.getGetStreamJobCodeMethod = getGetStreamJobCodeMethod =
+    if ((getGetStreamJobCodeMethod = StreamJobManageGrpc.getGetStreamJobCodeMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getGetStreamJobCodeMethod = StreamJobManageGrpc.getGetStreamJobCodeMethod) == null) {
+          StreamJobManageGrpc.getGetStreamJobCodeMethod = getGetStreamJobCodeMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStreamJobCode"))
@@ -227,7 +224,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("GetStreamJobCode"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("GetStreamJobCode"))
               .build();
         }
       }
@@ -246,10 +243,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.StreamJobCodeSyntax,
       com.dataomnis.gproto.responsepb.ResponsePB.StreamJobCodeSyntax> getStreamJobCodeSyntaxMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.StreamJobCodeSyntax, com.dataomnis.gproto.responsepb.ResponsePB.StreamJobCodeSyntax> getStreamJobCodeSyntaxMethod;
-    if ((getStreamJobCodeSyntaxMethod = WorkflowGrpc.getStreamJobCodeSyntaxMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getStreamJobCodeSyntaxMethod = WorkflowGrpc.getStreamJobCodeSyntaxMethod) == null) {
-          WorkflowGrpc.getStreamJobCodeSyntaxMethod = getStreamJobCodeSyntaxMethod =
+    if ((getStreamJobCodeSyntaxMethod = StreamJobManageGrpc.getStreamJobCodeSyntaxMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getStreamJobCodeSyntaxMethod = StreamJobManageGrpc.getStreamJobCodeSyntaxMethod) == null) {
+          StreamJobManageGrpc.getStreamJobCodeSyntaxMethod = getStreamJobCodeSyntaxMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.StreamJobCodeSyntax, com.dataomnis.gproto.responsepb.ResponsePB.StreamJobCodeSyntax>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamJobCodeSyntax"))
@@ -258,7 +255,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.StreamJobCodeSyntax.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.StreamJobCodeSyntax.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("StreamJobCodeSyntax"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("StreamJobCodeSyntax"))
               .build();
         }
       }
@@ -277,10 +274,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobArgs,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSetStreamJobArgsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobArgs, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSetStreamJobArgsMethod;
-    if ((getSetStreamJobArgsMethod = WorkflowGrpc.getSetStreamJobArgsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getSetStreamJobArgsMethod = WorkflowGrpc.getSetStreamJobArgsMethod) == null) {
-          WorkflowGrpc.getSetStreamJobArgsMethod = getSetStreamJobArgsMethod =
+    if ((getSetStreamJobArgsMethod = StreamJobManageGrpc.getSetStreamJobArgsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getSetStreamJobArgsMethod = StreamJobManageGrpc.getSetStreamJobArgsMethod) == null) {
+          StreamJobManageGrpc.getSetStreamJobArgsMethod = getSetStreamJobArgsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobArgs, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetStreamJobArgs"))
@@ -289,7 +286,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobArgs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("SetStreamJobArgs"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("SetStreamJobArgs"))
               .build();
         }
       }
@@ -308,10 +305,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs,
       com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs> getGetStreamJobArgsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs> getGetStreamJobArgsMethod;
-    if ((getGetStreamJobArgsMethod = WorkflowGrpc.getGetStreamJobArgsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getGetStreamJobArgsMethod = WorkflowGrpc.getGetStreamJobArgsMethod) == null) {
-          WorkflowGrpc.getGetStreamJobArgsMethod = getGetStreamJobArgsMethod =
+    if ((getGetStreamJobArgsMethod = StreamJobManageGrpc.getGetStreamJobArgsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getGetStreamJobArgsMethod = StreamJobManageGrpc.getGetStreamJobArgsMethod) == null) {
+          StreamJobManageGrpc.getGetStreamJobArgsMethod = getGetStreamJobArgsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStreamJobArgs"))
@@ -320,7 +317,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("GetStreamJobArgs"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("GetStreamJobArgs"))
               .build();
         }
       }
@@ -339,10 +336,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct,
       com.dataomnis.gproto.responsepb.ResponsePB.ListBuiltInConnectors> getListBuiltInConnectorsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct, com.dataomnis.gproto.responsepb.ResponsePB.ListBuiltInConnectors> getListBuiltInConnectorsMethod;
-    if ((getListBuiltInConnectorsMethod = WorkflowGrpc.getListBuiltInConnectorsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getListBuiltInConnectorsMethod = WorkflowGrpc.getListBuiltInConnectorsMethod) == null) {
-          WorkflowGrpc.getListBuiltInConnectorsMethod = getListBuiltInConnectorsMethod =
+    if ((getListBuiltInConnectorsMethod = StreamJobManageGrpc.getListBuiltInConnectorsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getListBuiltInConnectorsMethod = StreamJobManageGrpc.getListBuiltInConnectorsMethod) == null) {
+          StreamJobManageGrpc.getListBuiltInConnectorsMethod = getListBuiltInConnectorsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct, com.dataomnis.gproto.responsepb.ResponsePB.ListBuiltInConnectors>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBuiltInConnectors"))
@@ -351,7 +348,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.ListBuiltInConnectors.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("ListBuiltInConnectors"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ListBuiltInConnectors"))
               .build();
         }
       }
@@ -370,10 +367,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobSchedule,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSetStreamJobScheduleMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobSchedule, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSetStreamJobScheduleMethod;
-    if ((getSetStreamJobScheduleMethod = WorkflowGrpc.getSetStreamJobScheduleMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getSetStreamJobScheduleMethod = WorkflowGrpc.getSetStreamJobScheduleMethod) == null) {
-          WorkflowGrpc.getSetStreamJobScheduleMethod = getSetStreamJobScheduleMethod =
+    if ((getSetStreamJobScheduleMethod = StreamJobManageGrpc.getSetStreamJobScheduleMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getSetStreamJobScheduleMethod = StreamJobManageGrpc.getSetStreamJobScheduleMethod) == null) {
+          StreamJobManageGrpc.getSetStreamJobScheduleMethod = getSetStreamJobScheduleMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobSchedule, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetStreamJobSchedule"))
@@ -382,7 +379,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.SetStreamJobSchedule.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("SetStreamJobSchedule"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("SetStreamJobSchedule"))
               .build();
         }
       }
@@ -401,10 +398,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule,
       com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule> getGetStreamJobScheduleMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule> getGetStreamJobScheduleMethod;
-    if ((getGetStreamJobScheduleMethod = WorkflowGrpc.getGetStreamJobScheduleMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getGetStreamJobScheduleMethod = WorkflowGrpc.getGetStreamJobScheduleMethod) == null) {
-          WorkflowGrpc.getGetStreamJobScheduleMethod = getGetStreamJobScheduleMethod =
+    if ((getGetStreamJobScheduleMethod = StreamJobManageGrpc.getGetStreamJobScheduleMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getGetStreamJobScheduleMethod = StreamJobManageGrpc.getGetStreamJobScheduleMethod) == null) {
+          StreamJobManageGrpc.getGetStreamJobScheduleMethod = getGetStreamJobScheduleMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStreamJobSchedule"))
@@ -413,7 +410,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("GetStreamJobSchedule"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("GetStreamJobSchedule"))
               .build();
         }
       }
@@ -432,10 +429,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ReleaseStreamJob,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getReleaseStreamJobMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getReleaseStreamJobMethod;
-    if ((getReleaseStreamJobMethod = WorkflowGrpc.getReleaseStreamJobMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getReleaseStreamJobMethod = WorkflowGrpc.getReleaseStreamJobMethod) == null) {
-          WorkflowGrpc.getReleaseStreamJobMethod = getReleaseStreamJobMethod =
+    if ((getReleaseStreamJobMethod = StreamJobManageGrpc.getReleaseStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getReleaseStreamJobMethod = StreamJobManageGrpc.getReleaseStreamJobMethod) == null) {
+          StreamJobManageGrpc.getReleaseStreamJobMethod = getReleaseStreamJobMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReleaseStreamJob"))
@@ -444,7 +441,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.ReleaseStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("ReleaseStreamJob"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ReleaseStreamJob"))
               .build();
         }
       }
@@ -463,10 +460,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.OfflineReleaseStreamJob,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getOfflineReleaseStreamJobMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.OfflineReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getOfflineReleaseStreamJobMethod;
-    if ((getOfflineReleaseStreamJobMethod = WorkflowGrpc.getOfflineReleaseStreamJobMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getOfflineReleaseStreamJobMethod = WorkflowGrpc.getOfflineReleaseStreamJobMethod) == null) {
-          WorkflowGrpc.getOfflineReleaseStreamJobMethod = getOfflineReleaseStreamJobMethod =
+    if ((getOfflineReleaseStreamJobMethod = StreamJobManageGrpc.getOfflineReleaseStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getOfflineReleaseStreamJobMethod = StreamJobManageGrpc.getOfflineReleaseStreamJobMethod) == null) {
+          StreamJobManageGrpc.getOfflineReleaseStreamJobMethod = getOfflineReleaseStreamJobMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.OfflineReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OfflineReleaseStreamJob"))
@@ -475,7 +472,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.OfflineReleaseStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("OfflineReleaseStreamJob"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("OfflineReleaseStreamJob"))
               .build();
         }
       }
@@ -494,10 +491,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SuspendReleaseStreamJob,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSuspendReleaseStreamJobMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.SuspendReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getSuspendReleaseStreamJobMethod;
-    if ((getSuspendReleaseStreamJobMethod = WorkflowGrpc.getSuspendReleaseStreamJobMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getSuspendReleaseStreamJobMethod = WorkflowGrpc.getSuspendReleaseStreamJobMethod) == null) {
-          WorkflowGrpc.getSuspendReleaseStreamJobMethod = getSuspendReleaseStreamJobMethod =
+    if ((getSuspendReleaseStreamJobMethod = StreamJobManageGrpc.getSuspendReleaseStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getSuspendReleaseStreamJobMethod = StreamJobManageGrpc.getSuspendReleaseStreamJobMethod) == null) {
+          StreamJobManageGrpc.getSuspendReleaseStreamJobMethod = getSuspendReleaseStreamJobMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.SuspendReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SuspendReleaseStreamJob"))
@@ -506,7 +503,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.SuspendReleaseStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("SuspendReleaseStreamJob"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("SuspendReleaseStreamJob"))
               .build();
         }
       }
@@ -525,10 +522,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ResumeReleaseStreamJob,
       com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getResumeReleaseStreamJobMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ResumeReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct> getResumeReleaseStreamJobMethod;
-    if ((getResumeReleaseStreamJobMethod = WorkflowGrpc.getResumeReleaseStreamJobMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getResumeReleaseStreamJobMethod = WorkflowGrpc.getResumeReleaseStreamJobMethod) == null) {
-          WorkflowGrpc.getResumeReleaseStreamJobMethod = getResumeReleaseStreamJobMethod =
+    if ((getResumeReleaseStreamJobMethod = StreamJobManageGrpc.getResumeReleaseStreamJobMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getResumeReleaseStreamJobMethod = StreamJobManageGrpc.getResumeReleaseStreamJobMethod) == null) {
+          StreamJobManageGrpc.getResumeReleaseStreamJobMethod = getResumeReleaseStreamJobMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ResumeReleaseStreamJob, com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResumeReleaseStreamJob"))
@@ -537,7 +534,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.ResumeReleaseStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.modelpb.ModelPB.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("ResumeReleaseStreamJob"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ResumeReleaseStreamJob"))
               .build();
         }
       }
@@ -556,10 +553,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListReleaseStreamJobs,
       com.dataomnis.gproto.responsepb.ResponsePB.ListReleaseStreamJobs> getListReleaseStreamJobsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListReleaseStreamJobs, com.dataomnis.gproto.responsepb.ResponsePB.ListReleaseStreamJobs> getListReleaseStreamJobsMethod;
-    if ((getListReleaseStreamJobsMethod = WorkflowGrpc.getListReleaseStreamJobsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getListReleaseStreamJobsMethod = WorkflowGrpc.getListReleaseStreamJobsMethod) == null) {
-          WorkflowGrpc.getListReleaseStreamJobsMethod = getListReleaseStreamJobsMethod =
+    if ((getListReleaseStreamJobsMethod = StreamJobManageGrpc.getListReleaseStreamJobsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getListReleaseStreamJobsMethod = StreamJobManageGrpc.getListReleaseStreamJobsMethod) == null) {
+          StreamJobManageGrpc.getListReleaseStreamJobsMethod = getListReleaseStreamJobsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListReleaseStreamJobs, com.dataomnis.gproto.responsepb.ResponsePB.ListReleaseStreamJobs>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListReleaseStreamJobs"))
@@ -568,7 +565,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.ListReleaseStreamJobs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.ListReleaseStreamJobs.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("ListReleaseStreamJobs"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ListReleaseStreamJobs"))
               .build();
         }
       }
@@ -587,10 +584,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobVersions,
       com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobVersions> getListStreamJobVersionsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobVersions, com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobVersions> getListStreamJobVersionsMethod;
-    if ((getListStreamJobVersionsMethod = WorkflowGrpc.getListStreamJobVersionsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getListStreamJobVersionsMethod = WorkflowGrpc.getListStreamJobVersionsMethod) == null) {
-          WorkflowGrpc.getListStreamJobVersionsMethod = getListStreamJobVersionsMethod =
+    if ((getListStreamJobVersionsMethod = StreamJobManageGrpc.getListStreamJobVersionsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getListStreamJobVersionsMethod = StreamJobManageGrpc.getListStreamJobVersionsMethod) == null) {
+          StreamJobManageGrpc.getListStreamJobVersionsMethod = getListStreamJobVersionsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobVersions, com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobVersions>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListStreamJobVersions"))
@@ -599,7 +596,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.ListStreamJobVersions.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.ListStreamJobVersions.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("ListStreamJobVersions"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("ListStreamJobVersions"))
               .build();
         }
       }
@@ -618,10 +615,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob,
       com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob> getDescribeStreamJobVersionMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob, com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob> getDescribeStreamJobVersionMethod;
-    if ((getDescribeStreamJobVersionMethod = WorkflowGrpc.getDescribeStreamJobVersionMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getDescribeStreamJobVersionMethod = WorkflowGrpc.getDescribeStreamJobVersionMethod) == null) {
-          WorkflowGrpc.getDescribeStreamJobVersionMethod = getDescribeStreamJobVersionMethod =
+    if ((getDescribeStreamJobVersionMethod = StreamJobManageGrpc.getDescribeStreamJobVersionMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getDescribeStreamJobVersionMethod = StreamJobManageGrpc.getDescribeStreamJobVersionMethod) == null) {
+          StreamJobManageGrpc.getDescribeStreamJobVersionMethod = getDescribeStreamJobVersionMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob, com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeStreamJobVersion"))
@@ -630,7 +627,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("DescribeStreamJobVersion"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("DescribeStreamJobVersion"))
               .build();
         }
       }
@@ -639,34 +636,34 @@ public final class WorkflowGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode,
-      com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobVersionNodeMethod;
+      com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobVersionCodeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetStreamJobVersionNode",
+      fullMethodName = SERVICE_NAME + '/' + "GetStreamJobVersionCode",
       requestType = com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode.class,
       responseType = com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode,
-      com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobVersionNodeMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobVersionNodeMethod;
-    if ((getGetStreamJobVersionNodeMethod = WorkflowGrpc.getGetStreamJobVersionNodeMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getGetStreamJobVersionNodeMethod = WorkflowGrpc.getGetStreamJobVersionNodeMethod) == null) {
-          WorkflowGrpc.getGetStreamJobVersionNodeMethod = getGetStreamJobVersionNodeMethod =
+      com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobVersionCodeMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getGetStreamJobVersionCodeMethod;
+    if ((getGetStreamJobVersionCodeMethod = StreamJobManageGrpc.getGetStreamJobVersionCodeMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getGetStreamJobVersionCodeMethod = StreamJobManageGrpc.getGetStreamJobVersionCodeMethod) == null) {
+          StreamJobManageGrpc.getGetStreamJobVersionCodeMethod = getGetStreamJobVersionCodeMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStreamJobVersionNode"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStreamJobVersionCode"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("GetStreamJobVersionNode"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("GetStreamJobVersionCode"))
               .build();
         }
       }
     }
-    return getGetStreamJobVersionNodeMethod;
+    return getGetStreamJobVersionCodeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs,
@@ -680,10 +677,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs,
       com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs> getGetStreamJobVersionArgsMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs> getGetStreamJobVersionArgsMethod;
-    if ((getGetStreamJobVersionArgsMethod = WorkflowGrpc.getGetStreamJobVersionArgsMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getGetStreamJobVersionArgsMethod = WorkflowGrpc.getGetStreamJobVersionArgsMethod) == null) {
-          WorkflowGrpc.getGetStreamJobVersionArgsMethod = getGetStreamJobVersionArgsMethod =
+    if ((getGetStreamJobVersionArgsMethod = StreamJobManageGrpc.getGetStreamJobVersionArgsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getGetStreamJobVersionArgsMethod = StreamJobManageGrpc.getGetStreamJobVersionArgsMethod) == null) {
+          StreamJobManageGrpc.getGetStreamJobVersionArgsMethod = getGetStreamJobVersionArgsMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStreamJobVersionArgs"))
@@ -692,7 +689,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobArgs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobArgs.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("GetStreamJobVersionArgs"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("GetStreamJobVersionArgs"))
               .build();
         }
       }
@@ -711,10 +708,10 @@ public final class WorkflowGrpc {
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule,
       com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule> getGetStreamJobVersionScheduleMethod() {
     io.grpc.MethodDescriptor<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule> getGetStreamJobVersionScheduleMethod;
-    if ((getGetStreamJobVersionScheduleMethod = WorkflowGrpc.getGetStreamJobVersionScheduleMethod) == null) {
-      synchronized (WorkflowGrpc.class) {
-        if ((getGetStreamJobVersionScheduleMethod = WorkflowGrpc.getGetStreamJobVersionScheduleMethod) == null) {
-          WorkflowGrpc.getGetStreamJobVersionScheduleMethod = getGetStreamJobVersionScheduleMethod =
+    if ((getGetStreamJobVersionScheduleMethod = StreamJobManageGrpc.getGetStreamJobVersionScheduleMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getGetStreamJobVersionScheduleMethod = StreamJobManageGrpc.getGetStreamJobVersionScheduleMethod) == null) {
+          StreamJobManageGrpc.getGetStreamJobVersionScheduleMethod = getGetStreamJobVersionScheduleMethod =
               io.grpc.MethodDescriptor.<com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule, com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStreamJobVersionSchedule"))
@@ -723,7 +720,7 @@ public final class WorkflowGrpc {
                   com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobSchedule.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobSchedule.getDefaultInstance()))
-              .setSchemaDescriptor(new WorkflowMethodDescriptorSupplier("GetStreamJobVersionSchedule"))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("GetStreamJobVersionSchedule"))
               .build();
         }
       }
@@ -734,57 +731,54 @@ public final class WorkflowGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static WorkflowStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<WorkflowStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<WorkflowStub>() {
+  public static StreamJobManageStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<StreamJobManageStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<StreamJobManageStub>() {
         @java.lang.Override
-        public WorkflowStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new WorkflowStub(channel, callOptions);
+        public StreamJobManageStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new StreamJobManageStub(channel, callOptions);
         }
       };
-    return WorkflowStub.newStub(factory, channel);
+    return StreamJobManageStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static WorkflowBlockingStub newBlockingStub(
+  public static StreamJobManageBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<WorkflowBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<WorkflowBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<StreamJobManageBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<StreamJobManageBlockingStub>() {
         @java.lang.Override
-        public WorkflowBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new WorkflowBlockingStub(channel, callOptions);
+        public StreamJobManageBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new StreamJobManageBlockingStub(channel, callOptions);
         }
       };
-    return WorkflowBlockingStub.newStub(factory, channel);
+    return StreamJobManageBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static WorkflowFutureStub newFutureStub(
+  public static StreamJobManageFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<WorkflowFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<WorkflowFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<StreamJobManageFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<StreamJobManageFutureStub>() {
         @java.lang.Override
-        public WorkflowFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new WorkflowFutureStub(channel, callOptions);
+        public StreamJobManageFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new StreamJobManageFutureStub(channel, callOptions);
         }
       };
-    return WorkflowFutureStub.newStub(factory, channel);
+    return StreamJobManageFutureStub.newStub(factory, channel);
   }
 
   /**
-   * <pre>
-   * Workflow Service
-   * </pre>
    */
-  public static abstract class WorkflowImplBase implements io.grpc.BindableService {
+  public static abstract class StreamJobManageImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * Interface for stream job.
+     * Interface for stream job dev.
      * ListStreamJobs to get a list of stream job of the workspace.
      * </pre>
      */
@@ -986,12 +980,12 @@ public final class WorkflowGrpc {
 
     /**
      * <pre>
-     * GetStreamJobVersionNode for get the node properties of the job of the specified version.
+     * GetStreamJobVersionCode for get the node properties of the job of the specified version.
      * </pre>
      */
-    public void getStreamJobVersionNode(com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode request,
+    public void getStreamJobVersionCode(com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamJobVersionNodeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamJobVersionCodeMethod(), responseObserver);
     }
 
     /**
@@ -1157,12 +1151,12 @@ public final class WorkflowGrpc {
                 com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob>(
                   this, METHODID_DESCRIBE_STREAM_JOB_VERSION)))
           .addMethod(
-            getGetStreamJobVersionNodeMethod(),
+            getGetStreamJobVersionCodeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode,
                 com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode>(
-                  this, METHODID_GET_STREAM_JOB_VERSION_NODE)))
+                  this, METHODID_GET_STREAM_JOB_VERSION_CODE)))
           .addMethod(
             getGetStreamJobVersionArgsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1182,25 +1176,22 @@ public final class WorkflowGrpc {
   }
 
   /**
-   * <pre>
-   * Workflow Service
-   * </pre>
    */
-  public static final class WorkflowStub extends io.grpc.stub.AbstractAsyncStub<WorkflowStub> {
-    private WorkflowStub(
+  public static final class StreamJobManageStub extends io.grpc.stub.AbstractAsyncStub<StreamJobManageStub> {
+    private StreamJobManageStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected WorkflowStub build(
+    protected StreamJobManageStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new WorkflowStub(channel, callOptions);
+      return new StreamJobManageStub(channel, callOptions);
     }
 
     /**
      * <pre>
-     * Interface for stream job.
+     * Interface for stream job dev.
      * ListStreamJobs to get a list of stream job of the workspace.
      * </pre>
      */
@@ -1422,13 +1413,13 @@ public final class WorkflowGrpc {
 
     /**
      * <pre>
-     * GetStreamJobVersionNode for get the node properties of the job of the specified version.
+     * GetStreamJobVersionCode for get the node properties of the job of the specified version.
      * </pre>
      */
-    public void getStreamJobVersionNode(com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode request,
+    public void getStreamJobVersionCode(com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetStreamJobVersionNodeMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetStreamJobVersionCodeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1455,25 +1446,22 @@ public final class WorkflowGrpc {
   }
 
   /**
-   * <pre>
-   * Workflow Service
-   * </pre>
    */
-  public static final class WorkflowBlockingStub extends io.grpc.stub.AbstractBlockingStub<WorkflowBlockingStub> {
-    private WorkflowBlockingStub(
+  public static final class StreamJobManageBlockingStub extends io.grpc.stub.AbstractBlockingStub<StreamJobManageBlockingStub> {
+    private StreamJobManageBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected WorkflowBlockingStub build(
+    protected StreamJobManageBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new WorkflowBlockingStub(channel, callOptions);
+      return new StreamJobManageBlockingStub(channel, callOptions);
     }
 
     /**
      * <pre>
-     * Interface for stream job.
+     * Interface for stream job dev.
      * ListStreamJobs to get a list of stream job of the workspace.
      * </pre>
      */
@@ -1675,12 +1663,12 @@ public final class WorkflowGrpc {
 
     /**
      * <pre>
-     * GetStreamJobVersionNode for get the node properties of the job of the specified version.
+     * GetStreamJobVersionCode for get the node properties of the job of the specified version.
      * </pre>
      */
-    public com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode getStreamJobVersionNode(com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode request) {
+    public com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode getStreamJobVersionCode(com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetStreamJobVersionNodeMethod(), getCallOptions(), request);
+          getChannel(), getGetStreamJobVersionCodeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1705,25 +1693,22 @@ public final class WorkflowGrpc {
   }
 
   /**
-   * <pre>
-   * Workflow Service
-   * </pre>
    */
-  public static final class WorkflowFutureStub extends io.grpc.stub.AbstractFutureStub<WorkflowFutureStub> {
-    private WorkflowFutureStub(
+  public static final class StreamJobManageFutureStub extends io.grpc.stub.AbstractFutureStub<StreamJobManageFutureStub> {
+    private StreamJobManageFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected WorkflowFutureStub build(
+    protected StreamJobManageFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new WorkflowFutureStub(channel, callOptions);
+      return new StreamJobManageFutureStub(channel, callOptions);
     }
 
     /**
      * <pre>
-     * Interface for stream job.
+     * Interface for stream job dev.
      * ListStreamJobs to get a list of stream job of the workspace.
      * </pre>
      */
@@ -1945,13 +1930,13 @@ public final class WorkflowGrpc {
 
     /**
      * <pre>
-     * GetStreamJobVersionNode for get the node properties of the job of the specified version.
+     * GetStreamJobVersionCode for get the node properties of the job of the specified version.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getStreamJobVersionNode(
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode> getStreamJobVersionCode(
         com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetStreamJobVersionNodeMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetStreamJobVersionCodeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1997,7 +1982,7 @@ public final class WorkflowGrpc {
   private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 17;
   private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 18;
   private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 19;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_NODE = 20;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 20;
   private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 21;
   private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 22;
 
@@ -2006,10 +1991,10 @@ public final class WorkflowGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WorkflowImplBase serviceImpl;
+    private final StreamJobManageImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WorkflowImplBase serviceImpl, int methodId) {
+    MethodHandlers(StreamJobManageImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2098,8 +2083,8 @@ public final class WorkflowGrpc {
           serviceImpl.describeStreamJobVersion((com.dataomnis.gproto.requestpb.RequestPB.DescribeStreamJob) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.DescribeStreamJob>) responseObserver);
           break;
-        case METHODID_GET_STREAM_JOB_VERSION_NODE:
-          serviceImpl.getStreamJobVersionNode((com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode) request,
+        case METHODID_GET_STREAM_JOB_VERSION_CODE:
+          serviceImpl.getStreamJobVersionCode((com.dataomnis.gproto.requestpb.RequestPB.GetStreamJobCode) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.responsepb.ResponsePB.GetStreamJobCode>) responseObserver);
           break;
         case METHODID_GET_STREAM_JOB_VERSION_ARGS:
@@ -2126,9 +2111,9 @@ public final class WorkflowGrpc {
     }
   }
 
-  private static abstract class WorkflowBaseDescriptorSupplier
+  private static abstract class StreamJobManageBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    WorkflowBaseDescriptorSupplier() {}
+    StreamJobManageBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -2137,21 +2122,21 @@ public final class WorkflowGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("Workflow");
+      return getFileDescriptor().findServiceByName("StreamJobManage");
     }
   }
 
-  private static final class WorkflowFileDescriptorSupplier
-      extends WorkflowBaseDescriptorSupplier {
-    WorkflowFileDescriptorSupplier() {}
+  private static final class StreamJobManageFileDescriptorSupplier
+      extends StreamJobManageBaseDescriptorSupplier {
+    StreamJobManageFileDescriptorSupplier() {}
   }
 
-  private static final class WorkflowMethodDescriptorSupplier
-      extends WorkflowBaseDescriptorSupplier
+  private static final class StreamJobManageMethodDescriptorSupplier
+      extends StreamJobManageBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    WorkflowMethodDescriptorSupplier(String methodName) {
+    StreamJobManageMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -2166,11 +2151,11 @@ public final class WorkflowGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (WorkflowGrpc.class) {
+      synchronized (StreamJobManageGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new WorkflowFileDescriptorSupplier())
+              .setSchemaDescriptor(new StreamJobManageFileDescriptorSupplier())
               .addMethod(getListStreamJobsMethod())
               .addMethod(getDeleteStreamJobsMethod())
               .addMethod(getCreateStreamJobMethod())
@@ -2191,7 +2176,7 @@ public final class WorkflowGrpc {
               .addMethod(getListReleaseStreamJobsMethod())
               .addMethod(getListStreamJobVersionsMethod())
               .addMethod(getDescribeStreamJobVersionMethod())
-              .addMethod(getGetStreamJobVersionNodeMethod())
+              .addMethod(getGetStreamJobVersionCodeMethod())
               .addMethod(getGetStreamJobVersionArgsMethod())
               .addMethod(getGetStreamJobVersionScheduleMethod())
               .build();

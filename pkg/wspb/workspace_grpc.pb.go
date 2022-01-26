@@ -21,583 +21,627 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// WorkspaceClient is the client API for Workspace service.
+// SpaceManageClient is the client API for SpaceManage service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type WorkspaceClient interface {
+type SpaceManageClient interface {
 	// API of workspace manager.
 	ListWorkspaces(ctx context.Context, in *request.ListWorkspaces, opts ...grpc.CallOption) (*response.ListWorkspaces, error)
-	// DeleteWorkspaces delete the specified workspaces and its resources;
-	// Resources includes
-	//  - Members.
-	//  - Audit(Operation Records).
 	DeleteWorkspaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DisableWorkspaces(ctx context.Context, in *request.DisableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	EnableWorkspaces(ctx context.Context, in *request.EnableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	CreateWorkspace(ctx context.Context, in *request.CreateWorkspace, opts ...grpc.CallOption) (*response.CreateWorkspace, error)
 	UpdateWorkspace(ctx context.Context, in *request.UpdateWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DescribeWorkspace(ctx context.Context, in *request.DescribeWorkspace, opts ...grpc.CallOption) (*response.DescribeWorkspace, error)
-	// API of workspace operation audit log.
-	AddAudit(ctx context.Context, in *request.AddAudit, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	ListAudits(ctx context.Context, in *request.ListAudits, opts ...grpc.CallOption) (*response.ListAudits, error)
-	// API of workspace role.
-	ListSystemRoles(ctx context.Context, in *request.ListSystemRoles, opts ...grpc.CallOption) (*response.ListSystemRoles, error)
-	// API of workspace member.
-	ListMembers(ctx context.Context, in *request.ListMembers, opts ...grpc.CallOption) (*response.ListMembers, error)
-	UpsertMembers(ctx context.Context, in *request.UpsertMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	DeleteMembers(ctx context.Context, in *request.DeleteMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
-	// Permission Auth.
+	// Permission Check.
+	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*response.CheckPermission, error)
+	// API of workspace operation audit log.
+	ListOpAudits(ctx context.Context, in *request.ListOpAudits, opts ...grpc.CallOption) (*response.ListOpAudits, error)
+	AddOpAudit(ctx context.Context, in *request.AddOpAudit, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 }
 
-type workspaceClient struct {
+type spaceManageClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewWorkspaceClient(cc grpc.ClientConnInterface) WorkspaceClient {
-	return &workspaceClient{cc}
+func NewSpaceManageClient(cc grpc.ClientConnInterface) SpaceManageClient {
+	return &spaceManageClient{cc}
 }
 
-func (c *workspaceClient) ListWorkspaces(ctx context.Context, in *request.ListWorkspaces, opts ...grpc.CallOption) (*response.ListWorkspaces, error) {
+func (c *spaceManageClient) ListWorkspaces(ctx context.Context, in *request.ListWorkspaces, opts ...grpc.CallOption) (*response.ListWorkspaces, error) {
 	out := new(response.ListWorkspaces)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/ListWorkspaces", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/ListWorkspaces", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) DeleteWorkspaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *spaceManageClient) DeleteWorkspaces(ctx context.Context, in *request.DeleteWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/DeleteWorkspaces", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/DeleteWorkspaces", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) DisableWorkspaces(ctx context.Context, in *request.DisableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *spaceManageClient) DisableWorkspaces(ctx context.Context, in *request.DisableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/DisableWorkspaces", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/DisableWorkspaces", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) EnableWorkspaces(ctx context.Context, in *request.EnableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *spaceManageClient) EnableWorkspaces(ctx context.Context, in *request.EnableWorkspaces, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/EnableWorkspaces", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/EnableWorkspaces", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) CreateWorkspace(ctx context.Context, in *request.CreateWorkspace, opts ...grpc.CallOption) (*response.CreateWorkspace, error) {
+func (c *spaceManageClient) CreateWorkspace(ctx context.Context, in *request.CreateWorkspace, opts ...grpc.CallOption) (*response.CreateWorkspace, error) {
 	out := new(response.CreateWorkspace)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/CreateWorkspace", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/CreateWorkspace", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) UpdateWorkspace(ctx context.Context, in *request.UpdateWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *spaceManageClient) UpdateWorkspace(ctx context.Context, in *request.UpdateWorkspace, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/UpdateWorkspace", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/UpdateWorkspace", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) DescribeWorkspace(ctx context.Context, in *request.DescribeWorkspace, opts ...grpc.CallOption) (*response.DescribeWorkspace, error) {
+func (c *spaceManageClient) DescribeWorkspace(ctx context.Context, in *request.DescribeWorkspace, opts ...grpc.CallOption) (*response.DescribeWorkspace, error) {
 	out := new(response.DescribeWorkspace)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/DescribeWorkspace", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/DescribeWorkspace", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workspaceClient) AddAudit(ctx context.Context, in *request.AddAudit, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/AddAudit", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) ListAudits(ctx context.Context, in *request.ListAudits, opts ...grpc.CallOption) (*response.ListAudits, error) {
-	out := new(response.ListAudits)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/ListAudits", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) ListSystemRoles(ctx context.Context, in *request.ListSystemRoles, opts ...grpc.CallOption) (*response.ListSystemRoles, error) {
-	out := new(response.ListSystemRoles)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/ListSystemRoles", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) ListMembers(ctx context.Context, in *request.ListMembers, opts ...grpc.CallOption) (*response.ListMembers, error) {
-	out := new(response.ListMembers)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/ListMembers", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) UpsertMembers(ctx context.Context, in *request.UpsertMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/UpsertMembers", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) DeleteMembers(ctx context.Context, in *request.DeleteMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/DeleteMembers", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *workspaceClient) CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*response.CheckPermission, error) {
+func (c *spaceManageClient) CheckPermission(ctx context.Context, in *request.CheckPermission, opts ...grpc.CallOption) (*response.CheckPermission, error) {
 	out := new(response.CheckPermission)
-	err := c.cc.Invoke(ctx, "/wspb.Workspace/CheckPermission", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/CheckPermission", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// WorkspaceServer is the server API for Workspace service.
-// All implementations must embed UnimplementedWorkspaceServer
+func (c *spaceManageClient) ListOpAudits(ctx context.Context, in *request.ListOpAudits, opts ...grpc.CallOption) (*response.ListOpAudits, error) {
+	out := new(response.ListOpAudits)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/ListOpAudits", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *spaceManageClient) AddOpAudit(ctx context.Context, in *request.AddOpAudit, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.SpaceManage/AddOpAudit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// SpaceManageServer is the server API for SpaceManage service.
+// All implementations must embed UnimplementedSpaceManageServer
 // for forward compatibility
-type WorkspaceServer interface {
+type SpaceManageServer interface {
 	// API of workspace manager.
 	ListWorkspaces(context.Context, *request.ListWorkspaces) (*response.ListWorkspaces, error)
-	// DeleteWorkspaces delete the specified workspaces and its resources;
-	// Resources includes
-	//  - Members.
-	//  - Audit(Operation Records).
 	DeleteWorkspaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error)
 	DisableWorkspaces(context.Context, *request.DisableWorkspaces) (*model.EmptyStruct, error)
 	EnableWorkspaces(context.Context, *request.EnableWorkspaces) (*model.EmptyStruct, error)
 	CreateWorkspace(context.Context, *request.CreateWorkspace) (*response.CreateWorkspace, error)
 	UpdateWorkspace(context.Context, *request.UpdateWorkspace) (*model.EmptyStruct, error)
 	DescribeWorkspace(context.Context, *request.DescribeWorkspace) (*response.DescribeWorkspace, error)
-	// API of workspace operation audit log.
-	AddAudit(context.Context, *request.AddAudit) (*model.EmptyStruct, error)
-	ListAudits(context.Context, *request.ListAudits) (*response.ListAudits, error)
-	// API of workspace role.
-	ListSystemRoles(context.Context, *request.ListSystemRoles) (*response.ListSystemRoles, error)
-	// API of workspace member.
-	ListMembers(context.Context, *request.ListMembers) (*response.ListMembers, error)
-	UpsertMembers(context.Context, *request.UpsertMembers) (*model.EmptyStruct, error)
-	DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error)
-	// Permission Auth.
+	// Permission Check.
+	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(context.Context, *request.CheckPermission) (*response.CheckPermission, error)
-	mustEmbedUnimplementedWorkspaceServer()
+	// API of workspace operation audit log.
+	ListOpAudits(context.Context, *request.ListOpAudits) (*response.ListOpAudits, error)
+	AddOpAudit(context.Context, *request.AddOpAudit) (*model.EmptyStruct, error)
+	mustEmbedUnimplementedSpaceManageServer()
 }
 
-// UnimplementedWorkspaceServer must be embedded to have forward compatible implementations.
-type UnimplementedWorkspaceServer struct {
+// UnimplementedSpaceManageServer must be embedded to have forward compatible implementations.
+type UnimplementedSpaceManageServer struct {
 }
 
-func (UnimplementedWorkspaceServer) ListWorkspaces(context.Context, *request.ListWorkspaces) (*response.ListWorkspaces, error) {
+func (UnimplementedSpaceManageServer) ListWorkspaces(context.Context, *request.ListWorkspaces) (*response.ListWorkspaces, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListWorkspaces not implemented")
 }
-func (UnimplementedWorkspaceServer) DeleteWorkspaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
+func (UnimplementedSpaceManageServer) DeleteWorkspaces(context.Context, *request.DeleteWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteWorkspaces not implemented")
 }
-func (UnimplementedWorkspaceServer) DisableWorkspaces(context.Context, *request.DisableWorkspaces) (*model.EmptyStruct, error) {
+func (UnimplementedSpaceManageServer) DisableWorkspaces(context.Context, *request.DisableWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DisableWorkspaces not implemented")
 }
-func (UnimplementedWorkspaceServer) EnableWorkspaces(context.Context, *request.EnableWorkspaces) (*model.EmptyStruct, error) {
+func (UnimplementedSpaceManageServer) EnableWorkspaces(context.Context, *request.EnableWorkspaces) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnableWorkspaces not implemented")
 }
-func (UnimplementedWorkspaceServer) CreateWorkspace(context.Context, *request.CreateWorkspace) (*response.CreateWorkspace, error) {
+func (UnimplementedSpaceManageServer) CreateWorkspace(context.Context, *request.CreateWorkspace) (*response.CreateWorkspace, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWorkspace not implemented")
 }
-func (UnimplementedWorkspaceServer) UpdateWorkspace(context.Context, *request.UpdateWorkspace) (*model.EmptyStruct, error) {
+func (UnimplementedSpaceManageServer) UpdateWorkspace(context.Context, *request.UpdateWorkspace) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateWorkspace not implemented")
 }
-func (UnimplementedWorkspaceServer) DescribeWorkspace(context.Context, *request.DescribeWorkspace) (*response.DescribeWorkspace, error) {
+func (UnimplementedSpaceManageServer) DescribeWorkspace(context.Context, *request.DescribeWorkspace) (*response.DescribeWorkspace, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeWorkspace not implemented")
 }
-func (UnimplementedWorkspaceServer) AddAudit(context.Context, *request.AddAudit) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddAudit not implemented")
-}
-func (UnimplementedWorkspaceServer) ListAudits(context.Context, *request.ListAudits) (*response.ListAudits, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListAudits not implemented")
-}
-func (UnimplementedWorkspaceServer) ListSystemRoles(context.Context, *request.ListSystemRoles) (*response.ListSystemRoles, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListSystemRoles not implemented")
-}
-func (UnimplementedWorkspaceServer) ListMembers(context.Context, *request.ListMembers) (*response.ListMembers, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListMembers not implemented")
-}
-func (UnimplementedWorkspaceServer) UpsertMembers(context.Context, *request.UpsertMembers) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpsertMembers not implemented")
-}
-func (UnimplementedWorkspaceServer) DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteMembers not implemented")
-}
-func (UnimplementedWorkspaceServer) CheckPermission(context.Context, *request.CheckPermission) (*response.CheckPermission, error) {
+func (UnimplementedSpaceManageServer) CheckPermission(context.Context, *request.CheckPermission) (*response.CheckPermission, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckPermission not implemented")
 }
-func (UnimplementedWorkspaceServer) mustEmbedUnimplementedWorkspaceServer() {}
+func (UnimplementedSpaceManageServer) ListOpAudits(context.Context, *request.ListOpAudits) (*response.ListOpAudits, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListOpAudits not implemented")
+}
+func (UnimplementedSpaceManageServer) AddOpAudit(context.Context, *request.AddOpAudit) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddOpAudit not implemented")
+}
+func (UnimplementedSpaceManageServer) mustEmbedUnimplementedSpaceManageServer() {}
 
-// UnsafeWorkspaceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to WorkspaceServer will
+// UnsafeSpaceManageServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to SpaceManageServer will
 // result in compilation errors.
-type UnsafeWorkspaceServer interface {
-	mustEmbedUnimplementedWorkspaceServer()
+type UnsafeSpaceManageServer interface {
+	mustEmbedUnimplementedSpaceManageServer()
 }
 
-func RegisterWorkspaceServer(s grpc.ServiceRegistrar, srv WorkspaceServer) {
-	s.RegisterService(&Workspace_ServiceDesc, srv)
+func RegisterSpaceManageServer(s grpc.ServiceRegistrar, srv SpaceManageServer) {
+	s.RegisterService(&SpaceManage_ServiceDesc, srv)
 }
 
-func _Workspace_ListWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_ListWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ListWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).ListWorkspaces(ctx, in)
+		return srv.(SpaceManageServer).ListWorkspaces(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/ListWorkspaces",
+		FullMethod: "/wspb.SpaceManage/ListWorkspaces",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).ListWorkspaces(ctx, req.(*request.ListWorkspaces))
+		return srv.(SpaceManageServer).ListWorkspaces(ctx, req.(*request.ListWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_DeleteWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_DeleteWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DeleteWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).DeleteWorkspaces(ctx, in)
+		return srv.(SpaceManageServer).DeleteWorkspaces(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/DeleteWorkspaces",
+		FullMethod: "/wspb.SpaceManage/DeleteWorkspaces",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).DeleteWorkspaces(ctx, req.(*request.DeleteWorkspaces))
+		return srv.(SpaceManageServer).DeleteWorkspaces(ctx, req.(*request.DeleteWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_DisableWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_DisableWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DisableWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).DisableWorkspaces(ctx, in)
+		return srv.(SpaceManageServer).DisableWorkspaces(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/DisableWorkspaces",
+		FullMethod: "/wspb.SpaceManage/DisableWorkspaces",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).DisableWorkspaces(ctx, req.(*request.DisableWorkspaces))
+		return srv.(SpaceManageServer).DisableWorkspaces(ctx, req.(*request.DisableWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_EnableWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_EnableWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.EnableWorkspaces)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).EnableWorkspaces(ctx, in)
+		return srv.(SpaceManageServer).EnableWorkspaces(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/EnableWorkspaces",
+		FullMethod: "/wspb.SpaceManage/EnableWorkspaces",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).EnableWorkspaces(ctx, req.(*request.EnableWorkspaces))
+		return srv.(SpaceManageServer).EnableWorkspaces(ctx, req.(*request.EnableWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_CreateWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_CreateWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.CreateWorkspace)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).CreateWorkspace(ctx, in)
+		return srv.(SpaceManageServer).CreateWorkspace(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/CreateWorkspace",
+		FullMethod: "/wspb.SpaceManage/CreateWorkspace",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).CreateWorkspace(ctx, req.(*request.CreateWorkspace))
+		return srv.(SpaceManageServer).CreateWorkspace(ctx, req.(*request.CreateWorkspace))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_UpdateWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_UpdateWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.UpdateWorkspace)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).UpdateWorkspace(ctx, in)
+		return srv.(SpaceManageServer).UpdateWorkspace(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/UpdateWorkspace",
+		FullMethod: "/wspb.SpaceManage/UpdateWorkspace",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).UpdateWorkspace(ctx, req.(*request.UpdateWorkspace))
+		return srv.(SpaceManageServer).UpdateWorkspace(ctx, req.(*request.UpdateWorkspace))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_DescribeWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_DescribeWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DescribeWorkspace)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).DescribeWorkspace(ctx, in)
+		return srv.(SpaceManageServer).DescribeWorkspace(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/DescribeWorkspace",
+		FullMethod: "/wspb.SpaceManage/DescribeWorkspace",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).DescribeWorkspace(ctx, req.(*request.DescribeWorkspace))
+		return srv.(SpaceManageServer).DescribeWorkspace(ctx, req.(*request.DescribeWorkspace))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workspace_AddAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.AddAudit)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).AddAudit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/AddAudit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).AddAudit(ctx, req.(*request.AddAudit))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_ListAudits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ListAudits)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).ListAudits(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/ListAudits",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).ListAudits(ctx, req.(*request.ListAudits))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_ListSystemRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ListSystemRoles)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).ListSystemRoles(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/ListSystemRoles",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).ListSystemRoles(ctx, req.(*request.ListSystemRoles))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_ListMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ListMembers)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).ListMembers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/ListMembers",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).ListMembers(ctx, req.(*request.ListMembers))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_UpsertMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.UpsertMembers)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).UpsertMembers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/UpsertMembers",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).UpsertMembers(ctx, req.(*request.UpsertMembers))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_DeleteMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DeleteMembers)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(WorkspaceServer).DeleteMembers(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Workspace/DeleteMembers",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).DeleteMembers(ctx, req.(*request.DeleteMembers))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Workspace_CheckPermission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpaceManage_CheckPermission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.CheckPermission)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkspaceServer).CheckPermission(ctx, in)
+		return srv.(SpaceManageServer).CheckPermission(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workspace/CheckPermission",
+		FullMethod: "/wspb.SpaceManage/CheckPermission",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkspaceServer).CheckPermission(ctx, req.(*request.CheckPermission))
+		return srv.(SpaceManageServer).CheckPermission(ctx, req.(*request.CheckPermission))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Workspace_ServiceDesc is the grpc.ServiceDesc for Workspace service.
+func _SpaceManage_ListOpAudits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListOpAudits)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SpaceManageServer).ListOpAudits(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.SpaceManage/ListOpAudits",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SpaceManageServer).ListOpAudits(ctx, req.(*request.ListOpAudits))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SpaceManage_AddOpAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.AddOpAudit)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SpaceManageServer).AddOpAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.SpaceManage/AddOpAudit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SpaceManageServer).AddOpAudit(ctx, req.(*request.AddOpAudit))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// SpaceManage_ServiceDesc is the grpc.ServiceDesc for SpaceManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Workspace_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "wspb.Workspace",
-	HandlerType: (*WorkspaceServer)(nil),
+var SpaceManage_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "wspb.SpaceManage",
+	HandlerType: (*SpaceManageServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "ListWorkspaces",
-			Handler:    _Workspace_ListWorkspaces_Handler,
+			Handler:    _SpaceManage_ListWorkspaces_Handler,
 		},
 		{
 			MethodName: "DeleteWorkspaces",
-			Handler:    _Workspace_DeleteWorkspaces_Handler,
+			Handler:    _SpaceManage_DeleteWorkspaces_Handler,
 		},
 		{
 			MethodName: "DisableWorkspaces",
-			Handler:    _Workspace_DisableWorkspaces_Handler,
+			Handler:    _SpaceManage_DisableWorkspaces_Handler,
 		},
 		{
 			MethodName: "EnableWorkspaces",
-			Handler:    _Workspace_EnableWorkspaces_Handler,
+			Handler:    _SpaceManage_EnableWorkspaces_Handler,
 		},
 		{
 			MethodName: "CreateWorkspace",
-			Handler:    _Workspace_CreateWorkspace_Handler,
+			Handler:    _SpaceManage_CreateWorkspace_Handler,
 		},
 		{
 			MethodName: "UpdateWorkspace",
-			Handler:    _Workspace_UpdateWorkspace_Handler,
+			Handler:    _SpaceManage_UpdateWorkspace_Handler,
 		},
 		{
 			MethodName: "DescribeWorkspace",
-			Handler:    _Workspace_DescribeWorkspace_Handler,
-		},
-		{
-			MethodName: "AddAudit",
-			Handler:    _Workspace_AddAudit_Handler,
-		},
-		{
-			MethodName: "ListAudits",
-			Handler:    _Workspace_ListAudits_Handler,
-		},
-		{
-			MethodName: "ListSystemRoles",
-			Handler:    _Workspace_ListSystemRoles_Handler,
-		},
-		{
-			MethodName: "ListMembers",
-			Handler:    _Workspace_ListMembers_Handler,
-		},
-		{
-			MethodName: "UpsertMembers",
-			Handler:    _Workspace_UpsertMembers_Handler,
-		},
-		{
-			MethodName: "DeleteMembers",
-			Handler:    _Workspace_DeleteMembers_Handler,
+			Handler:    _SpaceManage_DescribeWorkspace_Handler,
 		},
 		{
 			MethodName: "CheckPermission",
-			Handler:    _Workspace_CheckPermission_Handler,
+			Handler:    _SpaceManage_CheckPermission_Handler,
+		},
+		{
+			MethodName: "ListOpAudits",
+			Handler:    _SpaceManage_ListOpAudits_Handler,
+		},
+		{
+			MethodName: "AddOpAudit",
+			Handler:    _SpaceManage_AddOpAudit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "proto/workspace.proto",
 }
 
-// WorkflowClient is the client API for Workflow service.
+// MemberManageClient is the client API for MemberManage service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type WorkflowClient interface {
-	// Interface for stream job.
+type MemberManageClient interface {
+	// API of workspace role.
+	ListSystemRoles(ctx context.Context, in *request.ListSystemRoles, opts ...grpc.CallOption) (*response.ListSystemRoles, error)
+	// API of workspace member.
+	ListMembers(ctx context.Context, in *request.ListMembers, opts ...grpc.CallOption) (*response.ListMembers, error)
+	UpsertMembers(ctx context.Context, in *request.UpsertMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteMembers(ctx context.Context, in *request.DeleteMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+}
+
+type memberManageClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewMemberManageClient(cc grpc.ClientConnInterface) MemberManageClient {
+	return &memberManageClient{cc}
+}
+
+func (c *memberManageClient) ListSystemRoles(ctx context.Context, in *request.ListSystemRoles, opts ...grpc.CallOption) (*response.ListSystemRoles, error) {
+	out := new(response.ListSystemRoles)
+	err := c.cc.Invoke(ctx, "/wspb.MemberManage/ListSystemRoles", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *memberManageClient) ListMembers(ctx context.Context, in *request.ListMembers, opts ...grpc.CallOption) (*response.ListMembers, error) {
+	out := new(response.ListMembers)
+	err := c.cc.Invoke(ctx, "/wspb.MemberManage/ListMembers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *memberManageClient) UpsertMembers(ctx context.Context, in *request.UpsertMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.MemberManage/UpsertMembers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *memberManageClient) DeleteMembers(ctx context.Context, in *request.DeleteMembers, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.MemberManage/DeleteMembers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// MemberManageServer is the server API for MemberManage service.
+// All implementations must embed UnimplementedMemberManageServer
+// for forward compatibility
+type MemberManageServer interface {
+	// API of workspace role.
+	ListSystemRoles(context.Context, *request.ListSystemRoles) (*response.ListSystemRoles, error)
+	// API of workspace member.
+	ListMembers(context.Context, *request.ListMembers) (*response.ListMembers, error)
+	UpsertMembers(context.Context, *request.UpsertMembers) (*model.EmptyStruct, error)
+	DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error)
+	mustEmbedUnimplementedMemberManageServer()
+}
+
+// UnimplementedMemberManageServer must be embedded to have forward compatible implementations.
+type UnimplementedMemberManageServer struct {
+}
+
+func (UnimplementedMemberManageServer) ListSystemRoles(context.Context, *request.ListSystemRoles) (*response.ListSystemRoles, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListSystemRoles not implemented")
+}
+func (UnimplementedMemberManageServer) ListMembers(context.Context, *request.ListMembers) (*response.ListMembers, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListMembers not implemented")
+}
+func (UnimplementedMemberManageServer) UpsertMembers(context.Context, *request.UpsertMembers) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpsertMembers not implemented")
+}
+func (UnimplementedMemberManageServer) DeleteMembers(context.Context, *request.DeleteMembers) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteMembers not implemented")
+}
+func (UnimplementedMemberManageServer) mustEmbedUnimplementedMemberManageServer() {}
+
+// UnsafeMemberManageServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MemberManageServer will
+// result in compilation errors.
+type UnsafeMemberManageServer interface {
+	mustEmbedUnimplementedMemberManageServer()
+}
+
+func RegisterMemberManageServer(s grpc.ServiceRegistrar, srv MemberManageServer) {
+	s.RegisterService(&MemberManage_ServiceDesc, srv)
+}
+
+func _MemberManage_ListSystemRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListSystemRoles)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberManageServer).ListSystemRoles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.MemberManage/ListSystemRoles",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberManageServer).ListSystemRoles(ctx, req.(*request.ListSystemRoles))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MemberManage_ListMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListMembers)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberManageServer).ListMembers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.MemberManage/ListMembers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberManageServer).ListMembers(ctx, req.(*request.ListMembers))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MemberManage_UpsertMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.UpsertMembers)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberManageServer).UpsertMembers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.MemberManage/UpsertMembers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberManageServer).UpsertMembers(ctx, req.(*request.UpsertMembers))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _MemberManage_DeleteMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteMembers)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberManageServer).DeleteMembers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.MemberManage/DeleteMembers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberManageServer).DeleteMembers(ctx, req.(*request.DeleteMembers))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// MemberManage_ServiceDesc is the grpc.ServiceDesc for MemberManage service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var MemberManage_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "wspb.MemberManage",
+	HandlerType: (*MemberManageServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "ListSystemRoles",
+			Handler:    _MemberManage_ListSystemRoles_Handler,
+		},
+		{
+			MethodName: "ListMembers",
+			Handler:    _MemberManage_ListMembers_Handler,
+		},
+		{
+			MethodName: "UpsertMembers",
+			Handler:    _MemberManage_UpsertMembers_Handler,
+		},
+		{
+			MethodName: "DeleteMembers",
+			Handler:    _MemberManage_DeleteMembers_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "proto/workspace.proto",
+}
+
+// StreamJobManageClient is the client API for StreamJobManage service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type StreamJobManageClient interface {
+	// Interface for stream job dev.
 	//
 	// ListStreamJobs to get a list of stream job of the workspace.
 	ListStreamJobs(ctx context.Context, in *request.ListStreamJobs, opts ...grpc.CallOption) (*response.ListStreamJobs, error)
@@ -646,234 +690,234 @@ type WorkflowClient interface {
 	ListStreamJobVersions(ctx context.Context, in *request.ListStreamJobVersions, opts ...grpc.CallOption) (*response.ListStreamJobVersions, error)
 	// DescribeStreamJobVersion for get the info of the job of the specified version.
 	DescribeStreamJobVersion(ctx context.Context, in *request.DescribeStreamJob, opts ...grpc.CallOption) (*response.DescribeStreamJob, error)
-	// GetStreamJobVersionNode for get the node properties of the job of the specified version.
-	GetStreamJobVersionNode(ctx context.Context, in *request.GetStreamJobCode, opts ...grpc.CallOption) (*response.GetStreamJobCode, error)
+	// GetStreamJobVersionCode for get the node properties of the job of the specified version.
+	GetStreamJobVersionCode(ctx context.Context, in *request.GetStreamJobCode, opts ...grpc.CallOption) (*response.GetStreamJobCode, error)
 	// GetStreamJobVersionArgs for get the run parameters of the job of the specified version.
 	GetStreamJobVersionArgs(ctx context.Context, in *request.GetStreamJobArgs, opts ...grpc.CallOption) (*response.GetStreamJobArgs, error)
 	// GetStreamJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetStreamJobVersionSchedule(ctx context.Context, in *request.GetStreamJobSchedule, opts ...grpc.CallOption) (*response.GetStreamJobSchedule, error)
 }
 
-type workflowClient struct {
+type streamJobManageClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewWorkflowClient(cc grpc.ClientConnInterface) WorkflowClient {
-	return &workflowClient{cc}
+func NewStreamJobManageClient(cc grpc.ClientConnInterface) StreamJobManageClient {
+	return &streamJobManageClient{cc}
 }
 
-func (c *workflowClient) ListStreamJobs(ctx context.Context, in *request.ListStreamJobs, opts ...grpc.CallOption) (*response.ListStreamJobs, error) {
+func (c *streamJobManageClient) ListStreamJobs(ctx context.Context, in *request.ListStreamJobs, opts ...grpc.CallOption) (*response.ListStreamJobs, error) {
 	out := new(response.ListStreamJobs)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/ListStreamJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/ListStreamJobs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DeleteStreamJobs(ctx context.Context, in *request.DeleteStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) DeleteStreamJobs(ctx context.Context, in *request.DeleteStreamJobs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/DeleteStreamJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/DeleteStreamJobs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) CreateStreamJob(ctx context.Context, in *request.CreateStreamJob, opts ...grpc.CallOption) (*response.CreateStreamJob, error) {
+func (c *streamJobManageClient) CreateStreamJob(ctx context.Context, in *request.CreateStreamJob, opts ...grpc.CallOption) (*response.CreateStreamJob, error) {
 	out := new(response.CreateStreamJob)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/CreateStreamJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/CreateStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) UpdateStreamJob(ctx context.Context, in *request.UpdateStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) UpdateStreamJob(ctx context.Context, in *request.UpdateStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/UpdateStreamJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/UpdateStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DescribeStreamJob(ctx context.Context, in *request.DescribeStreamJob, opts ...grpc.CallOption) (*response.DescribeStreamJob, error) {
+func (c *streamJobManageClient) DescribeStreamJob(ctx context.Context, in *request.DescribeStreamJob, opts ...grpc.CallOption) (*response.DescribeStreamJob, error) {
 	out := new(response.DescribeStreamJob)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/DescribeStreamJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/DescribeStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) SetStreamJobCode(ctx context.Context, in *request.SetStreamJobCode, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) SetStreamJobCode(ctx context.Context, in *request.SetStreamJobCode, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/SetStreamJobCode", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/SetStreamJobCode", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamJobCode(ctx context.Context, in *request.GetStreamJobCode, opts ...grpc.CallOption) (*response.GetStreamJobCode, error) {
+func (c *streamJobManageClient) GetStreamJobCode(ctx context.Context, in *request.GetStreamJobCode, opts ...grpc.CallOption) (*response.GetStreamJobCode, error) {
 	out := new(response.GetStreamJobCode)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/GetStreamJobCode", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/GetStreamJobCode", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) StreamJobCodeSyntax(ctx context.Context, in *request.StreamJobCodeSyntax, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error) {
+func (c *streamJobManageClient) StreamJobCodeSyntax(ctx context.Context, in *request.StreamJobCodeSyntax, opts ...grpc.CallOption) (*response.StreamJobCodeSyntax, error) {
 	out := new(response.StreamJobCodeSyntax)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/StreamJobCodeSyntax", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/StreamJobCodeSyntax", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) SetStreamJobArgs(ctx context.Context, in *request.SetStreamJobArgs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) SetStreamJobArgs(ctx context.Context, in *request.SetStreamJobArgs, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/SetStreamJobArgs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/SetStreamJobArgs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamJobArgs(ctx context.Context, in *request.GetStreamJobArgs, opts ...grpc.CallOption) (*response.GetStreamJobArgs, error) {
+func (c *streamJobManageClient) GetStreamJobArgs(ctx context.Context, in *request.GetStreamJobArgs, opts ...grpc.CallOption) (*response.GetStreamJobArgs, error) {
 	out := new(response.GetStreamJobArgs)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/GetStreamJobArgs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/GetStreamJobArgs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ListBuiltInConnectors(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListBuiltInConnectors, error) {
+func (c *streamJobManageClient) ListBuiltInConnectors(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.ListBuiltInConnectors, error) {
 	out := new(response.ListBuiltInConnectors)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/ListBuiltInConnectors", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/ListBuiltInConnectors", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) SetStreamJobSchedule(ctx context.Context, in *request.SetStreamJobSchedule, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) SetStreamJobSchedule(ctx context.Context, in *request.SetStreamJobSchedule, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/SetStreamJobSchedule", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/SetStreamJobSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamJobSchedule(ctx context.Context, in *request.GetStreamJobSchedule, opts ...grpc.CallOption) (*response.GetStreamJobSchedule, error) {
+func (c *streamJobManageClient) GetStreamJobSchedule(ctx context.Context, in *request.GetStreamJobSchedule, opts ...grpc.CallOption) (*response.GetStreamJobSchedule, error) {
 	out := new(response.GetStreamJobSchedule)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/GetStreamJobSchedule", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/GetStreamJobSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ReleaseStreamJob(ctx context.Context, in *request.ReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) ReleaseStreamJob(ctx context.Context, in *request.ReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/ReleaseStreamJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/ReleaseStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) OfflineReleaseStreamJob(ctx context.Context, in *request.OfflineReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) OfflineReleaseStreamJob(ctx context.Context, in *request.OfflineReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/OfflineReleaseStreamJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/OfflineReleaseStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) SuspendReleaseStreamJob(ctx context.Context, in *request.SuspendReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) SuspendReleaseStreamJob(ctx context.Context, in *request.SuspendReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/SuspendReleaseStreamJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/SuspendReleaseStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ResumeReleaseStreamJob(ctx context.Context, in *request.ResumeReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *streamJobManageClient) ResumeReleaseStreamJob(ctx context.Context, in *request.ResumeReleaseStreamJob, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/ResumeReleaseStreamJob", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/ResumeReleaseStreamJob", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ListReleaseStreamJobs(ctx context.Context, in *request.ListReleaseStreamJobs, opts ...grpc.CallOption) (*response.ListReleaseStreamJobs, error) {
+func (c *streamJobManageClient) ListReleaseStreamJobs(ctx context.Context, in *request.ListReleaseStreamJobs, opts ...grpc.CallOption) (*response.ListReleaseStreamJobs, error) {
 	out := new(response.ListReleaseStreamJobs)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/ListReleaseStreamJobs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/ListReleaseStreamJobs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) ListStreamJobVersions(ctx context.Context, in *request.ListStreamJobVersions, opts ...grpc.CallOption) (*response.ListStreamJobVersions, error) {
+func (c *streamJobManageClient) ListStreamJobVersions(ctx context.Context, in *request.ListStreamJobVersions, opts ...grpc.CallOption) (*response.ListStreamJobVersions, error) {
 	out := new(response.ListStreamJobVersions)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/ListStreamJobVersions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/ListStreamJobVersions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) DescribeStreamJobVersion(ctx context.Context, in *request.DescribeStreamJob, opts ...grpc.CallOption) (*response.DescribeStreamJob, error) {
+func (c *streamJobManageClient) DescribeStreamJobVersion(ctx context.Context, in *request.DescribeStreamJob, opts ...grpc.CallOption) (*response.DescribeStreamJob, error) {
 	out := new(response.DescribeStreamJob)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/DescribeStreamJobVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/DescribeStreamJobVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamJobVersionNode(ctx context.Context, in *request.GetStreamJobCode, opts ...grpc.CallOption) (*response.GetStreamJobCode, error) {
+func (c *streamJobManageClient) GetStreamJobVersionCode(ctx context.Context, in *request.GetStreamJobCode, opts ...grpc.CallOption) (*response.GetStreamJobCode, error) {
 	out := new(response.GetStreamJobCode)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/GetStreamJobVersionNode", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/GetStreamJobVersionCode", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamJobVersionArgs(ctx context.Context, in *request.GetStreamJobArgs, opts ...grpc.CallOption) (*response.GetStreamJobArgs, error) {
+func (c *streamJobManageClient) GetStreamJobVersionArgs(ctx context.Context, in *request.GetStreamJobArgs, opts ...grpc.CallOption) (*response.GetStreamJobArgs, error) {
 	out := new(response.GetStreamJobArgs)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/GetStreamJobVersionArgs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/GetStreamJobVersionArgs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *workflowClient) GetStreamJobVersionSchedule(ctx context.Context, in *request.GetStreamJobSchedule, opts ...grpc.CallOption) (*response.GetStreamJobSchedule, error) {
+func (c *streamJobManageClient) GetStreamJobVersionSchedule(ctx context.Context, in *request.GetStreamJobSchedule, opts ...grpc.CallOption) (*response.GetStreamJobSchedule, error) {
 	out := new(response.GetStreamJobSchedule)
-	err := c.cc.Invoke(ctx, "/wspb.Workflow/GetStreamJobVersionSchedule", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.StreamJobManage/GetStreamJobVersionSchedule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// WorkflowServer is the server API for Workflow service.
-// All implementations must embed UnimplementedWorkflowServer
+// StreamJobManageServer is the server API for StreamJobManage service.
+// All implementations must embed UnimplementedStreamJobManageServer
 // for forward compatibility
-type WorkflowServer interface {
-	// Interface for stream job.
+type StreamJobManageServer interface {
+	// Interface for stream job dev.
 	//
 	// ListStreamJobs to get a list of stream job of the workspace.
 	ListStreamJobs(context.Context, *request.ListStreamJobs) (*response.ListStreamJobs, error)
@@ -922,623 +966,623 @@ type WorkflowServer interface {
 	ListStreamJobVersions(context.Context, *request.ListStreamJobVersions) (*response.ListStreamJobVersions, error)
 	// DescribeStreamJobVersion for get the info of the job of the specified version.
 	DescribeStreamJobVersion(context.Context, *request.DescribeStreamJob) (*response.DescribeStreamJob, error)
-	// GetStreamJobVersionNode for get the node properties of the job of the specified version.
-	GetStreamJobVersionNode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error)
+	// GetStreamJobVersionCode for get the node properties of the job of the specified version.
+	GetStreamJobVersionCode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error)
 	// GetStreamJobVersionArgs for get the run parameters of the job of the specified version.
 	GetStreamJobVersionArgs(context.Context, *request.GetStreamJobArgs) (*response.GetStreamJobArgs, error)
 	// GetStreamJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetStreamJobVersionSchedule(context.Context, *request.GetStreamJobSchedule) (*response.GetStreamJobSchedule, error)
-	mustEmbedUnimplementedWorkflowServer()
+	mustEmbedUnimplementedStreamJobManageServer()
 }
 
-// UnimplementedWorkflowServer must be embedded to have forward compatible implementations.
-type UnimplementedWorkflowServer struct {
+// UnimplementedStreamJobManageServer must be embedded to have forward compatible implementations.
+type UnimplementedStreamJobManageServer struct {
 }
 
-func (UnimplementedWorkflowServer) ListStreamJobs(context.Context, *request.ListStreamJobs) (*response.ListStreamJobs, error) {
+func (UnimplementedStreamJobManageServer) ListStreamJobs(context.Context, *request.ListStreamJobs) (*response.ListStreamJobs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListStreamJobs not implemented")
 }
-func (UnimplementedWorkflowServer) DeleteStreamJobs(context.Context, *request.DeleteStreamJobs) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) DeleteStreamJobs(context.Context, *request.DeleteStreamJobs) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamJobs not implemented")
 }
-func (UnimplementedWorkflowServer) CreateStreamJob(context.Context, *request.CreateStreamJob) (*response.CreateStreamJob, error) {
+func (UnimplementedStreamJobManageServer) CreateStreamJob(context.Context, *request.CreateStreamJob) (*response.CreateStreamJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) UpdateStreamJob(context.Context, *request.UpdateStreamJob) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) UpdateStreamJob(context.Context, *request.UpdateStreamJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) DescribeStreamJob(context.Context, *request.DescribeStreamJob) (*response.DescribeStreamJob, error) {
+func (UnimplementedStreamJobManageServer) DescribeStreamJob(context.Context, *request.DescribeStreamJob) (*response.DescribeStreamJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) SetStreamJobCode(context.Context, *request.SetStreamJobCode) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) SetStreamJobCode(context.Context, *request.SetStreamJobCode) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetStreamJobCode not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamJobCode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error) {
+func (UnimplementedStreamJobManageServer) GetStreamJobCode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobCode not implemented")
 }
-func (UnimplementedWorkflowServer) StreamJobCodeSyntax(context.Context, *request.StreamJobCodeSyntax) (*response.StreamJobCodeSyntax, error) {
+func (UnimplementedStreamJobManageServer) StreamJobCodeSyntax(context.Context, *request.StreamJobCodeSyntax) (*response.StreamJobCodeSyntax, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StreamJobCodeSyntax not implemented")
 }
-func (UnimplementedWorkflowServer) SetStreamJobArgs(context.Context, *request.SetStreamJobArgs) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) SetStreamJobArgs(context.Context, *request.SetStreamJobArgs) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetStreamJobArgs not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamJobArgs(context.Context, *request.GetStreamJobArgs) (*response.GetStreamJobArgs, error) {
+func (UnimplementedStreamJobManageServer) GetStreamJobArgs(context.Context, *request.GetStreamJobArgs) (*response.GetStreamJobArgs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobArgs not implemented")
 }
-func (UnimplementedWorkflowServer) ListBuiltInConnectors(context.Context, *model.EmptyStruct) (*response.ListBuiltInConnectors, error) {
+func (UnimplementedStreamJobManageServer) ListBuiltInConnectors(context.Context, *model.EmptyStruct) (*response.ListBuiltInConnectors, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListBuiltInConnectors not implemented")
 }
-func (UnimplementedWorkflowServer) SetStreamJobSchedule(context.Context, *request.SetStreamJobSchedule) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) SetStreamJobSchedule(context.Context, *request.SetStreamJobSchedule) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetStreamJobSchedule not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamJobSchedule(context.Context, *request.GetStreamJobSchedule) (*response.GetStreamJobSchedule, error) {
+func (UnimplementedStreamJobManageServer) GetStreamJobSchedule(context.Context, *request.GetStreamJobSchedule) (*response.GetStreamJobSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobSchedule not implemented")
 }
-func (UnimplementedWorkflowServer) ReleaseStreamJob(context.Context, *request.ReleaseStreamJob) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) ReleaseStreamJob(context.Context, *request.ReleaseStreamJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReleaseStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) OfflineReleaseStreamJob(context.Context, *request.OfflineReleaseStreamJob) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) OfflineReleaseStreamJob(context.Context, *request.OfflineReleaseStreamJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OfflineReleaseStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) SuspendReleaseStreamJob(context.Context, *request.SuspendReleaseStreamJob) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) SuspendReleaseStreamJob(context.Context, *request.SuspendReleaseStreamJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SuspendReleaseStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) ResumeReleaseStreamJob(context.Context, *request.ResumeReleaseStreamJob) (*model.EmptyStruct, error) {
+func (UnimplementedStreamJobManageServer) ResumeReleaseStreamJob(context.Context, *request.ResumeReleaseStreamJob) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResumeReleaseStreamJob not implemented")
 }
-func (UnimplementedWorkflowServer) ListReleaseStreamJobs(context.Context, *request.ListReleaseStreamJobs) (*response.ListReleaseStreamJobs, error) {
+func (UnimplementedStreamJobManageServer) ListReleaseStreamJobs(context.Context, *request.ListReleaseStreamJobs) (*response.ListReleaseStreamJobs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListReleaseStreamJobs not implemented")
 }
-func (UnimplementedWorkflowServer) ListStreamJobVersions(context.Context, *request.ListStreamJobVersions) (*response.ListStreamJobVersions, error) {
+func (UnimplementedStreamJobManageServer) ListStreamJobVersions(context.Context, *request.ListStreamJobVersions) (*response.ListStreamJobVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListStreamJobVersions not implemented")
 }
-func (UnimplementedWorkflowServer) DescribeStreamJobVersion(context.Context, *request.DescribeStreamJob) (*response.DescribeStreamJob, error) {
+func (UnimplementedStreamJobManageServer) DescribeStreamJobVersion(context.Context, *request.DescribeStreamJob) (*response.DescribeStreamJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeStreamJobVersion not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamJobVersionNode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobVersionNode not implemented")
+func (UnimplementedStreamJobManageServer) GetStreamJobVersionCode(context.Context, *request.GetStreamJobCode) (*response.GetStreamJobCode, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobVersionCode not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamJobVersionArgs(context.Context, *request.GetStreamJobArgs) (*response.GetStreamJobArgs, error) {
+func (UnimplementedStreamJobManageServer) GetStreamJobVersionArgs(context.Context, *request.GetStreamJobArgs) (*response.GetStreamJobArgs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobVersionArgs not implemented")
 }
-func (UnimplementedWorkflowServer) GetStreamJobVersionSchedule(context.Context, *request.GetStreamJobSchedule) (*response.GetStreamJobSchedule, error) {
+func (UnimplementedStreamJobManageServer) GetStreamJobVersionSchedule(context.Context, *request.GetStreamJobSchedule) (*response.GetStreamJobSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobVersionSchedule not implemented")
 }
-func (UnimplementedWorkflowServer) mustEmbedUnimplementedWorkflowServer() {}
+func (UnimplementedStreamJobManageServer) mustEmbedUnimplementedStreamJobManageServer() {}
 
-// UnsafeWorkflowServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to WorkflowServer will
+// UnsafeStreamJobManageServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to StreamJobManageServer will
 // result in compilation errors.
-type UnsafeWorkflowServer interface {
-	mustEmbedUnimplementedWorkflowServer()
+type UnsafeStreamJobManageServer interface {
+	mustEmbedUnimplementedStreamJobManageServer()
 }
 
-func RegisterWorkflowServer(s grpc.ServiceRegistrar, srv WorkflowServer) {
-	s.RegisterService(&Workflow_ServiceDesc, srv)
+func RegisterStreamJobManageServer(s grpc.ServiceRegistrar, srv StreamJobManageServer) {
+	s.RegisterService(&StreamJobManage_ServiceDesc, srv)
 }
 
-func _Workflow_ListStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_ListStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ListStreamJobs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ListStreamJobs(ctx, in)
+		return srv.(StreamJobManageServer).ListStreamJobs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/ListStreamJobs",
+		FullMethod: "/wspb.StreamJobManage/ListStreamJobs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListStreamJobs(ctx, req.(*request.ListStreamJobs))
+		return srv.(StreamJobManageServer).ListStreamJobs(ctx, req.(*request.ListStreamJobs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_DeleteStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_DeleteStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DeleteStreamJobs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DeleteStreamJobs(ctx, in)
+		return srv.(StreamJobManageServer).DeleteStreamJobs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/DeleteStreamJobs",
+		FullMethod: "/wspb.StreamJobManage/DeleteStreamJobs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DeleteStreamJobs(ctx, req.(*request.DeleteStreamJobs))
+		return srv.(StreamJobManageServer).DeleteStreamJobs(ctx, req.(*request.DeleteStreamJobs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_CreateStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_CreateStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.CreateStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).CreateStreamJob(ctx, in)
+		return srv.(StreamJobManageServer).CreateStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/CreateStreamJob",
+		FullMethod: "/wspb.StreamJobManage/CreateStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).CreateStreamJob(ctx, req.(*request.CreateStreamJob))
+		return srv.(StreamJobManageServer).CreateStreamJob(ctx, req.(*request.CreateStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_UpdateStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_UpdateStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.UpdateStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).UpdateStreamJob(ctx, in)
+		return srv.(StreamJobManageServer).UpdateStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/UpdateStreamJob",
+		FullMethod: "/wspb.StreamJobManage/UpdateStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).UpdateStreamJob(ctx, req.(*request.UpdateStreamJob))
+		return srv.(StreamJobManageServer).UpdateStreamJob(ctx, req.(*request.UpdateStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_DescribeStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_DescribeStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DescribeStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeStreamJob(ctx, in)
+		return srv.(StreamJobManageServer).DescribeStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/DescribeStreamJob",
+		FullMethod: "/wspb.StreamJobManage/DescribeStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeStreamJob(ctx, req.(*request.DescribeStreamJob))
+		return srv.(StreamJobManageServer).DescribeStreamJob(ctx, req.(*request.DescribeStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_SetStreamJobCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_SetStreamJobCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.SetStreamJobCode)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).SetStreamJobCode(ctx, in)
+		return srv.(StreamJobManageServer).SetStreamJobCode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/SetStreamJobCode",
+		FullMethod: "/wspb.StreamJobManage/SetStreamJobCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).SetStreamJobCode(ctx, req.(*request.SetStreamJobCode))
+		return srv.(StreamJobManageServer).SetStreamJobCode(ctx, req.(*request.SetStreamJobCode))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_GetStreamJobCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_GetStreamJobCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.GetStreamJobCode)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).GetStreamJobCode(ctx, in)
+		return srv.(StreamJobManageServer).GetStreamJobCode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/GetStreamJobCode",
+		FullMethod: "/wspb.StreamJobManage/GetStreamJobCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamJobCode(ctx, req.(*request.GetStreamJobCode))
+		return srv.(StreamJobManageServer).GetStreamJobCode(ctx, req.(*request.GetStreamJobCode))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_StreamJobCodeSyntax_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_StreamJobCodeSyntax_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.StreamJobCodeSyntax)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).StreamJobCodeSyntax(ctx, in)
+		return srv.(StreamJobManageServer).StreamJobCodeSyntax(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/StreamJobCodeSyntax",
+		FullMethod: "/wspb.StreamJobManage/StreamJobCodeSyntax",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).StreamJobCodeSyntax(ctx, req.(*request.StreamJobCodeSyntax))
+		return srv.(StreamJobManageServer).StreamJobCodeSyntax(ctx, req.(*request.StreamJobCodeSyntax))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_SetStreamJobArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_SetStreamJobArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.SetStreamJobArgs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).SetStreamJobArgs(ctx, in)
+		return srv.(StreamJobManageServer).SetStreamJobArgs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/SetStreamJobArgs",
+		FullMethod: "/wspb.StreamJobManage/SetStreamJobArgs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).SetStreamJobArgs(ctx, req.(*request.SetStreamJobArgs))
+		return srv.(StreamJobManageServer).SetStreamJobArgs(ctx, req.(*request.SetStreamJobArgs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_GetStreamJobArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_GetStreamJobArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.GetStreamJobArgs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).GetStreamJobArgs(ctx, in)
+		return srv.(StreamJobManageServer).GetStreamJobArgs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/GetStreamJobArgs",
+		FullMethod: "/wspb.StreamJobManage/GetStreamJobArgs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamJobArgs(ctx, req.(*request.GetStreamJobArgs))
+		return srv.(StreamJobManageServer).GetStreamJobArgs(ctx, req.(*request.GetStreamJobArgs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ListBuiltInConnectors_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_ListBuiltInConnectors_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(model.EmptyStruct)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ListBuiltInConnectors(ctx, in)
+		return srv.(StreamJobManageServer).ListBuiltInConnectors(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/ListBuiltInConnectors",
+		FullMethod: "/wspb.StreamJobManage/ListBuiltInConnectors",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListBuiltInConnectors(ctx, req.(*model.EmptyStruct))
+		return srv.(StreamJobManageServer).ListBuiltInConnectors(ctx, req.(*model.EmptyStruct))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_SetStreamJobSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_SetStreamJobSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.SetStreamJobSchedule)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).SetStreamJobSchedule(ctx, in)
+		return srv.(StreamJobManageServer).SetStreamJobSchedule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/SetStreamJobSchedule",
+		FullMethod: "/wspb.StreamJobManage/SetStreamJobSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).SetStreamJobSchedule(ctx, req.(*request.SetStreamJobSchedule))
+		return srv.(StreamJobManageServer).SetStreamJobSchedule(ctx, req.(*request.SetStreamJobSchedule))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_GetStreamJobSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_GetStreamJobSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.GetStreamJobSchedule)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).GetStreamJobSchedule(ctx, in)
+		return srv.(StreamJobManageServer).GetStreamJobSchedule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/GetStreamJobSchedule",
+		FullMethod: "/wspb.StreamJobManage/GetStreamJobSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamJobSchedule(ctx, req.(*request.GetStreamJobSchedule))
+		return srv.(StreamJobManageServer).GetStreamJobSchedule(ctx, req.(*request.GetStreamJobSchedule))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_ReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ReleaseStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ReleaseStreamJob(ctx, in)
+		return srv.(StreamJobManageServer).ReleaseStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/ReleaseStreamJob",
+		FullMethod: "/wspb.StreamJobManage/ReleaseStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ReleaseStreamJob(ctx, req.(*request.ReleaseStreamJob))
+		return srv.(StreamJobManageServer).ReleaseStreamJob(ctx, req.(*request.ReleaseStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_OfflineReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_OfflineReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.OfflineReleaseStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).OfflineReleaseStreamJob(ctx, in)
+		return srv.(StreamJobManageServer).OfflineReleaseStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/OfflineReleaseStreamJob",
+		FullMethod: "/wspb.StreamJobManage/OfflineReleaseStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).OfflineReleaseStreamJob(ctx, req.(*request.OfflineReleaseStreamJob))
+		return srv.(StreamJobManageServer).OfflineReleaseStreamJob(ctx, req.(*request.OfflineReleaseStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_SuspendReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_SuspendReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.SuspendReleaseStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).SuspendReleaseStreamJob(ctx, in)
+		return srv.(StreamJobManageServer).SuspendReleaseStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/SuspendReleaseStreamJob",
+		FullMethod: "/wspb.StreamJobManage/SuspendReleaseStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).SuspendReleaseStreamJob(ctx, req.(*request.SuspendReleaseStreamJob))
+		return srv.(StreamJobManageServer).SuspendReleaseStreamJob(ctx, req.(*request.SuspendReleaseStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ResumeReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_ResumeReleaseStreamJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ResumeReleaseStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ResumeReleaseStreamJob(ctx, in)
+		return srv.(StreamJobManageServer).ResumeReleaseStreamJob(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/ResumeReleaseStreamJob",
+		FullMethod: "/wspb.StreamJobManage/ResumeReleaseStreamJob",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ResumeReleaseStreamJob(ctx, req.(*request.ResumeReleaseStreamJob))
+		return srv.(StreamJobManageServer).ResumeReleaseStreamJob(ctx, req.(*request.ResumeReleaseStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ListReleaseStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_ListReleaseStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ListReleaseStreamJobs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ListReleaseStreamJobs(ctx, in)
+		return srv.(StreamJobManageServer).ListReleaseStreamJobs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/ListReleaseStreamJobs",
+		FullMethod: "/wspb.StreamJobManage/ListReleaseStreamJobs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListReleaseStreamJobs(ctx, req.(*request.ListReleaseStreamJobs))
+		return srv.(StreamJobManageServer).ListReleaseStreamJobs(ctx, req.(*request.ListReleaseStreamJobs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_ListStreamJobVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_ListStreamJobVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ListStreamJobVersions)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).ListStreamJobVersions(ctx, in)
+		return srv.(StreamJobManageServer).ListStreamJobVersions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/ListStreamJobVersions",
+		FullMethod: "/wspb.StreamJobManage/ListStreamJobVersions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).ListStreamJobVersions(ctx, req.(*request.ListStreamJobVersions))
+		return srv.(StreamJobManageServer).ListStreamJobVersions(ctx, req.(*request.ListStreamJobVersions))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_DescribeStreamJobVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_DescribeStreamJobVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DescribeStreamJob)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).DescribeStreamJobVersion(ctx, in)
+		return srv.(StreamJobManageServer).DescribeStreamJobVersion(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/DescribeStreamJobVersion",
+		FullMethod: "/wspb.StreamJobManage/DescribeStreamJobVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).DescribeStreamJobVersion(ctx, req.(*request.DescribeStreamJob))
+		return srv.(StreamJobManageServer).DescribeStreamJobVersion(ctx, req.(*request.DescribeStreamJob))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_GetStreamJobVersionNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_GetStreamJobVersionCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.GetStreamJobCode)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).GetStreamJobVersionNode(ctx, in)
+		return srv.(StreamJobManageServer).GetStreamJobVersionCode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/GetStreamJobVersionNode",
+		FullMethod: "/wspb.StreamJobManage/GetStreamJobVersionCode",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamJobVersionNode(ctx, req.(*request.GetStreamJobCode))
+		return srv.(StreamJobManageServer).GetStreamJobVersionCode(ctx, req.(*request.GetStreamJobCode))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_GetStreamJobVersionArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_GetStreamJobVersionArgs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.GetStreamJobArgs)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).GetStreamJobVersionArgs(ctx, in)
+		return srv.(StreamJobManageServer).GetStreamJobVersionArgs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/GetStreamJobVersionArgs",
+		FullMethod: "/wspb.StreamJobManage/GetStreamJobVersionArgs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamJobVersionArgs(ctx, req.(*request.GetStreamJobArgs))
+		return srv.(StreamJobManageServer).GetStreamJobVersionArgs(ctx, req.(*request.GetStreamJobArgs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Workflow_GetStreamJobVersionSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _StreamJobManage_GetStreamJobVersionSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.GetStreamJobSchedule)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(WorkflowServer).GetStreamJobVersionSchedule(ctx, in)
+		return srv.(StreamJobManageServer).GetStreamJobVersionSchedule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Workflow/GetStreamJobVersionSchedule",
+		FullMethod: "/wspb.StreamJobManage/GetStreamJobVersionSchedule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(WorkflowServer).GetStreamJobVersionSchedule(ctx, req.(*request.GetStreamJobSchedule))
+		return srv.(StreamJobManageServer).GetStreamJobVersionSchedule(ctx, req.(*request.GetStreamJobSchedule))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Workflow_ServiceDesc is the grpc.ServiceDesc for Workflow service.
+// StreamJobManage_ServiceDesc is the grpc.ServiceDesc for StreamJobManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Workflow_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "wspb.Workflow",
-	HandlerType: (*WorkflowServer)(nil),
+var StreamJobManage_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "wspb.StreamJobManage",
+	HandlerType: (*StreamJobManageServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "ListStreamJobs",
-			Handler:    _Workflow_ListStreamJobs_Handler,
+			Handler:    _StreamJobManage_ListStreamJobs_Handler,
 		},
 		{
 			MethodName: "DeleteStreamJobs",
-			Handler:    _Workflow_DeleteStreamJobs_Handler,
+			Handler:    _StreamJobManage_DeleteStreamJobs_Handler,
 		},
 		{
 			MethodName: "CreateStreamJob",
-			Handler:    _Workflow_CreateStreamJob_Handler,
+			Handler:    _StreamJobManage_CreateStreamJob_Handler,
 		},
 		{
 			MethodName: "UpdateStreamJob",
-			Handler:    _Workflow_UpdateStreamJob_Handler,
+			Handler:    _StreamJobManage_UpdateStreamJob_Handler,
 		},
 		{
 			MethodName: "DescribeStreamJob",
-			Handler:    _Workflow_DescribeStreamJob_Handler,
+			Handler:    _StreamJobManage_DescribeStreamJob_Handler,
 		},
 		{
 			MethodName: "SetStreamJobCode",
-			Handler:    _Workflow_SetStreamJobCode_Handler,
+			Handler:    _StreamJobManage_SetStreamJobCode_Handler,
 		},
 		{
 			MethodName: "GetStreamJobCode",
-			Handler:    _Workflow_GetStreamJobCode_Handler,
+			Handler:    _StreamJobManage_GetStreamJobCode_Handler,
 		},
 		{
 			MethodName: "StreamJobCodeSyntax",
-			Handler:    _Workflow_StreamJobCodeSyntax_Handler,
+			Handler:    _StreamJobManage_StreamJobCodeSyntax_Handler,
 		},
 		{
 			MethodName: "SetStreamJobArgs",
-			Handler:    _Workflow_SetStreamJobArgs_Handler,
+			Handler:    _StreamJobManage_SetStreamJobArgs_Handler,
 		},
 		{
 			MethodName: "GetStreamJobArgs",
-			Handler:    _Workflow_GetStreamJobArgs_Handler,
+			Handler:    _StreamJobManage_GetStreamJobArgs_Handler,
 		},
 		{
 			MethodName: "ListBuiltInConnectors",
-			Handler:    _Workflow_ListBuiltInConnectors_Handler,
+			Handler:    _StreamJobManage_ListBuiltInConnectors_Handler,
 		},
 		{
 			MethodName: "SetStreamJobSchedule",
-			Handler:    _Workflow_SetStreamJobSchedule_Handler,
+			Handler:    _StreamJobManage_SetStreamJobSchedule_Handler,
 		},
 		{
 			MethodName: "GetStreamJobSchedule",
-			Handler:    _Workflow_GetStreamJobSchedule_Handler,
+			Handler:    _StreamJobManage_GetStreamJobSchedule_Handler,
 		},
 		{
 			MethodName: "ReleaseStreamJob",
-			Handler:    _Workflow_ReleaseStreamJob_Handler,
+			Handler:    _StreamJobManage_ReleaseStreamJob_Handler,
 		},
 		{
 			MethodName: "OfflineReleaseStreamJob",
-			Handler:    _Workflow_OfflineReleaseStreamJob_Handler,
+			Handler:    _StreamJobManage_OfflineReleaseStreamJob_Handler,
 		},
 		{
 			MethodName: "SuspendReleaseStreamJob",
-			Handler:    _Workflow_SuspendReleaseStreamJob_Handler,
+			Handler:    _StreamJobManage_SuspendReleaseStreamJob_Handler,
 		},
 		{
 			MethodName: "ResumeReleaseStreamJob",
-			Handler:    _Workflow_ResumeReleaseStreamJob_Handler,
+			Handler:    _StreamJobManage_ResumeReleaseStreamJob_Handler,
 		},
 		{
 			MethodName: "ListReleaseStreamJobs",
-			Handler:    _Workflow_ListReleaseStreamJobs_Handler,
+			Handler:    _StreamJobManage_ListReleaseStreamJobs_Handler,
 		},
 		{
 			MethodName: "ListStreamJobVersions",
-			Handler:    _Workflow_ListStreamJobVersions_Handler,
+			Handler:    _StreamJobManage_ListStreamJobVersions_Handler,
 		},
 		{
 			MethodName: "DescribeStreamJobVersion",
-			Handler:    _Workflow_DescribeStreamJobVersion_Handler,
+			Handler:    _StreamJobManage_DescribeStreamJobVersion_Handler,
 		},
 		{
-			MethodName: "GetStreamJobVersionNode",
-			Handler:    _Workflow_GetStreamJobVersionNode_Handler,
+			MethodName: "GetStreamJobVersionCode",
+			Handler:    _StreamJobManage_GetStreamJobVersionCode_Handler,
 		},
 		{
 			MethodName: "GetStreamJobVersionArgs",
-			Handler:    _Workflow_GetStreamJobVersionArgs_Handler,
+			Handler:    _StreamJobManage_GetStreamJobVersionArgs_Handler,
 		},
 		{
 			MethodName: "GetStreamJobVersionSchedule",
-			Handler:    _Workflow_GetStreamJobVersionSchedule_Handler,
+			Handler:    _StreamJobManage_GetStreamJobVersionSchedule_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "proto/workspace.proto",
 }
 
-// SchedulerClient is the client API for Scheduler service.
+// StreamInstanceManageClient is the client API for StreamInstanceManage service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type SchedulerClient interface {
+type StreamInstanceManageClient interface {
 	// Interface for stream job cycle instance.
 	//
 	ListStreamInstances(ctx context.Context, in *request.ListStreamInstances, opts ...grpc.CallOption) (*response.ListStreamInstances, error)
@@ -1546,6 +1590,233 @@ type SchedulerClient interface {
 	SuspendStreamInstances(ctx context.Context, in *request.SuspendStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	ResumeStreamInstances(ctx context.Context, in *request.ResumeStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error)
 	DescribeFlinkUIByInstanceId(ctx context.Context, in *request.DescribeFlinkUIByInstanceId, opts ...grpc.CallOption) (*response.DescribeFlinkUIByInstanceId, error)
+}
+
+type streamInstanceManageClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewStreamInstanceManageClient(cc grpc.ClientConnInterface) StreamInstanceManageClient {
+	return &streamInstanceManageClient{cc}
+}
+
+func (c *streamInstanceManageClient) ListStreamInstances(ctx context.Context, in *request.ListStreamInstances, opts ...grpc.CallOption) (*response.ListStreamInstances, error) {
+	out := new(response.ListStreamInstances)
+	err := c.cc.Invoke(ctx, "/wspb.StreamInstanceManage/ListStreamInstances", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *streamInstanceManageClient) TerminateStreamInstances(ctx context.Context, in *request.TerminateStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.StreamInstanceManage/TerminateStreamInstances", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *streamInstanceManageClient) SuspendStreamInstances(ctx context.Context, in *request.SuspendStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.StreamInstanceManage/SuspendStreamInstances", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *streamInstanceManageClient) ResumeStreamInstances(ctx context.Context, in *request.ResumeStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.StreamInstanceManage/ResumeStreamInstances", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *streamInstanceManageClient) DescribeFlinkUIByInstanceId(ctx context.Context, in *request.DescribeFlinkUIByInstanceId, opts ...grpc.CallOption) (*response.DescribeFlinkUIByInstanceId, error) {
+	out := new(response.DescribeFlinkUIByInstanceId)
+	err := c.cc.Invoke(ctx, "/wspb.StreamInstanceManage/DescribeFlinkUIByInstanceId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// StreamInstanceManageServer is the server API for StreamInstanceManage service.
+// All implementations must embed UnimplementedStreamInstanceManageServer
+// for forward compatibility
+type StreamInstanceManageServer interface {
+	// Interface for stream job cycle instance.
+	//
+	ListStreamInstances(context.Context, *request.ListStreamInstances) (*response.ListStreamInstances, error)
+	TerminateStreamInstances(context.Context, *request.TerminateStreamInstances) (*model.EmptyStruct, error)
+	SuspendStreamInstances(context.Context, *request.SuspendStreamInstances) (*model.EmptyStruct, error)
+	ResumeStreamInstances(context.Context, *request.ResumeStreamInstances) (*model.EmptyStruct, error)
+	DescribeFlinkUIByInstanceId(context.Context, *request.DescribeFlinkUIByInstanceId) (*response.DescribeFlinkUIByInstanceId, error)
+	mustEmbedUnimplementedStreamInstanceManageServer()
+}
+
+// UnimplementedStreamInstanceManageServer must be embedded to have forward compatible implementations.
+type UnimplementedStreamInstanceManageServer struct {
+}
+
+func (UnimplementedStreamInstanceManageServer) ListStreamInstances(context.Context, *request.ListStreamInstances) (*response.ListStreamInstances, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListStreamInstances not implemented")
+}
+func (UnimplementedStreamInstanceManageServer) TerminateStreamInstances(context.Context, *request.TerminateStreamInstances) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TerminateStreamInstances not implemented")
+}
+func (UnimplementedStreamInstanceManageServer) SuspendStreamInstances(context.Context, *request.SuspendStreamInstances) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SuspendStreamInstances not implemented")
+}
+func (UnimplementedStreamInstanceManageServer) ResumeStreamInstances(context.Context, *request.ResumeStreamInstances) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResumeStreamInstances not implemented")
+}
+func (UnimplementedStreamInstanceManageServer) DescribeFlinkUIByInstanceId(context.Context, *request.DescribeFlinkUIByInstanceId) (*response.DescribeFlinkUIByInstanceId, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlinkUIByInstanceId not implemented")
+}
+func (UnimplementedStreamInstanceManageServer) mustEmbedUnimplementedStreamInstanceManageServer() {}
+
+// UnsafeStreamInstanceManageServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to StreamInstanceManageServer will
+// result in compilation errors.
+type UnsafeStreamInstanceManageServer interface {
+	mustEmbedUnimplementedStreamInstanceManageServer()
+}
+
+func RegisterStreamInstanceManageServer(s grpc.ServiceRegistrar, srv StreamInstanceManageServer) {
+	s.RegisterService(&StreamInstanceManage_ServiceDesc, srv)
+}
+
+func _StreamInstanceManage_ListStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListStreamInstances)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamInstanceManageServer).ListStreamInstances(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.StreamInstanceManage/ListStreamInstances",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamInstanceManageServer).ListStreamInstances(ctx, req.(*request.ListStreamInstances))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StreamInstanceManage_TerminateStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.TerminateStreamInstances)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamInstanceManageServer).TerminateStreamInstances(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.StreamInstanceManage/TerminateStreamInstances",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamInstanceManageServer).TerminateStreamInstances(ctx, req.(*request.TerminateStreamInstances))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StreamInstanceManage_SuspendStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.SuspendStreamInstances)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamInstanceManageServer).SuspendStreamInstances(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.StreamInstanceManage/SuspendStreamInstances",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamInstanceManageServer).SuspendStreamInstances(ctx, req.(*request.SuspendStreamInstances))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StreamInstanceManage_ResumeStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ResumeStreamInstances)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamInstanceManageServer).ResumeStreamInstances(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.StreamInstanceManage/ResumeStreamInstances",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamInstanceManageServer).ResumeStreamInstances(ctx, req.(*request.ResumeStreamInstances))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StreamInstanceManage_DescribeFlinkUIByInstanceId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeFlinkUIByInstanceId)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamInstanceManageServer).DescribeFlinkUIByInstanceId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.StreamInstanceManage/DescribeFlinkUIByInstanceId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamInstanceManageServer).DescribeFlinkUIByInstanceId(ctx, req.(*request.DescribeFlinkUIByInstanceId))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// StreamInstanceManage_ServiceDesc is the grpc.ServiceDesc for StreamInstanceManage service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var StreamInstanceManage_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "wspb.StreamInstanceManage",
+	HandlerType: (*StreamInstanceManageServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "ListStreamInstances",
+			Handler:    _StreamInstanceManage_ListStreamInstances_Handler,
+		},
+		{
+			MethodName: "TerminateStreamInstances",
+			Handler:    _StreamInstanceManage_TerminateStreamInstances_Handler,
+		},
+		{
+			MethodName: "SuspendStreamInstances",
+			Handler:    _StreamInstanceManage_SuspendStreamInstances_Handler,
+		},
+		{
+			MethodName: "ResumeStreamInstances",
+			Handler:    _StreamInstanceManage_ResumeStreamInstances_Handler,
+		},
+		{
+			MethodName: "DescribeFlinkUIByInstanceId",
+			Handler:    _StreamInstanceManage_DescribeFlinkUIByInstanceId_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "proto/workspace.proto",
+}
+
+// MonitorManageClient is the client API for MonitorManage service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type MonitorManageClient interface {
 	// Interface for monitor.
 	ListMonitorRules(ctx context.Context, in *request.ListMonitorRules, opts ...grpc.CallOption) (*response.ListMonitorRules, error)
 	DeleteMonitorRules(ctx context.Context, in *request.DeleteMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error)
@@ -1556,133 +1827,81 @@ type SchedulerClient interface {
 	DescribeMonitorRule(ctx context.Context, in *request.DescribeMonitorRule, opts ...grpc.CallOption) (*response.DescribeMonitorRule, error)
 }
 
-type schedulerClient struct {
+type monitorManageClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewSchedulerClient(cc grpc.ClientConnInterface) SchedulerClient {
-	return &schedulerClient{cc}
+func NewMonitorManageClient(cc grpc.ClientConnInterface) MonitorManageClient {
+	return &monitorManageClient{cc}
 }
 
-func (c *schedulerClient) ListStreamInstances(ctx context.Context, in *request.ListStreamInstances, opts ...grpc.CallOption) (*response.ListStreamInstances, error) {
-	out := new(response.ListStreamInstances)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/ListStreamInstances", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *schedulerClient) TerminateStreamInstances(ctx context.Context, in *request.TerminateStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/TerminateStreamInstances", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *schedulerClient) SuspendStreamInstances(ctx context.Context, in *request.SuspendStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/SuspendStreamInstances", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *schedulerClient) ResumeStreamInstances(ctx context.Context, in *request.ResumeStreamInstances, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
-	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/ResumeStreamInstances", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *schedulerClient) DescribeFlinkUIByInstanceId(ctx context.Context, in *request.DescribeFlinkUIByInstanceId, opts ...grpc.CallOption) (*response.DescribeFlinkUIByInstanceId, error) {
-	out := new(response.DescribeFlinkUIByInstanceId)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/DescribeFlinkUIByInstanceId", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *schedulerClient) ListMonitorRules(ctx context.Context, in *request.ListMonitorRules, opts ...grpc.CallOption) (*response.ListMonitorRules, error) {
+func (c *monitorManageClient) ListMonitorRules(ctx context.Context, in *request.ListMonitorRules, opts ...grpc.CallOption) (*response.ListMonitorRules, error) {
 	out := new(response.ListMonitorRules)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/ListMonitorRules", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.MonitorManage/ListMonitorRules", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) DeleteMonitorRules(ctx context.Context, in *request.DeleteMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *monitorManageClient) DeleteMonitorRules(ctx context.Context, in *request.DeleteMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/DeleteMonitorRules", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.MonitorManage/DeleteMonitorRules", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) EnableMonitorRules(ctx context.Context, in *request.EnableMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *monitorManageClient) EnableMonitorRules(ctx context.Context, in *request.EnableMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/EnableMonitorRules", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.MonitorManage/EnableMonitorRules", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) DisableMonitorRules(ctx context.Context, in *request.DisableMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *monitorManageClient) DisableMonitorRules(ctx context.Context, in *request.DisableMonitorRules, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/DisableMonitorRules", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.MonitorManage/DisableMonitorRules", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) CreateMonitorRule(ctx context.Context, in *request.CreateMonitorRule, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *monitorManageClient) CreateMonitorRule(ctx context.Context, in *request.CreateMonitorRule, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/CreateMonitorRule", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.MonitorManage/CreateMonitorRule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) UpdateMonitorRule(ctx context.Context, in *request.UpdateMonitorRule, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+func (c *monitorManageClient) UpdateMonitorRule(ctx context.Context, in *request.UpdateMonitorRule, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
 	out := new(model.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/UpdateMonitorRule", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.MonitorManage/UpdateMonitorRule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *schedulerClient) DescribeMonitorRule(ctx context.Context, in *request.DescribeMonitorRule, opts ...grpc.CallOption) (*response.DescribeMonitorRule, error) {
+func (c *monitorManageClient) DescribeMonitorRule(ctx context.Context, in *request.DescribeMonitorRule, opts ...grpc.CallOption) (*response.DescribeMonitorRule, error) {
 	out := new(response.DescribeMonitorRule)
-	err := c.cc.Invoke(ctx, "/wspb.Scheduler/DescribeMonitorRule", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/wspb.MonitorManage/DescribeMonitorRule", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// SchedulerServer is the server API for Scheduler service.
-// All implementations must embed UnimplementedSchedulerServer
+// MonitorManageServer is the server API for MonitorManage service.
+// All implementations must embed UnimplementedMonitorManageServer
 // for forward compatibility
-type SchedulerServer interface {
-	// Interface for stream job cycle instance.
-	//
-	ListStreamInstances(context.Context, *request.ListStreamInstances) (*response.ListStreamInstances, error)
-	TerminateStreamInstances(context.Context, *request.TerminateStreamInstances) (*model.EmptyStruct, error)
-	SuspendStreamInstances(context.Context, *request.SuspendStreamInstances) (*model.EmptyStruct, error)
-	ResumeStreamInstances(context.Context, *request.ResumeStreamInstances) (*model.EmptyStruct, error)
-	DescribeFlinkUIByInstanceId(context.Context, *request.DescribeFlinkUIByInstanceId) (*response.DescribeFlinkUIByInstanceId, error)
+type MonitorManageServer interface {
 	// Interface for monitor.
 	ListMonitorRules(context.Context, *request.ListMonitorRules) (*response.ListMonitorRules, error)
 	DeleteMonitorRules(context.Context, *request.DeleteMonitorRules) (*model.EmptyStruct, error)
@@ -1691,332 +1910,207 @@ type SchedulerServer interface {
 	CreateMonitorRule(context.Context, *request.CreateMonitorRule) (*model.EmptyStruct, error)
 	UpdateMonitorRule(context.Context, *request.UpdateMonitorRule) (*model.EmptyStruct, error)
 	DescribeMonitorRule(context.Context, *request.DescribeMonitorRule) (*response.DescribeMonitorRule, error)
-	mustEmbedUnimplementedSchedulerServer()
+	mustEmbedUnimplementedMonitorManageServer()
 }
 
-// UnimplementedSchedulerServer must be embedded to have forward compatible implementations.
-type UnimplementedSchedulerServer struct {
+// UnimplementedMonitorManageServer must be embedded to have forward compatible implementations.
+type UnimplementedMonitorManageServer struct {
 }
 
-func (UnimplementedSchedulerServer) ListStreamInstances(context.Context, *request.ListStreamInstances) (*response.ListStreamInstances, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListStreamInstances not implemented")
-}
-func (UnimplementedSchedulerServer) TerminateStreamInstances(context.Context, *request.TerminateStreamInstances) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TerminateStreamInstances not implemented")
-}
-func (UnimplementedSchedulerServer) SuspendStreamInstances(context.Context, *request.SuspendStreamInstances) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SuspendStreamInstances not implemented")
-}
-func (UnimplementedSchedulerServer) ResumeStreamInstances(context.Context, *request.ResumeStreamInstances) (*model.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResumeStreamInstances not implemented")
-}
-func (UnimplementedSchedulerServer) DescribeFlinkUIByInstanceId(context.Context, *request.DescribeFlinkUIByInstanceId) (*response.DescribeFlinkUIByInstanceId, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlinkUIByInstanceId not implemented")
-}
-func (UnimplementedSchedulerServer) ListMonitorRules(context.Context, *request.ListMonitorRules) (*response.ListMonitorRules, error) {
+func (UnimplementedMonitorManageServer) ListMonitorRules(context.Context, *request.ListMonitorRules) (*response.ListMonitorRules, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListMonitorRules not implemented")
 }
-func (UnimplementedSchedulerServer) DeleteMonitorRules(context.Context, *request.DeleteMonitorRules) (*model.EmptyStruct, error) {
+func (UnimplementedMonitorManageServer) DeleteMonitorRules(context.Context, *request.DeleteMonitorRules) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteMonitorRules not implemented")
 }
-func (UnimplementedSchedulerServer) EnableMonitorRules(context.Context, *request.EnableMonitorRules) (*model.EmptyStruct, error) {
+func (UnimplementedMonitorManageServer) EnableMonitorRules(context.Context, *request.EnableMonitorRules) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnableMonitorRules not implemented")
 }
-func (UnimplementedSchedulerServer) DisableMonitorRules(context.Context, *request.DisableMonitorRules) (*model.EmptyStruct, error) {
+func (UnimplementedMonitorManageServer) DisableMonitorRules(context.Context, *request.DisableMonitorRules) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DisableMonitorRules not implemented")
 }
-func (UnimplementedSchedulerServer) CreateMonitorRule(context.Context, *request.CreateMonitorRule) (*model.EmptyStruct, error) {
+func (UnimplementedMonitorManageServer) CreateMonitorRule(context.Context, *request.CreateMonitorRule) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateMonitorRule not implemented")
 }
-func (UnimplementedSchedulerServer) UpdateMonitorRule(context.Context, *request.UpdateMonitorRule) (*model.EmptyStruct, error) {
+func (UnimplementedMonitorManageServer) UpdateMonitorRule(context.Context, *request.UpdateMonitorRule) (*model.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMonitorRule not implemented")
 }
-func (UnimplementedSchedulerServer) DescribeMonitorRule(context.Context, *request.DescribeMonitorRule) (*response.DescribeMonitorRule, error) {
+func (UnimplementedMonitorManageServer) DescribeMonitorRule(context.Context, *request.DescribeMonitorRule) (*response.DescribeMonitorRule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeMonitorRule not implemented")
 }
-func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}
+func (UnimplementedMonitorManageServer) mustEmbedUnimplementedMonitorManageServer() {}
 
-// UnsafeSchedulerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to SchedulerServer will
+// UnsafeMonitorManageServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MonitorManageServer will
 // result in compilation errors.
-type UnsafeSchedulerServer interface {
-	mustEmbedUnimplementedSchedulerServer()
+type UnsafeMonitorManageServer interface {
+	mustEmbedUnimplementedMonitorManageServer()
 }
 
-func RegisterSchedulerServer(s grpc.ServiceRegistrar, srv SchedulerServer) {
-	s.RegisterService(&Scheduler_ServiceDesc, srv)
+func RegisterMonitorManageServer(s grpc.ServiceRegistrar, srv MonitorManageServer) {
+	s.RegisterService(&MonitorManage_ServiceDesc, srv)
 }
 
-func _Scheduler_ListStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ListStreamInstances)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SchedulerServer).ListStreamInstances(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Scheduler/ListStreamInstances",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).ListStreamInstances(ctx, req.(*request.ListStreamInstances))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Scheduler_TerminateStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.TerminateStreamInstances)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SchedulerServer).TerminateStreamInstances(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Scheduler/TerminateStreamInstances",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).TerminateStreamInstances(ctx, req.(*request.TerminateStreamInstances))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Scheduler_SuspendStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.SuspendStreamInstances)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SchedulerServer).SuspendStreamInstances(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Scheduler/SuspendStreamInstances",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).SuspendStreamInstances(ctx, req.(*request.SuspendStreamInstances))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Scheduler_ResumeStreamInstances_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.ResumeStreamInstances)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SchedulerServer).ResumeStreamInstances(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Scheduler/ResumeStreamInstances",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).ResumeStreamInstances(ctx, req.(*request.ResumeStreamInstances))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Scheduler_DescribeFlinkUIByInstanceId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(request.DescribeFlinkUIByInstanceId)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SchedulerServer).DescribeFlinkUIByInstanceId(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wspb.Scheduler/DescribeFlinkUIByInstanceId",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).DescribeFlinkUIByInstanceId(ctx, req.(*request.DescribeFlinkUIByInstanceId))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Scheduler_ListMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonitorManage_ListMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.ListMonitorRules)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).ListMonitorRules(ctx, in)
+		return srv.(MonitorManageServer).ListMonitorRules(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Scheduler/ListMonitorRules",
+		FullMethod: "/wspb.MonitorManage/ListMonitorRules",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).ListMonitorRules(ctx, req.(*request.ListMonitorRules))
+		return srv.(MonitorManageServer).ListMonitorRules(ctx, req.(*request.ListMonitorRules))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_DeleteMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonitorManage_DeleteMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DeleteMonitorRules)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).DeleteMonitorRules(ctx, in)
+		return srv.(MonitorManageServer).DeleteMonitorRules(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Scheduler/DeleteMonitorRules",
+		FullMethod: "/wspb.MonitorManage/DeleteMonitorRules",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).DeleteMonitorRules(ctx, req.(*request.DeleteMonitorRules))
+		return srv.(MonitorManageServer).DeleteMonitorRules(ctx, req.(*request.DeleteMonitorRules))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_EnableMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonitorManage_EnableMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.EnableMonitorRules)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).EnableMonitorRules(ctx, in)
+		return srv.(MonitorManageServer).EnableMonitorRules(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Scheduler/EnableMonitorRules",
+		FullMethod: "/wspb.MonitorManage/EnableMonitorRules",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).EnableMonitorRules(ctx, req.(*request.EnableMonitorRules))
+		return srv.(MonitorManageServer).EnableMonitorRules(ctx, req.(*request.EnableMonitorRules))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_DisableMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonitorManage_DisableMonitorRules_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DisableMonitorRules)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).DisableMonitorRules(ctx, in)
+		return srv.(MonitorManageServer).DisableMonitorRules(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Scheduler/DisableMonitorRules",
+		FullMethod: "/wspb.MonitorManage/DisableMonitorRules",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).DisableMonitorRules(ctx, req.(*request.DisableMonitorRules))
+		return srv.(MonitorManageServer).DisableMonitorRules(ctx, req.(*request.DisableMonitorRules))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_CreateMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonitorManage_CreateMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.CreateMonitorRule)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).CreateMonitorRule(ctx, in)
+		return srv.(MonitorManageServer).CreateMonitorRule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Scheduler/CreateMonitorRule",
+		FullMethod: "/wspb.MonitorManage/CreateMonitorRule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).CreateMonitorRule(ctx, req.(*request.CreateMonitorRule))
+		return srv.(MonitorManageServer).CreateMonitorRule(ctx, req.(*request.CreateMonitorRule))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_UpdateMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonitorManage_UpdateMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.UpdateMonitorRule)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).UpdateMonitorRule(ctx, in)
+		return srv.(MonitorManageServer).UpdateMonitorRule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Scheduler/UpdateMonitorRule",
+		FullMethod: "/wspb.MonitorManage/UpdateMonitorRule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).UpdateMonitorRule(ctx, req.(*request.UpdateMonitorRule))
+		return srv.(MonitorManageServer).UpdateMonitorRule(ctx, req.(*request.UpdateMonitorRule))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Scheduler_DescribeMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MonitorManage_DescribeMonitorRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(request.DescribeMonitorRule)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SchedulerServer).DescribeMonitorRule(ctx, in)
+		return srv.(MonitorManageServer).DescribeMonitorRule(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/wspb.Scheduler/DescribeMonitorRule",
+		FullMethod: "/wspb.MonitorManage/DescribeMonitorRule",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SchedulerServer).DescribeMonitorRule(ctx, req.(*request.DescribeMonitorRule))
+		return srv.(MonitorManageServer).DescribeMonitorRule(ctx, req.(*request.DescribeMonitorRule))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Scheduler_ServiceDesc is the grpc.ServiceDesc for Scheduler service.
+// MonitorManage_ServiceDesc is the grpc.ServiceDesc for MonitorManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Scheduler_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "wspb.Scheduler",
-	HandlerType: (*SchedulerServer)(nil),
+var MonitorManage_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "wspb.MonitorManage",
+	HandlerType: (*MonitorManageServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListStreamInstances",
-			Handler:    _Scheduler_ListStreamInstances_Handler,
-		},
-		{
-			MethodName: "TerminateStreamInstances",
-			Handler:    _Scheduler_TerminateStreamInstances_Handler,
-		},
-		{
-			MethodName: "SuspendStreamInstances",
-			Handler:    _Scheduler_SuspendStreamInstances_Handler,
-		},
-		{
-			MethodName: "ResumeStreamInstances",
-			Handler:    _Scheduler_ResumeStreamInstances_Handler,
-		},
-		{
-			MethodName: "DescribeFlinkUIByInstanceId",
-			Handler:    _Scheduler_DescribeFlinkUIByInstanceId_Handler,
-		},
-		{
 			MethodName: "ListMonitorRules",
-			Handler:    _Scheduler_ListMonitorRules_Handler,
+			Handler:    _MonitorManage_ListMonitorRules_Handler,
 		},
 		{
 			MethodName: "DeleteMonitorRules",
-			Handler:    _Scheduler_DeleteMonitorRules_Handler,
+			Handler:    _MonitorManage_DeleteMonitorRules_Handler,
 		},
 		{
 			MethodName: "EnableMonitorRules",
-			Handler:    _Scheduler_EnableMonitorRules_Handler,
+			Handler:    _MonitorManage_EnableMonitorRules_Handler,
 		},
 		{
 			MethodName: "DisableMonitorRules",
-			Handler:    _Scheduler_DisableMonitorRules_Handler,
+			Handler:    _MonitorManage_DisableMonitorRules_Handler,
 		},
 		{
 			MethodName: "CreateMonitorRule",
-			Handler:    _Scheduler_CreateMonitorRule_Handler,
+			Handler:    _MonitorManage_CreateMonitorRule_Handler,
 		},
 		{
 			MethodName: "UpdateMonitorRule",
-			Handler:    _Scheduler_UpdateMonitorRule_Handler,
+			Handler:    _MonitorManage_UpdateMonitorRule_Handler,
 		},
 		{
 			MethodName: "DescribeMonitorRule",
-			Handler:    _Scheduler_DescribeMonitorRule_Handler,
+			Handler:    _MonitorManage_DescribeMonitorRule_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
