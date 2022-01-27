@@ -739,6 +739,13 @@ func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_type() error {
 	return nil
 }
 
+func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateStreamJob
 func (this *CreateStreamJob) Validate() error {
 	if this == nil {
@@ -757,6 +764,9 @@ func (this *CreateStreamJob) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil
@@ -1837,6 +1847,13 @@ func (this *CreateDataSource) _xxx_xxx_Validator_Validate_last_connection() erro
 	return nil
 }
 
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateDataSource
 func (this *CreateDataSource) Validate() error {
 	if this == nil {
@@ -1861,6 +1878,9 @@ func (this *CreateDataSource) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_last_connection(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil
@@ -2026,6 +2046,72 @@ func (this *DisableDataSources) Validate() error {
 	return nil
 }
 
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_source_id() error {
+	if !(len(this.SourceId) == 20) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+	}
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+	}
+	return nil
+}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_offset() error {
+	if !(this.Offset >= 0) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ListDataSourceConnections_In_SortBy = map[string]bool{"": true, "source_id": true, "created": true}
+
+func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListDataSourceConnections_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'sort_by' must be one of '[ source_id created]'", this.SortBy)
+	}
+	return nil
+}
+
+// Set default value for message request.ListDataSourceConnections
+func (this *ListDataSourceConnections) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("PingDataSourceConnection", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
@@ -2137,51 +2223,25 @@ func (this *PingDataSourceConnection) Validate() error {
 	return nil
 }
 
-func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *DescribeDataSourceTables) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("ListDataSourceConnections", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("DescribeDataSourceTables", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("DescribeDataSourceTables", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_source_id() error {
+func (this *DescribeDataSourceTables) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("ListDataSourceConnections", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+		return protovalidator.FieldError1("DescribeDataSourceTables", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
 	return nil
 }
 
-func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_limit() error {
-	if !(this.Limit > 0) {
-		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
-	}
-	if !(this.Limit <= 100) {
-		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
-	}
-	return nil
-}
-
-func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_offset() error {
-	if !(this.Offset >= 0) {
-		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_ListDataSourceConnections_In_SortBy = map[string]bool{"": true, "source_id": true, "created": true}
-
-func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_sort_by() error {
-	if !(_xxx_xxx_Validator_ListDataSourceConnections_In_SortBy[this.SortBy]) {
-		return protovalidator.FieldError1("ListDataSourceConnections", "the value of field 'sort_by' must be one of '[ source_id created]'", this.SortBy)
-	}
-	return nil
-}
-
-// Set default value for message request.ListDataSourceConnections
-func (this *ListDataSourceConnections) Validate() error {
+// Set default value for message request.DescribeDataSourceTables
+func (this *DescribeDataSourceTables) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -2191,62 +2251,48 @@ func (this *ListDataSourceConnections) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
-		return err
+	return nil
+}
+
+func (this *DescribeDataSourceTableSchema) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribeDataSourceTableSchema", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
-	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
-		return err
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribeDataSourceTableSchema", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *SourceTables) _xxx_xxx_Validator_Validate_source_id() error {
+func (this *DescribeDataSourceTableSchema) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("SourceTables", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+		return protovalidator.FieldError1("DescribeDataSourceTableSchema", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
 	return nil
 }
 
-// Set default value for message request.SourceTables
-func (this *SourceTables) Validate() error {
+func (this *DescribeDataSourceTableSchema) _xxx_xxx_Validator_Validate_table_name() error {
+	if !(len(this.TableName) > 1) {
+		return protovalidator.FieldError1("DescribeDataSourceTableSchema", "the byte length of field 'table_name' must be greater than '1'", protovalidator.StringByteLenToString(this.TableName))
+	}
+	if !(len(this.TableName) <= 256) {
+		return protovalidator.FieldError1("DescribeDataSourceTableSchema", "the byte length of field 'table_name' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.TableName))
+	}
+	return nil
+}
+
+// Set default value for message request.DescribeDataSourceTableSchema
+func (this *DescribeDataSourceTableSchema) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
 		return err
-	}
-	return nil
-}
-
-func (this *TableColumns) _xxx_xxx_Validator_Validate_table_name() error {
-	if !(len(this.TableName) > 1) {
-		return protovalidator.FieldError1("TableColumns", "the byte length of field 'table_name' must be greater than '1'", protovalidator.StringByteLenToString(this.TableName))
-	}
-	if !(len(this.TableName) <= 64) {
-		return protovalidator.FieldError1("TableColumns", "the byte length of field 'table_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.TableName))
-	}
-	return nil
-}
-
-func (this *TableColumns) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("TableColumns", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	return nil
-}
-
-// Set default value for message request.TableColumns
-func (this *TableColumns) Validate() error {
-	if this == nil {
-		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_table_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
 		return err
 	}
 	return nil

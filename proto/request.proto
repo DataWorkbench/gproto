@@ -335,9 +335,9 @@ message CreateStreamJob {
   // @inject_tag: json:"cluster_id" default:"" binding:"-"
   string cluster_id = 6 [(validator.field) = {}];
 
-  // The workspace owner set by workspace owner.
-  // @inject_tag: json:"space_owner" uri:"-" default:"" binding:"-" swaggerignore:"true"
-  string space_owner = 7;
+	// The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 7 [(validator.field).tags.string = { ne: "" } ];
 }
 
 // DeleteStreamJobs used as a request parameters for RPC and HTTP(based on Body)
@@ -811,7 +811,11 @@ message CreateDataSource {
 
 	// The last connection record. The value is nil if never tested for usability.
 	// @inject_tag: json:"last_connection" gorm:"-"
-	model.DataSourceConnection last_connection = 11;
+	model.DataSourceConnection last_connection = 7;
+
+	// The owner of workspace, only used to check quota. Set by APIServer.
+	// @inject_tag: json:"space_owner" swaggerignore:"true"
+	string space_owner = 8 [(validator.field).tags.string = { ne: "" } ];
 }
 
 // UpdateDataSource used as request parameters for RPC and HTTP(based on Body)
@@ -869,6 +873,41 @@ message DisableDataSources {
 	repeated string source_ids = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100 } ];
 }
 
+// ListDataSourceConnections used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListDataSourceConnections {
+	// SpaceID; required.
+	// @inject_tag: json:"space_id" swaggerignore:"true"
+	string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+	// The source id.
+	// @inject_tag: json:"source_id" swaggerignore:"true"
+	string source_id  = 2 [(validator.field).tags.string = { byte_len_eq: 20 }];
+
+	// Limit the maximum number of entries returned this time.
+	// @inject_tag: json:"limit" form:"limit"
+	int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+	// The offset position. Not required, default 0.
+	// @inject_tag: json:"offset" form:"offset"
+	int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
+
+	// The field list used to sorted query results.
+	// Optional values: {"source_id", "created"}.
+	// Multiple fields are separated by commas(","), eg: sort_by="created".
+	// Not required, default: source_id.
+	// @inject_tag: json:"sort_by" form:"sort_by"
+	string sort_by = 5 [ (validator.field).tags.string = { in: ["", "source_id", "created"] } ];
+
+	// Reverse order results. Not required, default: false.
+	// @inject_tag: json:"reverse" default:"false" form:"reverse"
+	bool reverse = 6 [(validator.field) = {}];
+
+	// Verbose indicates the verbosity level.
+	// If the value greater than 1, The details of the associated information will be returned.
+	// @inject_tag: json:"verbose" form:"verbose"
+	int32 verbose = 7;
+}
+
 // PingDataSource used as request parameters for RPC and HTTP(based on Body)
 message PingDataSourceConnection {
 	enum Stage {
@@ -911,58 +950,43 @@ message PingDataSourceConnection {
 	;
 }
 
-// ListDataSourceConnections used as a request parameters for RPC and HTTP(based on URL-Query)
-message ListDataSourceConnections {
-	// SpaceID; required.
+// DescribeDataSourceTables
+message DescribeDataSourceTables {
 	// @inject_tag: json:"space_id" swaggerignore:"true"
-	string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-	// The source id.
-	// @inject_tag: json:"source_id" swaggerignore:"true"
-	string source_id  = 2 [(validator.field).tags.string = { byte_len_eq: 20 }];
-
-	// Limit the maximum number of entries returned this time.
-	// @inject_tag: json:"limit" form:"limit"
-	int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
-	// The offset position. Not required, default 0.
-	// @inject_tag: json:"offset" form:"offset"
-	int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
-
-	// The field list used to sorted query results.
-	// Optional values: {"source_id", "created"}.
-	// Multiple fields are separated by commas(","), eg: sort_by="created".
-	// Not required, default: source_id.
-	// @inject_tag: json:"sort_by" form:"sort_by"
-	string sort_by = 5 [ (validator.field).tags.string = { in: ["", "source_id", "created"] } ];
-
-	// Reverse order results. Not required, default: false.
-	// @inject_tag: json:"reverse" default:"false" form:"reverse"
-	bool reverse = 6 [(validator.field) = {}];
-
-	// Verbose indicates the verbosity level.
-	// If the value greater than 1, The details of the associated information will be returned.
-	// @inject_tag: json:"verbose" form:"verbose"
-	int32 verbose = 7;
+	// @inject_tag: json:"source_id"
+	string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 }
 
-// SourceTables used as request parameters for RPC and HTTP(based on Body)
-message SourceTables {
-	// SourceID
-	// @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
-	string source_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+message DescribeDataSourceTableSchema {
+	// @inject_tag: json:"space_id" swaggerignore:"true"
+	string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+	// @inject_tag: json:"source_id"
+	string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+	// @inject_tag: json:"table_name"
+	string table_name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 256 } ];
 }
 
-// TableColumns used as request parameters for RPC and HTTP(based on Body)
-message TableColumns {
-	// tablename
-	// @inject_tag: json:"table_name" default:"" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"
-	string table_name  = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 64 } ];
+//// SourceTables used as request parameters for RPC and HTTP(based on Body)
+//message SourceTables {
+//	// SourceID
+//	// @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
+//	string source_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+//}
 
-	// tablename
-	// @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
-	string source_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-}
+//// TableColumns used as request parameters for RPC and HTTP(based on Body)
+//message TableColumns {
+//	// tablename
+//	// @inject_tag: json:"table_name" default:"" binding:"gte=1" required:"true" minLength:"2" maxLength:"64"
+//	string table_name  = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 64 } ];
+//
+//	// tablename
+//	// @inject_tag: json:"source_id" default:"" binding:"lte=20" required:"true" minLength:"20" maxLength:"20" swaggerignore:"true"
+//	string source_id  = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+//}
 
 // CreateTable used as request parameters for RPC and HTTP(based on Body)
 message CreateTable {

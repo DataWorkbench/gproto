@@ -15,21 +15,33 @@ import "request.proto";
 import "response.proto";
 
 service Sourcemanager {
-    // datasource
-    rpc ListDataSources(request.ListDataSources)    returns (response.ListDataSources) {}
-    rpc CreateDataSource(request.CreateDataSource)   returns (response.CreateDataSource) {}
-    rpc UpdateDataSource(request.UpdateDataSource)   returns (model.EmptyStruct) {}
-    rpc DescribeDataSource(request.DescribeDataSource) returns (response.DescribeDataSource) {}
-    rpc DisableDataSources(request.DisableDataSources) returns (model.EmptyStruct) {}
-    rpc EnableDataSources(request.EnableDataSources)  returns (model.EmptyStruct) {}
-    rpc DeleteDataSources(request.DeleteDataSources)  returns (model.EmptyStruct) {}
-    rpc DeleteDataSourcesBySpaceId(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
-    rpc DescribeDataSourceKinds(model.EmptyStruct) returns (response.DescribeDataSourceKinds) {}
+//    // datasource
+//    rpc ListDataSources(request.ListDataSources)       returns (response.ListDataSources) {}
+//    rpc CreateDataSource(request.CreateDataSource)     returns (response.CreateDataSource) {}
+//    rpc UpdateDataSource(request.UpdateDataSource)     returns (model.EmptyStruct) {}
+//    rpc DescribeDataSource(request.DescribeDataSource) returns (response.DescribeDataSource) {}
+//    rpc DisableDataSources(request.DisableDataSources) returns (model.EmptyStruct) {}
+//    rpc EnableDataSources(request.EnableDataSources)   returns (model.EmptyStruct) {}
+//    rpc DeleteDataSources(request.DeleteDataSources)   returns (model.EmptyStruct) {}
+//    rpc DeleteDataSourcesBySpaceId(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+//    rpc DescribeDataSourceKinds(model.EmptyStruct)           returns (response.DescribeDataSourceKinds) {}
+//
+//    rpc ListDataSourceConnections (request.ListDataSourceConnections) returns (response.ListDataSourceConnections) {}
+//    rpc PingDataSourceConnection(request.PingDataSourceConnection) returns (response.PingDataSourceConnection) {}
+//    // DescribeDataSourceTables get a table list of specified data source.
+//    rpc DescribeDataSourceTables(request.DescribeDataSourceTables) returns (response.DescribeDataSourceTables) {}
+//    // DescribeDataSourceTableSchema get the table schema of specified table in datasource.
+//    rpc DescribeDataSourceTableSchema(request.DescribeDataSourceTableSchema) returns (response.DescribeDataSourceTableSchema) {}
 
-    rpc PingDataSourceConnection(request.PingDataSourceConnection) returns (response.PingDataSourceConnection) {}
-    rpc ListDataSourceConnections (request.ListDataSourceConnections) returns (response.ListDataSourceConnections) {}
+//    //source utile
+//    rpc DataFormat(model.EmptyStruct) returns (response.JsonList) {}
+//    rpc DataType(model.EmptyStruct) returns (response.JsonList) {}
 
-	//source
+//    //source utile
+//    rpc SourceTables(request.SourceTables) returns (response.JsonList) {}
+//    rpc TableColumns(request.TableColumns) returns (response.TableColumns) {}
+
+    //source
 //    rpc Create(request.CreateSource) returns (model.EmptyStruct) {}
 //    rpc Update(request.UpdateSource) returns (model.EmptyStruct) {}
 //    rpc Describe(request.DescribeSource) returns (response.DescribeSource) {}
@@ -39,18 +51,10 @@ service Sourcemanager {
 //    rpc Delete(request.DeleteSource) returns(model.EmptyStruct) {}
 //    rpc DeleteAll(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
 
-	//source utile
-    rpc DataFormat(model.EmptyStruct) returns (response.JsonList) {}
-    rpc DataType(model.EmptyStruct) returns (response.JsonList) {}
-
 	//table
     rpc CreateTable(request.CreateTable) returns (model.EmptyStruct) {}
     rpc DescribeTable(request.DescribeTable) returns (response.DescribeTable) {}
     rpc UpdateTable(request.UpdateTable) returns (model.EmptyStruct) {}
     rpc DeleteTable(request.DeleteTable) returns (model.EmptyStruct) {}
     rpc ListTable(request.ListTable) returns (response.ListTable) {}
-
-	//source utile
-    rpc SourceTables(request.SourceTables) returns (response.JsonList) {}
-    rpc TableColumns(request.TableColumns) returns (response.TableColumns) {}
 }

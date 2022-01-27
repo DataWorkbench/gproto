@@ -548,6 +548,7 @@ func (x *HDFSURL) GetNodes() *HDFSURL_NodeURL {
 	return nil
 }
 
+// SourceKind represents the kind of datasource. eg. { "name": "MySQL"}, { "name": "Kafka" }
 type SourceKind struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -596,6 +597,82 @@ func (x *SourceKind) GetName() string {
 	return ""
 }
 
+// TableColumn represents the schema column in structured database.
+type TableColumn struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// column name
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name" gorm:"column:name;"`
+	// column type
+	Type string `protobuf:"bytes,2,opt,name=type,proto3" json:"type" gorm:"column:type;"`
+	// type CHARACTER_MAXIMUM_LENGTH or NUMERIC_PRECISION
+	Length string `protobuf:"bytes,3,opt,name=length,proto3" json:"length" gorm:"column:length;"`
+	// primary key, one of true/false
+	IsPrimaryKey string `protobuf:"bytes,4,opt,name=is_primary_key,json=isPrimaryKey,proto3" json:"is_primary_key" gorm:"column:is_primary_key;"`
+}
+
+func (x *TableColumn) Reset() {
+	*x = TableColumn{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_datasource_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *TableColumn) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TableColumn) ProtoMessage() {}
+
+func (x *TableColumn) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_datasource_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TableColumn.ProtoReflect.Descriptor instead.
+func (*TableColumn) Descriptor() ([]byte, []int) {
+	return file_proto_datasource_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *TableColumn) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TableColumn) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
+func (x *TableColumn) GetLength() string {
+	if x != nil {
+		return x.Length
+	}
+	return ""
+}
+
+func (x *TableColumn) GetIsPrimaryKey() string {
+	if x != nil {
+		return x.IsPrimaryKey
+	}
+	return ""
+}
+
 type HDFSURL_NodeURL struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -610,7 +687,7 @@ type HDFSURL_NodeURL struct {
 func (x *HDFSURL_NodeURL) Reset() {
 	*x = HDFSURL_NodeURL{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_datasource_proto_msgTypes[9]
+		mi := &file_proto_datasource_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -623,7 +700,7 @@ func (x *HDFSURL_NodeURL) String() string {
 func (*HDFSURL_NodeURL) ProtoMessage() {}
 
 func (x *HDFSURL_NodeURL) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_datasource_proto_msgTypes[9]
+	mi := &file_proto_datasource_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -743,14 +820,22 @@ var file_proto_datasource_proto_rawDesc = []byte{
 	0x1f, 0x0b, 0x12, 0x09, 0xb2, 0x01, 0x06, 0x38, 0x80, 0x80, 0x04, 0x40, 0x00, 0x52, 0x04, 0x70,
 	0x6f, 0x72, 0x74, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x20, 0x0a, 0x0a, 0x53,
 	0x6f, 0x75, 0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d,
-	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x66, 0x0a,
-	0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65,
-	0x70, 0x64, 0x62, 0x42, 0x0c, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x50,
-	0x42, 0x50, 0x00, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75,
-	0x72, 0x63, 0x65, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x73, 0x0a,
+	0x0b, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x12, 0x12, 0x0a, 0x04,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
+	0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x74, 0x79, 0x70, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x6c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6c, 0x65, 0x6e, 0x67, 0x74, 0x68, 0x12, 0x24, 0x0a, 0x0e,
+	0x69, 0x73, 0x5f, 0x70, 0x72, 0x69, 0x6d, 0x61, 0x72, 0x79, 0x5f, 0x6b, 0x65, 0x79, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x69, 0x73, 0x50, 0x72, 0x69, 0x6d, 0x61, 0x72, 0x79, 0x4b,
+	0x65, 0x79, 0x42, 0x66, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d,
+	0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x73,
+	0x6f, 0x75, 0x72, 0x63, 0x65, 0x70, 0x64, 0x62, 0x42, 0x0c, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x50, 0x42, 0x50, 0x00, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
+	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x64, 0x61,
+	0x74, 0x61, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -765,7 +850,7 @@ func file_proto_datasource_proto_rawDescGZIP() []byte {
 	return file_proto_datasource_proto_rawDescData
 }
 
-var file_proto_datasource_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_proto_datasource_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_proto_datasource_proto_goTypes = []interface{}{
 	(*MySQLURL)(nil),        // 0: datasource.MySQLURL
 	(*PostgreSQLURL)(nil),   // 1: datasource.PostgreSQLURL
@@ -776,15 +861,16 @@ var file_proto_datasource_proto_goTypes = []interface{}{
 	(*FtpURL)(nil),          // 6: datasource.FtpURL
 	(*HDFSURL)(nil),         // 7: datasource.HDFSURL
 	(*SourceKind)(nil),      // 8: datasource.SourceKind
-	(*HDFSURL_NodeURL)(nil), // 9: datasource.HDFSURL.NodeURL
+	(*TableColumn)(nil),     // 9: datasource.TableColumn
+	(*HDFSURL_NodeURL)(nil), // 10: datasource.HDFSURL.NodeURL
 }
 var file_proto_datasource_proto_depIdxs = []int32{
-	9, // 0: datasource.HDFSURL.nodes:type_name -> datasource.HDFSURL.NodeURL
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	10, // 0: datasource.HDFSURL.nodes:type_name -> datasource.HDFSURL.NodeURL
+	1,  // [1:1] is the sub-list for method output_type
+	1,  // [1:1] is the sub-list for method input_type
+	1,  // [1:1] is the sub-list for extension type_name
+	1,  // [1:1] is the sub-list for extension extendee
+	0,  // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_proto_datasource_proto_init() }
@@ -902,6 +988,18 @@ func file_proto_datasource_proto_init() {
 			}
 		}
 		file_proto_datasource_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*TableColumn); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_datasource_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*HDFSURL_NodeURL); i {
 			case 0:
 				return &v.state
@@ -920,7 +1018,7 @@ func file_proto_datasource_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_datasource_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

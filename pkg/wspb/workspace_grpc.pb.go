@@ -2116,3 +2116,491 @@ var MonitorManage_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "proto/workspace.proto",
 }
+
+// DataSourceManageClient is the client API for DataSourceManage service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type DataSourceManageClient interface {
+	// datasource
+	ListDataSources(ctx context.Context, in *request.ListDataSources, opts ...grpc.CallOption) (*response.ListDataSources, error)
+	CreateDataSource(ctx context.Context, in *request.CreateDataSource, opts ...grpc.CallOption) (*response.CreateDataSource, error)
+	UpdateDataSource(ctx context.Context, in *request.UpdateDataSource, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DescribeDataSource(ctx context.Context, in *request.DescribeDataSource, opts ...grpc.CallOption) (*response.DescribeDataSource, error)
+	DisableDataSources(ctx context.Context, in *request.DisableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	EnableDataSources(ctx context.Context, in *request.EnableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DeleteDataSources(ctx context.Context, in *request.DeleteDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error)
+	DescribeDataSourceKinds(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.DescribeDataSourceKinds, error)
+	ListDataSourceConnections(ctx context.Context, in *request.ListDataSourceConnections, opts ...grpc.CallOption) (*response.ListDataSourceConnections, error)
+	PingDataSourceConnection(ctx context.Context, in *request.PingDataSourceConnection, opts ...grpc.CallOption) (*response.PingDataSourceConnection, error)
+	// DescribeDataSourceTables get a table list of specified data source.
+	DescribeDataSourceTables(ctx context.Context, in *request.DescribeDataSourceTables, opts ...grpc.CallOption) (*response.DescribeDataSourceTables, error)
+	// DescribeDataSourceTableSchema get the table schema of specified table in datasource.
+	DescribeDataSourceTableSchema(ctx context.Context, in *request.DescribeDataSourceTableSchema, opts ...grpc.CallOption) (*response.DescribeDataSourceTableSchema, error)
+}
+
+type dataSourceManageClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDataSourceManageClient(cc grpc.ClientConnInterface) DataSourceManageClient {
+	return &dataSourceManageClient{cc}
+}
+
+func (c *dataSourceManageClient) ListDataSources(ctx context.Context, in *request.ListDataSources, opts ...grpc.CallOption) (*response.ListDataSources, error) {
+	out := new(response.ListDataSources)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/ListDataSources", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) CreateDataSource(ctx context.Context, in *request.CreateDataSource, opts ...grpc.CallOption) (*response.CreateDataSource, error) {
+	out := new(response.CreateDataSource)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/CreateDataSource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) UpdateDataSource(ctx context.Context, in *request.UpdateDataSource, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/UpdateDataSource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) DescribeDataSource(ctx context.Context, in *request.DescribeDataSource, opts ...grpc.CallOption) (*response.DescribeDataSource, error) {
+	out := new(response.DescribeDataSource)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/DescribeDataSource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) DisableDataSources(ctx context.Context, in *request.DisableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/DisableDataSources", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) EnableDataSources(ctx context.Context, in *request.EnableDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/EnableDataSources", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) DeleteDataSources(ctx context.Context, in *request.DeleteDataSources, opts ...grpc.CallOption) (*model.EmptyStruct, error) {
+	out := new(model.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/DeleteDataSources", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) DescribeDataSourceKinds(ctx context.Context, in *model.EmptyStruct, opts ...grpc.CallOption) (*response.DescribeDataSourceKinds, error) {
+	out := new(response.DescribeDataSourceKinds)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/DescribeDataSourceKinds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) ListDataSourceConnections(ctx context.Context, in *request.ListDataSourceConnections, opts ...grpc.CallOption) (*response.ListDataSourceConnections, error) {
+	out := new(response.ListDataSourceConnections)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/ListDataSourceConnections", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) PingDataSourceConnection(ctx context.Context, in *request.PingDataSourceConnection, opts ...grpc.CallOption) (*response.PingDataSourceConnection, error) {
+	out := new(response.PingDataSourceConnection)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/PingDataSourceConnection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) DescribeDataSourceTables(ctx context.Context, in *request.DescribeDataSourceTables, opts ...grpc.CallOption) (*response.DescribeDataSourceTables, error) {
+	out := new(response.DescribeDataSourceTables)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/DescribeDataSourceTables", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataSourceManageClient) DescribeDataSourceTableSchema(ctx context.Context, in *request.DescribeDataSourceTableSchema, opts ...grpc.CallOption) (*response.DescribeDataSourceTableSchema, error) {
+	out := new(response.DescribeDataSourceTableSchema)
+	err := c.cc.Invoke(ctx, "/wspb.DataSourceManage/DescribeDataSourceTableSchema", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// DataSourceManageServer is the server API for DataSourceManage service.
+// All implementations must embed UnimplementedDataSourceManageServer
+// for forward compatibility
+type DataSourceManageServer interface {
+	// datasource
+	ListDataSources(context.Context, *request.ListDataSources) (*response.ListDataSources, error)
+	CreateDataSource(context.Context, *request.CreateDataSource) (*response.CreateDataSource, error)
+	UpdateDataSource(context.Context, *request.UpdateDataSource) (*model.EmptyStruct, error)
+	DescribeDataSource(context.Context, *request.DescribeDataSource) (*response.DescribeDataSource, error)
+	DisableDataSources(context.Context, *request.DisableDataSources) (*model.EmptyStruct, error)
+	EnableDataSources(context.Context, *request.EnableDataSources) (*model.EmptyStruct, error)
+	DeleteDataSources(context.Context, *request.DeleteDataSources) (*model.EmptyStruct, error)
+	DescribeDataSourceKinds(context.Context, *model.EmptyStruct) (*response.DescribeDataSourceKinds, error)
+	ListDataSourceConnections(context.Context, *request.ListDataSourceConnections) (*response.ListDataSourceConnections, error)
+	PingDataSourceConnection(context.Context, *request.PingDataSourceConnection) (*response.PingDataSourceConnection, error)
+	// DescribeDataSourceTables get a table list of specified data source.
+	DescribeDataSourceTables(context.Context, *request.DescribeDataSourceTables) (*response.DescribeDataSourceTables, error)
+	// DescribeDataSourceTableSchema get the table schema of specified table in datasource.
+	DescribeDataSourceTableSchema(context.Context, *request.DescribeDataSourceTableSchema) (*response.DescribeDataSourceTableSchema, error)
+	mustEmbedUnimplementedDataSourceManageServer()
+}
+
+// UnimplementedDataSourceManageServer must be embedded to have forward compatible implementations.
+type UnimplementedDataSourceManageServer struct {
+}
+
+func (UnimplementedDataSourceManageServer) ListDataSources(context.Context, *request.ListDataSources) (*response.ListDataSources, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListDataSources not implemented")
+}
+func (UnimplementedDataSourceManageServer) CreateDataSource(context.Context, *request.CreateDataSource) (*response.CreateDataSource, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDataSource not implemented")
+}
+func (UnimplementedDataSourceManageServer) UpdateDataSource(context.Context, *request.UpdateDataSource) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataSource not implemented")
+}
+func (UnimplementedDataSourceManageServer) DescribeDataSource(context.Context, *request.DescribeDataSource) (*response.DescribeDataSource, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSource not implemented")
+}
+func (UnimplementedDataSourceManageServer) DisableDataSources(context.Context, *request.DisableDataSources) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableDataSources not implemented")
+}
+func (UnimplementedDataSourceManageServer) EnableDataSources(context.Context, *request.EnableDataSources) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableDataSources not implemented")
+}
+func (UnimplementedDataSourceManageServer) DeleteDataSources(context.Context, *request.DeleteDataSources) (*model.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataSources not implemented")
+}
+func (UnimplementedDataSourceManageServer) DescribeDataSourceKinds(context.Context, *model.EmptyStruct) (*response.DescribeDataSourceKinds, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSourceKinds not implemented")
+}
+func (UnimplementedDataSourceManageServer) ListDataSourceConnections(context.Context, *request.ListDataSourceConnections) (*response.ListDataSourceConnections, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListDataSourceConnections not implemented")
+}
+func (UnimplementedDataSourceManageServer) PingDataSourceConnection(context.Context, *request.PingDataSourceConnection) (*response.PingDataSourceConnection, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PingDataSourceConnection not implemented")
+}
+func (UnimplementedDataSourceManageServer) DescribeDataSourceTables(context.Context, *request.DescribeDataSourceTables) (*response.DescribeDataSourceTables, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSourceTables not implemented")
+}
+func (UnimplementedDataSourceManageServer) DescribeDataSourceTableSchema(context.Context, *request.DescribeDataSourceTableSchema) (*response.DescribeDataSourceTableSchema, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSourceTableSchema not implemented")
+}
+func (UnimplementedDataSourceManageServer) mustEmbedUnimplementedDataSourceManageServer() {}
+
+// UnsafeDataSourceManageServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to DataSourceManageServer will
+// result in compilation errors.
+type UnsafeDataSourceManageServer interface {
+	mustEmbedUnimplementedDataSourceManageServer()
+}
+
+func RegisterDataSourceManageServer(s grpc.ServiceRegistrar, srv DataSourceManageServer) {
+	s.RegisterService(&DataSourceManage_ServiceDesc, srv)
+}
+
+func _DataSourceManage_ListDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListDataSources)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).ListDataSources(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/ListDataSources",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).ListDataSources(ctx, req.(*request.ListDataSources))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_CreateDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.CreateDataSource)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).CreateDataSource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/CreateDataSource",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).CreateDataSource(ctx, req.(*request.CreateDataSource))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_UpdateDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.UpdateDataSource)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).UpdateDataSource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/UpdateDataSource",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).UpdateDataSource(ctx, req.(*request.UpdateDataSource))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_DescribeDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeDataSource)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).DescribeDataSource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/DescribeDataSource",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).DescribeDataSource(ctx, req.(*request.DescribeDataSource))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_DisableDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DisableDataSources)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).DisableDataSources(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/DisableDataSources",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).DisableDataSources(ctx, req.(*request.DisableDataSources))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_EnableDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.EnableDataSources)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).EnableDataSources(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/EnableDataSources",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).EnableDataSources(ctx, req.(*request.EnableDataSources))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_DeleteDataSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DeleteDataSources)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).DeleteDataSources(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/DeleteDataSources",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).DeleteDataSources(ctx, req.(*request.DeleteDataSources))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_DescribeDataSourceKinds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(model.EmptyStruct)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).DescribeDataSourceKinds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/DescribeDataSourceKinds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).DescribeDataSourceKinds(ctx, req.(*model.EmptyStruct))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_ListDataSourceConnections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.ListDataSourceConnections)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).ListDataSourceConnections(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/ListDataSourceConnections",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).ListDataSourceConnections(ctx, req.(*request.ListDataSourceConnections))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_PingDataSourceConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.PingDataSourceConnection)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).PingDataSourceConnection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/PingDataSourceConnection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).PingDataSourceConnection(ctx, req.(*request.PingDataSourceConnection))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_DescribeDataSourceTables_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeDataSourceTables)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).DescribeDataSourceTables(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/DescribeDataSourceTables",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).DescribeDataSourceTables(ctx, req.(*request.DescribeDataSourceTables))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataSourceManage_DescribeDataSourceTableSchema_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(request.DescribeDataSourceTableSchema)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).DescribeDataSourceTableSchema(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wspb.DataSourceManage/DescribeDataSourceTableSchema",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).DescribeDataSourceTableSchema(ctx, req.(*request.DescribeDataSourceTableSchema))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// DataSourceManage_ServiceDesc is the grpc.ServiceDesc for DataSourceManage service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var DataSourceManage_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "wspb.DataSourceManage",
+	HandlerType: (*DataSourceManageServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "ListDataSources",
+			Handler:    _DataSourceManage_ListDataSources_Handler,
+		},
+		{
+			MethodName: "CreateDataSource",
+			Handler:    _DataSourceManage_CreateDataSource_Handler,
+		},
+		{
+			MethodName: "UpdateDataSource",
+			Handler:    _DataSourceManage_UpdateDataSource_Handler,
+		},
+		{
+			MethodName: "DescribeDataSource",
+			Handler:    _DataSourceManage_DescribeDataSource_Handler,
+		},
+		{
+			MethodName: "DisableDataSources",
+			Handler:    _DataSourceManage_DisableDataSources_Handler,
+		},
+		{
+			MethodName: "EnableDataSources",
+			Handler:    _DataSourceManage_EnableDataSources_Handler,
+		},
+		{
+			MethodName: "DeleteDataSources",
+			Handler:    _DataSourceManage_DeleteDataSources_Handler,
+		},
+		{
+			MethodName: "DescribeDataSourceKinds",
+			Handler:    _DataSourceManage_DescribeDataSourceKinds_Handler,
+		},
+		{
+			MethodName: "ListDataSourceConnections",
+			Handler:    _DataSourceManage_ListDataSourceConnections_Handler,
+		},
+		{
+			MethodName: "PingDataSourceConnection",
+			Handler:    _DataSourceManage_PingDataSourceConnection_Handler,
+		},
+		{
+			MethodName: "DescribeDataSourceTables",
+			Handler:    _DataSourceManage_DescribeDataSourceTables_Handler,
+		},
+		{
+			MethodName: "DescribeDataSourceTableSchema",
+			Handler:    _DataSourceManage_DescribeDataSourceTableSchema_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "proto/workspace.proto",
+}

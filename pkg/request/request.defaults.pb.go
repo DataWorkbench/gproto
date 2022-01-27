@@ -542,6 +542,17 @@ func (this *DisableDataSources) SetDefaults() {
 	return
 }
 
+// Set default value for message request.ListDataSourceConnections
+func (this *ListDataSourceConnections) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
+	}
+	return
+}
+
 // Set default value for message request.PingDataSourceConnection
 func (this *PingDataSourceConnection) SetDefaults() {
 	if this == nil {
@@ -555,27 +566,16 @@ func (this *PingDataSourceConnection) SetDefaults() {
 	return
 }
 
-// Set default value for message request.ListDataSourceConnections
-func (this *ListDataSourceConnections) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Limit == 0 {
-		this.Limit = 100
-	}
-	return
-}
-
-// Set default value for message request.SourceTables
-func (this *SourceTables) SetDefaults() {
+// Set default value for message request.DescribeDataSourceTables
+func (this *DescribeDataSourceTables) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message request.TableColumns
-func (this *TableColumns) SetDefaults() {
+// Set default value for message request.DescribeDataSourceTableSchema
+func (this *DescribeDataSourceTableSchema) SetDefaults() {
 	if this == nil {
 		return
 	}

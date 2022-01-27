@@ -47,6 +47,7 @@ service MemberManage {
     rpc DeleteMembers(request.DeleteMembers) returns (model.EmptyStruct) {}
 }
 
+// StreamJobManage declares API for manage stream job.
 service StreamJobManage {
     // Interface for stream job dev.
     //
@@ -128,6 +129,7 @@ service StreamJobManage {
     rpc GetStreamJobVersionSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
 }
 
+// StreamInstanceManage declares API for manage stream instance.
 service StreamInstanceManage {
     // Interface for stream job cycle instance.
     //
@@ -139,6 +141,7 @@ service StreamInstanceManage {
     rpc DescribeFlinkUIByInstanceId(request.DescribeFlinkUIByInstanceId)  returns (response.DescribeFlinkUIByInstanceId) {}
 }
 
+// MonitorManage declares API for manage monitor rule
 service MonitorManage {
     // Interface for monitor.
     rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
@@ -148,4 +151,24 @@ service MonitorManage {
     rpc CreateMonitorRule(request.CreateMonitorRule)     returns (model.EmptyStruct)            {}
     rpc UpdateMonitorRule(request.UpdateMonitorRule)     returns (model.EmptyStruct)            {}
     rpc DescribeMonitorRule(request.DescribeMonitorRule) returns (response.DescribeMonitorRule) {}
+}
+
+// DataSourceManage declares API for manage datasource.
+service DataSourceManage {
+    // datasource
+    rpc ListDataSources(request.ListDataSources)       returns (response.ListDataSources) {}
+    rpc CreateDataSource(request.CreateDataSource)     returns (response.CreateDataSource) {}
+    rpc UpdateDataSource(request.UpdateDataSource)     returns (model.EmptyStruct) {}
+    rpc DescribeDataSource(request.DescribeDataSource) returns (response.DescribeDataSource) {}
+    rpc DisableDataSources(request.DisableDataSources) returns (model.EmptyStruct) {}
+    rpc EnableDataSources(request.EnableDataSources)   returns (model.EmptyStruct) {}
+    rpc DeleteDataSources(request.DeleteDataSources)   returns (model.EmptyStruct) {}
+    rpc DescribeDataSourceKinds(model.EmptyStruct)     returns (response.DescribeDataSourceKinds) {}
+
+    rpc ListDataSourceConnections (request.ListDataSourceConnections) returns (response.ListDataSourceConnections) {}
+    rpc PingDataSourceConnection(request.PingDataSourceConnection)    returns (response.PingDataSourceConnection) {}
+    // DescribeDataSourceTables get a table list of specified data source.
+    rpc DescribeDataSourceTables(request.DescribeDataSourceTables)    returns (response.DescribeDataSourceTables) {}
+    // DescribeDataSourceTableSchema get the table schema of specified table in datasource.
+    rpc DescribeDataSourceTableSchema(request.DescribeDataSourceTableSchema) returns (response.DescribeDataSourceTableSchema) {}
 }

@@ -270,82 +270,167 @@ var file_proto_workspace_proto_rawDesc = []byte{
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4d,
 	0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x1a, 0x1d, 0x2e, 0x72, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4d, 0x6f,
-	0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x22, 0x00, 0x42, 0x5b, 0x0a, 0x20, 0x63,
-	0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2e, 0x77, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x70, 0x62, 0x42,
-	0x0b, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x50, 0x42, 0x50, 0x00, 0x5a, 0x28,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57,
-	0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
-	0x70, 0x6b, 0x67, 0x2f, 0x77, 0x73, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x75, 0x6c, 0x65, 0x22, 0x00, 0x32, 0x92, 0x08, 0x0a, 0x10,
+	0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x12, 0x48, 0x0a, 0x0f, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x73, 0x12, 0x18, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x4c, 0x69,
+	0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x19, 0x2e,
+	0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74,
+	0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x22, 0x00, 0x12, 0x4b, 0x0a, 0x10, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x19,
+	0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44,
+	0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x1a, 0x1a, 0x2e, 0x72, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53,
+	0x6f, 0x75, 0x72, 0x63, 0x65, 0x22, 0x00, 0x12, 0x43, 0x0a, 0x10, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x19, 0x2e, 0x72, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61,
+	0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45,
+	0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12, 0x51, 0x0a, 0x12,
+	0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x12, 0x1b, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44, 0x65, 0x73,
+	0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x1a,
+	0x1c, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72,
+	0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x22, 0x00, 0x12,
+	0x47, 0x0a, 0x12, 0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x73, 0x12, 0x1b, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e,
+	0x44, 0x69, 0x73, 0x61, 0x62, 0x6c, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63,
+	0x65, 0x73, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79,
+	0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12, 0x45, 0x0a, 0x11, 0x45, 0x6e, 0x61, 0x62,
+	0x6c, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x12, 0x1a, 0x2e,
+	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x44, 0x61,
+	0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12,
+	0x45, 0x0a, 0x11, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75,
+	0x72, 0x63, 0x65, 0x73, 0x12, 0x1a, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x73,
+	0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74,
+	0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12, 0x52, 0x0a, 0x17, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69,
+	0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64,
+	0x73, 0x12, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53,
+	0x74, 0x72, 0x75, 0x63, 0x74, 0x1a, 0x21, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75,
+	0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64, 0x73, 0x22, 0x00, 0x12, 0x66, 0x0a, 0x19, 0x4c, 0x69,
+	0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x43, 0x6f, 0x6e, 0x6e,
+	0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x22, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x1a, 0x23, 0x2e, 0x72, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53,
+	0x6f, 0x75, 0x72, 0x63, 0x65, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x22, 0x00, 0x12, 0x63, 0x0a, 0x18, 0x50, 0x69, 0x6e, 0x67, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x21,
+	0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x50, 0x69, 0x6e, 0x67, 0x44, 0x61, 0x74,
+	0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x1a, 0x22, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x50, 0x69, 0x6e,
+	0x67, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x43, 0x6f, 0x6e, 0x6e, 0x65,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x00, 0x12, 0x63, 0x0a, 0x18, 0x44, 0x65, 0x73, 0x63, 0x72,
+	0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x61, 0x62,
+	0x6c, 0x65, 0x73, 0x12, 0x21, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44, 0x65,
+	0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65,
+	0x54, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x1a, 0x22, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x22, 0x00, 0x12, 0x72, 0x0a, 0x1d,
+	0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x12, 0x26, 0x2e,
+	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65,
+	0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53,
+	0x63, 0x68, 0x65, 0x6d, 0x61, 0x1a, 0x27, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75,
+	0x72, 0x63, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x22, 0x00,
+	0x42, 0x5b, 0x0a, 0x20, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69,
+	0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x77, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x70, 0x62, 0x42, 0x0b, 0x57, 0x6f, 0x72, 0x6b, 0x73, 0x70, 0x61, 0x63, 0x65, 0x50,
+	0x42, 0x50, 0x00, 0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x77, 0x73, 0x70, 0x62, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var file_proto_workspace_proto_goTypes = []interface{}{
-	(*request.ListWorkspaces)(nil),               // 0: request.ListWorkspaces
-	(*request.DeleteWorkspaces)(nil),             // 1: request.DeleteWorkspaces
-	(*request.DisableWorkspaces)(nil),            // 2: request.DisableWorkspaces
-	(*request.EnableWorkspaces)(nil),             // 3: request.EnableWorkspaces
-	(*request.CreateWorkspace)(nil),              // 4: request.CreateWorkspace
-	(*request.UpdateWorkspace)(nil),              // 5: request.UpdateWorkspace
-	(*request.DescribeWorkspace)(nil),            // 6: request.DescribeWorkspace
-	(*request.CheckPermission)(nil),              // 7: request.CheckPermission
-	(*request.ListOpAudits)(nil),                 // 8: request.ListOpAudits
-	(*request.AddOpAudit)(nil),                   // 9: request.AddOpAudit
-	(*request.ListSystemRoles)(nil),              // 10: request.ListSystemRoles
-	(*request.ListMembers)(nil),                  // 11: request.ListMembers
-	(*request.UpsertMembers)(nil),                // 12: request.UpsertMembers
-	(*request.DeleteMembers)(nil),                // 13: request.DeleteMembers
-	(*request.ListStreamJobs)(nil),               // 14: request.ListStreamJobs
-	(*request.DeleteStreamJobs)(nil),             // 15: request.DeleteStreamJobs
-	(*request.CreateStreamJob)(nil),              // 16: request.CreateStreamJob
-	(*request.UpdateStreamJob)(nil),              // 17: request.UpdateStreamJob
-	(*request.DescribeStreamJob)(nil),            // 18: request.DescribeStreamJob
-	(*request.SetStreamJobCode)(nil),             // 19: request.SetStreamJobCode
-	(*request.GetStreamJobCode)(nil),             // 20: request.GetStreamJobCode
-	(*request.StreamJobCodeSyntax)(nil),          // 21: request.StreamJobCodeSyntax
-	(*request.SetStreamJobArgs)(nil),             // 22: request.SetStreamJobArgs
-	(*request.GetStreamJobArgs)(nil),             // 23: request.GetStreamJobArgs
-	(*model.EmptyStruct)(nil),                    // 24: model.EmptyStruct
-	(*request.SetStreamJobSchedule)(nil),         // 25: request.SetStreamJobSchedule
-	(*request.GetStreamJobSchedule)(nil),         // 26: request.GetStreamJobSchedule
-	(*request.ReleaseStreamJob)(nil),             // 27: request.ReleaseStreamJob
-	(*request.OfflineReleaseStreamJob)(nil),      // 28: request.OfflineReleaseStreamJob
-	(*request.SuspendReleaseStreamJob)(nil),      // 29: request.SuspendReleaseStreamJob
-	(*request.ResumeReleaseStreamJob)(nil),       // 30: request.ResumeReleaseStreamJob
-	(*request.ListReleaseStreamJobs)(nil),        // 31: request.ListReleaseStreamJobs
-	(*request.ListStreamJobVersions)(nil),        // 32: request.ListStreamJobVersions
-	(*request.ListStreamInstances)(nil),          // 33: request.ListStreamInstances
-	(*request.TerminateStreamInstances)(nil),     // 34: request.TerminateStreamInstances
-	(*request.SuspendStreamInstances)(nil),       // 35: request.SuspendStreamInstances
-	(*request.ResumeStreamInstances)(nil),        // 36: request.ResumeStreamInstances
-	(*request.DescribeFlinkUIByInstanceId)(nil),  // 37: request.DescribeFlinkUIByInstanceId
-	(*request.ListMonitorRules)(nil),             // 38: request.ListMonitorRules
-	(*request.DeleteMonitorRules)(nil),           // 39: request.DeleteMonitorRules
-	(*request.EnableMonitorRules)(nil),           // 40: request.EnableMonitorRules
-	(*request.DisableMonitorRules)(nil),          // 41: request.DisableMonitorRules
-	(*request.CreateMonitorRule)(nil),            // 42: request.CreateMonitorRule
-	(*request.UpdateMonitorRule)(nil),            // 43: request.UpdateMonitorRule
-	(*request.DescribeMonitorRule)(nil),          // 44: request.DescribeMonitorRule
-	(*response.ListWorkspaces)(nil),              // 45: response.ListWorkspaces
-	(*response.CreateWorkspace)(nil),             // 46: response.CreateWorkspace
-	(*response.DescribeWorkspace)(nil),           // 47: response.DescribeWorkspace
-	(*response.CheckPermission)(nil),             // 48: response.CheckPermission
-	(*response.ListOpAudits)(nil),                // 49: response.ListOpAudits
-	(*response.ListSystemRoles)(nil),             // 50: response.ListSystemRoles
-	(*response.ListMembers)(nil),                 // 51: response.ListMembers
-	(*response.ListStreamJobs)(nil),              // 52: response.ListStreamJobs
-	(*response.CreateStreamJob)(nil),             // 53: response.CreateStreamJob
-	(*response.DescribeStreamJob)(nil),           // 54: response.DescribeStreamJob
-	(*response.GetStreamJobCode)(nil),            // 55: response.GetStreamJobCode
-	(*response.StreamJobCodeSyntax)(nil),         // 56: response.StreamJobCodeSyntax
-	(*response.GetStreamJobArgs)(nil),            // 57: response.GetStreamJobArgs
-	(*response.ListBuiltInConnectors)(nil),       // 58: response.ListBuiltInConnectors
-	(*response.GetStreamJobSchedule)(nil),        // 59: response.GetStreamJobSchedule
-	(*response.ListReleaseStreamJobs)(nil),       // 60: response.ListReleaseStreamJobs
-	(*response.ListStreamJobVersions)(nil),       // 61: response.ListStreamJobVersions
-	(*response.ListStreamInstances)(nil),         // 62: response.ListStreamInstances
-	(*response.DescribeFlinkUIByInstanceId)(nil), // 63: response.DescribeFlinkUIByInstanceId
-	(*response.ListMonitorRules)(nil),            // 64: response.ListMonitorRules
-	(*response.DescribeMonitorRule)(nil),         // 65: response.DescribeMonitorRule
+	(*request.ListWorkspaces)(nil),                 // 0: request.ListWorkspaces
+	(*request.DeleteWorkspaces)(nil),               // 1: request.DeleteWorkspaces
+	(*request.DisableWorkspaces)(nil),              // 2: request.DisableWorkspaces
+	(*request.EnableWorkspaces)(nil),               // 3: request.EnableWorkspaces
+	(*request.CreateWorkspace)(nil),                // 4: request.CreateWorkspace
+	(*request.UpdateWorkspace)(nil),                // 5: request.UpdateWorkspace
+	(*request.DescribeWorkspace)(nil),              // 6: request.DescribeWorkspace
+	(*request.CheckPermission)(nil),                // 7: request.CheckPermission
+	(*request.ListOpAudits)(nil),                   // 8: request.ListOpAudits
+	(*request.AddOpAudit)(nil),                     // 9: request.AddOpAudit
+	(*request.ListSystemRoles)(nil),                // 10: request.ListSystemRoles
+	(*request.ListMembers)(nil),                    // 11: request.ListMembers
+	(*request.UpsertMembers)(nil),                  // 12: request.UpsertMembers
+	(*request.DeleteMembers)(nil),                  // 13: request.DeleteMembers
+	(*request.ListStreamJobs)(nil),                 // 14: request.ListStreamJobs
+	(*request.DeleteStreamJobs)(nil),               // 15: request.DeleteStreamJobs
+	(*request.CreateStreamJob)(nil),                // 16: request.CreateStreamJob
+	(*request.UpdateStreamJob)(nil),                // 17: request.UpdateStreamJob
+	(*request.DescribeStreamJob)(nil),              // 18: request.DescribeStreamJob
+	(*request.SetStreamJobCode)(nil),               // 19: request.SetStreamJobCode
+	(*request.GetStreamJobCode)(nil),               // 20: request.GetStreamJobCode
+	(*request.StreamJobCodeSyntax)(nil),            // 21: request.StreamJobCodeSyntax
+	(*request.SetStreamJobArgs)(nil),               // 22: request.SetStreamJobArgs
+	(*request.GetStreamJobArgs)(nil),               // 23: request.GetStreamJobArgs
+	(*model.EmptyStruct)(nil),                      // 24: model.EmptyStruct
+	(*request.SetStreamJobSchedule)(nil),           // 25: request.SetStreamJobSchedule
+	(*request.GetStreamJobSchedule)(nil),           // 26: request.GetStreamJobSchedule
+	(*request.ReleaseStreamJob)(nil),               // 27: request.ReleaseStreamJob
+	(*request.OfflineReleaseStreamJob)(nil),        // 28: request.OfflineReleaseStreamJob
+	(*request.SuspendReleaseStreamJob)(nil),        // 29: request.SuspendReleaseStreamJob
+	(*request.ResumeReleaseStreamJob)(nil),         // 30: request.ResumeReleaseStreamJob
+	(*request.ListReleaseStreamJobs)(nil),          // 31: request.ListReleaseStreamJobs
+	(*request.ListStreamJobVersions)(nil),          // 32: request.ListStreamJobVersions
+	(*request.ListStreamInstances)(nil),            // 33: request.ListStreamInstances
+	(*request.TerminateStreamInstances)(nil),       // 34: request.TerminateStreamInstances
+	(*request.SuspendStreamInstances)(nil),         // 35: request.SuspendStreamInstances
+	(*request.ResumeStreamInstances)(nil),          // 36: request.ResumeStreamInstances
+	(*request.DescribeFlinkUIByInstanceId)(nil),    // 37: request.DescribeFlinkUIByInstanceId
+	(*request.ListMonitorRules)(nil),               // 38: request.ListMonitorRules
+	(*request.DeleteMonitorRules)(nil),             // 39: request.DeleteMonitorRules
+	(*request.EnableMonitorRules)(nil),             // 40: request.EnableMonitorRules
+	(*request.DisableMonitorRules)(nil),            // 41: request.DisableMonitorRules
+	(*request.CreateMonitorRule)(nil),              // 42: request.CreateMonitorRule
+	(*request.UpdateMonitorRule)(nil),              // 43: request.UpdateMonitorRule
+	(*request.DescribeMonitorRule)(nil),            // 44: request.DescribeMonitorRule
+	(*request.ListDataSources)(nil),                // 45: request.ListDataSources
+	(*request.CreateDataSource)(nil),               // 46: request.CreateDataSource
+	(*request.UpdateDataSource)(nil),               // 47: request.UpdateDataSource
+	(*request.DescribeDataSource)(nil),             // 48: request.DescribeDataSource
+	(*request.DisableDataSources)(nil),             // 49: request.DisableDataSources
+	(*request.EnableDataSources)(nil),              // 50: request.EnableDataSources
+	(*request.DeleteDataSources)(nil),              // 51: request.DeleteDataSources
+	(*request.ListDataSourceConnections)(nil),      // 52: request.ListDataSourceConnections
+	(*request.PingDataSourceConnection)(nil),       // 53: request.PingDataSourceConnection
+	(*request.DescribeDataSourceTables)(nil),       // 54: request.DescribeDataSourceTables
+	(*request.DescribeDataSourceTableSchema)(nil),  // 55: request.DescribeDataSourceTableSchema
+	(*response.ListWorkspaces)(nil),                // 56: response.ListWorkspaces
+	(*response.CreateWorkspace)(nil),               // 57: response.CreateWorkspace
+	(*response.DescribeWorkspace)(nil),             // 58: response.DescribeWorkspace
+	(*response.CheckPermission)(nil),               // 59: response.CheckPermission
+	(*response.ListOpAudits)(nil),                  // 60: response.ListOpAudits
+	(*response.ListSystemRoles)(nil),               // 61: response.ListSystemRoles
+	(*response.ListMembers)(nil),                   // 62: response.ListMembers
+	(*response.ListStreamJobs)(nil),                // 63: response.ListStreamJobs
+	(*response.CreateStreamJob)(nil),               // 64: response.CreateStreamJob
+	(*response.DescribeStreamJob)(nil),             // 65: response.DescribeStreamJob
+	(*response.GetStreamJobCode)(nil),              // 66: response.GetStreamJobCode
+	(*response.StreamJobCodeSyntax)(nil),           // 67: response.StreamJobCodeSyntax
+	(*response.GetStreamJobArgs)(nil),              // 68: response.GetStreamJobArgs
+	(*response.ListBuiltInConnectors)(nil),         // 69: response.ListBuiltInConnectors
+	(*response.GetStreamJobSchedule)(nil),          // 70: response.GetStreamJobSchedule
+	(*response.ListReleaseStreamJobs)(nil),         // 71: response.ListReleaseStreamJobs
+	(*response.ListStreamJobVersions)(nil),         // 72: response.ListStreamJobVersions
+	(*response.ListStreamInstances)(nil),           // 73: response.ListStreamInstances
+	(*response.DescribeFlinkUIByInstanceId)(nil),   // 74: response.DescribeFlinkUIByInstanceId
+	(*response.ListMonitorRules)(nil),              // 75: response.ListMonitorRules
+	(*response.DescribeMonitorRule)(nil),           // 76: response.DescribeMonitorRule
+	(*response.ListDataSources)(nil),               // 77: response.ListDataSources
+	(*response.CreateDataSource)(nil),              // 78: response.CreateDataSource
+	(*response.DescribeDataSource)(nil),            // 79: response.DescribeDataSource
+	(*response.DescribeDataSourceKinds)(nil),       // 80: response.DescribeDataSourceKinds
+	(*response.ListDataSourceConnections)(nil),     // 81: response.ListDataSourceConnections
+	(*response.PingDataSourceConnection)(nil),      // 82: response.PingDataSourceConnection
+	(*response.DescribeDataSourceTables)(nil),      // 83: response.DescribeDataSourceTables
+	(*response.DescribeDataSourceTableSchema)(nil), // 84: response.DescribeDataSourceTableSchema
 }
 var file_proto_workspace_proto_depIdxs = []int32{
 	0,  // 0: wspb.SpaceManage.ListWorkspaces:input_type -> request.ListWorkspaces
@@ -397,57 +482,81 @@ var file_proto_workspace_proto_depIdxs = []int32{
 	42, // 46: wspb.MonitorManage.CreateMonitorRule:input_type -> request.CreateMonitorRule
 	43, // 47: wspb.MonitorManage.UpdateMonitorRule:input_type -> request.UpdateMonitorRule
 	44, // 48: wspb.MonitorManage.DescribeMonitorRule:input_type -> request.DescribeMonitorRule
-	45, // 49: wspb.SpaceManage.ListWorkspaces:output_type -> response.ListWorkspaces
-	24, // 50: wspb.SpaceManage.DeleteWorkspaces:output_type -> model.EmptyStruct
-	24, // 51: wspb.SpaceManage.DisableWorkspaces:output_type -> model.EmptyStruct
-	24, // 52: wspb.SpaceManage.EnableWorkspaces:output_type -> model.EmptyStruct
-	46, // 53: wspb.SpaceManage.CreateWorkspace:output_type -> response.CreateWorkspace
-	24, // 54: wspb.SpaceManage.UpdateWorkspace:output_type -> model.EmptyStruct
-	47, // 55: wspb.SpaceManage.DescribeWorkspace:output_type -> response.DescribeWorkspace
-	48, // 56: wspb.SpaceManage.CheckPermission:output_type -> response.CheckPermission
-	49, // 57: wspb.SpaceManage.ListOpAudits:output_type -> response.ListOpAudits
-	24, // 58: wspb.SpaceManage.AddOpAudit:output_type -> model.EmptyStruct
-	50, // 59: wspb.MemberManage.ListSystemRoles:output_type -> response.ListSystemRoles
-	51, // 60: wspb.MemberManage.ListMembers:output_type -> response.ListMembers
-	24, // 61: wspb.MemberManage.UpsertMembers:output_type -> model.EmptyStruct
-	24, // 62: wspb.MemberManage.DeleteMembers:output_type -> model.EmptyStruct
-	52, // 63: wspb.StreamJobManage.ListStreamJobs:output_type -> response.ListStreamJobs
-	24, // 64: wspb.StreamJobManage.DeleteStreamJobs:output_type -> model.EmptyStruct
-	53, // 65: wspb.StreamJobManage.CreateStreamJob:output_type -> response.CreateStreamJob
-	24, // 66: wspb.StreamJobManage.UpdateStreamJob:output_type -> model.EmptyStruct
-	54, // 67: wspb.StreamJobManage.DescribeStreamJob:output_type -> response.DescribeStreamJob
-	24, // 68: wspb.StreamJobManage.SetStreamJobCode:output_type -> model.EmptyStruct
-	55, // 69: wspb.StreamJobManage.GetStreamJobCode:output_type -> response.GetStreamJobCode
-	56, // 70: wspb.StreamJobManage.StreamJobCodeSyntax:output_type -> response.StreamJobCodeSyntax
-	24, // 71: wspb.StreamJobManage.SetStreamJobArgs:output_type -> model.EmptyStruct
-	57, // 72: wspb.StreamJobManage.GetStreamJobArgs:output_type -> response.GetStreamJobArgs
-	58, // 73: wspb.StreamJobManage.ListBuiltInConnectors:output_type -> response.ListBuiltInConnectors
-	24, // 74: wspb.StreamJobManage.SetStreamJobSchedule:output_type -> model.EmptyStruct
-	59, // 75: wspb.StreamJobManage.GetStreamJobSchedule:output_type -> response.GetStreamJobSchedule
-	24, // 76: wspb.StreamJobManage.ReleaseStreamJob:output_type -> model.EmptyStruct
-	24, // 77: wspb.StreamJobManage.OfflineReleaseStreamJob:output_type -> model.EmptyStruct
-	24, // 78: wspb.StreamJobManage.SuspendReleaseStreamJob:output_type -> model.EmptyStruct
-	24, // 79: wspb.StreamJobManage.ResumeReleaseStreamJob:output_type -> model.EmptyStruct
-	60, // 80: wspb.StreamJobManage.ListReleaseStreamJobs:output_type -> response.ListReleaseStreamJobs
-	61, // 81: wspb.StreamJobManage.ListStreamJobVersions:output_type -> response.ListStreamJobVersions
-	54, // 82: wspb.StreamJobManage.DescribeStreamJobVersion:output_type -> response.DescribeStreamJob
-	55, // 83: wspb.StreamJobManage.GetStreamJobVersionCode:output_type -> response.GetStreamJobCode
-	57, // 84: wspb.StreamJobManage.GetStreamJobVersionArgs:output_type -> response.GetStreamJobArgs
-	59, // 85: wspb.StreamJobManage.GetStreamJobVersionSchedule:output_type -> response.GetStreamJobSchedule
-	62, // 86: wspb.StreamInstanceManage.ListStreamInstances:output_type -> response.ListStreamInstances
-	24, // 87: wspb.StreamInstanceManage.TerminateStreamInstances:output_type -> model.EmptyStruct
-	24, // 88: wspb.StreamInstanceManage.SuspendStreamInstances:output_type -> model.EmptyStruct
-	24, // 89: wspb.StreamInstanceManage.ResumeStreamInstances:output_type -> model.EmptyStruct
-	63, // 90: wspb.StreamInstanceManage.DescribeFlinkUIByInstanceId:output_type -> response.DescribeFlinkUIByInstanceId
-	64, // 91: wspb.MonitorManage.ListMonitorRules:output_type -> response.ListMonitorRules
-	24, // 92: wspb.MonitorManage.DeleteMonitorRules:output_type -> model.EmptyStruct
-	24, // 93: wspb.MonitorManage.EnableMonitorRules:output_type -> model.EmptyStruct
-	24, // 94: wspb.MonitorManage.DisableMonitorRules:output_type -> model.EmptyStruct
-	24, // 95: wspb.MonitorManage.CreateMonitorRule:output_type -> model.EmptyStruct
-	24, // 96: wspb.MonitorManage.UpdateMonitorRule:output_type -> model.EmptyStruct
-	65, // 97: wspb.MonitorManage.DescribeMonitorRule:output_type -> response.DescribeMonitorRule
-	49, // [49:98] is the sub-list for method output_type
-	0,  // [0:49] is the sub-list for method input_type
+	45, // 49: wspb.DataSourceManage.ListDataSources:input_type -> request.ListDataSources
+	46, // 50: wspb.DataSourceManage.CreateDataSource:input_type -> request.CreateDataSource
+	47, // 51: wspb.DataSourceManage.UpdateDataSource:input_type -> request.UpdateDataSource
+	48, // 52: wspb.DataSourceManage.DescribeDataSource:input_type -> request.DescribeDataSource
+	49, // 53: wspb.DataSourceManage.DisableDataSources:input_type -> request.DisableDataSources
+	50, // 54: wspb.DataSourceManage.EnableDataSources:input_type -> request.EnableDataSources
+	51, // 55: wspb.DataSourceManage.DeleteDataSources:input_type -> request.DeleteDataSources
+	24, // 56: wspb.DataSourceManage.DescribeDataSourceKinds:input_type -> model.EmptyStruct
+	52, // 57: wspb.DataSourceManage.ListDataSourceConnections:input_type -> request.ListDataSourceConnections
+	53, // 58: wspb.DataSourceManage.PingDataSourceConnection:input_type -> request.PingDataSourceConnection
+	54, // 59: wspb.DataSourceManage.DescribeDataSourceTables:input_type -> request.DescribeDataSourceTables
+	55, // 60: wspb.DataSourceManage.DescribeDataSourceTableSchema:input_type -> request.DescribeDataSourceTableSchema
+	56, // 61: wspb.SpaceManage.ListWorkspaces:output_type -> response.ListWorkspaces
+	24, // 62: wspb.SpaceManage.DeleteWorkspaces:output_type -> model.EmptyStruct
+	24, // 63: wspb.SpaceManage.DisableWorkspaces:output_type -> model.EmptyStruct
+	24, // 64: wspb.SpaceManage.EnableWorkspaces:output_type -> model.EmptyStruct
+	57, // 65: wspb.SpaceManage.CreateWorkspace:output_type -> response.CreateWorkspace
+	24, // 66: wspb.SpaceManage.UpdateWorkspace:output_type -> model.EmptyStruct
+	58, // 67: wspb.SpaceManage.DescribeWorkspace:output_type -> response.DescribeWorkspace
+	59, // 68: wspb.SpaceManage.CheckPermission:output_type -> response.CheckPermission
+	60, // 69: wspb.SpaceManage.ListOpAudits:output_type -> response.ListOpAudits
+	24, // 70: wspb.SpaceManage.AddOpAudit:output_type -> model.EmptyStruct
+	61, // 71: wspb.MemberManage.ListSystemRoles:output_type -> response.ListSystemRoles
+	62, // 72: wspb.MemberManage.ListMembers:output_type -> response.ListMembers
+	24, // 73: wspb.MemberManage.UpsertMembers:output_type -> model.EmptyStruct
+	24, // 74: wspb.MemberManage.DeleteMembers:output_type -> model.EmptyStruct
+	63, // 75: wspb.StreamJobManage.ListStreamJobs:output_type -> response.ListStreamJobs
+	24, // 76: wspb.StreamJobManage.DeleteStreamJobs:output_type -> model.EmptyStruct
+	64, // 77: wspb.StreamJobManage.CreateStreamJob:output_type -> response.CreateStreamJob
+	24, // 78: wspb.StreamJobManage.UpdateStreamJob:output_type -> model.EmptyStruct
+	65, // 79: wspb.StreamJobManage.DescribeStreamJob:output_type -> response.DescribeStreamJob
+	24, // 80: wspb.StreamJobManage.SetStreamJobCode:output_type -> model.EmptyStruct
+	66, // 81: wspb.StreamJobManage.GetStreamJobCode:output_type -> response.GetStreamJobCode
+	67, // 82: wspb.StreamJobManage.StreamJobCodeSyntax:output_type -> response.StreamJobCodeSyntax
+	24, // 83: wspb.StreamJobManage.SetStreamJobArgs:output_type -> model.EmptyStruct
+	68, // 84: wspb.StreamJobManage.GetStreamJobArgs:output_type -> response.GetStreamJobArgs
+	69, // 85: wspb.StreamJobManage.ListBuiltInConnectors:output_type -> response.ListBuiltInConnectors
+	24, // 86: wspb.StreamJobManage.SetStreamJobSchedule:output_type -> model.EmptyStruct
+	70, // 87: wspb.StreamJobManage.GetStreamJobSchedule:output_type -> response.GetStreamJobSchedule
+	24, // 88: wspb.StreamJobManage.ReleaseStreamJob:output_type -> model.EmptyStruct
+	24, // 89: wspb.StreamJobManage.OfflineReleaseStreamJob:output_type -> model.EmptyStruct
+	24, // 90: wspb.StreamJobManage.SuspendReleaseStreamJob:output_type -> model.EmptyStruct
+	24, // 91: wspb.StreamJobManage.ResumeReleaseStreamJob:output_type -> model.EmptyStruct
+	71, // 92: wspb.StreamJobManage.ListReleaseStreamJobs:output_type -> response.ListReleaseStreamJobs
+	72, // 93: wspb.StreamJobManage.ListStreamJobVersions:output_type -> response.ListStreamJobVersions
+	65, // 94: wspb.StreamJobManage.DescribeStreamJobVersion:output_type -> response.DescribeStreamJob
+	66, // 95: wspb.StreamJobManage.GetStreamJobVersionCode:output_type -> response.GetStreamJobCode
+	68, // 96: wspb.StreamJobManage.GetStreamJobVersionArgs:output_type -> response.GetStreamJobArgs
+	70, // 97: wspb.StreamJobManage.GetStreamJobVersionSchedule:output_type -> response.GetStreamJobSchedule
+	73, // 98: wspb.StreamInstanceManage.ListStreamInstances:output_type -> response.ListStreamInstances
+	24, // 99: wspb.StreamInstanceManage.TerminateStreamInstances:output_type -> model.EmptyStruct
+	24, // 100: wspb.StreamInstanceManage.SuspendStreamInstances:output_type -> model.EmptyStruct
+	24, // 101: wspb.StreamInstanceManage.ResumeStreamInstances:output_type -> model.EmptyStruct
+	74, // 102: wspb.StreamInstanceManage.DescribeFlinkUIByInstanceId:output_type -> response.DescribeFlinkUIByInstanceId
+	75, // 103: wspb.MonitorManage.ListMonitorRules:output_type -> response.ListMonitorRules
+	24, // 104: wspb.MonitorManage.DeleteMonitorRules:output_type -> model.EmptyStruct
+	24, // 105: wspb.MonitorManage.EnableMonitorRules:output_type -> model.EmptyStruct
+	24, // 106: wspb.MonitorManage.DisableMonitorRules:output_type -> model.EmptyStruct
+	24, // 107: wspb.MonitorManage.CreateMonitorRule:output_type -> model.EmptyStruct
+	24, // 108: wspb.MonitorManage.UpdateMonitorRule:output_type -> model.EmptyStruct
+	76, // 109: wspb.MonitorManage.DescribeMonitorRule:output_type -> response.DescribeMonitorRule
+	77, // 110: wspb.DataSourceManage.ListDataSources:output_type -> response.ListDataSources
+	78, // 111: wspb.DataSourceManage.CreateDataSource:output_type -> response.CreateDataSource
+	24, // 112: wspb.DataSourceManage.UpdateDataSource:output_type -> model.EmptyStruct
+	79, // 113: wspb.DataSourceManage.DescribeDataSource:output_type -> response.DescribeDataSource
+	24, // 114: wspb.DataSourceManage.DisableDataSources:output_type -> model.EmptyStruct
+	24, // 115: wspb.DataSourceManage.EnableDataSources:output_type -> model.EmptyStruct
+	24, // 116: wspb.DataSourceManage.DeleteDataSources:output_type -> model.EmptyStruct
+	80, // 117: wspb.DataSourceManage.DescribeDataSourceKinds:output_type -> response.DescribeDataSourceKinds
+	81, // 118: wspb.DataSourceManage.ListDataSourceConnections:output_type -> response.ListDataSourceConnections
+	82, // 119: wspb.DataSourceManage.PingDataSourceConnection:output_type -> response.PingDataSourceConnection
+	83, // 120: wspb.DataSourceManage.DescribeDataSourceTables:output_type -> response.DescribeDataSourceTables
+	84, // 121: wspb.DataSourceManage.DescribeDataSourceTableSchema:output_type -> response.DescribeDataSourceTableSchema
+	61, // [61:122] is the sub-list for method output_type
+	0,  // [0:61] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -466,7 +575,7 @@ func file_proto_workspace_proto_init() {
 			NumEnums:      0,
 			NumMessages:   0,
 			NumExtensions: 0,
-			NumServices:   5,
+			NumServices:   6,
 		},
 		GoTypes:           file_proto_workspace_proto_goTypes,
 		DependencyIndexes: file_proto_workspace_proto_depIdxs,

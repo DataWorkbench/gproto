@@ -94,3 +94,11 @@ func (this *SourceKind) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message datasource.TableColumn
+func (this *TableColumn) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

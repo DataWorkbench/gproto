@@ -417,3 +417,11 @@ func (this *SourceKind) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message datasource.TableColumn
+func (this *TableColumn) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

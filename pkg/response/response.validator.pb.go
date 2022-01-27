@@ -479,26 +479,6 @@ func (this *DescribeDataSourceKinds) Validate() error {
 	return nil
 }
 
-func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_info() error {
-	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message response.PingDataSourceConnection
-func (this *PingDataSourceConnection) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (this *ListDataSourceConnections) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.
@@ -522,15 +502,35 @@ func (this *ListDataSourceConnections) Validate() error {
 	return nil
 }
 
-// Set default value for message response.JsonList
-func (this *JsonList) Validate() error {
+func (this *PingDataSourceConnection) _xxx_xxx_Validator_Validate_info() error {
+	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.PingDataSourceConnection
+func (this *PingDataSourceConnection) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeDataSourceTables
+func (this *DescribeDataSourceTables) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-func (this *TableColumns) _xxx_xxx_Validator_Validate_columns() error {
+func (this *DescribeDataSourceTableSchema) _xxx_xxx_Validator_Validate_columns() error {
 	for _, item := range this.Columns {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -542,8 +542,8 @@ func (this *TableColumns) _xxx_xxx_Validator_Validate_columns() error {
 	return nil
 }
 
-// Set default value for message response.TableColumns
-func (this *TableColumns) Validate() error {
+// Set default value for message response.DescribeDataSourceTableSchema
+func (this *DescribeDataSourceTableSchema) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -553,8 +553,8 @@ func (this *TableColumns) Validate() error {
 	return nil
 }
 
-// Set default value for message response.TableColumns.Column
-func (this *TableColumns_Column) Validate() error {
+// Set default value for message response.JsonList
+func (this *JsonList) Validate() error {
 	if this == nil {
 		return nil
 	}

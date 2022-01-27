@@ -243,6 +243,14 @@ func (this *DescribeDataSourceKinds) SetDefaults() {
 	return
 }
 
+// Set default value for message response.ListDataSourceConnections
+func (this *ListDataSourceConnections) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message response.PingDataSourceConnection
 func (this *PingDataSourceConnection) SetDefaults() {
 	if this == nil {
@@ -256,8 +264,16 @@ func (this *PingDataSourceConnection) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ListDataSourceConnections
-func (this *ListDataSourceConnections) SetDefaults() {
+// Set default value for message response.DescribeDataSourceTables
+func (this *DescribeDataSourceTables) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.DescribeDataSourceTableSchema
+func (this *DescribeDataSourceTableSchema) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -266,22 +282,6 @@ func (this *ListDataSourceConnections) SetDefaults() {
 
 // Set default value for message response.JsonList
 func (this *JsonList) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message response.TableColumns
-func (this *TableColumns) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message response.TableColumns.Column
-func (this *TableColumns_Column) SetDefaults() {
 	if this == nil {
 		return
 	}
