@@ -1569,30 +1569,8 @@ func (this *DataSource_URL) _xxx_xxx_Validator_Validate_postgresql() error {
 	return nil
 }
 
-func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_clickhouse() bool {
-	if !(this.Type == 3) {
-		return false
-	}
-	return true
-}
-
-func (this *DataSource_URL) _xxx_xxx_Validator_Validate_clickhouse() error {
-	if !this._xxx_xxx_Validator_CheckIf_clickhouse() {
-		return nil
-	}
-	if !(this.Clickhouse != nil) {
-		return protovalidator.FieldError2("DataSource_URL", "the value of field 'clickhouse' cannot be null")
-	}
-	if dt, ok := interface{}(this.Clickhouse).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_kafka() bool {
-	if !(this.Type == 4) {
+	if !(this.Type == 3) {
 		return false
 	}
 	return true
@@ -1614,7 +1592,7 @@ func (this *DataSource_URL) _xxx_xxx_Validator_Validate_kafka() error {
 }
 
 func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_s3() bool {
-	if !(this.Type == 5) {
+	if !(this.Type == 4) {
 		return false
 	}
 	return true
@@ -1628,6 +1606,28 @@ func (this *DataSource_URL) _xxx_xxx_Validator_Validate_s3() error {
 		return protovalidator.FieldError2("DataSource_URL", "the value of field 's3' cannot be null")
 	}
 	if dt, ok := interface{}(this.S3).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_CheckIf_clickhouse() bool {
+	if !(this.Type == 5) {
+		return false
+	}
+	return true
+}
+
+func (this *DataSource_URL) _xxx_xxx_Validator_Validate_clickhouse() error {
+	if !this._xxx_xxx_Validator_CheckIf_clickhouse() {
+		return nil
+	}
+	if !(this.Clickhouse != nil) {
+		return protovalidator.FieldError2("DataSource_URL", "the value of field 'clickhouse' cannot be null")
+	}
+	if dt, ok := interface{}(this.Clickhouse).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -1715,13 +1715,13 @@ func (this *DataSource_URL) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_postgresql(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_clickhouse(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_kafka(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_s3(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_clickhouse(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_hbase(); err != nil {

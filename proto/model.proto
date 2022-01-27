@@ -777,23 +777,23 @@ message DataSource {
       (validator.field).tags.message = { not_null: true }
     ];
 
-    // ClickHouse Source Connection Info.
-    // @inject_tag: json:"clickhouse"
-    datasource.ClickHouseURL clickhouse = 3 [
-      (validator.field).check_if = {field: "type", tags: { enum: { eq: 3 } } },
-      (validator.field).tags.message = { not_null: true }
-    ];
-
     // Kafka Source Connection Info.
     // @inject_tag: json:"kafka"
-    datasource.KafkaURL kafka = 4 [
-      (validator.field).check_if = {field: "type", tags: { enum: { eq: 4 } } },
+    datasource.KafkaURL kafka = 3 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 3 } } },
       (validator.field).tags.message = { not_null: true }
     ];
 
     // S3 Source Connection Info.
     // @inject_tag: json:"s3"
-    datasource.S3URL s3 = 5 [
+    datasource.S3URL s3 = 4 [
+      (validator.field).check_if = {field: "type", tags: { enum: { eq: 4 } } },
+      (validator.field).tags.message = { not_null: true }
+    ];
+
+    // ClickHouse Source Connection Info.
+    // @inject_tag: json:"clickhouse"
+    datasource.ClickHouseURL clickhouse = 5 [
       (validator.field).check_if = {field: "type", tags: { enum: { eq: 5 } } },
       (validator.field).tags.message = { not_null: true }
     ];

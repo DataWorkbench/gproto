@@ -253,11 +253,6 @@ func (this *DataSource_URL) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.Clickhouse != nil {
-		if dt, ok := interface{}(this.Clickhouse).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	if this.Kafka != nil {
 		if dt, ok := interface{}(this.Kafka).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
@@ -265,6 +260,11 @@ func (this *DataSource_URL) SetDefaults() {
 	}
 	if this.S3 != nil {
 		if dt, ok := interface{}(this.S3).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.Clickhouse != nil {
+		if dt, ok := interface{}(this.Clickhouse).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
