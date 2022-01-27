@@ -974,7 +974,7 @@ type UpsertMembers struct {
 	// The workspace id in HTTP Request-URI
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" binding:"len=20" swaggerignore:"true"`
 	// The list of pair to user_id => role_ids. Min: 1, Max: 100
-	Users []*UpsertMembers_Pair `protobuf:"bytes,2,rep,name=users,proto3" json:"users" binding:"gte=1,lte=100"`
+	Users []*UpsertMembers_Pair `protobuf:"bytes,2,rep,name=users,proto3" json:"users"`
 }
 
 func (x *UpsertMembers) Reset() {
@@ -7277,10 +7277,9 @@ type UpsertMembers_Pair struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The account user_id. Is Required.
-	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id" binding:"required"`
+	UserId string `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id"`
 	// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
-	// FIXME
-	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" binding:"gte=1,lte=100"`
+	RoleIds string `protobuf:"bytes,3,opt,name=role_ids,json=roleIds,proto3" json:"role_ids"`
 }
 
 func (x *UpsertMembers_Pair) Reset() {

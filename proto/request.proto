@@ -237,12 +237,11 @@ message ListMembers {
 message UpsertMembers {
 	message Pair {
 		// The account user_id. Is Required.
-		// @inject_tag: json:"user_id" default:"" binding:"required"
+		// @inject_tag: json:"user_id"
 		string user_id = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
 		// The lists of role_id. Multiple 'role_id' are separated by ','. Is Required, Min 1, Max 100.
-		// @inject_tag: json:"role_ids" default:"" binding:"gte=1,lte=100"
-		// FIXME
+		// @inject_tag: json:"role_ids"
 		string role_ids = 3;
 	}
 
@@ -251,7 +250,7 @@ message UpsertMembers {
 	string space_id = 1[ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
 	// The list of pair to user_id => role_ids. Min: 1, Max: 100
-	// @inject_tag: json:"users" default:"" binding:"gte=1,lte=100""
+	// @inject_tag: json:"users"
 	repeated Pair users = 2 [ (validator.field).tags.repeated = { len_lte: 100 } ];
 }
 
