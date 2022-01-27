@@ -227,7 +227,8 @@ message StreamJobSchedule {
   enum SchedulePolicy {
     SchedulePolicyUnset = 0;
     Periodicity = 1;
-    Once = 2;
+    AppointTime = 2; // Execute job in a fixed time.
+    Immediately = 3; // Execute job immediately after publishing.
   }
 
   enum ConcurrencyPolicy {
@@ -243,22 +244,23 @@ message StreamJobSchedule {
     Auto = 2;
   }
 
-  // Schedule Policy, Options Value: 1 => "Periodicity", 2 => "Once".
+  // Schedule Policy, Options Value: 1 => "Periodicity", 2 => "AppointTime", 3 => "Immediately"
   // Is Required.
   // @inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
   SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { in_enums: true  } ];
 
-  // ------ Once Options ------
-  //
   // Timestamp of execute time for once. unit in seconds.
   // Not required, default the time of created job.
   // @inject_tag: json:"executed" default:"0" binding:"gte=0"
-  int64 executed = 2;
+  int64 executed = 2 [
+    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.int = { gte: 31507200 }
+  ];
 
-  // Whether execute immediately the job after release.
-  // Not required, default False. If immediately is True, the field executed will be ignore.
-  // @inject_tag: json:"immediately" binding:"-"
-  bool immediately = 3;
+//  // Whether execute immediately the job after release.
+//  // Not required, default False. If immediately is True, the field executed will be ignore.
+//  // @inject_tag: json:"immediately" binding:"-"
+//  bool immediately = 3;
 
   // ------ Period Options ------
   //
@@ -272,16 +274,12 @@ message StreamJobSchedule {
   // @inject_tag: json:"ended" default:"0" binding:"gte=0"
   int64 ended = 5 [(validator.field).tags.int = { gte: 0 }];
 
-  // Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace"
+  // Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace". Is required .
   // - allow: Multiple task instances are allowed at the same time.
   // - forbid: No new instances will be created, and this schedule cycle will be skipped,
   // - replace: Force stop the old running instances and create new.
-  // Is required with schedule_policy = 1.
   // @inject_tag: json:"concurrency_policy" default:"" binding:"-"
-  ConcurrencyPolicy concurrency_policy = 6 [
-    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
-    (validator.field).tags.enum = { gt: 0; in_enums: true  }
-  ];
+  ConcurrencyPolicy concurrency_policy = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
   // Is required with with schedule_policy = 1.
@@ -308,7 +306,6 @@ message StreamJobSchedule {
   // Is required.
   // @inject_tag: json:"retry_policy" default:"" binding:"gte=0,lte=2"
   RetryPolicy retry_policy = 10 [
-    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
     (validator.field).tags.enum = { gt: 0; in_enums: true  }
   ];
 
