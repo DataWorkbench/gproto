@@ -11149,7 +11149,7 @@ public final class ModelPB {
 
     /**
      * <pre>
-     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
      * Is Required.
      * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
      * </pre>
@@ -11160,7 +11160,7 @@ public final class ModelPB {
     int getSchedulePolicyValue();
     /**
      * <pre>
-     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
      * Is Required.
      * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
      * </pre>
@@ -11172,28 +11172,15 @@ public final class ModelPB {
 
     /**
      * <pre>
-     * ------ Once Options ------
      * Timestamp of execute time for once. unit in seconds.
      * Not required, default the time of created job.
      * &#64;inject_tag: json:"executed" default:"0" binding:"gte=0"
      * </pre>
      *
-     * <code>int64 executed = 2;</code>
+     * <code>int64 executed = 2 [(.validator.field) = { ... }</code>
      * @return The executed.
      */
     long getExecuted();
-
-    /**
-     * <pre>
-     * Whether execute immediately the job after release.
-     * Not required, default False. If immediately is True, the field executed will be ignore.
-     * &#64;inject_tag: json:"immediately" binding:"-"
-     * </pre>
-     *
-     * <code>bool immediately = 3;</code>
-     * @return The immediately.
-     */
-    boolean getImmediately();
 
     /**
      * <pre>
@@ -11222,11 +11209,10 @@ public final class ModelPB {
 
     /**
      * <pre>
-     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
      * - allow: Multiple task instances are allowed at the same time.
      * - forbid: No new instances will be created, and this schedule cycle will be skipped,
      * - replace: Force stop the old running instances and create new.
-     * Is required with schedule_policy = 1.
      * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
      * </pre>
      *
@@ -11236,11 +11222,10 @@ public final class ModelPB {
     int getConcurrencyPolicyValue();
     /**
      * <pre>
-     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
      * - allow: Multiple task instances are allowed at the same time.
      * - forbid: No new instances will be created, and this schedule cycle will be skipped,
      * - replace: Force stop the old running instances and create new.
-     * Is required with schedule_policy = 1.
      * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
      * </pre>
      *
@@ -11418,11 +11403,6 @@ public final class ModelPB {
               executed_ = input.readInt64();
               break;
             }
-            case 24: {
-
-              immediately_ = input.readBool();
-              break;
-            }
             case 32: {
 
               started_ = input.readInt64();
@@ -11518,9 +11498,21 @@ public final class ModelPB {
        */
       Periodicity(1),
       /**
-       * <code>Once = 2;</code>
+       * <pre>
+       * Execute job in a fixed time.
+       * </pre>
+       *
+       * <code>AppointTime = 2;</code>
        */
-      Once(2),
+      AppointTime(2),
+      /**
+       * <pre>
+       * Execute job immediately after publishing.
+       * </pre>
+       *
+       * <code>Immediately = 3;</code>
+       */
+      Immediately(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -11533,9 +11525,21 @@ public final class ModelPB {
        */
       public static final int Periodicity_VALUE = 1;
       /**
-       * <code>Once = 2;</code>
+       * <pre>
+       * Execute job in a fixed time.
+       * </pre>
+       *
+       * <code>AppointTime = 2;</code>
        */
-      public static final int Once_VALUE = 2;
+      public static final int AppointTime_VALUE = 2;
+      /**
+       * <pre>
+       * Execute job immediately after publishing.
+       * </pre>
+       *
+       * <code>Immediately = 3;</code>
+       */
+      public static final int Immediately_VALUE = 3;
 
 
       public final int getNumber() {
@@ -11564,7 +11568,8 @@ public final class ModelPB {
         switch (value) {
           case 0: return SchedulePolicyUnset;
           case 1: return Periodicity;
-          case 2: return Once;
+          case 2: return AppointTime;
+          case 3: return Immediately;
           default: return null;
         }
       }
@@ -11884,7 +11889,7 @@ public final class ModelPB {
     private int schedulePolicy_;
     /**
      * <pre>
-     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
      * Is Required.
      * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
      * </pre>
@@ -11897,7 +11902,7 @@ public final class ModelPB {
     }
     /**
      * <pre>
-     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+     * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
      * Is Required.
      * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
      * </pre>
@@ -11915,35 +11920,17 @@ public final class ModelPB {
     private long executed_;
     /**
      * <pre>
-     * ------ Once Options ------
      * Timestamp of execute time for once. unit in seconds.
      * Not required, default the time of created job.
      * &#64;inject_tag: json:"executed" default:"0" binding:"gte=0"
      * </pre>
      *
-     * <code>int64 executed = 2;</code>
+     * <code>int64 executed = 2 [(.validator.field) = { ... }</code>
      * @return The executed.
      */
     @java.lang.Override
     public long getExecuted() {
       return executed_;
-    }
-
-    public static final int IMMEDIATELY_FIELD_NUMBER = 3;
-    private boolean immediately_;
-    /**
-     * <pre>
-     * Whether execute immediately the job after release.
-     * Not required, default False. If immediately is True, the field executed will be ignore.
-     * &#64;inject_tag: json:"immediately" binding:"-"
-     * </pre>
-     *
-     * <code>bool immediately = 3;</code>
-     * @return The immediately.
-     */
-    @java.lang.Override
-    public boolean getImmediately() {
-      return immediately_;
     }
 
     public static final int STARTED_FIELD_NUMBER = 4;
@@ -11985,11 +11972,10 @@ public final class ModelPB {
     private int concurrencyPolicy_;
     /**
      * <pre>
-     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
      * - allow: Multiple task instances are allowed at the same time.
      * - forbid: No new instances will be created, and this schedule cycle will be skipped,
      * - replace: Force stop the old running instances and create new.
-     * Is required with schedule_policy = 1.
      * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
      * </pre>
      *
@@ -12001,11 +11987,10 @@ public final class ModelPB {
     }
     /**
      * <pre>
-     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+     * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
      * - allow: Multiple task instances are allowed at the same time.
      * - forbid: No new instances will be created, and this schedule cycle will be skipped,
      * - replace: Force stop the old running instances and create new.
-     * Is required with schedule_policy = 1.
      * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
      * </pre>
      *
@@ -12216,9 +12201,6 @@ public final class ModelPB {
       if (executed_ != 0L) {
         output.writeInt64(2, executed_);
       }
-      if (immediately_ != false) {
-        output.writeBool(3, immediately_);
-      }
       if (started_ != 0L) {
         output.writeInt64(4, started_);
       }
@@ -12262,10 +12244,6 @@ public final class ModelPB {
       if (executed_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, executed_);
-      }
-      if (immediately_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, immediately_);
       }
       if (started_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -12319,8 +12297,6 @@ public final class ModelPB {
       if (schedulePolicy_ != other.schedulePolicy_) return false;
       if (getExecuted()
           != other.getExecuted()) return false;
-      if (getImmediately()
-          != other.getImmediately()) return false;
       if (getStarted()
           != other.getStarted()) return false;
       if (getEnded()
@@ -12353,9 +12329,6 @@ public final class ModelPB {
       hash = (37 * hash) + EXECUTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExecuted());
-      hash = (37 * hash) + IMMEDIATELY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getImmediately());
       hash = (37 * hash) + STARTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getStarted());
@@ -12518,8 +12491,6 @@ public final class ModelPB {
 
         executed_ = 0L;
 
-        immediately_ = false;
-
         started_ = 0L;
 
         ended_ = 0L;
@@ -12566,7 +12537,6 @@ public final class ModelPB {
         com.dataomnis.gproto.modelpb.ModelPB.StreamJobSchedule result = new com.dataomnis.gproto.modelpb.ModelPB.StreamJobSchedule(this);
         result.schedulePolicy_ = schedulePolicy_;
         result.executed_ = executed_;
-        result.immediately_ = immediately_;
         result.started_ = started_;
         result.ended_ = ended_;
         result.concurrencyPolicy_ = concurrencyPolicy_;
@@ -12630,9 +12600,6 @@ public final class ModelPB {
         if (other.getExecuted() != 0L) {
           setExecuted(other.getExecuted());
         }
-        if (other.getImmediately() != false) {
-          setImmediately(other.getImmediately());
-        }
         if (other.getStarted() != 0L) {
           setStarted(other.getStarted());
         }
@@ -12694,7 +12661,7 @@ public final class ModelPB {
       private int schedulePolicy_ = 0;
       /**
        * <pre>
-       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
        * Is Required.
        * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
        * </pre>
@@ -12707,7 +12674,7 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
        * Is Required.
        * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
        * </pre>
@@ -12724,7 +12691,7 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
        * Is Required.
        * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
        * </pre>
@@ -12740,7 +12707,7 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
        * Is Required.
        * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
        * </pre>
@@ -12760,7 +12727,7 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "Once".
+       * Schedule Policy, Options Value: 1 =&gt; "Periodicity", 2 =&gt; "AppointTime", 3 =&gt; "Immediately"
        * Is Required.
        * &#64;inject_tag: json:"schedule_policy" default:"0" binding:"gte=1,lte=2"
        * </pre>
@@ -12778,13 +12745,12 @@ public final class ModelPB {
       private long executed_ ;
       /**
        * <pre>
-       * ------ Once Options ------
        * Timestamp of execute time for once. unit in seconds.
        * Not required, default the time of created job.
        * &#64;inject_tag: json:"executed" default:"0" binding:"gte=0"
        * </pre>
        *
-       * <code>int64 executed = 2;</code>
+       * <code>int64 executed = 2 [(.validator.field) = { ... }</code>
        * @return The executed.
        */
       @java.lang.Override
@@ -12793,13 +12759,12 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * ------ Once Options ------
        * Timestamp of execute time for once. unit in seconds.
        * Not required, default the time of created job.
        * &#64;inject_tag: json:"executed" default:"0" binding:"gte=0"
        * </pre>
        *
-       * <code>int64 executed = 2;</code>
+       * <code>int64 executed = 2 [(.validator.field) = { ... }</code>
        * @param value The executed to set.
        * @return This builder for chaining.
        */
@@ -12811,67 +12776,17 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * ------ Once Options ------
        * Timestamp of execute time for once. unit in seconds.
        * Not required, default the time of created job.
        * &#64;inject_tag: json:"executed" default:"0" binding:"gte=0"
        * </pre>
        *
-       * <code>int64 executed = 2;</code>
+       * <code>int64 executed = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearExecuted() {
         
         executed_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean immediately_ ;
-      /**
-       * <pre>
-       * Whether execute immediately the job after release.
-       * Not required, default False. If immediately is True, the field executed will be ignore.
-       * &#64;inject_tag: json:"immediately" binding:"-"
-       * </pre>
-       *
-       * <code>bool immediately = 3;</code>
-       * @return The immediately.
-       */
-      @java.lang.Override
-      public boolean getImmediately() {
-        return immediately_;
-      }
-      /**
-       * <pre>
-       * Whether execute immediately the job after release.
-       * Not required, default False. If immediately is True, the field executed will be ignore.
-       * &#64;inject_tag: json:"immediately" binding:"-"
-       * </pre>
-       *
-       * <code>bool immediately = 3;</code>
-       * @param value The immediately to set.
-       * @return This builder for chaining.
-       */
-      public Builder setImmediately(boolean value) {
-        
-        immediately_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Whether execute immediately the job after release.
-       * Not required, default False. If immediately is True, the field executed will be ignore.
-       * &#64;inject_tag: json:"immediately" binding:"-"
-       * </pre>
-       *
-       * <code>bool immediately = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearImmediately() {
-        
-        immediately_ = false;
         onChanged();
         return this;
       }
@@ -12980,11 +12895,10 @@ public final class ModelPB {
       private int concurrencyPolicy_ = 0;
       /**
        * <pre>
-       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
        * - allow: Multiple task instances are allowed at the same time.
        * - forbid: No new instances will be created, and this schedule cycle will be skipped,
        * - replace: Force stop the old running instances and create new.
-       * Is required with schedule_policy = 1.
        * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
        * </pre>
        *
@@ -12996,11 +12910,10 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
        * - allow: Multiple task instances are allowed at the same time.
        * - forbid: No new instances will be created, and this schedule cycle will be skipped,
        * - replace: Force stop the old running instances and create new.
-       * Is required with schedule_policy = 1.
        * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
        * </pre>
        *
@@ -13016,11 +12929,10 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
        * - allow: Multiple task instances are allowed at the same time.
        * - forbid: No new instances will be created, and this schedule cycle will be skipped,
        * - replace: Force stop the old running instances and create new.
-       * Is required with schedule_policy = 1.
        * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
        * </pre>
        *
@@ -13035,11 +12947,10 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
        * - allow: Multiple task instances are allowed at the same time.
        * - forbid: No new instances will be created, and this schedule cycle will be skipped,
        * - replace: Force stop the old running instances and create new.
-       * Is required with schedule_policy = 1.
        * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
        * </pre>
        *
@@ -13058,11 +12969,10 @@ public final class ModelPB {
       }
       /**
        * <pre>
-       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace"
+       * Concurrency policy. 1 =&gt; "allow", 2 =&gt; "forbid", 3 =&gt; "replace". Is required .
        * - allow: Multiple task instances are allowed at the same time.
        * - forbid: No new instances will be created, and this schedule cycle will be skipped,
        * - replace: Force stop the old running instances and create new.
-       * Is required with schedule_policy = 1.
        * &#64;inject_tag: json:"concurrency_policy" default:"" binding:"-"
        * </pre>
        *
@@ -33711,41 +33621,11 @@ public final class ModelPB {
 
       /**
        * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-       * @return Whether the clickhouse field is set.
-       */
-      boolean hasClickhouse();
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-       * @return The clickhouse.
-       */
-      com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse();
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-       */
-      com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder();
-
-      /**
-       * <pre>
        * Kafka Source Connection Info.
        * &#64;inject_tag: json:"kafka"
        * </pre>
        *
-       * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+       * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
        * @return Whether the kafka field is set.
        */
       boolean hasKafka();
@@ -33755,7 +33635,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"kafka"
        * </pre>
        *
-       * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+       * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
        * @return The kafka.
        */
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL getKafka();
@@ -33765,7 +33645,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"kafka"
        * </pre>
        *
-       * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+       * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
        */
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder getKafkaOrBuilder();
 
@@ -33775,7 +33655,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"s3"
        * </pre>
        *
-       * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+       * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
        * @return Whether the s3 field is set.
        */
       boolean hasS3();
@@ -33785,7 +33665,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"s3"
        * </pre>
        *
-       * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+       * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
        * @return The s3.
        */
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL getS3();
@@ -33795,9 +33675,39 @@ public final class ModelPB {
        * &#64;inject_tag: json:"s3"
        * </pre>
        *
-       * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+       * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
        */
       com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder getS3OrBuilder();
+
+      /**
+       * <pre>
+       * ClickHouse Source Connection Info.
+       * &#64;inject_tag: json:"clickhouse"
+       * </pre>
+       *
+       * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+       * @return Whether the clickhouse field is set.
+       */
+      boolean hasClickhouse();
+      /**
+       * <pre>
+       * ClickHouse Source Connection Info.
+       * &#64;inject_tag: json:"clickhouse"
+       * </pre>
+       *
+       * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+       * @return The clickhouse.
+       */
+      com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse();
+      /**
+       * <pre>
+       * ClickHouse Source Connection Info.
+       * &#64;inject_tag: json:"clickhouse"
+       * </pre>
+       *
+       * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+       */
+      com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder();
 
       /**
        * <pre>
@@ -33966,19 +33876,6 @@ public final class ModelPB {
                 break;
               }
               case 26: {
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder subBuilder = null;
-                if (clickhouse_ != null) {
-                  subBuilder = clickhouse_.toBuilder();
-                }
-                clickhouse_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(clickhouse_);
-                  clickhouse_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-              case 34: {
                 com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder subBuilder = null;
                 if (kafka_ != null) {
                   subBuilder = kafka_.toBuilder();
@@ -33991,7 +33888,7 @@ public final class ModelPB {
 
                 break;
               }
-              case 42: {
+              case 34: {
                 com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder subBuilder = null;
                 if (s3_ != null) {
                   subBuilder = s3_.toBuilder();
@@ -34000,6 +33897,19 @@ public final class ModelPB {
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(s3_);
                   s3_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 42: {
+                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder subBuilder = null;
+                if (clickhouse_ != null) {
+                  subBuilder = clickhouse_.toBuilder();
+                }
+                clickhouse_ = input.readMessage(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(clickhouse_);
+                  clickhouse_ = subBuilder.buildPartial();
                 }
 
                 break;
@@ -34192,48 +34102,7 @@ public final class ModelPB {
         return getPostgresql();
       }
 
-      public static final int CLICKHOUSE_FIELD_NUMBER = 3;
-      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL clickhouse_;
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-       * @return Whether the clickhouse field is set.
-       */
-      @java.lang.Override
-      public boolean hasClickhouse() {
-        return clickhouse_ != null;
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-       * @return The clickhouse.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse() {
-        return clickhouse_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
-      }
-      /**
-       * <pre>
-       * ClickHouse Source Connection Info.
-       * &#64;inject_tag: json:"clickhouse"
-       * </pre>
-       *
-       * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder() {
-        return getClickhouse();
-      }
-
-      public static final int KAFKA_FIELD_NUMBER = 4;
+      public static final int KAFKA_FIELD_NUMBER = 3;
       private com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL kafka_;
       /**
        * <pre>
@@ -34241,7 +34110,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"kafka"
        * </pre>
        *
-       * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+       * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
        * @return Whether the kafka field is set.
        */
       @java.lang.Override
@@ -34254,7 +34123,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"kafka"
        * </pre>
        *
-       * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+       * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
        * @return The kafka.
        */
       @java.lang.Override
@@ -34267,14 +34136,14 @@ public final class ModelPB {
        * &#64;inject_tag: json:"kafka"
        * </pre>
        *
-       * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+       * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
        */
       @java.lang.Override
       public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder getKafkaOrBuilder() {
         return getKafka();
       }
 
-      public static final int S3_FIELD_NUMBER = 5;
+      public static final int S3_FIELD_NUMBER = 4;
       private com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL s3_;
       /**
        * <pre>
@@ -34282,7 +34151,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"s3"
        * </pre>
        *
-       * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+       * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
        * @return Whether the s3 field is set.
        */
       @java.lang.Override
@@ -34295,7 +34164,7 @@ public final class ModelPB {
        * &#64;inject_tag: json:"s3"
        * </pre>
        *
-       * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+       * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
        * @return The s3.
        */
       @java.lang.Override
@@ -34308,11 +34177,52 @@ public final class ModelPB {
        * &#64;inject_tag: json:"s3"
        * </pre>
        *
-       * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+       * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
        */
       @java.lang.Override
       public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder getS3OrBuilder() {
         return getS3();
+      }
+
+      public static final int CLICKHOUSE_FIELD_NUMBER = 5;
+      private com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL clickhouse_;
+      /**
+       * <pre>
+       * ClickHouse Source Connection Info.
+       * &#64;inject_tag: json:"clickhouse"
+       * </pre>
+       *
+       * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+       * @return Whether the clickhouse field is set.
+       */
+      @java.lang.Override
+      public boolean hasClickhouse() {
+        return clickhouse_ != null;
+      }
+      /**
+       * <pre>
+       * ClickHouse Source Connection Info.
+       * &#64;inject_tag: json:"clickhouse"
+       * </pre>
+       *
+       * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+       * @return The clickhouse.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse() {
+        return clickhouse_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
+      }
+      /**
+       * <pre>
+       * ClickHouse Source Connection Info.
+       * &#64;inject_tag: json:"clickhouse"
+       * </pre>
+       *
+       * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder() {
+        return getClickhouse();
       }
 
       public static final int HBASE_FIELD_NUMBER = 6;
@@ -34458,14 +34368,14 @@ public final class ModelPB {
         if (postgresql_ != null) {
           output.writeMessage(2, getPostgresql());
         }
-        if (clickhouse_ != null) {
-          output.writeMessage(3, getClickhouse());
-        }
         if (kafka_ != null) {
-          output.writeMessage(4, getKafka());
+          output.writeMessage(3, getKafka());
         }
         if (s3_ != null) {
-          output.writeMessage(5, getS3());
+          output.writeMessage(4, getS3());
+        }
+        if (clickhouse_ != null) {
+          output.writeMessage(5, getClickhouse());
         }
         if (hbase_ != null) {
           output.writeMessage(6, getHbase());
@@ -34496,17 +34406,17 @@ public final class ModelPB {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, getPostgresql());
         }
-        if (clickhouse_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getClickhouse());
-        }
         if (kafka_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, getKafka());
+            .computeMessageSize(3, getKafka());
         }
         if (s3_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(5, getS3());
+            .computeMessageSize(4, getS3());
+        }
+        if (clickhouse_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, getClickhouse());
         }
         if (hbase_ != null) {
           size += com.google.protobuf.CodedOutputStream
@@ -34550,11 +34460,6 @@ public final class ModelPB {
           if (!getPostgresql()
               .equals(other.getPostgresql())) return false;
         }
-        if (hasClickhouse() != other.hasClickhouse()) return false;
-        if (hasClickhouse()) {
-          if (!getClickhouse()
-              .equals(other.getClickhouse())) return false;
-        }
         if (hasKafka() != other.hasKafka()) return false;
         if (hasKafka()) {
           if (!getKafka()
@@ -34564,6 +34469,11 @@ public final class ModelPB {
         if (hasS3()) {
           if (!getS3()
               .equals(other.getS3())) return false;
+        }
+        if (hasClickhouse() != other.hasClickhouse()) return false;
+        if (hasClickhouse()) {
+          if (!getClickhouse()
+              .equals(other.getClickhouse())) return false;
         }
         if (hasHbase() != other.hasHbase()) return false;
         if (hasHbase()) {
@@ -34601,10 +34511,6 @@ public final class ModelPB {
           hash = (37 * hash) + POSTGRESQL_FIELD_NUMBER;
           hash = (53 * hash) + getPostgresql().hashCode();
         }
-        if (hasClickhouse()) {
-          hash = (37 * hash) + CLICKHOUSE_FIELD_NUMBER;
-          hash = (53 * hash) + getClickhouse().hashCode();
-        }
         if (hasKafka()) {
           hash = (37 * hash) + KAFKA_FIELD_NUMBER;
           hash = (53 * hash) + getKafka().hashCode();
@@ -34612,6 +34518,10 @@ public final class ModelPB {
         if (hasS3()) {
           hash = (37 * hash) + S3_FIELD_NUMBER;
           hash = (53 * hash) + getS3().hashCode();
+        }
+        if (hasClickhouse()) {
+          hash = (37 * hash) + CLICKHOUSE_FIELD_NUMBER;
+          hash = (53 * hash) + getClickhouse().hashCode();
         }
         if (hasHbase()) {
           hash = (37 * hash) + HBASE_FIELD_NUMBER;
@@ -34776,12 +34686,6 @@ public final class ModelPB {
             postgresql_ = null;
             postgresqlBuilder_ = null;
           }
-          if (clickhouseBuilder_ == null) {
-            clickhouse_ = null;
-          } else {
-            clickhouse_ = null;
-            clickhouseBuilder_ = null;
-          }
           if (kafkaBuilder_ == null) {
             kafka_ = null;
           } else {
@@ -34793,6 +34697,12 @@ public final class ModelPB {
           } else {
             s3_ = null;
             s3Builder_ = null;
+          }
+          if (clickhouseBuilder_ == null) {
+            clickhouse_ = null;
+          } else {
+            clickhouse_ = null;
+            clickhouseBuilder_ = null;
           }
           if (hbaseBuilder_ == null) {
             hbase_ = null;
@@ -34849,11 +34759,6 @@ public final class ModelPB {
           } else {
             result.postgresql_ = postgresqlBuilder_.build();
           }
-          if (clickhouseBuilder_ == null) {
-            result.clickhouse_ = clickhouse_;
-          } else {
-            result.clickhouse_ = clickhouseBuilder_.build();
-          }
           if (kafkaBuilder_ == null) {
             result.kafka_ = kafka_;
           } else {
@@ -34863,6 +34768,11 @@ public final class ModelPB {
             result.s3_ = s3_;
           } else {
             result.s3_ = s3Builder_.build();
+          }
+          if (clickhouseBuilder_ == null) {
+            result.clickhouse_ = clickhouse_;
+          } else {
+            result.clickhouse_ = clickhouseBuilder_.build();
           }
           if (hbaseBuilder_ == null) {
             result.hbase_ = hbase_;
@@ -34936,14 +34846,14 @@ public final class ModelPB {
           if (other.hasPostgresql()) {
             mergePostgresql(other.getPostgresql());
           }
-          if (other.hasClickhouse()) {
-            mergeClickhouse(other.getClickhouse());
-          }
           if (other.hasKafka()) {
             mergeKafka(other.getKafka());
           }
           if (other.hasS3()) {
             mergeS3(other.getS3());
+          }
+          if (other.hasClickhouse()) {
+            mergeClickhouse(other.getClickhouse());
           }
           if (other.hasHbase()) {
             mergeHbase(other.getHbase());
@@ -35390,170 +35300,6 @@ public final class ModelPB {
           return postgresqlBuilder_;
         }
 
-        private com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL clickhouse_;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder> clickhouseBuilder_;
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         * @return Whether the clickhouse field is set.
-         */
-        public boolean hasClickhouse() {
-          return clickhouseBuilder_ != null || clickhouse_ != null;
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         * @return The clickhouse.
-         */
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse() {
-          if (clickhouseBuilder_ == null) {
-            return clickhouse_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
-          } else {
-            return clickhouseBuilder_.getMessage();
-          }
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         */
-        public Builder setClickhouse(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL value) {
-          if (clickhouseBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            clickhouse_ = value;
-            onChanged();
-          } else {
-            clickhouseBuilder_.setMessage(value);
-          }
-
-          return this;
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         */
-        public Builder setClickhouse(
-            com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder builderForValue) {
-          if (clickhouseBuilder_ == null) {
-            clickhouse_ = builderForValue.build();
-            onChanged();
-          } else {
-            clickhouseBuilder_.setMessage(builderForValue.build());
-          }
-
-          return this;
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         */
-        public Builder mergeClickhouse(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL value) {
-          if (clickhouseBuilder_ == null) {
-            if (clickhouse_ != null) {
-              clickhouse_ =
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.newBuilder(clickhouse_).mergeFrom(value).buildPartial();
-            } else {
-              clickhouse_ = value;
-            }
-            onChanged();
-          } else {
-            clickhouseBuilder_.mergeFrom(value);
-          }
-
-          return this;
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         */
-        public Builder clearClickhouse() {
-          if (clickhouseBuilder_ == null) {
-            clickhouse_ = null;
-            onChanged();
-          } else {
-            clickhouse_ = null;
-            clickhouseBuilder_ = null;
-          }
-
-          return this;
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         */
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder getClickhouseBuilder() {
-          
-          onChanged();
-          return getClickhouseFieldBuilder().getBuilder();
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         */
-        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder() {
-          if (clickhouseBuilder_ != null) {
-            return clickhouseBuilder_.getMessageOrBuilder();
-          } else {
-            return clickhouse_ == null ?
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
-          }
-        }
-        /**
-         * <pre>
-         * ClickHouse Source Connection Info.
-         * &#64;inject_tag: json:"clickhouse"
-         * </pre>
-         *
-         * <code>.datasource.ClickHouseURL clickhouse = 3 [(.validator.field) = { ... }</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder> 
-            getClickhouseFieldBuilder() {
-          if (clickhouseBuilder_ == null) {
-            clickhouseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder>(
-                    getClickhouse(),
-                    getParentForChildren(),
-                    isClean());
-            clickhouse_ = null;
-          }
-          return clickhouseBuilder_;
-        }
-
         private com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL kafka_;
         private com.google.protobuf.SingleFieldBuilderV3<
             com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder> kafkaBuilder_;
@@ -35563,7 +35309,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          * @return Whether the kafka field is set.
          */
         public boolean hasKafka() {
@@ -35575,7 +35321,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          * @return The kafka.
          */
         public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL getKafka() {
@@ -35591,7 +35337,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          */
         public Builder setKafka(com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL value) {
           if (kafkaBuilder_ == null) {
@@ -35612,7 +35358,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          */
         public Builder setKafka(
             com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder builderForValue) {
@@ -35631,7 +35377,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          */
         public Builder mergeKafka(com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL value) {
           if (kafkaBuilder_ == null) {
@@ -35654,7 +35400,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          */
         public Builder clearKafka() {
           if (kafkaBuilder_ == null) {
@@ -35673,7 +35419,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          */
         public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder getKafkaBuilder() {
           
@@ -35686,7 +35432,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          */
         public com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder getKafkaOrBuilder() {
           if (kafkaBuilder_ != null) {
@@ -35702,7 +35448,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"kafka"
          * </pre>
          *
-         * <code>.datasource.KafkaURL kafka = 4 [(.validator.field) = { ... }</code>
+         * <code>.datasource.KafkaURL kafka = 3 [(.validator.field) = { ... }</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.KafkaURLOrBuilder> 
@@ -35727,7 +35473,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          * @return Whether the s3 field is set.
          */
         public boolean hasS3() {
@@ -35739,7 +35485,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          * @return The s3.
          */
         public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL getS3() {
@@ -35755,7 +35501,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          */
         public Builder setS3(com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL value) {
           if (s3Builder_ == null) {
@@ -35776,7 +35522,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          */
         public Builder setS3(
             com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder builderForValue) {
@@ -35795,7 +35541,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          */
         public Builder mergeS3(com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL value) {
           if (s3Builder_ == null) {
@@ -35818,7 +35564,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          */
         public Builder clearS3() {
           if (s3Builder_ == null) {
@@ -35837,7 +35583,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          */
         public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder getS3Builder() {
           
@@ -35850,7 +35596,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          */
         public com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder getS3OrBuilder() {
           if (s3Builder_ != null) {
@@ -35866,7 +35612,7 @@ public final class ModelPB {
          * &#64;inject_tag: json:"s3"
          * </pre>
          *
-         * <code>.datasource.S3URL s3 = 5 [(.validator.field) = { ... }</code>
+         * <code>.datasource.S3URL s3 = 4 [(.validator.field) = { ... }</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.S3URLOrBuilder> 
@@ -35880,6 +35626,170 @@ public final class ModelPB {
             s3_ = null;
           }
           return s3Builder_;
+        }
+
+        private com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL clickhouse_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder> clickhouseBuilder_;
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         * @return Whether the clickhouse field is set.
+         */
+        public boolean hasClickhouse() {
+          return clickhouseBuilder_ != null || clickhouse_ != null;
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         * @return The clickhouse.
+         */
+        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL getClickhouse() {
+          if (clickhouseBuilder_ == null) {
+            return clickhouse_ == null ? com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
+          } else {
+            return clickhouseBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         */
+        public Builder setClickhouse(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL value) {
+          if (clickhouseBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            clickhouse_ = value;
+            onChanged();
+          } else {
+            clickhouseBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         */
+        public Builder setClickhouse(
+            com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder builderForValue) {
+          if (clickhouseBuilder_ == null) {
+            clickhouse_ = builderForValue.build();
+            onChanged();
+          } else {
+            clickhouseBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         */
+        public Builder mergeClickhouse(com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL value) {
+          if (clickhouseBuilder_ == null) {
+            if (clickhouse_ != null) {
+              clickhouse_ =
+                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.newBuilder(clickhouse_).mergeFrom(value).buildPartial();
+            } else {
+              clickhouse_ = value;
+            }
+            onChanged();
+          } else {
+            clickhouseBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         */
+        public Builder clearClickhouse() {
+          if (clickhouseBuilder_ == null) {
+            clickhouse_ = null;
+            onChanged();
+          } else {
+            clickhouse_ = null;
+            clickhouseBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder getClickhouseBuilder() {
+          
+          onChanged();
+          return getClickhouseFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         */
+        public com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder getClickhouseOrBuilder() {
+          if (clickhouseBuilder_ != null) {
+            return clickhouseBuilder_.getMessageOrBuilder();
+          } else {
+            return clickhouse_ == null ?
+                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.getDefaultInstance() : clickhouse_;
+          }
+        }
+        /**
+         * <pre>
+         * ClickHouse Source Connection Info.
+         * &#64;inject_tag: json:"clickhouse"
+         * </pre>
+         *
+         * <code>.datasource.ClickHouseURL clickhouse = 5 [(.validator.field) = { ... }</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder> 
+            getClickhouseFieldBuilder() {
+          if (clickhouseBuilder_ == null) {
+            clickhouseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURL.Builder, com.dataomnis.gproto.datasourcepdb.DataSourcePB.ClickHouseURLOrBuilder>(
+                    getClickhouse(),
+                    getParentForChildren(),
+                    isClean());
+            clickhouse_ = null;
+          }
+          return clickhouseBuilder_;
         }
 
         private com.dataomnis.gproto.datasourcepdb.DataSourcePB.HBaseURL hbase_;
@@ -57137,241 +57047,241 @@ public final class ModelPB {
       "bArgs\022\030\n\ncluster_id\030\001 \001(\tB\004\342\337\037\000\022\"\n\013paral" +
       "lelism\030\002 \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022\022\n\004udfs\030\003 \003(" +
       "\tB\004\342\337\037\000\022\022\n\nconnectors\030\004 \003(\t\022\033\n\023built_in_" +
-      "connectors\030\005 \003(\t:\006\312\262\004\002\n\000\"\277\007\n\021StreamJobSc" +
+      "connectors\030\005 \003(\t:\006\312\262\004\002\n\000\"\264\007\n\021StreamJobSc" +
       "hedule\022M\n\017schedule_policy\030\001 \001(\0162\'.model." +
       "StreamJobSchedule.SchedulePolicyB\013\342\337\037\007\022\005" +
-      "\332\001\002X\001\022\020\n\010executed\030\002 \001(\003\022\023\n\013immediately\030\003" +
-      " \001(\010\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005en" +
-      "ded\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022s\n\022concurrency_po" +
-      "licy\030\006 \001(\0162*.model.StreamJobSchedule.Con" +
-      "currencyPolicyB+\342\337\037\032\n\030\n\017schedule_policy\022" +
-      "\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\t" +
-      "BM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001" +
-      "&J\006minuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022" +
-      ";\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_polic" +
-      "y\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342" +
-      "\337\037\t\022\007\262\001\0048d@\000\022g\n\014retry_policy\030\n \001(\0162$.mod" +
-      "el.StreamJobSchedule.RetryPolicyB+\342\337\037\032\n\030" +
-      "\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022=\n" +
-      "\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy" +
-      "\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014" +
-      " \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262" +
-      "\001\0048\036@\001\"D\n\016SchedulePolicy\022\027\n\023SchedulePoli" +
-      "cyUnset\020\000\022\017\n\013Periodicity\020\001\022\010\n\004Once\020\002\"S\n\021" +
-      "ConcurrencyPolicy\022\032\n\026ConcurrencyPolicyUn" +
-      "set\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020" +
-      "\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset\020\000\022\010" +
-      "\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\244\003\n\020StreamJob" +
-      "Release\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007vers" +
-      "ion\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\036\n\004name\030\004 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004type\030\005 \001(\0162\025.model.Str" +
-      "eamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006status\030\006 \001" +
-      "(\0162\036.model.StreamJobRelease.Status\022\014\n\004de" +
-      "sc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230" +
-      "\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007upda" +
-      "ted\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013Stat" +
-      "usUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007" +
-      "Deleted\020\003\"\204\002\n\007JobInfo\022!\n\013instance_id\030\001 \001" +
-      "(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007note_id\030\002 \001(\tB\004\342\337\037\000\022" +
-      "\032\n\014paragraph_id\030\003 \001(\tB\004\342\337\037\000\022\026\n\010flink_id\030" +
-      "\004 \001(\tB\004\342\337\037\000\022\025\n\007message\030\005 \001(\tB\004\342\337\037\000\0228\n\005st" +
-      "ate\030\006 \001(\0162\032.model.StreamJobInst.StateB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
-      "0\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"\303\004\n\rStr" +
-      "eamJobInst\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022" +
-      "\034\n\007version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\030\n\002id\030\004 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\0228\n\005state\030\005 \001(\0162\032.model.S" +
-      "treamJobInst.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\022:\n\006sta" +
-      "tus\030\006 \001(\0162\033.model.StreamJobInst.StatusB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\017\n\007note_i" +
-      "d\030\n \001(\t\022\024\n\014paragraph_id\030\013 \001(\t\022\020\n\010flink_i" +
-      "d\030\014 \001(\t\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n" +
-      "\007updated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n" +
-      "\013StatusUnset\020\000\022\n\n\006Active\020\001\022\013\n\007Deleted\020\002\"" +
-      "\204\001\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Pending\020\001\022\013" +
-      "\n\007Running\020\002\022\014\n\010Retrying\020\003\022\r\n\tSuspended\020\004" +
-      "\022\016\n\nTerminated\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout" +
-      "\020\007\022\n\n\006Failed\020\010\"\305\002\n\tOperation\022\037\n\007user_id\030" +
-      "\001 \001(\tB\016\342\337\037\n\022\010\302\001\005\"\000\230\002@\022\020\n\010space_id\030\002 \001(\t\022" +
-      "\034\n\007op_name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0225\n\007op_type" +
-      "\030\004 \001(\0162\025.model.Operation.TypeB\r\342\337\037\t\022\007\332\001\004" +
-      "0\000X\001\0224\n\005state\030\005 \001(\0162\026.model.Operation.St" +
-      "ateB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\006 \001(\003B\013\342\337\037" +
-      "\007\022\005\262\001\0020\000\"*\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005Write" +
-      "\020\001\022\010\n\004Read\020\002\"0\n\005State\022\016\n\nStateUnset\020\000\022\013\n" +
-      "\007Success\020\001\022\n\n\006Failed\020\002\"\254\002\n\004Role\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001" +
-      "(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001" +
-      "\007\220\002\001\230\002\200\001\022-\n\004type\030\004 \001(\0162\020.model.Role.Type" +
-      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\006status\030\005 \001(\0162\022.model." +
-      "Role.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\"-\n\004Type\022\r\n\tTy" +
-      "peUnset\020\000\022\n\n\006System\020\001\022\n\n\006Custom\020\002\"2\n\006Sta" +
-      "tus\022\017\n\013StatusUnset\020\000\022\n\n\006Normal\020\001\022\013\n\007Dele" +
-      "ted\020\002\"\205\002\n\006Member\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\007user_id\030\003 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\230\002@\022\020\n\010role_ids\030\004 \001(\t\0223\n\006status\030\005 \001(\016" +
-      "2\024.model.Member.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n" +
-      "\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007" +
-      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUns" +
-      "et\020\000\022\n\n\006Normal\020\001\022\013\n\007Deleted\020\002\"\303\003\n\013Monito" +
-      "rRule\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003" +
-      " \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0228\n\006status\030\004 \001(\0162\031" +
-      ".model.MonitorRule.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\022\033\n\004unit\030\005 \001(\005B\r\342\337\037\t\022\007\262\001\0040\0008\002\022\036\n\004text\030\006 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\001\310\001\200\010\022\025\n\007trigger\030\007 \001(\005B\004" +
-      "\342\337\037\000\022\031\n\013alarm_times\030\010 \001(\005B\004\342\337\037\000\022\034\n\016alarm" +
-      "_interval\030\t \001(\005B\004\342\337\037\000\022\030\n\nalarm_type\030\n \001(" +
-      "\tB\004\342\337\037\000\022\027\n\tfree_time\030\013 \001(\tB\004\342\337\037\000\022\026\n\010rece" +
-      "iver\030\014 \001(\tB\004\342\337\037\000\"A\n\006Status\022\017\n\013StatusUnse" +
-      "t\020\000\022\013\n\007Enabled\020\001\022\014\n\010Disabled\020\002\022\013\n\007Delete" +
-      "d\020\003\"\230\002\n\014QueueMessage\0227\n\010property\030\001 \001(\0132\030" +
-      ".model.StreamJobPropertyB\013\342\337\037\007\022\005\342\001\002\020\001\022\025\n" +
-      "\007retries\030\002 \001(\005B\004\342\337\037\000\022\025\n\007started\030\003 \001(\003B\004\342" +
-      "\337\037\000\022\025\n\007note_id\030\004 \001(\tB\004\342\337\037\000\022\032\n\014paragraph_" +
-      "id\030\005 \001(\tB\004\342\337\037\000\022\033\n\010flink_id\030\006 \001(\tB\t\342\337\037\005\022\003" +
-      "\302\001\000\"Q\n\006Action\022\017\n\013ActionUnset\020\000\022\n\n\006Create" +
-      "\020\001\022\010\n\004Init\020\005\022\n\n\006Submit\020\002\022\t\n\005Check\020\004\022\t\n\005R" +
-      "etry\020\003\"L\n\022InstanceStatusStat\022\032\n\005state\030\001 " +
-      "\001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005count\030\002 \001(\003B\013\342\337\037\007\022\005\262" +
-      "\001\002@\000\"{\n\027InstanceRuntimeRankInfo\022\020\n\002id\030\001 " +
-      "\001(\tB\004\342\337\037\000\022\024\n\006job_id\030\002 \001(\tB\004\342\337\037\000\022!\n\014runni" +
-      "ng_time\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\025\n\007version\030\004 " +
-      "\001(\tB\004\342\337\037\000\"f\n\025InstanceErrorRankInfo\022\024\n\006jo" +
-      "b_id\030\001 \001(\tB\004\342\337\037\000\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\022" +
-      " \n\013error_count\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\"{\n\025Dis" +
-      "patchTaskCountInfo\022\037\n\nflow_count\030\001 \001(\005B\013" +
-      "\342\337\037\007\022\005\262\001\002@\000\022#\n\016instance_count\030\002 \001(\005B\013\342\337\037" +
-      "\007\022\005\262\001\002@\000\022\034\n\007updated\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"X" +
-      "\n\024InstanceTaskExecStat\022\033\n\004hour\030\001 \001(\005B\r\342\337" +
-      "\037\t\022\007\262\001\0048\030@\000\022#\n\016instance_count\030\002 \001(\003B\013\342\337\037" +
-      "\007\022\005\262\001\002@\000\"\351\t\n\nDataSource\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\360\001\024\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022" +
-      "\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type\030\005 \001" +
-      "(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X" +
-      "\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource.URLB\r\342" +
-      "\337\037\t\022\007\342\001\004\020\001\030\001\0227\n\006status\030\007 \001(\0162\030.model.Dat" +
-      "aSource.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022 \n\ncreated" +
-      "_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003" +
-      "B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001" +
-      "\0020\000\0224\n\017last_connection\030\013 \001(\0132\033.model.Dat" +
-      "aSourceConnection\032\362\004\n\003URL\0223\n\004type\030\n \001(\0162" +
-      "\026.model.DataSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C" +
-      "\n\005mysql\030\001 \001(\0132\024.datasource.MySQLURLB\036\342\337\037" +
-      "\017\n\r\n\004type\022\005\332\001\002\030\001\342\337\037\007\022\005\342\001\002\020\001\022M\n\npostgresq" +
-      "l\030\002 \001(\0132\031.datasource.PostgreSQLURLB\036\342\337\037\017" +
-      "\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022M\n\nclickhouse" +
-      "\030\003 \001(\0132\031.datasource.ClickHouseURLB\036\342\337\037\017\n" +
-      "\r\n\004type\022\005\332\001\002\030\003\342\337\037\007\022\005\342\001\002\020\001\022C\n\005kafka\030\004 \001(\013" +
-      "2\024.datasource.KafkaURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001" +
-      "\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022=\n\002s3\030\005 \001(\0132\021.datasource." +
-      "S3URLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001\022C\n" +
-      "\005hbase\030\006 \001(\0132\024.datasource.HBaseURLB\036\342\337\037\017" +
-      "\n\r\n\004type\022\005\332\001\002\030\006\342\337\037\007\022\005\342\001\002\020\001\022?\n\003ftp\030\007 \001(\0132" +
-      "\022.datasource.FtpURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\007" +
-      "\342\337\037\007\022\005\342\001\002\020\001\022A\n\004hdfs\030\010 \001(\0132\023.datasource.H" +
-      "DFSURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\010\342\337\037\007\022\005\342\001\002\020\001:\006" +
-      "\312\262\004\002\n\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Del" +
-      "eted\020\001\022\013\n\007Enabled\020\002\022\014\n\010Disabled\020\003\"q\n\004Typ" +
-      "e\022\r\n\tTypeUnset\020\000\022\t\n\005MySQL\020\001\022\016\n\nPostgreSQ" +
-      "L\020\002\022\t\n\005Kafka\020\003\022\006\n\002S3\020\004\022\016\n\nClickHouse\020\005\022\t" +
-      "\n\005HBase\020\006\022\007\n\003Ftp\020\007\022\010\n\004HDFS\020\010\"\335\003\n\024DataSou" +
-      "rceConnection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022\037\n\tsource_id\030\002 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\360\001\024\022 \n\nnetwork_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022" +
-      "A\n\006status\030\004 \001(\0162\".model.DataSourceConnec" +
-      "tion.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022A\n\006result\030\005 \001" +
-      "(\0162\".model.DataSourceConnection.ResultB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\007message\030\006 \001(\tB\t\342\337\037\005\022\003\302\001" +
-      "\000\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elaps" +
-      "e\030\010 \001(\003\022$\n\014network_info\030\t \001(\0132\016.model.Ne" +
-      "twork\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Dele" +
-      "ted\020\001\022\n\n\006Active\020\002\"1\n\006Result\022\016\n\nStateUnse" +
-      "t\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020\002\"\236\005\n\tTableIn" +
-      "fo\022\036\n\010table_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\037\n\tso" +
-      "urce_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022%\n\010space_id\030" +
-      "\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\004 \001(\t" +
-      "B\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\036\n\007comment\030\005 \001(\tB\r\342\337\037\t" +
-      "\022\007\302\001\004\310\001\200\002\022(\n\014table_schema\030\006 \001(\0132\022.flink." +
-      "TableSchema\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
-      "\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0226\n\006statu" +
-      "s\030\t \001(\0162\027.model.TableInfo.StatusB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\0228\n\ntable_kind\030\n \001(\0162\025.model.Tabl" +
-      "eInfo.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001\022$\n\013source_name" +
-      "\030\013 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\000\230\002@\022E\n\nconnection\030\014 " +
-      "\001(\0162\".model.DataSourceConnection.StatusB" +
-      "\r\342\337\037\t\022\007\332\001\0040\000X\001\022\037\n\tcreate_by\030\r \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\230\002@\"A\n\004Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source" +
-      "\020\001\022\017\n\013Destination\020\002\022\r\n\tDimension\020\003\"A\n\006St" +
-      "atus\022\017\n\013StatusUnset\020\000\022\013\n\007Enabled\020\001\022\014\n\010Di" +
-      "sabled\020\002\022\013\n\007Deleted\020\003\"\217\004\n\010Resource\022!\n\013re" +
-      "source_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\013\n\003pid\030\002 \001" +
-      "(\t\022%\n\010space_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0221\n\004typ" +
-      "e\030\005 \001(\0162\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001\004" +
-      "0\000X\001\022\"\n\rresource_size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000" +
-      "\022\"\n\013description\030\007 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\034\n\007" +
-      "created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t " +
-      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\037\n\tcreate_by\030\n \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\230\002@\0225\n\006status\030\013 \001(\0162\026.model.Resour" +
-      "ce.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\":\n\004Type\022\021\n\rReso" +
-      "urceUnset\020\000\022\007\n\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCONNECT" +
-      "OR\020\003\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Enabl" +
-      "ed\020\001\022\014\n\010Disabled\020\002\022\013\n\007Deleted\020\003\"\221\005\n\007UDFI" +
-      "nfo\022\034\n\006udf_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022%\n\010spa" +
-      "ce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0224\n\010udf_" +
-      "type\030\003 \001(\0162\023.model.UDFInfo.TypeB\r\342\337\037\t\022\007\332" +
-      "\001\0040\000X\001\022<\n\014udf_language\030\004 \001(\0162\027.model.UDF" +
-      "Info.LanguageB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\004name\030\005 \001" +
-      "(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\036\n\007comment\030\006 \001(\tB\r\342\337" +
-      "\037\t\022\007\302\001\004\310\001\200\002\022\036\n\006define\030\007 \001(\tB\016\342\337\037\n\022\010\302\001\005\310\001" +
-      "\240\234\001\022#\n\014usage_sample\030\010 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\320\017" +
-      "\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007update" +
-      "d\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0224\n\006status\030\013 \001(\0162\025.m" +
-      "odel.UDFInfo.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\037\n\tcr" +
-      "eate_by\030\014 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\"3\n\004Type\022\r\n\tT" +
-      "ypeUnset\020\000\022\007\n\003UDF\020\001\022\010\n\004UDTF\020\002\022\t\n\005UDTTF\020\003" +
-      "\">\n\010Language\022\021\n\rLanguageUnset\020\000\022\t\n\005Scala" +
-      "\020\001\022\010\n\004Java\020\002\022\n\n\006Python\020\003\"A\n\006Status\022\017\n\013St" +
-      "atusUnset\020\000\022\013\n\007Enabled\020\001\022\014\n\010Disabled\020\002\022\013" +
-      "\n\007Deleted\020\003\"K\n\014JobResources\022\034\n\006job_id\030\001 " +
-      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\035\n\003jar\030\002 \001(\tB\020\342\337\037\014\022\n\302\001" +
-      "\007\220\002\000\230\002\200\010\"\361\002\n\007Network\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022\036\n" +
-      "\trouter_id\030\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\035\n\010vxnet_i" +
-      "d\030\005 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022 \n\ncreated_by\030\006 \001(\t" +
-      "B\014\342\337\037\010\022\006\302\001\003\230\002@\0224\n\006status\030\007 \001(\0162\025.model.N" +
-      "etwork.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030" +
-      "\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337\037" +
-      "\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007D" +
-      "eleted\020\001\022\n\n\006Active\020\002\"u\n\013HostAliases\022,\n\005i" +
-      "tems\030\001 \003(\0132\027.model.HostAliases.ItemB\004\342\337\037" +
-      "\000\0320\n\004Item\022\020\n\002ip\030\001 \001(\tB\004\342\337\037\000\022\026\n\010hostname\030" +
-      "\002 \001(\tB\004\342\337\037\000:\006\312\262\004\002\n\000\"\315\005\n\014FlinkCluster\022%\n\010" +
+      "\332\001\002X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedul" +
+      "e_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started" +
+      "\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\002@\000\022U\n\022concurrency_policy\030\006 \001(\0162*.mo" +
+      "del.StreamJobSchedule.ConcurrencyPolicyB" +
+      "\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037" +
+      "\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006mi" +
+      "nuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007ex" +
+      "press\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001" +
+      "\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007" +
+      "\262\001\0048d@\000\022I\n\014retry_policy\030\n \001(\0162$.model.St" +
+      "reamJobSchedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000" +
+      "X\001\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_p" +
+      "olicy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_inter" +
+      "val\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337" +
+      "\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023Schedul" +
+      "ePolicyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013Appoi" +
+      "ntTime\020\002\022\017\n\013Immediately\020\003\"S\n\021Concurrency" +
+      "Policy\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Al" +
+      "low\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryP" +
+      "olicy\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n" +
+      "\004Auto\020\002:\006\312\262\004\002\n\000\"\244\003\n\020StreamJobRelease\022%\n\010" +
       "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002i" +
-      "d\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037" +
-      "\014\022\n\302\001\007\220\002\002\230\002\200\001\0223\n\007version\030\004 \001(\tB\"\342\337\037\036\022\034\302\001" +
-      "\031J\027flink-1.12.3-scala_2.11\0229\n\006status\030\005 \001" +
-      "(\0162\032.model.FlinkCluster.StatusB\r\342\337\037\t\022\007\332\001" +
-      "\0040\000X\001\022\035\n\010task_num\030\006 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\022+\n\006" +
-      "job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340" +
-      "?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000" +
-      "\000\000\000\000\000\340?\022\030\n\nnetwork_id\030\t \001(\tB\004\342\337\037\000\022.\n\014hos" +
-      "t_aliases\030\n \001(\0132\022.model.HostAliasesB\004\342\337\037" +
-      "\000\022(\n\006config\030\013 \001(\0132\022.flink.FlinkConfigB\004\342" +
-      "\337\037\000\022 \n\ncreated_by\030\014 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n" +
-      "\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\016" +
-      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006web_ui\030\017 \001(\t\022$\n\014net" +
-      "work_info\030\020 \001(\0132\016.model.Network\"j\n\006Statu" +
-      "s\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Runni" +
-      "ng\020\002\022\013\n\007Stopped\020\003\022\014\n\010Starting\020\004\022\r\n\tExcep" +
-      "tion\020\005\022\013\n\007Arrears\020\006BT\n\034com.dataomnis.gpr" +
-      "oto.modelpbB\007ModelPBP\000Z)github.com/DataW" +
-      "orkbench/gproto/pkg/modelb\006proto3"
+      "d\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007version\030\003 \001(\tB\013" +
+      "\342\337\037\007\022\005\302\001\002\"\000\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230" +
+      "\002\200\001\0222\n\004type\030\005 \001(\0162\025.model.StreamJob.Type" +
+      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model." +
+      "StreamJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n" +
+      "\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007creat" +
+      "ed\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013" +
+      "\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n" +
+      "\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003\"\204" +
+      "\002\n\007JobInfo\022!\n\013instance_id\030\001 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\360\001\024\022\025\n\007note_id\030\002 \001(\tB\004\342\337\037\000\022\032\n\014paragrap" +
+      "h_id\030\003 \001(\tB\004\342\337\037\000\022\026\n\010flink_id\030\004 \001(\tB\004\342\337\037\000" +
+      "\022\025\n\007message\030\005 \001(\tB\004\342\337\037\000\0228\n\005state\030\006 \001(\0162\032" +
+      ".model.StreamJobInst.StateB\r\342\337\037\t\022\007\332\001\0040\000X" +
+      "\001\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updat" +
+      "ed\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"\303\004\n\rStreamJobInst\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034" +
+      "\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007version\030" +
+      "\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\030\n\002id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\360\001\024\0228\n\005state\030\005 \001(\0162\032.model.StreamJobIns" +
+      "t.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\022:\n\006status\030\006 \001(\0162\033" +
+      ".model.StreamJobInst.StatusB\r\342\337\037\t\022\007\332\001\0040\000" +
+      "X\001\022\017\n\007message\030\007 \001(\t\022\017\n\007note_id\030\n \001(\t\022\024\n\014" +
+      "paragraph_id\030\013 \001(\t\022\020\n\010flink_id\030\014 \001(\t\022\034\n\007" +
+      "created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t " +
+      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnse" +
+      "t\020\000\022\n\n\006Active\020\001\022\013\n\007Deleted\020\002\"\204\001\n\005State\022\016" +
+      "\n\nStateUnset\020\000\022\013\n\007Pending\020\001\022\013\n\007Running\020\002" +
+      "\022\014\n\010Retrying\020\003\022\r\n\tSuspended\020\004\022\016\n\nTermina" +
+      "ted\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout\020\007\022\n\n\006Faile" +
+      "d\020\010\"\305\002\n\tOperation\022\037\n\007user_id\030\001 \001(\tB\016\342\337\037\n" +
+      "\022\010\302\001\005\"\000\230\002@\022\020\n\010space_id\030\002 \001(\t\022\034\n\007op_name\030" +
+      "\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0225\n\007op_type\030\004 \001(\0162\025.mo" +
+      "del.Operation.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0224\n\005sta" +
+      "te\030\005 \001(\0162\026.model.Operation.StateB\r\342\337\037\t\022\007" +
+      "\332\001\0040\000X\001\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"*\n" +
+      "\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020" +
+      "\002\"0\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022" +
+      "\n\n\006Failed\020\002\"\254\002\n\004Role\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\001\022-\n" +
+      "\004type\030\004 \001(\0162\020.model.Role.TypeB\r\342\337\037\t\022\007\332\001\004" +
+      "0\000X\001\0221\n\006status\030\005 \001(\0162\022.model.Role.Status" +
+      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\"-\n\004Type\022\r\n\tTypeUnset\020\000\022\n" +
+      "\n\006System\020\001\022\n\n\006Custom\020\002\"2\n\006Status\022\017\n\013Stat" +
+      "usUnset\020\000\022\n\n\006Normal\020\001\022\013\n\007Deleted\020\002\"\205\002\n\006M" +
+      "ember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022\035\n\007user_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\020\n\010r" +
+      "ole_ids\030\004 \001(\t\0223\n\006status\030\005 \001(\0162\024.model.Me" +
+      "mber.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\006 " +
+      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007 \001(\003B\013\342\337\037\007\022" +
+      "\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Nor" +
+      "mal\020\001\022\013\n\007Deleted\020\002\"\303\003\n\013MonitorRule\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030" +
+      "\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022" +
+      "\n\302\001\007\220\002\002\230\002\200\001\0228\n\006status\030\004 \001(\0162\031.model.Moni" +
+      "torRule.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\033\n\004unit\030\005 " +
+      "\001(\005B\r\342\337\037\t\022\007\262\001\0040\0008\002\022\036\n\004text\030\006 \001(\tB\020\342\337\037\014\022\n" +
+      "\302\001\007\300\001\001\310\001\200\010\022\025\n\007trigger\030\007 \001(\005B\004\342\337\037\000\022\031\n\013ala" +
+      "rm_times\030\010 \001(\005B\004\342\337\037\000\022\034\n\016alarm_interval\030\t" +
+      " \001(\005B\004\342\337\037\000\022\030\n\nalarm_type\030\n \001(\tB\004\342\337\037\000\022\027\n\t" +
+      "free_time\030\013 \001(\tB\004\342\337\037\000\022\026\n\010receiver\030\014 \001(\tB" +
+      "\004\342\337\037\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Enab" +
+      "led\020\001\022\014\n\010Disabled\020\002\022\013\n\007Deleted\020\003\"\230\002\n\014Que" +
+      "ueMessage\0227\n\010property\030\001 \001(\0132\030.model.Stre" +
+      "amJobPropertyB\013\342\337\037\007\022\005\342\001\002\020\001\022\025\n\007retries\030\002 " +
+      "\001(\005B\004\342\337\037\000\022\025\n\007started\030\003 \001(\003B\004\342\337\037\000\022\025\n\007note" +
+      "_id\030\004 \001(\tB\004\342\337\037\000\022\032\n\014paragraph_id\030\005 \001(\tB\004\342" +
+      "\337\037\000\022\033\n\010flink_id\030\006 \001(\tB\t\342\337\037\005\022\003\302\001\000\"Q\n\006Acti" +
+      "on\022\017\n\013ActionUnset\020\000\022\n\n\006Create\020\001\022\010\n\004Init\020" +
+      "\005\022\n\n\006Submit\020\002\022\t\n\005Check\020\004\022\t\n\005Retry\020\003\"L\n\022I" +
+      "nstanceStatusStat\022\032\n\005state\030\001 \001(\005B\013\342\337\037\007\022\005" +
+      "\262\001\002@\000\022\032\n\005count\030\002 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\"{\n\027Ins" +
+      "tanceRuntimeRankInfo\022\020\n\002id\030\001 \001(\tB\004\342\337\037\000\022\024" +
+      "\n\006job_id\030\002 \001(\tB\004\342\337\037\000\022!\n\014running_time\030\003 \001" +
+      "(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\025\n\007version\030\004 \001(\tB\004\342\337\037\000\"f" +
+      "\n\025InstanceErrorRankInfo\022\024\n\006job_id\030\001 \001(\tB" +
+      "\004\342\337\037\000\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\022 \n\013error_co" +
+      "unt\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\"{\n\025DispatchTaskCo" +
+      "untInfo\022\037\n\nflow_count\030\001 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000" +
+      "\022#\n\016instance_count\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022\034\n" +
+      "\007updated\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"X\n\024InstanceT" +
+      "askExecStat\022\033\n\004hour\030\001 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\000" +
+      "\022#\n\016instance_count\030\002 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\"\351\t" +
+      "\n\nDataSource\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\035\n" +
+      "\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\033\n\004desc\030\004 \001" +
+      "(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type\030\005 \001(\0162\026.model." +
+      "DataSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\003url\030\006 " +
+      "\001(\0132\025.model.DataSource.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030" +
+      "\001\0227\n\006status\030\007 \001(\0162\030.model.DataSource.Sta" +
+      "tusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022 \n\ncreated_by\030\010 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "0\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0224\n\017last" +
+      "_connection\030\013 \001(\0132\033.model.DataSourceConn" +
+      "ection\032\362\004\n\003URL\0223\n\004type\030\n \001(\0162\026.model.Dat" +
+      "aSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\005mysql\030\001 \001" +
+      "(\0132\024.datasource.MySQLURLB\036\342\337\037\017\n\r\n\004type\022\005" +
+      "\332\001\002\030\001\342\337\037\007\022\005\342\001\002\020\001\022M\n\npostgresql\030\002 \001(\0132\031.d" +
+      "atasource.PostgreSQLURLB\036\342\337\037\017\n\r\n\004type\022\005\332" +
+      "\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022C\n\005kafka\030\003 \001(\0132\024.datasou" +
+      "rce.KafkaURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037\007\022\005\342" +
+      "\001\002\020\001\022=\n\002s3\030\004 \001(\0132\021.datasource.S3URLB\036\342\337\037" +
+      "\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022M\n\nclickhous" +
+      "e\030\005 \001(\0132\031.datasource.ClickHouseURLB\036\342\337\037\017" +
+      "\n\r\n\004type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001\022C\n\005hbase\030\006 \001(" +
+      "\0132\024.datasource.HBaseURLB\036\342\337\037\017\n\r\n\004type\022\005\332" +
+      "\001\002\030\006\342\337\037\007\022\005\342\001\002\020\001\022?\n\003ftp\030\007 \001(\0132\022.datasourc" +
+      "e.FtpURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\007\342\337\037\007\022\005\342\001\002\020\001" +
+      "\022A\n\004hdfs\030\010 \001(\0132\023.datasource.HDFSURLB\036\342\337\037" +
+      "\017\n\r\n\004type\022\005\332\001\002\030\010\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"A\n\006S" +
+      "tatus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007E" +
+      "nabled\020\002\022\014\n\010Disabled\020\003\"q\n\004Type\022\r\n\tTypeUn" +
+      "set\020\000\022\t\n\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafk" +
+      "a\020\003\022\006\n\002S3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007" +
+      "\n\003Ftp\020\007\022\010\n\004HDFS\020\010\"\335\003\n\024DataSourceConnecti" +
+      "on\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
+      "-\022\037\n\tsource_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022 \n\nne" +
+      "twork_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\006status\030\004" +
+      " \001(\0162\".model.DataSourceConnection.Status" +
+      "B\r\342\337\037\t\022\007\332\001\0040\001X\001\022A\n\006result\030\005 \001(\0162\".model." +
+      "DataSourceConnection.ResultB\r\342\337\037\t\022\007\332\001\0040\000" +
+      "X\001\022\032\n\007message\030\006 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\034\n\007create" +
+      "d\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\010 \001(\003\022$\n\014" +
+      "network_info\030\t \001(\0132\016.model.Network\"2\n\006St" +
+      "atus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Ac" +
+      "tive\020\002\"1\n\006Result\022\016\n\nStateUnset\020\000\022\013\n\007Succ" +
+      "ess\020\001\022\n\n\006Failed\020\002\"\236\005\n\tTableInfo\022\036\n\010table" +
+      "_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\037\n\tsource_id\030\002 \001" +
+      "(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022%\n\010space_id\030\003 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\220\002\002\230\002@\022\036\n\007comment\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\022(" +
+      "\n\014table_schema\030\006 \001(\0132\022.flink.TableSchema" +
+      "\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007update" +
+      "d\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0226\n\006status\030\t \001(\0162\027.m" +
+      "odel.TableInfo.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\0228\n\n" +
+      "table_kind\030\n \001(\0162\025.model.TableInfo.KindB" +
+      "\r\342\337\037\t\022\007\332\001\0040\000X\001\022$\n\013source_name\030\013 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\220\002\000\230\002@\022E\n\nconnection\030\014 \001(\0162\".model" +
+      ".DataSourceConnection.StatusB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022\037\n\tcreate_by\030\r \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\"A\n\004" +
+      "Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source\020\001\022\017\n\013Desti" +
+      "nation\020\002\022\r\n\tDimension\020\003\"A\n\006Status\022\017\n\013Sta" +
+      "tusUnset\020\000\022\013\n\007Enabled\020\001\022\014\n\010Disabled\020\002\022\013\n" +
+      "\007Deleted\020\003\"\217\004\n\010Resource\022!\n\013resource_id\030\001" +
+      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\013\n\003pid\030\002 \001(\t\022%\n\010space" +
+      "_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\004name\030\004" +
+      " \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0221\n\004type\030\005 \001(\0162\024.m" +
+      "odel.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\"\n\rres" +
+      "ource_size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\"\n\013descrip" +
+      "tion\030\007 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\034\n\007created\030\010 \001" +
+      "(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337\037\007\022\005" +
+      "\262\001\0020\000\022\037\n\tcreate_by\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\0225" +
+      "\n\006status\030\013 \001(\0162\026.model.Resource.StatusB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\":\n\004Type\022\021\n\rResourceUnset\020\000" +
+      "\022\007\n\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCONNECTOR\020\003\"A\n\006Sta" +
+      "tus\022\017\n\013StatusUnset\020\000\022\013\n\007Enabled\020\001\022\014\n\010Dis" +
+      "abled\020\002\022\013\n\007Deleted\020\003\"\221\005\n\007UDFInfo\022\034\n\006udf_" +
+      "id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022%\n\010space_id\030\002 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0224\n\010udf_type\030\003 \001(\0162" +
+      "\023.model.UDFInfo.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\014u" +
+      "df_language\030\004 \001(\0162\027.model.UDFInfo.Langua" +
+      "geB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\004name\030\005 \001(\tB\017\342\337\037\013\022\t\302" +
+      "\001\006\220\002\002\230\002@\022\036\n\007comment\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002" +
+      "\022\036\n\006define\030\007 \001(\tB\016\342\337\037\n\022\010\302\001\005\310\001\240\234\001\022#\n\014usag" +
+      "e_sample\030\010 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\320\017\022\034\n\007created" +
+      "\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337" +
+      "\037\007\022\005\262\001\0020\000\0224\n\006status\030\013 \001(\0162\025.model.UDFInf" +
+      "o.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\037\n\tcreate_by\030\014 \001" +
+      "(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\"3\n\004Type\022\r\n\tTypeUnset\020\000\022" +
+      "\007\n\003UDF\020\001\022\010\n\004UDTF\020\002\022\t\n\005UDTTF\020\003\">\n\010Languag" +
+      "e\022\021\n\rLanguageUnset\020\000\022\t\n\005Scala\020\001\022\010\n\004Java\020" +
+      "\002\022\n\n\006Python\020\003\"A\n\006Status\022\017\n\013StatusUnset\020\000" +
+      "\022\013\n\007Enabled\020\001\022\014\n\010Disabled\020\002\022\013\n\007Deleted\020\003" +
+      "\"K\n\014JobResources\022\034\n\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\360\001\024\022\035\n\003jar\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\010\"\361\002" +
+      "\n\007Network\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004na" +
+      "me\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022\036\n\trouter_id\030" +
+      "\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\035\n\010vxnet_id\030\005 \001(\tB\013\342\337" +
+      "\037\007\022\005\302\001\002\"\000\022 \n\ncreated_by\030\006 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\230\002@\0224\n\006status\030\007 \001(\0162\025.model.Network.Stat" +
+      "usB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"2\n" +
+      "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n" +
+      "\006Active\020\002\"u\n\013HostAliases\022,\n\005items\030\001 \003(\0132" +
+      "\027.model.HostAliases.ItemB\004\342\337\037\000\0320\n\004Item\022\020" +
+      "\n\002ip\030\001 \001(\tB\004\342\337\037\000\022\026\n\010hostname\030\002 \001(\tB\004\342\337\037\000" +
+      ":\006\312\262\004\002\n\000\"\315\005\n\014FlinkCluster\022%\n\010space_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337" +
+      "\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002" +
+      "\200\001\0223\n\007version\030\004 \001(\tB\"\342\337\037\036\022\034\302\001\031J\027flink-1." +
+      "12.3-scala_2.11\0229\n\006status\030\005 \001(\0162\032.model." +
+      "FlinkCluster.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\010ta" +
+      "sk_num\030\006 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\022+\n\006job_cu\030\007 \001(" +
+      "\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_c" +
+      "u\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\030\n\n" +
+      "network_id\030\t \001(\tB\004\342\337\037\000\022.\n\014host_aliases\030\n" +
+      " \001(\0132\022.model.HostAliasesB\004\342\337\037\000\022(\n\006config" +
+      "\030\013 \001(\0132\022.flink.FlinkConfigB\004\342\337\037\000\022 \n\ncrea" +
+      "ted_by\030\014 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\r " +
+      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\016 \001(\003B\013\342\337\037\007\022" +
+      "\005\262\001\0020\000\022\016\n\006web_ui\030\017 \001(\t\022$\n\014network_info\030\020" +
+      " \001(\0132\016.model.Network\"j\n\006Status\022\017\n\013Status" +
+      "Unset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Running\020\002\022\013\n\007Sto" +
+      "pped\020\003\022\014\n\010Starting\020\004\022\r\n\tException\020\005\022\013\n\007A" +
+      "rrears\020\006BT\n\034com.dataomnis.gproto.modelpb" +
+      "B\007ModelPBP\000Z)github.com/DataWorkbench/gp" +
+      "roto/pkg/modelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -57428,7 +57338,7 @@ public final class ModelPB {
     internal_static_model_StreamJobSchedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJobSchedule_descriptor,
-        new java.lang.String[] { "SchedulePolicy", "Executed", "Immediately", "Started", "Ended", "ConcurrencyPolicy", "PeriodType", "Express", "Timeout", "RetryPolicy", "RetryLimit", "RetryInterval", });
+        new java.lang.String[] { "SchedulePolicy", "Executed", "Started", "Ended", "ConcurrencyPolicy", "PeriodType", "Express", "Timeout", "RetryPolicy", "RetryLimit", "RetryInterval", });
     internal_static_model_StreamJobRelease_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_model_StreamJobRelease_fieldAccessorTable = new
@@ -57518,7 +57428,7 @@ public final class ModelPB {
     internal_static_model_DataSource_URL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_DataSource_URL_descriptor,
-        new java.lang.String[] { "Type", "Mysql", "Postgresql", "Clickhouse", "Kafka", "S3", "Hbase", "Ftp", "Hdfs", });
+        new java.lang.String[] { "Type", "Mysql", "Postgresql", "Kafka", "S3", "Clickhouse", "Hbase", "Ftp", "Hdfs", });
     internal_static_model_DataSourceConnection_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_model_DataSourceConnection_fieldAccessorTable = new

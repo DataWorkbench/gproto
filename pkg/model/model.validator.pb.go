@@ -474,11 +474,28 @@ func (this *StreamJobArgs) Validate() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy = map[StreamJobSchedule_SchedulePolicy]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy = map[StreamJobSchedule_SchedulePolicy]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_schedule_policy() error {
 	if !(_xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy[this.SchedulePolicy]) {
-		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
+		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
+	}
+	return nil
+}
+
+func (this *StreamJobSchedule) _xxx_xxx_Validator_CheckIf_executed() bool {
+	if !(this.SchedulePolicy == 2) {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_executed() error {
+	if !this._xxx_xxx_Validator_CheckIf_executed() {
+		return nil
+	}
+	if !(this.Executed >= 31507200) {
+		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'executed' must be greater than or equal to '31507200'", protovalidator.Int64ToString(this.Executed))
 	}
 	return nil
 }
@@ -497,19 +514,9 @@ func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_ended() error {
 	return nil
 }
 
-func (this *StreamJobSchedule) _xxx_xxx_Validator_CheckIf_concurrency_policy() bool {
-	if !(this.SchedulePolicy == 1) {
-		return false
-	}
-	return true
-}
-
 var _xxx_xxx_Validator_StreamJobSchedule_InEnums_ConcurrencyPolicy = map[StreamJobSchedule_ConcurrencyPolicy]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_concurrency_policy() error {
-	if !this._xxx_xxx_Validator_CheckIf_concurrency_policy() {
-		return nil
-	}
 	if !(this.ConcurrencyPolicy > 0) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'concurrency_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.ConcurrencyPolicy)))
 	}
@@ -565,19 +572,9 @@ func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_timeout() error {
 	return nil
 }
 
-func (this *StreamJobSchedule) _xxx_xxx_Validator_CheckIf_retry_policy() bool {
-	if !(this.SchedulePolicy == 1) {
-		return false
-	}
-	return true
-}
-
 var _xxx_xxx_Validator_StreamJobSchedule_InEnums_RetryPolicy = map[StreamJobSchedule_RetryPolicy]bool{0: true, 1: true, 2: true}
 
 func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_retry_policy() error {
-	if !this._xxx_xxx_Validator_CheckIf_retry_policy() {
-		return nil
-	}
 	if !(this.RetryPolicy > 0) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'retry_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.RetryPolicy)))
 	}
@@ -633,6 +630,9 @@ func (this *StreamJobSchedule) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_schedule_policy(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_executed(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_started(); err != nil {
