@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package billing;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcbilling";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcbilling";
+// File name of class.
+option java_outer_classname = "PBSvcBilling";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/billing.proto";
+import "proto/types/response/billing.proto";
+
+// Billing to provides billing related services
+service Billing {
+  rpc GetBillingPriceComponents(model.EmptyStruct) returns (response.GetPriceComponents)    {}
+  rpc CreateBillingInstance(request.CreateBillingInstance) returns (response.CreateBillingInstance)    {}
+  rpc StopBillingInstance(request.StopBillingInstance) returns (response.StopBillingInstance)    {}
+  rpc RecoveryBillingInstance(request.RecoveryBillingInstance) returns (response.RecoveryBillingInstance)    {}
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelJobManage";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+
+import "proto/types/model/stream_instance.proto";
+
+message JobInfo {
+  // Job ID it belongs to.
+  // @inject_tag: json:"instance_id" gorm:"column:instance_id;"
+  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Session ID
+  // @inject_tag: json:"note_id" gorm:"column:note_id;"
+  string note_id = 2[(validator.field) = {}];
+
+  // Statement ID
+  // @inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
+  string paragraph_id = 3[(validator.field) = {}];
+
+  // Flink Job ID
+  // @inject_tag: json:"flink_id" gorm:"column:flink_id;"
+  string flink_id = 4[(validator.field) = {}];
+
+  // Data
+  // @inject_tag: json:"message" gorm:"column:message;"
+  string message = 5[(validator.field) = {}];
+
+  // Job status
+  // @inject_tag: json:"state" gorm:"column:state;"
+  StreamInstance.State state = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
+}

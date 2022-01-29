@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelEmpty";
+option java_multiple_files = false;
+
+// EmptyStruct used to no parameters in request or response.
+message EmptyStruct {}

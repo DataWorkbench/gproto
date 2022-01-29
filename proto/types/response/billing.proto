@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseBilling";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+//import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+
+// Reply parameters used to GetPriceComponents
+message GetPriceComponents {
+  double hour_price = 1;
+  double month_price = 2;
+}
+
+message CreateBillingInstance {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 30 } ];
+}
+
+message StopBillingInstance {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"message" uri:"message" swaggerignore:"true"
+  string message = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+}
+
+message RecoveryBillingInstance {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"message" uri:"message" swaggerignore:"true"
+  string message = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+}

@@ -1,0 +1,358 @@
+syntax = "proto3";
+
+package flink;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel/pbflink";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbflink";
+// File name of class.
+option java_outer_classname = "PBFlinkOperator";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+//import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+
+// ----------------------------- Flink Operator ----------------------------------------- //
+
+// ColumnAs
+message ColumnAs {
+  // Column name
+  // @inject_tag: json:"field"
+  string field = 1 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // func
+  // @inject_tag: json:"func"
+  string func = 2 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // Type
+  // @inject_tag: json:"type"
+  string type = 4 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 256 } ];
+
+  // Column AS
+  // @inject_tag: json:"as"
+  string as = 5 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+}
+
+// DestOperatorProperty
+message DestOperator {
+  // insert into these columns
+  // @inject_tag: json:"columns"
+  repeated string columns = 1 [ (validator.field).tags.repeated = { len_gt: 0 , len_lte: 20000} ];
+
+  // tableid
+  // @inject_tag: json:"table_id"
+  string table_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+}
+
+// ValuesOperatorProperty
+message ValuesOperator {
+  message ValuesType  {
+    // this is one row.
+    // @inject_tag: json:"values"
+    repeated string values = 1 [ (validator.field).tags.repeated = { len_gt: 0 } ];
+  }
+
+  // all rows.
+  // @inject_tag: json:"rows"
+  repeated ValuesType rows = 1 [ (validator.field).tags.repeated = { len_gt: 0 } ];
+}
+
+// OrderByOperatorProperty
+message OrderByOperator {
+  message OrderByColumn  {
+    // Column name
+    // @inject_tag: json:"field"
+    string field = 1 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+    // order oneof 'asc' 'desc'
+    // @inject_tag: json:"order"
+    string order = 2 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+  }
+
+  // OrderBy
+  // @inject_tag: json:"column"
+  repeated OrderByColumn column = 1  [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 1025} ];
+}
+
+// LimitOperatorProperty
+message LimitOperator {
+  // The limit
+  // @inject_tag: json:"limit"
+  int32 limit = 1 [ (validator.field).tags.int = { gt: 0, lte: 100 } ];
+}
+
+// OffsetOperatorProperty
+message OffsetOperator {
+  // The limit
+  // @inject_tag: json:"offset"
+  int32 offset = 1 [ (validator.field).tags.int = { gt: 0, lte: 100 } ];
+}
+
+// FetchOperatorProperty
+message FetchOperator {
+  // The limit
+  // @inject_tag: json:"fetch"
+  int32 fetch = 1 [ (validator.field).tags.int = { gt: 0, lte: 100 } ];
+}
+
+// UnionOperatorProperty
+message UnionOperator {
+  // bool true or false
+  // @inject_tag: json:"all" default:""
+  bool all = 1 [(validator.field) = {}];
+}
+
+// GroupByOperatorProperty
+message GroupByOperator {
+  // Groupby column
+  // @inject_tag: json:"group_by"
+  repeated string group_by = 1 [ (validator.field).tags.repeated = {len_gt: 0, len_lte: 1024 } ];
+}
+
+// HavingOperatorProperty
+message HavingOperator {
+  // having code
+  // @inject_tag: json:"having"
+  string having = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 1024 } ];
+}
+
+// ConstOperatorProperty
+message ConstOperator {
+  // table name
+  // @inject_tag: json:"table"
+  string table = 1 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64} ];
+
+  // column define.
+  // @inject_tag: json:"column" default:"" binding:"-"
+  repeated ColumnAs column = 2 [(validator.field) = { } ];
+}
+
+// SourceOperatorProperty
+message SourceOperator {
+  // tableid
+  // @inject_tag: json:"table_id"
+  string table_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // table name
+  // @inject_tag: json:"table_as"
+  string table_as = 2 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // distinct or all, oneof ''(empty string) 'distinct'
+  // @inject_tag: json:"distinct"
+  string distinct = 3 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // column define.
+  // @inject_tag: json:"column"
+  repeated ColumnAs column = 4 [(validator.field) = { } ];
+
+  // column define.
+  // @inject_tag: json:"custom_column"
+  repeated ColumnAs custom_column = 5 [(validator.field) = { } ];
+
+  // column define.
+  // @inject_tag: json:"time_column"
+  repeated ColumnAs time_column = 6 [(validator.field) = { } ];
+}
+
+// DimensionOperatorProperty
+message DimensionOperator {
+  // tableid
+  // @inject_tag: json:"table_id"
+  string table_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // table name
+  // @inject_tag: json:"table_as"
+  string table_as = 2  [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // distinct or all, oneof 'all' 'distinct'
+  // @inject_tag: json:"distinct"
+  string distinct = 3  [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // column define.
+  // @inject_tag: json:"column"
+  repeated ColumnAs column = 4 [(validator.field) = { } ];
+
+  // column define.
+  // @inject_tag: json:"custom_column"
+  repeated ColumnAs custom_column = 5 [(validator.field) = { } ];
+
+  // column define.
+  // @inject_tag: json:"time_column"
+  ColumnAs time_column = 6 [(validator.field) = { } ];
+}
+
+// ExceptOperatorProperty
+message ExceptOperator {
+}
+
+// IntersectOperatorProperty
+message IntersectOperator {
+}
+
+// FilterOperatorProperty
+message FilterOperator {
+  // Where eg: a.id = 10
+  // @inject_tag: json:"where"
+  string where = 1 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+
+  // in: this is columnname
+  // @inject_tag: json:"in"
+  string in = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+
+  // Exists: this is columnname
+  // @inject_tag: json:"exists"
+  string exists = 3 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+
+  // expression: if upstreamright is null.  eg: "1, 2, 3"
+  // @inject_tag: json:"expression"
+  string expression = 4 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+}
+
+// JoinOperatorProperty
+message JoinOperator {
+  // Join oneof "JOIN" "LEFT JOIN" "RIGHT JOIN" "FULL OUTER JOIN" "CROSS JOIN" "INTERVAL JOIN"
+  // @inject_tag: json:"join"
+  string join = 1 [ (validator.field).tags.string = {
+    byte_len_gte: 0 , byte_len_lte: 64,
+    in: [ "JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN", "CROSS JOIN", "INTERVAL JOIN" ] }
+  ];
+
+  // Expression
+  // @inject_tag: json:"expression"
+  string expression = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+
+  // table name
+  // @inject_tag: json:"table_as"
+  string table_as = 3 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // table name
+  // @inject_tag: json:"table_as_right"
+  string table_as_right = 4 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // Args
+  // @inject_tag: json:"args"
+  string args = 5 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+
+  // column define.
+  // @inject_tag: json:"column"
+  repeated ColumnAs column = 6 [(validator.field) = { } ];
+
+  // column define.
+  // @inject_tag: json:"generate_column"
+  repeated ColumnAs generate_column = 7 [(validator.field) = { } ];
+}
+
+// UDTFOperatorProperty
+message UDTFOperator {
+  // udfid in udfmanager
+  // @inject_tag: json:"udf_id"
+  string udf_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Args
+  // @inject_tag: json:"args"
+  string args = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+
+  // table name
+  // @inject_tag: json:"table_as"
+  string table_as = 3 [ (validator.field).tags.string = { byte_len_gte: 0 , byte_len_lte: 64 } ];
+
+  // column define.
+  // @inject_tag: json:"column"
+  repeated ColumnAs column = 4 [(validator.field) = { } ];
+
+  // selectcolumn define.
+  // @inject_tag: json:"select_column"
+  repeated ColumnAs select_column = 5 [(validator.field) = { } ];
+}
+
+// UDTTFOperatorProperty
+message UDTTFOperator {
+  // udfid in udfmanager
+  // @inject_tag: json:"udf_id"
+  string udf_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Args
+  // @inject_tag: json:"args"
+  string args = 2 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 1024 } ];
+
+  // column define.
+  // @inject_tag: json:"column"
+  repeated ColumnAs column = 3 [(validator.field) = { } ];
+}
+
+// FlinkOperatorProperty
+message OperatorProperty {
+  // Source
+  // @inject_tag: json:"source"
+  SourceOperator source = 1 [ (validator.field) = { } ];
+
+  // dest node
+  // @inject_tag: json:"dest"
+  DestOperator dest = 2  [ (validator.field) = { } ];
+
+  // values node
+  // @inject_tag: json:"values"
+  ValuesOperator values = 3  [ (validator.field) = { } ];
+
+  // OrderBy
+  // @inject_tag: json:"order_by"
+  OrderByOperator order_by = 4  [ (validator.field) = { } ];
+
+  // Limit
+  // @inject_tag: json:"limit"
+  LimitOperator limit = 5  [ (validator.field) = { } ];
+
+  // Offset
+  // @inject_tag: json:offset"
+  OffsetOperator offset = 6  [ (validator.field) = { } ];
+
+  // Fetch
+  // @inject_tag: json:"fetch"
+  FetchOperator fetch = 7  [ (validator.field) = { } ];
+
+  // Union
+  // @inject_tag: json:"union"
+  UnionOperator union = 8  [ (validator.field) = { } ];
+
+  // GroupBy
+  // @inject_tag: json:"group_by"
+  GroupByOperator group_by = 9 [ (validator.field) = { } ];
+
+  // Having
+  // @inject_tag: json:"having"
+  HavingOperator having = 10 [ (validator.field) = { } ];
+
+  // Const
+  // @inject_tag: json:"const"
+  ConstOperator const = 11 [ (validator.field) = { } ];
+
+  // Dimension
+  // @inject_tag: json:"dimension"
+  DimensionOperator dimension = 12 [ (validator.field) = { } ];
+
+  // Except
+  // @inject_tag: json:"except"
+  ExceptOperator except = 13 [ (validator.field) = { } ];
+
+  // Intersect
+  // @inject_tag: json:"intersect"
+  IntersectOperator intersect = 14 [ (validator.field) = { } ];
+
+  // Filter
+  // @inject_tag: json:"filter"
+  FilterOperator filter = 15 [ (validator.field) = { } ];
+
+  // UDTF
+  // @inject_tag: json:"udtf"
+  UDTFOperator udtf = 16 [ (validator.field) = { } ];
+
+  // UDTTF
+  // @inject_tag: json:"udttf"
+  UDTTFOperator udttf = 17 [ (validator.field) = { } ];
+
+  // Join
+  // @inject_tag: json:"join"
+  JoinOperator join = 18 [ (validator.field) = { } ];
+}

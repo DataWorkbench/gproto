@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelMember";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+// The Role info.
+message Role {
+  enum Type {
+    TypeUnset = 0;
+    System = 1;
+    Custom = 2;
+  }
+
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Active = 2;
+  }
+
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The name of role. unique in a workspace.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3 [(validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 128 }];
+
+  // Type. 1 => "System" 2 => "Custom"
+  // @inject_tag: json:"type" gorm:"column:type;"
+  Type type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // Status. 1 => "Deleted" 2 => "Active"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+}
+
+// The workspace member info.
+message Member {
+  enum Status {
+    StatusUnset = 0;
+    Normal = 1;
+    Deleted = 2;
+  }
+
+  // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+  string space_id = 1[ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // The user id in account-server.
+  // @inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+  string user_id = 3 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+
+  // The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
+  // FIXME: confirm the
+  // @inject_tag: json:"role_ids" gorm:"column:role_ids;"
+  string role_ids = 4;
+
+  // 1 => "Normal" 2 => "Deleted". Ignore it for client.
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 6 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 7 [ (validator.field).tags.int = { gt: 0 } ];
+}

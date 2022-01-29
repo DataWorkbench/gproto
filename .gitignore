@@ -25,3 +25,5 @@ gproto.iml
 build
 target
 
+project_env.sh
+

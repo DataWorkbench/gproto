@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package flink;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel/pbflink";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbflink";
+// File name of class.
+option java_outer_classname = "PBFlinkConfig";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+
+// FlinkConfig
+message FlinkConfig {
+  option (gosql.serialize) = { json: {} };
+
+  // Item for uses-defined config.
+  message Item {
+    // The key in key/value item, Is required, Min: 1, Max: 1024.
+    // @inject_tag: json:"key"
+    string key = 1 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
+
+    // The value in key/value item, Is required, Min: 1, Max: 1024.
+    // @inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+    string value = 2 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
+  }
+
+  // Config for flink restart strategy.
+  message RestartStrategy {
+    // Flink restart_strategy, Optional value: "none | fixed-delay | failure-rate"
+    // @inject_tag: json:"restart_strategy"
+    string restart_strategy = 1 [ (validator.field).tags.string = { in: [ "none", "fixed-delay", "failure-rate" ] } ];
+
+    // Affect when restart_strategy == "fixed-delay". Min: 1, Max: 1000. Default 1.
+    // @inject_tag: json:"fixed_delay_attempts"
+    int32 fixed_delay_attempts = 2 [
+      (defaults.field).basic = "1",
+      (validator.field).tags.int = { gte: 1, lte: 1000 }
+    ];
+
+    // Affect when restart_strategy == "fixed-delay". Min: 1, Max: 86400. Default 1, unit is second.
+    // @inject_tag: json:"fixed_delay_delay
+    int32 fixed_delay_delay = 3 [
+      (defaults.field).basic = "1"
+    ];
+
+    // Affect when restart_strategy == "failure-rate". Min: 1, Max: 1000. Default 1.
+    // @inject_tag: json:"failure_rate_max_failures_per_interval"
+    int32 failure_rate_max_failures_per_interval = 4 [
+      (defaults.field).basic = "1"
+    ];
+
+    // Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 1. unit is second.
+    // @inject_tag: json:"failure_rate_delay"
+    int32 failure_rate_delay = 5 [
+      (defaults.field).basic = "1",
+      (validator.field).tags.int = { gte: 1, lte: 86400 }
+    ];
+
+    // Affect when restart_strategy == "failure-rate". Min: 1, Max: 86400. Default 60, unit is second.
+    // @inject_tag: json:"failure_rate_failure_rate_interval"
+    int32 failure_rate_failure_rate_interval = 6 [
+      (defaults.field).basic = "3",
+      (validator.field).tags.int = { gte: 1, lte: 86400 }
+    ];
+  }
+
+  // Log config.
+  message Logger {
+    // Root log level. Optional Value: "TRACE | DEBUG | INFO | WARN | ERROR", Default is "INFO".
+    // @inject_tag: json:"root_log_level"
+    string root_log_level = 1 [
+      (defaults.field).basic = "INFO",
+      (validator.field).tags.string = { in: ["TRACE", "DEBUG", "INFO", "WARN", "ERROR"] }
+    ];
+  }
+
+  // Use-defined config. Not required.
+  // @inject_tag: json:"custom" default:"" binding:"-"
+  repeated Item custom = 1  [ (validator.field) = { } ];
+
+  // RestartStrategy settings. Is required.
+  // @inject_tag: json:"restart_strategy"
+  RestartStrategy restart_strategy = 2 ;
+
+  // Logger settings. Is required.
+  // @inject_tag: json:"logger" default:"" binding:"-"
+  Logger logger = 3 [ (validator.field).tags.message = { not_null: true } ];
+}

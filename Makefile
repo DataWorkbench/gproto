@@ -11,8 +11,9 @@ help:
 	@echo "  check   to format, vet, lint"
 	@echo "  test    to run test case"
 	@echo "  generate to generate protobuf code"
-	@echo "  generate-go to generate protobuf code for go"
-	@echo "  generate-java to generate protobuf code for java"
+	@echo "  generate-go to generate protobuf code for Golang"
+	@echo "  generate-java to generate protobuf code for Java"
+	@echo "  generate-py to generate protobuf code for Python"
 	@exit 0
 
 
@@ -31,6 +32,15 @@ GENERATE_JAVA = _generate_java() {                     \
         bash -x scripts/generate_java.sh $$args;  \
     else                                     \
         bash scripts/generate_java.sh $$args;      \
+    fi                                       \
+}
+
+GENERATE_PYTHON = _generate_python() {                     \
+    args="$(filter-out $@,$(MAKECMDGOALS))"; \
+    if [[ $(VERBOSE) = "yes" ]]; then        \
+        bash -x scripts/generate_python.sh $$args;  \
+    else                                     \
+        bash scripts/generate_python.sh $$args;      \
     fi                                       \
 }
 
@@ -64,6 +74,10 @@ generate-go:
 .PHONY: generate-java
 generate-java:
 	@$(GENERATE_JAVA); _generate_java;
+
+.PHONY: generate-py
+generate-py:
+	@$(GENERATE_PYTHON); _generate_python;
 
 .PHONY: generate
 generate: generate-go

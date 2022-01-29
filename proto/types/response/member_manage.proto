@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseMemberManage";
+option java_multiple_files = false;
+
+//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+import "proto/types/model/member.proto";
+
+// ListSystemRoles used as reply parameters in RPC or response body in HTTP.
+message ListMembers {
+  // @inject_tag: json:"infos"
+  repeated model.Member infos = 1;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+
+  // @inject_tag: json:"total"
+  int64 total = 3;
+}
+
+// ListSystemRoles used as reply parameters in RPC or response body in HTTP.
+message ListSystemRoles {
+  // @inject_tag: json:"infos"
+  repeated model.Role infos = 1;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+
+  // @inject_tag: json:"total"
+  int64 total = 3;
+}

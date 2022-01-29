@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+package flink;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel/pbflink";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbflink";
+// File name of class.
+option java_outer_classname = "PBFlinkJob";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+import "proto/types/model/flink/flink_operator.proto";
+
+// FlinkOperator
+message FlinkOperator {
+  enum Type {
+    Empty = 0;
+    Values = 1;
+    Const = 2;
+    Source = 3;
+    Dimension = 4;
+    Dest = 5;
+    OrderBy = 6;
+    Limit = 7;
+    Offset = 8;
+    Fetch = 9;
+    Filter = 10;
+    Union = 11;
+    Except = 12;
+    Intersect = 13;
+    GroupBy = 14;
+    Having = 15;
+    Join = 16;
+    UDTF = 17;
+    UDTTF = 18;
+  }
+  // OperatorType, Optional Value:
+  // "1-Values" "2-Const" "3-Source" "4-Dimension" "5-Dest" "6-OrderBy"
+  // "7-Limit" "8-Offset" "9-Fetch" "10-Filter" "11-Union" "12-Except"
+  // "13-Intersect" "14-GroupBy" "15-Having" "16-Join" "17-UDTF" "18-UDTTF"
+  // @inject_tag: json:"type"
+  Type type = 1 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // nodeid is unique in this flow.
+  // @inject_tag: json:"id"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+
+  // this node name
+  // @inject_tag: json:"name"
+  string name = 3 [ (validator.field).tags.string = { byte_len_lt: 65} ];
+
+  // the upstream node id
+  // @inject_tag: json:"upstream"
+  string upstream = 4 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+
+  // the right upstream node id
+  // @inject_tag: json:"upstream_right"
+  string upstream_right = 5 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+
+  // the downstream node id
+  // @inject_tag: json:"down_stream"
+  string down_stream = 6 [ (validator.field).tags.string = { byte_len_eq: 21} ];
+
+  // the PointX
+  // @inject_tag: json:"point_x"
+  int32 point_x = 7 [ (validator.field).tags.int = { gte: 1 , lte: 200 } ];
+
+  // the PointY
+  // @inject_tag: json:"point_y"
+  int32 point_y = 8 [ (validator.field).tags.int = { gte: 1 , lte: 200 } ];
+
+  // this operator's property
+  // @inject_tag: json:"property"
+  OperatorProperty property = 9 [ (validator.field) = { } ];
+}
+
+// FlinkJar
+message FlinkJar {
+  // jarid in resource manager. Is resource_id.
+  // @inject_tag: json:"resource_id"
+  string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // JarArgs
+  // @inject_tag: json:"jar_args"
+  string jar_args = 2 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
+
+  // JarEntry
+  // @inject_tag: json:"jar_entry"
+  string jar_entry = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
+}
+
+// ScalaOperatorProperty
+message FlinkScala {
+  // code.
+  // @inject_tag: json:"code"
+  string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
+}
+
+// PythonOperatorProperty
+message FlinkPython {
+  // code.
+  // @inject_tag: json:"code"
+  string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
+}
+
+// FlinkSQL
+message FlinkSQL {
+  // sql code.
+  // @inject_tag: json:"code"
+  string code = 1 [ (validator.field).tags.string = { byte_len_lte: 40000, utf8: true } ];
+}

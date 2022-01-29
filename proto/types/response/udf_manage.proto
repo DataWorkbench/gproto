@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseUDFManage";
+option java_multiple_files = false;
+
+//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+//import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+
+import "proto/types/model/udf.proto";
+
+// ListUDF used as reply parameters in RPC or response body in HTTP.
+message ListUDF {
+  // @inject_tag: json:"infos"
+  repeated model.UDFInfo infos = 1;
+
+  // @inject_tag: json:"total"
+  int64 total = 2;
+}
+
+// DescribeUDF used as reply parameters in RPC or response body in HTTP.
+message DescribeUDF {
+  // UDF info
+  // @inject_tag: json:"infos"
+  model.UDFInfo info = 1;
+}
+
+// JsonStringList used as reply parameters in RPC or response body in HTTP.
+message JsonList {
+  // @inject_tag: json:"json_list"
+  repeated string json_list = 1;
+}

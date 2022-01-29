@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelAccount";
+option java_multiple_files = false;
+
+//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+
+//message AccessKey {
+//  string access_key_id = 1;
+//  string secret_access_key = 2;
+//  string owner = 3;
+//  string root_user_id = 4;
+//}
+
+message User {
+  string user_id = 1;
+  string user_name = 2;
+  string lang = 3;
+  string email = 4;
+  string phone = 5;
+  string status = 6;
+  string role = 7;
+  string currency = 8;
+  string gravatar_email = 9;
+  int32  privilege = 10;
+  repeated string zones = 11;
+  repeated string regions = 12;
+}
+

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseStreamInstanceManage";
+option java_multiple_files = false;
+
+//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+//import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+
+import "proto/types/model/stream_instance.proto";
+
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query).
+// This struct can used for ListStreamTestInst and ListStreamCycleInst
+message ListStreamInstances {
+  // @inject_tag: json:"infos"
+  repeated model.StreamInstance infos = 1;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+
+  // @inject_tag: json:"total"
+  int64 total = 3 ;
+}
+
+// DescribeFlinkUIByInstanceId used as a request parameters for RPC and HTTP(based on URL-Query).
+message DescribeFlinkUIByInstanceId {
+  // @inject_tag: json:"web_ui"
+  string web_ui = 1;
+}

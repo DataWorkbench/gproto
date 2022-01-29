@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package notifier;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcnotifier";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcaccount";
+// File name of class.
+option java_outer_classname = "PBSvcNotifier";
+option java_multiple_files = false;
+
+//import "proto/types/model/empty.proto";
+//import "proto/types/request/workspace.proto";
+//import "proto/types/response/workspace.proto";
+
+service Notifier {
+  rpc SendInternalNotice(SendInternalNoticeRequest) returns (SendInternalNoticeReply) {}
+  rpc ListNotifications(ListRequest) returns (ListReply) {}
+}
+
+message SendInternalNoticeRequest {
+  string user_id = 1 ;
+  string title = 2;
+  string content = 3;
+  string short_content = 4;
+  repeated string email_address = 5;
+}
+
+message SendInternalNoticeReply {
+  int32 status = 1 ;
+  string message = 2 ;
+}
+
+message RecordEntry {
+  string notification_post_id = 1;
+  string owner = 2;
+  string notify_type = 3;
+  string title = 4;
+  string content = 5;
+  string short_content = 6;
+  string status = 7;
+  int64 create_time = 8;
+  int64 status_time = 9;
+  string email_address = 10;
+}
+
+message ListRequest {
+  string notification_post_id = 1;
+  string owner = 2 ;
+  repeated string status = 3;
+  int32 limit = 4 ;
+  int32 offset = 5 ;
+}
+
+message ListReply {
+  repeated RecordEntry records = 1 ;
+  int64 total_count = 2;
+  int32 status = 3  ;
+  string message = 4 ;
+}

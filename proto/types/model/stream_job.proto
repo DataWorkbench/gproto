@@ -1,0 +1,321 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelStreamJob";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+import "proto/types/model/flink/flink_job.proto";
+
+// The stream job info
+message StreamJob {
+  enum Type {
+    TypeUnset = 0; // is useless.
+    Operator = 1;
+    SQL = 2;
+    Jar = 3;
+    Python = 4;
+    Scala = 5;
+  }
+
+  enum Status {
+    StatusUnset = 0;
+    Normal = 1;
+    Deleted = 2;
+  }
+
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Job ID, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The job version id, only used for Published job.
+  // Only used in published job.
+  // @inject_tag: json:"version" gorm:"column:version;primarykey;"
+  string version = 3 [(validator.field) = {}];
+
+  // Job Name, Unique within a workspace.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 4 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+
+  // Job Description.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 5 [(validator.field).tags.string = { char_len_lte: 1024 } ];
+
+  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+  // @inject_tag: json:"type" gorm:"column:type;"
+  Type type = 6 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+
+  // Job status, 1 => "Normal", 2 => "Deleted".
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 7 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+
+  // The user-id of created this job.
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 8 [(validator.field).tags.string = { byte_len_lte: 64 }];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 9 [(validator.field).tags.int = { gt: 0 }];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 10 [(validator.field).tags.int = { gt: 0 }];
+}
+
+// StreamJobProperty represents property of job.
+message StreamJobProperty {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Job Id, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The release version.
+  // @inject_tag: json:"version" gorm:"column:version;primarykey"
+  string version = 3 [(validator.field).tags.string = { ne: "" }];
+
+  // @inject_tag: json:"code" gorm:"column:code;type:json"
+  StreamJobCode code = 4 [(validator.field) = {}];
+
+  // @inject_tag: json:"args" gorm:"column:args;type:json"
+  StreamJobArgs args = 5 [(validator.field) = {}];
+
+  // @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
+  StreamJobSchedule schedule = 6 [(validator.field) = {}];
+}
+
+// StreamJobCode represents a job code info.
+message StreamJobCode {
+  option (gosql.serialize) = {json: {}};
+
+  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+  // @inject_tag: json:"type"
+  StreamJob.Type type = 1 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+
+  // The flink operator nodes. Is useless on present.
+  // @inject_tag: json:"operators" default:""
+  repeated flink.FlinkOperator operators = 2 [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 1 } }},
+    (validator.field).tags.repeated = {len_gt: 0}
+  ];
+
+  // @inject_tag: json:"sql"
+  flink.FlinkSQL sql = 3  [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 2 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
+
+  // Jar
+  // @inject_tag: json:"jar"
+  flink.FlinkJar jar = 4 [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 3 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
+
+  // Python
+  // @inject_tag: json:"python"
+  flink.FlinkPython python = 5  [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 4 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
+
+  // Scala
+  // @inject_tag: json:"scala"
+  flink.FlinkScala scala = 6  [
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 5 } }},
+    (validator.field).tags.message = {not_null: true}
+  ];
+}
+
+// StreamJobArgs represents a job running parameters.
+// Not use with gorm.
+message StreamJobArgs {
+  option (gosql.serialize) = {json: {}};
+
+  // The flink cluster id. Is required.
+  // @inject_tag: json:"cluster_id"
+  string cluster_id = 1 [(validator.field) = {}];
+
+  // Flink parallelism. Is required, Min 0, Max 100. default is 0.
+  // @inject_tag: json:"parallelism"
+  int32 parallelism = 2 [(validator.field).tags.int = { gte: 0, lte: 100 }];
+
+  // The list of function(udf). Not required
+  // @inject_tag: json:"udfs"
+  repeated string udfs = 3 [(validator.field) = {}];
+
+  // The list of connectors dependency package. Not required.
+  repeated string connectors = 4 ;
+
+  // The list of built-in connectors. Not required.
+  repeated string built_in_connectors = 5;
+}
+
+// StreamJobSchedule represents a job schedule info.
+// Not use with gorm.
+message StreamJobSchedule {
+  option (gosql.serialize) = {json: {}};
+
+  enum SchedulePolicy {
+    SchedulePolicyUnset = 0;
+    Periodicity = 1;
+    AppointTime = 2; // Execute job in a fixed time.
+    Immediately = 3; // Execute job immediately after publishing.
+  }
+
+  enum ConcurrencyPolicy {
+    ConcurrencyPolicyUnset = 0; // Is useless.
+    Allow = 1;
+    Forbid = 2;
+    Replace = 3;
+  }
+
+  enum RetryPolicy {
+    RetryPolicyUnset = 0; // Is useless.
+    None = 1;
+    Auto = 2;
+  }
+
+  // Schedule Policy, Options Value: 1 => "Periodicity", 2 => "AppointTime", 3 => "Immediately"
+  // Is Required.
+  // @inject_tag: json:"schedule_policy"
+  SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { in_enums: true  } ];
+
+  // Timestamp of execute time for once. unit in seconds.
+  // Not required, default the time of created job.
+  // @inject_tag: json:"executed" default:"0" binding:"gte=0"
+  int64 executed = 2 [
+    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.int = { gte: 31507200 }
+  ];
+
+  //  // Whether execute immediately the job after release.
+  //  // Not required, default False. If immediately is True, the field executed will be ignore.
+  //  // @inject_tag: json:"immediately" binding:"-"
+  //  bool immediately = 3;
+
+  // ------ Period Options ------
+  //
+  // Timestamp of start time of the validity period, unit in seconds.
+  // Not required, default 31507200(1971-01-01 00:00:00), means no limit.
+  // @inject_tag: json:"started"
+  int64 started = 4 [(validator.field).tags.int = { gte: 0 }];
+
+  // Timestamp of end time of the validity period, unit in seconds.
+  // Not required, default 31588502400(2971-01-01 00:00:00), means no limit.
+  // @inject_tag: json:"ended"
+  int64 ended = 5 [(validator.field).tags.int = { gte: 0 }];
+
+  // Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace". Is required .
+  // - allow: Multiple task instances are allowed at the same time.
+  // - forbid: No new instances will be created, and this schedule cycle will be skipped,
+  // - replace: Force stop the old running instances and create new.
+  // @inject_tag: json:"concurrency_policy"
+  ConcurrencyPolicy concurrency_policy = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
+  // Is required with with schedule_policy = 1.
+  // @inject_tag: json:"period_type"
+  string period_type = 7 [
+    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
+    (validator.field).tags.string = { in: ["minute", "hour", "day", "week", "month", "year"] }
+  ];
+
+  // Crontab Express. Is required with schedule_policy == 1
+  // @inject_tag: json:"express" default:"" binding:"-"
+  string express = 8 [
+    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
+    (validator.field).tags.string = { unix_cron: true }
+  ];
+
+  // ------ Advanced (Retry) options ------
+  //
+  // Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 100 min.
+  // @inject_tag: json:"timeout"
+  int32 timeout = 9 [(validator.field).tags.int = {gte: 0, lte: 100}];
+
+  // Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
+  // Is required.
+  // @inject_tag: json:"retry_policy"
+  RetryPolicy retry_policy = 10 [
+    (validator.field).tags.enum = { gt: 0; in_enums: true  }
+  ];
+
+  // Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+  // @inject_tag: json:"retry_limit"
+  int32 retry_limit = 11 [
+    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.int = { gte: 0, lte: 100}
+  ];
+
+  // Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+  // @inject_tag: json:"retry_interval"
+  int32 retry_interval = 12 [
+    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
+    (validator.field).tags.int = { gte: 1, lte: 30 }
+  ];
+}
+
+// The release stream job info.
+message StreamJobRelease {
+  enum Status {
+    StatusUnset = 0;
+    Active = 1;
+    Suspended = 2;
+    Deleted = 3;
+  }
+
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Job ID, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The release version.
+  // @inject_tag: json:"version" gorm:"column:version;"
+  string version = 3 [(validator.field).tags.string = { ne: "" }];
+
+  // Job Name, Unique within a workspace.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
+
+  // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+  // @inject_tag: json:"type" gorm:"column:type;"
+  StreamJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 6 ;
+
+  // Job release description.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 7 ;
+
+  // The user-id of release this job.
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 8 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
+}

@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelNetwork";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+// Network config.
+message Network {
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Active = 2;
+  }
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Network Id, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Network Name.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
+
+  // VPC's route id
+  // @inject_tag: json:"router_id" gorm:"column:router_id;"
+  string router_id = 4 [(validator.field).tags.string = { ne: "" }];
+
+  // vxnet id.
+  // @inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+  string vxnet_id = 5 [(validator.field).tags.string = { ne: "" }];
+
+  // The user-id of created this network.
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 6 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+
+  // Network Status. 1 => "deleted" 2 => "active"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 8 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 9[ (validator.field).tags.int = { gt: 0 } ];
+}

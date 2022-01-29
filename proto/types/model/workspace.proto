@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelWorkspace";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+// The workspace info.
+message Workspace {
+  enum Status {
+    StatusUnset = 0;
+    Enabled = 1;
+    Disabled = 2;
+    Deleted = 3;
+  }
+  // Workspace ID, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primaryKey;"
+  string id = 1 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // User id of workspace owner.
+  // @inject_tag: json:"owner" gorm:"column:owner;"
+  string owner = 2 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+
+  // Workspace Name, unique within a region.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+
+  // Workspace Description.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 4;
+
+  // Workspace status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 5 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
+}

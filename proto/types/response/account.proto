@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseAccount";
+option java_multiple_files = false;
+
+//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+
+import "proto/types/model/account.proto";
+
+message DescribeAccessKey {
+  string owner = 1;
+  string secret_access_key = 2;
+}
+
+message DescribeUsers {
+  repeated model.User user_set = 1;
+  int64 total_count = 2;
+  int32 status = 3;
+  string message = 4 ;
+}
+
+message ValidateRequestSignature {
+  int32 status = 1;
+  string message = 2 ;
+  string user_id = 3;
+}

@@ -1,0 +1,191 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestWorkspaceManage";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+import "github.com/yu31/proto-go-plugin/proto/defaults.proto";
+
+import "proto/types/model/workspace.proto";
+import "proto/types/model/opaudit.proto";
+
+// ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListWorkspaces {
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, name, created, updated}.
+  // Multiple fields are separated by commas(","), eg: sort_by="id|name|updated".
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by" form:"sort_by"
+  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse" form:"reverse"
+  bool reverse = 4;
+
+  // Search with workspace name; Not required.
+  // @inject_tag: json:"search" form:"search"
+  string search = 5;
+
+  // The used_id fixed to request user id.
+  // @inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+  string user_id = 6 [ (validator.field).tags.string = { byte_len_gt:1, byte_len_lt: 65 } ];
+
+  // Filter by workspace status;  Not required.
+  // Valid optional: 1 => "enabled", 2 => "disabled".
+  // @inject_tag: json:"status" form:"status"
+  model.Workspace.Status status = 7 [ (validator.field).tags.enum = { in_enums: true } ];
+
+  // Filter by workspace name; valid if `search` is empty; Not required.
+  // @inject_tag: json:"name" form:"name"
+  string name = 8;
+}
+
+// DeleteWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+message DeleteWorkspaces {
+  // The list of workspace id. Is required, Min 1, Max 100.
+  // @inject_tag: json:"space_ids"
+  repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
+}
+
+// DisableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+message DisableWorkspaces {
+  // The list of workspace id. Is required, Contains at least one.
+  // Disable workspace will suspend all release stream job and stop all running instances.
+  // @inject_tag: json:"space_ids"
+  repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
+}
+
+// EnableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
+message EnableWorkspaces {
+  // The list of workspace id. Is required, Contains at least one.
+  // @inject_tag: json:"space_ids"
+  repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
+
+  // Whether resume all suspended job. Not required, default false.
+  // @inject_tag: `json:"resume_job"
+  bool resume_job = 2;
+}
+
+// CreateWorkspace used as a request parameters for RPC and HTTP(based on Body)
+message CreateWorkspace {
+  // The owner fixed to request user id.
+  // @inject_tag: json:"owner" swaggerignore:"true"
+  string owner = 1 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+
+  // The space name of each account in each region is unique. Is required, Max Length 128.
+  // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+  //@inject_tag: json:"name"
+  string name = 2 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128 } ];
+
+  // Description of the workspace, Not required, Max 1024 char.
+  //@inject_tag: json:"desc"
+  string desc = 3  [ (validator.field).tags.string = { char_len_lte: 1024 } ];
+}
+
+// UpdateWorkspace used as a request parameters for RPC and HTTP(based on Body)
+message UpdateWorkspace {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The space name of each account in each region is unique. Is required, Max Length 128.
+  // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+  //@inject_tag: json:"name"
+  string name = 2 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
+
+  // Description of the workspace, Not required, Max length 1024.
+  //@inject_tag: json:"desc"
+  string desc = 3  [ (validator.field).tags.string = { char_len_lte: 1024 } ];
+}
+
+// DescribeWorkspace used as a request parameters for RPC.
+message DescribeWorkspace {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+}
+
+// AddOpAudit used as a request parameters for RPC.
+message AddOpAudit {
+  model.Operation info = 1 [ (validator.field) = { } ];
+}
+
+// ListOpAudits used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListOpAudits {
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, created}.
+  // Multiple fields are separated by commas(","), eg: sort_by="created".
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by" form:"sort_by"
+  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "created"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse" form:"reverse"
+  bool reverse = 4 [(validator.field) = {}];
+
+  // The used_id fixed to request user id.
+  // @inject_tag: json:"user_id" swaggerignore:"true"
+  string user_id = 5 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+
+  // Querying conditions. Not required.
+  // @inject_tag: json:"space_id" form:"space_id"
+  string space_id = 6 [(validator.field) = {}];
+
+  // Querying conditions. Not required.
+  // @inject_tag: json:"type" form:"type"
+  model.Operation.Type type = 7 [(validator.field).tags.enum = { in_enums: true }];
+
+  // Querying conditions. Not required.
+  // @inject_tag: json:"action" form:"action"
+  string action = 8 [(validator.field) = {}];
+
+  // Querying conditions. Not required.
+  // @inject_tag: json:"state" form:"state"
+  model.Operation.State state = 9 [(validator.field) = {}];
+
+  // Querying conditions. Not required.
+  // Desc: Timestamp of start time.
+  // @inject_tag: json:"started" form:"started"
+  int64 started = 10 [(validator.field) = {}];
+
+  // Querying conditions. Not required.
+  // Desc: Timestamp of end time.
+  // @inject_tag: json:"ended" form:"ended"
+  int64 ended = 11 [(validator.field) = {}];
+}
+
+// CheckPermission used as a request parameters for RPC.
+message CheckPermission {
+  string req_user_id      = 1 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+  string space_id         = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  string module           = 3 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
+  model.Operation.Type op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  string op_name          = 5 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
+  map<string, bool> roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
+}

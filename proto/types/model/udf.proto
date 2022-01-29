@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelUDF";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+// UDF Info
+message UDFInfo {
+  enum Type {
+    TypeUnset = 0;
+    UDF = 1;
+    UDTF = 2;
+    UDTTF = 3;
+  }
+
+  enum Language {
+    LanguageUnset = 0;
+    Scala = 1;
+    Java = 2;
+    Python = 3;
+  }
+
+  enum Status {
+    StatusUnset = 0;
+    Enabled = 1;
+    Disabled = 2;
+    Deleted = 3;
+  }
+
+  // ID, unique within a region.
+  // @inject_tag: json:"udf_id" gorm:"column:udf_id;primaryKey;"
+  string udf_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Space ID, workspace ID.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // UDF Type one of UDF/UDTF/UDTTF
+  // @inject_tag: json:"udf_type" gorm:"column:udf_type;"
+  Type udf_type = 3  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // UDF language one of Scala/Java/Python
+  // @inject_tag: json:"udf_language" gorm:"column:udf_language;"
+  Language udf_language = 4  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // Source Name, unique within a space.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 5 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
+
+  // Comment, describe this source.
+  // @inject_tag: json:"comment" gorm:"column:comment;"
+  string comment = 6 [(validator.field).tags.string = { char_len_lte: 256 }];
+
+  // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+  // @inject_tag: json:"define" gorm:"column:define;"
+  string define = 7 [ (validator.field).tags.string = { char_len_lte: 20000 }];
+
+  // usage for this udf
+  // @inject_tag: json:"usage_sample" gorm:"column:usage_sample;"
+  string usage_sample = 8 [ (validator.field).tags.string = { char_len_lte: 2000 }];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Udf status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 11 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // Udf owner.
+  // @inject_tag: json:"create_by" gorm:"column:create_by"
+  string create_by = 12 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+}
+

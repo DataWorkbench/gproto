@@ -1,0 +1,169 @@
+syntax = "proto3";
+
+package datasource;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel/pbdatasource";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbdatasource";
+// File name of class.
+option java_outer_classname = "PBDataSourceURL";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+message MySQLURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+}
+
+// PostgreSQLURL used as request parameters for RPC and HTTP(based on Body)
+message PostgreSQLURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+}
+
+// ClickHouseURL used as request parameters for RPC and HTTP(based on Body)
+message ClickHouseURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"database"
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+}
+
+// KafkaURL used as request parameters for RPC and HTTP(based on Body)
+message KafkaURL {
+  option (gosql.serialize) = { json: {} };
+
+  // The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
+  // Is required. Length min: 1, Length MAX: 1024.
+  // @inject_tag: json:"kafka_brokers"
+  string kafka_brokers = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
+}
+
+// S3Url used as request parameters for RPC and HTTP(based on Body)
+message S3URL {
+  option (gosql.serialize) = { json: {} };
+
+  //	// The s3 EndPoint
+  //	// @inject_tag: json:"endpoint"
+  //	string endpoint = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 128 } ];
+  //
+  //	// The s3 AccessKey
+  //	// @inject_tag: json:"access_key"
+  //	string access_key = 2 [ (validator.field).tags.string  = { byte_len_gte: 1, byte_len_lte: 128 } ];
+  //
+  //	// The s3 SecretKey
+  //	// @inject_tag: json:"secret_key"
+  //	string secret_key = 3 [ (validator.field).tags.string  = { byte_len_gte: 1, byte_len_lte: 128 } ];
+}
+
+// HBaseURL used as request parameters for RPC and HTTP(based on Body)
+message HBaseURL {
+  option (gosql.serialize) = { json: {} };
+
+  // The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
+  // Is required. Length min: 1, Length MAX: 1024.
+  // @inject_tag: json:"zk_hosts"
+  string zk_hosts = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
+
+  // The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+  // @inject_tag: json:"zk_path"
+  string zk_path = 2 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
+}
+
+// FtpURL used as request parameters for RPC and HTTP(based on Body)
+message FtpURL {
+  option (gosql.serialize) = { json: {} };
+
+  // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"host"
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
+  // @inject_tag: json:"port"
+  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+
+  // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"user"
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+  // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
+  // @inject_tag: json:"password"
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+}
+
+// HDFSURL used as request parameters for RPC and HTTP(based on Body)
+message HDFSURL {
+  option (gosql.serialize) = { json: {} };
+
+  message NodeURL {
+    // The host
+    // @inject_tag: json:"name_node"
+    string name_node = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+
+    // The port
+    // @inject_tag: json:"port"
+    int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+  }
+
+  // @inject_tag: json:"nodes"
+  NodeURL nodes = 1 [ (validator.field).tags.message = { not_null: true } ];
+}
+

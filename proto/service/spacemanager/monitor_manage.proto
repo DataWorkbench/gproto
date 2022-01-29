@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package spacemanager;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcspace";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
+// File name of class.
+option java_outer_classname = "PBSvcMonitorManage";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/monitor_manage.proto";
+import "proto/types/response/monitor_manage.proto";
+
+// MonitorManage declares API for manage monitor rule
+service MonitorManage {
+  // Interface for monitor.
+  rpc ListMonitorRules(request.ListMonitorRules)       returns (response.ListMonitorRules)    {}
+  rpc DeleteMonitorRules(request.DeleteMonitorRules)   returns (model.EmptyStruct)            {}
+  rpc EnableMonitorRules(request.EnableMonitorRules)   returns (model.EmptyStruct)            {}
+  rpc DisableMonitorRules(request.DisableMonitorRules) returns (model.EmptyStruct)            {}
+  rpc CreateMonitorRule(request.CreateMonitorRule)     returns (model.EmptyStruct)            {}
+  rpc UpdateMonitorRule(request.UpdateMonitorRule)     returns (model.EmptyStruct)            {}
+  rpc DescribeMonitorRule(request.DescribeMonitorRule) returns (response.DescribeMonitorRule) {}
+}

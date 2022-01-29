@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelMonitor";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+// The monitor rule info
+message MonitorRule {
+  enum Status {
+    StatusUnset = 0;
+    Enabled = 1;
+    Disabled = 2;
+    Deleted = 3;
+  }
+
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Rule ID, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Rule Name.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
+
+  // Rule status, 1 => "enabled", 2 => "disabled", 3 => "Deleted".
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // The object unit, 1 => "workspace" 2 => "job'
+  // FIXME: use enum
+  // @inject_tag: json:"unit" gorm:"column:unit;"
+  int32 unit = 5 [ (validator.field).tags.int = { gt: 0, lte: 2} ];
+
+  // The object text.
+  // @inject_tag: json:"text" gorm:"column:text;"
+  string text = 6 [(validator.field).tags.string = { char_len_gte: 1, char_len_lte: 1024 }];
+
+  // The trigger conditions. 3 => "retrying" 6 => "timeout"  7 => "succeed", 8 => "failed",
+  // FIXME: use enum
+  // @inject_tag: json:"trigger" gorm:"column:trigger;"
+  int32 trigger = 7 [(validator.field) = { }];
+
+  // The alarm times. 1 ~ 99
+  // @inject_tag: json:"alarm_times" gorm:"column:alarm_times;"
+  int32 alarm_times = 8 [(validator.field) = { }];
+
+  // The alarm interval. 1 ~ 30
+  // @inject_tag: json:"alarm_interval" gorm:"column:alarm_interval;"
+  int32 alarm_interval = 9 [(validator.field) = { }];
+
+  // The alarm type. "sms, email"
+  // @inject_tag: json:"alarm_type" gorm:"column:alarm_type;"
+  string alarm_type = 10 [(validator.field) = { }];
+
+  // The free time. "00:01,03:00".
+  // @inject_tag: json:"free_time" gorm:"column:free_time;"
+  string free_time = 11 [(validator.field) = { }];
+
+  // The alarm receiver. "usr-111111,usr-22222".
+  // @inject_tag: json:"receiver" gorm:"column:receiver;"
+  string receiver = 12 [(validator.field) = { }];
+}

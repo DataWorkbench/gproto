@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package udfmanager;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcudf";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcudf";
+// File name of class.
+option java_outer_classname = "PBSvcUDFManage";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/udf_manage.proto";
+import "proto/types/response/udf_manage.proto";
+import "proto/types/request/space_manage.proto";
+
+service UdfManage {
+  rpc Create(request.CreateUDF) returns (model.EmptyStruct) {}
+  rpc Update(request.UpdateUDF) returns (model.EmptyStruct) {}
+  rpc Describe(request.DescribeUDF) returns (response.DescribeUDF) {}
+  rpc Delete(request.DeleteUDF) returns (model.EmptyStruct) {}
+  rpc DeleteAll(request.DeleteWorkspaces) returns (model.EmptyStruct) {}
+  rpc List(request.ListUDF) returns (response.ListUDF) {}
+  rpc CommonFunc(request.UDFCommonFunc) returns (response.JsonList) {}
+}
+

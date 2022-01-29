@@ -19,11 +19,11 @@
     <distributionManagement>
         <repository>
             <id>dataomnis-nexus-releases</id>
-            <url>http://nexus.139.198.106.118.nip.io/repository/maven-releases/</url>
+            <url>http://nexus.data.qingcloud.link/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>dataomnis-nexus-snapshots</id>
-            <url>http://nexus.139.198.106.118.nip.io/repository/maven-snapshots/</url>
+            <url>http://nexus.data.qingcloud.link/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 

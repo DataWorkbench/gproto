@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package spacemanager;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcspace";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
+// File name of class.
+option java_outer_classname = "PBSvcTableManage";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/table_manage.proto";
+import "proto/types/response/table_manage.proto";
+
+// TableMange for manage flink table.
+service TableMange {
+  rpc ListFlinkTables(request.ListFlinkTables) returns (response.ListFlinkTables) {}
+  rpc CreateFlinkTable(request.CreateFlinkTable) returns (model.EmptyStruct) {}
+  rpc DescribeFlinkTable(request.DescribeFlinkTable) returns (response.DescribeFlinkTable) {}
+  rpc UpdateFlinkTable(request.UpdateFlinkTable) returns (model.EmptyStruct) {}
+  rpc DeleteFlinkTables(request.DeleteFlinkTables) returns (model.EmptyStruct) {}
+}

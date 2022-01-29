@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelOpAudit";
+option java_multiple_files = false;
+
+import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+
+// The workspace operation audit log record.
+message Operation {
+  // Type declares the API operation type.
+  enum Type {
+    TypeUnset = 0; // Is useless.
+    Write = 1; // Include Operation: create/update/delete.
+    Read = 2; // Include Operation: read.
+  }
+
+  // State declares the API operation result.
+  enum State {
+    StateUnset = 0;
+    Success = 1;
+    Failed = 2;
+  }
+
+  // The user id of who execute this operation.
+  // @inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
+  string user_id = 1 [(validator.field).tags.string = { ne: "", byte_len_lte: 64 }];
+
+  // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+  string space_id = 2;
+  //  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  //	-- The operation of user behavior.
+  // @inject_tag: json:"op_name" gorm:"column:op_name;"
+  string op_name = 3 [(validator.field).tags.string = { ne: "" }];
+
+  // -- The type of operation, 2 => "Write",  3 => "Read".
+  // @inject_tag: json:"op_type" gorm:"column:op_type;"
+  Type op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // -- The result of operation, 1 => "Success", 2 => "Failed".
+  // @inject_tag: json:"state" gorm:"column:state;"
+  State state = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Timestamp of time of when accessed.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 6 [ (validator.field).tags.int = { gt: 0 } ];
+}
+

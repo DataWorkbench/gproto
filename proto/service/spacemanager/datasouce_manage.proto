@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package spacemanager;
+
+option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcspace";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
+// File name of class.
+option java_outer_classname = "PBSvcDataSourceManage";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/datasource_manage.proto";
+import "proto/types/response/datasource_manage.proto";
+
+
+// DataSourceManage declares API for manage datasource.
+service DataSourceManage {
+  // datasource
+  rpc ListDataSources(request.ListDataSources)       returns (response.ListDataSources) {}
+  rpc CreateDataSource(request.CreateDataSource)     returns (response.CreateDataSource) {}
+  rpc UpdateDataSource(request.UpdateDataSource)     returns (model.EmptyStruct) {}
+  rpc DescribeDataSource(request.DescribeDataSource) returns (response.DescribeDataSource) {}
+  rpc DisableDataSources(request.DisableDataSources) returns (model.EmptyStruct) {}
+  rpc EnableDataSources(request.EnableDataSources)   returns (model.EmptyStruct) {}
+  rpc DeleteDataSources(request.DeleteDataSources)   returns (model.EmptyStruct) {}
+  rpc DescribeDataSourceKinds(model.EmptyStruct)     returns (response.DescribeDataSourceKinds) {}
+
+  rpc ListDataSourceConnections (request.ListDataSourceConnections) returns (response.ListDataSourceConnections) {}
+  rpc PingDataSourceConnection(request.PingDataSourceConnection)    returns (response.PingDataSourceConnection) {}
+  // DescribeDataSourceTables get a table list of specified data source.
+  rpc DescribeDataSourceTables(request.DescribeDataSourceTables)    returns (response.DescribeDataSourceTables) {}
+  // DescribeDataSourceTableSchema get the table schema of specified table in datasource.
+  rpc DescribeDataSourceTableSchema(request.DescribeDataSourceTableSchema) returns (response.DescribeDataSourceTableSchema) {}
+}
+
