@@ -31,6 +31,9 @@ target
 *.test
 *.profile
 
+# Python
+*.pyc
+
 # IntelliJ IDEA
 .idea
 .editorconfig
