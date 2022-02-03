@@ -19,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/response/resource_manage.proto',
   package='response',
   syntax='proto3',
-  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\030PBResponseResourceManageP\000Z4github.com/DataWorkbench/gproto/pkg/types/pbresponse',
+  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\030PBResponseResourceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*proto/types/response/resource_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a proto/types/model/resource.proto\"%\n\tCreateDir\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"&\n\nUploadFile\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"8\n\x0c\x44ownloadFile\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\"P\n\rListResources\x12\x1e\n\x05infos\x18\x01 \x03(\x0b\x32\x0f.model.Resource\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\x42y\n%com.dataomnis.gproto.types.pbresponseB\x18PBResponseResourceManageP\x00Z4github.com/DataWorkbench/gproto/pkg/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n*proto/types/response/resource_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a proto/types/model/resource.proto\"%\n\tCreateDir\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"&\n\nUploadFile\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"8\n\x0c\x44ownloadFile\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\"P\n\rListResources\x12\x1e\n\x05infos\x18\x01 \x03(\x0b\x32\x0f.model.Resource\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\x42y\n%com.dataomnis.gproto.types.pbresponseB\x18PBResponseResourceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_resource__pb2.DESCRIPTOR,])
 

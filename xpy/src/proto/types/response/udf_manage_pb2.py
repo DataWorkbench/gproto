@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/response/udf_manage.proto',
   package='response',
   syntax='proto3',
-  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\023PBResponseUDFManageP\000Z4github.com/DataWorkbench/gproto/pkg/types/pbresponse',
+  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\023PBResponseUDFManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%proto/types/response/udf_manage.proto\x12\x08response\x1a\x1bproto/types/model/udf.proto\"7\n\x07ListUDF\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.UDFInfo\x12\r\n\x05total\x18\x02 \x01(\x03\"+\n\x0b\x44\x65scribeUDF\x12\x1c\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.UDFInfo\"\x1d\n\x08JsonList\x12\x11\n\tjson_list\x18\x01 \x03(\tBt\n%com.dataomnis.gproto.types.pbresponseB\x13PBResponseUDFManageP\x00Z4github.com/DataWorkbench/gproto/pkg/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n%proto/types/response/udf_manage.proto\x12\x08response\x1a\x1bproto/types/model/udf.proto\"7\n\x07ListUDF\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.UDFInfo\x12\r\n\x05total\x18\x02 \x01(\x03\"+\n\x0b\x44\x65scribeUDF\x12\x1c\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.UDFInfo\"\x1d\n\x08JsonList\x12\x11\n\tjson_list\x18\x01 \x03(\tBt\n%com.dataomnis.gproto.types.pbresponseB\x13PBResponseUDFManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_udf__pb2.DESCRIPTOR,])
 

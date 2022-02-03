@@ -2367,7 +2367,7 @@ public final class PBResponseNetworkManage {
       "escribeNetwork\022\034\n\004info\030\001 \001(\0132\016.model.Net" +
       "workBx\n%com.dataomnis.gproto.types.pbres" +
       "ponseB\027PBResponseNetworkManageP\000Z4github" +
-      ".com/DataWorkbench/gproto/pkg/types/pbre" +
+      ".com/DataWorkbench/gproto/xgo/types/pbre" +
       "sponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

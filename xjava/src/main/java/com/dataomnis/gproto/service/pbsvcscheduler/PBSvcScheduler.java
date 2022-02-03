@@ -26,7 +26,7 @@ public final class PBSvcScheduler {
       "\n\'proto/service/scheduler/scheduler.prot" +
       "o\022\tschedulerB{\n+com.dataomnis.gproto.ser" +
       "vice.pbsvcschedulerB\016PBSvcSchedulerP\000Z:g" +
-      "ithub.com/DataWorkbench/gproto/pkg/servi" +
+      "ithub.com/DataWorkbench/gproto/xgo/servi" +
       "ce/pbsvcschedulerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

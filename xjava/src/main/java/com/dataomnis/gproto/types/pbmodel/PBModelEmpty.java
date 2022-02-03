@@ -457,7 +457,7 @@ public final class PBModelEmpty {
       "\n\035proto/types/model/empty.proto\022\005model\"\r" +
       "\n\013EmptyStructBg\n\"com.dataomnis.gproto.ty" +
       "pes.pbmodelB\014PBModelEmptyP\000Z1github.com/" +
-      "DataWorkbench/gproto/pkg/types/pbmodelb\006" +
+      "DataWorkbench/gproto/xgo/types/pbmodelb\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -5145,7 +5145,7 @@ public final class PBRequestStreamInstanceManage {
       "kUIByInstanceId\022\035\n\007inst_id\030\001 \001(\tB\014\342\337\037\010\022\006" +
       "\302\001\003\360\001\024B|\n$com.dataomnis.gproto.types.pbr" +
       "equestB\035PBRequestStreamInstanceManageP\000Z" +
-      "3github.com/DataWorkbench/gproto/pkg/typ" +
+      "3github.com/DataWorkbench/gproto/xgo/typ" +
       "es/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

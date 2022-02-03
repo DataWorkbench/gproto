@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/model/empty.proto',
   package='model',
   syntax='proto3',
-  serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\014PBModelEmptyP\000Z1github.com/DataWorkbench/gproto/pkg/types/pbmodel',
+  serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\014PBModelEmptyP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dproto/types/model/empty.proto\x12\x05model\"\r\n\x0b\x45mptyStructBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelEmptyP\x00Z1github.com/DataWorkbench/gproto/pkg/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1dproto/types/model/empty.proto\x12\x05model\"\r\n\x0b\x45mptyStructBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelEmptyP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
 )
 
 

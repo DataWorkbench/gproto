@@ -4098,7 +4098,7 @@ public final class PBFlinkConfig {
       "BUGJ\004INFOJ\004WARNJ\005ERROR:\006\312\262\004\002\n\000Bx\n*com.da" +
       "taomnis.gproto.types.pbmodel.pbflinkB\rPB" +
       "FlinkConfigP\000Z9github.com/DataWorkbench/" +
-      "gproto/pkg/types/pbmodel/pbflinkb\006proto3"
+      "gproto/xgo/types/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

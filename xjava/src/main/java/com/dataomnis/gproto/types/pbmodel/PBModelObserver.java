@@ -3990,7 +3990,7 @@ public final class PBModelObserver {
       " \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\000\022#\n\016instance_count\030\002 " +
       "\001(\003B\013\342\337\037\007\022\005\262\001\002@\000Bj\n\"com.dataomnis.gproto" +
       ".types.pbmodelB\017PBModelObserverP\000Z1githu" +
-      "b.com/DataWorkbench/gproto/pkg/types/pbm" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbm" +
       "odelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

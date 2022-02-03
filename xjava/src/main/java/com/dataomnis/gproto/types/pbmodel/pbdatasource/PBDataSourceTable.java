@@ -2179,7 +2179,7 @@ public final class PBDataSourceTable {
       "\002 \001(\t\022\016\n\006length\030\003 \001(\t\022\026\n\016is_primary_key\030" +
       "\004 \001(\tB\206\001\n/com.dataomnis.gproto.types.pbm" +
       "odel.pbdatasourceB\021PBDataSourceTableP\000Z>" +
-      "github.com/DataWorkbench/gproto/pkg/type" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
       "s/pbmodel/pbdatasourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

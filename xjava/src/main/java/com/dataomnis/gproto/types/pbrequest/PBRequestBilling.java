@@ -3159,7 +3159,7 @@ public final class PBRequestBilling {
       "d\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\024\n\014constance_id\030\003 " +
       "\001(\tBo\n$com.dataomnis.gproto.types.pbrequ" +
       "estB\020PBRequestBillingP\000Z3github.com/Data" +
-      "Workbench/gproto/pkg/types/pbrequestb\006pr" +
+      "Workbench/gproto/xgo/types/pbrequestb\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

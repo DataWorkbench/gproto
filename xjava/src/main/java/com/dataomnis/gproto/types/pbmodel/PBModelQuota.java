@@ -6472,8 +6472,8 @@ public final class PBModelQuota {
       "r\030\t \001(\0132\030.model.QuotaFlinkCluster\022$\n\007net" +
       "work\030\n \001(\0132\023.model.QuotaNetworkBg\n\"com.d" +
       "ataomnis.gproto.types.pbmodelB\014PBModelQu" +
-      "otaP\000Z1github.com/DataWorkbench/gproto/p" +
-      "kg/types/pbmodelb\006proto3"
+      "otaP\000Z1github.com/DataWorkbench/gproto/x" +
+      "go/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

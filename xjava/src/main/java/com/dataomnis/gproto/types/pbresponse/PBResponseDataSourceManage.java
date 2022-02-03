@@ -6610,7 +6610,7 @@ public final class PBResponseDataSourceManage {
       "source.TableSchemaB{\n%com.dataomnis.gpro" +
       "to.types.pbresponseB\032PBResponseDataSourc" +
       "eManageP\000Z4github.com/DataWorkbench/gpro" +
-      "to/pkg/types/pbresponseb\006proto3"
+      "to/xgo/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

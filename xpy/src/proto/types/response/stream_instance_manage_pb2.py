@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/response/stream_instance_manage.proto',
   package='response',
   syntax='proto3',
-  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\036PBResponseStreamInstanceManageP\000Z4github.com/DataWorkbench/gproto/pkg/types/pbresponse',
+  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\036PBResponseStreamInstanceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1proto/types/response/stream_instance_manage.proto\x12\x08response\x1a\'proto/types/model/stream_instance.proto\"\\\n\x13ListStreamInstances\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.StreamInstance\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"-\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\tB\x7f\n%com.dataomnis.gproto.types.pbresponseB\x1ePBResponseStreamInstanceManageP\x00Z4github.com/DataWorkbench/gproto/pkg/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n1proto/types/response/stream_instance_manage.proto\x12\x08response\x1a\'proto/types/model/stream_instance.proto\"\\\n\x13ListStreamInstances\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.StreamInstance\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"-\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\tB\x7f\n%com.dataomnis.gproto.types.pbresponseB\x1ePBResponseStreamInstanceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_stream__instance__pb2.DESCRIPTOR,])
 

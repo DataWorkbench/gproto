@@ -4372,7 +4372,7 @@ public final class PBRequestMemberManage {
       "ks-\022\035\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028dBt\n$co" +
       "m.dataomnis.gproto.types.pbrequestB\025PBRe" +
       "questMemberManageP\000Z3github.com/DataWork" +
-      "bench/gproto/pkg/types/pbrequestb\006proto3"
+      "bench/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

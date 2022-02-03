@@ -19,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/service/account/account.proto',
   package='account',
   syntax='proto3',
-  serialized_options=b'\n)com.dataomnis.gproto.service.pbsvcaccountB\014PBSvcAccountP\000Z8github.com/DataWorkbench/gproto/pkg/service/pbsvcaccount',
+  serialized_options=b'\n)com.dataomnis.gproto.service.pbsvcaccountB\014PBSvcAccountP\000Z8github.com/DataWorkbench/gproto/xgo/service/pbsvcaccount',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/service/account/account.proto\x12\x07\x61\x63\x63ount\x1a!proto/types/request/account.proto\x1a\"proto/types/response/account.proto2\x82\x02\n\x07\x41\x63\x63ount\x12\x63\n\x18ValidateRequestSignature\x12!.request.ValidateRequestSignature\x1a\".response.ValidateRequestSignature\"\x00\x12\x42\n\rDescribeUsers\x12\x16.request.DescribeUsers\x1a\x17.response.DescribeUsers\"\x00\x12N\n\x11\x44\x65scribeAccessKey\x12\x1a.request.DescribeAccessKey\x1a\x1b.response.DescribeAccessKey\"\x00\x42u\n)com.dataomnis.gproto.service.pbsvcaccountB\x0cPBSvcAccountP\x00Z8github.com/DataWorkbench/gproto/pkg/service/pbsvcaccountb\x06proto3'
+  serialized_pb=b'\n#proto/service/account/account.proto\x12\x07\x61\x63\x63ount\x1a!proto/types/request/account.proto\x1a\"proto/types/response/account.proto2\x82\x02\n\x07\x41\x63\x63ount\x12\x63\n\x18ValidateRequestSignature\x12!.request.ValidateRequestSignature\x1a\".response.ValidateRequestSignature\"\x00\x12\x42\n\rDescribeUsers\x12\x16.request.DescribeUsers\x1a\x17.response.DescribeUsers\"\x00\x12N\n\x11\x44\x65scribeAccessKey\x12\x1a.request.DescribeAccessKey\x1a\x1b.response.DescribeAccessKey\"\x00\x42u\n)com.dataomnis.gproto.service.pbsvcaccountB\x0cPBSvcAccountP\x00Z8github.com/DataWorkbench/gproto/xgo/service/pbsvcaccountb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_request_dot_account__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_account__pb2.DESCRIPTOR,])
 

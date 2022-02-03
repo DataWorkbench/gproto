@@ -2812,7 +2812,7 @@ public final class PBModelStreamInstance {
       "inated\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout\020\007\022\n\n\006Fa" +
       "iled\020\010Bp\n\"com.dataomnis.gproto.types.pbm" +
       "odelB\025PBModelStreamInstanceP\000Z1github.co" +
-      "m/DataWorkbench/gproto/pkg/types/pbmodel" +
+      "m/DataWorkbench/gproto/xgo/types/pbmodel" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

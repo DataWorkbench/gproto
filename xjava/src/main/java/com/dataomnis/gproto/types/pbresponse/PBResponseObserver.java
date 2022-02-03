@@ -5738,7 +5738,7 @@ public final class PBResponseObserver {
       "tchCount\022+\n\005infos\030\001 \003(\0132\034.model.Dispatch" +
       "TaskCountInfoBs\n%com.dataomnis.gproto.ty" +
       "pes.pbresponseB\022PBResponseObserverP\000Z4gi" +
-      "thub.com/DataWorkbench/gproto/pkg/types/" +
+      "thub.com/DataWorkbench/gproto/xgo/types/" +
       "pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

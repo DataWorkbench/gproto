@@ -3163,7 +3163,7 @@ public final class PBRequestAccount {
       "key_id\030\006 \001(\t\022\022\n\nreq_source\030\007 \001(\t\022\026\n\016req_" +
       "user_agent\030\010 \001(\tBo\n$com.dataomnis.gproto" +
       ".types.pbrequestB\020PBRequestAccountP\000Z3gi" +
-      "thub.com/DataWorkbench/gproto/pkg/types/" +
+      "thub.com/DataWorkbench/gproto/xgo/types/" +
       "pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -5746,7 +5746,7 @@ public final class PBRequestNetworkManage {
       "beNetwork\022 \n\nnetwork_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
       "\360\001\024Bu\n$com.dataomnis.gproto.types.pbrequ" +
       "estB\026PBRequestNetworkManageP\000Z3github.co" +
-      "m/DataWorkbench/gproto/pkg/types/pbreque" +
+      "m/DataWorkbench/gproto/xgo/types/pbreque" +
       "stb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

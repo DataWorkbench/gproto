@@ -49,7 +49,7 @@ public final class PBSvcResourceManage {
       "eteFlinkState\032\022.model.EmptyStruct\"\000B~\n*c" +
       "om.dataomnis.gproto.service.pbsvcresourc" +
       "eB\023PBSvcResourceManageP\000Z9github.com/Dat" +
-      "aWorkbench/gproto/pkg/service/pbsvcresou" +
+      "aWorkbench/gproto/xgo/service/pbsvcresou" +
       "rceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

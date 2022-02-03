@@ -2467,7 +2467,7 @@ public final class PBResponseUDFManage {
       " \001(\0132\016.model.UDFInfo\"\035\n\010JsonList\022\021\n\tjson" +
       "_list\030\001 \003(\tBt\n%com.dataomnis.gproto.type" +
       "s.pbresponseB\023PBResponseUDFManageP\000Z4git" +
-      "hub.com/DataWorkbench/gproto/pkg/types/p" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
       "bresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

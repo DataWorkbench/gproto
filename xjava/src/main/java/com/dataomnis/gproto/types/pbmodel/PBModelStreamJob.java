@@ -12625,7 +12625,7 @@ public final class PBModelStreamJob {
       "ve\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bk\n\"com." +
       "dataomnis.gproto.types.pbmodelB\020PBModelS" +
       "treamJobP\000Z1github.com/DataWorkbench/gpr" +
-      "oto/pkg/types/pbmodelb\006proto3"
+      "oto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

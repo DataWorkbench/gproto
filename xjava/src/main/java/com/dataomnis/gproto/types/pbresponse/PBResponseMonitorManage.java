@@ -1825,7 +1825,7 @@ public final class PBResponseMonitorManage {
       "\004info\030\001 \001(\0132\022.model.MonitorRuleBx\n%com.d" +
       "ataomnis.gproto.types.pbresponseB\027PBResp" +
       "onseMonitorManageP\000Z4github.com/DataWork" +
-      "bench/gproto/pkg/types/pbresponseb\006proto" +
+      "bench/gproto/xgo/types/pbresponseb\006proto" +
       "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

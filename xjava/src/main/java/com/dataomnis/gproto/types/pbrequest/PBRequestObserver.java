@@ -3902,8 +3902,8 @@ public final class PBRequestObserver {
       "\022\037\n\nstart_time\030\002 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\035\n\010end" +
       "_time\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000Bp\n$com.dataomni" +
       "s.gproto.types.pbrequestB\021PBRequestObser" +
-      "verP\000Z3github.com/DataWorkbench/gproto/p" +
-      "kg/types/pbrequestb\006proto3"
+      "verP\000Z3github.com/DataWorkbench/gproto/x" +
+      "go/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

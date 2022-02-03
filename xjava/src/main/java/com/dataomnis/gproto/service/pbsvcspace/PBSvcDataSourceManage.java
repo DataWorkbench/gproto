@@ -56,7 +56,7 @@ public final class PBSvcDataSourceManage {
       ".DescribeDataSourceTableSchema\"\000Bz\n\'com." +
       "dataomnis.gproto.service.pbsvcspaceB\025PBS" +
       "vcDataSourceManageP\000Z6github.com/DataWor" +
-      "kbench/gproto/pkg/service/pbsvcspaceb\006pr" +
+      "kbench/gproto/xgo/service/pbsvcspaceb\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -1777,7 +1777,7 @@ public final class PBModelJobManage {
       "\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000" +
       "Bk\n\"com.dataomnis.gproto.types.pbmodelB\020" +
       "PBModelJobManageP\000Z1github.com/DataWorkb" +
-      "ench/gproto/pkg/types/pbmodelb\006proto3"
+      "ench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

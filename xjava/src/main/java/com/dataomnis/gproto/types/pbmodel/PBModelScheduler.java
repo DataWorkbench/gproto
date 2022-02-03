@@ -1630,7 +1630,7 @@ public final class PBModelScheduler {
       "\n\006Create\020\001\022\010\n\004Init\020\005\022\n\n\006Submit\020\002\022\t\n\005Chec" +
       "k\020\004\022\t\n\005Retry\020\003Bk\n\"com.dataomnis.gproto.t" +
       "ypes.pbmodelB\020PBModelSchedulerP\000Z1github" +
-      ".com/DataWorkbench/gproto/pkg/types/pbmo" +
+      ".com/DataWorkbench/gproto/xgo/types/pbmo" +
       "delb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

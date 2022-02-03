@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/request/engine_manage.proto',
   package='request',
   syntax='proto3',
-  serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestEngineManageP\000Z3github.com/DataWorkbench/gproto/pkg/types/pbrequest',
+  serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestEngineManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/engine_manage.proto\x12\x07requestBt\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestEngineManageP\x00Z3github.com/DataWorkbench/gproto/pkg/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/engine_manage.proto\x12\x07requestBt\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestEngineManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
 )
 
 

@@ -2311,7 +2311,7 @@ public final class PBModelAccount {
       "\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007r" +
       "egions\030\014 \003(\tBi\n\"com.dataomnis.gproto.typ" +
       "es.pbmodelB\016PBModelAccountP\000Z1github.com" +
-      "/DataWorkbench/gproto/pkg/types/pbmodelb" +
+      "/DataWorkbench/gproto/xgo/types/pbmodelb" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

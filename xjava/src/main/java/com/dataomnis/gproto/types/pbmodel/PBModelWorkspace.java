@@ -1716,7 +1716,7 @@ public final class PBModelWorkspace {
       "\022\013\n\007Enabled\020\001\022\014\n\010Disabled\020\002\022\013\n\007Deleted\020\003" +
       "Bk\n\"com.dataomnis.gproto.types.pbmodelB\020" +
       "PBModelWorkspaceP\000Z1github.com/DataWorkb" +
-      "ench/gproto/pkg/types/pbmodelb\006proto3"
+      "ench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

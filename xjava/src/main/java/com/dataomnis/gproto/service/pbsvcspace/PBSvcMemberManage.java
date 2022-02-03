@@ -36,7 +36,7 @@ public final class PBSvcMemberManage {
       "teMembers\022\026.request.DeleteMembers\032\022.mode" +
       "l.EmptyStruct\"\000Bv\n\'com.dataomnis.gproto." +
       "service.pbsvcspaceB\021PBSvcMemberManageP\000Z" +
-      "6github.com/DataWorkbench/gproto/pkg/ser" +
+      "6github.com/DataWorkbench/gproto/xgo/ser" +
       "vice/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -34,7 +34,7 @@ public final class PBSvcAccount {
       "\032.request.DescribeAccessKey\032\033.response.D" +
       "escribeAccessKey\"\000Bu\n)com.dataomnis.gpro" +
       "to.service.pbsvcaccountB\014PBSvcAccountP\000Z" +
-      "8github.com/DataWorkbench/gproto/pkg/ser" +
+      "8github.com/DataWorkbench/gproto/xgo/ser" +
       "vice/pbsvcaccountb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

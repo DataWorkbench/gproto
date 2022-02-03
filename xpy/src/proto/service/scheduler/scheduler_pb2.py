@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/service/scheduler/scheduler.proto',
   package='scheduler',
   syntax='proto3',
-  serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcschedulerB\016PBSvcSchedulerP\000Z:github.com/DataWorkbench/gproto/pkg/service/pbsvcscheduler',
+  serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcschedulerB\016PBSvcSchedulerP\000Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcscheduler',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/service/scheduler/scheduler.proto\x12\tschedulerB{\n+com.dataomnis.gproto.service.pbsvcschedulerB\x0ePBSvcSchedulerP\x00Z:github.com/DataWorkbench/gproto/pkg/service/pbsvcschedulerb\x06proto3'
+  serialized_pb=b'\n\'proto/service/scheduler/scheduler.proto\x12\tschedulerB{\n+com.dataomnis.gproto.service.pbsvcschedulerB\x0ePBSvcSchedulerP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcschedulerb\x06proto3'
 )
 
 

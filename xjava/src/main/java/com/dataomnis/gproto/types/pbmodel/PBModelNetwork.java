@@ -2098,7 +2098,7 @@ public final class PBModelNetwork {
       "B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000" +
       "\022\013\n\007Deleted\020\001\022\n\n\006Active\020\002Bi\n\"com.dataomn" +
       "is.gproto.types.pbmodelB\016PBModelNetworkP" +
-      "\000Z1github.com/DataWorkbench/gproto/pkg/t" +
+      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
       "ypes/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

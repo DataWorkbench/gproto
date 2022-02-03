@@ -2638,7 +2638,7 @@ public final class PBResponseAccount {
       "us\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\017\n\007user_id\030\003 \001" +
       "(\tBr\n%com.dataomnis.gproto.types.pbrespo" +
       "nseB\021PBResponseAccountP\000Z4github.com/Dat" +
-      "aWorkbench/gproto/pkg/types/pbresponseb\006" +
+      "aWorkbench/gproto/xgo/types/pbresponseb\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

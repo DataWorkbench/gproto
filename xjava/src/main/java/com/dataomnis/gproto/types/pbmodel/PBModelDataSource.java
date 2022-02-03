@@ -8486,7 +8486,7 @@ public final class PBModelDataSource {
       "\006Failed\020\002\"\036\n\016DataSourceKind\022\014\n\004Name\030\001 \001(" +
       "\tBl\n\"com.dataomnis.gproto.types.pbmodelB" +
       "\021PBModelDataSourceP\000Z1github.com/DataWor" +
-      "kbench/gproto/pkg/types/pbmodelb\006proto3"
+      "kbench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

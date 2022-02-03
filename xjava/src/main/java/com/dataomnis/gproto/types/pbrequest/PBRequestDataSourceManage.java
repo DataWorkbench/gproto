@@ -13222,7 +13222,7 @@ public final class PBRequestDataSourceManage {
       "\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis.gprot" +
       "o.types.pbrequestB\031PBRequestDataSourceMa" +
       "nageP\000Z3github.com/DataWorkbench/gproto/" +
-      "pkg/types/pbrequestb\006proto3"
+      "xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

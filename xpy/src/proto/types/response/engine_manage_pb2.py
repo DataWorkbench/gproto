@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/response/engine_manage.proto',
   package='response',
   syntax='proto3',
-  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\026PBResponseEngineManageP\000Z4github.com/DataWorkbench/gproto/pkg/types/pbresponse',
+  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\026PBResponseEngineManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/response/engine_manage.proto\x12\x08responseBw\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseEngineManageP\x00Z4github.com/DataWorkbench/gproto/pkg/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n(proto/types/response/engine_manage.proto\x12\x08responseBw\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseEngineManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
 )
 
 

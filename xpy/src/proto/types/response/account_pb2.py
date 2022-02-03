@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/response/account.proto',
   package='response',
   syntax='proto3',
-  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\021PBResponseAccountP\000Z4github.com/DataWorkbench/gproto/pkg/types/pbresponse',
+  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\021PBResponseAccountP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"L\n\x18ValidateRequestSignature\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\tBr\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/pkg/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"L\n\x18ValidateRequestSignature\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\tBr\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
 

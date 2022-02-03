@@ -5257,7 +5257,7 @@ public final class PBFlinkJob {
       "\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkSQL\022\037\n\004code\030\001 " +
       "\001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*com.dataomnis." +
       "gproto.types.pbmodel.pbflinkB\nPBFlinkJob" +
-      "P\000Z9github.com/DataWorkbench/gproto/pkg/" +
+      "P\000Z9github.com/DataWorkbench/gproto/xgo/" +
       "types/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

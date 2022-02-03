@@ -1708,7 +1708,7 @@ public final class PBModelOpAudit {
       "\001\022\010\n\004Read\020\002\"0\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007" +
       "Success\020\001\022\n\n\006Failed\020\002Bi\n\"com.dataomnis.g" +
       "proto.types.pbmodelB\016PBModelOpAuditP\000Z1g" +
-      "ithub.com/DataWorkbench/gproto/pkg/types" +
+      "ithub.com/DataWorkbench/gproto/xgo/types" +
       "/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

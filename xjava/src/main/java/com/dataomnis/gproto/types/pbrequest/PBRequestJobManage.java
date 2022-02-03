@@ -6301,7 +6301,7 @@ public final class PBRequestJobManage {
       " \001(\0132\024.model.StreamJobCodeBq\n$com.dataom" +
       "nis.gproto.types.pbrequestB\022PBRequestJob" +
       "ManageP\000Z3github.com/DataWorkbench/gprot" +
-      "o/pkg/types/pbrequestb\006proto3"
+      "o/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -9675,7 +9675,7 @@ public final class PBRequestClusterManage {
       "Cluster\022 \n\ncluster_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
       "\024Bu\n$com.dataomnis.gproto.types.pbreques" +
       "tB\026PBRequestClusterManageP\000Z3github.com/" +
-      "DataWorkbench/gproto/pkg/types/pbrequest" +
+      "DataWorkbench/gproto/xgo/types/pbrequest" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

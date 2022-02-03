@@ -2462,7 +2462,7 @@ public final class PBResponseBilling {
       "RecoveryBillingInstance\022\035\n\007message\030\001 \001(\t" +
       "B\014\342\337\037\010\022\006\302\001\003\360\001\024Br\n%com.dataomnis.gproto.t" +
       "ypes.pbresponseB\021PBResponseBillingP\000Z4gi" +
-      "thub.com/DataWorkbench/gproto/pkg/types/" +
+      "thub.com/DataWorkbench/gproto/xgo/types/" +
       "pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -10888,7 +10888,7 @@ public final class PBRequestWorkspaceManage {
       "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001Bw\n$com.d" +
       "ataomnis.gproto.types.pbrequestB\030PBReque" +
       "stWorkspaceManageP\000Z3github.com/DataWork" +
-      "bench/gproto/pkg/types/pbrequestb\006proto3"
+      "bench/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

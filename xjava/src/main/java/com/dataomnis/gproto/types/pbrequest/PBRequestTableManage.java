@@ -6570,7 +6570,7 @@ public final class PBRequestTableManage {
       "nkTable.KindB\013\342\337\037\007\022\005\332\001\002X\001Bs\n$com.dataomn" +
       "is.gproto.types.pbrequestB\024PBRequestTabl" +
       "eManageP\000Z3github.com/DataWorkbench/gpro" +
-      "to/pkg/types/pbrequestb\006proto3"
+      "to/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

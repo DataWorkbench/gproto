@@ -20,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/service/billing/billing.proto',
   package='billing',
   syntax='proto3',
-  serialized_options=b'\n)com.dataomnis.gproto.service.pbsvcbillingB\014PBSvcBillingP\000Z8github.com/DataWorkbench/gproto/pkg/service/pbsvcbilling',
+  serialized_options=b'\n)com.dataomnis.gproto.service.pbsvcbillingB\014PBSvcBillingP\000Z8github.com/DataWorkbench/gproto/xgo/service/pbsvcbilling',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/service/billing/billing.proto\x12\x07\x62illing\x1a\x1dproto/types/model/empty.proto\x1a!proto/types/request/billing.proto\x1a\"proto/types/response/billing.proto2\xee\x02\n\x07\x42illing\x12O\n\x19GetBillingPriceComponents\x12\x12.model.EmptyStruct\x1a\x1c.response.GetPriceComponents\"\x00\x12Z\n\x15\x43reateBillingInstance\x12\x1e.request.CreateBillingInstance\x1a\x1f.response.CreateBillingInstance\"\x00\x12T\n\x13StopBillingInstance\x12\x1c.request.StopBillingInstance\x1a\x1d.response.StopBillingInstance\"\x00\x12`\n\x17RecoveryBillingInstance\x12 .request.RecoveryBillingInstance\x1a!.response.RecoveryBillingInstance\"\x00\x42u\n)com.dataomnis.gproto.service.pbsvcbillingB\x0cPBSvcBillingP\x00Z8github.com/DataWorkbench/gproto/pkg/service/pbsvcbillingb\x06proto3'
+  serialized_pb=b'\n#proto/service/billing/billing.proto\x12\x07\x62illing\x1a\x1dproto/types/model/empty.proto\x1a!proto/types/request/billing.proto\x1a\"proto/types/response/billing.proto2\xee\x02\n\x07\x42illing\x12O\n\x19GetBillingPriceComponents\x12\x12.model.EmptyStruct\x1a\x1c.response.GetPriceComponents\"\x00\x12Z\n\x15\x43reateBillingInstance\x12\x1e.request.CreateBillingInstance\x1a\x1f.response.CreateBillingInstance\"\x00\x12T\n\x13StopBillingInstance\x12\x1c.request.StopBillingInstance\x1a\x1d.response.StopBillingInstance\"\x00\x12`\n\x17RecoveryBillingInstance\x12 .request.RecoveryBillingInstance\x1a!.response.RecoveryBillingInstance\"\x00\x42u\n)com.dataomnis.gproto.service.pbsvcbillingB\x0cPBSvcBillingP\x00Z8github.com/DataWorkbench/gproto/xgo/service/pbsvcbillingb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_billing__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_billing__pb2.DESCRIPTOR,])
 

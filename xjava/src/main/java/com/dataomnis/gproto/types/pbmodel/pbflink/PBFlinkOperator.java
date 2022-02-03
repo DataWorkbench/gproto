@@ -28484,7 +28484,7 @@ public final class PBFlinkOperator {
       "flink.JoinOperatorB\004\342\337\037\000Bz\n*com.dataomni" +
       "s.gproto.types.pbmodel.pbflinkB\017PBFlinkO" +
       "peratorP\000Z9github.com/DataWorkbench/gpro" +
-      "to/pkg/types/pbmodel/pbflinkb\006proto3"
+      "to/xgo/types/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

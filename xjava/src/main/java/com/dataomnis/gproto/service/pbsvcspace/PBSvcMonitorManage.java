@@ -43,7 +43,7 @@ public final class PBSvcMonitorManage {
       "onitorRule\032\035.response.DescribeMonitorRul" +
       "e\"\000Bw\n\'com.dataomnis.gproto.service.pbsv" +
       "cspaceB\022PBSvcMonitorManageP\000Z6github.com" +
-      "/DataWorkbench/gproto/pkg/service/pbsvcs" +
+      "/DataWorkbench/gproto/xgo/service/pbsvcs" +
       "paceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

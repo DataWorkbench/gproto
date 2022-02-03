@@ -26,7 +26,7 @@ public final class PBRequestEngineManage {
       "\n\'proto/types/request/engine_manage.prot" +
       "o\022\007requestBt\n$com.dataomnis.gproto.types" +
       ".pbrequestB\025PBRequestEngineManageP\000Z3git" +
-      "hub.com/DataWorkbench/gproto/pkg/types/p" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
       "brequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

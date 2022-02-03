@@ -9390,7 +9390,7 @@ public final class PBRequestResourceManage {
       "h\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002d\022\016\n\006is_dir\030\002 \001(\010" +
       "Bv\n$com.dataomnis.gproto.types.pbrequest" +
       "B\027PBRequestResourceManageP\000Z3github.com/" +
-      "DataWorkbench/gproto/pkg/types/pbrequest" +
+      "DataWorkbench/gproto/xgo/types/pbrequest" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

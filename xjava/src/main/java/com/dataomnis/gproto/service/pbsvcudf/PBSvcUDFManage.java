@@ -40,7 +40,7 @@ public final class PBSvcUDFManage {
       "quest.UDFCommonFunc\032\022.response.JsonList\"" +
       "\000Bo\n%com.dataomnis.gproto.service.pbsvcu" +
       "dfB\016PBSvcUDFManageP\000Z4github.com/DataWor" +
-      "kbench/gproto/pkg/service/pbsvcudfb\006prot" +
+      "kbench/gproto/xgo/service/pbsvcudfb\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

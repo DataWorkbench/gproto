@@ -3821,7 +3821,7 @@ public final class PBResponseClusterManage {
       "ribeFlinkCluster\022!\n\004info\030\001 \001(\0132\023.model.F" +
       "linkClusterBx\n%com.dataomnis.gproto.type" +
       "s.pbresponseB\027PBResponseClusterManageP\000Z" +
-      "4github.com/DataWorkbench/gproto/pkg/typ" +
+      "4github.com/DataWorkbench/gproto/xgo/typ" +
       "es/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

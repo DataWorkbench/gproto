@@ -4032,7 +4032,7 @@ public final class PBResponseWorkspaceManage {
       "mission\022\036\n\004info\030\001 \001(\0132\020.model.WorkspaceB" +
       "z\n%com.dataomnis.gproto.types.pbresponse" +
       "B\031PBResponseWorkspaceManageP\000Z4github.co" +
-      "m/DataWorkbench/gproto/pkg/types/pbrespo" +
+      "m/DataWorkbench/gproto/xgo/types/pbrespo" +
       "nseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -2231,7 +2231,7 @@ public final class PBResponseMemberManage {
       "odel.Role\022\020\n\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001" +
       "(\003Bw\n%com.dataomnis.gproto.types.pbrespo" +
       "nseB\026PBResponseMemberManageP\000Z4github.co" +
-      "m/DataWorkbench/gproto/pkg/types/pbrespo" +
+      "m/DataWorkbench/gproto/xgo/types/pbrespo" +
       "nseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

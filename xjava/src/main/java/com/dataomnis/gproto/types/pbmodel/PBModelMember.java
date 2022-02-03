@@ -3049,7 +3049,7 @@ public final class PBModelMember {
       "\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006No" +
       "rmal\020\001\022\013\n\007Deleted\020\002Bh\n\"com.dataomnis.gpr" +
       "oto.types.pbmodelB\rPBModelMemberP\000Z1gith" +
-      "ub.com/DataWorkbench/gproto/pkg/types/pb" +
+      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
       "modelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

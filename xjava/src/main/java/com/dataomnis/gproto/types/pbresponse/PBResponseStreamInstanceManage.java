@@ -1750,7 +1750,7 @@ public final class PBResponseStreamInstanceManage {
       "DescribeFlinkUIByInstanceId\022\016\n\006web_ui\030\001 " +
       "\001(\tB\177\n%com.dataomnis.gproto.types.pbresp" +
       "onseB\036PBResponseStreamInstanceManageP\000Z4" +
-      "github.com/DataWorkbench/gproto/pkg/type" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
       "s/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

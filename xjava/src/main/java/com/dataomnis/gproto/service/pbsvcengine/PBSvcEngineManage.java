@@ -61,7 +61,7 @@ public final class PBSvcEngineManage {
       "orks\022\027.request.DeleteNetworks\032\022.model.Em" +
       "ptyStruct\"\000Bx\n(com.dataomnis.gproto.serv" +
       "ice.pbsvcengineB\021PBSvcEngineManageP\000Z7gi" +
-      "thub.com/DataWorkbench/gproto/pkg/servic" +
+      "thub.com/DataWorkbench/gproto/xgo/servic" +
       "e/pbsvcengineb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

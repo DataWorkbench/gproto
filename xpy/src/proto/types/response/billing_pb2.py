@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/response/billing.proto',
   package='response',
   syntax='proto3',
-  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\021PBResponseBillingP\000Z4github.com/DataWorkbench/gproto/pkg/types/pbresponse',
+  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\021PBResponseBillingP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/response/billing.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"=\n\x12GetPriceComponents\x12\x12\n\nhour_price\x18\x01 \x01(\x01\x12\x13\n\x0bmonth_price\x18\x02 \x01(\x01\":\n\x15\x43reateBillingInstance\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x1e\"4\n\x13StopBillingInstance\x12\x1d\n\x07message\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"8\n\x17RecoveryBillingInstance\x12\x1d\n\x07message\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x42r\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseBillingP\x00Z4github.com/DataWorkbench/gproto/pkg/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\"proto/types/response/billing.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"=\n\x12GetPriceComponents\x12\x12\n\nhour_price\x18\x01 \x01(\x01\x12\x13\n\x0bmonth_price\x18\x02 \x01(\x01\":\n\x15\x43reateBillingInstance\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x1e\"4\n\x13StopBillingInstance\x12\x1d\n\x07message\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"8\n\x17RecoveryBillingInstance\x12\x1d\n\x07message\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x42r\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseBillingP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 

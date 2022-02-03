@@ -26,7 +26,7 @@ public final class PBResponseEngineManage {
       "\n(proto/types/response/engine_manage.pro" +
       "to\022\010responseBw\n%com.dataomnis.gproto.typ" +
       "es.pbresponseB\026PBResponseEngineManageP\000Z" +
-      "4github.com/DataWorkbench/gproto/pkg/typ" +
+      "4github.com/DataWorkbench/gproto/xgo/typ" +
       "es/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

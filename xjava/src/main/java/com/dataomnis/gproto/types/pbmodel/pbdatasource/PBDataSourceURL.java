@@ -8379,7 +8379,7 @@ public final class PBDataSourceURL {
       "\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000:\006\312\262\004\002\n\000B\204" +
       "\001\n/com.dataomnis.gproto.types.pbmodel.pb" +
       "datasourceB\017PBDataSourceURLP\000Z>github.co" +
-      "m/DataWorkbench/gproto/pkg/types/pbmodel" +
+      "m/DataWorkbench/gproto/xgo/types/pbmodel" +
       "/pbdatasourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

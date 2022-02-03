@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/request/account.proto',
   package='request',
   syntax='proto3',
-  serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\020PBRequestAccountP\000Z3github.com/DataWorkbench/gproto/pkg/types/pbrequest',
+  serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\020PBRequestAccountP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!proto/types/request/account.proto\x12\x07request\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"Q\n\rDescribeUsers\x12\r\n\x05users\x18\x01 \x03(\t\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x12\n\nreq_source\x18\x04 \x01(\t\"\xca\x01\n\x18ValidateRequestSignature\x12\x12\n\nreq_method\x18\x01 \x01(\t\x12\x10\n\x08req_path\x18\x02 \x01(\t\x12\x18\n\x10req_query_string\x18\x03 \x01(\t\x12\x10\n\x08req_body\x18\x04 \x01(\t\x12\x15\n\rreq_signature\x18\x05 \x01(\t\x12\x19\n\x11req_access_key_id\x18\x06 \x01(\t\x12\x12\n\nreq_source\x18\x07 \x01(\t\x12\x16\n\x0ereq_user_agent\x18\x08 \x01(\tBo\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/pkg/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n!proto/types/request/account.proto\x12\x07request\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"Q\n\rDescribeUsers\x12\r\n\x05users\x18\x01 \x03(\t\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x12\n\nreq_source\x18\x04 \x01(\t\"\xca\x01\n\x18ValidateRequestSignature\x12\x12\n\nreq_method\x18\x01 \x01(\t\x12\x10\n\x08req_path\x18\x02 \x01(\t\x12\x18\n\x10req_query_string\x18\x03 \x01(\t\x12\x10\n\x08req_body\x18\x04 \x01(\t\x12\x15\n\rreq_signature\x18\x05 \x01(\t\x12\x19\n\x11req_access_key_id\x18\x06 \x01(\t\x12\x12\n\nreq_source\x18\x07 \x01(\t\x12\x16\n\x0ereq_user_agent\x18\x08 \x01(\tBo\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
 )
 
 

@@ -41,7 +41,7 @@ public final class PBSvcJobManage {
       "nse.StreamJobCodeSyntax\"\000B{\n+com.dataomn" +
       "is.gproto.service.pbsvcdeveloperB\016PBSvcJ" +
       "obManageP\000Z:github.com/DataWorkbench/gpr" +
-      "oto/pkg/service/pbsvcdeveloperb\006proto3"
+      "oto/xgo/service/pbsvcdeveloperb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

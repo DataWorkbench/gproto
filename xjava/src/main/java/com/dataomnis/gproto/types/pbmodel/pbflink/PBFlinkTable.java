@@ -24157,7 +24157,7 @@ public final class PBFlinkTable {
       "\0132\017.flink.FtpTable\022\036\n\004hdfs\030\010 \001(\0132\020.flink" +
       ".HDFSTable:\006\312\262\004\002\n\000Bw\n*com.dataomnis.gpro" +
       "to.types.pbmodel.pbflinkB\014PBFlinkTableP\000" +
-      "Z9github.com/DataWorkbench/gproto/pkg/ty" +
+      "Z9github.com/DataWorkbench/gproto/xgo/ty" +
       "pes/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

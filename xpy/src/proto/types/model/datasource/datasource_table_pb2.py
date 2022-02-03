@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/model/datasource/datasource_table.proto',
   package='datasource',
   syntax='proto3',
-  serialized_options=b'\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\021PBDataSourceTableP\000Z>github.com/DataWorkbench/gproto/pkg/types/pbmodel/pbdatasource',
+  serialized_options=b'\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\021PBDataSourceTableP\000Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasource',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3proto/types/model/datasource/datasource_table.proto\x12\ndatasource\"7\n\x0bTableSchema\x12(\n\x07\x63olumns\x18\x01 \x03(\x0b\x32\x17.datasource.TableColumn\"Q\n\x0bTableColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0e\n\x06length\x18\x03 \x01(\t\x12\x16\n\x0eis_primary_key\x18\x04 \x01(\tB\x86\x01\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\x11PBDataSourceTableP\x00Z>github.com/DataWorkbench/gproto/pkg/types/pbmodel/pbdatasourceb\x06proto3'
+  serialized_pb=b'\n3proto/types/model/datasource/datasource_table.proto\x12\ndatasource\"7\n\x0bTableSchema\x12(\n\x07\x63olumns\x18\x01 \x03(\x0b\x32\x17.datasource.TableColumn\"Q\n\x0bTableColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0e\n\x06length\x18\x03 \x01(\t\x12\x16\n\x0eis_primary_key\x18\x04 \x01(\tB\x86\x01\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\x11PBDataSourceTableP\x00Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasourceb\x06proto3'
 )
 
 

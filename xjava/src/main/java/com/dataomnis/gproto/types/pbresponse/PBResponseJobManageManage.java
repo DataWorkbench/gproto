@@ -2583,8 +2583,8 @@ public final class PBResponseJobManageManage {
       "model.StreamInstance.StateB\004\342\337\037\000\022\025\n\007mess" +
       "age\030\002 \001(\tB\004\342\337\037\000Bz\n%com.dataomnis.gproto." +
       "types.pbresponseB\031PBResponseJobManageMan" +
-      "ageP\000Z4github.com/DataWorkbench/gproto/p" +
-      "kg/types/pbresponseb\006proto3"
+      "ageP\000Z4github.com/DataWorkbench/gproto/x" +
+      "go/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

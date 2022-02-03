@@ -76,7 +76,7 @@ public final class PBSvcStreamJobManage {
       "obSchedule\032\036.response.GetStreamJobSchedu" +
       "le\"\000By\n\'com.dataomnis.gproto.service.pbs" +
       "vcspaceB\024PBSvcStreamJobManageP\000Z6github." +
-      "com/DataWorkbench/gproto/pkg/service/pbs" +
+      "com/DataWorkbench/gproto/xgo/service/pbs" +
       "vcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -5869,7 +5869,7 @@ public final class PBSvcNotifier {
       "tifier.ListRequest\032\023.notifier.ListReply\"" +
       "\000Bw\n)com.dataomnis.gproto.service.pbsvca" +
       "ccountB\rPBSvcNotifierP\000Z9github.com/Data" +
-      "Workbench/gproto/pkg/service/pbsvcnotifi" +
+      "Workbench/gproto/xgo/service/pbsvcnotifi" +
       "erb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

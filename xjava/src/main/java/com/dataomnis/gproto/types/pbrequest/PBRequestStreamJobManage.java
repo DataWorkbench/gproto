@@ -19370,7 +19370,7 @@ public final class PBRequestStreamJobManage {
       "\030\004 \001(\010B\004\342\337\037\000\022\034\n\006job_id\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
       "\001\024Bw\n$com.dataomnis.gproto.types.pbreque" +
       "stB\030PBRequestStreamJobManageP\000Z3github.c" +
-      "om/DataWorkbench/gproto/pkg/types/pbrequ" +
+      "om/DataWorkbench/gproto/xgo/types/pbrequ" +
       "estb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

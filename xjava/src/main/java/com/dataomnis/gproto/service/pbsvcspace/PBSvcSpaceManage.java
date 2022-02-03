@@ -47,7 +47,7 @@ public final class PBSvcSpaceManage {
       "dit\022\023.request.AddOpAudit\032\022.model.EmptySt" +
       "ruct\"\000Bu\n\'com.dataomnis.gproto.service.p" +
       "bsvcspaceB\020PBSvcSpaceManageP\000Z6github.co" +
-      "m/DataWorkbench/gproto/pkg/service/pbsvc" +
+      "m/DataWorkbench/gproto/xgo/service/pbsvc" +
       "spaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

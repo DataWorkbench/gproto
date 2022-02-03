@@ -5208,7 +5208,7 @@ public final class PBModelCluster {
       "rting\020\004\022\r\n\tException\020\005\022\013\n\007Arrears\020\006Bi\n\"c" +
       "om.dataomnis.gproto.types.pbmodelB\016PBMod" +
       "elClusterP\000Z1github.com/DataWorkbench/gp" +
-      "roto/pkg/types/pbmodelb\006proto3"
+      "roto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

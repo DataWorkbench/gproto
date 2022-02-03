@@ -3193,7 +3193,7 @@ public final class PBResponseResourceManage {
       "esource\022\020\n\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003" +
       "By\n%com.dataomnis.gproto.types.pbrespons" +
       "eB\030PBResponseResourceManageP\000Z4github.co" +
-      "m/DataWorkbench/gproto/pkg/types/pbrespo" +
+      "m/DataWorkbench/gproto/xgo/types/pbrespo" +
       "nseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

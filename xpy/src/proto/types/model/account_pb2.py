@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/model/account.proto',
   package='model',
   syntax='proto3',
-  serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelAccountP\000Z1github.com/DataWorkbench/gproto/pkg/types/pbmodel',
+  serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelAccountP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\"\xd1\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\tBi\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/pkg/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\"\xd1\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\tBi\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
 )
 
 

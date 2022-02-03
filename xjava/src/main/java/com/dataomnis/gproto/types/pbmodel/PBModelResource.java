@@ -2477,7 +2477,7 @@ public final class PBModelResource {
       "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Enabled\020\001\022\014\n" +
       "\010Disabled\020\002\022\013\n\007Deleted\020\003Bj\n\"com.dataomni" +
       "s.gproto.types.pbmodelB\017PBModelResourceP" +
-      "\000Z1github.com/DataWorkbench/gproto/pkg/t" +
+      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
       "ypes/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

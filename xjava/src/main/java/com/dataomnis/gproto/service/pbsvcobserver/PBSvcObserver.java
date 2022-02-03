@@ -40,7 +40,7 @@ public final class PBSvcObserver {
       "rrorRanking\032\033.response.PTaskErrorRanking" +
       "\"\000Bx\n*com.dataomnis.gproto.service.pbsvc" +
       "observerB\rPBSvcObserverP\000Z9github.com/Da" +
-      "taWorkbench/gproto/pkg/service/pbsvcobse" +
+      "taWorkbench/gproto/xgo/service/pbsvcobse" +
       "rverb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

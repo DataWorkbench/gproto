@@ -38,7 +38,7 @@ public final class PBSvcBilling {
       "\032!.response.RecoveryBillingInstance\"\000Bu\n" +
       ")com.dataomnis.gproto.service.pbsvcbilli" +
       "ngB\014PBSvcBillingP\000Z8github.com/DataWorkb" +
-      "ench/gproto/pkg/service/pbsvcbillingb\006pr" +
+      "ench/gproto/xgo/service/pbsvcbillingb\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

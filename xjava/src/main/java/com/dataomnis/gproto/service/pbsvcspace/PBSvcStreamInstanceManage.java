@@ -42,7 +42,7 @@ public final class PBSvcStreamInstanceManage {
       "DescribeFlinkUIByInstanceId\"\000B~\n\'com.dat" +
       "aomnis.gproto.service.pbsvcspaceB\031PBSvcS" +
       "treamInstanceManageP\000Z6github.com/DataWo" +
-      "rkbench/gproto/pkg/service/pbsvcspaceb\006p" +
+      "rkbench/gproto/xgo/service/pbsvcspaceb\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

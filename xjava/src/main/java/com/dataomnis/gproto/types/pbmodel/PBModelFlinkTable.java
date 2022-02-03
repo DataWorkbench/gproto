@@ -2865,7 +2865,7 @@ public final class PBModelFlinkTable {
       "us\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enab" +
       "led\020\002\022\014\n\010Disabled\020\003Bl\n\"com.dataomnis.gpr" +
       "oto.types.pbmodelB\021PBModelFlinkTableP\000Z1" +
-      "github.com/DataWorkbench/gproto/pkg/type" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
       "s/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

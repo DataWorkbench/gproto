@@ -39,7 +39,7 @@ public final class PBSvcTableManage {
       "eFlinkTables\032\022.model.EmptyStruct\"\000Bu\n\'co" +
       "m.dataomnis.gproto.service.pbsvcspaceB\020P" +
       "BSvcTableManageP\000Z6github.com/DataWorkbe" +
-      "nch/gproto/pkg/service/pbsvcspaceb\006proto" +
+      "nch/gproto/xgo/service/pbsvcspaceb\006proto" +
       "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

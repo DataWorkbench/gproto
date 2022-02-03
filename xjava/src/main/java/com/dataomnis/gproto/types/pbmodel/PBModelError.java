@@ -1106,7 +1106,7 @@ public final class PBModelError {
       "\n\005Error\022\014\n\004code\030\001 \001(\t\022\016\n\006status\030\002 \001(\005\022\r\n" +
       "\005en_us\030\003 \001(\t\022\r\n\005zh_cn\030\004 \001(\tBg\n\"com.datao" +
       "mnis.gproto.types.pbmodelB\014PBModelErrorP" +
-      "\000Z1github.com/DataWorkbench/gproto/pkg/t" +
+      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
       "ypes/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

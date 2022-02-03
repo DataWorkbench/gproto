@@ -7031,7 +7031,7 @@ public final class PBRequestUDFManage {
       "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-Bq\n$com.dataomni" +
       "s.gproto.types.pbrequestB\022PBRequestUDFMa" +
       "nageP\000Z3github.com/DataWorkbench/gproto/" +
-      "pkg/types/pbrequestb\006proto3"
+      "xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

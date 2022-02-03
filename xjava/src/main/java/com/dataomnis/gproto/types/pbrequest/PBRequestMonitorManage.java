@@ -4965,7 +4965,7 @@ public final class PBRequestMonitorManage {
       "le\022\035\n\007rule_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bu\n$com" +
       ".dataomnis.gproto.types.pbrequestB\026PBReq" +
       "uestMonitorManageP\000Z3github.com/DataWork" +
-      "bench/gproto/pkg/types/pbrequestb\006proto3"
+      "bench/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

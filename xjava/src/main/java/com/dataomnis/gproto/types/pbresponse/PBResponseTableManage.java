@@ -1768,7 +1768,7 @@ public final class PBResponseTableManage {
       "infos\030\001 \003(\0132\021.model.FlinkTable\022\r\n\005total\030" +
       "\002 \001(\003Bv\n%com.dataomnis.gproto.types.pbre" +
       "sponseB\025PBResponseTableManageP\000Z4github." +
-      "com/DataWorkbench/gproto/pkg/types/pbres" +
+      "com/DataWorkbench/gproto/xgo/types/pbres" +
       "ponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

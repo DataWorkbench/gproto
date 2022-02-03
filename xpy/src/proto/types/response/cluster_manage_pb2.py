@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/types/response/cluster_manage.proto',
   package='response',
   syntax='proto3',
-  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\027PBResponseClusterManageP\000Z4github.com/DataWorkbench/gproto/pkg/types/pbresponse',
+  serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\027PBResponseClusterManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)proto/types/response/cluster_manage.proto\x12\x08response\x1a\x1fproto/types/model/cluster.proto\"7\n\x17\x44\x65scribeFlinkClusterAPI\x12\x0b\n\x03URL\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"+\n\x1aListAvailableFlinkVersions\x12\r\n\x05items\x18\x01 \x03(\t\"X\n\x11ListFlinkClusters\x12\"\n\x05infos\x18\x01 \x03(\x0b\x32\x13.model.FlinkCluster\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\" \n\x12\x43reateFlinkCluster\x12\n\n\x02id\x18\x01 \x01(\t\"9\n\x14\x44\x65scribeFlinkCluster\x12!\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterBx\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseClusterManageP\x00Z4github.com/DataWorkbench/gproto/pkg/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n)proto/types/response/cluster_manage.proto\x12\x08response\x1a\x1fproto/types/model/cluster.proto\"7\n\x17\x44\x65scribeFlinkClusterAPI\x12\x0b\n\x03URL\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"+\n\x1aListAvailableFlinkVersions\x12\r\n\x05items\x18\x01 \x03(\t\"X\n\x11ListFlinkClusters\x12\"\n\x05infos\x18\x01 \x03(\x0b\x32\x13.model.FlinkCluster\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\" \n\x12\x43reateFlinkCluster\x12\n\n\x02id\x18\x01 \x01(\t\"9\n\x14\x44\x65scribeFlinkCluster\x12!\n\x04info\x18\x01 \x01(\x0b\x32\x13.model.FlinkClusterBx\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseClusterManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,])
 

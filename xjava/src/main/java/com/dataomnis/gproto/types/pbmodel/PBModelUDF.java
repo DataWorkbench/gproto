@@ -2865,7 +2865,7 @@ public final class PBModelUDF {
       "\020\003\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Enabled" +
       "\020\001\022\014\n\010Disabled\020\002\022\013\n\007Deleted\020\003Be\n\"com.dat" +
       "aomnis.gproto.types.pbmodelB\nPBModelUDFP" +
-      "\000Z1github.com/DataWorkbench/gproto/pkg/t" +
+      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
       "ypes/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

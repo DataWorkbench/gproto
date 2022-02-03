@@ -8021,7 +8021,7 @@ public final class PBResponseStreamJobManage {
       "\"&\n\025ListBuiltInConnectors\022\r\n\005items\030\001 \003(\t" +
       "Bz\n%com.dataomnis.gproto.types.pbrespons" +
       "eB\031PBResponseStreamJobManageP\000Z4github.c" +
-      "om/DataWorkbench/gproto/pkg/types/pbresp" +
+      "om/DataWorkbench/gproto/xgo/types/pbresp" +
       "onseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
