@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package request;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbrequest";
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.types.pbrequest";
@@ -10,7 +10,7 @@ option java_package = "com.dataomnis.gproto.types.pbrequest";
 option java_outer_classname = "PBRequestAccount";
 option java_multiple_files = false;
 
-//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 message DescribeAccessKey {
   string access_key_id = 1;

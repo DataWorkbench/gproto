@@ -27,7 +27,7 @@ if ! java -version 2>&1 |grep 'java version "11.' >/dev/null ; then
   exit 1
 fi
 
-output_dir="./src/main/java"
+output_dir="./xjava/src/main/java"
 
 # generate code
 process_file() {

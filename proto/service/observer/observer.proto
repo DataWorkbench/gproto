@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package observer;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcobserver";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcobserver";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.service.pbsvcobserver";

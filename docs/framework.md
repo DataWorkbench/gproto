@@ -4,13 +4,12 @@
 ```
 - docs: 文档
 - scripts: 维护项目用的脚本. 一般是通过 make 调用.
-- pkg: 生成 Golang 代码的目标目录. 勿手动修改.
-- src:
-    - main/java: 生成 Java 代码的目标目录. 勿手动修改.
-    - python: 保留. 生成 Python 代码的目标目录. 勿手动修改.
 - proto: protobuf 代码的根目录.
     - service: 定义 rpc 接口的代码
     - types: 定义数据结构的代码.
+- xgo: 生成 Golang 代码的目标目录. 勿手动修改.
+- xjava: 生成 Java 代码的目标目录. 勿手动修改.
+- xpy: 保留. 生成 Python 代码的目标目录. 勿手动修改.
 ```
 
 ## proto 结构和规则
@@ -41,7 +40,7 @@
 
 #### 命名空间
 ``` 
-- 所有 `go_package` 模块路径都在 `github.com/DataWorkbench/gproto/pkg/service/*` 下.
+- 所有 `go_package` 模块路径都在 `github.com/DataWorkbench/gproto/xgo/service/*` 下.
 - 所有 `java_package` 模块路径都在 `com.dataomnis.gproto.service.*` 下.
 ```
 
@@ -75,7 +74,7 @@
 
 #### 命名空间
 ``` 
-- 所有 `go_package` 模块路径都在 `github.com/DataWorkbench/gproto/pkg/types/*` 下.
+- 所有 `go_package` 模块路径都在 `github.com/DataWorkbench/gproto/xgo/types/*` 下.
 - 所有 `java_package` 模块路径都在 `com.dataomnis.gproto.types.*` 下.
 ```
 

@@ -115,7 +115,7 @@ process_loop() {
 }
 
 # To avoids invalid code residue.
-/bin/rm -fr ./pkg/*
+/bin/rm -fr ./xgo/*
 # read proto files.
 process_loop ./proto
 

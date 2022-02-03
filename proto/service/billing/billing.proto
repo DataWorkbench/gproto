@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package billing;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcbilling";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcbilling";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.service.pbsvcbilling";

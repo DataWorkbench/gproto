@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package spacemanager;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcspace";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.service.pbsvcspace";

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package response;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbresponse";
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.types.pbresponse";
@@ -10,7 +10,7 @@ option java_package = "com.dataomnis.gproto.types.pbresponse";
 option java_outer_classname = "PBResponseAccount";
 option java_multiple_files = false;
 
-//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/account.proto";
 

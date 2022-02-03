@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package developer;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcdeveloper";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloper";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.service.pbsvcdeveloper";

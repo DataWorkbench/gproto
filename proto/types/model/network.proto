@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package model;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel";
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.types.pbmodel";
@@ -10,8 +10,8 @@ option java_package = "com.dataomnis.gproto.types.pbmodel";
 option java_outer_classname = "PBModelNetwork";
 option java_multiple_files = false;
 
-import "github.com/yu31/proto-go-plugin/proto/validator.proto";
-//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 // Network config.
 message Network {

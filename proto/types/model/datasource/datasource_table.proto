@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package datasource;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/types/pbmodel/pbdatasource";
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasource";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.types.pbmodel.pbdatasource";
@@ -10,8 +10,8 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbdatasource";
 option java_outer_classname = "PBDataSourceTable";
 option java_multiple_files = false;
 
-//import "github.com/yu31/proto-go-plugin/proto/validator.proto";
-//import "github.com/yu31/proto-go-plugin/proto/gosql.proto";
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message TableSchema {
   // Columns represents the columns of table.

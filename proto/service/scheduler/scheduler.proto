@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package scheduler;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcscheduler";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcscheduler";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.service.pbsvcscheduler";

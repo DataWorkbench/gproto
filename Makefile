@@ -38,9 +38,9 @@ GENERATE_JAVA = _generate_java() {                     \
 GENERATE_PYTHON = _generate_python() {                     \
     args="$(filter-out $@,$(MAKECMDGOALS))"; \
     if [[ $(VERBOSE) = "yes" ]]; then        \
-        bash -x scripts/generate_python.sh $$args;  \
+        bash -x scripts/generate_py.sh $$args;  \
     else                                     \
-        bash scripts/generate_python.sh $$args;      \
+        bash scripts/generate_py.sh $$args;      \
     fi                                       \
 }
 

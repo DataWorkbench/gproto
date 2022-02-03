@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package enginecenter;
 
-option go_package = "github.com/DataWorkbench/gproto/pkg/service/pbsvcengine";
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcengine";
 
 // Package name of class.
 option java_package = "com.dataomnis.gproto.service.pbsvcengine";
