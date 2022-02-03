@@ -58,13 +58,13 @@ public final class PBSvcResourceManage {
           com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
           com.dataomnis.gproto.types.pbrequest.PBRequestResourceManage.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseResourceManage.getDescriptor(),
-          com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor(),
+          com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelResource.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
     com.dataomnis.gproto.types.pbrequest.PBRequestResourceManage.getDescriptor();
     com.dataomnis.gproto.types.pbresponse.PBResponseResourceManage.getDescriptor();
-    com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor();
+    com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelResource.getDescriptor();
   }
 

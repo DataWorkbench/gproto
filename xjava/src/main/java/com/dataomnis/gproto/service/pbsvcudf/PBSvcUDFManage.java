@@ -49,12 +49,12 @@ public final class PBSvcUDFManage {
           com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
           com.dataomnis.gproto.types.pbrequest.PBRequestUDFManage.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseUDFManage.getDescriptor(),
-          com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor(),
+          com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
     com.dataomnis.gproto.types.pbrequest.PBRequestUDFManage.getDescriptor();
     com.dataomnis.gproto.types.pbresponse.PBResponseUDFManage.getDescriptor();
-    com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor();
+    com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

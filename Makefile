@@ -83,9 +83,12 @@ generate-py:
 generate: generate-go
 #	@$(GENERATE_CODE); _generate_code;
 
+.PHONY: generate-all
+generate-all: generate-go generate-java generate-py
+
 .PHONY: mvn-deploy
 mvn-deploy:
-	@[[ ${VERBOSE} = "yes" ]] && set -x; mvn clean package deploy;
+	@[[ ${VERBOSE} = "yes" ]] && set -x; cd xjava; mvn clean package deploy;
 
 .DEFAULT_GOAL = help
 

@@ -3,8 +3,8 @@
 
 package com.dataomnis.gproto.types.pbresponse;
 
-public final class PBResponseWorkspaceManage {
-  private PBResponseWorkspaceManage() {}
+public final class PBResponseSpaceManage {
+  private PBResponseSpaceManage() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -176,15 +176,15 @@ public final class PBResponseWorkspaceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListWorkspaces_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListWorkspaces_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListWorkspaces_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListWorkspaces_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.Builder.class);
     }
 
     public static final int INFOS_FIELD_NUMBER = 1;
@@ -331,10 +331,10 @@ public final class PBResponseWorkspaceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces other = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces) obj;
 
       if (!getInfosList()
           .equals(other.getInfosList())) return false;
@@ -368,69 +368,69 @@ public final class PBResponseWorkspaceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -443,7 +443,7 @@ public final class PBResponseWorkspaceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -468,21 +468,21 @@ public final class PBResponseWorkspaceManage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:response.ListWorkspaces)
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspacesOrBuilder {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspacesOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListWorkspaces_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListWorkspaces_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListWorkspaces_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListWorkspaces_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -517,17 +517,17 @@ public final class PBResponseWorkspaceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListWorkspaces_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListWorkspaces_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -535,8 +535,8 @@ public final class PBResponseWorkspaceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces result = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces(this);
         int from_bitField0_ = bitField0_;
         if (infosBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -587,16 +587,16 @@ public final class PBResponseWorkspaceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.getDefaultInstance()) return this;
         if (infosBuilder_ == null) {
           if (!other.infos_.isEmpty()) {
             if (infos_.isEmpty()) {
@@ -644,11 +644,11 @@ public final class PBResponseWorkspaceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1073,12 +1073,12 @@ public final class PBResponseWorkspaceManage {
     }
 
     // @@protoc_insertion_point(class_scope:response.ListWorkspaces)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces DEFAULT_INSTANCE;
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1103,7 +1103,7 @@ public final class PBResponseWorkspaceManage {
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1256,15 +1256,15 @@ public final class PBResponseWorkspaceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListOpAudits_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListOpAudits_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListOpAudits_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListOpAudits_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.Builder.class);
     }
 
     public static final int INFOS_FIELD_NUMBER = 1;
@@ -1389,10 +1389,10 @@ public final class PBResponseWorkspaceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits other = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits) obj;
 
       if (!getInfosList()
           .equals(other.getInfosList())) return false;
@@ -1421,69 +1421,69 @@ public final class PBResponseWorkspaceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1496,7 +1496,7 @@ public final class PBResponseWorkspaceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1521,21 +1521,21 @@ public final class PBResponseWorkspaceManage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:response.ListOpAudits)
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAuditsOrBuilder {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAuditsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListOpAudits_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListOpAudits_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListOpAudits_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListOpAudits_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1568,17 +1568,17 @@ public final class PBResponseWorkspaceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_ListOpAudits_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_ListOpAudits_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1586,8 +1586,8 @@ public final class PBResponseWorkspaceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits result = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits(this);
         int from_bitField0_ = bitField0_;
         if (infosBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -1637,16 +1637,16 @@ public final class PBResponseWorkspaceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.getDefaultInstance()) return this;
         if (infosBuilder_ == null) {
           if (!other.infos_.isEmpty()) {
             if (infos_.isEmpty()) {
@@ -1691,11 +1691,11 @@ public final class PBResponseWorkspaceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2077,12 +2077,12 @@ public final class PBResponseWorkspaceManage {
     }
 
     // @@protoc_insertion_point(class_scope:response.ListOpAudits)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits DEFAULT_INSTANCE;
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2107,7 +2107,7 @@ public final class PBResponseWorkspaceManage {
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2216,15 +2216,15 @@ public final class PBResponseWorkspaceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CreateWorkspace_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CreateWorkspace_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CreateWorkspace_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CreateWorkspace_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -2314,10 +2314,10 @@ public final class PBResponseWorkspaceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace other = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -2339,69 +2339,69 @@ public final class PBResponseWorkspaceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2414,7 +2414,7 @@ public final class PBResponseWorkspaceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2439,21 +2439,21 @@ public final class PBResponseWorkspaceManage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:response.CreateWorkspace)
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspaceOrBuilder {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspaceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CreateWorkspace_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CreateWorkspace_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CreateWorkspace_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CreateWorkspace_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2479,17 +2479,17 @@ public final class PBResponseWorkspaceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CreateWorkspace_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CreateWorkspace_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2497,8 +2497,8 @@ public final class PBResponseWorkspaceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace result = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace(this);
         result.id_ = id_;
         onBuilt();
         return result;
@@ -2538,16 +2538,16 @@ public final class PBResponseWorkspaceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -2567,11 +2567,11 @@ public final class PBResponseWorkspaceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2698,12 +2698,12 @@ public final class PBResponseWorkspaceManage {
     }
 
     // @@protoc_insertion_point(class_scope:response.CreateWorkspace)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace DEFAULT_INSTANCE;
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2728,7 +2728,7 @@ public final class PBResponseWorkspaceManage {
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2836,15 +2836,15 @@ public final class PBResponseWorkspaceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_DescribeWorkspace_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspace_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_DescribeWorkspace_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspace_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.Builder.class);
     }
 
     public static final int INFO_FIELD_NUMBER = 1;
@@ -2913,10 +2913,10 @@ public final class PBResponseWorkspaceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace other = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace) obj;
 
       if (hasInfo() != other.hasInfo()) return false;
       if (hasInfo()) {
@@ -2943,69 +2943,69 @@ public final class PBResponseWorkspaceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3018,7 +3018,7 @@ public final class PBResponseWorkspaceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3043,21 +3043,21 @@ public final class PBResponseWorkspaceManage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:response.DescribeWorkspace)
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspaceOrBuilder {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_DescribeWorkspace_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspace_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_DescribeWorkspace_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspace_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3087,17 +3087,17 @@ public final class PBResponseWorkspaceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_DescribeWorkspace_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspace_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3105,8 +3105,8 @@ public final class PBResponseWorkspaceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace result = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace(this);
         if (infoBuilder_ == null) {
           result.info_ = info_;
         } else {
@@ -3150,16 +3150,16 @@ public final class PBResponseWorkspaceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.getDefaultInstance()) return this;
         if (other.hasInfo()) {
           mergeInfo(other.getInfo());
         }
@@ -3178,11 +3178,11 @@ public final class PBResponseWorkspaceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3327,12 +3327,12 @@ public final class PBResponseWorkspaceManage {
     }
 
     // @@protoc_insertion_point(class_scope:response.DescribeWorkspace)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace DEFAULT_INSTANCE;
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3357,7 +3357,7 @@ public final class PBResponseWorkspaceManage {
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3461,15 +3461,15 @@ public final class PBResponseWorkspaceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CheckPermission_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CheckPermission_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CheckPermission_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CheckPermission_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.Builder.class);
     }
 
     public static final int INFO_FIELD_NUMBER = 1;
@@ -3538,10 +3538,10 @@ public final class PBResponseWorkspaceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission other = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission) obj;
 
       if (hasInfo() != other.hasInfo()) return false;
       if (hasInfo()) {
@@ -3568,69 +3568,69 @@ public final class PBResponseWorkspaceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3643,7 +3643,7 @@ public final class PBResponseWorkspaceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3664,21 +3664,21 @@ public final class PBResponseWorkspaceManage {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:response.CheckPermission)
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermissionOrBuilder {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermissionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CheckPermission_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CheckPermission_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CheckPermission_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CheckPermission_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.class, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3708,17 +3708,17 @@ public final class PBResponseWorkspaceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.internal_static_response_CheckPermission_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_CheckPermission_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3726,8 +3726,8 @@ public final class PBResponseWorkspaceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission result = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission(this);
         if (infoBuilder_ == null) {
           result.info_ = info_;
         } else {
@@ -3771,16 +3771,16 @@ public final class PBResponseWorkspaceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.getDefaultInstance()) return this;
         if (other.hasInfo()) {
           mergeInfo(other.getInfo());
         }
@@ -3799,11 +3799,11 @@ public final class PBResponseWorkspaceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3948,12 +3948,12 @@ public final class PBResponseWorkspaceManage {
     }
 
     // @@protoc_insertion_point(class_scope:response.CheckPermission)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission DEFAULT_INSTANCE;
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3978,7 +3978,7 @@ public final class PBResponseWorkspaceManage {
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4030,10 +4030,10 @@ public final class PBResponseWorkspaceManage {
       "\022\r\302\001\n\360\001\024\312\002\004wks-\"3\n\021DescribeWorkspace\022\036\n\004" +
       "info\030\001 \001(\0132\020.model.Workspace\"1\n\017CheckPer" +
       "mission\022\036\n\004info\030\001 \001(\0132\020.model.WorkspaceB" +
-      "z\n%com.dataomnis.gproto.types.pbresponse" +
-      "B\031PBResponseWorkspaceManageP\000Z4github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbrespo" +
-      "nseb\006proto3"
+      "v\n%com.dataomnis.gproto.types.pbresponse" +
+      "B\025PBResponseSpaceManageP\000Z4github.com/Da" +
+      "taWorkbench/gproto/xgo/types/pbresponseb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

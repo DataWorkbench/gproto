@@ -19,27 +19,27 @@ public final class EngineGrpc {
   public static final String SERVICE_NAME = "enginecenter.Engine";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DeleteWorkspaces",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod;
     if ((getDeleteWorkspacesMethod = EngineGrpc.getDeleteWorkspacesMethod) == null) {
       synchronized (EngineGrpc.class) {
         if ((getDeleteWorkspacesMethod = EngineGrpc.getDeleteWorkspacesMethod) == null) {
           EngineGrpc.getDeleteWorkspacesMethod = getDeleteWorkspacesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkspaces"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new EngineMethodDescriptorSupplier("DeleteWorkspaces"))
@@ -541,7 +541,7 @@ public final class EngineGrpc {
      * DeleteWorkspaces for all resource of specified space ids.
      * </pre>
      */
-    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request,
+    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteWorkspacesMethod(), responseObserver);
     }
@@ -661,7 +661,7 @@ public final class EngineGrpc {
             getDeleteWorkspacesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_WORKSPACES)))
           .addMethod(
@@ -789,7 +789,7 @@ public final class EngineGrpc {
      * DeleteWorkspaces for all resource of specified space ids.
      * </pre>
      */
-    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request,
+    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWorkspacesMethod(), getCallOptions()), request, responseObserver);
@@ -942,7 +942,7 @@ public final class EngineGrpc {
      * DeleteWorkspaces for all resource of specified space ids.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteWorkspacesMethod(), getCallOptions(), request);
     }
@@ -1081,7 +1081,7 @@ public final class EngineGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteWorkspaces(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWorkspacesMethod(), getCallOptions()), request);
     }
@@ -1244,7 +1244,7 @@ public final class EngineGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_DELETE_WORKSPACES:
-          serviceImpl.deleteWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces) request,
+          serviceImpl.deleteWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_LIST_AVAILABLE_FLINK_VERSIONS:

@@ -18,29 +18,29 @@ public final class SpaceManageGrpc {
   public static final String SERVICE_NAME = "spacemanager.SpaceManage";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces> getListWorkspacesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces> getListWorkspacesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListWorkspaces",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces> getListWorkspacesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces> getListWorkspacesMethod;
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces> getListWorkspacesMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces> getListWorkspacesMethod;
     if ((getListWorkspacesMethod = SpaceManageGrpc.getListWorkspacesMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getListWorkspacesMethod = SpaceManageGrpc.getListWorkspacesMethod) == null) {
           SpaceManageGrpc.getListWorkspacesMethod = getListWorkspacesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkspaces"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("ListWorkspaces"))
               .build();
         }
@@ -49,27 +49,27 @@ public final class SpaceManageGrpc {
     return getListWorkspacesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DeleteWorkspaces",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteWorkspacesMethod;
     if ((getDeleteWorkspacesMethod = SpaceManageGrpc.getDeleteWorkspacesMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getDeleteWorkspacesMethod = SpaceManageGrpc.getDeleteWorkspacesMethod) == null) {
           SpaceManageGrpc.getDeleteWorkspacesMethod = getDeleteWorkspacesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkspaces"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("DeleteWorkspaces"))
@@ -80,27 +80,27 @@ public final class SpaceManageGrpc {
     return getDeleteWorkspacesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDisableWorkspacesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DisableWorkspaces",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDisableWorkspacesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDisableWorkspacesMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDisableWorkspacesMethod;
     if ((getDisableWorkspacesMethod = SpaceManageGrpc.getDisableWorkspacesMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getDisableWorkspacesMethod = SpaceManageGrpc.getDisableWorkspacesMethod) == null) {
           SpaceManageGrpc.getDisableWorkspacesMethod = getDisableWorkspacesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableWorkspaces"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("DisableWorkspaces"))
@@ -111,27 +111,27 @@ public final class SpaceManageGrpc {
     return getDisableWorkspacesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getEnableWorkspacesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "EnableWorkspaces",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getEnableWorkspacesMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getEnableWorkspacesMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getEnableWorkspacesMethod;
     if ((getEnableWorkspacesMethod = SpaceManageGrpc.getEnableWorkspacesMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getEnableWorkspacesMethod = SpaceManageGrpc.getEnableWorkspacesMethod) == null) {
           SpaceManageGrpc.getEnableWorkspacesMethod = getEnableWorkspacesMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableWorkspaces"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("EnableWorkspaces"))
@@ -142,29 +142,29 @@ public final class SpaceManageGrpc {
     return getEnableWorkspacesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace> getCreateWorkspaceMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace> getCreateWorkspaceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateWorkspace",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace> getCreateWorkspaceMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace> getCreateWorkspaceMethod;
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace> getCreateWorkspaceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace> getCreateWorkspaceMethod;
     if ((getCreateWorkspaceMethod = SpaceManageGrpc.getCreateWorkspaceMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getCreateWorkspaceMethod = SpaceManageGrpc.getCreateWorkspaceMethod) == null) {
           SpaceManageGrpc.getCreateWorkspaceMethod = getCreateWorkspaceMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateWorkspace"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("CreateWorkspace"))
               .build();
         }
@@ -173,27 +173,27 @@ public final class SpaceManageGrpc {
     return getCreateWorkspaceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateWorkspaceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "UpdateWorkspace",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateWorkspaceMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateWorkspaceMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateWorkspaceMethod;
     if ((getUpdateWorkspaceMethod = SpaceManageGrpc.getUpdateWorkspaceMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getUpdateWorkspaceMethod = SpaceManageGrpc.getUpdateWorkspaceMethod) == null) {
           SpaceManageGrpc.getUpdateWorkspaceMethod = getUpdateWorkspaceMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateWorkspace"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("UpdateWorkspace"))
@@ -204,29 +204,29 @@ public final class SpaceManageGrpc {
     return getUpdateWorkspaceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace> getDescribeWorkspaceMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace> getDescribeWorkspaceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DescribeWorkspace",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace> getDescribeWorkspaceMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace> getDescribeWorkspaceMethod;
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace> getDescribeWorkspaceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace> getDescribeWorkspaceMethod;
     if ((getDescribeWorkspaceMethod = SpaceManageGrpc.getDescribeWorkspaceMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getDescribeWorkspaceMethod = SpaceManageGrpc.getDescribeWorkspaceMethod) == null) {
           SpaceManageGrpc.getDescribeWorkspaceMethod = getDescribeWorkspaceMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeWorkspace"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("DescribeWorkspace"))
               .build();
         }
@@ -235,29 +235,29 @@ public final class SpaceManageGrpc {
     return getDescribeWorkspaceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission> getCheckPermissionMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission> getCheckPermissionMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CheckPermission",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission> getCheckPermissionMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission> getCheckPermissionMethod;
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission> getCheckPermissionMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission> getCheckPermissionMethod;
     if ((getCheckPermissionMethod = SpaceManageGrpc.getCheckPermissionMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getCheckPermissionMethod = SpaceManageGrpc.getCheckPermissionMethod) == null) {
           SpaceManageGrpc.getCheckPermissionMethod = getCheckPermissionMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckPermission"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("CheckPermission"))
               .build();
         }
@@ -266,29 +266,29 @@ public final class SpaceManageGrpc {
     return getCheckPermissionMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits> getListOpAuditsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits> getListOpAuditsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListOpAudits",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits,
-      com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits> getListOpAuditsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits> getListOpAuditsMethod;
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits> getListOpAuditsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits> getListOpAuditsMethod;
     if ((getListOpAuditsMethod = SpaceManageGrpc.getListOpAuditsMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getListOpAuditsMethod = SpaceManageGrpc.getListOpAuditsMethod) == null) {
           SpaceManageGrpc.getListOpAuditsMethod = getListOpAuditsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits, com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOpAudits"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("ListOpAudits"))
               .build();
         }
@@ -297,27 +297,27 @@ public final class SpaceManageGrpc {
     return getListOpAuditsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAddOpAuditMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "AddOpAudit",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAddOpAuditMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAddOpAuditMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAddOpAuditMethod;
     if ((getAddOpAuditMethod = SpaceManageGrpc.getAddOpAuditMethod) == null) {
       synchronized (SpaceManageGrpc.class) {
         if ((getAddOpAuditMethod = SpaceManageGrpc.getAddOpAuditMethod) == null) {
           SpaceManageGrpc.getAddOpAuditMethod = getAddOpAuditMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddOpAudit"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("AddOpAudit"))
@@ -384,50 +384,50 @@ public final class SpaceManageGrpc {
      * API of workspace manager.
      * </pre>
      */
-    public void listWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces> responseObserver) {
+    public void listWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkspacesMethod(), responseObserver);
     }
 
     /**
      */
-    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request,
+    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteWorkspacesMethod(), responseObserver);
     }
 
     /**
      */
-    public void disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces request,
+    public void disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableWorkspacesMethod(), responseObserver);
     }
 
     /**
      */
-    public void enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces request,
+    public void enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableWorkspacesMethod(), responseObserver);
     }
 
     /**
      */
-    public void createWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace> responseObserver) {
+    public void createWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateWorkspaceMethod(), responseObserver);
     }
 
     /**
      */
-    public void updateWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace request,
+    public void updateWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateWorkspaceMethod(), responseObserver);
     }
 
     /**
      */
-    public void describeWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace> responseObserver) {
+    public void describeWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeWorkspaceMethod(), responseObserver);
     }
 
@@ -437,8 +437,8 @@ public final class SpaceManageGrpc {
      * Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
      * </pre>
      */
-    public void checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission> responseObserver) {
+    public void checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckPermissionMethod(), responseObserver);
     }
 
@@ -447,14 +447,14 @@ public final class SpaceManageGrpc {
      * API of workspace operation audit log.
      * </pre>
      */
-    public void listOpAudits(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits> responseObserver) {
+    public void listOpAudits(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListOpAuditsMethod(), responseObserver);
     }
 
     /**
      */
-    public void addOpAudit(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit request,
+    public void addOpAudit(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddOpAuditMethod(), responseObserver);
     }
@@ -465,70 +465,70 @@ public final class SpaceManageGrpc {
             getListWorkspacesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces,
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces>(
                   this, METHODID_LIST_WORKSPACES)))
           .addMethod(
             getDeleteWorkspacesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_WORKSPACES)))
           .addMethod(
             getDisableWorkspacesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DISABLE_WORKSPACES)))
           .addMethod(
             getEnableWorkspacesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_ENABLE_WORKSPACES)))
           .addMethod(
             getCreateWorkspaceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace,
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace>(
                   this, METHODID_CREATE_WORKSPACE)))
           .addMethod(
             getUpdateWorkspaceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_UPDATE_WORKSPACE)))
           .addMethod(
             getDescribeWorkspaceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace,
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace>(
                   this, METHODID_DESCRIBE_WORKSPACE)))
           .addMethod(
             getCheckPermissionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission,
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission>(
                   this, METHODID_CHECK_PERMISSION)))
           .addMethod(
             getListOpAuditsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits,
-                com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits>(
                   this, METHODID_LIST_OP_AUDITS)))
           .addMethod(
             getAddOpAuditMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit,
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_ADD_OP_AUDIT)))
           .build();
@@ -557,15 +557,15 @@ public final class SpaceManageGrpc {
      * API of workspace manager.
      * </pre>
      */
-    public void listWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces> responseObserver) {
+    public void listWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWorkspacesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request,
+    public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWorkspacesMethod(), getCallOptions()), request, responseObserver);
@@ -573,7 +573,7 @@ public final class SpaceManageGrpc {
 
     /**
      */
-    public void disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces request,
+    public void disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDisableWorkspacesMethod(), getCallOptions()), request, responseObserver);
@@ -581,7 +581,7 @@ public final class SpaceManageGrpc {
 
     /**
      */
-    public void enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces request,
+    public void enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getEnableWorkspacesMethod(), getCallOptions()), request, responseObserver);
@@ -589,15 +589,15 @@ public final class SpaceManageGrpc {
 
     /**
      */
-    public void createWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace> responseObserver) {
+    public void createWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWorkspaceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void updateWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace request,
+    public void updateWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWorkspaceMethod(), getCallOptions()), request, responseObserver);
@@ -605,8 +605,8 @@ public final class SpaceManageGrpc {
 
     /**
      */
-    public void describeWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace> responseObserver) {
+    public void describeWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeWorkspaceMethod(), getCallOptions()), request, responseObserver);
     }
@@ -617,8 +617,8 @@ public final class SpaceManageGrpc {
      * Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
      * </pre>
      */
-    public void checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission> responseObserver) {
+    public void checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckPermissionMethod(), getCallOptions()), request, responseObserver);
     }
@@ -628,15 +628,15 @@ public final class SpaceManageGrpc {
      * API of workspace operation audit log.
      * </pre>
      */
-    public void listOpAudits(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits> responseObserver) {
+    public void listOpAudits(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListOpAuditsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void addOpAudit(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit request,
+    public void addOpAudit(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAddOpAuditMethod(), getCallOptions()), request, responseObserver);
@@ -665,49 +665,49 @@ public final class SpaceManageGrpc {
      * API of workspace manager.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces listWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces listWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkspacesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteWorkspacesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDisableWorkspacesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEnableWorkspacesMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace createWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace createWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateWorkspaceMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWorkspaceMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace describeWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace describeWorkspace(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeWorkspaceMethod(), getCallOptions(), request);
     }
@@ -718,7 +718,7 @@ public final class SpaceManageGrpc {
      * Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckPermissionMethod(), getCallOptions(), request);
     }
@@ -728,14 +728,14 @@ public final class SpaceManageGrpc {
      * API of workspace operation audit log.
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits listOpAudits(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits listOpAudits(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListOpAuditsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct addOpAudit(com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct addOpAudit(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAddOpAuditMethod(), getCallOptions(), request);
     }
@@ -763,8 +763,8 @@ public final class SpaceManageGrpc {
      * API of workspace manager.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces> listWorkspaces(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces> listWorkspaces(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkspacesMethod(), getCallOptions()), request);
     }
@@ -772,7 +772,7 @@ public final class SpaceManageGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteWorkspaces(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWorkspacesMethod(), getCallOptions()), request);
     }
@@ -780,7 +780,7 @@ public final class SpaceManageGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> disableWorkspaces(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDisableWorkspacesMethod(), getCallOptions()), request);
     }
@@ -788,15 +788,15 @@ public final class SpaceManageGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> enableWorkspaces(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getEnableWorkspacesMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace> createWorkspace(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace> createWorkspace(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWorkspaceMethod(), getCallOptions()), request);
     }
@@ -804,15 +804,15 @@ public final class SpaceManageGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateWorkspace(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkspaceMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace> describeWorkspace(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace> describeWorkspace(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeWorkspaceMethod(), getCallOptions()), request);
     }
@@ -823,8 +823,8 @@ public final class SpaceManageGrpc {
      * Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission> checkPermission(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission> checkPermission(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckPermissionMethod(), getCallOptions()), request);
     }
@@ -834,8 +834,8 @@ public final class SpaceManageGrpc {
      * API of workspace operation audit log.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits> listOpAudits(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits> listOpAudits(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListOpAuditsMethod(), getCallOptions()), request);
     }
@@ -843,7 +843,7 @@ public final class SpaceManageGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> addOpAudit(
-        com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAddOpAuditMethod(), getCallOptions()), request);
     }
@@ -878,43 +878,43 @@ public final class SpaceManageGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_LIST_WORKSPACES:
-          serviceImpl.listWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListWorkspaces) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListWorkspaces>) responseObserver);
+          serviceImpl.listWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListWorkspaces>) responseObserver);
           break;
         case METHODID_DELETE_WORKSPACES:
-          serviceImpl.deleteWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DeleteWorkspaces) request,
+          serviceImpl.deleteWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_DISABLE_WORKSPACES:
-          serviceImpl.disableWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DisableWorkspaces) request,
+          serviceImpl.disableWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_ENABLE_WORKSPACES:
-          serviceImpl.enableWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.EnableWorkspaces) request,
+          serviceImpl.enableWorkspaces((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_CREATE_WORKSPACE:
-          serviceImpl.createWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CreateWorkspace) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CreateWorkspace>) responseObserver);
+          serviceImpl.createWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CreateWorkspace) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CreateWorkspace>) responseObserver);
           break;
         case METHODID_UPDATE_WORKSPACE:
-          serviceImpl.updateWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.UpdateWorkspace) request,
+          serviceImpl.updateWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.UpdateWorkspace) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_DESCRIBE_WORKSPACE:
-          serviceImpl.describeWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.DescribeWorkspace) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.DescribeWorkspace>) responseObserver);
+          serviceImpl.describeWorkspace((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspace) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspace>) responseObserver);
           break;
         case METHODID_CHECK_PERMISSION:
-          serviceImpl.checkPermission((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.CheckPermission) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.CheckPermission>) responseObserver);
+          serviceImpl.checkPermission((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission>) responseObserver);
           break;
         case METHODID_LIST_OP_AUDITS:
-          serviceImpl.listOpAudits((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.ListOpAudits) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.ListOpAudits>) responseObserver);
+          serviceImpl.listOpAudits((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListOpAudits) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.ListOpAudits>) responseObserver);
           break;
         case METHODID_ADD_OP_AUDIT:
-          serviceImpl.addOpAudit((com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.AddOpAudit) request,
+          serviceImpl.addOpAudit((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.AddOpAudit) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         default:

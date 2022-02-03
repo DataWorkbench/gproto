@@ -54,12 +54,12 @@ public final class PBSvcSpaceManage {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
-          com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor(),
-          com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.getDescriptor(),
+          com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor(),
+          com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
-    com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor();
-    com.dataomnis.gproto.types.pbresponse.PBResponseWorkspaceManage.getDescriptor();
+    com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor();
+    com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

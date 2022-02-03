@@ -68,14 +68,14 @@ public final class PBSvcEngineManage {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
-          com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor(),
+          com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor(),
           com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.getDescriptor(),
           com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseClusterManage.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseNetworkManage.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
-    com.dataomnis.gproto.types.pbrequest.PBRequestWorkspaceManage.getDescriptor();
+    com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.getDescriptor();
     com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.getDescriptor();
     com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.getDescriptor();
     com.dataomnis.gproto.types.pbresponse.PBResponseClusterManage.getDescriptor();
