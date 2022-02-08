@@ -12,11 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from proto.types.model import empty_pb2 as proto_dot_types_dot_model_dot_empty__pb2
-from proto.types.request import space_manage_pb2 as proto_dot_types_dot_request_dot_space__manage__pb2
-from proto.types.request import cluster_manage_pb2 as proto_dot_types_dot_request_dot_cluster__manage__pb2
-from proto.types.request import network_manage_pb2 as proto_dot_types_dot_request_dot_network__manage__pb2
-from proto.types.response import cluster_manage_pb2 as proto_dot_types_dot_response_dot_cluster__manage__pb2
-from proto.types.response import network_manage_pb2 as proto_dot_types_dot_response_dot_network__manage__pb2
+from proto.types.request import engine_manage_pb2 as proto_dot_types_dot_request_dot_engine__manage__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -25,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(com.dataomnis.gproto.service.pbsvcengineB\021PBSvcEngineManageP\000Z7github.com/DataWorkbench/gproto/xgo/service/pbsvcengine',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/proto/service/enginemanager/engine_manage.proto\x12\x0c\x65nginecenter\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/space_manage.proto\x1a(proto/types/request/cluster_manage.proto\x1a(proto/types/request/network_manage.proto\x1a)proto/types/response/cluster_manage.proto\x1a)proto/types/response/network_manage.proto2\xf8\x08\n\x06\x45ngine\x12\x43\n\x10\x44\x65leteWorkspaces\x12\x19.request.DeleteWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12X\n\x1aListAvailableFlinkVersions\x12\x12.model.EmptyStruct\x1a$.response.ListAvailableFlinkVersions\"\x00\x12`\n\x17\x44\x65scribeFlinkClusterAPI\x12 .request.DescribeFlinkClusterAPI\x1a!.response.DescribeFlinkClusterAPI\"\x00\x12Q\n\x12\x43reateFlinkCluster\x12\x1b.request.CreateFlinkCluster\x1a\x1c.response.CreateFlinkCluster\"\x00\x12N\n\x11ListFlinkClusters\x12\x1a.request.ListFlinkClusters\x1a\x1b.response.ListFlinkClusters\"\x00\x12W\n\x14\x44\x65scribeFlinkCluster\x12\x1d.request.DescribeFlinkCluster\x1a\x1e.response.DescribeFlinkCluster\"\x00\x12G\n\x12UpdateFlinkCluster\x12\x1b.request.UpdateFlinkCluster\x1a\x12.model.EmptyStruct\"\x00\x12I\n\x13\x44\x65leteFlinkClusters\x12\x1c.request.DeleteFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12G\n\x12StartFlinkClusters\x12\x1b.request.StartFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x11StopFlinkClusters\x12\x1a.request.StopFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12\x42\n\rCreateNetwork\x12\x16.request.CreateNetwork\x1a\x17.response.CreateNetwork\"\x00\x12?\n\x0cListNetworks\x12\x15.request.ListNetworks\x1a\x16.response.ListNetworks\"\x00\x12H\n\x0f\x44\x65scribeNetwork\x12\x18.request.DescribeNetwork\x1a\x19.response.DescribeNetwork\"\x00\x12=\n\rUpdateNetwork\x12\x16.request.UpdateNetwork\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0e\x44\x65leteNetworks\x12\x17.request.DeleteNetworks\x1a\x12.model.EmptyStruct\"\x00\x42x\n(com.dataomnis.gproto.service.pbsvcengineB\x11PBSvcEngineManageP\x00Z7github.com/DataWorkbench/gproto/xgo/service/pbsvcengineb\x06proto3'
+  serialized_pb=b'\n/proto/service/enginemanager/engine_manage.proto\x12\x0c\x65nginecenter\x1a\x1dproto/types/model/empty.proto\x1a\'proto/types/request/engine_manage.proto2\xaa\x03\n\x0c\x45ngineManage\x12Q\n\x17\x43reateFlinkClusterInK8s\x12 .request.CreateFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16StartFlinkClusterInK8s\x12\x1f.request.StartFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12M\n\x15StopFlinkClusterInK8s\x12\x1e.request.StopFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12R\n\x18\x43reateNetworkBrokerInK8s\x12 .request.CreateFlinkClusterInK8s\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18\x44\x65leteNetworkBrokerInK8s\x12!.request.DeleteNetworkBrokerInK8s\x1a\x12.model.EmptyStruct\"\x00\x42x\n(com.dataomnis.gproto.service.pbsvcengineB\x11PBSvcEngineManageP\x00Z7github.com/DataWorkbench/gproto/xgo/service/pbsvcengineb\x06proto3'
   ,
-  dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_space__manage__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_cluster__manage__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_network__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_cluster__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_network__manage__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_engine__manage__pb2.DESCRIPTOR,])
 
 
 
@@ -36,169 +32,69 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DESCRIPTOR._options = None
 
-_ENGINE = _descriptor.ServiceDescriptor(
-  name='Engine',
-  full_name='enginecenter.Engine',
+_ENGINEMANAGE = _descriptor.ServiceDescriptor(
+  name='EngineManage',
+  full_name='enginecenter.EngineManage',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=307,
-  serialized_end=1451,
+  serialized_start=138,
+  serialized_end=564,
   methods=[
   _descriptor.MethodDescriptor(
-    name='DeleteWorkspaces',
-    full_name='enginecenter.Engine.DeleteWorkspaces',
+    name='CreateFlinkClusterInK8s',
+    full_name='enginecenter.EngineManage.CreateFlinkClusterInK8s',
     index=0,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_space__manage__pb2._DELETEWORKSPACES,
+    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._CREATEFLINKCLUSTERINK8S,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ListAvailableFlinkVersions',
-    full_name='enginecenter.Engine.ListAvailableFlinkVersions',
+    name='StartFlinkClusterInK8s',
+    full_name='enginecenter.EngineManage.StartFlinkClusterInK8s',
     index=1,
     containing_service=None,
-    input_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    output_type=proto_dot_types_dot_response_dot_cluster__manage__pb2._LISTAVAILABLEFLINKVERSIONS,
+    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._STARTFLINKCLUSTERINK8S,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='DescribeFlinkClusterAPI',
-    full_name='enginecenter.Engine.DescribeFlinkClusterAPI',
+    name='StopFlinkClusterInK8s',
+    full_name='enginecenter.EngineManage.StopFlinkClusterInK8s',
     index=2,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._DESCRIBEFLINKCLUSTERAPI,
-    output_type=proto_dot_types_dot_response_dot_cluster__manage__pb2._DESCRIBEFLINKCLUSTERAPI,
+    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._STOPFLINKCLUSTERINK8S,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='CreateFlinkCluster',
-    full_name='enginecenter.Engine.CreateFlinkCluster',
+    name='CreateNetworkBrokerInK8s',
+    full_name='enginecenter.EngineManage.CreateNetworkBrokerInK8s',
     index=3,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._CREATEFLINKCLUSTER,
-    output_type=proto_dot_types_dot_response_dot_cluster__manage__pb2._CREATEFLINKCLUSTER,
+    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._CREATEFLINKCLUSTERINK8S,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ListFlinkClusters',
-    full_name='enginecenter.Engine.ListFlinkClusters',
+    name='DeleteNetworkBrokerInK8s',
+    full_name='enginecenter.EngineManage.DeleteNetworkBrokerInK8s',
     index=4,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._LISTFLINKCLUSTERS,
-    output_type=proto_dot_types_dot_response_dot_cluster__manage__pb2._LISTFLINKCLUSTERS,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DescribeFlinkCluster',
-    full_name='enginecenter.Engine.DescribeFlinkCluster',
-    index=5,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._DESCRIBEFLINKCLUSTER,
-    output_type=proto_dot_types_dot_response_dot_cluster__manage__pb2._DESCRIBEFLINKCLUSTER,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateFlinkCluster',
-    full_name='enginecenter.Engine.UpdateFlinkCluster',
-    index=6,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._UPDATEFLINKCLUSTER,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteFlinkClusters',
-    full_name='enginecenter.Engine.DeleteFlinkClusters',
-    index=7,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._DELETEFLINKCLUSTERS,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='StartFlinkClusters',
-    full_name='enginecenter.Engine.StartFlinkClusters',
-    index=8,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._STARTFLINKCLUSTERS,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='StopFlinkClusters',
-    full_name='enginecenter.Engine.StopFlinkClusters',
-    index=9,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_cluster__manage__pb2._STOPFLINKCLUSTERS,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateNetwork',
-    full_name='enginecenter.Engine.CreateNetwork',
-    index=10,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_network__manage__pb2._CREATENETWORK,
-    output_type=proto_dot_types_dot_response_dot_network__manage__pb2._CREATENETWORK,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListNetworks',
-    full_name='enginecenter.Engine.ListNetworks',
-    index=11,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_network__manage__pb2._LISTNETWORKS,
-    output_type=proto_dot_types_dot_response_dot_network__manage__pb2._LISTNETWORKS,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DescribeNetwork',
-    full_name='enginecenter.Engine.DescribeNetwork',
-    index=12,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_network__manage__pb2._DESCRIBENETWORK,
-    output_type=proto_dot_types_dot_response_dot_network__manage__pb2._DESCRIBENETWORK,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateNetwork',
-    full_name='enginecenter.Engine.UpdateNetwork',
-    index=13,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_network__manage__pb2._UPDATENETWORK,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteNetworks',
-    full_name='enginecenter.Engine.DeleteNetworks',
-    index=14,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_network__manage__pb2._DELETENETWORKS,
+    input_type=proto_dot_types_dot_request_dot_engine__manage__pb2._DELETENETWORKBROKERINK8S,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_ENGINE)
+_sym_db.RegisterServiceDescriptor(_ENGINEMANAGE)
 
-DESCRIPTOR.services_by_name['Engine'] = _ENGINE
+DESCRIPTOR.services_by_name['EngineManage'] = _ENGINEMANAGE
 
 # @@protoc_insertion_point(module_scope)

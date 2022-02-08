@@ -111,22 +111,22 @@ func (this *CreateNetwork) _xxx_xxx_Validator_Validate_name() error {
 	if !(len(this.Name) > 1) {
 		return protovalidator.FieldError1("CreateNetwork", "the byte length of field 'name' must be greater than '1'", protovalidator.StringByteLenToString(this.Name))
 	}
-	if !(len(this.Name) <= 129) {
-		return protovalidator.FieldError1("CreateNetwork", "the byte length of field 'name' must be less than or equal to '129'", protovalidator.StringByteLenToString(this.Name))
+	if !(len(this.Name) <= 128) {
+		return protovalidator.FieldError1("CreateNetwork", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
 	}
 	return nil
 }
 
 func (this *CreateNetwork) _xxx_xxx_Validator_Validate_router_id() error {
-	if !(this.RouterId != "") {
-		return protovalidator.FieldError1("CreateNetwork", "the value of field 'router_id' must be not equal to ''", this.RouterId)
+	if !(strings.HasPrefix(this.RouterId, "rtr-")) {
+		return protovalidator.FieldError1("CreateNetwork", "the value of field 'router_id' must start with string 'rtr-'", this.RouterId)
 	}
 	return nil
 }
 
 func (this *CreateNetwork) _xxx_xxx_Validator_Validate_vxnet_id() error {
-	if !(this.VxnetId != "") {
-		return protovalidator.FieldError1("CreateNetwork", "the value of field 'vxnet_id' must be not equal to ''", this.VxnetId)
+	if !(strings.HasPrefix(this.VxnetId, "vxnet-")) {
+		return protovalidator.FieldError1("CreateNetwork", "the value of field 'vxnet_id' must start with string 'vxnet-'", this.VxnetId)
 	}
 	return nil
 }
@@ -182,15 +182,15 @@ func (this *UpdateNetwork) _xxx_xxx_Validator_Validate_name() error {
 }
 
 func (this *UpdateNetwork) _xxx_xxx_Validator_Validate_router_id() error {
-	if !(this.RouterId != "") {
-		return protovalidator.FieldError1("UpdateNetwork", "the value of field 'router_id' must be not equal to ''", this.RouterId)
+	if !(strings.HasPrefix(this.RouterId, "rtr-")) {
+		return protovalidator.FieldError1("UpdateNetwork", "the value of field 'router_id' must start with string 'rtr-'", this.RouterId)
 	}
 	return nil
 }
 
 func (this *UpdateNetwork) _xxx_xxx_Validator_Validate_vxnet_id() error {
-	if !(this.VxnetId != "") {
-		return protovalidator.FieldError1("UpdateNetwork", "the value of field 'vxnet_id' must be not equal to ''", this.VxnetId)
+	if !(strings.HasPrefix(this.VxnetId, "vxnet-")) {
+		return protovalidator.FieldError1("UpdateNetwork", "the value of field 'vxnet_id' must start with string 'vxnet-'", this.VxnetId)
 	}
 	return nil
 }

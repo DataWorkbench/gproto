@@ -34,9 +34,6 @@ func (this *FlinkConfig) _xxx_xxx_Validator_Validate_restart_strategy() error {
 }
 
 func (this *FlinkConfig) _xxx_xxx_Validator_Validate_logger() error {
-	if !(this.Logger != nil) {
-		return protovalidator.FieldError2("FlinkConfig", "the value of field 'logger' cannot be null")
-	}
 	if dt, ok := interface{}(this.Logger).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err

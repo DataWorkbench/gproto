@@ -45,7 +45,7 @@ public final class PBRequestNetworkManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {id, name, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -58,7 +58,7 @@ public final class PBRequestNetworkManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {id, name, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -305,7 +305,7 @@ public final class PBRequestNetworkManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {id, name, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -330,7 +330,7 @@ public final class PBRequestNetworkManage {
      * <pre>
      * The field list used to sorted query results.
      * Optional values: {id, name, created, updated}.
-     * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+     * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: id.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
@@ -1018,7 +1018,7 @@ public final class PBRequestNetworkManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {id, name, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1042,7 +1042,7 @@ public final class PBRequestNetworkManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {id, name, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1067,7 +1067,7 @@ public final class PBRequestNetworkManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {id, name, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1090,7 +1090,7 @@ public final class PBRequestNetworkManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {id, name, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -1108,7 +1108,7 @@ public final class PBRequestNetworkManage {
        * <pre>
        * The field list used to sorted query results.
        * Optional values: {id, name, created, updated}.
-       * Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+       * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: id.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
@@ -2325,7 +2325,6 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -2336,7 +2335,6 @@ public final class PBRequestNetworkManage {
     java.lang.String getRouterId();
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -2349,7 +2347,6 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -2360,7 +2357,6 @@ public final class PBRequestNetworkManage {
     java.lang.String getVxnetId();
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -2631,7 +2627,6 @@ public final class PBRequestNetworkManage {
     private volatile java.lang.Object routerId_;
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -2654,7 +2649,6 @@ public final class PBRequestNetworkManage {
     }
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -2681,7 +2675,6 @@ public final class PBRequestNetworkManage {
     private volatile java.lang.Object vxnetId_;
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -2704,7 +2697,6 @@ public final class PBRequestNetworkManage {
     }
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -3403,7 +3395,6 @@ public final class PBRequestNetworkManage {
       private java.lang.Object routerId_ = "";
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -3425,7 +3416,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -3448,7 +3438,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -3469,7 +3458,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -3485,7 +3473,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -3509,7 +3496,6 @@ public final class PBRequestNetworkManage {
       private java.lang.Object vxnetId_ = "";
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -3531,7 +3517,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -3554,7 +3539,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -3575,7 +3559,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -3591,7 +3574,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -3736,7 +3718,6 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -3747,7 +3728,6 @@ public final class PBRequestNetworkManage {
     java.lang.String getRouterId();
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -3760,7 +3740,6 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -3771,7 +3750,6 @@ public final class PBRequestNetworkManage {
     java.lang.String getVxnetId();
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -4042,7 +4020,6 @@ public final class PBRequestNetworkManage {
     private volatile java.lang.Object routerId_;
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -4065,7 +4042,6 @@ public final class PBRequestNetworkManage {
     }
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id"
      * </pre>
@@ -4092,7 +4068,6 @@ public final class PBRequestNetworkManage {
     private volatile java.lang.Object vxnetId_;
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -4115,7 +4090,6 @@ public final class PBRequestNetworkManage {
     }
     /**
      * <pre>
-     * FIXME: Confirm the length.
      * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id"
      * </pre>
@@ -4814,7 +4788,6 @@ public final class PBRequestNetworkManage {
       private java.lang.Object routerId_ = "";
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -4836,7 +4809,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -4859,7 +4831,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -4880,7 +4851,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -4896,7 +4866,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id"
        * </pre>
@@ -4920,7 +4889,6 @@ public final class PBRequestNetworkManage {
       private java.lang.Object vxnetId_ = "";
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -4942,7 +4910,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -4965,7 +4932,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -4986,7 +4952,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -5002,7 +4967,6 @@ public final class PBRequestNetworkManage {
       }
       /**
        * <pre>
-       * FIXME: Confirm the length.
        * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id"
        * </pre>
@@ -5733,21 +5697,21 @@ public final class PBRequestNetworkManage {
       "\337\037\000\022\024\n\006search\030\005 \001(\tB\004\342\337\037\000\022%\n\010space_id\030\006 " +
       "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\022\n\004name\030\007 \001(\tB\004" +
       "\342\337\037\000\"4\n\016DeleteNetworks\022\"\n\013network_ids\030\001 " +
-      "\003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"\267\001\n\rCreateNetwork\022%\n\010" +
+      "\003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"\303\001\n\rCreateNetwork\022%\n\010" +
       "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nc" +
       "reated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\003 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\201\001\022\036\n\trouter_id\030\004 \001(\t" +
-      "B\013\342\337\037\007\022\005\302\001\002\"\000\022\035\n\010vxnet_id\030\005 \001(\tB\013\342\337\037\007\022\005\302" +
-      "\001\002\"\000\"\267\001\n\rUpdateNetwork\022%\n\010space_id\030\001 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nnetwork_id\030\002 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
-      "\200\002\001\230\002\200\001\022\036\n\trouter_id\030\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022" +
-      "\035\n\010vxnet_id\030\005 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"3\n\017Descri" +
-      "beNetwork\022 \n\nnetwork_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\360\001\024Bu\n$com.dataomnis.gproto.types.pbrequ" +
-      "estB\026PBRequestNetworkManageP\000Z3github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbreque" +
-      "stb\006proto3"
+      "\001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337" +
+      "\037\016\022\014\302\001\t\312\002\006vxnet-\"\303\001\n\rUpdateNetwork\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nnet" +
+      "work_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(" +
+      "\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020" +
+      "\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016" +
+      "\022\014\302\001\t\312\002\006vxnet-\"3\n\017DescribeNetwork\022 \n\nnet" +
+      "work_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bu\n$com.datao" +
+      "mnis.gproto.types.pbrequestB\026PBRequestNe" +
+      "tworkManageP\000Z3github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

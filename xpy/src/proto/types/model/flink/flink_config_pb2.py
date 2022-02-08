@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n*com.dataomnis.gproto.types.pbmodel.pbflinkB\rPBFlinkConfigP\000Z9github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbflink',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*proto/types/model/flink/flink_config.proto\x12\x05\x66link\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\xbe\x05\n\x0b\x46linkConfig\x12-\n\x06\x63ustom\x18\x01 \x03(\x0b\x32\x17.flink.FlinkConfig.ItemB\x04\xe2\xdf\x1f\x00\x12<\n\x10restart_strategy\x18\x02 \x01(\x0b\x32\".flink.FlinkConfig.RestartStrategy\x12\x36\n\x06logger\x18\x03 \x01(\x0b\x32\x19.flink.FlinkConfig.LoggerB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x1a@\n\x04Item\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x80\x08\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x80\x08\x1a\xe6\x02\n\x0fRestartStrategy\x12\x44\n\x10restart_strategy\x18\x01 \x01(\tB*\xe2\xdf\x1f&\x12$\xc2\x01!J\x04noneJ\x0b\x66ixed-delayJ\x0c\x66\x61ilure-rate\x12\x34\n\x14\x66ixed_delay_attempts\x18\x02 \x01(\x05\x42\x16\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xe8\x07@\x01\x12#\n\x11\x66ixed_delay_delay\x18\x03 \x01(\x05\x42\x08\xa2\xa1\x1f\x04\xaa\x06\x01\x31\x12\x38\n&failure_rate_max_failures_per_interval\x18\x04 \x01(\x05\x42\x08\xa2\xa1\x1f\x04\xaa\x06\x01\x31\x12\x33\n\x12\x66\x61ilure_rate_delay\x18\x05 \x01(\x05\x42\x17\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\xa3\x05@\x01\x12\x43\n\"failure_rate_failure_rate_interval\x18\x06 \x01(\x05\x42\x17\xa2\xa1\x1f\x04\xaa\x06\x01\x33\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\xa3\x05@\x01\x1aW\n\x06Logger\x12M\n\x0eroot_log_level\x18\x01 \x01(\tB5\xa2\xa1\x1f\x07\xaa\x06\x04INFO\xe2\xdf\x1f&\x12$\xc2\x01!J\x05TRACEJ\x05\x44\x45\x42UGJ\x04INFOJ\x04WARNJ\x05\x45RROR:\x06\xca\xb2\x04\x02\n\x00\x42x\n*com.dataomnis.gproto.types.pbmodel.pbflinkB\rPBFlinkConfigP\x00Z9github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbflinkb\x06proto3'
+  serialized_pb=b'\n*proto/types/model/flink/flink_config.proto\x12\x05\x66link\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\xbc\x05\n\x0b\x46linkConfig\x12-\n\x06\x63ustom\x18\x01 \x03(\x0b\x32\x17.flink.FlinkConfig.ItemB\x04\xe2\xdf\x1f\x00\x12<\n\x10restart_strategy\x18\x02 \x01(\x0b\x32\".flink.FlinkConfig.RestartStrategy\x12\x34\n\x06logger\x18\x03 \x01(\x0b\x32\x19.flink.FlinkConfig.LoggerB\t\xe2\xdf\x1f\x05\x12\x03\xe2\x01\x00\x1a@\n\x04Item\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x80\x08\x12\x1c\n\x05value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x80\x08\x1a\xe6\x02\n\x0fRestartStrategy\x12\x44\n\x10restart_strategy\x18\x01 \x01(\tB*\xe2\xdf\x1f&\x12$\xc2\x01!J\x04noneJ\x0b\x66ixed-delayJ\x0c\x66\x61ilure-rate\x12\x34\n\x14\x66ixed_delay_attempts\x18\x02 \x01(\x05\x42\x16\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xe8\x07@\x01\x12#\n\x11\x66ixed_delay_delay\x18\x03 \x01(\x05\x42\x08\xa2\xa1\x1f\x04\xaa\x06\x01\x31\x12\x38\n&failure_rate_max_failures_per_interval\x18\x04 \x01(\x05\x42\x08\xa2\xa1\x1f\x04\xaa\x06\x01\x31\x12\x33\n\x12\x66\x61ilure_rate_delay\x18\x05 \x01(\x05\x42\x17\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\xa3\x05@\x01\x12\x43\n\"failure_rate_failure_rate_interval\x18\x06 \x01(\x05\x42\x17\xa2\xa1\x1f\x04\xaa\x06\x01\x33\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\xa3\x05@\x01\x1aW\n\x06Logger\x12M\n\x0eroot_log_level\x18\x01 \x01(\tB5\xa2\xa1\x1f\x07\xaa\x06\x04INFO\xe2\xdf\x1f&\x12$\xc2\x01!J\x05TRACEJ\x05\x44\x45\x42UGJ\x04INFOJ\x04WARNJ\x05\x45RROR:\x06\xca\xb2\x04\x02\n\x00\x42x\n*com.dataomnis.gproto.types.pbmodel.pbflinkB\rPBFlinkConfigP\x00Z9github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbflinkb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
 
@@ -63,8 +63,8 @@ _FLINKCONFIG_ITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=388,
-  serialized_end=452,
+  serialized_start=386,
+  serialized_end=450,
 )
 
 _FLINKCONFIG_RESTARTSTRATEGY = _descriptor.Descriptor(
@@ -129,8 +129,8 @@ _FLINKCONFIG_RESTARTSTRATEGY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=455,
-  serialized_end=813,
+  serialized_start=453,
+  serialized_end=811,
 )
 
 _FLINKCONFIG_LOGGER = _descriptor.Descriptor(
@@ -160,8 +160,8 @@ _FLINKCONFIG_LOGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=815,
-  serialized_end=902,
+  serialized_start=813,
+  serialized_end=900,
 )
 
 _FLINKCONFIG = _descriptor.Descriptor(
@@ -192,7 +192,7 @@ _FLINKCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\005\022\003\342\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -206,7 +206,7 @@ _FLINKCONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=208,
-  serialized_end=910,
+  serialized_end=908,
 )
 
 _FLINKCONFIG_ITEM.containing_type = _FLINKCONFIG

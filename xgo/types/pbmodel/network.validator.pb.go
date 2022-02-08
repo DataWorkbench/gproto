@@ -39,15 +39,15 @@ func (this *Network) _xxx_xxx_Validator_Validate_name() error {
 }
 
 func (this *Network) _xxx_xxx_Validator_Validate_router_id() error {
-	if !(this.RouterId != "") {
-		return protovalidator.FieldError1("Network", "the value of field 'router_id' must be not equal to ''", this.RouterId)
+	if !(strings.HasPrefix(this.RouterId, "rtr-")) {
+		return protovalidator.FieldError1("Network", "the value of field 'router_id' must start with string 'rtr-'", this.RouterId)
 	}
 	return nil
 }
 
 func (this *Network) _xxx_xxx_Validator_Validate_vxnet_id() error {
-	if !(this.VxnetId != "") {
-		return protovalidator.FieldError1("Network", "the value of field 'vxnet_id' must be not equal to ''", this.VxnetId)
+	if !(strings.HasPrefix(this.VxnetId, "vxnet-")) {
+		return protovalidator.FieldError1("Network", "the value of field 'vxnet_id' must start with string 'vxnet-'", this.VxnetId)
 	}
 	return nil
 }

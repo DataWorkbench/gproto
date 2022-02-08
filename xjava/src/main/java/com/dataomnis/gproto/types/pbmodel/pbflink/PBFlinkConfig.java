@@ -21,7 +21,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -31,7 +31,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -40,7 +40,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -49,7 +49,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -59,7 +59,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -100,7 +100,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Logger settings. Is required.
-     * &#64;inject_tag: json:"logger" default:"" binding:"-"
+     * &#64;inject_tag: json:"logger"
      * </pre>
      *
      * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -110,7 +110,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Logger settings. Is required.
-     * &#64;inject_tag: json:"logger" default:"" binding:"-"
+     * &#64;inject_tag: json:"logger"
      * </pre>
      *
      * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -120,7 +120,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Logger settings. Is required.
-     * &#64;inject_tag: json:"logger" default:"" binding:"-"
+     * &#64;inject_tag: json:"logger"
      * </pre>
      *
      * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -277,7 +277,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * The value in key/value item, Is required, Min: 1, Max: 1024.
-       * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"value"
        * </pre>
        *
        * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -287,7 +287,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * The value in key/value item, Is required, Min: 1, Max: 1024.
-       * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"value"
        * </pre>
        *
        * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -444,7 +444,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * The value in key/value item, Is required, Min: 1, Max: 1024.
-       * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"value"
        * </pre>
        *
        * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -466,7 +466,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * The value in key/value item, Is required, Min: 1, Max: 1024.
-       * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+       * &#64;inject_tag: json:"value"
        * </pre>
        *
        * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -915,7 +915,7 @@ public final class PBFlinkConfig {
         /**
          * <pre>
          * The value in key/value item, Is required, Min: 1, Max: 1024.
-         * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+         * &#64;inject_tag: json:"value"
          * </pre>
          *
          * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -936,7 +936,7 @@ public final class PBFlinkConfig {
         /**
          * <pre>
          * The value in key/value item, Is required, Min: 1, Max: 1024.
-         * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+         * &#64;inject_tag: json:"value"
          * </pre>
          *
          * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -958,7 +958,7 @@ public final class PBFlinkConfig {
         /**
          * <pre>
          * The value in key/value item, Is required, Min: 1, Max: 1024.
-         * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+         * &#64;inject_tag: json:"value"
          * </pre>
          *
          * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -978,7 +978,7 @@ public final class PBFlinkConfig {
         /**
          * <pre>
          * The value in key/value item, Is required, Min: 1, Max: 1024.
-         * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+         * &#64;inject_tag: json:"value"
          * </pre>
          *
          * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -993,7 +993,7 @@ public final class PBFlinkConfig {
         /**
          * <pre>
          * The value in key/value item, Is required, Min: 1, Max: 1024.
-         * &#64;inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+         * &#64;inject_tag: json:"value"
          * </pre>
          *
          * <code>string value = 2 [(.validator.field) = { ... }</code>
@@ -2786,7 +2786,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -2798,7 +2798,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -2811,7 +2811,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -2823,7 +2823,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -2835,7 +2835,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Use-defined config. Not required.
-     * &#64;inject_tag: json:"custom" default:"" binding:"-"
+     * &#64;inject_tag: json:"custom"
      * </pre>
      *
      * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -2892,7 +2892,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Logger settings. Is required.
-     * &#64;inject_tag: json:"logger" default:"" binding:"-"
+     * &#64;inject_tag: json:"logger"
      * </pre>
      *
      * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -2905,7 +2905,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Logger settings. Is required.
-     * &#64;inject_tag: json:"logger" default:"" binding:"-"
+     * &#64;inject_tag: json:"logger"
      * </pre>
      *
      * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -2918,7 +2918,7 @@ public final class PBFlinkConfig {
     /**
      * <pre>
      * Logger settings. Is required.
-     * &#64;inject_tag: json:"logger" default:"" binding:"-"
+     * &#64;inject_tag: json:"logger"
      * </pre>
      *
      * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3349,7 +3349,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3364,7 +3364,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3379,7 +3379,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3394,7 +3394,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3416,7 +3416,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3435,7 +3435,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3456,7 +3456,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3478,7 +3478,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3497,7 +3497,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3516,7 +3516,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3536,7 +3536,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3554,7 +3554,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3572,7 +3572,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3584,7 +3584,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3599,7 +3599,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3615,7 +3615,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3627,7 +3627,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3640,7 +3640,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Use-defined config. Not required.
-       * &#64;inject_tag: json:"custom" default:"" binding:"-"
+       * &#64;inject_tag: json:"custom"
        * </pre>
        *
        * <code>repeated .flink.FlinkConfig.Item custom = 1 [(.validator.field) = { ... }</code>
@@ -3834,7 +3834,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3846,7 +3846,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3862,7 +3862,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3883,7 +3883,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3902,7 +3902,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3925,7 +3925,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3944,7 +3944,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3957,7 +3957,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -3973,7 +3973,7 @@ public final class PBFlinkConfig {
       /**
        * <pre>
        * Logger settings. Is required.
-       * &#64;inject_tag: json:"logger" default:"" binding:"-"
+       * &#64;inject_tag: json:"logger"
        * </pre>
        *
        * <code>.flink.FlinkConfig.Logger logger = 3 [(.validator.field) = { ... }</code>
@@ -4078,27 +4078,27 @@ public final class PBFlinkConfig {
       "in/proto/validator.proto\032/github.com/yu3" +
       "1/protoc-plugin/proto/gosql.proto\0322githu" +
       "b.com/yu31/protoc-plugin/proto/defaults." +
-      "proto\"\276\005\n\013FlinkConfig\022-\n\006custom\030\001 \003(\0132\027." +
+      "proto\"\274\005\n\013FlinkConfig\022-\n\006custom\030\001 \003(\0132\027." +
       "flink.FlinkConfig.ItemB\004\342\337\037\000\022<\n\020restart_" +
       "strategy\030\002 \001(\0132\".flink.FlinkConfig.Resta" +
-      "rtStrategy\0226\n\006logger\030\003 \001(\0132\031.flink.Flink" +
-      "Config.LoggerB\013\342\337\037\007\022\005\342\001\002\020\001\032@\n\004Item\022\032\n\003ke" +
-      "y\030\001 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\200\010\022\034\n\005value\030\002 \001(\tB\r\342" +
-      "\337\037\t\022\007\302\001\004\230\002\200\010\032\346\002\n\017RestartStrategy\022D\n\020rest" +
-      "art_strategy\030\001 \001(\tB*\342\337\037&\022$\302\001!J\004noneJ\013fix" +
-      "ed-delayJ\014failure-rate\0224\n\024fixed_delay_at" +
-      "tempts\030\002 \001(\005B\026\242\241\037\004\252\006\0011\342\337\037\n\022\010\262\001\0058\350\007@\001\022#\n\021" +
-      "fixed_delay_delay\030\003 \001(\005B\010\242\241\037\004\252\006\0011\0228\n&fai" +
-      "lure_rate_max_failures_per_interval\030\004 \001(" +
-      "\005B\010\242\241\037\004\252\006\0011\0223\n\022failure_rate_delay\030\005 \001(\005B" +
-      "\027\242\241\037\004\252\006\0011\342\337\037\013\022\t\262\001\0068\200\243\005@\001\022C\n\"failure_rate" +
-      "_failure_rate_interval\030\006 \001(\005B\027\242\241\037\004\252\006\0013\342\337" +
-      "\037\013\022\t\262\001\0068\200\243\005@\001\032W\n\006Logger\022M\n\016root_log_leve" +
-      "l\030\001 \001(\tB5\242\241\037\007\252\006\004INFO\342\337\037&\022$\302\001!J\005TRACEJ\005DE" +
-      "BUGJ\004INFOJ\004WARNJ\005ERROR:\006\312\262\004\002\n\000Bx\n*com.da" +
-      "taomnis.gproto.types.pbmodel.pbflinkB\rPB" +
-      "FlinkConfigP\000Z9github.com/DataWorkbench/" +
-      "gproto/xgo/types/pbmodel/pbflinkb\006proto3"
+      "rtStrategy\0224\n\006logger\030\003 \001(\0132\031.flink.Flink" +
+      "Config.LoggerB\t\342\337\037\005\022\003\342\001\000\032@\n\004Item\022\032\n\003key\030" +
+      "\001 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\200\010\022\034\n\005value\030\002 \001(\tB\r\342\337\037" +
+      "\t\022\007\302\001\004\230\002\200\010\032\346\002\n\017RestartStrategy\022D\n\020restar" +
+      "t_strategy\030\001 \001(\tB*\342\337\037&\022$\302\001!J\004noneJ\013fixed" +
+      "-delayJ\014failure-rate\0224\n\024fixed_delay_atte" +
+      "mpts\030\002 \001(\005B\026\242\241\037\004\252\006\0011\342\337\037\n\022\010\262\001\0058\350\007@\001\022#\n\021fi" +
+      "xed_delay_delay\030\003 \001(\005B\010\242\241\037\004\252\006\0011\0228\n&failu" +
+      "re_rate_max_failures_per_interval\030\004 \001(\005B" +
+      "\010\242\241\037\004\252\006\0011\0223\n\022failure_rate_delay\030\005 \001(\005B\027\242" +
+      "\241\037\004\252\006\0011\342\337\037\013\022\t\262\001\0068\200\243\005@\001\022C\n\"failure_rate_f" +
+      "ailure_rate_interval\030\006 \001(\005B\027\242\241\037\004\252\006\0013\342\337\037\013" +
+      "\022\t\262\001\0068\200\243\005@\001\032W\n\006Logger\022M\n\016root_log_level\030" +
+      "\001 \001(\tB5\242\241\037\007\252\006\004INFO\342\337\037&\022$\302\001!J\005TRACEJ\005DEBU" +
+      "GJ\004INFOJ\004WARNJ\005ERROR:\006\312\262\004\002\n\000Bx\n*com.data" +
+      "omnis.gproto.types.pbmodel.pbflinkB\rPBFl" +
+      "inkConfigP\000Z9github.com/DataWorkbench/gp" +
+      "roto/xgo/types/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

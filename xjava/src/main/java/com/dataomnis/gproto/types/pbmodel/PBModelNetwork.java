@@ -86,7 +86,7 @@ public final class PBModelNetwork {
 
     /**
      * <pre>
-     * VPC's route id
+     * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
      * </pre>
      *
@@ -96,7 +96,7 @@ public final class PBModelNetwork {
     java.lang.String getRouterId();
     /**
      * <pre>
-     * VPC's route id
+     * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
      * </pre>
      *
@@ -108,7 +108,7 @@ public final class PBModelNetwork {
 
     /**
      * <pre>
-     * vxnet id.
+     * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
      * </pre>
      *
@@ -118,7 +118,7 @@ public final class PBModelNetwork {
     java.lang.String getVxnetId();
     /**
      * <pre>
-     * vxnet id.
+     * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
      * </pre>
      *
@@ -598,7 +598,7 @@ public final class PBModelNetwork {
     private volatile java.lang.Object routerId_;
     /**
      * <pre>
-     * VPC's route id
+     * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
      * </pre>
      *
@@ -620,7 +620,7 @@ public final class PBModelNetwork {
     }
     /**
      * <pre>
-     * VPC's route id
+     * VPC's route id, Is required.
      * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
      * </pre>
      *
@@ -646,7 +646,7 @@ public final class PBModelNetwork {
     private volatile java.lang.Object vxnetId_;
     /**
      * <pre>
-     * vxnet id.
+     * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
      * </pre>
      *
@@ -668,7 +668,7 @@ public final class PBModelNetwork {
     }
     /**
      * <pre>
-     * vxnet id.
+     * vxnet id. Is required.
      * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
      * </pre>
      *
@@ -1548,7 +1548,7 @@ public final class PBModelNetwork {
       private java.lang.Object routerId_ = "";
       /**
        * <pre>
-       * VPC's route id
+       * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
        * </pre>
        *
@@ -1569,7 +1569,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * VPC's route id
+       * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
        * </pre>
        *
@@ -1591,7 +1591,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * VPC's route id
+       * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
        * </pre>
        *
@@ -1611,7 +1611,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * VPC's route id
+       * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
        * </pre>
        *
@@ -1626,7 +1626,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * VPC's route id
+       * VPC's route id, Is required.
        * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
        * </pre>
        *
@@ -1649,7 +1649,7 @@ public final class PBModelNetwork {
       private java.lang.Object vxnetId_ = "";
       /**
        * <pre>
-       * vxnet id.
+       * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
        * </pre>
        *
@@ -1670,7 +1670,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * vxnet id.
+       * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
        * </pre>
        *
@@ -1692,7 +1692,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * vxnet id.
+       * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
        * </pre>
        *
@@ -1712,7 +1712,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * vxnet id.
+       * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
        * </pre>
        *
@@ -1727,7 +1727,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * vxnet id.
+       * vxnet id. Is required.
        * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
        * </pre>
        *
@@ -2087,19 +2087,19 @@ public final class PBModelNetwork {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/network.proto\022\005model" +
       "\0323github.com/yu31/protoc-plugin/proto/va" +
-      "lidator.proto\"\361\002\n\007Network\022%\n\010space_id\030\001 " +
+      "lidator.proto\"\375\002\n\007Network\022%\n\010space_id\030\001 " +
       "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337" +
       "\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002" +
-      "\200\001\022\036\n\trouter_id\030\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\035\n\010vx" +
-      "net_id\030\005 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022 \n\ncreated_by\030" +
-      "\006 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\0224\n\006status\030\007 \001(\0162\025.mo" +
-      "del.Network.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007cre" +
-      "ated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003" +
-      "B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000" +
-      "\022\013\n\007Deleted\020\001\022\n\n\006Active\020\002Bi\n\"com.dataomn" +
-      "is.gproto.types.pbmodelB\016PBModelNetworkP" +
-      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
-      "ypes/pbmodelb\006proto3"
+      "\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022" +
+      "$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\022 \n" +
+      "\ncreated_by\030\006 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\0224\n\006statu" +
+      "s\030\007 \001(\0162\025.model.Network.StatusB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007u" +
+      "pdated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013S" +
+      "tatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Active\020\002Bi\n" +
+      "\"com.dataomnis.gproto.types.pbmodelB\016PBM" +
+      "odelNetworkP\000Z1github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
