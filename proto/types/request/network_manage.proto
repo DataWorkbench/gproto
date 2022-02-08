@@ -26,7 +26,7 @@ message ListNetworks {
 
   // The field list used to sorted query results.
   // Optional values: {id, name, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="id,name,updated".
+  // Multiple fields are separated by commas(","), eg: sort_by="updated".
   // Not required, default: id.
   // @inject_tag: json:"sort_by" form:"sort_by"
   string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "created", "updated", "name"] } ];
@@ -65,17 +65,15 @@ message CreateNetwork {
 
   // Network Name. Is required.
   // @inject_tag: json:"name"
-  string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 129 } ];
+  string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
-  // FIXME: Confirm the length.
   // VPC's route id, Is required.
   // @inject_tag: json:"router_id"
-  string router_id = 4 [ (validator.field).tags.string = { ne: "" } ];
+  string router_id = 4 [ (validator.field).tags.string = { prefix: "rtr-" } ];
 
-  // FIXME: Confirm the length.
   // vxnet id. Is required.
   // @inject_tag: json:"vxnet_id"
-  string vxnet_id = 5 [ (validator.field).tags.string = { ne: "" } ];
+  string vxnet_id = 5 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
 }
 
 message UpdateNetwork {
@@ -91,15 +89,13 @@ message UpdateNetwork {
   // @inject_tag: json:"name"
   string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
-  // FIXME: Confirm the length.
   // VPC's route id, Is required.
   // @inject_tag: json:"router_id"
-  string router_id = 4 [ (validator.field).tags.string = { ne: "" } ];
+  string router_id = 4 [ (validator.field).tags.string = { prefix: "rtr-" } ];
 
-  // FIXME: Confirm the length.
   // vxnet id. Is required.
   // @inject_tag: json:"vxnet_id"
-  string vxnet_id = 5 [ (validator.field).tags.string = { ne: "" } ];
+  string vxnet_id = 5 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
 }
 
 message DescribeNetwork {

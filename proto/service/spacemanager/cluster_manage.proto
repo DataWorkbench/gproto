@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package spacemanager;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
+// File name of class.
+option java_outer_classname = "PBSvcClusterManage";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/cluster_manage.proto";
+import "proto/types/response/cluster_manage.proto";
+
+
+service ClusterManage {
+  // Interface for manage flink cluster
+  rpc ListAvailableFlinkVersions(model.EmptyStruct) returns (response.ListAvailableFlinkVersions) {}
+  // Describe flink cluster api that job-manager commit job to
+  rpc DescribeFlinkClusterAPI(request.DescribeFlinkClusterAPI) returns(response.DescribeFlinkClusterAPI) {}
+
+  rpc ListFlinkClusters(request.ListFlinkClusters)       returns (response.ListFlinkClusters) {}
+  rpc CreateFlinkCluster(request.CreateFlinkCluster)     returns (response.CreateFlinkCluster) {}
+  rpc DescribeFlinkCluster(request.DescribeFlinkCluster) returns (response.DescribeFlinkCluster) {}
+  rpc UpdateFlinkCluster(request.UpdateFlinkCluster)     returns (model.EmptyStruct) {}
+  rpc DeleteFlinkClusters(request.DeleteFlinkClusters)   returns (model.EmptyStruct) {}
+  rpc StartFlinkClusters(request.StartFlinkClusters)     returns (model.EmptyStruct) {}
+  rpc StopFlinkClusters(request.StopFlinkClusters)       returns (model.EmptyStruct) {}
+}

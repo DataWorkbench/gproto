@@ -11,40 +11,16 @@ option java_outer_classname = "PBSvcEngineManage";
 option java_multiple_files = false;
 
 import "proto/types/model/empty.proto";
-import "proto/types/request/space_manage.proto";
 
-import "proto/types/request/cluster_manage.proto";
-import "proto/types/request/network_manage.proto";
+import "proto/types/request/engine_manage.proto";
+//import "proto/types/response/engine_manage.proto";
 
-import "proto/types/response/cluster_manage.proto";
-import "proto/types/response/network_manage.proto";
+service EngineManage {
+  rpc CreateFlinkClusterInK8s(request.CreateFlinkClusterInK8s) returns (model.EmptyStruct) {}
+//  rpc DeleteFlinkClusterInK8s(request.DeleteFlinkClusterInK8s) returns (model.EmptyStruct) {}
+  rpc StartFlinkClusterInK8s(request.StartFlinkClusterInK8s)   returns (model.EmptyStruct) {}
+  rpc StopFlinkClusterInK8s(request.StopFlinkClusterInK8s)     returns (model.EmptyStruct) {}
 
-// Engine Server
-// Interface for manage global apis of engine-manager
-service Engine {
-  // DeleteWorkspaces for all resource of specified space ids.
-  rpc DeleteWorkspaces(request.DeleteWorkspaces) returns(model.EmptyStruct) {}
-
-  // Flink Server
-  // Interface for manage flink cluster
-  rpc ListAvailableFlinkVersions(model.EmptyStruct) returns (response.ListAvailableFlinkVersions) {}
-  // Describe flink cluster api that job-manager commit job to
-  rpc DescribeFlinkClusterAPI(request.DescribeFlinkClusterAPI) returns(response.DescribeFlinkClusterAPI) {}
-
-  rpc CreateFlinkCluster(request.CreateFlinkCluster) returns (response.CreateFlinkCluster) {}
-  rpc ListFlinkClusters(request.ListFlinkClusters) returns (response.ListFlinkClusters) {}
-  rpc DescribeFlinkCluster(request.DescribeFlinkCluster) returns (response.DescribeFlinkCluster) {}
-  rpc UpdateFlinkCluster(request.UpdateFlinkCluster) returns (model.EmptyStruct) {}
-  rpc DeleteFlinkClusters(request.DeleteFlinkClusters) returns (model.EmptyStruct) {}
-
-  rpc StartFlinkClusters(request.StartFlinkClusters) returns (model.EmptyStruct) {}
-  rpc StopFlinkClusters(request.StopFlinkClusters) returns (model.EmptyStruct) {}
-
-  // Network Server
-  // Interface for manage network configuration from iaas-pvc
-  rpc CreateNetwork(request.CreateNetwork) returns (response.CreateNetwork) {}
-  rpc ListNetworks(request.ListNetworks) returns (response.ListNetworks) {}
-  rpc DescribeNetwork(request.DescribeNetwork) returns (response.DescribeNetwork) {}
-  rpc UpdateNetwork(request.UpdateNetwork) returns (model.EmptyStruct) {}
-  rpc DeleteNetworks(request.DeleteNetworks) returns (model.EmptyStruct) {}
+  rpc CreateNetworkBrokerInK8s(request.CreateFlinkClusterInK8s) returns (model.EmptyStruct) {}
+  rpc DeleteNetworkBrokerInK8s(request.DeleteNetworkBrokerInK8s) returns (model.EmptyStruct) {}
 }

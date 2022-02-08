@@ -25,7 +25,7 @@ message FlinkConfig {
     string key = 1 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
 
     // The value in key/value item, Is required, Min: 1, Max: 1024.
-    // @inject_tag: json:"value" default:"" binding:"gte=1,lte=1024"  minLength:"1" maxLength:"1024"
+    // @inject_tag: json:"value"
     string value = 2 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
   }
 
@@ -80,7 +80,7 @@ message FlinkConfig {
   }
 
   // Use-defined config. Not required.
-  // @inject_tag: json:"custom" default:"" binding:"-"
+  // @inject_tag: json:"custom"
   repeated Item custom = 1  [ (validator.field) = { } ];
 
   // RestartStrategy settings. Is required.
@@ -88,6 +88,6 @@ message FlinkConfig {
   RestartStrategy restart_strategy = 2 ;
 
   // Logger settings. Is required.
-  // @inject_tag: json:"logger" default:"" binding:"-"
-  Logger logger = 3 [ (validator.field).tags.message = { not_null: true } ];
+  // @inject_tag: json:"logger"
+  Logger logger = 3 [ (validator.field).tags.message = { } ];
 }

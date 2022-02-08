@@ -32,13 +32,13 @@ message Network {
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
 
-  // VPC's route id
+  // VPC's route id, Is required.
   // @inject_tag: json:"router_id" gorm:"column:router_id;"
-  string router_id = 4 [(validator.field).tags.string = { ne: "" }];
+  string router_id = 4 [ (validator.field).tags.string = { prefix: "rtr-" } ];
 
-  // vxnet id.
+  // vxnet id. Is required.
   // @inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
-  string vxnet_id = 5 [(validator.field).tags.string = { ne: "" }];
+  string vxnet_id = 5 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
 
   // The user-id of created this network.
   // @inject_tag: json:"created_by" gorm:"column:created_by;"

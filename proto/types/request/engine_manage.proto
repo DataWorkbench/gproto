@@ -10,5 +10,47 @@ option java_package = "com.dataomnis.gproto.types.pbrequest";
 option java_outer_classname = "PBRequestEngineManage";
 option java_multiple_files = false;
 
-//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+import "proto/types/model/cluster.proto";
+import "proto/types/model/network.proto";
+
+message CreateFlinkClusterInK8s {
+  // Cluster is the metadata info of flink cluster.
+  model.FlinkCluster info = 1 [ (validator.field).tags.message = { not_null: true } ];
+}
+
+//message DeleteFlinkClusterInK8s {
+////  // The id of workspace.
+////  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+//
+//  // The id of flink cluster.
+//  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "cfi-" } ];
+//}
+
+message StartFlinkClusterInK8s {
+  // The metadata info of flink cluster.
+  model.FlinkCluster info = 1 [ (validator.field).tags.message = { not_null: true } ];
+}
+
+message StopFlinkClusterInK8s {
+  // The id of workspace.
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The id of flink cluster.
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "cfi-" } ];
+}
+
+message CreateNetworkBrokerInK8s {
+  // Cluster is the metadata info of flink cluster.
+  model.Network info = 1 [ (validator.field).tags.message = { not_null: true } ];
+}
+
+message DeleteNetworkBrokerInK8s {
+  // The id of workspace.
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The id of flink cluster.
+  string network_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "cfi-" } ];
+}
