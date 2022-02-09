@@ -25,6 +25,26 @@ func (this *StreamJob) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
+func (this *StreamJob) _xxx_xxx_Validator_CheckIf_pid() bool {
+	if !(this.Pid != "") {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJob) _xxx_xxx_Validator_Validate_pid() error {
+	if !this._xxx_xxx_Validator_CheckIf_pid() {
+		return nil
+	}
+	if !(len(this.Pid) == 20) {
+		return protovalidator.FieldError1("StreamJob", "the byte length of field 'pid' must be equal to '20'", protovalidator.StringByteLenToString(this.Pid))
+	}
+	if !(strings.HasPrefix(this.Pid, "stj-")) {
+		return protovalidator.FieldError1("StreamJob", "the value of field 'pid' must start with string 'stj-'", this.Pid)
+	}
+	return nil
+}
+
 func (this *StreamJob) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("StreamJob", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
@@ -49,9 +69,19 @@ func (this *StreamJob) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
+func (this *StreamJob) _xxx_xxx_Validator_CheckIf_type() bool {
+	if !(this.IsDirectory == false) {
+		return false
+	}
+	return true
+}
+
 var _xxx_xxx_Validator_StreamJob_InEnums_Type = map[StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *StreamJob) _xxx_xxx_Validator_Validate_type() error {
+	if !this._xxx_xxx_Validator_CheckIf_type() {
+		return nil
+	}
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("StreamJob", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
@@ -100,6 +130,9 @@ func (this *StreamJob) Validate() error {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_pid(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {

@@ -30,12 +30,15 @@ type StreamJobManageClient interface {
 	// ListStreamJobs to get a list of stream job of the workspace.
 	ListStreamJobs(ctx context.Context, in *pbrequest.ListStreamJobs, opts ...grpc.CallOption) (*pbresponse.ListStreamJobs, error)
 	// DeleteStreamJobs delete stream job ant its related resources where in ids.
+	// Cannot not delete directory in this API.
 	// Resources includes:
 	//  - History version and Released's job.
 	//  - Node, env schedule and its history version.
 	//  - Offline job and force stop all running instances. (By Scheduler-Server)
 	//  - All instances records. (By Scheduler-Server)
 	DeleteStreamJobs(ctx context.Context, in *pbrequest.DeleteStreamJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// Move StreamJob to other directory.
+	MoveStreamJobs(ctx context.Context, in *pbrequest.MoveStreamJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// CreateStreamJob to create a new stream job.
 	CreateStreamJob(ctx context.Context, in *pbrequest.CreateStreamJob, opts ...grpc.CallOption) (*pbresponse.CreateStreamJob, error)
 	// UpdateStreamJob to update the info for the specified stream job.
@@ -102,6 +105,15 @@ func (c *streamJobManageClient) ListStreamJobs(ctx context.Context, in *pbreques
 func (c *streamJobManageClient) DeleteStreamJobs(ctx context.Context, in *pbrequest.DeleteStreamJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/DeleteStreamJobs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *streamJobManageClient) MoveStreamJobs(ctx context.Context, in *pbrequest.MoveStreamJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/MoveStreamJobs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -306,12 +318,15 @@ type StreamJobManageServer interface {
 	// ListStreamJobs to get a list of stream job of the workspace.
 	ListStreamJobs(context.Context, *pbrequest.ListStreamJobs) (*pbresponse.ListStreamJobs, error)
 	// DeleteStreamJobs delete stream job ant its related resources where in ids.
+	// Cannot not delete directory in this API.
 	// Resources includes:
 	//  - History version and Released's job.
 	//  - Node, env schedule and its history version.
 	//  - Offline job and force stop all running instances. (By Scheduler-Server)
 	//  - All instances records. (By Scheduler-Server)
 	DeleteStreamJobs(context.Context, *pbrequest.DeleteStreamJobs) (*pbmodel.EmptyStruct, error)
+	// Move StreamJob to other directory.
+	MoveStreamJobs(context.Context, *pbrequest.MoveStreamJobs) (*pbmodel.EmptyStruct, error)
 	// CreateStreamJob to create a new stream job.
 	CreateStreamJob(context.Context, *pbrequest.CreateStreamJob) (*pbresponse.CreateStreamJob, error)
 	// UpdateStreamJob to update the info for the specified stream job.
@@ -368,6 +383,9 @@ func (UnimplementedStreamJobManageServer) ListStreamJobs(context.Context, *pbreq
 }
 func (UnimplementedStreamJobManageServer) DeleteStreamJobs(context.Context, *pbrequest.DeleteStreamJobs) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamJobs not implemented")
+}
+func (UnimplementedStreamJobManageServer) MoveStreamJobs(context.Context, *pbrequest.MoveStreamJobs) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MoveStreamJobs not implemented")
 }
 func (UnimplementedStreamJobManageServer) CreateStreamJob(context.Context, *pbrequest.CreateStreamJob) (*pbresponse.CreateStreamJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStreamJob not implemented")
@@ -477,6 +495,24 @@ func _StreamJobManage_DeleteStreamJobs_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StreamJobManageServer).DeleteStreamJobs(ctx, req.(*pbrequest.DeleteStreamJobs))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _StreamJobManage_MoveStreamJobs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.MoveStreamJobs)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamJobManageServer).MoveStreamJobs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.StreamJobManage/MoveStreamJobs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamJobManageServer).MoveStreamJobs(ctx, req.(*pbrequest.MoveStreamJobs))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -873,6 +909,10 @@ var StreamJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteStreamJobs",
 			Handler:    _StreamJobManage_DeleteStreamJobs_Handler,
+		},
+		{
+			MethodName: "MoveStreamJobs",
+			Handler:    _StreamJobManage_MoveStreamJobs_Handler,
 		},
 		{
 			MethodName: "CreateStreamJob",

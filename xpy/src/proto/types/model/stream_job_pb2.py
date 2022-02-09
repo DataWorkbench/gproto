@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\020PBModelStreamJobP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/model/stream_job.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\'proto/types/model/flink/flink_job.proto\"\xec\x03\n\tStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x15\n\x07version\x18\x03 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x32\n\x04type\x18\x06 \x01(\x0e\x32\x15.model.StreamJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x36\n\x06status\x18\x07 \x01(\x0e\x32\x17.model.StreamJob.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\ncreated_by\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"L\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x0c\n\x08Operator\x10\x01\x12\x07\n\x03SQL\x10\x02\x12\x07\n\x03Jar\x10\x03\x12\n\n\x06Python\x10\x04\x12\t\n\x05Scala\x10\x05\"2\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\n\n\x06Normal\x10\x01\x12\x0b\n\x07\x44\x65leted\x10\x02\"\xf8\x01\n\x11StreamJobProperty\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1c\n\x07version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12(\n\x04\x63ode\x18\x04 \x01(\x0b\x32\x14.model.StreamJobCodeB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x61rgs\x18\x05 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12\x30\n\x08schedule\x18\x06 \x01(\x0b\x32\x18.model.StreamJobScheduleB\x04\xe2\xdf\x1f\x00\"\x96\x03\n\rStreamJobCode\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32\x15.model.StreamJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12G\n\toperators\x18\x02 \x03(\x0b\x32\x14.flink.FlinkOperatorB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12<\n\x03sql\x18\x03 \x01(\x0b\x32\x0f.flink.FlinkSQLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12<\n\x03jar\x18\x04 \x01(\x0b\x32\x0f.flink.FlinkJarB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x03\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x42\n\x06python\x18\x05 \x01(\x0b\x32\x12.flink.FlinkPythonB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x04\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12@\n\x05scala\x18\x06 \x01(\x0b\x32\x11.flink.FlinkScalaB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x05\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01:\x06\xca\xb2\x04\x02\n\x00\"\x9a\x01\n\rStreamJobArgs\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\"\n\x0bparallelism\x18\x02 \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12\x12\n\x04udfs\x18\x03 \x03(\tB\x04\xe2\xdf\x1f\x00\x12\x12\n\nconnectors\x18\x04 \x03(\t\x12\x1b\n\x13\x62uilt_in_connectors\x18\x05 \x03(\t:\x06\xca\xb2\x04\x02\n\x00\"\xb4\x07\n\x11StreamJobSchedule\x12M\n\x0fschedule_policy\x18\x01 \x01(\x0e\x32\'.model.StreamJobSchedule.SchedulePolicyB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12>\n\x08\x65xecuted\x18\x02 \x01(\x03\x42,\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05@\x80\x86\x83\x0f\x12\x1c\n\x07started\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x05\x65nded\x18\x05 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12U\n\x12\x63oncurrency_policy\x18\x06 \x01(\x0e\x32*.model.StreamJobSchedule.ConcurrencyPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x62\n\x0bperiod_type\x18\x07 \x01(\tBM\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f+\x12)\xc2\x01&J\x06minuteJ\x04hourJ\x03\x64\x61yJ\x04weekJ\x05monthJ\x04year\x12;\n\x07\x65xpress\x18\x08 \x01(\tB*\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x05\x01\x12\x1e\n\x07timeout\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12I\n\x0cretry_policy\x18\n \x01(\x0e\x32$.model.StreamJobSchedule.RetryPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12=\n\x0bretry_limit\x18\x0b \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12@\n\x0eretry_interval\x18\x0c \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x1e@\x01\"\\\n\x0eSchedulePolicy\x12\x17\n\x13SchedulePolicyUnset\x10\x00\x12\x0f\n\x0bPeriodicity\x10\x01\x12\x0f\n\x0b\x41ppointTime\x10\x02\x12\x0f\n\x0bImmediately\x10\x03\"S\n\x11\x43oncurrencyPolicy\x12\x1a\n\x16\x43oncurrencyPolicyUnset\x10\x00\x12\t\n\x05\x41llow\x10\x01\x12\n\n\x06\x46orbid\x10\x02\x12\x0b\n\x07Replace\x10\x03\"7\n\x0bRetryPolicy\x12\x14\n\x10RetryPolicyUnset\x10\x00\x12\x08\n\x04None\x10\x01\x12\x08\n\x04\x41uto\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xa4\x03\n\x10StreamJobRelease\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1c\n\x07version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x15.model.StreamJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12.\n\x06status\x18\x06 \x01(\x0e\x32\x1e.model.StreamJobRelease.Status\x12\x0c\n\x04\x64\x65sc\x18\x07 \x01(\t\x12 \n\ncreated_by\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\n\n\x06\x41\x63tive\x10\x01\x12\r\n\tSuspended\x10\x02\x12\x0b\n\x07\x44\x65leted\x10\x03\x42k\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelStreamJobP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\"proto/types/model/stream_job.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\'proto/types/model/flink/flink_job.proto\"\xd1\x04\n\tStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x32\n\x03pid\x18\x02 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x18\n\x02id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x15\n\x07version\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x14\n\x0cis_directory\x18\x07 \x01(\x08\x12M\n\x04type\x18\x08 \x01(\x0e\x32\x15.model.StreamJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x36\n\x06status\x18\t \x01(\x0e\x32\x17.model.StreamJob.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\ncreated_by\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\x0b \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"L\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x0c\n\x08Operator\x10\x01\x12\x07\n\x03SQL\x10\x02\x12\x07\n\x03Jar\x10\x03\x12\n\n\x06Python\x10\x04\x12\t\n\x05Scala\x10\x05\"2\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\n\n\x06\x41\x63tive\x10\x02\"\xf8\x01\n\x11StreamJobProperty\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1c\n\x07version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12(\n\x04\x63ode\x18\x04 \x01(\x0b\x32\x14.model.StreamJobCodeB\x04\xe2\xdf\x1f\x00\x12(\n\x04\x61rgs\x18\x05 \x01(\x0b\x32\x14.model.StreamJobArgsB\x04\xe2\xdf\x1f\x00\x12\x30\n\x08schedule\x18\x06 \x01(\x0b\x32\x18.model.StreamJobScheduleB\x04\xe2\xdf\x1f\x00\"\x96\x03\n\rStreamJobCode\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32\x15.model.StreamJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12G\n\toperators\x18\x02 \x03(\x0b\x32\x14.flink.FlinkOperatorB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12<\n\x03sql\x18\x03 \x01(\x0b\x32\x0f.flink.FlinkSQLB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12<\n\x03jar\x18\x04 \x01(\x0b\x32\x0f.flink.FlinkJarB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x03\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x42\n\x06python\x18\x05 \x01(\x0b\x32\x12.flink.FlinkPythonB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x04\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12@\n\x05scala\x18\x06 \x01(\x0b\x32\x11.flink.FlinkScalaB\x1e\xe2\xdf\x1f\x0f\n\r\n\x04type\x12\x05\xda\x01\x02\x18\x05\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01:\x06\xca\xb2\x04\x02\n\x00\"\x9a\x01\n\rStreamJobArgs\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\"\n\x0bparallelism\x18\x02 \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12\x12\n\x04udfs\x18\x03 \x03(\tB\x04\xe2\xdf\x1f\x00\x12\x12\n\nconnectors\x18\x04 \x03(\t\x12\x1b\n\x13\x62uilt_in_connectors\x18\x05 \x03(\t:\x06\xca\xb2\x04\x02\n\x00\"\xb4\x07\n\x11StreamJobSchedule\x12M\n\x0fschedule_policy\x18\x01 \x01(\x0e\x32\'.model.StreamJobSchedule.SchedulePolicyB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12>\n\x08\x65xecuted\x18\x02 \x01(\x03\x42,\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05@\x80\x86\x83\x0f\x12\x1c\n\x07started\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x05\x65nded\x18\x05 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12U\n\x12\x63oncurrency_policy\x18\x06 \x01(\x0e\x32*.model.StreamJobSchedule.ConcurrencyPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x62\n\x0bperiod_type\x18\x07 \x01(\tBM\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f+\x12)\xc2\x01&J\x06minuteJ\x04hourJ\x03\x64\x61yJ\x04weekJ\x05monthJ\x04year\x12;\n\x07\x65xpress\x18\x08 \x01(\tB*\xe2\xdf\x1f\x1a\n\x18\n\x0fschedule_policy\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x05\x01\x12\x1e\n\x07timeout\x18\t \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12I\n\x0cretry_policy\x18\n \x01(\x0e\x32$.model.StreamJobSchedule.RetryPolicyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12=\n\x0bretry_limit\x18\x0b \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x64@\x00\x12@\n\x0eretry_interval\x18\x0c \x01(\x05\x42(\xe2\xdf\x1f\x17\n\x15\n\x0cretry_policy\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x1e@\x01\"\\\n\x0eSchedulePolicy\x12\x17\n\x13SchedulePolicyUnset\x10\x00\x12\x0f\n\x0bPeriodicity\x10\x01\x12\x0f\n\x0b\x41ppointTime\x10\x02\x12\x0f\n\x0bImmediately\x10\x03\"S\n\x11\x43oncurrencyPolicy\x12\x1a\n\x16\x43oncurrencyPolicyUnset\x10\x00\x12\t\n\x05\x41llow\x10\x01\x12\n\n\x06\x46orbid\x10\x02\x12\x0b\n\x07Replace\x10\x03\"7\n\x0bRetryPolicy\x12\x14\n\x10RetryPolicyUnset\x10\x00\x12\x08\n\x04None\x10\x01\x12\x08\n\x04\x41uto\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xa4\x03\n\x10StreamJobRelease\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1c\n\x07version\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x32\n\x04type\x18\x05 \x01(\x0e\x32\x15.model.StreamJob.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12.\n\x06status\x18\x06 \x01(\x0e\x32\x1e.model.StreamJobRelease.Status\x12\x0c\n\x04\x64\x65sc\x18\x07 \x01(\t\x12 \n\ncreated_by\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\n\n\x06\x41\x63tive\x10\x01\x12\r\n\tSuspended\x10\x02\x12\x0b\n\x07\x44\x65leted\x10\x03\x42k\n\"com.dataomnis.gproto.types.pbmodelB\x10PBModelStreamJobP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_flink_dot_flink__job__pb2.DESCRIPTOR,])
 
@@ -68,8 +68,8 @@ _STREAMJOB_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=553,
-  serialized_end=629,
+  serialized_start=654,
+  serialized_end=730,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOB_TYPE)
 
@@ -86,20 +86,20 @@ _STREAMJOB_STATUS = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='Normal', index=1, number=1,
+      name='Deleted', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='Deleted', index=2, number=2,
+      name='Active', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=631,
-  serialized_end=681,
+  serialized_start=732,
+  serialized_end=782,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOB_STATUS)
 
@@ -133,8 +133,8 @@ _STREAMJOBSCHEDULE_SCHEDULEPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2207,
-  serialized_end=2299,
+  serialized_start=2308,
+  serialized_end=2400,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOBSCHEDULE_SCHEDULEPOLICY)
 
@@ -168,8 +168,8 @@ _STREAMJOBSCHEDULE_CONCURRENCYPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2301,
-  serialized_end=2384,
+  serialized_start=2402,
+  serialized_end=2485,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOBSCHEDULE_CONCURRENCYPOLICY)
 
@@ -198,8 +198,8 @@ _STREAMJOBSCHEDULE_RETRYPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2386,
-  serialized_end=2441,
+  serialized_start=2487,
+  serialized_end=2542,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOBSCHEDULE_RETRYPOLICY)
 
@@ -233,8 +233,8 @@ _STREAMJOBRELEASE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2807,
-  serialized_end=2872,
+  serialized_start=2908,
+  serialized_end=2973,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMJOBRELEASE_STATUS)
 
@@ -255,64 +255,78 @@ _STREAMJOB = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='model.StreamJob.id', index=1,
+      name='pid', full_name='model.StreamJob.pid', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='model.StreamJob.id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='model.StreamJob.version', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='version', full_name='model.StreamJob.version', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='model.StreamJob.name', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='name', full_name='model.StreamJob.name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='desc', full_name='model.StreamJob.desc', index=4,
-      number=5, type=9, cpp_type=9, label=1,
+      name='desc', full_name='model.StreamJob.desc', index=5,
+      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='model.StreamJob.type', index=5,
-      number=6, type=14, cpp_type=8, label=1,
+      name='is_directory', full_name='model.StreamJob.is_directory', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='model.StreamJob.type', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='model.StreamJob.status', index=8,
+      number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='model.StreamJob.status', index=6,
-      number=7, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created_by', full_name='model.StreamJob.created_by', index=7,
-      number=8, type=9, cpp_type=9, label=1,
+      name='created_by', full_name='model.StreamJob.created_by', index=9,
+      number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created', full_name='model.StreamJob.created', index=8,
-      number=9, type=3, cpp_type=2, label=1,
+      name='created', full_name='model.StreamJob.created', index=10,
+      number=11, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updated', full_name='model.StreamJob.updated', index=9,
-      number=10, type=3, cpp_type=2, label=1,
+      name='updated', full_name='model.StreamJob.updated', index=11,
+      number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -332,7 +346,7 @@ _STREAMJOB = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=189,
-  serialized_end=681,
+  serialized_end=782,
 )
 
 
@@ -398,8 +412,8 @@ _STREAMJOBPROPERTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=684,
-  serialized_end=932,
+  serialized_start=785,
+  serialized_end=1033,
 )
 
 
@@ -465,8 +479,8 @@ _STREAMJOBCODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=935,
-  serialized_end=1341,
+  serialized_start=1036,
+  serialized_end=1442,
 )
 
 
@@ -525,8 +539,8 @@ _STREAMJOBARGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1344,
-  serialized_end=1498,
+  serialized_start=1445,
+  serialized_end=1599,
 )
 
 
@@ -630,8 +644,8 @@ _STREAMJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1501,
-  serialized_end=2449,
+  serialized_start=1602,
+  serialized_end=2550,
 )
 
 
@@ -726,8 +740,8 @@ _STREAMJOBRELEASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2452,
-  serialized_end=2872,
+  serialized_start=2553,
+  serialized_end=2973,
 )
 
 _STREAMJOB.fields_by_name['type'].enum_type = _STREAMJOB_TYPE
@@ -805,6 +819,7 @@ _sym_db.RegisterMessage(StreamJobRelease)
 
 DESCRIPTOR._options = None
 _STREAMJOB.fields_by_name['space_id']._options = None
+_STREAMJOB.fields_by_name['pid']._options = None
 _STREAMJOB.fields_by_name['id']._options = None
 _STREAMJOB.fields_by_name['version']._options = None
 _STREAMJOB.fields_by_name['name']._options = None

@@ -80,6 +80,37 @@ public final class StreamJobManageGrpc {
     return getDeleteStreamJobsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getMoveStreamJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MoveStreamJobs",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getMoveStreamJobsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getMoveStreamJobsMethod;
+    if ((getMoveStreamJobsMethod = StreamJobManageGrpc.getMoveStreamJobsMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getMoveStreamJobsMethod = StreamJobManageGrpc.getMoveStreamJobsMethod) == null) {
+          StreamJobManageGrpc.getMoveStreamJobsMethod = getMoveStreamJobsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MoveStreamJobs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("MoveStreamJobs"))
+              .build();
+        }
+      }
+    }
+    return getMoveStreamJobsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.CreateStreamJob,
       com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.CreateStreamJob> getCreateStreamJobMethod;
 
@@ -796,6 +827,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * DeleteStreamJobs delete stream job ant its related resources where in ids.
+     * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
      *  - Node, env schedule and its history version.
@@ -806,6 +838,16 @@ public final class StreamJobManageGrpc {
     public void deleteStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DeleteStreamJobs request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteStreamJobsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Move StreamJob to other directory.
+     * </pre>
+     */
+    public void moveStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMoveStreamJobsMethod(), responseObserver);
     }
 
     /**
@@ -1031,6 +1073,13 @@ public final class StreamJobManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_STREAM_JOBS)))
           .addMethod(
+            getMoveStreamJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_MOVE_STREAM_JOBS)))
+          .addMethod(
             getCreateStreamJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -1213,6 +1262,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * DeleteStreamJobs delete stream job ant its related resources where in ids.
+     * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
      *  - Node, env schedule and its history version.
@@ -1224,6 +1274,17 @@ public final class StreamJobManageGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteStreamJobsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Move StreamJob to other directory.
+     * </pre>
+     */
+    public void moveStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMoveStreamJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1485,6 +1546,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * DeleteStreamJobs delete stream job ant its related resources where in ids.
+     * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
      *  - Node, env schedule and its history version.
@@ -1495,6 +1557,16 @@ public final class StreamJobManageGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DeleteStreamJobs request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteStreamJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Move StreamJob to other directory.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct moveStreamJobs(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveStreamJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1736,6 +1808,7 @@ public final class StreamJobManageGrpc {
     /**
      * <pre>
      * DeleteStreamJobs delete stream job ant its related resources where in ids.
+     * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
      *  - Node, env schedule and its history version.
@@ -1747,6 +1820,17 @@ public final class StreamJobManageGrpc {
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DeleteStreamJobs request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteStreamJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Move StreamJob to other directory.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> moveStreamJobs(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMoveStreamJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1979,27 +2063,28 @@ public final class StreamJobManageGrpc {
 
   private static final int METHODID_LIST_STREAM_JOBS = 0;
   private static final int METHODID_DELETE_STREAM_JOBS = 1;
-  private static final int METHODID_CREATE_STREAM_JOB = 2;
-  private static final int METHODID_UPDATE_STREAM_JOB = 3;
-  private static final int METHODID_DESCRIBE_STREAM_JOB = 4;
-  private static final int METHODID_SET_STREAM_JOB_CODE = 5;
-  private static final int METHODID_GET_STREAM_JOB_CODE = 6;
-  private static final int METHODID_STREAM_JOB_CODE_SYNTAX = 7;
-  private static final int METHODID_SET_STREAM_JOB_ARGS = 8;
-  private static final int METHODID_GET_STREAM_JOB_ARGS = 9;
-  private static final int METHODID_LIST_BUILT_IN_CONNECTORS = 10;
-  private static final int METHODID_SET_STREAM_JOB_SCHEDULE = 11;
-  private static final int METHODID_GET_STREAM_JOB_SCHEDULE = 12;
-  private static final int METHODID_RELEASE_STREAM_JOB = 13;
-  private static final int METHODID_OFFLINE_RELEASE_STREAM_JOB = 14;
-  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 15;
-  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 16;
-  private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 17;
-  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 18;
-  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 19;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 20;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 21;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 22;
+  private static final int METHODID_MOVE_STREAM_JOBS = 2;
+  private static final int METHODID_CREATE_STREAM_JOB = 3;
+  private static final int METHODID_UPDATE_STREAM_JOB = 4;
+  private static final int METHODID_DESCRIBE_STREAM_JOB = 5;
+  private static final int METHODID_SET_STREAM_JOB_CODE = 6;
+  private static final int METHODID_GET_STREAM_JOB_CODE = 7;
+  private static final int METHODID_STREAM_JOB_CODE_SYNTAX = 8;
+  private static final int METHODID_SET_STREAM_JOB_ARGS = 9;
+  private static final int METHODID_GET_STREAM_JOB_ARGS = 10;
+  private static final int METHODID_LIST_BUILT_IN_CONNECTORS = 11;
+  private static final int METHODID_SET_STREAM_JOB_SCHEDULE = 12;
+  private static final int METHODID_GET_STREAM_JOB_SCHEDULE = 13;
+  private static final int METHODID_RELEASE_STREAM_JOB = 14;
+  private static final int METHODID_OFFLINE_RELEASE_STREAM_JOB = 15;
+  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 16;
+  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 17;
+  private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 18;
+  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 19;
+  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 20;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 21;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 22;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 23;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2024,6 +2109,10 @@ public final class StreamJobManageGrpc {
           break;
         case METHODID_DELETE_STREAM_JOBS:
           serviceImpl.deleteStreamJobs((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DeleteStreamJobs) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_MOVE_STREAM_JOBS:
+          serviceImpl.moveStreamJobs((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.MoveStreamJobs) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_CREATE_STREAM_JOB:
@@ -2173,6 +2262,7 @@ public final class StreamJobManageGrpc {
               .setSchemaDescriptor(new StreamJobManageFileDescriptorSupplier())
               .addMethod(getListStreamJobsMethod())
               .addMethod(getDeleteStreamJobsMethod())
+              .addMethod(getMoveStreamJobsMethod())
               .addMethod(getCreateStreamJobMethod())
               .addMethod(getUpdateStreamJobMethod())
               .addMethod(getDescribeStreamJobMethod())

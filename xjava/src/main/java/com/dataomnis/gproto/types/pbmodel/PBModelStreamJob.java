@@ -42,11 +42,33 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
+     * PID is the parent id(directory). pid is "" means root(`/`)
+     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+     * </pre>
+     *
+     * <code>string pid = 2 [(.validator.field) = { ... }</code>
+     * @return The pid.
+     */
+    java.lang.String getPid();
+    /**
+     * <pre>
+     * PID is the parent id(directory). pid is "" means root(`/`)
+     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+     * </pre>
+     *
+     * <code>string pid = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for pid.
+     */
+    com.google.protobuf.ByteString
+        getPidBytes();
+
+    /**
+     * <pre>
      * Job ID, unique within a region.
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * <code>string id = 3 [(.validator.field) = { ... }</code>
      * @return The id.
      */
     java.lang.String getId();
@@ -56,7 +78,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * <code>string id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
@@ -69,7 +91,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
      * </pre>
      *
-     * <code>string version = 3 [(.validator.field) = { ... }</code>
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
      * @return The version.
      */
     java.lang.String getVersion();
@@ -80,7 +102,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
      * </pre>
      *
-     * <code>string version = 3 [(.validator.field) = { ... }</code>
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for version.
      */
     com.google.protobuf.ByteString
@@ -92,7 +114,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -102,7 +124,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -114,7 +136,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     java.lang.String getDesc();
@@ -124,7 +146,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
@@ -132,11 +154,22 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
+     * IsDirectory represents this job whether a directory.
+     * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
+     * </pre>
+     *
+     * <code>bool is_directory = 7;</code>
+     * @return The isDirectory.
+     */
+    boolean getIsDirectory();
+
+    /**
+     * <pre>
      * Job type. 1 =&gt; "StreamOperator" 2 =&gt; "StreamSQL" 3 =&gt; "StreamJAR" 4 =&gt; "StreamPython" 5 =&gt; "StreamScala"
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
@@ -146,7 +179,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type getType();
@@ -157,7 +190,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
@@ -167,7 +200,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
      * @return The status.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Status getStatus();
@@ -178,7 +211,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
      * @return The createdBy.
      */
     java.lang.String getCreatedBy();
@@ -188,7 +221,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
      * @return The bytes for createdBy.
      */
     com.google.protobuf.ByteString
@@ -200,7 +233,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
-     * <code>int64 created = 9 [(.validator.field) = { ... }</code>
+     * <code>int64 created = 11 [(.validator.field) = { ... }</code>
      * @return The created.
      */
     long getCreated();
@@ -211,7 +244,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
-     * <code>int64 updated = 10 [(.validator.field) = { ... }</code>
+     * <code>int64 updated = 12 [(.validator.field) = { ... }</code>
      * @return The updated.
      */
     long getUpdated();
@@ -234,6 +267,7 @@ public final class PBModelStreamJob {
     }
     private StreamJob() {
       spaceId_ = "";
+      pid_ = "";
       id_ = "";
       version_ = "";
       name_ = "";
@@ -282,51 +316,62 @@ public final class PBModelStreamJob {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
+              pid_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              version_ = s;
+              id_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              version_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              name_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               desc_ = s;
               break;
             }
-            case 48: {
+            case 56: {
+
+              isDirectory_ = input.readBool();
+              break;
+            }
+            case 64: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
               break;
             }
-            case 56: {
+            case 72: {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
               break;
             }
-            case 66: {
+            case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
               createdBy_ = s;
               break;
             }
-            case 72: {
+            case 88: {
 
               created_ = input.readInt64();
               break;
             }
-            case 80: {
+            case 96: {
 
               updated_ = input.readInt64();
               break;
@@ -525,13 +570,13 @@ public final class PBModelStreamJob {
        */
       StatusUnset(0),
       /**
-       * <code>Normal = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      Normal(1),
+      Deleted(1),
       /**
-       * <code>Deleted = 2;</code>
+       * <code>Active = 2;</code>
        */
-      Deleted(2),
+      Active(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -540,13 +585,13 @@ public final class PBModelStreamJob {
        */
       public static final int StatusUnset_VALUE = 0;
       /**
-       * <code>Normal = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      public static final int Normal_VALUE = 1;
+      public static final int Deleted_VALUE = 1;
       /**
-       * <code>Deleted = 2;</code>
+       * <code>Active = 2;</code>
        */
-      public static final int Deleted_VALUE = 2;
+      public static final int Active_VALUE = 2;
 
 
       public final int getNumber() {
@@ -574,8 +619,8 @@ public final class PBModelStreamJob {
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return StatusUnset;
-          case 1: return Normal;
-          case 2: return Deleted;
+          case 1: return Deleted;
+          case 2: return Active;
           default: return null;
         }
       }
@@ -680,7 +725,55 @@ public final class PBModelStreamJob {
       }
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int PID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object pid_;
+    /**
+     * <pre>
+     * PID is the parent id(directory). pid is "" means root(`/`)
+     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+     * </pre>
+     *
+     * <code>string pid = 2 [(.validator.field) = { ... }</code>
+     * @return The pid.
+     */
+    @java.lang.Override
+    public java.lang.String getPid() {
+      java.lang.Object ref = pid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * PID is the parent id(directory). pid is "" means root(`/`)
+     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+     * </pre>
+     *
+     * <code>string pid = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for pid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPidBytes() {
+      java.lang.Object ref = pid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object id_;
     /**
      * <pre>
@@ -688,7 +781,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * <code>string id = 3 [(.validator.field) = { ... }</code>
      * @return The id.
      */
     @java.lang.Override
@@ -710,7 +803,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
-     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * <code>string id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -728,7 +821,7 @@ public final class PBModelStreamJob {
       }
     }
 
-    public static final int VERSION_FIELD_NUMBER = 3;
+    public static final int VERSION_FIELD_NUMBER = 4;
     private volatile java.lang.Object version_;
     /**
      * <pre>
@@ -737,7 +830,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
      * </pre>
      *
-     * <code>string version = 3 [(.validator.field) = { ... }</code>
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
      * @return The version.
      */
     @java.lang.Override
@@ -760,7 +853,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
      * </pre>
      *
-     * <code>string version = 3 [(.validator.field) = { ... }</code>
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for version.
      */
     @java.lang.Override
@@ -778,7 +871,7 @@ public final class PBModelStreamJob {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 4;
+    public static final int NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object name_;
     /**
      * <pre>
@@ -786,7 +879,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -808,7 +901,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -826,7 +919,7 @@ public final class PBModelStreamJob {
       }
     }
 
-    public static final int DESC_FIELD_NUMBER = 5;
+    public static final int DESC_FIELD_NUMBER = 6;
     private volatile java.lang.Object desc_;
     /**
      * <pre>
@@ -834,7 +927,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The desc.
      */
     @java.lang.Override
@@ -856,7 +949,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for desc.
      */
     @java.lang.Override
@@ -874,7 +967,23 @@ public final class PBModelStreamJob {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 6;
+    public static final int IS_DIRECTORY_FIELD_NUMBER = 7;
+    private boolean isDirectory_;
+    /**
+     * <pre>
+     * IsDirectory represents this job whether a directory.
+     * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
+     * </pre>
+     *
+     * <code>bool is_directory = 7;</code>
+     * @return The isDirectory.
+     */
+    @java.lang.Override
+    public boolean getIsDirectory() {
+      return isDirectory_;
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 8;
     private int type_;
     /**
      * <pre>
@@ -882,7 +991,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -894,7 +1003,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"type" gorm:"column:type;"
      * </pre>
      *
-     * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
      * @return The type.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type getType() {
@@ -903,7 +1012,7 @@ public final class PBModelStreamJob {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.UNRECOGNIZED : result;
     }
 
-    public static final int STATUS_FIELD_NUMBER = 7;
+    public static final int STATUS_FIELD_NUMBER = 9;
     private int status_;
     /**
      * <pre>
@@ -911,7 +1020,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
@@ -923,7 +1032,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
      * @return The status.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Status getStatus() {
@@ -932,7 +1041,7 @@ public final class PBModelStreamJob {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Status.UNRECOGNIZED : result;
     }
 
-    public static final int CREATED_BY_FIELD_NUMBER = 8;
+    public static final int CREATED_BY_FIELD_NUMBER = 10;
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
@@ -940,7 +1049,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
      * @return The createdBy.
      */
     @java.lang.Override
@@ -962,7 +1071,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 10 [(.validator.field) = { ... }</code>
      * @return The bytes for createdBy.
      */
     @java.lang.Override
@@ -980,7 +1089,7 @@ public final class PBModelStreamJob {
       }
     }
 
-    public static final int CREATED_FIELD_NUMBER = 9;
+    public static final int CREATED_FIELD_NUMBER = 11;
     private long created_;
     /**
      * <pre>
@@ -988,7 +1097,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
-     * <code>int64 created = 9 [(.validator.field) = { ... }</code>
+     * <code>int64 created = 11 [(.validator.field) = { ... }</code>
      * @return The created.
      */
     @java.lang.Override
@@ -996,7 +1105,7 @@ public final class PBModelStreamJob {
       return created_;
     }
 
-    public static final int UPDATED_FIELD_NUMBER = 10;
+    public static final int UPDATED_FIELD_NUMBER = 12;
     private long updated_;
     /**
      * <pre>
@@ -1004,7 +1113,7 @@ public final class PBModelStreamJob {
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
-     * <code>int64 updated = 10 [(.validator.field) = { ... }</code>
+     * <code>int64 updated = 12 [(.validator.field) = { ... }</code>
      * @return The updated.
      */
     @java.lang.Override
@@ -1029,32 +1138,38 @@ public final class PBModelStreamJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pid_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, desc_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
+      }
+      if (isDirectory_ != false) {
+        output.writeBool(7, isDirectory_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.TypeUnset.getNumber()) {
-        output.writeEnum(6, type_);
+        output.writeEnum(8, type_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Status.StatusUnset.getNumber()) {
-        output.writeEnum(7, status_);
+        output.writeEnum(9, status_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdBy_);
       }
       if (created_ != 0L) {
-        output.writeInt64(9, created_);
+        output.writeInt64(11, created_);
       }
       if (updated_ != 0L) {
-        output.writeInt64(10, updated_);
+        output.writeInt64(12, updated_);
       }
       unknownFields.writeTo(output);
     }
@@ -1068,36 +1183,43 @@ public final class PBModelStreamJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pid_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desc_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
+      }
+      if (isDirectory_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isDirectory_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, type_);
+          .computeEnumSize(8, type_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Status.StatusUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, status_);
+          .computeEnumSize(9, status_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdBy_);
       }
       if (created_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, created_);
+          .computeInt64Size(11, created_);
       }
       if (updated_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, updated_);
+          .computeInt64Size(12, updated_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1116,6 +1238,8 @@ public final class PBModelStreamJob {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getPid()
+          .equals(other.getPid())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (!getVersion()
@@ -1124,6 +1248,8 @@ public final class PBModelStreamJob {
           .equals(other.getName())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
+      if (getIsDirectory()
+          != other.getIsDirectory()) return false;
       if (type_ != other.type_) return false;
       if (status_ != other.status_) return false;
       if (!getCreatedBy()
@@ -1145,6 +1271,8 @@ public final class PBModelStreamJob {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + PID_FIELD_NUMBER;
+      hash = (53 * hash) + getPid().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -1153,6 +1281,9 @@ public final class PBModelStreamJob {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
+      hash = (37 * hash) + IS_DIRECTORY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDirectory());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -1304,6 +1435,8 @@ public final class PBModelStreamJob {
         super.clear();
         spaceId_ = "";
 
+        pid_ = "";
+
         id_ = "";
 
         version_ = "";
@@ -1311,6 +1444,8 @@ public final class PBModelStreamJob {
         name_ = "";
 
         desc_ = "";
+
+        isDirectory_ = false;
 
         type_ = 0;
 
@@ -1349,10 +1484,12 @@ public final class PBModelStreamJob {
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob result = new com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob(this);
         result.spaceId_ = spaceId_;
+        result.pid_ = pid_;
         result.id_ = id_;
         result.version_ = version_;
         result.name_ = name_;
         result.desc_ = desc_;
+        result.isDirectory_ = isDirectory_;
         result.type_ = type_;
         result.status_ = status_;
         result.createdBy_ = createdBy_;
@@ -1410,6 +1547,10 @@ public final class PBModelStreamJob {
           spaceId_ = other.spaceId_;
           onChanged();
         }
+        if (!other.getPid().isEmpty()) {
+          pid_ = other.pid_;
+          onChanged();
+        }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -1425,6 +1566,9 @@ public final class PBModelStreamJob {
         if (!other.getDesc().isEmpty()) {
           desc_ = other.desc_;
           onChanged();
+        }
+        if (other.getIsDirectory() != false) {
+          setIsDirectory(other.getIsDirectory());
         }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
@@ -1572,6 +1716,107 @@ public final class PBModelStreamJob {
         return this;
       }
 
+      private java.lang.Object pid_ = "";
+      /**
+       * <pre>
+       * PID is the parent id(directory). pid is "" means root(`/`)
+       * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+       * </pre>
+       *
+       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * @return The pid.
+       */
+      public java.lang.String getPid() {
+        java.lang.Object ref = pid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * PID is the parent id(directory). pid is "" means root(`/`)
+       * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+       * </pre>
+       *
+       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for pid.
+       */
+      public com.google.protobuf.ByteString
+          getPidBytes() {
+        java.lang.Object ref = pid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * PID is the parent id(directory). pid is "" means root(`/`)
+       * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+       * </pre>
+       *
+       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * @param value The pid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PID is the parent id(directory). pid is "" means root(`/`)
+       * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+       * </pre>
+       *
+       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPid() {
+        
+        pid_ = getDefaultInstance().getPid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * PID is the parent id(directory). pid is "" means root(`/`)
+       * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+       * </pre>
+       *
+       * <code>string pid = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for pid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pid_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object id_ = "";
       /**
        * <pre>
@@ -1579,7 +1824,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * <code>string id = 3 [(.validator.field) = { ... }</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -1600,7 +1845,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * <code>string id = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -1622,7 +1867,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * <code>string id = 3 [(.validator.field) = { ... }</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -1642,7 +1887,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * <code>string id = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -1657,7 +1902,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
-       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * <code>string id = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -1681,7 +1926,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
        * </pre>
        *
-       * <code>string version = 3 [(.validator.field) = { ... }</code>
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
        * @return The version.
        */
       public java.lang.String getVersion() {
@@ -1703,7 +1948,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
        * </pre>
        *
-       * <code>string version = 3 [(.validator.field) = { ... }</code>
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for version.
        */
       public com.google.protobuf.ByteString
@@ -1726,7 +1971,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
        * </pre>
        *
-       * <code>string version = 3 [(.validator.field) = { ... }</code>
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
        * @param value The version to set.
        * @return This builder for chaining.
        */
@@ -1747,7 +1992,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
        * </pre>
        *
-       * <code>string version = 3 [(.validator.field) = { ... }</code>
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
@@ -1763,7 +2008,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"version" gorm:"column:version;primarykey;"
        * </pre>
        *
-       * <code>string version = 3 [(.validator.field) = { ... }</code>
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for version to set.
        * @return This builder for chaining.
        */
@@ -1786,7 +2031,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1807,7 +2052,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1829,7 +2074,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1849,7 +2094,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1864,7 +2109,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1887,7 +2132,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return The desc.
        */
       public java.lang.String getDesc() {
@@ -1908,7 +2153,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
@@ -1930,7 +2175,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @param value The desc to set.
        * @return This builder for chaining.
        */
@@ -1950,7 +2195,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDesc() {
@@ -1965,7 +2210,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
@@ -1981,6 +2226,52 @@ public final class PBModelStreamJob {
         return this;
       }
 
+      private boolean isDirectory_ ;
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
+       * </pre>
+       *
+       * <code>bool is_directory = 7;</code>
+       * @return The isDirectory.
+       */
+      @java.lang.Override
+      public boolean getIsDirectory() {
+        return isDirectory_;
+      }
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
+       * </pre>
+       *
+       * <code>bool is_directory = 7;</code>
+       * @param value The isDirectory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsDirectory(boolean value) {
+        
+        isDirectory_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * IsDirectory represents this job whether a directory.
+       * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
+       * </pre>
+       *
+       * <code>bool is_directory = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsDirectory() {
+        
+        isDirectory_ = false;
+        onChanged();
+        return this;
+      }
+
       private int type_ = 0;
       /**
        * <pre>
@@ -1988,7 +2279,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -2000,7 +2291,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -2016,7 +2307,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override
@@ -2031,7 +2322,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -2050,7 +2341,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"type" gorm:"column:type;"
        * </pre>
        *
-       * <code>.model.StreamJob.Type type = 6 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Type type = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -2067,7 +2358,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for status.
        */
       @java.lang.Override public int getStatusValue() {
@@ -2079,7 +2370,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
        */
@@ -2095,7 +2386,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
        * @return The status.
        */
       @java.lang.Override
@@ -2110,7 +2401,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -2129,7 +2420,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
-       * <code>.model.StreamJob.Status status = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJob.Status status = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -2146,7 +2437,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
        * @return The createdBy.
        */
       public java.lang.String getCreatedBy() {
@@ -2167,7 +2458,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
        * @return The bytes for createdBy.
        */
       public com.google.protobuf.ByteString
@@ -2189,7 +2480,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
        * @param value The createdBy to set.
        * @return This builder for chaining.
        */
@@ -2209,7 +2500,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedBy() {
@@ -2224,7 +2515,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 10 [(.validator.field) = { ... }</code>
        * @param value The bytes for createdBy to set.
        * @return This builder for chaining.
        */
@@ -2247,7 +2538,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 9 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 11 [(.validator.field) = { ... }</code>
        * @return The created.
        */
       @java.lang.Override
@@ -2260,7 +2551,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 9 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 11 [(.validator.field) = { ... }</code>
        * @param value The created to set.
        * @return This builder for chaining.
        */
@@ -2276,7 +2567,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 9 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 11 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCreated() {
@@ -2293,7 +2584,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 10 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 12 [(.validator.field) = { ... }</code>
        * @return The updated.
        */
       @java.lang.Override
@@ -2306,7 +2597,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 10 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 12 [(.validator.field) = { ... }</code>
        * @param value The updated to set.
        * @return This builder for chaining.
        */
@@ -2322,7 +2613,7 @@ public final class PBModelStreamJob {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 10 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 12 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdated() {
@@ -12555,77 +12846,80 @@ public final class PBModelStreamJob {
       "del\0323github.com/yu31/protoc-plugin/proto" +
       "/validator.proto\032/github.com/yu31/protoc" +
       "-plugin/proto/gosql.proto\032\'proto/types/m" +
-      "odel/flink/flink_job.proto\"\354\003\n\tStreamJob" +
+      "odel/flink/flink_job.proto\"\321\004\n\tStreamJob" +
       "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      "\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007version\030\003 \001" +
-      "(\tB\004\342\337\037\000\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001" +
-      "\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\0222\n\004type\030\006 " +
-      "\001(\0162\025.model.StreamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X" +
-      "\001\0226\n\006status\030\007 \001(\0162\027.model.StreamJob.Stat" +
-      "usB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_by\030\010 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
-      "\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"L\n\004Type\022" +
-      "\r\n\tTypeUnset\020\000\022\014\n\010Operator\020\001\022\007\n\003SQL\020\002\022\007\n" +
-      "\003Jar\020\003\022\n\n\006Python\020\004\022\t\n\005Scala\020\005\"2\n\006Status\022" +
-      "\017\n\013StatusUnset\020\000\022\n\n\006Normal\020\001\022\013\n\007Deleted\020" +
-      "\002\"\370\001\n\021StreamJobProperty\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\360\001\024\022\034\n\007version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022(" +
-      "\n\004code\030\004 \001(\0132\024.model.StreamJobCodeB\004\342\337\037\000" +
-      "\022(\n\004args\030\005 \001(\0132\024.model.StreamJobArgsB\004\342\337" +
-      "\037\000\0220\n\010schedule\030\006 \001(\0132\030.model.StreamJobSc" +
-      "heduleB\004\342\337\037\000\"\226\003\n\rStreamJobCode\0222\n\004type\030\001" +
-      " \001(\0162\025.model.StreamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000" +
-      "X\001\022G\n\toperators\030\002 \003(\0132\024.flink.FlinkOpera" +
-      "torB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\001\342\337\037\007\022\005\352\001\0020\000\022<\n\003s" +
-      "ql\030\003 \001(\0132\017.flink.FlinkSQLB\036\342\337\037\017\n\r\n\004type\022" +
-      "\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<\n\003jar\030\004 \001(\0132\017.flink.F" +
-      "linkJarB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037\007\022\005\342\001\002\020\001\022" +
-      "B\n\006python\030\005 \001(\0132\022.flink.FlinkPythonB\036\342\337\037" +
-      "\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022@\n\005scala\030\006 \001" +
-      "(\0132\021.flink.FlinkScalaB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002" +
-      "\030\005\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"\232\001\n\rStreamJobArgs\022" +
-      "\030\n\ncluster_id\030\001 \001(\tB\004\342\337\037\000\022\"\n\013parallelism" +
-      "\030\002 \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022\022\n\004udfs\030\003 \003(\tB\004\342\337\037" +
-      "\000\022\022\n\nconnectors\030\004 \003(\t\022\033\n\023built_in_connec" +
-      "tors\030\005 \003(\t:\006\312\262\004\002\n\000\"\264\007\n\021StreamJobSchedule" +
-      "\022M\n\017schedule_policy\030\001 \001(\0162\'.model.Stream" +
-      "JobSchedule.SchedulePolicyB\013\342\337\037\007\022\005\332\001\002X\001\022" +
-      ">\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_poli" +
-      "cy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003" +
-      "B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@" +
-      "\000\022U\n\022concurrency_policy\030\006 \001(\0162*.model.St" +
-      "reamJobSchedule.ConcurrencyPolicyB\r\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017s" +
-      "chedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004" +
-      "hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express\030" +
-      "\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037" +
-      "\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@" +
-      "\000\022I\n\014retry_policy\030\n \001(\0162$.model.StreamJo" +
-      "bSchedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013" +
-      "retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022" +
-      "\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 " +
-      "\001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001" +
-      "\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023SchedulePolic" +
-      "yUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime" +
-      "\020\002\022\017\n\013Immediately\020\003\"S\n\021ConcurrencyPolicy" +
-      "\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022" +
-      "\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022" +
-      "\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020" +
-      "\002:\006\312\262\004\002\n\000\"\244\003\n\020StreamJobRelease\022%\n\010space_" +
-      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007version\030\003 \001(\tB\013\342\337\037\007\022\005" +
-      "\302\001\002\"\000\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n" +
-      "\004type\030\005 \001(\0162\025.model.StreamJob.TypeB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model.Stream" +
-      "JobRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreat" +
-      "ed_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001" +
-      "(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005" +
-      "\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Acti" +
-      "ve\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bk\n\"com." +
-      "dataomnis.gproto.types.pbmodelB\020PBModelS" +
-      "treamJobP\000Z1github.com/DataWorkbench/gpr" +
-      "oto/xgo/types/pbmodelb\006proto3"
+      "2\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004stj-\022\030\n\002id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n" +
+      "\007version\030\004 \001(\tB\004\342\337\037\000\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014" +
+      "\022\n\302\001\007\200\002\001\230\002\200\001\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200" +
+      "\010\022\024\n\014is_directory\030\007 \001(\010\022M\n\004type\030\010 \001(\0162\025." +
+      "model.StreamJob.TypeB(\342\337\037\027\n\025\n\014is_directo" +
+      "ry\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\0040\000X\001\0226\n\006status\030\t \001(\0162\027" +
+      ".model.StreamJob.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 " +
+      "\n\ncreated_by\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007crea" +
+      "ted\030\013 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\014 \001(\003B" +
+      "\013\342\337\037\007\022\005\262\001\0020\000\"L\n\004Type\022\r\n\tTypeUnset\020\000\022\014\n\010O" +
+      "perator\020\001\022\007\n\003SQL\020\002\022\007\n\003Jar\020\003\022\n\n\006Python\020\004\022" +
+      "\t\n\005Scala\020\005\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n" +
+      "\007Deleted\020\001\022\n\n\006Active\020\002\"\370\001\n\021StreamJobProp" +
+      "erty\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007version" +
+      "\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022(\n\004code\030\004 \001(\0132\024.mode" +
+      "l.StreamJobCodeB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.mo" +
+      "del.StreamJobArgsB\004\342\337\037\000\0220\n\010schedule\030\006 \001(" +
+      "\0132\030.model.StreamJobScheduleB\004\342\337\037\000\"\226\003\n\rSt" +
+      "reamJobCode\0222\n\004type\030\001 \001(\0162\025.model.Stream" +
+      "Job.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022G\n\toperators\030\002 \003" +
+      "(\0132\024.flink.FlinkOperatorB\036\342\337\037\017\n\r\n\004type\022\005" +
+      "\332\001\002\030\001\342\337\037\007\022\005\352\001\0020\000\022<\n\003sql\030\003 \001(\0132\017.flink.Fl" +
+      "inkSQLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<" +
+      "\n\003jar\030\004 \001(\0132\017.flink.FlinkJarB\036\342\337\037\017\n\r\n\004ty" +
+      "pe\022\005\332\001\002\030\003\342\337\037\007\022\005\342\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.f" +
+      "link.FlinkPythonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037" +
+      "\007\022\005\342\001\002\020\001\022@\n\005scala\030\006 \001(\0132\021.flink.FlinkSca" +
+      "laB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002" +
+      "\n\000\"\232\001\n\rStreamJobArgs\022\030\n\ncluster_id\030\001 \001(\t" +
+      "B\004\342\337\037\000\022\"\n\013parallelism\030\002 \001(\005B\r\342\337\037\t\022\007\262\001\0048d" +
+      "@\000\022\022\n\004udfs\030\003 \003(\tB\004\342\337\037\000\022\022\n\nconnectors\030\004 \003" +
+      "(\t\022\033\n\023built_in_connectors\030\005 \003(\t:\006\312\262\004\002\n\000\"" +
+      "\264\007\n\021StreamJobSchedule\022M\n\017schedule_policy" +
+      "\030\001 \001(\0162\'.model.StreamJobSchedule.Schedul" +
+      "ePolicyB\013\342\337\037\007\022\005\332\001\002X\001\022>\n\010executed\030\002 \001(\003B," +
+      "\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@" +
+      "\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005en" +
+      "ded\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022concurrency_po" +
+      "licy\030\006 \001(\0162*.model.StreamJobSchedule.Con" +
+      "currencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_" +
+      "type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002" +
+      "\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003dayJ\004weekJ\005mo" +
+      "nthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017sche" +
+      "dule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeou" +
+      "t\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022I\n\014retry_policy\030\n" +
+      " \001(\0162$.model.StreamJobSchedule.RetryPoli" +
+      "cyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_limit\030\013 \001(\005B(" +
+      "\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000" +
+      "\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_" +
+      "policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePo" +
+      "licy\022\027\n\023SchedulePolicyUnset\020\000\022\017\n\013Periodi" +
+      "city\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Immediately\020\003" +
+      "\"S\n\021ConcurrencyPolicy\022\032\n\026ConcurrencyPoli" +
+      "cyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Repl" +
+      "ace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPolicyUnset" +
+      "\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\244\003\n\020Strea" +
+      "mJobRelease\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007" +
+      "version\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\036\n\004name\030\004 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004type\030\005 \001(\0162\025.model" +
+      ".StreamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006status" +
+      "\030\006 \001(\0162\036.model.StreamJobRelease.Status\022\014" +
+      "\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007" +
+      "updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013" +
+      "StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002" +
+      "\022\013\n\007Deleted\020\003Bk\n\"com.dataomnis.gproto.ty" +
+      "pes.pbmodelB\020PBModelStreamJobP\000Z1github." +
+      "com/DataWorkbench/gproto/xgo/types/pbmod" +
+      "elb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12639,7 +12933,7 @@ public final class PBModelStreamJob {
     internal_static_model_StreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_StreamJob_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Version", "Name", "Desc", "Type", "Status", "CreatedBy", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "Pid", "Id", "Version", "Name", "Desc", "IsDirectory", "Type", "Status", "CreatedBy", "Created", "Updated", });
     internal_static_model_StreamJobProperty_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_StreamJobProperty_fieldAccessorTable = new

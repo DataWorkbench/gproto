@@ -27,57 +27,58 @@ public final class PBSvcStreamJobManage {
       "manage.proto\022\014spacemanager\032\035proto/types/" +
       "model/empty.proto\032+proto/types/request/s" +
       "tream_job_manage.proto\032,proto/types/resp" +
-      "onse/stream_job_manage.proto2\275\016\n\017StreamJ" +
+      "onse/stream_job_manage.proto2\376\016\n\017StreamJ" +
       "obManage\022E\n\016ListStreamJobs\022\027.request.Lis" +
       "tStreamJobs\032\030.response.ListStreamJobs\"\000\022" +
       "C\n\020DeleteStreamJobs\022\031.request.DeleteStre" +
-      "amJobs\032\022.model.EmptyStruct\"\000\022H\n\017CreateSt" +
-      "reamJob\022\030.request.CreateStreamJob\032\031.resp" +
-      "onse.CreateStreamJob\"\000\022A\n\017UpdateStreamJo" +
-      "b\022\030.request.UpdateStreamJob\032\022.model.Empt" +
-      "yStruct\"\000\022N\n\021DescribeStreamJob\022\032.request" +
-      ".DescribeStreamJob\032\033.response.DescribeSt" +
-      "reamJob\"\000\022C\n\020SetStreamJobCode\022\031.request." +
-      "SetStreamJobCode\032\022.model.EmptyStruct\"\000\022K" +
-      "\n\020GetStreamJobCode\022\031.request.GetStreamJo" +
-      "bCode\032\032.response.GetStreamJobCode\"\000\022T\n\023S" +
-      "treamJobCodeSyntax\022\034.request.StreamJobCo" +
-      "deSyntax\032\035.response.StreamJobCodeSyntax\"" +
-      "\000\022C\n\020SetStreamJobArgs\022\031.request.SetStrea" +
-      "mJobArgs\032\022.model.EmptyStruct\"\000\022K\n\020GetStr" +
-      "eamJobArgs\022\031.request.GetStreamJobArgs\032\032." +
-      "response.GetStreamJobArgs\"\000\022N\n\025ListBuilt" +
-      "InConnectors\022\022.model.EmptyStruct\032\037.respo" +
-      "nse.ListBuiltInConnectors\"\000\022K\n\024SetStream" +
-      "JobSchedule\022\035.request.SetStreamJobSchedu" +
-      "le\032\022.model.EmptyStruct\"\000\022W\n\024GetStreamJob" +
-      "Schedule\022\035.request.GetStreamJobSchedule\032" +
-      "\036.response.GetStreamJobSchedule\"\000\022C\n\020Rel" +
-      "easeStreamJob\022\031.request.ReleaseStreamJob" +
-      "\032\022.model.EmptyStruct\"\000\022Q\n\027OfflineRelease" +
-      "StreamJob\022 .request.OfflineReleaseStream" +
-      "Job\032\022.model.EmptyStruct\"\000\022Q\n\027SuspendRele" +
-      "aseStreamJob\022 .request.SuspendReleaseStr" +
-      "eamJob\032\022.model.EmptyStruct\"\000\022O\n\026ResumeRe" +
-      "leaseStreamJob\022\037.request.ResumeReleaseSt" +
-      "reamJob\032\022.model.EmptyStruct\"\000\022Z\n\025ListRel" +
-      "easeStreamJobs\022\036.request.ListReleaseStre" +
-      "amJobs\032\037.response.ListReleaseStreamJobs\"" +
-      "\000\022Z\n\025ListStreamJobVersions\022\036.request.Lis" +
-      "tStreamJobVersions\032\037.response.ListStream" +
-      "JobVersions\"\000\022U\n\030DescribeStreamJobVersio" +
-      "n\022\032.request.DescribeStreamJob\032\033.response" +
-      ".DescribeStreamJob\"\000\022R\n\027GetStreamJobVers" +
-      "ionCode\022\031.request.GetStreamJobCode\032\032.res" +
-      "ponse.GetStreamJobCode\"\000\022R\n\027GetStreamJob" +
-      "VersionArgs\022\031.request.GetStreamJobArgs\032\032" +
-      ".response.GetStreamJobArgs\"\000\022^\n\033GetStrea" +
-      "mJobVersionSchedule\022\035.request.GetStreamJ" +
-      "obSchedule\032\036.response.GetStreamJobSchedu" +
-      "le\"\000By\n\'com.dataomnis.gproto.service.pbs" +
-      "vcspaceB\024PBSvcStreamJobManageP\000Z6github." +
-      "com/DataWorkbench/gproto/xgo/service/pbs" +
-      "vcspaceb\006proto3"
+      "amJobs\032\022.model.EmptyStruct\"\000\022?\n\016MoveStre" +
+      "amJobs\022\027.request.MoveStreamJobs\032\022.model." +
+      "EmptyStruct\"\000\022H\n\017CreateStreamJob\022\030.reque" +
+      "st.CreateStreamJob\032\031.response.CreateStre" +
+      "amJob\"\000\022A\n\017UpdateStreamJob\022\030.request.Upd" +
+      "ateStreamJob\032\022.model.EmptyStruct\"\000\022N\n\021De" +
+      "scribeStreamJob\022\032.request.DescribeStream" +
+      "Job\032\033.response.DescribeStreamJob\"\000\022C\n\020Se" +
+      "tStreamJobCode\022\031.request.SetStreamJobCod" +
+      "e\032\022.model.EmptyStruct\"\000\022K\n\020GetStreamJobC" +
+      "ode\022\031.request.GetStreamJobCode\032\032.respons" +
+      "e.GetStreamJobCode\"\000\022T\n\023StreamJobCodeSyn" +
+      "tax\022\034.request.StreamJobCodeSyntax\032\035.resp" +
+      "onse.StreamJobCodeSyntax\"\000\022C\n\020SetStreamJ" +
+      "obArgs\022\031.request.SetStreamJobArgs\032\022.mode" +
+      "l.EmptyStruct\"\000\022K\n\020GetStreamJobArgs\022\031.re" +
+      "quest.GetStreamJobArgs\032\032.response.GetStr" +
+      "eamJobArgs\"\000\022N\n\025ListBuiltInConnectors\022\022." +
+      "model.EmptyStruct\032\037.response.ListBuiltIn" +
+      "Connectors\"\000\022K\n\024SetStreamJobSchedule\022\035.r" +
+      "equest.SetStreamJobSchedule\032\022.model.Empt" +
+      "yStruct\"\000\022W\n\024GetStreamJobSchedule\022\035.requ" +
+      "est.GetStreamJobSchedule\032\036.response.GetS" +
+      "treamJobSchedule\"\000\022C\n\020ReleaseStreamJob\022\031" +
+      ".request.ReleaseStreamJob\032\022.model.EmptyS" +
+      "truct\"\000\022Q\n\027OfflineReleaseStreamJob\022 .req" +
+      "uest.OfflineReleaseStreamJob\032\022.model.Emp" +
+      "tyStruct\"\000\022Q\n\027SuspendReleaseStreamJob\022 ." +
+      "request.SuspendReleaseStreamJob\032\022.model." +
+      "EmptyStruct\"\000\022O\n\026ResumeReleaseStreamJob\022" +
+      "\037.request.ResumeReleaseStreamJob\032\022.model" +
+      ".EmptyStruct\"\000\022Z\n\025ListReleaseStreamJobs\022" +
+      "\036.request.ListReleaseStreamJobs\032\037.respon" +
+      "se.ListReleaseStreamJobs\"\000\022Z\n\025ListStream" +
+      "JobVersions\022\036.request.ListStreamJobVersi" +
+      "ons\032\037.response.ListStreamJobVersions\"\000\022U" +
+      "\n\030DescribeStreamJobVersion\022\032.request.Des" +
+      "cribeStreamJob\032\033.response.DescribeStream" +
+      "Job\"\000\022R\n\027GetStreamJobVersionCode\022\031.reque" +
+      "st.GetStreamJobCode\032\032.response.GetStream" +
+      "JobCode\"\000\022R\n\027GetStreamJobVersionArgs\022\031.r" +
+      "equest.GetStreamJobArgs\032\032.response.GetSt" +
+      "reamJobArgs\"\000\022^\n\033GetStreamJobVersionSche" +
+      "dule\022\035.request.GetStreamJobSchedule\032\036.re" +
+      "sponse.GetStreamJobSchedule\"\000By\n\'com.dat" +
+      "aomnis.gproto.service.pbsvcspaceB\024PBSvcS" +
+      "treamJobManageP\000Z6github.com/DataWorkben" +
+      "ch/gproto/xgo/service/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -38,6 +38,14 @@ func (this *DeleteStreamJobs) SetDefaults() {
 	return
 }
 
+// Set default value for message request.MoveStreamJobs
+func (this *MoveStreamJobs) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.UpdateStreamJob
 func (this *UpdateStreamJob) SetDefaults() {
 	if this == nil {

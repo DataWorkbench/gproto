@@ -15,6 +15,16 @@ import (
 	utf8 "unicode/utf8"
 )
 
+func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListStreamJobs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListStreamJobs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
 		return protovalidator.FieldError1("ListStreamJobs", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
@@ -41,12 +51,22 @@ func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("ListStreamJobs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+func (this *ListStreamJobs) _xxx_xxx_Validator_CheckIf_pid() bool {
+	if !(this.Pid != "") {
+		return false
 	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("ListStreamJobs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	return true
+}
+
+func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_pid() error {
+	if !this._xxx_xxx_Validator_CheckIf_pid() {
+		return nil
+	}
+	if !(len(this.Pid) == 20) {
+		return protovalidator.FieldError1("ListStreamJobs", "the byte length of field 'pid' must be equal to '20'", protovalidator.StringByteLenToString(this.Pid))
+	}
+	if !(strings.HasPrefix(this.Pid, "stj-")) {
+		return protovalidator.FieldError1("ListStreamJobs", "the value of field 'pid' must start with string 'stj-'", this.Pid)
 	}
 	return nil
 }
@@ -55,6 +75,9 @@ func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_space_id() error {
 func (this *ListStreamJobs) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
@@ -65,7 +88,7 @@ func (this *ListStreamJobs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_pid(); err != nil {
 		return err
 	}
 	return nil
@@ -88,6 +111,26 @@ func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_created_by() error {
 	return nil
 }
 
+func (this *CreateStreamJob) _xxx_xxx_Validator_CheckIf_pid() bool {
+	if !(this.Pid != "") {
+		return false
+	}
+	return true
+}
+
+func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_pid() error {
+	if !this._xxx_xxx_Validator_CheckIf_pid() {
+		return nil
+	}
+	if !(len(this.Pid) == 20) {
+		return protovalidator.FieldError1("CreateStreamJob", "the byte length of field 'pid' must be equal to '20'", protovalidator.StringByteLenToString(this.Pid))
+	}
+	if !(strings.HasPrefix(this.Pid, "stj-")) {
+		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'pid' must start with string 'stj-'", this.Pid)
+	}
+	return nil
+}
+
 func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_name() error {
 	if !(utf8.RuneCountInString(this.Name) >= 2) {
 		return protovalidator.FieldError1("CreateStreamJob", "the character length of field 'name' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.Name))
@@ -105,9 +148,19 @@ func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
+func (this *CreateStreamJob) _xxx_xxx_Validator_CheckIf_type() bool {
+	if !(this.IsDirectory == false) {
+		return false
+	}
+	return true
+}
+
 var _xxx_xxx_Validator_CreateStreamJob_InEnums_Type = map[pbmodel.StreamJob_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
 
 func (this *CreateStreamJob) _xxx_xxx_Validator_Validate_type() error {
+	if !this._xxx_xxx_Validator_CheckIf_type() {
+		return nil
+	}
 	if !(this.Type > 0) {
 		return protovalidator.FieldError1("CreateStreamJob", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
@@ -133,6 +186,9 @@ func (this *CreateStreamJob) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_pid(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
@@ -179,6 +235,63 @@ func (this *DeleteStreamJobs) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *MoveStreamJobs) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("MoveStreamJobs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("MoveStreamJobs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *MoveStreamJobs) _xxx_xxx_Validator_Validate_job_ids() error {
+	if !(len(this.JobIds) > 0) {
+		return protovalidator.FieldError1("MoveStreamJobs", "the length of field 'job_ids' must be greater than '0'", strconv.Itoa(len(this.JobIds)))
+	}
+	if !(len(this.JobIds) <= 100) {
+		return protovalidator.FieldError1("MoveStreamJobs", "the length of field 'job_ids' must be less than or equal to '100'", strconv.Itoa(len(this.JobIds)))
+	}
+	return nil
+}
+
+func (this *MoveStreamJobs) _xxx_xxx_Validator_CheckIf_target() bool {
+	if !(this.Target != "") {
+		return false
+	}
+	return true
+}
+
+func (this *MoveStreamJobs) _xxx_xxx_Validator_Validate_target() error {
+	if !this._xxx_xxx_Validator_CheckIf_target() {
+		return nil
+	}
+	if !(len(this.Target) == 20) {
+		return protovalidator.FieldError1("MoveStreamJobs", "the byte length of field 'target' must be equal to '20'", protovalidator.StringByteLenToString(this.Target))
+	}
+	if !(strings.HasPrefix(this.Target, "stj-")) {
+		return protovalidator.FieldError1("MoveStreamJobs", "the value of field 'target' must start with string 'stj-'", this.Target)
+	}
+	return nil
+}
+
+// Set default value for message request.MoveStreamJobs
+func (this *MoveStreamJobs) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_ids(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_target(); err != nil {
 		return err
 	}
 	return nil
