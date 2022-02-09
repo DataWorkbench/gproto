@@ -16,3 +16,11 @@ func (this *Network) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.NetworkBinding
+func (this *NetworkBinding) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

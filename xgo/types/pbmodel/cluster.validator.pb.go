@@ -236,3 +236,67 @@ func (this *FlinkCluster) Validate() error {
 	}
 	return nil
 }
+
+func (this *FlinkClusterBinding) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *FlinkClusterBinding) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "net-")) {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the value of field 'cluster_id' must start with string 'net-'", this.ClusterId)
+	}
+	return nil
+}
+
+func (this *FlinkClusterBinding) _xxx_xxx_Validator_Validate_module_id() error {
+	if !(len(this.ModuleId) == 20) {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the byte length of field 'module_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ModuleId))
+	}
+	return nil
+}
+
+func (this *FlinkClusterBinding) _xxx_xxx_Validator_Validate_version() error {
+	if !(this.Version != "") {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the value of field 'version' must be not equal to ''", this.Version)
+	}
+	return nil
+}
+
+func (this *FlinkClusterBinding) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+// Set default value for message model.FlinkClusterBinding
+func (this *FlinkClusterBinding) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_module_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	return nil
+}

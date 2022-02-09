@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelClusterP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/cluster.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x1fproto/types/model/network.proto\x1a*proto/types/model/flink/flink_config.proto\"\x85\x01\n\x0bHostAliases\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x17.model.HostAliases.ItemB\x04\xe2\xdf\x1f\x00\x1a@\n\x04Item\x12\x18\n\x02ip\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xb0\x06\x01\x12\x1e\n\x08hostname\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xb0\x07\x01:\x06\xca\xb2\x04\x02\n\x00\"\xcd\x05\n\x0c\x46linkCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x33\n\x07version\x18\x04 \x01(\tB\"\xe2\xdf\x1f\x1e\x12\x1c\xc2\x01\x19J\x17\x66link-1.12.3-scala_2.11\x12\x39\n\x06status\x18\x05 \x01(\x0e\x32\x1a.model.FlinkCluster.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1d\n\x08task_num\x18\x06 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12+\n\x06job_cu\x18\x07 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12,\n\x07task_cu\x18\x08 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12\x18\n\nnetwork_id\x18\t \x01(\tB\x04\xe2\xdf\x1f\x00\x12.\n\x0chost_aliases\x18\n \x01(\x0b\x32\x12.model.HostAliasesB\x04\xe2\xdf\x1f\x00\x12(\n\x06\x63onfig\x18\x0b \x01(\x0b\x32\x12.flink.FlinkConfigB\x04\xe2\xdf\x1f\x00\x12 \n\ncreated_by\x18\x0c \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0e \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0e\n\x06web_ui\x18\x0f \x01(\t\x12$\n\x0cnetwork_info\x18\x10 \x01(\x0b\x32\x0e.model.Network\"j\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07Running\x10\x02\x12\x0b\n\x07Stopped\x10\x03\x12\x0c\n\x08Starting\x10\x04\x12\r\n\tException\x10\x05\x12\x0b\n\x07\x41rrears\x10\x06\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelClusterP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/cluster.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x1fproto/types/model/network.proto\x1a*proto/types/model/flink/flink_config.proto\"\x85\x01\n\x0bHostAliases\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x17.model.HostAliases.ItemB\x04\xe2\xdf\x1f\x00\x1a@\n\x04Item\x12\x18\n\x02ip\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xb0\x06\x01\x12\x1e\n\x08hostname\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xb0\x07\x01:\x06\xca\xb2\x04\x02\n\x00\"\xcd\x05\n\x0c\x46linkCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x33\n\x07version\x18\x04 \x01(\tB\"\xe2\xdf\x1f\x1e\x12\x1c\xc2\x01\x19J\x17\x66link-1.12.3-scala_2.11\x12\x39\n\x06status\x18\x05 \x01(\x0e\x32\x1a.model.FlinkCluster.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1d\n\x08task_num\x18\x06 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12+\n\x06job_cu\x18\x07 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12,\n\x07task_cu\x18\x08 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12\x18\n\nnetwork_id\x18\t \x01(\tB\x04\xe2\xdf\x1f\x00\x12.\n\x0chost_aliases\x18\n \x01(\x0b\x32\x12.model.HostAliasesB\x04\xe2\xdf\x1f\x00\x12(\n\x06\x63onfig\x18\x0b \x01(\x0b\x32\x12.flink.FlinkConfigB\x04\xe2\xdf\x1f\x00\x12 \n\ncreated_by\x18\x0c \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0e \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x0e\n\x06web_ui\x18\x0f \x01(\t\x12$\n\x0cnetwork_info\x18\x10 \x01(\x0b\x32\x0e.model.Network\"j\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07Running\x10\x02\x12\x0b\n\x07Stopped\x10\x03\x12\x0c\n\x08Starting\x10\x04\x12\r\n\tException\x10\x05\x12\x0b\n\x07\x41rrears\x10\x06\"\xc2\x01\n\x13\x46linkClusterBinding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12\x1f\n\tmodule_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1c\n\x07version\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1c\n\x07\x63reated\x18\x05 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelClusterP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_network__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_flink_dot_flink__config__pb2.DESCRIPTOR,])
 
@@ -287,6 +287,66 @@ _FLINKCLUSTER = _descriptor.Descriptor(
   serialized_end=1075,
 )
 
+
+_FLINKCLUSTERBINDING = _descriptor.Descriptor(
+  name='FlinkClusterBinding',
+  full_name='model.FlinkClusterBinding',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.FlinkClusterBinding.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='model.FlinkClusterBinding.cluster_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='module_id', full_name='model.FlinkClusterBinding.module_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='model.FlinkClusterBinding.version', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='model.FlinkClusterBinding.created', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1078,
+  serialized_end=1272,
+)
+
 _HOSTALIASES_ITEM.containing_type = _HOSTALIASES
 _HOSTALIASES.fields_by_name['items'].message_type = _HOSTALIASES_ITEM
 _FLINKCLUSTER.fields_by_name['status'].enum_type = _FLINKCLUSTER_STATUS
@@ -296,6 +356,7 @@ _FLINKCLUSTER.fields_by_name['network_info'].message_type = proto_dot_types_dot_
 _FLINKCLUSTER_STATUS.containing_type = _FLINKCLUSTER
 DESCRIPTOR.message_types_by_name['HostAliases'] = _HOSTALIASES
 DESCRIPTOR.message_types_by_name['FlinkCluster'] = _FLINKCLUSTER
+DESCRIPTOR.message_types_by_name['FlinkClusterBinding'] = _FLINKCLUSTERBINDING
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HostAliases = _reflection.GeneratedProtocolMessageType('HostAliases', (_message.Message,), {
@@ -320,6 +381,13 @@ FlinkCluster = _reflection.GeneratedProtocolMessageType('FlinkCluster', (_messag
   })
 _sym_db.RegisterMessage(FlinkCluster)
 
+FlinkClusterBinding = _reflection.GeneratedProtocolMessageType('FlinkClusterBinding', (_message.Message,), {
+  'DESCRIPTOR' : _FLINKCLUSTERBINDING,
+  '__module__' : 'proto.types.model.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:model.FlinkClusterBinding)
+  })
+_sym_db.RegisterMessage(FlinkClusterBinding)
+
 
 DESCRIPTOR._options = None
 _HOSTALIASES_ITEM.fields_by_name['ip']._options = None
@@ -340,4 +408,9 @@ _FLINKCLUSTER.fields_by_name['config']._options = None
 _FLINKCLUSTER.fields_by_name['created_by']._options = None
 _FLINKCLUSTER.fields_by_name['created']._options = None
 _FLINKCLUSTER.fields_by_name['updated']._options = None
+_FLINKCLUSTERBINDING.fields_by_name['space_id']._options = None
+_FLINKCLUSTERBINDING.fields_by_name['cluster_id']._options = None
+_FLINKCLUSTERBINDING.fields_by_name['module_id']._options = None
+_FLINKCLUSTERBINDING.fields_by_name['version']._options = None
+_FLINKCLUSTERBINDING.fields_by_name['created']._options = None
 # @@protoc_insertion_point(module_scope)

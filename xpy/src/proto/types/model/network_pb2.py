@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelNetworkP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/network.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xfd\x02\n\x07Network\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12#\n\trouter_id\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x05 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\x12 \n\ncreated_by\x18\x06 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x34\n\x06status\x18\x07 \x01(\x0e\x32\x15.model.Network.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"2\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\n\n\x06\x41\x63tive\x10\x02\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelNetworkP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/network.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xfd\x02\n\x07Network\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12#\n\trouter_id\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x05 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\x12 \n\ncreated_by\x18\x06 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x34\n\x06status\x18\x07 \x01(\x0e\x32\x15.model.Network.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"2\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\n\n\x06\x41\x63tive\x10\x02\"\x9f\x01\n\x0eNetworkBinding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\nnetwork_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12\x1f\n\tmodule_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1c\n\x07\x63reated\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelNetworkP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -145,9 +145,63 @@ _NETWORK = _descriptor.Descriptor(
   serialized_end=477,
 )
 
+
+_NETWORKBINDING = _descriptor.Descriptor(
+  name='NetworkBinding',
+  full_name='model.NetworkBinding',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.NetworkBinding.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='network_id', full_name='model.NetworkBinding.network_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='module_id', full_name='model.NetworkBinding.module_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='model.NetworkBinding.created', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=480,
+  serialized_end=639,
+)
+
 _NETWORK.fields_by_name['status'].enum_type = _NETWORK_STATUS
 _NETWORK_STATUS.containing_type = _NETWORK
 DESCRIPTOR.message_types_by_name['Network'] = _NETWORK
+DESCRIPTOR.message_types_by_name['NetworkBinding'] = _NETWORKBINDING
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Network = _reflection.GeneratedProtocolMessageType('Network', (_message.Message,), {
@@ -156,6 +210,13 @@ Network = _reflection.GeneratedProtocolMessageType('Network', (_message.Message,
   # @@protoc_insertion_point(class_scope:model.Network)
   })
 _sym_db.RegisterMessage(Network)
+
+NetworkBinding = _reflection.GeneratedProtocolMessageType('NetworkBinding', (_message.Message,), {
+  'DESCRIPTOR' : _NETWORKBINDING,
+  '__module__' : 'proto.types.model.network_pb2'
+  # @@protoc_insertion_point(class_scope:model.NetworkBinding)
+  })
+_sym_db.RegisterMessage(NetworkBinding)
 
 
 DESCRIPTOR._options = None
@@ -168,4 +229,8 @@ _NETWORK.fields_by_name['created_by']._options = None
 _NETWORK.fields_by_name['status']._options = None
 _NETWORK.fields_by_name['created']._options = None
 _NETWORK.fields_by_name['updated']._options = None
+_NETWORKBINDING.fields_by_name['space_id']._options = None
+_NETWORKBINDING.fields_by_name['network_id']._options = None
+_NETWORKBINDING.fields_by_name['module_id']._options = None
+_NETWORKBINDING.fields_by_name['created']._options = None
 # @@protoc_insertion_point(module_scope)

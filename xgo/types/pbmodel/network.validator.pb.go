@@ -119,3 +119,57 @@ func (this *Network) Validate() error {
 	}
 	return nil
 }
+
+func (this *NetworkBinding) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("NetworkBinding", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("NetworkBinding", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *NetworkBinding) _xxx_xxx_Validator_Validate_network_id() error {
+	if !(len(this.NetworkId) == 20) {
+		return protovalidator.FieldError1("NetworkBinding", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
+	}
+	if !(strings.HasPrefix(this.NetworkId, "net-")) {
+		return protovalidator.FieldError1("NetworkBinding", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
+	}
+	return nil
+}
+
+func (this *NetworkBinding) _xxx_xxx_Validator_Validate_module_id() error {
+	if !(len(this.ModuleId) == 20) {
+		return protovalidator.FieldError1("NetworkBinding", "the byte length of field 'module_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ModuleId))
+	}
+	return nil
+}
+
+func (this *NetworkBinding) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("NetworkBinding", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+// Set default value for message model.NetworkBinding
+func (this *NetworkBinding) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_module_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	return nil
+}
