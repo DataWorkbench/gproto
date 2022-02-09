@@ -26,7 +26,7 @@ service StreamJobManage {
   // Cannot not delete directory in this API.
   // Resources includes:
   //  - History version and Released's job.
-  //  - Node, env schedule and its history version.
+  //  - code, env schedule and its history version.
   //  - Offline job and force stop all running instances. (By Scheduler-Server)
   //  - All instances records. (By Scheduler-Server)
   rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
@@ -51,8 +51,6 @@ service StreamJobManage {
 
   // GetStreamJobCode to get the code properties of the specified stream job.
   rpc GetStreamJobCode(request.GetStreamJobCode) returns (response.GetStreamJobCode) {}
-
-  rpc StreamJobCodeSyntax(request.StreamJobCodeSyntax) returns (response.StreamJobCodeSyntax) {}
 
   // SetStreamJobArgs to set the run parameters of the specified stream job.
   rpc SetStreamJobArgs(request.SetStreamJobArgs) returns (model.EmptyStruct) {}
@@ -85,7 +83,6 @@ service StreamJobManage {
   // ListReleaseStreamJobs for gets a list of all published job in the workspace.
   rpc ListReleaseStreamJobs(request.ListReleaseStreamJobs) returns (response.ListReleaseStreamJobs) {}
 
-
   // Interface for stream job versions.
   //
   // ListStreamJobVersions for gets a list of all versions of the specified job.
@@ -102,4 +99,8 @@ service StreamJobManage {
 
   // GetStreamJobVersionSchedule for get the schedule properties of the job of the specified version.
   rpc GetStreamJobVersionSchedule(request.GetStreamJobSchedule) returns (response.GetStreamJobSchedule) {}
+
+  // Interface for helper.
+  //
+  rpc DescribeFlinkUIByInstanceId(request.DescribeFlinkUIByInstanceId)  returns (response.DescribeFlinkUIByInstanceId) {}
 }

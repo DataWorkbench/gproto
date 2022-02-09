@@ -91,9 +91,6 @@ message ResumeStreamInstances {
   repeated string instance_ids = 2;
 }
 
-// DescribeFlinkUIByInstanceId used as a request parameters for RPC.
-message DescribeFlinkUIByInstanceId {
-  // The instance id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-  string inst_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+message DescribeStreamInstance {
+  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "sti-" } ];
 }

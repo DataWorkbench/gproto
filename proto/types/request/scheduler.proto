@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestScheduler";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+
+import "proto/types/model/stream_job.proto";
+
+// SubmitStreamJobs used as a request parameters for RPC.
+message SubmitStreamJob {
+  model.StreamJobProperty property = 1 [(validator.field).tags.message = { not_null: true }];
+
+  bool stop_running = 2 [(validator.field) = {}];
+}
+
+// SubmitStreamJobs used as a request parameters for RPC.
+message StopStreamJob {
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  string job_id = 2 [ (validator.field).tags.string = {  byte_len_eq: 20; prefix: "stj-" } ];
+
+  bool stop_running = 3 [(validator.field) = {}];
+}
+
+message DeleteStreamJobsBySpaceIds {
+  // The list of workspace id.
+  repeated string space_ids = 1 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "wks-" } } } ];
+}
+
+message DeleteStreamJobsByJobIds {
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The list of stream job id.
+  repeated string job_ids = 2 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "stj-" } } } ];
+}

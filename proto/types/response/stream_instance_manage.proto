@@ -29,8 +29,6 @@ message ListStreamInstances {
   int64 total = 3 ;
 }
 
-// DescribeFlinkUIByInstanceId used as a request parameters for RPC and HTTP(based on URL-Query).
-message DescribeFlinkUIByInstanceId {
-  // @inject_tag: json:"web_ui"
-  string web_ui = 1;
+message DescribeStreamInstance {
+  model.StreamInstance info = 1;
 }

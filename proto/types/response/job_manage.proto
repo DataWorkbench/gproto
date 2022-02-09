@@ -48,3 +48,18 @@ message GetFlinkJob{
   // @inject_tag: json:"message"
   string message = 2 [(validator.field) = {}];
 }
+
+// GetStreamJobCode used as reply parameters in RPC.
+message ValidateFlinkJob {
+  enum Result {
+    ResultUnset = 0;
+    Correct = 1;
+    Incorrect = 2;
+  }
+
+  // Result for check syntax of code. 1 => "Correct" 2 => "Incorrect".
+  Result result = 1;
+
+  // Message represents the error message when found syntax Incorrect.
+  string message = 2;
+}
