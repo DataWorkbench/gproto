@@ -14,6 +14,722 @@ public final class PBDataSourceURL {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface HostOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datasource.Host)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * host or ip. Is Required. Min Length 0, Max Length 256.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     * <pre>
+     * host or ip. Is Required. Min Length 0, Max Length 256.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString
+        getHostBytes();
+
+    /**
+     * <pre>
+     * Port, Is Required. Min: 0, Max: 65535.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+     * @return The port.
+     */
+    int getPort();
+  }
+  /**
+   * <pre>
+   * Host represents the pair of host(or ip):port
+   * </pre>
+   *
+   * Protobuf type {@code datasource.Host}
+   */
+  public static final class Host extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:datasource.Host)
+      HostOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Host.newBuilder() to construct.
+    private Host(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Host() {
+      host_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Host();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Host(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              host_ = s;
+              break;
+            }
+            case 16: {
+
+              port_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_Host_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_Host_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder.class);
+    }
+
+    public static final int HOST_FIELD_NUMBER = 1;
+    private volatile java.lang.Object host_;
+    /**
+     * <pre>
+     * host or ip. Is Required. Min Length 0, Max Length 256.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * host or ip. Is Required. Min Length 0, Max Length 256.
+     * &#64;inject_tag: json:"host"
+     * </pre>
+     *
+     * <code>string host = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_;
+    /**
+     * <pre>
+     * Port, Is Required. Min: 0, Max: 65535.
+     * &#64;inject_tag: json:"port"
+     * </pre>
+     *
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, host_);
+      }
+      if (port_ != 0) {
+        output.writeInt32(2, port_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, host_);
+      }
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, port_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host) obj;
+
+      if (!getHost()
+          .equals(other.getHost())) return false;
+      if (getPort()
+          != other.getPort()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Host represents the pair of host(or ip):port
+     * </pre>
+     *
+     * Protobuf type {@code datasource.Host}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:datasource.Host)
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_Host_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_Host_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        host_ = "";
+
+        port_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_Host_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host build() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host(this);
+        result.host_ = host_;
+        result.port_ = port_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object host_ = "";
+      /**
+       * <pre>
+       * host or ip. Is Required. Min Length 0, Max Length 256.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * host or ip. Is Required. Min Length 0, Max Length 256.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString
+          getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * host or ip. Is Required. Min Length 0, Max Length 256.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        host_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * host or ip. Is Required. Min Length 0, Max Length 256.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        
+        host_ = getDefaultInstance().getHost();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * host or ip. Is Required. Min Length 0, Max Length 256.
+       * &#64;inject_tag: json:"host"
+       * </pre>
+       *
+       * <code>string host = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        host_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int port_ ;
+      /**
+       * <pre>
+       * Port, Is Required. Min: 0, Max: 65535.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       * <pre>
+       * Port, Is Required. Min: 0, Max: 65535.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+        
+        port_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Port, Is Required. Min: 0, Max: 65535.
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:datasource.Host)
+    }
+
+    // @@protoc_insertion_point(class_scope:datasource.Host)
+    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Host>
+        PARSER = new com.google.protobuf.AbstractParser<Host>() {
+      @java.lang.Override
+      public Host parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Host(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Host> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Host> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MySQLURLOrBuilder extends
       // @@protoc_insertion_point(interface_extends:datasource.MySQLURL)
       com.google.protobuf.MessageOrBuilder {
@@ -3909,1887 +4625,6 @@ public final class PBDataSourceURL {
 
   }
 
-  public interface KafkaURLOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:datasource.KafkaURL)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"kafka_brokers"
-     * </pre>
-     *
-     * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-     * @return The kafkaBrokers.
-     */
-    java.lang.String getKafkaBrokers();
-    /**
-     * <pre>
-     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"kafka_brokers"
-     * </pre>
-     *
-     * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for kafkaBrokers.
-     */
-    com.google.protobuf.ByteString
-        getKafkaBrokersBytes();
-  }
-  /**
-   * <pre>
-   * KafkaURL used as request parameters for RPC and HTTP(based on Body)
-   * </pre>
-   *
-   * Protobuf type {@code datasource.KafkaURL}
-   */
-  public static final class KafkaURL extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:datasource.KafkaURL)
-      KafkaURLOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use KafkaURL.newBuilder() to construct.
-    private KafkaURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private KafkaURL() {
-      kafkaBrokers_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new KafkaURL();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private KafkaURL(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kafkaBrokers_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.Builder.class);
-    }
-
-    public static final int KAFKA_BROKERS_FIELD_NUMBER = 1;
-    private volatile java.lang.Object kafkaBrokers_;
-    /**
-     * <pre>
-     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"kafka_brokers"
-     * </pre>
-     *
-     * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-     * @return The kafkaBrokers.
-     */
-    @java.lang.Override
-    public java.lang.String getKafkaBrokers() {
-      java.lang.Object ref = kafkaBrokers_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        kafkaBrokers_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"kafka_brokers"
-     * </pre>
-     *
-     * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for kafkaBrokers.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKafkaBrokersBytes() {
-      java.lang.Object ref = kafkaBrokers_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        kafkaBrokers_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaBrokers_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kafkaBrokers_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaBrokers_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kafkaBrokers_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL) obj;
-
-      if (!getKafkaBrokers()
-          .equals(other.getKafkaBrokers())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KAFKA_BROKERS_FIELD_NUMBER;
-      hash = (53 * hash) + getKafkaBrokers().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * KafkaURL used as request parameters for RPC and HTTP(based on Body)
-     * </pre>
-     *
-     * Protobuf type {@code datasource.KafkaURL}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:datasource.KafkaURL)
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURLOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        kafkaBrokers_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL build() {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL(this);
-        result.kafkaBrokers_ = kafkaBrokers_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.getDefaultInstance()) return this;
-        if (!other.getKafkaBrokers().isEmpty()) {
-          kafkaBrokers_ = other.kafkaBrokers_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object kafkaBrokers_ = "";
-      /**
-       * <pre>
-       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"kafka_brokers"
-       * </pre>
-       *
-       * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-       * @return The kafkaBrokers.
-       */
-      public java.lang.String getKafkaBrokers() {
-        java.lang.Object ref = kafkaBrokers_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          kafkaBrokers_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"kafka_brokers"
-       * </pre>
-       *
-       * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for kafkaBrokers.
-       */
-      public com.google.protobuf.ByteString
-          getKafkaBrokersBytes() {
-        java.lang.Object ref = kafkaBrokers_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          kafkaBrokers_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"kafka_brokers"
-       * </pre>
-       *
-       * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-       * @param value The kafkaBrokers to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKafkaBrokers(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        kafkaBrokers_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"kafka_brokers"
-       * </pre>
-       *
-       * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKafkaBrokers() {
-        
-        kafkaBrokers_ = getDefaultInstance().getKafkaBrokers();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"kafka_brokers"
-       * </pre>
-       *
-       * <code>string kafka_brokers = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for kafkaBrokers to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKafkaBrokersBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        kafkaBrokers_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:datasource.KafkaURL)
-    }
-
-    // @@protoc_insertion_point(class_scope:datasource.KafkaURL)
-    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<KafkaURL>
-        PARSER = new com.google.protobuf.AbstractParser<KafkaURL>() {
-      @java.lang.Override
-      public KafkaURL parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KafkaURL(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<KafkaURL> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<KafkaURL> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface S3URLOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:datasource.S3URL)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * <pre>
-   * S3Url used as request parameters for RPC and HTTP(based on Body)
-   * </pre>
-   *
-   * Protobuf type {@code datasource.S3URL}
-   */
-  public static final class S3URL extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:datasource.S3URL)
-      S3URLOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use S3URL.newBuilder() to construct.
-    private S3URL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private S3URL() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new S3URL();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private S3URL(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * S3Url used as request parameters for RPC and HTTP(based on Body)
-     * </pre>
-     *
-     * Protobuf type {@code datasource.S3URL}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:datasource.S3URL)
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URLOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL build() {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:datasource.S3URL)
-    }
-
-    // @@protoc_insertion_point(class_scope:datasource.S3URL)
-    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<S3URL>
-        PARSER = new com.google.protobuf.AbstractParser<S3URL>() {
-      @java.lang.Override
-      public S3URL parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new S3URL(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<S3URL> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<S3URL> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface HBaseURLOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:datasource.HBaseURL)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-     * @return The zkHosts.
-     */
-    java.lang.String getZkHosts();
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for zkHosts.
-     */
-    com.google.protobuf.ByteString
-        getZkHostsBytes();
-
-    /**
-     * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
-     * </pre>
-     *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The zkPath.
-     */
-    java.lang.String getZkPath();
-    /**
-     * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
-     * </pre>
-     *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for zkPath.
-     */
-    com.google.protobuf.ByteString
-        getZkPathBytes();
-  }
-  /**
-   * <pre>
-   * HBaseURL used as request parameters for RPC and HTTP(based on Body)
-   * </pre>
-   *
-   * Protobuf type {@code datasource.HBaseURL}
-   */
-  public static final class HBaseURL extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:datasource.HBaseURL)
-      HBaseURLOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use HBaseURL.newBuilder() to construct.
-    private HBaseURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private HBaseURL() {
-      zkHosts_ = "";
-      zkPath_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new HBaseURL();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private HBaseURL(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zkHosts_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zkPath_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.Builder.class);
-    }
-
-    public static final int ZK_HOSTS_FIELD_NUMBER = 1;
-    private volatile java.lang.Object zkHosts_;
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-     * @return The zkHosts.
-     */
-    @java.lang.Override
-    public java.lang.String getZkHosts() {
-      java.lang.Object ref = zkHosts_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        zkHosts_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-     * Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for zkHosts.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getZkHostsBytes() {
-      java.lang.Object ref = zkHosts_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        zkHosts_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ZK_PATH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object zkPath_;
-    /**
-     * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
-     * </pre>
-     *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The zkPath.
-     */
-    @java.lang.Override
-    public java.lang.String getZkPath() {
-      java.lang.Object ref = zkPath_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        zkPath_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
-     * </pre>
-     *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for zkPath.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getZkPathBytes() {
-      java.lang.Object ref = zkPath_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        zkPath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkHosts_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, zkHosts_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zkPath_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkHosts_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, zkHosts_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zkPath_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL) obj;
-
-      if (!getZkHosts()
-          .equals(other.getZkHosts())) return false;
-      if (!getZkPath()
-          .equals(other.getZkPath())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ZK_HOSTS_FIELD_NUMBER;
-      hash = (53 * hash) + getZkHosts().hashCode();
-      hash = (37 * hash) + ZK_PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getZkPath().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * HBaseURL used as request parameters for RPC and HTTP(based on Body)
-     * </pre>
-     *
-     * Protobuf type {@code datasource.HBaseURL}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:datasource.HBaseURL)
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURLOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        zkHosts_ = "";
-
-        zkPath_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL build() {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL(this);
-        result.zkHosts_ = zkHosts_;
-        result.zkPath_ = zkPath_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.getDefaultInstance()) return this;
-        if (!other.getZkHosts().isEmpty()) {
-          zkHosts_ = other.zkHosts_;
-          onChanged();
-        }
-        if (!other.getZkPath().isEmpty()) {
-          zkPath_ = other.zkPath_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object zkHosts_ = "";
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-       * @return The zkHosts.
-       */
-      public java.lang.String getZkHosts() {
-        java.lang.Object ref = zkHosts_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          zkHosts_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for zkHosts.
-       */
-      public com.google.protobuf.ByteString
-          getZkHostsBytes() {
-        java.lang.Object ref = zkHosts_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          zkHosts_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-       * @param value The zkHosts to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZkHosts(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        zkHosts_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearZkHosts() {
-        
-        zkHosts_ = getDefaultInstance().getZkHosts();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
-       * Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>string zk_hosts = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for zkHosts to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZkHostsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        zkHosts_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object zkPath_ = "";
-      /**
-       * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
-       * </pre>
-       *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @return The zkPath.
-       */
-      public java.lang.String getZkPath() {
-        java.lang.Object ref = zkPath_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          zkPath_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
-       * </pre>
-       *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for zkPath.
-       */
-      public com.google.protobuf.ByteString
-          getZkPathBytes() {
-        java.lang.Object ref = zkPath_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          zkPath_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
-       * </pre>
-       *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @param value The zkPath to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZkPath(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        zkPath_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
-       * </pre>
-       *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearZkPath() {
-        
-        zkPath_ = getDefaultInstance().getZkPath();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
-       * </pre>
-       *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for zkPath to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZkPathBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        zkPath_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:datasource.HBaseURL)
-    }
-
-    // @@protoc_insertion_point(class_scope:datasource.HBaseURL)
-    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<HBaseURL>
-        PARSER = new com.google.protobuf.AbstractParser<HBaseURL>() {
-      @java.lang.Override
-      public HBaseURL parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HBaseURL(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<HBaseURL> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<HBaseURL> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface FtpURLOrBuilder extends
       // @@protoc_insertion_point(interface_extends:datasource.FtpURL)
       com.google.protobuf.MessageOrBuilder {
@@ -6896,36 +5731,2601 @@ public final class PBDataSourceURL {
 
   }
 
+  public interface S3URLOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datasource.S3URL)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * S3Url used as request parameters for RPC and HTTP(based on Body)
+   * </pre>
+   *
+   * Protobuf type {@code datasource.S3URL}
+   */
+  public static final class S3URL extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:datasource.S3URL)
+      S3URLOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use S3URL.newBuilder() to construct.
+    private S3URL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S3URL() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new S3URL();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private S3URL(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * S3Url used as request parameters for RPC and HTTP(based on Body)
+     * </pre>
+     *
+     * Protobuf type {@code datasource.S3URL}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:datasource.S3URL)
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URLOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_S3URL_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL build() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:datasource.S3URL)
+    }
+
+    // @@protoc_insertion_point(class_scope:datasource.S3URL)
+    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S3URL>
+        PARSER = new com.google.protobuf.AbstractParser<S3URL>() {
+      @java.lang.Override
+      public S3URL parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new S3URL(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S3URL> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S3URL> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.S3URL getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface KafkaURLOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datasource.KafkaURL)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> 
+        getKafkaBrokersList();
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getKafkaBrokers(int index);
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    int getKafkaBrokersCount();
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+        getKafkaBrokersOrBuilderList();
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getKafkaBrokersOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * KafkaURL used as request parameters for RPC and HTTP(based on Body)
+   * </pre>
+   *
+   * Protobuf type {@code datasource.KafkaURL}
+   */
+  public static final class KafkaURL extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:datasource.KafkaURL)
+      KafkaURLOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use KafkaURL.newBuilder() to construct.
+    private KafkaURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private KafkaURL() {
+      kafkaBrokers_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new KafkaURL();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private KafkaURL(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                kafkaBrokers_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              kafkaBrokers_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          kafkaBrokers_ = java.util.Collections.unmodifiableList(kafkaBrokers_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.Builder.class);
+    }
+
+    public static final int KAFKA_BROKERS_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> kafkaBrokers_;
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getKafkaBrokersList() {
+      return kafkaBrokers_;
+    }
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+        getKafkaBrokersOrBuilderList() {
+      return kafkaBrokers_;
+    }
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public int getKafkaBrokersCount() {
+      return kafkaBrokers_.size();
+    }
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getKafkaBrokers(int index) {
+      return kafkaBrokers_.get(index);
+    }
+    /**
+     * <pre>
+     * The kafka brokers.
+     * Is required. Min: 1, MAX: 128.
+     * &#64;inject_tag: json:"kafka_brokers"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getKafkaBrokersOrBuilder(
+        int index) {
+      return kafkaBrokers_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < kafkaBrokers_.size(); i++) {
+        output.writeMessage(1, kafkaBrokers_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < kafkaBrokers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, kafkaBrokers_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL) obj;
+
+      if (!getKafkaBrokersList()
+          .equals(other.getKafkaBrokersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getKafkaBrokersCount() > 0) {
+        hash = (37 * hash) + KAFKA_BROKERS_FIELD_NUMBER;
+        hash = (53 * hash) + getKafkaBrokersList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * KafkaURL used as request parameters for RPC and HTTP(based on Body)
+     * </pre>
+     *
+     * Protobuf type {@code datasource.KafkaURL}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:datasource.KafkaURL)
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURLOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getKafkaBrokersFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (kafkaBrokersBuilder_ == null) {
+          kafkaBrokers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          kafkaBrokersBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_KafkaURL_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL build() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL(this);
+        int from_bitField0_ = bitField0_;
+        if (kafkaBrokersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            kafkaBrokers_ = java.util.Collections.unmodifiableList(kafkaBrokers_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.kafkaBrokers_ = kafkaBrokers_;
+        } else {
+          result.kafkaBrokers_ = kafkaBrokersBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL.getDefaultInstance()) return this;
+        if (kafkaBrokersBuilder_ == null) {
+          if (!other.kafkaBrokers_.isEmpty()) {
+            if (kafkaBrokers_.isEmpty()) {
+              kafkaBrokers_ = other.kafkaBrokers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureKafkaBrokersIsMutable();
+              kafkaBrokers_.addAll(other.kafkaBrokers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.kafkaBrokers_.isEmpty()) {
+            if (kafkaBrokersBuilder_.isEmpty()) {
+              kafkaBrokersBuilder_.dispose();
+              kafkaBrokersBuilder_ = null;
+              kafkaBrokers_ = other.kafkaBrokers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              kafkaBrokersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getKafkaBrokersFieldBuilder() : null;
+            } else {
+              kafkaBrokersBuilder_.addAllMessages(other.kafkaBrokers_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> kafkaBrokers_ =
+        java.util.Collections.emptyList();
+      private void ensureKafkaBrokersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          kafkaBrokers_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>(kafkaBrokers_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> kafkaBrokersBuilder_;
+
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getKafkaBrokersList() {
+        if (kafkaBrokersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(kafkaBrokers_);
+        } else {
+          return kafkaBrokersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public int getKafkaBrokersCount() {
+        if (kafkaBrokersBuilder_ == null) {
+          return kafkaBrokers_.size();
+        } else {
+          return kafkaBrokersBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getKafkaBrokers(int index) {
+        if (kafkaBrokersBuilder_ == null) {
+          return kafkaBrokers_.get(index);
+        } else {
+          return kafkaBrokersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setKafkaBrokers(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (kafkaBrokersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureKafkaBrokersIsMutable();
+          kafkaBrokers_.set(index, value);
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setKafkaBrokers(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (kafkaBrokersBuilder_ == null) {
+          ensureKafkaBrokersIsMutable();
+          kafkaBrokers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addKafkaBrokers(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (kafkaBrokersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureKafkaBrokersIsMutable();
+          kafkaBrokers_.add(value);
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addKafkaBrokers(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (kafkaBrokersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureKafkaBrokersIsMutable();
+          kafkaBrokers_.add(index, value);
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addKafkaBrokers(
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (kafkaBrokersBuilder_ == null) {
+          ensureKafkaBrokersIsMutable();
+          kafkaBrokers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addKafkaBrokers(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (kafkaBrokersBuilder_ == null) {
+          ensureKafkaBrokersIsMutable();
+          kafkaBrokers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addAllKafkaBrokers(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> values) {
+        if (kafkaBrokersBuilder_ == null) {
+          ensureKafkaBrokersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, kafkaBrokers_);
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearKafkaBrokers() {
+        if (kafkaBrokersBuilder_ == null) {
+          kafkaBrokers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder removeKafkaBrokers(int index) {
+        if (kafkaBrokersBuilder_ == null) {
+          ensureKafkaBrokersIsMutable();
+          kafkaBrokers_.remove(index);
+          onChanged();
+        } else {
+          kafkaBrokersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder getKafkaBrokersBuilder(
+          int index) {
+        return getKafkaBrokersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getKafkaBrokersOrBuilder(
+          int index) {
+        if (kafkaBrokersBuilder_ == null) {
+          return kafkaBrokers_.get(index);  } else {
+          return kafkaBrokersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+           getKafkaBrokersOrBuilderList() {
+        if (kafkaBrokersBuilder_ != null) {
+          return kafkaBrokersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(kafkaBrokers_);
+        }
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addKafkaBrokersBuilder() {
+        return getKafkaBrokersFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addKafkaBrokersBuilder(
+          int index) {
+        return getKafkaBrokersFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The kafka brokers.
+       * Is required. Min: 1, MAX: 128.
+       * &#64;inject_tag: json:"kafka_brokers"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host kafka_brokers = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder> 
+           getKafkaBrokersBuilderList() {
+        return getKafkaBrokersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+          getKafkaBrokersFieldBuilder() {
+        if (kafkaBrokersBuilder_ == null) {
+          kafkaBrokersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder>(
+                  kafkaBrokers_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          kafkaBrokers_ = null;
+        }
+        return kafkaBrokersBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:datasource.KafkaURL)
+    }
+
+    // @@protoc_insertion_point(class_scope:datasource.KafkaURL)
+    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KafkaURL>
+        PARSER = new com.google.protobuf.AbstractParser<KafkaURL>() {
+      @java.lang.Override
+      public KafkaURL parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new KafkaURL(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<KafkaURL> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KafkaURL> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.KafkaURL getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HBaseURLOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datasource.HBaseURL)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> 
+        getZkHostsList();
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getZkHosts(int index);
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    int getZkHostsCount();
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+        getZkHostsOrBuilderList();
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getZkHostsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
+     * </pre>
+     *
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The zkPath.
+     */
+    java.lang.String getZkPath();
+    /**
+     * <pre>
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
+     * </pre>
+     *
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for zkPath.
+     */
+    com.google.protobuf.ByteString
+        getZkPathBytes();
+  }
+  /**
+   * <pre>
+   * HBaseURL used as request parameters for RPC and HTTP(based on Body)
+   * </pre>
+   *
+   * Protobuf type {@code datasource.HBaseURL}
+   */
+  public static final class HBaseURL extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:datasource.HBaseURL)
+      HBaseURLOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HBaseURL.newBuilder() to construct.
+    private HBaseURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HBaseURL() {
+      zkHosts_ = java.util.Collections.emptyList();
+      zkPath_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HBaseURL();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HBaseURL(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                zkHosts_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              zkHosts_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              zkPath_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          zkHosts_ = java.util.Collections.unmodifiableList(zkHosts_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.Builder.class);
+    }
+
+    public static final int ZK_HOSTS_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> zkHosts_;
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getZkHostsList() {
+      return zkHosts_;
+    }
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+        getZkHostsOrBuilderList() {
+      return zkHosts_;
+    }
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public int getZkHostsCount() {
+      return zkHosts_.size();
+    }
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getZkHosts(int index) {
+      return zkHosts_.get(index);
+    }
+    /**
+     * <pre>
+     * The zookeeper hosts that used by hbase.
+     * Is required. MIN: 1, MAX: 128.
+     * &#64;inject_tag: json:"zk_hosts"
+     * </pre>
+     *
+     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getZkHostsOrBuilder(
+        int index) {
+      return zkHosts_.get(index);
+    }
+
+    public static final int ZK_PATH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object zkPath_;
+    /**
+     * <pre>
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
+     * </pre>
+     *
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The zkPath.
+     */
+    @java.lang.Override
+    public java.lang.String getZkPath() {
+      java.lang.Object ref = zkPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        zkPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+     * &#64;inject_tag: json:"zk_path"
+     * </pre>
+     *
+     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for zkPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getZkPathBytes() {
+      java.lang.Object ref = zkPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        zkPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < zkHosts_.size(); i++) {
+        output.writeMessage(1, zkHosts_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zkPath_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < zkHosts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, zkHosts_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zkPath_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL) obj;
+
+      if (!getZkHostsList()
+          .equals(other.getZkHostsList())) return false;
+      if (!getZkPath()
+          .equals(other.getZkPath())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getZkHostsCount() > 0) {
+        hash = (37 * hash) + ZK_HOSTS_FIELD_NUMBER;
+        hash = (53 * hash) + getZkHostsList().hashCode();
+      }
+      hash = (37 * hash) + ZK_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getZkPath().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * HBaseURL used as request parameters for RPC and HTTP(based on Body)
+     * </pre>
+     *
+     * Protobuf type {@code datasource.HBaseURL}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:datasource.HBaseURL)
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURLOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getZkHostsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (zkHostsBuilder_ == null) {
+          zkHosts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          zkHostsBuilder_.clear();
+        }
+        zkPath_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HBaseURL_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL build() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL(this);
+        int from_bitField0_ = bitField0_;
+        if (zkHostsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            zkHosts_ = java.util.Collections.unmodifiableList(zkHosts_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.zkHosts_ = zkHosts_;
+        } else {
+          result.zkHosts_ = zkHostsBuilder_.build();
+        }
+        result.zkPath_ = zkPath_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.getDefaultInstance()) return this;
+        if (zkHostsBuilder_ == null) {
+          if (!other.zkHosts_.isEmpty()) {
+            if (zkHosts_.isEmpty()) {
+              zkHosts_ = other.zkHosts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureZkHostsIsMutable();
+              zkHosts_.addAll(other.zkHosts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.zkHosts_.isEmpty()) {
+            if (zkHostsBuilder_.isEmpty()) {
+              zkHostsBuilder_.dispose();
+              zkHostsBuilder_ = null;
+              zkHosts_ = other.zkHosts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              zkHostsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getZkHostsFieldBuilder() : null;
+            } else {
+              zkHostsBuilder_.addAllMessages(other.zkHosts_);
+            }
+          }
+        }
+        if (!other.getZkPath().isEmpty()) {
+          zkPath_ = other.zkPath_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> zkHosts_ =
+        java.util.Collections.emptyList();
+      private void ensureZkHostsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          zkHosts_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>(zkHosts_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> zkHostsBuilder_;
+
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getZkHostsList() {
+        if (zkHostsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(zkHosts_);
+        } else {
+          return zkHostsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public int getZkHostsCount() {
+        if (zkHostsBuilder_ == null) {
+          return zkHosts_.size();
+        } else {
+          return zkHostsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getZkHosts(int index) {
+        if (zkHostsBuilder_ == null) {
+          return zkHosts_.get(index);
+        } else {
+          return zkHostsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setZkHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (zkHostsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureZkHostsIsMutable();
+          zkHosts_.set(index, value);
+          onChanged();
+        } else {
+          zkHostsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setZkHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (zkHostsBuilder_ == null) {
+          ensureZkHostsIsMutable();
+          zkHosts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          zkHostsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addZkHosts(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (zkHostsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureZkHostsIsMutable();
+          zkHosts_.add(value);
+          onChanged();
+        } else {
+          zkHostsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addZkHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
+        if (zkHostsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureZkHostsIsMutable();
+          zkHosts_.add(index, value);
+          onChanged();
+        } else {
+          zkHostsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addZkHosts(
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (zkHostsBuilder_ == null) {
+          ensureZkHostsIsMutable();
+          zkHosts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          zkHostsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addZkHosts(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
+        if (zkHostsBuilder_ == null) {
+          ensureZkHostsIsMutable();
+          zkHosts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          zkHostsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder addAllZkHosts(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> values) {
+        if (zkHostsBuilder_ == null) {
+          ensureZkHostsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, zkHosts_);
+          onChanged();
+        } else {
+          zkHostsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearZkHosts() {
+        if (zkHostsBuilder_ == null) {
+          zkHosts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          zkHostsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder removeZkHosts(int index) {
+        if (zkHostsBuilder_ == null) {
+          ensureZkHostsIsMutable();
+          zkHosts_.remove(index);
+          onChanged();
+        } else {
+          zkHostsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder getZkHostsBuilder(
+          int index) {
+        return getZkHostsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getZkHostsOrBuilder(
+          int index) {
+        if (zkHostsBuilder_ == null) {
+          return zkHosts_.get(index);  } else {
+          return zkHostsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+           getZkHostsOrBuilderList() {
+        if (zkHostsBuilder_ != null) {
+          return zkHostsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(zkHosts_);
+        }
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addZkHostsBuilder() {
+        return getZkHostsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addZkHostsBuilder(
+          int index) {
+        return getZkHostsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The zookeeper hosts that used by hbase.
+       * Is required. MIN: 1, MAX: 128.
+       * &#64;inject_tag: json:"zk_hosts"
+       * </pre>
+       *
+       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder> 
+           getZkHostsBuilderList() {
+        return getZkHostsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
+          getZkHostsFieldBuilder() {
+        if (zkHostsBuilder_ == null) {
+          zkHostsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder>(
+                  zkHosts_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          zkHosts_ = null;
+        }
+        return zkHostsBuilder_;
+      }
+
+      private java.lang.Object zkPath_ = "";
+      /**
+       * <pre>
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
+       * </pre>
+       *
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @return The zkPath.
+       */
+      public java.lang.String getZkPath() {
+        java.lang.Object ref = zkPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          zkPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
+       * </pre>
+       *
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for zkPath.
+       */
+      public com.google.protobuf.ByteString
+          getZkPathBytes() {
+        java.lang.Object ref = zkPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          zkPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
+       * </pre>
+       *
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @param value The zkPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZkPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        zkPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
+       * </pre>
+       *
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearZkPath() {
+        
+        zkPath_ = getDefaultInstance().getZkPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+       * &#64;inject_tag: json:"zk_path"
+       * </pre>
+       *
+       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for zkPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZkPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        zkPath_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:datasource.HBaseURL)
+    }
+
+    // @@protoc_insertion_point(class_scope:datasource.HBaseURL)
+    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HBaseURL>
+        PARSER = new com.google.protobuf.AbstractParser<HBaseURL>() {
+      @java.lang.Override
+      public HBaseURL parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HBaseURL(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HBaseURL> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HBaseURL> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface HDFSURLOrBuilder extends
       // @@protoc_insertion_point(interface_extends:datasource.HDFSURL)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes"
+     * The host of name node
+     * &#64;inject_tag: json:"name_node"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-     * @return Whether the nodes field is set.
+     * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+     * @return The nameNode.
      */
-    boolean hasNodes();
+    java.lang.String getNameNode();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes"
+     * The host of name node
+     * &#64;inject_tag: json:"name_node"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-     * @return The nodes.
+     * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for nameNode.
      */
-    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL getNodes();
+    com.google.protobuf.ByteString
+        getNameNodeBytes();
+
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes"
+     * The port of name node
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+     * @return The port.
      */
-    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURLOrBuilder getNodesOrBuilder();
+    int getPort();
   }
   /**
    * <pre>
@@ -6944,6 +8344,7 @@ public final class PBDataSourceURL {
       super(builder);
     }
     private HDFSURL() {
+      nameNode_ = "";
     }
 
     @java.lang.Override
@@ -6977,16 +8378,14 @@ public final class PBDataSourceURL {
               done = true;
               break;
             case 10: {
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder subBuilder = null;
-              if (nodes_ != null) {
-                subBuilder = nodes_.toBuilder();
-              }
-              nodes_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nodes_);
-                nodes_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              nameNode_ = s;
+              break;
+            }
+            case 16: {
+
+              port_ = input.readInt32();
               break;
             }
             default: {
@@ -7021,750 +8420,68 @@ public final class PBDataSourceURL {
               com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.Builder.class);
     }
 
-    public interface NodeURLOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:datasource.HDFSURL.NodeURL)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <pre>
-       * The host
-       * &#64;inject_tag: json:"name_node"
-       * </pre>
-       *
-       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-       * @return The nameNode.
-       */
-      java.lang.String getNameNode();
-      /**
-       * <pre>
-       * The host
-       * &#64;inject_tag: json:"name_node"
-       * </pre>
-       *
-       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for nameNode.
-       */
-      com.google.protobuf.ByteString
-          getNameNodeBytes();
-
-      /**
-       * <pre>
-       * The port
-       * &#64;inject_tag: json:"port"
-       * </pre>
-       *
-       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-       * @return The port.
-       */
-      int getPort();
-    }
-    /**
-     * Protobuf type {@code datasource.HDFSURL.NodeURL}
-     */
-    public static final class NodeURL extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:datasource.HDFSURL.NodeURL)
-        NodeURLOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use NodeURL.newBuilder() to construct.
-      private NodeURL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private NodeURL() {
-        nameNode_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new NodeURL();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private NodeURL(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                nameNode_ = s;
-                break;
-              }
-              case 16: {
-
-                port_ = input.readInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HDFSURL_NodeURL_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder.class);
-      }
-
-      public static final int NAME_NODE_FIELD_NUMBER = 1;
-      private volatile java.lang.Object nameNode_;
-      /**
-       * <pre>
-       * The host
-       * &#64;inject_tag: json:"name_node"
-       * </pre>
-       *
-       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-       * @return The nameNode.
-       */
-      @java.lang.Override
-      public java.lang.String getNameNode() {
-        java.lang.Object ref = nameNode_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          nameNode_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * The host
-       * &#64;inject_tag: json:"name_node"
-       * </pre>
-       *
-       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for nameNode.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getNameNodeBytes() {
-        java.lang.Object ref = nameNode_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nameNode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int PORT_FIELD_NUMBER = 2;
-      private int port_;
-      /**
-       * <pre>
-       * The port
-       * &#64;inject_tag: json:"port"
-       * </pre>
-       *
-       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-       * @return The port.
-       */
-      @java.lang.Override
-      public int getPort() {
-        return port_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nameNode_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nameNode_);
-        }
-        if (port_ != 0) {
-          output.writeInt32(2, port_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nameNode_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nameNode_);
-        }
-        if (port_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, port_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL)) {
-          return super.equals(obj);
-        }
-        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL) obj;
-
-        if (!getNameNode()
-            .equals(other.getNameNode())) return false;
-        if (getPort()
-            != other.getPort()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + NAME_NODE_FIELD_NUMBER;
-        hash = (53 * hash) + getNameNode().hashCode();
-        hash = (37 * hash) + PORT_FIELD_NUMBER;
-        hash = (53 * hash) + getPort();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code datasource.HDFSURL.NodeURL}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:datasource.HDFSURL.NodeURL)
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURLOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HDFSURL_NodeURL_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder.class);
-        }
-
-        // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          nameNode_ = "";
-
-          port_ = 0;
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_HDFSURL_NodeURL_descriptor;
-        }
-
-        @java.lang.Override
-        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL getDefaultInstanceForType() {
-          return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL build() {
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL buildPartial() {
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL(this);
-          result.nameNode_ = nameNode_;
-          result.port_ = port_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL) {
-            return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL other) {
-          if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.getDefaultInstance()) return this;
-          if (!other.getNameNode().isEmpty()) {
-            nameNode_ = other.nameNode_;
-            onChanged();
-          }
-          if (other.getPort() != 0) {
-            setPort(other.getPort());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object nameNode_ = "";
-        /**
-         * <pre>
-         * The host
-         * &#64;inject_tag: json:"name_node"
-         * </pre>
-         *
-         * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-         * @return The nameNode.
-         */
-        public java.lang.String getNameNode() {
-          java.lang.Object ref = nameNode_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            nameNode_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * The host
-         * &#64;inject_tag: json:"name_node"
-         * </pre>
-         *
-         * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-         * @return The bytes for nameNode.
-         */
-        public com.google.protobuf.ByteString
-            getNameNodeBytes() {
-          java.lang.Object ref = nameNode_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            nameNode_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * The host
-         * &#64;inject_tag: json:"name_node"
-         * </pre>
-         *
-         * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-         * @param value The nameNode to set.
-         * @return This builder for chaining.
-         */
-        public Builder setNameNode(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          nameNode_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * The host
-         * &#64;inject_tag: json:"name_node"
-         * </pre>
-         *
-         * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearNameNode() {
-          
-          nameNode_ = getDefaultInstance().getNameNode();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * The host
-         * &#64;inject_tag: json:"name_node"
-         * </pre>
-         *
-         * <code>string name_node = 1 [(.validator.field) = { ... }</code>
-         * @param value The bytes for nameNode to set.
-         * @return This builder for chaining.
-         */
-        public Builder setNameNodeBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          nameNode_ = value;
-          onChanged();
-          return this;
-        }
-
-        private int port_ ;
-        /**
-         * <pre>
-         * The port
-         * &#64;inject_tag: json:"port"
-         * </pre>
-         *
-         * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-         * @return The port.
-         */
-        @java.lang.Override
-        public int getPort() {
-          return port_;
-        }
-        /**
-         * <pre>
-         * The port
-         * &#64;inject_tag: json:"port"
-         * </pre>
-         *
-         * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-         * @param value The port to set.
-         * @return This builder for chaining.
-         */
-        public Builder setPort(int value) {
-          
-          port_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * The port
-         * &#64;inject_tag: json:"port"
-         * </pre>
-         *
-         * <code>int32 port = 2 [(.validator.field) = { ... }</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearPort() {
-          
-          port_ = 0;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:datasource.HDFSURL.NodeURL)
-      }
-
-      // @@protoc_insertion_point(class_scope:datasource.HDFSURL.NodeURL)
-      private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL();
-      }
-
-      public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<NodeURL>
-          PARSER = new com.google.protobuf.AbstractParser<NodeURL>() {
-        @java.lang.Override
-        public NodeURL parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NodeURL(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<NodeURL> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<NodeURL> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int NODES_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL nodes_;
+    public static final int NAME_NODE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nameNode_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes"
+     * The host of name node
+     * &#64;inject_tag: json:"name_node"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-     * @return Whether the nodes field is set.
+     * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+     * @return The nameNode.
      */
     @java.lang.Override
-    public boolean hasNodes() {
-      return nodes_ != null;
+    public java.lang.String getNameNode() {
+      java.lang.Object ref = nameNode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nameNode_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes"
+     * The host of name node
+     * &#64;inject_tag: json:"name_node"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-     * @return The nodes.
+     * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for nameNode.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL getNodes() {
-      return nodes_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.getDefaultInstance() : nodes_;
+    public com.google.protobuf.ByteString
+        getNameNodeBytes() {
+      java.lang.Object ref = nameNode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nameNode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"nodes"
+     * The port of name node
+     * &#64;inject_tag: json:"port"
      * </pre>
      *
-     * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
+     * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+     * @return The port.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURLOrBuilder getNodesOrBuilder() {
-      return getNodes();
+    public int getPort() {
+      return port_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7781,8 +8498,11 @@ public final class PBDataSourceURL {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (nodes_ != null) {
-        output.writeMessage(1, getNodes());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nameNode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nameNode_);
+      }
+      if (port_ != 0) {
+        output.writeInt32(2, port_);
       }
       unknownFields.writeTo(output);
     }
@@ -7793,9 +8513,12 @@ public final class PBDataSourceURL {
       if (size != -1) return size;
 
       size = 0;
-      if (nodes_ != null) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nameNode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nameNode_);
+      }
+      if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getNodes());
+          .computeInt32Size(2, port_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7812,11 +8535,10 @@ public final class PBDataSourceURL {
       }
       com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL) obj;
 
-      if (hasNodes() != other.hasNodes()) return false;
-      if (hasNodes()) {
-        if (!getNodes()
-            .equals(other.getNodes())) return false;
-      }
+      if (!getNameNode()
+          .equals(other.getNameNode())) return false;
+      if (getPort()
+          != other.getPort()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7828,10 +8550,10 @@ public final class PBDataSourceURL {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasNodes()) {
-        hash = (37 * hash) + NODES_FIELD_NUMBER;
-        hash = (53 * hash) + getNodes().hashCode();
-      }
+      hash = (37 * hash) + NAME_NODE_FIELD_NUMBER;
+      hash = (53 * hash) + getNameNode().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7969,12 +8691,10 @@ public final class PBDataSourceURL {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (nodesBuilder_ == null) {
-          nodes_ = null;
-        } else {
-          nodes_ = null;
-          nodesBuilder_ = null;
-        }
+        nameNode_ = "";
+
+        port_ = 0;
+
         return this;
       }
 
@@ -8001,11 +8721,8 @@ public final class PBDataSourceURL {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL buildPartial() {
         com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL(this);
-        if (nodesBuilder_ == null) {
-          result.nodes_ = nodes_;
-        } else {
-          result.nodes_ = nodesBuilder_.build();
-        }
+        result.nameNode_ = nameNode_;
+        result.port_ = port_;
         onBuilt();
         return result;
       }
@@ -8054,8 +8771,12 @@ public final class PBDataSourceURL {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL other) {
         if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.getDefaultInstance()) return this;
-        if (other.hasNodes()) {
-          mergeNodes(other.getNodes());
+        if (!other.getNameNode().isEmpty()) {
+          nameNode_ = other.nameNode_;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8086,159 +8807,151 @@ public final class PBDataSourceURL {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL nodes_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURLOrBuilder> nodesBuilder_;
+      private java.lang.Object nameNode_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes"
+       * The host of name node
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-       * @return Whether the nodes field is set.
+       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+       * @return The nameNode.
        */
-      public boolean hasNodes() {
-        return nodesBuilder_ != null || nodes_ != null;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-       * @return The nodes.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL getNodes() {
-        if (nodesBuilder_ == null) {
-          return nodes_ == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.getDefaultInstance() : nodes_;
+      public java.lang.String getNameNode() {
+        java.lang.Object ref = nameNode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nameNode_ = s;
+          return s;
         } else {
-          return nodesBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes"
+       * The host of name node
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
+       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for nameNode.
        */
-      public Builder setNodes(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL value) {
-        if (nodesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          nodes_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getNameNodeBytes() {
+        java.lang.Object ref = nameNode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nameNode_ = b;
+          return b;
         } else {
-          nodesBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes"
+       * The host of name node
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
+       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+       * @param value The nameNode to set.
+       * @return This builder for chaining.
        */
-      public Builder setNodes(
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder builderForValue) {
-        if (nodesBuilder_ == null) {
-          nodes_ = builderForValue.build();
-          onChanged();
-        } else {
-          nodesBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeNodes(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL value) {
-        if (nodesBuilder_ == null) {
-          if (nodes_ != null) {
-            nodes_ =
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.newBuilder(nodes_).mergeFrom(value).buildPartial();
-          } else {
-            nodes_ = value;
-          }
-          onChanged();
-        } else {
-          nodesBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearNodes() {
-        if (nodesBuilder_ == null) {
-          nodes_ = null;
-          onChanged();
-        } else {
-          nodes_ = null;
-          nodesBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"nodes"
-       * </pre>
-       *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder getNodesBuilder() {
-        
+      public Builder setNameNode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nameNode_ = value;
         onChanged();
-        return getNodesFieldBuilder().getBuilder();
+        return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes"
+       * The host of name node
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
+       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
        */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURLOrBuilder getNodesOrBuilder() {
-        if (nodesBuilder_ != null) {
-          return nodesBuilder_.getMessageOrBuilder();
-        } else {
-          return nodes_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.getDefaultInstance() : nodes_;
-        }
+      public Builder clearNameNode() {
+        
+        nameNode_ = getDefaultInstance().getNameNode();
+        onChanged();
+        return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nodes"
+       * The host of name node
+       * &#64;inject_tag: json:"name_node"
        * </pre>
        *
-       * <code>.datasource.HDFSURL.NodeURL nodes = 1 [(.validator.field) = { ... }</code>
+       * <code>string name_node = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for nameNode to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURLOrBuilder> 
-          getNodesFieldBuilder() {
-        if (nodesBuilder_ == null) {
-          nodesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURL.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL.NodeURLOrBuilder>(
-                  getNodes(),
-                  getParentForChildren(),
-                  isClean());
-          nodes_ = null;
-        }
-        return nodesBuilder_;
+      public Builder setNameNodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nameNode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int port_ ;
+      /**
+       * <pre>
+       * The port of name node
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       * <pre>
+       * The port of name node
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+        
+        port_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The port of name node
+       * &#64;inject_tag: json:"port"
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        
+        port_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8294,6 +9007,11 @@ public final class PBDataSourceURL {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_datasource_Host_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_datasource_Host_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datasource_MySQLURL_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8309,35 +9027,30 @@ public final class PBDataSourceURL {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datasource_ClickHouseURL_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_datasource_KafkaURL_descriptor;
+    internal_static_datasource_FtpURL_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_datasource_KafkaURL_fieldAccessorTable;
+      internal_static_datasource_FtpURL_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datasource_S3URL_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datasource_S3URL_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_datasource_KafkaURL_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_datasource_KafkaURL_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datasource_HBaseURL_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datasource_HBaseURL_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_datasource_FtpURL_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_datasource_FtpURL_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datasource_HDFSURL_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datasource_HDFSURL_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_datasource_HDFSURL_NodeURL_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8351,36 +9064,37 @@ public final class PBDataSourceURL {
       "e_url.proto\022\ndatasource\0323github.com/yu31" +
       "/protoc-plugin/proto/validator.proto\032/gi" +
       "thub.com/yu31/protoc-plugin/proto/gosql." +
-      "proto\"\265\001\n\010MySQLURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t" +
-      "\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000" +
-      "\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010passw" +
-      "ord\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005" +
-      " \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\272\001\n\rPostgr" +
-      "eSQLURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035" +
-      "\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017" +
-      "\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022" +
-      "\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\272\001\n\rClickHouseURL\022\035\n\004" +
-      "host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(" +
-      "\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t" +
-      "\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002" +
-      "\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:" +
-      "\006\312\262\004\002\n\000\";\n\010KafkaURL\022\'\n\rkafka_brokers\030\001 \001" +
-      "(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010:\006\312\262\004\002\n\000\"\017\n\005S3URL:\006\312" +
-      "\262\004\002\n\000\"Y\n\010HBaseURL\022\"\n\010zk_hosts\030\001 \001(\tB\020\342\337\037" +
-      "\014\022\n\302\001\007\220\002\001\230\002\200\010\022!\n\007zk_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001" +
-      "\007\220\002\001\230\002\200\010:\006\312\262\004\002\n\000\"\220\001\n\006FtpURL\022\035\n\004host\030\001 \001(" +
+      "proto\"E\n\004Host\022\036\n\004host\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002" +
+      "\001\230\002\200\002\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\006(\377\377\0030\000\"\265\001\n" +
+      "\010MySQLURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
+      "\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030" +
+      "\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\272\001\n\rPostgreSQLURL\022\035" +
+      "\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 " +
+      "\001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013" +
+      "\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\220\002\001\230\002@\022!\n\010database\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002" +
+      "@:\006\312\262\004\002\n\000\"\272\001\n\rClickHouseURL\022\035\n\004host\030\001 \001(" +
       "\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t" +
       "\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
-      "\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004" +
-      "\002\n\000\"\230\001\n\007HDFSURL\0227\n\005nodes\030\001 \001(\0132\033.datasou" +
-      "rce.HDFSURL.NodeURLB\013\342\337\037\007\022\005\342\001\002\020\001\032L\n\007Node" +
-      "URL\022\"\n\tname_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022" +
-      "\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000:\006\312\262\004\002\n\000B\204" +
-      "\001\n/com.dataomnis.gproto.types.pbmodel.pb" +
-      "datasourceB\017PBDataSourceURLP\000Z>github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbmodel" +
-      "/pbdatasourceb\006proto3"
+      "\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010d" +
+      "atabase\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\220" +
+      "\001\n\006FtpURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
+      "\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030" +
+      "\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\017\n\005S3URL:\006\312\262\004\002" +
+      "\n\000\"K\n\010KafkaURL\0227\n\rkafka_brokers\030\001 \003(\0132\020." +
+      "datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001:\006\312\262\004\002\n\000\"" +
+      "i\n\010HBaseURL\0222\n\010zk_hosts\030\001 \003(\0132\020.datasour" +
+      "ce.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022!\n\007zk_path\030\002 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010:\006\312\262\004\002\n\000\"T\n\007HDFSURL\022\"\n" +
+      "\tname_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004por" +
+      "t\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000:\006\312\262\004\002\n\000B\204\001\n/com" +
+      ".dataomnis.gproto.types.pbmodel.pbdataso" +
+      "urceB\017PBDataSourceURLP\000Z>github.com/Data" +
+      "Workbench/gproto/xgo/types/pbmodel/pbdat" +
+      "asourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8388,59 +9102,59 @@ public final class PBDataSourceURL {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
-    internal_static_datasource_MySQLURL_descriptor =
+    internal_static_datasource_Host_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_datasource_Host_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_datasource_Host_descriptor,
+        new java.lang.String[] { "Host", "Port", });
+    internal_static_datasource_MySQLURL_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_datasource_MySQLURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_MySQLURL_descriptor,
         new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
     internal_static_datasource_PostgreSQLURL_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_datasource_PostgreSQLURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_PostgreSQLURL_descriptor,
         new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
     internal_static_datasource_ClickHouseURL_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_datasource_ClickHouseURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_ClickHouseURL_descriptor,
         new java.lang.String[] { "Host", "Port", "User", "Password", "Database", });
-    internal_static_datasource_KafkaURL_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_datasource_KafkaURL_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_KafkaURL_descriptor,
-        new java.lang.String[] { "KafkaBrokers", });
-    internal_static_datasource_S3URL_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_datasource_S3URL_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_S3URL_descriptor,
-        new java.lang.String[] { });
-    internal_static_datasource_HBaseURL_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_datasource_HBaseURL_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_HBaseURL_descriptor,
-        new java.lang.String[] { "ZkHosts", "ZkPath", });
     internal_static_datasource_FtpURL_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_datasource_FtpURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_FtpURL_descriptor,
         new java.lang.String[] { "Host", "Port", "User", "Password", });
-    internal_static_datasource_HDFSURL_descriptor =
+    internal_static_datasource_S3URL_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_datasource_S3URL_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_datasource_S3URL_descriptor,
+        new java.lang.String[] { });
+    internal_static_datasource_KafkaURL_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_datasource_KafkaURL_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_datasource_KafkaURL_descriptor,
+        new java.lang.String[] { "KafkaBrokers", });
+    internal_static_datasource_HBaseURL_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_datasource_HBaseURL_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_datasource_HBaseURL_descriptor,
+        new java.lang.String[] { "ZkHosts", "ZkPath", });
+    internal_static_datasource_HDFSURL_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_datasource_HDFSURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_HDFSURL_descriptor,
-        new java.lang.String[] { "Nodes", });
-    internal_static_datasource_HDFSURL_NodeURL_descriptor =
-      internal_static_datasource_HDFSURL_descriptor.getNestedTypes().get(0);
-    internal_static_datasource_HDFSURL_NodeURL_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_datasource_HDFSURL_NodeURL_descriptor,
         new java.lang.String[] { "NameNode", "Port", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

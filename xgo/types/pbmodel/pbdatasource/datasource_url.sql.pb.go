@@ -52,12 +52,12 @@ func (t *ClickHouseURL) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *KafkaURL) Scan(val interface{}) error {
+func (t *FtpURL) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *KafkaURL) Value() (driver.Value, error) {
+func (t *FtpURL) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -78,12 +78,12 @@ func (t *S3URL) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *HBaseURL) Scan(val interface{}) error {
+func (t *KafkaURL) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *HBaseURL) Value() (driver.Value, error) {
+func (t *KafkaURL) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}
@@ -91,12 +91,12 @@ func (t *HBaseURL) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *FtpURL) Scan(val interface{}) error {
+func (t *HBaseURL) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *FtpURL) Value() (driver.Value, error) {
+func (t *HBaseURL) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}

@@ -10,6 +10,14 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
+// Set default value for message datasource.Host
+func (this *Host) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message datasource.MySQLURL
 func (this *MySQLURL) SetDefaults() {
 	if this == nil {
@@ -34,8 +42,8 @@ func (this *ClickHouseURL) SetDefaults() {
 	return
 }
 
-// Set default value for message datasource.KafkaURL
-func (this *KafkaURL) SetDefaults() {
+// Set default value for message datasource.FtpURL
+func (this *FtpURL) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -50,6 +58,14 @@ func (this *S3URL) SetDefaults() {
 	return
 }
 
+// Set default value for message datasource.KafkaURL
+func (this *KafkaURL) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message datasource.HBaseURL
 func (this *HBaseURL) SetDefaults() {
 	if this == nil {
@@ -58,29 +74,8 @@ func (this *HBaseURL) SetDefaults() {
 	return
 }
 
-// Set default value for message datasource.FtpURL
-func (this *FtpURL) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message datasource.HDFSURL
 func (this *HDFSURL) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Nodes != nil {
-		if dt, ok := interface{}(this.Nodes).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message datasource.HDFSURL.NodeURL
-func (this *HDFSURL_NodeURL) SetDefaults() {
 	if this == nil {
 		return
 	}
