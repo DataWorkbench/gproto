@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.19.3
-// source: proto/service/spacemanager/stream_instance_manage.proto
+// source: proto/service/scheduler/stream_instance_manage.proto
 
-package pbsvcspace
+package pbsvcscheduler
 
 import (
 	context "context"
@@ -25,13 +25,11 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type StreamInstanceManageClient interface {
-	// Interface for stream job cycle instance.
-	//
 	ListStreamInstances(ctx context.Context, in *pbrequest.ListStreamInstances, opts ...grpc.CallOption) (*pbresponse.ListStreamInstances, error)
 	TerminateStreamInstances(ctx context.Context, in *pbrequest.TerminateStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	SuspendStreamInstances(ctx context.Context, in *pbrequest.SuspendStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ResumeStreamInstances(ctx context.Context, in *pbrequest.ResumeStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	DescribeFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeFlinkUIByInstanceId, error)
+	DescribeStreamInstance(ctx context.Context, in *pbrequest.DescribeStreamInstance, opts ...grpc.CallOption) (*pbresponse.DescribeStreamInstance, error)
 }
 
 type streamInstanceManageClient struct {
@@ -44,7 +42,7 @@ func NewStreamInstanceManageClient(cc grpc.ClientConnInterface) StreamInstanceMa
 
 func (c *streamInstanceManageClient) ListStreamInstances(ctx context.Context, in *pbrequest.ListStreamInstances, opts ...grpc.CallOption) (*pbresponse.ListStreamInstances, error) {
 	out := new(pbresponse.ListStreamInstances)
-	err := c.cc.Invoke(ctx, "/spacemanager.StreamInstanceManage/ListStreamInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/scheduler.StreamInstanceManage/ListStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +51,7 @@ func (c *streamInstanceManageClient) ListStreamInstances(ctx context.Context, in
 
 func (c *streamInstanceManageClient) TerminateStreamInstances(ctx context.Context, in *pbrequest.TerminateStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.StreamInstanceManage/TerminateStreamInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/scheduler.StreamInstanceManage/TerminateStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +60,7 @@ func (c *streamInstanceManageClient) TerminateStreamInstances(ctx context.Contex
 
 func (c *streamInstanceManageClient) SuspendStreamInstances(ctx context.Context, in *pbrequest.SuspendStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.StreamInstanceManage/SuspendStreamInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/scheduler.StreamInstanceManage/SuspendStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -71,16 +69,16 @@ func (c *streamInstanceManageClient) SuspendStreamInstances(ctx context.Context,
 
 func (c *streamInstanceManageClient) ResumeStreamInstances(ctx context.Context, in *pbrequest.ResumeStreamInstances, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.StreamInstanceManage/ResumeStreamInstances", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/scheduler.StreamInstanceManage/ResumeStreamInstances", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *streamInstanceManageClient) DescribeFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeFlinkUIByInstanceId, error) {
-	out := new(pbresponse.DescribeFlinkUIByInstanceId)
-	err := c.cc.Invoke(ctx, "/spacemanager.StreamInstanceManage/DescribeFlinkUIByInstanceId", in, out, opts...)
+func (c *streamInstanceManageClient) DescribeStreamInstance(ctx context.Context, in *pbrequest.DescribeStreamInstance, opts ...grpc.CallOption) (*pbresponse.DescribeStreamInstance, error) {
+	out := new(pbresponse.DescribeStreamInstance)
+	err := c.cc.Invoke(ctx, "/scheduler.StreamInstanceManage/DescribeStreamInstance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,13 +89,11 @@ func (c *streamInstanceManageClient) DescribeFlinkUIByInstanceId(ctx context.Con
 // All implementations must embed UnimplementedStreamInstanceManageServer
 // for forward compatibility
 type StreamInstanceManageServer interface {
-	// Interface for stream job cycle instance.
-	//
 	ListStreamInstances(context.Context, *pbrequest.ListStreamInstances) (*pbresponse.ListStreamInstances, error)
 	TerminateStreamInstances(context.Context, *pbrequest.TerminateStreamInstances) (*pbmodel.EmptyStruct, error)
 	SuspendStreamInstances(context.Context, *pbrequest.SuspendStreamInstances) (*pbmodel.EmptyStruct, error)
 	ResumeStreamInstances(context.Context, *pbrequest.ResumeStreamInstances) (*pbmodel.EmptyStruct, error)
-	DescribeFlinkUIByInstanceId(context.Context, *pbrequest.DescribeFlinkUIByInstanceId) (*pbresponse.DescribeFlinkUIByInstanceId, error)
+	DescribeStreamInstance(context.Context, *pbrequest.DescribeStreamInstance) (*pbresponse.DescribeStreamInstance, error)
 	mustEmbedUnimplementedStreamInstanceManageServer()
 }
 
@@ -117,8 +113,8 @@ func (UnimplementedStreamInstanceManageServer) SuspendStreamInstances(context.Co
 func (UnimplementedStreamInstanceManageServer) ResumeStreamInstances(context.Context, *pbrequest.ResumeStreamInstances) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResumeStreamInstances not implemented")
 }
-func (UnimplementedStreamInstanceManageServer) DescribeFlinkUIByInstanceId(context.Context, *pbrequest.DescribeFlinkUIByInstanceId) (*pbresponse.DescribeFlinkUIByInstanceId, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlinkUIByInstanceId not implemented")
+func (UnimplementedStreamInstanceManageServer) DescribeStreamInstance(context.Context, *pbrequest.DescribeStreamInstance) (*pbresponse.DescribeStreamInstance, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeStreamInstance not implemented")
 }
 func (UnimplementedStreamInstanceManageServer) mustEmbedUnimplementedStreamInstanceManageServer() {}
 
@@ -143,7 +139,7 @@ func _StreamInstanceManage_ListStreamInstances_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.StreamInstanceManage/ListStreamInstances",
+		FullMethod: "/scheduler.StreamInstanceManage/ListStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StreamInstanceManageServer).ListStreamInstances(ctx, req.(*pbrequest.ListStreamInstances))
@@ -161,7 +157,7 @@ func _StreamInstanceManage_TerminateStreamInstances_Handler(srv interface{}, ctx
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.StreamInstanceManage/TerminateStreamInstances",
+		FullMethod: "/scheduler.StreamInstanceManage/TerminateStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StreamInstanceManageServer).TerminateStreamInstances(ctx, req.(*pbrequest.TerminateStreamInstances))
@@ -179,7 +175,7 @@ func _StreamInstanceManage_SuspendStreamInstances_Handler(srv interface{}, ctx c
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.StreamInstanceManage/SuspendStreamInstances",
+		FullMethod: "/scheduler.StreamInstanceManage/SuspendStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StreamInstanceManageServer).SuspendStreamInstances(ctx, req.(*pbrequest.SuspendStreamInstances))
@@ -197,7 +193,7 @@ func _StreamInstanceManage_ResumeStreamInstances_Handler(srv interface{}, ctx co
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.StreamInstanceManage/ResumeStreamInstances",
+		FullMethod: "/scheduler.StreamInstanceManage/ResumeStreamInstances",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StreamInstanceManageServer).ResumeStreamInstances(ctx, req.(*pbrequest.ResumeStreamInstances))
@@ -205,20 +201,20 @@ func _StreamInstanceManage_ResumeStreamInstances_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _StreamInstanceManage_DescribeFlinkUIByInstanceId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.DescribeFlinkUIByInstanceId)
+func _StreamInstanceManage_DescribeStreamInstance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeStreamInstance)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StreamInstanceManageServer).DescribeFlinkUIByInstanceId(ctx, in)
+		return srv.(StreamInstanceManageServer).DescribeStreamInstance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/spacemanager.StreamInstanceManage/DescribeFlinkUIByInstanceId",
+		FullMethod: "/scheduler.StreamInstanceManage/DescribeStreamInstance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StreamInstanceManageServer).DescribeFlinkUIByInstanceId(ctx, req.(*pbrequest.DescribeFlinkUIByInstanceId))
+		return srv.(StreamInstanceManageServer).DescribeStreamInstance(ctx, req.(*pbrequest.DescribeStreamInstance))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -227,7 +223,7 @@ func _StreamInstanceManage_DescribeFlinkUIByInstanceId_Handler(srv interface{}, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var StreamInstanceManage_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "spacemanager.StreamInstanceManage",
+	ServiceName: "scheduler.StreamInstanceManage",
 	HandlerType: (*StreamInstanceManageServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -247,10 +243,10 @@ var StreamInstanceManage_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _StreamInstanceManage_ResumeStreamInstances_Handler,
 		},
 		{
-			MethodName: "DescribeFlinkUIByInstanceId",
-			Handler:    _StreamInstanceManage_DescribeFlinkUIByInstanceId_Handler,
+			MethodName: "DescribeStreamInstance",
+			Handler:    _StreamInstanceManage_DescribeStreamInstance_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/service/spacemanager/stream_instance_manage.proto",
+	Metadata: "proto/service/scheduler/stream_instance_manage.proto",
 }

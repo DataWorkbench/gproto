@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\035PBRequestStreamInstanceManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0proto/types/request/stream_instance_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\'proto/types/model/stream_instance.proto\"\xba\x02\n\x13ListStreamInstances\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x06job_id\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07version\x18\x05 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x37\n\x05state\x18\x06 \x01(\x0e\x32\x1b.model.StreamInstance.StateB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12:\n\x07sort_by\x18\x07 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x06job_idJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x08 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"W\n\x18TerminateStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"U\n\x16SuspendStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"T\n\x15ResumeStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"<\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12\x1d\n\x07inst_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x42|\n$com.dataomnis.gproto.types.pbrequestB\x1dPBRequestStreamInstanceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n0proto/types/request/stream_instance_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\'proto/types/model/stream_instance.proto\"\xba\x02\n\x13ListStreamInstances\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x06job_id\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07version\x18\x05 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x37\n\x05state\x18\x06 \x01(\x0e\x32\x1b.model.StreamInstance.StateB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12:\n\x07sort_by\x18\x07 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x06job_idJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x08 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"W\n\x18TerminateStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"U\n\x16SuspendStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"T\n\x15ResumeStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"B\n\x16\x44\x65scribeStreamInstance\x12(\n\x0binstance_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04sti-B|\n$com.dataomnis.gproto.types.pbrequestB\x1dPBRequestStreamInstanceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__instance__pb2.DESCRIPTOR,])
 
@@ -227,21 +227,21 @@ _RESUMESTREAMINSTANCES = _descriptor.Descriptor(
 )
 
 
-_DESCRIBEFLINKUIBYINSTANCEID = _descriptor.Descriptor(
-  name='DescribeFlinkUIByInstanceId',
-  full_name='request.DescribeFlinkUIByInstanceId',
+_DESCRIBESTREAMINSTANCE = _descriptor.Descriptor(
+  name='DescribeStreamInstance',
+  full_name='request.DescribeStreamInstance',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='inst_id', full_name='request.DescribeFlinkUIByInstanceId.inst_id', index=0,
+      name='instance_id', full_name='request.DescribeStreamInstance.instance_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -255,7 +255,7 @@ _DESCRIBEFLINKUIBYINSTANCEID = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=786,
-  serialized_end=846,
+  serialized_end=852,
 )
 
 _LISTSTREAMINSTANCES.fields_by_name['state'].enum_type = proto_dot_types_dot_model_dot_stream__instance__pb2._STREAMINSTANCE_STATE
@@ -263,7 +263,7 @@ DESCRIPTOR.message_types_by_name['ListStreamInstances'] = _LISTSTREAMINSTANCES
 DESCRIPTOR.message_types_by_name['TerminateStreamInstances'] = _TERMINATESTREAMINSTANCES
 DESCRIPTOR.message_types_by_name['SuspendStreamInstances'] = _SUSPENDSTREAMINSTANCES
 DESCRIPTOR.message_types_by_name['ResumeStreamInstances'] = _RESUMESTREAMINSTANCES
-DESCRIPTOR.message_types_by_name['DescribeFlinkUIByInstanceId'] = _DESCRIBEFLINKUIBYINSTANCEID
+DESCRIPTOR.message_types_by_name['DescribeStreamInstance'] = _DESCRIBESTREAMINSTANCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListStreamInstances = _reflection.GeneratedProtocolMessageType('ListStreamInstances', (_message.Message,), {
@@ -294,12 +294,12 @@ ResumeStreamInstances = _reflection.GeneratedProtocolMessageType('ResumeStreamIn
   })
 _sym_db.RegisterMessage(ResumeStreamInstances)
 
-DescribeFlinkUIByInstanceId = _reflection.GeneratedProtocolMessageType('DescribeFlinkUIByInstanceId', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBEFLINKUIBYINSTANCEID,
+DescribeStreamInstance = _reflection.GeneratedProtocolMessageType('DescribeStreamInstance', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBESTREAMINSTANCE,
   '__module__' : 'proto.types.request.stream_instance_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.DescribeFlinkUIByInstanceId)
+  # @@protoc_insertion_point(class_scope:request.DescribeStreamInstance)
   })
-_sym_db.RegisterMessage(DescribeFlinkUIByInstanceId)
+_sym_db.RegisterMessage(DescribeStreamInstance)
 
 
 DESCRIPTOR._options = None
@@ -314,5 +314,5 @@ _LISTSTREAMINSTANCES.fields_by_name['reverse']._options = None
 _TERMINATESTREAMINSTANCES.fields_by_name['space_id']._options = None
 _SUSPENDSTREAMINSTANCES.fields_by_name['space_id']._options = None
 _RESUMESTREAMINSTANCES.fields_by_name['space_id']._options = None
-_DESCRIBEFLINKUIBYINSTANCEID.fields_by_name['inst_id']._options = None
+_DESCRIBESTREAMINSTANCE.fields_by_name['instance_id']._options = None
 # @@protoc_insertion_point(module_scope)

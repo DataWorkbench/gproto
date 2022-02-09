@@ -14,7 +14,6 @@ _sym_db = _symbol_database.Default()
 from proto.types.model import empty_pb2 as proto_dot_types_dot_model_dot_empty__pb2
 from proto.types.request import job_manage_pb2 as proto_dot_types_dot_request_dot_job__manage__pb2
 from proto.types.response import job_manage_pb2 as proto_dot_types_dot_response_dot_job__manage__pb2
-from proto.types.response import stream_job_manage_pb2 as proto_dot_types_dot_response_dot_stream__job__manage__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcdeveloperB\016PBSvcJobManageP\000Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloper',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/service/developer/job_manage.proto\x12\tdeveloper\x1a\x1dproto/types/model/empty.proto\x1a$proto/types/request/job_manage.proto\x1a%proto/types/response/job_manage.proto\x1a,proto/types/response/stream_job_manage.proto2\x9f\x03\n\tJobManage\x12;\n\x0c\x46reeFlinkJob\x12\x15.request.FreeFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0cInitFlinkJob\x12\x15.request.InitFlinkJob\x1a\x16.response.InitFlinkJob\"\x00\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12<\n\x0bGetFlinkJob\x12\x14.request.GetFlinkJob\x1a\x15.response.GetFlinkJob\"\x00\x12?\n\x0e\x43\x61ncelFlinkJob\x12\x17.request.CancelFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1d.response.StreamJobCodeSyntax\"\x00\x42{\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x0ePBSvcJobManageP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
+  serialized_pb=b'\n(proto/service/developer/job_manage.proto\x12\tdeveloper\x1a\x1dproto/types/model/empty.proto\x1a$proto/types/request/job_manage.proto\x1a%proto/types/response/job_manage.proto2\x9c\x03\n\tJobManage\x12;\n\x0c\x46reeFlinkJob\x12\x15.request.FreeFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12?\n\x0cInitFlinkJob\x12\x15.request.InitFlinkJob\x1a\x16.response.InitFlinkJob\"\x00\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12<\n\x0bGetFlinkJob\x12\x14.request.GetFlinkJob\x1a\x15.response.GetFlinkJob\"\x00\x12?\n\x0e\x43\x61ncelFlinkJob\x12\x17.request.CancelFlinkJob\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x42{\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x0ePBSvcJobManageP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
   ,
-  dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_job__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_job__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_stream__job__manage__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_job__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_job__manage__pb2.DESCRIPTOR,])
 
 
 
@@ -41,8 +40,8 @@ _JOBMANAGE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=210,
-  serialized_end=625,
+  serialized_start=164,
+  serialized_end=576,
   methods=[
   _descriptor.MethodDescriptor(
     name='FreeFlinkJob',
@@ -100,7 +99,7 @@ _JOBMANAGE = _descriptor.ServiceDescriptor(
     index=5,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_job__manage__pb2._VALIDATEFLINKJOB,
-    output_type=proto_dot_types_dot_response_dot_stream__job__manage__pb2._STREAMJOBCODESYNTAX,
+    output_type=proto_dot_types_dot_response_dot_job__manage__pb2._VALIDATEFLINKJOB,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

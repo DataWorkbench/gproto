@@ -266,37 +266,6 @@ public final class StreamJobManageGrpc {
     return getGetStreamJobCodeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax,
-      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax> getStreamJobCodeSyntaxMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "StreamJobCodeSyntax",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax,
-      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax> getStreamJobCodeSyntaxMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax> getStreamJobCodeSyntaxMethod;
-    if ((getStreamJobCodeSyntaxMethod = StreamJobManageGrpc.getStreamJobCodeSyntaxMethod) == null) {
-      synchronized (StreamJobManageGrpc.class) {
-        if ((getStreamJobCodeSyntaxMethod = StreamJobManageGrpc.getStreamJobCodeSyntaxMethod) == null) {
-          StreamJobManageGrpc.getStreamJobCodeSyntaxMethod = getStreamJobCodeSyntaxMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamJobCodeSyntax"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax.getDefaultInstance()))
-              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("StreamJobCodeSyntax"))
-              .build();
-        }
-      }
-    }
-    return getStreamJobCodeSyntaxMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.SetStreamJobArgs,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSetStreamJobArgsMethod;
 
@@ -762,6 +731,37 @@ public final class StreamJobManageGrpc {
     return getGetStreamJobVersionScheduleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId,
+      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeFlinkUIByInstanceId",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId,
+      com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod;
+    if ((getDescribeFlinkUIByInstanceIdMethod = StreamJobManageGrpc.getDescribeFlinkUIByInstanceIdMethod) == null) {
+      synchronized (StreamJobManageGrpc.class) {
+        if ((getDescribeFlinkUIByInstanceIdMethod = StreamJobManageGrpc.getDescribeFlinkUIByInstanceIdMethod) == null) {
+          StreamJobManageGrpc.getDescribeFlinkUIByInstanceIdMethod = getDescribeFlinkUIByInstanceIdMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeFlinkUIByInstanceId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamJobManageMethodDescriptorSupplier("DescribeFlinkUIByInstanceId"))
+              .build();
+        }
+      }
+    }
+    return getDescribeFlinkUIByInstanceIdMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -830,7 +830,7 @@ public final class StreamJobManageGrpc {
      * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
-     *  - Node, env schedule and its history version.
+     *  - code, env schedule and its history version.
      *  - Offline job and force stop all running instances. (By Scheduler-Server)
      *  - All instances records. (By Scheduler-Server)
      * </pre>
@@ -898,13 +898,6 @@ public final class StreamJobManageGrpc {
     public void getStreamJobCode(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobCode request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobCode> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamJobCodeMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void streamJobCodeSyntax(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStreamJobCodeSyntaxMethod(), responseObserver);
     }
 
     /**
@@ -1056,6 +1049,16 @@ public final class StreamJobManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamJobVersionScheduleMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Interface for helper.
+     * </pre>
+     */
+    public void describeFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeFlinkUIByInstanceIdMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -1114,13 +1117,6 @@ public final class StreamJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobCode,
                 com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobCode>(
                   this, METHODID_GET_STREAM_JOB_CODE)))
-          .addMethod(
-            getStreamJobCodeSyntaxMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax,
-                com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax>(
-                  this, METHODID_STREAM_JOB_CODE_SYNTAX)))
           .addMethod(
             getSetStreamJobArgsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1226,6 +1222,13 @@ public final class StreamJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobSchedule,
                 com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule>(
                   this, METHODID_GET_STREAM_JOB_VERSION_SCHEDULE)))
+          .addMethod(
+            getDescribeFlinkUIByInstanceIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId,
+                com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId>(
+                  this, METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID)))
           .build();
     }
   }
@@ -1265,7 +1268,7 @@ public final class StreamJobManageGrpc {
      * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
-     *  - Node, env schedule and its history version.
+     *  - code, env schedule and its history version.
      *  - Offline job and force stop all running instances. (By Scheduler-Server)
      *  - All instances records. (By Scheduler-Server)
      * </pre>
@@ -1340,14 +1343,6 @@ public final class StreamJobManageGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobCode> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetStreamJobCodeMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void streamJobCodeSyntax(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getStreamJobCodeSyntaxMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1513,6 +1508,17 @@ public final class StreamJobManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetStreamJobVersionScheduleMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Interface for helper.
+     * </pre>
+     */
+    public void describeFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeFlinkUIByInstanceIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1549,7 +1555,7 @@ public final class StreamJobManageGrpc {
      * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
-     *  - Node, env schedule and its history version.
+     *  - code, env schedule and its history version.
      *  - Offline job and force stop all running instances. (By Scheduler-Server)
      *  - All instances records. (By Scheduler-Server)
      * </pre>
@@ -1617,13 +1623,6 @@ public final class StreamJobManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobCode getStreamJobCode(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobCode request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetStreamJobCodeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax streamJobCodeSyntax(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getStreamJobCodeSyntaxMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1774,6 +1773,16 @@ public final class StreamJobManageGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetStreamJobVersionScheduleMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Interface for helper.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId describeFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeFlinkUIByInstanceIdMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1811,7 +1820,7 @@ public final class StreamJobManageGrpc {
      * Cannot not delete directory in this API.
      * Resources includes:
      *  - History version and Released's job.
-     *  - Node, env schedule and its history version.
+     *  - code, env schedule and its history version.
      *  - Offline job and force stop all running instances. (By Scheduler-Server)
      *  - All instances records. (By Scheduler-Server)
      * </pre>
@@ -1886,14 +1895,6 @@ public final class StreamJobManageGrpc {
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobCode request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetStreamJobCodeMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax> streamJobCodeSyntax(
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getStreamJobCodeSyntaxMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2059,6 +2060,17 @@ public final class StreamJobManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetStreamJobVersionScheduleMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Interface for helper.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId> describeFlinkUIByInstanceId(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeFlinkUIByInstanceIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_STREAM_JOBS = 0;
@@ -2069,22 +2081,22 @@ public final class StreamJobManageGrpc {
   private static final int METHODID_DESCRIBE_STREAM_JOB = 5;
   private static final int METHODID_SET_STREAM_JOB_CODE = 6;
   private static final int METHODID_GET_STREAM_JOB_CODE = 7;
-  private static final int METHODID_STREAM_JOB_CODE_SYNTAX = 8;
-  private static final int METHODID_SET_STREAM_JOB_ARGS = 9;
-  private static final int METHODID_GET_STREAM_JOB_ARGS = 10;
-  private static final int METHODID_LIST_BUILT_IN_CONNECTORS = 11;
-  private static final int METHODID_SET_STREAM_JOB_SCHEDULE = 12;
-  private static final int METHODID_GET_STREAM_JOB_SCHEDULE = 13;
-  private static final int METHODID_RELEASE_STREAM_JOB = 14;
-  private static final int METHODID_OFFLINE_RELEASE_STREAM_JOB = 15;
-  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 16;
-  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 17;
-  private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 18;
-  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 19;
-  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 20;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 21;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 22;
-  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 23;
+  private static final int METHODID_SET_STREAM_JOB_ARGS = 8;
+  private static final int METHODID_GET_STREAM_JOB_ARGS = 9;
+  private static final int METHODID_LIST_BUILT_IN_CONNECTORS = 10;
+  private static final int METHODID_SET_STREAM_JOB_SCHEDULE = 11;
+  private static final int METHODID_GET_STREAM_JOB_SCHEDULE = 12;
+  private static final int METHODID_RELEASE_STREAM_JOB = 13;
+  private static final int METHODID_OFFLINE_RELEASE_STREAM_JOB = 14;
+  private static final int METHODID_SUSPEND_RELEASE_STREAM_JOB = 15;
+  private static final int METHODID_RESUME_RELEASE_STREAM_JOB = 16;
+  private static final int METHODID_LIST_RELEASE_STREAM_JOBS = 17;
+  private static final int METHODID_LIST_STREAM_JOB_VERSIONS = 18;
+  private static final int METHODID_DESCRIBE_STREAM_JOB_VERSION = 19;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_CODE = 20;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_ARGS = 21;
+  private static final int METHODID_GET_STREAM_JOB_VERSION_SCHEDULE = 22;
+  private static final int METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID = 23;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2134,10 +2146,6 @@ public final class StreamJobManageGrpc {
         case METHODID_GET_STREAM_JOB_CODE:
           serviceImpl.getStreamJobCode((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobCode) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobCode>) responseObserver);
-          break;
-        case METHODID_STREAM_JOB_CODE_SYNTAX:
-          serviceImpl.streamJobCodeSyntax((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.StreamJobCodeSyntax>) responseObserver);
           break;
         case METHODID_SET_STREAM_JOB_ARGS:
           serviceImpl.setStreamJobArgs((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.SetStreamJobArgs) request,
@@ -2198,6 +2206,10 @@ public final class StreamJobManageGrpc {
         case METHODID_GET_STREAM_JOB_VERSION_SCHEDULE:
           serviceImpl.getStreamJobVersionSchedule((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.GetStreamJobSchedule) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID:
+          serviceImpl.describeFlinkUIByInstanceId((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.DescribeFlinkUIByInstanceId>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2268,7 +2280,6 @@ public final class StreamJobManageGrpc {
               .addMethod(getDescribeStreamJobMethod())
               .addMethod(getSetStreamJobCodeMethod())
               .addMethod(getGetStreamJobCodeMethod())
-              .addMethod(getStreamJobCodeSyntaxMethod())
               .addMethod(getSetStreamJobArgsMethod())
               .addMethod(getGetStreamJobArgsMethod())
               .addMethod(getListBuiltInConnectorsMethod())
@@ -2284,6 +2295,7 @@ public final class StreamJobManageGrpc {
               .addMethod(getGetStreamJobVersionCodeMethod())
               .addMethod(getGetStreamJobVersionArgsMethod())
               .addMethod(getGetStreamJobVersionScheduleMethod())
+              .addMethod(getDescribeFlinkUIByInstanceIdMethod())
               .build();
         }
       }

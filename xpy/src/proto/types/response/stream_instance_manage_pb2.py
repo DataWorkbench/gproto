@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\036PBResponseStreamInstanceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1proto/types/response/stream_instance_manage.proto\x12\x08response\x1a\'proto/types/model/stream_instance.proto\"\\\n\x13ListStreamInstances\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.StreamInstance\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"-\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\tB\x7f\n%com.dataomnis.gproto.types.pbresponseB\x1ePBResponseStreamInstanceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n1proto/types/response/stream_instance_manage.proto\x12\x08response\x1a\'proto/types/model/stream_instance.proto\"\\\n\x13ListStreamInstances\x12$\n\x05infos\x18\x01 \x03(\x0b\x32\x15.model.StreamInstance\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"=\n\x16\x44\x65scribeStreamInstance\x12#\n\x04info\x18\x01 \x01(\x0b\x32\x15.model.StreamInstanceB\x7f\n%com.dataomnis.gproto.types.pbresponseB\x1ePBResponseStreamInstanceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_stream__instance__pb2.DESCRIPTOR,])
 
@@ -73,18 +73,18 @@ _LISTSTREAMINSTANCES = _descriptor.Descriptor(
 )
 
 
-_DESCRIBEFLINKUIBYINSTANCEID = _descriptor.Descriptor(
-  name='DescribeFlinkUIByInstanceId',
-  full_name='response.DescribeFlinkUIByInstanceId',
+_DESCRIBESTREAMINSTANCE = _descriptor.Descriptor(
+  name='DescribeStreamInstance',
+  full_name='response.DescribeStreamInstance',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='web_ui', full_name='response.DescribeFlinkUIByInstanceId.web_ui', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='info', full_name='response.DescribeStreamInstance.info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -101,12 +101,13 @@ _DESCRIBEFLINKUIBYINSTANCEID = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=198,
-  serialized_end=243,
+  serialized_end=259,
 )
 
 _LISTSTREAMINSTANCES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_stream__instance__pb2._STREAMINSTANCE
+_DESCRIBESTREAMINSTANCE.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_stream__instance__pb2._STREAMINSTANCE
 DESCRIPTOR.message_types_by_name['ListStreamInstances'] = _LISTSTREAMINSTANCES
-DESCRIPTOR.message_types_by_name['DescribeFlinkUIByInstanceId'] = _DESCRIBEFLINKUIBYINSTANCEID
+DESCRIPTOR.message_types_by_name['DescribeStreamInstance'] = _DESCRIBESTREAMINSTANCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListStreamInstances = _reflection.GeneratedProtocolMessageType('ListStreamInstances', (_message.Message,), {
@@ -116,12 +117,12 @@ ListStreamInstances = _reflection.GeneratedProtocolMessageType('ListStreamInstan
   })
 _sym_db.RegisterMessage(ListStreamInstances)
 
-DescribeFlinkUIByInstanceId = _reflection.GeneratedProtocolMessageType('DescribeFlinkUIByInstanceId', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBEFLINKUIBYINSTANCEID,
+DescribeStreamInstance = _reflection.GeneratedProtocolMessageType('DescribeStreamInstance', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBESTREAMINSTANCE,
   '__module__' : 'proto.types.response.stream_instance_manage_pb2'
-  # @@protoc_insertion_point(class_scope:response.DescribeFlinkUIByInstanceId)
+  # @@protoc_insertion_point(class_scope:response.DescribeStreamInstance)
   })
-_sym_db.RegisterMessage(DescribeFlinkUIByInstanceId)
+_sym_db.RegisterMessage(DescribeStreamInstance)
 
 
 DESCRIPTOR._options = None

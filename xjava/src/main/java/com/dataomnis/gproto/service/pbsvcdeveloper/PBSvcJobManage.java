@@ -27,21 +27,20 @@ public final class PBSvcJobManage {
       "to\022\tdeveloper\032\035proto/types/model/empty.p" +
       "roto\032$proto/types/request/job_manage.pro" +
       "to\032%proto/types/response/job_manage.prot" +
-      "o\032,proto/types/response/stream_job_manag" +
-      "e.proto2\237\003\n\tJobManage\022;\n\014FreeFlinkJob\022\025." +
-      "request.FreeFlinkJob\032\022.model.EmptyStruct" +
-      "\"\000\022?\n\014InitFlinkJob\022\025.request.InitFlinkJo" +
-      "b\032\026.response.InitFlinkJob\"\000\022E\n\016SubmitFli" +
-      "nkJob\022\027.request.SubmitFlinkJob\032\030.respons" +
-      "e.SubmitFlinkJob\"\000\022<\n\013GetFlinkJob\022\024.requ" +
-      "est.GetFlinkJob\032\025.response.GetFlinkJob\"\000" +
-      "\022?\n\016CancelFlinkJob\022\027.request.CancelFlink" +
-      "Job\032\022.model.EmptyStruct\"\000\022N\n\020ValidateFli" +
-      "nkJob\022\031.request.ValidateFlinkJob\032\035.respo" +
-      "nse.StreamJobCodeSyntax\"\000B{\n+com.dataomn" +
-      "is.gproto.service.pbsvcdeveloperB\016PBSvcJ" +
-      "obManageP\000Z:github.com/DataWorkbench/gpr" +
-      "oto/xgo/service/pbsvcdeveloperb\006proto3"
+      "o2\234\003\n\tJobManage\022;\n\014FreeFlinkJob\022\025.reques" +
+      "t.FreeFlinkJob\032\022.model.EmptyStruct\"\000\022?\n\014" +
+      "InitFlinkJob\022\025.request.InitFlinkJob\032\026.re" +
+      "sponse.InitFlinkJob\"\000\022E\n\016SubmitFlinkJob\022" +
+      "\027.request.SubmitFlinkJob\032\030.response.Subm" +
+      "itFlinkJob\"\000\022<\n\013GetFlinkJob\022\024.request.Ge" +
+      "tFlinkJob\032\025.response.GetFlinkJob\"\000\022?\n\016Ca" +
+      "ncelFlinkJob\022\027.request.CancelFlinkJob\032\022." +
+      "model.EmptyStruct\"\000\022K\n\020ValidateFlinkJob\022" +
+      "\031.request.ValidateFlinkJob\032\032.response.Va" +
+      "lidateFlinkJob\"\000B{\n+com.dataomnis.gproto" +
+      ".service.pbsvcdeveloperB\016PBSvcJobManageP" +
+      "\000Z:github.com/DataWorkbench/gproto/xgo/s" +
+      "ervice/pbsvcdeveloperb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -49,12 +48,10 @@ public final class PBSvcJobManage {
           com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
           com.dataomnis.gproto.types.pbrequest.PBRequestJobManage.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseJobManageManage.getDescriptor(),
-          com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
     com.dataomnis.gproto.types.pbrequest.PBRequestJobManage.getDescriptor();
     com.dataomnis.gproto.types.pbresponse.PBResponseJobManageManage.getDescriptor();
-    com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -30,7 +30,7 @@ type JobManageClient interface {
 	SubmitFlinkJob(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.SubmitFlinkJob, error)
 	GetFlinkJob(ctx context.Context, in *pbrequest.GetFlinkJob, opts ...grpc.CallOption) (*pbresponse.GetFlinkJob, error)
 	CancelFlinkJob(ctx context.Context, in *pbrequest.CancelFlinkJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.StreamJobCodeSyntax, error)
+	ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
 }
 
 type jobManageClient struct {
@@ -86,8 +86,8 @@ func (c *jobManageClient) CancelFlinkJob(ctx context.Context, in *pbrequest.Canc
 	return out, nil
 }
 
-func (c *jobManageClient) ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.StreamJobCodeSyntax, error) {
-	out := new(pbresponse.StreamJobCodeSyntax)
+func (c *jobManageClient) ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error) {
+	out := new(pbresponse.ValidateFlinkJob)
 	err := c.cc.Invoke(ctx, "/developer.JobManage/ValidateFlinkJob", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -104,7 +104,7 @@ type JobManageServer interface {
 	SubmitFlinkJob(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.SubmitFlinkJob, error)
 	GetFlinkJob(context.Context, *pbrequest.GetFlinkJob) (*pbresponse.GetFlinkJob, error)
 	CancelFlinkJob(context.Context, *pbrequest.CancelFlinkJob) (*pbmodel.EmptyStruct, error)
-	ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.StreamJobCodeSyntax, error)
+	ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.ValidateFlinkJob, error)
 	mustEmbedUnimplementedJobManageServer()
 }
 
@@ -127,7 +127,7 @@ func (UnimplementedJobManageServer) GetFlinkJob(context.Context, *pbrequest.GetF
 func (UnimplementedJobManageServer) CancelFlinkJob(context.Context, *pbrequest.CancelFlinkJob) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelFlinkJob not implemented")
 }
-func (UnimplementedJobManageServer) ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.StreamJobCodeSyntax, error) {
+func (UnimplementedJobManageServer) ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.ValidateFlinkJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateFlinkJob not implemented")
 }
 func (UnimplementedJobManageServer) mustEmbedUnimplementedJobManageServer() {}

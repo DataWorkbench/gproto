@@ -80,14 +80,6 @@ func (this *GetStreamJobCode) Validate() error {
 	return nil
 }
 
-// Set default value for message response.StreamJobCodeSyntax
-func (this *StreamJobCodeSyntax) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 func (this *GetStreamJobArgs) _xxx_xxx_Validator_Validate_info() error {
 	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -176,6 +168,14 @@ func (this *ListStreamJobVersions) Validate() error {
 
 // Set default value for message response.ListBuiltInConnectors
 func (this *ListBuiltInConnectors) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeFlinkUIByInstanceId
+func (this *DescribeFlinkUIByInstanceId) Validate() error {
 	if this == nil {
 		return nil
 	}

@@ -44,3 +44,11 @@ func (this *GetFlinkJob) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message response.ValidateFlinkJob
+func (this *ValidateFlinkJob) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

@@ -9786,1100 +9786,6 @@ public final class PBRequestStreamJobManage {
 
   }
 
-  public interface StreamJobCodeSyntaxOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.StreamJobCodeSyntax)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    java.lang.String getSpaceId();
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    com.google.protobuf.ByteString
-        getSpaceIdBytes();
-
-    /**
-     * <pre>
-     * The stream job id it belongs to.
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-     * @return The jobId.
-     */
-    java.lang.String getJobId();
-    /**
-     * <pre>
-     * The stream job id it belongs to.
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for jobId.
-     */
-    com.google.protobuf.ByteString
-        getJobIdBytes();
-
-    /**
-     * <pre>
-     * The code info of JSON format.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-     * @return Whether the code field is set.
-     */
-    boolean hasCode();
-    /**
-     * <pre>
-     * The code info of JSON format.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-     * @return The code.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode getCode();
-    /**
-     * <pre>
-     * The code info of JSON format.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder();
-  }
-  /**
-   * <pre>
-   * SetStreamJobCode used as a request parameters for RPC.
-   * </pre>
-   *
-   * Protobuf type {@code request.StreamJobCodeSyntax}
-   */
-  public static final class StreamJobCodeSyntax extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.StreamJobCodeSyntax)
-      StreamJobCodeSyntaxOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use StreamJobCodeSyntax.newBuilder() to construct.
-    private StreamJobCodeSyntax(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StreamJobCodeSyntax() {
-      spaceId_ = "";
-      jobId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new StreamJobCodeSyntax();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private StreamJobCodeSyntax(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              jobId_ = s;
-              break;
-            }
-            case 26: {
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder subBuilder = null;
-              if (code_ != null) {
-                subBuilder = code_.toBuilder();
-              }
-              code_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(code_);
-                code_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_StreamJobCodeSyntax_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_StreamJobCodeSyntax_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.Builder.class);
-    }
-
-    public static final int SPACE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object spaceId_;
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSpaceId() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spaceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSpaceIdBytes() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spaceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int JOB_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object jobId_;
-    /**
-     * <pre>
-     * The stream job id it belongs to.
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-     * @return The jobId.
-     */
-    @java.lang.Override
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The stream job id it belongs to.
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for jobId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getJobIdBytes() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        jobId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CODE_FIELD_NUMBER = 3;
-    private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode code_;
-    /**
-     * <pre>
-     * The code info of JSON format.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-     * @return Whether the code field is set.
-     */
-    @java.lang.Override
-    public boolean hasCode() {
-      return code_ != null;
-    }
-    /**
-     * <pre>
-     * The code info of JSON format.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-     * @return The code.
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode getCode() {
-      return code_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.getDefaultInstance() : code_;
-    }
-    /**
-     * <pre>
-     * The code info of JSON format.
-     * &#64;inject_tag: json:"code"
-     * </pre>
-     *
-     * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder() {
-      return getCode();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
-      }
-      if (code_ != null) {
-        output.writeMessage(3, getCode());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
-      }
-      if (code_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getCode());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax other = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax) obj;
-
-      if (!getSpaceId()
-          .equals(other.getSpaceId())) return false;
-      if (!getJobId()
-          .equals(other.getJobId())) return false;
-      if (hasCode() != other.hasCode()) return false;
-      if (hasCode()) {
-        if (!getCode()
-            .equals(other.getCode())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId().hashCode();
-      if (hasCode()) {
-        hash = (37 * hash) + CODE_FIELD_NUMBER;
-        hash = (53 * hash) + getCode().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * SetStreamJobCode used as a request parameters for RPC.
-     * </pre>
-     *
-     * Protobuf type {@code request.StreamJobCodeSyntax}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.StreamJobCodeSyntax)
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntaxOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_StreamJobCodeSyntax_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_StreamJobCodeSyntax_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        spaceId_ = "";
-
-        jobId_ = "";
-
-        if (codeBuilder_ == null) {
-          code_ = null;
-        } else {
-          code_ = null;
-          codeBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_StreamJobCodeSyntax_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax result = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax(this);
-        result.spaceId_ = spaceId_;
-        result.jobId_ = jobId_;
-        if (codeBuilder_ == null) {
-          result.code_ = code_;
-        } else {
-          result.code_ = codeBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax.getDefaultInstance()) return this;
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
-          onChanged();
-        }
-        if (!other.getJobId().isEmpty()) {
-          jobId_ = other.jobId_;
-          onChanged();
-        }
-        if (other.hasCode()) {
-          mergeCode(other.getCode());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object spaceId_ = "";
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return The spaceId.
-       */
-      public java.lang.String getSpaceId() {
-        java.lang.Object ref = spaceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceId.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceIdBytes() {
-        java.lang.Object ref = spaceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceId() {
-        
-        spaceId_ = getDefaultInstance().getSpaceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object jobId_ = "";
-      /**
-       * <pre>
-       * The stream job id it belongs to.
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-       * @return The jobId.
-       */
-      public java.lang.String getJobId() {
-        java.lang.Object ref = jobId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          jobId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The stream job id it belongs to.
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for jobId.
-       */
-      public com.google.protobuf.ByteString
-          getJobIdBytes() {
-        java.lang.Object ref = jobId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          jobId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The stream job id it belongs to.
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The jobId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJobId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        jobId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The stream job id it belongs to.
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJobId() {
-        
-        jobId_ = getDefaultInstance().getJobId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The stream job id it belongs to.
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for jobId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJobIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        jobId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode code_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder> codeBuilder_;
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       * @return Whether the code field is set.
-       */
-      public boolean hasCode() {
-        return codeBuilder_ != null || code_ != null;
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       * @return The code.
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode getCode() {
-        if (codeBuilder_ == null) {
-          return code_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.getDefaultInstance() : code_;
-        } else {
-          return codeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder setCode(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode value) {
-        if (codeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          code_ = value;
-          onChanged();
-        } else {
-          codeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder setCode(
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder builderForValue) {
-        if (codeBuilder_ == null) {
-          code_ = builderForValue.build();
-          onChanged();
-        } else {
-          codeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder mergeCode(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode value) {
-        if (codeBuilder_ == null) {
-          if (code_ != null) {
-            code_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.newBuilder(code_).mergeFrom(value).buildPartial();
-          } else {
-            code_ = value;
-          }
-          onChanged();
-        } else {
-          codeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearCode() {
-        if (codeBuilder_ == null) {
-          code_ = null;
-          onChanged();
-        } else {
-          code_ = null;
-          codeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder getCodeBuilder() {
-        
-        onChanged();
-        return getCodeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder() {
-        if (codeBuilder_ != null) {
-          return codeBuilder_.getMessageOrBuilder();
-        } else {
-          return code_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.getDefaultInstance() : code_;
-        }
-      }
-      /**
-       * <pre>
-       * The code info of JSON format.
-       * &#64;inject_tag: json:"code"
-       * </pre>
-       *
-       * <code>.model.StreamJobCode code = 3 [(.validator.field) = { ... }</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder> 
-          getCodeFieldBuilder() {
-        if (codeBuilder_ == null) {
-          codeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder>(
-                  getCode(),
-                  getParentForChildren(),
-                  isClean());
-          code_ = null;
-        }
-        return codeBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:request.StreamJobCodeSyntax)
-    }
-
-    // @@protoc_insertion_point(class_scope:request.StreamJobCodeSyntax)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax();
-    }
-
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StreamJobCodeSyntax>
-        PARSER = new com.google.protobuf.AbstractParser<StreamJobCodeSyntax>() {
-      @java.lang.Override
-      public StreamJobCodeSyntax parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StreamJobCodeSyntax(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StreamJobCodeSyntax> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StreamJobCodeSyntax> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.StreamJobCodeSyntax getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface SetStreamJobArgsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.SetStreamJobArgs)
       com.google.protobuf.MessageOrBuilder {
@@ -20807,6 +19713,627 @@ public final class PBRequestStreamJobManage {
 
   }
 
+  public interface DescribeFlinkUIByInstanceIdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeFlinkUIByInstanceId)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    java.lang.String getInstanceId();
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    com.google.protobuf.ByteString
+        getInstanceIdBytes();
+  }
+  /**
+   * <pre>
+   * DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+   * </pre>
+   *
+   * Protobuf type {@code request.DescribeFlinkUIByInstanceId}
+   */
+  public static final class DescribeFlinkUIByInstanceId extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DescribeFlinkUIByInstanceId)
+      DescribeFlinkUIByInstanceIdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeFlinkUIByInstanceId.newBuilder() to construct.
+    private DescribeFlinkUIByInstanceId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeFlinkUIByInstanceId() {
+      instanceId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeFlinkUIByInstanceId();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeFlinkUIByInstanceId(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.Builder.class);
+    }
+
+    public static final int INSTANCE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object instanceId_;
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    @java.lang.Override
+    public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The instance id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId other = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId) obj;
+
+      if (!getInstanceId()
+          .equals(other.getInstanceId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * DescribeFlinkUIByInstanceId used as a request parameters for RPC.
+     * </pre>
+     *
+     * Protobuf type {@code request.DescribeFlinkUIByInstanceId}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.DescribeFlinkUIByInstanceId)
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceIdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        instanceId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId result = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId(this);
+        result.instanceId_ = instanceId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId.getDefaultInstance()) return this;
+        if (!other.getInstanceId().isEmpty()) {
+          instanceId_ = other.instanceId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object instanceId_ = "";
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @return The instanceId.
+       */
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for instanceId.
+       */
+      public com.google.protobuf.ByteString
+          getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instanceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstanceId() {
+        
+        instanceId_ = getDefaultInstance().getInstanceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The instance id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.DescribeFlinkUIByInstanceId)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.DescribeFlinkUIByInstanceId)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeFlinkUIByInstanceId>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeFlinkUIByInstanceId>() {
+      @java.lang.Override
+      public DescribeFlinkUIByInstanceId parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeFlinkUIByInstanceId(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeFlinkUIByInstanceId> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeFlinkUIByInstanceId> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.DescribeFlinkUIByInstanceId getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListStreamJobs_descriptor;
   private static final 
@@ -20847,11 +20374,6 @@ public final class PBRequestStreamJobManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_SetStreamJobSchedule_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_StreamJobCodeSyntax_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_StreamJobCodeSyntax_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_SetStreamJobArgs_descriptor;
   private static final 
@@ -20902,6 +20424,11 @@ public final class PBRequestStreamJobManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_ListStreamJobVersions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -20950,47 +20477,45 @@ public final class PBRequestStreamJobManage {
       "\005\342\001\002\020\001\"\220\001\n\024SetStreamJobSchedule\022%\n\010space" +
       "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id" +
       "\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\0223\n\004info\030\003 \001(\0132\030.mod" +
-      "el.StreamJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\213\001\n\023St" +
-      "reamJobCodeSyntax\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\360\001\024\022/\n\004code\030\003 \001(\0132\024.model.StreamJobCo" +
-      "deB\013\342\337\037\007\022\005\342\001\002\020\001\"\210\001\n\020SetStreamJobArgs\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006j" +
-      "ob_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022/\n\004info\030\003 \001(\0132" +
-      "\024.model.StreamJobArgsB\013\342\337\037\007\022\005\342\001\002\020\001\"G\n\020Ge" +
-      "tStreamJobCode\022\034\n\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\360\001\024\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"K\n\024GetStream" +
-      "JobSchedule\022\034\n\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
-      "\024\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"G\n\020GetStreamJob" +
-      "Args\022\034\n\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007ve" +
-      "rsion\030\002 \001(\tB\004\342\337\037\000\"\275\002\n\025ListReleaseStreamJ" +
-      "obs\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040" +
-      "\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010spac" +
-      "e_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0228\n\007sort_" +
-      "by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007created" +
-      "J\007updated\022\025\n\007reverse\030\004 \001(\010B\004\342\337\037\000\022\024\n\006sear" +
-      "ch\030\006 \001(\tB\004\342\337\037\000\022;\n\006status\030\007 \001(\0162\036.model.S" +
-      "treamJobRelease.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\024\n\006j" +
-      "ob_id\030\010 \001(\tB\004\342\337\037\000\"|\n\020ReleaseStreamJob\022\034\n" +
-      "\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022 \n\ncreated_b" +
-      "y\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\014\n\004desc\030\003 \001(\t\022\032\n\014s" +
-      "top_running\030\004 \001(\010B\004\342\337\037\000\"^\n\027OfflineReleas" +
-      "eStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"" +
-      "z\n\027SuspendReleaseStreamJob\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\032\n\014stop_running\030\003 \001(\010B\004\342" +
-      "\337\037\000\"]\n\026ResumeReleaseStreamJob\022%\n\010space_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\312\001\n\025ListStreamJobVers" +
-      "ions\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\004" +
-      "0\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sor" +
-      "t_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007create" +
-      "dJ\007updated\022\025\n\007reverse\030\004 \001(\010B\004\342\337\037\000\022\034\n\006job" +
-      "_id\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bw\n$com.dataomnis" +
-      ".gproto.types.pbrequestB\030PBRequestStream" +
-      "JobManageP\000Z3github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbrequestb\006proto3"
+      "el.StreamJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\210\001\n\020Se" +
+      "tStreamJobArgs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\360\001\024\022/\n\004info\030\003 \001(\0132\024.model.StreamJobArgsB" +
+      "\013\342\337\037\007\022\005\342\001\002\020\001\"G\n\020GetStreamJobCode\022\034\n\006job_" +
+      "id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007version\030\002 \001(\tB" +
+      "\004\342\337\037\000\"K\n\024GetStreamJobSchedule\022\034\n\006job_id\030" +
+      "\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007version\030\002 \001(\tB\004\342\337" +
+      "\037\000\"G\n\020GetStreamJobArgs\022\034\n\006job_id\030\001 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\275\002\n\025" +
+      "ListReleaseStreamJobs\022&\n\005limit\030\001 \001(\005B\027\242\241" +
+      "\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342" +
+      "\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J" +
+      "\002idJ\004nameJ\007createdJ\007updated\022\025\n\007reverse\030\004" +
+      " \001(\010B\004\342\337\037\000\022\024\n\006search\030\006 \001(\tB\004\342\337\037\000\022;\n\006stat" +
+      "us\030\007 \001(\0162\036.model.StreamJobRelease.Status" +
+      "B\013\342\337\037\007\022\005\332\001\002X\001\022\024\n\006job_id\030\010 \001(\tB\004\342\337\037\000\"|\n\020R" +
+      "eleaseStreamJob\022\034\n\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006\302" +
+      "\001\003\360\001\024\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022" +
+      "\014\n\004desc\030\003 \001(\t\022\032\n\014stop_running\030\004 \001(\010B\004\342\337\037" +
+      "\000\"^\n\027OfflineReleaseStreamJob\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"z\n\027SuspendReleaseStrea" +
+      "mJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\032\n\014sto" +
+      "p_running\030\003 \001(\010B\004\342\337\037\000\"]\n\026ResumeReleaseSt" +
+      "reamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\312\001\n" +
+      "\025ListStreamJobVersions\022&\n\005limit\030\001 \001(\005B\027\242" +
+      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013" +
+      "\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J" +
+      "\000J\007versionJ\007createdJ\007updated\022\025\n\007reverse\030" +
+      "\004 \001(\010B\004\342\337\037\000\022\034\n\006job_id\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
+      "\024\"@\n\033DescribeFlinkUIByInstanceId\022!\n\013inst" +
+      "ance_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bw\n$com.datao" +
+      "mnis.gproto.types.pbrequestB\030PBRequestSt" +
+      "reamJobManageP\000Z3github.com/DataWorkbenc" +
+      "h/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21047,72 +20572,72 @@ public final class PBRequestStreamJobManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SetStreamJobSchedule_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", "Info", });
-    internal_static_request_StreamJobCodeSyntax_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_request_StreamJobCodeSyntax_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_StreamJobCodeSyntax_descriptor,
-        new java.lang.String[] { "SpaceId", "JobId", "Code", });
     internal_static_request_SetStreamJobArgs_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_request_SetStreamJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SetStreamJobArgs_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", "Info", });
     internal_static_request_GetStreamJobCode_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_request_GetStreamJobCode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetStreamJobCode_descriptor,
         new java.lang.String[] { "JobId", "Version", });
     internal_static_request_GetStreamJobSchedule_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_request_GetStreamJobSchedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetStreamJobSchedule_descriptor,
         new java.lang.String[] { "JobId", "Version", });
     internal_static_request_GetStreamJobArgs_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_request_GetStreamJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetStreamJobArgs_descriptor,
         new java.lang.String[] { "JobId", "Version", });
     internal_static_request_ListReleaseStreamJobs_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_request_ListReleaseStreamJobs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListReleaseStreamJobs_descriptor,
         new java.lang.String[] { "Limit", "Offset", "SpaceId", "SortBy", "Reverse", "Search", "Status", "JobId", });
     internal_static_request_ReleaseStreamJob_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_request_ReleaseStreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ReleaseStreamJob_descriptor,
         new java.lang.String[] { "JobId", "CreatedBy", "Desc", "StopRunning", });
     internal_static_request_OfflineReleaseStreamJob_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_request_OfflineReleaseStreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_OfflineReleaseStreamJob_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", });
     internal_static_request_SuspendReleaseStreamJob_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_request_SuspendReleaseStreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SuspendReleaseStreamJob_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", "StopRunning", });
     internal_static_request_ResumeReleaseStreamJob_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_request_ResumeReleaseStreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ResumeReleaseStreamJob_descriptor,
         new java.lang.String[] { "SpaceId", "JobId", });
     internal_static_request_ListStreamJobVersions_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_request_ListStreamJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListStreamJobVersions_descriptor,
         new java.lang.String[] { "Limit", "Offset", "SortBy", "Reverse", "JobId", });
+    internal_static_request_DescribeFlinkUIByInstanceId_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_DescribeFlinkUIByInstanceId_descriptor,
+        new java.lang.String[] { "InstanceId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

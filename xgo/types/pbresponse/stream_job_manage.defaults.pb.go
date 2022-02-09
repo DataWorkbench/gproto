@@ -51,14 +51,6 @@ func (this *GetStreamJobCode) SetDefaults() {
 	return
 }
 
-// Set default value for message response.StreamJobCodeSyntax
-func (this *StreamJobCodeSyntax) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message response.GetStreamJobArgs
 func (this *GetStreamJobArgs) SetDefaults() {
 	if this == nil {
@@ -103,6 +95,14 @@ func (this *ListStreamJobVersions) SetDefaults() {
 
 // Set default value for message response.ListBuiltInConnectors
 func (this *ListBuiltInConnectors) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.DescribeFlinkUIByInstanceId
+func (this *DescribeFlinkUIByInstanceId) SetDefaults() {
 	if this == nil {
 		return
 	}

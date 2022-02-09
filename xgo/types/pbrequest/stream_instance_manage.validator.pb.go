@@ -144,19 +144,22 @@ func (this *ResumeStreamInstances) Validate() error {
 	return nil
 }
 
-func (this *DescribeFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_inst_id() error {
-	if !(len(this.InstId) == 20) {
-		return protovalidator.FieldError1("DescribeFlinkUIByInstanceId", "the byte length of field 'inst_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstId))
+func (this *DescribeStreamInstance) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("DescribeStreamInstance", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
+		return protovalidator.FieldError1("DescribeStreamInstance", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
 	}
 	return nil
 }
 
-// Set default value for message request.DescribeFlinkUIByInstanceId
-func (this *DescribeFlinkUIByInstanceId) Validate() error {
+// Set default value for message request.DescribeStreamInstance
+func (this *DescribeStreamInstance) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_inst_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
 		return err
 	}
 	return nil

@@ -461,52 +461,6 @@ func (this *SetStreamJobSchedule) Validate() error {
 	return nil
 }
 
-func (this *StreamJobCodeSyntax) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("StreamJobCodeSyntax", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("StreamJobCodeSyntax", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *StreamJobCodeSyntax) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("StreamJobCodeSyntax", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	return nil
-}
-
-func (this *StreamJobCodeSyntax) _xxx_xxx_Validator_Validate_code() error {
-	if !(this.Code != nil) {
-		return protovalidator.FieldError2("StreamJobCodeSyntax", "the value of field 'code' cannot be null")
-	}
-	if dt, ok := interface{}(this.Code).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-// Set default value for message request.StreamJobCodeSyntax
-func (this *StreamJobCodeSyntax) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (this *SetStreamJobArgs) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("SetStreamJobArgs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
@@ -844,6 +798,24 @@ func (this *ListStreamJobVersions) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DescribeFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("DescribeFlinkUIByInstanceId", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	return nil
+}
+
+// Set default value for message request.DescribeFlinkUIByInstanceId
+func (this *DescribeFlinkUIByInstanceId) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
 		return err
 	}
 	return nil

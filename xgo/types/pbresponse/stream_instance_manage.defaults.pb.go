@@ -17,10 +17,15 @@ func (this *ListStreamInstances) SetDefaults() {
 	return
 }
 
-// Set default value for message response.DescribeFlinkUIByInstanceId
-func (this *DescribeFlinkUIByInstanceId) SetDefaults() {
+// Set default value for message response.DescribeStreamInstance
+func (this *DescribeStreamInstance) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }

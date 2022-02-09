@@ -33,7 +33,7 @@ type StreamJobManageClient interface {
 	// Cannot not delete directory in this API.
 	// Resources includes:
 	//  - History version and Released's job.
-	//  - Node, env schedule and its history version.
+	//  - code, env schedule and its history version.
 	//  - Offline job and force stop all running instances. (By Scheduler-Server)
 	//  - All instances records. (By Scheduler-Server)
 	DeleteStreamJobs(ctx context.Context, in *pbrequest.DeleteStreamJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -49,7 +49,6 @@ type StreamJobManageClient interface {
 	SetStreamJobCode(ctx context.Context, in *pbrequest.SetStreamJobCode, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// GetStreamJobCode to get the code properties of the specified stream job.
 	GetStreamJobCode(ctx context.Context, in *pbrequest.GetStreamJobCode, opts ...grpc.CallOption) (*pbresponse.GetStreamJobCode, error)
-	StreamJobCodeSyntax(ctx context.Context, in *pbrequest.StreamJobCodeSyntax, opts ...grpc.CallOption) (*pbresponse.StreamJobCodeSyntax, error)
 	// SetStreamJobArgs to set the run parameters of the specified stream job.
 	SetStreamJobArgs(ctx context.Context, in *pbrequest.SetStreamJobArgs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// GetStreamJobArgs to get the run parameters of the specified stream job.
@@ -83,6 +82,9 @@ type StreamJobManageClient interface {
 	GetStreamJobVersionArgs(ctx context.Context, in *pbrequest.GetStreamJobArgs, opts ...grpc.CallOption) (*pbresponse.GetStreamJobArgs, error)
 	// GetStreamJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetStreamJobVersionSchedule(ctx context.Context, in *pbrequest.GetStreamJobSchedule, opts ...grpc.CallOption) (*pbresponse.GetStreamJobSchedule, error)
+	// Interface for helper.
+	//
+	DescribeFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeFlinkUIByInstanceId, error)
 }
 
 type streamJobManageClient struct {
@@ -159,15 +161,6 @@ func (c *streamJobManageClient) SetStreamJobCode(ctx context.Context, in *pbrequ
 func (c *streamJobManageClient) GetStreamJobCode(ctx context.Context, in *pbrequest.GetStreamJobCode, opts ...grpc.CallOption) (*pbresponse.GetStreamJobCode, error) {
 	out := new(pbresponse.GetStreamJobCode)
 	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/GetStreamJobCode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *streamJobManageClient) StreamJobCodeSyntax(ctx context.Context, in *pbrequest.StreamJobCodeSyntax, opts ...grpc.CallOption) (*pbresponse.StreamJobCodeSyntax, error) {
-	out := new(pbresponse.StreamJobCodeSyntax)
-	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/StreamJobCodeSyntax", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -309,6 +302,15 @@ func (c *streamJobManageClient) GetStreamJobVersionSchedule(ctx context.Context,
 	return out, nil
 }
 
+func (c *streamJobManageClient) DescribeFlinkUIByInstanceId(ctx context.Context, in *pbrequest.DescribeFlinkUIByInstanceId, opts ...grpc.CallOption) (*pbresponse.DescribeFlinkUIByInstanceId, error) {
+	out := new(pbresponse.DescribeFlinkUIByInstanceId)
+	err := c.cc.Invoke(ctx, "/spacemanager.StreamJobManage/DescribeFlinkUIByInstanceId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // StreamJobManageServer is the server API for StreamJobManage service.
 // All implementations must embed UnimplementedStreamJobManageServer
 // for forward compatibility
@@ -321,7 +323,7 @@ type StreamJobManageServer interface {
 	// Cannot not delete directory in this API.
 	// Resources includes:
 	//  - History version and Released's job.
-	//  - Node, env schedule and its history version.
+	//  - code, env schedule and its history version.
 	//  - Offline job and force stop all running instances. (By Scheduler-Server)
 	//  - All instances records. (By Scheduler-Server)
 	DeleteStreamJobs(context.Context, *pbrequest.DeleteStreamJobs) (*pbmodel.EmptyStruct, error)
@@ -337,7 +339,6 @@ type StreamJobManageServer interface {
 	SetStreamJobCode(context.Context, *pbrequest.SetStreamJobCode) (*pbmodel.EmptyStruct, error)
 	// GetStreamJobCode to get the code properties of the specified stream job.
 	GetStreamJobCode(context.Context, *pbrequest.GetStreamJobCode) (*pbresponse.GetStreamJobCode, error)
-	StreamJobCodeSyntax(context.Context, *pbrequest.StreamJobCodeSyntax) (*pbresponse.StreamJobCodeSyntax, error)
 	// SetStreamJobArgs to set the run parameters of the specified stream job.
 	SetStreamJobArgs(context.Context, *pbrequest.SetStreamJobArgs) (*pbmodel.EmptyStruct, error)
 	// GetStreamJobArgs to get the run parameters of the specified stream job.
@@ -371,6 +372,9 @@ type StreamJobManageServer interface {
 	GetStreamJobVersionArgs(context.Context, *pbrequest.GetStreamJobArgs) (*pbresponse.GetStreamJobArgs, error)
 	// GetStreamJobVersionSchedule for get the schedule properties of the job of the specified version.
 	GetStreamJobVersionSchedule(context.Context, *pbrequest.GetStreamJobSchedule) (*pbresponse.GetStreamJobSchedule, error)
+	// Interface for helper.
+	//
+	DescribeFlinkUIByInstanceId(context.Context, *pbrequest.DescribeFlinkUIByInstanceId) (*pbresponse.DescribeFlinkUIByInstanceId, error)
 	mustEmbedUnimplementedStreamJobManageServer()
 }
 
@@ -401,9 +405,6 @@ func (UnimplementedStreamJobManageServer) SetStreamJobCode(context.Context, *pbr
 }
 func (UnimplementedStreamJobManageServer) GetStreamJobCode(context.Context, *pbrequest.GetStreamJobCode) (*pbresponse.GetStreamJobCode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobCode not implemented")
-}
-func (UnimplementedStreamJobManageServer) StreamJobCodeSyntax(context.Context, *pbrequest.StreamJobCodeSyntax) (*pbresponse.StreamJobCodeSyntax, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method StreamJobCodeSyntax not implemented")
 }
 func (UnimplementedStreamJobManageServer) SetStreamJobArgs(context.Context, *pbrequest.SetStreamJobArgs) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetStreamJobArgs not implemented")
@@ -449,6 +450,9 @@ func (UnimplementedStreamJobManageServer) GetStreamJobVersionArgs(context.Contex
 }
 func (UnimplementedStreamJobManageServer) GetStreamJobVersionSchedule(context.Context, *pbrequest.GetStreamJobSchedule) (*pbresponse.GetStreamJobSchedule, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStreamJobVersionSchedule not implemented")
+}
+func (UnimplementedStreamJobManageServer) DescribeFlinkUIByInstanceId(context.Context, *pbrequest.DescribeFlinkUIByInstanceId) (*pbresponse.DescribeFlinkUIByInstanceId, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeFlinkUIByInstanceId not implemented")
 }
 func (UnimplementedStreamJobManageServer) mustEmbedUnimplementedStreamJobManageServer() {}
 
@@ -603,24 +607,6 @@ func _StreamJobManage_GetStreamJobCode_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StreamJobManageServer).GetStreamJobCode(ctx, req.(*pbrequest.GetStreamJobCode))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _StreamJobManage_StreamJobCodeSyntax_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.StreamJobCodeSyntax)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(StreamJobManageServer).StreamJobCodeSyntax(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.StreamJobManage/StreamJobCodeSyntax",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StreamJobManageServer).StreamJobCodeSyntax(ctx, req.(*pbrequest.StreamJobCodeSyntax))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -895,6 +881,24 @@ func _StreamJobManage_GetStreamJobVersionSchedule_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StreamJobManage_DescribeFlinkUIByInstanceId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeFlinkUIByInstanceId)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StreamJobManageServer).DescribeFlinkUIByInstanceId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.StreamJobManage/DescribeFlinkUIByInstanceId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StreamJobManageServer).DescribeFlinkUIByInstanceId(ctx, req.(*pbrequest.DescribeFlinkUIByInstanceId))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // StreamJobManage_ServiceDesc is the grpc.ServiceDesc for StreamJobManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -933,10 +937,6 @@ var StreamJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStreamJobCode",
 			Handler:    _StreamJobManage_GetStreamJobCode_Handler,
-		},
-		{
-			MethodName: "StreamJobCodeSyntax",
-			Handler:    _StreamJobManage_StreamJobCodeSyntax_Handler,
 		},
 		{
 			MethodName: "SetStreamJobArgs",
@@ -997,6 +997,10 @@ var StreamJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStreamJobVersionSchedule",
 			Handler:    _StreamJobManage_GetStreamJobVersionSchedule_Handler,
+		},
+		{
+			MethodName: "DescribeFlinkUIByInstanceId",
+			Handler:    _StreamJobManage_DescribeFlinkUIByInstanceId_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

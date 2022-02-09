@@ -1,4 +1,4 @@
-package com.dataomnis.gproto.service.pbsvcspace;
+package com.dataomnis.gproto.service.pbsvcscheduler;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -9,13 +9,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.43.2)",
-    comments = "Source: proto/service/spacemanager/stream_instance_manage.proto")
+    comments = "Source: proto/service/scheduler/stream_instance_manage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class StreamInstanceManageGrpc {
 
   private StreamInstanceManageGrpc() {}
 
-  public static final String SERVICE_NAME = "spacemanager.StreamInstanceManage";
+  public static final String SERVICE_NAME = "scheduler.StreamInstanceManage";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ListStreamInstances,
@@ -142,35 +142,35 @@ public final class StreamInstanceManageGrpc {
     return getResumeStreamInstancesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId,
-      com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance,
+      com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> getDescribeStreamInstanceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DescribeFlinkUIByInstanceId",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId.class,
+      fullMethodName = SERVICE_NAME + '/' + "DescribeStreamInstance",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId,
-      com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId, com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId> getDescribeFlinkUIByInstanceIdMethod;
-    if ((getDescribeFlinkUIByInstanceIdMethod = StreamInstanceManageGrpc.getDescribeFlinkUIByInstanceIdMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance,
+      com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> getDescribeStreamInstanceMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance, com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> getDescribeStreamInstanceMethod;
+    if ((getDescribeStreamInstanceMethod = StreamInstanceManageGrpc.getDescribeStreamInstanceMethod) == null) {
       synchronized (StreamInstanceManageGrpc.class) {
-        if ((getDescribeFlinkUIByInstanceIdMethod = StreamInstanceManageGrpc.getDescribeFlinkUIByInstanceIdMethod) == null) {
-          StreamInstanceManageGrpc.getDescribeFlinkUIByInstanceIdMethod = getDescribeFlinkUIByInstanceIdMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId, com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId>newBuilder()
+        if ((getDescribeStreamInstanceMethod = StreamInstanceManageGrpc.getDescribeStreamInstanceMethod) == null) {
+          StreamInstanceManageGrpc.getDescribeStreamInstanceMethod = getDescribeStreamInstanceMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance, com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeFlinkUIByInstanceId"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeStreamInstance"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId.getDefaultInstance()))
-              .setSchemaDescriptor(new StreamInstanceManageMethodDescriptorSupplier("DescribeFlinkUIByInstanceId"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance.getDefaultInstance()))
+              .setSchemaDescriptor(new StreamInstanceManageMethodDescriptorSupplier("DescribeStreamInstance"))
               .build();
         }
       }
     }
-    return getDescribeFlinkUIByInstanceIdMethod;
+    return getDescribeStreamInstanceMethod;
   }
 
   /**
@@ -225,9 +225,6 @@ public final class StreamInstanceManageGrpc {
   public static abstract class StreamInstanceManageImplBase implements io.grpc.BindableService {
 
     /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
      */
     public void listStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ListStreamInstances request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.ListStreamInstances> responseObserver) {
@@ -257,9 +254,9 @@ public final class StreamInstanceManageGrpc {
 
     /**
      */
-    public void describeFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeFlinkUIByInstanceIdMethod(), responseObserver);
+    public void describeStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeStreamInstanceMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -293,12 +290,12 @@ public final class StreamInstanceManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_RESUME_STREAM_INSTANCES)))
           .addMethod(
-            getDescribeFlinkUIByInstanceIdMethod(),
+            getDescribeStreamInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId,
-                com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId>(
-                  this, METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance,
+                com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance>(
+                  this, METHODID_DESCRIBE_STREAM_INSTANCE)))
           .build();
     }
   }
@@ -321,9 +318,6 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
      */
     public void listStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ListStreamInstances request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.ListStreamInstances> responseObserver) {
@@ -357,10 +351,10 @@ public final class StreamInstanceManageGrpc {
 
     /**
      */
-    public void describeFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId> responseObserver) {
+    public void describeStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDescribeFlinkUIByInstanceIdMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDescribeStreamInstanceMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -382,9 +376,6 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
      */
     public com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.ListStreamInstances listStreamInstances(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ListStreamInstances request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -414,9 +405,9 @@ public final class StreamInstanceManageGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId describeFlinkUIByInstanceId(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance describeStreamInstance(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDescribeFlinkUIByInstanceIdMethod(), getCallOptions(), request);
+          getChannel(), getDescribeStreamInstanceMethod(), getCallOptions(), request);
     }
   }
 
@@ -438,9 +429,6 @@ public final class StreamInstanceManageGrpc {
     }
 
     /**
-     * <pre>
-     * Interface for stream job cycle instance.
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.ListStreamInstances> listStreamInstances(
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ListStreamInstances request) {
@@ -474,10 +462,10 @@ public final class StreamInstanceManageGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId> describeFlinkUIByInstanceId(
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance> describeStreamInstance(
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDescribeFlinkUIByInstanceIdMethod(), getCallOptions()), request);
+          getChannel().newCall(getDescribeStreamInstanceMethod(), getCallOptions()), request);
     }
   }
 
@@ -485,7 +473,7 @@ public final class StreamInstanceManageGrpc {
   private static final int METHODID_TERMINATE_STREAM_INSTANCES = 1;
   private static final int METHODID_SUSPEND_STREAM_INSTANCES = 2;
   private static final int METHODID_RESUME_STREAM_INSTANCES = 3;
-  private static final int METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID = 4;
+  private static final int METHODID_DESCRIBE_STREAM_INSTANCE = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -520,9 +508,9 @@ public final class StreamInstanceManageGrpc {
           serviceImpl.resumeStreamInstances((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.ResumeStreamInstances) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_DESCRIBE_FLINK_UIBY_INSTANCE_ID:
-          serviceImpl.describeFlinkUIByInstanceId((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeFlinkUIByInstanceId>) responseObserver);
+        case METHODID_DESCRIBE_STREAM_INSTANCE:
+          serviceImpl.describeStreamInstance((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseStreamInstanceManage.DescribeStreamInstance>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -546,7 +534,7 @@ public final class StreamInstanceManageGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.dataomnis.gproto.service.pbsvcspace.PBSvcStreamInstanceManage.getDescriptor();
+      return com.dataomnis.gproto.service.pbsvcscheduler.PBSvcStreamInstanceManage.getDescriptor();
     }
 
     @java.lang.Override
@@ -589,7 +577,7 @@ public final class StreamInstanceManageGrpc {
               .addMethod(getTerminateStreamInstancesMethod())
               .addMethod(getSuspendStreamInstancesMethod())
               .addMethod(getResumeStreamInstancesMethod())
-              .addMethod(getDescribeFlinkUIByInstanceIdMethod())
+              .addMethod(getDescribeStreamInstanceMethod())
               .build();
         }
       }

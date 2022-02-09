@@ -46,8 +46,8 @@ func (this *ResumeStreamInstances) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DescribeFlinkUIByInstanceId
-func (this *DescribeFlinkUIByInstanceId) SetDefaults() {
+// Set default value for message request.DescribeStreamInstance
+func (this *DescribeStreamInstance) SetDefaults() {
 	if this == nil {
 		return
 	}

@@ -32,10 +32,22 @@ func (this *ListStreamInstances) Validate() error {
 	return nil
 }
 
-// Set default value for message response.DescribeFlinkUIByInstanceId
-func (this *DescribeFlinkUIByInstanceId) Validate() error {
+func (this *DescribeStreamInstance) _xxx_xxx_Validator_Validate_info() error {
+	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeStreamInstance
+func (this *DescribeStreamInstance) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+		return err
 	}
 	return nil
 }

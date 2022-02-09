@@ -24,15 +24,29 @@ public final class PBSvcScheduler {
   static {
     java.lang.String[] descriptorData = {
       "\n\'proto/service/scheduler/scheduler.prot" +
-      "o\022\tschedulerB{\n+com.dataomnis.gproto.ser" +
-      "vice.pbsvcschedulerB\016PBSvcSchedulerP\000Z:g" +
-      "ithub.com/DataWorkbench/gproto/xgo/servi" +
-      "ce/pbsvcschedulerb\006proto3"
+      "o\022\tscheduler\032\035proto/types/model/empty.pr" +
+      "oto\032#proto/types/request/scheduler.proto" +
+      "2\273\002\n\tScheduler\022A\n\017SubmitStreamJob\022\030.requ" +
+      "est.SubmitStreamJob\032\022.model.EmptyStruct\"" +
+      "\000\022=\n\rStopStreamJob\022\026.request.StopStreamJ" +
+      "ob\032\022.model.EmptyStruct\"\000\022W\n\032DeleteStream" +
+      "JobsBySpaceIds\022#.request.DeleteStreamJob" +
+      "sBySpaceIds\032\022.model.EmptyStruct\"\000\022S\n\030Del" +
+      "eteStreamJobsByJobIds\022!.request.DeleteSt" +
+      "reamJobsByJobIds\032\022.model.EmptyStruct\"\000B{" +
+      "\n+com.dataomnis.gproto.service.pbsvcsche" +
+      "dulerB\016PBSvcSchedulerP\000Z:github.com/Data" +
+      "Workbench/gproto/xgo/service/pbsvcschedu" +
+      "lerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
+          com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.getDescriptor(),
         });
+    com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
+    com.dataomnis.gproto.types.pbrequest.PBRequestScheduler.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

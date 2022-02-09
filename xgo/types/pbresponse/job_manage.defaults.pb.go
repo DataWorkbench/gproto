@@ -33,3 +33,11 @@ func (this *GetFlinkJob) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.ValidateFlinkJob
+func (this *ValidateFlinkJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

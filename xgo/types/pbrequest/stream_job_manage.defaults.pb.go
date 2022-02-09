@@ -88,19 +88,6 @@ func (this *SetStreamJobSchedule) SetDefaults() {
 	return
 }
 
-// Set default value for message request.StreamJobCodeSyntax
-func (this *StreamJobCodeSyntax) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Code != nil {
-		if dt, ok := interface{}(this.Code).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
 // Set default value for message request.SetStreamJobArgs
 func (this *SetStreamJobArgs) SetDefaults() {
 	if this == nil {
@@ -188,6 +175,14 @@ func (this *ListStreamJobVersions) SetDefaults() {
 	}
 	if this.Limit == 0 {
 		this.Limit = 100
+	}
+	return
+}
+
+// Set default value for message request.DescribeFlinkUIByInstanceId
+func (this *DescribeFlinkUIByInstanceId) SetDefaults() {
+	if this == nil {
+		return
 	}
 	return
 }

@@ -4467,57 +4467,43 @@ public final class PBRequestStreamInstanceManage {
 
   }
 
-  public interface DescribeFlinkUIByInstanceIdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.DescribeFlinkUIByInstanceId)
+  public interface DescribeStreamInstanceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeStreamInstance)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-     * @return The instId.
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
      */
-    java.lang.String getInstId();
+    java.lang.String getInstanceId();
     /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for instId.
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
      */
     com.google.protobuf.ByteString
-        getInstIdBytes();
+        getInstanceIdBytes();
   }
   /**
-   * <pre>
-   * DescribeFlinkUIByInstanceId used as a request parameters for RPC.
-   * </pre>
-   *
-   * Protobuf type {@code request.DescribeFlinkUIByInstanceId}
+   * Protobuf type {@code request.DescribeStreamInstance}
    */
-  public static final class DescribeFlinkUIByInstanceId extends
+  public static final class DescribeStreamInstance extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.DescribeFlinkUIByInstanceId)
-      DescribeFlinkUIByInstanceIdOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.DescribeStreamInstance)
+      DescribeStreamInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DescribeFlinkUIByInstanceId.newBuilder() to construct.
-    private DescribeFlinkUIByInstanceId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DescribeStreamInstance.newBuilder() to construct.
+    private DescribeStreamInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DescribeFlinkUIByInstanceId() {
-      instId_ = "";
+    private DescribeStreamInstance() {
+      instanceId_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DescribeFlinkUIByInstanceId();
+      return new DescribeStreamInstance();
     }
 
     @java.lang.Override
@@ -4525,7 +4511,7 @@ public final class PBRequestStreamInstanceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DescribeFlinkUIByInstanceId(
+    private DescribeStreamInstance(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4546,7 +4532,7 @@ public final class PBRequestStreamInstanceManage {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              instId_ = s;
+              instanceId_ = s;
               break;
             }
             default: {
@@ -4570,59 +4556,49 @@ public final class PBRequestStreamInstanceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeStreamInstance_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeStreamInstance_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.Builder.class);
     }
 
-    public static final int INST_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object instId_;
+    public static final int INSTANCE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object instanceId_;
     /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-     * @return The instId.
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
      */
     @java.lang.Override
-    public java.lang.String getInstId() {
-      java.lang.Object ref = instId_;
+    public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        instId_ = s;
+        instanceId_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     * The instance id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for instId.
+     * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getInstIdBytes() {
-      java.lang.Object ref = instId_;
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        instId_ = b;
+        instanceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4643,8 +4619,8 @@ public final class PBRequestStreamInstanceManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -4655,8 +4631,8 @@ public final class PBRequestStreamInstanceManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4668,13 +4644,13 @@ public final class PBRequestStreamInstanceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId other = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance other = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance) obj;
 
-      if (!getInstId()
-          .equals(other.getInstId())) return false;
+      if (!getInstanceId()
+          .equals(other.getInstanceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4686,76 +4662,76 @@ public final class PBRequestStreamInstanceManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstId().hashCode();
+      hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4768,7 +4744,7 @@ public final class PBRequestStreamInstanceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4784,30 +4760,26 @@ public final class PBRequestStreamInstanceManage {
       return builder;
     }
     /**
-     * <pre>
-     * DescribeFlinkUIByInstanceId used as a request parameters for RPC.
-     * </pre>
-     *
-     * Protobuf type {@code request.DescribeFlinkUIByInstanceId}
+     * Protobuf type {@code request.DescribeStreamInstance}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.DescribeFlinkUIByInstanceId)
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceIdOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.DescribeStreamInstance)
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstanceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeStreamInstance_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeStreamInstance_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4825,7 +4797,7 @@ public final class PBRequestStreamInstanceManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        instId_ = "";
+        instanceId_ = "";
 
         return this;
       }
@@ -4833,17 +4805,17 @@ public final class PBRequestStreamInstanceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.internal_static_request_DescribeStreamInstance_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4851,9 +4823,9 @@ public final class PBRequestStreamInstanceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId result = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId(this);
-        result.instId_ = instId_;
+      public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance result = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance(this);
+        result.instanceId_ = instanceId_;
         onBuilt();
         return result;
       }
@@ -4892,18 +4864,18 @@ public final class PBRequestStreamInstanceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId.getDefaultInstance()) return this;
-        if (!other.getInstId().isEmpty()) {
-          instId_ = other.instId_;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance.getDefaultInstance()) return this;
+        if (!other.getInstanceId().isEmpty()) {
+          instanceId_ = other.instanceId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -4921,11 +4893,11 @@ public final class PBRequestStreamInstanceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4935,103 +4907,78 @@ public final class PBRequestStreamInstanceManage {
         return this;
       }
 
-      private java.lang.Object instId_ = "";
+      private java.lang.Object instanceId_ = "";
       /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-       * @return The instId.
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @return The instanceId.
        */
-      public java.lang.String getInstId() {
-        java.lang.Object ref = instId_;
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          instId_ = s;
+          instanceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for instId.
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for instanceId.
        */
       public com.google.protobuf.ByteString
-          getInstIdBytes() {
-        java.lang.Object ref = instId_;
+          getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          instId_ = b;
+          instanceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The instId to set.
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The instanceId to set.
        * @return This builder for chaining.
        */
-      public Builder setInstId(
+      public Builder setInstanceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        instId_ = value;
+        instanceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearInstId() {
+      public Builder clearInstanceId() {
         
-        instId_ = getDefaultInstance().getInstId();
+        instanceId_ = getDefaultInstance().getInstanceId();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * The instance id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"inst_id" uri:"inst_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string inst_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for instId to set.
+       * <code>string instance_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for instanceId to set.
        * @return This builder for chaining.
        */
-      public Builder setInstIdBytes(
+      public Builder setInstanceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        instId_ = value;
+        instanceId_ = value;
         onChanged();
         return this;
       }
@@ -5048,41 +4995,41 @@ public final class PBRequestStreamInstanceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.DescribeFlinkUIByInstanceId)
+      // @@protoc_insertion_point(builder_scope:request.DescribeStreamInstance)
     }
 
-    // @@protoc_insertion_point(class_scope:request.DescribeFlinkUIByInstanceId)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.DescribeStreamInstance)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DescribeFlinkUIByInstanceId>
-        PARSER = new com.google.protobuf.AbstractParser<DescribeFlinkUIByInstanceId>() {
+    private static final com.google.protobuf.Parser<DescribeStreamInstance>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeStreamInstance>() {
       @java.lang.Override
-      public DescribeFlinkUIByInstanceId parsePartialFrom(
+      public DescribeStreamInstance parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescribeFlinkUIByInstanceId(input, extensionRegistry);
+        return new DescribeStreamInstance(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DescribeFlinkUIByInstanceId> parser() {
+    public static com.google.protobuf.Parser<DescribeStreamInstance> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DescribeFlinkUIByInstanceId> getParserForType() {
+    public com.google.protobuf.Parser<DescribeStreamInstance> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeFlinkUIByInstanceId getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestStreamInstanceManage.DescribeStreamInstance getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5109,10 +5056,10 @@ public final class PBRequestStreamInstanceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_ResumeStreamInstances_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_DescribeFlinkUIByInstanceId_descriptor;
+    internal_static_request_DescribeStreamInstance_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable;
+      internal_static_request_DescribeStreamInstance_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5141,12 +5088,12 @@ public final class PBRequestStreamInstanceManage {
       "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014" +
       "instance_ids\030\002 \003(\t\"T\n\025ResumeStreamInstan" +
       "ces\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022\024\n\014instance_ids\030\002 \003(\t\"<\n\033DescribeFlin" +
-      "kUIByInstanceId\022\035\n\007inst_id\030\001 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\360\001\024B|\n$com.dataomnis.gproto.types.pbr" +
-      "equestB\035PBRequestStreamInstanceManageP\000Z" +
-      "3github.com/DataWorkbench/gproto/xgo/typ" +
-      "es/pbrequestb\006proto3"
+      "s-\022\024\n\014instance_ids\030\002 \003(\t\"B\n\026DescribeStre" +
+      "amInstance\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004sti-B|\n$com.dataomnis.gproto.typ" +
+      "es.pbrequestB\035PBRequestStreamInstanceMan" +
+      "ageP\000Z3github.com/DataWorkbench/gproto/x" +
+      "go/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5179,12 +5126,12 @@ public final class PBRequestStreamInstanceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ResumeStreamInstances_descriptor,
         new java.lang.String[] { "SpaceId", "InstanceIds", });
-    internal_static_request_DescribeFlinkUIByInstanceId_descriptor =
+    internal_static_request_DescribeStreamInstance_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable = new
+    internal_static_request_DescribeStreamInstance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_DescribeFlinkUIByInstanceId_descriptor,
-        new java.lang.String[] { "InstId", });
+        internal_static_request_DescribeStreamInstance_descriptor,
+        new java.lang.String[] { "InstanceId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);
