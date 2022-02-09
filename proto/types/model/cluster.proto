@@ -111,3 +111,27 @@ message FlinkCluster {
   // @inject_tag: json:"network_info" gorm:"-"
   Network network_info = 16;
 }
+
+// NetworkBinding declares which modules binding the flink_cluster.
+message FlinkClusterBinding {
+  // Workspace ID it belongs to. Only used when delete workspace.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // ID of flink cluster.
+  // @inject_tag: json:"cluster_id" gorm:"column:cluster_id;primaryKey;"
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
+
+  // ID of which module binding it.
+  // Includes modules: "stream_job", "stream_job_release".
+  // @inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+  string module_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Version represents the module's version if there is a version number.
+  // @inject_tag: json:"version" gorm:"column:version;primaryKey;"
+  string version = 4 [ (validator.field).tags.string = { ne: "" } ];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 5 [ (validator.field).tags.int = { gt: 0 } ];
+}
