@@ -17,33 +17,39 @@ import "proto/types/model/stream_job.proto";
 
 // ListStreamJobs used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListStreamJobs {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit" form:"limit"
-  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
   // The offset position. Not required, default 0.
   // @inject_tag: json:"offset" form:"offset"
-  int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
 
-  // The field list used to sorted query results.
+  // The field list used to sorted query results. eg: sort_by="crated".
   // Optional values: {id, name, created, updated}.
-  // Multiple fields are separated by commas(","), eg: sort_by="name,crated".
   // Not required, default: id.
   // @inject_tag: json:"sort_by" form:"sort_by"
-  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"] } ];
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 4 [ (validator.field) = { } ];
-
-  // The workspace id in HTTP Request-URI
-  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-  string space_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  bool reverse = 5 [ (validator.field) = { } ];
 
   // Search with stream job name; Not required.
   // @inject_tag: json:"search" form:"search"
   string search = 6 [(validator.field) = {}];
+
+  // The parent id.
+  // @inject_tag: json:"pid" form:"pid"
+  string pid = 7 [
+    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
+  ];
 }
 
 // CreateStreamJob used as a request parameters for RPC and HTTP(based on Body)
@@ -56,27 +62,42 @@ message CreateStreamJob {
   // @inject_tag: json:"created_by" swaggerignore:"true"
   string created_by = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
 
+  // PID is the parent id(directory). pid is "" means root(`/`)
+  // @inject_tag: json:"pid"
+  string pid = 3 [
+    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
+  ];
+
+  // IsDirectory represents this job whether a directory.
+  // @inject_tag: json:"is_directory"
+  bool is_directory = 4;
+
   // The job name in each workspace is unique. Is required, Max Length 128.
   // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
   // @inject_tag: json:"name"
-  string name = 3 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128 } ];
+  string name = 5 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128 } ];
 
   // Description of the job, Not required, Max length 1024.
   // @inject_tag: json:"desc"
-  string desc = 4 [ (validator.field).tags.string = { char_len_lte: 1020 } ];
+  string desc = 6 [ (validator.field).tags.string = { char_len_lte: 1020 } ];
 
-  // The job Type. Is Required, Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+  // The job Type. Is Required when not directory,
+  // Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
   // Desc: Cannot be modified after creation.
   // @inject_tag: json:"type"
-  model.StreamJob.Type type = 5  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  model.StreamJob.Type type = 7  [
+    (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
+    (validator.field).tags.enum = { gt: 0; in_enums: true  }
+  ];
 
   // The flink compute cluster id. Is required.
   // @inject_tag: json:"cluster_id"
-  string cluster_id = 6 [(validator.field) = {}];
+  string cluster_id = 8 [(validator.field) = {}];
 
   // The owner of workspace, only used to check quota. Set by APIServer.
   // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 7 [(validator.field).tags.string = { ne: "" } ];
+  string space_owner = 9 [(validator.field).tags.string = { ne: "" } ];
 }
 
 // DeleteStreamJobs used as a request parameters for RPC and HTTP(based on Body)
@@ -87,6 +108,24 @@ message DeleteStreamJobs {
   // The list of stream job id. Is required, Min 1, Max 100.
   // @inject_tag: json:"job_ids"
   repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+}
+
+// MoveStreamJobs used as a request parameters for RPC and HTTP(based on Body)
+message MoveStreamJobs {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The list of stream job id. Is required, Min 1, Max 100.
+  // @inject_tag: json:"job_ids"
+  repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+
+  // Target represents the target directory. `target` is "" means move to root(`/`)
+  // @inject_tag: json:"target"
+  string target = 3 [
+    (validator.field).check_if = { field: "target", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
+  ];
 }
 
 // UpdateStreamJob used as a request parameters for RPC and HTTP(based on Body).

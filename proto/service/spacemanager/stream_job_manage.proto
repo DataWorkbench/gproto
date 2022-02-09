@@ -23,12 +23,19 @@ service StreamJobManage {
   rpc ListStreamJobs(request.ListStreamJobs) returns (response.ListStreamJobs) {}
 
   // DeleteStreamJobs delete stream job ant its related resources where in ids.
+  // Cannot not delete directory in this API.
   // Resources includes:
   //  - History version and Released's job.
   //  - Node, env schedule and its history version.
   //  - Offline job and force stop all running instances. (By Scheduler-Server)
   //  - All instances records. (By Scheduler-Server)
   rpc DeleteStreamJobs(request.DeleteStreamJobs) returns (model.EmptyStruct) {}
+
+//  // Allowed only delete empty directory.
+//  rpc DeleteStreamJobDirectories(request.DeleteStreamJobDirectories) returns (model.EmptyStruct) {}
+
+  // Move StreamJob to other directory.
+  rpc MoveStreamJobs(request.MoveStreamJobs) returns (model.EmptyStruct) {}
 
   // CreateStreamJob to create a new stream job.
   rpc CreateStreamJob(request.CreateStreamJob) returns (response.CreateStreamJob) {}

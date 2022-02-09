@@ -28,50 +28,64 @@ message StreamJob {
 
   enum Status {
     StatusUnset = 0;
-    Normal = 1;
-    Deleted = 2;
+    Deleted = 1;
+    Active = 2;
   }
 
   // Workspace ID it belongs to.
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
+  // PID is the parent id(directory). pid is "" means root(`/`)
+  // @inject_tag: json:"pid" gorm:"column:pid;"
+  string pid = 2 [
+    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
+  ];
+
   // Job ID, unique within a region.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // The job version id, only used for Published job.
   // Only used in published job.
   // @inject_tag: json:"version" gorm:"column:version;primarykey;"
-  string version = 3 [(validator.field) = {}];
+  string version = 4 [(validator.field) = {}];
 
   // Job Name, Unique within a workspace.
   // @inject_tag: json:"name" gorm:"column:name;"
-  string name = 4 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+  string name = 5 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
 
   // Job Description.
   // @inject_tag: json:"desc" gorm:"column:desc;"
-  string desc = 5 [(validator.field).tags.string = { char_len_lte: 1024 } ];
+  string desc = 6 [(validator.field).tags.string = { char_len_lte: 1024 } ];
+
+  // IsDirectory represents this job whether a directory.
+  // @inject_tag: json:"is_directory" gorm:"column:is_directory;"
+  bool is_directory = 7;
 
   // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
   // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 6 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+  Type type = 8 [
+    (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
+    (validator.field).tags.enum = { gt: 0; in_enums: true  }
+  ];
 
   // Job status, 1 => "Normal", 2 => "Deleted".
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 7 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+  Status status = 9 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
 
   // The user-id of created this job.
   // @inject_tag: json:"created_by" gorm:"column:created_by;"
-  string created_by = 8 [(validator.field).tags.string = { byte_len_lte: 64 }];
+  string created_by = 10 [(validator.field).tags.string = { byte_len_lte: 64 }];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 9 [(validator.field).tags.int = { gt: 0 }];
+  int64 created = 11 [(validator.field).tags.int = { gt: 0 }];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 10 [(validator.field).tags.int = { gt: 0 }];
+  int64 updated = 12 [(validator.field).tags.int = { gt: 0 }];
 }
 
 // StreamJobProperty represents property of job.
