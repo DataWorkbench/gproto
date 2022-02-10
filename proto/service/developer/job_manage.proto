@@ -22,4 +22,3 @@ service JobManage {
   rpc CancelFlinkJob(request.CancelFlinkJob) returns(model.EmptyStruct){}
   rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob){}
 }
-

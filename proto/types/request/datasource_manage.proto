@@ -214,7 +214,7 @@ message PingDataSourceConnection {
   ];
 
   // this source connection info
-  // @inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+  // @inject_tag: json:"url"
   model.DataSource.URL url = 6 [
     (validator.field).check_if = { field: "stage", tags: { enum: { eq: 1 } } },
     (validator.field).tags.message = { not_null: true, skip: true } ]

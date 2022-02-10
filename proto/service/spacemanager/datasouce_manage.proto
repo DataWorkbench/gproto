@@ -27,8 +27,8 @@ service DataSourceManage {
   rpc DeleteDataSources(request.DeleteDataSources)   returns (model.EmptyStruct) {}
   rpc DescribeDataSourceKinds(model.EmptyStruct)     returns (response.DescribeDataSourceKinds) {}
 
-  rpc ListDataSourceConnections (request.ListDataSourceConnections) returns (response.ListDataSourceConnections) {}
-  rpc PingDataSourceConnection(request.PingDataSourceConnection)    returns (response.PingDataSourceConnection) {}
+  rpc ListDataSourceConnections(request.ListDataSourceConnections) returns (response.ListDataSourceConnections) {}
+  rpc PingDataSourceConnection(request.PingDataSourceConnection)   returns (response.PingDataSourceConnection) {}
   // DescribeDataSourceTables get a table list of specified data source.
   rpc DescribeDataSourceTables(request.DescribeDataSourceTables)    returns (response.DescribeDataSourceTables) {}
   // DescribeDataSourceTableSchema get the table schema of specified table in datasource.

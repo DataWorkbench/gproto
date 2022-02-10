@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package networkbroker;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcnetworkbroker";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcnetworkbroker";
+// File name of class.
+option java_outer_classname = "PBSvcDataSourceBroker";
+option java_multiple_files = false;
+
+import "proto/types/request/dataousrce_broker.proto";
+import "proto/types/response/dataousrce_broker.proto";
+
+service DataSourceBroker {
+  rpc PingDataSourceConnectionByBroker(request.PingDataSourceConnectionByBroker)   returns (response.PingDataSourceConnectionByBroker) {}
+
+  // DescribeDataSourceTables get a table list of specified data source.
+  rpc DescribeDataSourceTablesByBroker(request.DescribeDataSourceTablesByBroker)    returns (response.DescribeDataSourceTablesByBroker) {}
+
+  // DescribeDataSourceTableSchema get the table schema of specified table in datasource.
+  rpc DescribeDataSourceTableSchemaByBroker(request.DescribeDataSourceTableSchemaByBroker) returns (response.DescribeDataSourceTableSchemaByBroker) {}
+}
