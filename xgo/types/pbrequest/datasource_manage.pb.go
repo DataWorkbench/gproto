@@ -714,7 +714,7 @@ type PingDataSourceConnection struct {
 	// Source Type, one of 12345678 1->MySQL/2->PostgreSQL/3->Kafka/4->S3/5->ClickHouse/6->Hbase/7->Ftp/8->HDFS
 	Type pbmodel.DataSource_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.DataSource_Type" json:"type"`
 	// this source connection info
-	Url *pbmodel.DataSource_URL `protobuf:"bytes,6,opt,name=url,proto3" json:"url" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"`
+	Url *pbmodel.DataSource_URL `protobuf:"bytes,6,opt,name=url,proto3" json:"url"`
 }
 
 func (x *PingDataSourceConnection) Reset() {

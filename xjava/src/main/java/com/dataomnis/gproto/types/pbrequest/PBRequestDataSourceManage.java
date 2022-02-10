@@ -9731,7 +9731,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * this source connection info
-     * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+     * &#64;inject_tag: json:"url"
      * </pre>
      *
      * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -9741,7 +9741,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * this source connection info
-     * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+     * &#64;inject_tag: json:"url"
      * </pre>
      *
      * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -9751,7 +9751,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * this source connection info
-     * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+     * &#64;inject_tag: json:"url"
      * </pre>
      *
      * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -10211,7 +10211,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * this source connection info
-     * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+     * &#64;inject_tag: json:"url"
      * </pre>
      *
      * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -10224,7 +10224,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * this source connection info
-     * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+     * &#64;inject_tag: json:"url"
      * </pre>
      *
      * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -10237,7 +10237,7 @@ public final class PBRequestDataSourceManage {
     /**
      * <pre>
      * this source connection info
-     * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+     * &#64;inject_tag: json:"url"
      * </pre>
      *
      * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11116,7 +11116,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11128,7 +11128,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11144,7 +11144,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11165,7 +11165,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11184,7 +11184,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11207,7 +11207,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11226,7 +11226,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11239,7 +11239,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
@@ -11255,7 +11255,7 @@ public final class PBRequestDataSourceManage {
       /**
        * <pre>
        * this source connection info
-       * &#64;inject_tag: json:"url" default:"" binding:"gte=1,lte=8000" required:"true" minLength:"1" maxLength:"8000"
+       * &#64;inject_tag: json:"url"
        * </pre>
        *
        * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
