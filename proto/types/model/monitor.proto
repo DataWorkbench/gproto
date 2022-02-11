@@ -17,9 +17,9 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 message MonitorRule {
   enum Status {
     StatusUnset = 0;
-    Enabled = 1;
-    Disabled = 2;
-    Deleted = 3;
+    Deleted = 1;
+    Enabled = 2;
+    Disabled = 3;
   }
 
   // Workspace ID it belongs to.
@@ -34,7 +34,7 @@ message MonitorRule {
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
 
-  // Rule status, 1 => "enabled", 2 => "disabled", 3 => "Deleted".
+  // Rule status, 1 => "Deleted", 2 => "enabled", 3 => "disabled".
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 

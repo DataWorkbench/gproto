@@ -16,74 +16,108 @@ import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/udf.proto";
 
+// ListUDF used as a request parameters for RPC and HTTP(based on URL-Query)
+message ListUDFs {
+  // SpaceID; required.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // Limit the maximum number of entries returned this time.
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {udf_id, name, createtime, updatetime}.
+  // Multiple fields are separated by commas(","), eg: sort_by="updated".
+  // Not required, default: updated.
+  // @inject_tag: json:"sort_by" form:"sort_by"
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "udf_id", "created", "updated", "name"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse" form:"reverse"
+  bool reverse = 5 [(validator.field) = {}];
+
+  // Search with name; Not required.
+  // @inject_tag: json:"search" form:"search"
+  string search = 6 [(validator.field) = {}];
+
+  // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
+  // @inject_tag: json:"udf_type" form:"udf_type"
+  model.UDF.Type udf_type = 7 [ (validator.field).tags.enum = { in_enums: true  } ];
+}
+
+// DeleteUDF used as request parameters for RPC and HTTP(based on Body)
+message DeleteUDFs {
+  // delete these UDFIDs
+  // @inject_tag: json:"udf_ids"
+  repeated string udf_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lt: 100 } ];
+}
+
 // UDF is one of ScalaUDF/ScalaUDTF/ScalaUDTTF/JarUDF/JarUDTF/JarUDTTF/PythonUDF/PythonUDTF
 // CreateUDF used as request parameters for RPC and HTTP(based on Body)
 message CreateUDF {
-  // The udf id.
-  // @inject_tag: json:"udf_id" swaggerignore:"true"
-  string udf_id = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
-
-  // The space id.
+  // The space id in request-uri.
   // @inject_tag: json:"space_id" swaggerignore:"true"
-  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
-  // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF
-  // @inject_tag: json:"udf_type"
-  model.UDFInfo.Type udf_type = 3 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
-
-  // UDF language one of 1/2/3 1=>Scala/2=>Java/3=>Python
-  // @inject_tag: json:"udf_language"
-  model.UDFInfo.Language udf_language = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // UDF name unique within a space.
   // @inject_tag: json:"name"
-  string name = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 65 } ];
+  string name = 2 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 65 } ];
 
   // describe this udf.
   // @inject_tag: json:"comment"
-  string comment = 6 [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
+  string comment = 3 [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
 
   // define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-  // @inject_tag: json:"define"
-  string define = 7 [ (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 } ];
-
-  // usage for this udf
-  // @inject_tag: json:"usage_sample"
-  string usage_sample = 8 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
-
-  // Udf owner.
-  // @inject_tag: json:"create_by"
-  string create_by = 9 [(validator.field) = {}];
-}
-
-// UpdateUDF used as request parameters for RPC and HTTP(based on Body)
-message UpdateUDF {
-  // The udf id.
-  // @inject_tag: json:"udf_id" swaggerignore:"true"
-  string udf_id = 1 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
-
-  // UDF name unique within a space.
-  // @inject_tag: json:"name"
-  string name = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 65 } ];
-
-  // describe this udf.
-  // @inject_tag: json:"comment"
-  string comment = 3 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
-
-  // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
   // @inject_tag: json:"define"
   string define = 4 [ (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 } ];
 
   // usage for this udf
   // @inject_tag: json:"usage_sample"
   string usage_sample = 5 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
+
+  // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF.
+  // @inject_tag: json:"udf_type"
+  model.UDF.Type udf_type = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // UDF language one of 1/2/3 1=>Scala/2=>Java/3=>Python
+  // @inject_tag: json:"udf_language"
+  model.UDF.Language udf_language = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Udf owner.
+  // @inject_tag: json:"created_by"
+  string created_by = 8 [(validator.field) = {}];
 }
 
-// DeleteUDF used as request parameters for RPC and HTTP(based on Body)
-message DeleteUDF {
-  // delete these UDFIDs
-  // @inject_tag: json:"udf_ids"
-  repeated string udf_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lt: 100 } ];
+// UpdateUDF used as request parameters for RPC and HTTP(based on Body)
+message UpdateUDF {
+  // The space id in request-uri.
+  // @inject_tag: json:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The udf id.
+  // @inject_tag: json:"udf_id" swaggerignore:"true"
+  string udf_id = 2 [ (validator.field).tags.string = { byte_len_lt: 21 } ];
+
+  // UDF name unique within a space.
+  // @inject_tag: json:"name"
+  string name = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 65 } ];
+
+  // describe this udf.
+  // @inject_tag: json:"comment"
+  string comment = 4 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
+
+  // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+  // @inject_tag: json:"define"
+  string define = 5 [ (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 } ];
+
+  // usage for this udf
+  // @inject_tag: json:"usage_sample"
+  string usage_sample = 6 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
 }
 
 // DescribeUDF used as request parameters for RPC and HTTP(based on Body)
@@ -91,45 +125,4 @@ message DescribeUDF {
   // UDFID
   // @inject_tag: json:"udf_id"
   string udf_id  = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-}
-
-// ListUDF used as a request parameters for RPC and HTTP(based on URL-Query)
-message ListUDF {
-  // Limit the maximum number of entries returned this time.
-  // @inject_tag: json:"limit" form:"limit"
-  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-
-  // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset" form:"offset"
-  int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
-
-  // The field list used to sorted query results.
-  // Optional values: {udf_id, name, createtime, updatetime}.
-  // Multiple fields are separated by commas(","), eg: sort_by="updated".
-  // Not required, default: updated.
-  // @inject_tag: json:"sort_by" form:"sort_by"
-  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "udf_id", "created", "updated", "name"] } ];
-
-  // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 4 [(validator.field) = {}];
-
-  // Search with name; Not required.
-  // @inject_tag: json:"search" form:"search"
-  string search = 5 [(validator.field) = {}];
-
-  // SpaceID; required.
-  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-  string space_id  = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-
-  // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
-  // @inject_tag: json:"udf_type" form:"udf_type"
-  model.UDFInfo.Type udf_type = 7 [ (validator.field).tags.enum = { in_enums: true  } ];
-}
-
-// UDFCommonFunc used as request parameters for RPC and HTTP(based on Body)
-message UDFCommonFunc {
-  // The space id.
-  // @inject_tag: json:"space_id" swaggerignore:"true"
-  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 }

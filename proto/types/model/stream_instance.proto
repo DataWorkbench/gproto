@@ -17,8 +17,8 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 message StreamInstance {
   enum Status {
     StatusUnset = 0;
-    Active = 1;
-    Deleted = 2;
+    Deleted = 1;
+    Enabled = 2;
   }
 
   enum State {
@@ -47,13 +47,13 @@ message StreamInstance {
 
   // Job instance ID, unique.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
 
   // The instance state.
   // @inject_tag: json:"state" gorm:"column:state;"
   State state = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-  // Release status, 1 => "Active ", 2 => "Deleted"
+  // Release status, 1 => "Deleted", 2 => "Enabled "
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 

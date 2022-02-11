@@ -15,6 +15,7 @@ import "proto/types/request/table_manage.proto";
 import "proto/types/response/table_manage.proto";
 
 // TableMange for manage flink table.
+// NOTICE: Unused on present.
 service TableMange {
   rpc ListFlinkTables(request.ListFlinkTables) returns (response.ListFlinkTables) {}
   rpc CreateFlinkTable(request.CreateFlinkTable) returns (model.EmptyStruct) {}

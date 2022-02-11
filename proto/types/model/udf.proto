@@ -13,8 +13,8 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
-// UDF Info
-message UDFInfo {
+// UDF Schema
+message UDF {
   enum Type {
     TypeUnset = 0;
     UDF = 1;
@@ -31,57 +31,55 @@ message UDFInfo {
 
   enum Status {
     StatusUnset = 0;
-    Enabled = 1;
-    Disabled = 2;
-    Deleted = 3;
+    Deleted = 1;
+    Enabled = 2;
   }
-
-  // ID, unique within a region.
-  // @inject_tag: json:"udf_id" gorm:"column:udf_id;primaryKey;"
-  string udf_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // Space ID, workspace ID.
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
-  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
-  // UDF Type one of UDF/UDTF/UDTTF
-  // @inject_tag: json:"udf_type" gorm:"column:udf_type;"
-  Type udf_type = 3  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  // ID, unique within a region.
+  // @inject_tag: json:"udf_id" gorm:"column:udf_id;primaryKey;"
+  string udf_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "udf-" } ];
 
-  // UDF language one of Scala/Java/Python
-  // @inject_tag: json:"udf_language" gorm:"column:udf_language;"
-  Language udf_language = 4  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-
-  // Source Name, unique within a space.
+  // UDF Name, unique within a space.
   // @inject_tag: json:"name" gorm:"column:name;"
-  string name = 5 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
+  string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
 
-  // Comment, describe this source.
+  // Comment, describe this UDF.
   // @inject_tag: json:"comment" gorm:"column:comment;"
-  string comment = 6 [(validator.field).tags.string = { char_len_lte: 256 }];
+  string comment = 4 [(validator.field).tags.string = { char_len_lte: 256 }];
 
   // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
   // @inject_tag: json:"define" gorm:"column:define;"
-  string define = 7 [ (validator.field).tags.string = { char_len_lte: 20000 }];
+  string define = 5 [ (validator.field).tags.string = { char_len_lte: 20000 }];
 
-  // usage for this udf
+  // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF.
+  // @inject_tag: json:"udf_type" gorm:"column:udf_type;"
+  Type udf_type = 6  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // UDF status, Optional Values: 1 => "deleted", 2 => "enabled"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // UDF language; Optional Values: 1 => Scala 2=> Java 3=> Python
+  // @inject_tag: json:"udf_language" gorm:"column:udf_language;"
+  Language udf_language = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // usage example for this udf
   // @inject_tag: json:"usage_sample" gorm:"column:usage_sample;"
-  string usage_sample = 8 [ (validator.field).tags.string = { char_len_lte: 2000 }];
+  string usage_sample = 9 [ (validator.field).tags.string = { char_len_lte: 2000 }];
+
+  // Who created this udf.
+  // @inject_tag: json:"created_by" gorm:"column:created_by"
+  string created_by = 10 [ (validator.field).tags.string = { byte_len_lte: 64} ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 11 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
-
-  // Udf status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
-  // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 11 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-
-  // Udf owner.
-  // @inject_tag: json:"create_by" gorm:"column:create_by"
-  string create_by = 12 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+  int64 updated = 12 [ (validator.field).tags.int = { gt: 0 } ];
 }
-

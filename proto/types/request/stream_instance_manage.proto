@@ -53,6 +53,10 @@ message ListStreamInstances {
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
   bool reverse = 8 [(validator.field) = {}];
+
+  // Filter by `instance_id`.
+  // @inject_tag: json:"instance_id" form:"instance_id"
+  string instance_id = 9 [ (validator.field).tags.string = { byte_len_eq:20, prefix: "sti-" } ];
 }
 
 // TerminateStreamInstances used as a request parameters for RPC.
