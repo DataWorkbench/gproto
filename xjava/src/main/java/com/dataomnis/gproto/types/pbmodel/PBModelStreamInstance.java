@@ -129,7 +129,7 @@ public final class PBModelStreamInstance {
 
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+     * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -139,7 +139,7 @@ public final class PBModelStreamInstance {
     int getStatusValue();
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+     * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -428,13 +428,13 @@ public final class PBModelStreamInstance {
        */
       StatusUnset(0),
       /**
-       * <code>Active = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      Active(1),
+      Deleted(1),
       /**
-       * <code>Deleted = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      Deleted(2),
+      Enabled(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -443,13 +443,13 @@ public final class PBModelStreamInstance {
        */
       public static final int StatusUnset_VALUE = 0;
       /**
-       * <code>Active = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      public static final int Active_VALUE = 1;
+      public static final int Deleted_VALUE = 1;
       /**
-       * <code>Deleted = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      public static final int Deleted_VALUE = 2;
+      public static final int Enabled_VALUE = 2;
 
 
       public final int getNumber() {
@@ -477,8 +477,8 @@ public final class PBModelStreamInstance {
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return StatusUnset;
-          case 1: return Active;
-          case 2: return Deleted;
+          case 1: return Deleted;
+          case 2: return Enabled;
           default: return null;
         }
       }
@@ -931,7 +931,7 @@ public final class PBModelStreamInstance {
     private int status_;
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+     * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -943,7 +943,7 @@ public final class PBModelStreamInstance {
     }
     /**
      * <pre>
-     * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+     * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -2158,7 +2158,7 @@ public final class PBModelStreamInstance {
       private int status_ = 0;
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+       * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2170,7 +2170,7 @@ public final class PBModelStreamInstance {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+       * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2186,7 +2186,7 @@ public final class PBModelStreamInstance {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+       * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2201,7 +2201,7 @@ public final class PBModelStreamInstance {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+       * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2220,7 +2220,7 @@ public final class PBModelStreamInstance {
       }
       /**
        * <pre>
-       * Release status, 1 =&gt; "Active ", 2 =&gt; "Deleted"
+       * Release status, 1 =&gt; "Deleted", 2 =&gt; "Enabled "
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2795,25 +2795,25 @@ public final class PBModelStreamInstance {
     java.lang.String[] descriptorData = {
       "\n\'proto/types/model/stream_instance.prot" +
       "o\022\005model\0323github.com/yu31/protoc-plugin/" +
-      "proto/validator.proto\"\306\004\n\016StreamInstance" +
+      "proto/validator.proto\"\316\004\n\016StreamInstance" +
       "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
       "\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007version" +
-      "\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\030\n\002id\030\004 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\360\001\024\0229\n\005state\030\005 \001(\0162\033.model.StreamInsta" +
-      "nce.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\022;\n\006status\030\006 \001(\016" +
-      "2\034.model.StreamInstance.StatusB\r\342\337\037\t\022\007\332\001" +
-      "\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\017\n\007note_id\030\n \001(\t\022" +
-      "\024\n\014paragraph_id\030\013 \001(\t\022\020\n\010flink_id\030\014 \001(\t\022" +
-      "\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated" +
-      "\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusU" +
-      "nset\020\000\022\n\n\006Active\020\001\022\013\n\007Deleted\020\002\"\204\001\n\005Stat" +
-      "e\022\016\n\nStateUnset\020\000\022\013\n\007Pending\020\001\022\013\n\007Runnin" +
-      "g\020\002\022\014\n\010Retrying\020\003\022\r\n\tSuspended\020\004\022\016\n\nTerm" +
-      "inated\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout\020\007\022\n\n\006Fa" +
-      "iled\020\010Bp\n\"com.dataomnis.gproto.types.pbm" +
-      "odelB\025PBModelStreamInstanceP\000Z1github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbmodel" +
-      "b\006proto3"
+      "\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\037\n\002id\030\004 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004sti-\0229\n\005state\030\005 \001(\0162\033.model.Stre" +
+      "amInstance.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\022;\n\006statu" +
+      "s\030\006 \001(\0162\034.model.StreamInstance.StatusB\r\342" +
+      "\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\017\n\007note_id" +
+      "\030\n \001(\t\022\024\n\014paragraph_id\030\013 \001(\t\022\020\n\010flink_id" +
+      "\030\014 \001(\t\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007" +
+      "updated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013" +
+      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"" +
+      "\204\001\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Pending\020\001\022\013" +
+      "\n\007Running\020\002\022\014\n\010Retrying\020\003\022\r\n\tSuspended\020\004" +
+      "\022\016\n\nTerminated\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout" +
+      "\020\007\022\n\n\006Failed\020\010Bp\n\"com.dataomnis.gproto.t" +
+      "ypes.pbmodelB\025PBModelStreamInstanceP\000Z1g" +
+      "ithub.com/DataWorkbench/gproto/xgo/types" +
+      "/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -152,7 +152,7 @@ public final class PBModelNetwork {
 
     /**
      * <pre>
-     * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+     * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -162,7 +162,7 @@ public final class PBModelNetwork {
     int getStatusValue();
     /**
      * <pre>
-     * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+     * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -347,9 +347,9 @@ public final class PBModelNetwork {
        */
       Deleted(1),
       /**
-       * <code>Active = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      Active(2),
+      Enabled(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -362,9 +362,9 @@ public final class PBModelNetwork {
        */
       public static final int Deleted_VALUE = 1;
       /**
-       * <code>Active = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      public static final int Active_VALUE = 2;
+      public static final int Enabled_VALUE = 2;
 
 
       public final int getNumber() {
@@ -393,7 +393,7 @@ public final class PBModelNetwork {
         switch (value) {
           case 0: return StatusUnset;
           case 1: return Deleted;
-          case 2: return Active;
+          case 2: return Enabled;
           default: return null;
         }
       }
@@ -742,7 +742,7 @@ public final class PBModelNetwork {
     private int status_;
     /**
      * <pre>
-     * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+     * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -754,7 +754,7 @@ public final class PBModelNetwork {
     }
     /**
      * <pre>
-     * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+     * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -1851,7 +1851,7 @@ public final class PBModelNetwork {
       private int status_ = 0;
       /**
        * <pre>
-       * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+       * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1863,7 +1863,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+       * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1879,7 +1879,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+       * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1894,7 +1894,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+       * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1913,7 +1913,7 @@ public final class PBModelNetwork {
       }
       /**
        * <pre>
-       * Network Status. 1 =&gt; "deleted" 2 =&gt; "active"
+       * Network Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -3208,7 +3208,7 @@ public final class PBModelNetwork {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/network.proto\022\005model" +
       "\0323github.com/yu31/protoc-plugin/proto/va" +
-      "lidator.proto\"\375\002\n\007Network\022%\n\010space_id\030\001 " +
+      "lidator.proto\"\376\002\n\007Network\022%\n\010space_id\030\001 " +
       "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337" +
       "\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002" +
       "\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022" +
@@ -3216,15 +3216,15 @@ public final class PBModelNetwork {
       "\ncreated_by\030\006 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\0224\n\006statu" +
       "s\030\007 \001(\0162\025.model.Network.StatusB\r\342\337\037\t\022\007\332\001" +
       "\0040\000X\001\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007u" +
-      "pdated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013S" +
-      "tatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Active\020\002\"\237\001" +
-      "\n\016NetworkBinding\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004net-\022\037\n\tmodule_id\030\003 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\360\001\024\022\034\n\007created\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000B" +
-      "i\n\"com.dataomnis.gproto.types.pbmodelB\016P" +
-      "BModelNetworkP\000Z1github.com/DataWorkbenc" +
-      "h/gproto/xgo/types/pbmodelb\006proto3"
+      "pdated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013S" +
+      "tatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\237" +
+      "\001\n\016NetworkBinding\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_id\030\002 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\037\n\tmodule_id\030\003 \001(\tB\014\342\337" +
+      "\037\010\022\006\302\001\003\360\001\024\022\034\n\007created\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000" +
+      "Bi\n\"com.dataomnis.gproto.types.pbmodelB\016" +
+      "PBModelNetworkP\000Z1github.com/DataWorkben" +
+      "ch/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

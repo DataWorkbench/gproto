@@ -5653,7 +5653,7 @@ public final class PBModelDataSource {
 
     /**
      * <pre>
-     * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+     * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -5663,7 +5663,7 @@ public final class PBModelDataSource {
     int getStatusValue();
     /**
      * <pre>
-     * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+     * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -5924,9 +5924,9 @@ public final class PBModelDataSource {
        */
       Deleted(1),
       /**
-       * <code>Active = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      Active(2),
+      Enabled(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -5939,9 +5939,9 @@ public final class PBModelDataSource {
        */
       public static final int Deleted_VALUE = 1;
       /**
-       * <code>Active = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      public static final int Active_VALUE = 2;
+      public static final int Enabled_VALUE = 2;
 
 
       public final int getNumber() {
@@ -5970,7 +5970,7 @@ public final class PBModelDataSource {
         switch (value) {
           case 0: return StatusUnset;
           case 1: return Deleted;
-          case 2: return Active;
+          case 2: return Enabled;
           default: return null;
         }
       }
@@ -6296,7 +6296,7 @@ public final class PBModelDataSource {
     private int status_;
     /**
      * <pre>
-     * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+     * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -6308,7 +6308,7 @@ public final class PBModelDataSource {
     }
     /**
      * <pre>
-     * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+     * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -7229,7 +7229,7 @@ public final class PBModelDataSource {
       private int status_ = 0;
       /**
        * <pre>
-       * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+       * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -7241,7 +7241,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+       * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -7257,7 +7257,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+       * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -7272,7 +7272,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+       * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -7291,7 +7291,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Status, 1 =&gt; Deleted, 2 =&gt; Active.
+       * Status, 1 =&gt; "Deleted", 2 =&gt; "Enabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -8471,7 +8471,7 @@ public final class PBModelDataSource {
       "\022\014\n\010Disabled\020\003\"q\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n" +
       "\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka\020\003\022\006\n\002S" +
       "3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003Ftp\020\007\022" +
-      "\010\n\004HDFS\020\010\"\335\003\n\024DataSourceConnection\022%\n\010sp" +
+      "\010\n\004HDFS\020\010\"\336\003\n\024DataSourceConnection\022%\n\010sp" +
       "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsou" +
       "rce_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022 \n\nnetwork_id" +
       "\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\006status\030\004 \001(\0162\".m" +
@@ -8480,13 +8480,13 @@ public final class PBModelDataSource {
       "ceConnection.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\007me" +
       "ssage\030\006 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\034\n\007created\030\007 \001(\003B" +
       "\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\010 \001(\003\022$\n\014network_" +
-      "info\030\t \001(\0132\016.model.Network\"2\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Active\020\002\"1" +
-      "\n\006Result\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n" +
-      "\006Failed\020\002\"\036\n\016DataSourceKind\022\014\n\004Name\030\001 \001(" +
-      "\tBl\n\"com.dataomnis.gproto.types.pbmodelB" +
-      "\021PBModelDataSourceP\000Z1github.com/DataWor" +
-      "kbench/gproto/xgo/types/pbmodelb\006proto3"
+      "info\030\t \001(\0132\016.model.Network\"3\n\006Status\022\017\n\013" +
+      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"" +
+      "1\n\006Result\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n" +
+      "\n\006Failed\020\002\"\036\n\016DataSourceKind\022\014\n\004Name\030\001 \001" +
+      "(\tBl\n\"com.dataomnis.gproto.types.pbmodel" +
+      "B\021PBModelDataSourceP\000Z1github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

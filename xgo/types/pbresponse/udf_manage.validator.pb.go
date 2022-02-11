@@ -7,9 +7,12 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
+	strings "strings"
 )
 
-func (this *ListUDF) _xxx_xxx_Validator_Validate_infos() error {
+func (this *ListUDFs) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
@@ -21,12 +24,33 @@ func (this *ListUDF) _xxx_xxx_Validator_Validate_infos() error {
 	return nil
 }
 
-// Set default value for message response.ListUDF
-func (this *ListUDF) Validate() error {
+// Set default value for message response.ListUDFs
+func (this *ListUDFs) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_infos(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("CreateUDF", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
+	}
+	if !(strings.HasPrefix(this.Id, "udf-")) {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'id' must start with string 'udf-'", this.Id)
+	}
+	return nil
+}
+
+// Set default value for message response.CreateUDF
+func (this *CreateUDF) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
 		return err
 	}
 	return nil
@@ -48,14 +72,6 @@ func (this *DescribeUDF) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
 		return err
-	}
-	return nil
-}
-
-// Set default value for message response.JsonList
-func (this *JsonList) Validate() error {
-	if this == nil {
-		return nil
 	}
 	return nil
 }

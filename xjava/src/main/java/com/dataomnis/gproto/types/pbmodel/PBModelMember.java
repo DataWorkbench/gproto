@@ -103,7 +103,7 @@ public final class PBModelMember {
 
     /**
      * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -113,7 +113,7 @@ public final class PBModelMember {
     int getStatusValue();
     /**
      * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -369,9 +369,9 @@ public final class PBModelMember {
        */
       Deleted(1),
       /**
-       * <code>Active = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      Active(2),
+      Enabled(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -384,9 +384,9 @@ public final class PBModelMember {
        */
       public static final int Deleted_VALUE = 1;
       /**
-       * <code>Active = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      public static final int Active_VALUE = 2;
+      public static final int Enabled_VALUE = 2;
 
 
       public final int getNumber() {
@@ -415,7 +415,7 @@ public final class PBModelMember {
         switch (value) {
           case 0: return StatusUnset;
           case 1: return Deleted;
-          case 2: return Active;
+          case 2: return Enabled;
           default: return null;
         }
       }
@@ -645,7 +645,7 @@ public final class PBModelMember {
     private int status_;
     /**
      * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -657,7 +657,7 @@ public final class PBModelMember {
     }
     /**
      * <pre>
-     * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+     * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -1417,7 +1417,7 @@ public final class PBModelMember {
       private int status_ = 0;
       /**
        * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1429,7 +1429,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1445,7 +1445,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1460,7 +1460,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1479,7 +1479,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * Status. 1 =&gt; "Deleted" 2 =&gt; "Active"
+       * Status. 1 =&gt; "Deleted" 2 =&gt; "Enabled"
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -3033,24 +3033,24 @@ public final class PBModelMember {
     java.lang.String[] descriptorData = {
       "\n\036proto/types/model/member.proto\022\005model\032" +
       "3github.com/yu31/protoc-plugin/proto/val" +
-      "idator.proto\"\254\002\n\004Role\022%\n\010space_id\030\001 \001(\tB" +
+      "idator.proto\"\255\002\n\004Role\022%\n\010space_id\030\001 \001(\tB" +
       "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006" +
       "\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\001\022-" +
       "\n\004type\030\004 \001(\0162\020.model.Role.TypeB\r\342\337\037\t\022\007\332\001" +
       "\0040\000X\001\0221\n\006status\030\005 \001(\0162\022.model.Role.Statu" +
       "sB\r\342\337\037\t\022\007\332\001\0040\000X\001\"-\n\004Type\022\r\n\tTypeUnset\020\000\022" +
-      "\n\n\006System\020\001\022\n\n\006Custom\020\002\"2\n\006Status\022\017\n\013Sta" +
-      "tusUnset\020\000\022\013\n\007Deleted\020\001\022\n\n\006Active\020\002\"\205\002\n\006" +
-      "Member\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022\035\n\007user_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\020\n\010" +
-      "role_ids\030\004 \001(\t\0223\n\006status\030\005 \001(\0162\024.model.M" +
-      "ember.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\006" +
-      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007 \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006No" +
-      "rmal\020\001\022\013\n\007Deleted\020\002Bh\n\"com.dataomnis.gpr" +
-      "oto.types.pbmodelB\rPBModelMemberP\000Z1gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "modelb\006proto3"
+      "\n\n\006System\020\001\022\n\n\006Custom\020\002\"3\n\006Status\022\017\n\013Sta" +
+      "tusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\205\002\n" +
+      "\006Member\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022\035\n\007user_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\020\n" +
+      "\010role_ids\030\004 \001(\t\0223\n\006status\030\005 \001(\0162\024.model." +
+      "Member.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030" +
+      "\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007 \001(\003B\013\342\337\037" +
+      "\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006N" +
+      "ormal\020\001\022\013\n\007Deleted\020\002Bh\n\"com.dataomnis.gp" +
+      "roto.types.pbmodelB\rPBModelMemberP\000Z1git" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
+      "bmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -58,6 +58,16 @@ func (this *ListStreamInstances) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
+func (this *ListStreamInstances) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("ListStreamInstances", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
+		return protovalidator.FieldError1("ListStreamInstances", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
+	}
+	return nil
+}
+
 // Set default value for message request.ListStreamInstances
 func (this *ListStreamInstances) Validate() error {
 	if this == nil {
@@ -76,6 +86,9 @@ func (this *ListStreamInstances) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
 		return err
 	}
 	return nil

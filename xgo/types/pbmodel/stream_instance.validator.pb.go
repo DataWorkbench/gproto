@@ -39,6 +39,9 @@ func (this *StreamInstance) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("StreamInstance", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "sti-")) {
+		return protovalidator.FieldError1("StreamInstance", "the value of field 'id' must start with string 'sti-'", this.Id)
+	}
 	return nil
 }
 

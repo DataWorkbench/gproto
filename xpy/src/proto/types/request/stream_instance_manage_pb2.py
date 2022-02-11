@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\035PBRequestStreamInstanceManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0proto/types/request/stream_instance_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\'proto/types/model/stream_instance.proto\"\xba\x02\n\x13ListStreamInstances\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x06job_id\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07version\x18\x05 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x37\n\x05state\x18\x06 \x01(\x0e\x32\x1b.model.StreamInstance.StateB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12:\n\x07sort_by\x18\x07 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x06job_idJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x08 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"W\n\x18TerminateStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"U\n\x16SuspendStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"T\n\x15ResumeStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"B\n\x16\x44\x65scribeStreamInstance\x12(\n\x0binstance_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04sti-B|\n$com.dataomnis.gproto.types.pbrequestB\x1dPBRequestStreamInstanceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n0proto/types/request/stream_instance_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\'proto/types/model/stream_instance.proto\"\xe4\x02\n\x13ListStreamInstances\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x06job_id\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07version\x18\x05 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x37\n\x05state\x18\x06 \x01(\x0e\x32\x1b.model.StreamInstance.StateB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12:\n\x07sort_by\x18\x07 \x01(\tB)\xe2\xdf\x1f%\x12#\xc2\x01 J\x00J\x02idJ\x06job_idJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x08 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12(\n\x0binstance_id\x18\t \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04sti-\"W\n\x18TerminateStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"U\n\x16SuspendStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"T\n\x15ResumeStreamInstances\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x14\n\x0cinstance_ids\x18\x02 \x03(\t\"B\n\x16\x44\x65scribeStreamInstance\x12(\n\x0binstance_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04sti-B|\n$com.dataomnis.gproto.types.pbrequestB\x1dPBRequestStreamInstanceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__instance__pb2.DESCRIPTOR,])
 
@@ -93,6 +93,13 @@ _LISTSTREAMINSTANCES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='request.ListStreamInstances.instance_id', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -106,7 +113,7 @@ _LISTSTREAMINSTANCES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=208,
-  serialized_end=522,
+  serialized_end=564,
 )
 
 
@@ -144,8 +151,8 @@ _TERMINATESTREAMINSTANCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=524,
-  serialized_end=611,
+  serialized_start=566,
+  serialized_end=653,
 )
 
 
@@ -183,8 +190,8 @@ _SUSPENDSTREAMINSTANCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=613,
-  serialized_end=698,
+  serialized_start=655,
+  serialized_end=740,
 )
 
 
@@ -222,8 +229,8 @@ _RESUMESTREAMINSTANCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=700,
-  serialized_end=784,
+  serialized_start=742,
+  serialized_end=826,
 )
 
 
@@ -254,8 +261,8 @@ _DESCRIBESTREAMINSTANCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=786,
-  serialized_end=852,
+  serialized_start=828,
+  serialized_end=894,
 )
 
 _LISTSTREAMINSTANCES.fields_by_name['state'].enum_type = proto_dot_types_dot_model_dot_stream__instance__pb2._STREAMINSTANCE_STATE
@@ -311,6 +318,7 @@ _LISTSTREAMINSTANCES.fields_by_name['version']._options = None
 _LISTSTREAMINSTANCES.fields_by_name['state']._options = None
 _LISTSTREAMINSTANCES.fields_by_name['sort_by']._options = None
 _LISTSTREAMINSTANCES.fields_by_name['reverse']._options = None
+_LISTSTREAMINSTANCES.fields_by_name['instance_id']._options = None
 _TERMINATESTREAMINSTANCES.fields_by_name['space_id']._options = None
 _SUSPENDSTREAMINSTANCES.fields_by_name['space_id']._options = None
 _RESUMESTREAMINSTANCES.fields_by_name['space_id']._options = None

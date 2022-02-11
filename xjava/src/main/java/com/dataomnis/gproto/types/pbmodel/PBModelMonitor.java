@@ -86,7 +86,7 @@ public final class PBModelMonitor {
 
     /**
      * <pre>
-     * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -96,7 +96,7 @@ public final class PBModelMonitor {
     int getStatusValue();
     /**
      * <pre>
-     * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -406,17 +406,17 @@ public final class PBModelMonitor {
        */
       StatusUnset(0),
       /**
-       * <code>Enabled = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      Enabled(1),
+      Deleted(1),
       /**
-       * <code>Disabled = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      Disabled(2),
+      Enabled(2),
       /**
-       * <code>Deleted = 3;</code>
+       * <code>Disabled = 3;</code>
        */
-      Deleted(3),
+      Disabled(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -425,17 +425,17 @@ public final class PBModelMonitor {
        */
       public static final int StatusUnset_VALUE = 0;
       /**
-       * <code>Enabled = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      public static final int Enabled_VALUE = 1;
+      public static final int Deleted_VALUE = 1;
       /**
-       * <code>Disabled = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      public static final int Disabled_VALUE = 2;
+      public static final int Enabled_VALUE = 2;
       /**
-       * <code>Deleted = 3;</code>
+       * <code>Disabled = 3;</code>
        */
-      public static final int Deleted_VALUE = 3;
+      public static final int Disabled_VALUE = 3;
 
 
       public final int getNumber() {
@@ -463,9 +463,9 @@ public final class PBModelMonitor {
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return StatusUnset;
-          case 1: return Enabled;
-          case 2: return Disabled;
-          case 3: return Deleted;
+          case 1: return Deleted;
+          case 2: return Enabled;
+          case 3: return Disabled;
           default: return null;
         }
       }
@@ -670,7 +670,7 @@ public final class PBModelMonitor {
     private int status_;
     /**
      * <pre>
-     * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -682,7 +682,7 @@ public final class PBModelMonitor {
     }
     /**
      * <pre>
-     * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -1751,7 +1751,7 @@ public final class PBModelMonitor {
       private int status_ = 0;
       /**
        * <pre>
-       * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1763,7 +1763,7 @@ public final class PBModelMonitor {
       }
       /**
        * <pre>
-       * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1779,7 +1779,7 @@ public final class PBModelMonitor {
       }
       /**
        * <pre>
-       * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1794,7 +1794,7 @@ public final class PBModelMonitor {
       }
       /**
        * <pre>
-       * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -1813,7 +1813,7 @@ public final class PBModelMonitor {
       }
       /**
        * <pre>
-       * Rule status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "Deleted".
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled", 3 =&gt; "disabled".
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2499,8 +2499,8 @@ public final class PBModelMonitor {
       "mes\030\010 \001(\005B\004\342\337\037\000\022\034\n\016alarm_interval\030\t \001(\005B" +
       "\004\342\337\037\000\022\030\n\nalarm_type\030\n \001(\tB\004\342\337\037\000\022\027\n\tfree_" +
       "time\030\013 \001(\tB\004\342\337\037\000\022\026\n\010receiver\030\014 \001(\tB\004\342\337\037\000" +
-      "\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Enabled\020\001" +
-      "\022\014\n\010Disabled\020\002\022\013\n\007Deleted\020\003Bi\n\"com.datao" +
+      "\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001" +
+      "\022\013\n\007Enabled\020\002\022\014\n\010Disabled\020\003Bi\n\"com.datao" +
       "mnis.gproto.types.pbmodelB\016PBModelMonito" +
       "rP\000Z1github.com/DataWorkbench/gproto/xgo" +
       "/types/pbmodelb\006proto3"

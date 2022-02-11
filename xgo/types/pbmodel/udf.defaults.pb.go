@@ -9,8 +9,8 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.UDFInfo
-func (this *UDFInfo) SetDefaults() {
+// Set default value for message model.UDF
+func (this *UDF) SetDefaults() {
 	if this == nil {
 		return
 	}

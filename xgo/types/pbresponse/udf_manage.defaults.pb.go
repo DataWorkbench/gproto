@@ -7,10 +7,19 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message response.ListUDF
-func (this *ListUDF) SetDefaults() {
+// Set default value for message response.ListUDFs
+func (this *ListUDFs) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.CreateUDF
+func (this *CreateUDF) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -26,14 +35,6 @@ func (this *DescribeUDF) SetDefaults() {
 		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
-	}
-	return
-}
-
-// Set default value for message response.JsonList
-func (this *JsonList) SetDefaults() {
-	if this == nil {
-		return
 	}
 	return
 }

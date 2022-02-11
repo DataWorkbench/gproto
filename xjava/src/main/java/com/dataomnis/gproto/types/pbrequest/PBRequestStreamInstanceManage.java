@@ -164,6 +164,28 @@ public final class PBRequestStreamInstanceManage {
      * @return The reverse.
      */
     boolean getReverse();
+
+    /**
+     * <pre>
+     * Filter by `instance_id`.
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    java.lang.String getInstanceId();
+    /**
+     * <pre>
+     * Filter by `instance_id`.
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    com.google.protobuf.ByteString
+        getInstanceIdBytes();
   }
   /**
    * <pre>
@@ -188,6 +210,7 @@ public final class PBRequestStreamInstanceManage {
       version_ = "";
       state_ = 0;
       sortBy_ = "";
+      instanceId_ = "";
     }
 
     @java.lang.Override
@@ -263,6 +286,12 @@ public final class PBRequestStreamInstanceManage {
             case 64: {
 
               reverse_ = input.readBool();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceId_ = s;
               break;
             }
             default: {
@@ -571,6 +600,54 @@ public final class PBRequestStreamInstanceManage {
       return reverse_;
     }
 
+    public static final int INSTANCE_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object instanceId_;
+    /**
+     * <pre>
+     * Filter by `instance_id`.
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    @java.lang.Override
+    public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by `instance_id`.
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -609,6 +686,9 @@ public final class PBRequestStreamInstanceManage {
       if (reverse_ != false) {
         output.writeBool(8, reverse_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, instanceId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -646,6 +726,9 @@ public final class PBRequestStreamInstanceManage {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, reverse_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, instanceId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -676,6 +759,8 @@ public final class PBRequestStreamInstanceManage {
           .equals(other.getSortBy())) return false;
       if (getReverse()
           != other.getReverse()) return false;
+      if (!getInstanceId()
+          .equals(other.getInstanceId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -704,6 +789,8 @@ public final class PBRequestStreamInstanceManage {
       hash = (37 * hash) + REVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReverse());
+      hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -858,6 +945,8 @@ public final class PBRequestStreamInstanceManage {
 
         reverse_ = false;
 
+        instanceId_ = "";
+
         return this;
       }
 
@@ -892,6 +981,7 @@ public final class PBRequestStreamInstanceManage {
         result.state_ = state_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
+        result.instanceId_ = instanceId_;
         onBuilt();
         return result;
       }
@@ -967,6 +1057,10 @@ public final class PBRequestStreamInstanceManage {
         }
         if (other.getReverse() != false) {
           setReverse(other.getReverse());
+        }
+        if (!other.getInstanceId().isEmpty()) {
+          instanceId_ = other.instanceId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1627,6 +1721,107 @@ public final class PBRequestStreamInstanceManage {
       public Builder clearReverse() {
         
         reverse_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object instanceId_ = "";
+      /**
+       * <pre>
+       * Filter by `instance_id`.
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * @return The instanceId.
+       */
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by `instance_id`.
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * @return The bytes for instanceId.
+       */
+      public com.google.protobuf.ByteString
+          getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instanceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by `instance_id`.
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * @param value The instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by `instance_id`.
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstanceId() {
+        
+        instanceId_ = getDefaultInstance().getInstanceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by `instance_id`.
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * @param value The bytes for instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instanceId_ = value;
         onChanged();
         return this;
       }
@@ -5074,7 +5269,7 @@ public final class PBRequestStreamInstanceManage {
       "toc-plugin/proto/validator.proto\0322github" +
       ".com/yu31/protoc-plugin/proto/defaults.p" +
       "roto\032\'proto/types/model/stream_instance." +
-      "proto\"\272\002\n\023ListStreamInstances\022&\n\005limit\030\001" +
+      "proto\"\344\002\n\023ListStreamInstances\022&\n\005limit\030\001" +
       " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
       "\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\003 \001(\tB\023\342\337" +
       "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\006job_id\030\004 \001(\tB\004\342\337\037\000\022" +
@@ -5082,18 +5277,19 @@ public final class PBRequestStreamInstanceManage {
       "model.StreamInstance.StateB\013\342\337\037\007\022\005\332\001\002X\001\022" +
       ":\n\007sort_by\030\007 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\006job_i" +
       "dJ\007createdJ\007updated\022\025\n\007reverse\030\010 \001(\010B\004\342\337" +
-      "\037\000\"W\n\030TerminateStreamInstances\022%\n\010space_" +
-      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014instanc" +
-      "e_ids\030\002 \003(\t\"U\n\026SuspendStreamInstances\022%\n" +
-      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014" +
-      "instance_ids\030\002 \003(\t\"T\n\025ResumeStreamInstan" +
-      "ces\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022\024\n\014instance_ids\030\002 \003(\t\"B\n\026DescribeStre" +
-      "amInstance\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004sti-B|\n$com.dataomnis.gproto.typ" +
-      "es.pbrequestB\035PBRequestStreamInstanceMan" +
-      "ageP\000Z3github.com/DataWorkbench/gproto/x" +
-      "go/types/pbrequestb\006proto3"
+      "\037\000\022(\n\013instance_id\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "sti-\"W\n\030TerminateStreamInstances\022%\n\010spac" +
+      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014insta" +
+      "nce_ids\030\002 \003(\t\"U\n\026SuspendStreamInstances\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024" +
+      "\n\014instance_ids\030\002 \003(\t\"T\n\025ResumeStreamInst" +
+      "ances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022\024\n\014instance_ids\030\002 \003(\t\"B\n\026DescribeSt" +
+      "reamInstance\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004sti-B|\n$com.dataomnis.gproto.t" +
+      "ypes.pbrequestB\035PBRequestStreamInstanceM" +
+      "anageP\000Z3github.com/DataWorkbench/gproto" +
+      "/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5107,7 +5303,7 @@ public final class PBRequestStreamInstanceManage {
     internal_static_request_ListStreamInstances_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListStreamInstances_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SpaceId", "JobId", "Version", "State", "SortBy", "Reverse", });
+        new java.lang.String[] { "Limit", "Offset", "SpaceId", "JobId", "Version", "State", "SortBy", "Reverse", "InstanceId", });
     internal_static_request_TerminateStreamInstances_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_TerminateStreamInstances_fieldAccessorTable = new

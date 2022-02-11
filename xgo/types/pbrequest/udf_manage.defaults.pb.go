@@ -11,6 +11,25 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
+// Set default value for message request.ListUDFs
+func (this *ListUDFs) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
+	}
+	return
+}
+
+// Set default value for message request.DeleteUDFs
+func (this *DeleteUDFs) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.CreateUDF
 func (this *CreateUDF) SetDefaults() {
 	if this == nil {
@@ -27,35 +46,8 @@ func (this *UpdateUDF) SetDefaults() {
 	return
 }
 
-// Set default value for message request.DeleteUDF
-func (this *DeleteUDF) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.DescribeUDF
 func (this *DescribeUDF) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.ListUDF
-func (this *ListUDF) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Limit == 0 {
-		this.Limit = 100
-	}
-	return
-}
-
-// Set default value for message request.UDFCommonFunc
-func (this *UDFCommonFunc) SetDefaults() {
 	if this == nil {
 		return
 	}
