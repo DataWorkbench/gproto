@@ -29,7 +29,7 @@ message MySQLURL {
 
   // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"host"
-  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
   // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
   // @inject_tag: json:"port"
@@ -41,11 +41,11 @@ message MySQLURL {
 
   // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"password"
-  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
   // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"database"
-  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 }
 
 // PostgreSQLURL used as request parameters for RPC and HTTP(based on Body)
@@ -87,20 +87,40 @@ message ClickHouseURL {
 
   // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"user"
-  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
   // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"password"
-  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
   // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"database"
-  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string database = 5 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 }
 
 // FtpURL used as request parameters for RPC and HTTP(based on Body)
 message FtpURL {
   option (gosql.serialize) = { json: {} };
+
+  enum Protocol {
+    ProtocolUnset = 0;
+    FTP = 1;
+    SFTP = 2;
+  }
+
+  enum ConnectionMode {
+    ConnectionModeUnset = 0;
+    Active = 1;
+    Passive = 2;
+  }
+
+  // The connection protocol. 1 => "FTP" 2 = > "SFTP"; Is Required.
+  // @inject_tag: json:"protocol"
+  Protocol protocol = 10 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  // The connection modes. 1 => "Active" 2 = > "Passive"; Is Required.
+  // @inject_tag: json:"connection_mode"
+  ConnectionMode connection_mode = 11 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"host"
@@ -143,7 +163,7 @@ message KafkaURL {
   // The kafka brokers.
   // Is required. Min: 1, MAX: 128.
   // @inject_tag: json:"kafka_brokers"
-  repeated Host kafka_brokers = 1 [ (validator.field).tags.repeated = { len_gte: 1 , len_lte: 128 } ];
+  repeated Host kafka_brokers = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 128 } ];
 
   // The kafka brokers. Multiple nodes are separated by commas. eg: "192.168.1.1:9292,192.168.1.2:9292, 192.168.1.3:9292"
 //  string kafka_brokers = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
@@ -153,19 +173,24 @@ message KafkaURL {
 message HBaseURL {
   option (gosql.serialize) = { json: {} };
 
-  // The zookeeper hosts that used by hbase.
-  // Is required. MIN: 1, MAX: 128.
-  // @inject_tag: json:"zk_hosts"
-  repeated Host zk_hosts = 1 [ (validator.field).tags.repeated = { len_gte: 1 , len_lte: 128 } ];
+  // The hbase config. Is Required. Must be a JSON format string.
+  // Max Bytes Length: 1048576(16KB)
+  // @inject_tag: json:"config"
+  string config = 1 [ (validator.field).tags.string = { byte_len_gte: 1; byte_len_lte: 16384; json: true; } ];
 
 //  // The zookeeper hosts that used by hbase. Multiple nodes are separated by commas. eg: "zk_host1:2181,zk_host2:2181,zk_host3:2181"
 //  // Is required. Length min: 1, Length MAX: 1024.
 //  // @inject_tag: json:"zk_hosts"
 //  string zk_hosts = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
 
-  // The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-  // @inject_tag: json:"zk_path"
-  string zk_path = 2 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 1024 } ];
+//  // The zookeeper hosts that used by hbase.
+//  // Is required. MIN: 1, MAX: 128.
+//  // @inject_tag: json:"zk_hosts"
+//  repeated Host zk_hosts = 1 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 128 } ];
+//
+//  // The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
+//  // @inject_tag: json:"zk_path"
+//  string zk_path = 2 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 1024 } ];
 }
 
 // HDFSURL used as request parameters for RPC and HTTP(based on Body)
@@ -174,16 +199,16 @@ message HDFSURL {
 
   // The host of name node
   // @inject_tag: json:"name_node"
-  string name_node = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string name_node = 1 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
   // The port of name node
   // @inject_tag: json:"port"
   int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 
-  // The hdfs advanced config. Not Required.
+  // The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
   // @inject_tag: json:"config"
   string config = 3 [
     (validator.field).check_if = { field: "config"; tags: { string: { ne: "" } } },
-    (validator.field).tags.string = { json: true }
+    (validator.field).tags.string = { json: true; byte_len_lte: 16384 }
   ];
 }

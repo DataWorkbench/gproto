@@ -56,7 +56,10 @@ message ListStreamInstances {
 
   // Filter by `instance_id`.
   // @inject_tag: json:"instance_id" form:"instance_id"
-  string instance_id = 9 [ (validator.field).tags.string = { byte_len_eq:20, prefix: "sti-" } ];
+  string instance_id = 9 [
+    (validator.field).check_if = { field: "instance_id"; tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq:20, prefix: "sti-" }
+  ];
 }
 
 // TerminateStreamInstances used as a request parameters for RPC.
