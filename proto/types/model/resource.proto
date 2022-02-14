@@ -34,7 +34,7 @@ message Resource {
   // Resource ID, unique within a region.
   // FIXME: rename json name
   // @inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
-  string id = 2  [ (validator.field).tags.string = { byte_len_eq: 20; } ];
+  string id = 2  [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" } ];
 
   // Resource Parent ID, default "".
   // @inject_tag: json:"pid" gorm:"column:pid;"

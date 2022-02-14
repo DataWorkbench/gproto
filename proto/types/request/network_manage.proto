@@ -37,21 +37,21 @@ message ListNetworks {
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 5 [ (validator.field) = { } ];
+  bool reverse = 5;
 
   // Search with workspace name; Not required.
   // @inject_tag: json:"search" form:"search"
-  string search = 6 [ (validator.field) = { } ];
+  string search = 6;
 
   // Filter by network name; valid if `search` is empty; Not required.
   // @inject_tag: json:"name" form:"name"
-  string name = 7 [(validator.field) = {}];
+  string name = 7;
 }
 
 message DeleteNetworks {
   // The list of network id. Is required, Min 1, Max 100.
   // @inject_tag: json:"network_ids"
-  repeated string network_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string network_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "net-" } } } ];
 }
 
 message CreateNetwork {
@@ -83,7 +83,7 @@ message UpdateNetwork {
 
   // The flink cluster id in HTTP Request-URI
   // @inject_tag: json:"network_id" uri:"network_id" swaggerignore:"true"
-  string network_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string network_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
 
   // Network Name. Is required.
   // @inject_tag: json:"name"
@@ -101,5 +101,5 @@ message UpdateNetwork {
 message DescribeNetwork {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"network_id" uri:"network_id" swaggerignore:"true"
-  string network_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string network_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
 }

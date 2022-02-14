@@ -109,7 +109,7 @@ message DataSource {
 
   // Source ID, unique within a region.
   // @inject_tag: json:"id" gorm:"column:id;primaryKey;"
-  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
 
   // Data Source Name, unique within a space. Min characters 2. Max characters 64.
   // @inject_tag: json:"name" gorm:"column:name;"
@@ -117,7 +117,7 @@ message DataSource {
 
   // Comment, describe this source.
   // @inject_tag: json:"desc" gorm:"column:desc;" binding:"gte=0,lte=256"
-  string desc = 4 [(validator.field).tags.string = {char_len_lte: 256}];
+  string desc = 4 [(validator.field).tags.string = { char_len_lte: 256 }];
 
   // Source Type, 1->MySQL 2->PostgreSQL 3->Kafka 4->S3 5->ClickHouse 6->Hbase 7->Ftp 8->HDFS
   // @inject_tag: json:"type" gorm:"column:type;"
@@ -168,13 +168,13 @@ message DataSourceConnection {
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
-  // Source ID, unique within a region.
+  // DataSource ID.
   // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
-  string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
 
   // Source ID, unique within a region.
   // @inject_tag: json:"network_id" gorm:"column:network_id;"
-  string network_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string network_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
 
   // Status, 1 => "Deleted", 2 => "Enabled".
   // @inject_tag: json:"status" gorm:"column:status;"
@@ -186,7 +186,7 @@ message DataSourceConnection {
 
   // Message is the reason when connection failure.
   // @inject_tag: json:"message" gorm:"column:message;"
-  string message = 6 [ (validator.field).tags.string = { } ];
+  string message = 6;
 
   // Create Time, When start tested for usability..
   // @inject_tag: json:"created" gorm:"column:created;"

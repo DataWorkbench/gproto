@@ -69,19 +69,19 @@ message ListFlinkClusters {
 message DeleteFlinkClusters {
   // The list of flink cluster id. Is required, Min 1, Max 100.
   // @inject_tag: json:"cluster_ids"
-  repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "cfi-" } } } ];
 }
 
 message StartFlinkClusters {
   // The list of flink cluster id. Is required, Min 1, Max 100.
   // @inject_tag: json:"cluster_ids"
-  repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "cfi-" } } } ];
 }
 
 message StopFlinkClusters {
   // The list of flink cluster id. Is required, Min 1, Max 100.
   // @inject_tag: json:"cluster_ids"
-  repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string cluster_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "cfi-" } } } ];
 }
 
 message CreateFlinkCluster {
@@ -117,15 +117,15 @@ message CreateFlinkCluster {
 
   // Network config. Is required.
   // @inject_tag: json:"network_id"
-  string network_id = 9 [(validator.field) = {}];
+  string network_id = 9 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
 
   // Config of host aliases. Not required.
   // @inject_tag: json:"host_aliases"
-  model.HostAliases host_aliases = 11 [(validator.field) = {}];
+  model.HostAliases host_aliases = 11;
 
   // Flink config. Not required.
   // @inject_tag: json:"config"
-  flink.FlinkConfig config = 10 [(validator.field) = {}];
+  flink.FlinkConfig config = 10;
 }
 
 message UpdateFlinkCluster {
@@ -135,7 +135,7 @@ message UpdateFlinkCluster {
 
   // The flink cluster id in HTTP Request-URI
   // @inject_tag: json:"cluster_id" uri:"cluster_id" swaggerignore:"true"
-  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
 
   // Cluster Name. Is required.
   // @inject_tag: json:"name"
@@ -161,19 +161,19 @@ message UpdateFlinkCluster {
 
   // Network config. Is required.
   // @inject_tag: json:"network_id"
-  string network_id = 9 [(validator.field) = {}];
+  string network_id = 9 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
 
   // Config of host aliases. Not required.
   // @inject_tag: json:"host_aliases"
-  model.HostAliases host_aliases = 10 [(validator.field) = {}];
+  model.HostAliases host_aliases = 10;
 
   // Flink config, Is required.
   // @inject_tag: json:"config"
-  flink.FlinkConfig config = 11 [(validator.field) = {}];
+  flink.FlinkConfig config = 11;
 }
 
 message DescribeFlinkCluster {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"cluster_id" uri:"cluster_id" swaggerignore:"true"
-  string cluster_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string cluster_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
 }

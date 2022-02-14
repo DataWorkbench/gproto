@@ -26,7 +26,7 @@ message Network {
 
   // Network Id, unique within a region.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
 
   // Network Name.
   // @inject_tag: json:"name" gorm:"column:name;"
@@ -42,7 +42,7 @@ message Network {
 
   // The user-id of created this network.
   // @inject_tag: json:"created_by" gorm:"column:created_by;"
-  string created_by = 6 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+  string created_by = 6 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
 
   // Network Status. 1 => "Deleted" 2 => "Enabled"
   // @inject_tag: json:"status" gorm:"column:status;"

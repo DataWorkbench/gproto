@@ -45,12 +45,12 @@ message StreamJob {
 
   // Job ID, unique within a region.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The job version id, only used for Published job.
   // Only used in published job.
   // @inject_tag: json:"version" gorm:"column:version;primarykey;"
-  string version = 4 [(validator.field) = {}];
+  string version = 4 [(validator.field).tags.string = { byte_len_eq: 16 }];
 
   // Job Name, Unique within a workspace.
   // @inject_tag: json:"name" gorm:"column:name;"
@@ -96,11 +96,11 @@ message StreamJobProperty {
 
   // Job Id, unique within a region.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The release version.
   // @inject_tag: json:"version" gorm:"column:version;primarykey"
-  string version = 3 [(validator.field).tags.string = { ne: "" }];
+  string version = 3 [(validator.field).tags.string = { byte_len_eq: 16 }];
 
   // @inject_tag: json:"code" gorm:"column:code;type:json"
   StreamJobCode code = 4 [(validator.field) = {}];
@@ -299,11 +299,11 @@ message StreamJobRelease {
 
   // Job ID, unique within a region.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The release version.
   // @inject_tag: json:"version" gorm:"column:version;"
-  string version = 3 [(validator.field).tags.string = { ne: "" }];
+  string version = 3 [(validator.field).tags.string = { byte_len_eq: 16 }];
 
   // Job Name, Unique within a workspace.
   // @inject_tag: json:"name" gorm:"column:name;"

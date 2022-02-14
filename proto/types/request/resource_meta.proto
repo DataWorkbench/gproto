@@ -170,7 +170,7 @@ message ListFileMetas {
   // The resource name. not required.
   // FIXME: Rename json and form name
   // @inject_tag: json:"resource_name" form:"resource_name" binding:"-"
-  string name = 5 [(validator.field) = {}];
+  string name = 5;
 
   // Search with resource name; not required.
   // @inject_tag: json:"search" form:"search"
@@ -184,7 +184,7 @@ message ListFileMetas {
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 8 [(validator.field) = {}];
+  bool reverse = 8;
 
   // The parent id. Not required.
   // @inject_tag: json:"pid" form:"pid"
@@ -198,5 +198,5 @@ message DeleteFileMetas {
 
   // The list of resource id. Is required, Min 1 Max 100.
   // @inject_tag: json:"resource_ids"
-  repeated string resource_ids = 2 [(validator.field).tags.repeated = { len_gt: 0, len_lte: 100 }];
+  repeated string resource_ids = 2 [(validator.field).tags.repeated = { len_gt: 0, len_lte: 100; item: { string: { prefix: "res-" } } }];
 }

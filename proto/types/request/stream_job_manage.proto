@@ -38,11 +38,11 @@ message ListStreamJobs {
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 5 [ (validator.field) = { } ];
+  bool reverse = 5;
 
   // Search with stream job name; Not required.
   // @inject_tag: json:"search" form:"search"
-  string search = 6 [(validator.field) = {}];
+  string search = 6;
 
   // The parent id.
   // @inject_tag: json:"pid" form:"pid"
@@ -104,7 +104,7 @@ message DeleteStreamJobs {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // The list of stream job id. Is required, Min 1, Max 100.
   // @inject_tag: json:"job_ids"
-  repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "stj-" } } } ];
 }
 
 // MoveStreamJobs used as a request parameters for RPC and HTTP(based on Body)
@@ -115,7 +115,7 @@ message MoveStreamJobs {
 
   // The list of stream job id. Is required, Min 1, Max 100.
   // @inject_tag: json:"job_ids"
-  repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+  repeated string job_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "stj-" } } } ];
 
   // Target represents the target directory. `target` is "" means move to root(`/`)
   // @inject_tag: json:"target"
@@ -133,7 +133,7 @@ message UpdateStreamJob {
 
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The stream job name in each workspace is unique. Is required, Max Length 128.
   // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
@@ -149,7 +149,7 @@ message UpdateStreamJob {
 message DescribeStreamJob {
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
@@ -164,7 +164,7 @@ message SetStreamJobCode {
 
   // The stream job id it belongs to.
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The code info of JSON format.
   // @inject_tag: json:"code"
@@ -179,7 +179,7 @@ message SetStreamJobSchedule {
 
   // The stream job id it belongs to.
   // @inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   model.StreamJobSchedule info = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
@@ -192,7 +192,7 @@ message SetStreamJobArgs {
 
   // The stream job ID it belongs to.
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   model.StreamJobArgs info = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
@@ -201,7 +201,7 @@ message SetStreamJobArgs {
 message GetStreamJobCode {
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
@@ -212,7 +212,7 @@ message GetStreamJobCode {
 message GetStreamJobSchedule {
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
@@ -223,7 +223,7 @@ message GetStreamJobSchedule {
 message GetStreamJobArgs {
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The stream job version id in HTTP Request-URI
   // @inject_tag: json:"version" uri:"ver_id" swaggerignore:"true"
@@ -254,11 +254,11 @@ message ListReleaseStreamJobs {
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 4 [ (validator.field) = { } ];
+  bool reverse = 4;
 
   // Search with stream job name; Not required.
   // @inject_tag: json:"search" form:"search"
-  string search = 6 [(validator.field) = { } ];
+  string search = 6;
 
   // Filter by release status;  Not required.
   // Valid optional: 1 => "enabled", 2 => "disabled".
@@ -267,14 +267,14 @@ message ListReleaseStreamJobs {
 
   // The stream job id.
   // @inject_tag: json:"job_id" form:"job_id"
-  string job_id = 8 [(validator.field) = { } ];
+  string job_id = 8;
 }
 
 // ReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body.)
 message ReleaseStreamJob {
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // The user-id of release this job. Fixed to the request user id.
   // @inject_tag: json:"created_by" swaggerignore:"true"
@@ -285,7 +285,7 @@ message ReleaseStreamJob {
   string desc = 3;
 
   // @inject_tag: json:"stop_running"
-  bool stop_running = 4 [(validator.field) = {}];
+  bool stop_running = 4;
 }
 
 // OfflineReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
@@ -296,7 +296,7 @@ message OfflineReleaseStreamJob {
 
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 }
 
 // SuspendReleaseStreamJob used as a request parameters for RPC and HTTP(based on Body).
@@ -307,7 +307,7 @@ message SuspendReleaseStreamJob {
 
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
   // @inject_tag: json:"stop_running"
   bool stop_running = 3 [(validator.field) = {}];
@@ -321,11 +321,15 @@ message ResumeReleaseStreamJob {
 
   // The stream job id in HTTP Request-URI
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 }
 
 // ListStreamJobVersions used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListStreamJobVersions {
+  // The stream job id in HTTP Request-URI
+  // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+  string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit" form:"limit"
@@ -344,16 +348,12 @@ message ListStreamJobVersions {
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 4 [(validator.field) = {}];
-
-  // The stream job id in HTTP Request-URI
-  // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-  string job_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20} ];
+  bool reverse = 4;
 }
 
 // DescribeFlinkUIByInstanceId used as a request parameters for RPC.
 message DescribeFlinkUIByInstanceId {
   // The instance id in HTTP Request-URI. Is Required.
   // @inject_tag: json:"instance_id" uri:"instance_id" swaggerignore:"true"
-  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string instance_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
 }

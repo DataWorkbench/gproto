@@ -16,6 +16,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/flink/flink_table.proto";
 
 // Table Info
+// TODO: unused on present.
 message FlinkTable {
   enum Kind {
     KindUnset = 0;

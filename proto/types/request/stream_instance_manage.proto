@@ -34,11 +34,11 @@ message ListStreamInstances {
 
   // The stream job id. Not required.
   // @inject_tag: json:"job_id" form:"job_id"
-  string job_id = 4 [(validator.field) = {}];
+  string job_id = 4;
 
   // The stream job version id. Not required.
   // @inject_tag: json:"version" form:"version"
-  string version = 5 [(validator.field) = {}];
+  string version = 5;
 
   // The stream instance state. Not required.
   // @inject_tag: json:"state" form:"state"
@@ -52,7 +52,7 @@ message ListStreamInstances {
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 8 [(validator.field) = {}];
+  bool reverse = 8;
 
   // Filter by `instance_id`. Not required.
   // @inject_tag: json:"instance_id" form:"instance_id"
@@ -68,7 +68,7 @@ message TerminateStreamInstances {
 
   // The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
   // @inject_tag: json:"instance_ids"
-  repeated string instance_ids = 2;
+  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "sti-" } } } ];
 }
 
 // SuspendStreamInstances used as a request parameters for RPC.
@@ -80,7 +80,7 @@ message SuspendStreamInstances {
 
   // The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
   // @inject_tag: json:"instance_ids"
-  repeated string instance_ids = 2;
+  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "sti-" } } } ];
 }
 
 // ResumeStreamInstances used as a request parameters for RPC.
@@ -92,7 +92,7 @@ message ResumeStreamInstances {
 
   // The list of instance id and its stream job id. Is Required. Min: 1, Max: 100
   // @inject_tag: json:"instance_ids"
-  repeated string instance_ids = 2;
+  repeated string instance_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "sti-" } } } ];
 }
 
 message DescribeStreamInstance {

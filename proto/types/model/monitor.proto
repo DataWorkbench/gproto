@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 // The monitor rule info
+// TODO: unused on present.
 message MonitorRule {
   enum Status {
     StatusUnset = 0;

@@ -14,6 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 // The Role info.
+// TODO: unused on present.
 message Role {
   enum Type {
     TypeUnset = 0;
@@ -47,6 +48,7 @@ message Role {
 }
 
 // The workspace member info.
+// TODO: unused on present.
 message Member {
   enum Status {
     StatusUnset = 0;
