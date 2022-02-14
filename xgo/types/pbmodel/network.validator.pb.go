@@ -25,6 +25,9 @@ func (this *Network) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("Network", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "net-")) {
+		return protovalidator.FieldError1("Network", "the value of field 'id' must start with string 'net-'", this.Id)
+	}
 	return nil
 }
 

@@ -186,6 +186,9 @@ func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
 		return protovalidator.FieldError1("UpdateDataSource", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("UpdateDataSource", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
+	}
 	return nil
 }
 
@@ -258,6 +261,12 @@ func (this *DeleteDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 	if !(len(this.SourceIds) <= 100) {
 		return protovalidator.FieldError1("DeleteDataSources", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
 	}
+	for _, item := range this.SourceIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "som-")) {
+			return protovalidator.FieldError1("DeleteDataSources", "the value of array item where in field 'source_ids' must start with string 'som-'", item)
+		}
+	}
 	return nil
 }
 
@@ -275,6 +284,9 @@ func (this *DeleteDataSources) Validate() error {
 func (this *DescribeDataSource) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
 		return protovalidator.FieldError1("DescribeDataSource", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("DescribeDataSource", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
 	}
 	return nil
 }
@@ -297,6 +309,12 @@ func (this *EnableDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 	if !(len(this.SourceIds) <= 100) {
 		return protovalidator.FieldError1("EnableDataSources", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
 	}
+	for _, item := range this.SourceIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "som-")) {
+			return protovalidator.FieldError1("EnableDataSources", "the value of array item where in field 'source_ids' must start with string 'som-'", item)
+		}
+	}
 	return nil
 }
 
@@ -317,6 +335,12 @@ func (this *DisableDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 	}
 	if !(len(this.SourceIds) <= 100) {
 		return protovalidator.FieldError1("DisableDataSources", "the length of field 'source_ids' must be less than or equal to '100'", strconv.Itoa(len(this.SourceIds)))
+	}
+	for _, item := range this.SourceIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "som-")) {
+			return protovalidator.FieldError1("DisableDataSources", "the value of array item where in field 'source_ids' must start with string 'som-'", item)
+		}
 	}
 	return nil
 }
@@ -523,6 +547,9 @@ func (this *DescribeDataSourceTables) _xxx_xxx_Validator_Validate_source_id() er
 	if !(len(this.SourceId) == 20) {
 		return protovalidator.FieldError1("DescribeDataSourceTables", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("DescribeDataSourceTables", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
+	}
 	return nil
 }
 
@@ -553,6 +580,9 @@ func (this *DescribeDataSourceTableSchema) _xxx_xxx_Validator_Validate_space_id(
 func (this *DescribeDataSourceTableSchema) _xxx_xxx_Validator_Validate_source_id() error {
 	if !(len(this.SourceId) == 20) {
 		return protovalidator.FieldError1("DescribeDataSourceTableSchema", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("DescribeDataSourceTableSchema", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
 	}
 	return nil
 }

@@ -96,7 +96,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -107,7 +107,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     java.lang.String getSearch();
@@ -117,7 +117,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     com.google.protobuf.ByteString
@@ -428,7 +428,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -444,7 +444,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     @java.lang.Override
@@ -466,7 +466,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     @java.lang.Override
@@ -1291,7 +1291,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -1304,7 +1304,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -1320,7 +1320,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -1337,7 +1337,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The search.
        */
       public java.lang.String getSearch() {
@@ -1358,7 +1358,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The bytes for search.
        */
       public com.google.protobuf.ByteString
@@ -1380,7 +1380,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The search to set.
        * @return This builder for chaining.
        */
@@ -1400,7 +1400,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSearch() {
@@ -1415,7 +1415,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The bytes for search to set.
        * @return This builder for chaining.
        */
@@ -8296,7 +8296,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 6 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 6;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -8625,7 +8625,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 6 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 6;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -9476,7 +9476,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 6 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 6;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -9489,7 +9489,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 6 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 6;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -9505,7 +9505,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 6 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -11332,7 +11332,7 @@ public final class PBRequestDataSourceManage {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11341,7 +11341,7 @@ public final class PBRequestDataSourceManage {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11469,7 +11469,7 @@ public final class PBRequestDataSourceManage {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11490,7 +11490,7 @@ public final class PBRequestDataSourceManage {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11883,7 +11883,7 @@ public final class PBRequestDataSourceManage {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11903,7 +11903,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11924,7 +11924,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11943,7 +11943,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -11957,7 +11957,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12130,7 +12130,7 @@ public final class PBRequestDataSourceManage {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12139,7 +12139,7 @@ public final class PBRequestDataSourceManage {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12290,7 +12290,7 @@ public final class PBRequestDataSourceManage {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12311,7 +12311,7 @@ public final class PBRequestDataSourceManage {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"space_id"
      * </pre>
      *
      * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12763,7 +12763,7 @@ public final class PBRequestDataSourceManage {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12783,7 +12783,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12804,7 +12804,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12823,7 +12823,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -12837,7 +12837,7 @@ public final class PBRequestDataSourceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"space_id"
        * </pre>
        *
        * <code>string space_id = 1 [(.validator.field) = { ... }</code>
@@ -13168,61 +13168,62 @@ public final class PBRequestDataSourceManage {
       "proto\022\007request\0323github.com/yu31/protoc-p" +
       "lugin/proto/validator.proto\0322github.com/" +
       "yu31/protoc-plugin/proto/defaults.proto\032" +
-      "\"proto/types/model/datasource.proto\"\203\002\n\017" +
+      "\"proto/types/model/datasource.proto\"\367\001\n\017" +
       "ListDataSources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
       "\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\00310" +
       "0\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001" +
       "\002@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004n" +
-      "ameJ\007createdJ\007updated\022\025\n\007reverse\030\005 \001(\010B\004" +
-      "\342\337\037\000\022\024\n\006search\030\006 \001(\tB\004\342\337\037\000\022\014\n\004name\030\007 \001(\t" +
-      "\022\017\n\007verbose\030\010 \001(\005\"\326\002\n\020CreateDataSource\022%" +
-      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n" +
-      "\004name\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\230\002@\022\033\n\004desc\030\003 \001" +
-      "(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type\030\004 \001(\0162\026.model." +
-      "DataSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\003url\030\005 " +
-      "\001(\0132\025.model.DataSource.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030" +
-      "\001\022\037\n\ncreated_by\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0224\n\017la" +
-      "st_connection\030\007 \001(\0132\033.model.DataSourceCo" +
-      "nnection\022 \n\013space_owner\030\010 \001(\tB\013\342\337\037\007\022\005\302\001\002" +
-      "\"\000\"\376\001\n\020UpdateDataSource\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource_id\030\002 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\200\002\000\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004t" +
-      "ype\030\005 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource" +
-      ".URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"6\n\021DeleteDataSources" +
-      "\022!\n\nsource_ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\001\"5\n\022D" +
-      "escribeDataSource\022\037\n\tsource_id\030\001 \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\360\001\024\"6\n\021EnableDataSources\022!\n\nsourc" +
-      "e_ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\001\"7\n\022DisableDat" +
-      "aSources\022!\n\nsource_ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048" +
-      "d@\001\"\202\002\n\031ListDataSourceConnections\022%\n\010spa" +
-      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsour" +
-      "ce_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005" +
-      "B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(" +
-      "\005B\013\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302" +
-      "\001\026J\000J\tsource_idJ\007created\022\025\n\007reverse\030\006 \001(" +
-      "\010B\004\342\337\037\000\022\017\n\007verbose\030\007 \001(\005\"\253\003\n\030PingDataSou" +
-      "rceConnection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\360\001\024\022E\n\005stage\030\003 \001(\0162\'.request.PingData" +
-      "SourceConnection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n" +
-      "\tsource_id\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337" +
-      "\037\010\022\006\302\001\003\360\001\024\022G\n\004type\030\005 \001(\0162\026.model.DataSou" +
-      "rce.TypeB!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022E\n\003url\030\006 \001(\0132\025.model.DataSource.URLB" +
-      "!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005St" +
-      "age\022\016\n\nPhaseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n" +
-      "\013AfterCreate\020\002\"b\n\030DescribeDataSourceTabl" +
-      "es\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022\037\n\tsource_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\215\001\n\035D" +
-      "escribeDataSourceTableSchema\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource_id" +
-      "\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022$\n\ntable_name\030\003 \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis.gpro" +
-      "to.types.pbrequestB\031PBRequestDataSourceM" +
-      "anageP\000Z3github.com/DataWorkbench/gproto" +
-      "/xgo/types/pbrequestb\006proto3"
+      "ameJ\007createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016" +
+      "\n\006search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\022\017\n\007verbose\030" +
+      "\010 \001(\005\"\326\002\n\020CreateDataSource\022%\n\010space_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\200\002\001\230\002@\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001" +
+      "\004\310\001\200\002\0223\n\004type\030\004 \001(\0162\026.model.DataSource.T" +
+      "ypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\003url\030\005 \001(\0132\025.model." +
+      "DataSource.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\022\037\n\ncreated" +
+      "_by\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0224\n\017last_connectio" +
+      "n\030\007 \001(\0132\033.model.DataSourceConnection\022 \n\013" +
+      "space_owner\030\010 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"\205\002\n\020Updat" +
+      "eDataSource\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004som-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002" +
+      "@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type\030\005" +
+      " \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource.URLB" +
+      "\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"B\n\021DeleteDataSources\022-\n\ns" +
+      "ource_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004so" +
+      "m-\"<\n\022DescribeDataSource\022&\n\tsource_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"B\n\021EnableDataSo" +
+      "urces\022-\n\nsource_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001" +
+      "Z\n\302\001\007\312\002\004som-\"C\n\022DisableDataSources\022-\n\nso" +
+      "urce_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som" +
+      "-\"\374\001\n\031ListDataSourceConnections\022%\n\010space" +
+      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource" +
+      "_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B\027" +
+      "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B" +
+      "\013\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001\026" +
+      "J\000J\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010\022" +
+      "\017\n\007verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConne" +
+      "ction\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E" +
+      "\n\005stage\030\003 \001(\0162\'.request.PingDataSourceCo" +
+      "nnection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_" +
+      "id\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360" +
+      "\001\024\022G\n\004type\030\005 \001(\0162\026.model.DataSource.Type" +
+      "B!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003u" +
+      "rl\030\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016\n" +
+      "\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nP" +
+      "haseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterCr" +
+      "eate\020\002\"i\n\030DescribeDataSourceTables\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsou" +
+      "rce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035De" +
+      "scribeDataSourceTableSchema\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name" +
+      "\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomni" +
+      "s.gproto.types.pbrequestB\031PBRequestDataS" +
+      "ourceManageP\000Z3github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

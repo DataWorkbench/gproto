@@ -97,7 +97,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -108,7 +108,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     java.lang.String getSearch();
@@ -118,7 +118,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     com.google.protobuf.ByteString
@@ -130,7 +130,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
-     * <code>string name = 7 [(.validator.field) = { ... }</code>
+     * <code>string name = 7;</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -140,7 +140,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
-     * <code>string name = 7 [(.validator.field) = { ... }</code>
+     * <code>string name = 7;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -409,7 +409,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -425,7 +425,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     @java.lang.Override
@@ -447,7 +447,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     @java.lang.Override
@@ -473,7 +473,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
-     * <code>string name = 7 [(.validator.field) = { ... }</code>
+     * <code>string name = 7;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -495,7 +495,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
-     * <code>string name = 7 [(.validator.field) = { ... }</code>
+     * <code>string name = 7;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -1237,7 +1237,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -1250,7 +1250,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -1266,7 +1266,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -1283,7 +1283,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The search.
        */
       public java.lang.String getSearch() {
@@ -1304,7 +1304,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The bytes for search.
        */
       public com.google.protobuf.ByteString
@@ -1326,7 +1326,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The search to set.
        * @return This builder for chaining.
        */
@@ -1346,7 +1346,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSearch() {
@@ -1361,7 +1361,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The bytes for search to set.
        * @return This builder for chaining.
        */
@@ -1384,7 +1384,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
-       * <code>string name = 7 [(.validator.field) = { ... }</code>
+       * <code>string name = 7;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1405,7 +1405,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
-       * <code>string name = 7 [(.validator.field) = { ... }</code>
+       * <code>string name = 7;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1427,7 +1427,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
-       * <code>string name = 7 [(.validator.field) = { ... }</code>
+       * <code>string name = 7;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1447,7 +1447,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
-       * <code>string name = 7 [(.validator.field) = { ... }</code>
+       * <code>string name = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1462,7 +1462,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
-       * <code>string name = 7 [(.validator.field) = { ... }</code>
+       * <code>string name = 7;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -5689,29 +5689,30 @@ public final class PBRequestNetworkManage {
       "\n(proto/types/request/network_manage.pro" +
       "to\022\007request\0323github.com/yu31/protoc-plug" +
       "in/proto/validator.proto\0322github.com/yu3" +
-      "1/protoc-plugin/proto/defaults.proto\"\365\001\n" +
+      "1/protoc-plugin/proto/defaults.proto\"\343\001\n" +
       "\014ListNetworks\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
       "\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342" +
       "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
       "\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007cre" +
-      "atedJ\007updatedJ\004name\022\025\n\007reverse\030\005 \001(\010B\004\342\337" +
-      "\037\000\022\024\n\006search\030\006 \001(\tB\004\342\337\037\000\022\022\n\004name\030\007 \001(\tB\004" +
-      "\342\337\037\000\"4\n\016DeleteNetworks\022\"\n\013network_ids\030\001 " +
-      "\003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"\303\001\n\rCreateNetwork\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nc" +
-      "reated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\003 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337" +
-      "\037\016\022\014\302\001\t\312\002\006vxnet-\"\303\001\n\rUpdateNetwork\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nnet" +
-      "work_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(" +
-      "\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020" +
-      "\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016" +
-      "\022\014\302\001\t\312\002\006vxnet-\"3\n\017DescribeNetwork\022 \n\nnet" +
-      "work_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bu\n$com.datao" +
-      "mnis.gproto.types.pbrequestB\026PBRequestNe" +
-      "tworkManageP\000Z3github.com/DataWorkbench/" +
-      "gproto/xgo/types/pbrequestb\006proto3"
+      "atedJ\007updatedJ\004name\022\017\n\007reverse\030\005 \001(\010\022\016\n\006" +
+      "search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\"@\n\016DeleteNetw" +
+      "orks\022.\n\013network_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008d" +
+      "Z\n\302\001\007\312\002\004net-\"\303\001\n\rCreateNetwork\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncreated" +
+      "_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\003 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014" +
+      "\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001" +
+      "\t\312\002\006vxnet-\"\312\001\n\rUpdateNetwork\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_i" +
+      "d\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\036\n\004name\030\003 \001" +
+      "(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB" +
+      "\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037" +
+      "\016\022\014\302\001\t\312\002\006vxnet-\":\n\017DescribeNetwork\022\'\n\nne" +
+      "twork_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-Bu\n$c" +
+      "om.dataomnis.gproto.types.pbrequestB\026PBR" +
+      "equestNetworkManageP\000Z3github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbrequestb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

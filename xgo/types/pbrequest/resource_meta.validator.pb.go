@@ -486,6 +486,12 @@ func (this *DeleteFileMetas) _xxx_xxx_Validator_Validate_resource_ids() error {
 	if !(len(this.ResourceIds) <= 100) {
 		return protovalidator.FieldError1("DeleteFileMetas", "the length of field 'resource_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ResourceIds)))
 	}
+	for _, item := range this.ResourceIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "res-")) {
+			return protovalidator.FieldError1("DeleteFileMetas", "the value of array item where in field 'resource_ids' must start with string 'res-'", item)
+		}
+	}
 	return nil
 }
 

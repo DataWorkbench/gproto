@@ -10,6 +10,7 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
+	strconv "strconv"
 	strings "strings"
 )
 
@@ -91,12 +92,31 @@ func (this *TerminateStreamInstances) _xxx_xxx_Validator_Validate_space_id() err
 	return nil
 }
 
+func (this *TerminateStreamInstances) _xxx_xxx_Validator_Validate_instance_ids() error {
+	if !(len(this.InstanceIds) > 0) {
+		return protovalidator.FieldError1("TerminateStreamInstances", "the length of field 'instance_ids' must be greater than '0'", strconv.Itoa(len(this.InstanceIds)))
+	}
+	if !(len(this.InstanceIds) <= 100) {
+		return protovalidator.FieldError1("TerminateStreamInstances", "the length of field 'instance_ids' must be less than or equal to '100'", strconv.Itoa(len(this.InstanceIds)))
+	}
+	for _, item := range this.InstanceIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "sti-")) {
+			return protovalidator.FieldError1("TerminateStreamInstances", "the value of array item where in field 'instance_ids' must start with string 'sti-'", item)
+		}
+	}
+	return nil
+}
+
 // Set default value for message request.TerminateStreamInstances
 func (this *TerminateStreamInstances) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_ids(); err != nil {
 		return err
 	}
 	return nil
@@ -112,12 +132,31 @@ func (this *SuspendStreamInstances) _xxx_xxx_Validator_Validate_space_id() error
 	return nil
 }
 
+func (this *SuspendStreamInstances) _xxx_xxx_Validator_Validate_instance_ids() error {
+	if !(len(this.InstanceIds) > 0) {
+		return protovalidator.FieldError1("SuspendStreamInstances", "the length of field 'instance_ids' must be greater than '0'", strconv.Itoa(len(this.InstanceIds)))
+	}
+	if !(len(this.InstanceIds) <= 100) {
+		return protovalidator.FieldError1("SuspendStreamInstances", "the length of field 'instance_ids' must be less than or equal to '100'", strconv.Itoa(len(this.InstanceIds)))
+	}
+	for _, item := range this.InstanceIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "sti-")) {
+			return protovalidator.FieldError1("SuspendStreamInstances", "the value of array item where in field 'instance_ids' must start with string 'sti-'", item)
+		}
+	}
+	return nil
+}
+
 // Set default value for message request.SuspendStreamInstances
 func (this *SuspendStreamInstances) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_ids(); err != nil {
 		return err
 	}
 	return nil
@@ -133,12 +172,31 @@ func (this *ResumeStreamInstances) _xxx_xxx_Validator_Validate_space_id() error 
 	return nil
 }
 
+func (this *ResumeStreamInstances) _xxx_xxx_Validator_Validate_instance_ids() error {
+	if !(len(this.InstanceIds) > 0) {
+		return protovalidator.FieldError1("ResumeStreamInstances", "the length of field 'instance_ids' must be greater than '0'", strconv.Itoa(len(this.InstanceIds)))
+	}
+	if !(len(this.InstanceIds) <= 100) {
+		return protovalidator.FieldError1("ResumeStreamInstances", "the length of field 'instance_ids' must be less than or equal to '100'", strconv.Itoa(len(this.InstanceIds)))
+	}
+	for _, item := range this.InstanceIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "sti-")) {
+			return protovalidator.FieldError1("ResumeStreamInstances", "the value of array item where in field 'instance_ids' must start with string 'sti-'", item)
+		}
+	}
+	return nil
+}
+
 // Set default value for message request.ResumeStreamInstances
 func (this *ResumeStreamInstances) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_ids(); err != nil {
 		return err
 	}
 	return nil

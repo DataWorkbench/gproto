@@ -76,6 +76,12 @@ func (this *DeleteNetworks) _xxx_xxx_Validator_Validate_network_ids() error {
 	if !(len(this.NetworkIds) <= 100) {
 		return protovalidator.FieldError1("DeleteNetworks", "the length of field 'network_ids' must be less than or equal to '100'", strconv.Itoa(len(this.NetworkIds)))
 	}
+	for _, item := range this.NetworkIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "net-")) {
+			return protovalidator.FieldError1("DeleteNetworks", "the value of array item where in field 'network_ids' must start with string 'net-'", item)
+		}
+	}
 	return nil
 }
 
@@ -168,6 +174,9 @@ func (this *UpdateNetwork) _xxx_xxx_Validator_Validate_network_id() error {
 	if !(len(this.NetworkId) == 20) {
 		return protovalidator.FieldError1("UpdateNetwork", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
 	}
+	if !(strings.HasPrefix(this.NetworkId, "net-")) {
+		return protovalidator.FieldError1("UpdateNetwork", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
+	}
 	return nil
 }
 
@@ -221,6 +230,9 @@ func (this *UpdateNetwork) Validate() error {
 func (this *DescribeNetwork) _xxx_xxx_Validator_Validate_network_id() error {
 	if !(len(this.NetworkId) == 20) {
 		return protovalidator.FieldError1("DescribeNetwork", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
+	}
+	if !(strings.HasPrefix(this.NetworkId, "net-")) {
+		return protovalidator.FieldError1("DescribeNetwork", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
 	}
 	return nil
 }

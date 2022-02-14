@@ -7722,7 +7722,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 5;</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -7733,7 +7733,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 5;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -7793,7 +7793,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 8;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -8075,7 +8075,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 5;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -8098,7 +8098,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * <code>string name = 5;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -8224,7 +8224,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 8;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -9006,7 +9006,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 5;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -9028,7 +9028,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 5;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -9051,7 +9051,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 5;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -9072,7 +9072,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -9088,7 +9088,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 5;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -9323,7 +9323,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 8;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -9336,7 +9336,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 8;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -9352,7 +9352,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -10515,18 +10515,18 @@ public final class PBRequestResourceMeta {
       "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_id\030\002" +
       " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\tB\r\342\337\037\t\022\007" +
       "\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022\"\n\004type\030\005 \001(" +
-      "\0162\024.model.Resource.Type\"\303\002\n\rListFileMeta" +
+      "\0162\024.model.Resource.Type\"\267\002\n\rListFileMeta" +
       "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
       "\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d" +
       "\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022/\n\004type\030\004 " +
-      "\001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002X\001\022\022" +
-      "\n\004name\030\005 \001(\tB\004\342\337\037\000\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t" +
-      "\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J" +
-      "\002idJ\007createdJ\007updatedJ\004nameJ\004size\022\025\n\007rev" +
-      "erse\030\010 \001(\010B\004\342\337\037\000\022\013\n\003pid\030\t \001(\t\"]\n\017DeleteF" +
-      "ileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022#\n\014resource_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\004" +
-      "0\0008dBt\n$com.dataomnis.gproto.types.pbreq" +
+      "\001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002X\001\022\014" +
+      "\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230" +
+      "\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J\002idJ\007c" +
+      "reatedJ\007updatedJ\004nameJ\004size\022\017\n\007reverse\030\010" +
+      " \001(\010\022\013\n\003pid\030\t \001(\t\"i\n\017DeleteFileMetas\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014r" +
+      "esource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004" +
+      "res-Bt\n$com.dataomnis.gproto.types.pbreq" +
       "uestB\025PBRequestResourceMetaP\000Z3github.co" +
       "m/DataWorkbench/gproto/xgo/types/pbreque" +
       "stb\006proto3"

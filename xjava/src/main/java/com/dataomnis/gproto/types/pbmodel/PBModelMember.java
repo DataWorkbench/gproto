@@ -125,6 +125,7 @@ public final class PBModelMember {
   /**
    * <pre>
    * The Role info.
+   * TODO: unused on present.
    * </pre>
    *
    * Protobuf type {@code model.Role}
@@ -867,6 +868,7 @@ public final class PBModelMember {
     /**
      * <pre>
      * The Role info.
+     * TODO: unused on present.
      * </pre>
      *
      * Protobuf type {@code model.Role}
@@ -1660,6 +1662,7 @@ public final class PBModelMember {
   /**
    * <pre>
    * The workspace member info.
+   * TODO: unused on present.
    * </pre>
    *
    * Protobuf type {@code model.Member}
@@ -2308,6 +2311,7 @@ public final class PBModelMember {
     /**
      * <pre>
      * The workspace member info.
+     * TODO: unused on present.
      * </pre>
      *
      * Protobuf type {@code model.Member}

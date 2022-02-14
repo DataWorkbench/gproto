@@ -121,6 +121,12 @@ func (this *DeleteFlinkClusters) _xxx_xxx_Validator_Validate_cluster_ids() error
 	if !(len(this.ClusterIds) <= 100) {
 		return protovalidator.FieldError1("DeleteFlinkClusters", "the length of field 'cluster_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ClusterIds)))
 	}
+	for _, item := range this.ClusterIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "cfi-")) {
+			return protovalidator.FieldError1("DeleteFlinkClusters", "the value of array item where in field 'cluster_ids' must start with string 'cfi-'", item)
+		}
+	}
 	return nil
 }
 
@@ -142,6 +148,12 @@ func (this *StartFlinkClusters) _xxx_xxx_Validator_Validate_cluster_ids() error 
 	if !(len(this.ClusterIds) <= 100) {
 		return protovalidator.FieldError1("StartFlinkClusters", "the length of field 'cluster_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ClusterIds)))
 	}
+	for _, item := range this.ClusterIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "cfi-")) {
+			return protovalidator.FieldError1("StartFlinkClusters", "the value of array item where in field 'cluster_ids' must start with string 'cfi-'", item)
+		}
+	}
 	return nil
 }
 
@@ -162,6 +174,12 @@ func (this *StopFlinkClusters) _xxx_xxx_Validator_Validate_cluster_ids() error {
 	}
 	if !(len(this.ClusterIds) <= 100) {
 		return protovalidator.FieldError1("StopFlinkClusters", "the length of field 'cluster_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ClusterIds)))
+	}
+	for _, item := range this.ClusterIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "cfi-")) {
+			return protovalidator.FieldError1("StopFlinkClusters", "the value of array item where in field 'cluster_ids' must start with string 'cfi-'", item)
+		}
 	}
 	return nil
 }
@@ -243,6 +261,16 @@ func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_task_cu() error {
 	return nil
 }
 
+func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_network_id() error {
+	if !(len(this.NetworkId) == 20) {
+		return protovalidator.FieldError1("CreateFlinkCluster", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
+	}
+	if !(strings.HasPrefix(this.NetworkId, "net-")) {
+		return protovalidator.FieldError1("CreateFlinkCluster", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
+	}
+	return nil
+}
+
 func (this *CreateFlinkCluster) _xxx_xxx_Validator_Validate_host_aliases() error {
 	if dt, ok := interface{}(this.HostAliases).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -287,6 +315,9 @@ func (this *CreateFlinkCluster) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_task_cu(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_host_aliases(); err != nil {
 		return err
 	}
@@ -309,6 +340,9 @@ func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_space_id() error {
 func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_cluster_id() error {
 	if !(len(this.ClusterId) == 20) {
 		return protovalidator.FieldError1("UpdateFlinkCluster", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("UpdateFlinkCluster", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
 	}
 	return nil
 }
@@ -349,6 +383,16 @@ func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_task_cu() error {
 	}
 	if !(this.TaskCu <= 8.000000) {
 		return protovalidator.FieldError1("UpdateFlinkCluster", "the value of field 'task_cu' must be less than or equal to '8'", protovalidator.Float32ToString(this.TaskCu))
+	}
+	return nil
+}
+
+func (this *UpdateFlinkCluster) _xxx_xxx_Validator_Validate_network_id() error {
+	if !(len(this.NetworkId) == 20) {
+		return protovalidator.FieldError1("UpdateFlinkCluster", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
+	}
+	if !(strings.HasPrefix(this.NetworkId, "net-")) {
+		return protovalidator.FieldError1("UpdateFlinkCluster", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
 	}
 	return nil
 }
@@ -394,6 +438,9 @@ func (this *UpdateFlinkCluster) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_task_cu(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_network_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_host_aliases(); err != nil {
 		return err
 	}
@@ -406,6 +453,9 @@ func (this *UpdateFlinkCluster) Validate() error {
 func (this *DescribeFlinkCluster) _xxx_xxx_Validator_Validate_cluster_id() error {
 	if !(len(this.ClusterId) == 20) {
 		return protovalidator.FieldError1("DescribeFlinkCluster", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("DescribeFlinkCluster", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
 	}
 	return nil
 }

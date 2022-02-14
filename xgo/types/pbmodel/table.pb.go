@@ -127,6 +127,7 @@ func (FlinkTable_Status) EnumDescriptor() ([]byte, []int) {
 }
 
 // Table Info
+// TODO: unused on present.
 type FlinkTable struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -242,6 +242,7 @@ public final class PBModelMonitor {
   /**
    * <pre>
    * The monitor rule info
+   * TODO: unused on present.
    * </pre>
    *
    * Protobuf type {@code model.MonitorRule}
@@ -1224,6 +1225,7 @@ public final class PBModelMonitor {
     /**
      * <pre>
      * The monitor rule info
+     * TODO: unused on present.
      * </pre>
      *
      * Protobuf type {@code model.MonitorRule}

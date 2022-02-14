@@ -49,6 +49,16 @@ func (this *StreamJob) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("StreamJob", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "stj-")) {
+		return protovalidator.FieldError1("StreamJob", "the value of field 'id' must start with string 'stj-'", this.Id)
+	}
+	return nil
+}
+
+func (this *StreamJob) _xxx_xxx_Validator_Validate_version() error {
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("StreamJob", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
+	}
 	return nil
 }
 
@@ -138,6 +148,9 @@ func (this *StreamJob) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
@@ -176,12 +189,15 @@ func (this *StreamJobProperty) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("StreamJobProperty", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "stj-")) {
+		return protovalidator.FieldError1("StreamJobProperty", "the value of field 'id' must start with string 'stj-'", this.Id)
+	}
 	return nil
 }
 
 func (this *StreamJobProperty) _xxx_xxx_Validator_Validate_version() error {
-	if !(this.Version != "") {
-		return protovalidator.FieldError1("StreamJobProperty", "the value of field 'version' must be not equal to ''", this.Version)
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("StreamJobProperty", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
 	}
 	return nil
 }
@@ -616,12 +632,15 @@ func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("StreamJobRelease", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "stj-")) {
+		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'id' must start with string 'stj-'", this.Id)
+	}
 	return nil
 }
 
 func (this *StreamJobRelease) _xxx_xxx_Validator_Validate_version() error {
-	if !(this.Version != "") {
-		return protovalidator.FieldError1("StreamJobRelease", "the value of field 'version' must be not equal to ''", this.Version)
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("StreamJobRelease", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
 	}
 	return nil
 }

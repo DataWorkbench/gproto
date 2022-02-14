@@ -2795,25 +2795,25 @@ public final class PBModelStreamInstance {
     java.lang.String[] descriptorData = {
       "\n\'proto/types/model/stream_instance.prot" +
       "o\022\005model\0323github.com/yu31/protoc-plugin/" +
-      "proto/validator.proto\"\316\004\n\016StreamInstance" +
+      "proto/validator.proto\"\326\004\n\016StreamInstance" +
       "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      "\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\034\n\007version" +
-      "\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\037\n\002id\030\004 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004sti-\0229\n\005state\030\005 \001(\0162\033.model.Stre" +
-      "amInstance.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\022;\n\006statu" +
-      "s\030\006 \001(\0162\034.model.StreamInstance.StatusB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\017\n\007note_id" +
-      "\030\n \001(\t\022\024\n\014paragraph_id\030\013 \001(\t\022\020\n\010flink_id" +
-      "\030\014 \001(\t\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007" +
-      "updated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"" +
-      "\204\001\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Pending\020\001\022\013" +
-      "\n\007Running\020\002\022\014\n\010Retrying\020\003\022\r\n\tSuspended\020\004" +
-      "\022\016\n\nTerminated\020\005\022\013\n\007Succeed\020\006\022\013\n\007Timeout" +
-      "\020\007\022\n\n\006Failed\020\010Bp\n\"com.dataomnis.gproto.t" +
-      "ypes.pbmodelB\025PBModelStreamInstanceP\000Z1g" +
-      "ithub.com/DataWorkbench/gproto/xgo/types" +
-      "/pbmodelb\006proto3"
+      "#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007" +
+      "version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\037\n\002id\030\004 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-\0229\n\005state\030\005 \001(\0162\033.mo" +
+      "del.StreamInstance.StateB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      ";\n\006status\030\006 \001(\0162\034.model.StreamInstance.S" +
+      "tatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\007 \001(\t\022\017\n" +
+      "\007note_id\030\n \001(\t\022\024\n\014paragraph_id\030\013 \001(\t\022\020\n\010" +
+      "flink_id\030\014 \001(\t\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006St" +
+      "atus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007En" +
+      "abled\020\002\"\204\001\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007Pen" +
+      "ding\020\001\022\013\n\007Running\020\002\022\014\n\010Retrying\020\003\022\r\n\tSus" +
+      "pended\020\004\022\016\n\nTerminated\020\005\022\013\n\007Succeed\020\006\022\013\n" +
+      "\007Timeout\020\007\022\n\n\006Failed\020\010Bp\n\"com.dataomnis." +
+      "gproto.types.pbmodelB\025PBModelStreamInsta" +
+      "nceP\000Z1github.com/DataWorkbench/gproto/x" +
+      "go/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

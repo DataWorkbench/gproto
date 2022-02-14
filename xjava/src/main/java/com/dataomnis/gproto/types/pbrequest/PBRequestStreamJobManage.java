@@ -95,7 +95,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -106,7 +106,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     java.lang.String getSearch();
@@ -116,7 +116,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     com.google.protobuf.ByteString
@@ -409,7 +409,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -425,7 +425,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     @java.lang.Override
@@ -447,7 +447,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     @java.lang.Override
@@ -1236,7 +1236,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -1249,7 +1249,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -1265,7 +1265,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -1282,7 +1282,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The search.
        */
       public java.lang.String getSearch() {
@@ -1303,7 +1303,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The bytes for search.
        */
       public com.google.protobuf.ByteString
@@ -1325,7 +1325,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The search to set.
        * @return This builder for chaining.
        */
@@ -1345,7 +1345,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSearch() {
@@ -1360,7 +1360,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The bytes for search to set.
        * @return This builder for chaining.
        */
@@ -13336,7 +13336,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 4;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -13347,7 +13347,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     java.lang.String getSearch();
@@ -13357,7 +13357,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     com.google.protobuf.ByteString
@@ -13392,7 +13392,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 8;</code>
      * @return The jobId.
      */
     java.lang.String getJobId();
@@ -13402,7 +13402,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 8;</code>
      * @return The bytes for jobId.
      */
     com.google.protobuf.ByteString
@@ -13682,7 +13682,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 4;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -13698,7 +13698,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The search.
      */
     @java.lang.Override
@@ -13720,7 +13720,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 6 [(.validator.field) = { ... }</code>
+     * <code>string search = 6;</code>
      * @return The bytes for search.
      */
     @java.lang.Override
@@ -13777,7 +13777,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 8;</code>
      * @return The jobId.
      */
     @java.lang.Override
@@ -13799,7 +13799,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 8;</code>
      * @return The bytes for jobId.
      */
     @java.lang.Override
@@ -14561,7 +14561,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 4;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -14574,7 +14574,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 4;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -14590,7 +14590,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -14607,7 +14607,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The search.
        */
       public java.lang.String getSearch() {
@@ -14628,7 +14628,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return The bytes for search.
        */
       public com.google.protobuf.ByteString
@@ -14650,7 +14650,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The search to set.
        * @return This builder for chaining.
        */
@@ -14670,7 +14670,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSearch() {
@@ -14685,7 +14685,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 6 [(.validator.field) = { ... }</code>
+       * <code>string search = 6;</code>
        * @param value The bytes for search to set.
        * @return This builder for chaining.
        */
@@ -14792,7 +14792,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 8;</code>
        * @return The jobId.
        */
       public java.lang.String getJobId() {
@@ -14813,7 +14813,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 8;</code>
        * @return The bytes for jobId.
        */
       public com.google.protobuf.ByteString
@@ -14835,7 +14835,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 8;</code>
        * @param value The jobId to set.
        * @return This builder for chaining.
        */
@@ -14855,7 +14855,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearJobId() {
@@ -14870,7 +14870,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 8;</code>
        * @param value The bytes for jobId to set.
        * @return This builder for chaining.
        */
@@ -15013,7 +15013,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"stop_running"
      * </pre>
      *
-     * <code>bool stop_running = 4 [(.validator.field) = { ... }</code>
+     * <code>bool stop_running = 4;</code>
      * @return The stopRunning.
      */
     boolean getStopRunning();
@@ -15276,7 +15276,7 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"stop_running"
      * </pre>
      *
-     * <code>bool stop_running = 4 [(.validator.field) = { ... }</code>
+     * <code>bool stop_running = 4;</code>
      * @return The stopRunning.
      */
     @java.lang.Override
@@ -15951,7 +15951,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"stop_running"
        * </pre>
        *
-       * <code>bool stop_running = 4 [(.validator.field) = { ... }</code>
+       * <code>bool stop_running = 4;</code>
        * @return The stopRunning.
        */
       @java.lang.Override
@@ -15963,7 +15963,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"stop_running"
        * </pre>
        *
-       * <code>bool stop_running = 4 [(.validator.field) = { ... }</code>
+       * <code>bool stop_running = 4;</code>
        * @param value The stopRunning to set.
        * @return This builder for chaining.
        */
@@ -15978,7 +15978,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"stop_running"
        * </pre>
        *
-       * <code>bool stop_running = 4 [(.validator.field) = { ... }</code>
+       * <code>bool stop_running = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearStopRunning() {
@@ -18585,6 +18585,28 @@ public final class PBRequestStreamJobManage {
 
     /**
      * <pre>
+     * The stream job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     * <pre>
+     * The stream job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString
+        getJobIdBytes();
+
+    /**
+     * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
      * &#64;inject_tag: json:"limit" form:"limit"
@@ -18640,32 +18662,10 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 4;</code>
      * @return The reverse.
      */
     boolean getReverse();
-
-    /**
-     * <pre>
-     * The stream job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The jobId.
-     */
-    java.lang.String getJobId();
-    /**
-     * <pre>
-     * The stream job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for jobId.
-     */
-    com.google.protobuf.ByteString
-        getJobIdBytes();
   }
   /**
    * <pre>
@@ -18684,8 +18684,8 @@ public final class PBRequestStreamJobManage {
       super(builder);
     }
     private ListStreamJobVersions() {
-      sortBy_ = "";
       jobId_ = "";
+      sortBy_ = "";
     }
 
     @java.lang.Override
@@ -18775,6 +18775,54 @@ public final class PBRequestStreamJobManage {
       return com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.internal_static_request_ListStreamJobVersions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions.Builder.class);
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object jobId_;
+    /**
+     * <pre>
+     * The stream job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The stream job id in HTTP Request-URI
+     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -18872,60 +18920,12 @@ public final class PBRequestStreamJobManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 4;</code>
      * @return The reverse.
      */
     @java.lang.Override
     public boolean getReverse() {
       return reverse_;
-    }
-
-    public static final int JOB_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object jobId_;
-    /**
-     * <pre>
-     * The stream job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The jobId.
-     */
-    @java.lang.Override
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The stream job id in HTTP Request-URI
-     * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for jobId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getJobIdBytes() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        jobId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -18999,6 +18999,8 @@ public final class PBRequestStreamJobManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions other = (com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions) obj;
 
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
       if (getLimit()
           != other.getLimit()) return false;
       if (getOffset()
@@ -19007,8 +19009,6 @@ public final class PBRequestStreamJobManage {
           .equals(other.getSortBy())) return false;
       if (getReverse()
           != other.getReverse()) return false;
-      if (!getJobId()
-          .equals(other.getJobId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -19020,6 +19020,8 @@ public final class PBRequestStreamJobManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
@@ -19029,8 +19031,6 @@ public final class PBRequestStreamJobManage {
       hash = (37 * hash) + REVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReverse());
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -19168,6 +19168,8 @@ public final class PBRequestStreamJobManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        jobId_ = "";
+
         limit_ = 0;
 
         offset_ = 0;
@@ -19175,8 +19177,6 @@ public final class PBRequestStreamJobManage {
         sortBy_ = "";
 
         reverse_ = false;
-
-        jobId_ = "";
 
         return this;
       }
@@ -19204,11 +19204,11 @@ public final class PBRequestStreamJobManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions result = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions(this);
+        result.jobId_ = jobId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
-        result.jobId_ = jobId_;
         onBuilt();
         return result;
       }
@@ -19257,6 +19257,10 @@ public final class PBRequestStreamJobManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.ListStreamJobVersions.getDefaultInstance()) return this;
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
+        }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
         }
@@ -19269,10 +19273,6 @@ public final class PBRequestStreamJobManage {
         }
         if (other.getReverse() != false) {
           setReverse(other.getReverse());
-        }
-        if (!other.getJobId().isEmpty()) {
-          jobId_ = other.jobId_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -19300,6 +19300,107 @@ public final class PBRequestStreamJobManage {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       * <pre>
+       * The stream job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The stream job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The stream job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The stream job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The stream job id in HTTP Request-URI
+       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jobId_ = value;
+        onChanged();
         return this;
       }
 
@@ -19521,7 +19622,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 4;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -19534,7 +19635,7 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 4;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -19550,113 +19651,12 @@ public final class PBRequestStreamJobManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
         
         reverse_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object jobId_ = "";
-      /**
-       * <pre>
-       * The stream job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @return The jobId.
-       */
-      public java.lang.String getJobId() {
-        java.lang.Object ref = jobId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          jobId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The stream job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for jobId.
-       */
-      public com.google.protobuf.ByteString
-          getJobIdBytes() {
-        java.lang.Object ref = jobId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          jobId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The stream job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @param value The jobId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJobId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        jobId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The stream job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJobId() {
-        
-        jobId_ = getDefaultInstance().getJobId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The stream job id in HTTP Request-URI
-       * &#64;inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string job_id = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for jobId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJobIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        jobId_ = value;
         onChanged();
         return this;
       }
@@ -20442,79 +20442,81 @@ public final class PBRequestStreamJobManage {
       "proto\022\007request\0323github.com/yu31/protoc-p" +
       "lugin/proto/validator.proto\0322github.com/" +
       "yu31/protoc-plugin/proto/defaults.proto\032" +
-      "\"proto/types/model/stream_job.proto\"\360\001\n\016" +
+      "\"proto/types/model/stream_job.proto\"\344\001\n\016" +
       "ListStreamJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
       "\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100" +
       "\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002" +
       "@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004na" +
-      "meJ\007createdJ\007updated\022\025\n\007reverse\030\005 \001(\010B\004\342" +
-      "\337\037\000\022\024\n\006search\030\006 \001(\tB\004\342\337\037\000\022\013\n\003pid\030\007 \001(\t\"\354" +
-      "\002\n\017CreateStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncreated_by\030\002 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\210\002A\0222\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302" +
-      "\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\024\n\014is_directory\030" +
-      "\004 \001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n" +
-      "\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\374\007\022M\n\004type\030\007 \001(\016" +
-      "2\025.model.StreamJob.TypeB(\342\337\037\027\n\025\n\014is_dire" +
-      "ctory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\0040\000X\001\022\030\n\ncluster_id\030" +
-      "\010 \001(\tB\004\342\337\037\000\022 \n\013space_owner\030\t \001(\tB\013\342\337\037\007\022\005" +
-      "\302\001\002\"\000\"Y\n\020DeleteStreamJobs\022%\n\010space_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\007job_ids\030\002 \003(" +
-      "\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"\221\001\n\016MoveStreamJobs\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\007jo" +
-      "b_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0228\n\006target\030\003 \001" +
-      "(\tB(\342\337\037\021\n\017\n\006target\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "stj-\"\223\001\n\017UpdateStreamJob\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB" +
-      "\014\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001" +
-      "\002\310\001\200\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"H\n\021De" +
-      "scribeStreamJob\022\034\n\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\360\001\024\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\210\001\n\020SetStre" +
-      "amJobCode\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022/" +
-      "\n\004code\030\003 \001(\0132\024.model.StreamJobCodeB\013\342\337\037\007" +
-      "\022\005\342\001\002\020\001\"\220\001\n\024SetStreamJobSchedule\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_i" +
-      "d\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\0223\n\004info\030\003 \001(\0132\030.mo" +
-      "del.StreamJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\210\001\n\020S" +
+      "meJ\007createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016\n" +
+      "\006search\030\006 \001(\t\022\013\n\003pid\030\007 \001(\t\"\354\002\n\017CreateStr" +
+      "eamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022" +
+      "2\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004stj-\022\024\n\014is_directory\030\004 \001(\010\022\036\n\004nam" +
+      "e\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\006 \001(\tB" +
+      "\r\342\337\037\t\022\007\302\001\004\310\001\374\007\022M\n\004type\030\007 \001(\0162\025.model.Str" +
+      "eamJob.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022\030\n\ncluster_id\030\010 \001(\tB\004\342\337\037\000\022" +
+      " \n\013space_owner\030\t \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"e\n\020Del" +
+      "eteStreamJobs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022*\n\007job_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\020" +
+      "0\0008dZ\n\302\001\007\312\002\004stj-\"\235\001\n\016MoveStreamJobs\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007jo" +
+      "b_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004stj-\0228" +
+      "\n\006target\030\003 \001(\tB(\342\337\037\021\n\017\n\006target\022\005\302\001\002\"\000\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\232\001\n\017UpdateStreamJob\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006j" +
+      "ob_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\036\n\004name" +
+      "\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\004 \001(\tB\r" +
+      "\342\337\037\t\022\007\302\001\004\310\001\200\010\"O\n\021DescribeStreamJob\022#\n\006jo" +
+      "b_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n\007versi" +
+      "on\030\002 \001(\tB\004\342\337\037\000\"\217\001\n\020SetStreamJobCode\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006jo" +
+      "b_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022/\n\004code\030" +
+      "\003 \001(\0132\024.model.StreamJobCodeB\013\342\337\037\007\022\005\342\001\002\020\001" +
+      "\"\227\001\n\024SetStreamJobSchedule\022%\n\010space_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\0223\n\004info\030\003 \001(\0132\030.mo" +
+      "del.StreamJobScheduleB\013\342\337\037\007\022\005\342\001\002\020\001\"\217\001\n\020S" +
       "etStreamJobArgs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\360\001\024\022/\n\004info\030\003 \001(\0132\024.model.StreamJobArgs" +
-      "B\013\342\337\037\007\022\005\342\001\002\020\001\"G\n\020GetStreamJobCode\022\034\n\006job" +
-      "_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007version\030\002 \001(\t" +
-      "B\004\342\337\037\000\"K\n\024GetStreamJobSchedule\022\034\n\006job_id" +
-      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007version\030\002 \001(\tB\004\342" +
-      "\337\037\000\"G\n\020GetStreamJobArgs\022\034\n\006job_id\030\001 \001(\tB" +
-      "\014\342\337\037\010\022\006\302\001\003\360\001\024\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\275\002\n" +
-      "\025ListReleaseStreamJobs\022&\n\005limit\030\001 \001(\005B\027\242" +
-      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013" +
-      "\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000" +
-      "J\002idJ\004nameJ\007createdJ\007updated\022\025\n\007reverse\030" +
-      "\004 \001(\010B\004\342\337\037\000\022\024\n\006search\030\006 \001(\tB\004\342\337\037\000\022;\n\006sta" +
-      "tus\030\007 \001(\0162\036.model.StreamJobRelease.Statu" +
-      "sB\013\342\337\037\007\022\005\332\001\002X\001\022\024\n\006job_id\030\010 \001(\tB\004\342\337\037\000\"|\n\020" +
-      "ReleaseStreamJob\022\034\n\006job_id\030\001 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\360\001\024\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A" +
-      "\022\014\n\004desc\030\003 \001(\t\022\032\n\014stop_running\030\004 \001(\010B\004\342\337" +
-      "\037\000\"^\n\027OfflineReleaseStreamJob\022%\n\010space_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\034\n\006job_id\030\002" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"z\n\027SuspendReleaseStre" +
-      "amJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\032\n\014st" +
-      "op_running\030\003 \001(\010B\004\342\337\037\000\"]\n\026ResumeReleaseS" +
-      "treamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022\034\n\006job_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\312\001" +
-      "\n\025ListStreamJobVersions\022&\n\005limit\030\001 \001(\005B\027" +
-      "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B" +
-      "\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035" +
-      "J\000J\007versionJ\007createdJ\007updated\022\025\n\007reverse" +
-      "\030\004 \001(\010B\004\342\337\037\000\022\034\n\006job_id\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
-      "\001\024\"@\n\033DescribeFlinkUIByInstanceId\022!\n\013ins" +
-      "tance_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bw\n$com.data" +
-      "omnis.gproto.types.pbrequestB\030PBRequestS" +
-      "treamJobManageP\000Z3github.com/DataWorkben" +
-      "ch/gproto/xgo/types/pbrequestb\006proto3"
+      "\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004stj-\022/\n\004info\030\003 \001(\0132\024.model.Stream" +
+      "JobArgsB\013\342\337\037\007\022\005\342\001\002\020\001\"N\n\020GetStreamJobCode" +
+      "\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\025\n" +
+      "\007version\030\002 \001(\tB\004\342\337\037\000\"R\n\024GetStreamJobSche" +
+      "dule\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj" +
+      "-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"N\n\020GetStreamJob" +
+      "Args\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj" +
+      "-\022\025\n\007version\030\002 \001(\tB\004\342\337\037\000\"\253\002\n\025ListRelease" +
+      "StreamJobs\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037" +
+      "\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022" +
+      "%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\0228" +
+      "\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007" +
+      "createdJ\007updated\022\017\n\007reverse\030\004 \001(\010\022\016\n\006sea" +
+      "rch\030\006 \001(\t\022;\n\006status\030\007 \001(\0162\036.model.Stream" +
+      "JobRelease.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n\006job_id" +
+      "\030\010 \001(\t\"}\n\020ReleaseStreamJob\022#\n\006job_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022 \n\ncreated_by\030\002 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\014\n\004desc\030\003 \001(\t\022\024\n\014stop_" +
+      "running\030\004 \001(\010\"e\n\027OfflineReleaseStreamJob" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\201\001\n" +
+      "\027SuspendReleaseStreamJob\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\032\n\014stop_running\030\003 \001" +
+      "(\010B\004\342\337\037\000\"d\n\026ResumeReleaseStreamJob\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job" +
+      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\313\001\n\025ListS" +
+      "treamJobVersions\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004stj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100" +
+      "\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002" +
+      "@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versio" +
+      "nJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(\010\"G\n\033" +
+      "DescribeFlinkUIByInstanceId\022(\n\013instance_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-Bw\n$com.dat" +
+      "aomnis.gproto.types.pbrequestB\030PBRequest" +
+      "StreamJobManageP\000Z3github.com/DataWorkbe" +
+      "nch/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20630,7 +20632,7 @@ public final class PBRequestStreamJobManage {
     internal_static_request_ListStreamJobVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListStreamJobVersions_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SortBy", "Reverse", "JobId", });
+        new java.lang.String[] { "JobId", "Limit", "Offset", "SortBy", "Reverse", });
     internal_static_request_DescribeFlinkUIByInstanceId_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_request_DescribeFlinkUIByInstanceId_fieldAccessorTable = new

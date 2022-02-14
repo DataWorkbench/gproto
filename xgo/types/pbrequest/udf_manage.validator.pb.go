@@ -90,6 +90,12 @@ func (this *DeleteUDFs) _xxx_xxx_Validator_Validate_udf_ids() error {
 	if !(len(this.UdfIds) < 100) {
 		return protovalidator.FieldError1("DeleteUDFs", "the length of field 'udf_ids' must be less than '100'", strconv.Itoa(len(this.UdfIds)))
 	}
+	for _, item := range this.UdfIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "udf-")) {
+			return protovalidator.FieldError1("DeleteUDFs", "the value of array item where in field 'udf_ids' must start with string 'udf-'", item)
+		}
+	}
 	return nil
 }
 
@@ -172,6 +178,13 @@ func (this *CreateUDF) _xxx_xxx_Validator_Validate_language() error {
 	return nil
 }
 
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(this.CreatedBy != "") {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'created_by' must be not equal to ''", this.CreatedBy)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateUDF
 func (this *CreateUDF) Validate() error {
 	if this == nil {
@@ -198,6 +211,9 @@ func (this *CreateUDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_language(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -214,6 +230,9 @@ func (this *UpdateUDF) _xxx_xxx_Validator_Validate_space_id() error {
 func (this *UpdateUDF) _xxx_xxx_Validator_Validate_udf_id() error {
 	if !(len(this.UdfId) < 21) {
 		return protovalidator.FieldError1("UpdateUDF", "the byte length of field 'udf_id' must be less than '21'", protovalidator.StringByteLenToString(this.UdfId))
+	}
+	if !(strings.HasPrefix(this.UdfId, "udf-")) {
+		return protovalidator.FieldError1("UpdateUDF", "the value of field 'udf_id' must start with string 'udf-'", this.UdfId)
 	}
 	return nil
 }
@@ -281,6 +300,9 @@ func (this *UpdateUDF) Validate() error {
 func (this *DescribeUDF) _xxx_xxx_Validator_Validate_udf_id() error {
 	if !(len(this.UdfId) == 20) {
 		return protovalidator.FieldError1("DescribeUDF", "the byte length of field 'udf_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UdfId))
+	}
+	if !(strings.HasPrefix(this.UdfId, "udf-")) {
+		return protovalidator.FieldError1("DescribeUDF", "the value of field 'udf_id' must start with string 'udf-'", this.UdfId)
 	}
 	return nil
 }

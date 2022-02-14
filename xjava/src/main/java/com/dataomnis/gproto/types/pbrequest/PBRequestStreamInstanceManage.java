@@ -69,7 +69,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 4;</code>
      * @return The jobId.
      */
     java.lang.String getJobId();
@@ -79,7 +79,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 4;</code>
      * @return The bytes for jobId.
      */
     com.google.protobuf.ByteString
@@ -91,7 +91,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * <code>string version = 5;</code>
      * @return The version.
      */
     java.lang.String getVersion();
@@ -101,7 +101,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * <code>string version = 5;</code>
      * @return The bytes for version.
      */
     com.google.protobuf.ByteString
@@ -160,7 +160,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 8;</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -415,7 +415,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 4;</code>
      * @return The jobId.
      */
     @java.lang.Override
@@ -437,7 +437,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"job_id" form:"job_id"
      * </pre>
      *
-     * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string job_id = 4;</code>
      * @return The bytes for jobId.
      */
     @java.lang.Override
@@ -463,7 +463,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * <code>string version = 5;</code>
      * @return The version.
      */
     @java.lang.Override
@@ -485,7 +485,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"version" form:"version"
      * </pre>
      *
-     * <code>string version = 5 [(.validator.field) = { ... }</code>
+     * <code>string version = 5;</code>
      * @return The bytes for version.
      */
     @java.lang.Override
@@ -592,7 +592,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 8;</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -1294,7 +1294,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 4;</code>
        * @return The jobId.
        */
       public java.lang.String getJobId() {
@@ -1315,7 +1315,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 4;</code>
        * @return The bytes for jobId.
        */
       public com.google.protobuf.ByteString
@@ -1337,7 +1337,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 4;</code>
        * @param value The jobId to set.
        * @return This builder for chaining.
        */
@@ -1357,7 +1357,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearJobId() {
@@ -1372,7 +1372,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"job_id" form:"job_id"
        * </pre>
        *
-       * <code>string job_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string job_id = 4;</code>
        * @param value The bytes for jobId to set.
        * @return This builder for chaining.
        */
@@ -1395,7 +1395,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * <code>string version = 5;</code>
        * @return The version.
        */
       public java.lang.String getVersion() {
@@ -1416,7 +1416,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * <code>string version = 5;</code>
        * @return The bytes for version.
        */
       public com.google.protobuf.ByteString
@@ -1438,7 +1438,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * <code>string version = 5;</code>
        * @param value The version to set.
        * @return This builder for chaining.
        */
@@ -1458,7 +1458,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * <code>string version = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
@@ -1473,7 +1473,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"version" form:"version"
        * </pre>
        *
-       * <code>string version = 5 [(.validator.field) = { ... }</code>
+       * <code>string version = 5;</code>
        * @param value The bytes for version to set.
        * @return This builder for chaining.
        */
@@ -1686,7 +1686,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 8;</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -1699,7 +1699,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 8;</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -1715,7 +1715,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 8 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -1910,7 +1910,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the instanceIds.
      */
     java.util.List<java.lang.String>
@@ -1921,7 +1921,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of instanceIds.
      */
     int getInstanceIdsCount();
@@ -1931,7 +1931,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The instanceIds at the given index.
      */
@@ -1942,7 +1942,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the instanceIds at the given index.
      */
@@ -2108,7 +2108,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the instanceIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2121,7 +2121,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of instanceIds.
      */
     public int getInstanceIdsCount() {
@@ -2133,7 +2133,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The instanceIds at the given index.
      */
@@ -2146,7 +2146,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the instanceIds at the given index.
      */
@@ -2612,7 +2612,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the instanceIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -2625,7 +2625,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of instanceIds.
        */
       public int getInstanceIdsCount() {
@@ -2637,7 +2637,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The instanceIds at the given index.
        */
@@ -2650,7 +2650,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the instanceIds at the given index.
        */
@@ -2664,7 +2664,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The instanceIds to set.
        * @return This builder for chaining.
@@ -2685,7 +2685,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The instanceIds to add.
        * @return This builder for chaining.
        */
@@ -2705,7 +2705,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The instanceIds to add.
        * @return This builder for chaining.
        */
@@ -2723,7 +2723,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearInstanceIds() {
@@ -2738,7 +2738,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the instanceIds to add.
        * @return This builder for chaining.
        */
@@ -2838,7 +2838,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the instanceIds.
      */
     java.util.List<java.lang.String>
@@ -2849,7 +2849,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of instanceIds.
      */
     int getInstanceIdsCount();
@@ -2859,7 +2859,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The instanceIds at the given index.
      */
@@ -2870,7 +2870,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the instanceIds at the given index.
      */
@@ -3036,7 +3036,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the instanceIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -3049,7 +3049,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of instanceIds.
      */
     public int getInstanceIdsCount() {
@@ -3061,7 +3061,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The instanceIds at the given index.
      */
@@ -3074,7 +3074,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the instanceIds at the given index.
      */
@@ -3540,7 +3540,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the instanceIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -3553,7 +3553,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of instanceIds.
        */
       public int getInstanceIdsCount() {
@@ -3565,7 +3565,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The instanceIds at the given index.
        */
@@ -3578,7 +3578,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the instanceIds at the given index.
        */
@@ -3592,7 +3592,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The instanceIds to set.
        * @return This builder for chaining.
@@ -3613,7 +3613,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The instanceIds to add.
        * @return This builder for chaining.
        */
@@ -3633,7 +3633,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The instanceIds to add.
        * @return This builder for chaining.
        */
@@ -3651,7 +3651,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearInstanceIds() {
@@ -3666,7 +3666,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the instanceIds to add.
        * @return This builder for chaining.
        */
@@ -3766,7 +3766,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the instanceIds.
      */
     java.util.List<java.lang.String>
@@ -3777,7 +3777,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of instanceIds.
      */
     int getInstanceIdsCount();
@@ -3787,7 +3787,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The instanceIds at the given index.
      */
@@ -3798,7 +3798,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the instanceIds at the given index.
      */
@@ -3964,7 +3964,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the instanceIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -3977,7 +3977,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of instanceIds.
      */
     public int getInstanceIdsCount() {
@@ -3989,7 +3989,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The instanceIds at the given index.
      */
@@ -4002,7 +4002,7 @@ public final class PBRequestStreamInstanceManage {
      * &#64;inject_tag: json:"instance_ids"
      * </pre>
      *
-     * <code>repeated string instance_ids = 2;</code>
+     * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the instanceIds at the given index.
      */
@@ -4468,7 +4468,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the instanceIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -4481,7 +4481,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of instanceIds.
        */
       public int getInstanceIdsCount() {
@@ -4493,7 +4493,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The instanceIds at the given index.
        */
@@ -4506,7 +4506,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the instanceIds at the given index.
        */
@@ -4520,7 +4520,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The instanceIds to set.
        * @return This builder for chaining.
@@ -4541,7 +4541,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The instanceIds to add.
        * @return This builder for chaining.
        */
@@ -4561,7 +4561,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The instanceIds to add.
        * @return This builder for chaining.
        */
@@ -4579,7 +4579,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearInstanceIds() {
@@ -4594,7 +4594,7 @@ public final class PBRequestStreamInstanceManage {
        * &#64;inject_tag: json:"instance_ids"
        * </pre>
        *
-       * <code>repeated string instance_ids = 2;</code>
+       * <code>repeated string instance_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the instanceIds to add.
        * @return This builder for chaining.
        */
@@ -5269,27 +5269,28 @@ public final class PBRequestStreamInstanceManage {
       "toc-plugin/proto/validator.proto\0322github" +
       ".com/yu31/protoc-plugin/proto/defaults.p" +
       "roto\032\'proto/types/model/stream_instance." +
-      "proto\"\317\002\n\023ListStreamInstances\022&\n\005limit\030\001" +
+      "proto\"\275\002\n\023ListStreamInstances\022&\n\005limit\030\001" +
       " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
       "\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\003 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\006job_id\030\004 \001(\tB\004\342\337\037\000\022" +
-      "\025\n\007version\030\005 \001(\tB\004\342\337\037\000\0227\n\005state\030\006 \001(\0162\033." +
-      "model.StreamInstance.StateB\013\342\337\037\007\022\005\332\001\002X\001\022" +
-      ":\n\007sort_by\030\007 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\006job_i" +
-      "dJ\007createdJ\007updated\022\025\n\007reverse\030\010 \001(\010B\004\342\337" +
-      "\037\000\022\023\n\013instance_id\030\t \001(\t\"W\n\030TerminateStre" +
-      "amInstances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022\024\n\014instance_ids\030\002 \003(\t\"U\n\026Susp" +
-      "endStreamInstances\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014instance_ids\030\002 \003(\t\"" +
-      "T\n\025ResumeStreamInstances\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014instance_ids\030" +
-      "\002 \003(\t\"B\n\026DescribeStreamInstance\022(\n\013insta" +
-      "nce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-B|\n$com" +
-      ".dataomnis.gproto.types.pbrequestB\035PBReq" +
-      "uestStreamInstanceManageP\000Z3github.com/D" +
-      "ataWorkbench/gproto/xgo/types/pbrequestb" +
-      "\006proto3"
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\016\n\006job_id\030\004 \001(\t\022\017\n\007ver" +
+      "sion\030\005 \001(\t\0227\n\005state\030\006 \001(\0162\033.model.Stream" +
+      "Instance.StateB\013\342\337\037\007\022\005\332\001\002X\001\022:\n\007sort_by\030\007" +
+      " \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\006job_idJ\007createdJ\007" +
+      "updated\022\017\n\007reverse\030\010 \001(\010\022\023\n\013instance_id\030" +
+      "\t \001(\t\"r\n\030TerminateStreamInstances\022%\n\010spa" +
+      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014inst" +
+      "ance_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004sti" +
+      "-\"p\n\026SuspendStreamInstances\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014instance_i" +
+      "ds\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004sti-\"o\n\025R" +
+      "esumeStreamInstances\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014instance_ids\030\002 \003(" +
+      "\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004sti-\"B\n\026Describe" +
+      "StreamInstance\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004sti-B|\n$com.dataomnis.gproto" +
+      ".types.pbrequestB\035PBRequestStreamInstanc" +
+      "eManageP\000Z3github.com/DataWorkbench/gpro" +
+      "to/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -25,12 +25,15 @@ func (this *StreamInstance) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("StreamInstance", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("StreamInstance", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
 func (this *StreamInstance) _xxx_xxx_Validator_Validate_version() error {
-	if !(this.Version != "") {
-		return protovalidator.FieldError1("StreamInstance", "the value of field 'version' must be not equal to ''", this.Version)
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("StreamInstance", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
 	}
 	return nil
 }

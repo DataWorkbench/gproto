@@ -200,6 +200,12 @@ func (this *DeleteStreamJobs) _xxx_xxx_Validator_Validate_job_ids() error {
 	if !(len(this.JobIds) <= 100) {
 		return protovalidator.FieldError1("DeleteStreamJobs", "the length of field 'job_ids' must be less than or equal to '100'", strconv.Itoa(len(this.JobIds)))
 	}
+	for _, item := range this.JobIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "stj-")) {
+			return protovalidator.FieldError1("DeleteStreamJobs", "the value of array item where in field 'job_ids' must start with string 'stj-'", item)
+		}
+	}
 	return nil
 }
 
@@ -233,6 +239,12 @@ func (this *MoveStreamJobs) _xxx_xxx_Validator_Validate_job_ids() error {
 	}
 	if !(len(this.JobIds) <= 100) {
 		return protovalidator.FieldError1("MoveStreamJobs", "the length of field 'job_ids' must be less than or equal to '100'", strconv.Itoa(len(this.JobIds)))
+	}
+	for _, item := range this.JobIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "stj-")) {
+			return protovalidator.FieldError1("MoveStreamJobs", "the value of array item where in field 'job_ids' must start with string 'stj-'", item)
+		}
 	}
 	return nil
 }
@@ -288,6 +300,9 @@ func (this *UpdateStreamJob) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("UpdateStreamJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("UpdateStreamJob", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -332,6 +347,9 @@ func (this *DescribeStreamJob) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("DescribeStreamJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("DescribeStreamJob", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -359,6 +377,9 @@ func (this *SetStreamJobCode) _xxx_xxx_Validator_Validate_space_id() error {
 func (this *SetStreamJobCode) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("SetStreamJobCode", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("SetStreamJobCode", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
 	}
 	return nil
 }
@@ -406,6 +427,9 @@ func (this *SetStreamJobSchedule) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("SetStreamJobSchedule", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("SetStreamJobSchedule", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -452,6 +476,9 @@ func (this *SetStreamJobArgs) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("SetStreamJobArgs", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("SetStreamJobArgs", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -488,6 +515,9 @@ func (this *GetStreamJobCode) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("GetStreamJobCode", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("GetStreamJobCode", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -506,6 +536,9 @@ func (this *GetStreamJobSchedule) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("GetStreamJobSchedule", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("GetStreamJobSchedule", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -523,6 +556,9 @@ func (this *GetStreamJobSchedule) Validate() error {
 func (this *GetStreamJobArgs) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("GetStreamJobArgs", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("GetStreamJobArgs", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
 	}
 	return nil
 }
@@ -610,6 +646,9 @@ func (this *ReleaseStreamJob) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("ReleaseStreamJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("ReleaseStreamJob", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -648,6 +687,9 @@ func (this *OfflineReleaseStreamJob) _xxx_xxx_Validator_Validate_job_id() error 
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("OfflineReleaseStreamJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("OfflineReleaseStreamJob", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -678,6 +720,9 @@ func (this *SuspendReleaseStreamJob) _xxx_xxx_Validator_Validate_space_id() erro
 func (this *SuspendReleaseStreamJob) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("SuspendReleaseStreamJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("SuspendReleaseStreamJob", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
 	}
 	return nil
 }
@@ -710,6 +755,9 @@ func (this *ResumeReleaseStreamJob) _xxx_xxx_Validator_Validate_job_id() error {
 	if !(len(this.JobId) == 20) {
 		return protovalidator.FieldError1("ResumeReleaseStreamJob", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
 	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("ResumeReleaseStreamJob", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
+	}
 	return nil
 }
 
@@ -723,6 +771,16 @@ func (this *ResumeReleaseStreamJob) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *ListStreamJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("ListStreamJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "stj-")) {
+		return protovalidator.FieldError1("ListStreamJobVersions", "the value of field 'job_id' must start with string 'stj-'", this.JobId)
 	}
 	return nil
 }
@@ -753,17 +811,13 @@ func (this *ListStreamJobVersions) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-func (this *ListStreamJobVersions) _xxx_xxx_Validator_Validate_job_id() error {
-	if !(len(this.JobId) == 20) {
-		return protovalidator.FieldError1("ListStreamJobVersions", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
-	}
-	return nil
-}
-
 // Set default value for message request.ListStreamJobVersions
 func (this *ListStreamJobVersions) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
@@ -774,15 +828,15 @@ func (this *ListStreamJobVersions) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
-		return err
-	}
 	return nil
 }
 
 func (this *DescribeFlinkUIByInstanceId) _xxx_xxx_Validator_Validate_instance_id() error {
 	if !(len(this.InstanceId) == 20) {
 		return protovalidator.FieldError1("DescribeFlinkUIByInstanceId", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	if !(strings.HasPrefix(this.InstanceId, "sti-")) {
+		return protovalidator.FieldError1("DescribeFlinkUIByInstanceId", "the value of field 'instance_id' must start with string 'sti-'", this.InstanceId)
 	}
 	return nil
 }

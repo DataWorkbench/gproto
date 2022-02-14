@@ -78,6 +78,9 @@ func (this *FlinkCluster) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("FlinkCluster", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "cfi-")) {
+		return protovalidator.FieldError1("FlinkCluster", "the value of field 'id' must start with string 'cfi-'", this.Id)
+	}
 	return nil
 }
 

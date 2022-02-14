@@ -5609,7 +5609,7 @@ public final class PBModelDataSource {
 
     /**
      * <pre>
-     * Source ID, unique within a region.
+     * DataSource ID.
      * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
      * </pre>
      *
@@ -5619,7 +5619,7 @@ public final class PBModelDataSource {
     java.lang.String getSourceId();
     /**
      * <pre>
-     * Source ID, unique within a region.
+     * DataSource ID.
      * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
      * </pre>
      *
@@ -5699,7 +5699,7 @@ public final class PBModelDataSource {
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
-     * <code>string message = 6 [(.validator.field) = { ... }</code>
+     * <code>string message = 6;</code>
      * @return The message.
      */
     java.lang.String getMessage();
@@ -5709,7 +5709,7 @@ public final class PBModelDataSource {
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
-     * <code>string message = 6 [(.validator.field) = { ... }</code>
+     * <code>string message = 6;</code>
      * @return The bytes for message.
      */
     com.google.protobuf.ByteString
@@ -6200,7 +6200,7 @@ public final class PBModelDataSource {
     private volatile java.lang.Object sourceId_;
     /**
      * <pre>
-     * Source ID, unique within a region.
+     * DataSource ID.
      * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
      * </pre>
      *
@@ -6222,7 +6222,7 @@ public final class PBModelDataSource {
     }
     /**
      * <pre>
-     * Source ID, unique within a region.
+     * DataSource ID.
      * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
      * </pre>
      *
@@ -6358,7 +6358,7 @@ public final class PBModelDataSource {
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
-     * <code>string message = 6 [(.validator.field) = { ... }</code>
+     * <code>string message = 6;</code>
      * @return The message.
      */
     @java.lang.Override
@@ -6380,7 +6380,7 @@ public final class PBModelDataSource {
      * &#64;inject_tag: json:"message" gorm:"column:message;"
      * </pre>
      *
-     * <code>string message = 6 [(.validator.field) = { ... }</code>
+     * <code>string message = 6;</code>
      * @return The bytes for message.
      */
     @java.lang.Override
@@ -7027,7 +7027,7 @@ public final class PBModelDataSource {
       private java.lang.Object sourceId_ = "";
       /**
        * <pre>
-       * Source ID, unique within a region.
+       * DataSource ID.
        * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
        * </pre>
        *
@@ -7048,7 +7048,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Source ID, unique within a region.
+       * DataSource ID.
        * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
        * </pre>
        *
@@ -7070,7 +7070,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Source ID, unique within a region.
+       * DataSource ID.
        * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
        * </pre>
        *
@@ -7090,7 +7090,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Source ID, unique within a region.
+       * DataSource ID.
        * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
        * </pre>
        *
@@ -7105,7 +7105,7 @@ public final class PBModelDataSource {
       }
       /**
        * <pre>
-       * Source ID, unique within a region.
+       * DataSource ID.
        * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
        * </pre>
        *
@@ -7391,7 +7391,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
-       * <code>string message = 6 [(.validator.field) = { ... }</code>
+       * <code>string message = 6;</code>
        * @return The message.
        */
       public java.lang.String getMessage() {
@@ -7412,7 +7412,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
-       * <code>string message = 6 [(.validator.field) = { ... }</code>
+       * <code>string message = 6;</code>
        * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
@@ -7434,7 +7434,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
-       * <code>string message = 6 [(.validator.field) = { ... }</code>
+       * <code>string message = 6;</code>
        * @param value The message to set.
        * @return This builder for chaining.
        */
@@ -7454,7 +7454,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
-       * <code>string message = 6 [(.validator.field) = { ... }</code>
+       * <code>string message = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearMessage() {
@@ -7469,7 +7469,7 @@ public final class PBModelDataSource {
        * &#64;inject_tag: json:"message" gorm:"column:message;"
        * </pre>
        *
-       * <code>string message = 6 [(.validator.field) = { ... }</code>
+       * <code>string message = 6;</code>
        * @param value The bytes for message to set.
        * @return This builder for chaining.
        */
@@ -8439,54 +8439,55 @@ public final class PBModelDataSource {
       "/validator.proto\032/github.com/yu31/protoc" +
       "-plugin/proto/gosql.proto\032\037proto/types/m" +
       "odel/network.proto\0321proto/types/model/da" +
-      "tasource/datasource_url.proto\"\351\t\n\nDataSo" +
+      "tasource/datasource_url.proto\"\360\t\n\nDataSo" +
       "urce\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\035\n\004name\030\003 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t" +
-      "\022\007\302\001\004\310\001\200\002\0223\n\004type\030\005 \001(\0162\026.model.DataSour" +
-      "ce.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\003url\030\006 \001(\0132\025.mo" +
-      "del.DataSource.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\0227\n\006sta" +
-      "tus\030\007 \001(\0162\030.model.DataSource.StatusB\r\342\337\037" +
-      "\t\022\007\332\001\0040\001X\001\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007up" +
-      "dated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0224\n\017last_connect" +
-      "ion\030\013 \001(\0132\033.model.DataSourceConnection\032\362" +
-      "\004\n\003URL\0223\n\004type\030\n \001(\0162\026.model.DataSource." +
-      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\005mysql\030\001 \001(\0132\024.dat" +
-      "asource.MySQLURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\001\342\337\037" +
-      "\007\022\005\342\001\002\020\001\022M\n\npostgresql\030\002 \001(\0132\031.datasourc" +
-      "e.PostgreSQLURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007" +
-      "\022\005\342\001\002\020\001\022C\n\005kafka\030\003 \001(\0132\024.datasource.Kafk" +
-      "aURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037\007\022\005\342\001\002\020\001\022=\n\002" +
-      "s3\030\004 \001(\0132\021.datasource.S3URLB\036\342\337\037\017\n\r\n\004typ" +
-      "e\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022M\n\nclickhouse\030\005 \001(\0132" +
-      "\031.datasource.ClickHouseURLB\036\342\337\037\017\n\r\n\004type" +
-      "\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001\022C\n\005hbase\030\006 \001(\0132\024.data" +
-      "source.HBaseURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\006\342\337\037\007" +
-      "\022\005\342\001\002\020\001\022?\n\003ftp\030\007 \001(\0132\022.datasource.FtpURL" +
-      "B\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\007\342\337\037\007\022\005\342\001\002\020\001\022A\n\004hdfs" +
-      "\030\010 \001(\0132\023.datasource.HDFSURLB\036\342\337\037\017\n\r\n\004typ" +
-      "e\022\005\332\001\002\030\010\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"A\n\006Status\022\017\n" +
-      "\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002" +
-      "\022\014\n\010Disabled\020\003\"q\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n" +
-      "\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka\020\003\022\006\n\002S" +
-      "3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n\003Ftp\020\007\022" +
-      "\010\n\004HDFS\020\010\"\336\003\n\024DataSourceConnection\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsou" +
-      "rce_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022 \n\nnetwork_id" +
-      "\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\006status\030\004 \001(\0162\".m" +
-      "odel.DataSourceConnection.StatusB\r\342\337\037\t\022\007" +
-      "\332\001\0040\001X\001\022A\n\006result\030\005 \001(\0162\".model.DataSour" +
-      "ceConnection.ResultB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\007me" +
-      "ssage\030\006 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\034\n\007created\030\007 \001(\003B" +
-      "\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\010 \001(\003\022$\n\014network_" +
-      "info\030\t \001(\0132\016.model.Network\"3\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"" +
-      "1\n\006Result\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n" +
-      "\n\006Failed\020\002\"\036\n\016DataSourceKind\022\014\n\004Name\030\001 \001" +
-      "(\tBl\n\"com.dataomnis.gproto.types.pbmodel" +
-      "B\021PBModelDataSourceP\000Z1github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbmodelb\006proto3"
+      "ks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022\035\n\004" +
+      "name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\033\n\004desc\030\004 \001(" +
+      "\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type\030\005 \001(\0162\026.model.D" +
+      "ataSource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\003url\030\006 \001" +
+      "(\0132\025.model.DataSource.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001" +
+      "\0227\n\006status\030\007 \001(\0162\030.model.DataSource.Stat" +
+      "usB\r\342\337\037\t\022\007\332\001\0040\001X\001\022 \n\ncreated_by\030\010 \001(\tB\014\342" +
+      "\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
+      "\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0224\n\017last_" +
+      "connection\030\013 \001(\0132\033.model.DataSourceConne" +
+      "ction\032\362\004\n\003URL\0223\n\004type\030\n \001(\0162\026.model.Data" +
+      "Source.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\005mysql\030\001 \001(" +
+      "\0132\024.datasource.MySQLURLB\036\342\337\037\017\n\r\n\004type\022\005\332" +
+      "\001\002\030\001\342\337\037\007\022\005\342\001\002\020\001\022M\n\npostgresql\030\002 \001(\0132\031.da" +
+      "tasource.PostgreSQLURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001" +
+      "\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022C\n\005kafka\030\003 \001(\0132\024.datasour" +
+      "ce.KafkaURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037\007\022\005\342\001" +
+      "\002\020\001\022=\n\002s3\030\004 \001(\0132\021.datasource.S3URLB\036\342\337\037\017" +
+      "\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022M\n\nclickhouse" +
+      "\030\005 \001(\0132\031.datasource.ClickHouseURLB\036\342\337\037\017\n" +
+      "\r\n\004type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001\022C\n\005hbase\030\006 \001(\013" +
+      "2\024.datasource.HBaseURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001" +
+      "\002\030\006\342\337\037\007\022\005\342\001\002\020\001\022?\n\003ftp\030\007 \001(\0132\022.datasource" +
+      ".FtpURLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\007\342\337\037\007\022\005\342\001\002\020\001\022" +
+      "A\n\004hdfs\030\010 \001(\0132\023.datasource.HDFSURLB\036\342\337\037\017" +
+      "\n\r\n\004type\022\005\332\001\002\030\010\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"A\n\006St" +
+      "atus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007En" +
+      "abled\020\002\022\014\n\010Disabled\020\003\"q\n\004Type\022\r\n\tTypeUns" +
+      "et\020\000\022\t\n\005MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\t\n\005Kafka" +
+      "\020\003\022\006\n\002S3\020\004\022\016\n\nClickHouse\020\005\022\t\n\005HBase\020\006\022\007\n" +
+      "\003Ftp\020\007\022\010\n\004HDFS\020\010\"\341\003\n\024DataSourceConnectio" +
+      "n\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-" +
+      "\022\'\n\nnetwork_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net" +
+      "-\022A\n\006status\030\004 \001(\0162\".model.DataSourceConn" +
+      "ection.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022A\n\006result\030\005" +
+      " \001(\0162\".model.DataSourceConnection.Result" +
+      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022\017\n\007message\030\006 \001(\t\022\034\n\007crea" +
+      "ted\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006elapse\030\010 \001(\003\022$" +
+      "\n\014network_info\030\t \001(\0132\016.model.Network\"3\n\006" +
+      "Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007" +
+      "Enabled\020\002\"1\n\006Result\022\016\n\nStateUnset\020\000\022\013\n\007S" +
+      "uccess\020\001\022\n\n\006Failed\020\002\"\036\n\016DataSourceKind\022\014" +
+      "\n\004Name\030\001 \001(\tBl\n\"com.dataomnis.gproto.typ" +
+      "es.pbmodelB\021PBModelDataSourceP\000Z1github." +
+      "com/DataWorkbench/gproto/xgo/types/pbmod" +
+      "elb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

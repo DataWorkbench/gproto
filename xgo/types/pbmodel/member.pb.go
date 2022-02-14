@@ -169,6 +169,7 @@ func (Member_Status) EnumDescriptor() ([]byte, []int) {
 }
 
 // The Role info.
+// TODO: unused on present.
 type Role struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -252,6 +253,7 @@ func (x *Role) GetStatus() Role_Status {
 }
 
 // The workspace member info.
+// TODO: unused on present.
 type Member struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

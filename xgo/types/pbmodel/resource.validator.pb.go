@@ -26,6 +26,9 @@ func (this *Resource) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("Resource", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "res-")) {
+		return protovalidator.FieldError1("Resource", "the value of field 'id' must start with string 'res-'", this.Id)
+	}
 	return nil
 }
 

@@ -28,6 +28,9 @@ func (this *DataSource) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("DataSource", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
+	if !(strings.HasPrefix(this.Id, "som-")) {
+		return protovalidator.FieldError1("DataSource", "the value of field 'id' must start with string 'som-'", this.Id)
+	}
 	return nil
 }
 
@@ -387,12 +390,18 @@ func (this *DataSourceConnection) _xxx_xxx_Validator_Validate_source_id() error 
 	if !(len(this.SourceId) == 20) {
 		return protovalidator.FieldError1("DataSourceConnection", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
 	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("DataSourceConnection", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
+	}
 	return nil
 }
 
 func (this *DataSourceConnection) _xxx_xxx_Validator_Validate_network_id() error {
 	if !(len(this.NetworkId) == 20) {
 		return protovalidator.FieldError1("DataSourceConnection", "the byte length of field 'network_id' must be equal to '20'", protovalidator.StringByteLenToString(this.NetworkId))
+	}
+	if !(strings.HasPrefix(this.NetworkId, "net-")) {
+		return protovalidator.FieldError1("DataSourceConnection", "the value of field 'network_id' must start with string 'net-'", this.NetworkId)
 	}
 	return nil
 }
@@ -418,10 +427,6 @@ func (this *DataSourceConnection) _xxx_xxx_Validator_Validate_result() error {
 	if !(_xxx_xxx_Validator_DataSourceConnection_InEnums_Result[this.Result]) {
 		return protovalidator.FieldError1("DataSourceConnection", "the value of field 'result' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Result)))
 	}
-	return nil
-}
-
-func (this *DataSourceConnection) _xxx_xxx_Validator_Validate_message() error {
 	return nil
 }
 
@@ -459,9 +464,6 @@ func (this *DataSourceConnection) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_result(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_message(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {

@@ -74,6 +74,7 @@ func (MonitorRule_Status) EnumDescriptor() ([]byte, []int) {
 }
 
 // The monitor rule info
+// TODO: unused on present.
 type MonitorRule struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\030PBRequestStreamJobManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+proto/types/request/stream_job_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/stream_job.proto\"\xf0\x01\n\x0eListStreamJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x14\n\x06search\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x0b\n\x03pid\x18\x07 \x01(\t\"\xec\x02\n\x0f\x43reateStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x32\n\x03pid\x18\x03 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x14\n\x0cis_directory\x18\x04 \x01(\x08\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\xfc\x07\x12M\n\x04type\x18\x07 \x01(\x0e\x32\x15.model.StreamJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x18\n\ncluster_id\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12 \n\x0bspace_owner\x18\t \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"Y\n\x10\x44\x65leteStreamJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1e\n\x07job_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"\x91\x01\n\x0eMoveStreamJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1e\n\x07job_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x38\n\x06target\x18\x03 \x01(\tB(\xe2\xdf\x1f\x11\n\x0f\n\x06target\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"\x93\x01\n\x0fUpdateStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"H\n\x11\x44\x65scribeStreamJob\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"\x88\x01\n\x10SetStreamJobCode\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12/\n\x04\x63ode\x18\x03 \x01(\x0b\x32\x14.model.StreamJobCodeB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"\x90\x01\n\x14SetStreamJobSchedule\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x33\n\x04info\x18\x03 \x01(\x0b\x32\x18.model.StreamJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"\x88\x01\n\x10SetStreamJobArgs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12/\n\x04info\x18\x03 \x01(\x0b\x32\x14.model.StreamJobArgsB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"G\n\x10GetStreamJobCode\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"K\n\x14GetStreamJobSchedule\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"G\n\x10GetStreamJobArgs\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"\xbd\x02\n\x15ListReleaseStreamJobs\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x03 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x14\n\x06search\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12;\n\x06status\x18\x07 \x01(\x0e\x32\x1e.model.StreamJobRelease.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x14\n\x06job_id\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\"|\n\x10ReleaseStreamJob\x12\x1c\n\x06job_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12\x1a\n\x0cstop_running\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"^\n\x17OfflineReleaseStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"z\n\x17SuspendReleaseStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"]\n\x16ResumeReleaseStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"\xca\x01\n\x15ListStreamJobVersions\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x03 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07versionJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1c\n\x06job_id\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"@\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x42w\n$com.dataomnis.gproto.types.pbrequestB\x18PBRequestStreamJobManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n+proto/types/request/stream_job_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/stream_job.proto\"\xe4\x01\n\x0eListStreamJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0b\n\x03pid\x18\x07 \x01(\t\"\xec\x02\n\x0f\x43reateStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x32\n\x03pid\x18\x03 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x14\n\x0cis_directory\x18\x04 \x01(\x08\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\xfc\x07\x12M\n\x04type\x18\x07 \x01(\x0e\x32\x15.model.StreamJob.TypeB(\xe2\xdf\x1f\x17\n\x15\n\x0cis_directory\x12\x05\xd2\x01\x02\x18\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x18\n\ncluster_id\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12 \n\x0bspace_owner\x18\t \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"e\n\x10\x44\x65leteStreamJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07job_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04stj-\"\x9d\x01\n\x0eMoveStreamJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07job_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04stj-\x12\x38\n\x06target\x18\x03 \x01(\tB(\xe2\xdf\x1f\x11\n\x0f\n\x06target\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"\x9a\x01\n\x0fUpdateStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"O\n\x11\x44\x65scribeStreamJob\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"\x8f\x01\n\x10SetStreamJobCode\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12/\n\x04\x63ode\x18\x03 \x01(\x0b\x32\x14.model.StreamJobCodeB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"\x97\x01\n\x14SetStreamJobSchedule\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x33\n\x04info\x18\x03 \x01(\x0b\x32\x18.model.StreamJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"\x8f\x01\n\x10SetStreamJobArgs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12/\n\x04info\x18\x03 \x01(\x0b\x32\x14.model.StreamJobArgsB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\"N\n\x10GetStreamJobCode\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"R\n\x14GetStreamJobSchedule\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"N\n\x10GetStreamJobArgs\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe2\xdf\x1f\x00\"\xab\x02\n\x15ListReleaseStreamJobs\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x03 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12;\n\x06status\x18\x07 \x01(\x0e\x32\x1e.model.StreamJobRelease.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x0e\n\x06job_id\x18\x08 \x01(\t\"}\n\x10ReleaseStreamJob\x12#\n\x06job_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x0c\n\x04\x64\x65sc\x18\x03 \x01(\t\x12\x14\n\x0cstop_running\x18\x04 \x01(\x08\"e\n\x17OfflineReleaseStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"\x81\x01\n\x17SuspendReleaseStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"d\n\x16ResumeReleaseStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"\xcb\x01\n\x15ListStreamJobVersions\x12#\n\x06job_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x03 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07versionJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x04 \x01(\x08\"G\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12(\n\x0binstance_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04sti-Bw\n$com.dataomnis.gproto.types.pbrequestB\x18PBRequestStreamJobManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,])
 
@@ -71,14 +71,14 @@ _LISTSTREAMJOBS = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='search', full_name='request.ListStreamJobs.search', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='pid', full_name='request.ListStreamJobs.pid', index=6,
       number=7, type=9, cpp_type=9, label=1,
@@ -99,7 +99,7 @@ _LISTSTREAMJOBS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=198,
-  serialized_end=438,
+  serialized_end=426,
 )
 
 
@@ -186,8 +186,8 @@ _CREATESTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=441,
-  serialized_end=805,
+  serialized_start=429,
+  serialized_end=793,
 )
 
 
@@ -212,7 +212,7 @@ _DELETESTREAMJOBS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -225,7 +225,7 @@ _DELETESTREAMJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=807,
+  serialized_start=795,
   serialized_end=896,
 )
 
@@ -251,7 +251,7 @@ _MOVESTREAMJOBS = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target', full_name='request.MoveStreamJobs.target', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -272,7 +272,7 @@ _MOVESTREAMJOBS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=899,
-  serialized_end=1044,
+  serialized_end=1056,
 )
 
 
@@ -297,7 +297,7 @@ _UPDATESTREAMJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='request.UpdateStreamJob.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -324,8 +324,8 @@ _UPDATESTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1047,
-  serialized_end=1194,
+  serialized_start=1059,
+  serialized_end=1213,
 )
 
 
@@ -343,7 +343,7 @@ _DESCRIBESTREAMJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='request.DescribeStreamJob.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -363,8 +363,8 @@ _DESCRIBESTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1196,
-  serialized_end=1268,
+  serialized_start=1215,
+  serialized_end=1294,
 )
 
 
@@ -389,7 +389,7 @@ _SETSTREAMJOBCODE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='code', full_name='request.SetStreamJobCode.code', index=2,
       number=3, type=11, cpp_type=10, label=1,
@@ -409,8 +409,8 @@ _SETSTREAMJOBCODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1271,
-  serialized_end=1407,
+  serialized_start=1297,
+  serialized_end=1440,
 )
 
 
@@ -435,7 +435,7 @@ _SETSTREAMJOBSCHEDULE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='info', full_name='request.SetStreamJobSchedule.info', index=2,
       number=3, type=11, cpp_type=10, label=1,
@@ -455,8 +455,8 @@ _SETSTREAMJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1410,
-  serialized_end=1554,
+  serialized_start=1443,
+  serialized_end=1594,
 )
 
 
@@ -481,7 +481,7 @@ _SETSTREAMJOBARGS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='info', full_name='request.SetStreamJobArgs.info', index=2,
       number=3, type=11, cpp_type=10, label=1,
@@ -501,8 +501,8 @@ _SETSTREAMJOBARGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1557,
-  serialized_end=1693,
+  serialized_start=1597,
+  serialized_end=1740,
 )
 
 
@@ -520,7 +520,7 @@ _GETSTREAMJOBCODE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='request.GetStreamJobCode.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -540,8 +540,8 @@ _GETSTREAMJOBCODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1695,
-  serialized_end=1766,
+  serialized_start=1742,
+  serialized_end=1820,
 )
 
 
@@ -559,7 +559,7 @@ _GETSTREAMJOBSCHEDULE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='request.GetStreamJobSchedule.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -579,8 +579,8 @@ _GETSTREAMJOBSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1768,
-  serialized_end=1843,
+  serialized_start=1822,
+  serialized_end=1904,
 )
 
 
@@ -598,7 +598,7 @@ _GETSTREAMJOBARGS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='request.GetStreamJobArgs.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -618,8 +618,8 @@ _GETSTREAMJOBARGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1845,
-  serialized_end=1916,
+  serialized_start=1906,
+  serialized_end=1984,
 )
 
 
@@ -665,14 +665,14 @@ _LISTRELEASESTREAMJOBS = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='search', full_name='request.ListReleaseStreamJobs.search', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='request.ListReleaseStreamJobs.status', index=6,
       number=7, type=14, cpp_type=8, label=1,
@@ -686,7 +686,7 @@ _LISTRELEASESTREAMJOBS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -699,8 +699,8 @@ _LISTRELEASESTREAMJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1919,
-  serialized_end=2236,
+  serialized_start=1987,
+  serialized_end=2286,
 )
 
 
@@ -718,7 +718,7 @@ _RELEASESTREAMJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created_by', full_name='request.ReleaseStreamJob.created_by', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -739,7 +739,7 @@ _RELEASESTREAMJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -752,8 +752,8 @@ _RELEASESTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2238,
-  serialized_end=2362,
+  serialized_start=2288,
+  serialized_end=2413,
 )
 
 
@@ -778,7 +778,7 @@ _OFFLINERELEASESTREAMJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -791,8 +791,8 @@ _OFFLINERELEASESTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2364,
-  serialized_end=2458,
+  serialized_start=2415,
+  serialized_end=2516,
 )
 
 
@@ -817,7 +817,7 @@ _SUSPENDRELEASESTREAMJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='stop_running', full_name='request.SuspendReleaseStreamJob.stop_running', index=2,
       number=3, type=8, cpp_type=7, label=1,
@@ -837,8 +837,8 @@ _SUSPENDRELEASESTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2460,
-  serialized_end=2582,
+  serialized_start=2519,
+  serialized_end=2648,
 )
 
 
@@ -863,7 +863,7 @@ _RESUMERELEASESTREAMJOB = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -876,8 +876,8 @@ _RESUMERELEASESTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2584,
-  serialized_end=2677,
+  serialized_start=2650,
+  serialized_end=2750,
 )
 
 
@@ -890,40 +890,40 @@ _LISTSTREAMJOBVERSIONS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='request.ListStreamJobVersions.limit', index=0,
+      name='job_id', full_name='request.ListStreamJobVersions.job_id', index=0,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='request.ListStreamJobVersions.limit', index=1,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='offset', full_name='request.ListStreamJobVersions.offset', index=1,
+      name='offset', full_name='request.ListStreamJobVersions.offset', index=2,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sort_by', full_name='request.ListStreamJobVersions.sort_by', index=2,
+      name='sort_by', full_name='request.ListStreamJobVersions.sort_by', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007updated', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reverse', full_name='request.ListStreamJobVersions.reverse', index=3,
+      name='reverse', full_name='request.ListStreamJobVersions.reverse', index=4,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='job_id', full_name='request.ListStreamJobVersions.job_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -936,8 +936,8 @@ _LISTSTREAMJOBVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2680,
-  serialized_end=2882,
+  serialized_start=2753,
+  serialized_end=2956,
 )
 
 
@@ -955,7 +955,7 @@ _DESCRIBEFLINKUIBYINSTANCEID = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -968,8 +968,8 @@ _DESCRIBEFLINKUIBYINSTANCEID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2884,
-  serialized_end=2948,
+  serialized_start=2958,
+  serialized_end=3029,
 )
 
 _CREATESTREAMJOB.fields_by_name['type'].enum_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB_TYPE
@@ -1137,8 +1137,6 @@ _LISTSTREAMJOBS.fields_by_name['space_id']._options = None
 _LISTSTREAMJOBS.fields_by_name['limit']._options = None
 _LISTSTREAMJOBS.fields_by_name['offset']._options = None
 _LISTSTREAMJOBS.fields_by_name['sort_by']._options = None
-_LISTSTREAMJOBS.fields_by_name['reverse']._options = None
-_LISTSTREAMJOBS.fields_by_name['search']._options = None
 _CREATESTREAMJOB.fields_by_name['space_id']._options = None
 _CREATESTREAMJOB.fields_by_name['created_by']._options = None
 _CREATESTREAMJOB.fields_by_name['pid']._options = None
@@ -1177,13 +1175,9 @@ _LISTRELEASESTREAMJOBS.fields_by_name['limit']._options = None
 _LISTRELEASESTREAMJOBS.fields_by_name['offset']._options = None
 _LISTRELEASESTREAMJOBS.fields_by_name['space_id']._options = None
 _LISTRELEASESTREAMJOBS.fields_by_name['sort_by']._options = None
-_LISTRELEASESTREAMJOBS.fields_by_name['reverse']._options = None
-_LISTRELEASESTREAMJOBS.fields_by_name['search']._options = None
 _LISTRELEASESTREAMJOBS.fields_by_name['status']._options = None
-_LISTRELEASESTREAMJOBS.fields_by_name['job_id']._options = None
 _RELEASESTREAMJOB.fields_by_name['job_id']._options = None
 _RELEASESTREAMJOB.fields_by_name['created_by']._options = None
-_RELEASESTREAMJOB.fields_by_name['stop_running']._options = None
 _OFFLINERELEASESTREAMJOB.fields_by_name['space_id']._options = None
 _OFFLINERELEASESTREAMJOB.fields_by_name['job_id']._options = None
 _SUSPENDRELEASESTREAMJOB.fields_by_name['space_id']._options = None
@@ -1191,10 +1185,9 @@ _SUSPENDRELEASESTREAMJOB.fields_by_name['job_id']._options = None
 _SUSPENDRELEASESTREAMJOB.fields_by_name['stop_running']._options = None
 _RESUMERELEASESTREAMJOB.fields_by_name['space_id']._options = None
 _RESUMERELEASESTREAMJOB.fields_by_name['job_id']._options = None
+_LISTSTREAMJOBVERSIONS.fields_by_name['job_id']._options = None
 _LISTSTREAMJOBVERSIONS.fields_by_name['limit']._options = None
 _LISTSTREAMJOBVERSIONS.fields_by_name['offset']._options = None
 _LISTSTREAMJOBVERSIONS.fields_by_name['sort_by']._options = None
-_LISTSTREAMJOBVERSIONS.fields_by_name['reverse']._options = None
-_LISTSTREAMJOBVERSIONS.fields_by_name['job_id']._options = None
 _DESCRIBEFLINKUIBYINSTANCEID.fields_by_name['instance_id']._options = None
 # @@protoc_insertion_point(module_scope)

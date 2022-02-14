@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\031PBRequestDataSourceManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+proto/types/request/datasource_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/datasource.proto\"\x83\x02\n\x0fListDataSources\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x14\n\x06search\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0f\n\x07verbose\x18\x08 \x01(\x05\"\xd6\x02\n\x10\x43reateDataSource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x33\n\x04type\x18\x04 \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x03url\x18\x05 \x01(\x0b\x32\x15.model.DataSource.URLB\r\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\x12\x1f\n\ncreated_by\x18\x06 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x34\n\x0flast_connection\x18\x07 \x01(\x0b\x32\x1b.model.DataSourceConnection\x12 \n\x0bspace_owner\x18\x08 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"\xfe\x01\n\x10UpdateDataSource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tsource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x33\n\x04type\x18\x05 \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x03url\x18\x06 \x01(\x0b\x32\x15.model.DataSource.URLB\r\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\"6\n\x11\x44\x65leteDataSources\x12!\n\nsource_ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x01\"5\n\x12\x44\x65scribeDataSource\x12\x1f\n\tsource_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"6\n\x11\x45nableDataSources\x12!\n\nsource_ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x01\"7\n\x12\x44isableDataSources\x12!\n\nsource_ids\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x01\"\x82\x02\n\x19ListDataSourceConnections\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tsource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x30\n\x07sort_by\x18\x05 \x01(\tB\x1f\xe2\xdf\x1f\x1b\x12\x19\xc2\x01\x16J\x00J\tsource_idJ\x07\x63reated\x12\x15\n\x07reverse\x18\x06 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x0f\n\x07verbose\x18\x07 \x01(\x05\"\xab\x03\n\x18PingDataSourceConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\nnetwork_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x05stage\x18\x03 \x01(\x0e\x32\'.request.PingDataSourceConnection.StageB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x33\n\tsource_id\x18\x04 \x01(\tB \xe2\xdf\x1f\x10\n\x0e\n\x05stage\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12G\n\x04type\x18\x05 \x01(\x0e\x32\x16.model.DataSource.TypeB!\xe2\xdf\x1f\x10\n\x0e\n\x05stage\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x45\n\x03url\x18\x06 \x01(\x0b\x32\x15.model.DataSource.URLB!\xe2\xdf\x1f\x10\n\x0e\n\x05stage\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\":\n\x05Stage\x12\x0e\n\nPhaseUnset\x10\x00\x12\x10\n\x0c\x42\x65\x66oreCreate\x10\x01\x12\x0f\n\x0b\x41\x66terCreate\x10\x02\"b\n\x18\x44\x65scribeDataSourceTables\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tsource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"\x8d\x01\n\x1d\x44\x65scribeDataSourceTableSchema\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tsource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12$\n\ntable_name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x02\x42x\n$com.dataomnis.gproto.types.pbrequestB\x19PBRequestDataSourceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n+proto/types/request/datasource_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\"proto/types/model/datasource.proto\"\xf7\x01\n\x0fListDataSources\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0f\n\x07verbose\x18\x08 \x01(\x05\"\xd6\x02\n\x10\x43reateDataSource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x01\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x33\n\x04type\x18\x04 \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x03url\x18\x05 \x01(\x0b\x32\x15.model.DataSource.URLB\r\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\x12\x1f\n\ncreated_by\x18\x06 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x34\n\x0flast_connection\x18\x07 \x01(\x0b\x32\x1b.model.DataSourceConnection\x12 \n\x0bspace_owner\x18\x08 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"\x85\x02\n\x10UpdateDataSource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\tsource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x33\n\x04type\x18\x05 \x01(\x0e\x32\x16.model.DataSource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x03url\x18\x06 \x01(\x0b\x32\x15.model.DataSource.URLB\r\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\"B\n\x11\x44\x65leteDataSources\x12-\n\nsource_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04som-\"<\n\x12\x44\x65scribeDataSource\x12&\n\tsource_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\"B\n\x11\x45nableDataSources\x12-\n\nsource_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04som-\"C\n\x12\x44isableDataSources\x12-\n\nsource_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04som-\"\xfc\x01\n\x19ListDataSourceConnections\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tsource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x30\n\x07sort_by\x18\x05 \x01(\tB\x1f\xe2\xdf\x1f\x1b\x12\x19\xc2\x01\x16J\x00J\tsource_idJ\x07\x63reated\x12\x0f\n\x07reverse\x18\x06 \x01(\x08\x12\x0f\n\x07verbose\x18\x07 \x01(\x05\"\xab\x03\n\x18PingDataSourceConnection\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\nnetwork_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x05stage\x18\x03 \x01(\x0e\x32\'.request.PingDataSourceConnection.StageB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x33\n\tsource_id\x18\x04 \x01(\tB \xe2\xdf\x1f\x10\n\x0e\n\x05stage\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12G\n\x04type\x18\x05 \x01(\x0e\x32\x16.model.DataSource.TypeB!\xe2\xdf\x1f\x10\n\x0e\n\x05stage\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x45\n\x03url\x18\x06 \x01(\x0b\x32\x15.model.DataSource.URLB!\xe2\xdf\x1f\x10\n\x0e\n\x05stage\x12\x05\xda\x01\x02\x18\x01\xe2\xdf\x1f\t\x12\x07\xe2\x01\x04\x10\x01\x18\x01\":\n\x05Stage\x12\x0e\n\nPhaseUnset\x10\x00\x12\x10\n\x0c\x42\x65\x66oreCreate\x10\x01\x12\x0f\n\x0b\x41\x66terCreate\x10\x02\"i\n\x18\x44\x65scribeDataSourceTables\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\tsource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\"\x94\x01\n\x1d\x44\x65scribeDataSourceTableSchema\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\tsource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12$\n\ntable_name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x02\x42x\n$com.dataomnis.gproto.types.pbrequestB\x19PBRequestDataSourceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,])
 
@@ -53,8 +53,8 @@ _PINGDATASOURCECONNECTION_STAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1916,
-  serialized_end=1974,
+  serialized_start=1948,
+  serialized_end=2006,
 )
 _sym_db.RegisterEnumDescriptor(_PINGDATASOURCECONNECTION_STAGE)
 
@@ -101,14 +101,14 @@ _LISTDATASOURCES = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='search', full_name='request.ListDataSources.search', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='request.ListDataSources.name', index=6,
       number=7, type=9, cpp_type=9, label=1,
@@ -136,7 +136,7 @@ _LISTDATASOURCES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=198,
-  serialized_end=457,
+  serialized_end=445,
 )
 
 
@@ -216,8 +216,8 @@ _CREATEDATASOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=460,
-  serialized_end=802,
+  serialized_start=448,
+  serialized_end=790,
 )
 
 
@@ -242,7 +242,7 @@ _UPDATEDATASOURCE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='request.UpdateDataSource.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -283,8 +283,8 @@ _UPDATEDATASOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=805,
-  serialized_end=1059,
+  serialized_start=793,
+  serialized_end=1054,
 )
 
 
@@ -302,7 +302,7 @@ _DELETEDATASOURCES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0048d@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -315,8 +315,8 @@ _DELETEDATASOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1061,
-  serialized_end=1115,
+  serialized_start=1056,
+  serialized_end=1122,
 )
 
 
@@ -334,7 +334,7 @@ _DESCRIBEDATASOURCE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -347,8 +347,8 @@ _DESCRIBEDATASOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1117,
-  serialized_end=1170,
+  serialized_start=1124,
+  serialized_end=1184,
 )
 
 
@@ -366,7 +366,7 @@ _ENABLEDATASOURCES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0048d@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -379,8 +379,8 @@ _ENABLEDATASOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1172,
-  serialized_end=1226,
+  serialized_start=1186,
+  serialized_end=1252,
 )
 
 
@@ -398,7 +398,7 @@ _DISABLEDATASOURCES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0048d@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -411,8 +411,8 @@ _DISABLEDATASOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1228,
-  serialized_end=1283,
+  serialized_start=1254,
+  serialized_end=1321,
 )
 
 
@@ -465,7 +465,7 @@ _LISTDATASOURCECONNECTIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='verbose', full_name='request.ListDataSourceConnections.verbose', index=6,
       number=7, type=5, cpp_type=1, label=1,
@@ -485,8 +485,8 @@ _LISTDATASOURCECONNECTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1286,
-  serialized_end=1544,
+  serialized_start=1324,
+  serialized_end=1576,
 )
 
 
@@ -553,8 +553,8 @@ _PINGDATASOURCECONNECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1547,
-  serialized_end=1974,
+  serialized_start=1579,
+  serialized_end=2006,
 )
 
 
@@ -579,7 +579,7 @@ _DESCRIBEDATASOURCETABLES = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -592,8 +592,8 @@ _DESCRIBEDATASOURCETABLES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1976,
-  serialized_end=2074,
+  serialized_start=2008,
+  serialized_end=2113,
 )
 
 
@@ -618,7 +618,7 @@ _DESCRIBEDATASOURCETABLESCHEMA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='table_name', full_name='request.DescribeDataSourceTableSchema.table_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -638,8 +638,8 @@ _DESCRIBEDATASOURCETABLESCHEMA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2077,
-  serialized_end=2218,
+  serialized_start=2116,
+  serialized_end=2264,
 )
 
 _CREATEDATASOURCE.fields_by_name['type'].enum_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCE_TYPE
@@ -747,8 +747,6 @@ _LISTDATASOURCES.fields_by_name['space_id']._options = None
 _LISTDATASOURCES.fields_by_name['limit']._options = None
 _LISTDATASOURCES.fields_by_name['offset']._options = None
 _LISTDATASOURCES.fields_by_name['sort_by']._options = None
-_LISTDATASOURCES.fields_by_name['reverse']._options = None
-_LISTDATASOURCES.fields_by_name['search']._options = None
 _CREATEDATASOURCE.fields_by_name['space_id']._options = None
 _CREATEDATASOURCE.fields_by_name['name']._options = None
 _CREATEDATASOURCE.fields_by_name['desc']._options = None
@@ -771,7 +769,6 @@ _LISTDATASOURCECONNECTIONS.fields_by_name['source_id']._options = None
 _LISTDATASOURCECONNECTIONS.fields_by_name['limit']._options = None
 _LISTDATASOURCECONNECTIONS.fields_by_name['offset']._options = None
 _LISTDATASOURCECONNECTIONS.fields_by_name['sort_by']._options = None
-_LISTDATASOURCECONNECTIONS.fields_by_name['reverse']._options = None
 _PINGDATASOURCECONNECTION.fields_by_name['space_id']._options = None
 _PINGDATASOURCECONNECTION.fields_by_name['network_id']._options = None
 _PINGDATASOURCECONNECTION.fields_by_name['stage']._options = None
