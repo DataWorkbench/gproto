@@ -117,9 +117,9 @@ func (this *CreateDataSource) _xxx_xxx_Validator_Validate_url() error {
 	return nil
 }
 
-func (this *CreateDataSource) _xxx_xxx_Validator_Validate_create_by() error {
-	if !(this.CreateBy != "") {
-		return protovalidator.FieldError1("CreateDataSource", "the value of field 'create_by' must be not equal to ''", this.CreateBy)
+func (this *CreateDataSource) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(this.CreatedBy != "") {
+		return protovalidator.FieldError1("CreateDataSource", "the value of field 'created_by' must be not equal to ''", this.CreatedBy)
 	}
 	return nil
 }
@@ -160,7 +160,7 @@ func (this *CreateDataSource) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_url(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_create_by(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_last_connection(); err != nil {

@@ -424,6 +424,23 @@ func (this *HDFSURL) _xxx_xxx_Validator_Validate_port() error {
 	return nil
 }
 
+func (this *HDFSURL) _xxx_xxx_Validator_CheckIf_config() bool {
+	if !(this.Config != "") {
+		return false
+	}
+	return true
+}
+
+func (this *HDFSURL) _xxx_xxx_Validator_Validate_config() error {
+	if !this._xxx_xxx_Validator_CheckIf_config() {
+		return nil
+	}
+	if !(protovalidator.StringIsJSON(this.Config)) {
+		return protovalidator.FieldError1("HDFSURL", "the value of field 'config' must be a string in JSON format", this.Config)
+	}
+	return nil
+}
+
 // Set default value for message datasource.HDFSURL
 func (this *HDFSURL) Validate() error {
 	if this == nil {
@@ -433,6 +450,9 @@ func (this *HDFSURL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_port(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_config(); err != nil {
 		return err
 	}
 	return nil

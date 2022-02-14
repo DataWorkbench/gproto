@@ -111,9 +111,9 @@ func (this *FlinkTable) _xxx_xxx_Validator_Validate_source_name() error {
 	return nil
 }
 
-func (this *FlinkTable) _xxx_xxx_Validator_Validate_create_by() error {
-	if !(len(this.CreateBy) <= 64) {
-		return protovalidator.FieldError1("FlinkTable", "the byte length of field 'create_by' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.CreateBy))
+func (this *FlinkTable) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) <= 64) {
+		return protovalidator.FieldError1("FlinkTable", "the byte length of field 'created_by' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
@@ -156,7 +156,7 @@ func (this *FlinkTable) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_source_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_create_by(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	return nil

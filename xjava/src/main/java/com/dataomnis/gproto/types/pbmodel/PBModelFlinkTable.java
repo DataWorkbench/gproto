@@ -247,24 +247,24 @@ public final class PBModelFlinkTable {
     /**
      * <pre>
      * Table owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-     * @return The createBy.
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
      */
-    java.lang.String getCreateBy();
+    java.lang.String getCreatedBy();
     /**
      * <pre>
      * Table owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-     * @return The bytes for createBy.
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
      */
     com.google.protobuf.ByteString
-        getCreateByBytes();
+        getCreatedByBytes();
   }
   /**
    * <pre>
@@ -291,7 +291,7 @@ public final class PBModelFlinkTable {
       status_ = 0;
       tableKind_ = 0;
       sourceName_ = "";
-      createBy_ = "";
+      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -398,7 +398,7 @@ public final class PBModelFlinkTable {
             case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              createBy_ = s;
+              createdBy_ = s;
               break;
             }
             default: {
@@ -1104,48 +1104,48 @@ public final class PBModelFlinkTable {
       }
     }
 
-    public static final int CREATE_BY_FIELD_NUMBER = 13;
-    private volatile java.lang.Object createBy_;
+    public static final int CREATED_BY_FIELD_NUMBER = 13;
+    private volatile java.lang.Object createdBy_;
     /**
      * <pre>
      * Table owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-     * @return The createBy.
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
      */
     @java.lang.Override
-    public java.lang.String getCreateBy() {
-      java.lang.Object ref = createBy_;
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createBy_ = s;
+        createdBy_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Table owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
      *
-     * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-     * @return The bytes for createBy.
+     * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getCreateByBytes() {
-      java.lang.Object ref = createBy_;
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createBy_ = b;
+        createdBy_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1199,8 +1199,8 @@ public final class PBModelFlinkTable {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, sourceName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, createBy_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, createdBy_);
       }
       unknownFields.writeTo(output);
     }
@@ -1249,8 +1249,8 @@ public final class PBModelFlinkTable {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, sourceName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, createBy_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, createdBy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1290,8 +1290,8 @@ public final class PBModelFlinkTable {
       if (tableKind_ != other.tableKind_) return false;
       if (!getSourceName()
           .equals(other.getSourceName())) return false;
-      if (!getCreateBy()
-          .equals(other.getCreateBy())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1329,8 +1329,8 @@ public final class PBModelFlinkTable {
       hash = (53 * hash) + tableKind_;
       hash = (37 * hash) + SOURCE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getSourceName().hashCode();
-      hash = (37 * hash) + CREATE_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getCreateBy().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1494,7 +1494,7 @@ public final class PBModelFlinkTable {
 
         sourceName_ = "";
 
-        createBy_ = "";
+        createdBy_ = "";
 
         return this;
       }
@@ -1537,7 +1537,7 @@ public final class PBModelFlinkTable {
         result.status_ = status_;
         result.tableKind_ = tableKind_;
         result.sourceName_ = sourceName_;
-        result.createBy_ = createBy_;
+        result.createdBy_ = createdBy_;
         onBuilt();
         return result;
       }
@@ -1625,8 +1625,8 @@ public final class PBModelFlinkTable {
           sourceName_ = other.sourceName_;
           onChanged();
         }
-        if (!other.getCreateBy().isEmpty()) {
-          createBy_ = other.createBy_;
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2678,23 +2678,23 @@ public final class PBModelFlinkTable {
         return this;
       }
 
-      private java.lang.Object createBy_ = "";
+      private java.lang.Object createdBy_ = "";
       /**
        * <pre>
        * Table owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-       * @return The createBy.
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
        */
-      public java.lang.String getCreateBy() {
-        java.lang.Object ref = createBy_;
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          createBy_ = s;
+          createdBy_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2703,20 +2703,20 @@ public final class PBModelFlinkTable {
       /**
        * <pre>
        * Table owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-       * @return The bytes for createBy.
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
        */
       public com.google.protobuf.ByteString
-          getCreateByBytes() {
-        java.lang.Object ref = createBy_;
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          createBy_ = b;
+          createdBy_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2725,56 +2725,56 @@ public final class PBModelFlinkTable {
       /**
        * <pre>
        * Table owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-       * @param value The createBy to set.
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder setCreateBy(
+      public Builder setCreatedBy(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        createBy_ = value;
+        createdBy_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Table owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string create_by = 13 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearCreateBy() {
+      public Builder clearCreatedBy() {
         
-        createBy_ = getDefaultInstance().getCreateBy();
+        createdBy_ = getDefaultInstance().getCreatedBy();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Table owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
        * </pre>
        *
-       * <code>string create_by = 13 [(.validator.field) = { ... }</code>
-       * @param value The bytes for createBy to set.
+       * <code>string created_by = 13 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder setCreateByBytes(
+      public Builder setCreatedByBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        createBy_ = value;
+        createdBy_ = value;
         onChanged();
         return this;
       }
@@ -2848,7 +2848,7 @@ public final class PBModelFlinkTable {
       "\n\035proto/types/model/table.proto\022\005model\0323" +
       "github.com/yu31/protoc-plugin/proto/vali" +
       "dator.proto\032)proto/types/model/flink/fli" +
-      "nk_table.proto\"\332\004\n\nFlinkTable\022\036\n\010table_i" +
+      "nk_table.proto\"\333\004\n\nFlinkTable\022\036\n\010table_i" +
       "d\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\037\n\tsource_id\030\002 \001(\t" +
       "B\014\342\337\037\010\022\006\302\001\003\360\001\024\022%\n\010space_id\030\003 \001(\tB\023\342\337\037\017\022\r" +
       "\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002" +
@@ -2859,14 +2859,14 @@ public final class PBModelFlinkTable {
       "el.FlinkTable.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\0229\n\nt" +
       "able_kind\030\n \001(\0162\026.model.FlinkTable.KindB" +
       "\r\342\337\037\t\022\007\332\001\0040\000X\001\022$\n\013source_name\030\013 \001(\tB\017\342\337\037" +
-      "\013\022\t\302\001\006\220\002\000\230\002@\022\037\n\tcreate_by\030\r \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\230\002@\"A\n\004Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source\020\001" +
-      "\022\017\n\013Destination\020\002\022\r\n\tDimension\020\003\"A\n\006Stat" +
-      "us\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enab" +
-      "led\020\002\022\014\n\010Disabled\020\003Bl\n\"com.dataomnis.gpr" +
-      "oto.types.pbmodelB\021PBModelFlinkTableP\000Z1" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodelb\006proto3"
+      "\013\022\t\302\001\006\220\002\000\230\002@\022 \n\ncreated_by\030\r \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\230\002@\"A\n\004Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source\020" +
+      "\001\022\017\n\013Destination\020\002\022\r\n\tDimension\020\003\"A\n\006Sta" +
+      "tus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Ena" +
+      "bled\020\002\022\014\n\010Disabled\020\003Bl\n\"com.dataomnis.gp" +
+      "roto.types.pbmodelB\021PBModelFlinkTableP\000Z" +
+      "1github.com/DataWorkbench/gproto/xgo/typ" +
+      "es/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2879,7 +2879,7 @@ public final class PBModelFlinkTable {
     internal_static_model_FlinkTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_FlinkTable_descriptor,
-        new java.lang.String[] { "TableId", "SourceId", "SpaceId", "Name", "Comment", "TableSchema", "Created", "Updated", "Status", "TableKind", "SourceName", "CreateBy", });
+        new java.lang.String[] { "TableId", "SourceId", "SpaceId", "Name", "Comment", "TableSchema", "Created", "Updated", "Status", "TableKind", "SourceName", "CreatedBy", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

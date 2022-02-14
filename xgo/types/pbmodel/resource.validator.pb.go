@@ -12,13 +12,6 @@ import (
 	utf8 "unicode/utf8"
 )
 
-func (this *Resource) _xxx_xxx_Validator_Validate_resource_id() error {
-	if !(len(this.ResourceId) == 20) {
-		return protovalidator.FieldError1("Resource", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
-	}
-	return nil
-}
-
 func (this *Resource) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("Resource", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
@@ -29,12 +22,40 @@ func (this *Resource) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
+func (this *Resource) _xxx_xxx_Validator_Validate_resource_id() error {
+	if !(len(this.ResourceId) == 20) {
+		return protovalidator.FieldError1("Resource", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
+	}
+	return nil
+}
+
 func (this *Resource) _xxx_xxx_Validator_Validate_name() error {
 	if !(len(this.Name) >= 2) {
 		return protovalidator.FieldError1("Resource", "the byte length of field 'name' must be greater than or equal to '2'", protovalidator.StringByteLenToString(this.Name))
 	}
 	if !(len(this.Name) <= 128) {
 		return protovalidator.FieldError1("Resource", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
+	}
+	return nil
+}
+
+func (this *Resource) _xxx_xxx_Validator_Validate_description() error {
+	if !(utf8.RuneCountInString(this.Description) <= 1024) {
+		return protovalidator.FieldError1("Resource", "the character length of field 'description' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Description))
+	}
+	return nil
+}
+
+func (this *Resource) _xxx_xxx_Validator_Validate_size() error {
+	if !(this.Size >= 0) {
+		return protovalidator.FieldError1("Resource", "the value of field 'size' must be greater than or equal to '0'", protovalidator.Int64ToString(this.Size))
+	}
+	return nil
+}
+
+func (this *Resource) _xxx_xxx_Validator_Validate_etag() error {
+	if !(len(this.Etag) == 32) {
+		return protovalidator.FieldError1("Resource", "the byte length of field 'etag' must be equal to '32'", protovalidator.StringByteLenToString(this.Etag))
 	}
 	return nil
 }
@@ -51,16 +72,28 @@ func (this *Resource) _xxx_xxx_Validator_Validate_type() error {
 	return nil
 }
 
-func (this *Resource) _xxx_xxx_Validator_Validate_resource_size() error {
-	if !(this.ResourceSize > 0) {
-		return protovalidator.FieldError1("Resource", "the value of field 'resource_size' must be greater than '0'", protovalidator.Int64ToString(this.ResourceSize))
+var _xxx_xxx_Validator_Resource_InEnums_Status = map[Resource_Status]bool{0: true, 1: true, 2: true}
+
+func (this *Resource) _xxx_xxx_Validator_Validate_status() error {
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("Resource", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	if !(_xxx_xxx_Validator_Resource_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("Resource", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	return nil
 }
 
-func (this *Resource) _xxx_xxx_Validator_Validate_description() error {
-	if !(utf8.RuneCountInString(this.Description) <= 1024) {
-		return protovalidator.FieldError1("Resource", "the character length of field 'description' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Description))
+func (this *Resource) _xxx_xxx_Validator_Validate_version() error {
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("Resource", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
+	}
+	return nil
+}
+
+func (this *Resource) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 1) {
+		return protovalidator.FieldError1("Resource", "the byte length of field 'created_by' must be greater than '1'", protovalidator.StringByteLenToString(this.CreatedBy))
 	}
 	return nil
 }
@@ -79,58 +112,45 @@ func (this *Resource) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
-func (this *Resource) _xxx_xxx_Validator_Validate_create_by() error {
-	if !(len(this.CreateBy) <= 64) {
-		return protovalidator.FieldError1("Resource", "the byte length of field 'create_by' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.CreateBy))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_Resource_InEnums_Status = map[Resource_Status]bool{0: true, 1: true, 2: true, 3: true}
-
-func (this *Resource) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status > 0) {
-		return protovalidator.FieldError1("Resource", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	if !(_xxx_xxx_Validator_Resource_InEnums_Status[this.Status]) {
-		return protovalidator.FieldError1("Resource", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	return nil
-}
-
 // Set default value for message model.Resource
 func (this *Resource) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_description(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_size(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_etag(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource_size(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_description(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_create_by(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
 	return nil

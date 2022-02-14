@@ -20,6 +20,28 @@ public final class PBRequestSpaceManage {
 
     /**
      * <pre>
+     * The used_id fixed to request user id.
+     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <pre>
+     * The used_id fixed to request user id.
+     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
      * &#64;inject_tag: json:"limit" form:"limit"
@@ -104,28 +126,6 @@ public final class PBRequestSpaceManage {
 
     /**
      * <pre>
-     * The used_id fixed to request user id.
-     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-     * @return The userId.
-     */
-    java.lang.String getUserId();
-    /**
-     * <pre>
-     * The used_id fixed to request user id.
-     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for userId.
-     */
-    com.google.protobuf.ByteString
-        getUserIdBytes();
-
-    /**
-     * <pre>
      * Filter by workspace status;  Not required.
      * Valid optional: 1 =&gt; "enabled", 2 =&gt; "disabled".
      * &#64;inject_tag: json:"status" form:"status"
@@ -186,9 +186,9 @@ public final class PBRequestSpaceManage {
       super(builder);
     }
     private ListWorkspaces() {
+      userId_ = "";
       sortBy_ = "";
       search_ = "";
-      userId_ = "";
       status_ = 0;
       name_ = "";
     }
@@ -298,6 +298,54 @@ public final class PBRequestSpaceManage {
       return com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_ListWorkspaces_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces.class, com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces.Builder.class);
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object userId_;
+    /**
+     * <pre>
+     * The used_id fixed to request user id.
+     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The used_id fixed to request user id.
+     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -445,54 +493,6 @@ public final class PBRequestSpaceManage {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         search_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int USER_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object userId_;
-    /**
-     * <pre>
-     * The used_id fixed to request user id.
-     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-     * @return The userId.
-     */
-    @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The used_id fixed to request user id.
-     * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for userId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -668,6 +668,8 @@ public final class PBRequestSpaceManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces other = (com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces) obj;
 
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (getLimit()
           != other.getLimit()) return false;
       if (getOffset()
@@ -678,8 +680,6 @@ public final class PBRequestSpaceManage {
           != other.getReverse()) return false;
       if (!getSearch()
           .equals(other.getSearch())) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
       if (status_ != other.status_) return false;
       if (!getName()
           .equals(other.getName())) return false;
@@ -694,6 +694,8 @@ public final class PBRequestSpaceManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
@@ -705,8 +707,6 @@ public final class PBRequestSpaceManage {
           getReverse());
       hash = (37 * hash) + SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getSearch().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -848,6 +848,8 @@ public final class PBRequestSpaceManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        userId_ = "";
+
         limit_ = 0;
 
         offset_ = 0;
@@ -857,8 +859,6 @@ public final class PBRequestSpaceManage {
         reverse_ = false;
 
         search_ = "";
-
-        userId_ = "";
 
         status_ = 0;
 
@@ -890,12 +890,12 @@ public final class PBRequestSpaceManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces result = new com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces(this);
+        result.userId_ = userId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
         result.search_ = search_;
-        result.userId_ = userId_;
         result.status_ = status_;
         result.name_ = name_;
         onBuilt();
@@ -946,6 +946,10 @@ public final class PBRequestSpaceManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.ListWorkspaces.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
         }
@@ -961,10 +965,6 @@ public final class PBRequestSpaceManage {
         }
         if (!other.getSearch().isEmpty()) {
           search_ = other.search_;
-          onChanged();
-        }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
           onChanged();
         }
         if (other.status_ != 0) {
@@ -1000,6 +1000,107 @@ public final class PBRequestSpaceManage {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <pre>
+       * The used_id fixed to request user id.
+       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The used_id fixed to request user id.
+       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The used_id fixed to request user id.
+       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The used_id fixed to request user id.
+       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The used_id fixed to request user id.
+       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
         return this;
       }
 
@@ -1357,107 +1458,6 @@ public final class PBRequestSpaceManage {
   checkByteStringIsUtf8(value);
         
         search_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object userId_ = "";
-      /**
-       * <pre>
-       * The used_id fixed to request user id.
-       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-       * @return The userId.
-       */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The used_id fixed to request user id.
-       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for userId.
-       */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The used_id fixed to request user id.
-       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The used_id fixed to request user id.
-       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The used_id fixed to request user id.
-       * &#64;inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string user_id = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
         onChanged();
         return this;
       }
@@ -10848,11 +10848,11 @@ public final class PBRequestSpaceManage {
       "protoc-plugin/proto/defaults.proto\032!prot" +
       "o/types/model/workspace.proto\032\037proto/typ" +
       "es/model/opaudit.proto\"\226\002\n\016ListWorkspace" +
-      "s\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008" +
-      "d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_b" +
-      "y\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ" +
-      "\007updated\022\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\005 \001(" +
-      "\t\022 \n\007user_id\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\0224\n\006s" +
+      "s\022 \n\007user_id\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022&\n\005l" +
+      "imit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006o" +
+      "ffset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\003 \001(" +
+      "\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007updat" +
+      "ed\022\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\005 \001(\t\0224\n\006s" +
       "tatus\030\007 \001(\0162\027.model.Workspace.StatusB\013\342\337" +
       "\037\007\022\005\332\001\002X\001\022\014\n\004name\030\010 \001(\t\"@\n\020DeleteWorkspa" +
       "ces\022,\n\tspace_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302" +
@@ -10903,7 +10903,7 @@ public final class PBRequestSpaceManage {
     internal_static_request_ListWorkspaces_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListWorkspaces_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SortBy", "Reverse", "Search", "UserId", "Status", "Name", });
+        new java.lang.String[] { "UserId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Status", "Name", });
     internal_static_request_DeleteWorkspaces_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_DeleteWorkspaces_fieldAccessorTable = new

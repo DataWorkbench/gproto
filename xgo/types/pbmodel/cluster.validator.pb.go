@@ -251,8 +251,8 @@ func (this *FlinkClusterBinding) _xxx_xxx_Validator_Validate_cluster_id() error 
 	if !(len(this.ClusterId) == 20) {
 		return protovalidator.FieldError1("FlinkClusterBinding", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
 	}
-	if !(strings.HasPrefix(this.ClusterId, "net-")) {
-		return protovalidator.FieldError1("FlinkClusterBinding", "the value of field 'cluster_id' must start with string 'net-'", this.ClusterId)
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("FlinkClusterBinding", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
 	}
 	return nil
 }

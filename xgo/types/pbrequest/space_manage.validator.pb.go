@@ -15,6 +15,16 @@ import (
 	utf8 "unicode/utf8"
 )
 
+func (this *ListWorkspaces) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) > 1) {
+		return protovalidator.FieldError1("ListWorkspaces", "the byte length of field 'user_id' must be greater than '1'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(len(this.UserId) < 65) {
+		return protovalidator.FieldError1("ListWorkspaces", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	return nil
+}
+
 func (this *ListWorkspaces) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
 		return protovalidator.FieldError1("ListWorkspaces", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
@@ -41,16 +51,6 @@ func (this *ListWorkspaces) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-func (this *ListWorkspaces) _xxx_xxx_Validator_Validate_user_id() error {
-	if !(len(this.UserId) > 1) {
-		return protovalidator.FieldError1("ListWorkspaces", "the byte length of field 'user_id' must be greater than '1'", protovalidator.StringByteLenToString(this.UserId))
-	}
-	if !(len(this.UserId) < 65) {
-		return protovalidator.FieldError1("ListWorkspaces", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_ListWorkspaces_InEnums_Status = map[pbmodel.Workspace_Status]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *ListWorkspaces) _xxx_xxx_Validator_Validate_status() error {
@@ -65,6 +65,9 @@ func (this *ListWorkspaces) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
 	}
@@ -72,9 +75,6 @@ func (this *ListWorkspaces) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {

@@ -8326,6 +8326,28 @@ public final class PBDataSourceURL {
      * @return The port.
      */
     int getPort();
+
+    /**
+     * <pre>
+     * The hdfs advanced config. Not Required.
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 3 [(.validator.field) = { ... }</code>
+     * @return The config.
+     */
+    java.lang.String getConfig();
+    /**
+     * <pre>
+     * The hdfs advanced config. Not Required.
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for config.
+     */
+    com.google.protobuf.ByteString
+        getConfigBytes();
   }
   /**
    * <pre>
@@ -8345,6 +8367,7 @@ public final class PBDataSourceURL {
     }
     private HDFSURL() {
       nameNode_ = "";
+      config_ = "";
     }
 
     @java.lang.Override
@@ -8386,6 +8409,12 @@ public final class PBDataSourceURL {
             case 16: {
 
               port_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              config_ = s;
               break;
             }
             default: {
@@ -8484,6 +8513,54 @@ public final class PBDataSourceURL {
       return port_;
     }
 
+    public static final int CONFIG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object config_;
+    /**
+     * <pre>
+     * The hdfs advanced config. Not Required.
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 3 [(.validator.field) = { ... }</code>
+     * @return The config.
+     */
+    @java.lang.Override
+    public java.lang.String getConfig() {
+      java.lang.Object ref = config_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        config_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The hdfs advanced config. Not Required.
+     * &#64;inject_tag: json:"config"
+     * </pre>
+     *
+     * <code>string config = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for config.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConfigBytes() {
+      java.lang.Object ref = config_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        config_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8504,6 +8581,9 @@ public final class PBDataSourceURL {
       if (port_ != 0) {
         output.writeInt32(2, port_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(config_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, config_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8519,6 +8599,9 @@ public final class PBDataSourceURL {
       if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(config_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, config_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8539,6 +8622,8 @@ public final class PBDataSourceURL {
           .equals(other.getNameNode())) return false;
       if (getPort()
           != other.getPort()) return false;
+      if (!getConfig()
+          .equals(other.getConfig())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8554,6 +8639,8 @@ public final class PBDataSourceURL {
       hash = (53 * hash) + getNameNode().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
+      hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfig().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8695,6 +8782,8 @@ public final class PBDataSourceURL {
 
         port_ = 0;
 
+        config_ = "";
+
         return this;
       }
 
@@ -8723,6 +8812,7 @@ public final class PBDataSourceURL {
         com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HDFSURL(this);
         result.nameNode_ = nameNode_;
         result.port_ = port_;
+        result.config_ = config_;
         onBuilt();
         return result;
       }
@@ -8777,6 +8867,10 @@ public final class PBDataSourceURL {
         }
         if (other.getPort() != 0) {
           setPort(other.getPort());
+        }
+        if (!other.getConfig().isEmpty()) {
+          config_ = other.config_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8953,6 +9047,107 @@ public final class PBDataSourceURL {
         onChanged();
         return this;
       }
+
+      private java.lang.Object config_ = "";
+      /**
+       * <pre>
+       * The hdfs advanced config. Not Required.
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 3 [(.validator.field) = { ... }</code>
+       * @return The config.
+       */
+      public java.lang.String getConfig() {
+        java.lang.Object ref = config_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          config_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The hdfs advanced config. Not Required.
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for config.
+       */
+      public com.google.protobuf.ByteString
+          getConfigBytes() {
+        java.lang.Object ref = config_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          config_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The hdfs advanced config. Not Required.
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 3 [(.validator.field) = { ... }</code>
+       * @param value The config to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfig(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        config_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The hdfs advanced config. Not Required.
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfig() {
+        
+        config_ = getDefaultInstance().getConfig();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The hdfs advanced config. Not Required.
+       * &#64;inject_tag: json:"config"
+       * </pre>
+       *
+       * <code>string config = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for config to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        config_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9088,13 +9283,14 @@ public final class PBDataSourceURL {
       "datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001:\006\312\262\004\002\n\000\"" +
       "i\n\010HBaseURL\0222\n\010zk_hosts\030\001 \003(\0132\020.datasour" +
       "ce.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022!\n\007zk_path\030\002 \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010:\006\312\262\004\002\n\000\"T\n\007HDFSURL\022\"\n" +
-      "\tname_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004por" +
-      "t\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000:\006\312\262\004\002\n\000B\204\001\n/com" +
-      ".dataomnis.gproto.types.pbmodel.pbdataso" +
-      "urceB\017PBDataSourceURLP\000Z>github.com/Data" +
-      "Workbench/gproto/xgo/types/pbmodel/pbdat" +
-      "asourceb\006proto3"
+      "B\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010:\006\312\262\004\002\n\000\"\207\001\n\007HDFSURL\022\"" +
+      "\n\tname_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004po" +
+      "rt\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\0221\n\006config\030\003 \001(" +
+      "\tB!\342\337\037\021\n\017\n\006config\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\350\010\001:\006\312\262" +
+      "\004\002\n\000B\204\001\n/com.dataomnis.gproto.types.pbmo" +
+      "del.pbdatasourceB\017PBDataSourceURLP\000Z>git" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
+      "bmodel/pbdatasourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9155,7 +9351,7 @@ public final class PBDataSourceURL {
     internal_static_datasource_HDFSURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_HDFSURL_descriptor,
-        new java.lang.String[] { "NameNode", "Port", });
+        new java.lang.String[] { "NameNode", "Port", "Config", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);

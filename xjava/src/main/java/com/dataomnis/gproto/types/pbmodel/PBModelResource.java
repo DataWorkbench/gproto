@@ -20,11 +20,33 @@ public final class PBModelResource {
 
     /**
      * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * Resource ID, unique within a region.
      * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
      * </pre>
      *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
      * @return The resourceId.
      */
     java.lang.String getResourceId();
@@ -34,7 +56,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
      * </pre>
      *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for resourceId.
      */
     com.google.protobuf.ByteString
@@ -46,7 +68,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"pid" gorm:"column:pid;"
      * </pre>
      *
-     * <code>string pid = 2;</code>
+     * <code>string pid = 3;</code>
      * @return The pid.
      */
     java.lang.String getPid();
@@ -56,7 +78,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"pid" gorm:"column:pid;"
      * </pre>
      *
-     * <code>string pid = 2;</code>
+     * <code>string pid = 3;</code>
      * @return The bytes for pid.
      */
     com.google.protobuf.ByteString
@@ -64,25 +86,14 @@ public final class PBModelResource {
 
     /**
      * <pre>
-     * Workspace ID it belongs to.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * IsDirectory represents this file whether a directory.
+     * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
      * </pre>
      *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
+     * <code>bool is_directory = 4;</code>
+     * @return The isDirectory.
      */
-    java.lang.String getSpaceId();
-    /**
-     * <pre>
-     * Workspace ID it belongs to.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-     * </pre>
-     *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    com.google.protobuf.ByteString
-        getSpaceIdBytes();
+    boolean getIsDirectory();
 
     /**
      * <pre>
@@ -90,7 +101,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -100,7 +111,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -108,53 +119,21 @@ public final class PBModelResource {
 
     /**
      * <pre>
-     * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType();
-
-    /**
-     * <pre>
-     * Resource size, Byte.
-     * &#64;inject_tag: json:"size" gorm:"size;"
-     * </pre>
-     *
-     * <code>int64 resource_size = 6 [(.validator.field) = { ... }</code>
-     * @return The resourceSize.
-     */
-    long getResourceSize();
-
-    /**
-     * <pre>
-     * Resource description
+     * Resource description.
      * &#64;inject_tag: json:"description" gorm:"description;"
      * </pre>
      *
-     * <code>string description = 7 [(.validator.field) = { ... }</code>
+     * <code>string description = 6 [(.validator.field) = { ... }</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <pre>
-     * Resource description
+     * Resource description.
      * &#64;inject_tag: json:"description" gorm:"description;"
      * </pre>
      *
-     * <code>string description = 7 [(.validator.field) = { ... }</code>
+     * <code>string description = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for description.
      */
     com.google.protobuf.ByteString
@@ -162,11 +141,130 @@ public final class PBModelResource {
 
     /**
      * <pre>
+     * Resource size, Byte.
+     * &#64;inject_tag: json:"size" gorm:"size;"
+     * </pre>
+     *
+     * <code>int64 size = 7 [(.validator.field) = { ... }</code>
+     * @return The size.
+     */
+    long getSize();
+
+    /**
+     * <pre>
+     * ETag is MD5 value of file data encoded in hexadecimal.
+     * &#64;inject_tag: json:"etag" gorm:"etag;"
+     * </pre>
+     *
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
+     * @return The etag.
+     */
+    java.lang.String getEtag();
+    /**
+     * <pre>
+     * ETag is MD5 value of file data encoded in hexadecimal.
+     * &#64;inject_tag: json:"etag" gorm:"etag;"
+     * </pre>
+     *
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for etag.
+     */
+    com.google.protobuf.ByteString
+        getEtagBytes();
+
+    /**
+     * <pre>
+     * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType();
+
+    /**
+     * <pre>
+     * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
+     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * </pre>
+     *
+     * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <pre>
+     * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
+     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * </pre>
+     *
+     * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
+     * @return The status.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status getStatus();
+
+    /**
+     * <pre>
+     * The file version id, Each upload generates a new ID.
+     * &#64;inject_tag: json:"version" gorm:"column:version;"
+     * </pre>
+     *
+     * <code>string version = 11 [(.validator.field) = { ... }</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * The file version id, Each upload generates a new ID.
+     * &#64;inject_tag: json:"version" gorm:"column:version;"
+     * </pre>
+     *
+     * <code>string version = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <pre>
+     * Resource owner.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+     * </pre>
+     *
+     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * Resource owner.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+     * </pre>
+     *
+     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
      * Timestamp of create time.
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
-     * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+     * <code>int64 created = 13 [(.validator.field) = { ... }</code>
      * @return The created.
      */
     long getCreated();
@@ -177,53 +275,10 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
-     * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+     * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
      * @return The updated.
      */
     long getUpdated();
-
-    /**
-     * <pre>
-     * Resource owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-     * </pre>
-     *
-     * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-     * @return The createBy.
-     */
-    java.lang.String getCreateBy();
-    /**
-     * <pre>
-     * Resource owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-     * </pre>
-     *
-     * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-     * @return The bytes for createBy.
-     */
-    com.google.protobuf.ByteString
-        getCreateByBytes();
-
-    /**
-     * <pre>
-     * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
-     * </pre>
-     *
-     * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    int getStatusValue();
-    /**
-     * <pre>
-     * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
-     * &#64;inject_tag: json:"status" gorm:"column:status;"
-     * </pre>
-     *
-     * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
-     * @return The status.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status getStatus();
   }
   /**
    * Protobuf type {@code model.Resource}
@@ -238,14 +293,16 @@ public final class PBModelResource {
       super(builder);
     }
     private Resource() {
+      spaceId_ = "";
       resourceId_ = "";
       pid_ = "";
-      spaceId_ = "";
       name_ = "";
-      type_ = 0;
       description_ = "";
-      createBy_ = "";
+      etag_ = "";
+      type_ = 0;
       status_ = 0;
+      version_ = "";
+      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -281,64 +338,81 @@ public final class PBModelResource {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              resourceId_ = s;
+              spaceId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              pid_ = s;
+              resourceId_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              spaceId_ = s;
+              pid_ = s;
               break;
             }
-            case 34: {
+            case 32: {
+
+              isDirectory_ = input.readBool();
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 48: {
-
-              resourceSize_ = input.readInt64();
-              break;
-            }
-            case 58: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-            case 64: {
+            case 56: {
+
+              size_ = input.readInt64();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
+              break;
+            }
+            case 104: {
 
               created_ = input.readInt64();
               break;
             }
-            case 72: {
+            case 112: {
 
               updated_ = input.readInt64();
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              createBy_ = s;
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
               break;
             }
             default: {
@@ -509,17 +583,13 @@ public final class PBModelResource {
        */
       StatusUnset(0),
       /**
-       * <code>Enabled = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      Enabled(1),
+      Deleted(1),
       /**
-       * <code>Disabled = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      Disabled(2),
-      /**
-       * <code>Deleted = 3;</code>
-       */
-      Deleted(3),
+      Enabled(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -528,17 +598,13 @@ public final class PBModelResource {
        */
       public static final int StatusUnset_VALUE = 0;
       /**
-       * <code>Enabled = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      public static final int Enabled_VALUE = 1;
+      public static final int Deleted_VALUE = 1;
       /**
-       * <code>Disabled = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      public static final int Disabled_VALUE = 2;
-      /**
-       * <code>Deleted = 3;</code>
-       */
-      public static final int Deleted_VALUE = 3;
+      public static final int Enabled_VALUE = 2;
 
 
       public final int getNumber() {
@@ -566,9 +632,8 @@ public final class PBModelResource {
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return StatusUnset;
-          case 1: return Enabled;
-          case 2: return Disabled;
-          case 3: return Deleted;
+          case 1: return Deleted;
+          case 2: return Enabled;
           default: return null;
         }
       }
@@ -625,103 +690,7 @@ public final class PBModelResource {
       // @@protoc_insertion_point(enum_scope:model.Resource.Status)
     }
 
-    public static final int RESOURCE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object resourceId_;
-    /**
-     * <pre>
-     * Resource ID, unique within a region.
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The resourceId.
-     */
-    @java.lang.Override
-    public java.lang.String getResourceId() {
-      java.lang.Object ref = resourceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        resourceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Resource ID, unique within a region.
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getResourceIdBytes() {
-      java.lang.Object ref = resourceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        resourceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object pid_;
-    /**
-     * <pre>
-     * Resource Parent ID, default "".
-     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
-     * </pre>
-     *
-     * <code>string pid = 2;</code>
-     * @return The pid.
-     */
-    @java.lang.Override
-    public java.lang.String getPid() {
-      java.lang.Object ref = pid_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pid_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Resource Parent ID, default "".
-     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
-     * </pre>
-     *
-     * <code>string pid = 2;</code>
-     * @return The bytes for pid.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPidBytes() {
-      java.lang.Object ref = pid_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pid_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SPACE_ID_FIELD_NUMBER = 3;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
@@ -729,7 +698,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     @java.lang.Override
@@ -751,7 +720,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
     @java.lang.Override
@@ -769,7 +738,119 @@ public final class PBModelResource {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 4;
+    public static final int RESOURCE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object resourceId_;
+    /**
+     * <pre>
+     * Resource ID, unique within a region.
+     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
+     * @return The resourceId.
+     */
+    @java.lang.Override
+    public java.lang.String getResourceId() {
+      java.lang.Object ref = resourceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Resource ID, unique within a region.
+     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for resourceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getResourceIdBytes() {
+      java.lang.Object ref = resourceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object pid_;
+    /**
+     * <pre>
+     * Resource Parent ID, default "".
+     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+     * </pre>
+     *
+     * <code>string pid = 3;</code>
+     * @return The pid.
+     */
+    @java.lang.Override
+    public java.lang.String getPid() {
+      java.lang.Object ref = pid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Resource Parent ID, default "".
+     * &#64;inject_tag: json:"pid" gorm:"column:pid;"
+     * </pre>
+     *
+     * <code>string pid = 3;</code>
+     * @return The bytes for pid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPidBytes() {
+      java.lang.Object ref = pid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_DIRECTORY_FIELD_NUMBER = 4;
+    private boolean isDirectory_;
+    /**
+     * <pre>
+     * IsDirectory represents this file whether a directory.
+     * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
+     * </pre>
+     *
+     * <code>bool is_directory = 4;</code>
+     * @return The isDirectory.
+     */
+    @java.lang.Override
+    public boolean getIsDirectory() {
+      return isDirectory_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object name_;
     /**
      * <pre>
@@ -777,7 +858,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -799,7 +880,7 @@ public final class PBModelResource {
      * &#64;inject_tag: json:"name" gorm:"column:name;"
      * </pre>
      *
-     * <code>string name = 4 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -817,60 +898,15 @@ public final class PBModelResource {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
-    /**
-     * <pre>
-     * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-     * &#64;inject_tag: json:"type" gorm:"column:type;"
-     * </pre>
-     *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int RESOURCE_SIZE_FIELD_NUMBER = 6;
-    private long resourceSize_;
-    /**
-     * <pre>
-     * Resource size, Byte.
-     * &#64;inject_tag: json:"size" gorm:"size;"
-     * </pre>
-     *
-     * <code>int64 resource_size = 6 [(.validator.field) = { ... }</code>
-     * @return The resourceSize.
-     */
-    @java.lang.Override
-    public long getResourceSize() {
-      return resourceSize_;
-    }
-
-    public static final int DESCRIPTION_FIELD_NUMBER = 7;
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
     private volatile java.lang.Object description_;
     /**
      * <pre>
-     * Resource description
+     * Resource description.
      * &#64;inject_tag: json:"description" gorm:"description;"
      * </pre>
      *
-     * <code>string description = 7 [(.validator.field) = { ... }</code>
+     * <code>string description = 6 [(.validator.field) = { ... }</code>
      * @return The description.
      */
     @java.lang.Override
@@ -888,11 +924,11 @@ public final class PBModelResource {
     }
     /**
      * <pre>
-     * Resource description
+     * Resource description.
      * &#64;inject_tag: json:"description" gorm:"description;"
      * </pre>
      *
-     * <code>string description = 7 [(.validator.field) = { ... }</code>
+     * <code>string description = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for description.
      */
     @java.lang.Override
@@ -910,95 +946,108 @@ public final class PBModelResource {
       }
     }
 
-    public static final int CREATED_FIELD_NUMBER = 8;
-    private long created_;
+    public static final int SIZE_FIELD_NUMBER = 7;
+    private long size_;
     /**
      * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * Resource size, Byte.
+     * &#64;inject_tag: json:"size" gorm:"size;"
      * </pre>
      *
-     * <code>int64 created = 8 [(.validator.field) = { ... }</code>
-     * @return The created.
+     * <code>int64 size = 7 [(.validator.field) = { ... }</code>
+     * @return The size.
      */
     @java.lang.Override
-    public long getCreated() {
-      return created_;
+    public long getSize() {
+      return size_;
     }
 
-    public static final int UPDATED_FIELD_NUMBER = 9;
-    private long updated_;
+    public static final int ETAG_FIELD_NUMBER = 8;
+    private volatile java.lang.Object etag_;
     /**
      * <pre>
-     * Timestamp of update time.
-     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * ETag is MD5 value of file data encoded in hexadecimal.
+     * &#64;inject_tag: json:"etag" gorm:"etag;"
      * </pre>
      *
-     * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
-     * @return The updated.
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
+     * @return The etag.
      */
     @java.lang.Override
-    public long getUpdated() {
-      return updated_;
-    }
-
-    public static final int CREATE_BY_FIELD_NUMBER = 10;
-    private volatile java.lang.Object createBy_;
-    /**
-     * <pre>
-     * Resource owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-     * </pre>
-     *
-     * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-     * @return The createBy.
-     */
-    @java.lang.Override
-    public java.lang.String getCreateBy() {
-      java.lang.Object ref = createBy_;
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createBy_ = s;
+        etag_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Resource owner.
-     * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
+     * ETag is MD5 value of file data encoded in hexadecimal.
+     * &#64;inject_tag: json:"etag" gorm:"etag;"
      * </pre>
      *
-     * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-     * @return The bytes for createBy.
+     * <code>string etag = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for etag.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getCreateByBytes() {
-      java.lang.Object ref = createBy_;
+        getEtagBytes() {
+      java.lang.Object ref = etag_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createBy_ = b;
+        etag_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 11;
+    public static final int TYPE_FIELD_NUMBER = 9;
+    private int type_;
+    /**
+     * <pre>
+     * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 10;
     private int status_;
     /**
      * <pre>
-     * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
+     * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
+     * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
@@ -1006,17 +1055,145 @@ public final class PBModelResource {
     }
     /**
      * <pre>
-     * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
+     * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
-     * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
+     * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
      * @return The status.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.valueOf(status_);
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.UNRECOGNIZED : result;
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 11;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * The file version id, Each upload generates a new ID.
+     * &#64;inject_tag: json:"version" gorm:"column:version;"
+     * </pre>
+     *
+     * <code>string version = 11 [(.validator.field) = { ... }</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The file version id, Each upload generates a new ID.
+     * &#64;inject_tag: json:"version" gorm:"column:version;"
+     * </pre>
+     *
+     * <code>string version = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 12;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * Resource owner.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+     * </pre>
+     *
+     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Resource owner.
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+     * </pre>
+     *
+     * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_FIELD_NUMBER = 13;
+    private long created_;
+    /**
+     * <pre>
+     * Timestamp of create time.
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 13 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    @java.lang.Override
+    public long getCreated() {
+      return created_;
+    }
+
+    public static final int UPDATED_FIELD_NUMBER = 14;
+    private long updated_;
+    /**
+     * <pre>
+     * Timestamp of update time.
+     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * </pre>
+     *
+     * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
+     * @return The updated.
+     */
+    @java.lang.Override
+    public long getUpdated() {
+      return updated_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1033,38 +1210,47 @@ public final class PBModelResource {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pid_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceId_);
+      if (isDirectory_ != false) {
+        output.writeBool(4, isDirectory_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
-      }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(5, type_);
-      }
-      if (resourceSize_ != 0L) {
-        output.writeInt64(6, resourceSize_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
       }
-      if (created_ != 0L) {
-        output.writeInt64(8, created_);
+      if (size_ != 0L) {
+        output.writeInt64(7, size_);
       }
-      if (updated_ != 0L) {
-        output.writeInt64(9, updated_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createBy_);
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
+        output.writeEnum(9, type_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.StatusUnset.getNumber()) {
-        output.writeEnum(11, status_);
+        output.writeEnum(10, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, version_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, createdBy_);
+      }
+      if (created_ != 0L) {
+        output.writeInt64(13, created_);
+      }
+      if (updated_ != 0L) {
+        output.writeInt64(14, updated_);
       }
       unknownFields.writeTo(output);
     }
@@ -1075,43 +1261,53 @@ public final class PBModelResource {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pid_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceId_);
+      if (isDirectory_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isDirectory_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
+      }
+      if (size_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, size_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, type_);
-      }
-      if (resourceSize_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, resourceSize_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
-      }
-      if (created_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, created_);
-      }
-      if (updated_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, updated_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createBy_);
+          .computeEnumSize(9, type_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.StatusUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, status_);
+          .computeEnumSize(10, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, version_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, createdBy_);
+      }
+      if (created_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(13, created_);
+      }
+      if (updated_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(14, updated_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1128,26 +1324,32 @@ public final class PBModelResource {
       }
       com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource other = (com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getResourceId()
           .equals(other.getResourceId())) return false;
       if (!getPid()
           .equals(other.getPid())) return false;
-      if (!getSpaceId()
-          .equals(other.getSpaceId())) return false;
+      if (getIsDirectory()
+          != other.getIsDirectory()) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (type_ != other.type_) return false;
-      if (getResourceSize()
-          != other.getResourceSize()) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
+      if (getSize()
+          != other.getSize()) return false;
+      if (!getEtag()
+          .equals(other.getEtag())) return false;
+      if (type_ != other.type_) return false;
+      if (status_ != other.status_) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (getCreated()
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
-      if (!getCreateBy()
-          .equals(other.getCreateBy())) return false;
-      if (status_ != other.status_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1159,31 +1361,38 @@ public final class PBModelResource {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getResourceId().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid().hashCode();
-      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + IS_DIRECTORY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDirectory());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-      hash = (37 * hash) + RESOURCE_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getResourceSize());
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSize());
+      hash = (37 * hash) + ETAG_FIELD_NUMBER;
+      hash = (53 * hash) + getEtag().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreated());
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
-      hash = (37 * hash) + CREATE_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getCreateBy().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1317,27 +1526,33 @@ public final class PBModelResource {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         resourceId_ = "";
 
         pid_ = "";
 
-        spaceId_ = "";
+        isDirectory_ = false;
 
         name_ = "";
 
+        description_ = "";
+
+        size_ = 0L;
+
+        etag_ = "";
+
         type_ = 0;
 
-        resourceSize_ = 0L;
+        status_ = 0;
 
-        description_ = "";
+        version_ = "";
+
+        createdBy_ = "";
 
         created_ = 0L;
 
         updated_ = 0L;
-
-        createBy_ = "";
-
-        status_ = 0;
 
         return this;
       }
@@ -1365,17 +1580,20 @@ public final class PBModelResource {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource result = new com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource(this);
+        result.spaceId_ = spaceId_;
         result.resourceId_ = resourceId_;
         result.pid_ = pid_;
-        result.spaceId_ = spaceId_;
+        result.isDirectory_ = isDirectory_;
         result.name_ = name_;
-        result.type_ = type_;
-        result.resourceSize_ = resourceSize_;
         result.description_ = description_;
+        result.size_ = size_;
+        result.etag_ = etag_;
+        result.type_ = type_;
+        result.status_ = status_;
+        result.version_ = version_;
+        result.createdBy_ = createdBy_;
         result.created_ = created_;
         result.updated_ = updated_;
-        result.createBy_ = createBy_;
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -1424,6 +1642,10 @@ public final class PBModelResource {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.getResourceId().isEmpty()) {
           resourceId_ = other.resourceId_;
           onChanged();
@@ -1432,22 +1654,36 @@ public final class PBModelResource {
           pid_ = other.pid_;
           onChanged();
         }
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
-          onChanged();
+        if (other.getIsDirectory() != false) {
+          setIsDirectory(other.getIsDirectory());
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
         }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (other.getSize() != 0L) {
+          setSize(other.getSize());
+        }
+        if (!other.getEtag().isEmpty()) {
+          etag_ = other.etag_;
+          onChanged();
+        }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        if (other.getResourceSize() != 0L) {
-          setResourceSize(other.getResourceSize());
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
         }
-        if (!other.getDescription().isEmpty()) {
-          description_ = other.description_;
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
           onChanged();
         }
         if (other.getCreated() != 0L) {
@@ -1455,13 +1691,6 @@ public final class PBModelResource {
         }
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
-        }
-        if (!other.getCreateBy().isEmpty()) {
-          createBy_ = other.createBy_;
-          onChanged();
-        }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1492,6 +1721,107 @@ public final class PBModelResource {
         return this;
       }
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object resourceId_ = "";
       /**
        * <pre>
@@ -1499,7 +1829,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
        * @return The resourceId.
        */
       public java.lang.String getResourceId() {
@@ -1520,7 +1850,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for resourceId.
        */
       public com.google.protobuf.ByteString
@@ -1542,7 +1872,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
        * @param value The resourceId to set.
        * @return This builder for chaining.
        */
@@ -1562,7 +1892,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearResourceId() {
@@ -1577,7 +1907,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for resourceId to set.
        * @return This builder for chaining.
        */
@@ -1600,7 +1930,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"pid" gorm:"column:pid;"
        * </pre>
        *
-       * <code>string pid = 2;</code>
+       * <code>string pid = 3;</code>
        * @return The pid.
        */
       public java.lang.String getPid() {
@@ -1621,7 +1951,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"pid" gorm:"column:pid;"
        * </pre>
        *
-       * <code>string pid = 2;</code>
+       * <code>string pid = 3;</code>
        * @return The bytes for pid.
        */
       public com.google.protobuf.ByteString
@@ -1643,7 +1973,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"pid" gorm:"column:pid;"
        * </pre>
        *
-       * <code>string pid = 2;</code>
+       * <code>string pid = 3;</code>
        * @param value The pid to set.
        * @return This builder for chaining.
        */
@@ -1663,7 +1993,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"pid" gorm:"column:pid;"
        * </pre>
        *
-       * <code>string pid = 2;</code>
+       * <code>string pid = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPid() {
@@ -1678,7 +2008,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"pid" gorm:"column:pid;"
        * </pre>
        *
-       * <code>string pid = 2;</code>
+       * <code>string pid = 3;</code>
        * @param value The bytes for pid to set.
        * @return This builder for chaining.
        */
@@ -1694,103 +2024,48 @@ public final class PBModelResource {
         return this;
       }
 
-      private java.lang.Object spaceId_ = "";
+      private boolean isDirectory_ ;
       /**
        * <pre>
-       * Workspace ID it belongs to.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * IsDirectory represents this file whether a directory.
+       * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
-       * @return The spaceId.
+       * <code>bool is_directory = 4;</code>
+       * @return The isDirectory.
        */
-      public java.lang.String getSpaceId() {
-        java.lang.Object ref = spaceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getIsDirectory() {
+        return isDirectory_;
       }
       /**
        * <pre>
-       * Workspace ID it belongs to.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * IsDirectory represents this file whether a directory.
+       * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceId.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceIdBytes() {
-        java.lang.Object ref = spaceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Workspace ID it belongs to.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-       * </pre>
-       *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
-       * @param value The spaceId to set.
+       * <code>bool is_directory = 4;</code>
+       * @param value The isDirectory to set.
        * @return This builder for chaining.
        */
-      public Builder setSpaceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceId_ = value;
+      public Builder setIsDirectory(boolean value) {
+        
+        isDirectory_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Workspace ID it belongs to.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * IsDirectory represents this file whether a directory.
+       * &#64;inject_tag: json:"is_directory" gorm:"column:is_directory;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+       * <code>bool is_directory = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSpaceId() {
+      public Builder clearIsDirectory() {
         
-        spaceId_ = getDefaultInstance().getSpaceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Workspace ID it belongs to.
-       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
-       * </pre>
-       *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceId_ = value;
+        isDirectory_ = false;
         onChanged();
         return this;
       }
@@ -1802,7 +2077,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1823,7 +2098,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1845,7 +2120,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1865,7 +2140,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1880,7 +2155,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"name" gorm:"column:name;"
        * </pre>
        *
-       * <code>string name = 4 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1896,139 +2171,14 @@ public final class PBModelResource {
         return this;
       }
 
-      private int type_ = 0;
-      /**
-       * <pre>
-       * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Resource type, default 0,  0 =&gt; "directory", 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
-       * &#64;inject_tag: json:"type" gorm:"column:type;"
-       * </pre>
-       *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long resourceSize_ ;
-      /**
-       * <pre>
-       * Resource size, Byte.
-       * &#64;inject_tag: json:"size" gorm:"size;"
-       * </pre>
-       *
-       * <code>int64 resource_size = 6 [(.validator.field) = { ... }</code>
-       * @return The resourceSize.
-       */
-      @java.lang.Override
-      public long getResourceSize() {
-        return resourceSize_;
-      }
-      /**
-       * <pre>
-       * Resource size, Byte.
-       * &#64;inject_tag: json:"size" gorm:"size;"
-       * </pre>
-       *
-       * <code>int64 resource_size = 6 [(.validator.field) = { ... }</code>
-       * @param value The resourceSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResourceSize(long value) {
-        
-        resourceSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Resource size, Byte.
-       * &#64;inject_tag: json:"size" gorm:"size;"
-       * </pre>
-       *
-       * <code>int64 resource_size = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResourceSize() {
-        
-        resourceSize_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object description_ = "";
       /**
        * <pre>
-       * Resource description
+       * Resource description.
        * &#64;inject_tag: json:"description" gorm:"description;"
        * </pre>
        *
-       * <code>string description = 7 [(.validator.field) = { ... }</code>
+       * <code>string description = 6 [(.validator.field) = { ... }</code>
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -2045,11 +2195,11 @@ public final class PBModelResource {
       }
       /**
        * <pre>
-       * Resource description
+       * Resource description.
        * &#64;inject_tag: json:"description" gorm:"description;"
        * </pre>
        *
-       * <code>string description = 7 [(.validator.field) = { ... }</code>
+       * <code>string description = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
@@ -2067,11 +2217,11 @@ public final class PBModelResource {
       }
       /**
        * <pre>
-       * Resource description
+       * Resource description.
        * &#64;inject_tag: json:"description" gorm:"description;"
        * </pre>
        *
-       * <code>string description = 7 [(.validator.field) = { ... }</code>
+       * <code>string description = 6 [(.validator.field) = { ... }</code>
        * @param value The description to set.
        * @return This builder for chaining.
        */
@@ -2087,11 +2237,11 @@ public final class PBModelResource {
       }
       /**
        * <pre>
-       * Resource description
+       * Resource description.
        * &#64;inject_tag: json:"description" gorm:"description;"
        * </pre>
        *
-       * <code>string description = 7 [(.validator.field) = { ... }</code>
+       * <code>string description = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
@@ -2102,11 +2252,11 @@ public final class PBModelResource {
       }
       /**
        * <pre>
-       * Resource description
+       * Resource description.
        * &#64;inject_tag: json:"description" gorm:"description;"
        * </pre>
        *
-       * <code>string description = 7 [(.validator.field) = { ... }</code>
+       * <code>string description = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
        */
@@ -2122,6 +2272,513 @@ public final class PBModelResource {
         return this;
       }
 
+      private long size_ ;
+      /**
+       * <pre>
+       * Resource size, Byte.
+       * &#64;inject_tag: json:"size" gorm:"size;"
+       * </pre>
+       *
+       * <code>int64 size = 7 [(.validator.field) = { ... }</code>
+       * @return The size.
+       */
+      @java.lang.Override
+      public long getSize() {
+        return size_;
+      }
+      /**
+       * <pre>
+       * Resource size, Byte.
+       * &#64;inject_tag: json:"size" gorm:"size;"
+       * </pre>
+       *
+       * <code>int64 size = 7 [(.validator.field) = { ... }</code>
+       * @param value The size to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSize(long value) {
+        
+        size_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource size, Byte.
+       * &#64;inject_tag: json:"size" gorm:"size;"
+       * </pre>
+       *
+       * <code>int64 size = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSize() {
+        
+        size_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object etag_ = "";
+      /**
+       * <pre>
+       * ETag is MD5 value of file data encoded in hexadecimal.
+       * &#64;inject_tag: json:"etag" gorm:"etag;"
+       * </pre>
+       *
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
+       * @return The etag.
+       */
+      public java.lang.String getEtag() {
+        java.lang.Object ref = etag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          etag_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ETag is MD5 value of file data encoded in hexadecimal.
+       * &#64;inject_tag: json:"etag" gorm:"etag;"
+       * </pre>
+       *
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
+       * @return The bytes for etag.
+       */
+      public com.google.protobuf.ByteString
+          getEtagBytes() {
+        java.lang.Object ref = etag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          etag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ETag is MD5 value of file data encoded in hexadecimal.
+       * &#64;inject_tag: json:"etag" gorm:"etag;"
+       * </pre>
+       *
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
+       * @param value The etag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEtag(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        etag_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ETag is MD5 value of file data encoded in hexadecimal.
+       * &#64;inject_tag: json:"etag" gorm:"etag;"
+       * </pre>
+       *
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEtag() {
+        
+        etag_ = getDefaultInstance().getEtag();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ETag is MD5 value of file data encoded in hexadecimal.
+       * &#64;inject_tag: json:"etag" gorm:"etag;"
+       * </pre>
+       *
+       * <code>string etag = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes for etag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEtagBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        etag_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource type, 1 =&gt; "jar", 2 =&gt; "udf" 3 =&gt; "connector".
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <pre>
+       * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @java.lang.Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <pre>
+       * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status getStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.valueOf(status_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource status, 1 =&gt; "deleted", 2 =&gt; "enabled"
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.Resource.Status status = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * The file version id, Each upload generates a new ID.
+       * &#64;inject_tag: json:"version" gorm:"column:version;"
+       * </pre>
+       *
+       * <code>string version = 11 [(.validator.field) = { ... }</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The file version id, Each upload generates a new ID.
+       * &#64;inject_tag: json:"version" gorm:"column:version;"
+       * </pre>
+       *
+       * <code>string version = 11 [(.validator.field) = { ... }</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The file version id, Each upload generates a new ID.
+       * &#64;inject_tag: json:"version" gorm:"column:version;"
+       * </pre>
+       *
+       * <code>string version = 11 [(.validator.field) = { ... }</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The file version id, Each upload generates a new ID.
+       * &#64;inject_tag: json:"version" gorm:"column:version;"
+       * </pre>
+       *
+       * <code>string version = 11 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The file version id, Each upload generates a new ID.
+       * &#64;inject_tag: json:"version" gorm:"column:version;"
+       * </pre>
+       *
+       * <code>string version = 11 [(.validator.field) = { ... }</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * Resource owner.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+       * </pre>
+       *
+       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Resource owner.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+       * </pre>
+       *
+       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Resource owner.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+       * </pre>
+       *
+       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource owner.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+       * </pre>
+       *
+       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource owner.
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
+       * </pre>
+       *
+       * <code>string created_by = 12 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
       private long created_ ;
       /**
        * <pre>
@@ -2129,7 +2786,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 13 [(.validator.field) = { ... }</code>
        * @return The created.
        */
       @java.lang.Override
@@ -2142,7 +2799,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 13 [(.validator.field) = { ... }</code>
        * @param value The created to set.
        * @return This builder for chaining.
        */
@@ -2158,7 +2815,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
-       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+       * <code>int64 created = 13 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCreated() {
@@ -2175,7 +2832,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
        * @return The updated.
        */
       @java.lang.Override
@@ -2188,7 +2845,7 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
        * @param value The updated to set.
        * @return This builder for chaining.
        */
@@ -2204,192 +2861,12 @@ public final class PBModelResource {
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
-       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+       * <code>int64 updated = 14 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdated() {
         
         updated_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object createBy_ = "";
-      /**
-       * <pre>
-       * Resource owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-       * </pre>
-       *
-       * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-       * @return The createBy.
-       */
-      public java.lang.String getCreateBy() {
-        java.lang.Object ref = createBy_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          createBy_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Resource owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-       * </pre>
-       *
-       * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-       * @return The bytes for createBy.
-       */
-      public com.google.protobuf.ByteString
-          getCreateByBytes() {
-        java.lang.Object ref = createBy_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createBy_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Resource owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-       * </pre>
-       *
-       * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-       * @param value The createBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateBy(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        createBy_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Resource owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-       * </pre>
-       *
-       * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreateBy() {
-        
-        createBy_ = getDefaultInstance().getCreateBy();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Resource owner.
-       * &#64;inject_tag: json:"create_by" gorm:"column:create_by"
-       * </pre>
-       *
-       * <code>string create_by = 10 [(.validator.field) = { ... }</code>
-       * @param value The bytes for createBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateByBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        createBy_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <pre>
-       * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for status.
-       */
-      @java.lang.Override public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <pre>
-       * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusValue(int value) {
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
-       * @return The status.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status getStatus() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.valueOf(status_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        status_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Resource status, 1 =&gt; "enabled", 2 =&gt; "disabled", 3 =&gt; "deleted",
-       * &#64;inject_tag: json:"status" gorm:"column:status;"
-       * </pre>
-       *
-       * <code>.model.Resource.Status status = 11 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = 0;
         onChanged();
         return this;
       }
@@ -2462,23 +2939,24 @@ public final class PBModelResource {
     java.lang.String[] descriptorData = {
       "\n proto/types/model/resource.proto\022\005mode" +
       "l\0323github.com/yu31/protoc-plugin/proto/v" +
-      "alidator.proto\"\217\004\n\010Resource\022!\n\013resource_" +
-      "id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\013\n\003pid\030\002 \001(\t\022%\n\010s" +
-      "pace_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\004na" +
-      "me\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0221\n\004type\030\005 \001(\016" +
-      "2\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\"\n" +
-      "\rresource_size\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\"\n\013des" +
-      "cription\030\007 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\034\n\007created" +
-      "\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337" +
-      "\037\007\022\005\262\001\0020\000\022\037\n\tcreate_by\030\n \001(\tB\014\342\337\037\010\022\006\302\001\003\230" +
-      "\002@\0225\n\006status\030\013 \001(\0162\026.model.Resource.Stat" +
-      "usB\r\342\337\037\t\022\007\332\001\0040\000X\001\":\n\004Type\022\021\n\rResourceUns" +
-      "et\020\000\022\007\n\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCONNECTOR\020\003\"A\n" +
-      "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Enabled\020\001\022\014\n" +
-      "\010Disabled\020\002\022\013\n\007Deleted\020\003Bj\n\"com.dataomni" +
-      "s.gproto.types.pbmodelB\017PBModelResourceP" +
-      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
-      "ypes/pbmodelb\006proto3"
+      "alidator.proto\"\312\004\n\010Resource\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_i" +
+      "d\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\013\n\003pid\030\003 \001(\t\022\024\n\014is" +
+      "_directory\030\004 \001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001" +
+      "\007\220\002\002\230\002\200\001\022\"\n\013description\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
+      "\310\001\200\010\022\031\n\004size\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\004etag\030" +
+      "\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type\030\t \001(\0162\024.mode" +
+      "l.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0225\n\006status" +
+      "\030\n \001(\0162\026.model.Resource.StatusB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022\035\n\007version\030\013 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022 \n\n" +
+      "created_by\030\014 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\001\022\034\n\007create" +
+      "d\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\016 \001(\003B\013\342" +
+      "\337\037\007\022\005\262\001\0020\000\":\n\004Type\022\021\n\rResourceUnset\020\000\022\007\n" +
+      "\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCONNECTOR\020\003\"3\n\006Status" +
+      "\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enable" +
+      "d\020\002Bj\n\"com.dataomnis.gproto.types.pbmode" +
+      "lB\017PBModelResourceP\000Z1github.com/DataWor" +
+      "kbench/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2490,7 +2968,7 @@ public final class PBModelResource {
     internal_static_model_Resource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Resource_descriptor,
-        new java.lang.String[] { "ResourceId", "Pid", "SpaceId", "Name", "Type", "ResourceSize", "Description", "Created", "Updated", "CreateBy", "Status", });
+        new java.lang.String[] { "SpaceId", "ResourceId", "Pid", "IsDirectory", "Name", "Description", "Size", "Etag", "Type", "Status", "Version", "CreatedBy", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
