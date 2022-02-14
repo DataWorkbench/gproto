@@ -22,12 +22,12 @@ func (this *UDF) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
-func (this *UDF) _xxx_xxx_Validator_Validate_udf_id() error {
-	if !(len(this.UdfId) == 20) {
-		return protovalidator.FieldError1("UDF", "the byte length of field 'udf_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UdfId))
+func (this *UDF) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("UDF", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
-	if !(strings.HasPrefix(this.UdfId, "udf-")) {
-		return protovalidator.FieldError1("UDF", "the value of field 'udf_id' must start with string 'udf-'", this.UdfId)
+	if !(strings.HasPrefix(this.Id, "udf-")) {
+		return protovalidator.FieldError1("UDF", "the value of field 'id' must start with string 'udf-'", this.Id)
 	}
 	return nil
 }
@@ -42,9 +42,9 @@ func (this *UDF) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-func (this *UDF) _xxx_xxx_Validator_Validate_comment() error {
-	if !(utf8.RuneCountInString(this.Comment) <= 256) {
-		return protovalidator.FieldError1("UDF", "the character length of field 'comment' must be less than or equal to '256'", protovalidator.StringCharsetLenToString(this.Comment))
+func (this *UDF) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 256) {
+		return protovalidator.FieldError1("UDF", "the character length of field 'desc' must be less than or equal to '256'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
@@ -56,14 +56,14 @@ func (this *UDF) _xxx_xxx_Validator_Validate_define() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_UDF_InEnums_UdfType = map[UDF_Type]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_UDF_InEnums_Type = map[UDF_Type]bool{0: true, 1: true, 2: true, 3: true}
 
-func (this *UDF) _xxx_xxx_Validator_Validate_udf_type() error {
-	if !(this.UdfType > 0) {
-		return protovalidator.FieldError1("UDF", "the value of field 'udf_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.UdfType)))
+func (this *UDF) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("UDF", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
-	if !(_xxx_xxx_Validator_UDF_InEnums_UdfType[this.UdfType]) {
-		return protovalidator.FieldError1("UDF", "the value of field 'udf_type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfType)))
+	if !(_xxx_xxx_Validator_UDF_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("UDF", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -80,14 +80,14 @@ func (this *UDF) _xxx_xxx_Validator_Validate_status() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_UDF_InEnums_UdfLanguage = map[UDF_Language]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_UDF_InEnums_Language = map[UDF_Language]bool{0: true, 1: true, 2: true, 3: true}
 
-func (this *UDF) _xxx_xxx_Validator_Validate_udf_language() error {
-	if !(this.UdfLanguage > 0) {
-		return protovalidator.FieldError1("UDF", "the value of field 'udf_language' must be greater than '0'", protovalidator.Int32ToString(int32(this.UdfLanguage)))
+func (this *UDF) _xxx_xxx_Validator_Validate_language() error {
+	if !(this.Language > 0) {
+		return protovalidator.FieldError1("UDF", "the value of field 'language' must be greater than '0'", protovalidator.Int32ToString(int32(this.Language)))
 	}
-	if !(_xxx_xxx_Validator_UDF_InEnums_UdfLanguage[this.UdfLanguage]) {
-		return protovalidator.FieldError1("UDF", "the value of field 'udf_language' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfLanguage)))
+	if !(_xxx_xxx_Validator_UDF_InEnums_Language[this.Language]) {
+		return protovalidator.FieldError1("UDF", "the value of field 'language' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Language)))
 	}
 	return nil
 }
@@ -128,25 +128,25 @@ func (this *UDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_udf_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_comment(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_define(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_udf_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_udf_language(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_language(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_usage_sample(); err != nil {

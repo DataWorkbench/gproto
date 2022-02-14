@@ -20,69 +20,69 @@ public final class PBModelFlinkTable {
 
     /**
      * <pre>
-     * Table ID, unique within a region.
-     * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-     * @return The tableId.
-     */
-    java.lang.String getTableId();
-    /**
-     * <pre>
-     * Table ID, unique within a region.
-     * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for tableId.
-     */
-    com.google.protobuf.ByteString
-        getTableIdBytes();
-
-    /**
-     * <pre>
-     * Source ID
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The sourceId.
-     */
-    java.lang.String getSourceId();
-    /**
-     * <pre>
-     * Source ID
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceId.
-     */
-    com.google.protobuf.ByteString
-        getSourceIdBytes();
-
-    /**
-     * <pre>
-     * Space ID, workspace ID.
+     * SpaceID, workspace ID.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * Space ID, workspace ID.
+     * SpaceID, workspace ID.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
         getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * Table ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * Table ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * DataSource ID
+     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+     * </pre>
+     *
+     * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+     * @return The sourceId.
+     */
+    java.lang.String getSourceId();
+    /**
+     * <pre>
+     * DataSource ID
+     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+     * </pre>
+     *
+     * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for sourceId.
+     */
+    com.google.protobuf.ByteString
+        getSourceIdBytes();
 
     /**
      * <pre>
@@ -109,24 +109,24 @@ public final class PBModelFlinkTable {
     /**
      * <pre>
      * Comment, describe this source.
-     * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string comment = 5 [(.validator.field) = { ... }</code>
-     * @return The comment.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
-    java.lang.String getComment();
+    java.lang.String getDesc();
     /**
      * <pre>
      * Comment, describe this source.
-     * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string comment = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for comment.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
-        getCommentBytes();
+        getDescBytes();
 
     /**
      * <pre>
@@ -157,28 +157,6 @@ public final class PBModelFlinkTable {
      * <code>.flink.TableSchema table_schema = 6;</code>
      */
     com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkTable.TableSchemaOrBuilder getTableSchemaOrBuilder();
-
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 7 [(.validator.field) = { ... }</code>
-     * @return The created.
-     */
-    long getCreated();
-
-    /**
-     * <pre>
-     * Timestamp of update time.
-     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-     * </pre>
-     *
-     * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
-     * @return The updated.
-     */
-    long getUpdated();
 
     /**
      * <pre>
@@ -224,28 +202,6 @@ public final class PBModelFlinkTable {
 
     /**
      * <pre>
-     * SourceName
-     * &#64;inject_tag: json:"source_name"
-     * </pre>
-     *
-     * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-     * @return The sourceName.
-     */
-    java.lang.String getSourceName();
-    /**
-     * <pre>
-     * SourceName
-     * &#64;inject_tag: json:"source_name"
-     * </pre>
-     *
-     * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceName.
-     */
-    com.google.protobuf.ByteString
-        getSourceNameBytes();
-
-    /**
-     * <pre>
      * Table owner.
      * &#64;inject_tag: json:"created_by" gorm:"column:created_by"
      * </pre>
@@ -265,6 +221,28 @@ public final class PBModelFlinkTable {
      */
     com.google.protobuf.ByteString
         getCreatedByBytes();
+
+    /**
+     * <pre>
+     * Timestamp of create time.
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 7 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    long getCreated();
+
+    /**
+     * <pre>
+     * Timestamp of update time.
+     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * </pre>
+     *
+     * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
+     * @return The updated.
+     */
+    long getUpdated();
   }
   /**
    * <pre>
@@ -283,14 +261,13 @@ public final class PBModelFlinkTable {
       super(builder);
     }
     private FlinkTable() {
-      tableId_ = "";
-      sourceId_ = "";
       spaceId_ = "";
+      id_ = "";
+      sourceId_ = "";
       name_ = "";
-      comment_ = "";
+      desc_ = "";
       status_ = 0;
       tableKind_ = 0;
-      sourceName_ = "";
       createdBy_ = "";
     }
 
@@ -327,19 +304,19 @@ public final class PBModelFlinkTable {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              tableId_ = s;
+              spaceId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sourceId_ = s;
+              id_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              spaceId_ = s;
+              sourceId_ = s;
               break;
             }
             case 34: {
@@ -351,7 +328,7 @@ public final class PBModelFlinkTable {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              comment_ = s;
+              desc_ = s;
               break;
             }
             case 50: {
@@ -387,12 +364,6 @@ public final class PBModelFlinkTable {
               int rawValue = input.readEnum();
 
               tableKind_ = rawValue;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceName_ = s;
               break;
             }
             case 106: {
@@ -685,111 +656,15 @@ public final class PBModelFlinkTable {
       // @@protoc_insertion_point(enum_scope:model.FlinkTable.Status)
     }
 
-    public static final int TABLE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tableId_;
-    /**
-     * <pre>
-     * Table ID, unique within a region.
-     * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-     * @return The tableId.
-     */
-    @java.lang.Override
-    public java.lang.String getTableId() {
-      java.lang.Object ref = tableId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tableId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Table ID, unique within a region.
-     * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for tableId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTableIdBytes() {
-      java.lang.Object ref = tableId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tableId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SOURCE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sourceId_;
-    /**
-     * <pre>
-     * Source ID
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The sourceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSourceId() {
-      java.lang.Object ref = sourceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Source ID
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceIdBytes() {
-      java.lang.Object ref = sourceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SPACE_ID_FIELD_NUMBER = 3;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * Space ID, workspace ID.
+     * SpaceID, workspace ID.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     @java.lang.Override
@@ -807,11 +682,11 @@ public final class PBModelFlinkTable {
     }
     /**
      * <pre>
-     * Space ID, workspace ID.
+     * SpaceID, workspace ID.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
-     * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
     @java.lang.Override
@@ -823,6 +698,102 @@ public final class PBModelFlinkTable {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * Table ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Table ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object sourceId_;
+    /**
+     * <pre>
+     * DataSource ID
+     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+     * </pre>
+     *
+     * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+     * @return The sourceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceId() {
+      java.lang.Object ref = sourceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * DataSource ID
+     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+     * </pre>
+     *
+     * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for sourceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSourceIdBytes() {
+      java.lang.Object ref = sourceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -877,48 +848,48 @@ public final class PBModelFlinkTable {
       }
     }
 
-    public static final int COMMENT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object comment_;
+    public static final int DESC_FIELD_NUMBER = 5;
+    private volatile java.lang.Object desc_;
     /**
      * <pre>
      * Comment, describe this source.
-     * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string comment = 5 [(.validator.field) = { ... }</code>
-     * @return The comment.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
     @java.lang.Override
-    public java.lang.String getComment() {
-      java.lang.Object ref = comment_;
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        comment_ = s;
+        desc_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Comment, describe this source.
-     * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+     * &#64;inject_tag: json:"desc" gorm:"column:desc;"
      * </pre>
      *
-     * <code>string comment = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for comment.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getCommentBytes() {
-      java.lang.Object ref = comment_;
+        getDescBytes() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        comment_ = b;
+        desc_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -964,38 +935,6 @@ public final class PBModelFlinkTable {
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkTable.TableSchemaOrBuilder getTableSchemaOrBuilder() {
       return getTableSchema();
-    }
-
-    public static final int CREATED_FIELD_NUMBER = 7;
-    private long created_;
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 7 [(.validator.field) = { ... }</code>
-     * @return The created.
-     */
-    @java.lang.Override
-    public long getCreated() {
-      return created_;
-    }
-
-    public static final int UPDATED_FIELD_NUMBER = 8;
-    private long updated_;
-    /**
-     * <pre>
-     * Timestamp of update time.
-     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-     * </pre>
-     *
-     * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
-     * @return The updated.
-     */
-    @java.lang.Override
-    public long getUpdated() {
-      return updated_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 9;
@@ -1056,54 +995,6 @@ public final class PBModelFlinkTable {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable.Kind.UNRECOGNIZED : result;
     }
 
-    public static final int SOURCE_NAME_FIELD_NUMBER = 11;
-    private volatile java.lang.Object sourceName_;
-    /**
-     * <pre>
-     * SourceName
-     * &#64;inject_tag: json:"source_name"
-     * </pre>
-     *
-     * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-     * @return The sourceName.
-     */
-    @java.lang.Override
-    public java.lang.String getSourceName() {
-      java.lang.Object ref = sourceName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * SourceName
-     * &#64;inject_tag: json:"source_name"
-     * </pre>
-     *
-     * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceNameBytes() {
-      java.lang.Object ref = sourceName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int CREATED_BY_FIELD_NUMBER = 13;
     private volatile java.lang.Object createdBy_;
     /**
@@ -1152,6 +1043,38 @@ public final class PBModelFlinkTable {
       }
     }
 
+    public static final int CREATED_FIELD_NUMBER = 7;
+    private long created_;
+    /**
+     * <pre>
+     * Timestamp of create time.
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 7 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    @java.lang.Override
+    public long getCreated() {
+      return created_;
+    }
+
+    public static final int UPDATED_FIELD_NUMBER = 8;
+    private long updated_;
+    /**
+     * <pre>
+     * Timestamp of update time.
+     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * </pre>
+     *
+     * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
+     * @return The updated.
+     */
+    @java.lang.Override
+    public long getUpdated() {
+      return updated_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1166,20 +1089,20 @@ public final class PBModelFlinkTable {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, comment_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, desc_);
       }
       if (tableSchema_ != null) {
         output.writeMessage(6, getTableSchema());
@@ -1196,9 +1119,6 @@ public final class PBModelFlinkTable {
       if (tableKind_ != com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable.Kind.KindUnset.getNumber()) {
         output.writeEnum(10, tableKind_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, sourceName_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, createdBy_);
       }
@@ -1211,20 +1131,20 @@ public final class PBModelFlinkTable {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, comment_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desc_);
       }
       if (tableSchema_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -1246,9 +1166,6 @@ public final class PBModelFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, tableKind_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, sourceName_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, createdBy_);
       }
@@ -1267,31 +1184,29 @@ public final class PBModelFlinkTable {
       }
       com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable other = (com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable) obj;
 
-      if (!getTableId()
-          .equals(other.getTableId())) return false;
-      if (!getSourceId()
-          .equals(other.getSourceId())) return false;
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getSourceId()
+          .equals(other.getSourceId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getComment()
-          .equals(other.getComment())) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
       if (hasTableSchema() != other.hasTableSchema()) return false;
       if (hasTableSchema()) {
         if (!getTableSchema()
             .equals(other.getTableSchema())) return false;
       }
+      if (status_ != other.status_) return false;
+      if (tableKind_ != other.tableKind_) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (getCreated()
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
-      if (status_ != other.status_) return false;
-      if (tableKind_ != other.tableKind_) return false;
-      if (!getSourceName()
-          .equals(other.getSourceName())) return false;
-      if (!getCreatedBy()
-          .equals(other.getCreatedBy())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1303,34 +1218,32 @@ public final class PBModelFlinkTable {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TABLE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTableId().hashCode();
-      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceId().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + COMMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getComment().hashCode();
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
       if (hasTableSchema()) {
         hash = (37 * hash) + TABLE_SCHEMA_FIELD_NUMBER;
         hash = (53 * hash) + getTableSchema().hashCode();
       }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (37 * hash) + TABLE_KIND_FIELD_NUMBER;
+      hash = (53 * hash) + tableKind_;
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreated());
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
-      hash = (37 * hash) + TABLE_KIND_FIELD_NUMBER;
-      hash = (53 * hash) + tableKind_;
-      hash = (37 * hash) + SOURCE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceName().hashCode();
-      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1468,15 +1381,15 @@ public final class PBModelFlinkTable {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tableId_ = "";
+        spaceId_ = "";
+
+        id_ = "";
 
         sourceId_ = "";
 
-        spaceId_ = "";
-
         name_ = "";
 
-        comment_ = "";
+        desc_ = "";
 
         if (tableSchemaBuilder_ == null) {
           tableSchema_ = null;
@@ -1484,17 +1397,15 @@ public final class PBModelFlinkTable {
           tableSchema_ = null;
           tableSchemaBuilder_ = null;
         }
-        created_ = 0L;
-
-        updated_ = 0L;
-
         status_ = 0;
 
         tableKind_ = 0;
 
-        sourceName_ = "";
-
         createdBy_ = "";
+
+        created_ = 0L;
+
+        updated_ = 0L;
 
         return this;
       }
@@ -1522,22 +1433,21 @@ public final class PBModelFlinkTable {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable result = new com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable(this);
-        result.tableId_ = tableId_;
-        result.sourceId_ = sourceId_;
         result.spaceId_ = spaceId_;
+        result.id_ = id_;
+        result.sourceId_ = sourceId_;
         result.name_ = name_;
-        result.comment_ = comment_;
+        result.desc_ = desc_;
         if (tableSchemaBuilder_ == null) {
           result.tableSchema_ = tableSchema_;
         } else {
           result.tableSchema_ = tableSchemaBuilder_.build();
         }
-        result.created_ = created_;
-        result.updated_ = updated_;
         result.status_ = status_;
         result.tableKind_ = tableKind_;
-        result.sourceName_ = sourceName_;
         result.createdBy_ = createdBy_;
+        result.created_ = created_;
+        result.updated_ = updated_;
         onBuilt();
         return result;
       }
@@ -1586,34 +1496,28 @@ public final class PBModelFlinkTable {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable.getDefaultInstance()) return this;
-        if (!other.getTableId().isEmpty()) {
-          tableId_ = other.tableId_;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         if (!other.getSourceId().isEmpty()) {
           sourceId_ = other.sourceId_;
           onChanged();
         }
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
-          onChanged();
-        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.getComment().isEmpty()) {
-          comment_ = other.comment_;
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
           onChanged();
         }
         if (other.hasTableSchema()) {
           mergeTableSchema(other.getTableSchema());
-        }
-        if (other.getCreated() != 0L) {
-          setCreated(other.getCreated());
-        }
-        if (other.getUpdated() != 0L) {
-          setUpdated(other.getUpdated());
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
@@ -1621,13 +1525,15 @@ public final class PBModelFlinkTable {
         if (other.tableKind_ != 0) {
           setTableKindValue(other.getTableKindValue());
         }
-        if (!other.getSourceName().isEmpty()) {
-          sourceName_ = other.sourceName_;
-          onChanged();
-        }
         if (!other.getCreatedBy().isEmpty()) {
           createdBy_ = other.createdBy_;
           onChanged();
+        }
+        if (other.getCreated() != 0L) {
+          setCreated(other.getCreated());
+        }
+        if (other.getUpdated() != 0L) {
+          setUpdated(other.getUpdated());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1658,216 +1564,14 @@ public final class PBModelFlinkTable {
         return this;
       }
 
-      private java.lang.Object tableId_ = "";
-      /**
-       * <pre>
-       * Table ID, unique within a region.
-       * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-       * </pre>
-       *
-       * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-       * @return The tableId.
-       */
-      public java.lang.String getTableId() {
-        java.lang.Object ref = tableId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tableId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Table ID, unique within a region.
-       * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-       * </pre>
-       *
-       * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for tableId.
-       */
-      public com.google.protobuf.ByteString
-          getTableIdBytes() {
-        java.lang.Object ref = tableId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tableId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Table ID, unique within a region.
-       * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-       * </pre>
-       *
-       * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The tableId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tableId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Table ID, unique within a region.
-       * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-       * </pre>
-       *
-       * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTableId() {
-        
-        tableId_ = getDefaultInstance().getTableId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Table ID, unique within a region.
-       * &#64;inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-       * </pre>
-       *
-       * <code>string table_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for tableId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tableId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object sourceId_ = "";
-      /**
-       * <pre>
-       * Source ID
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @return The sourceId.
-       */
-      public java.lang.String getSourceId() {
-        java.lang.Object ref = sourceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sourceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Source ID
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for sourceId.
-       */
-      public com.google.protobuf.ByteString
-          getSourceIdBytes() {
-        java.lang.Object ref = sourceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sourceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Source ID
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The sourceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sourceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Source ID
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceId() {
-        
-        sourceId_ = getDefaultInstance().getSourceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Source ID
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for sourceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sourceId_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * Space ID, workspace ID.
+       * SpaceID, workspace ID.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @return The spaceId.
        */
       public java.lang.String getSpaceId() {
@@ -1884,11 +1588,11 @@ public final class PBModelFlinkTable {
       }
       /**
        * <pre>
-       * Space ID, workspace ID.
+       * SpaceID, workspace ID.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
@@ -1906,11 +1610,11 @@ public final class PBModelFlinkTable {
       }
       /**
        * <pre>
-       * Space ID, workspace ID.
+       * SpaceID, workspace ID.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @param value The spaceId to set.
        * @return This builder for chaining.
        */
@@ -1926,11 +1630,11 @@ public final class PBModelFlinkTable {
       }
       /**
        * <pre>
-       * Space ID, workspace ID.
+       * SpaceID, workspace ID.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSpaceId() {
@@ -1941,11 +1645,11 @@ public final class PBModelFlinkTable {
       }
       /**
        * <pre>
-       * Space ID, workspace ID.
+       * SpaceID, workspace ID.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
-       * <code>string space_id = 3 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
@@ -1957,6 +1661,208 @@ public final class PBModelFlinkTable {
   checkByteStringIsUtf8(value);
         
         spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * Table ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Table ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Table ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Table ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Table ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sourceId_ = "";
+      /**
+       * <pre>
+       * DataSource ID
+       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+       * </pre>
+       *
+       * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+       * @return The sourceId.
+       */
+      public java.lang.String getSourceId() {
+        java.lang.Object ref = sourceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DataSource ID
+       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+       * </pre>
+       *
+       * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for sourceId.
+       */
+      public com.google.protobuf.ByteString
+          getSourceIdBytes() {
+        java.lang.Object ref = sourceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sourceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * DataSource ID
+       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+       * </pre>
+       *
+       * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The sourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sourceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DataSource ID
+       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+       * </pre>
+       *
+       * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceId() {
+        
+        sourceId_ = getDefaultInstance().getSourceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * DataSource ID
+       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
+       * </pre>
+       *
+       * <code>string source_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for sourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sourceId_ = value;
         onChanged();
         return this;
       }
@@ -2062,23 +1968,23 @@ public final class PBModelFlinkTable {
         return this;
       }
 
-      private java.lang.Object comment_ = "";
+      private java.lang.Object desc_ = "";
       /**
        * <pre>
        * Comment, describe this source.
-       * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string comment = 5 [(.validator.field) = { ... }</code>
-       * @return The comment.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @return The desc.
        */
-      public java.lang.String getComment() {
-        java.lang.Object ref = comment_;
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          comment_ = s;
+          desc_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2087,20 +1993,20 @@ public final class PBModelFlinkTable {
       /**
        * <pre>
        * Comment, describe this source.
-       * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string comment = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for comment.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
-          getCommentBytes() {
-        java.lang.Object ref = comment_;
+          getDescBytes() {
+        java.lang.Object ref = desc_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          comment_ = b;
+          desc_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2109,56 +2015,56 @@ public final class PBModelFlinkTable {
       /**
        * <pre>
        * Comment, describe this source.
-       * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string comment = 5 [(.validator.field) = { ... }</code>
-       * @param value The comment to set.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @param value The desc to set.
        * @return This builder for chaining.
        */
-      public Builder setComment(
+      public Builder setDesc(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        comment_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Comment, describe this source.
-       * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string comment = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearComment() {
+      public Builder clearDesc() {
         
-        comment_ = getDefaultInstance().getComment();
+        desc_ = getDefaultInstance().getDesc();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Comment, describe this source.
-       * &#64;inject_tag: json:"comment" gorm:"column:comment;"
+       * &#64;inject_tag: json:"desc" gorm:"column:desc;"
        * </pre>
        *
-       * <code>string comment = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for comment to set.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
-      public Builder setCommentBytes(
+      public Builder setDescBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        comment_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
@@ -2327,98 +2233,6 @@ public final class PBModelFlinkTable {
         return tableSchemaBuilder_;
       }
 
-      private long created_ ;
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 7 [(.validator.field) = { ... }</code>
-       * @return The created.
-       */
-      @java.lang.Override
-      public long getCreated() {
-        return created_;
-      }
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 7 [(.validator.field) = { ... }</code>
-       * @param value The created to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreated(long value) {
-        
-        created_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp of create time.
-       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-       * </pre>
-       *
-       * <code>int64 created = 7 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreated() {
-        
-        created_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long updated_ ;
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
-       * @return The updated.
-       */
-      @java.lang.Override
-      public long getUpdated() {
-        return updated_;
-      }
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
-       * @param value The updated to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdated(long value) {
-        
-        updated_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp of update time.
-       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-       * </pre>
-       *
-       * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdated() {
-        
-        updated_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private int status_ = 0;
       /**
        * <pre>
@@ -2577,107 +2391,6 @@ public final class PBModelFlinkTable {
         return this;
       }
 
-      private java.lang.Object sourceName_ = "";
-      /**
-       * <pre>
-       * SourceName
-       * &#64;inject_tag: json:"source_name"
-       * </pre>
-       *
-       * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-       * @return The sourceName.
-       */
-      public java.lang.String getSourceName() {
-        java.lang.Object ref = sourceName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sourceName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * SourceName
-       * &#64;inject_tag: json:"source_name"
-       * </pre>
-       *
-       * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-       * @return The bytes for sourceName.
-       */
-      public com.google.protobuf.ByteString
-          getSourceNameBytes() {
-        java.lang.Object ref = sourceName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sourceName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * SourceName
-       * &#64;inject_tag: json:"source_name"
-       * </pre>
-       *
-       * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-       * @param value The sourceName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sourceName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SourceName
-       * &#64;inject_tag: json:"source_name"
-       * </pre>
-       *
-       * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceName() {
-        
-        sourceName_ = getDefaultInstance().getSourceName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SourceName
-       * &#64;inject_tag: json:"source_name"
-       * </pre>
-       *
-       * <code>string source_name = 11 [(.validator.field) = { ... }</code>
-       * @param value The bytes for sourceName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sourceName_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
@@ -2778,6 +2491,98 @@ public final class PBModelFlinkTable {
         onChanged();
         return this;
       }
+
+      private long created_ ;
+      /**
+       * <pre>
+       * Timestamp of create time.
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 7 [(.validator.field) = { ... }</code>
+       * @return The created.
+       */
+      @java.lang.Override
+      public long getCreated() {
+        return created_;
+      }
+      /**
+       * <pre>
+       * Timestamp of create time.
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 7 [(.validator.field) = { ... }</code>
+       * @param value The created to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreated(long value) {
+        
+        created_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp of create time.
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreated() {
+        
+        created_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long updated_ ;
+      /**
+       * <pre>
+       * Timestamp of update time.
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
+       * @return The updated.
+       */
+      @java.lang.Override
+      public long getUpdated() {
+        return updated_;
+      }
+      /**
+       * <pre>
+       * Timestamp of update time.
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
+       * @param value The updated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdated(long value) {
+        
+        updated_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp of update time.
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdated() {
+        
+        updated_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2848,25 +2653,24 @@ public final class PBModelFlinkTable {
       "\n\035proto/types/model/table.proto\022\005model\0323" +
       "github.com/yu31/protoc-plugin/proto/vali" +
       "dator.proto\032)proto/types/model/flink/fli" +
-      "nk_table.proto\"\333\004\n\nFlinkTable\022\036\n\010table_i" +
-      "d\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\037\n\tsource_id\030\002 \001(\t" +
-      "B\014\342\337\037\010\022\006\302\001\003\360\001\024\022%\n\010space_id\030\003 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002" +
-      "\002\230\002@\022\036\n\007comment\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\022(\n\014" +
-      "table_schema\030\006 \001(\0132\022.flink.TableSchema\022\034" +
-      "\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030" +
-      "\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0227\n\006status\030\t \001(\0162\030.mod" +
-      "el.FlinkTable.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\0229\n\nt" +
-      "able_kind\030\n \001(\0162\026.model.FlinkTable.KindB" +
-      "\r\342\337\037\t\022\007\332\001\0040\000X\001\022$\n\013source_name\030\013 \001(\tB\017\342\337\037" +
-      "\013\022\t\302\001\006\220\002\000\230\002@\022 \n\ncreated_by\030\r \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\230\002@\"A\n\004Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source\020" +
-      "\001\022\017\n\013Destination\020\002\022\r\n\tDimension\020\003\"A\n\006Sta" +
-      "tus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Ena" +
-      "bled\020\002\022\014\n\010Disabled\020\003Bl\n\"com.dataomnis.gp" +
-      "roto.types.pbmodelB\021PBModelFlinkTableP\000Z" +
-      "1github.com/DataWorkbench/gproto/xgo/typ" +
-      "es/pbmodelb\006proto3"
+      "nk_table.proto\"\254\004\n\nFlinkTable\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\t" +
+      "B\014\342\337\037\010\022\006\302\001\003\360\001\024\022\037\n\tsource_id\030\003 \001(\tB\014\342\337\037\010\022" +
+      "\006\302\001\003\360\001\024\022\035\n\004name\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\002\230\002@\022\033" +
+      "\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\022(\n\014table_sch" +
+      "ema\030\006 \001(\0132\022.flink.TableSchema\0227\n\006status\030" +
+      "\t \001(\0162\030.model.FlinkTable.StatusB\r\342\337\037\t\022\007\332" +
+      "\001\0040\000X\001\0229\n\ntable_kind\030\n \001(\0162\026.model.Flink" +
+      "Table.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_by\030" +
+      "\r \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\007 \001(\003B\013\342\337" +
+      "\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"" +
+      "A\n\004Kind\022\r\n\tKindUnset\020\000\022\n\n\006Source\020\001\022\017\n\013De" +
+      "stination\020\002\022\r\n\tDimension\020\003\"A\n\006Status\022\017\n\013" +
+      "StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\022" +
+      "\014\n\010Disabled\020\003Bl\n\"com.dataomnis.gproto.ty" +
+      "pes.pbmodelB\021PBModelFlinkTableP\000Z1github" +
+      ".com/DataWorkbench/gproto/xgo/types/pbmo" +
+      "delb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2879,7 +2683,7 @@ public final class PBModelFlinkTable {
     internal_static_model_FlinkTable_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_FlinkTable_descriptor,
-        new java.lang.String[] { "TableId", "SourceId", "SpaceId", "Name", "Comment", "TableSchema", "Created", "Updated", "Status", "TableKind", "SourceName", "CreatedBy", });
+        new java.lang.String[] { "SpaceId", "Id", "SourceId", "Name", "Desc", "TableSchema", "Status", "TableKind", "CreatedBy", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

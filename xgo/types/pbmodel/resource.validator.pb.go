@@ -22,9 +22,9 @@ func (this *Resource) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
-func (this *Resource) _xxx_xxx_Validator_Validate_resource_id() error {
-	if !(len(this.ResourceId) == 20) {
-		return protovalidator.FieldError1("Resource", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
+func (this *Resource) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("Resource", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
 	return nil
 }
@@ -39,9 +39,9 @@ func (this *Resource) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-func (this *Resource) _xxx_xxx_Validator_Validate_description() error {
-	if !(utf8.RuneCountInString(this.Description) <= 1024) {
-		return protovalidator.FieldError1("Resource", "the character length of field 'description' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Description))
+func (this *Resource) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("Resource", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
@@ -120,13 +120,13 @@ func (this *Resource) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_description(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_size(); err != nil {

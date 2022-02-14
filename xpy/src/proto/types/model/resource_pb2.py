@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\017PBModelResourceP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n proto/types/model/resource.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xca\x04\n\x08Resource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12!\n\x0bresource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x0b\n\x03pid\x18\x03 \x01(\t\x12\x14\n\x0cis_directory\x18\x04 \x01(\x08\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\"\n\x0b\x64\x65scription\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x19\n\x04size\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x04\x65tag\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x31\n\x04type\x18\t \x01(\x0e\x32\x14.model.Resource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x35\n\x06status\x18\n \x01(\x0e\x32\x16.model.Resource.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1d\n\x07version\x18\x0b \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12 \n\ncreated_by\x18\x0c \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x01\x12\x1c\n\x07\x63reated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0e \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\":\n\x04Type\x12\x11\n\rResourceUnset\x10\x00\x12\x07\n\x03Jar\x10\x01\x12\x07\n\x03Udf\x10\x02\x12\r\n\tCONNECTOR\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x42j\n\"com.dataomnis.gproto.types.pbmodelB\x0fPBModelResourceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n proto/types/model/resource.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xba\x04\n\x08Resource\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x0b\n\x03pid\x18\x03 \x01(\t\x12\x14\n\x0cis_directory\x18\x04 \x01(\x08\x12\x1e\n\x04name\x18\x05 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x19\n\x04size\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x1a\n\x04\x65tag\x18\x08 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x31\n\x04type\x18\t \x01(\x0e\x32\x14.model.Resource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x35\n\x06status\x18\n \x01(\x0e\x32\x16.model.Resource.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1d\n\x07version\x18\x0b \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12 \n\ncreated_by\x18\x0c \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x01\x12\x1c\n\x07\x63reated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0e \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\":\n\x04Type\x12\x11\n\rResourceUnset\x10\x00\x12\x07\n\x03Jar\x10\x01\x12\x07\n\x03Udf\x10\x02\x12\r\n\tCONNECTOR\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x42j\n\"com.dataomnis.gproto.types.pbmodelB\x0fPBModelResourceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -56,8 +56,8 @@ _RESOURCE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=572,
-  serialized_end=630,
+  serialized_start=556,
+  serialized_end=614,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCE_TYPE)
 
@@ -86,8 +86,8 @@ _RESOURCE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=632,
-  serialized_end=683,
+  serialized_start=616,
+  serialized_end=667,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCE_STATUS)
 
@@ -108,7 +108,7 @@ _RESOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='resource_id', full_name='model.Resource.resource_id', index=1,
+      name='id', full_name='model.Resource.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -136,7 +136,7 @@ _RESOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='model.Resource.description', index=5,
+      name='desc', full_name='model.Resource.desc', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -213,7 +213,7 @@ _RESOURCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=97,
-  serialized_end=683,
+  serialized_end=667,
 )
 
 _RESOURCE.fields_by_name['type'].enum_type = _RESOURCE_TYPE
@@ -233,9 +233,9 @@ _sym_db.RegisterMessage(Resource)
 
 DESCRIPTOR._options = None
 _RESOURCE.fields_by_name['space_id']._options = None
-_RESOURCE.fields_by_name['resource_id']._options = None
+_RESOURCE.fields_by_name['id']._options = None
 _RESOURCE.fields_by_name['name']._options = None
-_RESOURCE.fields_by_name['description']._options = None
+_RESOURCE.fields_by_name['desc']._options = None
 _RESOURCE.fields_by_name['size']._options = None
 _RESOURCE.fields_by_name['etag']._options = None
 _RESOURCE.fields_by_name['type']._options = None

@@ -43,24 +43,26 @@ public final class PBModelResource {
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
      * </pre>
      *
-     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-     * @return The resourceId.
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The id.
      */
-    java.lang.String getResourceId();
+    java.lang.String getId();
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
      * </pre>
      *
-     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceId.
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
-        getResourceIdBytes();
+        getIdBytes();
 
     /**
      * <pre>
@@ -120,24 +122,26 @@ public final class PBModelResource {
     /**
      * <pre>
      * Resource description.
-     * &#64;inject_tag: json:"description" gorm:"description;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"description" gorm:"desc;"
      * </pre>
      *
-     * <code>string description = 6 [(.validator.field) = { ... }</code>
-     * @return The description.
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
-    java.lang.String getDescription();
+    java.lang.String getDesc();
     /**
      * <pre>
      * Resource description.
-     * &#64;inject_tag: json:"description" gorm:"description;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"description" gorm:"desc;"
      * </pre>
      *
-     * <code>string description = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for description.
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
-        getDescriptionBytes();
+        getDescBytes();
 
     /**
      * <pre>
@@ -294,10 +298,10 @@ public final class PBModelResource {
     }
     private Resource() {
       spaceId_ = "";
-      resourceId_ = "";
+      id_ = "";
       pid_ = "";
       name_ = "";
-      description_ = "";
+      desc_ = "";
       etag_ = "";
       type_ = 0;
       status_ = 0;
@@ -344,7 +348,7 @@ public final class PBModelResource {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              resourceId_ = s;
+              id_ = s;
               break;
             }
             case 26: {
@@ -367,7 +371,7 @@ public final class PBModelResource {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              description_ = s;
+              desc_ = s;
               break;
             }
             case 56: {
@@ -738,48 +742,50 @@ public final class PBModelResource {
       }
     }
 
-    public static final int RESOURCE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object resourceId_;
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
      * </pre>
      *
-     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-     * @return The resourceId.
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getResourceId() {
-      java.lang.Object ref = resourceId_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        resourceId_ = s;
+        id_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
      * </pre>
      *
-     * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceId.
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getResourceIdBytes() {
-      java.lang.Object ref = resourceId_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resourceId_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -898,48 +904,50 @@ public final class PBModelResource {
       }
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 6;
-    private volatile java.lang.Object description_;
+    public static final int DESC_FIELD_NUMBER = 6;
+    private volatile java.lang.Object desc_;
     /**
      * <pre>
      * Resource description.
-     * &#64;inject_tag: json:"description" gorm:"description;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"description" gorm:"desc;"
      * </pre>
      *
-     * <code>string description = 6 [(.validator.field) = { ... }</code>
-     * @return The description.
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
     @java.lang.Override
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description_ = s;
+        desc_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Resource description.
-     * &#64;inject_tag: json:"description" gorm:"description;"
+     * FIXME: rename json name
+     * &#64;inject_tag: json:"description" gorm:"desc;"
      * </pre>
      *
-     * <code>string description = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for description.
+     * <code>string desc = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
+        getDescBytes() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description_ = b;
+        desc_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1213,8 +1221,8 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pid_);
@@ -1225,8 +1233,8 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
       }
       if (size_ != 0L) {
         output.writeInt64(7, size_);
@@ -1264,8 +1272,8 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pid_);
@@ -1277,8 +1285,8 @@ public final class PBModelResource {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -1326,16 +1334,16 @@ public final class PBModelResource {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
-      if (!getResourceId()
-          .equals(other.getResourceId())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!getPid()
           .equals(other.getPid())) return false;
       if (getIsDirectory()
           != other.getIsDirectory()) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getDescription()
-          .equals(other.getDescription())) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
       if (getSize()
           != other.getSize()) return false;
       if (!getEtag()
@@ -1363,8 +1371,8 @@ public final class PBModelResource {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceId().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid().hashCode();
       hash = (37 * hash) + IS_DIRECTORY_FIELD_NUMBER;
@@ -1372,8 +1380,8 @@ public final class PBModelResource {
           getIsDirectory());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
@@ -1528,7 +1536,7 @@ public final class PBModelResource {
         super.clear();
         spaceId_ = "";
 
-        resourceId_ = "";
+        id_ = "";
 
         pid_ = "";
 
@@ -1536,7 +1544,7 @@ public final class PBModelResource {
 
         name_ = "";
 
-        description_ = "";
+        desc_ = "";
 
         size_ = 0L;
 
@@ -1581,11 +1589,11 @@ public final class PBModelResource {
       public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource result = new com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource(this);
         result.spaceId_ = spaceId_;
-        result.resourceId_ = resourceId_;
+        result.id_ = id_;
         result.pid_ = pid_;
         result.isDirectory_ = isDirectory_;
         result.name_ = name_;
-        result.description_ = description_;
+        result.desc_ = desc_;
         result.size_ = size_;
         result.etag_ = etag_;
         result.type_ = type_;
@@ -1646,8 +1654,8 @@ public final class PBModelResource {
           spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.getResourceId().isEmpty()) {
-          resourceId_ = other.resourceId_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         if (!other.getPid().isEmpty()) {
@@ -1661,8 +1669,8 @@ public final class PBModelResource {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.getDescription().isEmpty()) {
-          description_ = other.description_;
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
           onChanged();
         }
         if (other.getSize() != 0L) {
@@ -1822,23 +1830,24 @@ public final class PBModelResource {
         return this;
       }
 
-      private java.lang.Object resourceId_ = "";
+      private java.lang.Object id_ = "";
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-       * @return The resourceId.
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The id.
        */
-      public java.lang.String getResourceId() {
-        java.lang.Object ref = resourceId_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          resourceId_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1847,20 +1856,21 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for resourceId.
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getResourceIdBytes() {
-        java.lang.Object ref = resourceId_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          resourceId_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1869,56 +1879,59 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The resourceId to set.
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceId(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        resourceId_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearResourceId() {
+      public Builder clearId() {
         
-        resourceId_ = getDefaultInstance().getResourceId();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * &#64;inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
        * </pre>
        *
-       * <code>string resource_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for resourceId to set.
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceIdBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        resourceId_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -2171,23 +2184,24 @@ public final class PBModelResource {
         return this;
       }
 
-      private java.lang.Object description_ = "";
+      private java.lang.Object desc_ = "";
       /**
        * <pre>
        * Resource description.
-       * &#64;inject_tag: json:"description" gorm:"description;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"description" gorm:"desc;"
        * </pre>
        *
-       * <code>string description = 6 [(.validator.field) = { ... }</code>
-       * @return The description.
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * @return The desc.
        */
-      public java.lang.String getDescription() {
-        java.lang.Object ref = description_;
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          description_ = s;
+          desc_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2196,20 +2210,21 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource description.
-       * &#64;inject_tag: json:"description" gorm:"description;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"description" gorm:"desc;"
        * </pre>
        *
-       * <code>string description = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for description.
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
-          getDescriptionBytes() {
-        java.lang.Object ref = description_;
+          getDescBytes() {
+        java.lang.Object ref = desc_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          description_ = b;
+          desc_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2218,56 +2233,59 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource description.
-       * &#64;inject_tag: json:"description" gorm:"description;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"description" gorm:"desc;"
        * </pre>
        *
-       * <code>string description = 6 [(.validator.field) = { ... }</code>
-       * @param value The description to set.
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * @param value The desc to set.
        * @return This builder for chaining.
        */
-      public Builder setDescription(
+      public Builder setDesc(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        description_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Resource description.
-       * &#64;inject_tag: json:"description" gorm:"description;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"description" gorm:"desc;"
        * </pre>
        *
-       * <code>string description = 6 [(.validator.field) = { ... }</code>
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearDescription() {
+      public Builder clearDesc() {
         
-        description_ = getDefaultInstance().getDescription();
+        desc_ = getDefaultInstance().getDesc();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Resource description.
-       * &#64;inject_tag: json:"description" gorm:"description;"
+       * FIXME: rename json name
+       * &#64;inject_tag: json:"description" gorm:"desc;"
        * </pre>
        *
-       * <code>string description = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for description to set.
+       * <code>string desc = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
-      public Builder setDescriptionBytes(
+      public Builder setDescBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        description_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
@@ -2939,24 +2957,24 @@ public final class PBModelResource {
     java.lang.String[] descriptorData = {
       "\n proto/types/model/resource.proto\022\005mode" +
       "l\0323github.com/yu31/protoc-plugin/proto/v" +
-      "alidator.proto\"\312\004\n\010Resource\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_i" +
-      "d\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\013\n\003pid\030\003 \001(\t\022\024\n\014is" +
-      "_directory\030\004 \001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001" +
-      "\007\220\002\002\230\002\200\001\022\"\n\013description\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
-      "\310\001\200\010\022\031\n\004size\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\004etag\030" +
-      "\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type\030\t \001(\0162\024.mode" +
-      "l.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0225\n\006status" +
-      "\030\n \001(\0162\026.model.Resource.StatusB\r\342\337\037\t\022\007\332\001" +
-      "\0040\000X\001\022\035\n\007version\030\013 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022 \n\n" +
-      "created_by\030\014 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\001\022\034\n\007create" +
-      "d\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\016 \001(\003B\013\342" +
-      "\337\037\007\022\005\262\001\0020\000\":\n\004Type\022\021\n\rResourceUnset\020\000\022\007\n" +
-      "\003Jar\020\001\022\007\n\003Udf\020\002\022\r\n\tCONNECTOR\020\003\"3\n\006Status" +
-      "\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enable" +
-      "d\020\002Bj\n\"com.dataomnis.gproto.types.pbmode" +
-      "lB\017PBModelResourceP\000Z1github.com/DataWor" +
-      "kbench/gproto/xgo/types/pbmodelb\006proto3"
+      "alidator.proto\"\272\004\n\010Resource\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\360\001\024\022\013\n\003pid\030\003 \001(\t\022\024\n\014is_director" +
+      "y\030\004 \001(\010\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022" +
+      "\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\031\n\004size\030\007 \001" +
+      "(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\004etag\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\360\001 \0221\n\004type\030\t \001(\0162\024.model.Resource.TypeB" +
+      "\r\342\337\037\t\022\007\332\001\0040\000X\001\0225\n\006status\030\n \001(\0162\026.model.R" +
+      "esource.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version" +
+      "\030\013 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022 \n\ncreated_by\030\014 \001(\t" +
+      "B\014\342\337\037\010\022\006\302\001\003\200\002\001\022\034\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\0020\000\022\034\n\007updated\030\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\":\n\004Ty" +
+      "pe\022\021\n\rResourceUnset\020\000\022\007\n\003Jar\020\001\022\007\n\003Udf\020\002\022" +
+      "\r\n\tCONNECTOR\020\003\"3\n\006Status\022\017\n\013StatusUnset\020" +
+      "\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002Bj\n\"com.datao" +
+      "mnis.gproto.types.pbmodelB\017PBModelResour" +
+      "ceP\000Z1github.com/DataWorkbench/gproto/xg" +
+      "o/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2968,7 +2986,7 @@ public final class PBModelResource {
     internal_static_model_Resource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Resource_descriptor,
-        new java.lang.String[] { "SpaceId", "ResourceId", "Pid", "IsDirectory", "Name", "Description", "Size", "Etag", "Type", "Status", "Version", "CreatedBy", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "Id", "Pid", "IsDirectory", "Name", "Desc", "Size", "Etag", "Type", "Status", "Version", "CreatedBy", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

@@ -51,11 +51,11 @@ func (this *ListUDFs) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ListUDFs_InEnums_UdfType = map[pbmodel.UDF_Type]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_ListUDFs_InEnums_Type = map[pbmodel.UDF_Type]bool{0: true, 1: true, 2: true, 3: true}
 
-func (this *ListUDFs) _xxx_xxx_Validator_Validate_udf_type() error {
-	if !(_xxx_xxx_Validator_ListUDFs_InEnums_UdfType[this.UdfType]) {
-		return protovalidator.FieldError1("ListUDFs", "the value of field 'udf_type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfType)))
+func (this *ListUDFs) _xxx_xxx_Validator_Validate_type() error {
+	if !(_xxx_xxx_Validator_ListUDFs_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("ListUDFs", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -77,7 +77,7 @@ func (this *ListUDFs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_udf_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	return nil
@@ -124,9 +124,9 @@ func (this *CreateUDF) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-func (this *CreateUDF) _xxx_xxx_Validator_Validate_comment() error {
-	if !(len(this.Comment) <= 256) {
-		return protovalidator.FieldError1("CreateUDF", "the byte length of field 'comment' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Comment))
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_desc() error {
+	if !(len(this.Desc) <= 256) {
+		return protovalidator.FieldError1("CreateUDF", "the byte length of field 'desc' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Desc))
 	}
 	return nil
 }
@@ -148,26 +148,26 @@ func (this *CreateUDF) _xxx_xxx_Validator_Validate_usage_sample() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_CreateUDF_InEnums_UdfType = map[pbmodel.UDF_Type]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_CreateUDF_InEnums_Type = map[pbmodel.UDF_Type]bool{0: true, 1: true, 2: true, 3: true}
 
-func (this *CreateUDF) _xxx_xxx_Validator_Validate_udf_type() error {
-	if !(this.UdfType > 0) {
-		return protovalidator.FieldError1("CreateUDF", "the value of field 'udf_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.UdfType)))
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
-	if !(_xxx_xxx_Validator_CreateUDF_InEnums_UdfType[this.UdfType]) {
-		return protovalidator.FieldError1("CreateUDF", "the value of field 'udf_type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfType)))
+	if !(_xxx_xxx_Validator_CreateUDF_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_CreateUDF_InEnums_UdfLanguage = map[pbmodel.UDF_Language]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_CreateUDF_InEnums_Language = map[pbmodel.UDF_Language]bool{0: true, 1: true, 2: true, 3: true}
 
-func (this *CreateUDF) _xxx_xxx_Validator_Validate_udf_language() error {
-	if !(this.UdfLanguage > 0) {
-		return protovalidator.FieldError1("CreateUDF", "the value of field 'udf_language' must be greater than '0'", protovalidator.Int32ToString(int32(this.UdfLanguage)))
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_language() error {
+	if !(this.Language > 0) {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'language' must be greater than '0'", protovalidator.Int32ToString(int32(this.Language)))
 	}
-	if !(_xxx_xxx_Validator_CreateUDF_InEnums_UdfLanguage[this.UdfLanguage]) {
-		return protovalidator.FieldError1("CreateUDF", "the value of field 'udf_language' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.UdfLanguage)))
+	if !(_xxx_xxx_Validator_CreateUDF_InEnums_Language[this.Language]) {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'language' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Language)))
 	}
 	return nil
 }
@@ -183,7 +183,7 @@ func (this *CreateUDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_comment(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_define(); err != nil {
@@ -192,10 +192,10 @@ func (this *CreateUDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_usage_sample(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_udf_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_udf_language(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_language(); err != nil {
 		return err
 	}
 	return nil
@@ -228,9 +228,9 @@ func (this *UpdateUDF) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-func (this *UpdateUDF) _xxx_xxx_Validator_Validate_comment() error {
-	if !(len(this.Comment) <= 256) {
-		return protovalidator.FieldError1("UpdateUDF", "the byte length of field 'comment' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Comment))
+func (this *UpdateUDF) _xxx_xxx_Validator_Validate_desc() error {
+	if !(len(this.Desc) <= 256) {
+		return protovalidator.FieldError1("UpdateUDF", "the byte length of field 'desc' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Desc))
 	}
 	return nil
 }
@@ -266,7 +266,7 @@ func (this *UpdateUDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_comment(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_define(); err != nil {

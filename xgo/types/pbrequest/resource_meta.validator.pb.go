@@ -135,9 +135,9 @@ func (this *CreateFileMeta) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-func (this *CreateFileMeta) _xxx_xxx_Validator_Validate_description() error {
-	if !(utf8.RuneCountInString(this.Description) <= 1024) {
-		return protovalidator.FieldError1("CreateFileMeta", "the character length of field 'description' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Description))
+func (this *CreateFileMeta) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("CreateFileMeta", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
 	}
 	return nil
 }
@@ -195,7 +195,7 @@ func (this *CreateFileMeta) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_description(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_etag(); err != nil {
@@ -352,21 +352,21 @@ func (this *UpdateFileMeta) _xxx_xxx_Validator_Validate_resource_id() error {
 	return nil
 }
 
-func (this *UpdateFileMeta) _xxx_xxx_Validator_Validate_resource_name() error {
-	if !(len(this.ResourceName) <= 500) {
-		return protovalidator.FieldError1("UpdateFileMeta", "the byte length of field 'resource_name' must be less than or equal to '500'", protovalidator.StringByteLenToString(this.ResourceName))
+func (this *UpdateFileMeta) _xxx_xxx_Validator_Validate_name() error {
+	if !(len(this.Name) <= 500) {
+		return protovalidator.FieldError1("UpdateFileMeta", "the byte length of field 'name' must be less than or equal to '500'", protovalidator.StringByteLenToString(this.Name))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_UpdateFileMeta_InEnums_ResourceType = map[pbmodel.Resource_Type]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_UpdateFileMeta_InEnums_Type = map[pbmodel.Resource_Type]bool{0: true, 1: true, 2: true, 3: true}
 
-func (this *UpdateFileMeta) _xxx_xxx_Validator_Validate_resource_type() error {
-	if !(this.ResourceType > 0) {
-		return protovalidator.FieldError1("UpdateFileMeta", "the value of field 'resource_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.ResourceType)))
+func (this *UpdateFileMeta) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("UpdateFileMeta", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
 	}
-	if !(_xxx_xxx_Validator_UpdateFileMeta_InEnums_ResourceType[this.ResourceType]) {
-		return protovalidator.FieldError1("UpdateFileMeta", "the value of field 'resource_type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.ResourceType)))
+	if !(_xxx_xxx_Validator_UpdateFileMeta_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("UpdateFileMeta", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -382,10 +382,10 @@ func (this *UpdateFileMeta) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource_name(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	return nil
@@ -418,11 +418,11 @@ func (this *ListFileMetas) _xxx_xxx_Validator_Validate_offset() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ListFileMetas_InEnums_ResourceType = map[pbmodel.Resource_Type]bool{0: true, 1: true, 2: true, 3: true}
+var _xxx_xxx_Validator_ListFileMetas_InEnums_Type = map[pbmodel.Resource_Type]bool{0: true, 1: true, 2: true, 3: true}
 
-func (this *ListFileMetas) _xxx_xxx_Validator_Validate_resource_type() error {
-	if !(_xxx_xxx_Validator_ListFileMetas_InEnums_ResourceType[this.ResourceType]) {
-		return protovalidator.FieldError1("ListFileMetas", "the value of field 'resource_type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.ResourceType)))
+func (this *ListFileMetas) _xxx_xxx_Validator_Validate_type() error {
+	if !(_xxx_xxx_Validator_ListFileMetas_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("ListFileMetas", "the value of field 'type' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Type)))
 	}
 	return nil
 }
@@ -457,7 +457,7 @@ func (this *ListFileMetas) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource_type(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_search(); err != nil {

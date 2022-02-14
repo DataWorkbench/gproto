@@ -1206,24 +1206,24 @@ public final class PBRequestResourceMeta {
     /**
      * <pre>
      * The resource description. not required.
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string description = 5 [(.validator.field) = { ... }</code>
-     * @return The description.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
-    java.lang.String getDescription();
+    java.lang.String getDesc();
     /**
      * <pre>
      * The resource description. not required.
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string description = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for description.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
-        getDescriptionBytes();
+        getDescBytes();
 
     /**
      * <pre>
@@ -1340,7 +1340,7 @@ public final class PBRequestResourceMeta {
       resourceId_ = "";
       pid_ = "";
       name_ = "";
-      description_ = "";
+      desc_ = "";
       etag_ = "";
       type_ = 0;
       version_ = "";
@@ -1404,7 +1404,7 @@ public final class PBRequestResourceMeta {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              description_ = s;
+              desc_ = s;
               break;
             }
             case 48: {
@@ -1658,48 +1658,48 @@ public final class PBRequestResourceMeta {
       }
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 5;
-    private volatile java.lang.Object description_;
+    public static final int DESC_FIELD_NUMBER = 5;
+    private volatile java.lang.Object desc_;
     /**
      * <pre>
      * The resource description. not required.
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string description = 5 [(.validator.field) = { ... }</code>
-     * @return The description.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
     @java.lang.Override
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description_ = s;
+        desc_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * The resource description. not required.
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
-     * <code>string description = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for description.
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
+        getDescBytes() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description_ = b;
+        desc_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1921,8 +1921,8 @@ public final class PBRequestResourceMeta {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, desc_);
       }
       if (size_ != 0L) {
         output.writeInt64(6, size_);
@@ -1960,8 +1960,8 @@ public final class PBRequestResourceMeta {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desc_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -2003,8 +2003,8 @@ public final class PBRequestResourceMeta {
           .equals(other.getPid())) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getDescription()
-          .equals(other.getDescription())) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
       if (getSize()
           != other.getSize()) return false;
       if (!getEtag()
@@ -2033,8 +2033,8 @@ public final class PBRequestResourceMeta {
       hash = (53 * hash) + getPid().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
@@ -2187,7 +2187,7 @@ public final class PBRequestResourceMeta {
 
         name_ = "";
 
-        description_ = "";
+        desc_ = "";
 
         size_ = 0L;
 
@@ -2229,7 +2229,7 @@ public final class PBRequestResourceMeta {
         result.resourceId_ = resourceId_;
         result.pid_ = pid_;
         result.name_ = name_;
-        result.description_ = description_;
+        result.desc_ = desc_;
         result.size_ = size_;
         result.etag_ = etag_;
         result.type_ = type_;
@@ -2299,8 +2299,8 @@ public final class PBRequestResourceMeta {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.getDescription().isEmpty()) {
-          description_ = other.description_;
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
           onChanged();
         }
         if (other.getSize() != 0L) {
@@ -2749,23 +2749,23 @@ public final class PBRequestResourceMeta {
         return this;
       }
 
-      private java.lang.Object description_ = "";
+      private java.lang.Object desc_ = "";
       /**
        * <pre>
        * The resource description. not required.
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string description = 5 [(.validator.field) = { ... }</code>
-       * @return The description.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @return The desc.
        */
-      public java.lang.String getDescription() {
-        java.lang.Object ref = description_;
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          description_ = s;
+          desc_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2774,20 +2774,20 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource description. not required.
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string description = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for description.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
-          getDescriptionBytes() {
-        java.lang.Object ref = description_;
+          getDescBytes() {
+        java.lang.Object ref = desc_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          description_ = b;
+          desc_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2796,56 +2796,56 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource description. not required.
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string description = 5 [(.validator.field) = { ... }</code>
-       * @param value The description to set.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @param value The desc to set.
        * @return This builder for chaining.
        */
-      public Builder setDescription(
+      public Builder setDesc(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        description_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource description. not required.
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string description = 5 [(.validator.field) = { ... }</code>
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearDescription() {
+      public Builder clearDesc() {
         
-        description_ = getDefaultInstance().getDescription();
+        desc_ = getDefaultInstance().getDesc();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource description. not required.
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
-       * <code>string description = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for description to set.
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
-      public Builder setDescriptionBytes(
+      public Builder setDescBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        description_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
@@ -6165,67 +6165,73 @@ public final class PBRequestResourceMeta {
     /**
      * <pre>
      * The resource name. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_name"
      * </pre>
      *
-     * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-     * @return The resourceName.
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
      */
-    java.lang.String getResourceName();
+    java.lang.String getName();
     /**
      * <pre>
      * The resource name. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_name"
      * </pre>
      *
-     * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceName.
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
-        getResourceNameBytes();
+        getNameBytes();
 
     /**
      * <pre>
      * The resource description. Not required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"description"
      * </pre>
      *
-     * <code>string description = 4 [(.validator.field) = { ... }</code>
-     * @return The description.
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
-    java.lang.String getDescription();
+    java.lang.String getDesc();
     /**
      * <pre>
      * The resource description. Not required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"description"
      * </pre>
      *
-     * <code>string description = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for description.
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     com.google.protobuf.ByteString
-        getDescriptionBytes();
+        getDescBytes();
 
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for resourceType.
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
      */
-    int getResourceTypeValue();
+    int getTypeValue();
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-     * @return The resourceType.
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getResourceType();
+    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType();
   }
   /**
    * Protobuf type {@code request.UpdateFileMeta}
@@ -6242,9 +6248,9 @@ public final class PBRequestResourceMeta {
     private UpdateFileMeta() {
       spaceId_ = "";
       resourceId_ = "";
-      resourceName_ = "";
-      description_ = "";
-      resourceType_ = 0;
+      name_ = "";
+      desc_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -6292,19 +6298,19 @@ public final class PBRequestResourceMeta {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              resourceName_ = s;
+              name_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              description_ = s;
+              desc_ = s;
               break;
             }
             case 40: {
               int rawValue = input.readEnum();
 
-              resourceType_ = rawValue;
+              type_ = rawValue;
               break;
             }
             default: {
@@ -6435,128 +6441,134 @@ public final class PBRequestResourceMeta {
       }
     }
 
-    public static final int RESOURCE_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object resourceName_;
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
     /**
      * <pre>
      * The resource name. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_name"
      * </pre>
      *
-     * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-     * @return The resourceName.
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
      */
     @java.lang.Override
-    public java.lang.String getResourceName() {
-      java.lang.Object ref = resourceName_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        resourceName_ = s;
+        name_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * The resource name. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_name"
      * </pre>
      *
-     * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceName.
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getResourceNameBytes() {
-      java.lang.Object ref = resourceName_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resourceName_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 4;
-    private volatile java.lang.Object description_;
+    public static final int DESC_FIELD_NUMBER = 4;
+    private volatile java.lang.Object desc_;
     /**
      * <pre>
      * The resource description. Not required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"description"
      * </pre>
      *
-     * <code>string description = 4 [(.validator.field) = { ... }</code>
-     * @return The description.
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The desc.
      */
     @java.lang.Override
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description_ = s;
+        desc_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * The resource description. Not required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"description"
      * </pre>
      *
-     * <code>string description = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for description.
+     * <code>string desc = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
+        getDescBytes() {
+      java.lang.Object ref = desc_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description_ = b;
+        desc_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int RESOURCE_TYPE_FIELD_NUMBER = 5;
-    private int resourceType_;
+    public static final int TYPE_FIELD_NUMBER = 5;
+    private int type_;
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for resourceType.
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getResourceTypeValue() {
-      return resourceType_;
+    @java.lang.Override public int getTypeValue() {
+      return type_;
     }
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json name
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-     * @return The resourceType.
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getResourceType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(resourceType_);
+      com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
     }
 
@@ -6580,14 +6592,14 @@ public final class PBRequestResourceMeta {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
-      if (resourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(5, resourceType_);
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
+        output.writeEnum(5, type_);
       }
       unknownFields.writeTo(output);
     }
@@ -6604,15 +6616,15 @@ public final class PBRequestResourceMeta {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, resourceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
       }
-      if (resourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, resourceType_);
+          .computeEnumSize(5, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6633,11 +6645,11 @@ public final class PBRequestResourceMeta {
           .equals(other.getSpaceId())) return false;
       if (!getResourceId()
           .equals(other.getResourceId())) return false;
-      if (!getResourceName()
-          .equals(other.getResourceName())) return false;
-      if (!getDescription()
-          .equals(other.getDescription())) return false;
-      if (resourceType_ != other.resourceType_) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
+      if (type_ != other.type_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6653,12 +6665,12 @@ public final class PBRequestResourceMeta {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getResourceId().hashCode();
-      hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceName().hashCode();
-      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getDescription().hashCode();
-      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + resourceType_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6796,11 +6808,11 @@ public final class PBRequestResourceMeta {
 
         resourceId_ = "";
 
-        resourceName_ = "";
+        name_ = "";
 
-        description_ = "";
+        desc_ = "";
 
-        resourceType_ = 0;
+        type_ = 0;
 
         return this;
       }
@@ -6830,9 +6842,9 @@ public final class PBRequestResourceMeta {
         com.dataomnis.gproto.types.pbrequest.PBRequestResourceMeta.UpdateFileMeta result = new com.dataomnis.gproto.types.pbrequest.PBRequestResourceMeta.UpdateFileMeta(this);
         result.spaceId_ = spaceId_;
         result.resourceId_ = resourceId_;
-        result.resourceName_ = resourceName_;
-        result.description_ = description_;
-        result.resourceType_ = resourceType_;
+        result.name_ = name_;
+        result.desc_ = desc_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -6889,16 +6901,16 @@ public final class PBRequestResourceMeta {
           resourceId_ = other.resourceId_;
           onChanged();
         }
-        if (!other.getResourceName().isEmpty()) {
-          resourceName_ = other.resourceName_;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
-        if (!other.getDescription().isEmpty()) {
-          description_ = other.description_;
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
           onChanged();
         }
-        if (other.resourceType_ != 0) {
-          setResourceTypeValue(other.getResourceTypeValue());
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7131,23 +7143,24 @@ public final class PBRequestResourceMeta {
         return this;
       }
 
-      private java.lang.Object resourceName_ = "";
+      private java.lang.Object name_ = "";
       /**
        * <pre>
        * The resource name. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_name"
        * </pre>
        *
-       * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-       * @return The resourceName.
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The name.
        */
-      public java.lang.String getResourceName() {
-        java.lang.Object ref = resourceName_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          resourceName_ = s;
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7156,20 +7169,21 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource name. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_name"
        * </pre>
        *
-       * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for resourceName.
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
-          getResourceNameBytes() {
-        java.lang.Object ref = resourceName_;
+          getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          resourceName_ = b;
+          name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7178,77 +7192,81 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource name. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_name"
        * </pre>
        *
-       * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-       * @param value The resourceName to set.
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceName(
+      public Builder setName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        resourceName_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource name. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_name"
        * </pre>
        *
-       * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearResourceName() {
+      public Builder clearName() {
         
-        resourceName_ = getDefaultInstance().getResourceName();
+        name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource name. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_name"
        * </pre>
        *
-       * <code>string resource_name = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for resourceName to set.
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceNameBytes(
+      public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        resourceName_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object description_ = "";
+      private java.lang.Object desc_ = "";
       /**
        * <pre>
        * The resource description. Not required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"description"
        * </pre>
        *
-       * <code>string description = 4 [(.validator.field) = { ... }</code>
-       * @return The description.
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return The desc.
        */
-      public java.lang.String getDescription() {
-        java.lang.Object ref = description_;
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          description_ = s;
+          desc_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7257,20 +7275,21 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource description. Not required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"description"
        * </pre>
        *
-       * <code>string description = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for description.
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for desc.
        */
       public com.google.protobuf.ByteString
-          getDescriptionBytes() {
-        java.lang.Object ref = description_;
+          getDescBytes() {
+        java.lang.Object ref = desc_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          description_ = b;
+          desc_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7279,135 +7298,143 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource description. Not required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"description"
        * </pre>
        *
-       * <code>string description = 4 [(.validator.field) = { ... }</code>
-       * @param value The description to set.
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @param value The desc to set.
        * @return This builder for chaining.
        */
-      public Builder setDescription(
+      public Builder setDesc(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        description_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource description. Not required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"description"
        * </pre>
        *
-       * <code>string description = 4 [(.validator.field) = { ... }</code>
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearDescription() {
+      public Builder clearDesc() {
         
-        description_ = getDefaultInstance().getDescription();
+        desc_ = getDefaultInstance().getDesc();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource description. Not required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"description"
        * </pre>
        *
-       * <code>string description = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for description to set.
+       * <code>string desc = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for desc to set.
        * @return This builder for chaining.
        */
-      public Builder setDescriptionBytes(
+      public Builder setDescBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        description_ = value;
+        desc_ = value;
         onChanged();
         return this;
       }
 
-      private int resourceType_ = 0;
+      private int type_ = 0;
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for resourceType.
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getResourceTypeValue() {
-        return resourceType_;
+      @java.lang.Override public int getTypeValue() {
+        return type_;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for resourceType to set.
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceTypeValue(int value) {
+      public Builder setTypeValue(int value) {
         
-        resourceType_ = value;
+        type_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-       * @return The resourceType.
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The type.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getResourceType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(resourceType_);
+        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
         return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
-       * @param value The resourceType to set.
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceType(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type value) {
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        resourceType_ = value.getNumber();
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json name
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearResourceType() {
+      public Builder clearType() {
         
-        resourceType_ = 0;
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -7516,45 +7543,49 @@ public final class PBRequestResourceMeta {
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_type" form:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for resourceType.
+     * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
      */
-    int getResourceTypeValue();
+    int getTypeValue();
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_type" form:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-     * @return The resourceType.
+     * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The type.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getResourceType();
+    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType();
 
     /**
      * <pre>
      * The resource name. not required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-     * @return The resourceName.
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * @return The name.
      */
-    java.lang.String getResourceName();
+    java.lang.String getName();
     /**
      * <pre>
      * The resource name. not required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceName.
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
-        getResourceNameBytes();
+        getNameBytes();
 
     /**
      * <pre>
@@ -7651,8 +7682,8 @@ public final class PBRequestResourceMeta {
     }
     private ListFileMetas() {
       spaceId_ = "";
-      resourceType_ = 0;
-      resourceName_ = "";
+      type_ = 0;
+      name_ = "";
       search_ = "";
       sortBy_ = "";
       pid_ = "";
@@ -7707,13 +7738,13 @@ public final class PBRequestResourceMeta {
             case 32: {
               int rawValue = input.readEnum();
 
-              resourceType_ = rawValue;
+              type_ = rawValue;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              resourceName_ = s;
+              name_ = s;
               break;
             }
             case 50: {
@@ -7852,77 +7883,81 @@ public final class PBRequestResourceMeta {
       return offset_;
     }
 
-    public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
-    private int resourceType_;
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_;
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_type" form:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for resourceType.
+     * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getResourceTypeValue() {
-      return resourceType_;
+    @java.lang.Override public int getTypeValue() {
+      return type_;
     }
     /**
      * <pre>
      * The resource type. required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_type" form:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-     * @return The resourceType.
+     * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The type.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getResourceType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(resourceType_);
+      com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
     }
 
-    public static final int RESOURCE_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object resourceName_;
+    public static final int NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object name_;
     /**
      * <pre>
      * The resource name. not required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-     * @return The resourceName.
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * @return The name.
      */
     @java.lang.Override
-    public java.lang.String getResourceName() {
-      java.lang.Object ref = resourceName_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        resourceName_ = s;
+        name_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * The resource name. not required.
+     * FIXME: Rename json and form name
      * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
      * </pre>
      *
-     * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceName.
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getResourceNameBytes() {
-      java.lang.Object ref = resourceName_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resourceName_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -8116,11 +8151,11 @@ public final class PBRequestResourceMeta {
       if (offset_ != 0) {
         output.writeInt32(3, offset_);
       }
-      if (resourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(4, resourceType_);
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
+        output.writeEnum(4, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resourceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, search_);
@@ -8154,12 +8189,12 @@ public final class PBRequestResourceMeta {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, offset_);
       }
-      if (resourceType_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, resourceType_);
+          .computeEnumSize(4, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, resourceName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, search_);
@@ -8195,9 +8230,9 @@ public final class PBRequestResourceMeta {
           != other.getLimit()) return false;
       if (getOffset()
           != other.getOffset()) return false;
-      if (resourceType_ != other.resourceType_) return false;
-      if (!getResourceName()
-          .equals(other.getResourceName())) return false;
+      if (type_ != other.type_) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!getSearch()
           .equals(other.getSearch())) return false;
       if (!getSortBy()
@@ -8223,10 +8258,10 @@ public final class PBRequestResourceMeta {
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
-      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + resourceType_;
-      hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceName().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getSearch().hashCode();
       hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
@@ -8375,9 +8410,9 @@ public final class PBRequestResourceMeta {
 
         offset_ = 0;
 
-        resourceType_ = 0;
+        type_ = 0;
 
-        resourceName_ = "";
+        name_ = "";
 
         search_ = "";
 
@@ -8416,8 +8451,8 @@ public final class PBRequestResourceMeta {
         result.spaceId_ = spaceId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
-        result.resourceType_ = resourceType_;
-        result.resourceName_ = resourceName_;
+        result.type_ = type_;
+        result.name_ = name_;
         result.search_ = search_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
@@ -8480,11 +8515,11 @@ public final class PBRequestResourceMeta {
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
         }
-        if (other.resourceType_ != 0) {
-          setResourceTypeValue(other.getResourceTypeValue());
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
-        if (!other.getResourceName().isEmpty()) {
-          resourceName_ = other.resourceName_;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
         if (!other.getSearch().isEmpty()) {
@@ -8727,102 +8762,108 @@ public final class PBRequestResourceMeta {
         return this;
       }
 
-      private int resourceType_ = 0;
+      private int type_ = 0;
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_type" form:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for resourceType.
+       * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getResourceTypeValue() {
-        return resourceType_;
+      @java.lang.Override public int getTypeValue() {
+        return type_;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_type" form:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for resourceType to set.
+       * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceTypeValue(int value) {
+      public Builder setTypeValue(int value) {
         
-        resourceType_ = value;
+        type_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_type" form:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-       * @return The resourceType.
+       * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+       * @return The type.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getResourceType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(resourceType_);
+        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
         return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_type" form:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
-       * @param value The resourceType to set.
+       * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceType(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type value) {
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        resourceType_ = value.getNumber();
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource type. required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_type" form:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type resource_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.Resource.Type type = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearResourceType() {
+      public Builder clearType() {
         
-        resourceType_ = 0;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object resourceName_ = "";
+      private java.lang.Object name_ = "";
       /**
        * <pre>
        * The resource name. not required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-       * @return The resourceName.
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * @return The name.
        */
-      public java.lang.String getResourceName() {
-        java.lang.Object ref = resourceName_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          resourceName_ = s;
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8831,20 +8872,21 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource name. not required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for resourceName.
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
-          getResourceNameBytes() {
-        java.lang.Object ref = resourceName_;
+          getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          resourceName_ = b;
+          name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8853,56 +8895,59 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource name. not required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-       * @param value The resourceName to set.
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceName(
+      public Builder setName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        resourceName_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource name. not required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearResourceName() {
+      public Builder clearName() {
         
-        resourceName_ = getDefaultInstance().getResourceName();
+        name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * The resource name. not required.
+       * FIXME: Rename json and form name
        * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
        * </pre>
        *
-       * <code>string resource_name = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for resourceName to set.
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceNameBytes(
+      public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        resourceName_ = value;
+        name_ = value;
         onChanged();
         return this;
       }
@@ -10294,45 +10339,44 @@ public final class PBRequestResourceMeta {
       "\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001" +
       "\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\003 \001(\tB\020\342\337" +
       "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\036\n\004size\030\004 \001(\003B\020\342\337\037\014\022\n\262\001\0070" +
-      "\0008\200\200\2002\"\372\002\n\016CreateFileMeta\022%\n\010space_id\030\001 " +
+      "\0008\200\200\2002\"\363\002\n\016CreateFileMeta\022%\n\010space_id\030\001 " +
       "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030" +
       "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\003 \001(\tB" +
       "%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036" +
-      "\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\013descri" +
-      "ption\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\014\n\004size\030\006 \001(\003" +
-      "\022\032\n\004etag\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type\030\010 \001" +
-      "(\0162\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      "\035\n\007version\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncreate" +
-      "d_by\030\n \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\206\001\n\023ReCreate" +
-      "FilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004res-\022\036\n\004size\030\003 \001(\003B\020\342\337\037\014\022\n\262\001\0070\0008" +
-      "\200\200\2002\"\254\001\n\020ReCreateFileMeta\022%\n\010space_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030" +
-      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\014\n\004size\030\003 \001(\003" +
-      "\022\032\n\004etag\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030" +
-      "\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"<\n\020DescribeFileMeta\022" +
-      "(\n\013resource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res" +
-      "-\"\327\001\n\016UpdateFileMeta\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_id\030\002 \001(\t" +
-      "B\014\342\337\037\010\022\006\302\001\003\360\001\024\022$\n\rresource_name\030\003 \001(\tB\r\342" +
-      "\337\037\t\022\007\302\001\004\230\002\364\003\022\031\n\013description\030\004 \001(\tB\004\342\337\037\000\022" +
-      ":\n\rresource_type\030\005 \001(\0162\024.model.Resource." +
-      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\325\002\n\rListFileMetas\022%\n" +
-      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005" +
-      "limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006" +
-      "offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\rresource_ty" +
-      "pe\030\004 \001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001" +
-      "\002X\001\022\033\n\rresource_name\030\005 \001(\tB\004\342\337\037\000\022\035\n\006sear" +
-      "ch\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\t" +
-      "B-\342\337\037)\022\'\302\001$J\000J\002idJ\007createdJ\007updatedJ\004nam" +
-      "eJ\004size\022\025\n\007reverse\030\010 \001(\010B\004\342\337\037\000\022\013\n\003pid\030\t " +
-      "\001(\t\"]\n\017DeleteFileMetas\022%\n\010space_id\030\001 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\014resource_ids\030\002 " +
-      "\003(\tB\r\342\337\037\t\022\007\352\001\0040\0008dBt\n$com.dataomnis.gpro" +
-      "to.types.pbrequestB\025PBRequestResourceMet" +
-      "aP\000Z3github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbrequestb\006proto3"
+      "\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\005" +
+      " \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\014\n\004size\030\006 \001(\003\022\032\n\004eta" +
+      "g\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type\030\010 \001(\0162\024.mo" +
+      "del.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007vers" +
+      "ion\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncreated_by\030\n " +
+      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\206\001\n\023ReCreateFilePre" +
+      "pare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004res-\022\036\n\004size\030\003 \001(\003B\020\342\337\037\014\022\n\262\001\0070\0008\200\200\2002\"\254\001" +
+      "\n\020ReCreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\014\n\004size\030\003 \001(\003\022\032\n\004eta" +
+      "g\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\360\001\020\"<\n\020DescribeFileMeta\022(\n\013reso" +
+      "urce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\276\001\n\016U" +
+      "pdateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022!\n\013resource_id\030\002 \001(\tB\014\342\337\037\010\022" +
+      "\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004" +
+      "desc\030\004 \001(\tB\004\342\337\037\000\0221\n\004type\030\005 \001(\0162\024.model.R" +
+      "esource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\303\002\n\rListFile" +
+      "Metas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\004" +
+      "0\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022/\n\004typ" +
+      "e\030\004 \001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002" +
+      "X\001\022\022\n\004name\030\005 \001(\tB\004\342\337\037\000\022\035\n\006search\030\006 \001(\tB\r" +
+      "\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001" +
+      "$J\000J\002idJ\007createdJ\007updatedJ\004nameJ\004size\022\025\n" +
+      "\007reverse\030\010 \001(\010B\004\342\337\037\000\022\013\n\003pid\030\t \001(\t\"]\n\017Del" +
+      "eteFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022#\n\014resource_ids\030\002 \003(\tB\r\342\337\037\t\022" +
+      "\007\352\001\0040\0008dBt\n$com.dataomnis.gproto.types.p" +
+      "brequestB\025PBRequestResourceMetaP\000Z3githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
+      "equestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10352,7 +10396,7 @@ public final class PBRequestResourceMeta {
     internal_static_request_CreateFileMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFileMeta_descriptor,
-        new java.lang.String[] { "SpaceId", "ResourceId", "Pid", "Name", "Description", "Size", "Etag", "Type", "Version", "CreatedBy", });
+        new java.lang.String[] { "SpaceId", "ResourceId", "Pid", "Name", "Desc", "Size", "Etag", "Type", "Version", "CreatedBy", });
     internal_static_request_ReCreateFilePrepare_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_ReCreateFilePrepare_fieldAccessorTable = new
@@ -10376,13 +10420,13 @@ public final class PBRequestResourceMeta {
     internal_static_request_UpdateFileMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateFileMeta_descriptor,
-        new java.lang.String[] { "SpaceId", "ResourceId", "ResourceName", "Description", "ResourceType", });
+        new java.lang.String[] { "SpaceId", "ResourceId", "Name", "Desc", "Type", });
     internal_static_request_ListFileMetas_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_request_ListFileMetas_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListFileMetas_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "ResourceType", "ResourceName", "Search", "SortBy", "Reverse", "Pid", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "Type", "Name", "Search", "SortBy", "Reverse", "Pid", });
     internal_static_request_DeleteFileMetas_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_request_DeleteFileMetas_fieldAccessorTable = new
