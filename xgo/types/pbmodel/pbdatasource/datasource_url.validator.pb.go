@@ -265,6 +265,30 @@ func (this *ClickHouseURL) Validate() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_FtpURL_InEnums_Protocol = map[FtpURL_Protocol]bool{0: true, 1: true, 2: true}
+
+func (this *FtpURL) _xxx_xxx_Validator_Validate_protocol() error {
+	if !(this.Protocol > 0) {
+		return protovalidator.FieldError1("FtpURL", "the value of field 'protocol' must be greater than '0'", protovalidator.Int32ToString(int32(this.Protocol)))
+	}
+	if !(_xxx_xxx_Validator_FtpURL_InEnums_Protocol[this.Protocol]) {
+		return protovalidator.FieldError1("FtpURL", "the value of field 'protocol' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Protocol)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_FtpURL_InEnums_ConnectionMode = map[FtpURL_ConnectionMode]bool{0: true, 1: true, 2: true}
+
+func (this *FtpURL) _xxx_xxx_Validator_Validate_connection_mode() error {
+	if !(this.ConnectionMode > 0) {
+		return protovalidator.FieldError1("FtpURL", "the value of field 'connection_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.ConnectionMode)))
+	}
+	if !(_xxx_xxx_Validator_FtpURL_InEnums_ConnectionMode[this.ConnectionMode]) {
+		return protovalidator.FieldError1("FtpURL", "the value of field 'connection_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ConnectionMode)))
+	}
+	return nil
+}
+
 func (this *FtpURL) _xxx_xxx_Validator_Validate_host() error {
 	if !(len(this.Host) >= 1) {
 		return protovalidator.FieldError1("FtpURL", "the byte length of field 'host' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Host))
@@ -309,6 +333,12 @@ func (this *FtpURL) _xxx_xxx_Validator_Validate_password() error {
 func (this *FtpURL) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_protocol(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_connection_mode(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
 		return err
@@ -362,30 +392,15 @@ func (this *KafkaURL) Validate() error {
 	return nil
 }
 
-func (this *HBaseURL) _xxx_xxx_Validator_Validate_zk_hosts() error {
-	if !(len(this.ZkHosts) >= 1) {
-		return protovalidator.FieldError1("HBaseURL", "the length of field 'zk_hosts' must be greater than or equal to '1'", strconv.Itoa(len(this.ZkHosts)))
+func (this *HBaseURL) _xxx_xxx_Validator_Validate_config() error {
+	if !(len(this.Config) >= 1) {
+		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'config' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Config))
 	}
-	if !(len(this.ZkHosts) <= 128) {
-		return protovalidator.FieldError1("HBaseURL", "the length of field 'zk_hosts' must be less than or equal to '128'", strconv.Itoa(len(this.ZkHosts)))
+	if !(len(this.Config) <= 16384) {
+		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'config' must be less than or equal to '16384'", protovalidator.StringByteLenToString(this.Config))
 	}
-	for _, item := range this.ZkHosts {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-func (this *HBaseURL) _xxx_xxx_Validator_Validate_zk_path() error {
-	if !(len(this.ZkPath) >= 1) {
-		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zk_path' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.ZkPath))
-	}
-	if !(len(this.ZkPath) <= 1024) {
-		return protovalidator.FieldError1("HBaseURL", "the byte length of field 'zk_path' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.ZkPath))
+	if !(protovalidator.StringIsJSON(this.Config)) {
+		return protovalidator.FieldError1("HBaseURL", "the value of field 'config' must be a string in JSON format", this.Config)
 	}
 	return nil
 }
@@ -395,10 +410,7 @@ func (this *HBaseURL) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_zk_hosts(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_zk_path(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_config(); err != nil {
 		return err
 	}
 	return nil
@@ -434,6 +446,9 @@ func (this *HDFSURL) _xxx_xxx_Validator_CheckIf_config() bool {
 func (this *HDFSURL) _xxx_xxx_Validator_Validate_config() error {
 	if !this._xxx_xxx_Validator_CheckIf_config() {
 		return nil
+	}
+	if !(len(this.Config) <= 16384) {
+		return protovalidator.FieldError1("HDFSURL", "the byte length of field 'config' must be less than or equal to '16384'", protovalidator.StringByteLenToString(this.Config))
 	}
 	if !(protovalidator.StringIsJSON(this.Config)) {
 		return protovalidator.FieldError1("HDFSURL", "the value of field 'config' must be a string in JSON format", this.Config)
