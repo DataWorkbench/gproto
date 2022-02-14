@@ -21,11 +21,71 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\017PBDataSourceURLP\000Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasource',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1proto/types/model/datasource/datasource_url.proto\x12\ndatasource\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"E\n\x04Host\x12\x1e\n\x04host\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x01\x98\x02\x80\x02\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06(\xff\xff\x03\x30\x00\"\xb5\x01\n\x08MySQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rPostgreSQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rClickHouseURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\x90\x01\n\x06\x46tpURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\x0f\n\x05S3URL:\x06\xca\xb2\x04\x02\n\x00\"K\n\x08KafkaURL\x12\x37\n\rkafka_brokers\x18\x01 \x03(\x0b\x32\x10.datasource.HostB\x0e\xe2\xdf\x1f\n\x12\x08\xea\x01\x05\x38\x80\x01@\x01:\x06\xca\xb2\x04\x02\n\x00\"i\n\x08HBaseURL\x12\x32\n\x08zk_hosts\x18\x01 \x03(\x0b\x32\x10.datasource.HostB\x0e\xe2\xdf\x1f\n\x12\x08\xea\x01\x05\x38\x80\x01@\x01\x12!\n\x07zk_path\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x01\x98\x02\x80\x08:\x06\xca\xb2\x04\x02\n\x00\"\x87\x01\n\x07HDFSURL\x12\"\n\tname_node\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x31\n\x06\x63onfig\x18\x03 \x01(\tB!\xe2\xdf\x1f\x11\n\x0f\n\x06\x63onfig\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xe8\x08\x01:\x06\xca\xb2\x04\x02\n\x00\x42\x84\x01\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\x0fPBDataSourceURLP\x00Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasourceb\x06proto3'
+  serialized_pb=b'\n1proto/types/model/datasource/datasource_url.proto\x12\ndatasource\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"E\n\x04Host\x12\x1e\n\x04host\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x01\x98\x02\x80\x02\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06(\xff\xff\x03\x30\x00\"\xb5\x01\n\x08MySQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rPostgreSQLURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\xba\x01\n\rClickHouseURL\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08\x64\x61tabase\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@:\x06\xca\xb2\x04\x02\n\x00\"\x8f\x03\n\x06\x46tpURL\x12<\n\x08protocol\x18\n \x01(\x0e\x32\x1b.datasource.FtpURL.ProtocolB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12I\n\x0f\x63onnection_mode\x18\x0b \x01(\x0e\x32!.datasource.FtpURL.ConnectionModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1d\n\x04host\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x1d\n\x04user\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12!\n\x08password\x18\x04 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\"0\n\x08Protocol\x12\x11\n\rProtocolUnset\x10\x00\x12\x07\n\x03\x46TP\x10\x01\x12\x08\n\x04SFTP\x10\x02\"B\n\x0e\x43onnectionMode\x12\x17\n\x13\x43onnectionModeUnset\x10\x00\x12\n\n\x06\x41\x63tive\x10\x01\x12\x0b\n\x07Passive\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\x0f\n\x05S3URL:\x06\xca\xb2\x04\x02\n\x00\"K\n\x08KafkaURL\x12\x37\n\rkafka_brokers\x18\x01 \x03(\x0b\x32\x10.datasource.HostB\x0e\xe2\xdf\x1f\n\x12\x08\xea\x01\x05\x38\x80\x01@\x01:\x06\xca\xb2\x04\x02\n\x00\"8\n\x08HBaseURL\x12$\n\x06\x63onfig\x18\x01 \x01(\tB\x14\xe2\xdf\x1f\x10\x12\x0e\xc2\x01\x0b\x90\x02\x01\x98\x02\x80\x80\x01\xe8\x08\x01:\x06\xca\xb2\x04\x02\n\x00\"\x8c\x01\n\x07HDFSURL\x12\"\n\tname_node\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x01\x98\x02@\x12\x1d\n\x04port\x18\x02 \x01(\x05\x42\x0f\xe2\xdf\x1f\x0b\x12\t\xb2\x01\x06\x38\x80\x80\x04@\x00\x12\x36\n\x06\x63onfig\x18\x03 \x01(\tB&\xe2\xdf\x1f\x11\n\x0f\n\x06\x63onfig\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\r\x12\x0b\xc2\x01\x08\x98\x02\x80\x80\x01\xe8\x08\x01:\x06\xca\xb2\x04\x02\n\x00\x42\x84\x01\n/com.dataomnis.gproto.types.pbmodel.pbdatasourceB\x0fPBDataSourceURLP\x00Z>github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbdatasourceb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
+
+_FTPURL_PROTOCOL = _descriptor.EnumDescriptor(
+  name='Protocol',
+  full_name='datasource.FtpURL.Protocol',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ProtocolUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='FTP', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SFTP', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1076,
+  serialized_end=1124,
+)
+_sym_db.RegisterEnumDescriptor(_FTPURL_PROTOCOL)
+
+_FTPURL_CONNECTIONMODE = _descriptor.EnumDescriptor(
+  name='ConnectionMode',
+  full_name='datasource.FtpURL.ConnectionMode',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ConnectionModeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Active', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Passive', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1126,
+  serialized_end=1192,
+)
+_sym_db.RegisterEnumDescriptor(_FTPURL_CONNECTIONMODE)
 
 
 _HOST = _descriptor.Descriptor(
@@ -256,28 +316,42 @@ _FTPURL = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='host', full_name='datasource.FtpURL.host', index=0,
+      name='protocol', full_name='datasource.FtpURL.protocol', index=0,
+      number=10, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='connection_mode', full_name='datasource.FtpURL.connection_mode', index=1,
+      number=11, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host', full_name='datasource.FtpURL.host', index=2,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='port', full_name='datasource.FtpURL.port', index=1,
+      name='port', full_name='datasource.FtpURL.port', index=3,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\262\001\0068\200\200\004@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user', full_name='datasource.FtpURL.user', index=2,
+      name='user', full_name='datasource.FtpURL.user', index=4,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\220\002\001\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='password', full_name='datasource.FtpURL.password', index=3,
+      name='password', full_name='datasource.FtpURL.password', index=5,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -288,6 +362,8 @@ _FTPURL = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _FTPURL_PROTOCOL,
+    _FTPURL_CONNECTIONMODE,
   ],
   serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
@@ -296,7 +372,7 @@ _FTPURL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=801,
-  serialized_end=945,
+  serialized_end=1200,
 )
 
 
@@ -320,8 +396,8 @@ _S3URL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=947,
-  serialized_end=962,
+  serialized_start=1202,
+  serialized_end=1217,
 )
 
 
@@ -352,8 +428,8 @@ _KAFKAURL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=964,
-  serialized_end=1039,
+  serialized_start=1219,
+  serialized_end=1294,
 )
 
 
@@ -366,19 +442,12 @@ _HBASEURL = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='zk_hosts', full_name='datasource.HBaseURL.zk_hosts', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\n\022\010\352\001\0058\200\001@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zk_path', full_name='datasource.HBaseURL.zk_path', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='config', full_name='datasource.HBaseURL.config', index=0,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\020\022\016\302\001\013\220\002\001\230\002\200\200\001\350\010\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -391,8 +460,8 @@ _HBASEURL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1041,
-  serialized_end=1146,
+  serialized_start=1296,
+  serialized_end=1352,
 )
 
 
@@ -424,7 +493,7 @@ _HDFSURL = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\021\n\017\n\006config\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\350\010\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\021\n\017\n\006config\022\005\302\001\002\"\000\342\337\037\r\022\013\302\001\010\230\002\200\200\001\350\010\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -437,12 +506,15 @@ _HDFSURL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1149,
-  serialized_end=1284,
+  serialized_start=1355,
+  serialized_end=1495,
 )
 
+_FTPURL.fields_by_name['protocol'].enum_type = _FTPURL_PROTOCOL
+_FTPURL.fields_by_name['connection_mode'].enum_type = _FTPURL_CONNECTIONMODE
+_FTPURL_PROTOCOL.containing_type = _FTPURL
+_FTPURL_CONNECTIONMODE.containing_type = _FTPURL
 _KAFKAURL.fields_by_name['kafka_brokers'].message_type = _HOST
-_HBASEURL.fields_by_name['zk_hosts'].message_type = _HOST
 DESCRIPTOR.message_types_by_name['Host'] = _HOST
 DESCRIPTOR.message_types_by_name['MySQLURL'] = _MYSQLURL
 DESCRIPTOR.message_types_by_name['PostgreSQLURL'] = _POSTGRESQLURL
@@ -539,6 +611,8 @@ _CLICKHOUSEURL.fields_by_name['user']._options = None
 _CLICKHOUSEURL.fields_by_name['password']._options = None
 _CLICKHOUSEURL.fields_by_name['database']._options = None
 _CLICKHOUSEURL._options = None
+_FTPURL.fields_by_name['protocol']._options = None
+_FTPURL.fields_by_name['connection_mode']._options = None
 _FTPURL.fields_by_name['host']._options = None
 _FTPURL.fields_by_name['port']._options = None
 _FTPURL.fields_by_name['user']._options = None
@@ -547,8 +621,7 @@ _FTPURL._options = None
 _S3URL._options = None
 _KAFKAURL.fields_by_name['kafka_brokers']._options = None
 _KAFKAURL._options = None
-_HBASEURL.fields_by_name['zk_hosts']._options = None
-_HBASEURL.fields_by_name['zk_path']._options = None
+_HBASEURL.fields_by_name['config']._options = None
 _HBASEURL._options = None
 _HDFSURL.fields_by_name['name_node']._options = None
 _HDFSURL.fields_by_name['port']._options = None

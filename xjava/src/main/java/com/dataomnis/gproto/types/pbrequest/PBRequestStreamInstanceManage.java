@@ -167,21 +167,21 @@ public final class PBRequestStreamInstanceManage {
 
     /**
      * <pre>
-     * Filter by `instance_id`.
+     * Filter by `instance_id`. Not required.
      * &#64;inject_tag: json:"instance_id" form:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 9;</code>
      * @return The instanceId.
      */
     java.lang.String getInstanceId();
     /**
      * <pre>
-     * Filter by `instance_id`.
+     * Filter by `instance_id`. Not required.
      * &#64;inject_tag: json:"instance_id" form:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 9;</code>
      * @return The bytes for instanceId.
      */
     com.google.protobuf.ByteString
@@ -604,11 +604,11 @@ public final class PBRequestStreamInstanceManage {
     private volatile java.lang.Object instanceId_;
     /**
      * <pre>
-     * Filter by `instance_id`.
+     * Filter by `instance_id`. Not required.
      * &#64;inject_tag: json:"instance_id" form:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 9;</code>
      * @return The instanceId.
      */
     @java.lang.Override
@@ -626,11 +626,11 @@ public final class PBRequestStreamInstanceManage {
     }
     /**
      * <pre>
-     * Filter by `instance_id`.
+     * Filter by `instance_id`. Not required.
      * &#64;inject_tag: json:"instance_id" form:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 9;</code>
      * @return The bytes for instanceId.
      */
     @java.lang.Override
@@ -1728,11 +1728,11 @@ public final class PBRequestStreamInstanceManage {
       private java.lang.Object instanceId_ = "";
       /**
        * <pre>
-       * Filter by `instance_id`.
+       * Filter by `instance_id`. Not required.
        * &#64;inject_tag: json:"instance_id" form:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 9;</code>
        * @return The instanceId.
        */
       public java.lang.String getInstanceId() {
@@ -1749,11 +1749,11 @@ public final class PBRequestStreamInstanceManage {
       }
       /**
        * <pre>
-       * Filter by `instance_id`.
+       * Filter by `instance_id`. Not required.
        * &#64;inject_tag: json:"instance_id" form:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 9;</code>
        * @return The bytes for instanceId.
        */
       public com.google.protobuf.ByteString
@@ -1771,11 +1771,11 @@ public final class PBRequestStreamInstanceManage {
       }
       /**
        * <pre>
-       * Filter by `instance_id`.
+       * Filter by `instance_id`. Not required.
        * &#64;inject_tag: json:"instance_id" form:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 9;</code>
        * @param value The instanceId to set.
        * @return This builder for chaining.
        */
@@ -1791,11 +1791,11 @@ public final class PBRequestStreamInstanceManage {
       }
       /**
        * <pre>
-       * Filter by `instance_id`.
+       * Filter by `instance_id`. Not required.
        * &#64;inject_tag: json:"instance_id" form:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearInstanceId() {
@@ -1806,11 +1806,11 @@ public final class PBRequestStreamInstanceManage {
       }
       /**
        * <pre>
-       * Filter by `instance_id`.
+       * Filter by `instance_id`. Not required.
        * &#64;inject_tag: json:"instance_id" form:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 9 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 9;</code>
        * @param value The bytes for instanceId to set.
        * @return This builder for chaining.
        */
@@ -5269,7 +5269,7 @@ public final class PBRequestStreamInstanceManage {
       "toc-plugin/proto/validator.proto\0322github" +
       ".com/yu31/protoc-plugin/proto/defaults.p" +
       "roto\032\'proto/types/model/stream_instance." +
-      "proto\"\344\002\n\023ListStreamInstances\022&\n\005limit\030\001" +
+      "proto\"\317\002\n\023ListStreamInstances\022&\n\005limit\030\001" +
       " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
       "\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022%\n\010space_id\030\003 \001(\tB\023\342\337" +
       "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\006job_id\030\004 \001(\tB\004\342\337\037\000\022" +
@@ -5277,19 +5277,19 @@ public final class PBRequestStreamInstanceManage {
       "model.StreamInstance.StateB\013\342\337\037\007\022\005\332\001\002X\001\022" +
       ":\n\007sort_by\030\007 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\006job_i" +
       "dJ\007createdJ\007updated\022\025\n\007reverse\030\010 \001(\010B\004\342\337" +
-      "\037\000\022(\n\013instance_id\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "sti-\"W\n\030TerminateStreamInstances\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014insta" +
-      "nce_ids\030\002 \003(\t\"U\n\026SuspendStreamInstances\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024" +
-      "\n\014instance_ids\030\002 \003(\t\"T\n\025ResumeStreamInst" +
-      "ances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022\024\n\014instance_ids\030\002 \003(\t\"B\n\026DescribeSt" +
-      "reamInstance\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004sti-B|\n$com.dataomnis.gproto.t" +
-      "ypes.pbrequestB\035PBRequestStreamInstanceM" +
-      "anageP\000Z3github.com/DataWorkbench/gproto" +
-      "/xgo/types/pbrequestb\006proto3"
+      "\037\000\022\023\n\013instance_id\030\t \001(\t\"W\n\030TerminateStre" +
+      "amInstances\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022\024\n\014instance_ids\030\002 \003(\t\"U\n\026Susp" +
+      "endStreamInstances\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014instance_ids\030\002 \003(\t\"" +
+      "T\n\025ResumeStreamInstances\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\024\n\014instance_ids\030" +
+      "\002 \003(\t\"B\n\026DescribeStreamInstance\022(\n\013insta" +
+      "nce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-B|\n$com" +
+      ".dataomnis.gproto.types.pbrequestB\035PBReq" +
+      "uestStreamInstanceManageP\000Z3github.com/D" +
+      "ataWorkbench/gproto/xgo/types/pbrequestb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

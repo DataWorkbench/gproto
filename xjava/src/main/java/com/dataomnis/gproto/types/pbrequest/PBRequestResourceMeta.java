@@ -7617,21 +7617,21 @@ public final class PBRequestResourceMeta {
 
     /**
      * <pre>
-     * The parent id.
+     * The parent id. Not required.
      * &#64;inject_tag: json:"pid" form:"pid"
      * </pre>
      *
-     * <code>string pid = 9 [(.validator.field) = { ... }</code>
+     * <code>string pid = 9;</code>
      * @return The pid.
      */
     java.lang.String getPid();
     /**
      * <pre>
-     * The parent id.
+     * The parent id. Not required.
      * &#64;inject_tag: json:"pid" form:"pid"
      * </pre>
      *
-     * <code>string pid = 9 [(.validator.field) = { ... }</code>
+     * <code>string pid = 9;</code>
      * @return The bytes for pid.
      */
     com.google.protobuf.ByteString
@@ -8049,11 +8049,11 @@ public final class PBRequestResourceMeta {
     private volatile java.lang.Object pid_;
     /**
      * <pre>
-     * The parent id.
+     * The parent id. Not required.
      * &#64;inject_tag: json:"pid" form:"pid"
      * </pre>
      *
-     * <code>string pid = 9 [(.validator.field) = { ... }</code>
+     * <code>string pid = 9;</code>
      * @return The pid.
      */
     @java.lang.Override
@@ -8071,11 +8071,11 @@ public final class PBRequestResourceMeta {
     }
     /**
      * <pre>
-     * The parent id.
+     * The parent id. Not required.
      * &#64;inject_tag: json:"pid" form:"pid"
      * </pre>
      *
-     * <code>string pid = 9 [(.validator.field) = { ... }</code>
+     * <code>string pid = 9;</code>
      * @return The bytes for pid.
      */
     @java.lang.Override
@@ -9168,11 +9168,11 @@ public final class PBRequestResourceMeta {
       private java.lang.Object pid_ = "";
       /**
        * <pre>
-       * The parent id.
+       * The parent id. Not required.
        * &#64;inject_tag: json:"pid" form:"pid"
        * </pre>
        *
-       * <code>string pid = 9 [(.validator.field) = { ... }</code>
+       * <code>string pid = 9;</code>
        * @return The pid.
        */
       public java.lang.String getPid() {
@@ -9189,11 +9189,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The parent id.
+       * The parent id. Not required.
        * &#64;inject_tag: json:"pid" form:"pid"
        * </pre>
        *
-       * <code>string pid = 9 [(.validator.field) = { ... }</code>
+       * <code>string pid = 9;</code>
        * @return The bytes for pid.
        */
       public com.google.protobuf.ByteString
@@ -9211,11 +9211,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The parent id.
+       * The parent id. Not required.
        * &#64;inject_tag: json:"pid" form:"pid"
        * </pre>
        *
-       * <code>string pid = 9 [(.validator.field) = { ... }</code>
+       * <code>string pid = 9;</code>
        * @param value The pid to set.
        * @return This builder for chaining.
        */
@@ -9231,11 +9231,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The parent id.
+       * The parent id. Not required.
        * &#64;inject_tag: json:"pid" form:"pid"
        * </pre>
        *
-       * <code>string pid = 9 [(.validator.field) = { ... }</code>
+       * <code>string pid = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearPid() {
@@ -9246,11 +9246,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The parent id.
+       * The parent id. Not required.
        * &#64;inject_tag: json:"pid" form:"pid"
        * </pre>
        *
-       * <code>string pid = 9 [(.validator.field) = { ... }</code>
+       * <code>string pid = 9;</code>
        * @param value The bytes for pid to set.
        * @return This builder for chaining.
        */
@@ -10318,7 +10318,7 @@ public final class PBRequestResourceMeta {
       "B\014\342\337\037\010\022\006\302\001\003\360\001\024\022$\n\rresource_name\030\003 \001(\tB\r\342" +
       "\337\037\t\022\007\302\001\004\230\002\364\003\022\031\n\013description\030\004 \001(\tB\004\342\337\037\000\022" +
       ":\n\rresource_type\030\005 \001(\0162\024.model.Resource." +
-      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\374\002\n\rListFileMetas\022%\n" +
+      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\325\002\n\rListFileMetas\022%\n" +
       "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005" +
       "limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006" +
       "offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\rresource_ty" +
@@ -10326,14 +10326,13 @@ public final class PBRequestResourceMeta {
       "\002X\001\022\033\n\rresource_name\030\005 \001(\tB\004\342\337\037\000\022\035\n\006sear" +
       "ch\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\t" +
       "B-\342\337\037)\022\'\302\001$J\000J\002idJ\007createdJ\007updatedJ\004nam" +
-      "eJ\004size\022\025\n\007reverse\030\010 \001(\010B\004\342\337\037\000\0222\n\003pid\030\t " +
-      "\001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004re" +
-      "s-\"]\n\017DeleteFileMetas\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\014resource_ids\030\002 \003" +
-      "(\tB\r\342\337\037\t\022\007\352\001\0040\0008dBt\n$com.dataomnis.gprot" +
-      "o.types.pbrequestB\025PBRequestResourceMeta" +
-      "P\000Z3github.com/DataWorkbench/gproto/xgo/" +
-      "types/pbrequestb\006proto3"
+      "eJ\004size\022\025\n\007reverse\030\010 \001(\010B\004\342\337\037\000\022\013\n\003pid\030\t " +
+      "\001(\t\"]\n\017DeleteFileMetas\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\014resource_ids\030\002 " +
+      "\003(\tB\r\342\337\037\t\022\007\352\001\0040\0008dBt\n$com.dataomnis.gpro" +
+      "to.types.pbrequestB\025PBRequestResourceMet" +
+      "aP\000Z3github.com/DataWorkbench/gproto/xgo" +
+      "/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

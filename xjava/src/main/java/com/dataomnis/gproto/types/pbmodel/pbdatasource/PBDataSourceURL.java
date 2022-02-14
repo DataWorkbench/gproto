@@ -4631,6 +4631,48 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
+     * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+     * &#64;inject_tag: json:"protocol"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for protocol.
+     */
+    int getProtocolValue();
+    /**
+     * <pre>
+     * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+     * &#64;inject_tag: json:"protocol"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+     * @return The protocol.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol getProtocol();
+
+    /**
+     * <pre>
+     * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+     * &#64;inject_tag: json:"connection_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for connectionMode.
+     */
+    int getConnectionModeValue();
+    /**
+     * <pre>
+     * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+     * &#64;inject_tag: json:"connection_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+     * @return The connectionMode.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode getConnectionMode();
+
+    /**
+     * <pre>
      * Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
      * &#64;inject_tag: json:"host"
      * </pre>
@@ -4723,6 +4765,8 @@ public final class PBDataSourceURL {
       super(builder);
     }
     private FtpURL() {
+      protocol_ = 0;
+      connectionMode_ = 0;
       host_ = "";
       user_ = "";
       password_ = "";
@@ -4781,6 +4825,18 @@ public final class PBDataSourceURL {
               password_ = s;
               break;
             }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              protocol_ = rawValue;
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              connectionMode_ = rawValue;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4811,6 +4867,298 @@ public final class PBDataSourceURL {
       return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.internal_static_datasource_FtpURL_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code datasource.FtpURL.Protocol}
+     */
+    public enum Protocol
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ProtocolUnset = 0;</code>
+       */
+      ProtocolUnset(0),
+      /**
+       * <code>FTP = 1;</code>
+       */
+      FTP(1),
+      /**
+       * <code>SFTP = 2;</code>
+       */
+      SFTP(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ProtocolUnset = 0;</code>
+       */
+      public static final int ProtocolUnset_VALUE = 0;
+      /**
+       * <code>FTP = 1;</code>
+       */
+      public static final int FTP_VALUE = 1;
+      /**
+       * <code>SFTP = 2;</code>
+       */
+      public static final int SFTP_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Protocol valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Protocol forNumber(int value) {
+        switch (value) {
+          case 0: return ProtocolUnset;
+          case 1: return FTP;
+          case 2: return SFTP;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Protocol>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Protocol> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Protocol>() {
+              public Protocol findValueByNumber(int number) {
+                return Protocol.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Protocol[] VALUES = values();
+
+      public static Protocol valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Protocol(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:datasource.FtpURL.Protocol)
+    }
+
+    /**
+     * Protobuf enum {@code datasource.FtpURL.ConnectionMode}
+     */
+    public enum ConnectionMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ConnectionModeUnset = 0;</code>
+       */
+      ConnectionModeUnset(0),
+      /**
+       * <code>Active = 1;</code>
+       */
+      Active(1),
+      /**
+       * <code>Passive = 2;</code>
+       */
+      Passive(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ConnectionModeUnset = 0;</code>
+       */
+      public static final int ConnectionModeUnset_VALUE = 0;
+      /**
+       * <code>Active = 1;</code>
+       */
+      public static final int Active_VALUE = 1;
+      /**
+       * <code>Passive = 2;</code>
+       */
+      public static final int Passive_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ConnectionMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ConnectionMode forNumber(int value) {
+        switch (value) {
+          case 0: return ConnectionModeUnset;
+          case 1: return Active;
+          case 2: return Passive;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ConnectionMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ConnectionMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConnectionMode>() {
+              public ConnectionMode findValueByNumber(int number) {
+                return ConnectionMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final ConnectionMode[] VALUES = values();
+
+      public static ConnectionMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ConnectionMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:datasource.FtpURL.ConnectionMode)
+    }
+
+    public static final int PROTOCOL_FIELD_NUMBER = 10;
+    private int protocol_;
+    /**
+     * <pre>
+     * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+     * &#64;inject_tag: json:"protocol"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for protocol.
+     */
+    @java.lang.Override public int getProtocolValue() {
+      return protocol_;
+    }
+    /**
+     * <pre>
+     * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+     * &#64;inject_tag: json:"protocol"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+     * @return The protocol.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol getProtocol() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol result = com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol.valueOf(protocol_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol.UNRECOGNIZED : result;
+    }
+
+    public static final int CONNECTION_MODE_FIELD_NUMBER = 11;
+    private int connectionMode_;
+    /**
+     * <pre>
+     * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+     * &#64;inject_tag: json:"connection_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for connectionMode.
+     */
+    @java.lang.Override public int getConnectionModeValue() {
+      return connectionMode_;
+    }
+    /**
+     * <pre>
+     * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+     * &#64;inject_tag: json:"connection_mode"
+     * </pre>
+     *
+     * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+     * @return The connectionMode.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode getConnectionMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode result = com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.valueOf(connectionMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.UNRECOGNIZED : result;
     }
 
     public static final int HOST_FIELD_NUMBER = 1;
@@ -4999,6 +5347,12 @@ public final class PBDataSourceURL {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, password_);
       }
+      if (protocol_ != com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol.ProtocolUnset.getNumber()) {
+        output.writeEnum(10, protocol_);
+      }
+      if (connectionMode_ != com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.ConnectionModeUnset.getNumber()) {
+        output.writeEnum(11, connectionMode_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5021,6 +5375,14 @@ public final class PBDataSourceURL {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, password_);
       }
+      if (protocol_ != com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol.ProtocolUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, protocol_);
+      }
+      if (connectionMode_ != com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.ConnectionModeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, connectionMode_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5036,6 +5398,8 @@ public final class PBDataSourceURL {
       }
       com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL) obj;
 
+      if (protocol_ != other.protocol_) return false;
+      if (connectionMode_ != other.connectionMode_) return false;
       if (!getHost()
           .equals(other.getHost())) return false;
       if (getPort()
@@ -5055,6 +5419,10 @@ public final class PBDataSourceURL {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + protocol_;
+      hash = (37 * hash) + CONNECTION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + connectionMode_;
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -5200,6 +5568,10 @@ public final class PBDataSourceURL {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        protocol_ = 0;
+
+        connectionMode_ = 0;
+
         host_ = "";
 
         port_ = 0;
@@ -5234,6 +5606,8 @@ public final class PBDataSourceURL {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL buildPartial() {
         com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL(this);
+        result.protocol_ = protocol_;
+        result.connectionMode_ = connectionMode_;
         result.host_ = host_;
         result.port_ = port_;
         result.user_ = user_;
@@ -5286,6 +5660,12 @@ public final class PBDataSourceURL {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL other) {
         if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.getDefaultInstance()) return this;
+        if (other.protocol_ != 0) {
+          setProtocolValue(other.getProtocolValue());
+        }
+        if (other.connectionMode_ != 0) {
+          setConnectionModeValue(other.getConnectionModeValue());
+        }
         if (!other.getHost().isEmpty()) {
           host_ = other.host_;
           onChanged();
@@ -5327,6 +5707,164 @@ public final class PBDataSourceURL {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int protocol_ = 0;
+      /**
+       * <pre>
+       * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+       * &#64;inject_tag: json:"protocol"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for protocol.
+       */
+      @java.lang.Override public int getProtocolValue() {
+        return protocol_;
+      }
+      /**
+       * <pre>
+       * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+       * &#64;inject_tag: json:"protocol"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for protocol to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocolValue(int value) {
+        
+        protocol_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+       * &#64;inject_tag: json:"protocol"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+       * @return The protocol.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol getProtocol() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol result = com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol.valueOf(protocol_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+       * &#64;inject_tag: json:"protocol"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+       * @param value The protocol to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocol(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.Protocol value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        protocol_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The connection protocol. 1 =&gt; "FTP" 2 = &gt; "SFTP"; Is Required.
+       * &#64;inject_tag: json:"protocol"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.Protocol protocol = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProtocol() {
+        
+        protocol_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int connectionMode_ = 0;
+      /**
+       * <pre>
+       * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+       * &#64;inject_tag: json:"connection_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for connectionMode.
+       */
+      @java.lang.Override public int getConnectionModeValue() {
+        return connectionMode_;
+      }
+      /**
+       * <pre>
+       * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+       * &#64;inject_tag: json:"connection_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for connectionMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectionModeValue(int value) {
+        
+        connectionMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+       * &#64;inject_tag: json:"connection_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+       * @return The connectionMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode getConnectionMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode result = com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.valueOf(connectionMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+       * &#64;inject_tag: json:"connection_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+       * @param value The connectionMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectionMode(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.FtpURL.ConnectionMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        connectionMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The connection modes. 1 =&gt; "Active" 2 = &gt; "Passive"; Is Required.
+       * &#64;inject_tag: json:"connection_mode"
+       * </pre>
+       *
+       * <code>.datasource.FtpURL.ConnectionMode connection_mode = 11 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConnectionMode() {
+        
+        connectionMode_ = 0;
+        onChanged();
         return this;
       }
 
@@ -7132,79 +7670,27 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
+     * The hbase config. Is Required. Must be a JSON format string.
+     * Max Bytes Length: 1048576(16KB)
+     * &#64;inject_tag: json:"config"
      * </pre>
      *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     * <code>string config = 1 [(.validator.field) = { ... }</code>
+     * @return The config.
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> 
-        getZkHostsList();
+    java.lang.String getConfig();
     /**
      * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
+     * The hbase config. Is Required. Must be a JSON format string.
+     * Max Bytes Length: 1048576(16KB)
+     * &#64;inject_tag: json:"config"
      * </pre>
      *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getZkHosts(int index);
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    int getZkHostsCount();
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
-        getZkHostsOrBuilderList();
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getZkHostsOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
-     * </pre>
-     *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The zkPath.
-     */
-    java.lang.String getZkPath();
-    /**
-     * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
-     * </pre>
-     *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for zkPath.
+     * <code>string config = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for config.
      */
     com.google.protobuf.ByteString
-        getZkPathBytes();
+        getConfigBytes();
   }
   /**
    * <pre>
@@ -7223,8 +7709,7 @@ public final class PBDataSourceURL {
       super(builder);
     }
     private HBaseURL() {
-      zkHosts_ = java.util.Collections.emptyList();
-      zkPath_ = "";
+      config_ = "";
     }
 
     @java.lang.Override
@@ -7247,7 +7732,6 @@ public final class PBDataSourceURL {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7259,18 +7743,9 @@ public final class PBDataSourceURL {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                zkHosts_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              zkHosts_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              zkPath_ = s;
+              config_ = s;
               break;
             }
             default: {
@@ -7288,9 +7763,6 @@ public final class PBDataSourceURL {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          zkHosts_ = java.util.Collections.unmodifiableList(zkHosts_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -7308,118 +7780,50 @@ public final class PBDataSourceURL {
               com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.Builder.class);
     }
 
-    public static final int ZK_HOSTS_FIELD_NUMBER = 1;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> zkHosts_;
+    public static final int CONFIG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object config_;
     /**
      * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
+     * The hbase config. Is Required. Must be a JSON format string.
+     * Max Bytes Length: 1048576(16KB)
+     * &#64;inject_tag: json:"config"
      * </pre>
      *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+     * <code>string config = 1 [(.validator.field) = { ... }</code>
+     * @return The config.
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getZkHostsList() {
-      return zkHosts_;
-    }
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
-        getZkHostsOrBuilderList() {
-      return zkHosts_;
-    }
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public int getZkHostsCount() {
-      return zkHosts_.size();
-    }
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getZkHosts(int index) {
-      return zkHosts_.get(index);
-    }
-    /**
-     * <pre>
-     * The zookeeper hosts that used by hbase.
-     * Is required. MIN: 1, MAX: 128.
-     * &#64;inject_tag: json:"zk_hosts"
-     * </pre>
-     *
-     * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getZkHostsOrBuilder(
-        int index) {
-      return zkHosts_.get(index);
-    }
-
-    public static final int ZK_PATH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object zkPath_;
-    /**
-     * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
-     * </pre>
-     *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The zkPath.
-     */
-    @java.lang.Override
-    public java.lang.String getZkPath() {
-      java.lang.Object ref = zkPath_;
+    public java.lang.String getConfig() {
+      java.lang.Object ref = config_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        zkPath_ = s;
+        config_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-     * &#64;inject_tag: json:"zk_path"
+     * The hbase config. Is Required. Must be a JSON format string.
+     * Max Bytes Length: 1048576(16KB)
+     * &#64;inject_tag: json:"config"
      * </pre>
      *
-     * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for zkPath.
+     * <code>string config = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for config.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getZkPathBytes() {
-      java.lang.Object ref = zkPath_;
+        getConfigBytes() {
+      java.lang.Object ref = config_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        zkPath_ = b;
+        config_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7440,11 +7844,8 @@ public final class PBDataSourceURL {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < zkHosts_.size(); i++) {
-        output.writeMessage(1, zkHosts_.get(i));
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, zkPath_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(config_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, config_);
       }
       unknownFields.writeTo(output);
     }
@@ -7455,12 +7856,8 @@ public final class PBDataSourceURL {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < zkHosts_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, zkHosts_.get(i));
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zkPath_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zkPath_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(config_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, config_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7477,10 +7874,8 @@ public final class PBDataSourceURL {
       }
       com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL) obj;
 
-      if (!getZkHostsList()
-          .equals(other.getZkHostsList())) return false;
-      if (!getZkPath()
-          .equals(other.getZkPath())) return false;
+      if (!getConfig()
+          .equals(other.getConfig())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7492,12 +7887,8 @@ public final class PBDataSourceURL {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getZkHostsCount() > 0) {
-        hash = (37 * hash) + ZK_HOSTS_FIELD_NUMBER;
-        hash = (53 * hash) + getZkHostsList().hashCode();
-      }
-      hash = (37 * hash) + ZK_PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getZkPath().hashCode();
+      hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfig().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7630,19 +8021,12 @@ public final class PBDataSourceURL {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getZkHostsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (zkHostsBuilder_ == null) {
-          zkHosts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          zkHostsBuilder_.clear();
-        }
-        zkPath_ = "";
+        config_ = "";
 
         return this;
       }
@@ -7670,17 +8054,7 @@ public final class PBDataSourceURL {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL buildPartial() {
         com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL(this);
-        int from_bitField0_ = bitField0_;
-        if (zkHostsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            zkHosts_ = java.util.Collections.unmodifiableList(zkHosts_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.zkHosts_ = zkHosts_;
-        } else {
-          result.zkHosts_ = zkHostsBuilder_.build();
-        }
-        result.zkPath_ = zkPath_;
+        result.config_ = config_;
         onBuilt();
         return result;
       }
@@ -7729,34 +8103,8 @@ public final class PBDataSourceURL {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL other) {
         if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HBaseURL.getDefaultInstance()) return this;
-        if (zkHostsBuilder_ == null) {
-          if (!other.zkHosts_.isEmpty()) {
-            if (zkHosts_.isEmpty()) {
-              zkHosts_ = other.zkHosts_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureZkHostsIsMutable();
-              zkHosts_.addAll(other.zkHosts_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.zkHosts_.isEmpty()) {
-            if (zkHostsBuilder_.isEmpty()) {
-              zkHostsBuilder_.dispose();
-              zkHostsBuilder_ = null;
-              zkHosts_ = other.zkHosts_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              zkHostsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getZkHostsFieldBuilder() : null;
-            } else {
-              zkHostsBuilder_.addAllMessages(other.zkHosts_);
-            }
-          }
-        }
-        if (!other.getZkPath().isEmpty()) {
-          zkPath_ = other.zkPath_;
+        if (!other.getConfig().isEmpty()) {
+          config_ = other.config_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7787,373 +8135,25 @@ public final class PBDataSourceURL {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> zkHosts_ =
-        java.util.Collections.emptyList();
-      private void ensureZkHostsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          zkHosts_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host>(zkHosts_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> zkHostsBuilder_;
-
+      private java.lang.Object config_ = "";
       /**
        * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
+       * The hbase config. Is Required. Must be a JSON format string.
+       * Max Bytes Length: 1048576(16KB)
+       * &#64;inject_tag: json:"config"
        * </pre>
        *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
+       * <code>string config = 1 [(.validator.field) = { ... }</code>
+       * @return The config.
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> getZkHostsList() {
-        if (zkHostsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(zkHosts_);
-        } else {
-          return zkHostsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public int getZkHostsCount() {
-        if (zkHostsBuilder_ == null) {
-          return zkHosts_.size();
-        } else {
-          return zkHostsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host getZkHosts(int index) {
-        if (zkHostsBuilder_ == null) {
-          return zkHosts_.get(index);
-        } else {
-          return zkHostsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder setZkHosts(
-          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
-        if (zkHostsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureZkHostsIsMutable();
-          zkHosts_.set(index, value);
-          onChanged();
-        } else {
-          zkHostsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder setZkHosts(
-          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
-        if (zkHostsBuilder_ == null) {
-          ensureZkHostsIsMutable();
-          zkHosts_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          zkHostsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder addZkHosts(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
-        if (zkHostsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureZkHostsIsMutable();
-          zkHosts_.add(value);
-          onChanged();
-        } else {
-          zkHostsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder addZkHosts(
-          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host value) {
-        if (zkHostsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureZkHostsIsMutable();
-          zkHosts_.add(index, value);
-          onChanged();
-        } else {
-          zkHostsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder addZkHosts(
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
-        if (zkHostsBuilder_ == null) {
-          ensureZkHostsIsMutable();
-          zkHosts_.add(builderForValue.build());
-          onChanged();
-        } else {
-          zkHostsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder addZkHosts(
-          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder builderForValue) {
-        if (zkHostsBuilder_ == null) {
-          ensureZkHostsIsMutable();
-          zkHosts_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          zkHostsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder addAllZkHosts(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host> values) {
-        if (zkHostsBuilder_ == null) {
-          ensureZkHostsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, zkHosts_);
-          onChanged();
-        } else {
-          zkHostsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearZkHosts() {
-        if (zkHostsBuilder_ == null) {
-          zkHosts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          zkHostsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public Builder removeZkHosts(int index) {
-        if (zkHostsBuilder_ == null) {
-          ensureZkHostsIsMutable();
-          zkHosts_.remove(index);
-          onChanged();
-        } else {
-          zkHostsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder getZkHostsBuilder(
-          int index) {
-        return getZkHostsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder getZkHostsOrBuilder(
-          int index) {
-        if (zkHostsBuilder_ == null) {
-          return zkHosts_.get(index);  } else {
-          return zkHostsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
-           getZkHostsOrBuilderList() {
-        if (zkHostsBuilder_ != null) {
-          return zkHostsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(zkHosts_);
-        }
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addZkHostsBuilder() {
-        return getZkHostsFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder addZkHostsBuilder(
-          int index) {
-        return getZkHostsFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * The zookeeper hosts that used by hbase.
-       * Is required. MIN: 1, MAX: 128.
-       * &#64;inject_tag: json:"zk_hosts"
-       * </pre>
-       *
-       * <code>repeated .datasource.Host zk_hosts = 1 [(.validator.field) = { ... }</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder> 
-           getZkHostsBuilderList() {
-        return getZkHostsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder> 
-          getZkHostsFieldBuilder() {
-        if (zkHostsBuilder_ == null) {
-          zkHostsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.Host.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceURL.HostOrBuilder>(
-                  zkHosts_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          zkHosts_ = null;
-        }
-        return zkHostsBuilder_;
-      }
-
-      private java.lang.Object zkPath_ = "";
-      /**
-       * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
-       * </pre>
-       *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @return The zkPath.
-       */
-      public java.lang.String getZkPath() {
-        java.lang.Object ref = zkPath_;
+      public java.lang.String getConfig() {
+        java.lang.Object ref = config_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          zkPath_ = s;
+          config_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8161,21 +8161,22 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
+       * The hbase config. Is Required. Must be a JSON format string.
+       * Max Bytes Length: 1048576(16KB)
+       * &#64;inject_tag: json:"config"
        * </pre>
        *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for zkPath.
+       * <code>string config = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for config.
        */
       public com.google.protobuf.ByteString
-          getZkPathBytes() {
-        java.lang.Object ref = zkPath_;
+          getConfigBytes() {
+        java.lang.Object ref = config_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          zkPath_ = b;
+          config_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8183,57 +8184,60 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
+       * The hbase config. Is Required. Must be a JSON format string.
+       * Max Bytes Length: 1048576(16KB)
+       * &#64;inject_tag: json:"config"
        * </pre>
        *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @param value The zkPath to set.
+       * <code>string config = 1 [(.validator.field) = { ... }</code>
+       * @param value The config to set.
        * @return This builder for chaining.
        */
-      public Builder setZkPath(
+      public Builder setConfig(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        zkPath_ = value;
+        config_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
+       * The hbase config. Is Required. Must be a JSON format string.
+       * Max Bytes Length: 1048576(16KB)
+       * &#64;inject_tag: json:"config"
        * </pre>
        *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
+       * <code>string config = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearZkPath() {
+      public Builder clearConfig() {
         
-        zkPath_ = getDefaultInstance().getZkPath();
+        config_ = getDefaultInstance().getConfig();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The hbase path in zookeeper. Is required. Length min: 1, Length MAX: 1024.
-       * &#64;inject_tag: json:"zk_path"
+       * The hbase config. Is Required. Must be a JSON format string.
+       * Max Bytes Length: 1048576(16KB)
+       * &#64;inject_tag: json:"config"
        * </pre>
        *
-       * <code>string zk_path = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for zkPath to set.
+       * <code>string config = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for config to set.
        * @return This builder for chaining.
        */
-      public Builder setZkPathBytes(
+      public Builder setConfigBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        zkPath_ = value;
+        config_ = value;
         onChanged();
         return this;
       }
@@ -8329,7 +8333,7 @@ public final class PBDataSourceURL {
 
     /**
      * <pre>
-     * The hdfs advanced config. Not Required.
+     * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
      * &#64;inject_tag: json:"config"
      * </pre>
      *
@@ -8339,7 +8343,7 @@ public final class PBDataSourceURL {
     java.lang.String getConfig();
     /**
      * <pre>
-     * The hdfs advanced config. Not Required.
+     * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
      * &#64;inject_tag: json:"config"
      * </pre>
      *
@@ -8517,7 +8521,7 @@ public final class PBDataSourceURL {
     private volatile java.lang.Object config_;
     /**
      * <pre>
-     * The hdfs advanced config. Not Required.
+     * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
      * &#64;inject_tag: json:"config"
      * </pre>
      *
@@ -8539,7 +8543,7 @@ public final class PBDataSourceURL {
     }
     /**
      * <pre>
-     * The hdfs advanced config. Not Required.
+     * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
      * &#64;inject_tag: json:"config"
      * </pre>
      *
@@ -9051,7 +9055,7 @@ public final class PBDataSourceURL {
       private java.lang.Object config_ = "";
       /**
        * <pre>
-       * The hdfs advanced config. Not Required.
+       * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
        * &#64;inject_tag: json:"config"
        * </pre>
        *
@@ -9072,7 +9076,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The hdfs advanced config. Not Required.
+       * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
        * &#64;inject_tag: json:"config"
        * </pre>
        *
@@ -9094,7 +9098,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The hdfs advanced config. Not Required.
+       * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
        * &#64;inject_tag: json:"config"
        * </pre>
        *
@@ -9114,7 +9118,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The hdfs advanced config. Not Required.
+       * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
        * &#64;inject_tag: json:"config"
        * </pre>
        *
@@ -9129,7 +9133,7 @@ public final class PBDataSourceURL {
       }
       /**
        * <pre>
-       * The hdfs advanced config. Not Required.
+       * The hadoop advanced config. Not Required. Max Bytes Length: 1048576(16KB)
        * &#64;inject_tag: json:"config"
        * </pre>
        *
@@ -9274,23 +9278,28 @@ public final class PBDataSourceURL {
       "\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t" +
       "\262\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
       "\022!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010d" +
-      "atabase\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\220" +
-      "\001\n\006FtpURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
-      "\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\022\035\n\004user\030" +
-      "\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\004 \001(\t" +
-      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\017\n\005S3URL:\006\312\262\004\002" +
-      "\n\000\"K\n\010KafkaURL\0227\n\rkafka_brokers\030\001 \003(\0132\020." +
-      "datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001:\006\312\262\004\002\n\000\"" +
-      "i\n\010HBaseURL\0222\n\010zk_hosts\030\001 \003(\0132\020.datasour" +
-      "ce.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022!\n\007zk_path\030\002 \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\010:\006\312\262\004\002\n\000\"\207\001\n\007HDFSURL\022\"" +
-      "\n\tname_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004po" +
-      "rt\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\0221\n\006config\030\003 \001(" +
-      "\tB!\342\337\037\021\n\017\n\006config\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\350\010\001:\006\312\262" +
-      "\004\002\n\000B\204\001\n/com.dataomnis.gproto.types.pbmo" +
-      "del.pbdatasourceB\017PBDataSourceURLP\000Z>git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "bmodel/pbdatasourceb\006proto3"
+      "atabase\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\217" +
+      "\003\n\006FtpURL\022<\n\010protocol\030\n \001(\0162\033.datasource" +
+      ".FtpURL.ProtocolB\r\342\337\037\t\022\007\332\001\0040\000X\001\022I\n\017conne" +
+      "ction_mode\030\013 \001(\0162!.datasource.FtpURL.Con" +
+      "nectionModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\004host\030\001 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262" +
+      "\001\0068\200\200\004@\000\022\035\n\004user\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\022" +
+      "!\n\010password\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@\"0\n\010Pr" +
+      "otocol\022\021\n\rProtocolUnset\020\000\022\007\n\003FTP\020\001\022\010\n\004SF" +
+      "TP\020\002\"B\n\016ConnectionMode\022\027\n\023ConnectionMode" +
+      "Unset\020\000\022\n\n\006Active\020\001\022\013\n\007Passive\020\002:\006\312\262\004\002\n\000" +
+      "\"\017\n\005S3URL:\006\312\262\004\002\n\000\"K\n\010KafkaURL\0227\n\rkafka_b" +
+      "rokers\030\001 \003(\0132\020.datasource.HostB\016\342\337\037\n\022\010\352\001" +
+      "\0058\200\001@\001:\006\312\262\004\002\n\000\"8\n\010HBaseURL\022$\n\006config\030\001 \001" +
+      "(\tB\024\342\337\037\020\022\016\302\001\013\220\002\001\230\002\200\200\001\350\010\001:\006\312\262\004\002\n\000\"\214\001\n\007HDF" +
+      "SURL\022\"\n\tname_node\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
+      "\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@\000\0226\n\006confi" +
+      "g\030\003 \001(\tB&\342\337\037\021\n\017\n\006config\022\005\302\001\002\"\000\342\337\037\r\022\013\302\001\010\230" +
+      "\002\200\200\001\350\010\001:\006\312\262\004\002\n\000B\204\001\n/com.dataomnis.gproto" +
+      ".types.pbmodel.pbdatasourceB\017PBDataSourc" +
+      "eURLP\000Z>github.com/DataWorkbench/gproto/" +
+      "xgo/types/pbmodel/pbdatasourceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9327,7 +9336,7 @@ public final class PBDataSourceURL {
     internal_static_datasource_FtpURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_FtpURL_descriptor,
-        new java.lang.String[] { "Host", "Port", "User", "Password", });
+        new java.lang.String[] { "Protocol", "ConnectionMode", "Host", "Port", "User", "Password", });
     internal_static_datasource_S3URL_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_datasource_S3URL_fieldAccessorTable = new
@@ -9345,7 +9354,7 @@ public final class PBDataSourceURL {
     internal_static_datasource_HBaseURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_HBaseURL_descriptor,
-        new java.lang.String[] { "ZkHosts", "ZkPath", });
+        new java.lang.String[] { "Config", });
     internal_static_datasource_HDFSURL_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_datasource_HDFSURL_fieldAccessorTable = new

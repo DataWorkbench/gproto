@@ -13,6 +13,16 @@ import (
 	strings "strings"
 )
 
+func (this *ListNetworks) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListNetworks", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListNetworks", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *ListNetworks) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
 		return protovalidator.FieldError1("ListNetworks", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
@@ -39,20 +49,13 @@ func (this *ListNetworks) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-func (this *ListNetworks) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("ListNetworks", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("ListNetworks", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
 // Set default value for message request.ListNetworks
 func (this *ListNetworks) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
@@ -61,9 +64,6 @@ func (this *ListNetworks) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
 	return nil

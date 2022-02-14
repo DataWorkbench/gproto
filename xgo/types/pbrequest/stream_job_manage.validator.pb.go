@@ -51,26 +51,6 @@ func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
-func (this *ListStreamJobs) _xxx_xxx_Validator_CheckIf_pid() bool {
-	if !(this.Pid != "") {
-		return false
-	}
-	return true
-}
-
-func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_pid() error {
-	if !this._xxx_xxx_Validator_CheckIf_pid() {
-		return nil
-	}
-	if !(len(this.Pid) == 20) {
-		return protovalidator.FieldError1("ListStreamJobs", "the byte length of field 'pid' must be equal to '20'", protovalidator.StringByteLenToString(this.Pid))
-	}
-	if !(strings.HasPrefix(this.Pid, "stj-")) {
-		return protovalidator.FieldError1("ListStreamJobs", "the value of field 'pid' must start with string 'stj-'", this.Pid)
-	}
-	return nil
-}
-
 // Set default value for message request.ListStreamJobs
 func (this *ListStreamJobs) Validate() error {
 	if this == nil {
@@ -86,9 +66,6 @@ func (this *ListStreamJobs) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_pid(); err != nil {
 		return err
 	}
 	return nil

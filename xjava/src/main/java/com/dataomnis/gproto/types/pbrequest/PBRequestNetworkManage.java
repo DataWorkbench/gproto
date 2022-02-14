@@ -20,12 +20,34 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
      * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
-     * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+     * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     int getLimit();
@@ -36,7 +58,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
-     * <code>int32 offset = 2 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
      * @return The offset.
      */
     int getOffset();
@@ -50,7 +72,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
      * @return The sortBy.
      */
     java.lang.String getSortBy();
@@ -63,7 +85,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for sortBy.
      */
     com.google.protobuf.ByteString
@@ -75,7 +97,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
      * @return The reverse.
      */
     boolean getReverse();
@@ -86,7 +108,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 5 [(.validator.field) = { ... }</code>
+     * <code>string search = 6 [(.validator.field) = { ... }</code>
      * @return The search.
      */
     java.lang.String getSearch();
@@ -96,33 +118,11 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 5 [(.validator.field) = { ... }</code>
+     * <code>string search = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for search.
      */
     com.google.protobuf.ByteString
         getSearchBytes();
-
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    java.lang.String getSpaceId();
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    com.google.protobuf.ByteString
-        getSpaceIdBytes();
 
     /**
      * <pre>
@@ -159,9 +159,9 @@ public final class PBRequestNetworkManage {
       super(builder);
     }
     private ListNetworks() {
+      spaceId_ = "";
       sortBy_ = "";
       search_ = "";
-      spaceId_ = "";
       name_ = "";
     }
 
@@ -195,37 +195,37 @@ public final class PBRequestNetworkManage {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              limit_ = input.readInt32();
+              spaceId_ = s;
               break;
             }
             case 16: {
 
+              limit_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
               offset_ = input.readInt32();
               break;
             }
-            case 26: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               sortBy_ = s;
               break;
             }
-            case 32: {
+            case 40: {
 
               reverse_ = input.readBool();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              search_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              spaceId_ = s;
+              search_ = s;
               break;
             }
             case 58: {
@@ -266,7 +266,55 @@ public final class PBRequestNetworkManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks.class, com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI. Is Required.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 2;
     private int limit_;
     /**
      * <pre>
@@ -275,7 +323,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
-     * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+     * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -283,7 +331,7 @@ public final class PBRequestNetworkManage {
       return limit_;
     }
 
-    public static final int OFFSET_FIELD_NUMBER = 2;
+    public static final int OFFSET_FIELD_NUMBER = 3;
     private int offset_;
     /**
      * <pre>
@@ -291,7 +339,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
-     * <code>int32 offset = 2 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
      * @return The offset.
      */
     @java.lang.Override
@@ -299,7 +347,7 @@ public final class PBRequestNetworkManage {
       return offset_;
     }
 
-    public static final int SORT_BY_FIELD_NUMBER = 3;
+    public static final int SORT_BY_FIELD_NUMBER = 4;
     private volatile java.lang.Object sortBy_;
     /**
      * <pre>
@@ -310,7 +358,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
      * @return The sortBy.
      */
     @java.lang.Override
@@ -335,7 +383,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for sortBy.
      */
     @java.lang.Override
@@ -353,7 +401,7 @@ public final class PBRequestNetworkManage {
       }
     }
 
-    public static final int REVERSE_FIELD_NUMBER = 4;
+    public static final int REVERSE_FIELD_NUMBER = 5;
     private boolean reverse_;
     /**
      * <pre>
@@ -361,7 +409,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
-     * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+     * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
      * @return The reverse.
      */
     @java.lang.Override
@@ -369,7 +417,7 @@ public final class PBRequestNetworkManage {
       return reverse_;
     }
 
-    public static final int SEARCH_FIELD_NUMBER = 5;
+    public static final int SEARCH_FIELD_NUMBER = 6;
     private volatile java.lang.Object search_;
     /**
      * <pre>
@@ -377,7 +425,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 5 [(.validator.field) = { ... }</code>
+     * <code>string search = 6 [(.validator.field) = { ... }</code>
      * @return The search.
      */
     @java.lang.Override
@@ -399,7 +447,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"search" form:"search"
      * </pre>
      *
-     * <code>string search = 5 [(.validator.field) = { ... }</code>
+     * <code>string search = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for search.
      */
     @java.lang.Override
@@ -411,54 +459,6 @@ public final class PBRequestNetworkManage {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         search_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SPACE_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object spaceId_;
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSpaceId() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spaceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The workspace id in HTTP Request-URI. Is Required.
-     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSpaceIdBytes() {
-      java.lang.Object ref = spaceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spaceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -527,23 +527,23 @@ public final class PBRequestNetworkManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       if (limit_ != 0) {
-        output.writeInt32(1, limit_);
+        output.writeInt32(2, limit_);
       }
       if (offset_ != 0) {
-        output.writeInt32(2, offset_);
+        output.writeInt32(3, offset_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sortBy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sortBy_);
       }
       if (reverse_ != false) {
-        output.writeBool(4, reverse_);
+        output.writeBool(5, reverse_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, search_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, search_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, name_);
@@ -557,26 +557,26 @@ public final class PBRequestNetworkManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       if (limit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, limit_);
+          .computeInt32Size(2, limit_);
       }
       if (offset_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, offset_);
+          .computeInt32Size(3, offset_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sortBy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sortBy_);
       }
       if (reverse_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, reverse_);
+          .computeBoolSize(5, reverse_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, search_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, search_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, name_);
@@ -596,6 +596,8 @@ public final class PBRequestNetworkManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks other = (com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (getLimit()
           != other.getLimit()) return false;
       if (getOffset()
@@ -606,8 +608,6 @@ public final class PBRequestNetworkManage {
           != other.getReverse()) return false;
       if (!getSearch()
           .equals(other.getSearch())) return false;
-      if (!getSpaceId()
-          .equals(other.getSpaceId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -621,6 +621,8 @@ public final class PBRequestNetworkManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
@@ -632,8 +634,6 @@ public final class PBRequestNetworkManage {
           getReverse());
       hash = (37 * hash) + SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getSearch().hashCode();
-      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -769,6 +769,8 @@ public final class PBRequestNetworkManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         limit_ = 0;
 
         offset_ = 0;
@@ -778,8 +780,6 @@ public final class PBRequestNetworkManage {
         reverse_ = false;
 
         search_ = "";
-
-        spaceId_ = "";
 
         name_ = "";
 
@@ -809,12 +809,12 @@ public final class PBRequestNetworkManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks result = new com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks(this);
+        result.spaceId_ = spaceId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
         result.search_ = search_;
-        result.spaceId_ = spaceId_;
         result.name_ = name_;
         onBuilt();
         return result;
@@ -864,6 +864,10 @@ public final class PBRequestNetworkManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.ListNetworks.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
         }
@@ -879,10 +883,6 @@ public final class PBRequestNetworkManage {
         }
         if (!other.getSearch().isEmpty()) {
           search_ = other.search_;
-          onChanged();
-        }
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
           onChanged();
         }
         if (!other.getName().isEmpty()) {
@@ -918,6 +918,107 @@ public final class PBRequestNetworkManage {
         return this;
       }
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI. Is Required.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private int limit_ ;
       /**
        * <pre>
@@ -926,7 +1027,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
-       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -940,7 +1041,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
-       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -957,7 +1058,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
-       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -974,7 +1075,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 2 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
        * @return The offset.
        */
       @java.lang.Override
@@ -987,7 +1088,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 2 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
        * @param value The offset to set.
        * @return This builder for chaining.
        */
@@ -1003,7 +1104,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 2 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
@@ -1023,7 +1124,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
        * @return The sortBy.
        */
       public java.lang.String getSortBy() {
@@ -1047,7 +1148,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for sortBy.
        */
       public com.google.protobuf.ByteString
@@ -1072,7 +1173,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
        * @param value The sortBy to set.
        * @return This builder for chaining.
        */
@@ -1095,7 +1196,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSortBy() {
@@ -1113,7 +1214,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 3 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for sortBy to set.
        * @return This builder for chaining.
        */
@@ -1136,7 +1237,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
        * @return The reverse.
        */
       @java.lang.Override
@@ -1149,7 +1250,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
        * @param value The reverse to set.
        * @return This builder for chaining.
        */
@@ -1165,7 +1266,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
-       * <code>bool reverse = 4 [(.validator.field) = { ... }</code>
+       * <code>bool reverse = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearReverse() {
@@ -1182,7 +1283,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 5 [(.validator.field) = { ... }</code>
+       * <code>string search = 6 [(.validator.field) = { ... }</code>
        * @return The search.
        */
       public java.lang.String getSearch() {
@@ -1203,7 +1304,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 5 [(.validator.field) = { ... }</code>
+       * <code>string search = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for search.
        */
       public com.google.protobuf.ByteString
@@ -1225,7 +1326,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 5 [(.validator.field) = { ... }</code>
+       * <code>string search = 6 [(.validator.field) = { ... }</code>
        * @param value The search to set.
        * @return This builder for chaining.
        */
@@ -1245,7 +1346,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 5 [(.validator.field) = { ... }</code>
+       * <code>string search = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSearch() {
@@ -1260,7 +1361,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"search" form:"search"
        * </pre>
        *
-       * <code>string search = 5 [(.validator.field) = { ... }</code>
+       * <code>string search = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for search to set.
        * @return This builder for chaining.
        */
@@ -1272,107 +1373,6 @@ public final class PBRequestNetworkManage {
   checkByteStringIsUtf8(value);
         
         search_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object spaceId_ = "";
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-       * @return The spaceId.
-       */
-      public java.lang.String getSpaceId() {
-        java.lang.Object ref = spaceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceId.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceIdBytes() {
-        java.lang.Object ref = spaceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-       * @param value The spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceId() {
-        
-        spaceId_ = getDefaultInstance().getSpaceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The workspace id in HTTP Request-URI. Is Required.
-       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_id = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceId_ = value;
         onChanged();
         return this;
       }
@@ -5690,12 +5690,12 @@ public final class PBRequestNetworkManage {
       "to\022\007request\0323github.com/yu31/protoc-plug" +
       "in/proto/validator.proto\0322github.com/yu3" +
       "1/protoc-plugin/proto/defaults.proto\"\365\001\n" +
-      "\014ListNetworks\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100" +
-      "\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002" +
-      "@\000\0228\n\007sort_by\030\003 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007cr" +
-      "eatedJ\007updatedJ\004name\022\025\n\007reverse\030\004 \001(\010B\004\342" +
-      "\337\037\000\022\024\n\006search\030\005 \001(\tB\004\342\337\037\000\022%\n\010space_id\030\006 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\022\n\004name\030\007 \001(\tB\004" +
+      "\014ListNetworks\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342" +
+      "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
+      "\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007cre" +
+      "atedJ\007updatedJ\004name\022\025\n\007reverse\030\005 \001(\010B\004\342\337" +
+      "\037\000\022\024\n\006search\030\006 \001(\tB\004\342\337\037\000\022\022\n\004name\030\007 \001(\tB\004" +
       "\342\337\037\000\"4\n\016DeleteNetworks\022\"\n\013network_ids\030\001 " +
       "\003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"\303\001\n\rCreateNetwork\022%\n\010" +
       "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nc" +
@@ -5724,7 +5724,7 @@ public final class PBRequestNetworkManage {
     internal_static_request_ListNetworks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListNetworks_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SortBy", "Reverse", "Search", "SpaceId", "Name", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Name", });
     internal_static_request_DeleteNetworks_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_DeleteNetworks_fieldAccessorTable = new
