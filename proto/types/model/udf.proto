@@ -40,32 +40,36 @@ message UDF {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
   // ID, unique within a region.
-  // @inject_tag: json:"udf_id" gorm:"column:udf_id;primaryKey;"
-  string udf_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "udf-" } ];
+  // FIXME: rename json name
+  // @inject_tag: json:"udf_id" gorm:"column:id;primaryKey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "udf-" } ];
 
   // UDF Name, unique within a space.
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
 
   // Comment, describe this UDF.
-  // @inject_tag: json:"comment" gorm:"column:comment;"
-  string comment = 4 [(validator.field).tags.string = { char_len_lte: 256 }];
+  // FIXME: rename json name
+  // @inject_tag: json:"comment" gorm:"column:desc;"
+  string desc = 4 [(validator.field).tags.string = { char_len_lte: 256 }];
 
-  // define this udf. jar udf this is resourcemanager jarID, is python/scala this is code.
+  // define this udf. jar udf this is resource jarID, is python/scala this is code.
   // @inject_tag: json:"define" gorm:"column:define;"
   string define = 5 [ (validator.field).tags.string = { char_len_lte: 20000 }];
 
   // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF.
-  // @inject_tag: json:"udf_type" gorm:"column:udf_type;"
-  Type udf_type = 6  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  // FIXME: rename json name
+  // @inject_tag: json:"udf_type" gorm:"column:type;"
+  Type type = 6  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // UDF status, Optional Values: 1 => "deleted", 2 => "enabled"
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // UDF language; Optional Values: 1 => Scala 2=> Java 3=> Python
-  // @inject_tag: json:"udf_language" gorm:"column:udf_language;"
-  Language udf_language = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // FIXME: rename json name
+  // @inject_tag: json:"udf_language" gorm:"column:language;"
+  Language language = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // usage example for this udf
   // @inject_tag: json:"usage_sample" gorm:"column:usage_sample;"

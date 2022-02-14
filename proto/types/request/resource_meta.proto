@@ -56,8 +56,8 @@ message CreateFileMeta {
   string name = 4 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128; } ];
 
   // The resource description. not required.
-  // @inject_tag: json:"description"
-  string description = 5 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
+  // @inject_tag: json:"desc"
+  string desc = 5 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
 
   // The resource Size. prevent data missing.
   // @inject_tag: json:"size"
@@ -129,16 +129,19 @@ message UpdateFileMeta {
   string resource_id = 2 [(validator.field).tags.string = { byte_len_eq: 20}];
 
   // The resource name. required.
+  // FIXME: Rename json name
   // @inject_tag: json:"resource_name"
-  string resource_name = 3 [(validator.field).tags.string = { byte_len_lte: 500 }];
+  string name = 3 [(validator.field).tags.string = { byte_len_lte: 500 }];
 
   // The resource description. Not required.
+  // FIXME: Rename json name
   // @inject_tag: json:"description"
-  string description = 4 [(validator.field) = {}];
+  string desc = 4 [(validator.field) = {}];
 
   // The resource type. required.
+  // FIXME: Rename json name
   // @inject_tag: json:"resource_type"
-  model.Resource.Type  resource_type = 5 [(validator.field).tags.enum = { gt:0; in_enums: true }];
+  model.Resource.Type type = 5 [(validator.field).tags.enum = { gt:0; in_enums: true }];
 }
 
 message ListFileMetas {
@@ -156,12 +159,14 @@ message ListFileMetas {
   int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The resource type. required.
+  // FIXME: Rename json and form name
   // @inject_tag: json:"resource_type" form:"resource_type"
-  model.Resource.Type  resource_type = 4 [(validator.field).tags.enum = { in_enums: true }];
+  model.Resource.Type type = 4 [(validator.field).tags.enum = { in_enums: true }];
 
   // The resource name. not required.
+  // FIXME: Rename json and form name
   // @inject_tag: json:"resource_name" form:"resource_name" binding:"-"
-  string resource_name = 5 [(validator.field) = {}];
+  string name = 5 [(validator.field) = {}];
 
   // Search with resource name; not required.
   // @inject_tag: json:"search" form:"search"

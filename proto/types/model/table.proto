@@ -31,37 +31,29 @@ message FlinkTable {
     Disabled = 3;
   }
 
-  // Table ID, unique within a region.
-  // @inject_tag: json:"table_id" gorm:"column:table_id;primaryKey;"
-  string table_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
-  // Source ID
-  // @inject_tag: json:"source_id" gorm:"column:source_id;"
-  string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
-  // Space ID, workspace ID.
+  // SpaceID, workspace ID.
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
-  string space_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Table ID, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;primaryKey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // DataSource ID
+  // @inject_tag: json:"source_id" gorm:"column:source_id;"
+  string source_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // Source Name, unique within a space.
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
 
   // Comment, describe this source.
-  // @inject_tag: json:"comment" gorm:"column:comment;"
-  string comment = 5 [ (validator.field).tags.string = { char_len_lte: 256 } ];
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 5 [ (validator.field).tags.string = { char_len_lte: 256 } ];
 
   // Define this table info.
   // @inject_tag: json:"table_schema" gorm:"column:table_schema;"
   flink.TableSchema table_schema = 6 ;
-
-  // Timestamp of create time.
-  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
-
-  // Timestamp of update time.
-  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Table status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
   // @inject_tag: json:"status" gorm:"column:status;"
@@ -71,12 +63,16 @@ message FlinkTable {
   // @inject_tag: json:"table_kind" gorm:"column:table_kind;"
   Kind table_kind = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-  // SourceName
-  // @inject_tag: json:"source_name"
-  string source_name = 11 [(validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 64 }];
-
   // Table owner.
   // @inject_tag: json:"created_by" gorm:"column:created_by"
   string created_by = 13  [ (validator.field).tags.string = { byte_len_lte: 64} ];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
 }
 

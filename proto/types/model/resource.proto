@@ -32,8 +32,9 @@ message Resource {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
   // Resource ID, unique within a region.
-  // @inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
-  string resource_id = 2  [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // FIXME: rename json name
+  // @inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+  string id = 2  [ (validator.field).tags.string = { byte_len_eq: 20; } ];
 
   // Resource Parent ID, default "".
   // @inject_tag: json:"pid" gorm:"column:pid;"
@@ -48,8 +49,9 @@ message Resource {
   string name = 5 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
 
   // Resource description.
-  // @inject_tag: json:"description" gorm:"description;"
-  string description = 6 [(validator.field).tags.string = { char_len_lte: 1024 }];
+  // FIXME: rename json name
+  // @inject_tag: json:"description" gorm:"desc;"
+  string desc = 6 [(validator.field).tags.string = { char_len_lte: 1024 }];
 
   // Resource size, Byte.
   // @inject_tag: json:"size" gorm:"size;"
