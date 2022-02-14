@@ -77,8 +77,8 @@ message CreateDataSource {
   model.DataSource.URL url = 5 [ (validator.field).tags.message = { not_null: true, skip: true } ];
 
   // Source owner.
-  // @inject_tag: json:"create_by"
-  string create_by = 6 [(validator.field).tags.string = { ne: "" }];
+  // @inject_tag: json:"created_by"
+  string created_by = 6 [(validator.field).tags.string = { ne: "" }];
 
   // The last connection record. The value is nil if never tested for usability.
   // @inject_tag: json:"last_connection" gorm:"-"

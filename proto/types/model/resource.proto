@@ -11,7 +11,6 @@ option java_outer_classname = "PBModelResource";
 option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
-//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 
 message Resource {
@@ -24,52 +23,63 @@ message Resource {
 
   enum Status {
     StatusUnset = 0;
-    Enabled = 1;
-    Disabled = 2;
-    Deleted = 3;
+    Deleted = 1;
+    Enabled = 2;
   }
-
-  // Resource ID, unique within a region.
-  // @inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
-  string resource_id = 1  [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
-  // Resource Parent ID, default "".
-  // @inject_tag: json:"pid" gorm:"column:pid;"
-  string pid = 2;
 
   // Workspace ID it belongs to.
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
-  string space_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Resource ID, unique within a region.
+  // @inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+  string resource_id = 2  [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Resource Parent ID, default "".
+  // @inject_tag: json:"pid" gorm:"column:pid;"
+  string pid = 3;
+
+  // IsDirectory represents this file whether a directory.
+  // @inject_tag: json:"is_directory" gorm:"column:is_directory;"
+  bool is_directory = 4;
 
   // Resource Name, unique within a region of same space_id and pid.
   // @inject_tag: json:"name" gorm:"column:name;"
-  string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
+  string name = 5 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
 
-  // Resource type, default 0,  0 => "directory", 1 => "jar", 2 => "udf" 3 => "connector".
-  // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // Resource description.
+  // @inject_tag: json:"description" gorm:"description;"
+  string description = 6 [(validator.field).tags.string = { char_len_lte: 1024 }];
 
   // Resource size, Byte.
   // @inject_tag: json:"size" gorm:"size;"
-  int64 resource_size = 6 [(validator.field).tags.int = { gt: 0 }];
+  int64 size = 7 [ (validator.field).tags.int = { gte: 0 } ];
 
-  // Resource description
-  // @inject_tag: json:"description" gorm:"description;"
-  string description = 7 [(validator.field).tags.string = { char_len_lte: 1024 }];
+  // ETag is MD5 value of file data encoded in hexadecimal.
+  // @inject_tag: json:"etag" gorm:"etag;"
+  string etag = 8 [ (validator.field).tags.string = { byte_len_eq: 32 } ];
+
+  // Resource type, 1 => "jar", 2 => "udf" 3 => "connector".
+  // @inject_tag: json:"type" gorm:"column:type;"
+  Type type = 9 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // Resource status, 1 => "deleted", 2 => "enabled"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // The file version id, Each upload generates a new ID.
+  // @inject_tag: json:"version" gorm:"column:version;"
+  string version = 11 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
+
+  // Resource owner.
+  // @inject_tag: json:"created_by" gorm:"column:created_by"
+  string created_by = 12 [ (validator.field).tags.string = { byte_len_gt: 1} ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 8 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 13 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 9 [ (validator.field).tags.int = { gt: 0 } ];
-
-  // Resource owner.
-  // @inject_tag: json:"create_by" gorm:"column:create_by"
-  string create_by = 10 [ (validator.field).tags.string = { byte_len_lte: 64} ];
-  // Resource status, 1 => "enabled", 2 => "disabled", 3 => "deleted",
-  // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 11 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  int64 updated = 14 [ (validator.field).tags.int = { gt: 0 } ];
 }
-

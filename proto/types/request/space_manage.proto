@@ -19,6 +19,10 @@ import "proto/types/model/opaudit.proto";
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListWorkspaces {
+  // The used_id fixed to request user id.
+  // @inject_tag: json:"user_id" form:"-" swaggerignore:"true"
+  string user_id = 6 [ (validator.field).tags.string = { byte_len_gt:1, byte_len_lt: 65 } ];
+
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit" form:"limit"
@@ -42,10 +46,6 @@ message ListWorkspaces {
   // Search with workspace name; Not required.
   // @inject_tag: json:"search" form:"search"
   string search = 5;
-
-  // The used_id fixed to request user id.
-  // @inject_tag: json:"user_id" form:"-" swaggerignore:"true"
-  string user_id = 6 [ (validator.field).tags.string = { byte_len_gt:1, byte_len_lt: 65 } ];
 
   // Filter by workspace status;  Not required.
   // Valid optional: 1 => "enabled", 2 => "disabled".

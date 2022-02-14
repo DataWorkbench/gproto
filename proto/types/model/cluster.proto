@@ -120,7 +120,7 @@ message FlinkClusterBinding {
 
   // ID of flink cluster.
   // @inject_tag: json:"cluster_id" gorm:"column:cluster_id;primaryKey;"
-  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
 
   // ID of which module binding it.
   // Includes modules: "stream_job", "stream_job_release".

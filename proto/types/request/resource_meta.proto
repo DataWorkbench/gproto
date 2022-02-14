@@ -1,0 +1,196 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestResourceMeta";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+import "proto/types/model/resource.proto";
+
+message CreateFilePrepare {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // PID is the parent id(directory). pid is "" means root(`/`)
+  // @inject_tag: json:"pid"
+  string pid = 2 [
+    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }
+  ];
+
+  // The resource name. required.
+  // @inject_tag: json:"name"
+  string name = 3 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128; } ];
+
+  // The resource Size. prevent data missing. Max Size: 100M
+  // @inject_tag: json:"size"
+  int64 size = 4 [ (validator.field).tags.int = { gt: 0, lte: 104857600 } ];
+}
+
+message CreateFileMeta {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // @inject_tag: json:"resource_id"
+  string resource_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
+
+  // PID is the parent id(directory). pid is "" means root(`/`)
+  // @inject_tag: json:"pid"
+  string pid = 3 [
+    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }
+  ];
+
+  // The resource name. required.
+  // @inject_tag: json:"name"
+  string name = 4 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128; } ];
+
+  // The resource description. not required.
+  // @inject_tag: json:"description"
+  string description = 5 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
+
+  // The resource Size. prevent data missing.
+  // @inject_tag: json:"size"
+  int64 size = 6;
+
+  // ETag is MD5 value of file data encoded in hexadecimal.
+  // @inject_tag: json:"etag"
+  string etag = 7 [ (validator.field).tags.string = { byte_len_eq: 32 } ];
+
+  // The resource type. Is required.
+  // @inject_tag: json:"type"
+  model.Resource.Type type = 8 [ (validator.field).tags.enum = { gt:0; in_enums: true } ];
+
+  // The file version id, Each upload generates a new ID.
+  // @inject_tag: json:"version"
+  string version = 9 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
+
+  // The resource owner.
+  // @inject_tag: json:"created_by"
+  string created_by = 10 [ (validator.field).tags.string = { byte_len_gt: 0; byte_len_lt: 65 }];
+}
+
+message ReCreateFilePrepare {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // @inject_tag: json:"resource_id"
+  string resource_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
+
+  // The resource Size. prevent data missing.
+  // @inject_tag: json:"size"
+  int64 size = 3 [ (validator.field).tags.int = { gt: 0, lte: 104857600 } ];
+}
+
+message ReCreateFileMeta {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // @inject_tag: json:"resource_id"
+  string resource_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
+
+  // The resource Size. prevent data missing.
+  // @inject_tag: json:"size"
+  int64 size = 3;
+
+  // ETag is MD5 value of file data encoded in hexadecimal.
+  // @inject_tag: json:"etag"
+  string etag = 4 [ (validator.field).tags.string = { byte_len_eq: 32 } ];
+
+  // The file version id, Each upload generates a new ID.
+  // @inject_tag: json:"version"
+  string version = 5 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
+}
+
+message DescribeFileMeta {
+  // @inject_tag: json:"resource_id"
+  string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
+}
+
+message UpdateFileMeta {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The resource id in HTTP Request_URI.
+  // @inject_tag: json:"resource_id" uri:"resource_id" swaggerignore:"true"
+  string resource_id = 2 [(validator.field).tags.string = { byte_len_eq: 20}];
+
+  // The resource name. required.
+  // @inject_tag: json:"resource_name"
+  string resource_name = 3 [(validator.field).tags.string = { byte_len_lte: 500 }];
+
+  // The resource description. Not required.
+  // @inject_tag: json:"description"
+  string description = 4 [(validator.field) = {}];
+
+  // The resource type. required.
+  // @inject_tag: json:"resource_type"
+  model.Resource.Type  resource_type = 5 [(validator.field).tags.enum = { gt:0; in_enums: true }];
+}
+
+message ListFileMetas {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The resource type. required.
+  // @inject_tag: json:"resource_type" form:"resource_type"
+  model.Resource.Type  resource_type = 4 [(validator.field).tags.enum = { in_enums: true }];
+
+  // The resource name. not required.
+  // @inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+  string resource_name = 5 [(validator.field) = {}];
+
+  // Search with resource name; not required.
+  // @inject_tag: json:"search" form:"search"
+  string search = 6 [(validator.field).tags.string = { byte_len_lte: 500 }];
+
+  // The field list used to sorted query results.
+  // Optional values: {id, created, updated, name, size}.
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by" form:"sort_by"
+  string sort_by = 7 [ (validator.field).tags.string = { in: ["", "id", "created", "updated", "name", "size"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse" form:"reverse"
+  bool reverse = 8 [(validator.field) = {}];
+
+  // The parent id.
+  // @inject_tag: json:"pid" form:"pid"
+  string pid = 9 [
+    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }
+  ];
+}
+
+message DeleteFileMetas {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The list of resource id. Is required, Min 1 Max 100.
+  // @inject_tag: json:"resource_ids"
+  repeated string resource_ids = 2 [(validator.field).tags.repeated = { len_gt: 0, len_lte: 100 }];
+}

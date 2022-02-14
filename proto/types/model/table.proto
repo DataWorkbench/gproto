@@ -76,7 +76,7 @@ message FlinkTable {
   string source_name = 11 [(validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 64 }];
 
   // Table owner.
-  // @inject_tag: json:"create_by" gorm:"column:create_by"
-  string create_by = 13  [ (validator.field).tags.string = { byte_len_lte: 64} ];
+  // @inject_tag: json:"created_by" gorm:"column:created_by"
+  string created_by = 13  [ (validator.field).tags.string = { byte_len_lte: 64} ];
 }
 

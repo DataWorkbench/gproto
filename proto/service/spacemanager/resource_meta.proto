@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package spacemanager;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.service.pbsvcspace";
+// File name of class.
+option java_outer_classname = "PBSvcResourceMeta";
+option java_multiple_files = false;
+
+import "proto/types/model/empty.proto";
+import "proto/types/request/resource_meta.proto";
+import "proto/types/response/resource_meta.proto";
+
+// ResourceMeta for manage metadata of file(resource)
+service ResourceMeta {
+  // CreateFilePrepare used for before write data.
+  // Do:
+  //   Generated a new id.
+  //   Generated a new version.
+  //   Check name conflict.
+  //   Check quota.
+  rpc CreateFilePrepare(request.CreateFilePrepare) returns (response.CreateFilePrepare) {}
+
+  // CreateFileMeta for create metadata after write data success.
+  rpc CreateFileMeta(request.CreateFileMeta) returns (model.EmptyStruct) {}
+
+  // CreateFilePrepare used for before write data.
+  // Do:
+  //   Generated a new version.
+  //   Check quota.
+  rpc ReCreateFilePrepare(request.ReCreateFilePrepare) returns (response.ReCreateFilePrepare) {}
+
+  // ReCreateFileMeta for update meta after re-upload file.
+  rpc ReCreateFileMeta(request.ReCreateFileMeta) returns (model.EmptyStruct) {}
+
+  rpc DescribeFileMeta(request.DescribeFileMeta) returns (response.DescribeFileMeta) {}
+
+  rpc UpdateFileMeta(request.UpdateFileMeta) returns (model.EmptyStruct) {}
+
+  rpc ListFileMetas(request.ListFileMetas) returns (response.ListFileMetas) {}
+
+  rpc DeleteFileMetas(request.DeleteFileMetas) returns (model.EmptyStruct) {}
+}
