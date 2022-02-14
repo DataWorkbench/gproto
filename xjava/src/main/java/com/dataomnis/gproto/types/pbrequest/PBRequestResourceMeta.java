@@ -94,6 +94,27 @@ public final class PBRequestResourceMeta {
      * @return The size.
      */
     long getSize();
+
+    /**
+     * <pre>
+     * The resource type. required.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * The resource type. required.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType();
   }
   /**
    * Protobuf type {@code request.CreateFilePrepare}
@@ -111,6 +132,7 @@ public final class PBRequestResourceMeta {
       spaceId_ = "";
       pid_ = "";
       name_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -164,6 +186,12 @@ public final class PBRequestResourceMeta {
             case 32: {
 
               size_ = input.readInt64();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
             default: {
@@ -358,6 +386,35 @@ public final class PBRequestResourceMeta {
       return size_;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 5;
+    private int type_;
+    /**
+     * <pre>
+     * The resource type. required.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The resource type. required.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -384,6 +441,9 @@ public final class PBRequestResourceMeta {
       if (size_ != 0L) {
         output.writeInt64(4, size_);
       }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
+        output.writeEnum(5, type_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -405,6 +465,10 @@ public final class PBRequestResourceMeta {
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, size_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -429,6 +493,7 @@ public final class PBRequestResourceMeta {
           .equals(other.getName())) return false;
       if (getSize()
           != other.getSize()) return false;
+      if (type_ != other.type_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -449,6 +514,8 @@ public final class PBRequestResourceMeta {
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -590,6 +657,8 @@ public final class PBRequestResourceMeta {
 
         size_ = 0L;
 
+        type_ = 0;
+
         return this;
       }
 
@@ -620,6 +689,7 @@ public final class PBRequestResourceMeta {
         result.pid_ = pid_;
         result.name_ = name_;
         result.size_ = size_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -682,6 +752,9 @@ public final class PBRequestResourceMeta {
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1057,6 +1130,85 @@ public final class PBRequestResourceMeta {
       public Builder clearSize() {
         
         size_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * The resource type. required.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * The resource type. required.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The resource type. required.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The resource type. required.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The resource type. required.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -6213,22 +6365,22 @@ public final class PBRequestResourceMeta {
     /**
      * <pre>
      * The resource type. required.
-     * FIXME: Rename json name
+     * FIXME: Rename json name; removed it.
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Resource.Type type = 5;</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
      * <pre>
      * The resource type. required.
-     * FIXME: Rename json name
+     * FIXME: Rename json name; removed it.
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Resource.Type type = 5;</code>
      * @return The type.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType();
@@ -6546,11 +6698,11 @@ public final class PBRequestResourceMeta {
     /**
      * <pre>
      * The resource type. required.
-     * FIXME: Rename json name
+     * FIXME: Rename json name; removed it.
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Resource.Type type = 5;</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -6559,11 +6711,11 @@ public final class PBRequestResourceMeta {
     /**
      * <pre>
      * The resource type. required.
-     * FIXME: Rename json name
+     * FIXME: Rename json name; removed it.
      * &#64;inject_tag: json:"resource_type"
      * </pre>
      *
-     * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.Resource.Type type = 5;</code>
      * @return The type.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType() {
@@ -7359,11 +7511,11 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource type. required.
-       * FIXME: Rename json name
+       * FIXME: Rename json name; removed it.
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Resource.Type type = 5;</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -7372,11 +7524,11 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource type. required.
-       * FIXME: Rename json name
+       * FIXME: Rename json name; removed it.
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Resource.Type type = 5;</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -7389,11 +7541,11 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource type. required.
-       * FIXME: Rename json name
+       * FIXME: Rename json name; removed it.
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Resource.Type type = 5;</code>
        * @return The type.
        */
       @java.lang.Override
@@ -7405,11 +7557,11 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource type. required.
-       * FIXME: Rename json name
+       * FIXME: Rename json name; removed it.
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Resource.Type type = 5;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -7425,11 +7577,11 @@ public final class PBRequestResourceMeta {
       /**
        * <pre>
        * The resource type. required.
-       * FIXME: Rename json name
+       * FIXME: Rename json name; removed it.
        * &#64;inject_tag: json:"resource_type"
        * </pre>
        *
-       * <code>.model.Resource.Type type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.Resource.Type type = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -10334,49 +10486,50 @@ public final class PBRequestResourceMeta {
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\0322github.com/yu31" +
       "/protoc-plugin/proto/defaults.proto\032 pro" +
-      "to/types/model/resource.proto\"\256\001\n\021Create" +
+      "to/types/model/resource.proto\"\341\001\n\021Create" +
       "FilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
       "\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001" +
       "\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\003 \001(\tB\020\342\337" +
       "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\036\n\004size\030\004 \001(\003B\020\342\337\037\014\022\n\262\001\0070" +
-      "\0008\200\200\2002\"\363\002\n\016CreateFileMeta\022%\n\010space_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030" +
-      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\003 \001(\tB" +
-      "%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036" +
-      "\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\005" +
-      " \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\014\n\004size\030\006 \001(\003\022\032\n\004eta" +
-      "g\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type\030\010 \001(\0162\024.mo" +
-      "del.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007vers" +
-      "ion\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncreated_by\030\n " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\206\001\n\023ReCreateFilePre" +
-      "pare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004res-\022\036\n\004size\030\003 \001(\003B\020\342\337\037\014\022\n\262\001\0070\0008\200\200\2002\"\254\001" +
-      "\n\020ReCreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\014\n\004size\030\003 \001(\003\022\032\n\004eta" +
-      "g\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014" +
-      "\342\337\037\010\022\006\302\001\003\360\001\020\"<\n\020DescribeFileMeta\022(\n\013reso" +
-      "urce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\276\001\n\016U" +
-      "pdateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022!\n\013resource_id\030\002 \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004" +
-      "desc\030\004 \001(\tB\004\342\337\037\000\0221\n\004type\030\005 \001(\0162\024.model.R" +
-      "esource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\303\002\n\rListFile" +
-      "Metas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\004" +
-      "0\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022/\n\004typ" +
-      "e\030\004 \001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002" +
-      "X\001\022\022\n\004name\030\005 \001(\tB\004\342\337\037\000\022\035\n\006search\030\006 \001(\tB\r" +
-      "\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001" +
-      "$J\000J\002idJ\007createdJ\007updatedJ\004nameJ\004size\022\025\n" +
-      "\007reverse\030\010 \001(\010B\004\342\337\037\000\022\013\n\003pid\030\t \001(\t\"]\n\017Del" +
-      "eteFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022#\n\014resource_ids\030\002 \003(\tB\r\342\337\037\t\022" +
-      "\007\352\001\0040\0008dBt\n$com.dataomnis.gproto.types.p" +
-      "brequestB\025PBRequestResourceMetaP\000Z3githu" +
-      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
-      "equestb\006proto3"
+      "\0008\200\200\2002\0221\n\004type\030\005 \001(\0162\024.model.Resource.Ty" +
+      "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\363\002\n\016CreateFileMeta\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013r" +
+      "esource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n" +
+      "\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004res-\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200" +
+      "\001\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\014\n\004size\030\006" +
+      " \001(\003\022\032\n\004etag\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type" +
+      "\030\010 \001(\0162\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022\035\n\007version\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncr" +
+      "eated_by\030\n \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\206\001\n\023ReCr" +
+      "eateFilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004size\030\003 \001(\003B\020\342\337\037\014\022\n\262\001" +
+      "\0070\0008\200\200\2002\"\254\001\n\020ReCreateFileMeta\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource" +
+      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\014\n\004size\030\003" +
+      " \001(\003\022\032\n\004etag\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007vers" +
+      "ion\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"<\n\020DescribeFileM" +
+      "eta\022(\n\013resource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004res-\"\257\001\n\016UpdateFileMeta\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_id\030\002" +
+      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\tB\r\342\337\037\t\022\007" +
+      "\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022\"\n\004type\030\005 \001(" +
+      "\0162\024.model.Resource.Type\"\303\002\n\rListFileMeta" +
+      "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d" +
+      "\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022/\n\004type\030\004 " +
+      "\001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002X\001\022\022" +
+      "\n\004name\030\005 \001(\tB\004\342\337\037\000\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t" +
+      "\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J" +
+      "\002idJ\007createdJ\007updatedJ\004nameJ\004size\022\025\n\007rev" +
+      "erse\030\010 \001(\010B\004\342\337\037\000\022\013\n\003pid\030\t \001(\t\"]\n\017DeleteF" +
+      "ileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022#\n\014resource_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\004" +
+      "0\0008dBt\n$com.dataomnis.gproto.types.pbreq" +
+      "uestB\025PBRequestResourceMetaP\000Z3github.co" +
+      "m/DataWorkbench/gproto/xgo/types/pbreque" +
+      "stb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10390,7 +10543,7 @@ public final class PBRequestResourceMeta {
     internal_static_request_CreateFilePrepare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFilePrepare_descriptor,
-        new java.lang.String[] { "SpaceId", "Pid", "Name", "Size", });
+        new java.lang.String[] { "SpaceId", "Pid", "Name", "Size", "Type", });
     internal_static_request_CreateFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateFileMeta_fieldAccessorTable = new
