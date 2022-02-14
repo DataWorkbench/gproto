@@ -15,33 +15,33 @@ import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message ListNetworks {
+  // The workspace id in HTTP Request-URI. Is Required.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
   // @inject_tag: json:"limit" form:"limit"
-  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
   // The offset position. Not required, default 0.
   // @inject_tag: json:"offset" form:"offset"
-  int32 offset = 2 [ (validator.field).tags.int  = { gte: 0 } ];
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
   // Optional values: {id, name, created, updated}.
   // Multiple fields are separated by commas(","), eg: sort_by="updated".
   // Not required, default: id.
   // @inject_tag: json:"sort_by" form:"sort_by"
-  string sort_by = 3 [ (validator.field).tags.string = { in: ["", "id", "created", "updated", "name"] } ];
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "created", "updated", "name"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
-  bool reverse = 4 [ (validator.field) = { } ];
+  bool reverse = 5 [ (validator.field) = { } ];
 
   // Search with workspace name; Not required.
   // @inject_tag: json:"search" form:"search"
-  string search = 5 [ (validator.field) = { } ];
-
-  // The workspace id in HTTP Request-URI. Is Required.
-  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
-  string space_id = 6 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  string search = 6 [ (validator.field) = { } ];
 
   // Filter by network name; valid if `search` is empty; Not required.
   // @inject_tag: json:"name" form:"name"

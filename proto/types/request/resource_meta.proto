@@ -177,12 +177,9 @@ message ListFileMetas {
   // @inject_tag: json:"reverse" form:"reverse"
   bool reverse = 8 [(validator.field) = {}];
 
-  // The parent id.
+  // The parent id. Not required.
   // @inject_tag: json:"pid" form:"pid"
-  string pid = 9 [
-    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
-    (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }
-  ];
+  string pid = 9;
 }
 
 message DeleteFileMetas {
