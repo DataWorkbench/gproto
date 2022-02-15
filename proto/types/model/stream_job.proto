@@ -137,7 +137,7 @@ message StreamJobCode {
   // @inject_tag: json:"jar"
   flink.FlinkJar jar = 4 [
     (validator.field).check_if = { field: "type", tags: { enum: { eq: 3 } }},
-    (validator.field).tags.message = {not_null: true}
+    (validator.field).tags.message = { not_null: true }
   ];
 
   // Python
@@ -170,12 +170,21 @@ message StreamJobArgs {
 
   // The list of function(udf). Not required
   // @inject_tag: json:"udfs"
-  repeated string udfs = 3 [(validator.field) = {}];
+  repeated string udfs = 3 [
+    (validator.field).check_if = { field: "udfs", tags: { repeated: { len_gt: 0 } } },
+    (validator.field).tags.repeated = { item: { string: { prefix: "udf-" } } }
+  ];
 
   // The list of connectors dependency package. Not required.
-  repeated string connectors = 4 ;
+  // @inject_tag: json:"connectors"
+  repeated string connectors = 4 [
+    (validator.field).check_if = { field: "connectors", tags: { repeated: { len_gt: 0 } } },
+    (validator.field).tags.repeated = { item: { string: { prefix: "res-" } } }
+  ];
 
   // The list of built-in connectors. Not required.
+  // Notice: check build-in connectors in `StreamJobManage Service`
+  // @inject_tag: json:"built_in_connectors"
   repeated string built_in_connectors = 5;
 }
 
@@ -207,7 +216,7 @@ message StreamJobSchedule {
   // Schedule Policy, Options Value: 1 => "Periodicity", 2 => "AppointTime", 3 => "Immediately"
   // Is Required.
   // @inject_tag: json:"schedule_policy"
-  SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { in_enums: true  } ];
+  SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { gt: 0, in_enums: true  } ];
 
   // Timestamp of execute time for once. unit in seconds.
   // Not required, default the time of created job.

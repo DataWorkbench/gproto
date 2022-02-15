@@ -82,15 +82,15 @@ message FlinkOperator {
 message FlinkJar {
   // jarid in resource manager. Is resource_id.
   // @inject_tag: json:"resource_id"
-  string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" } ];
 
   // JarArgs
   // @inject_tag: json:"jar_args"
-  string jar_args = 2 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
+  string jar_args = 2 [ (validator.field).tags.string = { byte_len_lte: 1024, utf8: true } ];
 
   // JarEntry
   // @inject_tag: json:"jar_entry"
-  string jar_entry = 3 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
+  string jar_entry = 3 [ (validator.field).tags.string = { byte_len_lte: 1024, utf8: true } ];
 }
 
 // ScalaOperatorProperty

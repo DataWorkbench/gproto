@@ -10,7 +10,7 @@ option java_package = "com.dataomnis.gproto.types.pbresponse";
 option java_outer_classname = "PBResponseStreamJobManage";
 option java_multiple_files = false;
 
-//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
@@ -42,17 +42,17 @@ message DescribeStreamJob {
 
 // GetStreamJobCode used as reply parameters in RPC.
 message GetStreamJobCode {
-  model.StreamJobCode code = 1;
+  model.StreamJobCode code = 1 [ (validator.field).tags.message = { skip: true} ];
 }
 
 // GetStreamJobArgs used as reply parameters in RPC.
 message GetStreamJobArgs {
-  model.StreamJobArgs info = 1;
+  model.StreamJobArgs info = 1 [ (validator.field).tags.message = { skip: true} ];
 }
 
 // GetStreamJobSchedule used as reply parameters in RPC.
 message GetStreamJobSchedule {
-  model.StreamJobSchedule info = 1;
+  model.StreamJobSchedule info = 1 [ (validator.field).tags.message = { skip: true} ];
 }
 
 // ListReleaseStreamJobs used as reply parameters in RPC or response body in HTTP.
