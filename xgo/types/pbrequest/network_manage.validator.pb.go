@@ -69,6 +69,16 @@ func (this *ListNetworks) Validate() error {
 	return nil
 }
 
+func (this *DeleteNetworks) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteNetworks", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteNetworks", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *DeleteNetworks) _xxx_xxx_Validator_Validate_network_ids() error {
 	if !(len(this.NetworkIds) > 0) {
 		return protovalidator.FieldError1("DeleteNetworks", "the length of field 'network_ids' must be greater than '0'", strconv.Itoa(len(this.NetworkIds)))
@@ -89,6 +99,9 @@ func (this *DeleteNetworks) _xxx_xxx_Validator_Validate_network_ids() error {
 func (this *DeleteNetworks) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_network_ids(); err != nil {
 		return err

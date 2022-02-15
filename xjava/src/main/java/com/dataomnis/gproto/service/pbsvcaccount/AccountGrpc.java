@@ -108,6 +108,161 @@ public final class AccountGrpc {
     return getDescribeAccessKeyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser> getCreateUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUser",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser> getCreateUserMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser> getCreateUserMethod;
+    if ((getCreateUserMethod = AccountGrpc.getCreateUserMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getCreateUserMethod = AccountGrpc.getCreateUserMethod) == null) {
+          AccountGrpc.getCreateUserMethod = getCreateUserMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("CreateUser"))
+              .build();
+        }
+      }
+    }
+    return getCreateUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser> getUpdateUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUser",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser> getUpdateUserMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser> getUpdateUserMethod;
+    if ((getUpdateUserMethod = AccountGrpc.getUpdateUserMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getUpdateUserMethod = AccountGrpc.getUpdateUserMethod) == null) {
+          AccountGrpc.getUpdateUserMethod = getUpdateUserMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("UpdateUser"))
+              .build();
+        }
+      }
+    }
+    return getUpdateUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser> getDeleteUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUser",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser> getDeleteUserMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser> getDeleteUserMethod;
+    if ((getDeleteUserMethod = AccountGrpc.getDeleteUserMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getDeleteUserMethod = AccountGrpc.getDeleteUserMethod) == null) {
+          AccountGrpc.getDeleteUserMethod = getDeleteUserMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("DeleteUser"))
+              .build();
+        }
+      }
+    }
+    return getDeleteUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession> getCheckSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckSession",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession> getCheckSessionMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession> getCheckSessionMethod;
+    if ((getCheckSessionMethod = AccountGrpc.getCheckSessionMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getCheckSessionMethod = AccountGrpc.getCheckSessionMethod) == null) {
+          AccountGrpc.getCheckSessionMethod = getCheckSessionMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CheckSession"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("CheckSession"))
+              .build();
+        }
+      }
+    }
+    return getCheckSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> getLoginMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Login",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> getLoginMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> getLoginMethod;
+    if ((getLoginMethod = AccountGrpc.getLoginMethod) == null) {
+      synchronized (AccountGrpc.class) {
+        if ((getLoginMethod = AccountGrpc.getLoginMethod) == null) {
+          AccountGrpc.getLoginMethod = getLoginMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Login"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("Login"))
+              .build();
+        }
+      }
+    }
+    return getLoginMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -177,6 +332,41 @@ public final class AccountGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeAccessKeyMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void createUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void updateUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void checkSession(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckSessionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void login(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -200,6 +390,41 @@ public final class AccountGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeAccessKey,
                 com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeAccessKey>(
                   this, METHODID_DESCRIBE_ACCESS_KEY)))
+          .addMethod(
+            getCreateUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser>(
+                  this, METHODID_CREATE_USER)))
+          .addMethod(
+            getUpdateUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser>(
+                  this, METHODID_UPDATE_USER)))
+          .addMethod(
+            getDeleteUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser>(
+                  this, METHODID_DELETE_USER)))
+          .addMethod(
+            getCheckSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession>(
+                  this, METHODID_CHECK_SESSION)))
+          .addMethod(
+            getLoginMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login>(
+                  this, METHODID_LOGIN)))
           .build();
     }
   }
@@ -241,6 +466,46 @@ public final class AccountGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeAccessKeyMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void checkSession(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckSessionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void login(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -276,6 +541,41 @@ public final class AccountGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeAccessKey describeAccessKey(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeAccessKey request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeAccessKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser createUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser updateUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser deleteUser(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession checkSession(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login login(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoginMethod(), getCallOptions(), request);
     }
   }
 
@@ -316,11 +616,56 @@ public final class AccountGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeAccessKeyMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser> createUser(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser> updateUser(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser> deleteUser(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession> checkSession(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> login(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLoginMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_VALIDATE_REQUEST_SIGNATURE = 0;
   private static final int METHODID_DESCRIBE_USERS = 1;
   private static final int METHODID_DESCRIBE_ACCESS_KEY = 2;
+  private static final int METHODID_CREATE_USER = 3;
+  private static final int METHODID_UPDATE_USER = 4;
+  private static final int METHODID_DELETE_USER = 5;
+  private static final int METHODID_CHECK_SESSION = 6;
+  private static final int METHODID_LOGIN = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -350,6 +695,26 @@ public final class AccountGrpc {
         case METHODID_DESCRIBE_ACCESS_KEY:
           serviceImpl.describeAccessKey((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DescribeAccessKey) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DescribeAccessKey>) responseObserver);
+          break;
+        case METHODID_CREATE_USER:
+          serviceImpl.createUser((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateUser) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateUser>) responseObserver);
+          break;
+        case METHODID_UPDATE_USER:
+          serviceImpl.updateUser((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.UpdateUser>) responseObserver);
+          break;
+        case METHODID_DELETE_USER:
+          serviceImpl.deleteUser((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteUser) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.DeleteUser>) responseObserver);
+          break;
+        case METHODID_CHECK_SESSION:
+          serviceImpl.checkSession((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession>) responseObserver);
+          break;
+        case METHODID_LOGIN:
+          serviceImpl.login((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -415,6 +780,11 @@ public final class AccountGrpc {
               .addMethod(getValidateRequestSignatureMethod())
               .addMethod(getDescribeUsersMethod())
               .addMethod(getDescribeAccessKeyMethod())
+              .addMethod(getCreateUserMethod())
+              .addMethod(getUpdateUserMethod())
+              .addMethod(getDeleteUserMethod())
+              .addMethod(getCheckSessionMethod())
+              .addMethod(getLoginMethod())
               .build();
         }
       }

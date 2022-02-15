@@ -114,6 +114,16 @@ func (this *ListFlinkClusters) Validate() error {
 	return nil
 }
 
+func (this *DeleteFlinkClusters) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteFlinkClusters", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteFlinkClusters", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *DeleteFlinkClusters) _xxx_xxx_Validator_Validate_cluster_ids() error {
 	if !(len(this.ClusterIds) > 0) {
 		return protovalidator.FieldError1("DeleteFlinkClusters", "the length of field 'cluster_ids' must be greater than '0'", strconv.Itoa(len(this.ClusterIds)))
@@ -135,8 +145,21 @@ func (this *DeleteFlinkClusters) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_cluster_ids(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *StartFlinkClusters) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("StartFlinkClusters", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("StartFlinkClusters", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -162,8 +185,21 @@ func (this *StartFlinkClusters) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_cluster_ids(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *StopFlinkClusters) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("StopFlinkClusters", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("StopFlinkClusters", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -188,6 +224,9 @@ func (this *StopFlinkClusters) _xxx_xxx_Validator_Validate_cluster_ids() error {
 func (this *StopFlinkClusters) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_cluster_ids(); err != nil {
 		return err

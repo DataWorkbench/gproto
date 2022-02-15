@@ -25,17 +25,24 @@ public final class PBSvcAccount {
     java.lang.String[] descriptorData = {
       "\n#proto/service/account/account.proto\022\007a" +
       "ccount\032!proto/types/request/account.prot" +
-      "o\032\"proto/types/response/account.proto2\202\002" +
+      "o\032\"proto/types/response/account.proto2\240\004" +
       "\n\007Account\022c\n\030ValidateRequestSignature\022!." +
       "request.ValidateRequestSignature\032\".respo" +
       "nse.ValidateRequestSignature\"\000\022B\n\rDescri" +
       "beUsers\022\026.request.DescribeUsers\032\027.respon" +
       "se.DescribeUsers\"\000\022N\n\021DescribeAccessKey\022" +
       "\032.request.DescribeAccessKey\032\033.response.D" +
-      "escribeAccessKey\"\000Bu\n)com.dataomnis.gpro" +
-      "to.service.pbsvcaccountB\014PBSvcAccountP\000Z" +
-      "8github.com/DataWorkbench/gproto/xgo/ser" +
-      "vice/pbsvcaccountb\006proto3"
+      "escribeAccessKey\"\000\0229\n\nCreateUser\022\023.reque" +
+      "st.CreateUser\032\024.response.CreateUser\"\000\0229\n" +
+      "\nUpdateUser\022\023.request.UpdateUser\032\024.respo" +
+      "nse.UpdateUser\"\000\0229\n\nDeleteUser\022\023.request" +
+      ".DeleteUser\032\024.response.DeleteUser\"\000\022?\n\014C" +
+      "heckSession\022\025.request.CheckSession\032\026.res" +
+      "ponse.CheckSession\"\000\022*\n\005Login\022\016.request." +
+      "Login\032\017.response.Login\"\000Bu\n)com.dataomni" +
+      "s.gproto.service.pbsvcaccountB\014PBSvcAcco" +
+      "untP\000Z8github.com/DataWorkbench/gproto/x" +
+      "go/service/pbsvcaccountb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

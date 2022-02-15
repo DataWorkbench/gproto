@@ -181,6 +181,18 @@ public final class PBModelAccount {
      */
     com.google.protobuf.ByteString
         getRegionsBytes(int index);
+
+    /**
+     * <code>string password = 13;</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 13;</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
   }
   /**
    * Protobuf type {@code model.User}
@@ -206,6 +218,7 @@ public final class PBModelAccount {
       gravatarEmail_ = "";
       zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      password_ = "";
     }
 
     @java.lang.Override
@@ -314,6 +327,12 @@ public final class PBModelAccount {
                 mutable_bitField0_ |= 0x00000002;
               }
               regions_.add(s);
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
               break;
             }
             default: {
@@ -777,6 +796,44 @@ public final class PBModelAccount {
       return regions_.getByteString(index);
     }
 
+    public static final int PASSWORD_FIELD_NUMBER = 13;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 13;</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 13;</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -826,6 +883,9 @@ public final class PBModelAccount {
       }
       for (int i = 0; i < regions_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, regions_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, password_);
       }
       unknownFields.writeTo(output);
     }
@@ -883,6 +943,9 @@ public final class PBModelAccount {
         size += dataSize;
         size += 1 * getRegionsList().size();
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, password_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -922,6 +985,8 @@ public final class PBModelAccount {
           .equals(other.getZonesList())) return false;
       if (!getRegionsList()
           .equals(other.getRegionsList())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -961,6 +1026,8 @@ public final class PBModelAccount {
         hash = (37 * hash) + REGIONS_FIELD_NUMBER;
         hash = (53 * hash) + getRegionsList().hashCode();
       }
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1118,6 +1185,8 @@ public final class PBModelAccount {
         bitField0_ = (bitField0_ & ~0x00000001);
         regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        password_ = "";
+
         return this;
       }
 
@@ -1165,6 +1234,7 @@ public final class PBModelAccount {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.regions_ = regions_;
+        result.password_ = password_;
         onBuilt();
         return result;
       }
@@ -1270,6 +1340,10 @@ public final class PBModelAccount {
             ensureRegionsIsMutable();
             regions_.addAll(other.regions_);
           }
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2236,6 +2310,82 @@ public final class PBModelAccount {
         onChanged();
         return this;
       }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 13;</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 13;</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 13;</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 13;</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2304,15 +2454,15 @@ public final class PBModelAccount {
   static {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/account.proto\022\005model" +
-      "\"\321\001\n\004User\022\017\n\007user_id\030\001 \001(\t\022\021\n\tuser_name\030" +
+      "\"\343\001\n\004User\022\017\n\007user_id\030\001 \001(\t\022\021\n\tuser_name\030" +
       "\002 \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\r\n\005ph" +
       "one\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022" +
       "\020\n\010currency\030\010 \001(\t\022\026\n\016gravatar_email\030\t \001(" +
       "\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007r" +
-      "egions\030\014 \003(\tBi\n\"com.dataomnis.gproto.typ" +
-      "es.pbmodelB\016PBModelAccountP\000Z1github.com" +
-      "/DataWorkbench/gproto/xgo/types/pbmodelb" +
-      "\006proto3"
+      "egions\030\014 \003(\t\022\020\n\010password\030\r \001(\tBi\n\"com.da" +
+      "taomnis.gproto.types.pbmodelB\016PBModelAcc" +
+      "ountP\000Z1github.com/DataWorkbench/gproto/" +
+      "xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2323,7 +2473,7 @@ public final class PBModelAccount {
     internal_static_model_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_User_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "Lang", "Email", "Phone", "Status", "Role", "Currency", "GravatarEmail", "Privilege", "Zones", "Regions", });
+        new java.lang.String[] { "UserId", "UserName", "Lang", "Email", "Phone", "Status", "Role", "Currency", "GravatarEmail", "Privilege", "Zones", "Regions", "Password", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

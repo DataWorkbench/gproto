@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\020PBRequestAccountP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!proto/types/request/account.proto\x12\x07request\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"Q\n\rDescribeUsers\x12\r\n\x05users\x18\x01 \x03(\t\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x12\n\nreq_source\x18\x04 \x01(\t\"\xca\x01\n\x18ValidateRequestSignature\x12\x12\n\nreq_method\x18\x01 \x01(\t\x12\x10\n\x08req_path\x18\x02 \x01(\t\x12\x18\n\x10req_query_string\x18\x03 \x01(\t\x12\x10\n\x08req_body\x18\x04 \x01(\t\x12\x15\n\rreq_signature\x18\x05 \x01(\t\x12\x19\n\x11req_access_key_id\x18\x06 \x01(\t\x12\x12\n\nreq_source\x18\x07 \x01(\t\x12\x16\n\x0ereq_user_agent\x18\x08 \x01(\tBo\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n!proto/types/request/account.proto\x12\x07request\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"Q\n\rDescribeUsers\x12\r\n\x05users\x18\x01 \x03(\t\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x12\n\nreq_source\x18\x04 \x01(\t\"\xca\x01\n\x18ValidateRequestSignature\x12\x12\n\nreq_method\x18\x01 \x01(\t\x12\x10\n\x08req_path\x18\x02 \x01(\t\x12\x18\n\x10req_query_string\x18\x03 \x01(\t\x12\x10\n\x08req_body\x18\x04 \x01(\t\x12\x15\n\rreq_signature\x18\x05 \x01(\t\x12\x19\n\x11req_access_key_id\x18\x06 \x01(\t\x12\x12\n\nreq_source\x18\x07 \x01(\t\x12\x16\n\x0ereq_user_agent\x18\x08 \x01(\t\"\xd8\x01\n\nCreateUser\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\"\xe9\x01\n\nUpdateUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\t\"\x1d\n\nDeleteUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x1f\n\x0c\x43heckSession\x12\x0f\n\x07session\x18\x01 \x01(\t\",\n\x05Login\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\tBo\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
 )
 
 
@@ -190,9 +190,342 @@ _VALIDATEREQUESTSIGNATURE = _descriptor.Descriptor(
   serialized_end=376,
 )
 
+
+_CREATEUSER = _descriptor.Descriptor(
+  name='CreateUser',
+  full_name='request.CreateUser',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_name', full_name='request.CreateUser.user_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='request.CreateUser.password', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lang', full_name='request.CreateUser.lang', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='request.CreateUser.email', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='phone', full_name='request.CreateUser.phone', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='request.CreateUser.status', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='role', full_name='request.CreateUser.role', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='currency', full_name='request.CreateUser.currency', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gravatar_email', full_name='request.CreateUser.gravatar_email', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='privilege', full_name='request.CreateUser.privilege', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='zones', full_name='request.CreateUser.zones', index=10,
+      number=11, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='regions', full_name='request.CreateUser.regions', index=11,
+      number=12, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=379,
+  serialized_end=595,
+)
+
+
+_UPDATEUSER = _descriptor.Descriptor(
+  name='UpdateUser',
+  full_name='request.UpdateUser',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='request.UpdateUser.user_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_name', full_name='request.UpdateUser.user_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lang', full_name='request.UpdateUser.lang', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='request.UpdateUser.email', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='phone', full_name='request.UpdateUser.phone', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='request.UpdateUser.status', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='role', full_name='request.UpdateUser.role', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='currency', full_name='request.UpdateUser.currency', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gravatar_email', full_name='request.UpdateUser.gravatar_email', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='privilege', full_name='request.UpdateUser.privilege', index=9,
+      number=10, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='zones', full_name='request.UpdateUser.zones', index=10,
+      number=11, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='regions', full_name='request.UpdateUser.regions', index=11,
+      number=12, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='request.UpdateUser.password', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=598,
+  serialized_end=831,
+)
+
+
+_DELETEUSER = _descriptor.Descriptor(
+  name='DeleteUser',
+  full_name='request.DeleteUser',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='request.DeleteUser.user_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=833,
+  serialized_end=862,
+)
+
+
+_CHECKSESSION = _descriptor.Descriptor(
+  name='CheckSession',
+  full_name='request.CheckSession',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='session', full_name='request.CheckSession.session', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=864,
+  serialized_end=895,
+)
+
+
+_LOGIN = _descriptor.Descriptor(
+  name='Login',
+  full_name='request.Login',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_name', full_name='request.Login.user_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='request.Login.password', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=897,
+  serialized_end=941,
+)
+
 DESCRIPTOR.message_types_by_name['DescribeAccessKey'] = _DESCRIBEACCESSKEY
 DESCRIPTOR.message_types_by_name['DescribeUsers'] = _DESCRIBEUSERS
 DESCRIPTOR.message_types_by_name['ValidateRequestSignature'] = _VALIDATEREQUESTSIGNATURE
+DESCRIPTOR.message_types_by_name['CreateUser'] = _CREATEUSER
+DESCRIPTOR.message_types_by_name['UpdateUser'] = _UPDATEUSER
+DESCRIPTOR.message_types_by_name['DeleteUser'] = _DELETEUSER
+DESCRIPTOR.message_types_by_name['CheckSession'] = _CHECKSESSION
+DESCRIPTOR.message_types_by_name['Login'] = _LOGIN
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DescribeAccessKey = _reflection.GeneratedProtocolMessageType('DescribeAccessKey', (_message.Message,), {
@@ -215,6 +548,41 @@ ValidateRequestSignature = _reflection.GeneratedProtocolMessageType('ValidateReq
   # @@protoc_insertion_point(class_scope:request.ValidateRequestSignature)
   })
 _sym_db.RegisterMessage(ValidateRequestSignature)
+
+CreateUser = _reflection.GeneratedProtocolMessageType('CreateUser', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEUSER,
+  '__module__' : 'proto.types.request.account_pb2'
+  # @@protoc_insertion_point(class_scope:request.CreateUser)
+  })
+_sym_db.RegisterMessage(CreateUser)
+
+UpdateUser = _reflection.GeneratedProtocolMessageType('UpdateUser', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEUSER,
+  '__module__' : 'proto.types.request.account_pb2'
+  # @@protoc_insertion_point(class_scope:request.UpdateUser)
+  })
+_sym_db.RegisterMessage(UpdateUser)
+
+DeleteUser = _reflection.GeneratedProtocolMessageType('DeleteUser', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEUSER,
+  '__module__' : 'proto.types.request.account_pb2'
+  # @@protoc_insertion_point(class_scope:request.DeleteUser)
+  })
+_sym_db.RegisterMessage(DeleteUser)
+
+CheckSession = _reflection.GeneratedProtocolMessageType('CheckSession', (_message.Message,), {
+  'DESCRIPTOR' : _CHECKSESSION,
+  '__module__' : 'proto.types.request.account_pb2'
+  # @@protoc_insertion_point(class_scope:request.CheckSession)
+  })
+_sym_db.RegisterMessage(CheckSession)
+
+Login = _reflection.GeneratedProtocolMessageType('Login', (_message.Message,), {
+  'DESCRIPTOR' : _LOGIN,
+  '__module__' : 'proto.types.request.account_pb2'
+  # @@protoc_insertion_point(class_scope:request.Login)
+  })
+_sym_db.RegisterMessage(Login)
 
 
 DESCRIPTOR._options = None

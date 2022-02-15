@@ -5384,11 +5384,33 @@ public final class PBRequestDataSourceManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * delete these SourceIDs
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the sourceIds.
      */
     java.util.List<java.lang.String>
@@ -5399,7 +5421,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of sourceIds.
      */
     int getSourceIdsCount();
@@ -5409,7 +5431,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The sourceIds at the given index.
      */
@@ -5420,7 +5442,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the sourceIds at the given index.
      */
@@ -5444,6 +5466,7 @@ public final class PBRequestDataSourceManage {
       super(builder);
     }
     private DeleteDataSources() {
+      spaceId_ = "";
       sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -5479,6 +5502,12 @@ public final class PBRequestDataSourceManage {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sourceIds_ = new com.google.protobuf.LazyStringArrayList();
@@ -5522,7 +5551,55 @@ public final class PBRequestDataSourceManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources.Builder.class);
     }
 
-    public static final int SOURCE_IDS_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList sourceIds_;
     /**
      * <pre>
@@ -5530,7 +5607,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the sourceIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -5543,7 +5620,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of sourceIds.
      */
     public int getSourceIdsCount() {
@@ -5555,7 +5632,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The sourceIds at the given index.
      */
@@ -5568,7 +5645,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the sourceIds at the given index.
      */
@@ -5591,8 +5668,11 @@ public final class PBRequestDataSourceManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       for (int i = 0; i < sourceIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceIds_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -5603,6 +5683,9 @@ public final class PBRequestDataSourceManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < sourceIds_.size(); i++) {
@@ -5626,6 +5709,8 @@ public final class PBRequestDataSourceManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getSourceIdsList()
           .equals(other.getSourceIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -5639,6 +5724,8 @@ public final class PBRequestDataSourceManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       if (getSourceIdsCount() > 0) {
         hash = (37 * hash) + SOURCE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getSourceIdsList().hashCode();
@@ -5780,6 +5867,8 @@ public final class PBRequestDataSourceManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -5809,6 +5898,7 @@ public final class PBRequestDataSourceManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources(this);
         int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           sourceIds_ = sourceIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -5862,6 +5952,10 @@ public final class PBRequestDataSourceManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DeleteDataSources.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.sourceIds_.isEmpty()) {
           if (sourceIds_.isEmpty()) {
             sourceIds_ = other.sourceIds_;
@@ -5902,6 +5996,107 @@ public final class PBRequestDataSourceManage {
       }
       private int bitField0_;
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureSourceIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -5915,7 +6110,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the sourceIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -5928,7 +6123,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of sourceIds.
        */
       public int getSourceIdsCount() {
@@ -5940,7 +6135,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The sourceIds at the given index.
        */
@@ -5953,7 +6148,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the sourceIds at the given index.
        */
@@ -5967,7 +6162,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The sourceIds to set.
        * @return This builder for chaining.
@@ -5988,7 +6183,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The sourceIds to add.
        * @return This builder for chaining.
        */
@@ -6008,7 +6203,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The sourceIds to add.
        * @return This builder for chaining.
        */
@@ -6026,7 +6221,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSourceIds() {
@@ -6041,7 +6236,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the sourceIds to add.
        * @return This builder for chaining.
        */
@@ -6736,11 +6931,33 @@ public final class PBRequestDataSourceManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * enable these SourceIDs
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the sourceIds.
      */
     java.util.List<java.lang.String>
@@ -6751,7 +6968,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of sourceIds.
      */
     int getSourceIdsCount();
@@ -6761,7 +6978,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The sourceIds at the given index.
      */
@@ -6772,7 +6989,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the sourceIds at the given index.
      */
@@ -6796,6 +7013,7 @@ public final class PBRequestDataSourceManage {
       super(builder);
     }
     private EnableDataSources() {
+      spaceId_ = "";
       sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -6831,6 +7049,12 @@ public final class PBRequestDataSourceManage {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sourceIds_ = new com.google.protobuf.LazyStringArrayList();
@@ -6874,7 +7098,55 @@ public final class PBRequestDataSourceManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources.Builder.class);
     }
 
-    public static final int SOURCE_IDS_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList sourceIds_;
     /**
      * <pre>
@@ -6882,7 +7154,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the sourceIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -6895,7 +7167,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of sourceIds.
      */
     public int getSourceIdsCount() {
@@ -6907,7 +7179,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The sourceIds at the given index.
      */
@@ -6920,7 +7192,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the sourceIds at the given index.
      */
@@ -6943,8 +7215,11 @@ public final class PBRequestDataSourceManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       for (int i = 0; i < sourceIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceIds_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -6955,6 +7230,9 @@ public final class PBRequestDataSourceManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < sourceIds_.size(); i++) {
@@ -6978,6 +7256,8 @@ public final class PBRequestDataSourceManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getSourceIdsList()
           .equals(other.getSourceIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -6991,6 +7271,8 @@ public final class PBRequestDataSourceManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       if (getSourceIdsCount() > 0) {
         hash = (37 * hash) + SOURCE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getSourceIdsList().hashCode();
@@ -7132,6 +7414,8 @@ public final class PBRequestDataSourceManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -7161,6 +7445,7 @@ public final class PBRequestDataSourceManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources(this);
         int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           sourceIds_ = sourceIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -7214,6 +7499,10 @@ public final class PBRequestDataSourceManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.EnableDataSources.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.sourceIds_.isEmpty()) {
           if (sourceIds_.isEmpty()) {
             sourceIds_ = other.sourceIds_;
@@ -7254,6 +7543,107 @@ public final class PBRequestDataSourceManage {
       }
       private int bitField0_;
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureSourceIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -7267,7 +7657,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the sourceIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -7280,7 +7670,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of sourceIds.
        */
       public int getSourceIdsCount() {
@@ -7292,7 +7682,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The sourceIds at the given index.
        */
@@ -7305,7 +7695,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the sourceIds at the given index.
        */
@@ -7319,7 +7709,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The sourceIds to set.
        * @return This builder for chaining.
@@ -7340,7 +7730,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The sourceIds to add.
        * @return This builder for chaining.
        */
@@ -7360,7 +7750,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The sourceIds to add.
        * @return This builder for chaining.
        */
@@ -7378,7 +7768,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSourceIds() {
@@ -7393,7 +7783,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the sourceIds to add.
        * @return This builder for chaining.
        */
@@ -7467,11 +7857,33 @@ public final class PBRequestDataSourceManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * delete these SourceIDs
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the sourceIds.
      */
     java.util.List<java.lang.String>
@@ -7482,7 +7894,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of sourceIds.
      */
     int getSourceIdsCount();
@@ -7492,7 +7904,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The sourceIds at the given index.
      */
@@ -7503,7 +7915,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the sourceIds at the given index.
      */
@@ -7527,6 +7939,7 @@ public final class PBRequestDataSourceManage {
       super(builder);
     }
     private DisableDataSources() {
+      spaceId_ = "";
       sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -7562,6 +7975,12 @@ public final class PBRequestDataSourceManage {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sourceIds_ = new com.google.protobuf.LazyStringArrayList();
@@ -7605,7 +8024,55 @@ public final class PBRequestDataSourceManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources.Builder.class);
     }
 
-    public static final int SOURCE_IDS_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList sourceIds_;
     /**
      * <pre>
@@ -7613,7 +8080,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the sourceIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -7626,7 +8093,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of sourceIds.
      */
     public int getSourceIdsCount() {
@@ -7638,7 +8105,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The sourceIds at the given index.
      */
@@ -7651,7 +8118,7 @@ public final class PBRequestDataSourceManage {
      * &#64;inject_tag: json:"source_ids"
      * </pre>
      *
-     * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the sourceIds at the given index.
      */
@@ -7674,8 +8141,11 @@ public final class PBRequestDataSourceManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       for (int i = 0; i < sourceIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceIds_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -7686,6 +8156,9 @@ public final class PBRequestDataSourceManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < sourceIds_.size(); i++) {
@@ -7709,6 +8182,8 @@ public final class PBRequestDataSourceManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getSourceIdsList()
           .equals(other.getSourceIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -7722,6 +8197,8 @@ public final class PBRequestDataSourceManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       if (getSourceIdsCount() > 0) {
         hash = (37 * hash) + SOURCE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getSourceIdsList().hashCode();
@@ -7863,6 +8340,8 @@ public final class PBRequestDataSourceManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -7892,6 +8371,7 @@ public final class PBRequestDataSourceManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources(this);
         int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           sourceIds_ = sourceIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -7945,6 +8425,10 @@ public final class PBRequestDataSourceManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DisableDataSources.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.sourceIds_.isEmpty()) {
           if (sourceIds_.isEmpty()) {
             sourceIds_ = other.sourceIds_;
@@ -7985,6 +8469,107 @@ public final class PBRequestDataSourceManage {
       }
       private int bitField0_;
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList sourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureSourceIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -7998,7 +8583,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the sourceIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -8011,7 +8596,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of sourceIds.
        */
       public int getSourceIdsCount() {
@@ -8023,7 +8608,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The sourceIds at the given index.
        */
@@ -8036,7 +8621,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the sourceIds at the given index.
        */
@@ -8050,7 +8635,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The sourceIds to set.
        * @return This builder for chaining.
@@ -8071,7 +8656,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The sourceIds to add.
        * @return This builder for chaining.
        */
@@ -8091,7 +8676,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The sourceIds to add.
        * @return This builder for chaining.
        */
@@ -8109,7 +8694,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSourceIds() {
@@ -8124,7 +8709,7 @@ public final class PBRequestDataSourceManage {
        * &#64;inject_tag: json:"source_ids"
        * </pre>
        *
-       * <code>repeated string source_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string source_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the sourceIds to add.
        * @return This builder for chaining.
        */
@@ -13190,40 +13775,43 @@ public final class PBRequestDataSourceManage {
       "@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004type\030\005" +
       " \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007\332\001\0040" +
       "\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource.URLB" +
-      "\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"B\n\021DeleteDataSources\022-\n\ns" +
-      "ource_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004so" +
-      "m-\"<\n\022DescribeDataSource\022&\n\tsource_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"B\n\021EnableDataSo" +
-      "urces\022-\n\nsource_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001" +
-      "Z\n\302\001\007\312\002\004som-\"C\n\022DisableDataSources\022-\n\nso" +
-      "urce_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som" +
-      "-\"\374\001\n\031ListDataSourceConnections\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource" +
-      "_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B\027" +
-      "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B" +
-      "\013\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001\026" +
-      "J\000J\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010\022" +
-      "\017\n\007verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConne" +
-      "ction\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E" +
-      "\n\005stage\030\003 \001(\0162\'.request.PingDataSourceCo" +
-      "nnection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_" +
-      "id\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360" +
-      "\001\024\022G\n\004type\030\005 \001(\0162\026.model.DataSource.Type" +
-      "B!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003u" +
-      "rl\030\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016\n" +
-      "\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nP" +
-      "haseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterCr" +
-      "eate\020\002\"i\n\030DescribeDataSourceTables\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsou" +
-      "rce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035De" +
-      "scribeDataSourceTableSchema\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030" +
-      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name" +
-      "\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomni" +
-      "s.gproto.types.pbrequestB\031PBRequestDataS" +
-      "ourceManageP\000Z3github.com/DataWorkbench/" +
-      "gproto/xgo/types/pbrequestb\006proto3"
+      "\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"i\n\021DeleteDataSources\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\nso" +
+      "urce_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som" +
+      "-\"<\n\022DescribeDataSource\022&\n\tsource_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"i\n\021EnableDataSou" +
+      "rces\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n" +
+      "\302\001\007\312\002\004som-\"j\n\022DisableDataSources\022%\n\010spac" +
+      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\nsourc" +
+      "e_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som-\"\374" +
+      "\001\n\031ListDataSourceConnections\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource_id" +
+      "\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B\027\242\241\037" +
+      "\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337" +
+      "\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001\026J\000J" +
+      "\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010\022\017\n\007" +
+      "verbose\030\007 \001(\005\"\253\003\n\030PingDataSourceConnecti" +
+      "on\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
+      "-\022 \n\nnetwork_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022E\n\005s" +
+      "tage\030\003 \001(\0162\'.request.PingDataSourceConne" +
+      "ction.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_id\030" +
+      "\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360\001\024\022" +
+      "G\n\004type\030\005 \001(\0162\026.model.DataSource.TypeB!\342" +
+      "\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003url\030" +
+      "\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016\n\005st" +
+      "age\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nPhas" +
+      "eUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterCreat" +
+      "e\020\002\"i\n\030DescribeDataSourceTables\022%\n\010space" +
+      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource" +
+      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035Descr" +
+      "ibeDataSourceTableSchema\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name\030\003 " +
+      "\001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis.g" +
+      "proto.types.pbrequestB\031PBRequestDataSour" +
+      "ceManageP\000Z3github.com/DataWorkbench/gpr" +
+      "oto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13255,7 +13843,7 @@ public final class PBRequestDataSourceManage {
     internal_static_request_DeleteDataSources_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteDataSources_descriptor,
-        new java.lang.String[] { "SourceIds", });
+        new java.lang.String[] { "SpaceId", "SourceIds", });
     internal_static_request_DescribeDataSource_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_request_DescribeDataSource_fieldAccessorTable = new
@@ -13267,13 +13855,13 @@ public final class PBRequestDataSourceManage {
     internal_static_request_EnableDataSources_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_EnableDataSources_descriptor,
-        new java.lang.String[] { "SourceIds", });
+        new java.lang.String[] { "SpaceId", "SourceIds", });
     internal_static_request_DisableDataSources_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_request_DisableDataSources_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DisableDataSources_descriptor,
-        new java.lang.String[] { "SourceIds", });
+        new java.lang.String[] { "SpaceId", "SourceIds", });
     internal_static_request_ListDataSourceConnections_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_request_ListDataSourceConnections_fieldAccessorTable = new

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\026PBRequestNetworkManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/request/network_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\xe3\x01\n\x0cListNetworks\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\"@\n\x0e\x44\x65leteNetworks\x12.\n\x0bnetwork_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04net-\"\xc3\x01\n\rCreateNetwork\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12#\n\trouter_id\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x05 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\"\xca\x01\n\rUpdateNetwork\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\nnetwork_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12#\n\trouter_id\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x05 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\":\n\x0f\x44\x65scribeNetwork\x12\'\n\nnetwork_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-Bu\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestNetworkManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n(proto/types/request/network_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\xe3\x01\n\x0cListNetworks\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\"g\n\x0e\x44\x65leteNetworks\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0bnetwork_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04net-\"\xc3\x01\n\rCreateNetwork\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12#\n\trouter_id\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x05 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\"\xca\x01\n\rUpdateNetwork\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\nnetwork_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12#\n\trouter_id\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xca\x02\x04rtr-\x12$\n\x08vxnet_id\x18\x05 \x01(\tB\x12\xe2\xdf\x1f\x0e\x12\x0c\xc2\x01\t\xca\x02\x06vxnet-\":\n\x0f\x44\x65scribeNetwork\x12\'\n\nnetwork_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-Bu\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestNetworkManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
 
@@ -111,8 +111,15 @@ _DELETENETWORKS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='network_ids', full_name='request.DeleteNetworks.network_ids', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='space_id', full_name='request.DeleteNetworks.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='network_ids', full_name='request.DeleteNetworks.network_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -130,7 +137,7 @@ _DELETENETWORKS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=388,
-  serialized_end=452,
+  serialized_end=491,
 )
 
 
@@ -189,8 +196,8 @@ _CREATENETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=455,
-  serialized_end=650,
+  serialized_start=494,
+  serialized_end=689,
 )
 
 
@@ -249,8 +256,8 @@ _UPDATENETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=653,
-  serialized_end=855,
+  serialized_start=692,
+  serialized_end=894,
 )
 
 
@@ -281,8 +288,8 @@ _DESCRIBENETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=857,
-  serialized_end=915,
+  serialized_start=896,
+  serialized_end=954,
 )
 
 DESCRIPTOR.message_types_by_name['ListNetworks'] = _LISTNETWORKS
@@ -333,6 +340,7 @@ _LISTNETWORKS.fields_by_name['space_id']._options = None
 _LISTNETWORKS.fields_by_name['limit']._options = None
 _LISTNETWORKS.fields_by_name['offset']._options = None
 _LISTNETWORKS.fields_by_name['sort_by']._options = None
+_DELETENETWORKS.fields_by_name['space_id']._options = None
 _DELETENETWORKS.fields_by_name['network_ids']._options = None
 _CREATENETWORK.fields_by_name['space_id']._options = None
 _CREATENETWORK.fields_by_name['created_by']._options = None

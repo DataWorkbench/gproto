@@ -2515,11 +2515,33 @@ public final class PBRequestClusterManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * The list of flink cluster id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the clusterIds.
      */
     java.util.List<java.lang.String>
@@ -2530,7 +2552,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of clusterIds.
      */
     int getClusterIdsCount();
@@ -2540,7 +2562,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The clusterIds at the given index.
      */
@@ -2551,7 +2573,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the clusterIds at the given index.
      */
@@ -2571,6 +2593,7 @@ public final class PBRequestClusterManage {
       super(builder);
     }
     private DeleteFlinkClusters() {
+      spaceId_ = "";
       clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -2606,6 +2629,12 @@ public final class PBRequestClusterManage {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 clusterIds_ = new com.google.protobuf.LazyStringArrayList();
@@ -2649,7 +2678,55 @@ public final class PBRequestClusterManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters.class, com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters.Builder.class);
     }
 
-    public static final int CLUSTER_IDS_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList clusterIds_;
     /**
      * <pre>
@@ -2657,7 +2734,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the clusterIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2670,7 +2747,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of clusterIds.
      */
     public int getClusterIdsCount() {
@@ -2682,7 +2759,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The clusterIds at the given index.
      */
@@ -2695,7 +2772,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the clusterIds at the given index.
      */
@@ -2718,8 +2795,11 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       for (int i = 0; i < clusterIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterIds_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2730,6 +2810,9 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < clusterIds_.size(); i++) {
@@ -2753,6 +2836,8 @@ public final class PBRequestClusterManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters other = (com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getClusterIdsList()
           .equals(other.getClusterIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2766,6 +2851,8 @@ public final class PBRequestClusterManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       if (getClusterIdsCount() > 0) {
         hash = (37 * hash) + CLUSTER_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getClusterIdsList().hashCode();
@@ -2903,6 +2990,8 @@ public final class PBRequestClusterManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -2932,6 +3021,7 @@ public final class PBRequestClusterManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters result = new com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters(this);
         int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           clusterIds_ = clusterIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -2985,6 +3075,10 @@ public final class PBRequestClusterManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.DeleteFlinkClusters.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.clusterIds_.isEmpty()) {
           if (clusterIds_.isEmpty()) {
             clusterIds_ = other.clusterIds_;
@@ -3025,6 +3119,107 @@ public final class PBRequestClusterManage {
       }
       private int bitField0_;
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureClusterIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -3038,7 +3233,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the clusterIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -3051,7 +3246,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of clusterIds.
        */
       public int getClusterIdsCount() {
@@ -3063,7 +3258,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The clusterIds at the given index.
        */
@@ -3076,7 +3271,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the clusterIds at the given index.
        */
@@ -3090,7 +3285,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The clusterIds to set.
        * @return This builder for chaining.
@@ -3111,7 +3306,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The clusterIds to add.
        * @return This builder for chaining.
        */
@@ -3131,7 +3326,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The clusterIds to add.
        * @return This builder for chaining.
        */
@@ -3149,7 +3344,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearClusterIds() {
@@ -3164,7 +3359,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the clusterIds to add.
        * @return This builder for chaining.
        */
@@ -3238,11 +3433,33 @@ public final class PBRequestClusterManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * The list of flink cluster id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the clusterIds.
      */
     java.util.List<java.lang.String>
@@ -3253,7 +3470,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of clusterIds.
      */
     int getClusterIdsCount();
@@ -3263,7 +3480,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The clusterIds at the given index.
      */
@@ -3274,7 +3491,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the clusterIds at the given index.
      */
@@ -3294,6 +3511,7 @@ public final class PBRequestClusterManage {
       super(builder);
     }
     private StartFlinkClusters() {
+      spaceId_ = "";
       clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -3329,6 +3547,12 @@ public final class PBRequestClusterManage {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 clusterIds_ = new com.google.protobuf.LazyStringArrayList();
@@ -3372,7 +3596,55 @@ public final class PBRequestClusterManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters.class, com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters.Builder.class);
     }
 
-    public static final int CLUSTER_IDS_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList clusterIds_;
     /**
      * <pre>
@@ -3380,7 +3652,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the clusterIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -3393,7 +3665,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of clusterIds.
      */
     public int getClusterIdsCount() {
@@ -3405,7 +3677,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The clusterIds at the given index.
      */
@@ -3418,7 +3690,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the clusterIds at the given index.
      */
@@ -3441,8 +3713,11 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       for (int i = 0; i < clusterIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterIds_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -3453,6 +3728,9 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < clusterIds_.size(); i++) {
@@ -3476,6 +3754,8 @@ public final class PBRequestClusterManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters other = (com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getClusterIdsList()
           .equals(other.getClusterIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3489,6 +3769,8 @@ public final class PBRequestClusterManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       if (getClusterIdsCount() > 0) {
         hash = (37 * hash) + CLUSTER_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getClusterIdsList().hashCode();
@@ -3626,6 +3908,8 @@ public final class PBRequestClusterManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -3655,6 +3939,7 @@ public final class PBRequestClusterManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters result = new com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters(this);
         int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           clusterIds_ = clusterIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -3708,6 +3993,10 @@ public final class PBRequestClusterManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StartFlinkClusters.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.clusterIds_.isEmpty()) {
           if (clusterIds_.isEmpty()) {
             clusterIds_ = other.clusterIds_;
@@ -3748,6 +4037,107 @@ public final class PBRequestClusterManage {
       }
       private int bitField0_;
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureClusterIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -3761,7 +4151,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the clusterIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -3774,7 +4164,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of clusterIds.
        */
       public int getClusterIdsCount() {
@@ -3786,7 +4176,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The clusterIds at the given index.
        */
@@ -3799,7 +4189,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the clusterIds at the given index.
        */
@@ -3813,7 +4203,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The clusterIds to set.
        * @return This builder for chaining.
@@ -3834,7 +4224,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The clusterIds to add.
        * @return This builder for chaining.
        */
@@ -3854,7 +4244,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The clusterIds to add.
        * @return This builder for chaining.
        */
@@ -3872,7 +4262,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearClusterIds() {
@@ -3887,7 +4277,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the clusterIds to add.
        * @return This builder for chaining.
        */
@@ -3961,11 +4351,33 @@ public final class PBRequestClusterManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * The list of flink cluster id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the clusterIds.
      */
     java.util.List<java.lang.String>
@@ -3976,7 +4388,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of clusterIds.
      */
     int getClusterIdsCount();
@@ -3986,7 +4398,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The clusterIds at the given index.
      */
@@ -3997,7 +4409,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the clusterIds at the given index.
      */
@@ -4017,6 +4429,7 @@ public final class PBRequestClusterManage {
       super(builder);
     }
     private StopFlinkClusters() {
+      spaceId_ = "";
       clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -4052,6 +4465,12 @@ public final class PBRequestClusterManage {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 clusterIds_ = new com.google.protobuf.LazyStringArrayList();
@@ -4095,7 +4514,55 @@ public final class PBRequestClusterManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters.class, com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters.Builder.class);
     }
 
-    public static final int CLUSTER_IDS_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList clusterIds_;
     /**
      * <pre>
@@ -4103,7 +4570,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the clusterIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -4116,7 +4583,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of clusterIds.
      */
     public int getClusterIdsCount() {
@@ -4128,7 +4595,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The clusterIds at the given index.
      */
@@ -4141,7 +4608,7 @@ public final class PBRequestClusterManage {
      * &#64;inject_tag: json:"cluster_ids"
      * </pre>
      *
-     * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the clusterIds at the given index.
      */
@@ -4164,8 +4631,11 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       for (int i = 0; i < clusterIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterIds_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -4176,6 +4646,9 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < clusterIds_.size(); i++) {
@@ -4199,6 +4672,8 @@ public final class PBRequestClusterManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters other = (com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getClusterIdsList()
           .equals(other.getClusterIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -4212,6 +4687,8 @@ public final class PBRequestClusterManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       if (getClusterIdsCount() > 0) {
         hash = (37 * hash) + CLUSTER_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getClusterIdsList().hashCode();
@@ -4349,6 +4826,8 @@ public final class PBRequestClusterManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -4378,6 +4857,7 @@ public final class PBRequestClusterManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters result = new com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters(this);
         int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           clusterIds_ = clusterIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -4431,6 +4911,10 @@ public final class PBRequestClusterManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestClusterManage.StopFlinkClusters.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.clusterIds_.isEmpty()) {
           if (clusterIds_.isEmpty()) {
             clusterIds_ = other.clusterIds_;
@@ -4471,6 +4955,107 @@ public final class PBRequestClusterManage {
       }
       private int bitField0_;
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureClusterIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -4484,7 +5069,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the clusterIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -4497,7 +5082,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of clusterIds.
        */
       public int getClusterIdsCount() {
@@ -4509,7 +5094,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The clusterIds at the given index.
        */
@@ -4522,7 +5107,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the clusterIds at the given index.
        */
@@ -4536,7 +5121,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The clusterIds to set.
        * @return This builder for chaining.
@@ -4557,7 +5142,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The clusterIds to add.
        * @return This builder for chaining.
        */
@@ -4577,7 +5162,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The clusterIds to add.
        * @return This builder for chaining.
        */
@@ -4595,7 +5180,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearClusterIds() {
@@ -4610,7 +5195,7 @@ public final class PBRequestClusterManage {
        * &#64;inject_tag: json:"cluster_ids"
        * </pre>
        *
-       * <code>repeated string cluster_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the clusterIds to add.
        * @return This builder for chaining.
        */
@@ -9647,37 +10232,40 @@ public final class PBRequestClusterManage {
       "e\022\025\n\007reverse\030\005 \001(\010B\004\342\337\037\000\022\024\n\006search\030\006 \001(\t" +
       "B\004\342\337\037\000\0227\n\006status\030\007 \001(\0162\032.model.FlinkClus" +
       "ter.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\022\n\004name\030\010 \001(\tB\004\342" +
-      "\337\037\000\022\017\n\007verbose\030\t \001(\005\"E\n\023DeleteFlinkClust" +
-      "ers\022.\n\013cluster_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ" +
-      "\n\302\001\007\312\002\004cfi-\"D\n\022StartFlinkClusters\022.\n\013clu" +
-      "ster_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi" +
-      "-\"C\n\021StopFlinkClusters\022.\n\013cluster_ids\030\001 " +
-      "\003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"\245\003\n\022Creat" +
-      "eFlinkCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\210\002A\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\0223" +
-      "\n\007version\030\004 \001(\tB\"\342\337\037\036\022\034\302\001\031J\027flink-1.12.3" +
-      "-scala_2.11\022\037\n\010task_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\004" +
-      "8\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @" +
-      "A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000" +
-      "\000\000\000\000 @A\000\000\000\000\000\000\340?\022\'\n\nnetwork_id\030\t \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004net-\022(\n\014host_aliases\030\013 \001(\0132\022" +
-      ".model.HostAliases\022\"\n\006config\030\n \001(\0132\022.fli" +
-      "nk.FlinkConfig\"\367\002\n\022UpdateFlinkCluster\022%\n" +
-      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\n" +
-      "cluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022\036\n" +
-      "\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\037\n\010task_nu" +
-      "m\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033" +
-      "\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010" +
-      " \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\'\n\nnet" +
-      "work_id\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022(\n\014ho" +
-      "st_aliases\030\n \001(\0132\022.model.HostAliases\022\"\n\006" +
-      "config\030\013 \001(\0132\022.flink.FlinkConfig\"?\n\024Desc" +
-      "ribeFlinkCluster\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-Bu\n$com.dataomnis.gprot" +
-      "o.types.pbrequestB\026PBRequestClusterManag" +
-      "eP\000Z3github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbrequestb\006proto3"
+      "\337\037\000\022\017\n\007verbose\030\t \001(\005\"l\n\023DeleteFlinkClust" +
+      "ers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
+      "s-\022.\n\013cluster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n" +
+      "\302\001\007\312\002\004cfi-\"k\n\022StartFlinkClusters\022%\n\010spac" +
+      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013clust" +
+      "er_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"" +
+      "j\n\021StopFlinkClusters\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_ids\030\002 \003(\t" +
+      "B\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"\245\003\n\022CreateFl" +
+      "inkCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\210\002A\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\0223\n\007v" +
+      "ersion\030\004 \001(\tB\"\342\337\037\036\022\034\302\001\031J\027flink-1.12.3-sc" +
+      "ala_2.11\022\037\n\010task_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@" +
+      "\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000" +
+      "\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000" +
+      "\000 @A\000\000\000\000\000\000\340?\022\'\n\nnetwork_id\030\t \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004net-\022(\n\014host_aliases\030\013 \001(\0132\022.mo" +
+      "del.HostAliases\022\"\n\006config\030\n \001(\0132\022.flink." +
+      "FlinkConfig\"\367\002\n\022UpdateFlinkCluster\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nclu" +
+      "ster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022\036\n\004na" +
+      "me\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\037\n\010task_num\030\006" +
+      " \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037" +
+      "\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(" +
+      "\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\'\n\nnetwor" +
+      "k_id\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022(\n\014host_" +
+      "aliases\030\n \001(\0132\022.model.HostAliases\022\"\n\006con" +
+      "fig\030\013 \001(\0132\022.flink.FlinkConfig\"?\n\024Describ" +
+      "eFlinkCluster\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004cfi-Bu\n$com.dataomnis.gproto.t" +
+      "ypes.pbrequestB\026PBRequestClusterManageP\000" +
+      "Z3github.com/DataWorkbench/gproto/xgo/ty" +
+      "pes/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9704,19 +10292,19 @@ public final class PBRequestClusterManage {
     internal_static_request_DeleteFlinkClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteFlinkClusters_descriptor,
-        new java.lang.String[] { "ClusterIds", });
+        new java.lang.String[] { "SpaceId", "ClusterIds", });
     internal_static_request_StartFlinkClusters_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_StartFlinkClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_StartFlinkClusters_descriptor,
-        new java.lang.String[] { "ClusterIds", });
+        new java.lang.String[] { "SpaceId", "ClusterIds", });
     internal_static_request_StopFlinkClusters_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_request_StopFlinkClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_StopFlinkClusters_descriptor,
-        new java.lang.String[] { "ClusterIds", });
+        new java.lang.String[] { "SpaceId", "ClusterIds", });
     internal_static_request_CreateFlinkCluster_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_request_CreateFlinkCluster_fieldAccessorTable = new

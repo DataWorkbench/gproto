@@ -254,6 +254,16 @@ func (this *UpdateDataSource) Validate() error {
 	return nil
 }
 
+func (this *DeleteDataSources) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteDataSources", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteDataSources", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *DeleteDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 	if !(len(this.SourceIds) >= 1) {
 		return protovalidator.FieldError1("DeleteDataSources", "the length of field 'source_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.SourceIds)))
@@ -274,6 +284,9 @@ func (this *DeleteDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 func (this *DeleteDataSources) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_source_ids(); err != nil {
 		return err
@@ -302,6 +315,16 @@ func (this *DescribeDataSource) Validate() error {
 	return nil
 }
 
+func (this *EnableDataSources) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("EnableDataSources", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("EnableDataSources", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
 func (this *EnableDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 	if !(len(this.SourceIds) >= 1) {
 		return protovalidator.FieldError1("EnableDataSources", "the length of field 'source_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.SourceIds)))
@@ -323,8 +346,21 @@ func (this *EnableDataSources) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_source_ids(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *DisableDataSources) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DisableDataSources", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DisableDataSources", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
@@ -349,6 +385,9 @@ func (this *DisableDataSources) _xxx_xxx_Validator_Validate_source_ids() error {
 func (this *DisableDataSources) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_source_ids(); err != nil {
 		return err

@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\026PBRequestClusterManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/request/cluster_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1fproto/types/model/cluster.proto\x1a*proto/types/model/flink/flink_config.proto\"b\n\x17\x44\x65scribeFlinkClusterAPI\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"\xc4\x02\n\x11ListFlinkClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x14\n\x06search\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x37\n\x06status\x18\x07 \x01(\x0e\x32\x1a.model.FlinkCluster.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x12\n\x04name\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x0f\n\x07verbose\x18\t \x01(\x05\"E\n\x13\x44\x65leteFlinkClusters\x12.\n\x0b\x63luster_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04\x63\x66i-\"D\n\x12StartFlinkClusters\x12.\n\x0b\x63luster_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04\x63\x66i-\"C\n\x11StopFlinkClusters\x12.\n\x0b\x63luster_ids\x18\x01 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04\x63\x66i-\"\xa5\x03\n\x12\x43reateFlinkCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x33\n\x07version\x18\x04 \x01(\tB\"\xe2\xdf\x1f\x1e\x12\x1c\xc2\x01\x19J\x17\x66link-1.12.3-scala_2.11\x12\x1f\n\x08task_num\x18\x06 \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x18@\x01\x12+\n\x06job_cu\x18\x07 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12,\n\x07task_cu\x18\x08 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12\'\n\nnetwork_id\x18\t \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12(\n\x0chost_aliases\x18\x0b \x01(\x0b\x32\x12.model.HostAliases\x12\"\n\x06\x63onfig\x18\n \x01(\x0b\x32\x12.flink.FlinkConfig\"\xf7\x02\n\x12UpdateFlinkCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1f\n\x08task_num\x18\x06 \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x18@\x01\x12+\n\x06job_cu\x18\x07 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12,\n\x07task_cu\x18\x08 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12\'\n\nnetwork_id\x18\t \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12(\n\x0chost_aliases\x18\n \x01(\x0b\x32\x12.model.HostAliases\x12\"\n\x06\x63onfig\x18\x0b \x01(\x0b\x32\x12.flink.FlinkConfig\"?\n\x14\x44\x65scribeFlinkCluster\x12\'\n\ncluster_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-Bu\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestClusterManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n(proto/types/request/cluster_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1fproto/types/model/cluster.proto\x1a*proto/types/model/flink/flink_config.proto\"b\n\x17\x44\x65scribeFlinkClusterAPI\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"\xc4\x02\n\x11ListFlinkClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x14\n\x06search\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x37\n\x06status\x18\x07 \x01(\x0e\x32\x1a.model.FlinkCluster.StatusB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x12\n\x04name\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x0f\n\x07verbose\x18\t \x01(\x05\"l\n\x13\x44\x65leteFlinkClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04\x63\x66i-\"k\n\x12StartFlinkClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04\x63\x66i-\"j\n\x11StopFlinkClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04\x63\x66i-\"\xa5\x03\n\x12\x43reateFlinkCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\ncreated_by\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x33\n\x07version\x18\x04 \x01(\tB\"\xe2\xdf\x1f\x1e\x12\x1c\xc2\x01\x19J\x17\x66link-1.12.3-scala_2.11\x12\x1f\n\x08task_num\x18\x06 \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x18@\x01\x12+\n\x06job_cu\x18\x07 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12,\n\x07task_cu\x18\x08 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12\'\n\nnetwork_id\x18\t \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12(\n\x0chost_aliases\x18\x0b \x01(\x0b\x32\x12.model.HostAliases\x12\"\n\x06\x63onfig\x18\n \x01(\x0b\x32\x12.flink.FlinkConfig\"\xf7\x02\n\x12UpdateFlinkCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\x12\x1f\n\x08task_num\x18\x06 \x01(\x05\x42\r\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x38\x18@\x01\x12+\n\x06job_cu\x18\x07 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12,\n\x07task_cu\x18\x08 \x01(\x02\x42\x1b\xe2\xdf\x1f\x17\x12\x15\xaa\x01\x12\x39\x00\x00\x00\x00\x00\x00 @A\x00\x00\x00\x00\x00\x00\xe0?\x12\'\n\nnetwork_id\x18\t \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04net-\x12(\n\x0chost_aliases\x18\n \x01(\x0b\x32\x12.model.HostAliases\x12\"\n\x06\x63onfig\x18\x0b \x01(\x0b\x32\x12.flink.FlinkConfig\"?\n\x14\x44\x65scribeFlinkCluster\x12\'\n\ncluster_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x63\x66i-Bu\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestClusterManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_cluster__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_flink_dot_flink__config__pb2.DESCRIPTOR,])
 
@@ -166,8 +166,15 @@ _DELETEFLINKCLUSTERS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cluster_ids', full_name='request.DeleteFlinkClusters.cluster_ids', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='space_id', full_name='request.DeleteFlinkClusters.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_ids', full_name='request.DeleteFlinkClusters.cluster_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -185,7 +192,7 @@ _DELETEFLINKCLUSTERS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=662,
-  serialized_end=731,
+  serialized_end=770,
 )
 
 
@@ -198,8 +205,15 @@ _STARTFLINKCLUSTERS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cluster_ids', full_name='request.StartFlinkClusters.cluster_ids', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='space_id', full_name='request.StartFlinkClusters.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_ids', full_name='request.StartFlinkClusters.cluster_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -216,8 +230,8 @@ _STARTFLINKCLUSTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=733,
-  serialized_end=801,
+  serialized_start=772,
+  serialized_end=879,
 )
 
 
@@ -230,8 +244,15 @@ _STOPFLINKCLUSTERS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cluster_ids', full_name='request.StopFlinkClusters.cluster_ids', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='space_id', full_name='request.StopFlinkClusters.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_ids', full_name='request.StopFlinkClusters.cluster_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -248,8 +269,8 @@ _STOPFLINKCLUSTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=803,
-  serialized_end=870,
+  serialized_start=881,
+  serialized_end=987,
 )
 
 
@@ -343,8 +364,8 @@ _CREATEFLINKCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=873,
-  serialized_end=1294,
+  serialized_start=990,
+  serialized_end=1411,
 )
 
 
@@ -431,8 +452,8 @@ _UPDATEFLINKCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1297,
-  serialized_end=1672,
+  serialized_start=1414,
+  serialized_end=1789,
 )
 
 
@@ -463,8 +484,8 @@ _DESCRIBEFLINKCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1674,
-  serialized_end=1737,
+  serialized_start=1791,
+  serialized_end=1854,
 )
 
 _LISTFLINKCLUSTERS.fields_by_name['status'].enum_type = proto_dot_types_dot_model_dot_cluster__pb2._FLINKCLUSTER_STATUS
@@ -550,8 +571,11 @@ _LISTFLINKCLUSTERS.fields_by_name['reverse']._options = None
 _LISTFLINKCLUSTERS.fields_by_name['search']._options = None
 _LISTFLINKCLUSTERS.fields_by_name['status']._options = None
 _LISTFLINKCLUSTERS.fields_by_name['name']._options = None
+_DELETEFLINKCLUSTERS.fields_by_name['space_id']._options = None
 _DELETEFLINKCLUSTERS.fields_by_name['cluster_ids']._options = None
+_STARTFLINKCLUSTERS.fields_by_name['space_id']._options = None
 _STARTFLINKCLUSTERS.fields_by_name['cluster_ids']._options = None
+_STOPFLINKCLUSTERS.fields_by_name['space_id']._options = None
 _STOPFLINKCLUSTERS.fields_by_name['cluster_ids']._options = None
 _CREATEFLINKCLUSTER.fields_by_name['space_id']._options = None
 _CREATEFLINKCLUSTER.fields_by_name['created_by']._options = None

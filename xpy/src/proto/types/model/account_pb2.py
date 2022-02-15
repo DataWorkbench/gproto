@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelAccountP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\"\xd1\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\tBi\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\"\xe3\x01\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0c\n\x04role\x18\x07 \x01(\t\x12\x10\n\x08\x63urrency\x18\x08 \x01(\t\x12\x16\n\x0egravatar_email\x18\t \x01(\t\x12\x11\n\tprivilege\x18\n \x01(\x05\x12\r\n\x05zones\x18\x0b \x03(\t\x12\x0f\n\x07regions\x18\x0c \x03(\t\x12\x10\n\x08password\x18\r \x01(\tBi\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
 )
 
 
@@ -117,6 +117,13 @@ _USER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='model.User.password', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -130,7 +137,7 @@ _USER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=43,
-  serialized_end=252,
+  serialized_end=270,
 )
 
 DESCRIPTOR.message_types_by_name['User'] = _USER

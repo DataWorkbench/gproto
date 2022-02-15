@@ -1536,11 +1536,33 @@ public final class PBRequestNetworkManage {
 
     /**
      * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
      * The list of network id. Is required, Min 1, Max 100.
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the networkIds.
      */
     java.util.List<java.lang.String>
@@ -1551,7 +1573,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of networkIds.
      */
     int getNetworkIdsCount();
@@ -1561,7 +1583,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The networkIds at the given index.
      */
@@ -1572,7 +1594,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the networkIds at the given index.
      */
@@ -1592,6 +1614,7 @@ public final class PBRequestNetworkManage {
       super(builder);
     }
     private DeleteNetworks() {
+      spaceId_ = "";
       networkIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -1627,6 +1650,12 @@ public final class PBRequestNetworkManage {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 networkIds_ = new com.google.protobuf.LazyStringArrayList();
@@ -1670,7 +1699,55 @@ public final class PBRequestNetworkManage {
               com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks.class, com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks.Builder.class);
     }
 
-    public static final int NETWORK_IDS_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The workspace id in HTTP Request-URI
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NETWORK_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList networkIds_;
     /**
      * <pre>
@@ -1678,7 +1755,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @return A list containing the networkIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1691,7 +1768,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @return The count of networkIds.
      */
     public int getNetworkIdsCount() {
@@ -1703,7 +1780,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The networkIds at the given index.
      */
@@ -1716,7 +1793,7 @@ public final class PBRequestNetworkManage {
      * &#64;inject_tag: json:"network_ids"
      * </pre>
      *
-     * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+     * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the networkIds at the given index.
      */
@@ -1739,8 +1816,11 @@ public final class PBRequestNetworkManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       for (int i = 0; i < networkIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, networkIds_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, networkIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1751,6 +1831,9 @@ public final class PBRequestNetworkManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < networkIds_.size(); i++) {
@@ -1774,6 +1857,8 @@ public final class PBRequestNetworkManage {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks other = (com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getNetworkIdsList()
           .equals(other.getNetworkIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1787,6 +1872,8 @@ public final class PBRequestNetworkManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       if (getNetworkIdsCount() > 0) {
         hash = (37 * hash) + NETWORK_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getNetworkIdsList().hashCode();
@@ -1924,6 +2011,8 @@ public final class PBRequestNetworkManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         networkIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1953,6 +2042,7 @@ public final class PBRequestNetworkManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks result = new com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks(this);
         int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           networkIds_ = networkIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -2006,6 +2096,10 @@ public final class PBRequestNetworkManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestNetworkManage.DeleteNetworks.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.networkIds_.isEmpty()) {
           if (networkIds_.isEmpty()) {
             networkIds_ = other.networkIds_;
@@ -2046,6 +2140,107 @@ public final class PBRequestNetworkManage {
       }
       private int bitField0_;
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The workspace id in HTTP Request-URI
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList networkIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureNetworkIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -2059,7 +2254,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @return A list containing the networkIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -2072,7 +2267,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @return The count of networkIds.
        */
       public int getNetworkIdsCount() {
@@ -2084,7 +2279,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The networkIds at the given index.
        */
@@ -2097,7 +2292,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the networkIds at the given index.
        */
@@ -2111,7 +2306,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The networkIds to set.
        * @return This builder for chaining.
@@ -2132,7 +2327,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The networkIds to add.
        * @return This builder for chaining.
        */
@@ -2152,7 +2347,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @param values The networkIds to add.
        * @return This builder for chaining.
        */
@@ -2170,7 +2365,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearNetworkIds() {
@@ -2185,7 +2380,7 @@ public final class PBRequestNetworkManage {
        * &#64;inject_tag: json:"network_ids"
        * </pre>
        *
-       * <code>repeated string network_ids = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string network_ids = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes of the networkIds to add.
        * @return This builder for chaining.
        */
@@ -5695,24 +5890,25 @@ public final class PBRequestNetworkManage {
       "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
       "\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007cre" +
       "atedJ\007updatedJ\004name\022\017\n\007reverse\030\005 \001(\010\022\016\n\006" +
-      "search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\"@\n\016DeleteNetw" +
-      "orks\022.\n\013network_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008d" +
-      "Z\n\302\001\007\312\002\004net-\"\303\001\n\rCreateNetwork\022%\n\010space_" +
-      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncreated" +
-      "_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\003 \001(\tB\020\342" +
-      "\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014" +
-      "\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001" +
-      "\t\312\002\006vxnet-\"\312\001\n\rUpdateNetwork\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_i" +
-      "d\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\036\n\004name\030\003 \001" +
-      "(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB" +
-      "\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037" +
-      "\016\022\014\302\001\t\312\002\006vxnet-\":\n\017DescribeNetwork\022\'\n\nne" +
-      "twork_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-Bu\n$c" +
-      "om.dataomnis.gproto.types.pbrequestB\026PBR" +
-      "equestNetworkManageP\000Z3github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbrequestb\006prot" +
-      "o3"
+      "search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\"g\n\016DeleteNetw" +
+      "orks\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022.\n\013network_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ" +
+      "\n\302\001\007\312\002\004net-\"\303\001\n\rCreateNetwork\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncreated_" +
+      "by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\003 \001(\tB\020\342\337" +
+      "\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014\022" +
+      "\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001\t" +
+      "\312\002\006vxnet-\"\312\001\n\rUpdateNetwork\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_id" +
+      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\036\n\004name\030\003 \001(" +
+      "\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020" +
+      "\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016" +
+      "\022\014\302\001\t\312\002\006vxnet-\":\n\017DescribeNetwork\022\'\n\nnet" +
+      "work_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-Bu\n$co" +
+      "m.dataomnis.gproto.types.pbrequestB\026PBRe" +
+      "questNetworkManageP\000Z3github.com/DataWor" +
+      "kbench/gproto/xgo/types/pbrequestb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5731,7 +5927,7 @@ public final class PBRequestNetworkManage {
     internal_static_request_DeleteNetworks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteNetworks_descriptor,
-        new java.lang.String[] { "NetworkIds", });
+        new java.lang.String[] { "SpaceId", "NetworkIds", });
     internal_static_request_CreateNetwork_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_CreateNetwork_fieldAccessorTable = new
