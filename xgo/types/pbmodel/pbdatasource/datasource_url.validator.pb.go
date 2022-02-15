@@ -277,14 +277,44 @@ func (this *FtpURL) _xxx_xxx_Validator_Validate_protocol() error {
 	return nil
 }
 
+func (this *FtpURL) _xxx_xxx_Validator_CheckIf_connection_mode() bool {
+	if !(this.Protocol == 1) {
+		return false
+	}
+	return true
+}
+
 var _xxx_xxx_Validator_FtpURL_InEnums_ConnectionMode = map[FtpURL_ConnectionMode]bool{0: true, 1: true, 2: true}
 
 func (this *FtpURL) _xxx_xxx_Validator_Validate_connection_mode() error {
+	if !this._xxx_xxx_Validator_CheckIf_connection_mode() {
+		return nil
+	}
 	if !(this.ConnectionMode > 0) {
 		return protovalidator.FieldError1("FtpURL", "the value of field 'connection_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.ConnectionMode)))
 	}
 	if !(_xxx_xxx_Validator_FtpURL_InEnums_ConnectionMode[this.ConnectionMode]) {
 		return protovalidator.FieldError1("FtpURL", "the value of field 'connection_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ConnectionMode)))
+	}
+	return nil
+}
+
+func (this *FtpURL) _xxx_xxx_Validator_CheckIf_private_key() bool {
+	if !(this.Protocol == 2) {
+		return false
+	}
+	return true
+}
+
+func (this *FtpURL) _xxx_xxx_Validator_Validate_private_key() error {
+	if !this._xxx_xxx_Validator_CheckIf_private_key() {
+		return nil
+	}
+	if !(len(this.PrivateKey) > 1) {
+		return protovalidator.FieldError1("FtpURL", "the byte length of field 'private_key' must be greater than '1'", protovalidator.StringByteLenToString(this.PrivateKey))
+	}
+	if !(len(this.PrivateKey) <= 2048) {
+		return protovalidator.FieldError1("FtpURL", "the byte length of field 'private_key' must be less than or equal to '2048'", protovalidator.StringByteLenToString(this.PrivateKey))
 	}
 	return nil
 }
@@ -338,6 +368,9 @@ func (this *FtpURL) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_connection_mode(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_private_key(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
