@@ -116,27 +116,39 @@ message FtpURL {
 
   // The connection protocol. 1 => "FTP" 2 = > "SFTP"; Is Required.
   // @inject_tag: json:"protocol"
-  Protocol protocol = 10 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  Protocol protocol = 1 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
-  // The connection modes. 1 => "Active" 2 = > "Passive"; Is Required.
+  // The connection modes.  Is Required if protocol == 1 (FTP).
+  // 1 => "Active" 2 = > "Passive";
   // @inject_tag: json:"connection_mode"
-  ConnectionMode connection_mode = 11 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  ConnectionMode connection_mode = 2 [
+    (validator.field).check_if = { field: "protocol", tags: { enum: { eq: 1 } } },
+    (validator.field).tags.enum = { gt: 0, in_enums: true }
+  ];
+
+  // The SFTP private key content.  Is Required if protocol == 2 (SFTP).
+  // Min Bytes Length: 1, Max Bytes Length: 2048
+  // @inject_tag: json:"private_key"
+  string private_key = 3 [
+    (validator.field).check_if = { field: "protocol", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 2048 }
+  ];
 
   // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"host"
-  string host = 1 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string host = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 
   // Port specifies the port of db. Is Required. Min: 0, Length Max: 65536.
   // @inject_tag: json:"port"
-  int32 port = 2 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
+  int32 port = 5 [ (validator.field).tags.int = { gte: 0, lte: 65536 } ];
 
   // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"user"
-  string user = 3 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string user = 6 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 
   // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"password"
-  string password = 4 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string password = 7 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
 }
 
 // S3Url used as request parameters for RPC and HTTP(based on Body)
