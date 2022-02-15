@@ -416,6 +416,46 @@ func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_parallelism() error {
 	return nil
 }
 
+func (this *StreamJobArgs) _xxx_xxx_Validator_CheckIf_udfs() bool {
+	if !(len(this.Udfs) > 0) {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_udfs() error {
+	if !this._xxx_xxx_Validator_CheckIf_udfs() {
+		return nil
+	}
+	for _, item := range this.Udfs {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "udf-")) {
+			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'udfs' must start with string 'udf-'", item)
+		}
+	}
+	return nil
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_CheckIf_connectors() bool {
+	if !(len(this.Connectors) > 0) {
+		return false
+	}
+	return true
+}
+
+func (this *StreamJobArgs) _xxx_xxx_Validator_Validate_connectors() error {
+	if !this._xxx_xxx_Validator_CheckIf_connectors() {
+		return nil
+	}
+	for _, item := range this.Connectors {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "res-")) {
+			return protovalidator.FieldError1("StreamJobArgs", "the value of array item where in field 'connectors' must start with string 'res-'", item)
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.StreamJobArgs
 func (this *StreamJobArgs) Validate() error {
 	if this == nil {
@@ -424,12 +464,21 @@ func (this *StreamJobArgs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_parallelism(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_udfs(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_connectors(); err != nil {
+		return err
+	}
 	return nil
 }
 
 var _xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy = map[StreamJobSchedule_SchedulePolicy]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *StreamJobSchedule) _xxx_xxx_Validator_Validate_schedule_policy() error {
+	if !(this.SchedulePolicy > 0) {
+		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must be greater than '0'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
+	}
 	if !(_xxx_xxx_Validator_StreamJobSchedule_InEnums_SchedulePolicy[this.SchedulePolicy]) {
 		return protovalidator.FieldError1("StreamJobSchedule", "the value of field 'schedule_policy' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.SchedulePolicy)))
 	}

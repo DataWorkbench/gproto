@@ -7,6 +7,7 @@ package pbresponse
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
 func (this *ListStreamJobs) _xxx_xxx_Validator_Validate_infos() error {
@@ -61,11 +62,6 @@ func (this *DescribeStreamJob) Validate() error {
 }
 
 func (this *GetStreamJobCode) _xxx_xxx_Validator_Validate_code() error {
-	if dt, ok := interface{}(this.Code).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
 	return nil
 }
 
@@ -81,11 +77,6 @@ func (this *GetStreamJobCode) Validate() error {
 }
 
 func (this *GetStreamJobArgs) _xxx_xxx_Validator_Validate_info() error {
-	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
 	return nil
 }
 
@@ -101,11 +92,6 @@ func (this *GetStreamJobArgs) Validate() error {
 }
 
 func (this *GetStreamJobSchedule) _xxx_xxx_Validator_Validate_info() error {
-	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
 	return nil
 }
 

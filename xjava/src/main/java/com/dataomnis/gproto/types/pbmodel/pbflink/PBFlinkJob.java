@@ -5249,16 +5249,17 @@ public final class PBFlinkJob {
       "\n\n\006Offset\020\010\022\t\n\005Fetch\020\t\022\n\n\006Filter\020\n\022\t\n\005Un" +
       "ion\020\013\022\n\n\006Except\020\014\022\r\n\tIntersect\020\r\022\013\n\007Grou" +
       "pBy\020\016\022\n\n\006Having\020\017\022\010\n\004Join\020\020\022\010\n\004UDTF\020\021\022\t\n" +
-      "\005UDTTF\020\022\"p\n\010FlinkJar\022!\n\013resource_id\030\001 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\037\n\010jar_args\030\002 \001(\tB\r\342\337\037\t\022" +
-      "\007\302\001\004\230\002\200\010\022 \n\tjar_entry\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002" +
-      "\200\010\"-\n\nFlinkScala\022\037\n\004code\030\001 \001(\tB\021\342\337\037\r\022\013\302\001" +
-      "\010\230\002\300\270\002\210\005\001\".\n\013FlinkPython\022\037\n\004code\030\001 \001(\tB\021" +
-      "\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkSQL\022\037\n\004code\030\001 " +
-      "\001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*com.dataomnis." +
-      "gproto.types.pbmodel.pbflinkB\nPBFlinkJob" +
-      "P\000Z9github.com/DataWorkbench/gproto/xgo/" +
-      "types/pbmodel/pbflinkb\006proto3"
+      "\005UDTTF\020\022\"}\n\010FlinkJar\022(\n\013resource_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\"\n\010jar_args\030\002 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\230\002\200\010\210\005\001\022#\n\tjar_entry\030\003 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\230\002\200\010\210\005\001\"-\n\nFlinkScala\022\037\n\004code\030\001 " +
+      "\001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\".\n\013FlinkPython\022\037\n" +
+      "\004code\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkS" +
+      "QL\022\037\n\004code\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*c" +
+      "om.dataomnis.gproto.types.pbmodel.pbflin" +
+      "kB\nPBFlinkJobP\000Z9github.com/DataWorkbenc" +
+      "h/gproto/xgo/types/pbmodel/pbflinkb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

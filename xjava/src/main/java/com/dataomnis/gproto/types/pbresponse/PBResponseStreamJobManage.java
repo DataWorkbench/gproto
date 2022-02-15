@@ -2364,17 +2364,17 @@ public final class PBResponseStreamJobManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.model.StreamJobCode code = 1;</code>
+     * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
      * @return Whether the code field is set.
      */
     boolean hasCode();
     /**
-     * <code>.model.StreamJobCode code = 1;</code>
+     * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
      * @return The code.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode getCode();
     /**
-     * <code>.model.StreamJobCode code = 1;</code>
+     * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder();
   }
@@ -2475,7 +2475,7 @@ public final class PBResponseStreamJobManage {
     public static final int CODE_FIELD_NUMBER = 1;
     private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode code_;
     /**
-     * <code>.model.StreamJobCode code = 1;</code>
+     * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
      * @return Whether the code field is set.
      */
     @java.lang.Override
@@ -2483,7 +2483,7 @@ public final class PBResponseStreamJobManage {
       return code_ != null;
     }
     /**
-     * <code>.model.StreamJobCode code = 1;</code>
+     * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
      * @return The code.
      */
     @java.lang.Override
@@ -2491,7 +2491,7 @@ public final class PBResponseStreamJobManage {
       return code_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.getDefaultInstance() : code_;
     }
     /**
-     * <code>.model.StreamJobCode code = 1;</code>
+     * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder() {
@@ -2821,14 +2821,14 @@ public final class PBResponseStreamJobManage {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder> codeBuilder_;
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        * @return Whether the code field is set.
        */
       public boolean hasCode() {
         return codeBuilder_ != null || code_ != null;
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        * @return The code.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode getCode() {
@@ -2839,7 +2839,7 @@ public final class PBResponseStreamJobManage {
         }
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setCode(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode value) {
         if (codeBuilder_ == null) {
@@ -2855,7 +2855,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setCode(
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder builderForValue) {
@@ -2869,7 +2869,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        */
       public Builder mergeCode(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode value) {
         if (codeBuilder_ == null) {
@@ -2887,7 +2887,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        */
       public Builder clearCode() {
         if (codeBuilder_ == null) {
@@ -2901,7 +2901,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder getCodeBuilder() {
         
@@ -2909,7 +2909,7 @@ public final class PBResponseStreamJobManage {
         return getCodeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder getCodeOrBuilder() {
         if (codeBuilder_ != null) {
@@ -2920,7 +2920,7 @@ public final class PBResponseStreamJobManage {
         }
       }
       /**
-       * <code>.model.StreamJobCode code = 1;</code>
+       * <code>.model.StreamJobCode code = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCode.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobCodeOrBuilder> 
@@ -2993,17 +2993,17 @@ public final class PBResponseStreamJobManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.model.StreamJobArgs info = 1;</code>
+     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.model.StreamJobArgs info = 1;</code>
+     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
      * @return The info.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getInfo();
     /**
-     * <code>.model.StreamJobArgs info = 1;</code>
+     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getInfoOrBuilder();
   }
@@ -3104,7 +3104,7 @@ public final class PBResponseStreamJobManage {
     public static final int INFO_FIELD_NUMBER = 1;
     private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs info_;
     /**
-     * <code>.model.StreamJobArgs info = 1;</code>
+     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -3112,7 +3112,7 @@ public final class PBResponseStreamJobManage {
       return info_ != null;
     }
     /**
-     * <code>.model.StreamJobArgs info = 1;</code>
+     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
      * @return The info.
      */
     @java.lang.Override
@@ -3120,7 +3120,7 @@ public final class PBResponseStreamJobManage {
       return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.getDefaultInstance() : info_;
     }
     /**
-     * <code>.model.StreamJobArgs info = 1;</code>
+     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getInfoOrBuilder() {
@@ -3450,14 +3450,14 @@ public final class PBResponseStreamJobManage {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder> infoBuilder_;
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        * @return The info.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getInfo() {
@@ -3468,7 +3468,7 @@ public final class PBResponseStreamJobManage {
         }
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
         if (infoBuilder_ == null) {
@@ -3484,7 +3484,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setInfo(
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder builderForValue) {
@@ -3498,7 +3498,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
         if (infoBuilder_ == null) {
@@ -3516,7 +3516,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -3530,7 +3530,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder getInfoBuilder() {
         
@@ -3538,7 +3538,7 @@ public final class PBResponseStreamJobManage {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -3549,7 +3549,7 @@ public final class PBResponseStreamJobManage {
         }
       }
       /**
-       * <code>.model.StreamJobArgs info = 1;</code>
+       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder> 
@@ -3622,17 +3622,17 @@ public final class PBResponseStreamJobManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.model.StreamJobSchedule info = 1;</code>
+     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.model.StreamJobSchedule info = 1;</code>
+     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
      * @return The info.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getInfo();
     /**
-     * <code>.model.StreamJobSchedule info = 1;</code>
+     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getInfoOrBuilder();
   }
@@ -3733,7 +3733,7 @@ public final class PBResponseStreamJobManage {
     public static final int INFO_FIELD_NUMBER = 1;
     private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule info_;
     /**
-     * <code>.model.StreamJobSchedule info = 1;</code>
+     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -3741,7 +3741,7 @@ public final class PBResponseStreamJobManage {
       return info_ != null;
     }
     /**
-     * <code>.model.StreamJobSchedule info = 1;</code>
+     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
      * @return The info.
      */
     @java.lang.Override
@@ -3749,7 +3749,7 @@ public final class PBResponseStreamJobManage {
       return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.getDefaultInstance() : info_;
     }
     /**
-     * <code>.model.StreamJobSchedule info = 1;</code>
+     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getInfoOrBuilder() {
@@ -4079,14 +4079,14 @@ public final class PBResponseStreamJobManage {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder> infoBuilder_;
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        * @return The info.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getInfo() {
@@ -4097,7 +4097,7 @@ public final class PBResponseStreamJobManage {
         }
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule value) {
         if (infoBuilder_ == null) {
@@ -4113,7 +4113,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setInfo(
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder builderForValue) {
@@ -4127,7 +4127,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule value) {
         if (infoBuilder_ == null) {
@@ -4145,7 +4145,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -4159,7 +4159,7 @@ public final class PBResponseStreamJobManage {
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder getInfoBuilder() {
         
@@ -4167,7 +4167,7 @@ public final class PBResponseStreamJobManage {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -4178,7 +4178,7 @@ public final class PBResponseStreamJobManage {
         }
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1;</code>
+       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder> 
@@ -7740,30 +7740,34 @@ public final class PBResponseStreamJobManage {
   static {
     java.lang.String[] descriptorData = {
       "\n,proto/types/response/stream_job_manage" +
-      ".proto\022\010response\032\"proto/types/model/stre" +
-      "am_job.proto\"R\n\016ListStreamJobs\022\037\n\005infos\030" +
-      "\001 \003(\0132\020.model.StreamJob\022\020\n\010has_more\030\002 \001(" +
-      "\010\022\r\n\005total\030\003 \001(\003\"\035\n\017CreateStreamJob\022\n\n\002i" +
-      "d\030\001 \001(\t\"3\n\021DescribeStreamJob\022\036\n\004info\030\001 \001" +
-      "(\0132\020.model.StreamJob\"6\n\020GetStreamJobCode" +
-      "\022\"\n\004code\030\001 \001(\0132\024.model.StreamJobCode\"6\n\020" +
-      "GetStreamJobArgs\022\"\n\004info\030\001 \001(\0132\024.model.S" +
-      "treamJobArgs\">\n\024GetStreamJobSchedule\022&\n\004" +
-      "info\030\001 \001(\0132\030.model.StreamJobSchedule\"`\n\025" +
-      "ListReleaseStreamJobs\022&\n\005infos\030\001 \003(\0132\027.m" +
-      "odel.StreamJobRelease\022\020\n\010has_more\030\002 \001(\010\022" +
-      "\r\n\005total\030\003 \001(\003\"J\n\025ListStreamJobVersions\022" +
-      "\037\n\005infos\030\001 \003(\0132\020.model.StreamJob\022\020\n\010has_" +
-      "more\030\002 \001(\010\"&\n\025ListBuiltInConnectors\022\r\n\005i" +
-      "tems\030\001 \003(\t\"-\n\033DescribeFlinkUIByInstanceI" +
-      "d\022\016\n\006web_ui\030\001 \001(\tBz\n%com.dataomnis.gprot" +
-      "o.types.pbresponseB\031PBResponseStreamJobM" +
-      "anageP\000Z4github.com/DataWorkbench/gproto" +
-      "/xgo/types/pbresponseb\006proto3"
+      ".proto\022\010response\0323github.com/yu31/protoc" +
+      "-plugin/proto/validator.proto\032\"proto/typ" +
+      "es/model/stream_job.proto\"R\n\016ListStreamJ" +
+      "obs\022\037\n\005infos\030\001 \003(\0132\020.model.StreamJob\022\020\n\010" +
+      "has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"\035\n\017CreateS" +
+      "treamJob\022\n\n\002id\030\001 \001(\t\"3\n\021DescribeStreamJo" +
+      "b\022\036\n\004info\030\001 \001(\0132\020.model.StreamJob\"C\n\020Get" +
+      "StreamJobCode\022/\n\004code\030\001 \001(\0132\024.model.Stre" +
+      "amJobCodeB\013\342\337\037\007\022\005\342\001\002\030\001\"C\n\020GetStreamJobAr" +
+      "gs\022/\n\004info\030\001 \001(\0132\024.model.StreamJobArgsB\013" +
+      "\342\337\037\007\022\005\342\001\002\030\001\"K\n\024GetStreamJobSchedule\0223\n\004i" +
+      "nfo\030\001 \001(\0132\030.model.StreamJobScheduleB\013\342\337\037" +
+      "\007\022\005\342\001\002\030\001\"`\n\025ListReleaseStreamJobs\022&\n\005inf" +
+      "os\030\001 \003(\0132\027.model.StreamJobRelease\022\020\n\010has" +
+      "_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"J\n\025ListStream" +
+      "JobVersions\022\037\n\005infos\030\001 \003(\0132\020.model.Strea" +
+      "mJob\022\020\n\010has_more\030\002 \001(\010\"&\n\025ListBuiltInCon" +
+      "nectors\022\r\n\005items\030\001 \003(\t\"-\n\033DescribeFlinkU" +
+      "IByInstanceId\022\016\n\006web_ui\030\001 \001(\tBz\n%com.dat" +
+      "aomnis.gproto.types.pbresponseB\031PBRespon" +
+      "seStreamJobManageP\000Z4github.com/DataWork" +
+      "bench/gproto/xgo/types/pbresponseb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor(),
         });
     internal_static_response_ListStreamJobs_descriptor =
@@ -7826,6 +7830,12 @@ public final class PBResponseStreamJobManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeFlinkUIByInstanceId_descriptor,
         new java.lang.String[] { "WebUi", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.getDescriptor();
   }
 

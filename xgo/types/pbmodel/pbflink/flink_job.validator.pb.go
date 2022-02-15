@@ -8,6 +8,7 @@ package pbflink
 import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
+	strings "strings"
 	utf8 "unicode/utf8"
 )
 
@@ -126,6 +127,9 @@ func (this *FlinkJar) _xxx_xxx_Validator_Validate_resource_id() error {
 	if !(len(this.ResourceId) == 20) {
 		return protovalidator.FieldError1("FlinkJar", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
 	}
+	if !(strings.HasPrefix(this.ResourceId, "res-")) {
+		return protovalidator.FieldError1("FlinkJar", "the value of field 'resource_id' must start with string 'res-'", this.ResourceId)
+	}
 	return nil
 }
 
@@ -133,12 +137,18 @@ func (this *FlinkJar) _xxx_xxx_Validator_Validate_jar_args() error {
 	if !(len(this.JarArgs) <= 1024) {
 		return protovalidator.FieldError1("FlinkJar", "the byte length of field 'jar_args' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.JarArgs))
 	}
+	if !(utf8.ValidString(this.JarArgs)) {
+		return protovalidator.FieldError1("FlinkJar", "the value of field 'jar_args' must be a UTF8 string", this.JarArgs)
+	}
 	return nil
 }
 
 func (this *FlinkJar) _xxx_xxx_Validator_Validate_jar_entry() error {
 	if !(len(this.JarEntry) <= 1024) {
 		return protovalidator.FieldError1("FlinkJar", "the byte length of field 'jar_entry' must be less than or equal to '1024'", protovalidator.StringByteLenToString(this.JarEntry))
+	}
+	if !(utf8.ValidString(this.JarEntry)) {
+		return protovalidator.FieldError1("FlinkJar", "the value of field 'jar_entry' must be a UTF8 string", this.JarEntry)
 	}
 	return nil
 }
