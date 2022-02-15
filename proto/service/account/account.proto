@@ -17,4 +17,10 @@ service Account {
   rpc ValidateRequestSignature(request.ValidateRequestSignature) returns (response.ValidateRequestSignature) {}
   rpc DescribeUsers(request.DescribeUsers) returns (response.DescribeUsers) {}
   rpc DescribeAccessKey(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
+  rpc CreateUser(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
+  rpc UpdateUser(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
+  rpc DeleteUser(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
+  rpc CheckSession(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
+  rpc Login(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
+
 }

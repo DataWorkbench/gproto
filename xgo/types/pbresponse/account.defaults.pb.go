@@ -32,3 +32,53 @@ func (this *ValidateRequestSignature) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.CreateUser
+func (this *CreateUser) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.User != nil {
+		if dt, ok := interface{}(this.User).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.UpdateUser
+func (this *UpdateUser) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.User != nil {
+		if dt, ok := interface{}(this.User).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.DeleteUser
+func (this *DeleteUser) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.CheckSession
+func (this *CheckSession) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.Login
+func (this *Login) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

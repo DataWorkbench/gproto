@@ -28,3 +28,43 @@ func (this *ValidateRequestSignature) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.CreateUser
+func (this *CreateUser) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.UpdateUser
+func (this *UpdateUser) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteUser
+func (this *DeleteUser) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.CheckSession
+func (this *CheckSession) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.Login
+func (this *Login) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

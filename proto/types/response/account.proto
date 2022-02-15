@@ -31,3 +31,26 @@ message ValidateRequestSignature {
   string message = 2 ;
   string user_id = 3;
 }
+
+
+message CreateUser{
+  model.User user = 1;
+}
+
+message UpdateUser{
+  model.User user = 1;
+}
+
+message DeleteUser{
+  string user_id = 1;
+}
+
+message CheckSession{
+  string user_id = 1;
+  string access_key_id = 2;
+  string secret_access_key = 3;
+}
+
+message Login{
+  string session = 1;
+}

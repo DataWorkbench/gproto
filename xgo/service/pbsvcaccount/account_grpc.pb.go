@@ -27,6 +27,11 @@ type AccountClient interface {
 	ValidateRequestSignature(ctx context.Context, in *pbrequest.ValidateRequestSignature, opts ...grpc.CallOption) (*pbresponse.ValidateRequestSignature, error)
 	DescribeUsers(ctx context.Context, in *pbrequest.DescribeUsers, opts ...grpc.CallOption) (*pbresponse.DescribeUsers, error)
 	DescribeAccessKey(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
+	CreateUser(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
+	UpdateUser(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
+	DeleteUser(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
+	CheckSession(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
+	Login(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
 }
 
 type accountClient struct {
@@ -64,6 +69,51 @@ func (c *accountClient) DescribeAccessKey(ctx context.Context, in *pbrequest.Des
 	return out, nil
 }
 
+func (c *accountClient) CreateUser(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error) {
+	out := new(pbresponse.DescribeAccessKey)
+	err := c.cc.Invoke(ctx, "/account.Account/CreateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) UpdateUser(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error) {
+	out := new(pbresponse.DescribeAccessKey)
+	err := c.cc.Invoke(ctx, "/account.Account/UpdateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) DeleteUser(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error) {
+	out := new(pbresponse.DescribeAccessKey)
+	err := c.cc.Invoke(ctx, "/account.Account/DeleteUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) CheckSession(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error) {
+	out := new(pbresponse.DescribeAccessKey)
+	err := c.cc.Invoke(ctx, "/account.Account/CheckSession", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountClient) Login(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error) {
+	out := new(pbresponse.DescribeAccessKey)
+	err := c.cc.Invoke(ctx, "/account.Account/Login", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServer is the server API for Account service.
 // All implementations must embed UnimplementedAccountServer
 // for forward compatibility
@@ -71,6 +121,11 @@ type AccountServer interface {
 	ValidateRequestSignature(context.Context, *pbrequest.ValidateRequestSignature) (*pbresponse.ValidateRequestSignature, error)
 	DescribeUsers(context.Context, *pbrequest.DescribeUsers) (*pbresponse.DescribeUsers, error)
 	DescribeAccessKey(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
+	CreateUser(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
+	UpdateUser(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
+	DeleteUser(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
+	CheckSession(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
+	Login(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
 	mustEmbedUnimplementedAccountServer()
 }
 
@@ -86,6 +141,21 @@ func (UnimplementedAccountServer) DescribeUsers(context.Context, *pbrequest.Desc
 }
 func (UnimplementedAccountServer) DescribeAccessKey(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeAccessKey not implemented")
+}
+func (UnimplementedAccountServer) CreateUser(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
+}
+func (UnimplementedAccountServer) UpdateUser(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
+}
+func (UnimplementedAccountServer) DeleteUser(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
+}
+func (UnimplementedAccountServer) CheckSession(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckSession not implemented")
+}
+func (UnimplementedAccountServer) Login(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
 }
 func (UnimplementedAccountServer) mustEmbedUnimplementedAccountServer() {}
 
@@ -154,6 +224,96 @@ func _Account_DescribeAccessKey_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Account_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).CreateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/CreateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).CreateUser(ctx, req.(*pbrequest.DescribeAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).UpdateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/UpdateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).UpdateUser(ctx, req.(*pbrequest.DescribeAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).DeleteUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/DeleteUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).DeleteUser(ctx, req.(*pbrequest.DescribeAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_CheckSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).CheckSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/CheckSession",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).CheckSession(ctx, req.(*pbrequest.DescribeAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Account_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServer).Login(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.Account/Login",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServer).Login(ctx, req.(*pbrequest.DescribeAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Account_ServiceDesc is the grpc.ServiceDesc for Account service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -172,6 +332,26 @@ var Account_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeAccessKey",
 			Handler:    _Account_DescribeAccessKey_Handler,
+		},
+		{
+			MethodName: "CreateUser",
+			Handler:    _Account_CreateUser_Handler,
+		},
+		{
+			MethodName: "UpdateUser",
+			Handler:    _Account_UpdateUser_Handler,
+		},
+		{
+			MethodName: "DeleteUser",
+			Handler:    _Account_DeleteUser_Handler,
+		},
+		{
+			MethodName: "CheckSession",
+			Handler:    _Account_CheckSession_Handler,
+		},
+		{
+			MethodName: "Login",
+			Handler:    _Account_Login_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

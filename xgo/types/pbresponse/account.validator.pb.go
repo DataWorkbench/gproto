@@ -47,3 +47,67 @@ func (this *ValidateRequestSignature) Validate() error {
 	}
 	return nil
 }
+
+func (this *CreateUser) _xxx_xxx_Validator_Validate_user() error {
+	if dt, ok := interface{}(this.User).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.CreateUser
+func (this *CreateUser) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpdateUser) _xxx_xxx_Validator_Validate_user() error {
+	if dt, ok := interface{}(this.User).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.UpdateUser
+func (this *UpdateUser) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message response.DeleteUser
+func (this *DeleteUser) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message response.CheckSession
+func (this *CheckSession) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message response.Login
+func (this *Login) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
