@@ -38,6 +38,10 @@ message CreateFilePrepare {
   // The resource type. required.
   // @inject_tag: json:"type"
   model.Resource.Type type = 5 [(validator.field).tags.enum = { gt:0; in_enums: true }];
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 6 [(validator.field).tags.string = { ne: "" } ];
 }
 
 message CreateFileMeta {

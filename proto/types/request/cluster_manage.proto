@@ -117,27 +117,31 @@ message CreateFlinkCluster {
   //
   // Flink task number for TaskManager. Is required, Min 1, Max 24
   // @inject_tag: json:"task_num"
-  int32 task_num = 6 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
+  int32 task_num = 5 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
 
   // Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"job_cu"
-  float job_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float job_cu = 6 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"task_cu"
-  float task_cu = 8 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float task_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Network config. Is required.
   // @inject_tag: json:"network_id"
-  string network_id = 9 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
+  string network_id = 8 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
 
   // Config of host aliases. Not required.
   // @inject_tag: json:"host_aliases"
-  model.HostAliases host_aliases = 11;
+  model.HostAliases host_aliases = 9;
 
   // Flink config. Not required.
   // @inject_tag: json:"config"
   flink.FlinkConfig config = 10;
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 11 [(validator.field).tags.string = { ne: "" } ];
 }
 
 message UpdateFlinkCluster {
@@ -161,27 +165,27 @@ message UpdateFlinkCluster {
   //
   // Flink task number for TaskManager. Is required, Min 1, Max 24
   // @inject_tag: json:"task_num"
-  int32 task_num = 6 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
+  int32 task_num = 5 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
 
   // Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"job_cu"
-  float job_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float job_cu = 6 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"task_cu"
-  float task_cu = 8 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float task_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Network config. Is required.
   // @inject_tag: json:"network_id"
-  string network_id = 9 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
+  string network_id = 8 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
 
   // Config of host aliases. Not required.
   // @inject_tag: json:"host_aliases"
-  model.HostAliases host_aliases = 10;
+  model.HostAliases host_aliases = 9;
 
   // Flink config, Is required.
   // @inject_tag: json:"config"
-  flink.FlinkConfig config = 11;
+  flink.FlinkConfig config = 10;
 }
 
 message DescribeFlinkCluster {

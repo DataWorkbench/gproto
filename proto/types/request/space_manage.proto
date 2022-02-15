@@ -62,6 +62,10 @@ message DeleteWorkspaces {
   // The list of workspace id. Is required, Min 1, Max 100.
   // @inject_tag: json:"space_ids"
   repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
+
+  // The user-id of request. Used to check permission.
+  // @inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+  string req_user_id = 2 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
 }
 
 // DisableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
@@ -70,6 +74,10 @@ message DisableWorkspaces {
   // Disable workspace will suspend all release stream job and stop all running instances.
   // @inject_tag: json:"space_ids"
   repeated string space_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100, item: { string: { prefix: "wks-" } } } ];
+
+  // The user-id of request. Used to check permission.
+  // @inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+  string req_user_id = 2 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
 }
 
 // EnableWorkspaces used as a request parameters for RPC and HTTP(based on Body).
@@ -81,13 +89,17 @@ message EnableWorkspaces {
   // Whether resume all suspended job. Not required, default false.
   // @inject_tag: `json:"resume_job"
   bool resume_job = 2;
+
+  // The user-id of request. Used to check permission.
+  // @inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+  string req_user_id = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
 }
 
 // CreateWorkspace used as a request parameters for RPC and HTTP(based on Body)
 message CreateWorkspace {
   // The owner fixed to request user id.
   // @inject_tag: json:"owner" swaggerignore:"true"
-  string owner = 1 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+  string owner = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
 
   // The space name of each account in each region is unique. Is required, Max Length 128.
   // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
@@ -182,7 +194,7 @@ message ListOpAudits {
 
 // CheckPermission used as a request parameters for RPC.
 message CheckPermission {
-  string req_user_id      = 1 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+  string req_user_id      = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
   string space_id         = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   string module           = 3 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
   model.Operation.Type op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];

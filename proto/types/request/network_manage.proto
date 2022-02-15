@@ -78,6 +78,10 @@ message CreateNetwork {
   // vxnet id. Is required.
   // @inject_tag: json:"vxnet_id"
   string vxnet_id = 5 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 6 [(validator.field).tags.string = { ne: "" } ];
 }
 
 message UpdateNetwork {

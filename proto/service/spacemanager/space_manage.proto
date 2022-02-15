@@ -20,8 +20,13 @@ service SpaceManage {
   // API of workspace manager.
   rpc ListWorkspaces(request.ListWorkspaces)       returns (response.ListWorkspaces)    {}
 
+  // DeleteWorkspaces allowed only invoke by space owner.
   rpc DeleteWorkspaces(request.DeleteWorkspaces)   returns (model.EmptyStruct)          {}
+
+  // DisableWorkspaces allowed only invoke by space owner.
   rpc DisableWorkspaces(request.DisableWorkspaces) returns (model.EmptyStruct)          {}
+
+  // DisableWorkspaces allowed only invoke by space owner.
   rpc EnableWorkspaces(request.EnableWorkspaces)   returns (model.EmptyStruct)          {}
 
   rpc CreateWorkspace(request.CreateWorkspace)     returns (response.CreateWorkspace)   {}
