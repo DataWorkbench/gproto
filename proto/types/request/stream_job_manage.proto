@@ -166,7 +166,7 @@ message SetStreamJobCode {
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
   string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
-  // The code info of JSON format.
+  // The code set.
   // @inject_tag: json:"code"
   model.StreamJobCode code = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
@@ -181,7 +181,9 @@ message SetStreamJobSchedule {
   // @inject_tag: json:"job_id" uri:"job_id"  swaggerignore:"true"
   string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
-  model.StreamJobSchedule info = 3 [ (validator.field).tags.message = { not_null: true } ];
+  // The schedule set.
+  // @inject_tag: json:"schedule"
+  model.StreamJobSchedule schedule = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // SetStreamJobArgs used as a request parameters for RPC.
@@ -194,7 +196,9 @@ message SetStreamJobArgs {
   // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
   string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
-  model.StreamJobArgs info = 3 [ (validator.field).tags.message = { not_null: true } ];
+  // The args set.
+  // @inject_tag: json:"args"
+  model.StreamJobArgs args = 3 [ (validator.field).tags.message = { not_null: true } ];
 }
 
 // GetStreamJobCode used as a request parameters for RPC.

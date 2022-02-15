@@ -47,12 +47,12 @@ message GetStreamJobCode {
 
 // GetStreamJobArgs used as reply parameters in RPC.
 message GetStreamJobArgs {
-  model.StreamJobArgs info = 1 [ (validator.field).tags.message = { skip: true} ];
+  model.StreamJobArgs args = 1 [ (validator.field).tags.message = { skip: true} ];
 }
 
 // GetStreamJobSchedule used as reply parameters in RPC.
 message GetStreamJobSchedule {
-  model.StreamJobSchedule info = 1 [ (validator.field).tags.message = { skip: true} ];
+  model.StreamJobSchedule schedule = 1 [ (validator.field).tags.message = { skip: true} ];
 }
 
 // ListReleaseStreamJobs used as reply parameters in RPC or response body in HTTP.
