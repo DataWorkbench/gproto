@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\031PBResponseStreamJobManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,proto/types/response/stream_job_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\"R\n\x0eListStreamJobs\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.StreamJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1d\n\x0f\x43reateStreamJob\x12\n\n\x02id\x18\x01 \x01(\t\"3\n\x11\x44\x65scribeStreamJob\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.StreamJob\"C\n\x10GetStreamJobCode\x12/\n\x04\x63ode\x18\x01 \x01(\x0b\x32\x14.model.StreamJobCodeB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"C\n\x10GetStreamJobArgs\x12/\n\x04info\x18\x01 \x01(\x0b\x32\x14.model.StreamJobArgsB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"K\n\x14GetStreamJobSchedule\x12\x33\n\x04info\x18\x01 \x01(\x0b\x32\x18.model.StreamJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"`\n\x15ListReleaseStreamJobs\x12&\n\x05infos\x18\x01 \x03(\x0b\x32\x17.model.StreamJobRelease\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"J\n\x15ListStreamJobVersions\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.StreamJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"&\n\x15ListBuiltInConnectors\x12\r\n\x05items\x18\x01 \x03(\t\"-\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\tBz\n%com.dataomnis.gproto.types.pbresponseB\x19PBResponseStreamJobManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n,proto/types/response/stream_job_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\"R\n\x0eListStreamJobs\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.StreamJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1d\n\x0f\x43reateStreamJob\x12\n\n\x02id\x18\x01 \x01(\t\"3\n\x11\x44\x65scribeStreamJob\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.StreamJob\"C\n\x10GetStreamJobCode\x12/\n\x04\x63ode\x18\x01 \x01(\x0b\x32\x14.model.StreamJobCodeB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"C\n\x10GetStreamJobArgs\x12/\n\x04\x61rgs\x18\x01 \x01(\x0b\x32\x14.model.StreamJobArgsB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"O\n\x14GetStreamJobSchedule\x12\x37\n\x08schedule\x18\x01 \x01(\x0b\x32\x18.model.StreamJobScheduleB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x18\x01\"`\n\x15ListReleaseStreamJobs\x12&\n\x05infos\x18\x01 \x03(\x0b\x32\x17.model.StreamJobRelease\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"J\n\x15ListStreamJobVersions\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.StreamJob\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"&\n\x15ListBuiltInConnectors\x12\r\n\x05items\x18\x01 \x03(\t\"-\n\x1b\x44\x65scribeFlinkUIByInstanceId\x12\x0e\n\x06web_ui\x18\x01 \x01(\tBz\n%com.dataomnis.gproto.types.pbresponseB\x19PBResponseStreamJobManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,])
 
@@ -179,7 +179,7 @@ _GETSTREAMJOBARGS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='info', full_name='response.GetStreamJobArgs.info', index=0,
+      name='args', full_name='response.GetStreamJobArgs.args', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -211,7 +211,7 @@ _GETSTREAMJOBSCHEDULE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='info', full_name='response.GetStreamJobSchedule.info', index=0,
+      name='schedule', full_name='response.GetStreamJobSchedule.schedule', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -230,7 +230,7 @@ _GETSTREAMJOBSCHEDULE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=453,
-  serialized_end=528,
+  serialized_end=532,
 )
 
 
@@ -275,8 +275,8 @@ _LISTRELEASESTREAMJOBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=530,
-  serialized_end=626,
+  serialized_start=534,
+  serialized_end=630,
 )
 
 
@@ -314,8 +314,8 @@ _LISTSTREAMJOBVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=628,
-  serialized_end=702,
+  serialized_start=632,
+  serialized_end=706,
 )
 
 
@@ -346,8 +346,8 @@ _LISTBUILTINCONNECTORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=704,
-  serialized_end=742,
+  serialized_start=708,
+  serialized_end=746,
 )
 
 
@@ -378,15 +378,15 @@ _DESCRIBEFLINKUIBYINSTANCEID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=744,
-  serialized_end=789,
+  serialized_start=748,
+  serialized_end=793,
 )
 
 _LISTSTREAMJOBS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
 _DESCRIBESTREAMJOB.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
 _GETSTREAMJOBCODE.fields_by_name['code'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBCODE
-_GETSTREAMJOBARGS.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBARGS
-_GETSTREAMJOBSCHEDULE.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBSCHEDULE
+_GETSTREAMJOBARGS.fields_by_name['args'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBARGS
+_GETSTREAMJOBSCHEDULE.fields_by_name['schedule'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBSCHEDULE
 _LISTRELEASESTREAMJOBS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBRELEASE
 _LISTSTREAMJOBVERSIONS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOB
 DESCRIPTOR.message_types_by_name['ListStreamJobs'] = _LISTSTREAMJOBS
@@ -474,6 +474,6 @@ _sym_db.RegisterMessage(DescribeFlinkUIByInstanceId)
 
 DESCRIPTOR._options = None
 _GETSTREAMJOBCODE.fields_by_name['code']._options = None
-_GETSTREAMJOBARGS.fields_by_name['info']._options = None
-_GETSTREAMJOBSCHEDULE.fields_by_name['info']._options = None
+_GETSTREAMJOBARGS.fields_by_name['args']._options = None
+_GETSTREAMJOBSCHEDULE.fields_by_name['schedule']._options = None
 # @@protoc_insertion_point(module_scope)

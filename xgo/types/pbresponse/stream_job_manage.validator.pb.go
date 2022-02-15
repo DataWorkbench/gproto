@@ -76,7 +76,7 @@ func (this *GetStreamJobCode) Validate() error {
 	return nil
 }
 
-func (this *GetStreamJobArgs) _xxx_xxx_Validator_Validate_info() error {
+func (this *GetStreamJobArgs) _xxx_xxx_Validator_Validate_args() error {
 	return nil
 }
 
@@ -85,13 +85,13 @@ func (this *GetStreamJobArgs) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (this *GetStreamJobSchedule) _xxx_xxx_Validator_Validate_info() error {
+func (this *GetStreamJobSchedule) _xxx_xxx_Validator_Validate_schedule() error {
 	return nil
 }
 
@@ -100,7 +100,7 @@ func (this *GetStreamJobSchedule) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_schedule(); err != nil {
 		return err
 	}
 	return nil

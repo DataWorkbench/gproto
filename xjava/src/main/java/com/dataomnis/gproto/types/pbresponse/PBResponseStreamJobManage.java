@@ -2993,19 +2993,19 @@ public final class PBResponseStreamJobManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
-     * @return Whether the info field is set.
+     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the args field is set.
      */
-    boolean hasInfo();
+    boolean hasArgs();
     /**
-     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
-     * @return The info.
+     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * @return The args.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getInfo();
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getArgs();
     /**
-     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getInfoOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getArgsOrBuilder();
   }
   /**
    * <pre>
@@ -3058,13 +3058,13 @@ public final class PBResponseStreamJobManage {
               break;
             case 10: {
               com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder subBuilder = null;
-              if (info_ != null) {
-                subBuilder = info_.toBuilder();
+              if (args_ != null) {
+                subBuilder = args_.toBuilder();
               }
-              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.parser(), extensionRegistry);
+              args_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(info_);
-                info_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(args_);
+                args_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3101,30 +3101,30 @@ public final class PBResponseStreamJobManage {
               com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs.class, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs info_;
+    public static final int ARGS_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs args_;
     /**
-     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
-     * @return Whether the info field is set.
+     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the args field is set.
      */
     @java.lang.Override
-    public boolean hasInfo() {
-      return info_ != null;
+    public boolean hasArgs() {
+      return args_ != null;
     }
     /**
-     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
-     * @return The info.
+     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+     * @return The args.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getInfo() {
-      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.getDefaultInstance() : info_;
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getArgs() {
+      return args_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.getDefaultInstance() : args_;
     }
     /**
-     * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getInfoOrBuilder() {
-      return getInfo();
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getArgsOrBuilder() {
+      return getArgs();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3141,8 +3141,8 @@ public final class PBResponseStreamJobManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (info_ != null) {
-        output.writeMessage(1, getInfo());
+      if (args_ != null) {
+        output.writeMessage(1, getArgs());
       }
       unknownFields.writeTo(output);
     }
@@ -3153,9 +3153,9 @@ public final class PBResponseStreamJobManage {
       if (size != -1) return size;
 
       size = 0;
-      if (info_ != null) {
+      if (args_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getInfo());
+          .computeMessageSize(1, getArgs());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3172,10 +3172,10 @@ public final class PBResponseStreamJobManage {
       }
       com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs other = (com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs) obj;
 
-      if (hasInfo() != other.hasInfo()) return false;
-      if (hasInfo()) {
-        if (!getInfo()
-            .equals(other.getInfo())) return false;
+      if (hasArgs() != other.hasArgs()) return false;
+      if (hasArgs()) {
+        if (!getArgs()
+            .equals(other.getArgs())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3188,9 +3188,9 @@ public final class PBResponseStreamJobManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasInfo()) {
-        hash = (37 * hash) + INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getInfo().hashCode();
+      if (hasArgs()) {
+        hash = (37 * hash) + ARGS_FIELD_NUMBER;
+        hash = (53 * hash) + getArgs().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3329,11 +3329,11 @@ public final class PBResponseStreamJobManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (infoBuilder_ == null) {
-          info_ = null;
+        if (argsBuilder_ == null) {
+          args_ = null;
         } else {
-          info_ = null;
-          infoBuilder_ = null;
+          args_ = null;
+          argsBuilder_ = null;
         }
         return this;
       }
@@ -3361,10 +3361,10 @@ public final class PBResponseStreamJobManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs result = new com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs(this);
-        if (infoBuilder_ == null) {
-          result.info_ = info_;
+        if (argsBuilder_ == null) {
+          result.args_ = args_;
         } else {
-          result.info_ = infoBuilder_.build();
+          result.args_ = argsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3414,8 +3414,8 @@ public final class PBResponseStreamJobManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs other) {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobArgs.getDefaultInstance()) return this;
-        if (other.hasInfo()) {
-          mergeInfo(other.getInfo());
+        if (other.hasArgs()) {
+          mergeArgs(other.getArgs());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3446,123 +3446,123 @@ public final class PBResponseStreamJobManage {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs info_;
+      private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs args_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder> infoBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder> argsBuilder_;
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
-       * @return Whether the info field is set.
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * @return Whether the args field is set.
        */
-      public boolean hasInfo() {
-        return infoBuilder_ != null || info_ != null;
+      public boolean hasArgs() {
+        return argsBuilder_ != null || args_ != null;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
-       * @return The info.
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
+       * @return The args.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getInfo() {
-        if (infoBuilder_ == null) {
-          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.getDefaultInstance() : info_;
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs getArgs() {
+        if (argsBuilder_ == null) {
+          return args_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.getDefaultInstance() : args_;
         } else {
-          return infoBuilder_.getMessage();
+          return argsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
-        if (infoBuilder_ == null) {
+      public Builder setArgs(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
+        if (argsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          info_ = value;
+          args_ = value;
           onChanged();
         } else {
-          infoBuilder_.setMessage(value);
+          argsBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setInfo(
+      public Builder setArgs(
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          info_ = builderForValue.build();
+        if (argsBuilder_ == null) {
+          args_ = builderForValue.build();
           onChanged();
         } else {
-          infoBuilder_.setMessage(builderForValue.build());
+          argsBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
-        if (infoBuilder_ == null) {
-          if (info_ != null) {
-            info_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.newBuilder(info_).mergeFrom(value).buildPartial();
+      public Builder mergeArgs(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs value) {
+        if (argsBuilder_ == null) {
+          if (args_ != null) {
+            args_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.newBuilder(args_).mergeFrom(value).buildPartial();
           } else {
-            info_ = value;
+            args_ = value;
           }
           onChanged();
         } else {
-          infoBuilder_.mergeFrom(value);
+          argsBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          info_ = null;
+      public Builder clearArgs() {
+        if (argsBuilder_ == null) {
+          args_ = null;
           onChanged();
         } else {
-          info_ = null;
-          infoBuilder_ = null;
+          args_ = null;
+          argsBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder getInfoBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder getArgsBuilder() {
         
         onChanged();
-        return getInfoFieldBuilder().getBuilder();
+        return getArgsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getInfoOrBuilder() {
-        if (infoBuilder_ != null) {
-          return infoBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder getArgsOrBuilder() {
+        if (argsBuilder_ != null) {
+          return argsBuilder_.getMessageOrBuilder();
         } else {
-          return info_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.getDefaultInstance() : info_;
+          return args_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.getDefaultInstance() : args_;
         }
       }
       /**
-       * <code>.model.StreamJobArgs info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobArgs args = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder> 
-          getInfoFieldBuilder() {
-        if (infoBuilder_ == null) {
-          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getArgsFieldBuilder() {
+        if (argsBuilder_ == null) {
+          argsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgs.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobArgsOrBuilder>(
-                  getInfo(),
+                  getArgs(),
                   getParentForChildren(),
                   isClean());
-          info_ = null;
+          args_ = null;
         }
-        return infoBuilder_;
+        return argsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3622,19 +3622,19 @@ public final class PBResponseStreamJobManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
-     * @return Whether the info field is set.
+     * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the schedule field is set.
      */
-    boolean hasInfo();
+    boolean hasSchedule();
     /**
-     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
-     * @return The info.
+     * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
+     * @return The schedule.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getInfo();
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getSchedule();
     /**
-     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getInfoOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getScheduleOrBuilder();
   }
   /**
    * <pre>
@@ -3687,13 +3687,13 @@ public final class PBResponseStreamJobManage {
               break;
             case 10: {
               com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder subBuilder = null;
-              if (info_ != null) {
-                subBuilder = info_.toBuilder();
+              if (schedule_ != null) {
+                subBuilder = schedule_.toBuilder();
               }
-              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.parser(), extensionRegistry);
+              schedule_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(info_);
-                info_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(schedule_);
+                schedule_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3730,30 +3730,30 @@ public final class PBResponseStreamJobManage {
               com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule.class, com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule info_;
+    public static final int SCHEDULE_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule schedule_;
     /**
-     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
-     * @return Whether the info field is set.
+     * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the schedule field is set.
      */
     @java.lang.Override
-    public boolean hasInfo() {
-      return info_ != null;
+    public boolean hasSchedule() {
+      return schedule_ != null;
     }
     /**
-     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
-     * @return The info.
+     * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
+     * @return The schedule.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getInfo() {
-      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.getDefaultInstance() : info_;
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getSchedule() {
+      return schedule_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.getDefaultInstance() : schedule_;
     }
     /**
-     * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getInfoOrBuilder() {
-      return getInfo();
+    public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getScheduleOrBuilder() {
+      return getSchedule();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3770,8 +3770,8 @@ public final class PBResponseStreamJobManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (info_ != null) {
-        output.writeMessage(1, getInfo());
+      if (schedule_ != null) {
+        output.writeMessage(1, getSchedule());
       }
       unknownFields.writeTo(output);
     }
@@ -3782,9 +3782,9 @@ public final class PBResponseStreamJobManage {
       if (size != -1) return size;
 
       size = 0;
-      if (info_ != null) {
+      if (schedule_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getInfo());
+          .computeMessageSize(1, getSchedule());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3801,10 +3801,10 @@ public final class PBResponseStreamJobManage {
       }
       com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule other = (com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule) obj;
 
-      if (hasInfo() != other.hasInfo()) return false;
-      if (hasInfo()) {
-        if (!getInfo()
-            .equals(other.getInfo())) return false;
+      if (hasSchedule() != other.hasSchedule()) return false;
+      if (hasSchedule()) {
+        if (!getSchedule()
+            .equals(other.getSchedule())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3817,9 +3817,9 @@ public final class PBResponseStreamJobManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasInfo()) {
-        hash = (37 * hash) + INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getInfo().hashCode();
+      if (hasSchedule()) {
+        hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
+        hash = (53 * hash) + getSchedule().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3958,11 +3958,11 @@ public final class PBResponseStreamJobManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (infoBuilder_ == null) {
-          info_ = null;
+        if (scheduleBuilder_ == null) {
+          schedule_ = null;
         } else {
-          info_ = null;
-          infoBuilder_ = null;
+          schedule_ = null;
+          scheduleBuilder_ = null;
         }
         return this;
       }
@@ -3990,10 +3990,10 @@ public final class PBResponseStreamJobManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule result = new com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule(this);
-        if (infoBuilder_ == null) {
-          result.info_ = info_;
+        if (scheduleBuilder_ == null) {
+          result.schedule_ = schedule_;
         } else {
-          result.info_ = infoBuilder_.build();
+          result.schedule_ = scheduleBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4043,8 +4043,8 @@ public final class PBResponseStreamJobManage {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule other) {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseStreamJobManage.GetStreamJobSchedule.getDefaultInstance()) return this;
-        if (other.hasInfo()) {
-          mergeInfo(other.getInfo());
+        if (other.hasSchedule()) {
+          mergeSchedule(other.getSchedule());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4075,123 +4075,123 @@ public final class PBResponseStreamJobManage {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule info_;
+      private com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule schedule_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder> infoBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder> scheduleBuilder_;
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
-       * @return Whether the info field is set.
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
+       * @return Whether the schedule field is set.
        */
-      public boolean hasInfo() {
-        return infoBuilder_ != null || info_ != null;
+      public boolean hasSchedule() {
+        return scheduleBuilder_ != null || schedule_ != null;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
-       * @return The info.
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
+       * @return The schedule.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getInfo() {
-        if (infoBuilder_ == null) {
-          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.getDefaultInstance() : info_;
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule getSchedule() {
+        if (scheduleBuilder_ == null) {
+          return schedule_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.getDefaultInstance() : schedule_;
         } else {
-          return infoBuilder_.getMessage();
+          return scheduleBuilder_.getMessage();
         }
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule value) {
-        if (infoBuilder_ == null) {
+      public Builder setSchedule(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule value) {
+        if (scheduleBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          info_ = value;
+          schedule_ = value;
           onChanged();
         } else {
-          infoBuilder_.setMessage(value);
+          scheduleBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setInfo(
+      public Builder setSchedule(
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          info_ = builderForValue.build();
+        if (scheduleBuilder_ == null) {
+          schedule_ = builderForValue.build();
           onChanged();
         } else {
-          infoBuilder_.setMessage(builderForValue.build());
+          scheduleBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule value) {
-        if (infoBuilder_ == null) {
-          if (info_ != null) {
-            info_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.newBuilder(info_).mergeFrom(value).buildPartial();
+      public Builder mergeSchedule(com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule value) {
+        if (scheduleBuilder_ == null) {
+          if (schedule_ != null) {
+            schedule_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.newBuilder(schedule_).mergeFrom(value).buildPartial();
           } else {
-            info_ = value;
+            schedule_ = value;
           }
           onChanged();
         } else {
-          infoBuilder_.mergeFrom(value);
+          scheduleBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          info_ = null;
+      public Builder clearSchedule() {
+        if (scheduleBuilder_ == null) {
+          schedule_ = null;
           onChanged();
         } else {
-          info_ = null;
-          infoBuilder_ = null;
+          schedule_ = null;
+          scheduleBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder getInfoBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder getScheduleBuilder() {
         
         onChanged();
-        return getInfoFieldBuilder().getBuilder();
+        return getScheduleFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getInfoOrBuilder() {
-        if (infoBuilder_ != null) {
-          return infoBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder getScheduleOrBuilder() {
+        if (scheduleBuilder_ != null) {
+          return scheduleBuilder_.getMessageOrBuilder();
         } else {
-          return info_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.getDefaultInstance() : info_;
+          return schedule_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.getDefaultInstance() : schedule_;
         }
       }
       /**
-       * <code>.model.StreamJobSchedule info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.StreamJobSchedule schedule = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder> 
-          getInfoFieldBuilder() {
-        if (infoBuilder_ == null) {
-          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getScheduleFieldBuilder() {
+        if (scheduleBuilder_ == null) {
+          scheduleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.Builder, com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobScheduleOrBuilder>(
-                  getInfo(),
+                  getSchedule(),
                   getParentForChildren(),
                   isClean());
-          info_ = null;
+          schedule_ = null;
         }
-        return infoBuilder_;
+        return scheduleBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7749,20 +7749,20 @@ public final class PBResponseStreamJobManage {
       "b\022\036\n\004info\030\001 \001(\0132\020.model.StreamJob\"C\n\020Get" +
       "StreamJobCode\022/\n\004code\030\001 \001(\0132\024.model.Stre" +
       "amJobCodeB\013\342\337\037\007\022\005\342\001\002\030\001\"C\n\020GetStreamJobAr" +
-      "gs\022/\n\004info\030\001 \001(\0132\024.model.StreamJobArgsB\013" +
-      "\342\337\037\007\022\005\342\001\002\030\001\"K\n\024GetStreamJobSchedule\0223\n\004i" +
-      "nfo\030\001 \001(\0132\030.model.StreamJobScheduleB\013\342\337\037" +
-      "\007\022\005\342\001\002\030\001\"`\n\025ListReleaseStreamJobs\022&\n\005inf" +
-      "os\030\001 \003(\0132\027.model.StreamJobRelease\022\020\n\010has" +
-      "_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"J\n\025ListStream" +
-      "JobVersions\022\037\n\005infos\030\001 \003(\0132\020.model.Strea" +
-      "mJob\022\020\n\010has_more\030\002 \001(\010\"&\n\025ListBuiltInCon" +
-      "nectors\022\r\n\005items\030\001 \003(\t\"-\n\033DescribeFlinkU" +
-      "IByInstanceId\022\016\n\006web_ui\030\001 \001(\tBz\n%com.dat" +
-      "aomnis.gproto.types.pbresponseB\031PBRespon" +
-      "seStreamJobManageP\000Z4github.com/DataWork" +
-      "bench/gproto/xgo/types/pbresponseb\006proto" +
-      "3"
+      "gs\022/\n\004args\030\001 \001(\0132\024.model.StreamJobArgsB\013" +
+      "\342\337\037\007\022\005\342\001\002\030\001\"O\n\024GetStreamJobSchedule\0227\n\010s" +
+      "chedule\030\001 \001(\0132\030.model.StreamJobScheduleB" +
+      "\013\342\337\037\007\022\005\342\001\002\030\001\"`\n\025ListReleaseStreamJobs\022&\n" +
+      "\005infos\030\001 \003(\0132\027.model.StreamJobRelease\022\020\n" +
+      "\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"J\n\025ListSt" +
+      "reamJobVersions\022\037\n\005infos\030\001 \003(\0132\020.model.S" +
+      "treamJob\022\020\n\010has_more\030\002 \001(\010\"&\n\025ListBuiltI" +
+      "nConnectors\022\r\n\005items\030\001 \003(\t\"-\n\033DescribeFl" +
+      "inkUIByInstanceId\022\016\n\006web_ui\030\001 \001(\tBz\n%com" +
+      ".dataomnis.gproto.types.pbresponseB\031PBRe" +
+      "sponseStreamJobManageP\000Z4github.com/Data" +
+      "Workbench/gproto/xgo/types/pbresponseb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7799,13 +7799,13 @@ public final class PBResponseStreamJobManage {
     internal_static_response_GetStreamJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_GetStreamJobArgs_descriptor,
-        new java.lang.String[] { "Info", });
+        new java.lang.String[] { "Args", });
     internal_static_response_GetStreamJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_response_GetStreamJobSchedule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_GetStreamJobSchedule_descriptor,
-        new java.lang.String[] { "Info", });
+        new java.lang.String[] { "Schedule", });
     internal_static_response_ListReleaseStreamJobs_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_response_ListReleaseStreamJobs_fieldAccessorTable = new

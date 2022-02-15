@@ -57,8 +57,8 @@ func (this *GetStreamJobArgs) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Info != nil {
-		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+	if this.Args != nil {
+		if dt, ok := interface{}(this.Args).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -70,8 +70,8 @@ func (this *GetStreamJobSchedule) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Info != nil {
-		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+	if this.Schedule != nil {
+		if dt, ok := interface{}(this.Schedule).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

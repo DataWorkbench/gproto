@@ -433,11 +433,11 @@ func (this *SetStreamJobSchedule) _xxx_xxx_Validator_Validate_job_id() error {
 	return nil
 }
 
-func (this *SetStreamJobSchedule) _xxx_xxx_Validator_Validate_info() error {
-	if !(this.Info != nil) {
-		return protovalidator.FieldError2("SetStreamJobSchedule", "the value of field 'info' cannot be null")
+func (this *SetStreamJobSchedule) _xxx_xxx_Validator_Validate_schedule() error {
+	if !(this.Schedule != nil) {
+		return protovalidator.FieldError2("SetStreamJobSchedule", "the value of field 'schedule' cannot be null")
 	}
-	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+	if dt, ok := interface{}(this.Schedule).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -456,7 +456,7 @@ func (this *SetStreamJobSchedule) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_schedule(); err != nil {
 		return err
 	}
 	return nil
@@ -482,11 +482,11 @@ func (this *SetStreamJobArgs) _xxx_xxx_Validator_Validate_job_id() error {
 	return nil
 }
 
-func (this *SetStreamJobArgs) _xxx_xxx_Validator_Validate_info() error {
-	if !(this.Info != nil) {
-		return protovalidator.FieldError2("SetStreamJobArgs", "the value of field 'info' cannot be null")
+func (this *SetStreamJobArgs) _xxx_xxx_Validator_Validate_args() error {
+	if !(this.Args != nil) {
+		return protovalidator.FieldError2("SetStreamJobArgs", "the value of field 'args' cannot be null")
 	}
-	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+	if dt, ok := interface{}(this.Args).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -505,7 +505,7 @@ func (this *SetStreamJobArgs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_args(); err != nil {
 		return err
 	}
 	return nil
