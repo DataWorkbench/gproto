@@ -23,7 +23,7 @@ public final class PBModelQuota {
      * Limit is the maximum number of workspace for every user. default 10.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     long getLimit();
@@ -73,7 +73,7 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               limit_ = input.readInt64();
               break;
@@ -110,14 +110,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
      * Limit is the maximum number of workspace for every user. default 10.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -140,7 +140,7 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+        output.writeInt64(1, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -153,7 +153,7 @@ public final class PBModelQuota {
       size = 0;
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(1, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -434,7 +434,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of workspace for every user. default 10.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -446,7 +446,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of workspace for every user. default 10.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -461,7 +461,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of workspace for every user. default 10.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -532,7 +532,7 @@ public final class PBModelQuota {
      * Limit is the maximum number of stream job for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     long getLimit();
@@ -582,7 +582,7 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               limit_ = input.readInt64();
               break;
@@ -619,14 +619,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
      * Limit is the maximum number of stream job for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -649,7 +649,7 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+        output.writeInt64(1, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -662,7 +662,7 @@ public final class PBModelQuota {
       size = 0;
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(1, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -943,7 +943,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of stream job for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -955,7 +955,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of stream job for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -970,7 +970,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of stream job for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -1041,7 +1041,7 @@ public final class PBModelQuota {
      * Limit is the maximum number of datasource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     long getLimit();
@@ -1091,7 +1091,7 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               limit_ = input.readInt64();
               break;
@@ -1128,14 +1128,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
      * Limit is the maximum number of datasource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -1158,7 +1158,7 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+        output.writeInt64(1, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -1171,7 +1171,7 @@ public final class PBModelQuota {
       size = 0;
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(1, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1452,7 +1452,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -1464,7 +1464,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -1479,7 +1479,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -1550,7 +1550,7 @@ public final class PBModelQuota {
      * Limit is the maximum number of datasource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     long getLimit();
@@ -1600,7 +1600,7 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               limit_ = input.readInt64();
               break;
@@ -1637,14 +1637,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
      * Limit is the maximum number of datasource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -1667,7 +1667,7 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+        output.writeInt64(1, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -1680,7 +1680,7 @@ public final class PBModelQuota {
       size = 0;
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(1, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1961,7 +1961,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -1973,7 +1973,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -1988,7 +1988,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -2059,7 +2059,7 @@ public final class PBModelQuota {
      * Limit is the maximum number of resource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     long getLimit();
@@ -2069,7 +2069,7 @@ public final class PBModelQuota {
      * Size is the maximum size of every file. default is 100MB.
      * </pre>
      *
-     * <code>int64 size = 4;</code>
+     * <code>int64 size = 2;</code>
      * @return The size.
      */
     long getSize();
@@ -2079,7 +2079,7 @@ public final class PBModelQuota {
      * SizeTotal is the maximum size of every user. default 5GB.
      * </pre>
      *
-     * <code>int64 size_total = 5;</code>
+     * <code>int64 size_total = 3;</code>
      * @return The sizeTotal.
      */
     long getSizeTotal();
@@ -2129,17 +2129,17 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               limit_ = input.readInt64();
               break;
             }
-            case 32: {
+            case 16: {
 
               size_ = input.readInt64();
               break;
             }
-            case 40: {
+            case 24: {
 
               sizeTotal_ = input.readInt64();
               break;
@@ -2176,14 +2176,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
      * Limit is the maximum number of resource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -2191,14 +2191,14 @@ public final class PBModelQuota {
       return limit_;
     }
 
-    public static final int SIZE_FIELD_NUMBER = 4;
+    public static final int SIZE_FIELD_NUMBER = 2;
     private long size_;
     /**
      * <pre>
      * Size is the maximum size of every file. default is 100MB.
      * </pre>
      *
-     * <code>int64 size = 4;</code>
+     * <code>int64 size = 2;</code>
      * @return The size.
      */
     @java.lang.Override
@@ -2206,14 +2206,14 @@ public final class PBModelQuota {
       return size_;
     }
 
-    public static final int SIZE_TOTAL_FIELD_NUMBER = 5;
+    public static final int SIZE_TOTAL_FIELD_NUMBER = 3;
     private long sizeTotal_;
     /**
      * <pre>
      * SizeTotal is the maximum size of every user. default 5GB.
      * </pre>
      *
-     * <code>int64 size_total = 5;</code>
+     * <code>int64 size_total = 3;</code>
      * @return The sizeTotal.
      */
     @java.lang.Override
@@ -2236,13 +2236,13 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+        output.writeInt64(1, limit_);
       }
       if (size_ != 0L) {
-        output.writeInt64(4, size_);
+        output.writeInt64(2, size_);
       }
       if (sizeTotal_ != 0L) {
-        output.writeInt64(5, sizeTotal_);
+        output.writeInt64(3, sizeTotal_);
       }
       unknownFields.writeTo(output);
     }
@@ -2255,15 +2255,15 @@ public final class PBModelQuota {
       size = 0;
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(1, limit_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, size_);
+          .computeInt64Size(2, size_);
       }
       if (sizeTotal_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, sizeTotal_);
+          .computeInt64Size(3, sizeTotal_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2566,7 +2566,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of resource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -2578,7 +2578,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of resource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -2593,7 +2593,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of resource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -2609,7 +2609,7 @@ public final class PBModelQuota {
        * Size is the maximum size of every file. default is 100MB.
        * </pre>
        *
-       * <code>int64 size = 4;</code>
+       * <code>int64 size = 2;</code>
        * @return The size.
        */
       @java.lang.Override
@@ -2621,7 +2621,7 @@ public final class PBModelQuota {
        * Size is the maximum size of every file. default is 100MB.
        * </pre>
        *
-       * <code>int64 size = 4;</code>
+       * <code>int64 size = 2;</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -2636,7 +2636,7 @@ public final class PBModelQuota {
        * Size is the maximum size of every file. default is 100MB.
        * </pre>
        *
-       * <code>int64 size = 4;</code>
+       * <code>int64 size = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -2652,7 +2652,7 @@ public final class PBModelQuota {
        * SizeTotal is the maximum size of every user. default 5GB.
        * </pre>
        *
-       * <code>int64 size_total = 5;</code>
+       * <code>int64 size_total = 3;</code>
        * @return The sizeTotal.
        */
       @java.lang.Override
@@ -2664,7 +2664,7 @@ public final class PBModelQuota {
        * SizeTotal is the maximum size of every user. default 5GB.
        * </pre>
        *
-       * <code>int64 size_total = 5;</code>
+       * <code>int64 size_total = 3;</code>
        * @param value The sizeTotal to set.
        * @return This builder for chaining.
        */
@@ -2679,7 +2679,7 @@ public final class PBModelQuota {
        * SizeTotal is the maximum size of every user. default 5GB.
        * </pre>
        *
-       * <code>int64 size_total = 5;</code>
+       * <code>int64 size_total = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearSizeTotal() {
@@ -2750,7 +2750,7 @@ public final class PBModelQuota {
      * Limit is the maximum number of clusters for every user. default 5.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     long getLimit();
@@ -2760,20 +2760,20 @@ public final class PBModelQuota {
      * Cu is the maximum number of cu for every cluster. default 8.
      * </pre>
      *
-     * <code>int64 cu = 4;</code>
+     * <code>float cu = 2;</code>
      * @return The cu.
      */
-    long getCu();
+    float getCu();
 
     /**
      * <pre>
      * CuTotal is the maximum number of cu for every user. default 12.
      * </pre>
      *
-     * <code>int64 cu_total = 5;</code>
+     * <code>float cu_total = 3;</code>
      * @return The cuTotal.
      */
-    long getCuTotal();
+    float getCuTotal();
   }
   /**
    * Protobuf type {@code model.QuotaFlinkCluster}
@@ -2820,19 +2820,19 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               limit_ = input.readInt64();
               break;
             }
-            case 32: {
+            case 21: {
 
-              cu_ = input.readInt64();
+              cu_ = input.readFloat();
               break;
             }
-            case 40: {
+            case 29: {
 
-              cuTotal_ = input.readInt64();
+              cuTotal_ = input.readFloat();
               break;
             }
             default: {
@@ -2867,14 +2867,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
      * Limit is the maximum number of clusters for every user. default 5.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -2882,33 +2882,33 @@ public final class PBModelQuota {
       return limit_;
     }
 
-    public static final int CU_FIELD_NUMBER = 4;
-    private long cu_;
+    public static final int CU_FIELD_NUMBER = 2;
+    private float cu_;
     /**
      * <pre>
      * Cu is the maximum number of cu for every cluster. default 8.
      * </pre>
      *
-     * <code>int64 cu = 4;</code>
+     * <code>float cu = 2;</code>
      * @return The cu.
      */
     @java.lang.Override
-    public long getCu() {
+    public float getCu() {
       return cu_;
     }
 
-    public static final int CU_TOTAL_FIELD_NUMBER = 5;
-    private long cuTotal_;
+    public static final int CU_TOTAL_FIELD_NUMBER = 3;
+    private float cuTotal_;
     /**
      * <pre>
      * CuTotal is the maximum number of cu for every user. default 12.
      * </pre>
      *
-     * <code>int64 cu_total = 5;</code>
+     * <code>float cu_total = 3;</code>
      * @return The cuTotal.
      */
     @java.lang.Override
-    public long getCuTotal() {
+    public float getCuTotal() {
       return cuTotal_;
     }
 
@@ -2927,13 +2927,13 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+        output.writeInt64(1, limit_);
       }
-      if (cu_ != 0L) {
-        output.writeInt64(4, cu_);
+      if (java.lang.Float.floatToRawIntBits(cu_) != 0) {
+        output.writeFloat(2, cu_);
       }
-      if (cuTotal_ != 0L) {
-        output.writeInt64(5, cuTotal_);
+      if (java.lang.Float.floatToRawIntBits(cuTotal_) != 0) {
+        output.writeFloat(3, cuTotal_);
       }
       unknownFields.writeTo(output);
     }
@@ -2946,15 +2946,15 @@ public final class PBModelQuota {
       size = 0;
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(1, limit_);
       }
-      if (cu_ != 0L) {
+      if (java.lang.Float.floatToRawIntBits(cu_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, cu_);
+          .computeFloatSize(2, cu_);
       }
-      if (cuTotal_ != 0L) {
+      if (java.lang.Float.floatToRawIntBits(cuTotal_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, cuTotal_);
+          .computeFloatSize(3, cuTotal_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2973,10 +2973,12 @@ public final class PBModelQuota {
 
       if (getLimit()
           != other.getLimit()) return false;
-      if (getCu()
-          != other.getCu()) return false;
-      if (getCuTotal()
-          != other.getCuTotal()) return false;
+      if (java.lang.Float.floatToIntBits(getCu())
+          != java.lang.Float.floatToIntBits(
+              other.getCu())) return false;
+      if (java.lang.Float.floatToIntBits(getCuTotal())
+          != java.lang.Float.floatToIntBits(
+              other.getCuTotal())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2992,10 +2994,10 @@ public final class PBModelQuota {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLimit());
       hash = (37 * hash) + CU_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCu());
       hash = (37 * hash) + CU_TOTAL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCuTotal());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3132,9 +3134,9 @@ public final class PBModelQuota {
         super.clear();
         limit_ = 0L;
 
-        cu_ = 0L;
+        cu_ = 0F;
 
-        cuTotal_ = 0L;
+        cuTotal_ = 0F;
 
         return this;
       }
@@ -3216,10 +3218,10 @@ public final class PBModelQuota {
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
-        if (other.getCu() != 0L) {
+        if (other.getCu() != 0F) {
           setCu(other.getCu());
         }
-        if (other.getCuTotal() != 0L) {
+        if (other.getCuTotal() != 0F) {
           setCuTotal(other.getCuTotal());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3257,7 +3259,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of clusters for every user. default 5.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -3269,7 +3271,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of clusters for every user. default 5.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -3284,7 +3286,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of clusters for every user. default 5.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -3294,17 +3296,17 @@ public final class PBModelQuota {
         return this;
       }
 
-      private long cu_ ;
+      private float cu_ ;
       /**
        * <pre>
        * Cu is the maximum number of cu for every cluster. default 8.
        * </pre>
        *
-       * <code>int64 cu = 4;</code>
+       * <code>float cu = 2;</code>
        * @return The cu.
        */
       @java.lang.Override
-      public long getCu() {
+      public float getCu() {
         return cu_;
       }
       /**
@@ -3312,11 +3314,11 @@ public final class PBModelQuota {
        * Cu is the maximum number of cu for every cluster. default 8.
        * </pre>
        *
-       * <code>int64 cu = 4;</code>
+       * <code>float cu = 2;</code>
        * @param value The cu to set.
        * @return This builder for chaining.
        */
-      public Builder setCu(long value) {
+      public Builder setCu(float value) {
         
         cu_ = value;
         onChanged();
@@ -3327,27 +3329,27 @@ public final class PBModelQuota {
        * Cu is the maximum number of cu for every cluster. default 8.
        * </pre>
        *
-       * <code>int64 cu = 4;</code>
+       * <code>float cu = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCu() {
         
-        cu_ = 0L;
+        cu_ = 0F;
         onChanged();
         return this;
       }
 
-      private long cuTotal_ ;
+      private float cuTotal_ ;
       /**
        * <pre>
        * CuTotal is the maximum number of cu for every user. default 12.
        * </pre>
        *
-       * <code>int64 cu_total = 5;</code>
+       * <code>float cu_total = 3;</code>
        * @return The cuTotal.
        */
       @java.lang.Override
-      public long getCuTotal() {
+      public float getCuTotal() {
         return cuTotal_;
       }
       /**
@@ -3355,11 +3357,11 @@ public final class PBModelQuota {
        * CuTotal is the maximum number of cu for every user. default 12.
        * </pre>
        *
-       * <code>int64 cu_total = 5;</code>
+       * <code>float cu_total = 3;</code>
        * @param value The cuTotal to set.
        * @return This builder for chaining.
        */
-      public Builder setCuTotal(long value) {
+      public Builder setCuTotal(float value) {
         
         cuTotal_ = value;
         onChanged();
@@ -3370,12 +3372,12 @@ public final class PBModelQuota {
        * CuTotal is the maximum number of cu for every user. default 12.
        * </pre>
        *
-       * <code>int64 cu_total = 5;</code>
+       * <code>float cu_total = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCuTotal() {
         
-        cuTotal_ = 0L;
+        cuTotal_ = 0F;
         onChanged();
         return this;
       }
@@ -3441,7 +3443,7 @@ public final class PBModelQuota {
      * Limit is the maximum number of datasource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     long getLimit();
@@ -3491,7 +3493,7 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               limit_ = input.readInt64();
               break;
@@ -3528,14 +3530,14 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder.class);
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private long limit_;
     /**
      * <pre>
      * Limit is the maximum number of datasource for every user. default 500.
      * </pre>
      *
-     * <code>int64 limit = 3;</code>
+     * <code>int64 limit = 1;</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -3558,7 +3560,7 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (limit_ != 0L) {
-        output.writeInt64(3, limit_);
+        output.writeInt64(1, limit_);
       }
       unknownFields.writeTo(output);
     }
@@ -3571,7 +3573,7 @@ public final class PBModelQuota {
       size = 0;
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, limit_);
+          .computeInt64Size(1, limit_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3852,7 +3854,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -3864,7 +3866,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -3879,7 +3881,7 @@ public final class PBModelQuota {
        * Limit is the maximum number of datasource for every user. default 500.
        * </pre>
        *
-       * <code>int64 limit = 3;</code>
+       * <code>int64 limit = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -3951,7 +3953,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 3;</code>
+     * <code>string user_id = 1;</code>
      * @return The userId.
      */
     java.lang.String getUserId();
@@ -3961,7 +3963,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 3;</code>
+     * <code>string user_id = 1;</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
@@ -3972,7 +3974,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 4;</code>
+     * <code>.model.QuotaWorkspace workspace = 2;</code>
      * @return Whether the workspace field is set.
      */
     boolean hasWorkspace();
@@ -3981,7 +3983,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 4;</code>
+     * <code>.model.QuotaWorkspace workspace = 2;</code>
      * @return The workspace.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getWorkspace();
@@ -3990,7 +3992,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 4;</code>
+     * <code>.model.QuotaWorkspace workspace = 2;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder getWorkspaceOrBuilder();
 
@@ -3999,7 +4001,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
      * </pre>
      *
-     * <code>.model.QuotaStreamJob stream_job = 5;</code>
+     * <code>.model.QuotaStreamJob stream_job = 3;</code>
      * @return Whether the streamJob field is set.
      */
     boolean hasStreamJob();
@@ -4008,7 +4010,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
      * </pre>
      *
-     * <code>.model.QuotaStreamJob stream_job = 5;</code>
+     * <code>.model.QuotaStreamJob stream_job = 3;</code>
      * @return The streamJob.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getStreamJob();
@@ -4017,7 +4019,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
      * </pre>
      *
-     * <code>.model.QuotaStreamJob stream_job = 5;</code>
+     * <code>.model.QuotaStreamJob stream_job = 3;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder getStreamJobOrBuilder();
 
@@ -4026,7 +4028,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
      * </pre>
      *
-     * <code>.model.QuotaDataSource data_source = 6;</code>
+     * <code>.model.QuotaDataSource data_source = 4;</code>
      * @return Whether the dataSource field is set.
      */
     boolean hasDataSource();
@@ -4035,7 +4037,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
      * </pre>
      *
-     * <code>.model.QuotaDataSource data_source = 6;</code>
+     * <code>.model.QuotaDataSource data_source = 4;</code>
      * @return The dataSource.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDataSource();
@@ -4044,7 +4046,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
      * </pre>
      *
-     * <code>.model.QuotaDataSource data_source = 6;</code>
+     * <code>.model.QuotaDataSource data_source = 4;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder getDataSourceOrBuilder();
 
@@ -4053,7 +4055,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"udf" gorm:"column:udf;"
      * </pre>
      *
-     * <code>.model.QuotaUDF udf = 7;</code>
+     * <code>.model.QuotaUDF udf = 5;</code>
      * @return Whether the udf field is set.
      */
     boolean hasUdf();
@@ -4062,7 +4064,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"udf" gorm:"column:udf;"
      * </pre>
      *
-     * <code>.model.QuotaUDF udf = 7;</code>
+     * <code>.model.QuotaUDF udf = 5;</code>
      * @return The udf.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getUdf();
@@ -4071,7 +4073,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"udf" gorm:"column:udf;"
      * </pre>
      *
-     * <code>.model.QuotaUDF udf = 7;</code>
+     * <code>.model.QuotaUDF udf = 5;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder getUdfOrBuilder();
 
@@ -4080,7 +4082,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"resource" gorm:"column:resource;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 8;</code>
+     * <code>.model.QuotaResource resource = 6;</code>
      * @return Whether the resource field is set.
      */
     boolean hasResource();
@@ -4089,7 +4091,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"resource" gorm:"column:resource;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 8;</code>
+     * <code>.model.QuotaResource resource = 6;</code>
      * @return The resource.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getResource();
@@ -4098,7 +4100,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"resource" gorm:"column:resource;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 8;</code>
+     * <code>.model.QuotaResource resource = 6;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder getResourceOrBuilder();
 
@@ -4107,7 +4109,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
      * </pre>
      *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
      * @return Whether the flinkCluster field is set.
      */
     boolean hasFlinkCluster();
@@ -4116,7 +4118,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
      * </pre>
      *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
      * @return The flinkCluster.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getFlinkCluster();
@@ -4125,7 +4127,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
      * </pre>
      *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder getFlinkClusterOrBuilder();
 
@@ -4134,7 +4136,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"network" gorm:"column:network;"
      * </pre>
      *
-     * <code>.model.QuotaNetwork network = 10;</code>
+     * <code>.model.QuotaNetwork network = 8;</code>
      * @return Whether the network field is set.
      */
     boolean hasNetwork();
@@ -4143,7 +4145,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"network" gorm:"column:network;"
      * </pre>
      *
-     * <code>.model.QuotaNetwork network = 10;</code>
+     * <code>.model.QuotaNetwork network = 8;</code>
      * @return The network.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getNetwork();
@@ -4152,13 +4154,13 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"network" gorm:"column:network;"
      * </pre>
      *
-     * <code>.model.QuotaNetwork network = 10;</code>
+     * <code>.model.QuotaNetwork network = 8;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder getNetworkOrBuilder();
   }
   /**
    * <pre>
-   * Quota for user.
+   * Quota for user level.
    * </pre>
    *
    * Protobuf type {@code model.UserQuota}
@@ -4206,13 +4208,13 @@ public final class PBModelQuota {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
               break;
             }
-            case 34: {
+            case 18: {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder subBuilder = null;
               if (workspace_ != null) {
                 subBuilder = workspace_.toBuilder();
@@ -4225,7 +4227,7 @@ public final class PBModelQuota {
 
               break;
             }
-            case 42: {
+            case 26: {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder subBuilder = null;
               if (streamJob_ != null) {
                 subBuilder = streamJob_.toBuilder();
@@ -4238,7 +4240,7 @@ public final class PBModelQuota {
 
               break;
             }
-            case 50: {
+            case 34: {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder subBuilder = null;
               if (dataSource_ != null) {
                 subBuilder = dataSource_.toBuilder();
@@ -4251,7 +4253,7 @@ public final class PBModelQuota {
 
               break;
             }
-            case 58: {
+            case 42: {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder subBuilder = null;
               if (udf_ != null) {
                 subBuilder = udf_.toBuilder();
@@ -4264,7 +4266,7 @@ public final class PBModelQuota {
 
               break;
             }
-            case 66: {
+            case 50: {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder subBuilder = null;
               if (resource_ != null) {
                 subBuilder = resource_.toBuilder();
@@ -4277,7 +4279,7 @@ public final class PBModelQuota {
 
               break;
             }
-            case 74: {
+            case 58: {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder subBuilder = null;
               if (flinkCluster_ != null) {
                 subBuilder = flinkCluster_.toBuilder();
@@ -4290,7 +4292,7 @@ public final class PBModelQuota {
 
               break;
             }
-            case 82: {
+            case 66: {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder subBuilder = null;
               if (network_ != null) {
                 subBuilder = network_.toBuilder();
@@ -4335,7 +4337,7 @@ public final class PBModelQuota {
               com.dataomnis.gproto.types.pbmodel.PBModelQuota.UserQuota.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.UserQuota.Builder.class);
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 3;
+    public static final int USER_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object userId_;
     /**
      * <pre>
@@ -4343,7 +4345,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 3;</code>
+     * <code>string user_id = 1;</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -4365,7 +4367,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
      * </pre>
      *
-     * <code>string user_id = 3;</code>
+     * <code>string user_id = 1;</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -4383,14 +4385,14 @@ public final class PBModelQuota {
       }
     }
 
-    public static final int WORKSPACE_FIELD_NUMBER = 4;
+    public static final int WORKSPACE_FIELD_NUMBER = 2;
     private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace workspace_;
     /**
      * <pre>
      * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 4;</code>
+     * <code>.model.QuotaWorkspace workspace = 2;</code>
      * @return Whether the workspace field is set.
      */
     @java.lang.Override
@@ -4402,7 +4404,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 4;</code>
+     * <code>.model.QuotaWorkspace workspace = 2;</code>
      * @return The workspace.
      */
     @java.lang.Override
@@ -4414,21 +4416,21 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
      * </pre>
      *
-     * <code>.model.QuotaWorkspace workspace = 4;</code>
+     * <code>.model.QuotaWorkspace workspace = 2;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder getWorkspaceOrBuilder() {
       return getWorkspace();
     }
 
-    public static final int STREAM_JOB_FIELD_NUMBER = 5;
+    public static final int STREAM_JOB_FIELD_NUMBER = 3;
     private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob streamJob_;
     /**
      * <pre>
      * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
      * </pre>
      *
-     * <code>.model.QuotaStreamJob stream_job = 5;</code>
+     * <code>.model.QuotaStreamJob stream_job = 3;</code>
      * @return Whether the streamJob field is set.
      */
     @java.lang.Override
@@ -4440,7 +4442,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
      * </pre>
      *
-     * <code>.model.QuotaStreamJob stream_job = 5;</code>
+     * <code>.model.QuotaStreamJob stream_job = 3;</code>
      * @return The streamJob.
      */
     @java.lang.Override
@@ -4452,21 +4454,21 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
      * </pre>
      *
-     * <code>.model.QuotaStreamJob stream_job = 5;</code>
+     * <code>.model.QuotaStreamJob stream_job = 3;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder getStreamJobOrBuilder() {
       return getStreamJob();
     }
 
-    public static final int DATA_SOURCE_FIELD_NUMBER = 6;
+    public static final int DATA_SOURCE_FIELD_NUMBER = 4;
     private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource dataSource_;
     /**
      * <pre>
      * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
      * </pre>
      *
-     * <code>.model.QuotaDataSource data_source = 6;</code>
+     * <code>.model.QuotaDataSource data_source = 4;</code>
      * @return Whether the dataSource field is set.
      */
     @java.lang.Override
@@ -4478,7 +4480,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
      * </pre>
      *
-     * <code>.model.QuotaDataSource data_source = 6;</code>
+     * <code>.model.QuotaDataSource data_source = 4;</code>
      * @return The dataSource.
      */
     @java.lang.Override
@@ -4490,21 +4492,21 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
      * </pre>
      *
-     * <code>.model.QuotaDataSource data_source = 6;</code>
+     * <code>.model.QuotaDataSource data_source = 4;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder getDataSourceOrBuilder() {
       return getDataSource();
     }
 
-    public static final int UDF_FIELD_NUMBER = 7;
+    public static final int UDF_FIELD_NUMBER = 5;
     private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF udf_;
     /**
      * <pre>
      * &#64;inject_tag: json:"udf" gorm:"column:udf;"
      * </pre>
      *
-     * <code>.model.QuotaUDF udf = 7;</code>
+     * <code>.model.QuotaUDF udf = 5;</code>
      * @return Whether the udf field is set.
      */
     @java.lang.Override
@@ -4516,7 +4518,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"udf" gorm:"column:udf;"
      * </pre>
      *
-     * <code>.model.QuotaUDF udf = 7;</code>
+     * <code>.model.QuotaUDF udf = 5;</code>
      * @return The udf.
      */
     @java.lang.Override
@@ -4528,21 +4530,21 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"udf" gorm:"column:udf;"
      * </pre>
      *
-     * <code>.model.QuotaUDF udf = 7;</code>
+     * <code>.model.QuotaUDF udf = 5;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder getUdfOrBuilder() {
       return getUdf();
     }
 
-    public static final int RESOURCE_FIELD_NUMBER = 8;
+    public static final int RESOURCE_FIELD_NUMBER = 6;
     private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource resource_;
     /**
      * <pre>
      * &#64;inject_tag: json:"resource" gorm:"column:resource;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 8;</code>
+     * <code>.model.QuotaResource resource = 6;</code>
      * @return Whether the resource field is set.
      */
     @java.lang.Override
@@ -4554,7 +4556,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"resource" gorm:"column:resource;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 8;</code>
+     * <code>.model.QuotaResource resource = 6;</code>
      * @return The resource.
      */
     @java.lang.Override
@@ -4566,21 +4568,21 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"resource" gorm:"column:resource;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 8;</code>
+     * <code>.model.QuotaResource resource = 6;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder getResourceOrBuilder() {
       return getResource();
     }
 
-    public static final int FLINK_CLUSTER_FIELD_NUMBER = 9;
+    public static final int FLINK_CLUSTER_FIELD_NUMBER = 7;
     private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster flinkCluster_;
     /**
      * <pre>
      * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
      * </pre>
      *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
      * @return Whether the flinkCluster field is set.
      */
     @java.lang.Override
@@ -4592,7 +4594,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
      * </pre>
      *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
      * @return The flinkCluster.
      */
     @java.lang.Override
@@ -4604,21 +4606,21 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
      * </pre>
      *
-     * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+     * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder getFlinkClusterOrBuilder() {
       return getFlinkCluster();
     }
 
-    public static final int NETWORK_FIELD_NUMBER = 10;
+    public static final int NETWORK_FIELD_NUMBER = 8;
     private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork network_;
     /**
      * <pre>
      * &#64;inject_tag: json:"network" gorm:"column:network;"
      * </pre>
      *
-     * <code>.model.QuotaNetwork network = 10;</code>
+     * <code>.model.QuotaNetwork network = 8;</code>
      * @return Whether the network field is set.
      */
     @java.lang.Override
@@ -4630,7 +4632,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"network" gorm:"column:network;"
      * </pre>
      *
-     * <code>.model.QuotaNetwork network = 10;</code>
+     * <code>.model.QuotaNetwork network = 8;</code>
      * @return The network.
      */
     @java.lang.Override
@@ -4642,7 +4644,7 @@ public final class PBModelQuota {
      * &#64;inject_tag: json:"network" gorm:"column:network;"
      * </pre>
      *
-     * <code>.model.QuotaNetwork network = 10;</code>
+     * <code>.model.QuotaNetwork network = 8;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder getNetworkOrBuilder() {
@@ -4664,28 +4666,28 @@ public final class PBModelQuota {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
       if (workspace_ != null) {
-        output.writeMessage(4, getWorkspace());
+        output.writeMessage(2, getWorkspace());
       }
       if (streamJob_ != null) {
-        output.writeMessage(5, getStreamJob());
+        output.writeMessage(3, getStreamJob());
       }
       if (dataSource_ != null) {
-        output.writeMessage(6, getDataSource());
+        output.writeMessage(4, getDataSource());
       }
       if (udf_ != null) {
-        output.writeMessage(7, getUdf());
+        output.writeMessage(5, getUdf());
       }
       if (resource_ != null) {
-        output.writeMessage(8, getResource());
+        output.writeMessage(6, getResource());
       }
       if (flinkCluster_ != null) {
-        output.writeMessage(9, getFlinkCluster());
+        output.writeMessage(7, getFlinkCluster());
       }
       if (network_ != null) {
-        output.writeMessage(10, getNetwork());
+        output.writeMessage(8, getNetwork());
       }
       unknownFields.writeTo(output);
     }
@@ -4697,35 +4699,35 @@ public final class PBModelQuota {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
       if (workspace_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getWorkspace());
+          .computeMessageSize(2, getWorkspace());
       }
       if (streamJob_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getStreamJob());
+          .computeMessageSize(3, getStreamJob());
       }
       if (dataSource_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getDataSource());
+          .computeMessageSize(4, getDataSource());
       }
       if (udf_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getUdf());
+          .computeMessageSize(5, getUdf());
       }
       if (resource_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getResource());
+          .computeMessageSize(6, getResource());
       }
       if (flinkCluster_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getFlinkCluster());
+          .computeMessageSize(7, getFlinkCluster());
       }
       if (network_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getNetwork());
+          .computeMessageSize(8, getNetwork());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4917,7 +4919,7 @@ public final class PBModelQuota {
     }
     /**
      * <pre>
-     * Quota for user.
+     * Quota for user level.
      * </pre>
      *
      * Protobuf type {@code model.UserQuota}
@@ -5172,7 +5174,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 3;</code>
+       * <code>string user_id = 1;</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -5193,7 +5195,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 3;</code>
+       * <code>string user_id = 1;</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -5215,7 +5217,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 3;</code>
+       * <code>string user_id = 1;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -5235,7 +5237,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 3;</code>
+       * <code>string user_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -5250,7 +5252,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
        * </pre>
        *
-       * <code>string user_id = 3;</code>
+       * <code>string user_id = 1;</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -5274,7 +5276,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        * @return Whether the workspace field is set.
        */
       public boolean hasWorkspace() {
@@ -5285,7 +5287,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        * @return The workspace.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace getWorkspace() {
@@ -5300,7 +5302,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        */
       public Builder setWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace value) {
         if (workspaceBuilder_ == null) {
@@ -5320,7 +5322,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        */
       public Builder setWorkspace(
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder builderForValue) {
@@ -5338,7 +5340,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        */
       public Builder mergeWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace value) {
         if (workspaceBuilder_ == null) {
@@ -5360,7 +5362,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        */
       public Builder clearWorkspace() {
         if (workspaceBuilder_ == null) {
@@ -5378,7 +5380,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder getWorkspaceBuilder() {
         
@@ -5390,7 +5392,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder getWorkspaceOrBuilder() {
         if (workspaceBuilder_ != null) {
@@ -5405,7 +5407,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"workspace" gorm:"column:workspace;"
        * </pre>
        *
-       * <code>.model.QuotaWorkspace workspace = 4;</code>
+       * <code>.model.QuotaWorkspace workspace = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaWorkspaceOrBuilder> 
@@ -5429,7 +5431,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        * @return Whether the streamJob field is set.
        */
       public boolean hasStreamJob() {
@@ -5440,7 +5442,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        * @return The streamJob.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob getStreamJob() {
@@ -5455,7 +5457,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        */
       public Builder setStreamJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob value) {
         if (streamJobBuilder_ == null) {
@@ -5475,7 +5477,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        */
       public Builder setStreamJob(
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder builderForValue) {
@@ -5493,7 +5495,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        */
       public Builder mergeStreamJob(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob value) {
         if (streamJobBuilder_ == null) {
@@ -5515,7 +5517,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        */
       public Builder clearStreamJob() {
         if (streamJobBuilder_ == null) {
@@ -5533,7 +5535,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder getStreamJobBuilder() {
         
@@ -5545,7 +5547,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder getStreamJobOrBuilder() {
         if (streamJobBuilder_ != null) {
@@ -5560,7 +5562,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"stream_job" gorm:"column:stream_job;"
        * </pre>
        *
-       * <code>.model.QuotaStreamJob stream_job = 5;</code>
+       * <code>.model.QuotaStreamJob stream_job = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJob.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaStreamJobOrBuilder> 
@@ -5584,7 +5586,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        * @return Whether the dataSource field is set.
        */
       public boolean hasDataSource() {
@@ -5595,7 +5597,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        * @return The dataSource.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource getDataSource() {
@@ -5610,7 +5612,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        */
       public Builder setDataSource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource value) {
         if (dataSourceBuilder_ == null) {
@@ -5630,7 +5632,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        */
       public Builder setDataSource(
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder builderForValue) {
@@ -5648,7 +5650,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        */
       public Builder mergeDataSource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource value) {
         if (dataSourceBuilder_ == null) {
@@ -5670,7 +5672,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        */
       public Builder clearDataSource() {
         if (dataSourceBuilder_ == null) {
@@ -5688,7 +5690,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder getDataSourceBuilder() {
         
@@ -5700,7 +5702,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder getDataSourceOrBuilder() {
         if (dataSourceBuilder_ != null) {
@@ -5715,7 +5717,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"data_source" gorm:"column:data_source;"
        * </pre>
        *
-       * <code>.model.QuotaDataSource data_source = 6;</code>
+       * <code>.model.QuotaDataSource data_source = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaDataSourceOrBuilder> 
@@ -5739,7 +5741,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        * @return Whether the udf field is set.
        */
       public boolean hasUdf() {
@@ -5750,7 +5752,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        * @return The udf.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF getUdf() {
@@ -5765,7 +5767,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        */
       public Builder setUdf(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF value) {
         if (udfBuilder_ == null) {
@@ -5785,7 +5787,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        */
       public Builder setUdf(
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder builderForValue) {
@@ -5803,7 +5805,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        */
       public Builder mergeUdf(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF value) {
         if (udfBuilder_ == null) {
@@ -5825,7 +5827,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        */
       public Builder clearUdf() {
         if (udfBuilder_ == null) {
@@ -5843,7 +5845,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder getUdfBuilder() {
         
@@ -5855,7 +5857,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder getUdfOrBuilder() {
         if (udfBuilder_ != null) {
@@ -5870,7 +5872,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"udf" gorm:"column:udf;"
        * </pre>
        *
-       * <code>.model.QuotaUDF udf = 7;</code>
+       * <code>.model.QuotaUDF udf = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDF.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaUDFOrBuilder> 
@@ -5894,7 +5896,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        * @return Whether the resource field is set.
        */
       public boolean hasResource() {
@@ -5905,7 +5907,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        * @return The resource.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getResource() {
@@ -5920,7 +5922,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        */
       public Builder setResource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource value) {
         if (resourceBuilder_ == null) {
@@ -5940,7 +5942,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        */
       public Builder setResource(
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder builderForValue) {
@@ -5958,7 +5960,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        */
       public Builder mergeResource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource value) {
         if (resourceBuilder_ == null) {
@@ -5980,7 +5982,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        */
       public Builder clearResource() {
         if (resourceBuilder_ == null) {
@@ -5998,7 +6000,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder getResourceBuilder() {
         
@@ -6010,7 +6012,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder getResourceOrBuilder() {
         if (resourceBuilder_ != null) {
@@ -6025,7 +6027,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"resource" gorm:"column:resource;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 8;</code>
+       * <code>.model.QuotaResource resource = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder> 
@@ -6049,7 +6051,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        * @return Whether the flinkCluster field is set.
        */
       public boolean hasFlinkCluster() {
@@ -6060,7 +6062,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        * @return The flinkCluster.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster getFlinkCluster() {
@@ -6075,7 +6077,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        */
       public Builder setFlinkCluster(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster value) {
         if (flinkClusterBuilder_ == null) {
@@ -6095,7 +6097,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        */
       public Builder setFlinkCluster(
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder builderForValue) {
@@ -6113,7 +6115,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        */
       public Builder mergeFlinkCluster(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster value) {
         if (flinkClusterBuilder_ == null) {
@@ -6135,7 +6137,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        */
       public Builder clearFlinkCluster() {
         if (flinkClusterBuilder_ == null) {
@@ -6153,7 +6155,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder getFlinkClusterBuilder() {
         
@@ -6165,7 +6167,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder getFlinkClusterOrBuilder() {
         if (flinkClusterBuilder_ != null) {
@@ -6180,7 +6182,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
        * </pre>
        *
-       * <code>.model.QuotaFlinkCluster flink_cluster = 9;</code>
+       * <code>.model.QuotaFlinkCluster flink_cluster = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkClusterOrBuilder> 
@@ -6204,7 +6206,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        * @return Whether the network field is set.
        */
       public boolean hasNetwork() {
@@ -6215,7 +6217,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        * @return The network.
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork getNetwork() {
@@ -6230,7 +6232,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        */
       public Builder setNetwork(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork value) {
         if (networkBuilder_ == null) {
@@ -6250,7 +6252,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        */
       public Builder setNetwork(
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder builderForValue) {
@@ -6268,7 +6270,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        */
       public Builder mergeNetwork(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork value) {
         if (networkBuilder_ == null) {
@@ -6290,7 +6292,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        */
       public Builder clearNetwork() {
         if (networkBuilder_ == null) {
@@ -6308,7 +6310,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder getNetworkBuilder() {
         
@@ -6320,7 +6322,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder getNetworkOrBuilder() {
         if (networkBuilder_ != null) {
@@ -6335,7 +6337,7 @@ public final class PBModelQuota {
        * &#64;inject_tag: json:"network" gorm:"column:network;"
        * </pre>
        *
-       * <code>.model.QuotaNetwork network = 10;</code>
+       * <code>.model.QuotaNetwork network = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetwork.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaNetworkOrBuilder> 
@@ -6454,23 +6456,23 @@ public final class PBModelQuota {
     java.lang.String[] descriptorData = {
       "\n\035proto/types/model/quota.proto\022\005model\032/" +
       "github.com/yu31/protoc-plugin/proto/gosq" +
-      "l.proto\"\'\n\016QuotaWorkspace\022\r\n\005limit\030\003 \001(\003" +
-      ":\006\312\262\004\002\n\000\"\'\n\016QuotaStreamJob\022\r\n\005limit\030\003 \001(" +
-      "\003:\006\312\262\004\002\n\000\"(\n\017QuotaDataSource\022\r\n\005limit\030\003 " +
-      "\001(\003:\006\312\262\004\002\n\000\"!\n\010QuotaUDF\022\r\n\005limit\030\003 \001(\003:\006" +
-      "\312\262\004\002\n\000\"H\n\rQuotaResource\022\r\n\005limit\030\003 \001(\003\022\014" +
-      "\n\004size\030\004 \001(\003\022\022\n\nsize_total\030\005 \001(\003:\006\312\262\004\002\n\000" +
-      "\"H\n\021QuotaFlinkCluster\022\r\n\005limit\030\003 \001(\003\022\n\n\002" +
-      "cu\030\004 \001(\003\022\020\n\010cu_total\030\005 \001(\003:\006\312\262\004\002\n\000\"%\n\014Qu" +
-      "otaNetwork\022\r\n\005limit\030\003 \001(\003:\006\312\262\004\002\n\000\"\273\002\n\tUs" +
-      "erQuota\022\017\n\007user_id\030\003 \001(\t\022(\n\tworkspace\030\004 " +
+      "l.proto\"\'\n\016QuotaWorkspace\022\r\n\005limit\030\001 \001(\003" +
+      ":\006\312\262\004\002\n\000\"\'\n\016QuotaStreamJob\022\r\n\005limit\030\001 \001(" +
+      "\003:\006\312\262\004\002\n\000\"(\n\017QuotaDataSource\022\r\n\005limit\030\001 " +
+      "\001(\003:\006\312\262\004\002\n\000\"!\n\010QuotaUDF\022\r\n\005limit\030\001 \001(\003:\006" +
+      "\312\262\004\002\n\000\"H\n\rQuotaResource\022\r\n\005limit\030\001 \001(\003\022\014" +
+      "\n\004size\030\002 \001(\003\022\022\n\nsize_total\030\003 \001(\003:\006\312\262\004\002\n\000" +
+      "\"H\n\021QuotaFlinkCluster\022\r\n\005limit\030\001 \001(\003\022\n\n\002" +
+      "cu\030\002 \001(\002\022\020\n\010cu_total\030\003 \001(\002:\006\312\262\004\002\n\000\"%\n\014Qu" +
+      "otaNetwork\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"\273\002\n\tUs" +
+      "erQuota\022\017\n\007user_id\030\001 \001(\t\022(\n\tworkspace\030\002 " +
       "\001(\0132\025.model.QuotaWorkspace\022)\n\nstream_job" +
-      "\030\005 \001(\0132\025.model.QuotaStreamJob\022+\n\013data_so" +
-      "urce\030\006 \001(\0132\026.model.QuotaDataSource\022\034\n\003ud" +
-      "f\030\007 \001(\0132\017.model.QuotaUDF\022&\n\010resource\030\010 \001" +
+      "\030\003 \001(\0132\025.model.QuotaStreamJob\022+\n\013data_so" +
+      "urce\030\004 \001(\0132\026.model.QuotaDataSource\022\034\n\003ud" +
+      "f\030\005 \001(\0132\017.model.QuotaUDF\022&\n\010resource\030\006 \001" +
       "(\0132\024.model.QuotaResource\022/\n\rflink_cluste" +
-      "r\030\t \001(\0132\030.model.QuotaFlinkCluster\022$\n\007net" +
-      "work\030\n \001(\0132\023.model.QuotaNetworkBg\n\"com.d" +
+      "r\030\007 \001(\0132\030.model.QuotaFlinkCluster\022$\n\007net" +
+      "work\030\010 \001(\0132\023.model.QuotaNetworkBg\n\"com.d" +
       "ataomnis.gproto.types.pbmodelB\014PBModelQu" +
       "otaP\000Z1github.com/DataWorkbench/gproto/x" +
       "go/types/pbmodelb\006proto3"

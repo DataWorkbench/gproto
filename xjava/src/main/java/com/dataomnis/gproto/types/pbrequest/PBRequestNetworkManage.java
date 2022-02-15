@@ -2561,6 +2561,28 @@ public final class PBRequestNetworkManage {
      */
     com.google.protobuf.ByteString
         getVxnetIdBytes();
+
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.CreateNetwork}
@@ -2580,6 +2602,7 @@ public final class PBRequestNetworkManage {
       name_ = "";
       routerId_ = "";
       vxnetId_ = "";
+      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -2640,6 +2663,12 @@ public final class PBRequestNetworkManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               vxnetId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
               break;
             }
             default: {
@@ -2914,6 +2943,54 @@ public final class PBRequestNetworkManage {
       }
     }
 
+    public static final int SPACE_OWNER_FIELD_NUMBER = 6;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2943,6 +3020,9 @@ public final class PBRequestNetworkManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, vxnetId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceOwner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2966,6 +3046,9 @@ public final class PBRequestNetworkManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, vxnetId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2992,6 +3075,8 @@ public final class PBRequestNetworkManage {
           .equals(other.getRouterId())) return false;
       if (!getVxnetId()
           .equals(other.getVxnetId())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3013,6 +3098,8 @@ public final class PBRequestNetworkManage {
       hash = (53 * hash) + getRouterId().hashCode();
       hash = (37 * hash) + VXNET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVxnetId().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3156,6 +3243,8 @@ public final class PBRequestNetworkManage {
 
         vxnetId_ = "";
 
+        spaceOwner_ = "";
+
         return this;
       }
 
@@ -3187,6 +3276,7 @@ public final class PBRequestNetworkManage {
         result.name_ = name_;
         result.routerId_ = routerId_;
         result.vxnetId_ = vxnetId_;
+        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -3253,6 +3343,10 @@ public final class PBRequestNetworkManage {
         }
         if (!other.getVxnetId().isEmpty()) {
           vxnetId_ = other.vxnetId_;
+          onChanged();
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3785,6 +3879,107 @@ public final class PBRequestNetworkManage {
   checkByteStringIsUtf8(value);
         
         vxnetId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -5893,22 +6088,22 @@ public final class PBRequestNetworkManage {
       "search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t\"g\n\016DeleteNetw" +
       "orks\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
       "ks-\022.\n\013network_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ" +
-      "\n\302\001\007\312\002\004net-\"\303\001\n\rCreateNetwork\022%\n\010space_i" +
+      "\n\302\001\007\312\002\004net-\"\345\001\n\rCreateNetwork\022%\n\010space_i" +
       "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncreated_" +
       "by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\003 \001(\tB\020\342\337" +
       "\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014\022" +
       "\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001\t" +
-      "\312\002\006vxnet-\"\312\001\n\rUpdateNetwork\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_id" +
-      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\036\n\004name\030\003 \001(" +
-      "\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020" +
-      "\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016" +
-      "\022\014\302\001\t\312\002\006vxnet-\":\n\017DescribeNetwork\022\'\n\nnet" +
-      "work_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-Bu\n$co" +
-      "m.dataomnis.gproto.types.pbrequestB\026PBRe" +
-      "questNetworkManageP\000Z3github.com/DataWor" +
-      "kbench/gproto/xgo/types/pbrequestb\006proto" +
-      "3"
+      "\312\002\006vxnet-\022 \n\013space_owner\030\006 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\"\312\001\n\rUpdateNetwork\022%\n\010space_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\nnetwork_id\030\002 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022\036\n\004name\030\003 \001(\tB\020\342\337\037" +
+      "\014\022\n\302\001\007\200\002\001\230\002\200\001\022#\n\trouter_id\030\004 \001(\tB\020\342\337\037\014\022\n" +
+      "\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\005 \001(\tB\022\342\337\037\016\022\014\302\001\t\312" +
+      "\002\006vxnet-\":\n\017DescribeNetwork\022\'\n\nnetwork_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-Bu\n$com.data" +
+      "omnis.gproto.types.pbrequestB\026PBRequestN" +
+      "etworkManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5933,7 +6128,7 @@ public final class PBRequestNetworkManage {
     internal_static_request_CreateNetwork_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateNetwork_descriptor,
-        new java.lang.String[] { "SpaceId", "CreatedBy", "Name", "RouterId", "VxnetId", });
+        new java.lang.String[] { "SpaceId", "CreatedBy", "Name", "RouterId", "VxnetId", "SpaceOwner", });
     internal_static_request_UpdateNetwork_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_UpdateNetwork_fieldAccessorTable = new

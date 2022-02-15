@@ -1747,6 +1747,28 @@ public final class PBRequestSpaceManage {
      */
     com.google.protobuf.ByteString
         getSpaceIdsBytes(int index);
+
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The reqUserId.
+     */
+    java.lang.String getReqUserId();
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for reqUserId.
+     */
+    com.google.protobuf.ByteString
+        getReqUserIdBytes();
   }
   /**
    * <pre>
@@ -1766,6 +1788,7 @@ public final class PBRequestSpaceManage {
     }
     private DeleteWorkspaces() {
       spaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      reqUserId_ = "";
     }
 
     @java.lang.Override
@@ -1806,6 +1829,12 @@ public final class PBRequestSpaceManage {
                 mutable_bitField0_ |= 0x00000001;
               }
               spaceIds_.add(s);
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reqUserId_ = s;
               break;
             }
             default: {
@@ -1898,6 +1927,54 @@ public final class PBRequestSpaceManage {
       return spaceIds_.getByteString(index);
     }
 
+    public static final int REQ_USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object reqUserId_;
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The reqUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getReqUserId() {
+      java.lang.Object ref = reqUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reqUserId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for reqUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReqUserIdBytes() {
+      java.lang.Object ref = reqUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reqUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1914,6 +1991,9 @@ public final class PBRequestSpaceManage {
                         throws java.io.IOException {
       for (int i = 0; i < spaceIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceIds_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reqUserId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1932,6 +2012,9 @@ public final class PBRequestSpaceManage {
         size += dataSize;
         size += 1 * getSpaceIdsList().size();
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reqUserId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1949,6 +2032,8 @@ public final class PBRequestSpaceManage {
 
       if (!getSpaceIdsList()
           .equals(other.getSpaceIdsList())) return false;
+      if (!getReqUserId()
+          .equals(other.getReqUserId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1964,6 +2049,8 @@ public final class PBRequestSpaceManage {
         hash = (37 * hash) + SPACE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getSpaceIdsList().hashCode();
       }
+      hash = (37 * hash) + REQ_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getReqUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2103,6 +2190,8 @@ public final class PBRequestSpaceManage {
         super.clear();
         spaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        reqUserId_ = "";
+
         return this;
       }
 
@@ -2135,6 +2224,7 @@ public final class PBRequestSpaceManage {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.spaceIds_ = spaceIds_;
+        result.reqUserId_ = reqUserId_;
         onBuilt();
         return result;
       }
@@ -2191,6 +2281,10 @@ public final class PBRequestSpaceManage {
             ensureSpaceIdsIsMutable();
             spaceIds_.addAll(other.spaceIds_);
           }
+          onChanged();
+        }
+        if (!other.getReqUserId().isEmpty()) {
+          reqUserId_ = other.reqUserId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2377,6 +2471,107 @@ public final class PBRequestSpaceManage {
         onChanged();
         return this;
       }
+
+      private java.lang.Object reqUserId_ = "";
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The reqUserId.
+       */
+      public java.lang.String getReqUserId() {
+        java.lang.Object ref = reqUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reqUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for reqUserId.
+       */
+      public com.google.protobuf.ByteString
+          getReqUserIdBytes() {
+        java.lang.Object ref = reqUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reqUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The reqUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReqUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reqUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReqUserId() {
+        
+        reqUserId_ = getDefaultInstance().getReqUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for reqUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReqUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reqUserId_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2482,6 +2677,28 @@ public final class PBRequestSpaceManage {
      */
     com.google.protobuf.ByteString
         getSpaceIdsBytes(int index);
+
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The reqUserId.
+     */
+    java.lang.String getReqUserId();
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for reqUserId.
+     */
+    com.google.protobuf.ByteString
+        getReqUserIdBytes();
   }
   /**
    * <pre>
@@ -2501,6 +2718,7 @@ public final class PBRequestSpaceManage {
     }
     private DisableWorkspaces() {
       spaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      reqUserId_ = "";
     }
 
     @java.lang.Override
@@ -2541,6 +2759,12 @@ public final class PBRequestSpaceManage {
                 mutable_bitField0_ |= 0x00000001;
               }
               spaceIds_.add(s);
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reqUserId_ = s;
               break;
             }
             default: {
@@ -2637,6 +2861,54 @@ public final class PBRequestSpaceManage {
       return spaceIds_.getByteString(index);
     }
 
+    public static final int REQ_USER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object reqUserId_;
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The reqUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getReqUserId() {
+      java.lang.Object ref = reqUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reqUserId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for reqUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReqUserIdBytes() {
+      java.lang.Object ref = reqUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reqUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2653,6 +2925,9 @@ public final class PBRequestSpaceManage {
                         throws java.io.IOException {
       for (int i = 0; i < spaceIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceIds_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reqUserId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2671,6 +2946,9 @@ public final class PBRequestSpaceManage {
         size += dataSize;
         size += 1 * getSpaceIdsList().size();
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reqUserId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2688,6 +2966,8 @@ public final class PBRequestSpaceManage {
 
       if (!getSpaceIdsList()
           .equals(other.getSpaceIdsList())) return false;
+      if (!getReqUserId()
+          .equals(other.getReqUserId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2703,6 +2983,8 @@ public final class PBRequestSpaceManage {
         hash = (37 * hash) + SPACE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getSpaceIdsList().hashCode();
       }
+      hash = (37 * hash) + REQ_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getReqUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2842,6 +3124,8 @@ public final class PBRequestSpaceManage {
         super.clear();
         spaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        reqUserId_ = "";
+
         return this;
       }
 
@@ -2874,6 +3158,7 @@ public final class PBRequestSpaceManage {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.spaceIds_ = spaceIds_;
+        result.reqUserId_ = reqUserId_;
         onBuilt();
         return result;
       }
@@ -2930,6 +3215,10 @@ public final class PBRequestSpaceManage {
             ensureSpaceIdsIsMutable();
             spaceIds_.addAll(other.spaceIds_);
           }
+          onChanged();
+        }
+        if (!other.getReqUserId().isEmpty()) {
+          reqUserId_ = other.reqUserId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3125,6 +3414,107 @@ public final class PBRequestSpaceManage {
         onChanged();
         return this;
       }
+
+      private java.lang.Object reqUserId_ = "";
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The reqUserId.
+       */
+      public java.lang.String getReqUserId() {
+        java.lang.Object ref = reqUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reqUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for reqUserId.
+       */
+      public com.google.protobuf.ByteString
+          getReqUserIdBytes() {
+        java.lang.Object ref = reqUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reqUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The reqUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReqUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reqUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReqUserId() {
+        
+        reqUserId_ = getDefaultInstance().getReqUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for reqUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReqUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reqUserId_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3237,6 +3627,28 @@ public final class PBRequestSpaceManage {
      * @return The resumeJob.
      */
     boolean getResumeJob();
+
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+     * @return The reqUserId.
+     */
+    java.lang.String getReqUserId();
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for reqUserId.
+     */
+    com.google.protobuf.ByteString
+        getReqUserIdBytes();
   }
   /**
    * <pre>
@@ -3256,6 +3668,7 @@ public final class PBRequestSpaceManage {
     }
     private EnableWorkspaces() {
       spaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      reqUserId_ = "";
     }
 
     @java.lang.Override
@@ -3301,6 +3714,12 @@ public final class PBRequestSpaceManage {
             case 16: {
 
               resumeJob_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reqUserId_ = s;
               break;
             }
             default: {
@@ -3409,6 +3828,54 @@ public final class PBRequestSpaceManage {
       return resumeJob_;
     }
 
+    public static final int REQ_USER_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object reqUserId_;
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+     * @return The reqUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getReqUserId() {
+      java.lang.Object ref = reqUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reqUserId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The user-id of request. Used to check permission.
+     * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for reqUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReqUserIdBytes() {
+      java.lang.Object ref = reqUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reqUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3428,6 +3895,9 @@ public final class PBRequestSpaceManage {
       }
       if (resumeJob_ != false) {
         output.writeBool(2, resumeJob_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reqUserId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3450,6 +3920,9 @@ public final class PBRequestSpaceManage {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, resumeJob_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reqUserId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3469,6 +3942,8 @@ public final class PBRequestSpaceManage {
           .equals(other.getSpaceIdsList())) return false;
       if (getResumeJob()
           != other.getResumeJob()) return false;
+      if (!getReqUserId()
+          .equals(other.getReqUserId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3487,6 +3962,8 @@ public final class PBRequestSpaceManage {
       hash = (37 * hash) + RESUME_JOB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getResumeJob());
+      hash = (37 * hash) + REQ_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getReqUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3628,6 +4105,8 @@ public final class PBRequestSpaceManage {
         bitField0_ = (bitField0_ & ~0x00000001);
         resumeJob_ = false;
 
+        reqUserId_ = "";
+
         return this;
       }
 
@@ -3661,6 +4140,7 @@ public final class PBRequestSpaceManage {
         }
         result.spaceIds_ = spaceIds_;
         result.resumeJob_ = resumeJob_;
+        result.reqUserId_ = reqUserId_;
         onBuilt();
         return result;
       }
@@ -3721,6 +4201,10 @@ public final class PBRequestSpaceManage {
         }
         if (other.getResumeJob() != false) {
           setResumeJob(other.getResumeJob());
+        }
+        if (!other.getReqUserId().isEmpty()) {
+          reqUserId_ = other.reqUserId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3949,6 +4433,107 @@ public final class PBRequestSpaceManage {
       public Builder clearResumeJob() {
         
         resumeJob_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object reqUserId_ = "";
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+       * @return The reqUserId.
+       */
+      public java.lang.String getReqUserId() {
+        java.lang.Object ref = reqUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reqUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for reqUserId.
+       */
+      public com.google.protobuf.ByteString
+          getReqUserIdBytes() {
+        java.lang.Object ref = reqUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reqUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The reqUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReqUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reqUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReqUserId() {
+        
+        reqUserId_ = getDefaultInstance().getReqUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user-id of request. Used to check permission.
+       * &#64;inject_tag: json:"req_user_id" form:"-" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string req_user_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for reqUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReqUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reqUserId_ = value;
         onChanged();
         return this;
       }
@@ -10854,32 +11439,35 @@ public final class PBRequestSpaceManage {
       "\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007updat" +
       "ed\022\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\005 \001(\t\0224\n\006s" +
       "tatus\030\007 \001(\0162\027.model.Workspace.StatusB\013\342\337" +
-      "\037\007\022\005\332\001\002X\001\022\014\n\004name\030\010 \001(\t\"@\n\020DeleteWorkspa" +
+      "\037\007\022\005\332\001\002X\001\022\014\n\004name\030\010 \001(\t\"f\n\020DeleteWorkspa" +
       "ces\022,\n\tspace_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302" +
-      "\001\007\312\002\004wks-\"A\n\021DisableWorkspaces\022,\n\tspace_" +
-      "ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\"T\n\020" +
-      "EnableWorkspaces\022,\n\tspace_ids\030\001 \003(\tB\031\342\337\037" +
-      "\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022\022\n\nresume_job\030\002 \001" +
-      "(\010\"k\n\017CreateWorkspace\022\033\n\005owner\030\001 \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\210\002A\022\036\n\004name\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001" +
-      "\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"u\n\017Updat" +
-      "eWorkspace\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022\036\n\004name\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200" +
-      "\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\":\n\021Descri" +
-      "beWorkspace\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\"2\n\nAddOpAudit\022$\n\004info\030\001 \001(\0132\020" +
-      ".model.OperationB\004\342\337\037\000\"\355\002\n\014ListOpAudits\022" +
-      "&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022" +
-      "\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022)\n\007sort_by\030" +
-      "\003 \001(\tB\030\342\337\037\024\022\022\302\001\017J\000J\002idJ\007created\022\025\n\007rever" +
-      "se\030\004 \001(\010B\004\342\337\037\000\022\035\n\007user_id\030\005 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\210\002A\022\026\n\010space_id\030\006 \001(\tB\004\342\337\037\000\0220\n\004type\030\007 " +
-      "\001(\0162\025.model.Operation.TypeB\013\342\337\037\007\022\005\332\001\002X\001\022" +
-      "\024\n\006action\030\010 \001(\tB\004\342\337\037\000\022+\n\005state\030\t \001(\0162\026.m" +
-      "odel.Operation.StateB\004\342\337\037\000\022\025\n\007started\030\n " +
-      "\001(\003B\004\342\337\037\000\022\023\n\005ended\030\013 \001(\003B\004\342\337\037\000\"\276\002\n\017Check" +
-      "Permission\022!\n\013req_user_id\030\001 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\210\002A\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "\001\007\312\002\004wks-\022$\n\013req_user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001" +
+      "\006\200\002\001\210\002A\"g\n\021DisableWorkspaces\022,\n\tspace_id" +
+      "s\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022$\n\013re" +
+      "q_user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\"z\n\020Enab" +
+      "leWorkspaces\022,\n\tspace_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352" +
+      "\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022\022\n\nresume_job\030\002 \001(\010\022$" +
+      "\n\013req_user_id\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\"n\n\017" +
+      "CreateWorkspace\022\036\n\005owner\030\001 \001(\tB\017\342\337\037\013\022\t\302\001" +
+      "\006\200\002\001\210\002A\022\036\n\004name\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022" +
+      "\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"u\n\017UpdateWo" +
+      "rkspace\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022\036\n\004name\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033" +
+      "\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\":\n\021DescribeW" +
+      "orkspace\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\"2\n\nAddOpAudit\022$\n\004info\030\001 \001(\0132\020.mo" +
+      "del.OperationB\004\342\337\037\000\"\355\002\n\014ListOpAudits\022&\n\005" +
+      "limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006" +
+      "offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022)\n\007sort_by\030\003 \001" +
+      "(\tB\030\342\337\037\024\022\022\302\001\017J\000J\002idJ\007created\022\025\n\007reverse\030" +
+      "\004 \001(\010B\004\342\337\037\000\022\035\n\007user_id\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\210" +
+      "\002A\022\026\n\010space_id\030\006 \001(\tB\004\342\337\037\000\0220\n\004type\030\007 \001(\016" +
+      "2\025.model.Operation.TypeB\013\342\337\037\007\022\005\332\001\002X\001\022\024\n\006" +
+      "action\030\010 \001(\tB\004\342\337\037\000\022+\n\005state\030\t \001(\0162\026.mode" +
+      "l.Operation.StateB\004\342\337\037\000\022\025\n\007started\030\n \001(\003" +
+      "B\004\342\337\037\000\022\023\n\005ended\030\013 \001(\003B\004\342\337\037\000\"\301\002\n\017CheckPer" +
+      "mission\022$\n\013req_user_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
+      "\002\001\210\002A\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
       "wks-\022\034\n\006module\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\0225\n\007op" +
       "_type\030\004 \001(\0162\025.model.Operation.TypeB\r\342\337\037\t" +
       "\022\007\332\001\0040\000X\001\022\035\n\007op_name\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000" +
@@ -10909,19 +11497,19 @@ public final class PBRequestSpaceManage {
     internal_static_request_DeleteWorkspaces_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteWorkspaces_descriptor,
-        new java.lang.String[] { "SpaceIds", });
+        new java.lang.String[] { "SpaceIds", "ReqUserId", });
     internal_static_request_DisableWorkspaces_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_DisableWorkspaces_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DisableWorkspaces_descriptor,
-        new java.lang.String[] { "SpaceIds", });
+        new java.lang.String[] { "SpaceIds", "ReqUserId", });
     internal_static_request_EnableWorkspaces_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_EnableWorkspaces_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_EnableWorkspaces_descriptor,
-        new java.lang.String[] { "SpaceIds", "ResumeJob", });
+        new java.lang.String[] { "SpaceIds", "ResumeJob", "ReqUserId", });
     internal_static_request_CreateWorkspace_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_request_CreateWorkspace_fieldAccessorTable = new

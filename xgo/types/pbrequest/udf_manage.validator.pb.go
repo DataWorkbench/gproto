@@ -198,6 +198,13 @@ func (this *CreateUDF) _xxx_xxx_Validator_Validate_created_by() error {
 	return nil
 }
 
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateUDF
 func (this *CreateUDF) Validate() error {
 	if this == nil {
@@ -225,6 +232,9 @@ func (this *CreateUDF) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

@@ -99,12 +99,25 @@ func (this *DeleteWorkspaces) _xxx_xxx_Validator_Validate_space_ids() error {
 	return nil
 }
 
+func (this *DeleteWorkspaces) _xxx_xxx_Validator_Validate_req_user_id() error {
+	if !(len(this.ReqUserId) > 1) {
+		return protovalidator.FieldError1("DeleteWorkspaces", "the byte length of field 'req_user_id' must be greater than '1'", protovalidator.StringByteLenToString(this.ReqUserId))
+	}
+	if !(len(this.ReqUserId) < 65) {
+		return protovalidator.FieldError1("DeleteWorkspaces", "the byte length of field 'req_user_id' must be less than '65'", protovalidator.StringByteLenToString(this.ReqUserId))
+	}
+	return nil
+}
+
 // Set default value for message request.DeleteWorkspaces
 func (this *DeleteWorkspaces) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_ids(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_req_user_id(); err != nil {
 		return err
 	}
 	return nil
@@ -126,12 +139,25 @@ func (this *DisableWorkspaces) _xxx_xxx_Validator_Validate_space_ids() error {
 	return nil
 }
 
+func (this *DisableWorkspaces) _xxx_xxx_Validator_Validate_req_user_id() error {
+	if !(len(this.ReqUserId) > 1) {
+		return protovalidator.FieldError1("DisableWorkspaces", "the byte length of field 'req_user_id' must be greater than '1'", protovalidator.StringByteLenToString(this.ReqUserId))
+	}
+	if !(len(this.ReqUserId) < 65) {
+		return protovalidator.FieldError1("DisableWorkspaces", "the byte length of field 'req_user_id' must be less than '65'", protovalidator.StringByteLenToString(this.ReqUserId))
+	}
+	return nil
+}
+
 // Set default value for message request.DisableWorkspaces
 func (this *DisableWorkspaces) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_ids(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_req_user_id(); err != nil {
 		return err
 	}
 	return nil
@@ -153,6 +179,16 @@ func (this *EnableWorkspaces) _xxx_xxx_Validator_Validate_space_ids() error {
 	return nil
 }
 
+func (this *EnableWorkspaces) _xxx_xxx_Validator_Validate_req_user_id() error {
+	if !(len(this.ReqUserId) > 1) {
+		return protovalidator.FieldError1("EnableWorkspaces", "the byte length of field 'req_user_id' must be greater than '1'", protovalidator.StringByteLenToString(this.ReqUserId))
+	}
+	if !(len(this.ReqUserId) < 65) {
+		return protovalidator.FieldError1("EnableWorkspaces", "the byte length of field 'req_user_id' must be less than '65'", protovalidator.StringByteLenToString(this.ReqUserId))
+	}
+	return nil
+}
+
 // Set default value for message request.EnableWorkspaces
 func (this *EnableWorkspaces) Validate() error {
 	if this == nil {
@@ -161,10 +197,16 @@ func (this *EnableWorkspaces) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_space_ids(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_req_user_id(); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (this *CreateWorkspace) _xxx_xxx_Validator_Validate_owner() error {
+	if !(len(this.Owner) > 1) {
+		return protovalidator.FieldError1("CreateWorkspace", "the byte length of field 'owner' must be greater than '1'", protovalidator.StringByteLenToString(this.Owner))
+	}
 	if !(len(this.Owner) < 65) {
 		return protovalidator.FieldError1("CreateWorkspace", "the byte length of field 'owner' must be less than '65'", protovalidator.StringByteLenToString(this.Owner))
 	}
@@ -356,6 +398,9 @@ func (this *ListOpAudits) Validate() error {
 }
 
 func (this *CheckPermission) _xxx_xxx_Validator_Validate_req_user_id() error {
+	if !(len(this.ReqUserId) > 1) {
+		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'req_user_id' must be greater than '1'", protovalidator.StringByteLenToString(this.ReqUserId))
+	}
 	if !(len(this.ReqUserId) < 65) {
 		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'req_user_id' must be less than '65'", protovalidator.StringByteLenToString(this.ReqUserId))
 	}

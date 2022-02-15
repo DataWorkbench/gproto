@@ -150,6 +150,13 @@ func (this *CreateNetwork) _xxx_xxx_Validator_Validate_vxnet_id() error {
 	return nil
 }
 
+func (this *CreateNetwork) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateNetwork", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateNetwork
 func (this *CreateNetwork) Validate() error {
 	if this == nil {
@@ -168,6 +175,9 @@ func (this *CreateNetwork) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_vxnet_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

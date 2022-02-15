@@ -115,6 +115,28 @@ public final class PBRequestResourceMeta {
      * @return The type.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type getType();
+
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.CreateFilePrepare}
@@ -133,6 +155,7 @@ public final class PBRequestResourceMeta {
       pid_ = "";
       name_ = "";
       type_ = 0;
+      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -192,6 +215,12 @@ public final class PBRequestResourceMeta {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
               break;
             }
             default: {
@@ -415,6 +444,54 @@ public final class PBRequestResourceMeta {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.UNRECOGNIZED : result;
     }
 
+    public static final int SPACE_OWNER_FIELD_NUMBER = 6;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -444,6 +521,9 @@ public final class PBRequestResourceMeta {
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
         output.writeEnum(5, type_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceOwner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -470,6 +550,9 @@ public final class PBRequestResourceMeta {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, type_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceOwner_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -494,6 +577,8 @@ public final class PBRequestResourceMeta {
       if (getSize()
           != other.getSize()) return false;
       if (type_ != other.type_) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -516,6 +601,8 @@ public final class PBRequestResourceMeta {
           getSize());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -659,6 +746,8 @@ public final class PBRequestResourceMeta {
 
         type_ = 0;
 
+        spaceOwner_ = "";
+
         return this;
       }
 
@@ -690,6 +779,7 @@ public final class PBRequestResourceMeta {
         result.name_ = name_;
         result.size_ = size_;
         result.type_ = type_;
+        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -755,6 +845,10 @@ public final class PBRequestResourceMeta {
         }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1209,6 +1303,107 @@ public final class PBRequestResourceMeta {
       public Builder clearType() {
         
         type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -10486,50 +10681,51 @@ public final class PBRequestResourceMeta {
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\0322github.com/yu31" +
       "/protoc-plugin/proto/defaults.proto\032 pro" +
-      "to/types/model/resource.proto\"\341\001\n\021Create" +
+      "to/types/model/resource.proto\"\203\002\n\021Create" +
       "FilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
       "\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001" +
       "\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\003 \001(\tB\020\342\337" +
       "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\036\n\004size\030\004 \001(\003B\020\342\337\037\014\022\n\262\001\0070" +
       "\0008\200\200\2002\0221\n\004type\030\005 \001(\0162\024.model.Resource.Ty" +
-      "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\363\002\n\016CreateFileMeta\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013r" +
-      "esource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n" +
-      "\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004res-\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200" +
-      "\001\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\014\n\004size\030\006" +
-      " \001(\003\022\032\n\004etag\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type" +
-      "\030\010 \001(\0162\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022\035\n\007version\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncr" +
-      "eated_by\030\n \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\206\001\n\023ReCr" +
-      "eateFilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004size\030\003 \001(\003B\020\342\337\037\014\022\n\262\001" +
-      "\0070\0008\200\200\2002\"\254\001\n\020ReCreateFileMeta\022%\n\010space_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource" +
-      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\014\n\004size\030\003" +
-      " \001(\003\022\032\n\004etag\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007vers" +
-      "ion\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"<\n\020DescribeFileM" +
-      "eta\022(\n\013resource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004res-\"\257\001\n\016UpdateFileMeta\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_id\030\002" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\tB\r\342\337\037\t\022\007" +
-      "\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022\"\n\004type\030\005 \001(" +
-      "\0162\024.model.Resource.Type\"\267\002\n\rListFileMeta" +
-      "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d" +
-      "\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022/\n\004type\030\004 " +
-      "\001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002X\001\022\014" +
-      "\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230" +
-      "\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J\002idJ\007c" +
-      "reatedJ\007updatedJ\004nameJ\004size\022\017\n\007reverse\030\010" +
-      " \001(\010\022\013\n\003pid\030\t \001(\t\"i\n\017DeleteFileMetas\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014r" +
-      "esource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004" +
-      "res-Bt\n$com.dataomnis.gproto.types.pbreq" +
-      "uestB\025PBRequestResourceMetaP\000Z3github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbreque" +
-      "stb\006proto3"
+      "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\013space_owner\030\006 \001(\tB\013" +
+      "\342\337\037\007\022\005\302\001\002\"\000\"\363\002\n\016CreateFileMeta\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resourc" +
+      "e_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\003" +
+      " \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004r" +
+      "es-\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004d" +
+      "esc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\014\n\004size\030\006 \001(\003\022\032" +
+      "\n\004etag\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004type\030\010 \001(\016" +
+      "2\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n" +
+      "\007version\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\ncreated_" +
+      "by\030\n \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\206\001\n\023ReCreateFi" +
+      "lePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004res-\022\036\n\004size\030\003 \001(\003B\020\342\337\037\014\022\n\262\001\0070\0008\200\200" +
+      "\2002\"\254\001\n\020ReCreateFileMeta\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\014\n\004size\030\003 \001(\003\022\032" +
+      "\n\004etag\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\005 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"<\n\020DescribeFileMeta\022(\n" +
+      "\013resource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"" +
+      "\257\001\n\016UpdateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_id\030\002 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364" +
+      "\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022\"\n\004type\030\005 \001(\0162\024.mo" +
+      "del.Resource.Type\"\267\002\n\rListFileMetas\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005li" +
+      "mit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006of" +
+      "fset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022/\n\004type\030\004 \001(\0162\024." +
+      "model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002X\001\022\014\n\004name" +
+      "\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n" +
+      "\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J\002idJ\007created" +
+      "J\007updatedJ\004nameJ\004size\022\017\n\007reverse\030\010 \001(\010\022\013" +
+      "\n\003pid\030\t \001(\t\"i\n\017DeleteFileMetas\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\014resourc" +
+      "e_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004res-Bt" +
+      "\n$com.dataomnis.gproto.types.pbrequestB\025" +
+      "PBRequestResourceMetaP\000Z3github.com/Data" +
+      "Workbench/gproto/xgo/types/pbrequestb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10543,7 +10739,7 @@ public final class PBRequestResourceMeta {
     internal_static_request_CreateFilePrepare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFilePrepare_descriptor,
-        new java.lang.String[] { "SpaceId", "Pid", "Name", "Size", "Type", });
+        new java.lang.String[] { "SpaceId", "Pid", "Name", "Size", "Type", "SpaceOwner", });
     internal_static_request_CreateFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_CreateFileMeta_fieldAccessorTable = new

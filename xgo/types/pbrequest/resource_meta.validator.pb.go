@@ -77,6 +77,13 @@ func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_type() error {
 	return nil
 }
 
+func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("CreateFilePrepare", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateFilePrepare
 func (this *CreateFilePrepare) Validate() error {
 	if this == nil {
@@ -95,6 +102,9 @@ func (this *CreateFilePrepare) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

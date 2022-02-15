@@ -390,6 +390,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DeleteWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -397,6 +400,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public void disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -404,6 +410,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public void enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -564,6 +573,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DeleteWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public void deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -572,6 +584,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public void disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -580,6 +595,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public void enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -671,6 +689,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DeleteWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -678,6 +699,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct disableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -685,6 +709,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct enableWorkspaces(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -770,6 +797,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DeleteWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteWorkspaces(
         com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DeleteWorkspaces request) {
@@ -778,6 +808,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> disableWorkspaces(
         com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DisableWorkspaces request) {
@@ -786,6 +819,9 @@ public final class SpaceManageGrpc {
     }
 
     /**
+     * <pre>
+     * DisableWorkspaces allowed only invoke by space owner.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> enableWorkspaces(
         com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.EnableWorkspaces request) {

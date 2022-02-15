@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\014PBModelQuotaP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\'\n\x0eQuotaWorkspace\x12\r\n\x05limit\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaStreamJob\x12\r\n\x05limit\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaDataSource\x12\r\n\x05limit\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"!\n\x08QuotaUDF\x12\r\n\x05limit\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\rQuotaResource\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\x0c\n\x04size\x18\x04 \x01(\x03\x12\x12\n\nsize_total\x18\x05 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\x11QuotaFlinkCluster\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\n\n\x02\x63u\x18\x04 \x01(\x03\x12\x10\n\x08\x63u_total\x18\x05 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaNetwork\x12\r\n\x05limit\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xbb\x02\n\tUserQuota\x12\x0f\n\x07user_id\x18\x03 \x01(\t\x12(\n\tworkspace\x18\x04 \x01(\x0b\x32\x15.model.QuotaWorkspace\x12)\n\nstream_job\x18\x05 \x01(\x0b\x32\x15.model.QuotaStreamJob\x12+\n\x0b\x64\x61ta_source\x18\x06 \x01(\x0b\x32\x16.model.QuotaDataSource\x12\x1c\n\x03udf\x18\x07 \x01(\x0b\x32\x0f.model.QuotaUDF\x12&\n\x08resource\x18\x08 \x01(\x0b\x32\x14.model.QuotaResource\x12/\n\rflink_cluster\x18\t \x01(\x0b\x32\x18.model.QuotaFlinkCluster\x12$\n\x07network\x18\n \x01(\x0b\x32\x13.model.QuotaNetworkBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\'\n\x0eQuotaWorkspace\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaStreamJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaDataSource\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"!\n\x08QuotaUDF\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\rQuotaResource\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x12\n\nsize_total\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\x11QuotaFlinkCluster\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\n\n\x02\x63u\x18\x02 \x01(\x02\x12\x10\n\x08\x63u_total\x18\x03 \x01(\x02:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaNetwork\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xbb\x02\n\tUserQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12(\n\tworkspace\x18\x02 \x01(\x0b\x32\x15.model.QuotaWorkspace\x12)\n\nstream_job\x18\x03 \x01(\x0b\x32\x15.model.QuotaStreamJob\x12+\n\x0b\x64\x61ta_source\x18\x04 \x01(\x0b\x32\x16.model.QuotaDataSource\x12\x1c\n\x03udf\x18\x05 \x01(\x0b\x32\x0f.model.QuotaUDF\x12&\n\x08resource\x18\x06 \x01(\x0b\x32\x14.model.QuotaResource\x12/\n\rflink_cluster\x18\x07 \x01(\x0b\x32\x18.model.QuotaFlinkCluster\x12$\n\x07network\x18\x08 \x01(\x0b\x32\x13.model.QuotaNetworkBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
@@ -37,7 +37,7 @@ _QUOTAWORKSPACE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='model.QuotaWorkspace.limit', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -69,7 +69,7 @@ _QUOTASTREAMJOB = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='model.QuotaStreamJob.limit', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -101,7 +101,7 @@ _QUOTADATASOURCE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='model.QuotaDataSource.limit', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -133,7 +133,7 @@ _QUOTAUDF = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='model.QuotaUDF.limit', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -165,21 +165,21 @@ _QUOTARESOURCE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='model.QuotaResource.limit', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='model.QuotaResource.size', index=1,
-      number=4, type=3, cpp_type=2, label=1,
+      number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size_total', full_name='model.QuotaResource.size_total', index=2,
-      number=5, type=3, cpp_type=2, label=1,
+      number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -211,22 +211,22 @@ _QUOTAFLINKCLUSTER = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='model.QuotaFlinkCluster.limit', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='cu', full_name='model.QuotaFlinkCluster.cu', index=1,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='cu_total', full_name='model.QuotaFlinkCluster.cu_total', index=2,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -257,7 +257,7 @@ _QUOTANETWORK = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='model.QuotaNetwork.limit', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -289,56 +289,56 @@ _USERQUOTA = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='user_id', full_name='model.UserQuota.user_id', index=0,
-      number=3, type=9, cpp_type=9, label=1,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='workspace', full_name='model.UserQuota.workspace', index=1,
-      number=4, type=11, cpp_type=10, label=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='stream_job', full_name='model.UserQuota.stream_job', index=2,
-      number=5, type=11, cpp_type=10, label=1,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data_source', full_name='model.UserQuota.data_source', index=3,
-      number=6, type=11, cpp_type=10, label=1,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='udf', full_name='model.UserQuota.udf', index=4,
-      number=7, type=11, cpp_type=10, label=1,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resource', full_name='model.UserQuota.resource', index=5,
-      number=8, type=11, cpp_type=10, label=1,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='flink_cluster', full_name='model.UserQuota.flink_cluster', index=6,
-      number=9, type=11, cpp_type=10, label=1,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='network', full_name='model.UserQuota.network', index=7,
-      number=10, type=11, cpp_type=10, label=1,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

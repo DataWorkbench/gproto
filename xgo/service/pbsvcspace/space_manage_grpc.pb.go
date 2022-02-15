@@ -27,8 +27,11 @@ const _ = grpc.SupportPackageIsVersion7
 type SpaceManageClient interface {
 	// API of workspace manager.
 	ListWorkspaces(ctx context.Context, in *pbrequest.ListWorkspaces, opts ...grpc.CallOption) (*pbresponse.ListWorkspaces, error)
+	// DeleteWorkspaces allowed only invoke by space owner.
 	DeleteWorkspaces(ctx context.Context, in *pbrequest.DeleteWorkspaces, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// DisableWorkspaces allowed only invoke by space owner.
 	DisableWorkspaces(ctx context.Context, in *pbrequest.DisableWorkspaces, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// DisableWorkspaces allowed only invoke by space owner.
 	EnableWorkspaces(ctx context.Context, in *pbrequest.EnableWorkspaces, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateWorkspace(ctx context.Context, in *pbrequest.CreateWorkspace, opts ...grpc.CallOption) (*pbresponse.CreateWorkspace, error)
 	UpdateWorkspace(ctx context.Context, in *pbrequest.UpdateWorkspace, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -145,8 +148,11 @@ func (c *spaceManageClient) AddOpAudit(ctx context.Context, in *pbrequest.AddOpA
 type SpaceManageServer interface {
 	// API of workspace manager.
 	ListWorkspaces(context.Context, *pbrequest.ListWorkspaces) (*pbresponse.ListWorkspaces, error)
+	// DeleteWorkspaces allowed only invoke by space owner.
 	DeleteWorkspaces(context.Context, *pbrequest.DeleteWorkspaces) (*pbmodel.EmptyStruct, error)
+	// DisableWorkspaces allowed only invoke by space owner.
 	DisableWorkspaces(context.Context, *pbrequest.DisableWorkspaces) (*pbmodel.EmptyStruct, error)
+	// DisableWorkspaces allowed only invoke by space owner.
 	EnableWorkspaces(context.Context, *pbrequest.EnableWorkspaces) (*pbmodel.EmptyStruct, error)
 	CreateWorkspace(context.Context, *pbrequest.CreateWorkspace) (*pbresponse.CreateWorkspace, error)
 	UpdateWorkspace(context.Context, *pbrequest.UpdateWorkspace) (*pbmodel.EmptyStruct, error)
