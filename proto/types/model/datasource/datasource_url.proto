@@ -15,9 +15,9 @@ import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 // Host represents the pair of host(or ip):port
 message Host {
-  // host or ip. Is Required. Min Length 0, Max Length 256.
+  // host or ip. Is Required. Min Length 0, Max Length 64.
   // @inject_tag: json:"host"
-  string host = 1 [(validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 256 } ];
+  string host = 1 [(validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
 
   // Port, Is Required. Min: 0, Max: 65535.
   // @inject_tag: json:"port"
@@ -131,7 +131,7 @@ message FtpURL {
   // @inject_tag: json:"private_key"
   string private_key = 3 [
     (validator.field).check_if = { field: "protocol", tags: { enum: { eq: 2 } } },
-    (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 2048 }
+    (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 2048, utf8: true }
   ];
 
   // Host specifies the hostname of db. Is Required. Length Min: 1, Length Max: 64.

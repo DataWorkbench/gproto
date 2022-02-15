@@ -56,23 +56,3 @@ message Network {
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 9 [ (validator.field).tags.int = { gt: 0 } ];
 }
-
-// NetworkBinding declares which modules binding the network.
-message NetworkBinding {
-  // Workspace ID it belongs to. Only used when delete workspace.
-  // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
-  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
-
-  // ID of network.
-  // @inject_tag: json:"network_id" gorm:"column:network_id;primaryKey;"
-  string network_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" } ];
-
-  // ID of which module binding it.
-  // Includes modules: "flink_cluster"
-  // @inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
-  string module_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
-  // Timestamp of create time.
-  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 4 [ (validator.field).tags.int = { gt: 0 } ];
-}

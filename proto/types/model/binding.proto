@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelBinding";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+
+
+// ModuleSource declares the source module info.
+// used to query from db.
+message ModuleSource {
+  // SourceId is the ID of the bound module.
+  // @inject_tag: json:"source_id" gorm:"column:source_id;"
+  string source_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // SourceVersion is the version of the bound module.
+  // Notice: Reserved field, unused on present.
+  // @inject_tag: json:"source_version" gorm:"column:source_version;"
+  string source_version = 2 [
+    (validator.field).check_if = { field: "source_version", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 16 }
+  ];
+}
+
+// ModuleTarget declares the target module info.
+// used to query from db.
+message ModuleTarget {
+  // TargetId is the ID of which module binding it.
+  // @inject_tag: json:"target_id" gorm:"column:target_id;"
+  string target_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // TargetVersion represents the Target's version if there is a version number.
+  // This filed maybe empty.
+  // @inject_tag: json:"target_version" gorm:"column:target_version;"
+  string target_version = 2 [
+    (validator.field).check_if = { field: "target_version", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 16 }
+  ];
+}
+
+// BindingModule for describes dependencies between modules.
+message BindingModule {
+  // Workspace ID it belongs to. Only used when delete workspace.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // SourceId is the ID of the bound module.
+  // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+  string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // SourceVersion is the version of the bound module.
+  // Notice: Reserved field, unused on present.
+  // @inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
+  string source_version = 3 [
+    (validator.field).check_if = { field: "source_version", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 16 }
+  ];
+
+  // TargetId is the ID of which module binding it.
+  // @inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+  string target_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // TargetVersion represents the Target's version if there is a version number.
+  // This filed maybe empty.
+  // @inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+  string target_version = 5 [
+    (validator.field).check_if = { field: "target_version", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 16 }
+  ];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 6 [ (validator.field).tags.int = { gt: 0 } ];
+}
+
