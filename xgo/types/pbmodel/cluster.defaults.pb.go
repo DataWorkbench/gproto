@@ -49,11 +49,3 @@ func (this *FlinkCluster) SetDefaults() {
 	}
 	return
 }
-
-// Set default value for message model.FlinkClusterBinding
-func (this *FlinkClusterBinding) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}

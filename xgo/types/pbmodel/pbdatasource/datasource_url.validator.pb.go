@@ -10,14 +10,15 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
+	utf8 "unicode/utf8"
 )
 
 func (this *Host) _xxx_xxx_Validator_Validate_host() error {
 	if !(len(this.Host) >= 1) {
 		return protovalidator.FieldError1("Host", "the byte length of field 'host' must be greater than or equal to '1'", protovalidator.StringByteLenToString(this.Host))
 	}
-	if !(len(this.Host) <= 256) {
-		return protovalidator.FieldError1("Host", "the byte length of field 'host' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.Host))
+	if !(len(this.Host) <= 64) {
+		return protovalidator.FieldError1("Host", "the byte length of field 'host' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.Host))
 	}
 	return nil
 }
@@ -315,6 +316,9 @@ func (this *FtpURL) _xxx_xxx_Validator_Validate_private_key() error {
 	}
 	if !(len(this.PrivateKey) <= 2048) {
 		return protovalidator.FieldError1("FtpURL", "the byte length of field 'private_key' must be less than or equal to '2048'", protovalidator.StringByteLenToString(this.PrivateKey))
+	}
+	if !(utf8.ValidString(this.PrivateKey)) {
+		return protovalidator.FieldError1("FtpURL", "the value of field 'private_key' must be a UTF8 string", this.PrivateKey)
 	}
 	return nil
 }
