@@ -52,9 +52,13 @@ message ListUDFs {
 
 // DeleteUDF used as request parameters for RPC and HTTP(based on Body)
 message DeleteUDFs {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
   // delete these UDFIDs
   // @inject_tag: json:"udf_ids"
-  repeated string udf_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lt: 100, item: { string: { prefix: "udf-" } } } ];
+  repeated string udf_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lt: 100, item: { string: { prefix: "udf-" } } } ];
 }
 
 // UDF is one of ScalaUDF/ScalaUDTF/ScalaUDTTF/JarUDF/JarUDTF/JarUDTTF/PythonUDF/PythonUDTF
