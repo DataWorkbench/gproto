@@ -223,10 +223,10 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterId_);
       }
       unknownFields.writeTo(output);
@@ -238,10 +238,10 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1340,7 +1340,7 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
       if (limit_ != 0) {
@@ -1349,19 +1349,19 @@ public final class PBRequestClusterManage {
       if (offset_ != 0) {
         output.writeInt32(3, offset_);
       }
-      if (!getSortByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sortBy_);
       }
       if (reverse_ != false) {
         output.writeBool(5, reverse_);
       }
-      if (!getSearchBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, search_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Status.StatusUnset.getNumber()) {
         output.writeEnum(7, status_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
       }
       if (verbose_ != 0) {
@@ -1376,7 +1376,7 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
       if (limit_ != 0) {
@@ -1387,21 +1387,21 @@ public final class PBRequestClusterManage {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, offset_);
       }
-      if (!getSortByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sortBy_);
       }
       if (reverse_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, reverse_);
       }
-      if (!getSearchBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, search_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelCluster.FlinkCluster.Status.StatusUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, status_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
       }
       if (verbose_ != 0) {
@@ -2795,7 +2795,7 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
       for (int i = 0; i < clusterIds_.size(); i++) {
@@ -2810,7 +2810,7 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
       {
@@ -3713,7 +3713,7 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
       for (int i = 0; i < clusterIds_.size(); i++) {
@@ -3728,7 +3728,7 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
       {
@@ -4631,7 +4631,7 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
       for (int i = 0; i < clusterIds_.size(); i++) {
@@ -4646,7 +4646,7 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
       {
@@ -6086,28 +6086,28 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createdBy_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
       }
       if (taskNum_ != 0) {
         output.writeInt32(5, taskNum_);
       }
-      if (jobCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(jobCu_) != 0) {
         output.writeFloat(6, jobCu_);
       }
-      if (taskCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(taskCu_) != 0) {
         output.writeFloat(7, taskCu_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, networkId_);
       }
       if (hostAliases_ != null) {
@@ -6116,7 +6116,7 @@ public final class PBRequestClusterManage {
       if (config_ != null) {
         output.writeMessage(10, getConfig());
       }
-      if (!getSpaceOwnerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, spaceOwner_);
       }
       unknownFields.writeTo(output);
@@ -6128,31 +6128,31 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createdBy_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
       }
       if (taskNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, taskNum_);
       }
-      if (jobCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(jobCu_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, jobCu_);
       }
-      if (taskCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(taskCu_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, taskCu_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, networkId_);
       }
       if (hostAliases_ != null) {
@@ -6163,7 +6163,7 @@ public final class PBRequestClusterManage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getConfig());
       }
-      if (!getSpaceOwnerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
@@ -8447,25 +8447,25 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterId_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (taskNum_ != 0) {
         output.writeInt32(5, taskNum_);
       }
-      if (jobCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(jobCu_) != 0) {
         output.writeFloat(6, jobCu_);
       }
-      if (taskCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(taskCu_) != 0) {
         output.writeFloat(7, taskCu_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, networkId_);
       }
       if (hostAliases_ != null) {
@@ -8486,28 +8486,28 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterId_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (taskNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, taskNum_);
       }
-      if (jobCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(jobCu_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(6, jobCu_);
       }
-      if (taskCu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(taskCu_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, taskCu_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, networkId_);
       }
       if (hostAliases_ != null) {
@@ -10116,7 +10116,7 @@ public final class PBRequestClusterManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterId_);
       }
       unknownFields.writeTo(output);
@@ -10128,7 +10128,7 @@ public final class PBRequestClusterManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clusterId_);
       }
       size += unknownFields.getSerializedSize();

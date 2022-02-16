@@ -128,7 +128,7 @@ type Operation struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The user id of who execute this operation.
-	UserId  string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primaryKey;"`
+	UserId string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primaryKey;"`
 	SpaceId string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;primaryKey;"` //  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 	//	-- The operation of user behavior.
 	OpName string `protobuf:"bytes,3,opt,name=op_name,json=opName,proto3" json:"op_name" gorm:"column:op_name;"`

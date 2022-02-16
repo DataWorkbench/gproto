@@ -1617,10 +1617,10 @@ public final class PBRequestEngineManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterId_);
       }
       unknownFields.writeTo(output);
@@ -1632,10 +1632,10 @@ public final class PBRequestEngineManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getClusterIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterId_);
       }
       size += unknownFields.getSerializedSize();
@@ -3088,10 +3088,10 @@ public final class PBRequestEngineManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, networkId_);
       }
       unknownFields.writeTo(output);
@@ -3103,10 +3103,10 @@ public final class PBRequestEngineManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, networkId_);
       }
       size += unknownFields.getSerializedSize();

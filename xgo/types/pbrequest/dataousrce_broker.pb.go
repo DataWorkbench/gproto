@@ -146,8 +146,8 @@ type DescribeDataSourceTableSchemaByBroker struct {
 	// Source Type
 	Type pbmodel.DataSource_Type `protobuf:"varint,1,opt,name=type,proto3,enum=model.DataSource_Type" json:"type"`
 	// Source URL of connection info.
-	Url       *pbmodel.DataSource_URL `protobuf:"bytes,2,opt,name=url,proto3" json:"url"`
-	TableName string                  `protobuf:"bytes,3,opt,name=table_name,json=tableName,proto3" json:"table_name"`
+	Url *pbmodel.DataSource_URL `protobuf:"bytes,2,opt,name=url,proto3" json:"url"`
+	TableName string `protobuf:"bytes,3,opt,name=table_name,json=tableName,proto3" json:"table_name"`
 }
 
 func (x *DescribeDataSourceTableSchemaByBroker) Reset() {

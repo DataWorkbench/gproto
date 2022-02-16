@@ -1218,28 +1218,28 @@ public final class PBModelResource {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!getPidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pid_);
       }
       if (isDirectory_ != false) {
         output.writeBool(4, isDirectory_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
       }
       if (size_ != 0L) {
         output.writeInt64(7, size_);
       }
-      if (!getEtagBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
@@ -1248,10 +1248,10 @@ public final class PBModelResource {
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Status.StatusUnset.getNumber()) {
         output.writeEnum(10, status_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, version_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, createdBy_);
       }
       if (created_ != 0L) {
@@ -1269,30 +1269,30 @@ public final class PBModelResource {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!getPidBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pid_);
       }
       if (isDirectory_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isDirectory_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, size_);
       }
-      if (!getEtagBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.Resource.Type.ResourceUnset.getNumber()) {
@@ -1303,10 +1303,10 @@ public final class PBModelResource {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, status_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, version_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, createdBy_);
       }
       if (created_ != 0L) {

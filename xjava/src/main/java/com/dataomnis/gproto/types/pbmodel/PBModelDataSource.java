@@ -3949,16 +3949,16 @@ public final class PBModelDataSource {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
@@ -3970,7 +3970,7 @@ public final class PBModelDataSource {
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Status.StatusUnset.getNumber()) {
         output.writeEnum(7, status_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
       }
       if (created_ != 0L) {
@@ -3991,16 +3991,16 @@ public final class PBModelDataSource {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.Type.TypeUnset.getNumber()) {
@@ -4015,7 +4015,7 @@ public final class PBModelDataSource {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, status_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
       }
       if (created_ != 0L) {
@@ -6482,13 +6482,13 @@ public final class PBModelDataSource {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getSourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceId_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, networkId_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Status.StatusUnset.getNumber()) {
@@ -6497,7 +6497,7 @@ public final class PBModelDataSource {
       if (result_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.StateUnset.getNumber()) {
         output.writeEnum(5, result_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, message_);
       }
       if (created_ != 0L) {
@@ -6518,13 +6518,13 @@ public final class PBModelDataSource {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getSourceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceId_);
       }
-      if (!getNetworkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, networkId_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Status.StatusUnset.getNumber()) {
@@ -6535,7 +6535,7 @@ public final class PBModelDataSource {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, result_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, message_);
       }
       if (created_ != 0L) {
@@ -7960,7 +7960,7 @@ public final class PBModelDataSource {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       unknownFields.writeTo(output);
@@ -7972,7 +7972,7 @@ public final class PBModelDataSource {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       size += unknownFields.getSerializedSize();

@@ -496,9 +496,9 @@ type StreamJobProperty struct {
 	// Job Id, unique within a region.
 	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// The release version.
-	Version  string             `protobuf:"bytes,3,opt,name=version,proto3" json:"version" gorm:"column:version;primarykey"`
-	Code     *StreamJobCode     `protobuf:"bytes,4,opt,name=code,proto3" json:"code" gorm:"column:code;type:json"`
-	Args     *StreamJobArgs     `protobuf:"bytes,5,opt,name=args,proto3" json:"args" gorm:"column:args;type:json"`
+	Version string `protobuf:"bytes,3,opt,name=version,proto3" json:"version" gorm:"column:version;primarykey"`
+	Code *StreamJobCode `protobuf:"bytes,4,opt,name=code,proto3" json:"code" gorm:"column:code;type:json"`
+	Args *StreamJobArgs `protobuf:"bytes,5,opt,name=args,proto3" json:"args" gorm:"column:args;type:json"`
 	Schedule *StreamJobSchedule `protobuf:"bytes,6,opt,name=schedule,proto3" json:"schedule" gorm:"column:schedule;type:json"`
 }
 
@@ -586,7 +586,7 @@ type StreamJobCode struct {
 	Type StreamJob_Type `protobuf:"varint,1,opt,name=type,proto3,enum=model.StreamJob_Type" json:"type"`
 	// The flink operator nodes. Is useless on present.
 	Operators []*pbflink.FlinkOperator `protobuf:"bytes,2,rep,name=operators,proto3" json:"operators"`
-	Sql       *pbflink.FlinkSQL        `protobuf:"bytes,3,opt,name=sql,proto3" json:"sql"`
+	Sql *pbflink.FlinkSQL `protobuf:"bytes,3,opt,name=sql,proto3" json:"sql"`
 	// Jar
 	Jar *pbflink.FlinkJar `protobuf:"bytes,4,opt,name=jar,proto3" json:"jar"`
 	// Python

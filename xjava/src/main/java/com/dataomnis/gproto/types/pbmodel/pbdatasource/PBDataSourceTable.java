@@ -1354,16 +1354,16 @@ public final class PBDataSourceTable {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
       }
-      if (!getLengthBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, length_);
       }
-      if (!getIsPrimaryKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isPrimaryKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, isPrimaryKey_);
       }
       unknownFields.writeTo(output);
@@ -1375,16 +1375,16 @@ public final class PBDataSourceTable {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
       }
-      if (!getLengthBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, length_);
       }
-      if (!getIsPrimaryKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isPrimaryKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, isPrimaryKey_);
       }
       size += unknownFields.getSerializedSize();

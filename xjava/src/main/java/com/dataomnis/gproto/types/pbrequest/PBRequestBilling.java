@@ -364,16 +364,16 @@ public final class PBRequestBilling {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
-      if (!getFeeTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feeType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, feeType_);
       }
-      if (cu_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(cu_) != 0) {
         output.writeDouble(4, cu_);
       }
       if (isAutoRenew_ != 0) {
@@ -388,16 +388,16 @@ public final class PBRequestBilling {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
       }
-      if (!getFeeTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(feeType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, feeType_);
       }
-      if (cu_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(cu_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, cu_);
       }
@@ -1440,13 +1440,13 @@ public final class PBRequestBilling {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
-      if (!getConstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, constanceId_);
       }
       unknownFields.writeTo(output);
@@ -1458,13 +1458,13 @@ public final class PBRequestBilling {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
       }
-      if (!getConstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, constanceId_);
       }
       size += unknownFields.getSerializedSize();
@@ -2443,13 +2443,13 @@ public final class PBRequestBilling {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
-      if (!getConstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, constanceId_);
       }
       unknownFields.writeTo(output);
@@ -2461,13 +2461,13 @@ public final class PBRequestBilling {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
       }
-      if (!getConstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(constanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, constanceId_);
       }
       size += unknownFields.getSerializedSize();

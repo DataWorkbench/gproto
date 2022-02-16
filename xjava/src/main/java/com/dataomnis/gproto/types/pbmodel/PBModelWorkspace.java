@@ -668,16 +668,16 @@ public final class PBModelWorkspace {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!getOwnerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Status.StatusUnset.getNumber()) {
@@ -698,16 +698,16 @@ public final class PBModelWorkspace {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!getOwnerBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Status.StatusUnset.getNumber()) {

@@ -981,16 +981,16 @@ public final class PBModelObserver {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
       if (runningTime_ != 0L) {
         output.writeInt64(3, runningTime_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
       }
       unknownFields.writeTo(output);
@@ -1002,17 +1002,17 @@ public final class PBModelObserver {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
       if (runningTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, runningTime_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
       }
       size += unknownFields.getSerializedSize();
@@ -2003,10 +2003,10 @@ public final class PBModelObserver {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobId_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
       if (errorCount_ != 0L) {
@@ -2021,10 +2021,10 @@ public final class PBModelObserver {
       if (size != -1) return size;
 
       size = 0;
-      if (!getJobIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobId_);
       }
-      if (!getVersionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
       }
       if (errorCount_ != 0L) {

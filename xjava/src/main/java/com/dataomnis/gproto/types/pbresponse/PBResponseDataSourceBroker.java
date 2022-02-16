@@ -310,7 +310,7 @@ public final class PBResponseDataSourceBroker {
       if (result_ != com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Result.StateUnset.getNumber()) {
         output.writeEnum(1, result_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       if (begin_ != 0L) {
@@ -332,7 +332,7 @@ public final class PBResponseDataSourceBroker {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, result_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       if (begin_ != 0L) {

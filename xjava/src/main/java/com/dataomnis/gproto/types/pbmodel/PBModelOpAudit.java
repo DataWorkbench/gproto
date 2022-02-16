@@ -752,13 +752,13 @@ public final class PBModelOpAudit {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
       }
-      if (!getOpNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, opName_);
       }
       if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {
@@ -779,13 +779,13 @@ public final class PBModelOpAudit {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUserIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
       }
-      if (!getOpNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, opName_);
       }
       if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {

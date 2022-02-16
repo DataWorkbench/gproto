@@ -615,19 +615,19 @@ public final class PBModelJobManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
       }
-      if (!getNoteIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, noteId_);
       }
-      if (!getParagraphIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paragraphId_);
       }
-      if (!getFlinkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, flinkId_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.StreamInstance.State.StateUnset.getNumber()) {
@@ -648,19 +648,19 @@ public final class PBModelJobManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
       }
-      if (!getNoteIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, noteId_);
       }
-      if (!getParagraphIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paragraphId_);
       }
-      if (!getFlinkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, flinkId_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.StreamInstance.State.StateUnset.getNumber()) {

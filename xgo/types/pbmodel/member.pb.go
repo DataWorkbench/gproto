@@ -176,7 +176,7 @@ type Role struct {
 	unknownFields protoimpl.UnknownFields
 
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
-	Id      string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primarykey;"`
 	// The name of role. unique in a workspace.
 	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
 	// Type. 1 => "System" 2 => "Custom"
@@ -266,8 +266,8 @@ type Member struct {
 	// FIXME: confirm the
 	RoleIds string `protobuf:"bytes,4,opt,name=role_ids,json=roleIds,proto3" json:"role_ids" gorm:"column:role_ids;"`
 	// 1 => "Normal" 2 => "Deleted". Ignore it for client.
-	Status  Member_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.Member_Status" json:"status" gorm:"column:status;"`
-	Created int64         `protobuf:"varint,6,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
+	Status Member_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.Member_Status" json:"status" gorm:"column:status;"`
+	Created int64 `protobuf:"varint,6,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
 	Updated int64 `protobuf:"varint,7,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }

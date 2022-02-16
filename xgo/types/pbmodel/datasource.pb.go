@@ -402,7 +402,7 @@ type DataSourceConnection struct {
 	// Create Time, When start tested for usability..
 	Created int64 `protobuf:"varint,7,opt,name=created,proto3" json:"created" gorm:"column:created;"`
 	// Elapse is Used time of tested for usability. unit in ms.
-	Elapse      int64    `protobuf:"varint,8,opt,name=elapse,proto3" json:"elapse" gorm:"column:elapse;"`
+	Elapse int64 `protobuf:"varint,8,opt,name=elapse,proto3" json:"elapse" gorm:"column:elapse;"`
 	NetworkInfo *Network `protobuf:"bytes,9,opt,name=network_info,json=networkInfo,proto3" json:"network_info" gorm:"-"`
 }
 

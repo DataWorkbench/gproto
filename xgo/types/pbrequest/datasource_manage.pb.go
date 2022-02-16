@@ -824,7 +824,7 @@ type DescribeDataSourceTables struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SpaceId  string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
 	SourceId string `protobuf:"bytes,2,opt,name=source_id,json=sourceId,proto3" json:"source_id"`
 }
 
@@ -879,8 +879,8 @@ type DescribeDataSourceTableSchema struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
-	SourceId  string `protobuf:"bytes,2,opt,name=source_id,json=sourceId,proto3" json:"source_id"`
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
+	SourceId string `protobuf:"bytes,2,opt,name=source_id,json=sourceId,proto3" json:"source_id"`
 	TableName string `protobuf:"bytes,3,opt,name=table_name,json=tableName,proto3" json:"table_name"`
 }
 

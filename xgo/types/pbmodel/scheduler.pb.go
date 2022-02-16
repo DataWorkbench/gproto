@@ -95,7 +95,7 @@ type QueueMessage struct {
 	NoteId string `protobuf:"bytes,4,opt,name=note_id,json=noteId,proto3" json:"note_id"`
 	// zeppelin paragraphID
 	ParagraphId string `protobuf:"bytes,5,opt,name=paragraph_id,json=paragraphId,proto3" json:"paragraph_id"`
-	FlinkId     string `protobuf:"bytes,6,opt,name=flink_id,json=flinkId,proto3" json:"flink_id"`
+	FlinkId string `protobuf:"bytes,6,opt,name=flink_id,json=flinkId,proto3" json:"flink_id"`
 }
 
 func (x *QueueMessage) Reset() {

@@ -157,10 +157,10 @@ public final class PBResponseBilling {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hourPrice_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(hourPrice_) != 0) {
         output.writeDouble(1, hourPrice_);
       }
-      if (monthPrice_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(monthPrice_) != 0) {
         output.writeDouble(2, monthPrice_);
       }
       unknownFields.writeTo(output);
@@ -172,11 +172,11 @@ public final class PBResponseBilling {
       if (size != -1) return size;
 
       size = 0;
-      if (hourPrice_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(hourPrice_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, hourPrice_);
       }
-      if (monthPrice_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(monthPrice_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, monthPrice_);
       }
@@ -756,7 +756,7 @@ public final class PBResponseBilling {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
       }
       unknownFields.writeTo(output);
@@ -768,7 +768,7 @@ public final class PBResponseBilling {
       if (size != -1) return size;
 
       size = 0;
-      if (!getInstanceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1369,7 +1369,7 @@ public final class PBResponseBilling {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
       unknownFields.writeTo(output);
@@ -1381,7 +1381,7 @@ public final class PBResponseBilling {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
       size += unknownFields.getSerializedSize();
@@ -1982,7 +1982,7 @@ public final class PBResponseBilling {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
       unknownFields.writeTo(output);
@@ -1994,7 +1994,7 @@ public final class PBResponseBilling {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
       size += unknownFields.getSerializedSize();

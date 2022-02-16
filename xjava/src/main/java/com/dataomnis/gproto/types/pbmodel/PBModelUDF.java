@@ -1272,19 +1272,19 @@ public final class PBModelUDF {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
-      if (!getDefineBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(define_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, define_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.TypeUnset.getNumber()) {
@@ -1296,10 +1296,10 @@ public final class PBModelUDF {
       if (language_ != com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.LanguageUnset.getNumber()) {
         output.writeEnum(8, language_);
       }
-      if (!getUsageSampleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, usageSample_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdBy_);
       }
       if (created_ != 0L) {
@@ -1317,19 +1317,19 @@ public final class PBModelUDF {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSpaceIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!getNameBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!getDescBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
       }
-      if (!getDefineBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(define_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, define_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.TypeUnset.getNumber()) {
@@ -1344,10 +1344,10 @@ public final class PBModelUDF {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, language_);
       }
-      if (!getUsageSampleBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, usageSample_);
       }
-      if (!getCreatedByBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdBy_);
       }
       if (created_ != 0L) {

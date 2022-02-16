@@ -263,10 +263,10 @@ public final class PBResponseJobManageManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNoteIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, noteId_);
       }
-      if (!getParagraphIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, paragraphId_);
       }
       unknownFields.writeTo(output);
@@ -278,10 +278,10 @@ public final class PBResponseJobManageManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNoteIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, noteId_);
       }
-      if (!getParagraphIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, paragraphId_);
       }
       size += unknownFields.getSerializedSize();
@@ -1131,10 +1131,10 @@ public final class PBResponseJobManageManage {
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.StreamInstance.State.StateUnset.getNumber()) {
         output.writeEnum(1, state_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
-      if (!getFlinkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, flinkId_);
       }
       unknownFields.writeTo(output);
@@ -1150,10 +1150,10 @@ public final class PBResponseJobManageManage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, state_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
-      if (!getFlinkIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, flinkId_);
       }
       size += unknownFields.getSerializedSize();
@@ -2014,7 +2014,7 @@ public final class PBResponseJobManageManage {
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.StreamInstance.State.StateUnset.getNumber()) {
         output.writeEnum(1, state_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       unknownFields.writeTo(output);
@@ -2030,7 +2030,7 @@ public final class PBResponseJobManageManage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, state_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       size += unknownFields.getSerializedSize();
@@ -2892,7 +2892,7 @@ public final class PBResponseJobManageManage {
       if (result_ != com.dataomnis.gproto.types.pbresponse.PBResponseJobManageManage.ValidateFlinkJob.Result.ResultUnset.getNumber()) {
         output.writeEnum(1, result_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       unknownFields.writeTo(output);
@@ -2908,7 +2908,7 @@ public final class PBResponseJobManageManage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, result_);
       }
-      if (!getMessageBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       size += unknownFields.getSerializedSize();
