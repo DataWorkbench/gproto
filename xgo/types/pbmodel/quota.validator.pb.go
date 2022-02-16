@@ -41,8 +41,8 @@ func (this *QuotaUDF) Validate() error {
 	return nil
 }
 
-// Set default value for message model.QuotaResource
-func (this *QuotaResource) Validate() error {
+// Set default value for message model.QuotaFile
+func (this *QuotaFile) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -101,8 +101,8 @@ func (this *UserQuota) _xxx_xxx_Validator_Validate_udf() error {
 	return nil
 }
 
-func (this *UserQuota) _xxx_xxx_Validator_Validate_resource() error {
-	if dt, ok := interface{}(this.Resource).(interface{ Validate() error }); ok {
+func (this *UserQuota) _xxx_xxx_Validator_Validate_file() error {
+	if dt, ok := interface{}(this.File).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -145,7 +145,7 @@ func (this *UserQuota) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_udf(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_file(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_flink_cluster(); err != nil {

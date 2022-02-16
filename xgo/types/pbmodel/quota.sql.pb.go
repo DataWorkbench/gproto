@@ -64,12 +64,12 @@ func (t *QuotaUDF) Value() (driver.Value, error) {
 }
 
 // Scan for implements sql.Scanner (- database/sql).
-func (t *QuotaResource) Scan(val interface{}) error {
+func (t *QuotaFile) Scan(val interface{}) error {
 	return json.Unmarshal(val.([]byte), t)
 }
 
 // Value for implements driver.Valuer (- database/sql/driver)
-func (t *QuotaResource) Value() (driver.Value, error) {
+func (t *QuotaFile) Value() (driver.Value, error) {
 	if t == nil {
 		return nil, nil
 	}

@@ -2329,25 +2329,27 @@ public final class PBFlinkJob {
 
     /**
      * <pre>
-     * jarid in resource manager. Is resource_id.
+     * The id of file type Jar. Is Required.
+     * FIXME: Rename JSON Name
      * &#64;inject_tag: json:"resource_id"
      * </pre>
      *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The resourceId.
+     * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+     * @return The fileId.
      */
-    java.lang.String getResourceId();
+    java.lang.String getFileId();
     /**
      * <pre>
-     * jarid in resource manager. Is resource_id.
+     * The id of file type Jar. Is Required.
+     * FIXME: Rename JSON Name
      * &#64;inject_tag: json:"resource_id"
      * </pre>
      *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceId.
+     * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for fileId.
      */
     com.google.protobuf.ByteString
-        getResourceIdBytes();
+        getFileIdBytes();
 
     /**
      * <pre>
@@ -2410,7 +2412,7 @@ public final class PBFlinkJob {
       super(builder);
     }
     private FlinkJar() {
-      resourceId_ = "";
+      fileId_ = "";
       jarArgs_ = "";
       jarEntry_ = "";
     }
@@ -2448,7 +2450,7 @@ public final class PBFlinkJob {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              resourceId_ = s;
+              fileId_ = s;
               break;
             }
             case 18: {
@@ -2495,48 +2497,50 @@ public final class PBFlinkJob {
               com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar.class, com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar.Builder.class);
     }
 
-    public static final int RESOURCE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object resourceId_;
+    public static final int FILE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object fileId_;
     /**
      * <pre>
-     * jarid in resource manager. Is resource_id.
+     * The id of file type Jar. Is Required.
+     * FIXME: Rename JSON Name
      * &#64;inject_tag: json:"resource_id"
      * </pre>
      *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The resourceId.
+     * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+     * @return The fileId.
      */
     @java.lang.Override
-    public java.lang.String getResourceId() {
-      java.lang.Object ref = resourceId_;
+    public java.lang.String getFileId() {
+      java.lang.Object ref = fileId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        resourceId_ = s;
+        fileId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * jarid in resource manager. Is resource_id.
+     * The id of file type Jar. Is Required.
+     * FIXME: Rename JSON Name
      * &#64;inject_tag: json:"resource_id"
      * </pre>
      *
-     * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for resourceId.
+     * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for fileId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getResourceIdBytes() {
-      java.lang.Object ref = resourceId_;
+        getFileIdBytes() {
+      java.lang.Object ref = fileId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        resourceId_ = b;
+        fileId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2653,8 +2657,8 @@ public final class PBFlinkJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fileId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarArgs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jarArgs_);
@@ -2671,8 +2675,8 @@ public final class PBFlinkJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fileId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarArgs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jarArgs_);
@@ -2695,8 +2699,8 @@ public final class PBFlinkJob {
       }
       com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar other = (com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar) obj;
 
-      if (!getResourceId()
-          .equals(other.getResourceId())) return false;
+      if (!getFileId()
+          .equals(other.getFileId())) return false;
       if (!getJarArgs()
           .equals(other.getJarArgs())) return false;
       if (!getJarEntry()
@@ -2712,8 +2716,8 @@ public final class PBFlinkJob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getResourceId().hashCode();
+      hash = (37 * hash) + FILE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFileId().hashCode();
       hash = (37 * hash) + JAR_ARGS_FIELD_NUMBER;
       hash = (53 * hash) + getJarArgs().hashCode();
       hash = (37 * hash) + JAR_ENTRY_FIELD_NUMBER;
@@ -2855,7 +2859,7 @@ public final class PBFlinkJob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        resourceId_ = "";
+        fileId_ = "";
 
         jarArgs_ = "";
 
@@ -2887,7 +2891,7 @@ public final class PBFlinkJob {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar buildPartial() {
         com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar result = new com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar(this);
-        result.resourceId_ = resourceId_;
+        result.fileId_ = fileId_;
         result.jarArgs_ = jarArgs_;
         result.jarEntry_ = jarEntry_;
         onBuilt();
@@ -2938,8 +2942,8 @@ public final class PBFlinkJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar other) {
         if (other == com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkJar.getDefaultInstance()) return this;
-        if (!other.getResourceId().isEmpty()) {
-          resourceId_ = other.resourceId_;
+        if (!other.getFileId().isEmpty()) {
+          fileId_ = other.fileId_;
           onChanged();
         }
         if (!other.getJarArgs().isEmpty()) {
@@ -2979,23 +2983,24 @@ public final class PBFlinkJob {
         return this;
       }
 
-      private java.lang.Object resourceId_ = "";
+      private java.lang.Object fileId_ = "";
       /**
        * <pre>
-       * jarid in resource manager. Is resource_id.
+       * The id of file type Jar. Is Required.
+       * FIXME: Rename JSON Name
        * &#64;inject_tag: json:"resource_id"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @return The resourceId.
+       * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+       * @return The fileId.
        */
-      public java.lang.String getResourceId() {
-        java.lang.Object ref = resourceId_;
+      public java.lang.String getFileId() {
+        java.lang.Object ref = fileId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          resourceId_ = s;
+          fileId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3003,21 +3008,22 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * jarid in resource manager. Is resource_id.
+       * The id of file type Jar. Is Required.
+       * FIXME: Rename JSON Name
        * &#64;inject_tag: json:"resource_id"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for resourceId.
+       * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for fileId.
        */
       public com.google.protobuf.ByteString
-          getResourceIdBytes() {
-        java.lang.Object ref = resourceId_;
+          getFileIdBytes() {
+        java.lang.Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          resourceId_ = b;
+          fileId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3025,57 +3031,60 @@ public final class PBFlinkJob {
       }
       /**
        * <pre>
-       * jarid in resource manager. Is resource_id.
+       * The id of file type Jar. Is Required.
+       * FIXME: Rename JSON Name
        * &#64;inject_tag: json:"resource_id"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The resourceId to set.
+       * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The fileId to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceId(
+      public Builder setFileId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        resourceId_ = value;
+        fileId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * jarid in resource manager. Is resource_id.
+       * The id of file type Jar. Is Required.
+       * FIXME: Rename JSON Name
        * &#64;inject_tag: json:"resource_id"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearResourceId() {
+      public Builder clearFileId() {
         
-        resourceId_ = getDefaultInstance().getResourceId();
+        fileId_ = getDefaultInstance().getFileId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * jarid in resource manager. Is resource_id.
+       * The id of file type Jar. Is Required.
+       * FIXME: Rename JSON Name
        * &#64;inject_tag: json:"resource_id"
        * </pre>
        *
-       * <code>string resource_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for resourceId to set.
+       * <code>string file_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for fileId to set.
        * @return This builder for chaining.
        */
-      public Builder setResourceIdBytes(
+      public Builder setFileIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        resourceId_ = value;
+        fileId_ = value;
         onChanged();
         return this;
       }
@@ -5249,17 +5258,16 @@ public final class PBFlinkJob {
       "\n\n\006Offset\020\010\022\t\n\005Fetch\020\t\022\n\n\006Filter\020\n\022\t\n\005Un" +
       "ion\020\013\022\n\n\006Except\020\014\022\r\n\tIntersect\020\r\022\013\n\007Grou" +
       "pBy\020\016\022\n\n\006Having\020\017\022\010\n\004Join\020\020\022\010\n\004UDTF\020\021\022\t\n" +
-      "\005UDTTF\020\022\"}\n\010FlinkJar\022(\n\013resource_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\"\n\010jar_args\030\002 \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\230\002\200\010\210\005\001\022#\n\tjar_entry\030\003 \001(\tB\020\342" +
-      "\337\037\014\022\n\302\001\007\230\002\200\010\210\005\001\"-\n\nFlinkScala\022\037\n\004code\030\001 " +
-      "\001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\".\n\013FlinkPython\022\037\n" +
-      "\004code\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkS" +
-      "QL\022\037\n\004code\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*c" +
-      "om.dataomnis.gproto.types.pbmodel.pbflin" +
-      "kB\nPBFlinkJobP\000Z9github.com/DataWorkbenc" +
-      "h/gproto/xgo/types/pbmodel/pbflinkb\006prot" +
-      "o3"
+      "\005UDTTF\020\022\"y\n\010FlinkJar\022$\n\007file_id\030\001 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\"\n\010jar_args\030\002 \001(\tB\020\342\337" +
+      "\037\014\022\n\302\001\007\230\002\200\010\210\005\001\022#\n\tjar_entry\030\003 \001(\tB\020\342\337\037\014\022" +
+      "\n\302\001\007\230\002\200\010\210\005\001\"-\n\nFlinkScala\022\037\n\004code\030\001 \001(\tB" +
+      "\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\".\n\013FlinkPython\022\037\n\004cod" +
+      "e\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001\"+\n\010FlinkSQL\022\037" +
+      "\n\004code\030\001 \001(\tB\021\342\337\037\r\022\013\302\001\010\230\002\300\270\002\210\005\001Bu\n*com.d" +
+      "ataomnis.gproto.types.pbmodel.pbflinkB\nP" +
+      "BFlinkJobP\000Z9github.com/DataWorkbench/gp" +
+      "roto/xgo/types/pbmodel/pbflinkb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5278,7 +5286,7 @@ public final class PBFlinkJob {
     internal_static_flink_FlinkJar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flink_FlinkJar_descriptor,
-        new java.lang.String[] { "ResourceId", "JarArgs", "JarEntry", });
+        new java.lang.String[] { "FileId", "JarArgs", "JarEntry", });
     internal_static_flink_FlinkScala_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flink_FlinkScala_fieldAccessorTable = new

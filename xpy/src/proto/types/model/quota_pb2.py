@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\014PBModelQuotaP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\'\n\x0eQuotaWorkspace\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaStreamJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaDataSource\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"!\n\x08QuotaUDF\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\rQuotaResource\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x12\n\nsize_total\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\x11QuotaFlinkCluster\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\n\n\x02\x63u\x18\x02 \x01(\x02\x12\x10\n\x08\x63u_total\x18\x03 \x01(\x02:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaNetwork\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xbb\x02\n\tUserQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12(\n\tworkspace\x18\x02 \x01(\x0b\x32\x15.model.QuotaWorkspace\x12)\n\nstream_job\x18\x03 \x01(\x0b\x32\x15.model.QuotaStreamJob\x12+\n\x0b\x64\x61ta_source\x18\x04 \x01(\x0b\x32\x16.model.QuotaDataSource\x12\x1c\n\x03udf\x18\x05 \x01(\x0b\x32\x0f.model.QuotaUDF\x12&\n\x08resource\x18\x06 \x01(\x0b\x32\x14.model.QuotaResource\x12/\n\rflink_cluster\x18\x07 \x01(\x0b\x32\x18.model.QuotaFlinkCluster\x12$\n\x07network\x18\x08 \x01(\x0b\x32\x13.model.QuotaNetworkBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\'\n\x0eQuotaWorkspace\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaStreamJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaDataSource\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"!\n\x08QuotaUDF\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"D\n\tQuotaFile\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x12\n\nsize_total\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\x11QuotaFlinkCluster\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\n\n\x02\x63u\x18\x02 \x01(\x02\x12\x10\n\x08\x63u_total\x18\x03 \x01(\x02:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaNetwork\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xb3\x02\n\tUserQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12(\n\tworkspace\x18\x02 \x01(\x0b\x32\x15.model.QuotaWorkspace\x12)\n\nstream_job\x18\x03 \x01(\x0b\x32\x15.model.QuotaStreamJob\x12+\n\x0b\x64\x61ta_source\x18\x04 \x01(\x0b\x32\x16.model.QuotaDataSource\x12\x1c\n\x03udf\x18\x05 \x01(\x0b\x32\x0f.model.QuotaUDF\x12\x1e\n\x04\x66ile\x18\x06 \x01(\x0b\x32\x10.model.QuotaFile\x12/\n\rflink_cluster\x18\x07 \x01(\x0b\x32\x18.model.QuotaFlinkCluster\x12$\n\x07network\x18\x08 \x01(\x0b\x32\x13.model.QuotaNetworkBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
@@ -155,30 +155,30 @@ _QUOTAUDF = _descriptor.Descriptor(
 )
 
 
-_QUOTARESOURCE = _descriptor.Descriptor(
-  name='QuotaResource',
-  full_name='model.QuotaResource',
+_QUOTAFILE = _descriptor.Descriptor(
+  name='QuotaFile',
+  full_name='model.QuotaFile',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='model.QuotaResource.limit', index=0,
+      name='limit', full_name='model.QuotaFile.limit', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='size', full_name='model.QuotaResource.size', index=1,
+      name='size', full_name='model.QuotaFile.size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='size_total', full_name='model.QuotaResource.size_total', index=2,
+      name='size_total', full_name='model.QuotaFile.size_total', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -197,7 +197,7 @@ _QUOTARESOURCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=248,
-  serialized_end=320,
+  serialized_end=316,
 )
 
 
@@ -242,8 +242,8 @@ _QUOTAFLINKCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=322,
-  serialized_end=394,
+  serialized_start=318,
+  serialized_end=390,
 )
 
 
@@ -274,8 +274,8 @@ _QUOTANETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=433,
+  serialized_start=392,
+  serialized_end=429,
 )
 
 
@@ -323,7 +323,7 @@ _USERQUOTA = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='resource', full_name='model.UserQuota.resource', index=5,
+      name='file', full_name='model.UserQuota.file', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -355,22 +355,22 @@ _USERQUOTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=436,
-  serialized_end=751,
+  serialized_start=432,
+  serialized_end=739,
 )
 
 _USERQUOTA.fields_by_name['workspace'].message_type = _QUOTAWORKSPACE
 _USERQUOTA.fields_by_name['stream_job'].message_type = _QUOTASTREAMJOB
 _USERQUOTA.fields_by_name['data_source'].message_type = _QUOTADATASOURCE
 _USERQUOTA.fields_by_name['udf'].message_type = _QUOTAUDF
-_USERQUOTA.fields_by_name['resource'].message_type = _QUOTARESOURCE
+_USERQUOTA.fields_by_name['file'].message_type = _QUOTAFILE
 _USERQUOTA.fields_by_name['flink_cluster'].message_type = _QUOTAFLINKCLUSTER
 _USERQUOTA.fields_by_name['network'].message_type = _QUOTANETWORK
 DESCRIPTOR.message_types_by_name['QuotaWorkspace'] = _QUOTAWORKSPACE
 DESCRIPTOR.message_types_by_name['QuotaStreamJob'] = _QUOTASTREAMJOB
 DESCRIPTOR.message_types_by_name['QuotaDataSource'] = _QUOTADATASOURCE
 DESCRIPTOR.message_types_by_name['QuotaUDF'] = _QUOTAUDF
-DESCRIPTOR.message_types_by_name['QuotaResource'] = _QUOTARESOURCE
+DESCRIPTOR.message_types_by_name['QuotaFile'] = _QUOTAFILE
 DESCRIPTOR.message_types_by_name['QuotaFlinkCluster'] = _QUOTAFLINKCLUSTER
 DESCRIPTOR.message_types_by_name['QuotaNetwork'] = _QUOTANETWORK
 DESCRIPTOR.message_types_by_name['UserQuota'] = _USERQUOTA
@@ -404,12 +404,12 @@ QuotaUDF = _reflection.GeneratedProtocolMessageType('QuotaUDF', (_message.Messag
   })
 _sym_db.RegisterMessage(QuotaUDF)
 
-QuotaResource = _reflection.GeneratedProtocolMessageType('QuotaResource', (_message.Message,), {
-  'DESCRIPTOR' : _QUOTARESOURCE,
+QuotaFile = _reflection.GeneratedProtocolMessageType('QuotaFile', (_message.Message,), {
+  'DESCRIPTOR' : _QUOTAFILE,
   '__module__' : 'proto.types.model.quota_pb2'
-  # @@protoc_insertion_point(class_scope:model.QuotaResource)
+  # @@protoc_insertion_point(class_scope:model.QuotaFile)
   })
-_sym_db.RegisterMessage(QuotaResource)
+_sym_db.RegisterMessage(QuotaFile)
 
 QuotaFlinkCluster = _reflection.GeneratedProtocolMessageType('QuotaFlinkCluster', (_message.Message,), {
   'DESCRIPTOR' : _QUOTAFLINKCLUSTER,
@@ -438,7 +438,7 @@ _QUOTAWORKSPACE._options = None
 _QUOTASTREAMJOB._options = None
 _QUOTADATASOURCE._options = None
 _QUOTAUDF._options = None
-_QUOTARESOURCE._options = None
+_QUOTAFILE._options = None
 _QUOTAFLINKCLUSTER._options = None
 _QUOTANETWORK._options = None
 # @@protoc_insertion_point(module_scope)

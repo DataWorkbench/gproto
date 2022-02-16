@@ -41,8 +41,8 @@ func (this *QuotaUDF) SetDefaults() {
 	return
 }
 
-// Set default value for message model.QuotaResource
-func (this *QuotaResource) SetDefaults() {
+// Set default value for message model.QuotaFile
+func (this *QuotaFile) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -90,8 +90,8 @@ func (this *UserQuota) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.Resource != nil {
-		if dt, ok := interface{}(this.Resource).(interface{ SetDefaults() }); ok {
+	if this.File != nil {
+		if dt, ok := interface{}(this.File).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

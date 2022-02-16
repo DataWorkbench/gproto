@@ -2050,8 +2050,8 @@ public final class PBModelQuota {
 
   }
 
-  public interface QuotaResourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaResource)
+  public interface QuotaFileOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaFile)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2085,25 +2085,25 @@ public final class PBModelQuota {
     long getSizeTotal();
   }
   /**
-   * Protobuf type {@code model.QuotaResource}
+   * Protobuf type {@code model.QuotaFile}
    */
-  public static final class QuotaResource extends
+  public static final class QuotaFile extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaResource)
-      QuotaResourceOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.QuotaFile)
+      QuotaFileOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use QuotaResource.newBuilder() to construct.
-    private QuotaResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use QuotaFile.newBuilder() to construct.
+    private QuotaFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private QuotaResource() {
+    private QuotaFile() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new QuotaResource();
+      return new QuotaFile();
     }
 
     @java.lang.Override
@@ -2111,7 +2111,7 @@ public final class PBModelQuota {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuotaResource(
+    private QuotaFile(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2165,15 +2165,15 @@ public final class PBModelQuota {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaResource_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaResource_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder.class);
     }
 
     public static final int LIMIT_FIELD_NUMBER = 1;
@@ -2275,10 +2275,10 @@ public final class PBModelQuota {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile) obj;
 
       if (getLimit()
           != other.getLimit()) return false;
@@ -2311,69 +2311,69 @@ public final class PBModelQuota {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2386,7 +2386,7 @@ public final class PBModelQuota {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2402,26 +2402,26 @@ public final class PBModelQuota {
       return builder;
     }
     /**
-     * Protobuf type {@code model.QuotaResource}
+     * Protobuf type {@code model.QuotaFile}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaResource)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.QuotaFile)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaResource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaResource_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2451,17 +2451,17 @@ public final class PBModelQuota {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaResource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaFile_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2469,8 +2469,8 @@ public final class PBModelQuota {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile(this);
         result.limit_ = limit_;
         result.size_ = size_;
         result.sizeTotal_ = sizeTotal_;
@@ -2512,16 +2512,16 @@ public final class PBModelQuota {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance()) return this;
         if (other.getLimit() != 0L) {
           setLimit(other.getLimit());
         }
@@ -2546,11 +2546,11 @@ public final class PBModelQuota {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2701,41 +2701,41 @@ public final class PBModelQuota {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.QuotaResource)
+      // @@protoc_insertion_point(builder_scope:model.QuotaFile)
     }
 
-    // @@protoc_insertion_point(class_scope:model.QuotaResource)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.QuotaFile)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<QuotaResource>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaResource>() {
+    private static final com.google.protobuf.Parser<QuotaFile>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaFile>() {
       @java.lang.Override
-      public QuotaResource parsePartialFrom(
+      public QuotaFile parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaResource(input, extensionRegistry);
+        return new QuotaFile(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<QuotaResource> parser() {
+    public static com.google.protobuf.Parser<QuotaFile> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<QuotaResource> getParserForType() {
+    public com.google.protobuf.Parser<QuotaFile> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4079,30 +4079,30 @@ public final class PBModelQuota {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 6;</code>
-     * @return Whether the resource field is set.
+     * <code>.model.QuotaFile file = 6;</code>
+     * @return Whether the file field is set.
      */
-    boolean hasResource();
+    boolean hasFile();
     /**
      * <pre>
-     * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 6;</code>
-     * @return The resource.
+     * <code>.model.QuotaFile file = 6;</code>
+     * @return The file.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getResource();
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getFile();
     /**
      * <pre>
-     * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 6;</code>
+     * <code>.model.QuotaFile file = 6;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder getResourceOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder getFileOrBuilder();
 
     /**
      * <pre>
@@ -4267,14 +4267,14 @@ public final class PBModelQuota {
               break;
             }
             case 50: {
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder subBuilder = null;
-              if (resource_ != null) {
-                subBuilder = resource_.toBuilder();
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder subBuilder = null;
+              if (file_ != null) {
+                subBuilder = file_.toBuilder();
               }
-              resource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.parser(), extensionRegistry);
+              file_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(resource_);
-                resource_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(file_);
+                file_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4537,42 +4537,42 @@ public final class PBModelQuota {
       return getUdf();
     }
 
-    public static final int RESOURCE_FIELD_NUMBER = 6;
-    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource resource_;
+    public static final int FILE_FIELD_NUMBER = 6;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile file_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 6;</code>
-     * @return Whether the resource field is set.
+     * <code>.model.QuotaFile file = 6;</code>
+     * @return Whether the file field is set.
      */
     @java.lang.Override
-    public boolean hasResource() {
-      return resource_ != null;
+    public boolean hasFile() {
+      return file_ != null;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 6;</code>
-     * @return The resource.
+     * <code>.model.QuotaFile file = 6;</code>
+     * @return The file.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getResource() {
-      return resource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.getDefaultInstance() : resource_;
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getFile() {
+      return file_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance() : file_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+     * &#64;inject_tag: json:"file" gorm:"column:file;"
      * </pre>
      *
-     * <code>.model.QuotaResource resource = 6;</code>
+     * <code>.model.QuotaFile file = 6;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder getResourceOrBuilder() {
-      return getResource();
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder getFileOrBuilder() {
+      return getFile();
     }
 
     public static final int FLINK_CLUSTER_FIELD_NUMBER = 7;
@@ -4680,8 +4680,8 @@ public final class PBModelQuota {
       if (udf_ != null) {
         output.writeMessage(5, getUdf());
       }
-      if (resource_ != null) {
-        output.writeMessage(6, getResource());
+      if (file_ != null) {
+        output.writeMessage(6, getFile());
       }
       if (flinkCluster_ != null) {
         output.writeMessage(7, getFlinkCluster());
@@ -4717,9 +4717,9 @@ public final class PBModelQuota {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getUdf());
       }
-      if (resource_ != null) {
+      if (file_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getResource());
+          .computeMessageSize(6, getFile());
       }
       if (flinkCluster_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -4766,10 +4766,10 @@ public final class PBModelQuota {
         if (!getUdf()
             .equals(other.getUdf())) return false;
       }
-      if (hasResource() != other.hasResource()) return false;
-      if (hasResource()) {
-        if (!getResource()
-            .equals(other.getResource())) return false;
+      if (hasFile() != other.hasFile()) return false;
+      if (hasFile()) {
+        if (!getFile()
+            .equals(other.getFile())) return false;
       }
       if (hasFlinkCluster() != other.hasFlinkCluster()) return false;
       if (hasFlinkCluster()) {
@@ -4810,9 +4810,9 @@ public final class PBModelQuota {
         hash = (37 * hash) + UDF_FIELD_NUMBER;
         hash = (53 * hash) + getUdf().hashCode();
       }
-      if (hasResource()) {
-        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getResource().hashCode();
+      if (hasFile()) {
+        hash = (37 * hash) + FILE_FIELD_NUMBER;
+        hash = (53 * hash) + getFile().hashCode();
       }
       if (hasFlinkCluster()) {
         hash = (37 * hash) + FLINK_CLUSTER_FIELD_NUMBER;
@@ -4985,11 +4985,11 @@ public final class PBModelQuota {
           udf_ = null;
           udfBuilder_ = null;
         }
-        if (resourceBuilder_ == null) {
-          resource_ = null;
+        if (fileBuilder_ == null) {
+          file_ = null;
         } else {
-          resource_ = null;
-          resourceBuilder_ = null;
+          file_ = null;
+          fileBuilder_ = null;
         }
         if (flinkClusterBuilder_ == null) {
           flinkCluster_ = null;
@@ -5050,10 +5050,10 @@ public final class PBModelQuota {
         } else {
           result.udf_ = udfBuilder_.build();
         }
-        if (resourceBuilder_ == null) {
-          result.resource_ = resource_;
+        if (fileBuilder_ == null) {
+          result.file_ = file_;
         } else {
-          result.resource_ = resourceBuilder_.build();
+          result.file_ = fileBuilder_.build();
         }
         if (flinkClusterBuilder_ == null) {
           result.flinkCluster_ = flinkCluster_;
@@ -5129,8 +5129,8 @@ public final class PBModelQuota {
         if (other.hasUdf()) {
           mergeUdf(other.getUdf());
         }
-        if (other.hasResource()) {
-          mergeResource(other.getResource());
+        if (other.hasFile()) {
+          mergeFile(other.getFile());
         }
         if (other.hasFlinkCluster()) {
           mergeFlinkCluster(other.getFlinkCluster());
@@ -5888,159 +5888,159 @@ public final class PBModelQuota {
         return udfBuilder_;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource resource_;
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile file_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder> resourceBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder> fileBuilder_;
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
-       * @return Whether the resource field is set.
+       * <code>.model.QuotaFile file = 6;</code>
+       * @return Whether the file field is set.
        */
-      public boolean hasResource() {
-        return resourceBuilder_ != null || resource_ != null;
+      public boolean hasFile() {
+        return fileBuilder_ != null || file_ != null;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
-       * @return The resource.
+       * <code>.model.QuotaFile file = 6;</code>
+       * @return The file.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource getResource() {
-        if (resourceBuilder_ == null) {
-          return resource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.getDefaultInstance() : resource_;
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile getFile() {
+        if (fileBuilder_ == null) {
+          return file_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance() : file_;
         } else {
-          return resourceBuilder_.getMessage();
+          return fileBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
+       * <code>.model.QuotaFile file = 6;</code>
        */
-      public Builder setResource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource value) {
-        if (resourceBuilder_ == null) {
+      public Builder setFile(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile value) {
+        if (fileBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          resource_ = value;
+          file_ = value;
           onChanged();
         } else {
-          resourceBuilder_.setMessage(value);
+          fileBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
+       * <code>.model.QuotaFile file = 6;</code>
        */
-      public Builder setResource(
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder builderForValue) {
-        if (resourceBuilder_ == null) {
-          resource_ = builderForValue.build();
+      public Builder setFile(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder builderForValue) {
+        if (fileBuilder_ == null) {
+          file_ = builderForValue.build();
           onChanged();
         } else {
-          resourceBuilder_.setMessage(builderForValue.build());
+          fileBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
+       * <code>.model.QuotaFile file = 6;</code>
        */
-      public Builder mergeResource(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource value) {
-        if (resourceBuilder_ == null) {
-          if (resource_ != null) {
-            resource_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.newBuilder(resource_).mergeFrom(value).buildPartial();
+      public Builder mergeFile(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile value) {
+        if (fileBuilder_ == null) {
+          if (file_ != null) {
+            file_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.newBuilder(file_).mergeFrom(value).buildPartial();
           } else {
-            resource_ = value;
+            file_ = value;
           }
           onChanged();
         } else {
-          resourceBuilder_.mergeFrom(value);
+          fileBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
+       * <code>.model.QuotaFile file = 6;</code>
        */
-      public Builder clearResource() {
-        if (resourceBuilder_ == null) {
-          resource_ = null;
+      public Builder clearFile() {
+        if (fileBuilder_ == null) {
+          file_ = null;
           onChanged();
         } else {
-          resource_ = null;
-          resourceBuilder_ = null;
+          file_ = null;
+          fileBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
+       * <code>.model.QuotaFile file = 6;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder getResourceBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder getFileBuilder() {
         
         onChanged();
-        return getResourceFieldBuilder().getBuilder();
+        return getFileFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
+       * <code>.model.QuotaFile file = 6;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder getResourceOrBuilder() {
-        if (resourceBuilder_ != null) {
-          return resourceBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder getFileOrBuilder() {
+        if (fileBuilder_ != null) {
+          return fileBuilder_.getMessageOrBuilder();
         } else {
-          return resource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.getDefaultInstance() : resource_;
+          return file_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.getDefaultInstance() : file_;
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"resource" gorm:"column:resource;"
+       * &#64;inject_tag: json:"file" gorm:"column:file;"
        * </pre>
        *
-       * <code>.model.QuotaResource resource = 6;</code>
+       * <code>.model.QuotaFile file = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder> 
-          getResourceFieldBuilder() {
-        if (resourceBuilder_ == null) {
-          resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaResourceOrBuilder>(
-                  getResource(),
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder> 
+          getFileFieldBuilder() {
+        if (fileBuilder_ == null) {
+          fileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFile.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFileOrBuilder>(
+                  getFile(),
                   getParentForChildren(),
                   isClean());
-          resource_ = null;
+          file_ = null;
         }
-        return resourceBuilder_;
+        return fileBuilder_;
       }
 
       private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaFlinkCluster flinkCluster_;
@@ -6426,10 +6426,10 @@ public final class PBModelQuota {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_QuotaUDF_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaResource_descriptor;
+    internal_static_model_QuotaFile_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaResource_fieldAccessorTable;
+      internal_static_model_QuotaFile_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_QuotaFlinkCluster_descriptor;
   private static final 
@@ -6460,22 +6460,22 @@ public final class PBModelQuota {
       ":\006\312\262\004\002\n\000\"\'\n\016QuotaStreamJob\022\r\n\005limit\030\001 \001(" +
       "\003:\006\312\262\004\002\n\000\"(\n\017QuotaDataSource\022\r\n\005limit\030\001 " +
       "\001(\003:\006\312\262\004\002\n\000\"!\n\010QuotaUDF\022\r\n\005limit\030\001 \001(\003:\006" +
-      "\312\262\004\002\n\000\"H\n\rQuotaResource\022\r\n\005limit\030\001 \001(\003\022\014" +
-      "\n\004size\030\002 \001(\003\022\022\n\nsize_total\030\003 \001(\003:\006\312\262\004\002\n\000" +
-      "\"H\n\021QuotaFlinkCluster\022\r\n\005limit\030\001 \001(\003\022\n\n\002" +
-      "cu\030\002 \001(\002\022\020\n\010cu_total\030\003 \001(\002:\006\312\262\004\002\n\000\"%\n\014Qu" +
-      "otaNetwork\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"\273\002\n\tUs" +
-      "erQuota\022\017\n\007user_id\030\001 \001(\t\022(\n\tworkspace\030\002 " +
-      "\001(\0132\025.model.QuotaWorkspace\022)\n\nstream_job" +
-      "\030\003 \001(\0132\025.model.QuotaStreamJob\022+\n\013data_so" +
-      "urce\030\004 \001(\0132\026.model.QuotaDataSource\022\034\n\003ud" +
-      "f\030\005 \001(\0132\017.model.QuotaUDF\022&\n\010resource\030\006 \001" +
-      "(\0132\024.model.QuotaResource\022/\n\rflink_cluste" +
-      "r\030\007 \001(\0132\030.model.QuotaFlinkCluster\022$\n\007net" +
-      "work\030\010 \001(\0132\023.model.QuotaNetworkBg\n\"com.d" +
-      "ataomnis.gproto.types.pbmodelB\014PBModelQu" +
-      "otaP\000Z1github.com/DataWorkbench/gproto/x" +
-      "go/types/pbmodelb\006proto3"
+      "\312\262\004\002\n\000\"D\n\tQuotaFile\022\r\n\005limit\030\001 \001(\003\022\014\n\004si" +
+      "ze\030\002 \001(\003\022\022\n\nsize_total\030\003 \001(\003:\006\312\262\004\002\n\000\"H\n\021" +
+      "QuotaFlinkCluster\022\r\n\005limit\030\001 \001(\003\022\n\n\002cu\030\002" +
+      " \001(\002\022\020\n\010cu_total\030\003 \001(\002:\006\312\262\004\002\n\000\"%\n\014QuotaN" +
+      "etwork\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"\263\002\n\tUserQu" +
+      "ota\022\017\n\007user_id\030\001 \001(\t\022(\n\tworkspace\030\002 \001(\0132" +
+      "\025.model.QuotaWorkspace\022)\n\nstream_job\030\003 \001" +
+      "(\0132\025.model.QuotaStreamJob\022+\n\013data_source" +
+      "\030\004 \001(\0132\026.model.QuotaDataSource\022\034\n\003udf\030\005 " +
+      "\001(\0132\017.model.QuotaUDF\022\036\n\004file\030\006 \001(\0132\020.mod" +
+      "el.QuotaFile\022/\n\rflink_cluster\030\007 \001(\0132\030.mo" +
+      "del.QuotaFlinkCluster\022$\n\007network\030\010 \001(\0132\023" +
+      ".model.QuotaNetworkBg\n\"com.dataomnis.gpr" +
+      "oto.types.pbmodelB\014PBModelQuotaP\000Z1githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbm" +
+      "odelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6506,11 +6506,11 @@ public final class PBModelQuota {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_QuotaUDF_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaResource_descriptor =
+    internal_static_model_QuotaFile_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_model_QuotaResource_fieldAccessorTable = new
+    internal_static_model_QuotaFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaResource_descriptor,
+        internal_static_model_QuotaFile_descriptor,
         new java.lang.String[] { "Limit", "Size", "SizeTotal", });
     internal_static_model_QuotaFlinkCluster_descriptor =
       getDescriptor().getMessageTypes().get(5);
@@ -6529,7 +6529,7 @@ public final class PBModelQuota {
     internal_static_model_UserQuota_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UserQuota_descriptor,
-        new java.lang.String[] { "UserId", "Workspace", "StreamJob", "DataSource", "Udf", "Resource", "FlinkCluster", "Network", });
+        new java.lang.String[] { "UserId", "Workspace", "StreamJob", "DataSource", "Udf", "File", "FlinkCluster", "Network", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);

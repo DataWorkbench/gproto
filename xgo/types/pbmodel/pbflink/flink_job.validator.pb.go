@@ -123,12 +123,12 @@ func (this *FlinkOperator) Validate() error {
 	return nil
 }
 
-func (this *FlinkJar) _xxx_xxx_Validator_Validate_resource_id() error {
-	if !(len(this.ResourceId) == 20) {
-		return protovalidator.FieldError1("FlinkJar", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
+func (this *FlinkJar) _xxx_xxx_Validator_Validate_file_id() error {
+	if !(len(this.FileId) == 20) {
+		return protovalidator.FieldError1("FlinkJar", "the byte length of field 'file_id' must be equal to '20'", protovalidator.StringByteLenToString(this.FileId))
 	}
-	if !(strings.HasPrefix(this.ResourceId, "res-")) {
-		return protovalidator.FieldError1("FlinkJar", "the value of field 'resource_id' must start with string 'res-'", this.ResourceId)
+	if !(strings.HasPrefix(this.FileId, "res-")) {
+		return protovalidator.FieldError1("FlinkJar", "the value of field 'file_id' must start with string 'res-'", this.FileId)
 	}
 	return nil
 }
@@ -158,7 +158,7 @@ func (this *FlinkJar) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_file_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_jar_args(); err != nil {
