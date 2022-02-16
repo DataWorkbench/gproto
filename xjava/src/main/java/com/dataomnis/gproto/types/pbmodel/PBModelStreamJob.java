@@ -6693,11 +6693,11 @@ public final class PBModelStreamJob {
 
     /**
      * <pre>
-     * Flink parallelism. Is required, Min 0, Max 100. default is 0.
+     * Flink parallelism. Is required, Min 0, Max 100. default is 1.
      * &#64;inject_tag: json:"parallelism"
      * </pre>
      *
-     * <code>int32 parallelism = 2 [(.validator.field) = { ... }</code>
+     * <code>int32 parallelism = 2 [(.defaults.field) = { ... }</code>
      * @return The parallelism.
      */
     int getParallelism();
@@ -7027,11 +7027,11 @@ public final class PBModelStreamJob {
     private int parallelism_;
     /**
      * <pre>
-     * Flink parallelism. Is required, Min 0, Max 100. default is 0.
+     * Flink parallelism. Is required, Min 0, Max 100. default is 1.
      * &#64;inject_tag: json:"parallelism"
      * </pre>
      *
-     * <code>int32 parallelism = 2 [(.validator.field) = { ... }</code>
+     * <code>int32 parallelism = 2 [(.defaults.field) = { ... }</code>
      * @return The parallelism.
      */
     @java.lang.Override
@@ -7740,11 +7740,11 @@ public final class PBModelStreamJob {
       private int parallelism_ ;
       /**
        * <pre>
-       * Flink parallelism. Is required, Min 0, Max 100. default is 0.
+       * Flink parallelism. Is required, Min 0, Max 100. default is 1.
        * &#64;inject_tag: json:"parallelism"
        * </pre>
        *
-       * <code>int32 parallelism = 2 [(.validator.field) = { ... }</code>
+       * <code>int32 parallelism = 2 [(.defaults.field) = { ... }</code>
        * @return The parallelism.
        */
       @java.lang.Override
@@ -7753,11 +7753,11 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Flink parallelism. Is required, Min 0, Max 100. default is 0.
+       * Flink parallelism. Is required, Min 0, Max 100. default is 1.
        * &#64;inject_tag: json:"parallelism"
        * </pre>
        *
-       * <code>int32 parallelism = 2 [(.validator.field) = { ... }</code>
+       * <code>int32 parallelism = 2 [(.defaults.field) = { ... }</code>
        * @param value The parallelism to set.
        * @return This builder for chaining.
        */
@@ -7769,11 +7769,11 @@ public final class PBModelStreamJob {
       }
       /**
        * <pre>
-       * Flink parallelism. Is required, Min 0, Max 100. default is 0.
+       * Flink parallelism. Is required, Min 0, Max 100. default is 1.
        * &#64;inject_tag: json:"parallelism"
        * </pre>
        *
-       * <code>int32 parallelism = 2 [(.validator.field) = { ... }</code>
+       * <code>int32 parallelism = 2 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearParallelism() {
@@ -12896,90 +12896,92 @@ public final class PBModelStreamJob {
       "\n\"proto/types/model/stream_job.proto\022\005mo" +
       "del\0323github.com/yu31/protoc-plugin/proto" +
       "/validator.proto\032/github.com/yu31/protoc" +
-      "-plugin/proto/gosql.proto\032\'proto/types/m" +
-      "odel/flink/flink_job.proto\"\341\004\n\tStreamJob" +
-      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      "2\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004stj-\022\037\n\002id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "stj-\022\035\n\007version\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004n" +
-      "ame\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\033\n\004desc\030\006 \001(" +
-      "\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\024\n\014is_directory\030\007 \001(\010\022M" +
-      "\n\004type\030\010 \001(\0162\025.model.StreamJob.TypeB(\342\337\037" +
-      "\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t\022\007\332\001\0040\000X\001\0226\n" +
-      "\006status\030\t \001(\0162\027.model.StreamJob.StatusB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_by\030\n \001(\tB\014\342\337\037\010\022" +
-      "\006\302\001\003\230\002@\022\034\n\007created\030\013 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n" +
-      "\007updated\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"L\n\004Type\022\r\n\tT" +
-      "ypeUnset\020\000\022\014\n\010Operator\020\001\022\007\n\003SQL\020\002\022\007\n\003Jar" +
-      "\020\003\022\n\n\006Python\020\004\022\t\n\005Scala\020\005\"3\n\006Status\022\017\n\013S" +
-      "tatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\200" +
-      "\002\n\021StreamJobProperty\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\360\001\020\022(\n\004code\030\004 \001(\0132\024.model.StreamJobCodeB" +
-      "\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.model.StreamJobArg" +
-      "sB\004\342\337\037\000\0220\n\010schedule\030\006 \001(\0132\030.model.Stream" +
-      "JobScheduleB\004\342\337\037\000\"\226\003\n\rStreamJobCode\0222\n\004t" +
-      "ype\030\001 \001(\0162\025.model.StreamJob.TypeB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022G\n\toperators\030\002 \003(\0132\024.flink.Flink" +
-      "OperatorB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\001\342\337\037\007\022\005\352\001\0020\000" +
-      "\022<\n\003sql\030\003 \001(\0132\017.flink.FlinkSQLB\036\342\337\037\017\n\r\n\004" +
-      "type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<\n\003jar\030\004 \001(\0132\017.fl" +
-      "ink.FlinkJarB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\003\342\337\037\007\022\005\342" +
-      "\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.flink.FlinkPython" +
-      "B\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342\001\002\020\001\022@\n\005scal" +
-      "a\030\006 \001(\0132\021.flink.FlinkScalaB\036\342\337\037\017\n\r\n\004type" +
-      "\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"\356\001\n\rStreamJob" +
-      "Args\022\030\n\ncluster_id\030\001 \001(\tB\004\342\337\037\000\022\"\n\013parall" +
-      "elism\030\002 \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\0226\n\004udfs\030\003 \003(\t" +
-      "B(\342\337\037\017\n\r\n\004udfs\022\005\352\001\0020\000\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312\002\004ud" +
-      "f-\022B\n\nconnectors\030\004 \003(\tB.\342\337\037\025\n\023\n\nconnecto" +
-      "rs\022\005\352\001\0020\000\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312\002\004res-\022\033\n\023built_" +
-      "in_connectors\030\005 \003(\t:\006\312\262\004\002\n\000\"\266\007\n\021StreamJo" +
-      "bSchedule\022O\n\017schedule_policy\030\001 \001(\0162\'.mod" +
-      "el.StreamJobSchedule.SchedulePolicyB\r\342\337\037" +
-      "\t\022\007\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sc" +
-      "hedule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007st" +
-      "arted\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B" +
-      "\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022concurrency_policy\030\006 \001(\016" +
-      "2*.model.StreamJobSchedule.ConcurrencyPo" +
-      "licyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\t" +
-      "BM\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001" +
-      "&J\006minuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022" +
-      ";\n\007express\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_polic" +
-      "y\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342" +
-      "\337\037\t\022\007\262\001\0048d@\000\022I\n\014retry_policy\030\n \001(\0162$.mod" +
-      "el.StreamJobSchedule.RetryPolicyB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014re" +
-      "try_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_" +
-      "interval\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001" +
-      "\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023Sc" +
-      "hedulePolicyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013" +
-      "AppointTime\020\002\022\017\n\013Immediately\020\003\"S\n\021Concur" +
-      "rencyPolicy\022\032\n\026ConcurrencyPolicyUnset\020\000\022" +
-      "\t\n\005Allow\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013R" +
-      "etryPolicy\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None" +
-      "\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"\254\003\n\020StreamJobReleas" +
-      "e\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007ver" +
-      "sion\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020" +
-      "\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004type\030\005 \001(\0162\025.model.S" +
-      "treamJob.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022.\n\006status\030\006" +
-      " \001(\0162\036.model.StreamJobRelease.Status\022\014\n\004" +
-      "desc\030\007 \001(\t\022 \n\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001" +
-      "\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007up" +
-      "dated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013St" +
-      "atusUnset\020\000\022\n\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013" +
-      "\n\007Deleted\020\003Bk\n\"com.dataomnis.gproto.type" +
-      "s.pbmodelB\020PBModelStreamJobP\000Z1github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbmodel" +
-      "b\006proto3"
+      "-plugin/proto/gosql.proto\0322github.com/yu" +
+      "31/protoc-plugin/proto/defaults.proto\032\'p" +
+      "roto/types/model/flink/flink_job.proto\"\341" +
+      "\004\n\tStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302" +
+      "\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\037\n\002id\030\003 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\004 \001(\tB\014\342\337\037\010\022" +
+      "\006\302\001\003\360\001\020\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022" +
+      "\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\024\n\014is_direc" +
+      "tory\030\007 \001(\010\022M\n\004type\030\010 \001(\0162\025.model.StreamJ" +
+      "ob.TypeB(\342\337\037\027\n\025\n\014is_directory\022\005\322\001\002\030\000\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\0226\n\006status\030\t \001(\0162\027.model.Stream" +
+      "Job.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022 \n\ncreated_by\030" +
+      "\n \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\013 \001(\003B\013\342\337" +
+      "\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"" +
+      "L\n\004Type\022\r\n\tTypeUnset\020\000\022\014\n\010Operator\020\001\022\007\n\003" +
+      "SQL\020\002\022\007\n\003Jar\020\003\022\n\n\006Python\020\004\022\t\n\005Scala\020\005\"3\n" +
+      "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n" +
+      "\007Enabled\020\002\"\200\002\n\021StreamJobProperty\022%\n\010spac" +
+      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(" +
+      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022(\n\004code\030\004 \001(\0132\024.model.St" +
+      "reamJobCodeB\004\342\337\037\000\022(\n\004args\030\005 \001(\0132\024.model." +
+      "StreamJobArgsB\004\342\337\037\000\0220\n\010schedule\030\006 \001(\0132\030." +
+      "model.StreamJobScheduleB\004\342\337\037\000\"\226\003\n\rStream" +
+      "JobCode\0222\n\004type\030\001 \001(\0162\025.model.StreamJob." +
+      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022G\n\toperators\030\002 \003(\0132\024" +
+      ".flink.FlinkOperatorB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030" +
+      "\001\342\337\037\007\022\005\352\001\0020\000\022<\n\003sql\030\003 \001(\0132\017.flink.FlinkS" +
+      "QLB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\002\342\337\037\007\022\005\342\001\002\020\001\022<\n\003ja" +
+      "r\030\004 \001(\0132\017.flink.FlinkJarB\036\342\337\037\017\n\r\n\004type\022\005" +
+      "\332\001\002\030\003\342\337\037\007\022\005\342\001\002\020\001\022B\n\006python\030\005 \001(\0132\022.flink" +
+      ".FlinkPythonB\036\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\004\342\337\037\007\022\005\342" +
+      "\001\002\020\001\022@\n\005scala\030\006 \001(\0132\021.flink.FlinkScalaB\036" +
+      "\342\337\037\017\n\r\n\004type\022\005\332\001\002\030\005\342\337\037\007\022\005\342\001\002\020\001:\006\312\262\004\002\n\000\"\366" +
+      "\001\n\rStreamJobArgs\022\030\n\ncluster_id\030\001 \001(\tB\004\342\337" +
+      "\037\000\022*\n\013parallelism\030\002 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262" +
+      "\001\0048d@\000\0226\n\004udfs\030\003 \003(\tB(\342\337\037\017\n\r\n\004udfs\022\005\352\001\0020" +
+      "\000\342\337\037\021\022\017\352\001\014Z\n\302\001\007\312\002\004udf-\022B\n\nconnectors\030\004 \003" +
+      "(\tB.\342\337\037\025\n\023\n\nconnectors\022\005\352\001\0020\000\342\337\037\021\022\017\352\001\014Z\n" +
+      "\302\001\007\312\002\004res-\022\033\n\023built_in_connectors\030\005 \003(\t:" +
+      "\006\312\262\004\002\n\000\"\266\007\n\021StreamJobSchedule\022O\n\017schedul" +
+      "e_policy\030\001 \001(\0162\'.model.StreamJobSchedule" +
+      ".SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010execut" +
+      "ed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\002" +
+      "\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022U\n\022conc" +
+      "urrency_policy\030\006 \001(\0162*.model.StreamJobSc" +
+      "hedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_p" +
+      "olicy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003day" +
+      "J\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001(\tB*\342\337" +
+      "\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001" +
+      "\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022I\n\014retr" +
+      "y_policy\030\n \001(\0162$.model.StreamJobSchedule" +
+      ".RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_lim" +
+      "it\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037" +
+      "\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027" +
+      "\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016" +
+      "SchedulePolicy\022\027\n\023SchedulePolicyUnset\020\000\022" +
+      "\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Imm" +
+      "ediately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026Concu" +
+      "rrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid" +
+      "\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryP" +
+      "olicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000" +
+      "\"\254\003\n\020StreamJobRelease\022%\n\010space_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0222\n\004" +
+      "type\030\005 \001(\0162\025.model.StreamJob.TypeB\r\342\337\037\t\022" +
+      "\007\332\001\0040\000X\001\022.\n\006status\030\006 \001(\0162\036.model.StreamJ" +
+      "obRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreate" +
+      "d_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Activ" +
+      "e\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003Bk\n\"com.d" +
+      "ataomnis.gproto.types.pbmodelB\020PBModelSt" +
+      "reamJobP\000Z1github.com/DataWorkbench/gpro" +
+      "to/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
+          io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.getDescriptor(),
         });
     internal_static_model_StreamJob_descriptor =
@@ -13020,12 +13022,14 @@ public final class PBModelStreamJob {
         new java.lang.String[] { "SpaceId", "Id", "Version", "Name", "Type", "Status", "Desc", "CreatedBy", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
+    io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.getDescriptor();
   }
 

@@ -7,6 +7,7 @@ package pbmodel
 
 import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbflink"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
@@ -74,6 +75,9 @@ func (this *StreamJobCode) SetDefaults() {
 func (this *StreamJobArgs) SetDefaults() {
 	if this == nil {
 		return
+	}
+	if this.Parallelism == 0 {
+		this.Parallelism = 1
 	}
 	return
 }
