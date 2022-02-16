@@ -9,24 +9,24 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.ModuleSource
-func (this *ModuleSource) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.ModuleTarget
-func (this *ModuleTarget) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message model.BindingModule
 func (this *BindingModule) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.BindingAttach
+func (this *BindingAttach) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.Binding
+func (this *Binding) SetDefaults() {
 	if this == nil {
 		return
 	}

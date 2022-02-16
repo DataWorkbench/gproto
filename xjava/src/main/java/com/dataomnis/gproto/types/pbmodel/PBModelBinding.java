@@ -14,1792 +14,60 @@ public final class PBModelBinding {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ModuleSourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.ModuleSource)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-     * @return The sourceId.
-     */
-    java.lang.String getSourceId();
-    /**
-     * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceId.
-     */
-    com.google.protobuf.ByteString
-        getSourceIdBytes();
-
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-     * </pre>
-     *
-     * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-     * @return The sourceVersion.
-     */
-    java.lang.String getSourceVersion();
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-     * </pre>
-     *
-     * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceVersion.
-     */
-    com.google.protobuf.ByteString
-        getSourceVersionBytes();
-  }
-  /**
-   * <pre>
-   * ModuleSource declares the source module info.
-   * used to query from db.
-   * </pre>
-   *
-   * Protobuf type {@code model.ModuleSource}
-   */
-  public static final class ModuleSource extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.ModuleSource)
-      ModuleSourceOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ModuleSource.newBuilder() to construct.
-    private ModuleSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ModuleSource() {
-      sourceId_ = "";
-      sourceVersion_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ModuleSource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ModuleSource(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceVersion_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleSource_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleSource_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource.Builder.class);
-    }
-
-    public static final int SOURCE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sourceId_;
-    /**
-     * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-     * @return The sourceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSourceId() {
-      java.lang.Object ref = sourceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-     * </pre>
-     *
-     * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceIdBytes() {
-      java.lang.Object ref = sourceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SOURCE_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sourceVersion_;
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-     * </pre>
-     *
-     * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-     * @return The sourceVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getSourceVersion() {
-      java.lang.Object ref = sourceVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-     * </pre>
-     *
-     * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceVersionBytes() {
-      java.lang.Object ref = sourceVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceVersion_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceVersion_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource) obj;
-
-      if (!getSourceId()
-          .equals(other.getSourceId())) return false;
-      if (!getSourceVersion()
-          .equals(other.getSourceVersion())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceId().hashCode();
-      hash = (37 * hash) + SOURCE_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceVersion().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * ModuleSource declares the source module info.
-     * used to query from db.
-     * </pre>
-     *
-     * Protobuf type {@code model.ModuleSource}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.ModuleSource)
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSourceOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleSource_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleSource_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        sourceId_ = "";
-
-        sourceVersion_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleSource_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource(this);
-        result.sourceId_ = sourceId_;
-        result.sourceVersion_ = sourceVersion_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource.getDefaultInstance()) return this;
-        if (!other.getSourceId().isEmpty()) {
-          sourceId_ = other.sourceId_;
-          onChanged();
-        }
-        if (!other.getSourceVersion().isEmpty()) {
-          sourceVersion_ = other.sourceVersion_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object sourceId_ = "";
-      /**
-       * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-       * @return The sourceId.
-       */
-      public java.lang.String getSourceId() {
-        java.lang.Object ref = sourceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sourceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for sourceId.
-       */
-      public com.google.protobuf.ByteString
-          getSourceIdBytes() {
-        java.lang.Object ref = sourceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sourceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The sourceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sourceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceId() {
-        
-        sourceId_ = getDefaultInstance().getSourceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;"
-       * </pre>
-       *
-       * <code>string source_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for sourceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sourceId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object sourceVersion_ = "";
-      /**
-       * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-       * </pre>
-       *
-       * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-       * @return The sourceVersion.
-       */
-      public java.lang.String getSourceVersion() {
-        java.lang.Object ref = sourceVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sourceVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-       * </pre>
-       *
-       * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for sourceVersion.
-       */
-      public com.google.protobuf.ByteString
-          getSourceVersionBytes() {
-        java.lang.Object ref = sourceVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sourceVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-       * </pre>
-       *
-       * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The sourceVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sourceVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-       * </pre>
-       *
-       * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSourceVersion() {
-        
-        sourceVersion_ = getDefaultInstance().getSourceVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;"
-       * </pre>
-       *
-       * <code>string source_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for sourceVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSourceVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sourceVersion_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.ModuleSource)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.ModuleSource)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ModuleSource>
-        PARSER = new com.google.protobuf.AbstractParser<ModuleSource>() {
-      @java.lang.Override
-      public ModuleSource parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ModuleSource(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ModuleSource> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ModuleSource> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleSource getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ModuleTargetOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.ModuleTarget)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-     * </pre>
-     *
-     * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-     * @return The targetId.
-     */
-    java.lang.String getTargetId();
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-     * </pre>
-     *
-     * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetId.
-     */
-    com.google.protobuf.ByteString
-        getTargetIdBytes();
-
-    /**
-     * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
-     * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-     * </pre>
-     *
-     * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-     * @return The targetVersion.
-     */
-    java.lang.String getTargetVersion();
-    /**
-     * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
-     * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-     * </pre>
-     *
-     * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetVersion.
-     */
-    com.google.protobuf.ByteString
-        getTargetVersionBytes();
-  }
-  /**
-   * <pre>
-   * ModuleTarget declares the target module info.
-   * used to query from db.
-   * </pre>
-   *
-   * Protobuf type {@code model.ModuleTarget}
-   */
-  public static final class ModuleTarget extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.ModuleTarget)
-      ModuleTargetOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ModuleTarget.newBuilder() to construct.
-    private ModuleTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ModuleTarget() {
-      targetId_ = "";
-      targetVersion_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ModuleTarget();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ModuleTarget(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetVersion_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleTarget_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleTarget_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget.Builder.class);
-    }
-
-    public static final int TARGET_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object targetId_;
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-     * </pre>
-     *
-     * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-     * @return The targetId.
-     */
-    @java.lang.Override
-    public java.lang.String getTargetId() {
-      java.lang.Object ref = targetId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        targetId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-     * </pre>
-     *
-     * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTargetIdBytes() {
-      java.lang.Object ref = targetId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TARGET_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object targetVersion_;
-    /**
-     * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
-     * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-     * </pre>
-     *
-     * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-     * @return The targetVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getTargetVersion() {
-      java.lang.Object ref = targetVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        targetVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
-     * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-     * </pre>
-     *
-     * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTargetVersionBytes() {
-      java.lang.Object ref = targetVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, targetId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetVersion_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, targetId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetVersion_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget) obj;
-
-      if (!getTargetId()
-          .equals(other.getTargetId())) return false;
-      if (!getTargetVersion()
-          .equals(other.getTargetVersion())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetId().hashCode();
-      hash = (37 * hash) + TARGET_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetVersion().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * ModuleTarget declares the target module info.
-     * used to query from db.
-     * </pre>
-     *
-     * Protobuf type {@code model.ModuleTarget}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.ModuleTarget)
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTargetOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleTarget_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleTarget_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        targetId_ = "";
-
-        targetVersion_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_ModuleTarget_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget(this);
-        result.targetId_ = targetId_;
-        result.targetVersion_ = targetVersion_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget.getDefaultInstance()) return this;
-        if (!other.getTargetId().isEmpty()) {
-          targetId_ = other.targetId_;
-          onChanged();
-        }
-        if (!other.getTargetVersion().isEmpty()) {
-          targetVersion_ = other.targetVersion_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object targetId_ = "";
-      /**
-       * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-       * </pre>
-       *
-       * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-       * @return The targetId.
-       */
-      public java.lang.String getTargetId() {
-        java.lang.Object ref = targetId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          targetId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-       * </pre>
-       *
-       * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for targetId.
-       */
-      public com.google.protobuf.ByteString
-          getTargetIdBytes() {
-        java.lang.Object ref = targetId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          targetId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-       * </pre>
-       *
-       * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The targetId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        targetId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-       * </pre>
-       *
-       * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetId() {
-        
-        targetId_ = getDefaultInstance().getTargetId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;"
-       * </pre>
-       *
-       * <code>string target_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for targetId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        targetId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object targetVersion_ = "";
-      /**
-       * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-       * </pre>
-       *
-       * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-       * @return The targetVersion.
-       */
-      public java.lang.String getTargetVersion() {
-        java.lang.Object ref = targetVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          targetVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-       * </pre>
-       *
-       * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for targetVersion.
-       */
-      public com.google.protobuf.ByteString
-          getTargetVersionBytes() {
-        java.lang.Object ref = targetVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          targetVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-       * </pre>
-       *
-       * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The targetVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        targetVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-       * </pre>
-       *
-       * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetVersion() {
-        
-        targetVersion_ = getDefaultInstance().getTargetVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;"
-       * </pre>
-       *
-       * <code>string target_version = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for targetVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        targetVersion_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.ModuleTarget)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.ModuleTarget)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ModuleTarget>
-        PARSER = new com.google.protobuf.AbstractParser<ModuleTarget>() {
-      @java.lang.Override
-      public ModuleTarget parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ModuleTarget(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ModuleTarget> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ModuleTarget> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.ModuleTarget getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface BindingModuleOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.BindingModule)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Workspace ID it belongs to. Only used when delete workspace.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
      * </pre>
      *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
+     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+     * @return The moduleId.
      */
-    java.lang.String getSpaceId();
+    java.lang.String getModuleId();
     /**
      * <pre>
-     * Workspace ID it belongs to. Only used when delete workspace.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
      * </pre>
      *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
+     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleId.
      */
     com.google.protobuf.ByteString
-        getSpaceIdBytes();
+        getModuleIdBytes();
 
     /**
      * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The sourceId.
-     */
-    java.lang.String getSourceId();
-    /**
-     * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceId.
-     */
-    com.google.protobuf.ByteString
-        getSourceIdBytes();
-
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-     * @return The sourceVersion.
-     */
-    java.lang.String getSourceVersion();
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceVersion.
-     */
-    com.google.protobuf.ByteString
-        getSourceVersionBytes();
-
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-     * @return The targetId.
-     */
-    java.lang.String getTargetId();
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetId.
-     */
-    com.google.protobuf.ByteString
-        getTargetIdBytes();
-
-    /**
-     * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
+     * ModuleVersion is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
      * </pre>
      *
-     * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-     * @return The targetVersion.
+     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+     * @return The moduleVersion.
      */
-    java.lang.String getTargetVersion();
+    java.lang.String getModuleVersion();
     /**
      * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
+     * ModuleVersion is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
      * </pre>
      *
-     * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetVersion.
+     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleVersion.
      */
     com.google.protobuf.ByteString
-        getTargetVersionBytes();
-
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
-     * @return The created.
-     */
-    long getCreated();
+        getModuleVersionBytes();
   }
   /**
    * <pre>
-   * BindingModule for describes dependencies between modules.
+   * ModuleSource declares module info.
+   * used to query from db.
    * </pre>
    *
    * Protobuf type {@code model.BindingModule}
@@ -1814,11 +82,8 @@ public final class PBModelBinding {
       super(builder);
     }
     private BindingModule() {
-      spaceId_ = "";
-      sourceId_ = "";
-      sourceVersion_ = "";
-      targetId_ = "";
-      targetVersion_ = "";
+      moduleId_ = "";
+      moduleVersion_ = "";
     }
 
     @java.lang.Override
@@ -1854,36 +119,13 @@ public final class PBModelBinding {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              spaceId_ = s;
+              moduleId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sourceId_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceVersion_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetId_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetVersion_ = s;
-              break;
-            }
-            case 48: {
-
-              created_ = input.readInt64();
+              moduleVersion_ = s;
               break;
             }
             default: {
@@ -1918,264 +160,102 @@ public final class PBModelBinding {
               com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule.Builder.class);
     }
 
-    public static final int SPACE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object spaceId_;
+    public static final int MODULE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object moduleId_;
     /**
      * <pre>
-     * Workspace ID it belongs to. Only used when delete workspace.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
      * </pre>
      *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The spaceId.
+     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+     * @return The moduleId.
      */
     @java.lang.Override
-    public java.lang.String getSpaceId() {
-      java.lang.Object ref = spaceId_;
+    public java.lang.String getModuleId() {
+      java.lang.Object ref = moduleId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        spaceId_ = s;
+        moduleId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Workspace ID it belongs to. Only used when delete workspace.
-     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
      * </pre>
      *
-     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceId.
+     * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSpaceIdBytes() {
-      java.lang.Object ref = spaceId_;
+        getModuleIdBytes() {
+      java.lang.Object ref = moduleId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        spaceId_ = b;
+        moduleId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SOURCE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sourceId_;
+    public static final int MODULE_VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object moduleVersion_;
     /**
      * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The sourceId.
-     */
-    @java.lang.Override
-    public java.lang.String getSourceId() {
-      java.lang.Object ref = sourceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * SourceId is the ID of the bound module.
-     * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceIdBytes() {
-      java.lang.Object ref = sourceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SOURCE_VERSION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object sourceVersion_;
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-     * @return The sourceVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getSourceVersion() {
-      java.lang.Object ref = sourceVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sourceVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * SourceVersion is the version of the bound module.
-     * Notice: Reserved field, unused on present.
-     * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
-     * </pre>
-     *
-     * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for sourceVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSourceVersionBytes() {
-      java.lang.Object ref = sourceVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sourceVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TARGET_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object targetId_;
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-     * @return The targetId.
-     */
-    @java.lang.Override
-    public java.lang.String getTargetId() {
-      java.lang.Object ref = targetId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        targetId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * TargetId is the ID of which module binding it.
-     * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
-     * </pre>
-     *
-     * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTargetIdBytes() {
-      java.lang.Object ref = targetId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TARGET_VERSION_FIELD_NUMBER = 5;
-    private volatile java.lang.Object targetVersion_;
-    /**
-     * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
+     * ModuleVersion is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
      * </pre>
      *
-     * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-     * @return The targetVersion.
+     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+     * @return The moduleVersion.
      */
     @java.lang.Override
-    public java.lang.String getTargetVersion() {
-      java.lang.Object ref = targetVersion_;
+    public java.lang.String getModuleVersion() {
+      java.lang.Object ref = moduleVersion_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        targetVersion_ = s;
+        moduleVersion_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * TargetVersion represents the Target's version if there is a version number.
+     * ModuleVersion is the version of module.
      * This filed maybe empty.
-     * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
      * </pre>
      *
-     * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for targetVersion.
+     * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleVersion.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTargetVersionBytes() {
-      java.lang.Object ref = targetVersion_;
+        getModuleVersionBytes() {
+      java.lang.Object ref = moduleVersion_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        targetVersion_ = b;
+        moduleVersion_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int CREATED_FIELD_NUMBER = 6;
-    private long created_;
-    /**
-     * <pre>
-     * Timestamp of create time.
-     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-     * </pre>
-     *
-     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
-     * @return The created.
-     */
-    @java.lang.Override
-    public long getCreated() {
-      return created_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2192,23 +272,11 @@ public final class PBModelBinding {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, moduleId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceVersion_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, targetId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, targetVersion_);
-      }
-      if (created_ != 0L) {
-        output.writeInt64(6, created_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, moduleVersion_);
       }
       unknownFields.writeTo(output);
     }
@@ -2219,24 +287,11 @@ public final class PBModelBinding {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, moduleId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceVersion_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, targetId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetVersion_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, targetVersion_);
-      }
-      if (created_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, created_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, moduleVersion_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2253,18 +308,10 @@ public final class PBModelBinding {
       }
       com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule) obj;
 
-      if (!getSpaceId()
-          .equals(other.getSpaceId())) return false;
-      if (!getSourceId()
-          .equals(other.getSourceId())) return false;
-      if (!getSourceVersion()
-          .equals(other.getSourceVersion())) return false;
-      if (!getTargetId()
-          .equals(other.getTargetId())) return false;
-      if (!getTargetVersion()
-          .equals(other.getTargetVersion())) return false;
-      if (getCreated()
-          != other.getCreated()) return false;
+      if (!getModuleId()
+          .equals(other.getModuleId())) return false;
+      if (!getModuleVersion()
+          .equals(other.getModuleVersion())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2276,19 +323,10 @@ public final class PBModelBinding {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceId().hashCode();
-      hash = (37 * hash) + SOURCE_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceVersion().hashCode();
-      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetId().hashCode();
-      hash = (37 * hash) + TARGET_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetVersion().hashCode();
-      hash = (37 * hash) + CREATED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreated());
+      hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleId().hashCode();
+      hash = (37 * hash) + MODULE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2386,7 +424,8 @@ public final class PBModelBinding {
     }
     /**
      * <pre>
-     * BindingModule for describes dependencies between modules.
+     * ModuleSource declares module info.
+     * used to query from db.
      * </pre>
      *
      * Protobuf type {@code model.BindingModule}
@@ -2426,17 +465,9 @@ public final class PBModelBinding {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        spaceId_ = "";
+        moduleId_ = "";
 
-        sourceId_ = "";
-
-        sourceVersion_ = "";
-
-        targetId_ = "";
-
-        targetVersion_ = "";
-
-        created_ = 0L;
+        moduleVersion_ = "";
 
         return this;
       }
@@ -2464,12 +495,8 @@ public final class PBModelBinding {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule(this);
-        result.spaceId_ = spaceId_;
-        result.sourceId_ = sourceId_;
-        result.sourceVersion_ = sourceVersion_;
-        result.targetId_ = targetId_;
-        result.targetVersion_ = targetVersion_;
-        result.created_ = created_;
+        result.moduleId_ = moduleId_;
+        result.moduleVersion_ = moduleVersion_;
         onBuilt();
         return result;
       }
@@ -2518,28 +545,13 @@ public final class PBModelBinding {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule.getDefaultInstance()) return this;
-        if (!other.getSpaceId().isEmpty()) {
-          spaceId_ = other.spaceId_;
+        if (!other.getModuleId().isEmpty()) {
+          moduleId_ = other.moduleId_;
           onChanged();
         }
-        if (!other.getSourceId().isEmpty()) {
-          sourceId_ = other.sourceId_;
+        if (!other.getModuleVersion().isEmpty()) {
+          moduleVersion_ = other.moduleVersion_;
           onChanged();
-        }
-        if (!other.getSourceVersion().isEmpty()) {
-          sourceVersion_ = other.sourceVersion_;
-          onChanged();
-        }
-        if (!other.getTargetId().isEmpty()) {
-          targetId_ = other.targetId_;
-          onChanged();
-        }
-        if (!other.getTargetVersion().isEmpty()) {
-          targetVersion_ = other.targetVersion_;
-          onChanged();
-        }
-        if (other.getCreated() != 0L) {
-          setCreated(other.getCreated());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2561,6 +573,1994 @@ public final class PBModelBinding {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object moduleId_ = "";
+      /**
+       * <pre>
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+       * @return The moduleId.
+       */
+      public java.lang.String getModuleId() {
+        java.lang.Object ref = moduleId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          moduleId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for moduleId.
+       */
+      public com.google.protobuf.ByteString
+          getModuleIdBytes() {
+        java.lang.Object ref = moduleId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          moduleId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The moduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        moduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModuleId() {
+        
+        moduleId_ = getDefaultInstance().getModuleId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for moduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        moduleId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object moduleVersion_ = "";
+      /**
+       * <pre>
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+       * @return The moduleVersion.
+       */
+      public java.lang.String getModuleVersion() {
+        java.lang.Object ref = moduleVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          moduleVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for moduleVersion.
+       */
+      public com.google.protobuf.ByteString
+          getModuleVersionBytes() {
+        java.lang.Object ref = moduleVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          moduleVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+       * @param value The moduleVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        moduleVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModuleVersion() {
+        
+        moduleVersion_ = getDefaultInstance().getModuleVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string module_version = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for moduleVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModuleVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        moduleVersion_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.BindingModule)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.BindingModule)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BindingModule>
+        PARSER = new com.google.protobuf.AbstractParser<BindingModule>() {
+      @java.lang.Override
+      public BindingModule parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BindingModule(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BindingModule> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BindingModule> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BindingAttachOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.BindingAttach)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+     * @return The attachId.
+     */
+    java.lang.String getAttachId();
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachId.
+     */
+    com.google.protobuf.ByteString
+        getAttachIdBytes();
+
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+     * @return The attachVersion.
+     */
+    java.lang.String getAttachVersion();
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachVersion.
+     */
+    com.google.protobuf.ByteString
+        getAttachVersionBytes();
+  }
+  /**
+   * <pre>
+   * ModuleTarget declares the attach info.
+   * used to query from db.
+   * </pre>
+   *
+   * Protobuf type {@code model.BindingAttach}
+   */
+  public static final class BindingAttach extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.BindingAttach)
+      BindingAttachOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BindingAttach.newBuilder() to construct.
+    private BindingAttach(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BindingAttach() {
+      attachId_ = "";
+      attachVersion_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BindingAttach();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BindingAttach(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              attachId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              attachVersion_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingAttach_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingAttach_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach.Builder.class);
+    }
+
+    public static final int ATTACH_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object attachId_;
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+     * @return The attachId.
+     */
+    @java.lang.Override
+    public java.lang.String getAttachId() {
+      java.lang.Object ref = attachId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        attachId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAttachIdBytes() {
+      java.lang.Object ref = attachId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        attachId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ATTACH_VERSION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object attachVersion_;
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+     * @return The attachVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getAttachVersion() {
+      java.lang.Object ref = attachVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        attachVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAttachVersionBytes() {
+      java.lang.Object ref = attachVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        attachVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attachId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, attachVersion_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attachId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, attachVersion_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach) obj;
+
+      if (!getAttachId()
+          .equals(other.getAttachId())) return false;
+      if (!getAttachVersion()
+          .equals(other.getAttachVersion())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ATTACH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAttachId().hashCode();
+      hash = (37 * hash) + ATTACH_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getAttachVersion().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ModuleTarget declares the attach info.
+     * used to query from db.
+     * </pre>
+     *
+     * Protobuf type {@code model.BindingAttach}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.BindingAttach)
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttachOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingAttach_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingAttach_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        attachId_ = "";
+
+        attachVersion_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_BindingAttach_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach(this);
+        result.attachId_ = attachId_;
+        result.attachVersion_ = attachVersion_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach.getDefaultInstance()) return this;
+        if (!other.getAttachId().isEmpty()) {
+          attachId_ = other.attachId_;
+          onChanged();
+        }
+        if (!other.getAttachVersion().isEmpty()) {
+          attachVersion_ = other.attachVersion_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object attachId_ = "";
+      /**
+       * <pre>
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+       * @return The attachId.
+       */
+      public java.lang.String getAttachId() {
+        java.lang.Object ref = attachId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          attachId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for attachId.
+       */
+      public com.google.protobuf.ByteString
+          getAttachIdBytes() {
+        java.lang.Object ref = attachId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          attachId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The attachId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAttachId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        attachId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAttachId() {
+        
+        attachId_ = getDefaultInstance().getAttachId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for attachId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAttachIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        attachId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object attachVersion_ = "";
+      /**
+       * <pre>
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+       * @return The attachVersion.
+       */
+      public java.lang.String getAttachVersion() {
+        java.lang.Object ref = attachVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          attachVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for attachVersion.
+       */
+      public com.google.protobuf.ByteString
+          getAttachVersionBytes() {
+        java.lang.Object ref = attachVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          attachVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+       * @param value The attachVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAttachVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        attachVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAttachVersion() {
+        
+        attachVersion_ = getDefaultInstance().getAttachVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+       * </pre>
+       *
+       * <code>string attach_version = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for attachVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAttachVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        attachVersion_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.BindingAttach)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.BindingAttach)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BindingAttach>
+        PARSER = new com.google.protobuf.AbstractParser<BindingAttach>() {
+      @java.lang.Override
+      public BindingAttach parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BindingAttach(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BindingAttach> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BindingAttach> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingAttach getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BindingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.Binding)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Workspace ID it belongs to. Only used when delete workspace.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * Workspace ID it belongs to. Only used when delete workspace.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+     * @return The moduleId.
+     */
+    java.lang.String getModuleId();
+    /**
+     * <pre>
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleId.
+     */
+    com.google.protobuf.ByteString
+        getModuleIdBytes();
+
+    /**
+     * <pre>
+     * ModuleVersion is the version of module.
+     * This filed maybe empty.
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+     * @return The moduleVersion.
+     */
+    java.lang.String getModuleVersion();
+    /**
+     * <pre>
+     * ModuleVersion is the version of module.
+     * This filed maybe empty.
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleVersion.
+     */
+    com.google.protobuf.ByteString
+        getModuleVersionBytes();
+
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+     * @return The attachId.
+     */
+    java.lang.String getAttachId();
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachId.
+     */
+    com.google.protobuf.ByteString
+        getAttachIdBytes();
+
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+     * @return The attachVersion.
+     */
+    java.lang.String getAttachVersion();
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachVersion.
+     */
+    com.google.protobuf.ByteString
+        getAttachVersionBytes();
+
+    /**
+     * <pre>
+     * Timestamp of create time.
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    long getCreated();
+  }
+  /**
+   * <pre>
+   * Binding for describes dependencies between modules.
+   * </pre>
+   *
+   * Protobuf type {@code model.Binding}
+   */
+  public static final class Binding extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.Binding)
+      BindingOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Binding.newBuilder() to construct.
+    private Binding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Binding() {
+      spaceId_ = "";
+      moduleId_ = "";
+      moduleVersion_ = "";
+      attachId_ = "";
+      attachVersion_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Binding();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Binding(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              moduleId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              moduleVersion_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              attachId_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              attachVersion_ = s;
+              break;
+            }
+            case 48: {
+
+              created_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_Binding_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_Binding_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * Workspace ID it belongs to. Only used when delete workspace.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Workspace ID it belongs to. Only used when delete workspace.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODULE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object moduleId_;
+    /**
+     * <pre>
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+     * @return The moduleId.
+     */
+    @java.lang.Override
+    public java.lang.String getModuleId() {
+      java.lang.Object ref = moduleId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ModuleId represents which other modules(AttachId) are bound to this module.
+     * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModuleIdBytes() {
+      java.lang.Object ref = moduleId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        moduleId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODULE_VERSION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object moduleVersion_;
+    /**
+     * <pre>
+     * ModuleVersion is the version of module.
+     * This filed maybe empty.
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+     * @return The moduleVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getModuleVersion() {
+      java.lang.Object ref = moduleVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ModuleVersion is the version of module.
+     * This filed maybe empty.
+     * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModuleVersionBytes() {
+      java.lang.Object ref = moduleVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        moduleVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ATTACH_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object attachId_;
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+     * @return The attachId.
+     */
+    @java.lang.Override
+    public java.lang.String getAttachId() {
+      java.lang.Object ref = attachId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        attachId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * AttachId represents this module are bound by which other modules(ModuleId).
+     * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAttachIdBytes() {
+      java.lang.Object ref = attachId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        attachId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ATTACH_VERSION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object attachVersion_;
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+     * @return The attachVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getAttachVersion() {
+      java.lang.Object ref = attachVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        attachVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * AttachVersion is the version of attach module.
+     * Notice: Reserved field, unused on present.
+     * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+     * </pre>
+     *
+     * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for attachVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAttachVersionBytes() {
+      java.lang.Object ref = attachVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        attachVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_FIELD_NUMBER = 6;
+    private long created_;
+    /**
+     * <pre>
+     * Timestamp of create time.
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 6 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    @java.lang.Override
+    public long getCreated() {
+      return created_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, moduleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, moduleVersion_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, attachId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, attachVersion_);
+      }
+      if (created_ != 0L) {
+        output.writeInt64(6, created_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, moduleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, moduleVersion_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, attachId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attachVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, attachVersion_);
+      }
+      if (created_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, created_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding other = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getModuleId()
+          .equals(other.getModuleId())) return false;
+      if (!getModuleVersion()
+          .equals(other.getModuleVersion())) return false;
+      if (!getAttachId()
+          .equals(other.getAttachId())) return false;
+      if (!getAttachVersion()
+          .equals(other.getAttachVersion())) return false;
+      if (getCreated()
+          != other.getCreated()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleId().hashCode();
+      hash = (37 * hash) + MODULE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleVersion().hashCode();
+      hash = (37 * hash) + ATTACH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAttachId().hashCode();
+      hash = (37 * hash) + ATTACH_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getAttachVersion().hashCode();
+      hash = (37 * hash) + CREATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreated());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Binding for describes dependencies between modules.
+     * </pre>
+     *
+     * Protobuf type {@code model.Binding}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.Binding)
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_Binding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_Binding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding.class, com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        moduleId_ = "";
+
+        moduleVersion_ = "";
+
+        attachId_ = "";
+
+        attachVersion_ = "";
+
+        created_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.internal_static_model_Binding_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding result = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding(this);
+        result.spaceId_ = spaceId_;
+        result.moduleId_ = moduleId_;
+        result.moduleVersion_ = moduleVersion_;
+        result.attachId_ = attachId_;
+        result.attachVersion_ = attachVersion_;
+        result.created_ = created_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getModuleId().isEmpty()) {
+          moduleId_ = other.moduleId_;
+          onChanged();
+        }
+        if (!other.getModuleVersion().isEmpty()) {
+          moduleVersion_ = other.moduleVersion_;
+          onChanged();
+        }
+        if (!other.getAttachId().isEmpty()) {
+          attachId_ = other.attachId_;
+          onChanged();
+        }
+        if (!other.getAttachVersion().isEmpty()) {
+          attachVersion_ = other.attachVersion_;
+          onChanged();
+        }
+        if (other.getCreated() != 0L) {
+          setCreated(other.getCreated());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2671,23 +2671,23 @@ public final class PBModelBinding {
         return this;
       }
 
-      private java.lang.Object sourceId_ = "";
+      private java.lang.Object moduleId_ = "";
       /**
        * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
        * </pre>
        *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @return The sourceId.
+       * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+       * @return The moduleId.
        */
-      public java.lang.String getSourceId() {
-        java.lang.Object ref = sourceId_;
+      public java.lang.String getModuleId() {
+        java.lang.Object ref = moduleId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          sourceId_ = s;
+          moduleId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2695,21 +2695,21 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
        * </pre>
        *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for sourceId.
+       * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for moduleId.
        */
       public com.google.protobuf.ByteString
-          getSourceIdBytes() {
-        java.lang.Object ref = sourceId_;
+          getModuleIdBytes() {
+        java.lang.Object ref = moduleId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          sourceId_ = b;
+          moduleId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2717,79 +2717,79 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
        * </pre>
        *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The sourceId to set.
+       * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The moduleId to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceId(
+      public Builder setModuleId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        sourceId_ = value;
+        moduleId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
        * </pre>
        *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string module_id = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearSourceId() {
+      public Builder clearModuleId() {
         
-        sourceId_ = getDefaultInstance().getSourceId();
+        moduleId_ = getDefaultInstance().getModuleId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * SourceId is the ID of the bound module.
-       * &#64;inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
+       * ModuleId represents which other modules(AttachId) are bound to this module.
+       * &#64;inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
        * </pre>
        *
-       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for sourceId to set.
+       * <code>string module_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for moduleId to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceIdBytes(
+      public Builder setModuleIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        sourceId_ = value;
+        moduleId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object sourceVersion_ = "";
+      private java.lang.Object moduleVersion_ = "";
       /**
        * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
        * </pre>
        *
-       * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-       * @return The sourceVersion.
+       * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+       * @return The moduleVersion.
        */
-      public java.lang.String getSourceVersion() {
-        java.lang.Object ref = sourceVersion_;
+      public java.lang.String getModuleVersion() {
+        java.lang.Object ref = moduleVersion_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          sourceVersion_ = s;
+          moduleVersion_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2797,22 +2797,22 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
        * </pre>
        *
-       * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for sourceVersion.
+       * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for moduleVersion.
        */
       public com.google.protobuf.ByteString
-          getSourceVersionBytes() {
-        java.lang.Object ref = sourceVersion_;
+          getModuleVersionBytes() {
+        java.lang.Object ref = moduleVersion_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          sourceVersion_ = b;
+          moduleVersion_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2820,81 +2820,81 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
        * </pre>
        *
-       * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-       * @param value The sourceVersion to set.
+       * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+       * @param value The moduleVersion to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceVersion(
+      public Builder setModuleVersion(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        sourceVersion_ = value;
+        moduleVersion_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
        * </pre>
        *
-       * <code>string source_version = 3 [(.validator.field) = { ... }</code>
+       * <code>string module_version = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearSourceVersion() {
+      public Builder clearModuleVersion() {
         
-        sourceVersion_ = getDefaultInstance().getSourceVersion();
+        moduleVersion_ = getDefaultInstance().getModuleVersion();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * SourceVersion is the version of the bound module.
-       * Notice: Reserved field, unused on present.
-       * &#64;inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
+       * ModuleVersion is the version of module.
+       * This filed maybe empty.
+       * &#64;inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
        * </pre>
        *
-       * <code>string source_version = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for sourceVersion to set.
+       * <code>string module_version = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for moduleVersion to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceVersionBytes(
+      public Builder setModuleVersionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        sourceVersion_ = value;
+        moduleVersion_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object targetId_ = "";
+      private java.lang.Object attachId_ = "";
       /**
        * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
        * </pre>
        *
-       * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-       * @return The targetId.
+       * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+       * @return The attachId.
        */
-      public java.lang.String getTargetId() {
-        java.lang.Object ref = targetId_;
+      public java.lang.String getAttachId() {
+        java.lang.Object ref = attachId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          targetId_ = s;
+          attachId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2902,21 +2902,21 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
        * </pre>
        *
-       * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for targetId.
+       * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for attachId.
        */
       public com.google.protobuf.ByteString
-          getTargetIdBytes() {
-        java.lang.Object ref = targetId_;
+          getAttachIdBytes() {
+        java.lang.Object ref = attachId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          targetId_ = b;
+          attachId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2924,79 +2924,79 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
        * </pre>
        *
-       * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-       * @param value The targetId to set.
+       * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The attachId to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetId(
+      public Builder setAttachId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        targetId_ = value;
+        attachId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
        * </pre>
        *
-       * <code>string target_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearTargetId() {
+      public Builder clearAttachId() {
         
-        targetId_ = getDefaultInstance().getTargetId();
+        attachId_ = getDefaultInstance().getAttachId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * TargetId is the ID of which module binding it.
-       * &#64;inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
+       * AttachId represents this module are bound by which other modules(ModuleId).
+       * &#64;inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
        * </pre>
        *
-       * <code>string target_id = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for targetId to set.
+       * <code>string attach_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for attachId to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetIdBytes(
+      public Builder setAttachIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        targetId_ = value;
+        attachId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object targetVersion_ = "";
+      private java.lang.Object attachVersion_ = "";
       /**
        * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
        * </pre>
        *
-       * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-       * @return The targetVersion.
+       * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+       * @return The attachVersion.
        */
-      public java.lang.String getTargetVersion() {
-        java.lang.Object ref = targetVersion_;
+      public java.lang.String getAttachVersion() {
+        java.lang.Object ref = attachVersion_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          targetVersion_ = s;
+          attachVersion_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3004,22 +3004,22 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
        * </pre>
        *
-       * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for targetVersion.
+       * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for attachVersion.
        */
       public com.google.protobuf.ByteString
-          getTargetVersionBytes() {
-        java.lang.Object ref = targetVersion_;
+          getAttachVersionBytes() {
+        java.lang.Object ref = attachVersion_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          targetVersion_ = b;
+          attachVersion_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3027,60 +3027,60 @@ public final class PBModelBinding {
       }
       /**
        * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
        * </pre>
        *
-       * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-       * @param value The targetVersion to set.
+       * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+       * @param value The attachVersion to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetVersion(
+      public Builder setAttachVersion(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        targetVersion_ = value;
+        attachVersion_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
        * </pre>
        *
-       * <code>string target_version = 5 [(.validator.field) = { ... }</code>
+       * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearTargetVersion() {
+      public Builder clearAttachVersion() {
         
-        targetVersion_ = getDefaultInstance().getTargetVersion();
+        attachVersion_ = getDefaultInstance().getAttachVersion();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * TargetVersion represents the Target's version if there is a version number.
-       * This filed maybe empty.
-       * &#64;inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
+       * AttachVersion is the version of attach module.
+       * Notice: Reserved field, unused on present.
+       * &#64;inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
        * </pre>
        *
-       * <code>string target_version = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for targetVersion to set.
+       * <code>string attach_version = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for attachVersion to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetVersionBytes(
+      public Builder setAttachVersionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        targetVersion_ = value;
+        attachVersion_ = value;
         onChanged();
         return this;
       }
@@ -3143,61 +3143,61 @@ public final class PBModelBinding {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.BindingModule)
+      // @@protoc_insertion_point(builder_scope:model.Binding)
     }
 
-    // @@protoc_insertion_point(class_scope:model.BindingModule)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.Binding)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BindingModule>
-        PARSER = new com.google.protobuf.AbstractParser<BindingModule>() {
+    private static final com.google.protobuf.Parser<Binding>
+        PARSER = new com.google.protobuf.AbstractParser<Binding>() {
       @java.lang.Override
-      public BindingModule parsePartialFrom(
+      public Binding parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BindingModule(input, extensionRegistry);
+        return new Binding(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BindingModule> parser() {
+    public static com.google.protobuf.Parser<Binding> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BindingModule> getParserForType() {
+    public com.google.protobuf.Parser<Binding> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.BindingModule getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelBinding.Binding getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_ModuleSource_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_ModuleSource_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_ModuleTarget_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_ModuleTarget_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_BindingModule_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_BindingModule_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_BindingAttach_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_BindingAttach_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_Binding_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_Binding_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3209,47 +3209,47 @@ public final class PBModelBinding {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/binding.proto\022\005model" +
       "\0323github.com/yu31/protoc-plugin/proto/va" +
-      "lidator.proto\"r\n\014ModuleSource\022\037\n\tsource_" +
-      "id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016source_version" +
-      "\030\002 \001(\tB)\342\337\037\031\n\027\n\016source_version\022\005\302\001\002\"\000\342\337\037" +
-      "\010\022\006\302\001\003\360\001\020\"r\n\014ModuleTarget\022\037\n\ttarget_id\030\001" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016target_version\030\002 \001" +
-      "(\tB)\342\337\037\031\n\027\n\016target_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302" +
-      "\001\003\360\001\020\"\234\002\n\rBindingModule\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsource_id\030\002 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016source_version\030\003 \001(\tB" +
-      ")\342\337\037\031\n\027\n\016source_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360" +
-      "\001\020\022\037\n\ttarget_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016t" +
-      "arget_version\030\005 \001(\tB)\342\337\037\031\n\027\n\016target_vers" +
-      "ion\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022\034\n\007created\030\006 \001(\003B" +
-      "\013\342\337\037\007\022\005\262\001\0020\000Bi\n\"com.dataomnis.gproto.typ" +
-      "es.pbmodelB\016PBModelBindingP\000Z1github.com" +
-      "/DataWorkbench/gproto/xgo/types/pbmodelb" +
-      "\006proto3"
+      "lidator.proto\"s\n\rBindingModule\022\037\n\tmodule" +
+      "_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016module_versio" +
+      "n\030\002 \001(\tB)\342\337\037\031\n\027\n\016module_version\022\005\302\001\002\"\000\342\337" +
+      "\037\010\022\006\302\001\003\360\001\020\"s\n\rBindingAttach\022\037\n\tattach_id" +
+      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016attach_version\030\002" +
+      " \001(\tB)\342\337\037\031\n\027\n\016attach_version\022\005\302\001\002\"\000\342\337\037\010\022" +
+      "\006\302\001\003\360\001\020\"\226\002\n\007Binding\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tmodule_id\030\002 \001(\tB\014\342" +
+      "\337\037\010\022\006\302\001\003\360\001\024\022A\n\016module_version\030\003 \001(\tB)\342\337\037" +
+      "\031\n\027\n\016module_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022\037" +
+      "\n\tattach_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022A\n\016attac" +
+      "h_version\030\005 \001(\tB)\342\337\037\031\n\027\n\016attach_version\022" +
+      "\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020\022\034\n\007created\030\006 \001(\003B\013\342\337\037" +
+      "\007\022\005\262\001\0020\000Bi\n\"com.dataomnis.gproto.types.p" +
+      "bmodelB\016PBModelBindingP\000Z1github.com/Dat" +
+      "aWorkbench/gproto/xgo/types/pbmodelb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
         });
-    internal_static_model_ModuleSource_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_model_ModuleSource_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_ModuleSource_descriptor,
-        new java.lang.String[] { "SourceId", "SourceVersion", });
-    internal_static_model_ModuleTarget_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_model_ModuleTarget_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_ModuleTarget_descriptor,
-        new java.lang.String[] { "TargetId", "TargetVersion", });
     internal_static_model_BindingModule_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_model_BindingModule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_BindingModule_descriptor,
-        new java.lang.String[] { "SpaceId", "SourceId", "SourceVersion", "TargetId", "TargetVersion", "Created", });
+        new java.lang.String[] { "ModuleId", "ModuleVersion", });
+    internal_static_model_BindingAttach_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_model_BindingAttach_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_BindingAttach_descriptor,
+        new java.lang.String[] { "AttachId", "AttachVersion", });
+    internal_static_model_Binding_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_model_Binding_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_Binding_descriptor,
+        new java.lang.String[] { "SpaceId", "ModuleId", "ModuleVersion", "AttachId", "AttachVersion", "Created", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

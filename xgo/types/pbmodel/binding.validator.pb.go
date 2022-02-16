@@ -11,143 +11,26 @@ import (
 	strings "strings"
 )
 
-func (this *ModuleSource) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("ModuleSource", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+func (this *BindingModule) _xxx_xxx_Validator_Validate_module_id() error {
+	if !(len(this.ModuleId) == 20) {
+		return protovalidator.FieldError1("BindingModule", "the byte length of field 'module_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ModuleId))
 	}
 	return nil
 }
 
-func (this *ModuleSource) _xxx_xxx_Validator_CheckIf_source_version() bool {
-	if !(this.SourceVersion != "") {
+func (this *BindingModule) _xxx_xxx_Validator_CheckIf_module_version() bool {
+	if !(this.ModuleVersion != "") {
 		return false
 	}
 	return true
 }
 
-func (this *ModuleSource) _xxx_xxx_Validator_Validate_source_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_source_version() {
+func (this *BindingModule) _xxx_xxx_Validator_Validate_module_version() error {
+	if !this._xxx_xxx_Validator_CheckIf_module_version() {
 		return nil
 	}
-	if !(len(this.SourceVersion) == 16) {
-		return protovalidator.FieldError1("ModuleSource", "the byte length of field 'source_version' must be equal to '16'", protovalidator.StringByteLenToString(this.SourceVersion))
-	}
-	return nil
-}
-
-// Set default value for message model.ModuleSource
-func (this *ModuleSource) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_source_version(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *ModuleTarget) _xxx_xxx_Validator_Validate_target_id() error {
-	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("ModuleTarget", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
-	}
-	return nil
-}
-
-func (this *ModuleTarget) _xxx_xxx_Validator_CheckIf_target_version() bool {
-	if !(this.TargetVersion != "") {
-		return false
-	}
-	return true
-}
-
-func (this *ModuleTarget) _xxx_xxx_Validator_Validate_target_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_target_version() {
-		return nil
-	}
-	if !(len(this.TargetVersion) == 16) {
-		return protovalidator.FieldError1("ModuleTarget", "the byte length of field 'target_version' must be equal to '16'", protovalidator.StringByteLenToString(this.TargetVersion))
-	}
-	return nil
-}
-
-// Set default value for message model.ModuleTarget
-func (this *ModuleTarget) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_target_version(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_Validate_space_id() error {
-	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("BindingModule", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
-	}
-	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("BindingModule", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
-	}
-	return nil
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_Validate_source_id() error {
-	if !(len(this.SourceId) == 20) {
-		return protovalidator.FieldError1("BindingModule", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
-	}
-	return nil
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_CheckIf_source_version() bool {
-	if !(this.SourceVersion != "") {
-		return false
-	}
-	return true
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_Validate_source_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_source_version() {
-		return nil
-	}
-	if !(len(this.SourceVersion) == 16) {
-		return protovalidator.FieldError1("BindingModule", "the byte length of field 'source_version' must be equal to '16'", protovalidator.StringByteLenToString(this.SourceVersion))
-	}
-	return nil
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_Validate_target_id() error {
-	if !(len(this.TargetId) == 20) {
-		return protovalidator.FieldError1("BindingModule", "the byte length of field 'target_id' must be equal to '20'", protovalidator.StringByteLenToString(this.TargetId))
-	}
-	return nil
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_CheckIf_target_version() bool {
-	if !(this.TargetVersion != "") {
-		return false
-	}
-	return true
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_Validate_target_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_target_version() {
-		return nil
-	}
-	if !(len(this.TargetVersion) == 16) {
-		return protovalidator.FieldError1("BindingModule", "the byte length of field 'target_version' must be equal to '16'", protovalidator.StringByteLenToString(this.TargetVersion))
-	}
-	return nil
-}
-
-func (this *BindingModule) _xxx_xxx_Validator_Validate_created() error {
-	if !(this.Created > 0) {
-		return protovalidator.FieldError1("BindingModule", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	if !(len(this.ModuleVersion) == 16) {
+		return protovalidator.FieldError1("BindingModule", "the byte length of field 'module_version' must be equal to '16'", protovalidator.StringByteLenToString(this.ModuleVersion))
 	}
 	return nil
 }
@@ -157,19 +40,136 @@ func (this *BindingModule) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_module_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_module_version(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *BindingAttach) _xxx_xxx_Validator_Validate_attach_id() error {
+	if !(len(this.AttachId) == 20) {
+		return protovalidator.FieldError1("BindingAttach", "the byte length of field 'attach_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AttachId))
+	}
+	return nil
+}
+
+func (this *BindingAttach) _xxx_xxx_Validator_CheckIf_attach_version() bool {
+	if !(this.AttachVersion != "") {
+		return false
+	}
+	return true
+}
+
+func (this *BindingAttach) _xxx_xxx_Validator_Validate_attach_version() error {
+	if !this._xxx_xxx_Validator_CheckIf_attach_version() {
+		return nil
+	}
+	if !(len(this.AttachVersion) == 16) {
+		return protovalidator.FieldError1("BindingAttach", "the byte length of field 'attach_version' must be equal to '16'", protovalidator.StringByteLenToString(this.AttachVersion))
+	}
+	return nil
+}
+
+// Set default value for message model.BindingAttach
+func (this *BindingAttach) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_attach_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_attach_version(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *Binding) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("Binding", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("Binding", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *Binding) _xxx_xxx_Validator_Validate_module_id() error {
+	if !(len(this.ModuleId) == 20) {
+		return protovalidator.FieldError1("Binding", "the byte length of field 'module_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ModuleId))
+	}
+	return nil
+}
+
+func (this *Binding) _xxx_xxx_Validator_CheckIf_module_version() bool {
+	if !(this.ModuleVersion != "") {
+		return false
+	}
+	return true
+}
+
+func (this *Binding) _xxx_xxx_Validator_Validate_module_version() error {
+	if !this._xxx_xxx_Validator_CheckIf_module_version() {
+		return nil
+	}
+	if !(len(this.ModuleVersion) == 16) {
+		return protovalidator.FieldError1("Binding", "the byte length of field 'module_version' must be equal to '16'", protovalidator.StringByteLenToString(this.ModuleVersion))
+	}
+	return nil
+}
+
+func (this *Binding) _xxx_xxx_Validator_Validate_attach_id() error {
+	if !(len(this.AttachId) == 20) {
+		return protovalidator.FieldError1("Binding", "the byte length of field 'attach_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AttachId))
+	}
+	return nil
+}
+
+func (this *Binding) _xxx_xxx_Validator_CheckIf_attach_version() bool {
+	if !(this.AttachVersion != "") {
+		return false
+	}
+	return true
+}
+
+func (this *Binding) _xxx_xxx_Validator_Validate_attach_version() error {
+	if !this._xxx_xxx_Validator_CheckIf_attach_version() {
+		return nil
+	}
+	if !(len(this.AttachVersion) == 16) {
+		return protovalidator.FieldError1("Binding", "the byte length of field 'attach_version' must be equal to '16'", protovalidator.StringByteLenToString(this.AttachVersion))
+	}
+	return nil
+}
+
+func (this *Binding) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("Binding", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+// Set default value for message model.Binding
+func (this *Binding) Validate() error {
+	if this == nil {
+		return nil
+	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_module_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_source_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_module_version(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_target_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_attach_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_target_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_attach_version(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
