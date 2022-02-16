@@ -979,19 +979,19 @@ public final class PBFlinkJob {
       if (type_ != com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkJob.FlinkOperator.Type.Empty.getNumber()) {
         output.writeEnum(1, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstream_)) {
+      if (!getUpstreamBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, upstream_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamRight_)) {
+      if (!getUpstreamRightBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, upstreamRight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downStream_)) {
+      if (!getDownStreamBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, downStream_);
       }
       if (pointX_ != 0) {
@@ -1016,19 +1016,19 @@ public final class PBFlinkJob {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstream_)) {
+      if (!getUpstreamBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, upstream_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamRight_)) {
+      if (!getUpstreamRightBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, upstreamRight_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(downStream_)) {
+      if (!getDownStreamBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, downStream_);
       }
       if (pointX_ != 0) {
@@ -2653,13 +2653,13 @@ public final class PBFlinkJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      if (!getResourceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarArgs_)) {
+      if (!getJarArgsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jarArgs_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarEntry_)) {
+      if (!getJarEntryBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jarEntry_);
       }
       unknownFields.writeTo(output);
@@ -2671,13 +2671,13 @@ public final class PBFlinkJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      if (!getResourceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarArgs_)) {
+      if (!getJarArgsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jarArgs_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jarEntry_)) {
+      if (!getJarEntryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jarEntry_);
       }
       size += unknownFields.getSerializedSize();
@@ -3510,7 +3510,7 @@ public final class PBFlinkJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      if (!getCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
       }
       unknownFields.writeTo(output);
@@ -3522,7 +3522,7 @@ public final class PBFlinkJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      if (!getCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
       }
       size += unknownFields.getSerializedSize();
@@ -4131,7 +4131,7 @@ public final class PBFlinkJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      if (!getCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
       }
       unknownFields.writeTo(output);
@@ -4143,7 +4143,7 @@ public final class PBFlinkJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      if (!getCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
       }
       size += unknownFields.getSerializedSize();
@@ -4752,7 +4752,7 @@ public final class PBFlinkJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      if (!getCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
       }
       unknownFields.writeTo(output);
@@ -4764,7 +4764,7 @@ public final class PBFlinkJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+      if (!getCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
       }
       size += unknownFields.getSerializedSize();

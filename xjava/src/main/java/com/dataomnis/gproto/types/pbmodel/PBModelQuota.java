@@ -2929,10 +2929,10 @@ public final class PBModelQuota {
       if (limit_ != 0L) {
         output.writeInt64(1, limit_);
       }
-      if (java.lang.Float.floatToRawIntBits(cu_) != 0) {
+      if (cu_ != 0F) {
         output.writeFloat(2, cu_);
       }
-      if (java.lang.Float.floatToRawIntBits(cuTotal_) != 0) {
+      if (cuTotal_ != 0F) {
         output.writeFloat(3, cuTotal_);
       }
       unknownFields.writeTo(output);
@@ -2948,11 +2948,11 @@ public final class PBModelQuota {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, limit_);
       }
-      if (java.lang.Float.floatToRawIntBits(cu_) != 0) {
+      if (cu_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, cu_);
       }
-      if (java.lang.Float.floatToRawIntBits(cuTotal_) != 0) {
+      if (cuTotal_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, cuTotal_);
       }
@@ -4665,7 +4665,7 @@ public final class PBModelQuota {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
       if (workspace_ != null) {
@@ -4698,7 +4698,7 @@ public final class PBModelQuota {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
       if (workspace_ != null) {

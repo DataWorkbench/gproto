@@ -949,10 +949,10 @@ public final class PBRequestScheduler {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+      if (!getJobIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
       if (stopRunning_ != false) {
@@ -967,10 +967,10 @@ public final class PBRequestScheduler {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+      if (!getJobIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
       if (stopRunning_ != false) {
@@ -2475,7 +2475,7 @@ public final class PBRequestScheduler {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
       for (int i = 0; i < jobIds_.size(); i++) {
@@ -2490,7 +2490,7 @@ public final class PBRequestScheduler {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
       {

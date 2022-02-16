@@ -411,16 +411,16 @@ public final class PBSvcNotifier {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      if (!getTitleBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+      if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortContent_)) {
+      if (!getShortContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, shortContent_);
       }
       for (int i = 0; i < emailAddress_.size(); i++) {
@@ -435,16 +435,16 @@ public final class PBSvcNotifier {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      if (!getTitleBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+      if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortContent_)) {
+      if (!getShortContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, shortContent_);
       }
       {
@@ -1429,7 +1429,7 @@ public final class PBSvcNotifier {
       if (status_ != 0) {
         output.writeInt32(1, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       unknownFields.writeTo(output);
@@ -1445,7 +1445,7 @@ public final class PBSvcNotifier {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       size += unknownFields.getSerializedSize();
@@ -2485,25 +2485,25 @@ public final class PBSvcNotifier {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPostId_)) {
+      if (!getNotificationPostIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, notificationPostId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+      if (!getOwnerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notifyType_)) {
+      if (!getNotifyTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, notifyType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      if (!getTitleBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, title_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+      if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, content_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortContent_)) {
+      if (!getShortContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, shortContent_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+      if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, status_);
       }
       if (createTime_ != 0L) {
@@ -2512,7 +2512,7 @@ public final class PBSvcNotifier {
       if (statusTime_ != 0L) {
         output.writeInt64(9, statusTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(emailAddress_)) {
+      if (!getEmailAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, emailAddress_);
       }
       unknownFields.writeTo(output);
@@ -2524,25 +2524,25 @@ public final class PBSvcNotifier {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPostId_)) {
+      if (!getNotificationPostIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, notificationPostId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+      if (!getOwnerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notifyType_)) {
+      if (!getNotifyTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, notifyType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      if (!getTitleBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, title_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+      if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, content_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortContent_)) {
+      if (!getShortContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, shortContent_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+      if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, status_);
       }
       if (createTime_ != 0L) {
@@ -2553,7 +2553,7 @@ public final class PBSvcNotifier {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, statusTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(emailAddress_)) {
+      if (!getEmailAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, emailAddress_);
       }
       size += unknownFields.getSerializedSize();
@@ -3977,10 +3977,10 @@ public final class PBSvcNotifier {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPostId_)) {
+      if (!getNotificationPostIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, notificationPostId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+      if (!getOwnerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, owner_);
       }
       for (int i = 0; i < status_.size(); i++) {
@@ -4001,10 +4001,10 @@ public final class PBSvcNotifier {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPostId_)) {
+      if (!getNotificationPostIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, notificationPostId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+      if (!getOwnerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, owner_);
       }
       {
@@ -5011,7 +5011,7 @@ public final class PBSvcNotifier {
       if (status_ != 0) {
         output.writeInt32(3, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
       }
       unknownFields.writeTo(output);
@@ -5035,7 +5035,7 @@ public final class PBSvcNotifier {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
       }
       size += unknownFields.getSerializedSize();

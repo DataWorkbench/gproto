@@ -498,19 +498,19 @@ public final class PBFlinkTable {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+      if (!getColumnBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+      if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+      if (!getCommentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, comment_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryKey_)) {
+      if (!getPrimaryKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, primaryKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
+      if (!getLengthBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, length_);
       }
       unknownFields.writeTo(output);
@@ -522,19 +522,19 @@ public final class PBFlinkTable {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+      if (!getColumnBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, column_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+      if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+      if (!getCommentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, comment_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryKey_)) {
+      if (!getPrimaryKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, primaryKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(length_)) {
+      if (!getLengthBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, length_);
       }
       size += unknownFields.getSerializedSize();
@@ -1842,13 +1842,13 @@ public final class PBFlinkTable {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+      if (!getColumnBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkTable.SqlTimeColumnType.Type.TypeUnset.getNumber()) {
         output.writeEnum(2, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
+      if (!getExpressionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, expression_);
       }
       unknownFields.writeTo(output);
@@ -1860,14 +1860,14 @@ public final class PBFlinkTable {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+      if (!getColumnBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, column_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkTable.SqlTimeColumnType.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expression_)) {
+      if (!getExpressionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, expression_);
       }
       size += unknownFields.getSerializedSize();
@@ -2753,10 +2753,10 @@ public final class PBFlinkTable {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
       unknownFields.writeTo(output);
@@ -2768,10 +2768,10 @@ public final class PBFlinkTable {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+      if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
       size += unknownFields.getSerializedSize();
@@ -3877,7 +3877,7 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -3899,7 +3899,7 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -6037,7 +6037,7 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -6059,7 +6059,7 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -8197,7 +8197,7 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -8219,7 +8219,7 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -10357,7 +10357,7 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -10379,7 +10379,7 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mappingName_)) {
+      if (!getMappingNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mappingName_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -12594,10 +12594,10 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+      if (!getPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -12619,10 +12619,10 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+      if (!getPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -14949,10 +14949,10 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+      if (!getPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -14974,10 +14974,10 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+      if (!getPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -17304,10 +17304,10 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+      if (!getPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -17329,10 +17329,10 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+      if (!getPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -19659,10 +19659,10 @@ public final class PBFlinkTable {
       for (int i = 0; i < sqlColumn_.size(); i++) {
         output.writeMessage(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+      if (!getTopicBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, topic_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {
@@ -19684,10 +19684,10 @@ public final class PBFlinkTable {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, sqlColumn_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
+      if (!getFormatBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, format_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
+      if (!getTopicBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, topic_);
       }
       for (int i = 0; i < connectorOptions_.size(); i++) {

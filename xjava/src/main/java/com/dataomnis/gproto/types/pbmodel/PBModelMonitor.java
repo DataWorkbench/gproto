@@ -968,13 +968,13 @@ public final class PBModelMonitor {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelMonitor.MonitorRule.Status.StatusUnset.getNumber()) {
@@ -983,7 +983,7 @@ public final class PBModelMonitor {
       if (unit_ != 0) {
         output.writeInt32(5, unit_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
+      if (!getTextBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, text_);
       }
       if (trigger_ != 0) {
@@ -995,13 +995,13 @@ public final class PBModelMonitor {
       if (alarmInterval_ != 0) {
         output.writeInt32(9, alarmInterval_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alarmType_)) {
+      if (!getAlarmTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, alarmType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(freeTime_)) {
+      if (!getFreeTimeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, freeTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(receiver_)) {
+      if (!getReceiverBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, receiver_);
       }
       unknownFields.writeTo(output);
@@ -1013,13 +1013,13 @@ public final class PBModelMonitor {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelMonitor.MonitorRule.Status.StatusUnset.getNumber()) {
@@ -1030,7 +1030,7 @@ public final class PBModelMonitor {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, unit_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
+      if (!getTextBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, text_);
       }
       if (trigger_ != 0) {
@@ -1045,13 +1045,13 @@ public final class PBModelMonitor {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, alarmInterval_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alarmType_)) {
+      if (!getAlarmTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, alarmType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(freeTime_)) {
+      if (!getFreeTimeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, freeTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(receiver_)) {
+      if (!getReceiverBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, receiver_);
       }
       size += unknownFields.getSerializedSize();

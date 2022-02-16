@@ -223,10 +223,10 @@ public final class PBResponseAccount {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+      if (!getOwnerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, owner_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
+      if (!getSecretAccessKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretAccessKey_);
       }
       unknownFields.writeTo(output);
@@ -238,10 +238,10 @@ public final class PBResponseAccount {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+      if (!getOwnerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, owner_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
+      if (!getSecretAccessKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretAccessKey_);
       }
       size += unknownFields.getSerializedSize();
@@ -1015,7 +1015,7 @@ public final class PBResponseAccount {
       if (status_ != 0) {
         output.writeInt32(3, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
       }
       unknownFields.writeTo(output);
@@ -1039,7 +1039,7 @@ public final class PBResponseAccount {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
       }
       size += unknownFields.getSerializedSize();
@@ -2050,10 +2050,10 @@ public final class PBResponseAccount {
       if (status_ != 0) {
         output.writeInt32(1, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId_);
       }
       unknownFields.writeTo(output);
@@ -2069,10 +2069,10 @@ public final class PBResponseAccount {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId_);
       }
       size += unknownFields.getSerializedSize();
@@ -3998,7 +3998,7 @@ public final class PBResponseAccount {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
       unknownFields.writeTo(output);
@@ -4010,7 +4010,7 @@ public final class PBResponseAccount {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
       size += unknownFields.getSerializedSize();
@@ -4680,13 +4680,13 @@ public final class PBResponseAccount {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessKeyId_)) {
+      if (!getAccessKeyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accessKeyId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
+      if (!getSecretAccessKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, secretAccessKey_);
       }
       unknownFields.writeTo(output);
@@ -4698,13 +4698,13 @@ public final class PBResponseAccount {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      if (!getUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessKeyId_)) {
+      if (!getAccessKeyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accessKeyId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
+      if (!getSecretAccessKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, secretAccessKey_);
       }
       size += unknownFields.getSerializedSize();
@@ -5434,7 +5434,7 @@ public final class PBResponseAccount {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
+      if (!getSessionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, session_);
       }
       unknownFields.writeTo(output);
@@ -5446,7 +5446,7 @@ public final class PBResponseAccount {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(session_)) {
+      if (!getSessionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, session_);
       }
       size += unknownFields.getSerializedSize();

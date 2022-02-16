@@ -716,19 +716,19 @@ public final class PBRequestTableManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+      if (!getTableIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
+      if (!getSourceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+      if (!getCommentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, comment_);
       }
       if (tableSchema_ != null) {
@@ -737,7 +737,7 @@ public final class PBRequestTableManage {
       if (tableKind_ != com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable.Kind.KindUnset.getNumber()) {
         output.writeEnum(7, tableKind_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+      if (!getCreatedByBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
       }
       unknownFields.writeTo(output);
@@ -749,19 +749,19 @@ public final class PBRequestTableManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+      if (!getTableIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
+      if (!getSourceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+      if (!getCommentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, comment_);
       }
       if (tableSchema_ != null) {
@@ -772,7 +772,7 @@ public final class PBRequestTableManage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, tableKind_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+      if (!getCreatedByBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
       }
       size += unknownFields.getSerializedSize();
@@ -2511,13 +2511,13 @@ public final class PBRequestTableManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+      if (!getTableIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+      if (!getCommentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, comment_);
       }
       if (tableSchema_ != null) {
@@ -2535,13 +2535,13 @@ public final class PBRequestTableManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+      if (!getTableIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+      if (!getCommentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, comment_);
       }
       if (tableSchema_ != null) {
@@ -4388,7 +4388,7 @@ public final class PBRequestTableManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+      if (!getTableIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableId_);
       }
       unknownFields.writeTo(output);
@@ -4400,7 +4400,7 @@ public final class PBRequestTableManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+      if (!getTableIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableId_);
       }
       size += unknownFields.getSerializedSize();
@@ -5411,19 +5411,19 @@ public final class PBRequestTableManage {
       if (offset_ != 0) {
         output.writeInt32(2, offset_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
+      if (!getSortByBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sortBy_);
       }
       if (reverse_ != false) {
         output.writeBool(4, reverse_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      if (!getSearchBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, search_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
+      if (!getSourceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sourceId_);
       }
       if (tableKind_ != com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable.Kind.KindUnset.getNumber()) {
@@ -5446,20 +5446,20 @@ public final class PBRequestTableManage {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, offset_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
+      if (!getSortByBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sortBy_);
       }
       if (reverse_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, reverse_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      if (!getSearchBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, search_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
+      if (!getSourceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sourceId_);
       }
       if (tableKind_ != com.dataomnis.gproto.types.pbmodel.PBModelFlinkTable.FlinkTable.Kind.KindUnset.getNumber()) {

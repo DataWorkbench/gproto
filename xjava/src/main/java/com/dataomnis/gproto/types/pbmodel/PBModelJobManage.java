@@ -615,19 +615,19 @@ public final class PBModelJobManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+      if (!getInstanceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
+      if (!getNoteIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, noteId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
+      if (!getParagraphIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paragraphId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
+      if (!getFlinkIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, flinkId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.StreamInstance.State.StateUnset.getNumber()) {
@@ -648,19 +648,19 @@ public final class PBModelJobManage {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+      if (!getInstanceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
+      if (!getNoteIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, noteId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
+      if (!getParagraphIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paragraphId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
+      if (!getFlinkIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, flinkId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
       }
       if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamInstance.StreamInstance.State.StateUnset.getNumber()) {

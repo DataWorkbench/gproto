@@ -1135,22 +1135,22 @@ public final class PBModelStreamJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
+      if (!getPidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pid_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      if (!getVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+      if (!getDescBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, desc_);
       }
       if (isDirectory_ != false) {
@@ -1162,7 +1162,7 @@ public final class PBModelStreamJob {
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Status.StatusUnset.getNumber()) {
         output.writeEnum(9, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+      if (!getCreatedByBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdBy_);
       }
       if (created_ != 0L) {
@@ -1180,22 +1180,22 @@ public final class PBModelStreamJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pid_)) {
+      if (!getPidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pid_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      if (!getVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+      if (!getDescBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, desc_);
       }
       if (isDirectory_ != false) {
@@ -1210,7 +1210,7 @@ public final class PBModelStreamJob {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+      if (!getCreatedByBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdBy_);
       }
       if (created_ != 0L) {
@@ -3239,13 +3239,13 @@ public final class PBModelStreamJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      if (!getVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
       }
       if (code_ != null) {
@@ -3266,13 +3266,13 @@ public final class PBModelStreamJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      if (!getVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
       }
       if (code_ != null) {
@@ -7222,7 +7222,7 @@ public final class PBModelStreamJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+      if (!getClusterIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterId_);
       }
       if (parallelism_ != 0) {
@@ -7246,7 +7246,7 @@ public final class PBModelStreamJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+      if (!getClusterIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clusterId_);
       }
       if (parallelism_ != 0) {
@@ -9376,10 +9376,10 @@ public final class PBModelStreamJob {
       if (concurrencyPolicy_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobSchedule.ConcurrencyPolicy.ConcurrencyPolicyUnset.getNumber()) {
         output.writeEnum(6, concurrencyPolicy_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(periodType_)) {
+      if (!getPeriodTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, periodType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(express_)) {
+      if (!getExpressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, express_);
       }
       if (timeout_ != 0) {
@@ -9423,10 +9423,10 @@ public final class PBModelStreamJob {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, concurrencyPolicy_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(periodType_)) {
+      if (!getPeriodTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, periodType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(express_)) {
+      if (!getExpressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, express_);
       }
       if (timeout_ != 0) {
@@ -11501,16 +11501,16 @@ public final class PBModelStreamJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      if (!getVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.TypeUnset.getNumber()) {
@@ -11519,10 +11519,10 @@ public final class PBModelStreamJob {
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJobRelease.Status.StatusUnset.getNumber()) {
         output.writeEnum(6, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+      if (!getDescBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+      if (!getCreatedByBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
       }
       if (created_ != 0L) {
@@ -11540,16 +11540,16 @@ public final class PBModelStreamJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+      if (!getSpaceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      if (!getVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelStreamJob.StreamJob.Type.TypeUnset.getNumber()) {
@@ -11560,10 +11560,10 @@ public final class PBModelStreamJob {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, status_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+      if (!getDescBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+      if (!getCreatedByBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
       }
       if (created_ != 0L) {

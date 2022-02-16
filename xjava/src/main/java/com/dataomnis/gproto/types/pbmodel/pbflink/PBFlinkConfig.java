@@ -501,10 +501,10 @@ public final class PBFlinkConfig {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        if (!getKeyBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        if (!getValueBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
         }
         unknownFields.writeTo(output);
@@ -516,10 +516,10 @@ public final class PBFlinkConfig {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        if (!getKeyBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        if (!getValueBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
         }
         size += unknownFields.getSerializedSize();
@@ -1400,7 +1400,7 @@ public final class PBFlinkConfig {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(restartStrategy_)) {
+        if (!getRestartStrategyBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, restartStrategy_);
         }
         if (fixedDelayAttempts_ != 0) {
@@ -1427,7 +1427,7 @@ public final class PBFlinkConfig {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(restartStrategy_)) {
+        if (!getRestartStrategyBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, restartStrategy_);
         }
         if (fixedDelayAttempts_ != 0) {
@@ -2336,7 +2336,7 @@ public final class PBFlinkConfig {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootLogLevel_)) {
+        if (!getRootLogLevelBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rootLogLevel_);
         }
         unknownFields.writeTo(output);
@@ -2348,7 +2348,7 @@ public final class PBFlinkConfig {
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootLogLevel_)) {
+        if (!getRootLogLevelBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rootLogLevel_);
         }
         size += unknownFields.getSerializedSize();

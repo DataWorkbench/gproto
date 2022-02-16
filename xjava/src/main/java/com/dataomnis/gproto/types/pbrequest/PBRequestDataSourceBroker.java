@@ -2041,7 +2041,7 @@ public final class PBRequestDataSourceBroker {
       if (url_ != null) {
         output.writeMessage(2, getUrl());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+      if (!getTableNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableName_);
       }
       unknownFields.writeTo(output);
@@ -2061,7 +2061,7 @@ public final class PBRequestDataSourceBroker {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getUrl());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+      if (!getTableNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableName_);
       }
       size += unknownFields.getSerializedSize();

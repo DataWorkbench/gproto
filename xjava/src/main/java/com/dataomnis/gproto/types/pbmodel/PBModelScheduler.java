@@ -631,13 +631,13 @@ public final class PBModelScheduler {
       if (started_ != 0L) {
         output.writeInt64(3, started_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
+      if (!getNoteIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, noteId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
+      if (!getParagraphIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, paragraphId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
+      if (!getFlinkIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, flinkId_);
       }
       unknownFields.writeTo(output);
@@ -661,13 +661,13 @@ public final class PBModelScheduler {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, started_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(noteId_)) {
+      if (!getNoteIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, noteId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paragraphId_)) {
+      if (!getParagraphIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, paragraphId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flinkId_)) {
+      if (!getFlinkIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, flinkId_);
       }
       size += unknownFields.getSerializedSize();
