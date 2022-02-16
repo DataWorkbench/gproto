@@ -33,7 +33,7 @@ message CreateFilePrepare {
 
   // The resource Size. prevent data missing. Max Size: 100M
   // @inject_tag: json:"size"
-  int64 size = 4 [ (validator.field).tags.int = { gt: 0, lte: 104857600 } ];
+  int64 size = 4;
 
   // The resource type. required.
   // @inject_tag: json:"type"
@@ -120,6 +120,10 @@ message ReCreateFileMeta {
   // The file version id, Each upload generates a new ID.
   // @inject_tag: json:"version"
   string version = 5 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 6 [(validator.field).tags.string = { ne: "" } ];
 }
 
 message DescribeFileMeta {

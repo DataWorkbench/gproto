@@ -186,6 +186,10 @@ message UpdateFlinkCluster {
   // Flink config, Is required.
   // @inject_tag: json:"config"
   flink.FlinkConfig config = 10;
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 11 [(validator.field).tags.string = { ne: "" } ];
 }
 
 message DescribeFlinkCluster {
