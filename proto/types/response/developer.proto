@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseDeveloper";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+import "proto/types/model/stream_instance.proto";
+
+message SubmitFlinkJob{
+  // job info
+  // @inject_tag: json:"state"
+  model.StreamInstance.State State = 1;
+
+  // message
+  // @inject_tag: json:"message"
+  string message = 2 [(validator.field) = {}];
+}
+
+message GetFlinkJob{
+  // job info
+  // @inject_tag: json:"state"
+  model.StreamInstance.State State = 1 [(validator.field) = {}];
+
+  // job message
+  // @inject_tag: json:"message"
+  string message = 2 [(validator.field) = {}];
+}
+
+// GetStreamJobCode used as reply parameters in RPC.
+message ValidateFlinkJob {
+  enum Result {
+    ResultUnset = 0;
+    Correct = 1;
+    Incorrect = 2;
+  }
+
+  // Result for check syntax of code. 1 => "Correct" 2 => "Incorrect".
+  Result result = 1;
+
+  // Message represents the error message when found syntax Incorrect.
+  string message = 2;
+}
