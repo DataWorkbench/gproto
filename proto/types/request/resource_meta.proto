@@ -31,9 +31,9 @@ message CreateFilePrepare {
   // @inject_tag: json:"name"
   string name = 3 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128; } ];
 
-  // The resource Size. prevent data missing. Max Size: 100M
+  // The resource Size. used to check quota. Max Size: 100M by default.
   // @inject_tag: json:"size"
-  int64 size = 4;
+  int64 size = 4 [ (validator.field).tags.int = { gt: 0 } ];
 
   // The resource type. required.
   // @inject_tag: json:"type"
@@ -67,9 +67,9 @@ message CreateFileMeta {
   // @inject_tag: json:"desc"
   string desc = 5 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
 
-  // The resource Size. prevent data missing.
+  // The resource file size.
   // @inject_tag: json:"size"
-  int64 size = 6;
+  int64 size = 6 [ (validator.field).tags.int = { gt: 0 } ];
 
   // ETag is MD5 value of file data encoded in hexadecimal.
   // @inject_tag: json:"etag"
@@ -96,9 +96,13 @@ message ReCreateFilePrepare {
   // @inject_tag: json:"resource_id"
   string resource_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
 
-  // The resource Size. prevent data missing.
+  // The resource Size. used to check quota. Max Size: 100M by default.
   // @inject_tag: json:"size"
-  int64 size = 3 [ (validator.field).tags.int = { gt: 0, lte: 104857600 } ];
+  int64 size = 3 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 6 [(validator.field).tags.string = { ne: "" } ];
 }
 
 message ReCreateFileMeta {
@@ -111,7 +115,7 @@ message ReCreateFileMeta {
 
   // The resource Size. prevent data missing.
   // @inject_tag: json:"size"
-  int64 size = 3;
+  int64 size = 3 [ (validator.field).tags.int = { gt: 0 } ];
 
   // ETag is MD5 value of file data encoded in hexadecimal.
   // @inject_tag: json:"etag"
@@ -120,10 +124,6 @@ message ReCreateFileMeta {
   // The file version id, Each upload generates a new ID.
   // @inject_tag: json:"version"
   string version = 5 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
-
-  // The owner of workspace, only used to check quota. Set by APIServer.
-  // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 6 [(validator.field).tags.string = { ne: "" } ];
 }
 
 message DescribeFileMeta {

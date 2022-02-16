@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestResourceMetaP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/resource_meta.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a proto/types/model/resource.proto\"\xf1\x01\n\x11\x43reateFilePrepare\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x32\n\x03pid\x18\x02 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x0c\n\x04size\x18\x04 \x01(\x03\x12\x31\n\x04type\x18\x05 \x01(\x0e\x32\x14.model.Resource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\x0bspace_owner\x18\x06 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"\xf3\x02\n\x0e\x43reateFileMeta\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12(\n\x0bresource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x32\n\x03pid\x18\x03 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x0c\n\x04size\x18\x06 \x01(\x03\x12\x1a\n\x04\x65tag\x18\x07 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x31\n\x04type\x18\x08 \x01(\x0e\x32\x14.model.Resource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1d\n\x07version\x18\t \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12#\n\ncreated_by\x18\n \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"\x86\x01\n\x13ReCreateFilePrepare\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12(\n\x0bresource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x1e\n\x04size\x18\x03 \x01(\x03\x42\x10\xe2\xdf\x1f\x0c\x12\n\xb2\x01\x07\x30\x00\x38\x80\x80\x80\x32\"\xce\x01\n\x10ReCreateFileMeta\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12(\n\x0bresource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x0c\n\x04size\x18\x03 \x01(\x03\x12\x1a\n\x04\x65tag\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1d\n\x07version\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12 \n\x0bspace_owner\x18\x06 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"<\n\x10\x44\x65scribeFileMeta\x12(\n\x0bresource_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\"\xaf\x01\n\x0eUpdateFileMeta\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12!\n\x0bresource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1b\n\x04name\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\xf4\x03\x12\x12\n\x04\x64\x65sc\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\"\n\x04type\x18\x05 \x01(\x0e\x32\x14.model.Resource.Type\"\xb7\x02\n\rListFileMetas\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12/\n\x04type\x18\x04 \x01(\x0e\x32\x14.model.Resource.TypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x1d\n\x06search\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\xf4\x03\x12>\n\x07sort_by\x18\x07 \x01(\tB-\xe2\xdf\x1f)\x12\'\xc2\x01$J\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04nameJ\x04size\x12\x0f\n\x07reverse\x18\x08 \x01(\x08\x12\x0b\n\x03pid\x18\t \x01(\t\"i\n\x0f\x44\x65leteFileMetas\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cresource_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04res-Bt\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestResourceMetaP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/resource_meta.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a proto/types/model/resource.proto\"\xfe\x01\n\x11\x43reateFilePrepare\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x32\n\x03pid\x18\x02 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x19\n\x04size\x18\x04 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x31\n\x04type\x18\x05 \x01(\x0e\x32\x14.model.Resource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12 \n\x0bspace_owner\x18\x06 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"\x80\x03\n\x0e\x43reateFileMeta\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12(\n\x0bresource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x32\n\x03pid\x18\x03 \x01(\tB%\xe2\xdf\x1f\x0e\n\x0c\n\x03pid\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x19\n\x04size\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1a\n\x04\x65tag\x18\x07 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x31\n\x04type\x18\x08 \x01(\x0e\x32\x14.model.Resource.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1d\n\x07version\x18\t \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12#\n\ncreated_by\x18\n \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"\xa3\x01\n\x13ReCreateFilePrepare\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12(\n\x0bresource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x19\n\x04size\x18\x03 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12 \n\x0bspace_owner\x18\x06 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"\xb9\x01\n\x10ReCreateFileMeta\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12(\n\x0bresource_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x19\n\x04size\x18\x03 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1a\n\x04\x65tag\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01 \x12\x1d\n\x07version\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"<\n\x10\x44\x65scribeFileMeta\x12(\n\x0bresource_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\"\xaf\x01\n\x0eUpdateFileMeta\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12!\n\x0bresource_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1b\n\x04name\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\xf4\x03\x12\x12\n\x04\x64\x65sc\x18\x04 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\"\n\x04type\x18\x05 \x01(\x0e\x32\x14.model.Resource.Type\"\xb7\x02\n\rListFileMetas\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12/\n\x04type\x18\x04 \x01(\x0e\x32\x14.model.Resource.TypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x1d\n\x06search\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\xf4\x03\x12>\n\x07sort_by\x18\x07 \x01(\tB-\xe2\xdf\x1f)\x12\'\xc2\x01$J\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04nameJ\x04size\x12\x0f\n\x07reverse\x18\x08 \x01(\x08\x12\x0b\n\x03pid\x18\t \x01(\t\"i\n\x0f\x44\x65leteFileMetas\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12/\n\x0cresource_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00\x38\x64Z\n\xc2\x01\x07\xca\x02\x04res-Bt\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestResourceMetaP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_resource__pb2.DESCRIPTOR,])
 
@@ -64,7 +64,7 @@ _CREATEFILEPREPARE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='request.CreateFilePrepare.type', index=4,
       number=5, type=14, cpp_type=8, label=1,
@@ -92,7 +92,7 @@ _CREATEFILEPREPARE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=192,
-  serialized_end=433,
+  serialized_end=446,
 )
 
 
@@ -145,7 +145,7 @@ _CREATEFILEMETA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='etag', full_name='request.CreateFileMeta.etag', index=6,
       number=7, type=9, cpp_type=9, label=1,
@@ -186,8 +186,8 @@ _CREATEFILEMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=436,
-  serialized_end=807,
+  serialized_start=449,
+  serialized_end=833,
 )
 
 
@@ -219,7 +219,14 @@ _RECREATEFILEPREPARE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\014\022\n\262\001\0070\0008\200\200\2002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='space_owner', full_name='request.ReCreateFilePrepare.space_owner', index=3,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -232,8 +239,8 @@ _RECREATEFILEPREPARE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=810,
-  serialized_end=944,
+  serialized_start=836,
+  serialized_end=999,
 )
 
 
@@ -265,7 +272,7 @@ _RECREATEFILEMETA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='etag', full_name='request.ReCreateFileMeta.etag', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -280,13 +287,6 @@ _RECREATEFILEMETA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='space_owner', full_name='request.ReCreateFileMeta.space_owner', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -299,8 +299,8 @@ _RECREATEFILEMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=947,
-  serialized_end=1153,
+  serialized_start=1002,
+  serialized_end=1187,
 )
 
 
@@ -331,8 +331,8 @@ _DESCRIBEFILEMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1155,
-  serialized_end=1215,
+  serialized_start=1189,
+  serialized_end=1249,
 )
 
 
@@ -391,8 +391,8 @@ _UPDATEFILEMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1218,
-  serialized_end=1393,
+  serialized_start=1252,
+  serialized_end=1427,
 )
 
 
@@ -479,8 +479,8 @@ _LISTFILEMETAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1396,
-  serialized_end=1707,
+  serialized_start=1430,
+  serialized_end=1741,
 )
 
 
@@ -518,8 +518,8 @@ _DELETEFILEMETAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1709,
-  serialized_end=1814,
+  serialized_start=1743,
+  serialized_end=1848,
 )
 
 _CREATEFILEPREPARE.fields_by_name['type'].enum_type = proto_dot_types_dot_model_dot_resource__pb2._RESOURCE_TYPE
@@ -597,6 +597,7 @@ DESCRIPTOR._options = None
 _CREATEFILEPREPARE.fields_by_name['space_id']._options = None
 _CREATEFILEPREPARE.fields_by_name['pid']._options = None
 _CREATEFILEPREPARE.fields_by_name['name']._options = None
+_CREATEFILEPREPARE.fields_by_name['size']._options = None
 _CREATEFILEPREPARE.fields_by_name['type']._options = None
 _CREATEFILEPREPARE.fields_by_name['space_owner']._options = None
 _CREATEFILEMETA.fields_by_name['space_id']._options = None
@@ -604,6 +605,7 @@ _CREATEFILEMETA.fields_by_name['resource_id']._options = None
 _CREATEFILEMETA.fields_by_name['pid']._options = None
 _CREATEFILEMETA.fields_by_name['name']._options = None
 _CREATEFILEMETA.fields_by_name['desc']._options = None
+_CREATEFILEMETA.fields_by_name['size']._options = None
 _CREATEFILEMETA.fields_by_name['etag']._options = None
 _CREATEFILEMETA.fields_by_name['type']._options = None
 _CREATEFILEMETA.fields_by_name['version']._options = None
@@ -611,11 +613,12 @@ _CREATEFILEMETA.fields_by_name['created_by']._options = None
 _RECREATEFILEPREPARE.fields_by_name['space_id']._options = None
 _RECREATEFILEPREPARE.fields_by_name['resource_id']._options = None
 _RECREATEFILEPREPARE.fields_by_name['size']._options = None
+_RECREATEFILEPREPARE.fields_by_name['space_owner']._options = None
 _RECREATEFILEMETA.fields_by_name['space_id']._options = None
 _RECREATEFILEMETA.fields_by_name['resource_id']._options = None
+_RECREATEFILEMETA.fields_by_name['size']._options = None
 _RECREATEFILEMETA.fields_by_name['etag']._options = None
 _RECREATEFILEMETA.fields_by_name['version']._options = None
-_RECREATEFILEMETA.fields_by_name['space_owner']._options = None
 _DESCRIBEFILEMETA.fields_by_name['resource_id']._options = None
 _UPDATEFILEMETA.fields_by_name['space_id']._options = None
 _UPDATEFILEMETA.fields_by_name['resource_id']._options = None

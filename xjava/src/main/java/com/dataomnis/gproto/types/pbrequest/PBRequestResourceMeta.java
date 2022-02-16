@@ -86,11 +86,11 @@ public final class PBRequestResourceMeta {
 
     /**
      * <pre>
-     * The resource Size. prevent data missing. Max Size: 100M
+     * The resource Size. used to check quota. Max Size: 100M by default.
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 4;</code>
+     * <code>int64 size = 4 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     long getSize();
@@ -403,11 +403,11 @@ public final class PBRequestResourceMeta {
     private long size_;
     /**
      * <pre>
-     * The resource Size. prevent data missing. Max Size: 100M
+     * The resource Size. used to check quota. Max Size: 100M by default.
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 4;</code>
+     * <code>int64 size = 4 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     @java.lang.Override
@@ -1185,11 +1185,11 @@ public final class PBRequestResourceMeta {
       private long size_ ;
       /**
        * <pre>
-       * The resource Size. prevent data missing. Max Size: 100M
+       * The resource Size. used to check quota. Max Size: 100M by default.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 4;</code>
+       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
        * @return The size.
        */
       @java.lang.Override
@@ -1198,11 +1198,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The resource Size. prevent data missing. Max Size: 100M
+       * The resource Size. used to check quota. Max Size: 100M by default.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 4;</code>
+       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -1214,11 +1214,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The resource Size. prevent data missing. Max Size: 100M
+       * The resource Size. used to check quota. Max Size: 100M by default.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 4;</code>
+       * <code>int64 size = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -1574,11 +1574,11 @@ public final class PBRequestResourceMeta {
 
     /**
      * <pre>
-     * The resource Size. prevent data missing.
+     * The resource file size.
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 6;</code>
+     * <code>int64 size = 6 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     long getSize();
@@ -2057,11 +2057,11 @@ public final class PBRequestResourceMeta {
     private long size_;
     /**
      * <pre>
-     * The resource Size. prevent data missing.
+     * The resource file size.
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 6;</code>
+     * <code>int64 size = 6 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     @java.lang.Override
@@ -3200,11 +3200,11 @@ public final class PBRequestResourceMeta {
       private long size_ ;
       /**
        * <pre>
-       * The resource Size. prevent data missing.
+       * The resource file size.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 6;</code>
+       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
        * @return The size.
        */
       @java.lang.Override
@@ -3213,11 +3213,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The resource Size. prevent data missing.
+       * The resource file size.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 6;</code>
+       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -3229,11 +3229,11 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The resource Size. prevent data missing.
+       * The resource file size.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 6;</code>
+       * <code>int64 size = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -3725,7 +3725,7 @@ public final class PBRequestResourceMeta {
 
     /**
      * <pre>
-     * The resource Size. prevent data missing.
+     * The resource Size. used to check quota. Max Size: 100M by default.
      * &#64;inject_tag: json:"size"
      * </pre>
      *
@@ -3733,6 +3733,28 @@ public final class PBRequestResourceMeta {
      * @return The size.
      */
     long getSize();
+
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.ReCreateFilePrepare}
@@ -3749,6 +3771,7 @@ public final class PBRequestResourceMeta {
     private ReCreateFilePrepare() {
       spaceId_ = "";
       resourceId_ = "";
+      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -3796,6 +3819,12 @@ public final class PBRequestResourceMeta {
             case 24: {
 
               size_ = input.readInt64();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
               break;
             }
             default: {
@@ -3928,7 +3957,7 @@ public final class PBRequestResourceMeta {
     private long size_;
     /**
      * <pre>
-     * The resource Size. prevent data missing.
+     * The resource Size. used to check quota. Max Size: 100M by default.
      * &#64;inject_tag: json:"size"
      * </pre>
      *
@@ -3938,6 +3967,54 @@ public final class PBRequestResourceMeta {
     @java.lang.Override
     public long getSize() {
       return size_;
+    }
+
+    public static final int SPACE_OWNER_FIELD_NUMBER = 6;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3963,6 +4040,9 @@ public final class PBRequestResourceMeta {
       if (size_ != 0L) {
         output.writeInt64(3, size_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceOwner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3981,6 +4061,9 @@ public final class PBRequestResourceMeta {
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, size_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4003,6 +4086,8 @@ public final class PBRequestResourceMeta {
           .equals(other.getResourceId())) return false;
       if (getSize()
           != other.getSize()) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4021,6 +4106,8 @@ public final class PBRequestResourceMeta {
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSize());
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4160,6 +4247,8 @@ public final class PBRequestResourceMeta {
 
         size_ = 0L;
 
+        spaceOwner_ = "";
+
         return this;
       }
 
@@ -4189,6 +4278,7 @@ public final class PBRequestResourceMeta {
         result.spaceId_ = spaceId_;
         result.resourceId_ = resourceId_;
         result.size_ = size_;
+        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -4247,6 +4337,10 @@ public final class PBRequestResourceMeta {
         }
         if (other.getSize() != 0L) {
           setSize(other.getSize());
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4477,7 +4571,7 @@ public final class PBRequestResourceMeta {
       private long size_ ;
       /**
        * <pre>
-       * The resource Size. prevent data missing.
+       * The resource Size. used to check quota. Max Size: 100M by default.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
@@ -4490,7 +4584,7 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The resource Size. prevent data missing.
+       * The resource Size. used to check quota. Max Size: 100M by default.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
@@ -4506,7 +4600,7 @@ public final class PBRequestResourceMeta {
       }
       /**
        * <pre>
-       * The resource Size. prevent data missing.
+       * The resource Size. used to check quota. Max Size: 100M by default.
        * &#64;inject_tag: json:"size"
        * </pre>
        *
@@ -4516,6 +4610,107 @@ public final class PBRequestResourceMeta {
       public Builder clearSize() {
         
         size_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -4624,7 +4819,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 3;</code>
+     * <code>int64 size = 3 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     long getSize();
@@ -4672,28 +4867,6 @@ public final class PBRequestResourceMeta {
      */
     com.google.protobuf.ByteString
         getVersionBytes();
-
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    java.lang.String getSpaceOwner();
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    com.google.protobuf.ByteString
-        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.ReCreateFileMeta}
@@ -4712,7 +4885,6 @@ public final class PBRequestResourceMeta {
       resourceId_ = "";
       etag_ = "";
       version_ = "";
-      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -4772,12 +4944,6 @@ public final class PBRequestResourceMeta {
               java.lang.String s = input.readStringRequireUtf8();
 
               version_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spaceOwner_ = s;
               break;
             }
             default: {
@@ -4914,7 +5080,7 @@ public final class PBRequestResourceMeta {
      * &#64;inject_tag: json:"size"
      * </pre>
      *
-     * <code>int64 size = 3;</code>
+     * <code>int64 size = 3 [(.validator.field) = { ... }</code>
      * @return The size.
      */
     @java.lang.Override
@@ -5018,54 +5184,6 @@ public final class PBRequestResourceMeta {
       }
     }
 
-    public static final int SPACE_OWNER_FIELD_NUMBER = 6;
-    private volatile java.lang.Object spaceOwner_;
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The spaceOwner.
-     */
-    @java.lang.Override
-    public java.lang.String getSpaceOwner() {
-      java.lang.Object ref = spaceOwner_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        spaceOwner_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The owner of workspace, only used to check quota. Set by APIServer.
-     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-     * @return The bytes for spaceOwner.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSpaceOwnerBytes() {
-      java.lang.Object ref = spaceOwner_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        spaceOwner_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5095,9 +5213,6 @@ public final class PBRequestResourceMeta {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceOwner_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5122,9 +5237,6 @@ public final class PBRequestResourceMeta {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5151,8 +5263,6 @@ public final class PBRequestResourceMeta {
           .equals(other.getEtag())) return false;
       if (!getVersion()
           .equals(other.getVersion())) return false;
-      if (!getSpaceOwner()
-          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5175,8 +5285,6 @@ public final class PBRequestResourceMeta {
       hash = (53 * hash) + getEtag().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5320,8 +5428,6 @@ public final class PBRequestResourceMeta {
 
         version_ = "";
 
-        spaceOwner_ = "";
-
         return this;
       }
 
@@ -5353,7 +5459,6 @@ public final class PBRequestResourceMeta {
         result.size_ = size_;
         result.etag_ = etag_;
         result.version_ = version_;
-        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -5419,10 +5524,6 @@ public final class PBRequestResourceMeta {
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
-          onChanged();
-        }
-        if (!other.getSpaceOwner().isEmpty()) {
-          spaceOwner_ = other.spaceOwner_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5658,7 +5759,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 3;</code>
+       * <code>int64 size = 3 [(.validator.field) = { ... }</code>
        * @return The size.
        */
       @java.lang.Override
@@ -5671,7 +5772,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 3;</code>
+       * <code>int64 size = 3 [(.validator.field) = { ... }</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -5687,7 +5788,7 @@ public final class PBRequestResourceMeta {
        * &#64;inject_tag: json:"size"
        * </pre>
        *
-       * <code>int64 size = 3;</code>
+       * <code>int64 size = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -5895,107 +5996,6 @@ public final class PBRequestResourceMeta {
   checkByteStringIsUtf8(value);
         
         version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object spaceOwner_ = "";
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The spaceOwner.
-       */
-      public java.lang.String getSpaceOwner() {
-        java.lang.Object ref = spaceOwner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          spaceOwner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return The bytes for spaceOwner.
-       */
-      public com.google.protobuf.ByteString
-          getSpaceOwnerBytes() {
-        java.lang.Object ref = spaceOwner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          spaceOwner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        spaceOwner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpaceOwner() {
-        
-        spaceOwner_ = getDefaultInstance().getSpaceOwner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The owner of workspace, only used to check quota. Set by APIServer.
-       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string space_owner = 6 [(.validator.field) = { ... }</code>
-       * @param value The bytes for spaceOwner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpaceOwnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -10876,51 +10876,52 @@ public final class PBRequestResourceMeta {
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\0322github.com/yu31" +
       "/protoc-plugin/proto/defaults.proto\032 pro" +
-      "to/types/model/resource.proto\"\361\001\n\021Create" +
+      "to/types/model/resource.proto\"\376\001\n\021Create" +
       "FilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
       "\360\001\024\312\002\004wks-\0222\n\003pid\030\002 \001(\tB%\342\337\037\016\n\014\n\003pid\022\005\302\001" +
       "\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\003 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\014\n\004size\030\004 \001(\003\0221\n\004type\030\005 \001" +
-      "(\0162\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      " \n\013space_owner\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"\363\002\n\016Cr" +
-      "eateFileMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\003 \001(\tB%\342\337\037\016\n\014\n\003pid\022" +
-      "\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004name\030\004 \001(\tB" +
-      "\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302" +
-      "\001\004\310\001\200\010\022\014\n\004size\030\006 \001(\003\022\032\n\004etag\030\007 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\360\001 \0221\n\004type\030\010 \001(\0162\024.model.Resource." +
-      "TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\007version\030\t \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\360\001\020\022#\n\ncreated_by\030\n \001(\tB\017\342\337\037\013\022\t\302\001" +
-      "\006\200\002\000\210\002A\"\206\001\n\023ReCreateFilePrepare\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resour" +
-      "ce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036\n\004size" +
-      "\030\003 \001(\003B\020\342\337\037\014\022\n\262\001\0070\0008\200\200\2002\"\316\001\n\020ReCreateFil" +
-      "eMeta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022(\n\013resource_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004res-\022\014\n\004size\030\003 \001(\003\022\032\n\004etag\030\004 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022" +
-      " \n\013space_owner\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"<\n\020Des" +
-      "cribeFileMeta\022(\n\013resource_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004res-\"\257\001\n\016UpdateFileMeta\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013res" +
-      "ource_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001" +
-      "(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022\"\n" +
-      "\004type\030\005 \001(\0162\024.model.Resource.Type\"\267\002\n\rLi" +
-      "stFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037" +
-      "\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022" +
-      "/\n\004type\030\004 \001(\0162\024.model.Resource.TypeB\013\342\337\037" +
-      "\007\022\005\332\001\002X\001\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r" +
-      "\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001" +
-      "$J\000J\002idJ\007createdJ\007updatedJ\004nameJ\004size\022\017\n" +
-      "\007reverse\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"i\n\017DeleteFil" +
-      "eMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022/\n\014resource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000" +
-      "8dZ\n\302\001\007\312\002\004res-Bt\n$com.dataomnis.gproto.t" +
-      "ypes.pbrequestB\025PBRequestResourceMetaP\000Z" +
-      "3github.com/DataWorkbench/gproto/xgo/typ" +
-      "es/pbrequestb\006proto3"
+      "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\031\n\004size\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
+      "\000\0221\n\004type\030\005 \001(\0162\024.model.Resource.TypeB\r\342" +
+      "\337\037\t\022\007\332\001\0040\000X\001\022 \n\013space_owner\030\006 \001(\tB\013\342\337\037\007\022" +
+      "\005\302\001\002\"\000\"\200\003\n\016CreateFileMeta\022%\n\010space_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n\003pid\030\003 \001(\tB" +
+      "%\342\337\037\016\n\014\n\003pid\022\005\302\001\002\"\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\036" +
+      "\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\005" +
+      " \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022\031\n\004size\030\006 \001(\003B\013\342\337\037\007\022" +
+      "\005\262\001\0020\000\022\032\n\004etag\030\007 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \0221\n\004ty" +
+      "pe\030\010 \001(\0162\024.model.Resource.TypeB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022\035\n\007version\030\t \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022#\n\n" +
+      "created_by\030\n \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\243\001\n\023Re" +
+      "CreateFilePrepare\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004size\030\003 \001(\003B\013\342\337\037\007\022\005" +
+      "\262\001\0020\000\022 \n\013space_owner\030\006 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"" +
+      "\271\001\n\020ReCreateFileMeta\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022(\n\013resource_id\030\002 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\022\031\n\004size\030\003 \001(\003B\013\342\337\037" +
+      "\007\022\005\262\001\0020\000\022\032\n\004etag\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007" +
+      "version\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"<\n\020DescribeF" +
+      "ileMeta\022(\n\013resource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004res-\"\257\001\n\016UpdateFileMeta\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\013resource_" +
+      "id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004name\030\003 \001(\tB\r\342\337" +
+      "\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337\037\000\022\"\n\004type\030" +
+      "\005 \001(\0162\024.model.Resource.Type\"\267\002\n\rListFile" +
+      "Metas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\004" +
+      "0\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022/\n\004typ" +
+      "e\030\004 \001(\0162\024.model.Resource.TypeB\013\342\337\037\007\022\005\332\001\002" +
+      "X\001\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r\342\337\037\t\022\007" +
+      "\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000J\002i" +
+      "dJ\007createdJ\007updatedJ\004nameJ\004size\022\017\n\007rever" +
+      "se\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"i\n\017DeleteFileMetas" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "/\n\014resource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001" +
+      "\007\312\002\004res-Bt\n$com.dataomnis.gproto.types.p" +
+      "brequestB\025PBRequestResourceMetaP\000Z3githu" +
+      "b.com/DataWorkbench/gproto/xgo/types/pbr" +
+      "equestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10946,13 +10947,13 @@ public final class PBRequestResourceMeta {
     internal_static_request_ReCreateFilePrepare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ReCreateFilePrepare_descriptor,
-        new java.lang.String[] { "SpaceId", "ResourceId", "Size", });
+        new java.lang.String[] { "SpaceId", "ResourceId", "Size", "SpaceOwner", });
     internal_static_request_ReCreateFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_ReCreateFileMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ReCreateFileMeta_descriptor,
-        new java.lang.String[] { "SpaceId", "ResourceId", "Size", "Etag", "Version", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "ResourceId", "Size", "Etag", "Version", });
     internal_static_request_DescribeFileMeta_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_request_DescribeFileMeta_fieldAccessorTable = new
