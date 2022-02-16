@@ -55,16 +55,6 @@ func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_size() error {
-	if !(this.Size > 0) {
-		return protovalidator.FieldError1("CreateFilePrepare", "the value of field 'size' must be greater than '0'", protovalidator.Int64ToString(this.Size))
-	}
-	if !(this.Size <= 104857600) {
-		return protovalidator.FieldError1("CreateFilePrepare", "the value of field 'size' must be less than or equal to '104857600'", protovalidator.Int64ToString(this.Size))
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_CreateFilePrepare_InEnums_Type = map[pbmodel.Resource_Type]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *CreateFilePrepare) _xxx_xxx_Validator_Validate_type() error {
@@ -96,9 +86,6 @@ func (this *CreateFilePrepare) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_size(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
@@ -319,6 +306,13 @@ func (this *ReCreateFileMeta) _xxx_xxx_Validator_Validate_version() error {
 	return nil
 }
 
+func (this *ReCreateFileMeta) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("ReCreateFileMeta", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.ReCreateFileMeta
 func (this *ReCreateFileMeta) Validate() error {
 	if this == nil {
@@ -334,6 +328,9 @@ func (this *ReCreateFileMeta) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

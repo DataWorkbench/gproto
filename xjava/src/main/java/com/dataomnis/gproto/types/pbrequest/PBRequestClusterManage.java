@@ -7886,6 +7886,28 @@ public final class PBRequestClusterManage {
      * <code>.flink.FlinkConfig config = 10;</code>
      */
     com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkConfig.FlinkConfigOrBuilder getConfigOrBuilder();
+
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.UpdateFlinkCluster}
@@ -7904,6 +7926,7 @@ public final class PBRequestClusterManage {
       clusterId_ = "";
       name_ = "";
       networkId_ = "";
+      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -7999,6 +8022,12 @@ public final class PBRequestClusterManage {
                 config_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
               break;
             }
             default: {
@@ -8356,6 +8385,54 @@ public final class PBRequestClusterManage {
       return getConfig();
     }
 
+    public static final int SPACE_OWNER_FIELD_NUMBER = 11;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8396,6 +8473,9 @@ public final class PBRequestClusterManage {
       }
       if (config_ != null) {
         output.writeMessage(10, getConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, spaceOwner_);
       }
       unknownFields.writeTo(output);
     }
@@ -8438,6 +8518,9 @@ public final class PBRequestClusterManage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getConfig());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, spaceOwner_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8479,6 +8562,8 @@ public final class PBRequestClusterManage {
         if (!getConfig()
             .equals(other.getConfig())) return false;
       }
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8514,6 +8599,8 @@ public final class PBRequestClusterManage {
         hash = (37 * hash) + CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getConfig().hashCode();
       }
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8673,6 +8760,8 @@ public final class PBRequestClusterManage {
           config_ = null;
           configBuilder_ = null;
         }
+        spaceOwner_ = "";
+
         return this;
       }
 
@@ -8716,6 +8805,7 @@ public final class PBRequestClusterManage {
         } else {
           result.config_ = configBuilder_.build();
         }
+        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -8794,6 +8884,10 @@ public final class PBRequestClusterManage {
         }
         if (other.hasConfig()) {
           mergeConfig(other.getConfig());
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9696,6 +9790,107 @@ public final class PBRequestClusterManage {
         }
         return configBuilder_;
       }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 11 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10447,7 +10642,7 @@ public final class PBRequestClusterManage {
       "\302\001\n\360\001\024\312\002\004net-\022(\n\014host_aliases\030\t \001(\0132\022.mo" +
       "del.HostAliases\022\"\n\006config\030\n \001(\0132\022.flink." +
       "FlinkConfig\022 \n\013space_owner\030\013 \001(\tB\013\342\337\037\007\022\005" +
-      "\302\001\002\"\000\"\367\002\n\022UpdateFlinkCluster\022%\n\010space_id" +
+      "\302\001\002\"\000\"\231\003\n\022UpdateFlinkCluster\022%\n\010space_id" +
       "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_i" +
       "d\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022\036\n\004name\030\003 \001" +
       "(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\037\n\010task_num\030\005 \001(\005B\r" +
@@ -10456,12 +10651,13 @@ public final class PBRequestClusterManage {
       "\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\'\n\nnetwork_id\030\010" +
       " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004net-\022(\n\014host_aliase" +
       "s\030\t \001(\0132\022.model.HostAliases\022\"\n\006config\030\n " +
-      "\001(\0132\022.flink.FlinkConfig\"?\n\024DescribeFlink" +
-      "Cluster\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004cfi-Bu\n$com.dataomnis.gproto.types.p" +
-      "brequestB\026PBRequestClusterManageP\000Z3gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "requestb\006proto3"
+      "\001(\0132\022.flink.FlinkConfig\022 \n\013space_owner\030\013" +
+      " \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"?\n\024DescribeFlinkCluste" +
+      "r\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cf" +
+      "i-Bu\n$com.dataomnis.gproto.types.pbreque" +
+      "stB\026PBRequestClusterManageP\000Z3github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbreques" +
+      "tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10512,7 +10708,7 @@ public final class PBRequestClusterManage {
     internal_static_request_UpdateFlinkCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateFlinkCluster_descriptor,
-        new java.lang.String[] { "SpaceId", "ClusterId", "Name", "TaskNum", "JobCu", "TaskCu", "NetworkId", "HostAliases", "Config", });
+        new java.lang.String[] { "SpaceId", "ClusterId", "Name", "TaskNum", "JobCu", "TaskCu", "NetworkId", "HostAliases", "Config", "SpaceOwner", });
     internal_static_request_DescribeFlinkCluster_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_request_DescribeFlinkCluster_fieldAccessorTable = new
