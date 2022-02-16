@@ -15,8 +15,8 @@ import "proto/types/request/developer.proto";
 import "proto/types/response/developer.proto";
 
 service Developer {
-  rpc SubmitFlinkJob(request.SubmitFlinkJob) returns(response.SubmitFlinkJob){}
-  rpc GetFlinkJob(request.GetFlinkJob) returns (response.GetFlinkJob){}
-  rpc CancelFlinkJob(request.CancelFlinkJob) returns(model.EmptyStruct){}
-  rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob){}
+//  rpc SubmitFlinkJob(request.SubmitFlinkJob) returns(response.SubmitFlinkJob){}
+//  rpc GetFlinkJob(request.GetFlinkJob) returns (response.GetFlinkJob){}
+//  rpc CancelFlinkJob(request.CancelFlinkJob) returns(model.EmptyStruct){}
+//  rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob){}
 }
