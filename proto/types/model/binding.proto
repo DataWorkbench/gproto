@@ -13,65 +13,65 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 
-// ModuleSource declares the source module info.
+// ModuleSource declares module info.
 // used to query from db.
-message ModuleSource {
-  // SourceId is the ID of the bound module.
-  // @inject_tag: json:"source_id" gorm:"column:source_id;"
-  string source_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
-  // SourceVersion is the version of the bound module.
-  // Notice: Reserved field, unused on present.
-  // @inject_tag: json:"source_version" gorm:"column:source_version;"
-  string source_version = 2 [
-    (validator.field).check_if = { field: "source_version", tags: { string: { ne: "" } } },
-    (validator.field).tags.string = { byte_len_eq: 16 }
-  ];
-}
-
-// ModuleTarget declares the target module info.
-// used to query from db.
-message ModuleTarget {
-  // TargetId is the ID of which module binding it.
-  // @inject_tag: json:"target_id" gorm:"column:target_id;"
-  string target_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
-  // TargetVersion represents the Target's version if there is a version number.
-  // This filed maybe empty.
-  // @inject_tag: json:"target_version" gorm:"column:target_version;"
-  string target_version = 2 [
-    (validator.field).check_if = { field: "target_version", tags: { string: { ne: "" } } },
-    (validator.field).tags.string = { byte_len_eq: 16 }
-  ];
-}
-
-// BindingModule for describes dependencies between modules.
 message BindingModule {
+  // ModuleId represents which other modules(AttachId) are bound to this module.
+  // @inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+  string module_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // ModuleVersion is the version of module.
+  // This filed maybe empty.
+  // @inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+  string module_version = 2 [
+    (validator.field).check_if = { field: "module_version", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 16 }
+  ];
+}
+
+// ModuleTarget declares the attach info.
+// used to query from db.
+message BindingAttach {
+  // AttachId represents this module are bound by which other modules(ModuleId).
+  // @inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+  string attach_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // AttachVersion is the version of attach module.
+  // Notice: Reserved field, unused on present.
+  // @inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+  string attach_version = 2 [
+    (validator.field).check_if = { field: "attach_version", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 16 }
+  ];
+}
+
+// Binding for describes dependencies between modules.
+message Binding {
   // Workspace ID it belongs to. Only used when delete workspace.
   // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
-  // SourceId is the ID of the bound module.
-  // @inject_tag: json:"source_id" gorm:"column:source_id;primaryKey;"
-  string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // ModuleId represents which other modules(AttachId) are bound to this module.
+  // @inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+  string module_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // SourceVersion is the version of the bound module.
-  // Notice: Reserved field, unused on present.
-  // @inject_tag: json:"source_version" gorm:"column:source_version;primaryKey;"
-  string source_version = 3 [
-    (validator.field).check_if = { field: "source_version", tags: { string: { ne: "" } } },
+  // ModuleVersion is the version of module.
+  // This filed maybe empty.
+  // @inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+  string module_version = 3 [
+    (validator.field).check_if = { field: "module_version", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 16 }
   ];
 
-  // TargetId is the ID of which module binding it.
-  // @inject_tag: json:"target_id" gorm:"column:target_id;primaryKey;"
-  string target_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // AttachId represents this module are bound by which other modules(ModuleId).
+  // @inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
+  string attach_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // TargetVersion represents the Target's version if there is a version number.
-  // This filed maybe empty.
-  // @inject_tag: json:"target_version" gorm:"column:target_version;primaryKey;"
-  string target_version = 5 [
-    (validator.field).check_if = { field: "target_version", tags: { string: { ne: "" } } },
+  // AttachVersion is the version of attach module.
+  // Notice: Reserved field, unused on present.
+  // @inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
+  string attach_version = 5 [
+    (validator.field).check_if = { field: "attach_version", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 16 }
   ];
 
