@@ -13,7 +13,7 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 
-message Resource {
+message File {
   enum Type {
     ResourceUnset = 0;
     Jar = 1;
@@ -44,16 +44,16 @@ message Resource {
   // @inject_tag: json:"is_directory" gorm:"column:is_directory;"
   bool is_directory = 4;
 
-  // Resource Name, unique within a region of same space_id and pid.
+  // File Name, unique within a region of same space_id and pid.
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 5 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128 } ];
 
-  // Resource description.
+  // File description.
   // FIXME: rename json name
   // @inject_tag: json:"description" gorm:"desc;"
   string desc = 6 [(validator.field).tags.string = { char_len_lte: 1024 }];
 
-  // Resource size, Byte.
+  // File size, Byte.
   // @inject_tag: json:"size" gorm:"size;"
   int64 size = 7 [ (validator.field).tags.int = { gte: 0 } ];
 
@@ -61,11 +61,11 @@ message Resource {
   // @inject_tag: json:"etag" gorm:"etag;"
   string etag = 8 [ (validator.field).tags.string = { byte_len_eq: 32 } ];
 
-  // Resource type, 1 => "jar", 2 => "udf" 3 => "connector".
+  // File type, 1 => "jar", 2 => "udf" 3 => "connector".
   // @inject_tag: json:"type" gorm:"column:type;"
   Type type = 9 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
-  // Resource status, 1 => "deleted", 2 => "enabled"
+  // File status, 1 => "deleted", 2 => "enabled"
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
@@ -73,7 +73,7 @@ message Resource {
   // @inject_tag: json:"version" gorm:"column:version;"
   string version = 11 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
 
-  // Resource owner.
+  // File owner.
   // @inject_tag: json:"created_by" gorm:"column:created_by"
   string created_by = 12 [ (validator.field).tags.string = { byte_len_gt: 1} ];
 

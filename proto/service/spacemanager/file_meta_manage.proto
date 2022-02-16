@@ -7,15 +7,15 @@ option go_package = "github.com/DataWorkbench/gproto/xgo/service/pbsvcspace";
 // Package name of class.
 option java_package = "com.dataomnis.gproto.service.pbsvcspace";
 // File name of class.
-option java_outer_classname = "PBSvcResourceMeta";
+option java_outer_classname = "PBSvcFileMeta";
 option java_multiple_files = false;
 
 import "proto/types/model/empty.proto";
-import "proto/types/request/resource_meta.proto";
-import "proto/types/response/resource_meta.proto";
+import "proto/types/request/file_meta_manage.proto";
+import "proto/types/response/file_meta_manage.proto";
 
-// ResourceMeta for manage metadata of file(resource)
-service ResourceMeta {
+// FileMetaManage for manage metadata of file.
+service FileMetaManage {
   // CreateFilePrepare used for before write data.
   // Do:
   //   Generated a new id.

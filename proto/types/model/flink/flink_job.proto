@@ -80,9 +80,10 @@ message FlinkOperator {
 
 // FlinkJar
 message FlinkJar {
-  // jarid in resource manager. Is resource_id.
+  // The id of file type Jar. Is Required.
+  // FIXME: Rename JSON Name
   // @inject_tag: json:"resource_id"
-  string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" } ];
+  string file_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" } ];
 
   // JarArgs
   // @inject_tag: json:"jar_args"

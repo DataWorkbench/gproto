@@ -19,14 +19,14 @@ message WriteFileData {
   // @inject_tag: json:"space_id"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // @inject_tag: json:"resource_id"
-  string resource_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
+  // @inject_tag: json:"file_id"
+  string file_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
 
   // The file version id, Each upload generates a new ID.
   // @inject_tag: json:"version"
   string version = 3 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
 
-  // The resource file size. prevent data missing.
+  // The file size. prevent data missing.
   // @inject_tag: json:"size"
   int64 size = 4;
 
@@ -39,9 +39,9 @@ message ReadFileData {
   // @inject_tag: json:"space_id"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The resource id in HTTP Request_URI.
-  // @inject_tag: json:"resource_id"
-  string resource_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" } ];
+  // The file id in HTTP Request_URI.
+  // @inject_tag: json:"file_id"
+  string file_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" } ];
 
   // The file version id.
   // @inject_tag: json:"version"
@@ -53,8 +53,8 @@ message DeleteFileData {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // @inject_tag: json:"resource_id"
-  string resource_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
+  // @inject_tag: json:"file_id"
+  string file_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "res-" }];
 
   // The file version id, Each upload generates a new ID.
   // @inject_tag: json:"version"
@@ -66,9 +66,9 @@ message DeleteFileDataByFileIds {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // The list of resource id. Is required, Min 1 Max 100.
-  // @inject_tag: json:"resource_ids"
-  repeated string resource_ids = 2 [(validator.field).tags.repeated = { len_gt: 0, len_lte: 100; item: { string: { prefix: "res-" } } } ];
+  // The list of file ids. Is required, Min 1 Max 100.
+  // @inject_tag: json:"file_ids"
+  repeated string file_ids = 2 [(validator.field).tags.repeated = { len_gt: 0, len_lte: 100; item: { string: { prefix: "res-" } } } ];
 }
 
 message DeleteFileDataBySpaceIds {

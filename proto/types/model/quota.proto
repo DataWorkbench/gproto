@@ -37,7 +37,7 @@ message QuotaUDF {
   int64 limit = 1;
 }
 
-message QuotaResource {
+message QuotaFile {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of resource for every user. default 500.
   int64 limit = 1;
@@ -85,8 +85,8 @@ message UserQuota {
   // @inject_tag: json:"udf" gorm:"column:udf;"
   QuotaUDF udf = 5;
 
-  // @inject_tag: json:"resource" gorm:"column:resource;"
-  QuotaResource resource = 6;
+  // @inject_tag: json:"file" gorm:"column:file;"
+  QuotaFile file = 6;
 
   // @inject_tag: json:"flink_cluster" gorm:"column:flink_cluster;"
   QuotaFlinkCluster flink_cluster = 7;
