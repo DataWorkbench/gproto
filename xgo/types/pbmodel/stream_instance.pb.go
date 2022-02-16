@@ -163,7 +163,7 @@ type StreamInstance struct {
 	ParagraphId string `protobuf:"bytes,11,opt,name=paragraph_id,json=paragraphId,proto3" json:"paragraph_id" gorm:"column:paragraph_id;"`
 	// FlinkId is the job id in flink.
 	FlinkId string `protobuf:"bytes,12,opt,name=flink_id,json=flinkId,proto3" json:"flink_id" gorm:"column:flink_id;"`
-	Created int64 `protobuf:"varint,8,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
+	Created int64  `protobuf:"varint,8,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
 	// Timestamp of update time
 	Updated int64 `protobuf:"varint,9,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }

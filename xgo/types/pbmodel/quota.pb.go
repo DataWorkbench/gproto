@@ -400,14 +400,14 @@ type UserQuota struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The user id of owner.
-	UserId string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primarykey"`
-	Workspace *QuotaWorkspace `protobuf:"bytes,2,opt,name=workspace,proto3" json:"workspace" gorm:"column:workspace;"`
-	StreamJob *QuotaStreamJob `protobuf:"bytes,3,opt,name=stream_job,json=streamJob,proto3" json:"stream_job" gorm:"column:stream_job;"`
-	DataSource *QuotaDataSource `protobuf:"bytes,4,opt,name=data_source,json=dataSource,proto3" json:"data_source" gorm:"column:data_source;"`
-	Udf *QuotaUDF `protobuf:"bytes,5,opt,name=udf,proto3" json:"udf" gorm:"column:udf;"`
-	Resource *QuotaResource `protobuf:"bytes,6,opt,name=resource,proto3" json:"resource" gorm:"column:resource;"`
+	UserId       string             `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id;primarykey"`
+	Workspace    *QuotaWorkspace    `protobuf:"bytes,2,opt,name=workspace,proto3" json:"workspace" gorm:"column:workspace;"`
+	StreamJob    *QuotaStreamJob    `protobuf:"bytes,3,opt,name=stream_job,json=streamJob,proto3" json:"stream_job" gorm:"column:stream_job;"`
+	DataSource   *QuotaDataSource   `protobuf:"bytes,4,opt,name=data_source,json=dataSource,proto3" json:"data_source" gorm:"column:data_source;"`
+	Udf          *QuotaUDF          `protobuf:"bytes,5,opt,name=udf,proto3" json:"udf" gorm:"column:udf;"`
+	Resource     *QuotaResource     `protobuf:"bytes,6,opt,name=resource,proto3" json:"resource" gorm:"column:resource;"`
 	FlinkCluster *QuotaFlinkCluster `protobuf:"bytes,7,opt,name=flink_cluster,json=flinkCluster,proto3" json:"flink_cluster" gorm:"column:flink_cluster;"`
-	Network *QuotaNetwork `protobuf:"bytes,8,opt,name=network,proto3" json:"network" gorm:"column:network;"`
+	Network      *QuotaNetwork      `protobuf:"bytes,8,opt,name=network,proto3" json:"network" gorm:"column:network;"`
 }
 
 func (x *UserQuota) Reset() {
