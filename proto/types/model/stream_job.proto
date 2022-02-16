@@ -12,6 +12,7 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/flink/flink_job.proto";
 
@@ -164,9 +165,12 @@ message StreamJobArgs {
   // @inject_tag: json:"cluster_id"
   string cluster_id = 1 [(validator.field) = {}];
 
-  // Flink parallelism. Is required, Min 0, Max 100. default is 0.
+  // Flink parallelism. Is required, Min 0, Max 100. default is 1.
   // @inject_tag: json:"parallelism"
-  int32 parallelism = 2 [(validator.field).tags.int = { gte: 0, lte: 100 }];
+  int32 parallelism = 2 [
+    (defaults.field).basic = "1",
+    (validator.field).tags.int = { gte: 0, lte: 100 }
+  ];
 
   // The list of function(udf). Not required
   // @inject_tag: json:"udfs"
