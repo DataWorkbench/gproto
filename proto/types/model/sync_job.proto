@@ -1,0 +1,1023 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBSyncManageSyncJob";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+
+// The stream job info
+message SyncJob {
+    enum Type {
+        OfflineFull = 0;
+        OfflineIncrement = 1;
+        RealTimeFull = 2;
+        RealTimeIncrement = 3;
+    }
+
+    enum Status {
+        StatusUnset = 0;
+        Deleted = 1;
+        Enabled = 2;
+    }
+
+    // Workspace ID it belongs to.
+    // @inject_tag: json:"space_id" gorm:"column:space_id;"
+    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+    // PID is the parent id(directory). pid is "" means root(`/`)
+    // @inject_tag: json:"pid" gorm:"column:pid;"
+    string pid = 2 [
+    (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
+(validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
+];
+
+// Job ID, unique within a region.
+// @inject_tag: json:"id" gorm:"column:id;primarykey;"
+string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+
+// The job version id, only used for Published job.
+// Only used in published job.
+// @inject_tag: json:"version" gorm:"column:version;primarykey;"
+string version = 4 [(validator.field).tags.string = { byte_len_eq: 16 }];
+
+// Job Name, Unique within a workspace.
+// @inject_tag: json:"name" gorm:"column:name;"
+string name = 5 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+
+// Job Description.
+// @inject_tag: json:"desc" gorm:"column:desc;"
+string desc = 6 [(validator.field).tags.string = { char_len_lte: 1024 } ];
+
+// IsDirectory represents this job whether a directory.
+// @inject_tag: json:"is_directory" gorm:"column:is_directory;"
+bool is_directory = 7;
+
+// Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+// @inject_tag: json:"type" gorm:"column:type;"
+Type type = 8 [
+(validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
+(validator.field).tags.enum = { gt: 0; in_enums: true  }
+];
+
+// Job status, 1 => "Deleted", 2 => "Enabled".
+// @inject_tag: json:"status" gorm:"column:status;"
+Status status = 9 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+
+// The user-id of created this job.
+// @inject_tag: json:"created_by" gorm:"column:created_by;"
+string created_by = 10 [(validator.field).tags.string = { byte_len_lte: 64 }];
+
+// Timestamp of create time.
+// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+int64 created = 11 [(validator.field).tags.int = { gt: 0 }];
+
+// Timestamp of update time.
+// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+int64 updated = 12 [(validator.field).tags.int = { gt: 0 }];
+}
+
+// SyncJobProperty represents property of job.
+message SyncJobProperty {
+    // Workspace ID it belongs to.
+    // @inject_tag: json:"space_id" gorm:"column:space_id;"
+    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+    // Job Id, unique within a region.
+    // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+    string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+
+    // The release version.
+    // @inject_tag: json:"version" gorm:"column:version;primarykey"
+    string version = 3 [(validator.field).tags.string = { byte_len_eq: 16 }];
+
+    // @inject_tag: json:"args" gorm:"column:args;type:json"
+    SyncJobArgs args = 4 [(validator.field) = {}];
+
+    // @inject_tag: json:"schedule" gorm:"column:schedule;type:json"
+    SyncJobSchedule schedule = 5 [(validator.field) = {}];
+}
+
+// SyncJobArgs represents a job running parameters.
+// Not use with gorm.
+message SyncJobArgs {
+
+    option (gosql.serialize) = {json: {}};
+
+    // source_id is datasource id
+    // @inject_tag: json:"source_id"
+    string source_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+
+// target_id is datasource id
+// @inject_tag: json:"target_id"
+string target_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+
+// The job name in each workspace is unique. Is required, Max Length 128.
+// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+// @inject_tag: json:"name"
+int32 parallelism = 3 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+// Description of the job, Not required, Max length 1024.
+// @inject_tag: json:"desc"
+int32 percentage = 4 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+// Description of the job, Not required, Max length 1024.
+// @inject_tag: json:"record_num"
+int32 record_num = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
+// bytes
+// @inject_tag: json:"bytes"
+int32 bytes = 6 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
+// 0:guide mode,1:shell mode
+// @inject_tag: json:"job_mode"
+int32 job_mode = 7 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0,lte: 1 } ];
+// shell mode json
+// @inject_tag: json:"job_content"
+string job_content = 8;
+// Relationaldb source
+// @inject_tag: json:"relationaldb_source"
+RelationaldbSource relationaldb_source = 9;
+// Relationaldb target
+// @inject_tag: json:"relationaldb_target"
+RelationaldbTarget relationaldb_target = 10;
+// mongodb target
+// @inject_tag: json:"mongodb_source"
+MongodbSource mongodb_source = 11;
+// mongodb target
+// @inject_tag: json:"mongodb_target"
+MongodbTarget mongodb_target = 12;
+
+// elasticsearch source
+// @inject_tag: json:"elasticsearch_source"
+ElasticSearchSource elasticsearch_source = 13;
+// elasticsearch target
+// @inject_tag: json:"elasticsearch_target"
+ElasticSearchTarget elasticsearch_target = 14;
+
+// hdfs source
+// @inject_tag: json:"hdfs_source"
+HdfsSource hdfs_source = 15;
+// hdfs source
+// @inject_tag: json:"hdfs_target"
+HdfsTarget hdfs_target = 16;
+// ftp source
+// @inject_tag: json:"ftp_source"
+FtpSource ftp_source = 17;
+// ftp target
+// @inject_tag: json:"ftp_target"
+FtpTarget ftp_target = 18;
+
+// hbase source
+// @inject_tag: json:"hbase_source"
+HbaseSource hbase_source = 19;
+// hbase target
+// @inject_tag: json:"hbase_target"
+HbaseTarget hbase_target = 20;
+
+// kafka target
+// @inject_tag: json:"kafka_source"
+KafkaSource kafka_source = 21;
+// kafka target
+// @inject_tag: json:"kafka_target"
+KafkaTarget kafka_target = 22;
+
+// binlog source
+// @inject_tag: json:"binlog_source"
+BinlogSource binlog_source = 23;
+// pgwal source
+// @inject_tag: json:"pgwal_source"
+PgwalSource pgwal_source = 24;
+// sqlservercdc source
+// @inject_tag: json:"sqlservercdc_source"
+SqlServerCdcSource sqlservercdc_source = 25;
+// logminer source
+// @inject_tag: json:"logminer_source"
+LogminerSource logminer_source = 26;
+// redis target
+// @inject_tag: json:"redis_target"
+RedisTarget redis_target = 27;
+// hive target
+// @inject_tag: json:"hive_target"
+HiveTarget hive_target = 28;
+}
+
+// SyncJobSchedule represents a job schedule info.
+// Not use with gorm.
+message SyncJobSchedule {
+    option (gosql.serialize) = {json: {}};
+
+    enum SchedulePolicy {
+        SchedulePolicyUnset = 0;
+        Periodicity = 1;
+        AppointTime = 2; // Execute job in a fixed time.
+        Immediately = 3; // Execute job immediately after publishing.
+    }
+
+    enum ConcurrencyPolicy {
+        ConcurrencyPolicyUnset = 0; // Is useless.
+        Allow = 1;
+        Forbid = 2;
+        Replace = 3;
+    }
+
+    enum RetryPolicy {
+        RetryPolicyUnset = 0; // Is useless.
+        None = 1;
+        Auto = 2;
+    }
+
+    // Schedule Policy, Options Value: 1 => "Periodicity", 2 => "AppointTime", 3 => "Immediately"
+    // Is Required.
+    // @inject_tag: json:"schedule_policy"
+    SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { gt: 0, in_enums: true  } ];
+
+// Timestamp of execute time for once. unit in seconds.
+// Not required, default the time of created job.
+// @inject_tag: json:"executed" default:"0" binding:"gte=0"
+int64 executed = 2 [
+(validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 2 } } },
+(validator.field).tags.int = { gte: 31507200 }
+];
+
+//  // Whether execute immediately the job after release.
+//  // Not required, default False. If immediately is True, the field executed will be ignore.
+//  // @inject_tag: json:"immediately" binding:"-"
+//  bool immediately = 3;
+
+// ------ Period Options ------
+//
+// Timestamp of start time of the validity period, unit in seconds.
+// Not required, default 31507200(1971-01-01 00:00:00), means no limit.
+// @inject_tag: json:"started"
+int64 started = 4 [(validator.field).tags.int = { gte: 0 }];
+
+// Timestamp of end time of the validity period, unit in seconds.
+// Not required, default 31588502400(2971-01-01 00:00:00), means no limit.
+// @inject_tag: json:"ended"
+int64 ended = 5 [(validator.field).tags.int = { gte: 0 }];
+
+// Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace". Is required .
+// - allow: Multiple task instances are allowed at the same time.
+// - forbid: No new instances will be created, and this schedule cycle will be skipped,
+// - replace: Force stop the old running instances and create new.
+// @inject_tag: json:"concurrency_policy"
+ConcurrencyPolicy concurrency_policy = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+// Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
+// Is required with with schedule_policy = 1.
+// @inject_tag: json:"period_type"
+string period_type = 7 [
+(validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
+(validator.field).tags.string = { in: ["minute", "hour", "day", "week", "month", "year"] }
+];
+
+// Crontab Express. Is required with schedule_policy == 1
+// @inject_tag: json:"express" default:"" binding:"-"
+string express = 8 [
+(validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
+(validator.field).tags.string = { unix_cron: true }
+];
+
+// ------ Advanced (Retry) options ------
+//
+// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 100 min.
+// @inject_tag: json:"timeout"
+int32 timeout = 9 [(validator.field).tags.int = {gte: 0, lte: 100}];
+
+// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
+// Is required.
+// @inject_tag: json:"retry_policy"
+RetryPolicy retry_policy = 10 [
+(validator.field).tags.enum = { gt: 0; in_enums: true  }
+];
+
+// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+// @inject_tag: json:"retry_limit"
+int32 retry_limit = 11 [
+(validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2 } } },
+(validator.field).tags.int = { gte: 0, lte: 100}
+];
+
+// Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+// @inject_tag: json:"retry_interval"
+int32 retry_interval = 12 [
+(validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
+(validator.field).tags.int = { gte: 1, lte: 30 }
+];
+}
+
+// The release stream job info.
+message SyncJobRelease {
+    enum Status {
+        StatusUnset = 0;
+        Active = 1;
+        Suspended = 2;
+        Deleted = 3;
+    }
+
+    // Workspace ID it belongs to.
+    // @inject_tag: json:"space_id" gorm:"column:space_id;"
+    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+    // Job ID, unique within a region.
+    // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+    string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+
+    // The release version.
+    // @inject_tag: json:"version" gorm:"column:version;"
+    string version = 3 [(validator.field).tags.string = { byte_len_eq: 16 }];
+
+    // Job Name, Unique within a workspace.
+    // @inject_tag: json:"name" gorm:"column:name;"
+    string name = 4 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
+
+    // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+    // @inject_tag: json:"type" gorm:"column:type;"
+    SyncJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+// Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
+// @inject_tag: json:"status" gorm:"column:status;"
+Status status = 6 ;
+
+// Job release description.
+// @inject_tag: json:"desc" gorm:"column:desc;"
+string desc = 7 ;
+
+// The user-id of release this job.
+// @inject_tag: json:"created_by" gorm:"column:created_by;"
+string created_by = 8 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+
+// Timestamp of create time.
+// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+
+// Timestamp of update time.
+// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
+}
+
+message RelationaldbSource {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // table
+    // @inject_tag: json:"table" swaggerignore:"true"
+    repeated string table = 2;
+    // schema
+    // @inject_tag: json:"schema" swaggerignore:"true"
+    string schema = 3;
+    // where
+    // @inject_tag: json:"where" swaggerignore:"true"
+    string where = 4;
+    // splitpk
+    // @inject_tag: json:"splitpk" swaggerignore:"true"
+    string splitpk = 5;
+}
+
+message RelationaldbTarget {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // table
+    // @inject_tag: json:"table" swaggerignore:"true"
+    repeated string table = 2;
+    // schema
+    // @inject_tag: json:"schema" swaggerignore:"true"
+    string schema = 3;
+    // pre sql
+    // @inject_tag: json:"pre_sql" swaggerignore:"true"
+    string pre_sql = 4;
+    // post sql
+    // @inject_tag: json:"post_sql" swaggerignore:"true"
+    string post_sql = 5;
+    // write mode
+    // @inject_tag: json:"write_mode" swaggerignore:"true"
+    string write_mode = 6;
+    // batch size
+    // @inject_tag: json:"batch_size" swaggerignore:"true"
+    string batch_size = 7;
+    // update key
+    // @inject_tag: json:"update_key" swaggerignore:"true"
+    string update_key = 8;
+    // mode
+    // @inject_tag: json:"mode" swaggerignore:"true"
+    string mode = 9;
+    // semantic
+    // @inject_tag: json:"semantic" swaggerignore:"true"
+    string semantic = 10;
+    // with no lock
+    // @inject_tag: json:"with_no_lock" swaggerignore:"true"
+    string with_no_lock = 11;
+}
+
+message MongodbSource {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // database
+    // @inject_tag: json:"database" swaggerignore:"true"
+    string database = 2;
+    // collection name
+    // @inject_tag: json:"collection_name" swaggerignore:"true"
+    string collection_name = 3;
+    // fetch size
+    // @inject_tag: json:"fetch_size" swaggerignore:"true"
+    int32 fetch_size = 4;
+    // filter
+    // @inject_tag: json:"filter" swaggerignore:"true"
+    string filter = 5;
+
+}
+
+message MongodbTarget {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // database
+    // @inject_tag: json:"database" swaggerignore:"true"
+    string database = 2;
+    // collection name
+    // @inject_tag: json:"collection_name" swaggerignore:"true"
+    string collection_name = 3;
+    // replace key
+    // @inject_tag: json:"replace_key" swaggerignore:"true"
+    string replace_key = 4;
+    // write mode
+    // @inject_tag: json:"write_mode" swaggerignore:"true"
+    string write_mode = 5;
+    // batch size
+    // @inject_tag: json:"batch_size" swaggerignore:"true"
+    int32 batch_size = 6;
+    // flush interval mills
+    // @inject_tag: json:"flush_interval_mills" swaggerignore:"true"
+    int32 flush_interval_mills = 7;
+}
+
+message ElasticSearchSource {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // version
+    // @inject_tag: json:"version" swaggerignore:"true"
+    string version = 2;
+    // index
+    // @inject_tag: json:"index" swaggerignore:"true"
+    string index = 3;
+    // batch size
+    // @inject_tag: json:"batch_size" swaggerignore:"true"
+    string batch_size = 4;
+}
+
+message ElasticSearchTarget {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // version
+    // @inject_tag: json:"version" swaggerignore:"true"
+    string version = 2;
+    // index
+    // @inject_tag: json:"index" swaggerignore:"true"
+    string index = 3;
+    // batch size
+    // @inject_tag: json:"batch_size" swaggerignore:"true"
+    string batch_size = 4;
+    // key delimiter
+    // @inject_tag: json:"key_delimiter" swaggerignore:"true"
+    string key_delimiter = 5;
+}
+
+message LogminerSource {
+    // table
+    // @inject_tag: json:"table" swaggerignore:"true"
+    repeated string table = 1;
+    // split update
+    // @inject_tag: json:"split_update" swaggerignore:"true"
+    string split_update = 2;
+    // paving data
+    // @inject_tag: json:"paving_data" swaggerignore:"true"
+    string paving_data = 3;
+    // cat
+    // @inject_tag: json:"cat" swaggerignore:"true"
+    string cat = 4;
+    // read position
+    // @inject_tag: json:"read_position" swaggerignore:"true"
+    string read_position = 5;
+    // start time
+    // @inject_tag: json:"start_time" swaggerignore:"true"
+    int64 start_time = 6;
+    // start scn
+    // @inject_tag: json:"start_scn" swaggerignore:"true"
+    int64 start_scn = 7;
+    // fetch size
+    // @inject_tag: json:"fetch_size" swaggerignore:"true"
+    int64 fetch_size = 8;
+    // support auto add log
+    // @inject_tag: json:"support_auto_add_log" swaggerignore:"true"
+    int64 support_auto_add_log = 9;
+}
+
+message PgwalSource {
+    // database name
+    // @inject_tag: json:"database_name" swaggerignore:"true"
+    string database_name = 1;
+    // table list
+    // @inject_tag: json:"table_list" swaggerignore:"true"
+    repeated string table_list = 2;
+    // slot name
+    // @inject_tag: json:"slot_name" swaggerignore:"true"
+    string slot_name = 3;
+    // split update
+    // @inject_tag: json:"split_update" swaggerignore:"true"
+    string split_update = 4;
+    // allow created
+    // @inject_tag: json:"allow_created" swaggerignore:"true"
+    string allow_created = 5;
+    // temporary
+    // @inject_tag: json:"temporary" swaggerignore:"true"
+    string temporary = 6;
+    // paving data
+    // @inject_tag: json:"paving_data" swaggerignore:"true"
+    string paving_data = 7;
+    // lsn
+    // @inject_tag: json:"lsn" swaggerignore:"true"
+    string lsn = 8;
+    // slot available
+    // @inject_tag: json:"slot_available" swaggerignore:"true"
+    string slot_available = 9;
+}
+
+message SqlServerCdcSource {
+    // table list
+    // @inject_tag: json:"table_list" swaggerignore:"true"
+    repeated string table_list = 1;
+    // split update
+    // @inject_tag: json:"split_update" swaggerignore:"true"
+    string split_update = 2;
+    // paving data
+    // @inject_tag: json:"paving_data" swaggerignore:"true"
+    string paving_data = 3;
+    // cat
+    // @inject_tag: json:"cat" swaggerignore:"true"
+    string cat = 4;
+    // lsn
+    // @inject_tag: json:"lsn" swaggerignore:"true"
+    string lsn = 5;
+    // poll interval
+    // @inject_tag: json:"poll_interval" swaggerignore:"true"
+    string poll_interval = 6;
+}
+
+message BinlogSource {
+    // schema
+    // @inject_tag: json:"schema" swaggerignore:"true"
+    string schema = 1;
+    // cat
+    // @inject_tag: json:"cat" swaggerignore:"true"
+    string cat = 2;
+    // start
+    // @inject_tag: json:"start" swaggerignore:"true"
+    Start start = 3;
+    // table
+    // @inject_tag: json:"table" swaggerignore:"true"
+    repeated string table = 4;
+    // split update
+    // @inject_tag: json:"split_update" swaggerignore:"true"
+    string split_update = 5;
+    // paving data
+    // @inject_tag: json:"paving_data" swaggerignore:"true"
+    string paving_data = 6;
+    // filter
+    // @inject_tag: json:"filter" swaggerignore:"true"
+    int64 filter = 7;
+    // is gtid mode
+    // @inject_tag: json:"is_gtid_mode" swaggerignore:"true"
+    int64 is_gtid_mode = 8;
+}
+
+message Start {
+    // timestamp
+    // @inject_tag: json:"timestamp" swaggerignore:"true"
+    string timestamp = 1;
+    // journal name
+    // @inject_tag: json:"journal_name" swaggerignore:"true"
+    string journal_name = 2;
+    // position
+    // @inject_tag: json:"position" swaggerignore:"true"
+    string position = 3;
+}
+
+message HiveTarget {
+    // partition
+    // @inject_tag: json:"partition" swaggerignore:"true"
+    string partition = 1;
+    // partition_type
+    // @inject_tag: json:"partition_type" swaggerignore:"true"
+    string partition_type = 2;
+    // tables column
+    // @inject_tag: json:"tables_column" swaggerignore:"true"
+    string tables_column = 3;
+    // analytical rules
+    // @inject_tag: json:"analytical_rules" swaggerignore:"true"
+    string analytical_rules = 4;
+    // schema
+    // @inject_tag: json:"schema" swaggerignore:"true"
+    string schema = 5;
+    // distribute table
+    // @inject_tag: json:"distribute_table" swaggerignore:"true"
+    string distribute_table = 6;
+    // write mode
+    // @inject_tag: json:"write_mode" swaggerignore:"true"
+    int64 write_mode = 7;
+    // Relationaldb column
+    // @inject_tag: json:"file_type" swaggerignore:"true"
+    int64 file_type = 8;
+    // default_fs
+    // @inject_tag: json:"default_fs" swaggerignore:"true"
+    int64 default_fs = 9;
+    // max file size
+    // @inject_tag: json:"max_file_size" swaggerignore:"true"
+    int64 max_file_size = 10;
+    // next check rows
+    // @inject_tag: json:"next_check_rows" swaggerignore:"true"
+    int64 next_check_rows = 11;
+    // row group size
+    // @inject_tag: json:"row_group_size" swaggerignore:"true"
+    int64 row_group_size = 12;
+    // enable dictionary
+    // @inject_tag: json:"enable_dictionary" swaggerignore:"true"
+    int64 enable_dictionary = 13;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    int64 encoding = 14;
+    // field_delimiter
+    // @inject_tag: json:"field_delimiter" swaggerignore:"true"
+    int64 field_delimiter = 15;
+    // compress
+    // @inject_tag: json:"compress" swaggerignore:"true"
+    int64 compress = 16;
+    // charset_name
+    // @inject_tag: json:"charset_name" swaggerignore:"true"
+    int64 charset_name = 17;
+    // hadoop config
+    // @inject_tag: json:"hadoop_Config" swaggerignore:"true"
+    string hadoop_Config = 18;
+
+}
+
+/*message HadoopConfig {
+    // @inject_tag: json:"hadoop_username" swaggerignore:"true"
+    string hadoop_username = 1;
+    // Relationaldb column
+    // @inject_tag: json:"dfs_ha_namenodes_ns" swaggerignore:"true"
+    string dfs_ha_namenodes_ns = 2;
+    // Relationaldb column
+    // @inject_tag: json:"default_fs" swaggerignore:"true"
+    string default_fs = 3;
+    // Relationaldb column
+    // @inject_tag: json:"analytical_rules" swaggerignore:"true"
+    string dfs_namenode_rpc_address_ns_nn1 = 4;
+    // Relationaldb column
+    // @inject_tag: json:"schema" swaggerignore:"true"
+    string dfs_namenode_rpc_address_ns_nn2 = 5;
+    // Relationaldb column
+    // @inject_tag: json:"dfs_client_failover_proxy_provider_ns" swaggerignore:"true"
+    string dfs_client_failover_proxy_provider_ns = 6;
+    // Relationaldb column
+    // @inject_tag: json:"dfs_nameservices" swaggerignore:"true"
+    string dfs_nameservices = 7;
+    // Relationaldb column
+    // @inject_tag: json:"fs_Hive_impl_disable_cache" swaggerignore:"true"
+    string fs_Hive_impl_disable_cache = 8;
+    // distributed filesystem
+    // @inject_tag: json:"org_apache_hadoop_hive_distributed_filesystem" swaggerignore:"true"
+    string org_apache_hadoop_hive_distributed_filesystem = 9;
+}*/
+
+message HdfsSource {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // path
+    // @inject_tag: json:"path" swaggerignore:"true"
+    string path = 2;
+    // file type
+    // @inject_tag: json:"file_type" swaggerignore:"true"
+    string file_type = 3;
+    // default_fs
+    // @inject_tag: json:"default_fs" swaggerignore:"true"
+    string default_fs = 4;
+    // filter regex
+    // @inject_tag: json:"filter_regex" swaggerignore:"true"
+    string filter_regex = 5;
+    // field delimiter
+    // @inject_tag: json:"field_delimiter" swaggerignore:"true"
+    string field_delimiter = 6;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    string encoding = 7;
+    // hadoop config
+    // @inject_tag: json:"dfs_nameservices" swaggerignore:"true"
+    string hadoop_config = 8;
+}
+
+message HdfsTarget {
+    // file column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // file path
+    // @inject_tag: json:"path" swaggerignore:"true"
+    string path = 2;
+    // file name
+    // @inject_tag: json:"file_name" swaggerignore:"true"
+    string file_name = 3;
+    // file type
+    // @inject_tag: json:"file_type" swaggerignore:"true"
+    string file_type = 4;
+    // write mode
+    // @inject_tag: json:"write_mode" swaggerignore:"true"
+    string write_mode = 5;
+    // default_fs
+    // @inject_tag: json:"default_fs" swaggerignore:"true"
+    string default_fs = 6;
+    // filter_regex
+    // @inject_tag: json:"filter_regex" swaggerignore:"true"
+    string filter_regex = 7;
+    // field delimiter
+    // @inject_tag: json:"field_delimiter" swaggerignore:"true"
+    string field_delimiter = 8;
+    // full column name
+    // @inject_tag: json:"full_column_name" swaggerignore:"true"
+    string full_column_name = 9;
+    // full column type
+    // @inject_tag: json:"full_column_type" swaggerignore:"true"
+    string full_column_type = 10;
+    // compress
+    // @inject_tag: json:"compress" swaggerignore:"true"
+    string compress = 11;
+    // max file size
+    // @inject_tag: json:"max_file_size" swaggerignore:"true"
+    string max_file_size = 12;
+    // next check rows
+    // @inject_tag: json:"next_check_rows" swaggerignore:"true"
+    string next_check_rows = 13;
+    // row group size
+    // @inject_tag: json:"row_group_size" swaggerignore:"true"
+    string row_group_size = 14;
+    // enable dictionary
+    // @inject_tag: json:"enable_dictionary" swaggerignore:"true"
+    string enable_dictionary = 15;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    string encoding = 16;
+    // hadoop config
+    // @inject_tag: json:"hadoop_config" swaggerignore:"true"
+    string hadoop_config = 17;
+
+}
+
+
+message FtpSource {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // path
+    // @inject_tag: json:"path" swaggerignore:"true"
+    repeated string path = 2;
+    // private key path
+    // @inject_tag: json:"private_key_path" swaggerignore:"true"
+    string private_key_path = 3;
+    // connect pattern
+    // @inject_tag: json:"connect_pattern" swaggerignore:"true"
+    string connect_pattern = 4;
+    // field delimiter
+    // @inject_tag: json:"field_delimiter" swaggerignore:"true"
+    string field_delimiter = 5;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    string encoding = 6;
+    // control encoding
+    // @inject_tag: json:"control_encoding" swaggerignore:"true"
+    string control_encoding = 7;
+    // is first line header
+    // @inject_tag: json:"is_first_line_header" swaggerignore:"true"
+    string is_first_line_header = 8;
+    // timeout
+    // @inject_tag: json:"timeout" swaggerignore:"true"
+    string timeout = 9;
+    // file type
+    // @inject_tag: json:"file_type" swaggerignore:"true"
+    string file_type = 10;
+    // compress type
+    // @inject_tag: json:"compress_type" swaggerignore:"true"
+    string compress_type = 11;
+    // file_config
+    // @inject_tag: json:"file_config" swaggerignore:"true"
+    string file_config = 12;
+
+}
+
+message FtpTarget {
+    // path
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // path
+    // @inject_tag: json:"path" swaggerignore:"true"
+    repeated string path = 2;
+    // private key path
+    // @inject_tag: json:"private_key_path" swaggerignore:"true"
+    string private_key_path = 3;
+    // connect pattern
+    // @inject_tag: json:"connect_pattern" swaggerignore:"true"
+    string connect_pattern = 4;
+    // field delimiter
+    // @inject_tag: json:"field_delimiter" swaggerignore:"true"
+    string field_delimiter = 5;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    string encoding = 6;
+    // control encoding
+    // @inject_tag: json:"control_encoding" swaggerignore:"true"
+    string control_encoding = 7;
+    // is first line header
+    // @inject_tag: json:"is_first_line_header" swaggerignore:"true"
+    string is_first_line_header = 8;
+    // timeout
+    // @inject_tag: json:"timeout" swaggerignore:"true"
+    string timeout = 9;
+}
+
+message HbaseSource {
+    // hbase parameter
+    // @inject_tag: json:"parameter" swaggerignore:"true"
+    HbaseReadParameter parameter = 1;
+    // hbase name
+    // @inject_tag: json:"name" swaggerignore:"true"
+    string name = 2;
+    // hbase table
+    // @inject_tag: json:"table" swaggerignore:"true"
+    Table table = 3;
+}
+
+message HbaseReadParameter {
+    // column
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // hbaseConfig
+    // @inject_tag: json:"hbaseConfig" swaggerignore:"true"
+    string hbaseConfig = 2;
+    // range
+    // @inject_tag: json:"range" swaggerignore:"true"
+    Range range = 3;
+    // change_log
+    // @inject_tag: json:"change_log" swaggerignore:"true"
+    string change_log = 4;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    string encoding = 5;
+    // hbase hadoopConfig
+    // @inject_tag: json:"hadoopConfig" swaggerignore:"true"
+    string hadoopConfig = 6;
+}
+
+message Range {
+    // start row key
+    // @inject_tag: json:"start_row_key" swaggerignore:"true"
+    int64 start_row_key = 1;
+    // end row key
+    // @inject_tag: json:"end_row_key" swaggerignore:"true"
+    int64 end_row_key = 2;
+    // is binary rowkey
+    // @inject_tag: json:"is_binary_rowkey" swaggerignore:"true"
+    int64 is_binary_rowkey = 3;
+}
+
+message HbaseTarget {
+    // hbase parameter
+    // @inject_tag: json:"parameter" swaggerignore:"true"
+    HbaseWriteParameter parameter = 1;
+    // name
+    // @inject_tag: json:"name" swaggerignore:"true"
+    string name = 2;
+    // hbase table
+    // @inject_tag: json:"table" swaggerignore:"true"
+    Table table = 3;
+}
+message Table {
+    // hbase tablename
+    // @inject_tag: json:"tablename" swaggerignore:"true"
+    string tablename = 1;
+}
+
+message HbaseWriteParameter {
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // hbaseConfig
+    // @inject_tag: json:"hbaseConfig" swaggerignore:"true"
+    string hbaseConfig = 2;
+    // null_mode
+    // @inject_tag: json:"null_mode" swaggerignore:"true"
+    string null_mode = 3;
+    // wal flag
+    // @inject_tag: json:"wal_flag" swaggerignore:"true"
+    bool wal_flag = 4;
+    // write buffer size
+    // @inject_tag: json:"write_buffer_size" swaggerignore:"true"
+    string write_buffer_size = 5;
+    // change_log
+    // @inject_tag: json:"change_log" swaggerignore:"true"
+    string change_log = 6;
+    // rowkey express
+    // @inject_tag: json:"rowkey_express" swaggerignore:"true"
+    string rowkey_express = 7;
+    // version column index
+    // @inject_tag: json:"version_column_index" swaggerignore:"true"
+    string version_column_index = 8;
+    // version column value
+    // @inject_tag: json:"version_column_value" swaggerignore:"true"
+    string version_column_value = 9;
+}
+
+
+message KafkaSource {
+    // @inject_tag: json:"column" swaggerignore:"true"
+    repeated string column = 1;
+    // topic
+    // @inject_tag: json:"topic" swaggerignore:"true"
+    string topic = 2;
+    // mode
+    // @inject_tag: json:"mode" swaggerignore:"true"
+    string mode = 3;
+    // timestamp
+    // @inject_tag: json:"timestamp" swaggerignore:"true"
+    string timestamp = 4;
+    // offset
+    // @inject_tag: json:"offset" swaggerignore:"true"
+    string offset = 5;
+    // consumer group_id
+    // @inject_tag: json:"group_id" swaggerignore:"true"
+    string group_id = 6;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    string encoding = 7;
+    // codec
+    // @inject_tag: json:"codec" swaggerignore:"true"
+    string codec = 8;
+    // kafka consumer settings
+    // @inject_tag: json:"consumersettings" swaggerignore:"true"
+    ConsumerSettings consumersettings = 9;
+}
+
+message ConsumerSettings {
+    // kafka server address
+    // @inject_tag: json:"bootstrap_servers" swaggerignore:"true"
+    string bootstrap_servers = 1;
+    // auto commit position enable
+    // @inject_tag: json:"auto_commit_enable" swaggerignore:"true"
+    string auto_commit_enable = 2;
+}
+
+message KafkaTarget {
+    // kafka tableFields
+    // @inject_tag: json:"tableFields" swaggerignore:"true"
+    repeated string tableFields = 1;
+    // kafka topic
+    // @inject_tag: json:"topic" swaggerignore:"true"
+    string topic = 2;
+    // kafka consumer settings
+    // @inject_tag: json:"consumersettings" swaggerignore:"true"
+    ConsumerSettings consumersettings = 3;
+}
+
+message RedisTarget {
+    // select database
+    // @inject_tag: json:"database" swaggerignore:"true"
+    string database = 1;
+    // keyIndexes
+    // @inject_tag: json:"keyIndexes" swaggerignore:"true"
+    repeated int32 keyIndexes = 2;
+    // date_format
+    // @inject_tag: json:"date_format" swaggerignore:"true"
+    string date_format = 3;
+    // expire time
+    // @inject_tag: json:"expire_time" swaggerignore:"true"
+    string expire_time = 4;
+    // write type
+    // @inject_tag: json:"write_type" swaggerignore:"true"
+    string write_type = 5;
+    // mode
+    // @inject_tag: json:"mode" swaggerignore:"true"
+    string mode = 6;
+    // key field delimiter
+    // @inject_tag: json:"key_field_delimiter" swaggerignore:"true"
+    string key_field_delimiter = 7;
+    // value field delimiter
+    // @inject_tag: json:"value_field_delimiter" swaggerignore:"true"
+    string value_field_delimiter = 8;
+}
