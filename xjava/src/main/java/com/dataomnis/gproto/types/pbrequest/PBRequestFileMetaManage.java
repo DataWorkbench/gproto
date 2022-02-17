@@ -6707,8 +6707,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"resource_name"
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
      * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -6718,8 +6717,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"resource_name"
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
      * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -6731,8 +6729,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file description. Not required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -6742,8 +6739,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file description. Not required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -6751,29 +6747,6 @@ public final class PBRequestFileMetaManage {
      */
     com.google.protobuf.ByteString
         getDescBytes();
-
-    /**
-     * <pre>
-     * The file type. required.
-     * FIXME: Rename json name; removed it.
-     * &#64;inject_tag: json:"resource_type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 5;</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * The file type. required.
-     * FIXME: Rename json name; removed it.
-     * &#64;inject_tag: json:"resource_type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 5;</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType();
   }
   /**
    * Protobuf type {@code request.UpdateFileMeta}
@@ -6792,7 +6765,6 @@ public final class PBRequestFileMetaManage {
       fileId_ = "";
       name_ = "";
       desc_ = "";
-      type_ = 0;
     }
 
     @java.lang.Override
@@ -6847,12 +6819,6 @@ public final class PBRequestFileMetaManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               desc_ = s;
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
               break;
             }
             default: {
@@ -6988,8 +6954,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"resource_name"
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
      * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -7011,8 +6976,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"resource_name"
+     * &#64;inject_tag: json:"name"
      * </pre>
      *
      * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -7038,8 +7002,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file description. Not required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -7061,8 +7024,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file description. Not required.
-     * FIXME: Rename json name
-     * &#64;inject_tag: json:"description"
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -7081,37 +7043,6 @@ public final class PBRequestFileMetaManage {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
-    /**
-     * <pre>
-     * The file type. required.
-     * FIXME: Rename json name; removed it.
-     * &#64;inject_tag: json:"resource_type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 5;</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * The file type. required.
-     * FIXME: Rename json name; removed it.
-     * &#64;inject_tag: json:"resource_type"
-     * </pre>
-     *
-     * <code>.model.File.Type type = 5;</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7140,9 +7071,6 @@ public final class PBRequestFileMetaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        output.writeEnum(5, type_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7163,10 +7091,6 @@ public final class PBRequestFileMetaManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
-      }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.ResourceUnset.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7191,7 +7115,6 @@ public final class PBRequestFileMetaManage {
           .equals(other.getName())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
-      if (type_ != other.type_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7211,8 +7134,6 @@ public final class PBRequestFileMetaManage {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7354,8 +7275,6 @@ public final class PBRequestFileMetaManage {
 
         desc_ = "";
 
-        type_ = 0;
-
         return this;
       }
 
@@ -7386,7 +7305,6 @@ public final class PBRequestFileMetaManage {
         result.fileId_ = fileId_;
         result.name_ = name_;
         result.desc_ = desc_;
-        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -7450,9 +7368,6 @@ public final class PBRequestFileMetaManage {
         if (!other.getDesc().isEmpty()) {
           desc_ = other.desc_;
           onChanged();
-        }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7689,8 +7604,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"resource_name"
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
        * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -7711,8 +7625,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"resource_name"
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
        * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -7734,8 +7647,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"resource_name"
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
        * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -7755,8 +7667,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"resource_name"
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
        * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -7771,8 +7682,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"resource_name"
+       * &#64;inject_tag: json:"name"
        * </pre>
        *
        * <code>string name = 3 [(.validator.field) = { ... }</code>
@@ -7795,8 +7705,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file description. Not required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -7817,8 +7726,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file description. Not required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -7840,8 +7748,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file description. Not required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -7861,8 +7768,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file description. Not required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -7877,8 +7783,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file description. Not required.
-       * FIXME: Rename json name
-       * &#64;inject_tag: json:"description"
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -7893,90 +7798,6 @@ public final class PBRequestFileMetaManage {
   checkByteStringIsUtf8(value);
         
         desc_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int type_ = 0;
-      /**
-       * <pre>
-       * The file type. required.
-       * FIXME: Rename json name; removed it.
-       * &#64;inject_tag: json:"resource_type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 5;</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * FIXME: Rename json name; removed it.
-       * &#64;inject_tag: json:"resource_type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 5;</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * FIXME: Rename json name; removed it.
-       * &#64;inject_tag: json:"resource_type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 5;</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type result = com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * FIXME: Rename json name; removed it.
-       * &#64;inject_tag: json:"resource_type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 5;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelResource.File.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The file type. required.
-       * FIXME: Rename json name; removed it.
-       * &#64;inject_tag: json:"resource_type"
-       * </pre>
-       *
-       * <code>.model.File.Type type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
         onChanged();
         return this;
       }
@@ -8085,8 +7906,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file type. required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_type" form:"resource_type"
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -8096,8 +7916,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file type. required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_type" form:"resource_type"
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -8108,8 +7927,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. not required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+     * &#64;inject_tag: json:"name" form:"name" binding:"-"
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -8119,8 +7937,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. not required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+     * &#64;inject_tag: json:"name" form:"name" binding:"-"
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -8430,8 +8247,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file type. required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_type" form:"resource_type"
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -8443,8 +8259,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file type. required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_type" form:"resource_type"
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -8461,8 +8276,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. not required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+     * &#64;inject_tag: json:"name" form:"name" binding:"-"
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -8484,8 +8298,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The file name. not required.
-     * FIXME: Rename json and form name
-     * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+     * &#64;inject_tag: json:"name" form:"name" binding:"-"
      * </pre>
      *
      * <code>string name = 5;</code>
@@ -9308,8 +9121,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file type. required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_type" form:"resource_type"
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -9321,8 +9133,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file type. required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_type" form:"resource_type"
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -9338,8 +9149,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file type. required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_type" form:"resource_type"
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -9354,8 +9164,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file type. required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_type" form:"resource_type"
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -9374,8 +9183,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file type. required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_type" form:"resource_type"
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.File.Type type = 4 [(.validator.field) = { ... }</code>
@@ -9392,8 +9200,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. not required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+       * &#64;inject_tag: json:"name" form:"name" binding:"-"
        * </pre>
        *
        * <code>string name = 5;</code>
@@ -9414,8 +9221,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. not required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+       * &#64;inject_tag: json:"name" form:"name" binding:"-"
        * </pre>
        *
        * <code>string name = 5;</code>
@@ -9437,8 +9243,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. not required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+       * &#64;inject_tag: json:"name" form:"name" binding:"-"
        * </pre>
        *
        * <code>string name = 5;</code>
@@ -9458,8 +9263,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. not required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+       * &#64;inject_tag: json:"name" form:"name" binding:"-"
        * </pre>
        *
        * <code>string name = 5;</code>
@@ -9474,8 +9278,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The file name. not required.
-       * FIXME: Rename json and form name
-       * &#64;inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+       * &#64;inject_tag: json:"name" form:"name" binding:"-"
        * </pre>
        *
        * <code>string name = 5;</code>
@@ -9934,8 +9737,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -9946,8 +9748,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -9957,8 +9758,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -9969,8 +9769,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10131,8 +9930,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10145,8 +9943,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10158,8 +9955,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10172,8 +9968,7 @@ public final class PBRequestFileMetaManage {
     /**
      * <pre>
      * The list of file id. Is required, Min 1 Max 100.
-     * FIXME: rename JSON name
-     * &#64;inject_tag: json:"resource_ids"
+     * &#64;inject_tag: json:"file_ids"
      * </pre>
      *
      * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10634,8 +10429,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10648,8 +10442,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10661,8 +10454,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10675,8 +10467,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10690,8 +10481,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10712,8 +10502,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10733,8 +10522,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10752,8 +10540,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10768,8 +10555,7 @@ public final class PBRequestFileMetaManage {
       /**
        * <pre>
        * The list of file id. Is required, Min 1 Max 100.
-       * FIXME: rename JSON name
-       * &#64;inject_tag: json:"resource_ids"
+       * &#64;inject_tag: json:"file_ids"
        * </pre>
        *
        * <code>repeated string file_ids = 2 [(.validator.field) = { ... }</code>
@@ -10919,25 +10705,24 @@ public final class PBRequestFileMetaManage {
       "\022\031\n\004size\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\032\n\004etag\030\004 \001(" +
       "\tB\014\342\337\037\010\022\006\302\001\003\360\001 \022\035\n\007version\030\005 \001(\tB\014\342\337\037\010\022\006" +
       "\302\001\003\360\001\020\"8\n\020DescribeFileMeta\022$\n\007file_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\247\001\n\016UpdateFileM" +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\"\207\001\n\016UpdateFileM" +
       "eta\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
       "s-\022\035\n\007file_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022\033\n\004nam" +
       "e\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022\022\n\004desc\030\004 \001(\tB\004\342\337" +
-      "\037\000\022\036\n\004type\030\005 \001(\0162\020.model.File.Type\"\263\002\n\rL" +
-      "istFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337" +
-      "\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000" +
-      "\022+\n\004type\030\004 \001(\0162\020.model.File.TypeB\013\342\337\037\007\022\005" +
-      "\332\001\002X\001\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 \001(\tB\r\342\337\037" +
-      "\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037)\022\'\302\001$J\000" +
-      "J\002idJ\007createdJ\007updatedJ\004nameJ\004size\022\017\n\007re" +
-      "verse\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"e\n\017DeleteFileMe" +
-      "tas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022+\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007" +
-      "\312\002\004res-Bv\n$com.dataomnis.gproto.types.pb" +
-      "requestB\027PBRequestFileMetaManageP\000Z3gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "requestb\006proto3"
+      "\037\000\"\263\002\n\rListFileMetas\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006" +
+      "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037" +
+      "\007\022\005\262\001\002@\000\022+\n\004type\030\004 \001(\0162\020.model.File.Type" +
+      "B\013\342\337\037\007\022\005\332\001\002X\001\022\014\n\004name\030\005 \001(\t\022\035\n\006search\030\006 " +
+      "\001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\364\003\022>\n\007sort_by\030\007 \001(\tB-\342\337\037" +
+      ")\022\'\302\001$J\000J\002idJ\007createdJ\007updatedJ\004nameJ\004si" +
+      "ze\022\017\n\007reverse\030\010 \001(\010\022\013\n\003pid\030\t \001(\t\"e\n\017Dele" +
+      "teFileMetas\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022+\n\010file_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200" +
+      "\0008dZ\n\302\001\007\312\002\004res-Bv\n$com.dataomnis.gproto." +
+      "types.pbrequestB\027PBRequestFileMetaManage" +
+      "P\000Z3github.com/DataWorkbench/gproto/xgo/" +
+      "types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10981,7 +10766,7 @@ public final class PBRequestFileMetaManage {
     internal_static_request_UpdateFileMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateFileMeta_descriptor,
-        new java.lang.String[] { "SpaceId", "FileId", "Name", "Desc", "Type", });
+        new java.lang.String[] { "SpaceId", "FileId", "Name", "Desc", });
     internal_static_request_ListFileMetas_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_request_ListFileMetas_fieldAccessorTable = new

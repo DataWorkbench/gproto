@@ -1683,7 +1683,7 @@ public final class PBRequestStreamJobManage {
 
     /**
      * <pre>
-     * The flink compute cluster id. Is required.
+     * The flink compute cluster id. Not required.
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
@@ -1693,7 +1693,7 @@ public final class PBRequestStreamJobManage {
     java.lang.String getClusterId();
     /**
      * <pre>
-     * The flink compute cluster id. Is required.
+     * The flink compute cluster id. Not required.
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
@@ -2162,7 +2162,7 @@ public final class PBRequestStreamJobManage {
     private volatile java.lang.Object clusterId_;
     /**
      * <pre>
-     * The flink compute cluster id. Is required.
+     * The flink compute cluster id. Not required.
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
@@ -2184,7 +2184,7 @@ public final class PBRequestStreamJobManage {
     }
     /**
      * <pre>
-     * The flink compute cluster id. Is required.
+     * The flink compute cluster id. Not required.
      * &#64;inject_tag: json:"cluster_id"
      * </pre>
      *
@@ -3344,7 +3344,7 @@ public final class PBRequestStreamJobManage {
       private java.lang.Object clusterId_ = "";
       /**
        * <pre>
-       * The flink compute cluster id. Is required.
+       * The flink compute cluster id. Not required.
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
@@ -3365,7 +3365,7 @@ public final class PBRequestStreamJobManage {
       }
       /**
        * <pre>
-       * The flink compute cluster id. Is required.
+       * The flink compute cluster id. Not required.
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
@@ -3387,7 +3387,7 @@ public final class PBRequestStreamJobManage {
       }
       /**
        * <pre>
-       * The flink compute cluster id. Is required.
+       * The flink compute cluster id. Not required.
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
@@ -3407,7 +3407,7 @@ public final class PBRequestStreamJobManage {
       }
       /**
        * <pre>
-       * The flink compute cluster id. Is required.
+       * The flink compute cluster id. Not required.
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *
@@ -3422,7 +3422,7 @@ public final class PBRequestStreamJobManage {
       }
       /**
        * <pre>
-       * The flink compute cluster id. Is required.
+       * The flink compute cluster id. Not required.
        * &#64;inject_tag: json:"cluster_id"
        * </pre>
        *

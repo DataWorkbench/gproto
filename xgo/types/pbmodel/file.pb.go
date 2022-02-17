@@ -130,8 +130,7 @@ type File struct {
 	// Workspace ID it belongs to.
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Resource ID, unique within a region.
-	// FIXME: rename json name
-	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"resource_id" gorm:"column:id;primaryKey;"`
+	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;primaryKey;"`
 	// Resource Parent ID, default "".
 	Pid string `protobuf:"bytes,3,opt,name=pid,proto3" json:"pid" gorm:"column:pid;"`
 	// IsDirectory represents this file whether a directory.
@@ -139,8 +138,7 @@ type File struct {
 	// File Name, unique within a region of same space_id and pid.
 	Name string `protobuf:"bytes,5,opt,name=name,proto3" json:"name" gorm:"column:name;"`
 	// File description.
-	// FIXME: rename json name
-	Desc string `protobuf:"bytes,6,opt,name=desc,proto3" json:"description" gorm:"desc;"`
+	Desc string `protobuf:"bytes,6,opt,name=desc,proto3" json:"desc" gorm:"desc;"`
 	// File size, Byte.
 	Size int64 `protobuf:"varint,7,opt,name=size,proto3" json:"size" gorm:"size;"`
 	// ETag is MD5 value of file data encoded in hexadecimal.

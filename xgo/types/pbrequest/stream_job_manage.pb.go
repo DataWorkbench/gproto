@@ -152,7 +152,7 @@ type CreateStreamJob struct {
 	// Optional Value: 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
 	// Desc: Cannot be modified after creation.
 	Type pbmodel.StreamJob_Type `protobuf:"varint,7,opt,name=type,proto3,enum=model.StreamJob_Type" json:"type"`
-	// The flink compute cluster id. Is required.
+	// The flink compute cluster id. Not required.
 	ClusterId string `protobuf:"bytes,8,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id"`
 	// The owner of workspace, only used to check quota. Set by APIServer.
 	SpaceOwner string `protobuf:"bytes,9,opt,name=space_owner,json=spaceOwner,proto3" json:"space_owner" swaggerignore:"true"`

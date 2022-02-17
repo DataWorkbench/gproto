@@ -43,8 +43,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
      * </pre>
      *
      * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -54,8 +53,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
      * </pre>
      *
      * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -122,8 +120,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * File description.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"description" gorm:"desc;"
+     * &#64;inject_tag: json:"desc" gorm:"desc;"
      * </pre>
      *
      * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -133,8 +130,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * File description.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"description" gorm:"desc;"
+     * &#64;inject_tag: json:"desc" gorm:"desc;"
      * </pre>
      *
      * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -747,8 +743,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
      * </pre>
      *
      * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -770,8 +765,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * Resource ID, unique within a region.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+     * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
      * </pre>
      *
      * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -909,8 +903,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * File description.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"description" gorm:"desc;"
+     * &#64;inject_tag: json:"desc" gorm:"desc;"
      * </pre>
      *
      * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -932,8 +925,7 @@ public final class PBModelResource {
     /**
      * <pre>
      * File description.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"description" gorm:"desc;"
+     * &#64;inject_tag: json:"desc" gorm:"desc;"
      * </pre>
      *
      * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -1834,8 +1826,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
        * </pre>
        *
        * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -1856,8 +1847,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
        * </pre>
        *
        * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -1879,8 +1869,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
        * </pre>
        *
        * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -1900,8 +1889,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
        * </pre>
        *
        * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -1916,8 +1904,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * Resource ID, unique within a region.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"resource_id" gorm:"column:id;primaryKey;"
+       * &#64;inject_tag: json:"id" gorm:"column:id;primaryKey;"
        * </pre>
        *
        * <code>string id = 2 [(.validator.field) = { ... }</code>
@@ -2188,8 +2175,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * File description.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"description" gorm:"desc;"
+       * &#64;inject_tag: json:"desc" gorm:"desc;"
        * </pre>
        *
        * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -2210,8 +2196,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * File description.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"description" gorm:"desc;"
+       * &#64;inject_tag: json:"desc" gorm:"desc;"
        * </pre>
        *
        * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -2233,8 +2218,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * File description.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"description" gorm:"desc;"
+       * &#64;inject_tag: json:"desc" gorm:"desc;"
        * </pre>
        *
        * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -2254,8 +2238,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * File description.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"description" gorm:"desc;"
+       * &#64;inject_tag: json:"desc" gorm:"desc;"
        * </pre>
        *
        * <code>string desc = 6 [(.validator.field) = { ... }</code>
@@ -2270,8 +2253,7 @@ public final class PBModelResource {
       /**
        * <pre>
        * File description.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"description" gorm:"desc;"
+       * &#64;inject_tag: json:"desc" gorm:"desc;"
        * </pre>
        *
        * <code>string desc = 6 [(.validator.field) = { ... }</code>
