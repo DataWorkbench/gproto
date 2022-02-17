@@ -15160,6 +15160,7 @@ public final class PBRequestStreamJobManage {
 
     /**
      * <pre>
+     * StopRunning indicates whether stop the stream job instance that state running.
      * &#64;inject_tag: json:"stop_running"
      * </pre>
      *
@@ -15423,6 +15424,7 @@ public final class PBRequestStreamJobManage {
     private boolean stopRunning_;
     /**
      * <pre>
+     * StopRunning indicates whether stop the stream job instance that state running.
      * &#64;inject_tag: json:"stop_running"
      * </pre>
      *
@@ -16098,6 +16100,7 @@ public final class PBRequestStreamJobManage {
       private boolean stopRunning_ ;
       /**
        * <pre>
+       * StopRunning indicates whether stop the stream job instance that state running.
        * &#64;inject_tag: json:"stop_running"
        * </pre>
        *
@@ -16110,6 +16113,7 @@ public final class PBRequestStreamJobManage {
       }
       /**
        * <pre>
+       * StopRunning indicates whether stop the stream job instance that state running.
        * &#64;inject_tag: json:"stop_running"
        * </pre>
        *
@@ -16125,6 +16129,7 @@ public final class PBRequestStreamJobManage {
       }
       /**
        * <pre>
+       * StopRunning indicates whether stop the stream job instance that state running.
        * &#64;inject_tag: json:"stop_running"
        * </pre>
        *
@@ -16237,6 +16242,17 @@ public final class PBRequestStreamJobManage {
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
+
+    /**
+     * <pre>
+     * StopRunning indicates whether stop the stream job instance that state running.
+     * &#64;inject_tag: json:"stop_running"
+     * </pre>
+     *
+     * <code>bool stop_running = 4;</code>
+     * @return The stopRunning.
+     */
+    boolean getStopRunning();
   }
   /**
    * <pre>
@@ -16299,6 +16315,11 @@ public final class PBRequestStreamJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               jobId_ = s;
+              break;
+            }
+            case 32: {
+
+              stopRunning_ = input.readBool();
               break;
             }
             default: {
@@ -16429,6 +16450,22 @@ public final class PBRequestStreamJobManage {
       }
     }
 
+    public static final int STOP_RUNNING_FIELD_NUMBER = 4;
+    private boolean stopRunning_;
+    /**
+     * <pre>
+     * StopRunning indicates whether stop the stream job instance that state running.
+     * &#64;inject_tag: json:"stop_running"
+     * </pre>
+     *
+     * <code>bool stop_running = 4;</code>
+     * @return The stopRunning.
+     */
+    @java.lang.Override
+    public boolean getStopRunning() {
+      return stopRunning_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16449,6 +16486,9 @@ public final class PBRequestStreamJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
+      if (stopRunning_ != false) {
+        output.writeBool(4, stopRunning_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -16463,6 +16503,10 @@ public final class PBRequestStreamJobManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
+      }
+      if (stopRunning_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, stopRunning_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16483,6 +16527,8 @@ public final class PBRequestStreamJobManage {
           .equals(other.getSpaceId())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
+      if (getStopRunning()
+          != other.getStopRunning()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16498,6 +16544,9 @@ public final class PBRequestStreamJobManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + STOP_RUNNING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStopRunning());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16639,6 +16688,8 @@ public final class PBRequestStreamJobManage {
 
         jobId_ = "";
 
+        stopRunning_ = false;
+
         return this;
       }
 
@@ -16667,6 +16718,7 @@ public final class PBRequestStreamJobManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.OfflineReleaseStreamJob result = new com.dataomnis.gproto.types.pbrequest.PBRequestStreamJobManage.OfflineReleaseStreamJob(this);
         result.spaceId_ = spaceId_;
         result.jobId_ = jobId_;
+        result.stopRunning_ = stopRunning_;
         onBuilt();
         return result;
       }
@@ -16722,6 +16774,9 @@ public final class PBRequestStreamJobManage {
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
           onChanged();
+        }
+        if (other.getStopRunning() != false) {
+          setStopRunning(other.getStopRunning());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -16950,6 +17005,52 @@ public final class PBRequestStreamJobManage {
   checkByteStringIsUtf8(value);
         
         jobId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean stopRunning_ ;
+      /**
+       * <pre>
+       * StopRunning indicates whether stop the stream job instance that state running.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 4;</code>
+       * @return The stopRunning.
+       */
+      @java.lang.Override
+      public boolean getStopRunning() {
+        return stopRunning_;
+      }
+      /**
+       * <pre>
+       * StopRunning indicates whether stop the stream job instance that state running.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 4;</code>
+       * @param value The stopRunning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStopRunning(boolean value) {
+        
+        stopRunning_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * StopRunning indicates whether stop the stream job instance that state running.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStopRunning() {
+        
+        stopRunning_ = false;
         onChanged();
         return this;
       }
@@ -20648,26 +20749,26 @@ public final class PBRequestStreamJobManage {
       "b_id\030\010 \001(\t\"}\n\020ReleaseStreamJob\022#\n\006job_id" +
       "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022 \n\ncreated_b" +
       "y\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\014\n\004desc\030\003 \001(\t\022\024\n\014s" +
-      "top_running\030\004 \001(\010\"e\n\027OfflineReleaseStrea" +
+      "top_running\030\004 \001(\010\"{\n\027OfflineReleaseStrea" +
       "mJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
       "ks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-" +
-      "\"\201\001\n\027SuspendReleaseStreamJob\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\032\n\014stop_running" +
-      "\030\003 \001(\010B\004\342\337\037\000\"d\n\026ResumeReleaseStreamJob\022%" +
-      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n" +
-      "\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\313\001\n\025L" +
-      "istStreamJobVersions\022#\n\006job_id\030\005 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
-      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022" +
-      "\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007ve" +
-      "rsionJ\007createdJ\007updated\022\017\n\007reverse\030\004 \001(\010" +
-      "\"G\n\033DescribeFlinkUIByInstanceId\022(\n\013insta" +
-      "nce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-Bw\n$com" +
-      ".dataomnis.gproto.types.pbrequestB\030PBReq" +
-      "uestStreamJobManageP\000Z3github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbrequestb\006prot" +
-      "o3"
+      "\022\024\n\014stop_running\030\004 \001(\010\"\201\001\n\027SuspendReleas" +
+      "eStreamJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004stj-\022\032\n\014stop_running\030\003 \001(\010B\004\342\337\037\000\"d\n\026Re" +
+      "sumeReleaseStreamJob\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\313\001\n\025ListStreamJobVersio" +
+      "ns\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022" +
+      "&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022" +
+      "\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030" +
+      "\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007up" +
+      "dated\022\017\n\007reverse\030\004 \001(\010\"G\n\033DescribeFlinkU" +
+      "IByInstanceId\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004sti-Bw\n$com.dataomnis.gproto." +
+      "types.pbrequestB\030PBRequestStreamJobManag" +
+      "eP\000Z3github.com/DataWorkbench/gproto/xgo" +
+      "/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20765,7 +20866,7 @@ public final class PBRequestStreamJobManage {
     internal_static_request_OfflineReleaseStreamJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_OfflineReleaseStreamJob_descriptor,
-        new java.lang.String[] { "SpaceId", "JobId", });
+        new java.lang.String[] { "SpaceId", "JobId", "StopRunning", });
     internal_static_request_SuspendReleaseStreamJob_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_request_SuspendReleaseStreamJob_fieldAccessorTable = new
