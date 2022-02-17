@@ -141,19 +141,12 @@ message UpdateFileMeta {
   string file_id = 2 [(validator.field).tags.string = { byte_len_eq: 20}];
 
   // The file name. required.
-  // FIXME: Rename json name
-  // @inject_tag: json:"resource_name"
+  // @inject_tag: json:"name"
   string name = 3 [(validator.field).tags.string = { byte_len_lte: 500 }];
 
   // The file description. Not required.
-  // FIXME: Rename json name
-  // @inject_tag: json:"description"
+  // @inject_tag: json:"desc"
   string desc = 4 [(validator.field) = {}];
-
-  // The file type. required.
-  // FIXME: Rename json name; removed it.
-  // @inject_tag: json:"resource_type"
-  model.File.Type type = 5;
 }
 
 message ListFileMetas {
@@ -171,13 +164,11 @@ message ListFileMetas {
   int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The file type. required.
-  // FIXME: Rename json and form name
-  // @inject_tag: json:"resource_type" form:"resource_type"
+  // @inject_tag: json:"type" form:"type"
   model.File.Type type = 4 [(validator.field).tags.enum = { in_enums: true }];
 
   // The file name. not required.
-  // FIXME: Rename json and form name
-  // @inject_tag: json:"resource_name" form:"resource_name" binding:"-"
+  // @inject_tag: json:"name" form:"name" binding:"-"
   string name = 5;
 
   // Search with resource name; not required.
@@ -205,7 +196,6 @@ message DeleteFileMetas {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // The list of file id. Is required, Min 1 Max 100.
-  // FIXME: rename JSON name
-  // @inject_tag: json:"resource_ids"
+  // @inject_tag: json:"file_ids"
   repeated string file_ids = 2 [(validator.field).tags.repeated = { len_gt: 0, len_lte: 100; item: { string: { prefix: "res-" } } }];
 }

@@ -88,7 +88,7 @@ message CreateStreamJob {
     (validator.field).tags.enum = { gt: 0; in_enums: true  }
   ];
 
-  // The flink compute cluster id. Is required.
+  // The flink compute cluster id. Not required.
   // @inject_tag: json:"cluster_id"
   string cluster_id = 8 [(validator.field) = {}];
 
