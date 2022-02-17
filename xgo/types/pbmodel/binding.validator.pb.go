@@ -49,39 +49,39 @@ func (this *BindingModule) Validate() error {
 	return nil
 }
 
-func (this *BindingAttach) _xxx_xxx_Validator_Validate_attach_id() error {
-	if !(len(this.AttachId) == 20) {
-		return protovalidator.FieldError1("BindingAttach", "the byte length of field 'attach_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AttachId))
+func (this *BindingResource) _xxx_xxx_Validator_Validate_resource_id() error {
+	if !(len(this.ResourceId) == 20) {
+		return protovalidator.FieldError1("BindingResource", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
 	}
 	return nil
 }
 
-func (this *BindingAttach) _xxx_xxx_Validator_CheckIf_attach_version() bool {
-	if !(this.AttachVersion != "") {
+func (this *BindingResource) _xxx_xxx_Validator_CheckIf_resource_version() bool {
+	if !(this.ResourceVersion != "") {
 		return false
 	}
 	return true
 }
 
-func (this *BindingAttach) _xxx_xxx_Validator_Validate_attach_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_attach_version() {
+func (this *BindingResource) _xxx_xxx_Validator_Validate_resource_version() error {
+	if !this._xxx_xxx_Validator_CheckIf_resource_version() {
 		return nil
 	}
-	if !(len(this.AttachVersion) == 16) {
-		return protovalidator.FieldError1("BindingAttach", "the byte length of field 'attach_version' must be equal to '16'", protovalidator.StringByteLenToString(this.AttachVersion))
+	if !(len(this.ResourceVersion) == 16) {
+		return protovalidator.FieldError1("BindingResource", "the byte length of field 'resource_version' must be equal to '16'", protovalidator.StringByteLenToString(this.ResourceVersion))
 	}
 	return nil
 }
 
-// Set default value for message model.BindingAttach
-func (this *BindingAttach) Validate() error {
+// Set default value for message model.BindingResource
+func (this *BindingResource) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_attach_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_attach_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_resource_version(); err != nil {
 		return err
 	}
 	return nil
@@ -121,26 +121,26 @@ func (this *Binding) _xxx_xxx_Validator_Validate_module_version() error {
 	return nil
 }
 
-func (this *Binding) _xxx_xxx_Validator_Validate_attach_id() error {
-	if !(len(this.AttachId) == 20) {
-		return protovalidator.FieldError1("Binding", "the byte length of field 'attach_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AttachId))
+func (this *Binding) _xxx_xxx_Validator_Validate_resource_id() error {
+	if !(len(this.ResourceId) == 20) {
+		return protovalidator.FieldError1("Binding", "the byte length of field 'resource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ResourceId))
 	}
 	return nil
 }
 
-func (this *Binding) _xxx_xxx_Validator_CheckIf_attach_version() bool {
-	if !(this.AttachVersion != "") {
+func (this *Binding) _xxx_xxx_Validator_CheckIf_resource_version() bool {
+	if !(this.ResourceVersion != "") {
 		return false
 	}
 	return true
 }
 
-func (this *Binding) _xxx_xxx_Validator_Validate_attach_version() error {
-	if !this._xxx_xxx_Validator_CheckIf_attach_version() {
+func (this *Binding) _xxx_xxx_Validator_Validate_resource_version() error {
+	if !this._xxx_xxx_Validator_CheckIf_resource_version() {
 		return nil
 	}
-	if !(len(this.AttachVersion) == 16) {
-		return protovalidator.FieldError1("Binding", "the byte length of field 'attach_version' must be equal to '16'", protovalidator.StringByteLenToString(this.AttachVersion))
+	if !(len(this.ResourceVersion) == 16) {
+		return protovalidator.FieldError1("Binding", "the byte length of field 'resource_version' must be equal to '16'", protovalidator.StringByteLenToString(this.ResourceVersion))
 	}
 	return nil
 }
@@ -166,10 +166,10 @@ func (this *Binding) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_module_version(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_attach_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_resource_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_attach_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_resource_version(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
