@@ -117,6 +117,54 @@ func (x *QuotaStreamJob) GetLimit() int64 {
 	return 0
 }
 
+type QuotaSyncJob struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Limit is the maximum number of stream job for every user. default 500.
+	Limit int64 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *QuotaSyncJob) Reset() {
+	*x = QuotaSyncJob{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_model_quota_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *QuotaSyncJob) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QuotaSyncJob) ProtoMessage() {}
+
+func (x *QuotaSyncJob) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_model_quota_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QuotaSyncJob.ProtoReflect.Descriptor instead.
+func (*QuotaSyncJob) Descriptor() ([]byte, []int) {
+	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *QuotaSyncJob) GetLimit() int64 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
 type QuotaDataSource struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -129,7 +177,7 @@ type QuotaDataSource struct {
 func (x *QuotaDataSource) Reset() {
 	*x = QuotaDataSource{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_quota_proto_msgTypes[2]
+		mi := &file_proto_types_model_quota_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -142,7 +190,7 @@ func (x *QuotaDataSource) String() string {
 func (*QuotaDataSource) ProtoMessage() {}
 
 func (x *QuotaDataSource) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_quota_proto_msgTypes[2]
+	mi := &file_proto_types_model_quota_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -155,7 +203,7 @@ func (x *QuotaDataSource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QuotaDataSource.ProtoReflect.Descriptor instead.
 func (*QuotaDataSource) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{2}
+	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *QuotaDataSource) GetLimit() int64 {
@@ -177,7 +225,7 @@ type QuotaUDF struct {
 func (x *QuotaUDF) Reset() {
 	*x = QuotaUDF{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_quota_proto_msgTypes[3]
+		mi := &file_proto_types_model_quota_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -190,7 +238,7 @@ func (x *QuotaUDF) String() string {
 func (*QuotaUDF) ProtoMessage() {}
 
 func (x *QuotaUDF) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_quota_proto_msgTypes[3]
+	mi := &file_proto_types_model_quota_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -203,7 +251,7 @@ func (x *QuotaUDF) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QuotaUDF.ProtoReflect.Descriptor instead.
 func (*QuotaUDF) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{3}
+	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *QuotaUDF) GetLimit() int64 {
@@ -229,7 +277,7 @@ type QuotaFile struct {
 func (x *QuotaFile) Reset() {
 	*x = QuotaFile{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_quota_proto_msgTypes[4]
+		mi := &file_proto_types_model_quota_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -242,7 +290,7 @@ func (x *QuotaFile) String() string {
 func (*QuotaFile) ProtoMessage() {}
 
 func (x *QuotaFile) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_quota_proto_msgTypes[4]
+	mi := &file_proto_types_model_quota_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +303,7 @@ func (x *QuotaFile) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QuotaFile.ProtoReflect.Descriptor instead.
 func (*QuotaFile) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{4}
+	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *QuotaFile) GetLimit() int64 {
@@ -295,7 +343,7 @@ type QuotaFlinkCluster struct {
 func (x *QuotaFlinkCluster) Reset() {
 	*x = QuotaFlinkCluster{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_quota_proto_msgTypes[5]
+		mi := &file_proto_types_model_quota_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -308,7 +356,7 @@ func (x *QuotaFlinkCluster) String() string {
 func (*QuotaFlinkCluster) ProtoMessage() {}
 
 func (x *QuotaFlinkCluster) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_quota_proto_msgTypes[5]
+	mi := &file_proto_types_model_quota_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -321,7 +369,7 @@ func (x *QuotaFlinkCluster) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QuotaFlinkCluster.ProtoReflect.Descriptor instead.
 func (*QuotaFlinkCluster) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{5}
+	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *QuotaFlinkCluster) GetLimit() int64 {
@@ -357,7 +405,7 @@ type QuotaNetwork struct {
 func (x *QuotaNetwork) Reset() {
 	*x = QuotaNetwork{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_quota_proto_msgTypes[6]
+		mi := &file_proto_types_model_quota_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -370,7 +418,7 @@ func (x *QuotaNetwork) String() string {
 func (*QuotaNetwork) ProtoMessage() {}
 
 func (x *QuotaNetwork) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_quota_proto_msgTypes[6]
+	mi := &file_proto_types_model_quota_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -383,58 +431,10 @@ func (x *QuotaNetwork) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QuotaNetwork.ProtoReflect.Descriptor instead.
 func (*QuotaNetwork) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *QuotaNetwork) GetLimit() int64 {
-	if x != nil {
-		return x.Limit
-	}
-	return 0
-}
-
-type QuotaSyncJob struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// Limit is the maximum number of sync job for every user. default 500.
-	Limit int64 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
-}
-
-func (x *QuotaSyncJob) Reset() {
-	*x = QuotaSyncJob{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_quota_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *QuotaSyncJob) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*QuotaSyncJob) ProtoMessage() {}
-
-func (x *QuotaSyncJob) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_quota_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use QuotaSyncJob.ProtoReflect.Descriptor instead.
-func (*QuotaSyncJob) Descriptor() ([]byte, []int) {
 	return file_proto_types_model_quota_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *QuotaSyncJob) GetLimit() int64 {
+func (x *QuotaNetwork) GetLimit() int64 {
 	if x != nil {
 		return x.Limit
 	}
@@ -568,28 +568,28 @@ var file_proto_types_model_quota_proto_rawDesc = []byte{
 	0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x2e, 0x0a, 0x0e, 0x51, 0x75, 0x6f, 0x74, 0x61,
 	0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x4a, 0x6f, 0x62, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d,
 	0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x3a,
-	0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x2f, 0x0a, 0x0f, 0x51, 0x75, 0x6f, 0x74, 0x61,
-	0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69,
-	0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74,
-	0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x28, 0x0a, 0x08, 0x51, 0x75, 0x6f, 0x74,
-	0x61, 0x55, 0x44, 0x46, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02,
-	0x0a, 0x00, 0x22, 0x5c, 0x0a, 0x09, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x46, 0x69, 0x6c, 0x65, 0x12,
-	0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05,
-	0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x03, 0x52, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x69, 0x7a,
-	0x65, 0x5f, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x73,
-	0x69, 0x7a, 0x65, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00,
-	0x22, 0x5c, 0x0a, 0x11, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c,
-	0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x63,
-	0x75, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x02, 0x63, 0x75, 0x12, 0x19, 0x0a, 0x08, 0x63,
-	0x75, 0x5f, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x02, 0x52, 0x07, 0x63,
-	0x75, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x2c,
-	0x0a, 0x0c, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x12, 0x14,
-	0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c,
-	0x69, 0x6d, 0x69, 0x74, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x2c, 0x0a, 0x0c,
-	0x51, 0x75, 0x6f, 0x74, 0x61, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x12, 0x14, 0x0a, 0x05,
+	0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x2c, 0x0a, 0x0c, 0x51, 0x75, 0x6f, 0x74, 0x61,
+	0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x3a, 0x06, 0xca,
+	0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x2f, 0x0a, 0x0f, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x44, 0x61,
+	0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69,
+	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x3a, 0x06,
+	0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x28, 0x0a, 0x08, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x55,
+	0x44, 0x46, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00,
+	0x22, 0x5c, 0x0a, 0x09, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x46, 0x69, 0x6c, 0x65, 0x12, 0x14, 0x0a,
+	0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69,
+	0x6d, 0x69, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x69, 0x7a, 0x65, 0x5f,
+	0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x73, 0x69, 0x7a,
+	0x65, 0x54, 0x6f, 0x74, 0x61, 0x6c, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x5c,
+	0x0a, 0x11, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x46, 0x6c, 0x69, 0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73,
+	0x74, 0x65, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x63, 0x75, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x02, 0x63, 0x75, 0x12, 0x19, 0x0a, 0x08, 0x63, 0x75, 0x5f,
+	0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x02, 0x52, 0x07, 0x63, 0x75, 0x54,
+	0x6f, 0x74, 0x61, 0x6c, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0x2c, 0x0a, 0x0c,
+	0x51, 0x75, 0x6f, 0x74, 0x61, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x12, 0x14, 0x0a, 0x05,
 	0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x6c, 0x69, 0x6d,
 	0x69, 0x74, 0x3a, 0x06, 0xca, 0xb2, 0x04, 0x02, 0x0a, 0x00, 0x22, 0xaf, 0x03, 0x0a, 0x09, 0x55,
 	0x73, 0x65, 0x72, 0x51, 0x75, 0x6f, 0x74, 0x61, 0x12, 0x17, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72,
@@ -644,23 +644,23 @@ var file_proto_types_model_quota_proto_msgTypes = make([]protoimpl.MessageInfo, 
 var file_proto_types_model_quota_proto_goTypes = []interface{}{
 	(*QuotaWorkspace)(nil),    // 0: model.QuotaWorkspace
 	(*QuotaStreamJob)(nil),    // 1: model.QuotaStreamJob
-	(*QuotaDataSource)(nil),   // 2: model.QuotaDataSource
-	(*QuotaUDF)(nil),          // 3: model.QuotaUDF
-	(*QuotaFile)(nil),         // 4: model.QuotaFile
-	(*QuotaFlinkCluster)(nil), // 5: model.QuotaFlinkCluster
-	(*QuotaNetwork)(nil),      // 6: model.QuotaNetwork
-	(*QuotaSyncJob)(nil),      // 7: model.QuotaSyncJob
+	(*QuotaSyncJob)(nil),      // 2: model.QuotaSyncJob
+	(*QuotaDataSource)(nil),   // 3: model.QuotaDataSource
+	(*QuotaUDF)(nil),          // 4: model.QuotaUDF
+	(*QuotaFile)(nil),         // 5: model.QuotaFile
+	(*QuotaFlinkCluster)(nil), // 6: model.QuotaFlinkCluster
+	(*QuotaNetwork)(nil),      // 7: model.QuotaNetwork
 	(*UserQuota)(nil),         // 8: model.UserQuota
 }
 var file_proto_types_model_quota_proto_depIdxs = []int32{
 	0, // 0: model.UserQuota.workspace:type_name -> model.QuotaWorkspace
 	1, // 1: model.UserQuota.stream_job:type_name -> model.QuotaStreamJob
-	2, // 2: model.UserQuota.data_source:type_name -> model.QuotaDataSource
-	3, // 3: model.UserQuota.udf:type_name -> model.QuotaUDF
-	4, // 4: model.UserQuota.file:type_name -> model.QuotaFile
-	5, // 5: model.UserQuota.flink_cluster:type_name -> model.QuotaFlinkCluster
-	6, // 6: model.UserQuota.network:type_name -> model.QuotaNetwork
-	7, // 7: model.UserQuota.sync_job:type_name -> model.QuotaSyncJob
+	3, // 2: model.UserQuota.data_source:type_name -> model.QuotaDataSource
+	4, // 3: model.UserQuota.udf:type_name -> model.QuotaUDF
+	5, // 4: model.UserQuota.file:type_name -> model.QuotaFile
+	6, // 5: model.UserQuota.flink_cluster:type_name -> model.QuotaFlinkCluster
+	7, // 6: model.UserQuota.network:type_name -> model.QuotaNetwork
+	2, // 7: model.UserQuota.sync_job:type_name -> model.QuotaSyncJob
 	8, // [8:8] is the sub-list for method output_type
 	8, // [8:8] is the sub-list for method input_type
 	8, // [8:8] is the sub-list for extension type_name
@@ -699,7 +699,7 @@ func file_proto_types_model_quota_proto_init() {
 			}
 		}
 		file_proto_types_model_quota_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QuotaDataSource); i {
+			switch v := v.(*QuotaSyncJob); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -711,7 +711,7 @@ func file_proto_types_model_quota_proto_init() {
 			}
 		}
 		file_proto_types_model_quota_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QuotaUDF); i {
+			switch v := v.(*QuotaDataSource); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -723,7 +723,7 @@ func file_proto_types_model_quota_proto_init() {
 			}
 		}
 		file_proto_types_model_quota_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QuotaFile); i {
+			switch v := v.(*QuotaUDF); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -735,7 +735,7 @@ func file_proto_types_model_quota_proto_init() {
 			}
 		}
 		file_proto_types_model_quota_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QuotaFlinkCluster); i {
+			switch v := v.(*QuotaFile); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -747,7 +747,7 @@ func file_proto_types_model_quota_proto_init() {
 			}
 		}
 		file_proto_types_model_quota_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QuotaNetwork); i {
+			switch v := v.(*QuotaFlinkCluster); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -759,7 +759,7 @@ func file_proto_types_model_quota_proto_init() {
 			}
 		}
 		file_proto_types_model_quota_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QuotaSyncJob); i {
+			switch v := v.(*QuotaNetwork); i {
 			case 0:
 				return &v.state
 			case 1:

@@ -25,6 +25,14 @@ func (this *QuotaStreamJob) SetDefaults() {
 	return
 }
 
+// Set default value for message model.QuotaSyncJob
+func (this *QuotaSyncJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.QuotaDataSource
 func (this *QuotaDataSource) SetDefaults() {
 	if this == nil {
@@ -59,14 +67,6 @@ func (this *QuotaFlinkCluster) SetDefaults() {
 
 // Set default value for message model.QuotaNetwork
 func (this *QuotaNetwork) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.QuotaSyncJob
-func (this *QuotaSyncJob) SetDefaults() {
 	if this == nil {
 		return
 	}

@@ -25,6 +25,14 @@ func (this *QuotaStreamJob) Validate() error {
 	return nil
 }
 
+// Set default value for message model.QuotaSyncJob
+func (this *QuotaSyncJob) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 // Set default value for message model.QuotaDataSource
 func (this *QuotaDataSource) Validate() error {
 	if this == nil {
@@ -59,14 +67,6 @@ func (this *QuotaFlinkCluster) Validate() error {
 
 // Set default value for message model.QuotaNetwork
 func (this *QuotaNetwork) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
-// Set default value for message model.QuotaSyncJob
-func (this *QuotaSyncJob) Validate() error {
 	if this == nil {
 		return nil
 	}
