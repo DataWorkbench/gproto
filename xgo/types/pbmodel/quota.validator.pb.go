@@ -65,6 +65,14 @@ func (this *QuotaNetwork) Validate() error {
 	return nil
 }
 
+// Set default value for message model.QuotaSyncJob
+func (this *QuotaSyncJob) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 func (this *UserQuota) _xxx_xxx_Validator_Validate_workspace() error {
 	if dt, ok := interface{}(this.Workspace).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -128,6 +136,15 @@ func (this *UserQuota) _xxx_xxx_Validator_Validate_network() error {
 	return nil
 }
 
+func (this *UserQuota) _xxx_xxx_Validator_Validate_sync_job() error {
+	if dt, ok := interface{}(this.SyncJob).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.UserQuota
 func (this *UserQuota) Validate() error {
 	if this == nil {
@@ -152,6 +169,9 @@ func (this *UserQuota) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_network(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sync_job(); err != nil {
 		return err
 	}
 	return nil

@@ -26,18 +26,25 @@ public final class PBSvcScheduler {
       "\n\'proto/service/scheduler/scheduler.prot" +
       "o\022\tscheduler\032\035proto/types/model/empty.pr" +
       "oto\032#proto/types/request/scheduler.proto" +
-      "2\273\002\n\tScheduler\022A\n\017SubmitStreamJob\022\030.requ" +
+      "2\333\004\n\tScheduler\022A\n\017SubmitStreamJob\022\030.requ" +
       "est.SubmitStreamJob\032\022.model.EmptyStruct\"" +
       "\000\022=\n\rStopStreamJob\022\026.request.StopStreamJ" +
       "ob\032\022.model.EmptyStruct\"\000\022W\n\032DeleteStream" +
       "JobsBySpaceIds\022#.request.DeleteStreamJob" +
       "sBySpaceIds\032\022.model.EmptyStruct\"\000\022S\n\030Del" +
       "eteStreamJobsByJobIds\022!.request.DeleteSt" +
-      "reamJobsByJobIds\032\022.model.EmptyStruct\"\000B{" +
-      "\n+com.dataomnis.gproto.service.pbsvcsche" +
-      "dulerB\016PBSvcSchedulerP\000Z:github.com/Data" +
-      "Workbench/gproto/xgo/service/pbsvcschedu" +
-      "lerb\006proto3"
+      "reamJobsByJobIds\032\022.model.EmptyStruct\"\000\022=" +
+      "\n\rSubmitSyncJob\022\026.request.SubmitSyncJob\032" +
+      "\022.model.EmptyStruct\"\000\0229\n\013StopSyncJob\022\024.r" +
+      "equest.StopSyncJob\032\022.model.EmptyStruct\"\000" +
+      "\022S\n\030DeleteSyncJobsBySpaceIds\022!.request.D" +
+      "eleteSyncJobsBySpaceIds\032\022.model.EmptyStr" +
+      "uct\"\000\022O\n\026DeleteSyncJobsByJobIds\022\037.reques" +
+      "t.DeleteSyncJobsByJobIds\032\022.model.EmptySt" +
+      "ruct\"\000B{\n+com.dataomnis.gproto.service.p" +
+      "bsvcschedulerB\016PBSvcSchedulerP\000Z:github." +
+      "com/DataWorkbench/gproto/xgo/service/pbs" +
+      "vcschedulerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

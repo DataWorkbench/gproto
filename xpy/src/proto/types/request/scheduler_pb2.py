@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import stream_job_pb2 as proto_dot_types_dot_model_dot_stream__job__pb2
+from proto.types.model import sync_job_pb2 as proto_dot_types_dot_model_dot_sync__job__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\022PBRequestSchedulerP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/types/request/scheduler.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\"f\n\x0fSubmitStreamJob\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"w\n\rStopStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"I\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"l\n\x18\x44\x65leteStreamJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-Bq\n$com.dataomnis.gproto.types.pbrequestB\x12PBRequestSchedulerP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n#proto/types/request/scheduler.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/stream_job.proto\x1a proto/types/model/sync_job.proto\"f\n\x0fSubmitStreamJob\x12\x37\n\x08property\x18\x01 \x01(\x0b\x32\x18.model.StreamJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"w\n\rStopStreamJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"I\n\x1a\x44\x65leteStreamJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"l\n\x18\x44\x65leteStreamJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\"b\n\rSubmitSyncJob\x12\x35\n\x08property\x18\x01 \x01(\x0b\x32\x16.model.SyncJobPropertyB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x1a\n\x0cstop_running\x18\x02 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"u\n\x0bStopSyncJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06job_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-\x12\x1a\n\x0cstop_running\x18\x03 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"G\n\x18\x44\x65leteSyncJobsBySpaceIds\x12+\n\tspace_ids\x18\x01 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"j\n\x16\x44\x65leteSyncJobsByJobIds\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12)\n\x07job_ids\x18\x02 \x03(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xea\x01\x0fZ\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04stj-Bq\n$com.dataomnis.gproto.types.pbrequestB\x12PBRequestSchedulerP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_stream__job__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_sync__job__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _SUBMITSTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=137,
-  serialized_end=239,
+  serialized_start=171,
+  serialized_end=273,
 )
 
 
@@ -108,8 +109,8 @@ _STOPSTREAMJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=241,
-  serialized_end=360,
+  serialized_start=275,
+  serialized_end=394,
 )
 
 
@@ -140,8 +141,8 @@ _DELETESTREAMJOBSBYSPACEIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=362,
-  serialized_end=435,
+  serialized_start=396,
+  serialized_end=469,
 )
 
 
@@ -179,15 +180,176 @@ _DELETESTREAMJOBSBYJOBIDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=437,
-  serialized_end=545,
+  serialized_start=471,
+  serialized_end=579,
+)
+
+
+_SUBMITSYNCJOB = _descriptor.Descriptor(
+  name='SubmitSyncJob',
+  full_name='request.SubmitSyncJob',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='property', full_name='request.SubmitSyncJob.property', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\342\001\002\020\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stop_running', full_name='request.SubmitSyncJob.stop_running', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=581,
+  serialized_end=679,
+)
+
+
+_STOPSYNCJOB = _descriptor.Descriptor(
+  name='StopSyncJob',
+  full_name='request.StopSyncJob',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.StopSyncJob.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='request.StopSyncJob.job_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stop_running', full_name='request.StopSyncJob.stop_running', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=681,
+  serialized_end=798,
+)
+
+
+_DELETESYNCJOBSBYSPACEIDS = _descriptor.Descriptor(
+  name='DeleteSyncJobsBySpaceIds',
+  full_name='request.DeleteSyncJobsBySpaceIds',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_ids', full_name='request.DeleteSyncJobsBySpaceIds.space_ids', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=800,
+  serialized_end=871,
+)
+
+
+_DELETESYNCJOBSBYJOBIDS = _descriptor.Descriptor(
+  name='DeleteSyncJobsByJobIds',
+  full_name='request.DeleteSyncJobsByJobIds',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.DeleteSyncJobsByJobIds.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_ids', full_name='request.DeleteSyncJobsByJobIds.job_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\024\022\022\352\001\017Z\r\302\001\n\360\001\024\312\002\004stj-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=873,
+  serialized_end=979,
 )
 
 _SUBMITSTREAMJOB.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_stream__job__pb2._STREAMJOBPROPERTY
+_SUBMITSYNCJOB.fields_by_name['property'].message_type = proto_dot_types_dot_model_dot_sync__job__pb2._SYNCJOBPROPERTY
 DESCRIPTOR.message_types_by_name['SubmitStreamJob'] = _SUBMITSTREAMJOB
 DESCRIPTOR.message_types_by_name['StopStreamJob'] = _STOPSTREAMJOB
 DESCRIPTOR.message_types_by_name['DeleteStreamJobsBySpaceIds'] = _DELETESTREAMJOBSBYSPACEIDS
 DESCRIPTOR.message_types_by_name['DeleteStreamJobsByJobIds'] = _DELETESTREAMJOBSBYJOBIDS
+DESCRIPTOR.message_types_by_name['SubmitSyncJob'] = _SUBMITSYNCJOB
+DESCRIPTOR.message_types_by_name['StopSyncJob'] = _STOPSYNCJOB
+DESCRIPTOR.message_types_by_name['DeleteSyncJobsBySpaceIds'] = _DELETESYNCJOBSBYSPACEIDS
+DESCRIPTOR.message_types_by_name['DeleteSyncJobsByJobIds'] = _DELETESYNCJOBSBYJOBIDS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SubmitStreamJob = _reflection.GeneratedProtocolMessageType('SubmitStreamJob', (_message.Message,), {
@@ -218,6 +380,34 @@ DeleteStreamJobsByJobIds = _reflection.GeneratedProtocolMessageType('DeleteStrea
   })
 _sym_db.RegisterMessage(DeleteStreamJobsByJobIds)
 
+SubmitSyncJob = _reflection.GeneratedProtocolMessageType('SubmitSyncJob', (_message.Message,), {
+  'DESCRIPTOR' : _SUBMITSYNCJOB,
+  '__module__' : 'proto.types.request.scheduler_pb2'
+  # @@protoc_insertion_point(class_scope:request.SubmitSyncJob)
+  })
+_sym_db.RegisterMessage(SubmitSyncJob)
+
+StopSyncJob = _reflection.GeneratedProtocolMessageType('StopSyncJob', (_message.Message,), {
+  'DESCRIPTOR' : _STOPSYNCJOB,
+  '__module__' : 'proto.types.request.scheduler_pb2'
+  # @@protoc_insertion_point(class_scope:request.StopSyncJob)
+  })
+_sym_db.RegisterMessage(StopSyncJob)
+
+DeleteSyncJobsBySpaceIds = _reflection.GeneratedProtocolMessageType('DeleteSyncJobsBySpaceIds', (_message.Message,), {
+  'DESCRIPTOR' : _DELETESYNCJOBSBYSPACEIDS,
+  '__module__' : 'proto.types.request.scheduler_pb2'
+  # @@protoc_insertion_point(class_scope:request.DeleteSyncJobsBySpaceIds)
+  })
+_sym_db.RegisterMessage(DeleteSyncJobsBySpaceIds)
+
+DeleteSyncJobsByJobIds = _reflection.GeneratedProtocolMessageType('DeleteSyncJobsByJobIds', (_message.Message,), {
+  'DESCRIPTOR' : _DELETESYNCJOBSBYJOBIDS,
+  '__module__' : 'proto.types.request.scheduler_pb2'
+  # @@protoc_insertion_point(class_scope:request.DeleteSyncJobsByJobIds)
+  })
+_sym_db.RegisterMessage(DeleteSyncJobsByJobIds)
+
 
 DESCRIPTOR._options = None
 _SUBMITSTREAMJOB.fields_by_name['property']._options = None
@@ -228,4 +418,12 @@ _STOPSTREAMJOB.fields_by_name['stop_running']._options = None
 _DELETESTREAMJOBSBYSPACEIDS.fields_by_name['space_ids']._options = None
 _DELETESTREAMJOBSBYJOBIDS.fields_by_name['space_id']._options = None
 _DELETESTREAMJOBSBYJOBIDS.fields_by_name['job_ids']._options = None
+_SUBMITSYNCJOB.fields_by_name['property']._options = None
+_SUBMITSYNCJOB.fields_by_name['stop_running']._options = None
+_STOPSYNCJOB.fields_by_name['space_id']._options = None
+_STOPSYNCJOB.fields_by_name['job_id']._options = None
+_STOPSYNCJOB.fields_by_name['stop_running']._options = None
+_DELETESYNCJOBSBYSPACEIDS.fields_by_name['space_ids']._options = None
+_DELETESYNCJOBSBYJOBIDS.fields_by_name['space_id']._options = None
+_DELETESYNCJOBSBYJOBIDS.fields_by_name['job_ids']._options = None
 # @@protoc_insertion_point(module_scope)

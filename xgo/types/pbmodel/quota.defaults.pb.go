@@ -65,6 +65,14 @@ func (this *QuotaNetwork) SetDefaults() {
 	return
 }
 
+// Set default value for message model.QuotaSyncJob
+func (this *QuotaSyncJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.UserQuota
 func (this *UserQuota) SetDefaults() {
 	if this == nil {
@@ -102,6 +110,11 @@ func (this *UserQuota) SetDefaults() {
 	}
 	if this.Network != nil {
 		if dt, ok := interface{}(this.Network).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.SyncJob != nil {
+		if dt, ok := interface{}(this.SyncJob).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
