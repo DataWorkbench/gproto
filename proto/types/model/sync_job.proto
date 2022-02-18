@@ -38,52 +38,52 @@ message SyncJob {
     // @inject_tag: json:"pid" gorm:"column:pid;"
     string pid = 2 [
     (validator.field).check_if = { field: "pid", tags: { string: { ne: "" } } },
-(validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
-];
+    (validator.field).tags.string = { byte_len_eq: 20; prefix: "stj-" }
+    ];
 
-// Job ID, unique within a region.
-// @inject_tag: json:"id" gorm:"column:id;primarykey;"
-string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    // Job ID, unique within a region.
+    // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+    string id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
 
-// The job version id, only used for Published job.
-// Only used in published job.
-// @inject_tag: json:"version" gorm:"column:version;primarykey;"
-string version = 4 [(validator.field).tags.string = { byte_len_eq: 16 }];
+    // The job version id, only used for Published job.
+    // Only used in published job.
+    // @inject_tag: json:"version" gorm:"column:version;primarykey;"
+    string version = 4 [(validator.field).tags.string = { byte_len_eq: 16 }];
 
-// Job Name, Unique within a workspace.
-// @inject_tag: json:"name" gorm:"column:name;"
-string name = 5 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+    // Job Name, Unique within a workspace.
+    // @inject_tag: json:"name" gorm:"column:name;"
+    string name = 5 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
 
-// Job Description.
-// @inject_tag: json:"desc" gorm:"column:desc;"
-string desc = 6 [(validator.field).tags.string = { char_len_lte: 1024 } ];
+    // Job Description.
+    // @inject_tag: json:"desc" gorm:"column:desc;"
+    string desc = 6 [(validator.field).tags.string = { char_len_lte: 1024 } ];
 
-// IsDirectory represents this job whether a directory.
-// @inject_tag: json:"is_directory" gorm:"column:is_directory;"
-bool is_directory = 7;
+    // IsDirectory represents this job whether a directory.
+    // @inject_tag: json:"is_directory" gorm:"column:is_directory;"
+    bool is_directory = 7;
 
-// Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
-// @inject_tag: json:"type" gorm:"column:type;"
-Type type = 8 [
-(validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
-(validator.field).tags.enum = { gt: 0; in_enums: true  }
-];
+    // Job type. 1 => "StreamOperator" 2 => "StreamSQL" 3 => "StreamJAR" 4 => "StreamPython" 5 => "StreamScala"
+    // @inject_tag: json:"type" gorm:"column:type;"
+    Type type = 8 [
+    (validator.field).check_if = { field: "is_directory", tags: { bool: { eq: false } } },
+    (validator.field).tags.enum = { gt: 0; in_enums: true  }
+    ];
 
-// Job status, 1 => "Deleted", 2 => "Enabled".
-// @inject_tag: json:"status" gorm:"column:status;"
-Status status = 9 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
+    // Job status, 1 => "Deleted", 2 => "Enabled".
+    // @inject_tag: json:"status" gorm:"column:status;"
+    Status status = 9 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
 
-// The user-id of created this job.
-// @inject_tag: json:"created_by" gorm:"column:created_by;"
-string created_by = 10 [(validator.field).tags.string = { byte_len_lte: 64 }];
+    // The user-id of created this job.
+    // @inject_tag: json:"created_by" gorm:"column:created_by;"
+    string created_by = 10 [(validator.field).tags.string = { byte_len_lte: 64 }];
 
-// Timestamp of create time.
-// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-int64 created = 11 [(validator.field).tags.int = { gt: 0 }];
+    // Timestamp of create time.
+    // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+    int64 created = 11 [(validator.field).tags.int = { gt: 0 }];
 
-// Timestamp of update time.
-// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-int64 updated = 12 [(validator.field).tags.int = { gt: 0 }];
+    // Timestamp of update time.
+    // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+    int64 updated = 12 [(validator.field).tags.int = { gt: 0 }];
 }
 
 // SyncJobProperty represents property of job.
@@ -94,7 +94,7 @@ message SyncJobProperty {
 
     // Job Id, unique within a region.
     // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-    string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
     // The release version.
     // @inject_tag: json:"version" gorm:"column:version;primarykey"
@@ -117,95 +117,95 @@ message SyncJobArgs {
     // @inject_tag: json:"source_id"
     string source_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
 
-// target_id is datasource id
-// @inject_tag: json:"target_id"
-string target_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+    // target_id is datasource id
+    // @inject_tag: json:"target_id"
+    string target_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
 
-// The job name in each workspace is unique. Is required, Max Length 128.
-// And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
-// @inject_tag: json:"name"
-int32 parallelism = 3 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+    // The job name in each workspace is unique. Is required, Max Length 128.
+    // And the valid characters include a ~ z, 0 ~ 9 and "_"; And cannot use "_" begging or end.
+    // @inject_tag: json:"name"
+    int32 parallelism = 3 [ (defaults.field).basic = "1", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
-// Description of the job, Not required, Max length 1024.
-// @inject_tag: json:"desc"
-int32 percentage = 4 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0, lte: 100 } ];
-// Description of the job, Not required, Max length 1024.
-// @inject_tag: json:"record_num"
-int32 record_num = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
-// bytes
-// @inject_tag: json:"bytes"
-int32 bytes = 6 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
-// 0:guide mode,1:shell mode
-// @inject_tag: json:"job_mode"
-int32 job_mode = 7 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0,lte: 1 } ];
-// shell mode json
-// @inject_tag: json:"job_content"
-string job_content = 8;
-// Relationaldb source
-// @inject_tag: json:"relationaldb_source"
-RelationaldbSource relationaldb_source = 9;
-// Relationaldb target
-// @inject_tag: json:"relationaldb_target"
-RelationaldbTarget relationaldb_target = 10;
-// mongodb target
-// @inject_tag: json:"mongodb_source"
-MongodbSource mongodb_source = 11;
-// mongodb target
-// @inject_tag: json:"mongodb_target"
-MongodbTarget mongodb_target = 12;
+    // Description of the job, Not required, Max length 1024.
+    // @inject_tag: json:"desc"
+    int32 percentage = 4 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+    // Description of the job, Not required, Max length 1024.
+    // @inject_tag: json:"record_num"
+    int32 record_num = 5 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
+    // bytes
+    // @inject_tag: json:"bytes"
+    int32 bytes = 6 [ (defaults.field).basic = "0", (validator.field).tags.int = { gt: 0 } ];
+    // 0:guide mode,1:shell mode
+    // @inject_tag: json:"job_mode"
+    int32 job_mode = 7 [ (defaults.field).basic = "0", (validator.field).tags.int = { gte: 0,lte: 1 } ];
+    // shell mode json
+    // @inject_tag: json:"job_content"
+    string job_content = 8;
+    // Relationaldb source
+    // @inject_tag: json:"relationaldb_source"
+    RelationaldbSource relationaldb_source = 9;
+    // Relationaldb target
+    // @inject_tag: json:"relationaldb_target"
+    RelationaldbTarget relationaldb_target = 10;
+    // mongodb target
+    // @inject_tag: json:"mongodb_source"
+    MongodbSource mongodb_source = 11;
+    // mongodb target
+    // @inject_tag: json:"mongodb_target"
+    MongodbTarget mongodb_target = 12;
 
-// elasticsearch source
-// @inject_tag: json:"elasticsearch_source"
-ElasticSearchSource elasticsearch_source = 13;
-// elasticsearch target
-// @inject_tag: json:"elasticsearch_target"
-ElasticSearchTarget elasticsearch_target = 14;
+    // elasticsearch source
+    // @inject_tag: json:"elasticsearch_source"
+    ElasticSearchSource elasticsearch_source = 13;
+    // elasticsearch target
+    // @inject_tag: json:"elasticsearch_target"
+    ElasticSearchTarget elasticsearch_target = 14;
 
-// hdfs source
-// @inject_tag: json:"hdfs_source"
-HdfsSource hdfs_source = 15;
-// hdfs source
-// @inject_tag: json:"hdfs_target"
-HdfsTarget hdfs_target = 16;
-// ftp source
-// @inject_tag: json:"ftp_source"
-FtpSource ftp_source = 17;
-// ftp target
-// @inject_tag: json:"ftp_target"
-FtpTarget ftp_target = 18;
+    // hdfs source
+    // @inject_tag: json:"hdfs_source"
+    HdfsSource hdfs_source = 15;
+    // hdfs source
+    // @inject_tag: json:"hdfs_target"
+    HdfsTarget hdfs_target = 16;
+    // ftp source
+    // @inject_tag: json:"ftp_source"
+    FtpSource ftp_source = 17;
+    // ftp target
+    // @inject_tag: json:"ftp_target"
+    FtpTarget ftp_target = 18;
 
-// hbase source
-// @inject_tag: json:"hbase_source"
-HbaseSource hbase_source = 19;
-// hbase target
-// @inject_tag: json:"hbase_target"
-HbaseTarget hbase_target = 20;
+    // hbase source
+    // @inject_tag: json:"hbase_source"
+    HbaseSource hbase_source = 19;
+    // hbase target
+    // @inject_tag: json:"hbase_target"
+    HbaseTarget hbase_target = 20;
 
-// kafka target
-// @inject_tag: json:"kafka_source"
-KafkaSource kafka_source = 21;
-// kafka target
-// @inject_tag: json:"kafka_target"
-KafkaTarget kafka_target = 22;
+    // kafka target
+    // @inject_tag: json:"kafka_source"
+    KafkaSource kafka_source = 21;
+    // kafka target
+    // @inject_tag: json:"kafka_target"
+    KafkaTarget kafka_target = 22;
 
-// binlog source
-// @inject_tag: json:"binlog_source"
-BinlogSource binlog_source = 23;
-// pgwal source
-// @inject_tag: json:"pgwal_source"
-PgwalSource pgwal_source = 24;
-// sqlservercdc source
-// @inject_tag: json:"sqlservercdc_source"
-SqlServerCdcSource sqlservercdc_source = 25;
-// logminer source
-// @inject_tag: json:"logminer_source"
-LogminerSource logminer_source = 26;
-// redis target
-// @inject_tag: json:"redis_target"
-RedisTarget redis_target = 27;
-// hive target
-// @inject_tag: json:"hive_target"
-HiveTarget hive_target = 28;
+    // binlog source
+    // @inject_tag: json:"binlog_source"
+    BinlogSource binlog_source = 23;
+    // pgwal source
+    // @inject_tag: json:"pgwal_source"
+    PgwalSource pgwal_source = 24;
+    // sqlservercdc source
+    // @inject_tag: json:"sqlservercdc_source"
+    SqlServerCdcSource sqlservercdc_source = 25;
+    // logminer source
+    // @inject_tag: json:"logminer_source"
+    LogminerSource logminer_source = 26;
+    // redis target
+    // @inject_tag: json:"redis_target"
+    RedisTarget redis_target = 27;
+    // hive target
+    // @inject_tag: json:"hive_target"
+    HiveTarget hive_target = 28;
 }
 
 // SyncJobSchedule represents a job schedule info.
@@ -238,80 +238,80 @@ message SyncJobSchedule {
     // @inject_tag: json:"schedule_policy"
     SchedulePolicy schedule_policy = 1 [ (validator.field).tags.enum = { gt: 0, in_enums: true  } ];
 
-// Timestamp of execute time for once. unit in seconds.
-// Not required, default the time of created job.
-// @inject_tag: json:"executed" default:"0" binding:"gte=0"
-int64 executed = 2 [
-(validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 2 } } },
-(validator.field).tags.int = { gte: 31507200 }
-];
+    // Timestamp of execute time for once. unit in seconds.
+    // Not required, default the time of created job.
+    // @inject_tag: json:"executed" default:"0" binding:"gte=0"
+    int64 executed = 2 [
+    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.int = { gte: 31507200 }
+    ];
 
-//  // Whether execute immediately the job after release.
-//  // Not required, default False. If immediately is True, the field executed will be ignore.
-//  // @inject_tag: json:"immediately" binding:"-"
-//  bool immediately = 3;
+    //  // Whether execute immediately the job after release.
+    //  // Not required, default False. If immediately is True, the field executed will be ignore.
+    //  // @inject_tag: json:"immediately" binding:"-"
+    //  bool immediately = 3;
 
-// ------ Period Options ------
-//
-// Timestamp of start time of the validity period, unit in seconds.
-// Not required, default 31507200(1971-01-01 00:00:00), means no limit.
-// @inject_tag: json:"started"
-int64 started = 4 [(validator.field).tags.int = { gte: 0 }];
+    // ------ Period Options ------
+    //
+    // Timestamp of start time of the validity period, unit in seconds.
+    // Not required, default 31507200(1971-01-01 00:00:00), means no limit.
+    // @inject_tag: json:"started"
+    int64 started = 4 [(validator.field).tags.int = { gte: 0 }];
 
-// Timestamp of end time of the validity period, unit in seconds.
-// Not required, default 31588502400(2971-01-01 00:00:00), means no limit.
-// @inject_tag: json:"ended"
-int64 ended = 5 [(validator.field).tags.int = { gte: 0 }];
+    // Timestamp of end time of the validity period, unit in seconds.
+    // Not required, default 31588502400(2971-01-01 00:00:00), means no limit.
+    // @inject_tag: json:"ended"
+    int64 ended = 5 [(validator.field).tags.int = { gte: 0 }];
 
-// Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace". Is required .
-// - allow: Multiple task instances are allowed at the same time.
-// - forbid: No new instances will be created, and this schedule cycle will be skipped,
-// - replace: Force stop the old running instances and create new.
-// @inject_tag: json:"concurrency_policy"
-ConcurrencyPolicy concurrency_policy = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+    // Concurrency policy. 1 => "allow", 2 => "forbid", 3 => "replace". Is required .
+    // - allow: Multiple task instances are allowed at the same time.
+    // - forbid: No new instances will be created, and this schedule cycle will be skipped,
+    // - replace: Force stop the old running instances and create new.
+    // @inject_tag: json:"concurrency_policy"
+    ConcurrencyPolicy concurrency_policy = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-// Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
-// Is required with with schedule_policy = 1.
-// @inject_tag: json:"period_type"
-string period_type = 7 [
-(validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
-(validator.field).tags.string = { in: ["minute", "hour", "day", "week", "month", "year"] }
-];
+    // Schedule period type. Is required. Optional value: "minute" | "hour" | "day" | "week" | "month" | "year"
+    // Is required with with schedule_policy = 1.
+    // @inject_tag: json:"period_type"
+    string period_type = 7 [
+    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
+    (validator.field).tags.string = { in: ["minute", "hour", "day", "week", "month", "year"] }
+    ];
 
-// Crontab Express. Is required with schedule_policy == 1
-// @inject_tag: json:"express" default:"" binding:"-"
-string express = 8 [
-(validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
-(validator.field).tags.string = { unix_cron: true }
-];
+    // Crontab Express. Is required with schedule_policy == 1
+    // @inject_tag: json:"express" default:"" binding:"-"
+    string express = 8 [
+    (validator.field).check_if = { field: "schedule_policy", tags: { enum: { eq: 1} } },
+    (validator.field).tags.string = { unix_cron: true }
+    ];
 
-// ------ Advanced (Retry) options ------
-//
-// Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 100 min.
-// @inject_tag: json:"timeout"
-int32 timeout = 9 [(validator.field).tags.int = {gte: 0, lte: 100}];
+    // ------ Advanced (Retry) options ------
+    //
+    // Timeout for task execution. Default 0 and means never timeout, unit minutes, Max 100 min.
+    // @inject_tag: json:"timeout"
+    int32 timeout = 9 [(validator.field).tags.int = {gte: 0, lte: 100}];
 
-// Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
-// Is required.
-// @inject_tag: json:"retry_policy"
-RetryPolicy retry_policy = 10 [
-(validator.field).tags.enum = { gt: 0; in_enums: true  }
-];
+    // Retry policy when task failed. 1 => "not retry" 2 => "auto retry".
+    // Is required.
+    // @inject_tag: json:"retry_policy"
+    RetryPolicy retry_policy = 10 [
+    (validator.field).tags.enum = { gt: 0; in_enums: true  }
+    ];
 
-// Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
-// @inject_tag: json:"retry_limit"
-int32 retry_limit = 11 [
-(validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2 } } },
-(validator.field).tags.int = { gte: 0, lte: 100}
-];
+    // Max retries when task instances failed. Is required with retry_policy = 2, Min 1, Max 99.
+    // @inject_tag: json:"retry_limit"
+    int32 retry_limit = 11 [
+    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.int = { gte: 0, lte: 100}
+    ];
 
-// Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
-// @inject_tag: json:"retry_interval"
-int32 retry_interval = 12 [
-(validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
-(validator.field).tags.int = { gte: 1, lte: 30 }
-];
-}
+    // Retry interval, unit is minutes. Is required with retry_policy = 2, Min 1, Max 30.
+    // @inject_tag: json:"retry_interval"
+    int32 retry_interval = 12 [
+    (validator.field).check_if = { field: "retry_policy", tags: { enum: { eq: 2} } },
+    (validator.field).tags.int = { gte: 1, lte: 30 }
+    ];
+    }
 
 // The release stream job info.
 message SyncJobRelease {
@@ -342,25 +342,25 @@ message SyncJobRelease {
     // @inject_tag: json:"type" gorm:"column:type;"
     SyncJob.Type type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-// Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
-// @inject_tag: json:"status" gorm:"column:status;"
-Status status = 6 ;
+    // Release status, 1 => "Active", 2 => "Suspended", 3 => "Deleted",
+    // @inject_tag: json:"status" gorm:"column:status;"
+    Status status = 6 ;
 
-// Job release description.
-// @inject_tag: json:"desc" gorm:"column:desc;"
-string desc = 7 ;
+    // Job release description.
+    // @inject_tag: json:"desc" gorm:"column:desc;"
+    string desc = 7 ;
 
-// The user-id of release this job.
-// @inject_tag: json:"created_by" gorm:"column:created_by;"
-string created_by = 8 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+    // The user-id of release this job.
+    // @inject_tag: json:"created_by" gorm:"column:created_by;"
+    string created_by = 8 [ (validator.field).tags.string = { byte_len_lte: 64} ];
 
-// Timestamp of create time.
-// @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+    // Timestamp of create time.
+    // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+    int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
 
-// Timestamp of update time.
-// @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
+    // Timestamp of update time.
+    // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+    int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
 }
 
 message RelationaldbSource {

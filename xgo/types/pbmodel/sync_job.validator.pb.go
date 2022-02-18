@@ -188,8 +188,8 @@ func (this *SyncJobProperty) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("SyncJobProperty", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
-	if !(strings.HasPrefix(this.Id, "stj-")) {
-		return protovalidator.FieldError1("SyncJobProperty", "the value of field 'id' must start with string 'stj-'", this.Id)
+	if !(strings.HasPrefix(this.Id, "syj-")) {
+		return protovalidator.FieldError1("SyncJobProperty", "the value of field 'id' must start with string 'syj-'", this.Id)
 	}
 	return nil
 }

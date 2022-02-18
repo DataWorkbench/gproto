@@ -13,6 +13,7 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/stream_job.proto";
+import "proto/types/model/sync_job.proto";
 
 // SubmitStreamJobs used as a request parameters for RPC.
 message SubmitStreamJob {
@@ -36,6 +37,35 @@ message DeleteStreamJobsBySpaceIds {
 }
 
 message DeleteStreamJobsByJobIds {
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The list of stream job id.
+  repeated string job_ids = 2 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "stj-" } } } ];
+}
+
+
+// SubmitSyncJobs used as a request parameters for RPC.
+message SubmitSyncJob {
+  model.SyncJobProperty property = 1 [(validator.field).tags.message = { not_null: true }];
+
+  bool stop_running = 2 [(validator.field) = {}];
+}
+
+// SubmitSyncJobs used as a request parameters for RPC.
+message StopSyncJob {
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  string job_id = 2 [ (validator.field).tags.string = {  byte_len_eq: 20; prefix: "stj-" } ];
+
+  bool stop_running = 3 [(validator.field) = {}];
+}
+
+message DeleteSyncJobsBySpaceIds {
+  // The list of workspace id.
+  repeated string space_ids = 1 [ (validator.field).tags.repeated = { item: { string: { byte_len_eq: 20; prefix: "wks-" } } } ];
+}
+
+message DeleteSyncJobsByJobIds {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
   // The list of stream job id.

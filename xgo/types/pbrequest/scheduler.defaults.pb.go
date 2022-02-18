@@ -46,3 +46,40 @@ func (this *DeleteStreamJobsByJobIds) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.SubmitSyncJob
+func (this *SubmitSyncJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Property != nil {
+		if dt, ok := interface{}(this.Property).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message request.StopSyncJob
+func (this *StopSyncJob) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteSyncJobsBySpaceIds
+func (this *DeleteSyncJobsBySpaceIds) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DeleteSyncJobsByJobIds
+func (this *DeleteSyncJobsByJobIds) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

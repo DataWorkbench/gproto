@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelSyncInstance";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+
+// The instance info of stream job.
+message SyncInstance {
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Enabled = 2;
+  }
+
+  enum State {
+    StateUnset = 0;
+    Pending = 1;
+    Running = 2;
+    Retrying = 3;
+    Suspended = 4;
+    Terminated = 5;
+    Succeed = 6;
+    Timeout = 7;
+    Failed = 8;
+  }
+
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // Job ID it belongs to.
+  // @inject_tag: json:"job_id" gorm:"column:job_id;"
+  string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+
+  // The release version.
+  // @inject_tag: json:"version" gorm:"column:version;
+  string version = 3 [(validator.field).tags.string = { byte_len_eq: 16 }];
+
+  // Job instance ID, unique.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "sti-" } ];
+
+  // The instance state.
+  // @inject_tag: json:"state" gorm:"column:state;"
+  State state = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Release status, 1 => "Deleted", 2 => "Enabled "
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Message is the error message when task execute failed.
+  // @inject_tag: json:"message" gorm:"column:message;"
+  string message = 7;
+
+  // NoteId is the zeppelin notebook id
+  // @inject_tag: json:"note_id" gorm:"column:note_id;"
+  string note_id = 10;
+
+  // ParagraphId is the zeppelin paragraph id where in notebook.
+  // @inject_tag: json:"paragraph_id" gorm:"column:paragraph_id;"
+  string paragraph_id = 11;
+
+  // FlinkId is the job id in flink.
+  // @inject_tag: json:"flink_id" gorm:"column:flink_id;"
+  string flink_id = 12;
+
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 8 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 9 [ (validator.field).tags.int = { gt: 0 } ];
+}
+
+
+

@@ -36,6 +36,18 @@ type SchedulerClient interface {
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
 	DeleteStreamJobsByJobIds(ctx context.Context, in *pbrequest.DeleteStreamJobsByJobIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// SubmitSyncJob used when release new stream job or resume stream job.
+	SubmitSyncJob(ctx context.Context, in *pbrequest.SubmitSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// StopSyncJob used when offline stream job.
+	StopSyncJob(ctx context.Context, in *pbrequest.StopSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// DeleteSyncJobsBySpaceIds used when delete workspaces.
+	// It will stop all stream jobs and terminate all instances.
+	// And delete all instances.
+	DeleteSyncJobsBySpaceIds(ctx context.Context, in *pbrequest.DeleteSyncJobsBySpaceIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// DeleteSyncJobsByJobIds used when delete stream jobs.
+	// It will stop all stream jobs and terminate all instances.
+	// And delete all instances.
+	DeleteSyncJobsByJobIds(ctx context.Context, in *pbrequest.DeleteSyncJobsByJobIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type schedulerClient struct {
@@ -82,6 +94,42 @@ func (c *schedulerClient) DeleteStreamJobsByJobIds(ctx context.Context, in *pbre
 	return out, nil
 }
 
+func (c *schedulerClient) SubmitSyncJob(ctx context.Context, in *pbrequest.SubmitSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/SubmitSyncJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) StopSyncJob(ctx context.Context, in *pbrequest.StopSyncJob, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/StopSyncJob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) DeleteSyncJobsBySpaceIds(ctx context.Context, in *pbrequest.DeleteSyncJobsBySpaceIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/DeleteSyncJobsBySpaceIds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *schedulerClient) DeleteSyncJobsByJobIds(ctx context.Context, in *pbrequest.DeleteSyncJobsByJobIds, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/scheduler.Scheduler/DeleteSyncJobsByJobIds", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SchedulerServer is the server API for Scheduler service.
 // All implementations must embed UnimplementedSchedulerServer
 // for forward compatibility
@@ -98,6 +146,18 @@ type SchedulerServer interface {
 	// It will stop all stream jobs and terminate all instances.
 	// And delete all instances.
 	DeleteStreamJobsByJobIds(context.Context, *pbrequest.DeleteStreamJobsByJobIds) (*pbmodel.EmptyStruct, error)
+	// SubmitSyncJob used when release new stream job or resume stream job.
+	SubmitSyncJob(context.Context, *pbrequest.SubmitSyncJob) (*pbmodel.EmptyStruct, error)
+	// StopSyncJob used when offline stream job.
+	StopSyncJob(context.Context, *pbrequest.StopSyncJob) (*pbmodel.EmptyStruct, error)
+	// DeleteSyncJobsBySpaceIds used when delete workspaces.
+	// It will stop all stream jobs and terminate all instances.
+	// And delete all instances.
+	DeleteSyncJobsBySpaceIds(context.Context, *pbrequest.DeleteSyncJobsBySpaceIds) (*pbmodel.EmptyStruct, error)
+	// DeleteSyncJobsByJobIds used when delete stream jobs.
+	// It will stop all stream jobs and terminate all instances.
+	// And delete all instances.
+	DeleteSyncJobsByJobIds(context.Context, *pbrequest.DeleteSyncJobsByJobIds) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedSchedulerServer()
 }
 
@@ -116,6 +176,18 @@ func (UnimplementedSchedulerServer) DeleteStreamJobsBySpaceIds(context.Context, 
 }
 func (UnimplementedSchedulerServer) DeleteStreamJobsByJobIds(context.Context, *pbrequest.DeleteStreamJobsByJobIds) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteStreamJobsByJobIds not implemented")
+}
+func (UnimplementedSchedulerServer) SubmitSyncJob(context.Context, *pbrequest.SubmitSyncJob) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitSyncJob not implemented")
+}
+func (UnimplementedSchedulerServer) StopSyncJob(context.Context, *pbrequest.StopSyncJob) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopSyncJob not implemented")
+}
+func (UnimplementedSchedulerServer) DeleteSyncJobsBySpaceIds(context.Context, *pbrequest.DeleteSyncJobsBySpaceIds) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteSyncJobsBySpaceIds not implemented")
+}
+func (UnimplementedSchedulerServer) DeleteSyncJobsByJobIds(context.Context, *pbrequest.DeleteSyncJobsByJobIds) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteSyncJobsByJobIds not implemented")
 }
 func (UnimplementedSchedulerServer) mustEmbedUnimplementedSchedulerServer() {}
 
@@ -202,6 +274,78 @@ func _Scheduler_DeleteStreamJobsByJobIds_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Scheduler_SubmitSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.SubmitSyncJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).SubmitSyncJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/SubmitSyncJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).SubmitSyncJob(ctx, req.(*pbrequest.SubmitSyncJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_StopSyncJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.StopSyncJob)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).StopSyncJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/StopSyncJob",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).StopSyncJob(ctx, req.(*pbrequest.StopSyncJob))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_DeleteSyncJobsBySpaceIds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteSyncJobsBySpaceIds)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).DeleteSyncJobsBySpaceIds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/DeleteSyncJobsBySpaceIds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).DeleteSyncJobsBySpaceIds(ctx, req.(*pbrequest.DeleteSyncJobsBySpaceIds))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Scheduler_DeleteSyncJobsByJobIds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteSyncJobsByJobIds)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SchedulerServer).DeleteSyncJobsByJobIds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/scheduler.Scheduler/DeleteSyncJobsByJobIds",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SchedulerServer).DeleteSyncJobsByJobIds(ctx, req.(*pbrequest.DeleteSyncJobsByJobIds))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Scheduler_ServiceDesc is the grpc.ServiceDesc for Scheduler service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -224,6 +368,22 @@ var Scheduler_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteStreamJobsByJobIds",
 			Handler:    _Scheduler_DeleteStreamJobsByJobIds_Handler,
+		},
+		{
+			MethodName: "SubmitSyncJob",
+			Handler:    _Scheduler_SubmitSyncJob_Handler,
+		},
+		{
+			MethodName: "StopSyncJob",
+			Handler:    _Scheduler_StopSyncJob_Handler,
+		},
+		{
+			MethodName: "DeleteSyncJobsBySpaceIds",
+			Handler:    _Scheduler_DeleteSyncJobsBySpaceIds_Handler,
+		},
+		{
+			MethodName: "DeleteSyncJobsByJobIds",
+			Handler:    _Scheduler_DeleteSyncJobsByJobIds_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
