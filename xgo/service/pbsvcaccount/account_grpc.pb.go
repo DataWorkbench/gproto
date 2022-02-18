@@ -31,7 +31,7 @@ type AccountClient interface {
 	UpdateUser(ctx context.Context, in *pbrequest.UpdateUser, opts ...grpc.CallOption) (*pbresponse.UpdateUser, error)
 	DeleteUser(ctx context.Context, in *pbrequest.DeleteUser, opts ...grpc.CallOption) (*pbresponse.DeleteUser, error)
 	CheckSession(ctx context.Context, in *pbrequest.CheckSession, opts ...grpc.CallOption) (*pbresponse.CheckSession, error)
-	Login(ctx context.Context, in *pbrequest.Login, opts ...grpc.CallOption) (*pbresponse.Login, error)
+	CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error)
 }
 
 type accountClient struct {
@@ -105,9 +105,9 @@ func (c *accountClient) CheckSession(ctx context.Context, in *pbrequest.CheckSes
 	return out, nil
 }
 
-func (c *accountClient) Login(ctx context.Context, in *pbrequest.Login, opts ...grpc.CallOption) (*pbresponse.Login, error) {
-	out := new(pbresponse.Login)
-	err := c.cc.Invoke(ctx, "/account.Account/Login", in, out, opts...)
+func (c *accountClient) CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error) {
+	out := new(pbresponse.CreateSession)
+	err := c.cc.Invoke(ctx, "/account.Account/CreateSession", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +125,7 @@ type AccountServer interface {
 	UpdateUser(context.Context, *pbrequest.UpdateUser) (*pbresponse.UpdateUser, error)
 	DeleteUser(context.Context, *pbrequest.DeleteUser) (*pbresponse.DeleteUser, error)
 	CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error)
-	Login(context.Context, *pbrequest.Login) (*pbresponse.Login, error)
+	CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error)
 	mustEmbedUnimplementedAccountServer()
 }
 
@@ -154,8 +154,8 @@ func (UnimplementedAccountServer) DeleteUser(context.Context, *pbrequest.DeleteU
 func (UnimplementedAccountServer) CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckSession not implemented")
 }
-func (UnimplementedAccountServer) Login(context.Context, *pbrequest.Login) (*pbresponse.Login, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+func (UnimplementedAccountServer) CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSession not implemented")
 }
 func (UnimplementedAccountServer) mustEmbedUnimplementedAccountServer() {}
 
@@ -296,20 +296,20 @@ func _Account_CheckSession_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Account_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.Login)
+func _Account_CreateSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateSession)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AccountServer).Login(ctx, in)
+		return srv.(AccountServer).CreateSession(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/account.Account/Login",
+		FullMethod: "/account.Account/CreateSession",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccountServer).Login(ctx, req.(*pbrequest.Login))
+		return srv.(AccountServer).CreateSession(ctx, req.(*pbrequest.CreateSession))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -350,8 +350,8 @@ var Account_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Account_CheckSession_Handler,
 		},
 		{
-			MethodName: "Login",
-			Handler:    _Account_Login_Handler,
+			MethodName: "CreateSession",
+			Handler:    _Account_CreateSession_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -51,6 +51,12 @@ message CheckSession{
   string secret_access_key = 3;
 }
 
-message Login{
+message CreateSession{
   string session = 1;
+}
+
+message GetUserRole{
+  string user_id = 1;
+  string role = 2;
+  int32  privilege = 3;
 }

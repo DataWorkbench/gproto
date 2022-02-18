@@ -104,8 +104,16 @@ func (this *CheckSession) Validate() error {
 	return nil
 }
 
-// Set default value for message response.Login
-func (this *Login) Validate() error {
+// Set default value for message response.CreateSession
+func (this *CreateSession) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message response.GetUserRole
+func (this *GetUserRole) Validate() error {
 	if this == nil {
 		return nil
 	}

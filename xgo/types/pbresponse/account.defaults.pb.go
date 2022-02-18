@@ -75,8 +75,16 @@ func (this *CheckSession) SetDefaults() {
 	return
 }
 
-// Set default value for message response.Login
-func (this *Login) SetDefaults() {
+// Set default value for message response.CreateSession
+func (this *CreateSession) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.GetUserRole
+func (this *GetUserRole) SetDefaults() {
 	if this == nil {
 		return
 	}

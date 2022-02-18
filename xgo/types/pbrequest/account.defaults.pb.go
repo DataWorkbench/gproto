@@ -5,6 +5,10 @@
 
 package pbrequest
 
+import (
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+)
+
 // Set default value for message request.DescribeAccessKey
 func (this *DescribeAccessKey) SetDefaults() {
 	if this == nil {
@@ -61,8 +65,8 @@ func (this *CheckSession) SetDefaults() {
 	return
 }
 
-// Set default value for message request.Login
-func (this *Login) SetDefaults() {
+// Set default value for message request.CreateSession
+func (this *CreateSession) SetDefaults() {
 	if this == nil {
 		return
 	}

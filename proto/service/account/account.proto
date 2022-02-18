@@ -21,6 +21,6 @@ service Account {
   rpc UpdateUser(request.UpdateUser) returns (response.UpdateUser) {}
   rpc DeleteUser(request.DeleteUser) returns (response.DeleteUser) {}
   rpc CheckSession(request.CheckSession) returns (response.CheckSession) {}
-  rpc Login(request.Login) returns (response.Login) {}
+  rpc CreateSession(request.CreateSession) returns (response.CreateSession) {}
 
 }

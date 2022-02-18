@@ -5,6 +5,14 @@
 
 package pbrequest
 
+import (
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
+	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
+	strconv "strconv"
+	strings "strings"
+	utf8 "unicode/utf8"
+)
+
 // Set default value for message request.DescribeAccessKey
 func (this *DescribeAccessKey) Validate() error {
 	if this == nil {
@@ -13,10 +21,29 @@ func (this *DescribeAccessKey) Validate() error {
 	return nil
 }
 
+func (this *DescribeUsers) _xxx_xxx_Validator_Validate_users() error {
+	if !(len(this.Users) > 0) {
+		return protovalidator.FieldError1("DescribeUsers", "the length of field 'users' must be greater than '0'", strconv.Itoa(len(this.Users)))
+	}
+	if !(len(this.Users) <= 100) {
+		return protovalidator.FieldError1("DescribeUsers", "the length of field 'users' must be less than or equal to '100'", strconv.Itoa(len(this.Users)))
+	}
+	for _, item := range this.Users {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "usr-")) {
+			return protovalidator.FieldError1("DescribeUsers", "the value of array item where in field 'users' must start with string 'usr-'", item)
+		}
+	}
+	return nil
+}
+
 // Set default value for message request.DescribeUsers
 func (this *DescribeUsers) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_users(); err != nil {
+		return err
 	}
 	return nil
 }
@@ -29,10 +56,58 @@ func (this *ValidateRequestSignature) Validate() error {
 	return nil
 }
 
+func (this *CreateUser) _xxx_xxx_Validator_Validate_user_name() error {
+	if !(utf8.RuneCountInString(this.UserName) >= 2) {
+		return protovalidator.FieldError1("CreateUser", "the character length of field 'user_name' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	if !(utf8.RuneCountInString(this.UserName) <= 128) {
+		return protovalidator.FieldError1("CreateUser", "the character length of field 'user_name' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	return nil
+}
+
+func (this *CreateUser) _xxx_xxx_Validator_Validate_password() error {
+	if !(utf8.RuneCountInString(this.Password) >= 2) {
+		return protovalidator.FieldError1("CreateUser", "the character length of field 'password' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.Password))
+	}
+	if !(utf8.RuneCountInString(this.Password) <= 128) {
+		return protovalidator.FieldError1("CreateUser", "the character length of field 'password' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.Password))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_CreateUser_In_Lang = map[string]bool{"": true, "cn": true, "en": true}
+
+func (this *CreateUser) _xxx_xxx_Validator_Validate_lang() error {
+	if !(_xxx_xxx_Validator_CreateUser_In_Lang[this.Lang]) {
+		return protovalidator.FieldError1("CreateUser", "the value of field 'lang' must be one of '[ cn en]'", this.Lang)
+	}
+	return nil
+}
+
 // Set default value for message request.CreateUser
 func (this *CreateUser) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_lang(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpdateUser) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) == 20) {
+		return protovalidator.FieldError1("UpdateUser", "the byte length of field 'user_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(strings.HasPrefix(this.UserId, "usr-")) {
+		return protovalidator.FieldError1("UpdateUser", "the value of field 'user_id' must start with string 'usr-'", this.UserId)
 	}
 	return nil
 }
@@ -42,6 +117,19 @@ func (this *UpdateUser) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *DeleteUser) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) == 20) {
+		return protovalidator.FieldError1("DeleteUser", "the byte length of field 'user_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	if !(strings.HasPrefix(this.UserId, "usr-")) {
+		return protovalidator.FieldError1("DeleteUser", "the value of field 'user_id' must start with string 'usr-'", this.UserId)
+	}
 	return nil
 }
 
@@ -49,6 +137,9 @@ func (this *UpdateUser) Validate() error {
 func (this *DeleteUser) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
 	}
 	return nil
 }
@@ -61,10 +152,36 @@ func (this *CheckSession) Validate() error {
 	return nil
 }
 
-// Set default value for message request.Login
-func (this *Login) Validate() error {
+func (this *CreateSession) _xxx_xxx_Validator_Validate_user_name() error {
+	if !(utf8.RuneCountInString(this.UserName) >= 2) {
+		return protovalidator.FieldError1("CreateSession", "the character length of field 'user_name' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	if !(utf8.RuneCountInString(this.UserName) <= 128) {
+		return protovalidator.FieldError1("CreateSession", "the character length of field 'user_name' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.UserName))
+	}
+	return nil
+}
+
+func (this *CreateSession) _xxx_xxx_Validator_Validate_password() error {
+	if !(utf8.RuneCountInString(this.Password) >= 2) {
+		return protovalidator.FieldError1("CreateSession", "the character length of field 'password' must be greater than or equal to '2'", protovalidator.StringCharsetLenToString(this.Password))
+	}
+	if !(utf8.RuneCountInString(this.Password) <= 128) {
+		return protovalidator.FieldError1("CreateSession", "the character length of field 'password' must be less than or equal to '128'", protovalidator.StringCharsetLenToString(this.Password))
+	}
+	return nil
+}
+
+// Set default value for message request.CreateSession
+func (this *CreateSession) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_password(); err != nil {
+		return err
 	}
 	return nil
 }
