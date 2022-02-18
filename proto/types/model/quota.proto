@@ -25,6 +25,12 @@ message QuotaStreamJob {
   int64 limit = 1;
 }
 
+message QuotaSyncJob {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of stream job for every user. default 500.
+  int64 limit = 1;
+}
+
 message QuotaDataSource {
   option (gosql.serialize) = {json: {}};
   // Limit is the maximum number of datasource for every user. default 500.

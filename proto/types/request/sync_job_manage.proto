@@ -274,9 +274,12 @@ message OfflineReleaseSyncJob {
     // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
     string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-// The stream job id in HTTP Request-URI
-// @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
-string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    // The stream job id in HTTP Request-URI
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "stj-" } ];
+    // StopRunning indicates whether stop the sync job instance that state running.
+    // @inject_tag: json:"stop_running"
+    bool stop_running = 3;
 }
 
 // SuspendReleaseSyncJob used as a request parameters for RPC and HTTP(based on Body).
