@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelBindingP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/binding.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"s\n\rBindingModule\x12\x1f\n\tmodule_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x02 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"s\n\rBindingAttach\x12\x1f\n\tattach_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0e\x61ttach_version\x18\x02 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0e\x61ttach_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x96\x02\n\x07\x42inding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tmodule_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x03 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1f\n\tattach_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0e\x61ttach_version\x18\x05 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0e\x61ttach_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelBindingP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/binding.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"s\n\rBindingModule\x12\x1f\n\tmodule_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x02 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"{\n\x0f\x42indingResource\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x10resource_version\x18\x02 \x01(\tB+\xe2\xdf\x1f\x1b\n\x19\n\x10resource_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x9c\x02\n\x07\x42inding\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\tmodule_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x41\n\x0emodule_version\x18\x03 \x01(\tB)\xe2\xdf\x1f\x19\n\x17\n\x0emodule_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12!\n\x0bresource_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x45\n\x10resource_version\x18\x05 \x01(\tB+\xe2\xdf\x1f\x1b\n\x19\n\x10resource_version\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelBindingP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -66,28 +66,28 @@ _BINDINGMODULE = _descriptor.Descriptor(
 )
 
 
-_BINDINGATTACH = _descriptor.Descriptor(
-  name='BindingAttach',
-  full_name='model.BindingAttach',
+_BINDINGRESOURCE = _descriptor.Descriptor(
+  name='BindingResource',
+  full_name='model.BindingResource',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='attach_id', full_name='model.BindingAttach.attach_id', index=0,
+      name='resource_id', full_name='model.BindingResource.resource_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='attach_version', full_name='model.BindingAttach.attach_version', index=1,
+      name='resource_version', full_name='model.BindingResource.resource_version', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\031\n\027\n\016attach_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\033\n\031\n\020resource_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -101,7 +101,7 @@ _BINDINGATTACH = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=212,
-  serialized_end=327,
+  serialized_end=335,
 )
 
 
@@ -135,19 +135,19 @@ _BINDING = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\031\n\027\n\016module_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='attach_id', full_name='model.Binding.attach_id', index=3,
+      name='resource_id', full_name='model.Binding.resource_id', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='attach_version', full_name='model.Binding.attach_version', index=4,
+      name='resource_version', full_name='model.Binding.resource_version', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\031\n\027\n\016attach_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\033\n\031\n\020resource_version\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\020', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='created', full_name='model.Binding.created', index=5,
       number=6, type=3, cpp_type=2, label=1,
@@ -167,12 +167,12 @@ _BINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=330,
-  serialized_end=608,
+  serialized_start=338,
+  serialized_end=622,
 )
 
 DESCRIPTOR.message_types_by_name['BindingModule'] = _BINDINGMODULE
-DESCRIPTOR.message_types_by_name['BindingAttach'] = _BINDINGATTACH
+DESCRIPTOR.message_types_by_name['BindingResource'] = _BINDINGRESOURCE
 DESCRIPTOR.message_types_by_name['Binding'] = _BINDING
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -183,12 +183,12 @@ BindingModule = _reflection.GeneratedProtocolMessageType('BindingModule', (_mess
   })
 _sym_db.RegisterMessage(BindingModule)
 
-BindingAttach = _reflection.GeneratedProtocolMessageType('BindingAttach', (_message.Message,), {
-  'DESCRIPTOR' : _BINDINGATTACH,
+BindingResource = _reflection.GeneratedProtocolMessageType('BindingResource', (_message.Message,), {
+  'DESCRIPTOR' : _BINDINGRESOURCE,
   '__module__' : 'proto.types.model.binding_pb2'
-  # @@protoc_insertion_point(class_scope:model.BindingAttach)
+  # @@protoc_insertion_point(class_scope:model.BindingResource)
   })
-_sym_db.RegisterMessage(BindingAttach)
+_sym_db.RegisterMessage(BindingResource)
 
 Binding = _reflection.GeneratedProtocolMessageType('Binding', (_message.Message,), {
   'DESCRIPTOR' : _BINDING,
@@ -201,12 +201,12 @@ _sym_db.RegisterMessage(Binding)
 DESCRIPTOR._options = None
 _BINDINGMODULE.fields_by_name['module_id']._options = None
 _BINDINGMODULE.fields_by_name['module_version']._options = None
-_BINDINGATTACH.fields_by_name['attach_id']._options = None
-_BINDINGATTACH.fields_by_name['attach_version']._options = None
+_BINDINGRESOURCE.fields_by_name['resource_id']._options = None
+_BINDINGRESOURCE.fields_by_name['resource_version']._options = None
 _BINDING.fields_by_name['space_id']._options = None
 _BINDING.fields_by_name['module_id']._options = None
 _BINDING.fields_by_name['module_version']._options = None
-_BINDING.fields_by_name['attach_id']._options = None
-_BINDING.fields_by_name['attach_version']._options = None
+_BINDING.fields_by_name['resource_id']._options = None
+_BINDING.fields_by_name['resource_version']._options = None
 _BINDING.fields_by_name['created']._options = None
 # @@protoc_insertion_point(module_scope)

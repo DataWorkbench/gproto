@@ -17,8 +17,8 @@ func (this *BindingModule) SetDefaults() {
 	return
 }
 
-// Set default value for message model.BindingAttach
-func (this *BindingAttach) SetDefaults() {
+// Set default value for message model.BindingResource
+func (this *BindingResource) SetDefaults() {
 	if this == nil {
 		return
 	}

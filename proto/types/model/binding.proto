@@ -17,30 +17,30 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 // used to query from db.
 message BindingModule {
   // ModuleId represents which other modules(AttachId) are bound to this module.
-  // @inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
+  // @inject_tag: json:"module_id" gorm:"column:module_id;<-:false"
   string module_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // ModuleVersion is the version of module.
   // This filed maybe empty.
-  // @inject_tag: json:"module_version" gorm:"column:module_version;primaryKey;"
+  // @inject_tag: json:"module_version" gorm:"column:module_version;<-:false"
   string module_version = 2 [
     (validator.field).check_if = { field: "module_version", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 16 }
   ];
 }
 
-// ModuleTarget declares the attach info.
+// BindingResource declares the resource info that be bound.
 // used to query from db.
-message BindingAttach {
+message BindingResource {
   // AttachId represents this module are bound by which other modules(ModuleId).
-  // @inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
-  string attach_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // @inject_tag: json:"resource_id" gorm:"column:resource_id;<-:false"
+  string resource_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // AttachVersion is the version of attach module.
   // Notice: Reserved field, unused on present.
-  // @inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
-  string attach_version = 2 [
-    (validator.field).check_if = { field: "attach_version", tags: { string: { ne: "" } } },
+  // @inject_tag: json:"resource_version" gorm:"column:resource_version;<-:false"
+  string resource_version = 2 [
+    (validator.field).check_if = { field: "resource_version", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 16 }
   ];
 }
@@ -51,7 +51,7 @@ message Binding {
   // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
-  // ModuleId represents which other modules(AttachId) are bound to this module.
+  // ModuleId represents which resources are bound to this module.
   // @inject_tag: json:"module_id" gorm:"column:module_id;primaryKey;"
   string module_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
@@ -63,15 +63,15 @@ message Binding {
     (validator.field).tags.string = { byte_len_eq: 16 }
   ];
 
-  // AttachId represents this module are bound by which other modules(ModuleId).
-  // @inject_tag: json:"attach_id" gorm:"column:attach_id;primaryKey;"
-  string attach_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  // ResourceId represents the module bound resources.
+  // @inject_tag: json:"resource_id" gorm:"column:resource_id;primaryKey;"
+  string resource_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
-  // AttachVersion is the version of attach module.
+  // ResourceVersion is the version of resource.
   // Notice: Reserved field, unused on present.
-  // @inject_tag: json:"attach_version" gorm:"column:attach_version;primaryKey;"
-  string attach_version = 5 [
-    (validator.field).check_if = { field: "attach_version", tags: { string: { ne: "" } } },
+  // @inject_tag: json:"resource_version" gorm:"column:resource_version;primaryKey;"
+  string resource_version = 5 [
+    (validator.field).check_if = { field: "resource_version", tags: { string: { ne: "" } } },
     (validator.field).tags.string = { byte_len_eq: 16 }
   ];
 
