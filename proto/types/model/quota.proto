@@ -67,6 +67,12 @@ message QuotaNetwork {
   int64 limit = 1;
 }
 
+message QuotaSyncJob {
+  option (gosql.serialize) = {json: {}};
+  // Limit is the maximum number of sync job for every user. default 500.
+  int64 limit = 1;
+}
+
 // Quota for user level.
 message UserQuota {
   // The user id of owner.
@@ -93,4 +99,7 @@ message UserQuota {
 
   // @inject_tag: json:"network" gorm:"column:network;"
   QuotaNetwork network = 8;
+
+  // @inject_tag: json:"sync_job" gorm:"column:sync_job;"
+  QuotaSyncJob sync_job = 9;
 }
