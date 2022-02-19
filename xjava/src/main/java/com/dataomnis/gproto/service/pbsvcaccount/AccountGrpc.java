@@ -232,35 +232,35 @@ public final class AccountGrpc {
     return getCheckSessionMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> getLoginMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession> getCreateSessionMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Login",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateSession",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login,
-      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> getLoginMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> getLoginMethod;
-    if ((getLoginMethod = AccountGrpc.getLoginMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession> getCreateSessionMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession> getCreateSessionMethod;
+    if ((getCreateSessionMethod = AccountGrpc.getCreateSessionMethod) == null) {
       synchronized (AccountGrpc.class) {
-        if ((getLoginMethod = AccountGrpc.getLoginMethod) == null) {
-          AccountGrpc.getLoginMethod = getLoginMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login>newBuilder()
+        if ((getCreateSessionMethod = AccountGrpc.getCreateSessionMethod) == null) {
+          AccountGrpc.getCreateSessionMethod = getCreateSessionMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Login"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSession"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.getDefaultInstance()))
-              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("Login"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountMethodDescriptorSupplier("CreateSession"))
               .build();
         }
       }
     }
-    return getLoginMethod;
+    return getCreateSessionMethod;
   }
 
   /**
@@ -362,9 +362,9 @@ public final class AccountGrpc {
 
     /**
      */
-    public void login(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
+    public void createSession(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSessionMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -419,12 +419,12 @@ public final class AccountGrpc {
                 com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession>(
                   this, METHODID_CHECK_SESSION)))
           .addMethod(
-            getLoginMethod(),
+            getCreateSessionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login,
-                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login>(
-                  this, METHODID_LOGIN)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession>(
+                  this, METHODID_CREATE_SESSION)))
           .build();
     }
   }
@@ -501,10 +501,10 @@ public final class AccountGrpc {
 
     /**
      */
-    public void login(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> responseObserver) {
+    public void createSession(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateSessionMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -573,9 +573,9 @@ public final class AccountGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login login(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession createSession(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getLoginMethod(), getCallOptions(), request);
+          getChannel(), getCreateSessionMethod(), getCallOptions(), request);
     }
   }
 
@@ -651,10 +651,10 @@ public final class AccountGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login> login(
-        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession> createSession(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getLoginMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateSessionMethod(), getCallOptions()), request);
     }
   }
 
@@ -665,7 +665,7 @@ public final class AccountGrpc {
   private static final int METHODID_UPDATE_USER = 4;
   private static final int METHODID_DELETE_USER = 5;
   private static final int METHODID_CHECK_SESSION = 6;
-  private static final int METHODID_LOGIN = 7;
+  private static final int METHODID_CREATE_SESSION = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -712,9 +712,9 @@ public final class AccountGrpc {
           serviceImpl.checkSession((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CheckSession) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CheckSession>) responseObserver);
           break;
-        case METHODID_LOGIN:
-          serviceImpl.login((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login>) responseObserver);
+        case METHODID_CREATE_SESSION:
+          serviceImpl.createSession((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -784,7 +784,7 @@ public final class AccountGrpc {
               .addMethod(getUpdateUserMethod())
               .addMethod(getDeleteUserMethod())
               .addMethod(getCheckSessionMethod())
-              .addMethod(getLoginMethod())
+              .addMethod(getCreateSessionMethod())
               .build();
         }
       }

@@ -9,8 +9,8 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.QueueMessage
-func (this *QueueMessage) SetDefaults() {
+// Set default value for message model.StreamJobQueue
+func (this *StreamJobQueue) SetDefaults() {
 	if this == nil {
 		return
 	}

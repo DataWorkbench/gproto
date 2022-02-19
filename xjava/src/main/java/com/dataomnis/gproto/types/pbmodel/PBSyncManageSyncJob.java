@@ -4911,6 +4911,28 @@ public final class PBSyncManageSyncJob {
      * <code>.model.HiveTarget hive_target = 28;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HiveTargetOrBuilder getHiveTargetOrBuilder();
+
+    /**
+     * <pre>
+     * The flink cluster id. Is required.
+     * &#64;inject_tag: json:"cluster_id"
+     * </pre>
+     *
+     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * @return The clusterId.
+     */
+    java.lang.String getClusterId();
+    /**
+     * <pre>
+     * The flink cluster id. Is required.
+     * &#64;inject_tag: json:"cluster_id"
+     * </pre>
+     *
+     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * @return The bytes for clusterId.
+     */
+    com.google.protobuf.ByteString
+        getClusterIdBytes();
   }
   /**
    * <pre>
@@ -4933,6 +4955,7 @@ public final class PBSyncManageSyncJob {
       sourceId_ = "";
       targetId_ = "";
       jobContent_ = "";
+      clusterId_ = "";
     }
 
     @java.lang.Override
@@ -5266,6 +5289,12 @@ public final class PBSyncManageSyncJob {
                 hiveTarget_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 234: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterId_ = s;
               break;
             }
             default: {
@@ -6345,6 +6374,54 @@ public final class PBSyncManageSyncJob {
       return getHiveTarget();
     }
 
+    public static final int CLUSTER_ID_FIELD_NUMBER = 29;
+    private volatile java.lang.Object clusterId_;
+    /**
+     * <pre>
+     * The flink cluster id. Is required.
+     * &#64;inject_tag: json:"cluster_id"
+     * </pre>
+     *
+     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * @return The clusterId.
+     */
+    @java.lang.Override
+    public java.lang.String getClusterId() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The flink cluster id. Is required.
+     * &#64;inject_tag: json:"cluster_id"
+     * </pre>
+     *
+     * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+     * @return The bytes for clusterId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClusterIdBytes() {
+      java.lang.Object ref = clusterId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clusterId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6442,6 +6519,9 @@ public final class PBSyncManageSyncJob {
       }
       if (hiveTarget_ != null) {
         output.writeMessage(28, getHiveTarget());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 29, clusterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -6560,6 +6640,9 @@ public final class PBSyncManageSyncJob {
       if (hiveTarget_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(28, getHiveTarget());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, clusterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6692,6 +6775,8 @@ public final class PBSyncManageSyncJob {
         if (!getHiveTarget()
             .equals(other.getHiveTarget())) return false;
       }
+      if (!getClusterId()
+          .equals(other.getClusterId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6799,6 +6884,8 @@ public final class PBSyncManageSyncJob {
         hash = (37 * hash) + HIVE_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getHiveTarget().hashCode();
       }
+      hash = (37 * hash) + CLUSTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7073,6 +7160,8 @@ public final class PBSyncManageSyncJob {
           hiveTarget_ = null;
           hiveTargetBuilder_ = null;
         }
+        clusterId_ = "";
+
         return this;
       }
 
@@ -7207,6 +7296,7 @@ public final class PBSyncManageSyncJob {
         } else {
           result.hiveTarget_ = hiveTargetBuilder_.build();
         }
+        result.clusterId_ = clusterId_;
         onBuilt();
         return result;
       }
@@ -7341,6 +7431,10 @@ public final class PBSyncManageSyncJob {
         }
         if (other.hasHiveTarget()) {
           mergeHiveTarget(other.getHiveTarget());
+        }
+        if (!other.getClusterId().isEmpty()) {
+          clusterId_ = other.clusterId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11185,6 +11279,107 @@ public final class PBSyncManageSyncJob {
           hiveTarget_ = null;
         }
         return hiveTargetBuilder_;
+      }
+
+      private java.lang.Object clusterId_ = "";
+      /**
+       * <pre>
+       * The flink cluster id. Is required.
+       * &#64;inject_tag: json:"cluster_id"
+       * </pre>
+       *
+       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * @return The clusterId.
+       */
+      public java.lang.String getClusterId() {
+        java.lang.Object ref = clusterId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clusterId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The flink cluster id. Is required.
+       * &#64;inject_tag: json:"cluster_id"
+       * </pre>
+       *
+       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * @return The bytes for clusterId.
+       */
+      public com.google.protobuf.ByteString
+          getClusterIdBytes() {
+        java.lang.Object ref = clusterId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clusterId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The flink cluster id. Is required.
+       * &#64;inject_tag: json:"cluster_id"
+       * </pre>
+       *
+       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * @param value The clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clusterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The flink cluster id. Is required.
+       * &#64;inject_tag: json:"cluster_id"
+       * </pre>
+       *
+       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterId() {
+        
+        clusterId_ = getDefaultInstance().getClusterId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The flink cluster id. Is required.
+       * &#64;inject_tag: json:"cluster_id"
+       * </pre>
+       *
+       * <code>string cluster_id = 29 [(.validator.field) = { ... }</code>
+       * @param value The bytes for clusterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clusterId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -63252,7 +63447,7 @@ public final class PBSyncManageSyncJob {
       "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\t" +
       "B\014\342\337\037\010\022\006\302\001\003\360\001\020\022&\n\004args\030\004 \001(\0132\022.model.Syn" +
       "cJobArgsB\004\342\337\037\000\022.\n\010schedule\030\005 \001(\0132\026.model" +
-      ".SyncJobScheduleB\004\342\337\037\000\"\333\t\n\013SyncJobArgs\022&" +
+      ".SyncJobScheduleB\004\342\337\037\000\"\365\t\n\013SyncJobArgs\022&" +
       "\n\tsource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&" +
       "\n\ttarget_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022*" +
       "\n\013parallelism\030\003 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\000" +
@@ -63283,152 +63478,152 @@ public final class PBSyncManageSyncJob {
       "rCdcSource\022.\n\017logminer_source\030\032 \001(\0132\025.mo" +
       "del.LogminerSource\022(\n\014redis_target\030\033 \001(\013" +
       "2\022.model.RedisTarget\022&\n\013hive_target\030\034 \001(" +
-      "\0132\021.model.HiveTarget:\006\312\262\004\002\n\000\"\256\007\n\017SyncJob" +
-      "Schedule\022M\n\017schedule_policy\030\001 \001(\0162%.mode" +
-      "l.SyncJobSchedule.SchedulePolicyB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022>\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017sched" +
-      "ule_policy\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007start" +
-      "ed\030\004 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337" +
-      "\037\007\022\005\262\001\002@\000\022S\n\022concurrency_policy\030\006 \001(\0162(." +
-      "model.SyncJobSchedule.ConcurrencyPolicyB" +
-      "\r\342\337\037\t\022\007\332\001\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037" +
-      "\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006mi" +
-      "nuteJ\004hourJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007ex" +
-      "press\030\010 \001(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001" +
-      "\002\030\001\342\337\037\010\022\006\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007" +
-      "\262\001\0048d@\000\022G\n\014retry_policy\030\n \001(\0162\".model.Sy" +
-      "ncJobSchedule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\022=\n\013retry_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_pol" +
-      "icy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interva" +
-      "l\030\014 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t" +
-      "\022\007\262\001\0048\036@\001\"\\\n\016SchedulePolicy\022\027\n\023ScheduleP" +
-      "olicyUnset\020\000\022\017\n\013Periodicity\020\001\022\017\n\013Appoint" +
-      "Time\020\002\022\017\n\013Immediately\020\003\"S\n\021ConcurrencyPo" +
-      "licy\022\032\n\026ConcurrencyPolicyUnset\020\000\022\t\n\005Allo" +
-      "w\020\001\022\n\n\006Forbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPol" +
-      "icy\022\024\n\020RetryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004A" +
-      "uto\020\002:\006\312\262\004\002\n\000\"\246\003\n\016SyncJobRelease\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
-      "\220\002\002\230\002\200\001\0220\n\004type\030\005 \001(\0162\023.model.SyncJob.Ty" +
-      "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022,\n\006status\030\006 \001(\0162\034.mode" +
-      "l.SyncJobRelease.Status\022\014\n\004desc\030\007 \001(\t\022 \n" +
-      "\ncreated_by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007creat" +
-      "ed\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013" +
-      "\342\337\037\007\022\005\262\001\0020\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n" +
-      "\n\006Active\020\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003\"c" +
-      "\n\022RelationaldbSource\022\016\n\006column\030\001 \003(\t\022\r\n\005" +
-      "table\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\r\n\005where\030\004 \001" +
-      "(\t\022\017\n\007splitpk\030\005 \001(\t\"\330\001\n\022RelationaldbTarg" +
-      "et\022\016\n\006column\030\001 \003(\t\022\r\n\005table\030\002 \003(\t\022\016\n\006sch" +
-      "ema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \001(\t\022\020\n\010post_sql\030\005" +
-      " \001(\t\022\022\n\nwrite_mode\030\006 \001(\t\022\022\n\nbatch_size\030\007" +
-      " \001(\t\022\022\n\nupdate_key\030\010 \001(\t\022\014\n\004mode\030\t \001(\t\022\020" +
-      "\n\010semantic\030\n \001(\t\022\024\n\014with_no_lock\030\013 \001(\t\"n" +
-      "\n\rMongodbSource\022\016\n\006column\030\001 \003(\t\022\020\n\010datab" +
-      "ase\030\002 \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\022\n\nfe" +
-      "tch_size\030\004 \001(\005\022\016\n\006filter\030\005 \001(\t\"\245\001\n\rMongo" +
-      "dbTarget\022\016\n\006column\030\001 \003(\t\022\020\n\010database\030\002 \001" +
-      "(\t\022\027\n\017collection_name\030\003 \001(\t\022\023\n\013replace_k" +
-      "ey\030\004 \001(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022\n\nbatch_si" +
-      "ze\030\006 \001(\005\022\034\n\024flush_interval_mills\030\007 \001(\005\"Y" +
-      "\n\023ElasticSearchSource\022\016\n\006column\030\001 \003(\t\022\017\n" +
-      "\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\t\022\022\n\nbatch_s" +
-      "ize\030\004 \001(\t\"p\n\023ElasticSearchTarget\022\016\n\006colu" +
-      "mn\030\001 \003(\t\022\017\n\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\t" +
-      "\022\022\n\nbatch_size\030\004 \001(\t\022\025\n\rkey_delimiter\030\005 " +
-      "\001(\t\"\307\001\n\016LogminerSource\022\r\n\005table\030\001 \003(\t\022\024\n" +
-      "\014split_update\030\002 \001(\t\022\023\n\013paving_data\030\003 \001(\t" +
-      "\022\013\n\003cat\030\004 \001(\t\022\025\n\rread_position\030\005 \001(\t\022\022\n\n" +
-      "start_time\030\006 \001(\003\022\021\n\tstart_scn\030\007 \001(\003\022\022\n\nf" +
-      "etch_size\030\010 \001(\003\022\034\n\024support_auto_add_log\030" +
-      "\t \001(\003\"\305\001\n\013PgwalSource\022\025\n\rdatabase_name\030\001" +
-      " \001(\t\022\022\n\ntable_list\030\002 \003(\t\022\021\n\tslot_name\030\003 " +
-      "\001(\t\022\024\n\014split_update\030\004 \001(\t\022\025\n\rallow_creat" +
-      "ed\030\005 \001(\t\022\021\n\ttemporary\030\006 \001(\t\022\023\n\013paving_da" +
-      "ta\030\007 \001(\t\022\013\n\003lsn\030\010 \001(\t\022\026\n\016slot_available\030" +
-      "\t \001(\t\"\204\001\n\022SqlServerCdcSource\022\022\n\ntable_li" +
-      "st\030\001 \003(\t\022\024\n\014split_update\030\002 \001(\t\022\023\n\013paving" +
-      "_data\030\003 \001(\t\022\013\n\003cat\030\004 \001(\t\022\013\n\003lsn\030\005 \001(\t\022\025\n" +
-      "\rpoll_interval\030\006 \001(\t\"\250\001\n\014BinlogSource\022\016\n" +
-      "\006schema\030\001 \001(\t\022\013\n\003cat\030\002 \001(\t\022\033\n\005start\030\003 \001(" +
-      "\0132\014.model.Start\022\r\n\005table\030\004 \003(\t\022\024\n\014split_" +
-      "update\030\005 \001(\t\022\023\n\013paving_data\030\006 \001(\t\022\016\n\006fil" +
-      "ter\030\007 \001(\003\022\024\n\014is_gtid_mode\030\010 \001(\003\"B\n\005Start" +
-      "\022\021\n\ttimestamp\030\001 \001(\t\022\024\n\014journal_name\030\002 \001(" +
-      "\t\022\020\n\010position\030\003 \001(\t\"\232\003\n\nHiveTarget\022\021\n\tpa" +
-      "rtition\030\001 \001(\t\022\026\n\016partition_type\030\002 \001(\t\022\025\n" +
-      "\rtables_column\030\003 \001(\t\022\030\n\020analytical_rules" +
-      "\030\004 \001(\t\022\016\n\006schema\030\005 \001(\t\022\030\n\020distribute_tab" +
-      "le\030\006 \001(\t\022\022\n\nwrite_mode\030\007 \001(\003\022\021\n\tfile_typ" +
-      "e\030\010 \001(\003\022\022\n\ndefault_fs\030\t \001(\003\022\025\n\rmax_file_" +
-      "size\030\n \001(\003\022\027\n\017next_check_rows\030\013 \001(\003\022\026\n\016r" +
-      "ow_group_size\030\014 \001(\003\022\031\n\021enable_dictionary" +
-      "\030\r \001(\003\022\020\n\010encoding\030\016 \001(\003\022\027\n\017field_delimi" +
-      "ter\030\017 \001(\003\022\020\n\010compress\030\020 \001(\003\022\024\n\014charset_n" +
-      "ame\030\021 \001(\003\022\025\n\rhadoop_Config\030\022 \001(\t\"\251\001\n\nHdf" +
-      "sSource\022\016\n\006column\030\001 \003(\t\022\014\n\004path\030\002 \001(\t\022\021\n" +
-      "\tfile_type\030\003 \001(\t\022\022\n\ndefault_fs\030\004 \001(\t\022\024\n\014" +
-      "filter_regex\030\005 \001(\t\022\027\n\017field_delimiter\030\006 " +
-      "\001(\t\022\020\n\010encoding\030\007 \001(\t\022\025\n\rhadoop_config\030\010" +
-      " \001(\t\"\371\002\n\nHdfsTarget\022\016\n\006column\030\001 \003(\t\022\014\n\004p" +
-      "ath\030\002 \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\021\n\tfile_typ" +
-      "e\030\004 \001(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022\n\ndefault_f" +
-      "s\030\006 \001(\t\022\024\n\014filter_regex\030\007 \001(\t\022\027\n\017field_d" +
-      "elimiter\030\010 \001(\t\022\030\n\020full_column_name\030\t \001(\t" +
-      "\022\030\n\020full_column_type\030\n \001(\t\022\020\n\010compress\030\013" +
-      " \001(\t\022\025\n\rmax_file_size\030\014 \001(\t\022\027\n\017next_chec" +
-      "k_rows\030\r \001(\t\022\026\n\016row_group_size\030\016 \001(\t\022\031\n\021" +
-      "enable_dictionary\030\017 \001(\t\022\020\n\010encoding\030\020 \001(" +
-      "\t\022\025\n\rhadoop_config\030\021 \001(\t\"\217\002\n\tFtpSource\022\016" +
-      "\n\006column\030\001 \003(\t\022\014\n\004path\030\002 \003(\t\022\030\n\020private_" +
-      "key_path\030\003 \001(\t\022\027\n\017connect_pattern\030\004 \001(\t\022" +
-      "\027\n\017field_delimiter\030\005 \001(\t\022\020\n\010encoding\030\006 \001" +
-      "(\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024is_first" +
-      "_line_header\030\010 \001(\t\022\017\n\007timeout\030\t \001(\t\022\021\n\tf" +
-      "ile_type\030\n \001(\t\022\025\n\rcompress_type\030\013 \001(\t\022\023\n" +
-      "\013file_config\030\014 \001(\t\"\320\001\n\tFtpTarget\022\016\n\006colu" +
-      "mn\030\001 \003(\t\022\014\n\004path\030\002 \003(\t\022\030\n\020private_key_pa" +
-      "th\030\003 \001(\t\022\027\n\017connect_pattern\030\004 \001(\t\022\027\n\017fie" +
-      "ld_delimiter\030\005 \001(\t\022\020\n\010encoding\030\006 \001(\t\022\030\n\020" +
-      "control_encoding\030\007 \001(\t\022\034\n\024is_first_line_" +
-      "header\030\010 \001(\t\022\017\n\007timeout\030\t \001(\t\"f\n\013HbaseSo" +
-      "urce\022,\n\tparameter\030\001 \001(\0132\031.model.HbaseRea" +
-      "dParameter\022\014\n\004name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132" +
-      "\014.model.Table\"\222\001\n\022HbaseReadParameter\022\016\n\006" +
-      "column\030\001 \003(\t\022\023\n\013hbaseConfig\030\002 \001(\t\022\033\n\005ran" +
-      "ge\030\003 \001(\0132\014.model.Range\022\022\n\nchange_log\030\004 \001" +
-      "(\t\022\020\n\010encoding\030\005 \001(\t\022\024\n\014hadoopConfig\030\006 \001" +
-      "(\t\"M\n\005Range\022\025\n\rstart_row_key\030\001 \001(\003\022\023\n\013en" +
-      "d_row_key\030\002 \001(\003\022\030\n\020is_binary_rowkey\030\003 \001(" +
-      "\003\"g\n\013HbaseTarget\022-\n\tparameter\030\001 \001(\0132\032.mo" +
-      "del.HbaseWriteParameter\022\014\n\004name\030\002 \001(\t\022\033\n" +
-      "\005table\030\003 \001(\0132\014.model.Table\"\032\n\005Table\022\021\n\tt" +
-      "ablename\030\001 \001(\t\"\342\001\n\023HbaseWriteParameter\022\016" +
-      "\n\006column\030\001 \003(\t\022\023\n\013hbaseConfig\030\002 \001(\t\022\021\n\tn" +
-      "ull_mode\030\003 \001(\t\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021writ" +
-      "e_buffer_size\030\005 \001(\t\022\022\n\nchange_log\030\006 \001(\t\022" +
-      "\026\n\016rowkey_express\030\007 \001(\t\022\034\n\024version_colum" +
-      "n_index\030\010 \001(\t\022\034\n\024version_column_value\030\t " +
-      "\001(\t\"\303\001\n\013KafkaSource\022\016\n\006column\030\001 \003(\t\022\r\n\005t" +
-      "opic\030\002 \001(\t\022\014\n\004mode\030\003 \001(\t\022\021\n\ttimestamp\030\004 " +
-      "\001(\t\022\016\n\006offset\030\005 \001(\t\022\020\n\010group_id\030\006 \001(\t\022\020\n" +
-      "\010encoding\030\007 \001(\t\022\r\n\005codec\030\010 \001(\t\0221\n\020consum" +
-      "ersettings\030\t \001(\0132\027.model.ConsumerSetting" +
-      "s\"I\n\020ConsumerSettings\022\031\n\021bootstrap_serve" +
-      "rs\030\001 \001(\t\022\032\n\022auto_commit_enable\030\002 \001(\t\"d\n\013" +
-      "KafkaTarget\022\023\n\013tableFields\030\001 \003(\t\022\r\n\005topi" +
-      "c\030\002 \001(\t\0221\n\020consumersettings\030\003 \001(\0132\027.mode" +
-      "l.ConsumerSettings\"\273\001\n\013RedisTarget\022\020\n\010da" +
-      "tabase\030\001 \001(\t\022\022\n\nkeyIndexes\030\002 \003(\005\022\023\n\013date" +
-      "_format\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\t\022\022\n\nwr" +
-      "ite_type\030\005 \001(\t\022\014\n\004mode\030\006 \001(\t\022\033\n\023key_fiel" +
-      "d_delimiter\030\007 \001(\t\022\035\n\025value_field_delimit" +
-      "er\030\010 \001(\tBn\n\"com.dataomnis.gproto.types.p" +
-      "bmodelB\023PBSyncManageSyncJobP\000Z1github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbmodel" +
-      "b\006proto3"
+      "\0132\021.model.HiveTarget\022\030\n\ncluster_id\030\035 \001(\t" +
+      "B\004\342\337\037\000:\006\312\262\004\002\n\000\"\256\007\n\017SyncJobSchedule\022M\n\017sc" +
+      "hedule_policy\030\001 \001(\0162%.model.SyncJobSched" +
+      "ule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010exe" +
+      "cuted\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001" +
+      "\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022c" +
+      "oncurrency_policy\030\006 \001(\0162(.model.SyncJobS" +
+      "chedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_" +
+      "policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003da" +
+      "yJ\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001(\tB*\342" +
+      "\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005" +
+      "\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022G\n\014ret" +
+      "ry_policy\030\n \001(\0162\".model.SyncJobSchedule." +
+      "RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_limi" +
+      "t\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t" +
+      "\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027\n" +
+      "\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016S" +
+      "chedulePolicy\022\027\n\023SchedulePolicyUnset\020\000\022\017" +
+      "\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Imme" +
+      "diately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026Concur" +
+      "rencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020" +
+      "\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPo" +
+      "licyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"" +
+      "\246\003\n\016SyncJobRelease\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
+      "\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004typ" +
+      "e\030\005 \001(\0162\023.model.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022,\n\006status\030\006 \001(\0162\034.model.SyncJobRelea" +
+      "se.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n" +
+      "\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\t" +
+      "Suspended\020\002\022\013\n\007Deleted\020\003\"c\n\022Relationaldb" +
+      "Source\022\016\n\006column\030\001 \003(\t\022\r\n\005table\030\002 \003(\t\022\016\n" +
+      "\006schema\030\003 \001(\t\022\r\n\005where\030\004 \001(\t\022\017\n\007splitpk\030" +
+      "\005 \001(\t\"\330\001\n\022RelationaldbTarget\022\016\n\006column\030\001" +
+      " \003(\t\022\r\n\005table\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\017\n\007p" +
+      "re_sql\030\004 \001(\t\022\020\n\010post_sql\030\005 \001(\t\022\022\n\nwrite_" +
+      "mode\030\006 \001(\t\022\022\n\nbatch_size\030\007 \001(\t\022\022\n\nupdate" +
+      "_key\030\010 \001(\t\022\014\n\004mode\030\t \001(\t\022\020\n\010semantic\030\n \001" +
+      "(\t\022\024\n\014with_no_lock\030\013 \001(\t\"n\n\rMongodbSourc" +
+      "e\022\016\n\006column\030\001 \003(\t\022\020\n\010database\030\002 \001(\t\022\027\n\017c" +
+      "ollection_name\030\003 \001(\t\022\022\n\nfetch_size\030\004 \001(\005" +
+      "\022\016\n\006filter\030\005 \001(\t\"\245\001\n\rMongodbTarget\022\016\n\006co" +
+      "lumn\030\001 \003(\t\022\020\n\010database\030\002 \001(\t\022\027\n\017collecti" +
+      "on_name\030\003 \001(\t\022\023\n\013replace_key\030\004 \001(\t\022\022\n\nwr" +
+      "ite_mode\030\005 \001(\t\022\022\n\nbatch_size\030\006 \001(\005\022\034\n\024fl" +
+      "ush_interval_mills\030\007 \001(\005\"Y\n\023ElasticSearc" +
+      "hSource\022\016\n\006column\030\001 \003(\t\022\017\n\007version\030\002 \001(\t" +
+      "\022\r\n\005index\030\003 \001(\t\022\022\n\nbatch_size\030\004 \001(\t\"p\n\023E" +
+      "lasticSearchTarget\022\016\n\006column\030\001 \003(\t\022\017\n\007ve" +
+      "rsion\030\002 \001(\t\022\r\n\005index\030\003 \001(\t\022\022\n\nbatch_size" +
+      "\030\004 \001(\t\022\025\n\rkey_delimiter\030\005 \001(\t\"\307\001\n\016Logmin" +
+      "erSource\022\r\n\005table\030\001 \003(\t\022\024\n\014split_update\030" +
+      "\002 \001(\t\022\023\n\013paving_data\030\003 \001(\t\022\013\n\003cat\030\004 \001(\t\022" +
+      "\025\n\rread_position\030\005 \001(\t\022\022\n\nstart_time\030\006 \001" +
+      "(\003\022\021\n\tstart_scn\030\007 \001(\003\022\022\n\nfetch_size\030\010 \001(" +
+      "\003\022\034\n\024support_auto_add_log\030\t \001(\003\"\305\001\n\013Pgwa" +
+      "lSource\022\025\n\rdatabase_name\030\001 \001(\t\022\022\n\ntable_" +
+      "list\030\002 \003(\t\022\021\n\tslot_name\030\003 \001(\t\022\024\n\014split_u" +
+      "pdate\030\004 \001(\t\022\025\n\rallow_created\030\005 \001(\t\022\021\n\tte" +
+      "mporary\030\006 \001(\t\022\023\n\013paving_data\030\007 \001(\t\022\013\n\003ls" +
+      "n\030\010 \001(\t\022\026\n\016slot_available\030\t \001(\t\"\204\001\n\022SqlS" +
+      "erverCdcSource\022\022\n\ntable_list\030\001 \003(\t\022\024\n\014sp" +
+      "lit_update\030\002 \001(\t\022\023\n\013paving_data\030\003 \001(\t\022\013\n" +
+      "\003cat\030\004 \001(\t\022\013\n\003lsn\030\005 \001(\t\022\025\n\rpoll_interval" +
+      "\030\006 \001(\t\"\250\001\n\014BinlogSource\022\016\n\006schema\030\001 \001(\t\022" +
+      "\013\n\003cat\030\002 \001(\t\022\033\n\005start\030\003 \001(\0132\014.model.Star" +
+      "t\022\r\n\005table\030\004 \003(\t\022\024\n\014split_update\030\005 \001(\t\022\023" +
+      "\n\013paving_data\030\006 \001(\t\022\016\n\006filter\030\007 \001(\003\022\024\n\014i" +
+      "s_gtid_mode\030\010 \001(\003\"B\n\005Start\022\021\n\ttimestamp\030" +
+      "\001 \001(\t\022\024\n\014journal_name\030\002 \001(\t\022\020\n\010position\030" +
+      "\003 \001(\t\"\232\003\n\nHiveTarget\022\021\n\tpartition\030\001 \001(\t\022" +
+      "\026\n\016partition_type\030\002 \001(\t\022\025\n\rtables_column" +
+      "\030\003 \001(\t\022\030\n\020analytical_rules\030\004 \001(\t\022\016\n\006sche" +
+      "ma\030\005 \001(\t\022\030\n\020distribute_table\030\006 \001(\t\022\022\n\nwr" +
+      "ite_mode\030\007 \001(\003\022\021\n\tfile_type\030\010 \001(\003\022\022\n\ndef" +
+      "ault_fs\030\t \001(\003\022\025\n\rmax_file_size\030\n \001(\003\022\027\n\017" +
+      "next_check_rows\030\013 \001(\003\022\026\n\016row_group_size\030" +
+      "\014 \001(\003\022\031\n\021enable_dictionary\030\r \001(\003\022\020\n\010enco" +
+      "ding\030\016 \001(\003\022\027\n\017field_delimiter\030\017 \001(\003\022\020\n\010c" +
+      "ompress\030\020 \001(\003\022\024\n\014charset_name\030\021 \001(\003\022\025\n\rh" +
+      "adoop_Config\030\022 \001(\t\"\251\001\n\nHdfsSource\022\016\n\006col" +
+      "umn\030\001 \003(\t\022\014\n\004path\030\002 \001(\t\022\021\n\tfile_type\030\003 \001" +
+      "(\t\022\022\n\ndefault_fs\030\004 \001(\t\022\024\n\014filter_regex\030\005" +
+      " \001(\t\022\027\n\017field_delimiter\030\006 \001(\t\022\020\n\010encodin" +
+      "g\030\007 \001(\t\022\025\n\rhadoop_config\030\010 \001(\t\"\371\002\n\nHdfsT" +
+      "arget\022\016\n\006column\030\001 \003(\t\022\014\n\004path\030\002 \001(\t\022\021\n\tf" +
+      "ile_name\030\003 \001(\t\022\021\n\tfile_type\030\004 \001(\t\022\022\n\nwri" +
+      "te_mode\030\005 \001(\t\022\022\n\ndefault_fs\030\006 \001(\t\022\024\n\014fil" +
+      "ter_regex\030\007 \001(\t\022\027\n\017field_delimiter\030\010 \001(\t" +
+      "\022\030\n\020full_column_name\030\t \001(\t\022\030\n\020full_colum" +
+      "n_type\030\n \001(\t\022\020\n\010compress\030\013 \001(\t\022\025\n\rmax_fi" +
+      "le_size\030\014 \001(\t\022\027\n\017next_check_rows\030\r \001(\t\022\026" +
+      "\n\016row_group_size\030\016 \001(\t\022\031\n\021enable_diction" +
+      "ary\030\017 \001(\t\022\020\n\010encoding\030\020 \001(\t\022\025\n\rhadoop_co" +
+      "nfig\030\021 \001(\t\"\217\002\n\tFtpSource\022\016\n\006column\030\001 \003(\t" +
+      "\022\014\n\004path\030\002 \003(\t\022\030\n\020private_key_path\030\003 \001(\t" +
+      "\022\027\n\017connect_pattern\030\004 \001(\t\022\027\n\017field_delim" +
+      "iter\030\005 \001(\t\022\020\n\010encoding\030\006 \001(\t\022\030\n\020control_" +
+      "encoding\030\007 \001(\t\022\034\n\024is_first_line_header\030\010" +
+      " \001(\t\022\017\n\007timeout\030\t \001(\t\022\021\n\tfile_type\030\n \001(\t" +
+      "\022\025\n\rcompress_type\030\013 \001(\t\022\023\n\013file_config\030\014" +
+      " \001(\t\"\320\001\n\tFtpTarget\022\016\n\006column\030\001 \003(\t\022\014\n\004pa" +
+      "th\030\002 \003(\t\022\030\n\020private_key_path\030\003 \001(\t\022\027\n\017co" +
+      "nnect_pattern\030\004 \001(\t\022\027\n\017field_delimiter\030\005" +
+      " \001(\t\022\020\n\010encoding\030\006 \001(\t\022\030\n\020control_encodi" +
+      "ng\030\007 \001(\t\022\034\n\024is_first_line_header\030\010 \001(\t\022\017" +
+      "\n\007timeout\030\t \001(\t\"f\n\013HbaseSource\022,\n\tparame" +
+      "ter\030\001 \001(\0132\031.model.HbaseReadParameter\022\014\n\004" +
+      "name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132\014.model.Table\"" +
+      "\222\001\n\022HbaseReadParameter\022\016\n\006column\030\001 \003(\t\022\023" +
+      "\n\013hbaseConfig\030\002 \001(\t\022\033\n\005range\030\003 \001(\0132\014.mod" +
+      "el.Range\022\022\n\nchange_log\030\004 \001(\t\022\020\n\010encoding" +
+      "\030\005 \001(\t\022\024\n\014hadoopConfig\030\006 \001(\t\"M\n\005Range\022\025\n" +
+      "\rstart_row_key\030\001 \001(\003\022\023\n\013end_row_key\030\002 \001(" +
+      "\003\022\030\n\020is_binary_rowkey\030\003 \001(\003\"g\n\013HbaseTarg" +
+      "et\022-\n\tparameter\030\001 \001(\0132\032.model.HbaseWrite" +
+      "Parameter\022\014\n\004name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132\014" +
+      ".model.Table\"\032\n\005Table\022\021\n\ttablename\030\001 \001(\t" +
+      "\"\342\001\n\023HbaseWriteParameter\022\016\n\006column\030\001 \003(\t" +
+      "\022\023\n\013hbaseConfig\030\002 \001(\t\022\021\n\tnull_mode\030\003 \001(\t" +
+      "\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021write_buffer_size\030" +
+      "\005 \001(\t\022\022\n\nchange_log\030\006 \001(\t\022\026\n\016rowkey_expr" +
+      "ess\030\007 \001(\t\022\034\n\024version_column_index\030\010 \001(\t\022" +
+      "\034\n\024version_column_value\030\t \001(\t\"\303\001\n\013KafkaS" +
+      "ource\022\016\n\006column\030\001 \003(\t\022\r\n\005topic\030\002 \001(\t\022\014\n\004" +
+      "mode\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\t\022\016\n\006offset\030" +
+      "\005 \001(\t\022\020\n\010group_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001(" +
+      "\t\022\r\n\005codec\030\010 \001(\t\0221\n\020consumersettings\030\t \001" +
+      "(\0132\027.model.ConsumerSettings\"I\n\020ConsumerS" +
+      "ettings\022\031\n\021bootstrap_servers\030\001 \001(\t\022\032\n\022au" +
+      "to_commit_enable\030\002 \001(\t\"d\n\013KafkaTarget\022\023\n" +
+      "\013tableFields\030\001 \003(\t\022\r\n\005topic\030\002 \001(\t\0221\n\020con" +
+      "sumersettings\030\003 \001(\0132\027.model.ConsumerSett" +
+      "ings\"\273\001\n\013RedisTarget\022\020\n\010database\030\001 \001(\t\022\022" +
+      "\n\nkeyIndexes\030\002 \003(\005\022\023\n\013date_format\030\003 \001(\t\022" +
+      "\023\n\013expire_time\030\004 \001(\t\022\022\n\nwrite_type\030\005 \001(\t" +
+      "\022\014\n\004mode\030\006 \001(\t\022\033\n\023key_field_delimiter\030\007 " +
+      "\001(\t\022\035\n\025value_field_delimiter\030\010 \001(\tBn\n\"co" +
+      "m.dataomnis.gproto.types.pbmodelB\023PBSync" +
+      "ManageSyncJobP\000Z1github.com/DataWorkbenc" +
+      "h/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -63454,7 +63649,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_SyncJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobArgs_descriptor,
-        new java.lang.String[] { "SourceId", "TargetId", "Parallelism", "Percentage", "RecordNum", "Bytes", "JobMode", "JobContent", "RelationaldbSource", "RelationaldbTarget", "MongodbSource", "MongodbTarget", "ElasticsearchSource", "ElasticsearchTarget", "HdfsSource", "HdfsTarget", "FtpSource", "FtpTarget", "HbaseSource", "HbaseTarget", "KafkaSource", "KafkaTarget", "BinlogSource", "PgwalSource", "SqlservercdcSource", "LogminerSource", "RedisTarget", "HiveTarget", });
+        new java.lang.String[] { "SourceId", "TargetId", "Parallelism", "Percentage", "RecordNum", "Bytes", "JobMode", "JobContent", "RelationaldbSource", "RelationaldbTarget", "MongodbSource", "MongodbTarget", "ElasticsearchSource", "ElasticsearchTarget", "HdfsSource", "HdfsTarget", "FtpSource", "FtpTarget", "HbaseSource", "HbaseTarget", "KafkaSource", "KafkaTarget", "BinlogSource", "PgwalSource", "SqlservercdcSource", "LogminerSource", "RedisTarget", "HiveTarget", "ClusterId", });
     internal_static_model_SyncJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_model_SyncJobSchedule_fieldAccessorTable = new

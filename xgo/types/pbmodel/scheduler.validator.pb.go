@@ -10,9 +10,9 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
-func (this *QueueMessage) _xxx_xxx_Validator_Validate_property() error {
+func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_property() error {
 	if !(this.Property != nil) {
-		return protovalidator.FieldError2("QueueMessage", "the value of field 'property' cannot be null")
+		return protovalidator.FieldError2("StreamJobQueue", "the value of field 'property' cannot be null")
 	}
 	if dt, ok := interface{}(this.Property).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -22,12 +22,12 @@ func (this *QueueMessage) _xxx_xxx_Validator_Validate_property() error {
 	return nil
 }
 
-func (this *QueueMessage) _xxx_xxx_Validator_Validate_flink_id() error {
+func (this *StreamJobQueue) _xxx_xxx_Validator_Validate_flink_id() error {
 	return nil
 }
 
-// Set default value for message model.QueueMessage
-func (this *QueueMessage) Validate() error {
+// Set default value for message model.StreamJobQueue
+func (this *StreamJobQueue) Validate() error {
 	if this == nil {
 		return nil
 	}

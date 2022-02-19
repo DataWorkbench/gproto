@@ -1032,6 +1032,515 @@ public final class PBModelQuota {
 
   }
 
+  public interface QuotaSyncJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.QuotaSyncJob)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Limit is the maximum number of stream job for every user. default 500.
+     * </pre>
+     *
+     * <code>int64 limit = 1;</code>
+     * @return The limit.
+     */
+    long getLimit();
+  }
+  /**
+   * Protobuf type {@code model.QuotaSyncJob}
+   */
+  public static final class QuotaSyncJob extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.QuotaSyncJob)
+      QuotaSyncJobOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use QuotaSyncJob.newBuilder() to construct.
+    private QuotaSyncJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private QuotaSyncJob() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new QuotaSyncJob();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private QuotaSyncJob(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              limit_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder.class);
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 1;
+    private long limit_;
+    /**
+     * <pre>
+     * Limit is the maximum number of stream job for every user. default 500.
+     * </pre>
+     *
+     * <code>int64 limit = 1;</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (limit_ != 0L) {
+        output.writeInt64(1, limit_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, limit_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) obj;
+
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.QuotaSyncJob}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.QuotaSyncJob)
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        limit_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob(this);
+        result.limit_ = limit_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance()) return this;
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <pre>
+       * Limit is the maximum number of stream job for every user. default 500.
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * Limit is the maximum number of stream job for every user. default 500.
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Limit is the maximum number of stream job for every user. default 500.
+       * </pre>
+       *
+       * <code>int64 limit = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.QuotaSyncJob)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.QuotaSyncJob)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuotaSyncJob>
+        PARSER = new com.google.protobuf.AbstractParser<QuotaSyncJob>() {
+      @java.lang.Override
+      public QuotaSyncJob parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new QuotaSyncJob(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<QuotaSyncJob> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuotaSyncJob> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface QuotaDataSourceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.QuotaDataSource)
       com.google.protobuf.MessageOrBuilder {
@@ -3943,515 +4452,6 @@ public final class PBModelQuota {
 
   }
 
-  public interface QuotaSyncJobOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.QuotaSyncJob)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Limit is the maximum number of sync job for every user. default 500.
-     * </pre>
-     *
-     * <code>int64 limit = 1;</code>
-     * @return The limit.
-     */
-    long getLimit();
-  }
-  /**
-   * Protobuf type {@code model.QuotaSyncJob}
-   */
-  public static final class QuotaSyncJob extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.QuotaSyncJob)
-      QuotaSyncJobOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use QuotaSyncJob.newBuilder() to construct.
-    private QuotaSyncJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private QuotaSyncJob() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new QuotaSyncJob();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private QuotaSyncJob(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              limit_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder.class);
-    }
-
-    public static final int LIMIT_FIELD_NUMBER = 1;
-    private long limit_;
-    /**
-     * <pre>
-     * Limit is the maximum number of sync job for every user. default 500.
-     * </pre>
-     *
-     * <code>int64 limit = 1;</code>
-     * @return The limit.
-     */
-    @java.lang.Override
-    public long getLimit() {
-      return limit_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (limit_ != 0L) {
-        output.writeInt64(1, limit_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (limit_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, limit_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob other = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) obj;
-
-      if (getLimit()
-          != other.getLimit()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLimit());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code model.QuotaSyncJob}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.QuotaSyncJob)
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJobOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.class, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        limit_ = 0L;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.internal_static_model_QuotaSyncJob_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob result = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob(this);
-        result.limit_ = limit_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob.getDefaultInstance()) return this;
-        if (other.getLimit() != 0L) {
-          setLimit(other.getLimit());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long limit_ ;
-      /**
-       * <pre>
-       * Limit is the maximum number of sync job for every user. default 500.
-       * </pre>
-       *
-       * <code>int64 limit = 1;</code>
-       * @return The limit.
-       */
-      @java.lang.Override
-      public long getLimit() {
-        return limit_;
-      }
-      /**
-       * <pre>
-       * Limit is the maximum number of sync job for every user. default 500.
-       * </pre>
-       *
-       * <code>int64 limit = 1;</code>
-       * @param value The limit to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLimit(long value) {
-        
-        limit_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Limit is the maximum number of sync job for every user. default 500.
-       * </pre>
-       *
-       * <code>int64 limit = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLimit() {
-        
-        limit_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.QuotaSyncJob)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.QuotaSyncJob)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<QuotaSyncJob>
-        PARSER = new com.google.protobuf.AbstractParser<QuotaSyncJob>() {
-      @java.lang.Override
-      public QuotaSyncJob parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuotaSyncJob(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<QuotaSyncJob> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<QuotaSyncJob> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSyncJob getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface UserQuotaOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.UserQuota)
       com.google.protobuf.MessageOrBuilder {
@@ -7188,6 +7188,11 @@ public final class PBModelQuota {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_QuotaStreamJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_QuotaSyncJob_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_QuotaSyncJob_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_QuotaDataSource_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7213,11 +7218,6 @@ public final class PBModelQuota {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_QuotaNetwork_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_QuotaSyncJob_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_QuotaSyncJob_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_UserQuota_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7235,14 +7235,14 @@ public final class PBModelQuota {
       "github.com/yu31/protoc-plugin/proto/gosq" +
       "l.proto\"\'\n\016QuotaWorkspace\022\r\n\005limit\030\001 \001(\003" +
       ":\006\312\262\004\002\n\000\"\'\n\016QuotaStreamJob\022\r\n\005limit\030\001 \001(" +
-      "\003:\006\312\262\004\002\n\000\"(\n\017QuotaDataSource\022\r\n\005limit\030\001 " +
-      "\001(\003:\006\312\262\004\002\n\000\"!\n\010QuotaUDF\022\r\n\005limit\030\001 \001(\003:\006" +
-      "\312\262\004\002\n\000\"D\n\tQuotaFile\022\r\n\005limit\030\001 \001(\003\022\014\n\004si" +
-      "ze\030\002 \001(\003\022\022\n\nsize_total\030\003 \001(\003:\006\312\262\004\002\n\000\"H\n\021" +
-      "QuotaFlinkCluster\022\r\n\005limit\030\001 \001(\003\022\n\n\002cu\030\002" +
-      " \001(\002\022\020\n\010cu_total\030\003 \001(\002:\006\312\262\004\002\n\000\"%\n\014QuotaN" +
-      "etwork\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"%\n\014QuotaSy" +
-      "ncJob\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"\332\002\n\tUserQuo" +
+      "\003:\006\312\262\004\002\n\000\"%\n\014QuotaSyncJob\022\r\n\005limit\030\001 \001(\003" +
+      ":\006\312\262\004\002\n\000\"(\n\017QuotaDataSource\022\r\n\005limit\030\001 \001" +
+      "(\003:\006\312\262\004\002\n\000\"!\n\010QuotaUDF\022\r\n\005limit\030\001 \001(\003:\006\312" +
+      "\262\004\002\n\000\"D\n\tQuotaFile\022\r\n\005limit\030\001 \001(\003\022\014\n\004siz" +
+      "e\030\002 \001(\003\022\022\n\nsize_total\030\003 \001(\003:\006\312\262\004\002\n\000\"H\n\021Q" +
+      "uotaFlinkCluster\022\r\n\005limit\030\001 \001(\003\022\n\n\002cu\030\002 " +
+      "\001(\002\022\020\n\010cu_total\030\003 \001(\002:\006\312\262\004\002\n\000\"%\n\014QuotaNe" +
+      "twork\022\r\n\005limit\030\001 \001(\003:\006\312\262\004\002\n\000\"\332\002\n\tUserQuo" +
       "ta\022\017\n\007user_id\030\001 \001(\t\022(\n\tworkspace\030\002 \001(\0132\025" +
       ".model.QuotaWorkspace\022)\n\nstream_job\030\003 \001(" +
       "\0132\025.model.QuotaStreamJob\022+\n\013data_source\030" +
@@ -7273,41 +7273,41 @@ public final class PBModelQuota {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_QuotaStreamJob_descriptor,
         new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaDataSource_descriptor =
+    internal_static_model_QuotaSyncJob_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_model_QuotaSyncJob_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_QuotaSyncJob_descriptor,
+        new java.lang.String[] { "Limit", });
+    internal_static_model_QuotaDataSource_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_model_QuotaDataSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_QuotaDataSource_descriptor,
         new java.lang.String[] { "Limit", });
     internal_static_model_QuotaUDF_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_model_QuotaUDF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_QuotaUDF_descriptor,
         new java.lang.String[] { "Limit", });
     internal_static_model_QuotaFile_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_model_QuotaFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_QuotaFile_descriptor,
         new java.lang.String[] { "Limit", "Size", "SizeTotal", });
     internal_static_model_QuotaFlinkCluster_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_model_QuotaFlinkCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_QuotaFlinkCluster_descriptor,
         new java.lang.String[] { "Limit", "Cu", "CuTotal", });
     internal_static_model_QuotaNetwork_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_model_QuotaNetwork_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_QuotaNetwork_descriptor,
-        new java.lang.String[] { "Limit", });
-    internal_static_model_QuotaSyncJob_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_model_QuotaSyncJob_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_QuotaSyncJob_descriptor,
         new java.lang.String[] { "Limit", });
     internal_static_model_UserQuota_descriptor =
       getDescriptor().getMessageTypes().get(8);

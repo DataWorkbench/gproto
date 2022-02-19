@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\021PBResponseAccountP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"L\n\x18ValidateRequestSignature\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"\'\n\nCreateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\'\n\nUpdateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\x1d\n\nDeleteUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"Q\n\x0c\x43heckSession\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x15\n\raccess_key_id\x18\x02 \x01(\t\x12\x19\n\x11secret_access_key\x18\x03 \x01(\t\"\x18\n\x05Login\x12\x0f\n\x07session\x18\x01 \x01(\tBr\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"L\n\x18ValidateRequestSignature\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x03 \x01(\t\"\'\n\nCreateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\'\n\nUpdateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\x1d\n\nDeleteUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"Q\n\x0c\x43heckSession\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x15\n\raccess_key_id\x18\x02 \x01(\t\x12\x19\n\x11secret_access_key\x18\x03 \x01(\t\" \n\rCreateSession\x12\x0f\n\x07session\x18\x01 \x01(\t\"?\n\x0bGetUserRole\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x11\n\tprivilege\x18\x03 \x01(\x05\x42r\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
 
@@ -307,16 +307,16 @@ _CHECKSESSION = _descriptor.Descriptor(
 )
 
 
-_LOGIN = _descriptor.Descriptor(
-  name='Login',
-  full_name='response.Login',
+_CREATESESSION = _descriptor.Descriptor(
+  name='CreateSession',
+  full_name='response.CreateSession',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='session', full_name='response.Login.session', index=0,
+      name='session', full_name='response.CreateSession.session', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -335,7 +335,53 @@ _LOGIN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=520,
-  serialized_end=544,
+  serialized_end=552,
+)
+
+
+_GETUSERROLE = _descriptor.Descriptor(
+  name='GetUserRole',
+  full_name='response.GetUserRole',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='response.GetUserRole.user_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='role', full_name='response.GetUserRole.role', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='privilege', full_name='response.GetUserRole.privilege', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=554,
+  serialized_end=617,
 )
 
 _DESCRIBEUSERS.fields_by_name['user_set'].message_type = proto_dot_types_dot_model_dot_account__pb2._USER
@@ -348,7 +394,8 @@ DESCRIPTOR.message_types_by_name['CreateUser'] = _CREATEUSER
 DESCRIPTOR.message_types_by_name['UpdateUser'] = _UPDATEUSER
 DESCRIPTOR.message_types_by_name['DeleteUser'] = _DELETEUSER
 DESCRIPTOR.message_types_by_name['CheckSession'] = _CHECKSESSION
-DESCRIPTOR.message_types_by_name['Login'] = _LOGIN
+DESCRIPTOR.message_types_by_name['CreateSession'] = _CREATESESSION
+DESCRIPTOR.message_types_by_name['GetUserRole'] = _GETUSERROLE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DescribeAccessKey = _reflection.GeneratedProtocolMessageType('DescribeAccessKey', (_message.Message,), {
@@ -400,12 +447,19 @@ CheckSession = _reflection.GeneratedProtocolMessageType('CheckSession', (_messag
   })
 _sym_db.RegisterMessage(CheckSession)
 
-Login = _reflection.GeneratedProtocolMessageType('Login', (_message.Message,), {
-  'DESCRIPTOR' : _LOGIN,
+CreateSession = _reflection.GeneratedProtocolMessageType('CreateSession', (_message.Message,), {
+  'DESCRIPTOR' : _CREATESESSION,
   '__module__' : 'proto.types.response.account_pb2'
-  # @@protoc_insertion_point(class_scope:response.Login)
+  # @@protoc_insertion_point(class_scope:response.CreateSession)
   })
-_sym_db.RegisterMessage(Login)
+_sym_db.RegisterMessage(CreateSession)
+
+GetUserRole = _reflection.GeneratedProtocolMessageType('GetUserRole', (_message.Message,), {
+  'DESCRIPTOR' : _GETUSERROLE,
+  '__module__' : 'proto.types.response.account_pb2'
+  # @@protoc_insertion_point(class_scope:response.GetUserRole)
+  })
+_sym_db.RegisterMessage(GetUserRole)
 
 
 DESCRIPTOR._options = None

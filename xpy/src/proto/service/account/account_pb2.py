@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)com.dataomnis.gproto.service.pbsvcaccountB\014PBSvcAccountP\000Z8github.com/DataWorkbench/gproto/xgo/service/pbsvcaccount',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/service/account/account.proto\x12\x07\x61\x63\x63ount\x1a!proto/types/request/account.proto\x1a\"proto/types/response/account.proto2\xa0\x04\n\x07\x41\x63\x63ount\x12\x63\n\x18ValidateRequestSignature\x12!.request.ValidateRequestSignature\x1a\".response.ValidateRequestSignature\"\x00\x12\x42\n\rDescribeUsers\x12\x16.request.DescribeUsers\x1a\x17.response.DescribeUsers\"\x00\x12N\n\x11\x44\x65scribeAccessKey\x12\x1a.request.DescribeAccessKey\x1a\x1b.response.DescribeAccessKey\"\x00\x12\x39\n\nCreateUser\x12\x13.request.CreateUser\x1a\x14.response.CreateUser\"\x00\x12\x39\n\nUpdateUser\x12\x13.request.UpdateUser\x1a\x14.response.UpdateUser\"\x00\x12\x39\n\nDeleteUser\x12\x13.request.DeleteUser\x1a\x14.response.DeleteUser\"\x00\x12?\n\x0c\x43heckSession\x12\x15.request.CheckSession\x1a\x16.response.CheckSession\"\x00\x12*\n\x05Login\x12\x0e.request.Login\x1a\x0f.response.Login\"\x00\x42u\n)com.dataomnis.gproto.service.pbsvcaccountB\x0cPBSvcAccountP\x00Z8github.com/DataWorkbench/gproto/xgo/service/pbsvcaccountb\x06proto3'
+  serialized_pb=b'\n#proto/service/account/account.proto\x12\x07\x61\x63\x63ount\x1a!proto/types/request/account.proto\x1a\"proto/types/response/account.proto2\xb8\x04\n\x07\x41\x63\x63ount\x12\x63\n\x18ValidateRequestSignature\x12!.request.ValidateRequestSignature\x1a\".response.ValidateRequestSignature\"\x00\x12\x42\n\rDescribeUsers\x12\x16.request.DescribeUsers\x1a\x17.response.DescribeUsers\"\x00\x12N\n\x11\x44\x65scribeAccessKey\x12\x1a.request.DescribeAccessKey\x1a\x1b.response.DescribeAccessKey\"\x00\x12\x39\n\nCreateUser\x12\x13.request.CreateUser\x1a\x14.response.CreateUser\"\x00\x12\x39\n\nUpdateUser\x12\x13.request.UpdateUser\x1a\x14.response.UpdateUser\"\x00\x12\x39\n\nDeleteUser\x12\x13.request.DeleteUser\x1a\x14.response.DeleteUser\"\x00\x12?\n\x0c\x43heckSession\x12\x15.request.CheckSession\x1a\x16.response.CheckSession\"\x00\x12\x42\n\rCreateSession\x12\x16.request.CreateSession\x1a\x17.response.CreateSession\"\x00\x42u\n)com.dataomnis.gproto.service.pbsvcaccountB\x0cPBSvcAccountP\x00Z8github.com/DataWorkbench/gproto/xgo/service/pbsvcaccountb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_request_dot_account__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_account__pb2.DESCRIPTOR,])
 
@@ -40,7 +40,7 @@ _ACCOUNT = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=120,
-  serialized_end=664,
+  serialized_end=688,
   methods=[
   _descriptor.MethodDescriptor(
     name='ValidateRequestSignature',
@@ -113,12 +113,12 @@ _ACCOUNT = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='Login',
-    full_name='account.Account.Login',
+    name='CreateSession',
+    full_name='account.Account.CreateSession',
     index=7,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_account__pb2._LOGIN,
-    output_type=proto_dot_types_dot_response_dot_account__pb2._LOGIN,
+    input_type=proto_dot_types_dot_request_dot_account__pb2._CREATESESSION,
+    output_type=proto_dot_types_dot_response_dot_account__pb2._CREATESESSION,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

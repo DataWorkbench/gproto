@@ -14327,6 +14327,17 @@ public final class PBRequestSyncJobManage {
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
+
+    /**
+     * <pre>
+     * StopRunning indicates whether stop the sync job instance that state running.
+     * &#64;inject_tag: json:"stop_running"
+     * </pre>
+     *
+     * <code>bool stop_running = 3;</code>
+     * @return The stopRunning.
+     */
+    boolean getStopRunning();
   }
   /**
    * <pre>
@@ -14389,6 +14400,11 @@ public final class PBRequestSyncJobManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               jobId_ = s;
+              break;
+            }
+            case 24: {
+
+              stopRunning_ = input.readBool();
               break;
             }
             default: {
@@ -14519,6 +14535,22 @@ public final class PBRequestSyncJobManage {
       }
     }
 
+    public static final int STOP_RUNNING_FIELD_NUMBER = 3;
+    private boolean stopRunning_;
+    /**
+     * <pre>
+     * StopRunning indicates whether stop the sync job instance that state running.
+     * &#64;inject_tag: json:"stop_running"
+     * </pre>
+     *
+     * <code>bool stop_running = 3;</code>
+     * @return The stopRunning.
+     */
+    @java.lang.Override
+    public boolean getStopRunning() {
+      return stopRunning_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14539,6 +14571,9 @@ public final class PBRequestSyncJobManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
+      if (stopRunning_ != false) {
+        output.writeBool(3, stopRunning_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -14553,6 +14588,10 @@ public final class PBRequestSyncJobManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
+      }
+      if (stopRunning_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, stopRunning_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14573,6 +14612,8 @@ public final class PBRequestSyncJobManage {
           .equals(other.getSpaceId())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
+      if (getStopRunning()
+          != other.getStopRunning()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14588,6 +14629,9 @@ public final class PBRequestSyncJobManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + STOP_RUNNING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStopRunning());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14729,6 +14773,8 @@ public final class PBRequestSyncJobManage {
 
         jobId_ = "";
 
+        stopRunning_ = false;
+
         return this;
       }
 
@@ -14757,6 +14803,7 @@ public final class PBRequestSyncJobManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.OfflineReleaseSyncJob result = new com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.OfflineReleaseSyncJob(this);
         result.spaceId_ = spaceId_;
         result.jobId_ = jobId_;
+        result.stopRunning_ = stopRunning_;
         onBuilt();
         return result;
       }
@@ -14812,6 +14859,9 @@ public final class PBRequestSyncJobManage {
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
           onChanged();
+        }
+        if (other.getStopRunning() != false) {
+          setStopRunning(other.getStopRunning());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -15040,6 +15090,52 @@ public final class PBRequestSyncJobManage {
   checkByteStringIsUtf8(value);
         
         jobId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean stopRunning_ ;
+      /**
+       * <pre>
+       * StopRunning indicates whether stop the sync job instance that state running.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 3;</code>
+       * @return The stopRunning.
+       */
+      @java.lang.Override
+      public boolean getStopRunning() {
+        return stopRunning_;
+      }
+      /**
+       * <pre>
+       * StopRunning indicates whether stop the sync job instance that state running.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 3;</code>
+       * @param value The stopRunning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStopRunning(boolean value) {
+        
+        stopRunning_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * StopRunning indicates whether stop the sync job instance that state running.
+       * &#64;inject_tag: json:"stop_running"
+       * </pre>
+       *
+       * <code>bool stop_running = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStopRunning() {
+        
+        stopRunning_ = false;
         onChanged();
         return this;
       }
@@ -18721,26 +18817,26 @@ public final class PBRequestSyncJobManage {
       "sB\013\342\337\037\007\022\005\332\001\002X\001\022\016\n\006job_id\030\010 \001(\t\"{\n\016Releas" +
       "eSyncJob\022#\n\006job_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
       "\004stj-\022 \n\ncreated_by\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022" +
-      "\014\n\004desc\030\003 \001(\t\022\024\n\014stop_running\030\004 \001(\010\"c\n\025O" +
+      "\014\n\004desc\030\003 \001(\t\022\024\n\014stop_running\030\004 \001(\010\"y\n\025O" +
       "fflineReleaseSyncJob\022%\n\010space_id\030\001 \001(\tB\023" +
       "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\177\n\025SuspendReleaseSyncJo" +
-      "b\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\032\n" +
-      "\014stop_running\030\003 \001(\010B\004\342\337\037\000\"b\n\024ResumeRelea" +
-      "seSyncJob\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004stj-\"\311\001\n\023ListSyncJobVersions\022#\n\006job_id\030" +
-      "\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022&\n\005limit\030\001 \001(" +
-      "\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001" +
-      "(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\003 \001(\tB&\342\337\037\"\022 " +
-      "\302\001\035J\000J\007versionJ\007createdJ\007updated\022\017\n\007reve" +
-      "rse\030\004 \001(\010\"K\n\037DescribeSyncFlinkUIByInstan" +
-      "ceId\022(\n\013instance_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004sti-Bu\n$com.dataomnis.gproto.types.pbr" +
-      "equestB\026PBRequestSyncJobManageP\000Z3github" +
-      ".com/DataWorkbench/gproto/xgo/types/pbre" +
-      "questb\006proto3"
+      "\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\024\n\014stop_running\030\003 \001(\010\"\177" +
+      "\n\025SuspendReleaseSyncJob\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\022\032\n\014stop_running\030\003 \001(" +
+      "\010B\004\342\337\037\000\"b\n\024ResumeReleaseSyncJob\022%\n\010space" +
+      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id" +
+      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004stj-\"\311\001\n\023ListSync" +
+      "JobVersions\022#\n\006job_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004stj-\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022" +
+      "\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n" +
+      "\007sort_by\030\003 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007cr" +
+      "eatedJ\007updated\022\017\n\007reverse\030\004 \001(\010\"K\n\037Descr" +
+      "ibeSyncFlinkUIByInstanceId\022(\n\013instance_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004sti-Bu\n$com.data" +
+      "omnis.gproto.types.pbrequestB\026PBRequestS" +
+      "yncJobManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18826,7 +18922,7 @@ public final class PBRequestSyncJobManage {
     internal_static_request_OfflineReleaseSyncJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_OfflineReleaseSyncJob_descriptor,
-        new java.lang.String[] { "SpaceId", "JobId", });
+        new java.lang.String[] { "SpaceId", "JobId", "StopRunning", });
     internal_static_request_SuspendReleaseSyncJob_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_request_SuspendReleaseSyncJob_fieldAccessorTable = new

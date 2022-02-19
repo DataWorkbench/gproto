@@ -25,7 +25,7 @@ public final class PBSvcAccount {
     java.lang.String[] descriptorData = {
       "\n#proto/service/account/account.proto\022\007a" +
       "ccount\032!proto/types/request/account.prot" +
-      "o\032\"proto/types/response/account.proto2\240\004" +
+      "o\032\"proto/types/response/account.proto2\270\004" +
       "\n\007Account\022c\n\030ValidateRequestSignature\022!." +
       "request.ValidateRequestSignature\032\".respo" +
       "nse.ValidateRequestSignature\"\000\022B\n\rDescri" +
@@ -38,11 +38,12 @@ public final class PBSvcAccount {
       "nse.UpdateUser\"\000\0229\n\nDeleteUser\022\023.request" +
       ".DeleteUser\032\024.response.DeleteUser\"\000\022?\n\014C" +
       "heckSession\022\025.request.CheckSession\032\026.res" +
-      "ponse.CheckSession\"\000\022*\n\005Login\022\016.request." +
-      "Login\032\017.response.Login\"\000Bu\n)com.dataomni" +
-      "s.gproto.service.pbsvcaccountB\014PBSvcAcco" +
-      "untP\000Z8github.com/DataWorkbench/gproto/x" +
-      "go/service/pbsvcaccountb\006proto3"
+      "ponse.CheckSession\"\000\022B\n\rCreateSession\022\026." +
+      "request.CreateSession\032\027.response.CreateS" +
+      "ession\"\000Bu\n)com.dataomnis.gproto.service" +
+      ".pbsvcaccountB\014PBSvcAccountP\000Z8github.co" +
+      "m/DataWorkbench/gproto/xgo/service/pbsvc" +
+      "accountb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

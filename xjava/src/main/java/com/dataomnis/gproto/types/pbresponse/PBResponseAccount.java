@@ -5282,8 +5282,8 @@ public final class PBResponseAccount {
 
   }
 
-  public interface LoginOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:response.Login)
+  public interface CreateSessionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.CreateSession)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5299,18 +5299,18 @@ public final class PBResponseAccount {
         getSessionBytes();
   }
   /**
-   * Protobuf type {@code response.Login}
+   * Protobuf type {@code response.CreateSession}
    */
-  public static final class Login extends
+  public static final class CreateSession extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:response.Login)
-      LoginOrBuilder {
+      // @@protoc_insertion_point(message_implements:response.CreateSession)
+      CreateSessionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Login.newBuilder() to construct.
-    private Login(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateSession.newBuilder() to construct.
+    private CreateSession(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Login() {
+    private CreateSession() {
       session_ = "";
     }
 
@@ -5318,7 +5318,7 @@ public final class PBResponseAccount {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new Login();
+      return new CreateSession();
     }
 
     @java.lang.Override
@@ -5326,7 +5326,7 @@ public final class PBResponseAccount {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Login(
+    private CreateSession(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5371,15 +5371,15 @@ public final class PBResponseAccount {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_Login_descriptor;
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_CreateSession_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_Login_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_CreateSession_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.class, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.Builder.class);
+              com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.class, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.Builder.class);
     }
 
     public static final int SESSION_FIELD_NUMBER = 1;
@@ -5459,10 +5459,10 @@ public final class PBResponseAccount {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login other = (com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login) obj;
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession other = (com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession) obj;
 
       if (!getSession()
           .equals(other.getSession())) return false;
@@ -5484,69 +5484,69 @@ public final class PBResponseAccount {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5559,7 +5559,7 @@ public final class PBResponseAccount {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5575,26 +5575,26 @@ public final class PBResponseAccount {
       return builder;
     }
     /**
-     * Protobuf type {@code response.Login}
+     * Protobuf type {@code response.CreateSession}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:response.Login)
-        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.LoginOrBuilder {
+        // @@protoc_insertion_point(builder_implements:response.CreateSession)
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSessionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_Login_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_CreateSession_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_Login_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_CreateSession_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.class, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.Builder.class);
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.class, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5620,17 +5620,17 @@ public final class PBResponseAccount {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_Login_descriptor;
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_CreateSession_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login build() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login result = buildPartial();
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5638,8 +5638,8 @@ public final class PBResponseAccount {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login buildPartial() {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login result = new com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login(this);
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession result = new com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession(this);
         result.session_ = session_;
         onBuilt();
         return result;
@@ -5679,16 +5679,16 @@ public final class PBResponseAccount {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login) {
-          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login)other);
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login other) {
-        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession.getDefaultInstance()) return this;
         if (!other.getSession().isEmpty()) {
           session_ = other.session_;
           onChanged();
@@ -5708,11 +5708,11 @@ public final class PBResponseAccount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login parsedMessage = null;
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5810,41 +5810,829 @@ public final class PBResponseAccount {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:response.Login)
+      // @@protoc_insertion_point(builder_scope:response.CreateSession)
     }
 
-    // @@protoc_insertion_point(class_scope:response.Login)
-    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:response.CreateSession)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession();
     }
 
-    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Login>
-        PARSER = new com.google.protobuf.AbstractParser<Login>() {
+    private static final com.google.protobuf.Parser<CreateSession>
+        PARSER = new com.google.protobuf.AbstractParser<CreateSession>() {
       @java.lang.Override
-      public Login parsePartialFrom(
+      public CreateSession parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Login(input, extensionRegistry);
+        return new CreateSession(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Login> parser() {
+    public static com.google.protobuf.Parser<CreateSession> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Login> getParserForType() {
+    public com.google.protobuf.Parser<CreateSession> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.Login getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.CreateSession getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetUserRoleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.GetUserRole)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string role = 2;</code>
+     * @return The role.
+     */
+    java.lang.String getRole();
+    /**
+     * <code>string role = 2;</code>
+     * @return The bytes for role.
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
+
+    /**
+     * <code>int32 privilege = 3;</code>
+     * @return The privilege.
+     */
+    int getPrivilege();
+  }
+  /**
+   * Protobuf type {@code response.GetUserRole}
+   */
+  public static final class GetUserRole extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.GetUserRole)
+      GetUserRoleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetUserRole.newBuilder() to construct.
+    private GetUserRole(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetUserRole() {
+      userId_ = "";
+      role_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetUserRole();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetUserRole(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              role_ = s;
+              break;
+            }
+            case 24: {
+
+              privilege_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_GetUserRole_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_GetUserRole_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole.class, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole.Builder.class);
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object role_;
+    /**
+     * <code>string role = 2;</code>
+     * @return The role.
+     */
+    @java.lang.Override
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string role = 2;</code>
+     * @return The bytes for role.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVILEGE_FIELD_NUMBER = 3;
+    private int privilege_;
+    /**
+     * <code>int32 privilege = 3;</code>
+     * @return The privilege.
+     */
+    @java.lang.Override
+    public int getPrivilege() {
+      return privilege_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, role_);
+      }
+      if (privilege_ != 0) {
+        output.writeInt32(3, privilege_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, role_);
+      }
+      if (privilege_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, privilege_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole other = (com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole) obj;
+
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!getRole()
+          .equals(other.getRole())) return false;
+      if (getPrivilege()
+          != other.getPrivilege()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
+      hash = (37 * hash) + PRIVILEGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivilege();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.GetUserRole}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.GetUserRole)
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRoleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_GetUserRole_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_GetUserRole_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole.class, com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+
+        role_ = "";
+
+        privilege_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.internal_static_response_GetUserRole_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole result = new com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole(this);
+        result.userId_ = userId_;
+        result.role_ = role_;
+        result.privilege_ = privilege_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getRole().isEmpty()) {
+          role_ = other.role_;
+          onChanged();
+        }
+        if (other.getPrivilege() != 0) {
+          setPrivilege(other.getPrivilege());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 1;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 1;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object role_ = "";
+      /**
+       * <code>string role = 2;</code>
+       * @return The role.
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @return The bytes for role.
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @param value The role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRole() {
+        
+        role_ = getDefaultInstance().getRole();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 2;</code>
+       * @param value The bytes for role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        role_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int privilege_ ;
+      /**
+       * <code>int32 privilege = 3;</code>
+       * @return The privilege.
+       */
+      @java.lang.Override
+      public int getPrivilege() {
+        return privilege_;
+      }
+      /**
+       * <code>int32 privilege = 3;</code>
+       * @param value The privilege to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivilege(int value) {
+        
+        privilege_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 privilege = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivilege() {
+        
+        privilege_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.GetUserRole)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.GetUserRole)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetUserRole>
+        PARSER = new com.google.protobuf.AbstractParser<GetUserRole>() {
+      @java.lang.Override
+      public GetUserRole parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetUserRole(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetUserRole> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetUserRole> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAccount.GetUserRole getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5886,10 +6674,15 @@ public final class PBResponseAccount {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_CheckSession_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_response_Login_descriptor;
+    internal_static_response_CreateSession_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_response_Login_fieldAccessorTable;
+      internal_static_response_CreateSession_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_GetUserRole_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_GetUserRole_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5911,11 +6704,13 @@ public final class PBResponseAccount {
       "ser\"\'\n\nUpdateUser\022\031\n\004user\030\001 \001(\0132\013.model." +
       "User\"\035\n\nDeleteUser\022\017\n\007user_id\030\001 \001(\t\"Q\n\014C" +
       "heckSession\022\017\n\007user_id\030\001 \001(\t\022\025\n\raccess_k" +
-      "ey_id\030\002 \001(\t\022\031\n\021secret_access_key\030\003 \001(\t\"\030" +
-      "\n\005Login\022\017\n\007session\030\001 \001(\tBr\n%com.dataomni" +
-      "s.gproto.types.pbresponseB\021PBResponseAcc" +
-      "ountP\000Z4github.com/DataWorkbench/gproto/" +
-      "xgo/types/pbresponseb\006proto3"
+      "ey_id\030\002 \001(\t\022\031\n\021secret_access_key\030\003 \001(\t\" " +
+      "\n\rCreateSession\022\017\n\007session\030\001 \001(\t\"?\n\013GetU" +
+      "serRole\022\017\n\007user_id\030\001 \001(\t\022\014\n\004role\030\002 \001(\t\022\021" +
+      "\n\tprivilege\030\003 \001(\005Br\n%com.dataomnis.gprot" +
+      "o.types.pbresponseB\021PBResponseAccountP\000Z" +
+      "4github.com/DataWorkbench/gproto/xgo/typ" +
+      "es/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5964,12 +6759,18 @@ public final class PBResponseAccount {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_CheckSession_descriptor,
         new java.lang.String[] { "UserId", "AccessKeyId", "SecretAccessKey", });
-    internal_static_response_Login_descriptor =
+    internal_static_response_CreateSession_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_response_Login_fieldAccessorTable = new
+    internal_static_response_CreateSession_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_response_Login_descriptor,
+        internal_static_response_CreateSession_descriptor,
         new java.lang.String[] { "Session", });
+    internal_static_response_GetUserRole_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_response_GetUserRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_GetUserRole_descriptor,
+        new java.lang.String[] { "UserId", "Role", "Privilege", });
     com.dataomnis.gproto.types.pbmodel.PBModelAccount.getDescriptor();
   }
 

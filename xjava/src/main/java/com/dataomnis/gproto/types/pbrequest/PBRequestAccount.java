@@ -587,24 +587,24 @@ public final class PBRequestAccount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @return A list containing the users.
      */
     java.util.List<java.lang.String>
         getUsersList();
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @return The count of users.
      */
     int getUsersCount();
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The users at the given index.
      */
     java.lang.String getUsers(int index);
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the users at the given index.
      */
@@ -746,7 +746,7 @@ public final class PBRequestAccount {
     public static final int USERS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList users_;
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @return A list containing the users.
      */
     public com.google.protobuf.ProtocolStringList
@@ -754,14 +754,14 @@ public final class PBRequestAccount {
       return users_;
     }
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @return The count of users.
      */
     public int getUsersCount() {
       return users_.size();
     }
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The users at the given index.
      */
@@ -769,7 +769,7 @@ public final class PBRequestAccount {
       return users_.get(index);
     }
     /**
-     * <code>repeated string users = 1;</code>
+     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the users at the given index.
      */
@@ -1218,7 +1218,7 @@ public final class PBRequestAccount {
          }
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @return A list containing the users.
        */
       public com.google.protobuf.ProtocolStringList
@@ -1226,14 +1226,14 @@ public final class PBRequestAccount {
         return users_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @return The count of users.
        */
       public int getUsersCount() {
         return users_.size();
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
        * @return The users at the given index.
        */
@@ -1241,7 +1241,7 @@ public final class PBRequestAccount {
         return users_.get(index);
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
        * @return The bytes of the users at the given index.
        */
@@ -1250,7 +1250,7 @@ public final class PBRequestAccount {
         return users_.getByteString(index);
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
        * @param value The users to set.
        * @return This builder for chaining.
@@ -1266,7 +1266,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @param value The users to add.
        * @return This builder for chaining.
        */
@@ -1281,7 +1281,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @param values The users to add.
        * @return This builder for chaining.
        */
@@ -1294,7 +1294,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUsers() {
@@ -1304,7 +1304,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>repeated string users = 1;</code>
+       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes of the users to add.
        * @return This builder for chaining.
        */
@@ -3133,36 +3133,36 @@ public final class PBRequestAccount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The userName.
      */
     java.lang.String getUserName();
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userName.
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
 
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The password.
      */
     java.lang.String getPassword();
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
 
     /**
-     * <code>string lang = 3;</code>
+     * <code>string lang = 3 [(.validator.field) = { ... }</code>
      * @return The lang.
      */
     java.lang.String getLang();
     /**
-     * <code>string lang = 3;</code>
+     * <code>string lang = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for lang.
      */
     com.google.protobuf.ByteString
@@ -3471,7 +3471,7 @@ public final class PBRequestAccount {
     public static final int USER_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object userName_;
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The userName.
      */
     @java.lang.Override
@@ -3488,7 +3488,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userName.
      */
     @java.lang.Override
@@ -3509,7 +3509,7 @@ public final class PBRequestAccount {
     public static final int PASSWORD_FIELD_NUMBER = 2;
     private volatile java.lang.Object password_;
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The password.
      */
     @java.lang.Override
@@ -3526,7 +3526,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -3547,7 +3547,7 @@ public final class PBRequestAccount {
     public static final int LANG_FIELD_NUMBER = 3;
     private volatile java.lang.Object lang_;
     /**
-     * <code>string lang = 3;</code>
+     * <code>string lang = 3 [(.validator.field) = { ... }</code>
      * @return The lang.
      */
     @java.lang.Override
@@ -3564,7 +3564,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string lang = 3;</code>
+     * <code>string lang = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for lang.
      */
     @java.lang.Override
@@ -4418,7 +4418,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object userName_ = "";
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @return The userName.
        */
       public java.lang.String getUserName() {
@@ -4434,7 +4434,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for userName.
        */
       public com.google.protobuf.ByteString
@@ -4451,7 +4451,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @param value The userName to set.
        * @return This builder for chaining.
        */
@@ -4466,7 +4466,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUserName() {
@@ -4476,7 +4476,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for userName to set.
        * @return This builder for chaining.
        */
@@ -4494,7 +4494,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object password_ = "";
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -4510,7 +4510,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -4527,7 +4527,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -4542,7 +4542,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
@@ -4552,7 +4552,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -4570,7 +4570,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object lang_ = "";
       /**
-       * <code>string lang = 3;</code>
+       * <code>string lang = 3 [(.validator.field) = { ... }</code>
        * @return The lang.
        */
       public java.lang.String getLang() {
@@ -4586,7 +4586,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string lang = 3;</code>
+       * <code>string lang = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for lang.
        */
       public com.google.protobuf.ByteString
@@ -4603,7 +4603,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string lang = 3;</code>
+       * <code>string lang = 3 [(.validator.field) = { ... }</code>
        * @param value The lang to set.
        * @return This builder for chaining.
        */
@@ -4618,7 +4618,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string lang = 3;</code>
+       * <code>string lang = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearLang() {
@@ -4628,7 +4628,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string lang = 3;</code>
+       * <code>string lang = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for lang to set.
        * @return This builder for chaining.
        */
@@ -5408,12 +5408,12 @@ public final class PBRequestAccount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     java.lang.String getUserId();
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
@@ -5765,7 +5765,7 @@ public final class PBRequestAccount {
     public static final int USER_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object userId_;
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -5782,7 +5782,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -6767,7 +6767,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object userId_ = "";
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -6783,7 +6783,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -6800,7 +6800,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -6815,7 +6815,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -6825,7 +6825,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -7833,12 +7833,12 @@ public final class PBRequestAccount {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     java.lang.String getUserId();
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
@@ -7931,7 +7931,7 @@ public final class PBRequestAccount {
     public static final int USER_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object userId_;
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -7948,7 +7948,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string user_id = 1;</code>
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -8270,7 +8270,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object userId_ = "";
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -8286,7 +8286,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -8303,7 +8303,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -8318,7 +8318,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -8328,7 +8328,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_id = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -8964,47 +8964,47 @@ public final class PBRequestAccount {
 
   }
 
-  public interface LoginOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.Login)
+  public interface CreateSessionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.CreateSession)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The userName.
      */
     java.lang.String getUserName();
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userName.
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
 
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The password.
      */
     java.lang.String getPassword();
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
   }
   /**
-   * Protobuf type {@code request.Login}
+   * Protobuf type {@code request.CreateSession}
    */
-  public static final class Login extends
+  public static final class CreateSession extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.Login)
-      LoginOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.CreateSession)
+      CreateSessionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Login.newBuilder() to construct.
-    private Login(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateSession.newBuilder() to construct.
+    private CreateSession(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Login() {
+    private CreateSession() {
       userName_ = "";
       password_ = "";
     }
@@ -9013,7 +9013,7 @@ public final class PBRequestAccount {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new Login();
+      return new CreateSession();
     }
 
     @java.lang.Override
@@ -9021,7 +9021,7 @@ public final class PBRequestAccount {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Login(
+    private CreateSession(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9072,21 +9072,21 @@ public final class PBRequestAccount {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_Login_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_CreateSession_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_Login_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_CreateSession_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.class, com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.class, com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.Builder.class);
     }
 
     public static final int USER_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object userName_;
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The userName.
      */
     @java.lang.Override
@@ -9103,7 +9103,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string user_name = 1;</code>
+     * <code>string user_name = 1 [(.validator.field) = { ... }</code>
      * @return The bytes for userName.
      */
     @java.lang.Override
@@ -9124,7 +9124,7 @@ public final class PBRequestAccount {
     public static final int PASSWORD_FIELD_NUMBER = 2;
     private volatile java.lang.Object password_;
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The password.
      */
     @java.lang.Override
@@ -9141,7 +9141,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string password = 2;</code>
+     * <code>string password = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -9204,10 +9204,10 @@ public final class PBRequestAccount {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login other = (com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession other = (com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession) obj;
 
       if (!getUserName()
           .equals(other.getUserName())) return false;
@@ -9233,69 +9233,69 @@ public final class PBRequestAccount {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9308,7 +9308,7 @@ public final class PBRequestAccount {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9324,26 +9324,26 @@ public final class PBRequestAccount {
       return builder;
     }
     /**
-     * Protobuf type {@code request.Login}
+     * Protobuf type {@code request.CreateSession}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.Login)
-        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.LoginOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.CreateSession)
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSessionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_Login_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_CreateSession_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_Login_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_CreateSession_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.class, com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.class, com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9371,17 +9371,17 @@ public final class PBRequestAccount {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_Login_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.internal_static_request_CreateSession_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9389,8 +9389,8 @@ public final class PBRequestAccount {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession(this);
         result.userName_ = userName_;
         result.password_ = password_;
         onBuilt();
@@ -9431,16 +9431,16 @@ public final class PBRequestAccount {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession.getDefaultInstance()) return this;
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
           onChanged();
@@ -9464,11 +9464,11 @@ public final class PBRequestAccount {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9480,7 +9480,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object userName_ = "";
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @return The userName.
        */
       public java.lang.String getUserName() {
@@ -9496,7 +9496,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @return The bytes for userName.
        */
       public com.google.protobuf.ByteString
@@ -9513,7 +9513,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @param value The userName to set.
        * @return This builder for chaining.
        */
@@ -9528,7 +9528,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUserName() {
@@ -9538,7 +9538,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string user_name = 1;</code>
+       * <code>string user_name = 1 [(.validator.field) = { ... }</code>
        * @param value The bytes for userName to set.
        * @return This builder for chaining.
        */
@@ -9556,7 +9556,7 @@ public final class PBRequestAccount {
 
       private java.lang.Object password_ = "";
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -9572,7 +9572,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -9589,7 +9589,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -9604,7 +9604,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
@@ -9614,7 +9614,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string password = 2;</code>
+       * <code>string password = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -9642,41 +9642,41 @@ public final class PBRequestAccount {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.Login)
+      // @@protoc_insertion_point(builder_scope:request.CreateSession)
     }
 
-    // @@protoc_insertion_point(class_scope:request.Login)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.CreateSession)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Login>
-        PARSER = new com.google.protobuf.AbstractParser<Login>() {
+    private static final com.google.protobuf.Parser<CreateSession>
+        PARSER = new com.google.protobuf.AbstractParser<CreateSession>() {
       @java.lang.Override
-      public Login parsePartialFrom(
+      public CreateSession parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Login(input, extensionRegistry);
+        return new CreateSession(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Login> parser() {
+    public static com.google.protobuf.Parser<CreateSession> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Login> getParserForType() {
+    public com.google.protobuf.Parser<CreateSession> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.Login getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.CreateSession getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9718,10 +9718,10 @@ public final class PBRequestAccount {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_CheckSession_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_Login_descriptor;
+    internal_static_request_CreateSession_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_Login_fieldAccessorTable;
+      internal_static_request_CreateSession_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9732,36 +9732,43 @@ public final class PBRequestAccount {
   static {
     java.lang.String[] descriptorData = {
       "\n!proto/types/request/account.proto\022\007req" +
-      "uest\"*\n\021DescribeAccessKey\022\025\n\raccess_key_" +
-      "id\030\001 \001(\t\"Q\n\rDescribeUsers\022\r\n\005users\030\001 \003(\t" +
+      "uest\0323github.com/yu31/protoc-plugin/prot" +
+      "o/validator.proto\"*\n\021DescribeAccessKey\022\025" +
+      "\n\raccess_key_id\030\001 \001(\t\"l\n\rDescribeUsers\022(" +
+      "\n\005users\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004usr-" +
       "\022\r\n\005limit\030\002 \001(\005\022\016\n\006offset\030\003 \001(\005\022\022\n\nreq_s" +
       "ource\030\004 \001(\t\"\312\001\n\030ValidateRequestSignature" +
       "\022\022\n\nreq_method\030\001 \001(\t\022\020\n\010req_path\030\002 \001(\t\022\030" +
       "\n\020req_query_string\030\003 \001(\t\022\020\n\010req_body\030\004 \001" +
       "(\t\022\025\n\rreq_signature\030\005 \001(\t\022\031\n\021req_access_" +
       "key_id\030\006 \001(\t\022\022\n\nreq_source\030\007 \001(\t\022\026\n\016req_" +
-      "user_agent\030\010 \001(\t\"\330\001\n\nCreateUser\022\021\n\tuser_" +
-      "name\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\014\n\004lang\030\003 \001" +
-      "(\t\022\r\n\005email\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\016\n\006stat" +
-      "us\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022\020\n\010currency\030\010 \001(\t" +
-      "\022\026\n\016gravatar_email\030\t \001(\t\022\021\n\tprivilege\030\n " +
-      "\001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007regions\030\014 \003(\t\"\351\001\n\n" +
-      "UpdateUser\022\017\n\007user_id\030\001 \001(\t\022\021\n\tuser_name" +
-      "\030\002 \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\r\n\005p" +
-      "hone\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t" +
-      "\022\020\n\010currency\030\010 \001(\t\022\026\n\016gravatar_email\030\t \001" +
-      "(\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007" +
-      "regions\030\014 \003(\t\022\020\n\010password\030\r \001(\t\"\035\n\nDelet" +
-      "eUser\022\017\n\007user_id\030\001 \001(\t\"\037\n\014CheckSession\022\017" +
-      "\n\007session\030\001 \001(\t\",\n\005Login\022\021\n\tuser_name\030\001 " +
-      "\001(\t\022\020\n\010password\030\002 \001(\tBo\n$com.dataomnis.g" +
-      "proto.types.pbrequestB\020PBRequestAccountP" +
-      "\000Z3github.com/DataWorkbench/gproto/xgo/t" +
-      "ypes/pbrequestb\006proto3"
+      "user_agent\030\010 \001(\t\"\221\002\n\nCreateUser\022#\n\tuser_" +
+      "name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password" +
+      "\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022!\n\004lang\030\003 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\nJ\000J\002cnJ\002en\022\r\n\005email\030\004 \001(\t\022\r\n\005ph" +
+      "one\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022" +
+      "\020\n\010currency\030\010 \001(\t\022\026\n\016gravatar_email\030\t \001(" +
+      "\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007r" +
+      "egions\030\014 \003(\t\"\376\001\n\nUpdateUser\022$\n\007user_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\021\n\tuser_name\030\002" +
+      " \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\r\n\005pho" +
+      "ne\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014\n\004role\030\007 \001(\t\022\020" +
+      "\n\010currency\030\010 \001(\t\022\026\n\016gravatar_email\030\t \001(\t" +
+      "\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zones\030\013 \003(\t\022\017\n\007re" +
+      "gions\030\014 \003(\t\022\020\n\010password\030\r \001(\t\"2\n\nDeleteU" +
+      "ser\022$\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr" +
+      "-\"\037\n\014CheckSession\022\017\n\007session\030\001 \001(\t\"X\n\rCr" +
+      "eateSession\022#\n\tuser_name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001" +
+      "\007\300\001\002\310\001\200\001\022\"\n\010password\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002" +
+      "\310\001\200\001Bo\n$com.dataomnis.gproto.types.pbreq" +
+      "uestB\020PBRequestAccountP\000Z3github.com/Dat" +
+      "aWorkbench/gproto/xgo/types/pbrequestb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
         });
     internal_static_request_DescribeAccessKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -9805,12 +9812,18 @@ public final class PBRequestAccount {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CheckSession_descriptor,
         new java.lang.String[] { "Session", });
-    internal_static_request_Login_descriptor =
+    internal_static_request_CreateSession_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_request_Login_fieldAccessorTable = new
+    internal_static_request_CreateSession_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_Login_descriptor,
+        internal_static_request_CreateSession_descriptor,
         new java.lang.String[] { "UserName", "Password", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
