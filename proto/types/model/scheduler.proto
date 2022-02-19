@@ -15,8 +15,8 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/stream_job.proto";
 
-// The message in inst queue..
-message QueueMessage {
+// StreamJobQueue is the message value used in scheduler queue.
+message StreamJobQueue {
   enum Action {
     ActionUnset = 0;
     Create = 1;
@@ -28,10 +28,10 @@ message QueueMessage {
   // The property of stream job.
   StreamJobProperty property = 1 [ (validator.field).tags.message = { not_null: true } ];
 
-  // The number of times the instance task was executed.
+  // The number of times the stream instance was executed.
   int32 retries = 2 [(validator.field) = {}];
 
-  // The start execution time of the task instance.
+  // The start execution time of the stream instance.
   int64 started = 3 [(validator.field) = {}];
 
   // zeppelin notebook id
