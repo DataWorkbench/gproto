@@ -176,6 +176,14 @@ func (this *SyncJobRelease) SetDefaults() {
 	return
 }
 
+// Set default value for message model.Column
+func (this *Column) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.RelationaldbSource
 func (this *RelationaldbSource) SetDefaults() {
 	if this == nil {

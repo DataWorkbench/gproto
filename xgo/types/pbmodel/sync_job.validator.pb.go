@@ -871,10 +871,45 @@ func (this *SyncJobRelease) Validate() error {
 	return nil
 }
 
+// Set default value for message model.Column
+func (this *Column) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+func (this *RelationaldbSource) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.RelationaldbSource
 func (this *RelationaldbSource) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *RelationaldbTarget) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
@@ -884,6 +919,21 @@ func (this *RelationaldbTarget) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *MongodbSource) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
 	return nil
 }
 
@@ -891,6 +941,21 @@ func (this *RelationaldbTarget) Validate() error {
 func (this *MongodbSource) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *MongodbTarget) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
@@ -900,6 +965,21 @@ func (this *MongodbTarget) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ElasticSearchSource) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
 	return nil
 }
 
@@ -908,6 +988,21 @@ func (this *ElasticSearchSource) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ElasticSearchTarget) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
 	return nil
 }
 
@@ -915,6 +1010,9 @@ func (this *ElasticSearchSource) Validate() error {
 func (this *ElasticSearchTarget) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
 	}
 	return nil
 }
@@ -979,10 +1077,37 @@ func (this *HiveTarget) Validate() error {
 	return nil
 }
 
+func (this *HdfsSource) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.HdfsSource
 func (this *HdfsSource) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *HdfsTarget) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
@@ -992,6 +1117,21 @@ func (this *HdfsTarget) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *FtpSource) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
 	return nil
 }
 
@@ -1000,6 +1140,21 @@ func (this *FtpSource) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *FtpTarget) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
 	return nil
 }
 
@@ -1007,6 +1162,9 @@ func (this *FtpSource) Validate() error {
 func (this *FtpTarget) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
 	}
 	return nil
 }
@@ -1043,6 +1201,18 @@ func (this *HbaseSource) Validate() error {
 	return nil
 }
 
+func (this *HbaseReadParameter) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 func (this *HbaseReadParameter) _xxx_xxx_Validator_Validate_range() error {
 	if dt, ok := interface{}(this.Range).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -1056,6 +1226,9 @@ func (this *HbaseReadParameter) _xxx_xxx_Validator_Validate_range() error {
 func (this *HbaseReadParameter) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_range(); err != nil {
 		return err
@@ -1111,10 +1284,37 @@ func (this *Table) Validate() error {
 	return nil
 }
 
+func (this *HbaseWriteParameter) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.HbaseWriteParameter
 func (this *HbaseWriteParameter) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *KafkaSource) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
@@ -1132,6 +1332,9 @@ func (this *KafkaSource) _xxx_xxx_Validator_Validate_consumersettings() error {
 func (this *KafkaSource) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
+		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_consumersettings(); err != nil {
 		return err
