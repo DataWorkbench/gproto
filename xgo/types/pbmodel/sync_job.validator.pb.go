@@ -441,8 +441,8 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_binlog_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_pgwal_source() error {
-	if dt, ok := interface{}(this.PgwalSource).(interface{ Validate() error }); ok {
+func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_pg_wal_source() error {
+	if dt, ok := interface{}(this.PgWalSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -459,8 +459,8 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_sqlserver_cdc_source() erro
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_logminer_source() error {
-	if dt, ok := interface{}(this.LogminerSource).(interface{ Validate() error }); ok {
+func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_log_miner_source() error {
+	if dt, ok := interface{}(this.LogMinerSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -557,13 +557,13 @@ func (this *SyncJobArgs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_binlog_source(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_pgwal_source(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_pg_wal_source(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sqlserver_cdc_source(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_logminer_source(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_log_miner_source(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_redis_target(); err != nil {

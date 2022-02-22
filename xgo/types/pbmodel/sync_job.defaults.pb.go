@@ -132,8 +132,8 @@ func (this *SyncJobArgs) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.PgwalSource != nil {
-		if dt, ok := interface{}(this.PgwalSource).(interface{ SetDefaults() }); ok {
+	if this.PgWalSource != nil {
+		if dt, ok := interface{}(this.PgWalSource).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -142,8 +142,8 @@ func (this *SyncJobArgs) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.LogminerSource != nil {
-		if dt, ok := interface{}(this.LogminerSource).(interface{ SetDefaults() }); ok {
+	if this.LogMinerSource != nil {
+		if dt, ok := interface{}(this.LogMinerSource).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
