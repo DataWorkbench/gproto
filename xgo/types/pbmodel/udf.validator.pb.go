@@ -49,9 +49,14 @@ func (this *UDF) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
-func (this *UDF) _xxx_xxx_Validator_Validate_define() error {
-	if !(utf8.RuneCountInString(this.Define) <= 20000) {
-		return protovalidator.FieldError1("UDF", "the character length of field 'define' must be less than or equal to '20000'", protovalidator.StringCharsetLenToString(this.Define))
+var _xxx_xxx_Validator_UDF_InEnums_Status = map[UDF_Status]bool{0: true, 1: true, 2: true}
+
+func (this *UDF) _xxx_xxx_Validator_Validate_status() error {
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("UDF", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	if !(_xxx_xxx_Validator_UDF_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("UDF", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	return nil
 }
@@ -68,18 +73,6 @@ func (this *UDF) _xxx_xxx_Validator_Validate_type() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_UDF_InEnums_Status = map[UDF_Status]bool{0: true, 1: true, 2: true}
-
-func (this *UDF) _xxx_xxx_Validator_Validate_status() error {
-	if !(this.Status > 0) {
-		return protovalidator.FieldError1("UDF", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	if !(_xxx_xxx_Validator_UDF_InEnums_Status[this.Status]) {
-		return protovalidator.FieldError1("UDF", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_UDF_InEnums_Language = map[UDF_Language]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *UDF) _xxx_xxx_Validator_Validate_language() error {
@@ -88,6 +81,48 @@ func (this *UDF) _xxx_xxx_Validator_Validate_language() error {
 	}
 	if !(_xxx_xxx_Validator_UDF_InEnums_Language[this.Language]) {
 		return protovalidator.FieldError1("UDF", "the value of field 'language' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Language)))
+	}
+	return nil
+}
+
+func (this *UDF) _xxx_xxx_Validator_CheckIf_file_id() bool {
+	if !(this.Language == 2) {
+		return false
+	}
+	return true
+}
+
+func (this *UDF) _xxx_xxx_Validator_Validate_file_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_file_id() {
+		return nil
+	}
+	if !(len(this.FileId) == 20) {
+		return protovalidator.FieldError1("UDF", "the byte length of field 'file_id' must be equal to '20'", protovalidator.StringByteLenToString(this.FileId))
+	}
+	if !(strings.HasPrefix(this.FileId, "res-")) {
+		return protovalidator.FieldError1("UDF", "the value of field 'file_id' must start with string 'res-'", this.FileId)
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_UDF_In_Code_By_Language = map[UDF_Language]bool{1: true, 3: true}
+
+func (this *UDF) _xxx_xxx_Validator_CheckIf_code() bool {
+	if !(_xxx_xxx_Validator_UDF_In_Code_By_Language[this.Language]) {
+		return false
+	}
+	return true
+}
+
+func (this *UDF) _xxx_xxx_Validator_Validate_code() error {
+	if !this._xxx_xxx_Validator_CheckIf_code() {
+		return nil
+	}
+	if !(utf8.RuneCountInString(this.Code) > 0) {
+		return protovalidator.FieldError1("UDF", "the character length of field 'code' must be greater than '0'", protovalidator.StringCharsetLenToString(this.Code))
+	}
+	if !(utf8.RuneCountInString(this.Code) <= 20000) {
+		return protovalidator.FieldError1("UDF", "the character length of field 'code' must be less than or equal to '20000'", protovalidator.StringCharsetLenToString(this.Code))
 	}
 	return nil
 }
@@ -137,16 +172,19 @@ func (this *UDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_define(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_language(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_language(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_file_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_usage_sample(); err != nil {

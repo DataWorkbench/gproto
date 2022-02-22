@@ -42,11 +42,11 @@ func (this *ListUDFs) _xxx_xxx_Validator_Validate_offset() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ListUDFs_In_SortBy = map[string]bool{"": true, "udf_id": true, "created": true, "updated": true, "name": true}
+var _xxx_xxx_Validator_ListUDFs_In_SortBy = map[string]bool{"": true, "id": true, "name": true, "created": true, "updated": true}
 
 func (this *ListUDFs) _xxx_xxx_Validator_Validate_sort_by() error {
 	if !(_xxx_xxx_Validator_ListUDFs_In_SortBy[this.SortBy]) {
-		return protovalidator.FieldError1("ListUDFs", "the value of field 'sort_by' must be one of '[ udf_id created updated name]'", this.SortBy)
+		return protovalidator.FieldError1("ListUDFs", "the value of field 'sort_by' must be one of '[ id name created updated]'", this.SortBy)
 	}
 	return nil
 }
@@ -150,23 +150,6 @@ func (this *CreateUDF) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
-func (this *CreateUDF) _xxx_xxx_Validator_Validate_define() error {
-	if !(utf8.RuneCountInString(this.Define) > 0) {
-		return protovalidator.FieldError1("CreateUDF", "the character length of field 'define' must be greater than '0'", protovalidator.StringCharsetLenToString(this.Define))
-	}
-	if !(utf8.RuneCountInString(this.Define) <= 20000) {
-		return protovalidator.FieldError1("CreateUDF", "the character length of field 'define' must be less than or equal to '20000'", protovalidator.StringCharsetLenToString(this.Define))
-	}
-	return nil
-}
-
-func (this *CreateUDF) _xxx_xxx_Validator_Validate_usage_sample() error {
-	if !(utf8.RuneCountInString(this.UsageSample) <= 2000) {
-		return protovalidator.FieldError1("CreateUDF", "the character length of field 'usage_sample' must be less than or equal to '2000'", protovalidator.StringCharsetLenToString(this.UsageSample))
-	}
-	return nil
-}
-
 var _xxx_xxx_Validator_CreateUDF_InEnums_Type = map[pbmodel.UDF_Type]bool{0: true, 1: true, 2: true, 3: true}
 
 func (this *CreateUDF) _xxx_xxx_Validator_Validate_type() error {
@@ -187,6 +170,55 @@ func (this *CreateUDF) _xxx_xxx_Validator_Validate_language() error {
 	}
 	if !(_xxx_xxx_Validator_CreateUDF_InEnums_Language[this.Language]) {
 		return protovalidator.FieldError1("CreateUDF", "the value of field 'language' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Language)))
+	}
+	return nil
+}
+
+func (this *CreateUDF) _xxx_xxx_Validator_CheckIf_file_id() bool {
+	if !(this.Language == 2) {
+		return false
+	}
+	return true
+}
+
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_file_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_file_id() {
+		return nil
+	}
+	if !(len(this.FileId) == 20) {
+		return protovalidator.FieldError1("CreateUDF", "the byte length of field 'file_id' must be equal to '20'", protovalidator.StringByteLenToString(this.FileId))
+	}
+	if !(strings.HasPrefix(this.FileId, "res-")) {
+		return protovalidator.FieldError1("CreateUDF", "the value of field 'file_id' must start with string 'res-'", this.FileId)
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_CreateUDF_In_Code_By_Language = map[pbmodel.UDF_Language]bool{1: true, 3: true}
+
+func (this *CreateUDF) _xxx_xxx_Validator_CheckIf_code() bool {
+	if !(_xxx_xxx_Validator_CreateUDF_In_Code_By_Language[this.Language]) {
+		return false
+	}
+	return true
+}
+
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_code() error {
+	if !this._xxx_xxx_Validator_CheckIf_code() {
+		return nil
+	}
+	if !(utf8.RuneCountInString(this.Code) > 0) {
+		return protovalidator.FieldError1("CreateUDF", "the character length of field 'code' must be greater than '0'", protovalidator.StringCharsetLenToString(this.Code))
+	}
+	if !(utf8.RuneCountInString(this.Code) <= 20000) {
+		return protovalidator.FieldError1("CreateUDF", "the character length of field 'code' must be less than or equal to '20000'", protovalidator.StringCharsetLenToString(this.Code))
+	}
+	return nil
+}
+
+func (this *CreateUDF) _xxx_xxx_Validator_Validate_usage_sample() error {
+	if !(utf8.RuneCountInString(this.UsageSample) <= 2000) {
+		return protovalidator.FieldError1("CreateUDF", "the character length of field 'usage_sample' must be less than or equal to '2000'", protovalidator.StringCharsetLenToString(this.UsageSample))
 	}
 	return nil
 }
@@ -219,16 +251,19 @@ func (this *CreateUDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_define(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_usage_sample(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_language(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_file_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_usage_sample(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
@@ -277,12 +312,42 @@ func (this *UpdateUDF) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
-func (this *UpdateUDF) _xxx_xxx_Validator_Validate_define() error {
-	if !(utf8.RuneCountInString(this.Define) > 0) {
-		return protovalidator.FieldError1("UpdateUDF", "the character length of field 'define' must be greater than '0'", protovalidator.StringCharsetLenToString(this.Define))
+func (this *UpdateUDF) _xxx_xxx_Validator_CheckIf_file_id() bool {
+	if !(this.FileId != "") {
+		return false
 	}
-	if !(utf8.RuneCountInString(this.Define) <= 20000) {
-		return protovalidator.FieldError1("UpdateUDF", "the character length of field 'define' must be less than or equal to '20000'", protovalidator.StringCharsetLenToString(this.Define))
+	return true
+}
+
+func (this *UpdateUDF) _xxx_xxx_Validator_Validate_file_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_file_id() {
+		return nil
+	}
+	if !(len(this.FileId) == 20) {
+		return protovalidator.FieldError1("UpdateUDF", "the byte length of field 'file_id' must be equal to '20'", protovalidator.StringByteLenToString(this.FileId))
+	}
+	if !(strings.HasPrefix(this.FileId, "res-")) {
+		return protovalidator.FieldError1("UpdateUDF", "the value of field 'file_id' must start with string 'res-'", this.FileId)
+	}
+	return nil
+}
+
+func (this *UpdateUDF) _xxx_xxx_Validator_CheckIf_code() bool {
+	if !(this.Code != "") {
+		return false
+	}
+	return true
+}
+
+func (this *UpdateUDF) _xxx_xxx_Validator_Validate_code() error {
+	if !this._xxx_xxx_Validator_CheckIf_code() {
+		return nil
+	}
+	if !(utf8.RuneCountInString(this.Code) > 0) {
+		return protovalidator.FieldError1("UpdateUDF", "the character length of field 'code' must be greater than '0'", protovalidator.StringCharsetLenToString(this.Code))
+	}
+	if !(utf8.RuneCountInString(this.Code) <= 20000) {
+		return protovalidator.FieldError1("UpdateUDF", "the character length of field 'code' must be less than or equal to '20000'", protovalidator.StringCharsetLenToString(this.Code))
 	}
 	return nil
 }
@@ -311,7 +376,10 @@ func (this *UpdateUDF) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_define(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_file_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_code(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_usage_sample(); err != nil {

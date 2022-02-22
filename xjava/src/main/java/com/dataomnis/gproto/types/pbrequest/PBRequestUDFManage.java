@@ -65,7 +65,7 @@ public final class PBRequestUDFManage {
     /**
      * <pre>
      * The field list used to sorted query results.
-     * Optional values: {udf_id, name, createtime, updatetime}.
+     * Optional values: {udf_id, name, created, updated}.
      * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: updated.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -78,7 +78,7 @@ public final class PBRequestUDFManage {
     /**
      * <pre>
      * The field list used to sorted query results.
-     * Optional values: {udf_id, name, createtime, updatetime}.
+     * Optional values: {udf_id, name, created, updated}.
      * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: updated.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -125,9 +125,8 @@ public final class PBRequestUDFManage {
 
     /**
      * <pre>
-     * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type" form:"udf_type"
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -136,9 +135,8 @@ public final class PBRequestUDFManage {
     int getTypeValue();
     /**
      * <pre>
-     * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type" form:"udf_type"
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -355,7 +353,7 @@ public final class PBRequestUDFManage {
     /**
      * <pre>
      * The field list used to sorted query results.
-     * Optional values: {udf_id, name, createtime, updatetime}.
+     * Optional values: {udf_id, name, created, updated}.
      * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: updated.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -380,7 +378,7 @@ public final class PBRequestUDFManage {
     /**
      * <pre>
      * The field list used to sorted query results.
-     * Optional values: {udf_id, name, createtime, updatetime}.
+     * Optional values: {udf_id, name, created, updated}.
      * Multiple fields are separated by commas(","), eg: sort_by="updated".
      * Not required, default: updated.
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -472,9 +470,8 @@ public final class PBRequestUDFManage {
     private int type_;
     /**
      * <pre>
-     * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type" form:"udf_type"
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -485,9 +482,8 @@ public final class PBRequestUDFManage {
     }
     /**
      * <pre>
-     * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type" form:"udf_type"
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+     * &#64;inject_tag: json:"type" form:"type"
      * </pre>
      *
      * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -1104,7 +1100,7 @@ public final class PBRequestUDFManage {
       /**
        * <pre>
        * The field list used to sorted query results.
-       * Optional values: {udf_id, name, createtime, updatetime}.
+       * Optional values: {udf_id, name, created, updated}.
        * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: updated.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -1128,7 +1124,7 @@ public final class PBRequestUDFManage {
       /**
        * <pre>
        * The field list used to sorted query results.
-       * Optional values: {udf_id, name, createtime, updatetime}.
+       * Optional values: {udf_id, name, created, updated}.
        * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: updated.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -1153,7 +1149,7 @@ public final class PBRequestUDFManage {
       /**
        * <pre>
        * The field list used to sorted query results.
-       * Optional values: {udf_id, name, createtime, updatetime}.
+       * Optional values: {udf_id, name, created, updated}.
        * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: updated.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -1176,7 +1172,7 @@ public final class PBRequestUDFManage {
       /**
        * <pre>
        * The field list used to sorted query results.
-       * Optional values: {udf_id, name, createtime, updatetime}.
+       * Optional values: {udf_id, name, created, updated}.
        * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: updated.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -1194,7 +1190,7 @@ public final class PBRequestUDFManage {
       /**
        * <pre>
        * The field list used to sorted query results.
-       * Optional values: {udf_id, name, createtime, updatetime}.
+       * Optional values: {udf_id, name, created, updated}.
        * Multiple fields are separated by commas(","), eg: sort_by="updated".
        * Not required, default: updated.
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
@@ -1366,9 +1362,8 @@ public final class PBRequestUDFManage {
       private int type_ = 0;
       /**
        * <pre>
-       * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type" form:"udf_type"
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -1379,9 +1374,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type" form:"udf_type"
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -1396,9 +1390,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type" form:"udf_type"
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -1412,9 +1405,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type" form:"udf_type"
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -1432,9 +1424,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * UDF Type one of 1/2/3 1=&gt;UDF/2=&gt;UDTF/3=&gt;UDTTF, default is 1
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type" form:"udf_type"
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF. Not required.
+       * &#64;inject_tag: json:"type" form:"type"
        * </pre>
        *
        * <code>.model.UDF.Type type = 7 [(.validator.field) = { ... }</code>
@@ -1527,7 +1518,7 @@ public final class PBRequestUDFManage {
 
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -1538,7 +1529,7 @@ public final class PBRequestUDFManage {
         getUdfIdsList();
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -1548,7 +1539,7 @@ public final class PBRequestUDFManage {
     int getUdfIdsCount();
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -1559,7 +1550,7 @@ public final class PBRequestUDFManage {
     java.lang.String getUdfIds(int index);
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -1724,7 +1715,7 @@ public final class PBRequestUDFManage {
     private com.google.protobuf.LazyStringList udfIds_;
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -1737,7 +1728,7 @@ public final class PBRequestUDFManage {
     }
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -1749,7 +1740,7 @@ public final class PBRequestUDFManage {
     }
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -1762,7 +1753,7 @@ public final class PBRequestUDFManage {
     }
     /**
      * <pre>
-     * delete these UDFIDs
+     * The list of udf that will be deleted.
      * &#64;inject_tag: json:"udf_ids"
      * </pre>
      *
@@ -2227,7 +2218,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2240,7 +2231,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2252,7 +2243,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2265,7 +2256,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2279,7 +2270,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2300,7 +2291,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2320,7 +2311,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2338,7 +2329,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2353,7 +2344,7 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * delete these UDFIDs
+       * The list of udf that will be deleted.
        * &#64;inject_tag: json:"udf_ids"
        * </pre>
        *
@@ -2475,9 +2466,8 @@ public final class PBRequestUDFManage {
 
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -2486,9 +2476,8 @@ public final class PBRequestUDFManage {
     java.lang.String getDesc();
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -2499,43 +2488,111 @@ public final class PBRequestUDFManage {
 
     /**
      * <pre>
-     * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+     * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>string define = 4 [(.validator.field) = { ... }</code>
-     * @return The define.
+     * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
      */
-    java.lang.String getDefine();
+    int getTypeValue();
     /**
      * <pre>
-     * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+     * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>string define = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for define.
+     * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The type.
      */
-    com.google.protobuf.ByteString
-        getDefineBytes();
+    com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type getType();
 
     /**
      * <pre>
-     * usage for this udf
+     * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+     * &#64;inject_tag: json:"language"
+     * </pre>
+     *
+     * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for language.
+     */
+    int getLanguageValue();
+    /**
+     * <pre>
+     * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+     * &#64;inject_tag: json:"language"
+     * </pre>
+     *
+     * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+     * @return The language.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language getLanguage();
+
+    /**
+     * <pre>
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
+     * </pre>
+     *
+     * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+     * @return The fileId.
+     */
+    java.lang.String getFileId();
+    /**
+     * <pre>
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
+     * </pre>
+     *
+     * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for fileId.
+     */
+    com.google.protobuf.ByteString
+        getFileIdBytes();
+
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 7 [(.validator.field) = { ... }</code>
+     * @return The code.
+     */
+    java.lang.String getCode();
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for code.
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+
+    /**
+     * <pre>
+     * usage sample for this udf
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
      * @return The usageSample.
      */
     java.lang.String getUsageSample();
     /**
      * <pre>
-     * usage for this udf
+     * usage sample for this udf
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for usageSample.
      */
     com.google.protobuf.ByteString
@@ -2543,57 +2600,11 @@ public final class PBRequestUDFManage {
 
     /**
      * <pre>
-     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type"
-     * </pre>
-     *
-     * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <pre>
-     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type"
-     * </pre>
-     *
-     * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type getType();
-
-    /**
-     * <pre>
-     * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_language"
-     * </pre>
-     *
-     * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for language.
-     */
-    int getLanguageValue();
-    /**
-     * <pre>
-     * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_language"
-     * </pre>
-     *
-     * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-     * @return The language.
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language getLanguage();
-
-    /**
-     * <pre>
      * Udf owner.
      * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 9 [(.validator.field) = { ... }</code>
      * @return The createdBy.
      */
     java.lang.String getCreatedBy();
@@ -2603,7 +2614,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for createdBy.
      */
     com.google.protobuf.ByteString
@@ -2615,7 +2626,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     java.lang.String getSpaceOwner();
@@ -2625,7 +2636,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     com.google.protobuf.ByteString
@@ -2652,10 +2663,11 @@ public final class PBRequestUDFManage {
       spaceId_ = "";
       name_ = "";
       desc_ = "";
-      define_ = "";
-      usageSample_ = "";
       type_ = 0;
       language_ = 0;
+      fileId_ = "";
+      code_ = "";
+      usageSample_ = "";
       createdBy_ = "";
       spaceOwner_ = "";
     }
@@ -2708,37 +2720,43 @@ public final class PBRequestUDFManage {
               desc_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              define_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              usageSample_ = s;
-              break;
-            }
-            case 48: {
+            case 32: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
               break;
             }
-            case 56: {
+            case 40: {
               int rawValue = input.readEnum();
 
               language_ = rawValue;
               break;
             }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fileId_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              code_ = s;
+              break;
+            }
             case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              usageSample_ = s;
+              break;
+            }
+            case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               createdBy_ = s;
               break;
             }
-            case 74: {
+            case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
               spaceOwner_ = s;
@@ -2876,9 +2894,8 @@ public final class PBRequestUDFManage {
     private volatile java.lang.Object desc_;
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -2899,9 +2916,8 @@ public final class PBRequestUDFManage {
     }
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -2922,63 +2938,173 @@ public final class PBRequestUDFManage {
       }
     }
 
-    public static final int DEFINE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object define_;
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_;
     /**
      * <pre>
-     * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+     * &#64;inject_tag: json:"type"
      * </pre>
      *
-     * <code>string define = 4 [(.validator.field) = { ... }</code>
-     * @return The define.
+     * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int LANGUAGE_FIELD_NUMBER = 5;
+    private int language_;
+    /**
+     * <pre>
+     * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+     * &#64;inject_tag: json:"language"
+     * </pre>
+     *
+     * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for language.
+     */
+    @java.lang.Override public int getLanguageValue() {
+      return language_;
+    }
+    /**
+     * <pre>
+     * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+     * &#64;inject_tag: json:"language"
+     * </pre>
+     *
+     * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+     * @return The language.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language getLanguage() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.valueOf(language_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.UNRECOGNIZED : result;
+    }
+
+    public static final int FILE_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object fileId_;
+    /**
+     * <pre>
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
+     * </pre>
+     *
+     * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+     * @return The fileId.
      */
     @java.lang.Override
-    public java.lang.String getDefine() {
-      java.lang.Object ref = define_;
+    public java.lang.String getFileId() {
+      java.lang.Object ref = fileId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        define_ = s;
+        fileId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
      * </pre>
      *
-     * <code>string define = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for define.
+     * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for fileId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDefineBytes() {
-      java.lang.Object ref = define_;
+        getFileIdBytes() {
+      java.lang.Object ref = fileId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        define_ = b;
+        fileId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int USAGE_SAMPLE_FIELD_NUMBER = 5;
+    public static final int CODE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object code_;
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 7 [(.validator.field) = { ... }</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for code.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USAGE_SAMPLE_FIELD_NUMBER = 8;
     private volatile java.lang.Object usageSample_;
     /**
      * <pre>
-     * usage for this udf
+     * usage sample for this udf
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
      * @return The usageSample.
      */
     @java.lang.Override
@@ -2996,11 +3122,11 @@ public final class PBRequestUDFManage {
     }
     /**
      * <pre>
-     * usage for this udf
+     * usage sample for this udf
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for usageSample.
      */
     @java.lang.Override
@@ -3018,69 +3144,7 @@ public final class PBRequestUDFManage {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 6;
-    private int type_;
-    /**
-     * <pre>
-     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type"
-     * </pre>
-     *
-     * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <pre>
-     * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_type"
-     * </pre>
-     *
-     * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-     * @return The type.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.UNRECOGNIZED : result;
-    }
-
-    public static final int LANGUAGE_FIELD_NUMBER = 7;
-    private int language_;
-    /**
-     * <pre>
-     * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_language"
-     * </pre>
-     *
-     * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-     * @return The enum numeric value on the wire for language.
-     */
-    @java.lang.Override public int getLanguageValue() {
-      return language_;
-    }
-    /**
-     * <pre>
-     * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"udf_language"
-     * </pre>
-     *
-     * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-     * @return The language.
-     */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language getLanguage() {
-      @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.valueOf(language_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.UNRECOGNIZED : result;
-    }
-
-    public static final int CREATED_BY_FIELD_NUMBER = 8;
+    public static final int CREATED_BY_FIELD_NUMBER = 9;
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
@@ -3088,7 +3152,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 9 [(.validator.field) = { ... }</code>
      * @return The createdBy.
      */
     @java.lang.Override
@@ -3110,7 +3174,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"created_by"
      * </pre>
      *
-     * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+     * <code>string created_by = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for createdBy.
      */
     @java.lang.Override
@@ -3128,7 +3192,7 @@ public final class PBRequestUDFManage {
       }
     }
 
-    public static final int SPACE_OWNER_FIELD_NUMBER = 9;
+    public static final int SPACE_OWNER_FIELD_NUMBER = 10;
     private volatile java.lang.Object spaceOwner_;
     /**
      * <pre>
@@ -3136,7 +3200,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
      * @return The spaceOwner.
      */
     @java.lang.Override
@@ -3158,7 +3222,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
      * </pre>
      *
-     * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+     * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceOwner.
      */
     @java.lang.Override
@@ -3199,23 +3263,26 @@ public final class PBRequestUDFManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(define_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, define_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, usageSample_);
-      }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.TypeUnset.getNumber()) {
-        output.writeEnum(6, type_);
+        output.writeEnum(4, type_);
       }
       if (language_ != com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.LanguageUnset.getNumber()) {
-        output.writeEnum(7, language_);
+        output.writeEnum(5, language_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, fileId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, usageSample_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdBy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createdBy_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, spaceOwner_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, spaceOwner_);
       }
       unknownFields.writeTo(output);
     }
@@ -3235,25 +3302,28 @@ public final class PBRequestUDFManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(define_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, define_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, usageSample_);
-      }
       if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, type_);
+          .computeEnumSize(4, type_);
       }
       if (language_ != com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.LanguageUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, language_);
+          .computeEnumSize(5, language_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, fileId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, usageSample_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdBy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createdBy_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, spaceOwner_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3276,12 +3346,14 @@ public final class PBRequestUDFManage {
           .equals(other.getName())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
-      if (!getDefine()
-          .equals(other.getDefine())) return false;
-      if (!getUsageSample()
-          .equals(other.getUsageSample())) return false;
       if (type_ != other.type_) return false;
       if (language_ != other.language_) return false;
+      if (!getFileId()
+          .equals(other.getFileId())) return false;
+      if (!getCode()
+          .equals(other.getCode())) return false;
+      if (!getUsageSample()
+          .equals(other.getUsageSample())) return false;
       if (!getCreatedBy()
           .equals(other.getCreatedBy())) return false;
       if (!getSpaceOwner()
@@ -3303,14 +3375,16 @@ public final class PBRequestUDFManage {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
-      hash = (37 * hash) + DEFINE_FIELD_NUMBER;
-      hash = (53 * hash) + getDefine().hashCode();
-      hash = (37 * hash) + USAGE_SAMPLE_FIELD_NUMBER;
-      hash = (53 * hash) + getUsageSample().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
       hash = (53 * hash) + language_;
+      hash = (37 * hash) + FILE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFileId().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+      hash = (37 * hash) + USAGE_SAMPLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUsageSample().hashCode();
       hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
@@ -3459,13 +3533,15 @@ public final class PBRequestUDFManage {
 
         desc_ = "";
 
-        define_ = "";
-
-        usageSample_ = "";
-
         type_ = 0;
 
         language_ = 0;
+
+        fileId_ = "";
+
+        code_ = "";
+
+        usageSample_ = "";
 
         createdBy_ = "";
 
@@ -3500,10 +3576,11 @@ public final class PBRequestUDFManage {
         result.spaceId_ = spaceId_;
         result.name_ = name_;
         result.desc_ = desc_;
-        result.define_ = define_;
-        result.usageSample_ = usageSample_;
         result.type_ = type_;
         result.language_ = language_;
+        result.fileId_ = fileId_;
+        result.code_ = code_;
+        result.usageSample_ = usageSample_;
         result.createdBy_ = createdBy_;
         result.spaceOwner_ = spaceOwner_;
         onBuilt();
@@ -3566,19 +3643,23 @@ public final class PBRequestUDFManage {
           desc_ = other.desc_;
           onChanged();
         }
-        if (!other.getDefine().isEmpty()) {
-          define_ = other.define_;
-          onChanged();
-        }
-        if (!other.getUsageSample().isEmpty()) {
-          usageSample_ = other.usageSample_;
-          onChanged();
-        }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
         if (other.language_ != 0) {
           setLanguageValue(other.getLanguageValue());
+        }
+        if (!other.getFileId().isEmpty()) {
+          fileId_ = other.fileId_;
+          onChanged();
+        }
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
+          onChanged();
+        }
+        if (!other.getUsageSample().isEmpty()) {
+          usageSample_ = other.usageSample_;
+          onChanged();
         }
         if (!other.getCreatedBy().isEmpty()) {
           createdBy_ = other.createdBy_;
@@ -3822,9 +3903,8 @@ public final class PBRequestUDFManage {
       private java.lang.Object desc_ = "";
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -3844,9 +3924,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -3867,9 +3946,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -3888,9 +3966,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -3904,9 +3981,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 3 [(.validator.field) = { ... }</code>
@@ -3925,23 +4001,182 @@ public final class PBRequestUDFManage {
         return this;
       }
 
-      private java.lang.Object define_ = "";
+      private int type_ = 0;
       /**
        * <pre>
-       * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+       * &#64;inject_tag: json:"type"
        * </pre>
        *
-       * <code>string define = 4 [(.validator.field) = { ... }</code>
-       * @return The define.
+       * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
        */
-      public java.lang.String getDefine() {
-        java.lang.Object ref = define_;
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.model.UDF.Type type = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int language_ = 0;
+      /**
+       * <pre>
+       * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+       * &#64;inject_tag: json:"language"
+       * </pre>
+       *
+       * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for language.
+       */
+      @java.lang.Override public int getLanguageValue() {
+        return language_;
+      }
+      /**
+       * <pre>
+       * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+       * &#64;inject_tag: json:"language"
+       * </pre>
+       *
+       * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for language to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageValue(int value) {
+        
+        language_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+       * &#64;inject_tag: json:"language"
+       * </pre>
+       *
+       * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+       * @return The language.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language getLanguage() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.valueOf(language_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+       * &#64;inject_tag: json:"language"
+       * </pre>
+       *
+       * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+       * @param value The language to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguage(com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        language_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * language of UDF; Optional Values: 1 =&gt; Scala 2=&gt; Java 3=&gt; Python
+       * &#64;inject_tag: json:"language"
+       * </pre>
+       *
+       * <code>.model.UDF.Language language = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLanguage() {
+        
+        language_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fileId_ = "";
+      /**
+       * <pre>
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
+       * </pre>
+       *
+       * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+       * @return The fileId.
+       */
+      public java.lang.String getFileId() {
+        java.lang.Object ref = fileId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          define_ = s;
+          fileId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3949,21 +4184,22 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for define.
+       * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for fileId.
        */
       public com.google.protobuf.ByteString
-          getDefineBytes() {
-        java.lang.Object ref = define_;
+          getFileIdBytes() {
+        java.lang.Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          define_ = b;
+          fileId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3971,57 +4207,166 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 4 [(.validator.field) = { ... }</code>
-       * @param value The define to set.
+       * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The fileId to set.
        * @return This builder for chaining.
        */
-      public Builder setDefine(
+      public Builder setFileId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        define_ = value;
+        fileId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 4 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearDefine() {
+      public Builder clearFileId() {
         
-        define_ = getDefaultInstance().getDefine();
+        fileId_ = getDefaultInstance().getFileId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for define to set.
+       * <code>string file_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for fileId to set.
        * @return This builder for chaining.
        */
-      public Builder setDefineBytes(
+      public Builder setFileIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        define_ = value;
+        fileId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object code_ = "";
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 7 [(.validator.field) = { ... }</code>
+       * @return The code.
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 7 [(.validator.field) = { ... }</code>
+       * @return The bytes for code.
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 7 [(.validator.field) = { ... }</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = getDefaultInstance().getCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 7 [(.validator.field) = { ... }</code>
+       * @param value The bytes for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        code_ = value;
         onChanged();
         return this;
       }
@@ -4029,11 +4374,11 @@ public final class PBRequestUDFManage {
       private java.lang.Object usageSample_ = "";
       /**
        * <pre>
-       * usage for this udf
+       * usage sample for this udf
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
        * @return The usageSample.
        */
       public java.lang.String getUsageSample() {
@@ -4050,11 +4395,11 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * usage for this udf
+       * usage sample for this udf
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
        * @return The bytes for usageSample.
        */
       public com.google.protobuf.ByteString
@@ -4072,11 +4417,11 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * usage for this udf
+       * usage sample for this udf
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
        * @param value The usageSample to set.
        * @return This builder for chaining.
        */
@@ -4092,11 +4437,11 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * usage for this udf
+       * usage sample for this udf
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUsageSample() {
@@ -4107,11 +4452,11 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * usage for this udf
+       * usage sample for this udf
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 5 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 8 [(.validator.field) = { ... }</code>
        * @param value The bytes for usageSample to set.
        * @return This builder for chaining.
        */
@@ -4127,174 +4472,6 @@ public final class PBRequestUDFManage {
         return this;
       }
 
-      private int type_ = 0;
-      /**
-       * <pre>
-       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type"
-       * </pre>
-       *
-       * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type"
-       * </pre>
-       *
-       * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type"
-       * </pre>
-       *
-       * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type getType() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type"
-       * </pre>
-       *
-       * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * UDF Type; Optional Values: 1=&gt;UDF, 2=&gt;UDTF 3=&gt; UDTTF.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_type"
-       * </pre>
-       *
-       * <code>.model.UDF.Type type = 6 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int language_ = 0;
-      /**
-       * <pre>
-       * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_language"
-       * </pre>
-       *
-       * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-       * @return The enum numeric value on the wire for language.
-       */
-      @java.lang.Override public int getLanguageValue() {
-        return language_;
-      }
-      /**
-       * <pre>
-       * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_language"
-       * </pre>
-       *
-       * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-       * @param value The enum numeric value on the wire for language to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLanguageValue(int value) {
-        
-        language_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_language"
-       * </pre>
-       *
-       * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-       * @return The language.
-       */
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language getLanguage() {
-        @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language result = com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.valueOf(language_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_language"
-       * </pre>
-       *
-       * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-       * @param value The language to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLanguage(com.dataomnis.gproto.types.pbmodel.PBModelUDF.UDF.Language value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        language_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * UDF language one of 1/2/3 1=&gt;Scala/2=&gt;Java/3=&gt;Python
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"udf_language"
-       * </pre>
-       *
-       * <code>.model.UDF.Language language = 7 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLanguage() {
-        
-        language_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
@@ -4302,7 +4479,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 9 [(.validator.field) = { ... }</code>
        * @return The createdBy.
        */
       public java.lang.String getCreatedBy() {
@@ -4323,7 +4500,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 9 [(.validator.field) = { ... }</code>
        * @return The bytes for createdBy.
        */
       public com.google.protobuf.ByteString
@@ -4345,7 +4522,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 9 [(.validator.field) = { ... }</code>
        * @param value The createdBy to set.
        * @return This builder for chaining.
        */
@@ -4365,7 +4542,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedBy() {
@@ -4380,7 +4557,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"created_by"
        * </pre>
        *
-       * <code>string created_by = 8 [(.validator.field) = { ... }</code>
+       * <code>string created_by = 9 [(.validator.field) = { ... }</code>
        * @param value The bytes for createdBy to set.
        * @return This builder for chaining.
        */
@@ -4403,7 +4580,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
        * @return The spaceOwner.
        */
       public java.lang.String getSpaceOwner() {
@@ -4424,7 +4601,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
        * @return The bytes for spaceOwner.
        */
       public com.google.protobuf.ByteString
@@ -4446,7 +4623,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
        * @param value The spaceOwner to set.
        * @return This builder for chaining.
        */
@@ -4466,7 +4643,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSpaceOwner() {
@@ -4481,7 +4658,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
        * </pre>
        *
-       * <code>string space_owner = 9 [(.validator.field) = { ... }</code>
+       * <code>string space_owner = 10 [(.validator.field) = { ... }</code>
        * @param value The bytes for spaceOwner to set.
        * @return This builder for chaining.
        */
@@ -4621,9 +4798,8 @@ public final class PBRequestUDFManage {
 
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -4632,9 +4808,8 @@ public final class PBRequestUDFManage {
     java.lang.String getDesc();
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -4645,25 +4820,51 @@ public final class PBRequestUDFManage {
 
     /**
      * <pre>
-     * define this udf. jar udf this is resource jarID, is python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
      * </pre>
      *
-     * <code>string define = 5 [(.validator.field) = { ... }</code>
-     * @return The define.
+     * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+     * @return The fileId.
      */
-    java.lang.String getDefine();
+    java.lang.String getFileId();
     /**
      * <pre>
-     * define this udf. jar udf this is resource jarID, is python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
      * </pre>
      *
-     * <code>string define = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for define.
+     * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for fileId.
      */
     com.google.protobuf.ByteString
-        getDefineBytes();
+        getFileIdBytes();
+
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 6 [(.validator.field) = { ... }</code>
+     * @return The code.
+     */
+    java.lang.String getCode();
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for code.
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
 
     /**
      * <pre>
@@ -4671,7 +4872,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
      * @return The usageSample.
      */
     java.lang.String getUsageSample();
@@ -4681,7 +4882,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for usageSample.
      */
     com.google.protobuf.ByteString
@@ -4708,7 +4909,8 @@ public final class PBRequestUDFManage {
       udfId_ = "";
       name_ = "";
       desc_ = "";
-      define_ = "";
+      fileId_ = "";
+      code_ = "";
       usageSample_ = "";
     }
 
@@ -4769,10 +4971,16 @@ public final class PBRequestUDFManage {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              define_ = s;
+              fileId_ = s;
               break;
             }
             case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              code_ = s;
+              break;
+            }
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               usageSample_ = s;
@@ -4958,9 +5166,8 @@ public final class PBRequestUDFManage {
     private volatile java.lang.Object desc_;
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -4981,9 +5188,8 @@ public final class PBRequestUDFManage {
     }
     /**
      * <pre>
-     * describe this udf.
-     * FIXME: rename json name
-     * &#64;inject_tag: json:"comment"
+     * description this udf.
+     * &#64;inject_tag: json:"desc"
      * </pre>
      *
      * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -5004,55 +5210,107 @@ public final class PBRequestUDFManage {
       }
     }
 
-    public static final int DEFINE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object define_;
+    public static final int FILE_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object fileId_;
     /**
      * <pre>
-     * define this udf. jar udf this is resource jarID, is python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
      * </pre>
      *
-     * <code>string define = 5 [(.validator.field) = { ... }</code>
-     * @return The define.
+     * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+     * @return The fileId.
      */
     @java.lang.Override
-    public java.lang.String getDefine() {
-      java.lang.Object ref = define_;
+    public java.lang.String getFileId() {
+      java.lang.Object ref = fileId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        define_ = s;
+        fileId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * define this udf. jar udf this is resource jarID, is python/scala this is code.
-     * &#64;inject_tag: json:"define"
+     * The id of resource. Used with language of JAVA.
+     * Is required if language == 2
+     * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
      * </pre>
      *
-     * <code>string define = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for define.
+     * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for fileId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDefineBytes() {
-      java.lang.Object ref = define_;
+        getFileIdBytes() {
+      java.lang.Object ref = fileId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        define_ = b;
+        fileId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int USAGE_SAMPLE_FIELD_NUMBER = 6;
+    public static final int CODE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object code_;
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 6 [(.validator.field) = { ... }</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The code. Used with language of Python and Scala.
+     * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+     * &#64;inject_tag: json:"code" gorm:"column:code;"
+     * </pre>
+     *
+     * <code>string code = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for code.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USAGE_SAMPLE_FIELD_NUMBER = 7;
     private volatile java.lang.Object usageSample_;
     /**
      * <pre>
@@ -5060,7 +5318,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
      * @return The usageSample.
      */
     @java.lang.Override
@@ -5082,7 +5340,7 @@ public final class PBRequestUDFManage {
      * &#64;inject_tag: json:"usage_sample"
      * </pre>
      *
-     * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+     * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for usageSample.
      */
     @java.lang.Override
@@ -5126,11 +5384,14 @@ public final class PBRequestUDFManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(define_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, define_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fileId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, code_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, usageSample_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, usageSample_);
       }
       unknownFields.writeTo(output);
     }
@@ -5153,11 +5414,14 @@ public final class PBRequestUDFManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(define_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, define_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fileId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, code_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageSample_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, usageSample_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, usageSample_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5182,8 +5446,10 @@ public final class PBRequestUDFManage {
           .equals(other.getName())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
-      if (!getDefine()
-          .equals(other.getDefine())) return false;
+      if (!getFileId()
+          .equals(other.getFileId())) return false;
+      if (!getCode()
+          .equals(other.getCode())) return false;
       if (!getUsageSample()
           .equals(other.getUsageSample())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -5205,8 +5471,10 @@ public final class PBRequestUDFManage {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
-      hash = (37 * hash) + DEFINE_FIELD_NUMBER;
-      hash = (53 * hash) + getDefine().hashCode();
+      hash = (37 * hash) + FILE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFileId().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
       hash = (37 * hash) + USAGE_SAMPLE_FIELD_NUMBER;
       hash = (53 * hash) + getUsageSample().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -5354,7 +5622,9 @@ public final class PBRequestUDFManage {
 
         desc_ = "";
 
-        define_ = "";
+        fileId_ = "";
+
+        code_ = "";
 
         usageSample_ = "";
 
@@ -5388,7 +5658,8 @@ public final class PBRequestUDFManage {
         result.udfId_ = udfId_;
         result.name_ = name_;
         result.desc_ = desc_;
-        result.define_ = define_;
+        result.fileId_ = fileId_;
+        result.code_ = code_;
         result.usageSample_ = usageSample_;
         onBuilt();
         return result;
@@ -5454,8 +5725,12 @@ public final class PBRequestUDFManage {
           desc_ = other.desc_;
           onChanged();
         }
-        if (!other.getDefine().isEmpty()) {
-          define_ = other.define_;
+        if (!other.getFileId().isEmpty()) {
+          fileId_ = other.fileId_;
+          onChanged();
+        }
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
           onChanged();
         }
         if (!other.getUsageSample().isEmpty()) {
@@ -5797,9 +6072,8 @@ public final class PBRequestUDFManage {
       private java.lang.Object desc_ = "";
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -5819,9 +6093,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -5842,9 +6115,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -5863,9 +6135,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -5879,9 +6150,8 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * describe this udf.
-       * FIXME: rename json name
-       * &#64;inject_tag: json:"comment"
+       * description this udf.
+       * &#64;inject_tag: json:"desc"
        * </pre>
        *
        * <code>string desc = 4 [(.validator.field) = { ... }</code>
@@ -5900,23 +6170,24 @@ public final class PBRequestUDFManage {
         return this;
       }
 
-      private java.lang.Object define_ = "";
+      private java.lang.Object fileId_ = "";
       /**
        * <pre>
-       * define this udf. jar udf this is resource jarID, is python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 5 [(.validator.field) = { ... }</code>
-       * @return The define.
+       * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+       * @return The fileId.
        */
-      public java.lang.String getDefine() {
-        java.lang.Object ref = define_;
+      public java.lang.String getFileId() {
+        java.lang.Object ref = fileId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          define_ = s;
+          fileId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5924,21 +6195,22 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resource jarID, is python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for define.
+       * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for fileId.
        */
       public com.google.protobuf.ByteString
-          getDefineBytes() {
-        java.lang.Object ref = define_;
+          getFileIdBytes() {
+        java.lang.Object ref = fileId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          define_ = b;
+          fileId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5946,57 +6218,166 @@ public final class PBRequestUDFManage {
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resource jarID, is python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 5 [(.validator.field) = { ... }</code>
-       * @param value The define to set.
+       * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The fileId to set.
        * @return This builder for chaining.
        */
-      public Builder setDefine(
+      public Builder setFileId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        define_ = value;
+        fileId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resource jarID, is python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 5 [(.validator.field) = { ... }</code>
+       * <code>string file_id = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearDefine() {
+      public Builder clearFileId() {
         
-        define_ = getDefaultInstance().getDefine();
+        fileId_ = getDefaultInstance().getFileId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * define this udf. jar udf this is resource jarID, is python/scala this is code.
-       * &#64;inject_tag: json:"define"
+       * The id of resource. Used with language of JAVA.
+       * Is required if language == 2
+       * &#64;inject_tag: json:"file_id" gorm:"column:file_id;"
        * </pre>
        *
-       * <code>string define = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for define to set.
+       * <code>string file_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for fileId to set.
        * @return This builder for chaining.
        */
-      public Builder setDefineBytes(
+      public Builder setFileIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        define_ = value;
+        fileId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object code_ = "";
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 6 [(.validator.field) = { ... }</code>
+       * @return The code.
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for code.
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 6 [(.validator.field) = { ... }</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = getDefaultInstance().getCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The code. Used with language of Python and Scala.
+       * Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+       * &#64;inject_tag: json:"code" gorm:"column:code;"
+       * </pre>
+       *
+       * <code>string code = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        code_ = value;
         onChanged();
         return this;
       }
@@ -6008,7 +6389,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
        * @return The usageSample.
        */
       public java.lang.String getUsageSample() {
@@ -6029,7 +6410,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
        * @return The bytes for usageSample.
        */
       public com.google.protobuf.ByteString
@@ -6051,7 +6432,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
        * @param value The usageSample to set.
        * @return This builder for chaining.
        */
@@ -6071,7 +6452,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUsageSample() {
@@ -6086,7 +6467,7 @@ public final class PBRequestUDFManage {
        * &#64;inject_tag: json:"usage_sample"
        * </pre>
        *
-       * <code>string usage_sample = 6 [(.validator.field) = { ... }</code>
+       * <code>string usage_sample = 7 [(.validator.field) = { ... }</code>
        * @param value The bytes for usageSample to set.
        * @return This builder for chaining.
        */
@@ -6804,35 +7185,39 @@ public final class PBRequestUDFManage {
       "request\0323github.com/yu31/protoc-plugin/p" +
       "roto/validator.proto\0322github.com/yu31/pr" +
       "otoc-plugin/proto/defaults.proto\032\033proto/" +
-      "types/model/udf.proto\"\201\002\n\010ListUDFs\022%\n\010sp" +
+      "types/model/udf.proto\"\375\001\n\010ListUDFs\022%\n\010sp" +
       "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005lim" +
       "it\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006off" +
-      "set\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022<\n\007sort_by\030\004 \001(\tB" +
-      "+\342\337\037\'\022%\302\001\"J\000J\006udf_idJ\007createdJ\007updatedJ\004" +
-      "name\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t\022*\n" +
-      "\004type\030\007 \001(\0162\017.model.UDF.TypeB\013\342\337\037\007\022\005\332\001\002X" +
-      "\001\"_\n\nDeleteUDFs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007udf_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352" +
-      "\001\020(d0\000Z\n\302\001\007\312\002\004udf-\"\335\002\n\tCreateUDF\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030" +
-      "\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002A\022\033\n\004desc\030\003 \001(\tB\r\342\337" +
-      "\037\t\022\007\302\001\004\230\002\200\002\022!\n\006define\030\004 \001(\tB\021\342\337\037\r\022\013\302\001\010\260\001" +
-      "\000\310\001\240\234\001\022#\n\014usage_sample\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310" +
-      "\001\320\017\022,\n\004type\030\006 \001(\0162\017.model.UDF.TypeB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\0224\n\010language\030\007 \001(\0162\023.model.UDF." +
-      "LanguageB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\037\n\ncreated_by\030\010 " +
-      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022 \n\013space_owner\030\t \001(\tB\013\342" +
-      "\337\037\007\022\005\302\001\002\"\000\"\333\001\n\tUpdateUDF\022%\n\010space_id\030\001 \001" +
+      "set\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004 \001(\tB" +
+      "\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007updated" +
+      "\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t\022*\n\004typ" +
+      "e\030\007 \001(\0162\017.model.UDF.TypeB\013\342\337\037\007\022\005\332\001\002X\001\"_\n" +
+      "\nDeleteUDFs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022*\n\007udf_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\020(d" +
+      "0\000Z\n\302\001\007\312\002\004udf-\"\261\003\n\tCreateUDF\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002 \001(" +
+      "\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002A\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007" +
+      "\302\001\004\230\002\200\002\022,\n\004type\030\004 \001(\0162\017.model.UDF.TypeB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\0224\n\010language\030\005 \001(\0162\023.model." +
+      "UDF.LanguageB\r\342\337\037\t\022\007\332\001\0040\000X\001\022;\n\007file_id\030\006" +
+      " \001(\tB*\342\337\037\023\n\021\n\010language\022\005\332\001\002\030\002\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004res-\0228\n\004code\030\007 \001(\tB*\342\337\037\025\n\023\n\010language" +
+      "\022\007\332\001\004J\002\001\003\342\337\037\r\022\013\302\001\010\260\001\000\310\001\240\234\001\022#\n\014usage_samp" +
+      "le\030\010 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\320\017\022\037\n\ncreated_by\030\t " +
+      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022 \n\013space_owner\030\n \001(\tB\013\342" +
+      "\337\037\007\022\005\302\001\002\"\000\"\250\002\n\tUpdateUDF\022%\n\010space_id\030\001 \001" +
       "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006udf_id\030\002 \001(\tB" +
       "\023\342\337\037\017\022\r\302\001\n\210\002\025\312\002\004udf-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013" +
       "\022\t\302\001\006\200\002\000\230\002A\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\200\002" +
-      "\022!\n\006define\030\005 \001(\tB\021\342\337\037\r\022\013\302\001\010\260\001\000\310\001\240\234\001\022#\n\014u" +
-      "sage_sample\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\320\017\"2\n\013Desc" +
-      "ribeUDF\022#\n\006udf_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "udf-Bq\n$com.dataomnis.gproto.types.pbreq" +
-      "uestB\022PBRequestUDFManageP\000Z3github.com/D" +
-      "ataWorkbench/gproto/xgo/types/pbrequestb" +
-      "\006proto3"
+      "\022:\n\007file_id\030\005 \001(\tB)\342\337\037\022\n\020\n\007file_id\022\005\302\001\002\"" +
+      "\000\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-\0222\n\004code\030\006 \001(\tB$\342\337\037\017" +
+      "\n\r\n\004code\022\005\302\001\002\"\000\342\337\037\r\022\013\302\001\010\260\001\000\310\001\240\234\001\022#\n\014usag" +
+      "e_sample\030\007 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\320\017\"2\n\013Describ" +
+      "eUDF\022#\n\006udf_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004udf" +
+      "-Bq\n$com.dataomnis.gproto.types.pbreques" +
+      "tB\022PBRequestUDFManageP\000Z3github.com/Data" +
+      "Workbench/gproto/xgo/types/pbrequestb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6858,13 +7243,13 @@ public final class PBRequestUDFManage {
     internal_static_request_CreateUDF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateUDF_descriptor,
-        new java.lang.String[] { "SpaceId", "Name", "Desc", "Define", "UsageSample", "Type", "Language", "CreatedBy", "SpaceOwner", });
+        new java.lang.String[] { "SpaceId", "Name", "Desc", "Type", "Language", "FileId", "Code", "UsageSample", "CreatedBy", "SpaceOwner", });
     internal_static_request_UpdateUDF_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_UpdateUDF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateUDF_descriptor,
-        new java.lang.String[] { "SpaceId", "UdfId", "Name", "Desc", "Define", "UsageSample", });
+        new java.lang.String[] { "SpaceId", "UdfId", "Name", "Desc", "FileId", "Code", "UsageSample", });
     internal_static_request_DescribeUDF_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_request_DescribeUDF_fieldAccessorTable = new

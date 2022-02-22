@@ -15979,6 +15979,814 @@ public final class PBSyncManageSyncJob {
 
   }
 
+  public interface ColumnOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.Column)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * name
+     * &#64;inject_tag: json:"name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * name
+     * &#64;inject_tag: json:"name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string type = 2;</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string type = 2;</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+  }
+  /**
+   * Protobuf type {@code model.Column}
+   */
+  public static final class Column extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.Column)
+      ColumnOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Column.newBuilder() to construct.
+    private Column(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Column() {
+      name_ = "";
+      type_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Column();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Column(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_Column_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_Column_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * name
+     * &#64;inject_tag: json:"name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * name
+     * &#64;inject_tag: json:"name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string type = 2;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string type = 2;</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.Column}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.Column)
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_Column_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_Column_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        type_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_Column_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column build() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column(this);
+        result.name_ = name_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * name
+       * &#64;inject_tag: json:"name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * &#64;inject_tag: json:"name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * name
+       * &#64;inject_tag: json:"name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * &#64;inject_tag: json:"name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * name
+       * &#64;inject_tag: json:"name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string type = 2;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.Column)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.Column)
+    private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Column>
+        PARSER = new com.google.protobuf.AbstractParser<Column>() {
+      @java.lang.Override
+      public Column parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Column(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Column> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Column> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RelationaldbSourceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.RelationaldbSource)
       com.google.protobuf.MessageOrBuilder {
@@ -15989,10 +16797,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -16000,8 +16807,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -16010,23 +16825,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -16152,7 +16964,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private RelationaldbSource() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       schema_ = "";
       where_ = "";
@@ -16191,12 +17003,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -16242,7 +17054,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           table_ = table_.getUnmodifiableView();
@@ -16265,18 +17077,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -16285,9 +17096,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -16297,11 +17121,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -16310,13 +17133,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int TABLE_FIELD_NUMBER = 2;
@@ -16533,7 +17355,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       for (int i = 0; i < table_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_.getRaw(i));
@@ -16556,13 +17378,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       {
         int dataSize = 0;
@@ -16759,13 +17577,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         schema_ = "";
@@ -16801,11 +17624,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbSource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbSource(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         if (((bitField0_ & 0x00000002) != 0)) {
           table_ = table_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -16862,15 +17689,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbSource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbSource.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.table_.isEmpty()) {
           if (table_.isEmpty()) {
@@ -16924,25 +17767,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -16950,11 +17800,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -16962,12 +17815,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -16975,33 +17830,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -17010,18 +17852,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -17030,16 +17914,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -17048,13 +17972,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -17063,20 +17990,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private com.google.protobuf.LazyStringList table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -17599,10 +18617,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -17610,8 +18627,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -17620,23 +18645,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -17894,7 +18916,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private RelationaldbTarget() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       schema_ = "";
       preSql_ = "";
@@ -17939,12 +18961,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -18026,7 +19048,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           table_ = table_.getUnmodifiableView();
@@ -18049,18 +19071,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -18069,9 +19090,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -18081,11 +19115,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -18094,13 +19127,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int TABLE_FIELD_NUMBER = 2;
@@ -18605,7 +19637,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       for (int i = 0; i < table_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_.getRaw(i));
@@ -18646,13 +19678,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       {
         int dataSize = 0;
@@ -18891,13 +19919,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         schema_ = "";
@@ -18945,11 +19978,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbTarget buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbTarget result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbTarget(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         if (((bitField0_ & 0x00000002) != 0)) {
           table_ = table_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -19012,15 +20049,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RelationaldbTarget.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.table_.isEmpty()) {
           if (table_.isEmpty()) {
@@ -19098,25 +20151,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -19124,11 +20184,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -19136,12 +20199,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -19149,33 +20214,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -19184,18 +20236,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -19204,16 +20298,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -19222,13 +20356,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -19237,20 +20374,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private com.google.protobuf.LazyStringList table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -20379,10 +21607,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -20390,8 +21617,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -20400,23 +21635,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -20508,7 +21740,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private MongodbSource() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       database_ = "";
       collectionName_ = "";
       filter_ = "";
@@ -20546,12 +21778,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -20593,7 +21825,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -20613,18 +21845,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -20633,9 +21864,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -20645,11 +21889,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -20658,13 +21901,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int DATABASE_FIELD_NUMBER = 2;
@@ -20842,7 +22084,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, database_);
@@ -20865,13 +22107,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, database_);
@@ -21062,13 +22300,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         database_ = "";
 
         collectionName_ = "";
@@ -21104,11 +22347,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbSource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbSource(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.database_ = database_;
         result.collectionName_ = collectionName_;
         result.fetchSize_ = fetchSize_;
@@ -21161,15 +22408,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbSource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbSource.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
@@ -21216,25 +22479,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -21242,11 +22512,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -21254,12 +22527,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -21267,33 +22542,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -21302,18 +22564,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -21322,16 +22626,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -21340,13 +22684,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -21355,20 +22702,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object database_ = "";
@@ -21782,10 +23220,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -21793,8 +23230,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -21803,23 +23248,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -21944,7 +23386,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private MongodbTarget() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       database_ = "";
       collectionName_ = "";
       replaceKey_ = "";
@@ -21983,12 +23425,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -22041,7 +23483,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -22061,18 +23503,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -22081,9 +23522,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -22093,11 +23547,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -22106,13 +23559,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int DATABASE_FIELD_NUMBER = 2;
@@ -22354,7 +23806,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, database_);
@@ -22383,13 +23835,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, database_);
@@ -22595,13 +24043,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         database_ = "";
 
         collectionName_ = "";
@@ -22641,11 +24094,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbTarget buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbTarget result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbTarget(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.database_ = database_;
         result.collectionName_ = collectionName_;
         result.replaceKey_ = replaceKey_;
@@ -22700,15 +24157,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.MongodbTarget.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getDatabase().isEmpty()) {
           database_ = other.database_;
@@ -22762,25 +24235,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -22788,11 +24268,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -22800,12 +24283,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -22813,33 +24298,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -22848,18 +24320,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -22868,16 +24382,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -22886,13 +24440,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -22901,20 +24458,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object database_ = "";
@@ -23475,10 +25123,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -23486,8 +25133,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -23496,23 +25151,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -23593,7 +25245,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private ElasticSearchSource() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       version_ = "";
       index_ = "";
       batchSize_ = "";
@@ -23631,12 +25283,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -23673,7 +25325,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -23693,18 +25345,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -23713,9 +25364,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -23725,11 +25389,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -23738,13 +25401,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int VERSION_FIELD_NUMBER = 2;
@@ -23906,7 +25568,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
@@ -23926,13 +25588,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
@@ -24115,13 +25773,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         version_ = "";
 
         index_ = "";
@@ -24155,11 +25818,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.version_ = version_;
         result.index_ = index_;
         result.batchSize_ = batchSize_;
@@ -24211,15 +25878,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
@@ -24263,25 +25946,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -24289,11 +25979,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -24301,12 +25994,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -24314,33 +26009,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -24349,18 +26031,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -24369,16 +26093,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -24387,13 +26151,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -24402,20 +26169,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object version_ = "";
@@ -24783,10 +26641,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -24794,8 +26651,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -24804,23 +26669,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -24923,7 +26785,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private ElasticSearchTarget() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       version_ = "";
       index_ = "";
       batchSize_ = "";
@@ -24962,12 +26824,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -25010,7 +26872,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -25030,18 +26892,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -25050,9 +26911,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -25062,11 +26936,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -25075,13 +26948,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int VERSION_FIELD_NUMBER = 2;
@@ -25291,7 +27163,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
@@ -25314,13 +27186,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
@@ -25510,13 +27378,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         version_ = "";
 
         index_ = "";
@@ -25552,11 +27425,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.version_ = version_;
         result.index_ = index_;
         result.batchSize_ = batchSize_;
@@ -25609,15 +27486,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
@@ -25665,25 +27558,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -25691,11 +27591,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -25703,12 +27606,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -25716,33 +27621,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -25751,18 +27643,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -25771,16 +27705,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -25789,13 +27763,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -25804,20 +27781,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object version_ = "";
@@ -37969,10 +40037,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -37980,8 +40047,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -37990,23 +40065,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -38175,7 +40247,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private HdfsSource() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       path_ = "";
       fileType_ = "";
       defaultFs_ = "";
@@ -38217,12 +40289,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -38283,7 +40355,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -38303,18 +40375,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -38323,9 +40394,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -38335,11 +40419,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -38348,13 +40431,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
@@ -38708,7 +40790,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
@@ -38740,13 +40822,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
@@ -38957,13 +41035,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         path_ = "";
 
         fileType_ = "";
@@ -39005,11 +41088,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsSource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsSource(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.path_ = path_;
         result.fileType_ = fileType_;
         result.defaultFs_ = defaultFs_;
@@ -39065,15 +41152,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsSource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsSource.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
@@ -39133,25 +41236,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -39159,11 +41269,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -39171,12 +41284,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -39184,33 +41299,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -39219,18 +41321,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -39239,16 +41383,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -39257,13 +41441,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -39272,20 +41459,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object path_ = "";
@@ -40057,10 +42335,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -40068,8 +42345,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * file column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -40078,23 +42363,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * file column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -40461,7 +42743,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private HdfsTarget() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       path_ = "";
       fileName_ = "";
       fileType_ = "";
@@ -40512,12 +42794,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -40632,7 +42914,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -40652,18 +42934,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * file column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -40672,9 +42953,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * file column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -40684,11 +42978,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -40697,13 +42990,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
@@ -41489,7 +43781,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
@@ -41548,13 +43840,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
@@ -41828,13 +44116,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         path_ = "";
 
         fileName_ = "";
@@ -41894,11 +44187,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsTarget buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsTarget result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsTarget(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.path_ = path_;
         result.fileName_ = fileName_;
         result.fileType_ = fileType_;
@@ -41963,15 +44260,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsTarget.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
@@ -42067,25 +44380,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * file column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -42093,11 +44413,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -42105,12 +44428,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -42118,33 +44443,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * file column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -42153,18 +44465,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -42173,16 +44527,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -42191,13 +44585,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -42206,20 +44603,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * file column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object path_ = "";
@@ -43900,10 +46388,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -43911,8 +46398,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -43921,23 +46416,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -44217,7 +46709,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private FtpSource() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       privateKeyPath_ = "";
       connectPattern_ = "";
@@ -44263,12 +46755,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -44356,7 +46848,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           path_ = path_.getUnmodifiableView();
@@ -44379,18 +46871,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -44399,9 +46890,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -44411,11 +46915,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -44424,13 +46927,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
@@ -44983,7 +47485,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       for (int i = 0; i < path_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_.getRaw(i));
@@ -45027,13 +47529,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       {
         int dataSize = 0;
@@ -45279,13 +47777,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         privateKeyPath_ = "";
@@ -45335,11 +47838,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpSource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpSource(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         if (((bitField0_ & 0x00000002) != 0)) {
           path_ = path_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -45403,15 +47910,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpSource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpSource.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.path_.isEmpty()) {
           if (path_.isEmpty()) {
@@ -45493,25 +48016,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -45519,11 +48049,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -45531,12 +48064,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -45544,33 +48079,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -45579,18 +48101,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -45599,16 +48163,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -45617,13 +48221,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -45632,20 +48239,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private com.google.protobuf.LazyStringList path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -46875,10 +49573,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -46886,8 +49583,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * path
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -46896,23 +49601,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * path
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -47126,7 +49828,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private FtpTarget() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       privateKeyPath_ = "";
       connectPattern_ = "";
@@ -47169,12 +49871,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -47244,7 +49946,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           path_ = path_.getUnmodifiableView();
@@ -47267,18 +49969,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * path
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -47287,9 +49988,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * path
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -47299,11 +50013,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -47312,13 +50025,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
@@ -47727,7 +50439,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       for (int i = 0; i < path_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_.getRaw(i));
@@ -47762,13 +50474,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       {
         int dataSize = 0;
@@ -47993,13 +50701,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         privateKeyPath_ = "";
@@ -48043,11 +50756,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpTarget buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpTarget result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpTarget(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         if (((bitField0_ & 0x00000002) != 0)) {
           path_ = path_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -48108,15 +50825,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.FtpTarget.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.path_.isEmpty()) {
           if (path_.isEmpty()) {
@@ -48186,25 +50919,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * path
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -48212,11 +50952,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -48224,12 +50967,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -48237,33 +50982,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -48272,18 +51004,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -48292,16 +51066,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -48310,13 +51124,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -48325,20 +51142,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * path
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private com.google.protobuf.LazyStringList path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -50434,10 +53342,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
@@ -50445,8 +53352,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -50455,23 +53370,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -50604,7 +53516,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private HbaseReadParameter() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       hbaseConfig_ = "";
       changeLog_ = "";
       encoding_ = "";
@@ -50643,12 +53555,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -50704,7 +53616,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -50724,18 +53636,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * column
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -50744,9 +53655,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -50756,11 +53680,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -50769,13 +53692,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int HBASECONFIG_FIELD_NUMBER = 2;
@@ -51026,7 +53948,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hbaseConfig_);
@@ -51052,13 +53974,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hbaseConfig_);
@@ -51261,13 +54179,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         hbaseConfig_ = "";
 
         if (rangeBuilder_ == null) {
@@ -51309,11 +54232,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseReadParameter buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseReadParameter result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseReadParameter(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.hbaseConfig_ = hbaseConfig_;
         if (rangeBuilder_ == null) {
           result.range_ = range_;
@@ -51371,15 +54298,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseReadParameter other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseReadParameter.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getHbaseConfig().isEmpty()) {
           hbaseConfig_ = other.hbaseConfig_;
@@ -51430,25 +54373,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * column
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -51456,11 +54406,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -51468,12 +54421,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -51481,33 +54436,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * column
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -51516,18 +54458,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -51536,16 +54520,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -51554,13 +54578,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -51569,20 +54596,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object hbaseConfig_ = "";
@@ -54702,18 +57820,24 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -54721,22 +57845,19 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -54916,7 +58037,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private HbaseWriteParameter() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       hbaseConfig_ = "";
       nullMode_ = "";
       writeBufferSize_ = "";
@@ -54958,12 +58079,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -55029,7 +58150,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -55049,17 +58170,16 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -55067,9 +58187,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -55078,11 +58210,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -55090,13 +58221,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int HBASECONFIG_FIELD_NUMBER = 2;
@@ -55466,7 +58596,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hbaseConfig_);
@@ -55501,13 +58631,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hbaseConfig_);
@@ -55727,13 +58853,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         hbaseConfig_ = "";
 
         nullMode_ = "";
@@ -55777,11 +58908,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseWriteParameter buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseWriteParameter result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseWriteParameter(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.hbaseConfig_ = hbaseConfig_;
         result.nullMode_ = nullMode_;
         result.walFlag_ = walFlag_;
@@ -55838,15 +58973,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseWriteParameter other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HbaseWriteParameter.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getHbaseConfig().isEmpty()) {
           hbaseConfig_ = other.hbaseConfig_;
@@ -55909,79 +59060,79 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -55989,18 +59140,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -56008,16 +59199,54 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -56025,13 +59254,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -56039,20 +59271,105 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object hbaseConfig_ = "";
@@ -56869,18 +60186,24 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getColumnList();
     /**
      * <pre>
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
      */
     int getColumnCount();
     /**
@@ -56888,22 +60211,19 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    java.lang.String getColumn(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList();
     /**
      * <pre>
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getColumnBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -57102,7 +60422,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private KafkaSource() {
-      column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      column_ = java.util.Collections.emptyList();
       topic_ = "";
       mode_ = "";
       timestamp_ = "";
@@ -57144,12 +60464,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                column_ = new com.google.protobuf.LazyStringArrayList();
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              column_.add(s);
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -57223,7 +60543,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -57243,17 +60563,16 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList column_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_;
     /**
      * <pre>
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return A list containing the column.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
       return column_;
     }
     /**
@@ -57261,9 +60580,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @return The count of column.
+     * <code>repeated .model.Column column = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 1;</code>
+     */
+    @java.lang.Override
     public int getColumnCount() {
       return column_.size();
     }
@@ -57272,11 +60603,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the element to return.
-     * @return The column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public java.lang.String getColumn(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
       return column_.get(index);
     }
     /**
@@ -57284,13 +60614,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"column" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string column = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the column at the given index.
+     * <code>repeated .model.Column column = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnBytes(int index) {
-      return column_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     public static final int TOPIC_FIELD_NUMBER = 2;
@@ -57685,7 +61014,7 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < column_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_.getRaw(i));
+        output.writeMessage(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
@@ -57720,13 +61049,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < column_.size(); i++) {
-          dataSize += computeStringSizeNoTag(column_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getColumnList().size();
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, column_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
@@ -57950,13 +61275,18 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          columnBuilder_.clear();
+        }
         topic_ = "";
 
         mode_ = "";
@@ -58004,11 +61334,15 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaSource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaSource(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          column_ = column_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
         }
-        result.column_ = column_;
         result.topic_ = topic_;
         result.mode_ = mode_;
         result.timestamp_ = timestamp_;
@@ -58069,15 +61403,31 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaSource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaSource.getDefaultInstance()) return this;
-        if (!other.column_.isEmpty()) {
-          if (column_.isEmpty()) {
-            column_ = other.column_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureColumnIsMutable();
-            column_.addAll(other.column_);
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
@@ -58140,79 +61490,79 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> column_ =
+        java.util.Collections.emptyList();
       private void ensureColumnIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          column_ = new com.google.protobuf.LazyStringArrayList(column_);
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(column_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> columnBuilder_;
+
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return A list containing the column.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getColumnList() {
-        return column_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return The count of column.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public int getColumnCount() {
-        return column_.size();
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the element to return.
-       * @return The column at the given index.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public java.lang.String getColumn(int index) {
-        return column_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the column at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getColumnBytes(int index) {
-        return column_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"column" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string column = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The column to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder setColumn(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -58220,18 +61570,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addColumn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -58239,16 +61629,54 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param values The column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder addAllColumn(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureColumnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, column_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -58256,13 +61684,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
       public Builder clearColumn() {
-        column_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -58270,20 +61701,105 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"column" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string column = 1;</code>
-       * @param value The bytes of the column to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 1;</code>
        */
-      public Builder addColumnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureColumnIsMutable();
-        column_.add(value);
-        onChanged();
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
 
       private java.lang.Object topic_ = "";
@@ -63284,6 +66800,11 @@ public final class PBSyncManageSyncJob {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_SyncJobRelease_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_Column_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_Column_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_RelationaldbSource_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -63513,117 +67034,123 @@ public final class PBSyncManageSyncJob {
       "\001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007" +
       "\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n" +
       "\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\t" +
-      "Suspended\020\002\022\013\n\007Deleted\020\003\"c\n\022Relationaldb" +
-      "Source\022\016\n\006column\030\001 \003(\t\022\r\n\005table\030\002 \003(\t\022\016\n" +
-      "\006schema\030\003 \001(\t\022\r\n\005where\030\004 \001(\t\022\017\n\007splitpk\030" +
-      "\005 \001(\t\"\330\001\n\022RelationaldbTarget\022\016\n\006column\030\001" +
-      " \003(\t\022\r\n\005table\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\017\n\007p" +
-      "re_sql\030\004 \001(\t\022\020\n\010post_sql\030\005 \001(\t\022\022\n\nwrite_" +
-      "mode\030\006 \001(\t\022\022\n\nbatch_size\030\007 \001(\t\022\022\n\nupdate" +
-      "_key\030\010 \001(\t\022\014\n\004mode\030\t \001(\t\022\020\n\010semantic\030\n \001" +
-      "(\t\022\024\n\014with_no_lock\030\013 \001(\t\"n\n\rMongodbSourc" +
-      "e\022\016\n\006column\030\001 \003(\t\022\020\n\010database\030\002 \001(\t\022\027\n\017c" +
-      "ollection_name\030\003 \001(\t\022\022\n\nfetch_size\030\004 \001(\005" +
-      "\022\016\n\006filter\030\005 \001(\t\"\245\001\n\rMongodbTarget\022\016\n\006co" +
-      "lumn\030\001 \003(\t\022\020\n\010database\030\002 \001(\t\022\027\n\017collecti" +
-      "on_name\030\003 \001(\t\022\023\n\013replace_key\030\004 \001(\t\022\022\n\nwr" +
-      "ite_mode\030\005 \001(\t\022\022\n\nbatch_size\030\006 \001(\005\022\034\n\024fl" +
-      "ush_interval_mills\030\007 \001(\005\"Y\n\023ElasticSearc" +
-      "hSource\022\016\n\006column\030\001 \003(\t\022\017\n\007version\030\002 \001(\t" +
-      "\022\r\n\005index\030\003 \001(\t\022\022\n\nbatch_size\030\004 \001(\t\"p\n\023E" +
-      "lasticSearchTarget\022\016\n\006column\030\001 \003(\t\022\017\n\007ve" +
-      "rsion\030\002 \001(\t\022\r\n\005index\030\003 \001(\t\022\022\n\nbatch_size" +
-      "\030\004 \001(\t\022\025\n\rkey_delimiter\030\005 \001(\t\"\307\001\n\016Logmin" +
-      "erSource\022\r\n\005table\030\001 \003(\t\022\024\n\014split_update\030" +
-      "\002 \001(\t\022\023\n\013paving_data\030\003 \001(\t\022\013\n\003cat\030\004 \001(\t\022" +
-      "\025\n\rread_position\030\005 \001(\t\022\022\n\nstart_time\030\006 \001" +
-      "(\003\022\021\n\tstart_scn\030\007 \001(\003\022\022\n\nfetch_size\030\010 \001(" +
-      "\003\022\034\n\024support_auto_add_log\030\t \001(\003\"\305\001\n\013Pgwa" +
-      "lSource\022\025\n\rdatabase_name\030\001 \001(\t\022\022\n\ntable_" +
-      "list\030\002 \003(\t\022\021\n\tslot_name\030\003 \001(\t\022\024\n\014split_u" +
-      "pdate\030\004 \001(\t\022\025\n\rallow_created\030\005 \001(\t\022\021\n\tte" +
-      "mporary\030\006 \001(\t\022\023\n\013paving_data\030\007 \001(\t\022\013\n\003ls" +
-      "n\030\010 \001(\t\022\026\n\016slot_available\030\t \001(\t\"\204\001\n\022SqlS" +
-      "erverCdcSource\022\022\n\ntable_list\030\001 \003(\t\022\024\n\014sp" +
-      "lit_update\030\002 \001(\t\022\023\n\013paving_data\030\003 \001(\t\022\013\n" +
-      "\003cat\030\004 \001(\t\022\013\n\003lsn\030\005 \001(\t\022\025\n\rpoll_interval" +
-      "\030\006 \001(\t\"\250\001\n\014BinlogSource\022\016\n\006schema\030\001 \001(\t\022" +
-      "\013\n\003cat\030\002 \001(\t\022\033\n\005start\030\003 \001(\0132\014.model.Star" +
-      "t\022\r\n\005table\030\004 \003(\t\022\024\n\014split_update\030\005 \001(\t\022\023" +
-      "\n\013paving_data\030\006 \001(\t\022\016\n\006filter\030\007 \001(\003\022\024\n\014i" +
-      "s_gtid_mode\030\010 \001(\003\"B\n\005Start\022\021\n\ttimestamp\030" +
-      "\001 \001(\t\022\024\n\014journal_name\030\002 \001(\t\022\020\n\010position\030" +
-      "\003 \001(\t\"\232\003\n\nHiveTarget\022\021\n\tpartition\030\001 \001(\t\022" +
-      "\026\n\016partition_type\030\002 \001(\t\022\025\n\rtables_column" +
-      "\030\003 \001(\t\022\030\n\020analytical_rules\030\004 \001(\t\022\016\n\006sche" +
-      "ma\030\005 \001(\t\022\030\n\020distribute_table\030\006 \001(\t\022\022\n\nwr" +
-      "ite_mode\030\007 \001(\003\022\021\n\tfile_type\030\010 \001(\003\022\022\n\ndef" +
-      "ault_fs\030\t \001(\003\022\025\n\rmax_file_size\030\n \001(\003\022\027\n\017" +
-      "next_check_rows\030\013 \001(\003\022\026\n\016row_group_size\030" +
-      "\014 \001(\003\022\031\n\021enable_dictionary\030\r \001(\003\022\020\n\010enco" +
-      "ding\030\016 \001(\003\022\027\n\017field_delimiter\030\017 \001(\003\022\020\n\010c" +
-      "ompress\030\020 \001(\003\022\024\n\014charset_name\030\021 \001(\003\022\025\n\rh" +
-      "adoop_Config\030\022 \001(\t\"\251\001\n\nHdfsSource\022\016\n\006col" +
-      "umn\030\001 \003(\t\022\014\n\004path\030\002 \001(\t\022\021\n\tfile_type\030\003 \001" +
-      "(\t\022\022\n\ndefault_fs\030\004 \001(\t\022\024\n\014filter_regex\030\005" +
-      " \001(\t\022\027\n\017field_delimiter\030\006 \001(\t\022\020\n\010encodin" +
-      "g\030\007 \001(\t\022\025\n\rhadoop_config\030\010 \001(\t\"\371\002\n\nHdfsT" +
-      "arget\022\016\n\006column\030\001 \003(\t\022\014\n\004path\030\002 \001(\t\022\021\n\tf" +
-      "ile_name\030\003 \001(\t\022\021\n\tfile_type\030\004 \001(\t\022\022\n\nwri" +
-      "te_mode\030\005 \001(\t\022\022\n\ndefault_fs\030\006 \001(\t\022\024\n\014fil" +
-      "ter_regex\030\007 \001(\t\022\027\n\017field_delimiter\030\010 \001(\t" +
-      "\022\030\n\020full_column_name\030\t \001(\t\022\030\n\020full_colum" +
-      "n_type\030\n \001(\t\022\020\n\010compress\030\013 \001(\t\022\025\n\rmax_fi" +
-      "le_size\030\014 \001(\t\022\027\n\017next_check_rows\030\r \001(\t\022\026" +
-      "\n\016row_group_size\030\016 \001(\t\022\031\n\021enable_diction" +
-      "ary\030\017 \001(\t\022\020\n\010encoding\030\020 \001(\t\022\025\n\rhadoop_co" +
-      "nfig\030\021 \001(\t\"\217\002\n\tFtpSource\022\016\n\006column\030\001 \003(\t" +
-      "\022\014\n\004path\030\002 \003(\t\022\030\n\020private_key_path\030\003 \001(\t" +
-      "\022\027\n\017connect_pattern\030\004 \001(\t\022\027\n\017field_delim" +
-      "iter\030\005 \001(\t\022\020\n\010encoding\030\006 \001(\t\022\030\n\020control_" +
-      "encoding\030\007 \001(\t\022\034\n\024is_first_line_header\030\010" +
-      " \001(\t\022\017\n\007timeout\030\t \001(\t\022\021\n\tfile_type\030\n \001(\t" +
-      "\022\025\n\rcompress_type\030\013 \001(\t\022\023\n\013file_config\030\014" +
-      " \001(\t\"\320\001\n\tFtpTarget\022\016\n\006column\030\001 \003(\t\022\014\n\004pa" +
-      "th\030\002 \003(\t\022\030\n\020private_key_path\030\003 \001(\t\022\027\n\017co" +
-      "nnect_pattern\030\004 \001(\t\022\027\n\017field_delimiter\030\005" +
-      " \001(\t\022\020\n\010encoding\030\006 \001(\t\022\030\n\020control_encodi" +
-      "ng\030\007 \001(\t\022\034\n\024is_first_line_header\030\010 \001(\t\022\017" +
-      "\n\007timeout\030\t \001(\t\"f\n\013HbaseSource\022,\n\tparame" +
-      "ter\030\001 \001(\0132\031.model.HbaseReadParameter\022\014\n\004" +
-      "name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132\014.model.Table\"" +
-      "\222\001\n\022HbaseReadParameter\022\016\n\006column\030\001 \003(\t\022\023" +
-      "\n\013hbaseConfig\030\002 \001(\t\022\033\n\005range\030\003 \001(\0132\014.mod" +
-      "el.Range\022\022\n\nchange_log\030\004 \001(\t\022\020\n\010encoding" +
-      "\030\005 \001(\t\022\024\n\014hadoopConfig\030\006 \001(\t\"M\n\005Range\022\025\n" +
-      "\rstart_row_key\030\001 \001(\003\022\023\n\013end_row_key\030\002 \001(" +
-      "\003\022\030\n\020is_binary_rowkey\030\003 \001(\003\"g\n\013HbaseTarg" +
-      "et\022-\n\tparameter\030\001 \001(\0132\032.model.HbaseWrite" +
-      "Parameter\022\014\n\004name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132\014" +
-      ".model.Table\"\032\n\005Table\022\021\n\ttablename\030\001 \001(\t" +
-      "\"\342\001\n\023HbaseWriteParameter\022\016\n\006column\030\001 \003(\t" +
-      "\022\023\n\013hbaseConfig\030\002 \001(\t\022\021\n\tnull_mode\030\003 \001(\t" +
-      "\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021write_buffer_size\030" +
-      "\005 \001(\t\022\022\n\nchange_log\030\006 \001(\t\022\026\n\016rowkey_expr" +
-      "ess\030\007 \001(\t\022\034\n\024version_column_index\030\010 \001(\t\022" +
-      "\034\n\024version_column_value\030\t \001(\t\"\303\001\n\013KafkaS" +
-      "ource\022\016\n\006column\030\001 \003(\t\022\r\n\005topic\030\002 \001(\t\022\014\n\004" +
-      "mode\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\t\022\016\n\006offset\030" +
-      "\005 \001(\t\022\020\n\010group_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001(" +
-      "\t\022\r\n\005codec\030\010 \001(\t\0221\n\020consumersettings\030\t \001" +
-      "(\0132\027.model.ConsumerSettings\"I\n\020ConsumerS" +
-      "ettings\022\031\n\021bootstrap_servers\030\001 \001(\t\022\032\n\022au" +
-      "to_commit_enable\030\002 \001(\t\"d\n\013KafkaTarget\022\023\n" +
-      "\013tableFields\030\001 \003(\t\022\r\n\005topic\030\002 \001(\t\0221\n\020con" +
-      "sumersettings\030\003 \001(\0132\027.model.ConsumerSett" +
-      "ings\"\273\001\n\013RedisTarget\022\020\n\010database\030\001 \001(\t\022\022" +
-      "\n\nkeyIndexes\030\002 \003(\005\022\023\n\013date_format\030\003 \001(\t\022" +
-      "\023\n\013expire_time\030\004 \001(\t\022\022\n\nwrite_type\030\005 \001(\t" +
-      "\022\014\n\004mode\030\006 \001(\t\022\033\n\023key_field_delimiter\030\007 " +
-      "\001(\t\022\035\n\025value_field_delimiter\030\010 \001(\tBn\n\"co" +
-      "m.dataomnis.gproto.types.pbmodelB\023PBSync" +
-      "ManageSyncJobP\000Z1github.com/DataWorkbenc" +
-      "h/gproto/xgo/types/pbmodelb\006proto3"
+      "Suspended\020\002\022\013\n\007Deleted\020\003\"$\n\006Column\022\014\n\004na" +
+      "me\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\"r\n\022RelationaldbSo" +
+      "urce\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\r\n\005t" +
+      "able\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\r\n\005where\030\004 \001(" +
+      "\t\022\017\n\007splitpk\030\005 \001(\t\"\347\001\n\022RelationaldbTarge" +
+      "t\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\r\n\005tabl" +
+      "e\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \001(\t" +
+      "\022\020\n\010post_sql\030\005 \001(\t\022\022\n\nwrite_mode\030\006 \001(\t\022\022" +
+      "\n\nbatch_size\030\007 \001(\t\022\022\n\nupdate_key\030\010 \001(\t\022\014" +
+      "\n\004mode\030\t \001(\t\022\020\n\010semantic\030\n \001(\t\022\024\n\014with_n" +
+      "o_lock\030\013 \001(\t\"}\n\rMongodbSource\022\035\n\006column\030" +
+      "\001 \003(\0132\r.model.Column\022\020\n\010database\030\002 \001(\t\022\027" +
+      "\n\017collection_name\030\003 \001(\t\022\022\n\nfetch_size\030\004 " +
+      "\001(\005\022\016\n\006filter\030\005 \001(\t\"\264\001\n\rMongodbTarget\022\035\n" +
+      "\006column\030\001 \003(\0132\r.model.Column\022\020\n\010database" +
+      "\030\002 \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\023\n\013repla" +
+      "ce_key\030\004 \001(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022\n\nbatc" +
+      "h_size\030\006 \001(\005\022\034\n\024flush_interval_mills\030\007 \001" +
+      "(\005\"h\n\023ElasticSearchSource\022\035\n\006column\030\001 \003(" +
+      "\0132\r.model.Column\022\017\n\007version\030\002 \001(\t\022\r\n\005ind" +
+      "ex\030\003 \001(\t\022\022\n\nbatch_size\030\004 \001(\t\"\177\n\023ElasticS" +
+      "earchTarget\022\035\n\006column\030\001 \003(\0132\r.model.Colu" +
+      "mn\022\017\n\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\t\022\022\n\nba" +
+      "tch_size\030\004 \001(\t\022\025\n\rkey_delimiter\030\005 \001(\t\"\307\001" +
+      "\n\016LogminerSource\022\r\n\005table\030\001 \003(\t\022\024\n\014split" +
+      "_update\030\002 \001(\t\022\023\n\013paving_data\030\003 \001(\t\022\013\n\003ca" +
+      "t\030\004 \001(\t\022\025\n\rread_position\030\005 \001(\t\022\022\n\nstart_" +
+      "time\030\006 \001(\003\022\021\n\tstart_scn\030\007 \001(\003\022\022\n\nfetch_s" +
+      "ize\030\010 \001(\003\022\034\n\024support_auto_add_log\030\t \001(\003\"" +
+      "\305\001\n\013PgwalSource\022\025\n\rdatabase_name\030\001 \001(\t\022\022" +
+      "\n\ntable_list\030\002 \003(\t\022\021\n\tslot_name\030\003 \001(\t\022\024\n" +
+      "\014split_update\030\004 \001(\t\022\025\n\rallow_created\030\005 \001" +
+      "(\t\022\021\n\ttemporary\030\006 \001(\t\022\023\n\013paving_data\030\007 \001" +
+      "(\t\022\013\n\003lsn\030\010 \001(\t\022\026\n\016slot_available\030\t \001(\t\"" +
+      "\204\001\n\022SqlServerCdcSource\022\022\n\ntable_list\030\001 \003" +
+      "(\t\022\024\n\014split_update\030\002 \001(\t\022\023\n\013paving_data\030" +
+      "\003 \001(\t\022\013\n\003cat\030\004 \001(\t\022\013\n\003lsn\030\005 \001(\t\022\025\n\rpoll_" +
+      "interval\030\006 \001(\t\"\250\001\n\014BinlogSource\022\016\n\006schem" +
+      "a\030\001 \001(\t\022\013\n\003cat\030\002 \001(\t\022\033\n\005start\030\003 \001(\0132\014.mo" +
+      "del.Start\022\r\n\005table\030\004 \003(\t\022\024\n\014split_update" +
+      "\030\005 \001(\t\022\023\n\013paving_data\030\006 \001(\t\022\016\n\006filter\030\007 " +
+      "\001(\003\022\024\n\014is_gtid_mode\030\010 \001(\003\"B\n\005Start\022\021\n\tti" +
+      "mestamp\030\001 \001(\t\022\024\n\014journal_name\030\002 \001(\t\022\020\n\010p" +
+      "osition\030\003 \001(\t\"\232\003\n\nHiveTarget\022\021\n\tpartitio" +
+      "n\030\001 \001(\t\022\026\n\016partition_type\030\002 \001(\t\022\025\n\rtable" +
+      "s_column\030\003 \001(\t\022\030\n\020analytical_rules\030\004 \001(\t" +
+      "\022\016\n\006schema\030\005 \001(\t\022\030\n\020distribute_table\030\006 \001" +
+      "(\t\022\022\n\nwrite_mode\030\007 \001(\003\022\021\n\tfile_type\030\010 \001(" +
+      "\003\022\022\n\ndefault_fs\030\t \001(\003\022\025\n\rmax_file_size\030\n" +
+      " \001(\003\022\027\n\017next_check_rows\030\013 \001(\003\022\026\n\016row_gro" +
+      "up_size\030\014 \001(\003\022\031\n\021enable_dictionary\030\r \001(\003" +
+      "\022\020\n\010encoding\030\016 \001(\003\022\027\n\017field_delimiter\030\017 " +
+      "\001(\003\022\020\n\010compress\030\020 \001(\003\022\024\n\014charset_name\030\021 " +
+      "\001(\003\022\025\n\rhadoop_Config\030\022 \001(\t\"\270\001\n\nHdfsSourc" +
+      "e\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\014\n\004path" +
+      "\030\002 \001(\t\022\021\n\tfile_type\030\003 \001(\t\022\022\n\ndefault_fs\030" +
+      "\004 \001(\t\022\024\n\014filter_regex\030\005 \001(\t\022\027\n\017field_del" +
+      "imiter\030\006 \001(\t\022\020\n\010encoding\030\007 \001(\t\022\025\n\rhadoop" +
+      "_config\030\010 \001(\t\"\210\003\n\nHdfsTarget\022\035\n\006column\030\001" +
+      " \003(\0132\r.model.Column\022\014\n\004path\030\002 \001(\t\022\021\n\tfil" +
+      "e_name\030\003 \001(\t\022\021\n\tfile_type\030\004 \001(\t\022\022\n\nwrite" +
+      "_mode\030\005 \001(\t\022\022\n\ndefault_fs\030\006 \001(\t\022\024\n\014filte" +
+      "r_regex\030\007 \001(\t\022\027\n\017field_delimiter\030\010 \001(\t\022\030" +
+      "\n\020full_column_name\030\t \001(\t\022\030\n\020full_column_" +
+      "type\030\n \001(\t\022\020\n\010compress\030\013 \001(\t\022\025\n\rmax_file" +
+      "_size\030\014 \001(\t\022\027\n\017next_check_rows\030\r \001(\t\022\026\n\016" +
+      "row_group_size\030\016 \001(\t\022\031\n\021enable_dictionar" +
+      "y\030\017 \001(\t\022\020\n\010encoding\030\020 \001(\t\022\025\n\rhadoop_conf" +
+      "ig\030\021 \001(\t\"\236\002\n\tFtpSource\022\035\n\006column\030\001 \003(\0132\r" +
+      ".model.Column\022\014\n\004path\030\002 \003(\t\022\030\n\020private_k" +
+      "ey_path\030\003 \001(\t\022\027\n\017connect_pattern\030\004 \001(\t\022\027" +
+      "\n\017field_delimiter\030\005 \001(\t\022\020\n\010encoding\030\006 \001(" +
+      "\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024is_first_" +
+      "line_header\030\010 \001(\t\022\017\n\007timeout\030\t \001(\t\022\021\n\tfi" +
+      "le_type\030\n \001(\t\022\025\n\rcompress_type\030\013 \001(\t\022\023\n\013" +
+      "file_config\030\014 \001(\t\"\337\001\n\tFtpTarget\022\035\n\006colum" +
+      "n\030\001 \003(\0132\r.model.Column\022\014\n\004path\030\002 \003(\t\022\030\n\020" +
+      "private_key_path\030\003 \001(\t\022\027\n\017connect_patter" +
+      "n\030\004 \001(\t\022\027\n\017field_delimiter\030\005 \001(\t\022\020\n\010enco" +
+      "ding\030\006 \001(\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024" +
+      "is_first_line_header\030\010 \001(\t\022\017\n\007timeout\030\t " +
+      "\001(\t\"f\n\013HbaseSource\022,\n\tparameter\030\001 \001(\0132\031." +
+      "model.HbaseReadParameter\022\014\n\004name\030\002 \001(\t\022\033" +
+      "\n\005table\030\003 \001(\0132\014.model.Table\"\241\001\n\022HbaseRea" +
+      "dParameter\022\035\n\006column\030\001 \003(\0132\r.model.Colum" +
+      "n\022\023\n\013hbaseConfig\030\002 \001(\t\022\033\n\005range\030\003 \001(\0132\014." +
+      "model.Range\022\022\n\nchange_log\030\004 \001(\t\022\020\n\010encod" +
+      "ing\030\005 \001(\t\022\024\n\014hadoopConfig\030\006 \001(\t\"M\n\005Range" +
+      "\022\025\n\rstart_row_key\030\001 \001(\003\022\023\n\013end_row_key\030\002" +
+      " \001(\003\022\030\n\020is_binary_rowkey\030\003 \001(\003\"g\n\013HbaseT" +
+      "arget\022-\n\tparameter\030\001 \001(\0132\032.model.HbaseWr" +
+      "iteParameter\022\014\n\004name\030\002 \001(\t\022\033\n\005table\030\003 \001(" +
+      "\0132\014.model.Table\"\032\n\005Table\022\021\n\ttablename\030\001 " +
+      "\001(\t\"\361\001\n\023HbaseWriteParameter\022\035\n\006column\030\001 " +
+      "\003(\0132\r.model.Column\022\023\n\013hbaseConfig\030\002 \001(\t\022" +
+      "\021\n\tnull_mode\030\003 \001(\t\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021" +
+      "write_buffer_size\030\005 \001(\t\022\022\n\nchange_log\030\006 " +
+      "\001(\t\022\026\n\016rowkey_express\030\007 \001(\t\022\034\n\024version_c" +
+      "olumn_index\030\010 \001(\t\022\034\n\024version_column_valu" +
+      "e\030\t \001(\t\"\322\001\n\013KafkaSource\022\035\n\006column\030\001 \003(\0132" +
+      "\r.model.Column\022\r\n\005topic\030\002 \001(\t\022\014\n\004mode\030\003 " +
+      "\001(\t\022\021\n\ttimestamp\030\004 \001(\t\022\016\n\006offset\030\005 \001(\t\022\020" +
+      "\n\010group_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001(\t\022\r\n\005co" +
+      "dec\030\010 \001(\t\0221\n\020consumersettings\030\t \001(\0132\027.mo" +
+      "del.ConsumerSettings\"I\n\020ConsumerSettings" +
+      "\022\031\n\021bootstrap_servers\030\001 \001(\t\022\032\n\022auto_comm" +
+      "it_enable\030\002 \001(\t\"d\n\013KafkaTarget\022\023\n\013tableF" +
+      "ields\030\001 \003(\t\022\r\n\005topic\030\002 \001(\t\0221\n\020consumerse" +
+      "ttings\030\003 \001(\0132\027.model.ConsumerSettings\"\273\001" +
+      "\n\013RedisTarget\022\020\n\010database\030\001 \001(\t\022\022\n\nkeyIn" +
+      "dexes\030\002 \003(\005\022\023\n\013date_format\030\003 \001(\t\022\023\n\013expi" +
+      "re_time\030\004 \001(\t\022\022\n\nwrite_type\030\005 \001(\t\022\014\n\004mod" +
+      "e\030\006 \001(\t\022\033\n\023key_field_delimiter\030\007 \001(\t\022\035\n\025" +
+      "value_field_delimiter\030\010 \001(\tBn\n\"com.datao" +
+      "mnis.gproto.types.pbmodelB\023PBSyncManageS" +
+      "yncJobP\000Z1github.com/DataWorkbench/gprot" +
+      "o/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -63662,158 +67189,164 @@ public final class PBSyncManageSyncJob {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobRelease_descriptor,
         new java.lang.String[] { "SpaceId", "Id", "Version", "Name", "Type", "Status", "Desc", "CreatedBy", "Created", "Updated", });
-    internal_static_model_RelationaldbSource_descriptor =
+    internal_static_model_Column_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_model_Column_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_Column_descriptor,
+        new java.lang.String[] { "Name", "Type", });
+    internal_static_model_RelationaldbSource_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_model_RelationaldbSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RelationaldbSource_descriptor,
         new java.lang.String[] { "Column", "Table", "Schema", "Where", "Splitpk", });
     internal_static_model_RelationaldbTarget_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_model_RelationaldbTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RelationaldbTarget_descriptor,
         new java.lang.String[] { "Column", "Table", "Schema", "PreSql", "PostSql", "WriteMode", "BatchSize", "UpdateKey", "Mode", "Semantic", "WithNoLock", });
     internal_static_model_MongodbSource_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_model_MongodbSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_MongodbSource_descriptor,
         new java.lang.String[] { "Column", "Database", "CollectionName", "FetchSize", "Filter", });
     internal_static_model_MongodbTarget_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_model_MongodbTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_MongodbTarget_descriptor,
         new java.lang.String[] { "Column", "Database", "CollectionName", "ReplaceKey", "WriteMode", "BatchSize", "FlushIntervalMills", });
     internal_static_model_ElasticSearchSource_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_model_ElasticSearchSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ElasticSearchSource_descriptor,
         new java.lang.String[] { "Column", "Version", "Index", "BatchSize", });
     internal_static_model_ElasticSearchTarget_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_model_ElasticSearchTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ElasticSearchTarget_descriptor,
         new java.lang.String[] { "Column", "Version", "Index", "BatchSize", "KeyDelimiter", });
     internal_static_model_LogminerSource_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_model_LogminerSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_LogminerSource_descriptor,
         new java.lang.String[] { "Table", "SplitUpdate", "PavingData", "Cat", "ReadPosition", "StartTime", "StartScn", "FetchSize", "SupportAutoAddLog", });
     internal_static_model_PgwalSource_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_model_PgwalSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_PgwalSource_descriptor,
         new java.lang.String[] { "DatabaseName", "TableList", "SlotName", "SplitUpdate", "AllowCreated", "Temporary", "PavingData", "Lsn", "SlotAvailable", });
     internal_static_model_SqlServerCdcSource_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_model_SqlServerCdcSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SqlServerCdcSource_descriptor,
         new java.lang.String[] { "TableList", "SplitUpdate", "PavingData", "Cat", "Lsn", "PollInterval", });
     internal_static_model_BinlogSource_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_model_BinlogSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_BinlogSource_descriptor,
         new java.lang.String[] { "Schema", "Cat", "Start", "Table", "SplitUpdate", "PavingData", "Filter", "IsGtidMode", });
     internal_static_model_Start_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_model_Start_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Start_descriptor,
         new java.lang.String[] { "Timestamp", "JournalName", "Position", });
     internal_static_model_HiveTarget_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_model_HiveTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HiveTarget_descriptor,
         new java.lang.String[] { "Partition", "PartitionType", "TablesColumn", "AnalyticalRules", "Schema", "DistributeTable", "WriteMode", "FileType", "DefaultFs", "MaxFileSize", "NextCheckRows", "RowGroupSize", "EnableDictionary", "Encoding", "FieldDelimiter", "Compress", "CharsetName", "HadoopConfig", });
     internal_static_model_HdfsSource_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_model_HdfsSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HdfsSource_descriptor,
         new java.lang.String[] { "Column", "Path", "FileType", "DefaultFs", "FilterRegex", "FieldDelimiter", "Encoding", "HadoopConfig", });
     internal_static_model_HdfsTarget_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_model_HdfsTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HdfsTarget_descriptor,
         new java.lang.String[] { "Column", "Path", "FileName", "FileType", "WriteMode", "DefaultFs", "FilterRegex", "FieldDelimiter", "FullColumnName", "FullColumnType", "Compress", "MaxFileSize", "NextCheckRows", "RowGroupSize", "EnableDictionary", "Encoding", "HadoopConfig", });
     internal_static_model_FtpSource_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_model_FtpSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_FtpSource_descriptor,
         new java.lang.String[] { "Column", "Path", "PrivateKeyPath", "ConnectPattern", "FieldDelimiter", "Encoding", "ControlEncoding", "IsFirstLineHeader", "Timeout", "FileType", "CompressType", "FileConfig", });
     internal_static_model_FtpTarget_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_model_FtpTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_FtpTarget_descriptor,
         new java.lang.String[] { "Column", "Path", "PrivateKeyPath", "ConnectPattern", "FieldDelimiter", "Encoding", "ControlEncoding", "IsFirstLineHeader", "Timeout", });
     internal_static_model_HbaseSource_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_model_HbaseSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseSource_descriptor,
         new java.lang.String[] { "Parameter", "Name", "Table", });
     internal_static_model_HbaseReadParameter_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_model_HbaseReadParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseReadParameter_descriptor,
         new java.lang.String[] { "Column", "HbaseConfig", "Range", "ChangeLog", "Encoding", "HadoopConfig", });
     internal_static_model_Range_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_model_Range_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Range_descriptor,
         new java.lang.String[] { "StartRowKey", "EndRowKey", "IsBinaryRowkey", });
     internal_static_model_HbaseTarget_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_model_HbaseTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseTarget_descriptor,
         new java.lang.String[] { "Parameter", "Name", "Table", });
     internal_static_model_Table_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_model_Table_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Table_descriptor,
         new java.lang.String[] { "Tablename", });
     internal_static_model_HbaseWriteParameter_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_model_HbaseWriteParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseWriteParameter_descriptor,
         new java.lang.String[] { "Column", "HbaseConfig", "NullMode", "WalFlag", "WriteBufferSize", "ChangeLog", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", });
     internal_static_model_KafkaSource_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_model_KafkaSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_KafkaSource_descriptor,
         new java.lang.String[] { "Column", "Topic", "Mode", "Timestamp", "Offset", "GroupId", "Encoding", "Codec", "Consumersettings", });
     internal_static_model_ConsumerSettings_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_model_ConsumerSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ConsumerSettings_descriptor,
         new java.lang.String[] { "BootstrapServers", "AutoCommitEnable", });
     internal_static_model_KafkaTarget_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_model_KafkaTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_KafkaTarget_descriptor,
         new java.lang.String[] { "TableFields", "Topic", "Consumersettings", });
     internal_static_model_RedisTarget_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_model_RedisTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RedisTarget_descriptor,

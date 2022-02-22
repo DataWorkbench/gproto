@@ -1596,7 +1596,7 @@ public final class PBModelMember {
     /**
      * <pre>
      * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * FIXME: confirm the
+     * FIXME: review it.
      * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
      * </pre>
      *
@@ -1607,7 +1607,7 @@ public final class PBModelMember {
     /**
      * <pre>
      * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * FIXME: confirm the
+     * FIXME: review it.
      * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
      * </pre>
      *
@@ -1995,7 +1995,7 @@ public final class PBModelMember {
     /**
      * <pre>
      * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * FIXME: confirm the
+     * FIXME: review it.
      * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
      * </pre>
      *
@@ -2018,7 +2018,7 @@ public final class PBModelMember {
     /**
      * <pre>
      * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-     * FIXME: confirm the
+     * FIXME: review it.
      * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
      * </pre>
      *
@@ -2694,7 +2694,7 @@ public final class PBModelMember {
       /**
        * <pre>
        * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * FIXME: confirm the
+       * FIXME: review it.
        * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
        * </pre>
        *
@@ -2716,7 +2716,7 @@ public final class PBModelMember {
       /**
        * <pre>
        * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * FIXME: confirm the
+       * FIXME: review it.
        * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
        * </pre>
        *
@@ -2739,7 +2739,7 @@ public final class PBModelMember {
       /**
        * <pre>
        * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * FIXME: confirm the
+       * FIXME: review it.
        * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
        * </pre>
        *
@@ -2760,7 +2760,7 @@ public final class PBModelMember {
       /**
        * <pre>
        * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * FIXME: confirm the
+       * FIXME: review it.
        * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
        * </pre>
        *
@@ -2776,7 +2776,7 @@ public final class PBModelMember {
       /**
        * <pre>
        * The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-       * FIXME: confirm the
+       * FIXME: review it.
        * &#64;inject_tag: json:"role_ids" gorm:"column:role_ids;"
        * </pre>
        *

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\nPBModelUDFP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1bproto/types/model/udf.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xec\x04\n\x03UDF\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04udf-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x02\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x1e\n\x06\x64\x65\x66ine\x18\x05 \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\xc8\x01\xa0\x9c\x01\x12,\n\x04type\x18\x06 \x01(\x0e\x32\x0f.model.UDF.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x30\n\x06status\x18\x07 \x01(\x0e\x32\x11.model.UDF.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x34\n\x08language\x18\x08 \x01(\x0e\x32\x13.model.UDF.LanguageB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12#\n\x0cusage_sample\x18\t \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\xd0\x0f\x12 \n\ncreated_by\x18\n \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\x0b \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x07\n\x03UDF\x10\x01\x12\x08\n\x04UDTF\x10\x02\x12\t\n\x05UDTTF\x10\x03\">\n\x08Language\x12\x11\n\rLanguageUnset\x10\x00\x12\t\n\x05Scala\x10\x01\x12\x08\n\x04Java\x10\x02\x12\n\n\x06Python\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x42\x65\n\"com.dataomnis.gproto.types.pbmodelB\nPBModelUDFP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1bproto/types/model/udf.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xc3\x05\n\x03UDF\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04udf-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x90\x02\x02\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x30\n\x06status\x18\x05 \x01(\x0e\x32\x11.model.UDF.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12,\n\x04type\x18\x06 \x01(\x0e\x32\x0f.model.UDF.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x34\n\x08language\x18\x07 \x01(\x0e\x32\x13.model.UDF.LanguageB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12;\n\x07\x66ile_id\x18\x08 \x01(\tB*\xe2\xdf\x1f\x13\n\x11\n\x08language\x12\x05\xda\x01\x02\x18\x02\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04res-\x12\x38\n\x04\x63ode\x18\t \x01(\tB*\xe2\xdf\x1f\x15\n\x13\n\x08language\x12\x07\xda\x01\x04J\x02\x01\x03\xe2\xdf\x1f\r\x12\x0b\xc2\x01\x08\xb0\x01\x00\xc8\x01\xa0\x9c\x01\x12#\n\x0cusage_sample\x18\n \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\xd0\x0f\x12 \n\ncreated_by\x18\x0b \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1c\n\x07\x63reated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x07\n\x03UDF\x10\x01\x12\x08\n\x04UDTF\x10\x02\x12\t\n\x05UDTTF\x10\x03\">\n\x08Language\x12\x11\n\rLanguageUnset\x10\x00\x12\t\n\x05Scala\x10\x01\x12\x08\n\x04Java\x10\x02\x12\n\n\x06Python\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x42\x65\n\"com.dataomnis.gproto.types.pbmodelB\nPBModelUDFP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -56,8 +56,8 @@ _UDF_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=544,
-  serialized_end=595,
+  serialized_start=631,
+  serialized_end=682,
 )
 _sym_db.RegisterEnumDescriptor(_UDF_TYPE)
 
@@ -91,8 +91,8 @@ _UDF_LANGUAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=597,
-  serialized_end=659,
+  serialized_start=684,
+  serialized_end=746,
 )
 _sym_db.RegisterEnumDescriptor(_UDF_LANGUAGE)
 
@@ -121,8 +121,8 @@ _UDF_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=661,
-  serialized_end=712,
+  serialized_start=748,
+  serialized_end=799,
 )
 _sym_db.RegisterEnumDescriptor(_UDF_STATUS)
 
@@ -164,12 +164,12 @@ _UDF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='define', full_name='model.UDF.define', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='status', full_name='model.UDF.status', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\n\022\010\302\001\005\310\001\240\234\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='model.UDF.type', index=5,
       number=6, type=14, cpp_type=8, label=1,
@@ -178,43 +178,50 @@ _UDF = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='model.UDF.status', index=6,
+      name='language', full_name='model.UDF.language', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='language', full_name='model.UDF.language', index=7,
-      number=8, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
+      name='file_id', full_name='model.UDF.file_id', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\023\n\021\n\010language\022\005\332\001\002\030\002\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004res-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='usage_sample', full_name='model.UDF.usage_sample', index=8,
+      name='code', full_name='model.UDF.code', index=8,
       number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\025\n\023\n\010language\022\007\332\001\004J\002\001\003\342\337\037\r\022\013\302\001\010\260\001\000\310\001\240\234\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_sample', full_name='model.UDF.usage_sample', index=9,
+      number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\320\017', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created_by', full_name='model.UDF.created_by', index=9,
-      number=10, type=9, cpp_type=9, label=1,
+      name='created_by', full_name='model.UDF.created_by', index=10,
+      number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created', full_name='model.UDF.created', index=10,
-      number=11, type=3, cpp_type=2, label=1,
+      name='created', full_name='model.UDF.created', index=11,
+      number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updated', full_name='model.UDF.updated', index=11,
-      number=12, type=3, cpp_type=2, label=1,
+      name='updated', full_name='model.UDF.updated', index=12,
+      number=13, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -235,11 +242,11 @@ _UDF = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=92,
-  serialized_end=712,
+  serialized_end=799,
 )
 
-_UDF.fields_by_name['type'].enum_type = _UDF_TYPE
 _UDF.fields_by_name['status'].enum_type = _UDF_STATUS
+_UDF.fields_by_name['type'].enum_type = _UDF_TYPE
 _UDF.fields_by_name['language'].enum_type = _UDF_LANGUAGE
 _UDF_TYPE.containing_type = _UDF
 _UDF_LANGUAGE.containing_type = _UDF
@@ -260,10 +267,11 @@ _UDF.fields_by_name['space_id']._options = None
 _UDF.fields_by_name['id']._options = None
 _UDF.fields_by_name['name']._options = None
 _UDF.fields_by_name['desc']._options = None
-_UDF.fields_by_name['define']._options = None
-_UDF.fields_by_name['type']._options = None
 _UDF.fields_by_name['status']._options = None
+_UDF.fields_by_name['type']._options = None
 _UDF.fields_by_name['language']._options = None
+_UDF.fields_by_name['file_id']._options = None
+_UDF.fields_by_name['code']._options = None
 _UDF.fields_by_name['usage_sample']._options = None
 _UDF.fields_by_name['created_by']._options = None
 _UDF.fields_by_name['created']._options = None
