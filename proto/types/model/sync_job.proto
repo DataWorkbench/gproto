@@ -193,13 +193,13 @@ message SyncJobArgs {
     BinlogSource binlog_source = 23;
     // pgwal source
     // @inject_tag: json:"pgwal_source"
-    PgwalSource pgwal_source = 24;
+    PgWalSource pgwal_source = 24;
     // sqlservercdc source
     // @inject_tag: json:"sqlserver_cdc_source"
     SqlServerCdcSource sqlserver_cdc_source = 25;
     // logminer source
     // @inject_tag: json:"logminer_source"
-    LogminerSource logminer_source = 26;
+    LogMinerSource logminer_source = 26;
     // redis target
     // @inject_tag: json:"redis_target"
     RedisTarget redis_target = 27;
@@ -390,9 +390,9 @@ message RelationaldbSource {
     // where
     // @inject_tag: json:"where" swaggerignore:"true"
     string where = 4;
-    // splitpk
-    // @inject_tag: json:"splitpk" swaggerignore:"true"
-    string splitpk = 5;
+    // split_pk
+    // @inject_tag: json:"split_pk" swaggerignore:"true"
+    string split_pk = 5;
 }
 
 message RelationaldbTarget {
@@ -407,19 +407,19 @@ message RelationaldbTarget {
     string schema = 3;
     // pre sql
     // @inject_tag: json:"pre_sql" swaggerignore:"true"
-    string pre_sql = 4;
+    repeated string pre_sql = 4;
     // post sql
     // @inject_tag: json:"post_sql" swaggerignore:"true"
-    string post_sql = 5;
+    repeated string post_sql = 5;
     // write mode
     // @inject_tag: json:"write_mode" swaggerignore:"true"
     string write_mode = 6;
     // batch size
     // @inject_tag: json:"batch_size" swaggerignore:"true"
-    string batch_size = 7;
+    int32 batch_size = 7;
     // update key
     // @inject_tag: json:"update_key" swaggerignore:"true"
-    string update_key = 8;
+    repeated string update_key = 8;
     // mode
     // @inject_tag: json:"mode" swaggerignore:"true"
     string mode = 9;
@@ -486,7 +486,7 @@ message ElasticSearchSource {
     string index = 3;
     // batch size
     // @inject_tag: json:"batch_size" swaggerignore:"true"
-    string batch_size = 4;
+    int32 batch_size = 4;
 }
 
 message ElasticSearchTarget {
@@ -501,22 +501,22 @@ message ElasticSearchTarget {
     string index = 3;
     // batch size
     // @inject_tag: json:"batch_size" swaggerignore:"true"
-    string batch_size = 4;
+    int32 batch_size = 4;
     // key delimiter
     // @inject_tag: json:"key_delimiter" swaggerignore:"true"
     string key_delimiter = 5;
 }
 
-message LogminerSource {
+message LogMinerSource {
     // table
     // @inject_tag: json:"table" swaggerignore:"true"
     repeated string table = 1;
     // split update
     // @inject_tag: json:"split_update" swaggerignore:"true"
-    string split_update = 2;
+    bool split_update = 2;
     // paving data
     // @inject_tag: json:"paving_data" swaggerignore:"true"
-    string paving_data = 3;
+    bool paving_data = 3;
     // cat
     // @inject_tag: json:"cat" swaggerignore:"true"
     string cat = 4;
@@ -528,16 +528,19 @@ message LogminerSource {
     int64 start_time = 6;
     // start scn
     // @inject_tag: json:"start_scn" swaggerignore:"true"
-    int64 start_scn = 7;
+    string start_scn = 7;
     // fetch size
     // @inject_tag: json:"fetch_size" swaggerignore:"true"
-    int64 fetch_size = 8;
+    int32 fetch_size = 8;
     // support auto add log
     // @inject_tag: json:"support_auto_add_log" swaggerignore:"true"
-    int64 support_auto_add_log = 9;
+    bool support_auto_add_log = 9;
+    // support auto add log
+    // @inject_tag: json:"query_timeout" swaggerignore:"true"
+    int32 query_timeout = 10;
 }
 
-message PgwalSource {
+message PgWalSource {
     // database name
     // @inject_tag: json:"database_name" swaggerignore:"true"
     string database_name = 1;
@@ -547,24 +550,25 @@ message PgwalSource {
     // slot name
     // @inject_tag: json:"slot_name" swaggerignore:"true"
     string slot_name = 3;
-    // split update
-    // @inject_tag: json:"split_update" swaggerignore:"true"
-    string split_update = 4;
+    // status interval
+    // @inject_tag: json:"status_interval" swaggerignore:"true"
+    int32 status_interval = 4;
     // allow created
     // @inject_tag: json:"allow_created" swaggerignore:"true"
-    string allow_created = 5;
+    bool allow_created = 5;
     // temporary
     // @inject_tag: json:"temporary" swaggerignore:"true"
-    string temporary = 6;
+    bool temporary = 6;
     // paving data
     // @inject_tag: json:"paving_data" swaggerignore:"true"
-    string paving_data = 7;
+    bool paving_data = 7;
     // lsn
     // @inject_tag: json:"lsn" swaggerignore:"true"
-    string lsn = 8;
+    int64 lsn = 8;
     // slot available
     // @inject_tag: json:"slot_available" swaggerignore:"true"
-    string slot_available = 9;
+    bool slot_available = 9;
+
 }
 
 message SqlServerCdcSource {
@@ -573,10 +577,10 @@ message SqlServerCdcSource {
     repeated string table_list = 1;
     // split update
     // @inject_tag: json:"split_update" swaggerignore:"true"
-    string split_update = 2;
+    bool split_update = 2;
     // paving data
     // @inject_tag: json:"paving_data" swaggerignore:"true"
-    string paving_data = 3;
+    bool paving_data = 3;
     // cat
     // @inject_tag: json:"cat" swaggerignore:"true"
     string cat = 4;
@@ -586,6 +590,9 @@ message SqlServerCdcSource {
     // poll interval
     // @inject_tag: json:"poll_interval" swaggerignore:"true"
     string poll_interval = 6;
+    // database name
+    // @inject_tag: json:"database_name" swaggerignore:"true"
+    string database_name = 7;
 }
 
 message BinlogSource {
@@ -603,28 +610,34 @@ message BinlogSource {
     repeated string table = 4;
     // split update
     // @inject_tag: json:"split_update" swaggerignore:"true"
-    string split_update = 5;
+    bool split_update = 5;
     // paving data
     // @inject_tag: json:"paving_data" swaggerignore:"true"
-    string paving_data = 6;
+    bool paving_data = 6;
     // filter
     // @inject_tag: json:"filter" swaggerignore:"true"
-    int64 filter = 7;
+    string filter = 7;
     // is gtid mode
     // @inject_tag: json:"is_gtid_mode" swaggerignore:"true"
-    int64 is_gtid_mode = 8;
+    bool is_gtid_mode = 8;
+    // query_timeout
+    // @inject_tag: json:"query_timeout" swaggerignore:"true"
+    int32 query_timeout = 9;
+    // connect_timeout
+    // @inject_tag: json:"connect_timeout" swaggerignore:"true"
+    int32 connect_timeout = 10;
 }
 
 message Start {
     // timestamp
     // @inject_tag: json:"timestamp" swaggerignore:"true"
-    string timestamp = 1;
+    int64 timestamp = 1;
     // journal name
     // @inject_tag: json:"journal_name" swaggerignore:"true"
     string journal_name = 2;
     // position
     // @inject_tag: json:"position" swaggerignore:"true"
-    string position = 3;
+    int64 position = 3;
 }
 
 message HiveTarget {
@@ -762,39 +775,36 @@ message HdfsTarget {
     // default_fs
     // @inject_tag: json:"default_fs" swaggerignore:"true"
     string default_fs = 6;
-    // filter_regex
-    // @inject_tag: json:"filter_regex" swaggerignore:"true"
-    string filter_regex = 7;
+    // encoding
+    // @inject_tag: json:"encoding" swaggerignore:"true"
+    string encoding = 7;
     // field delimiter
     // @inject_tag: json:"field_delimiter" swaggerignore:"true"
     string field_delimiter = 8;
     // full column name
     // @inject_tag: json:"full_column_name" swaggerignore:"true"
-    string full_column_name = 9;
+    repeated string full_column_name = 9;
     // full column type
     // @inject_tag: json:"full_column_type" swaggerignore:"true"
-    string full_column_type = 10;
+    repeated string full_column_type = 10;
     // compress
     // @inject_tag: json:"compress" swaggerignore:"true"
     string compress = 11;
     // max file size
     // @inject_tag: json:"max_file_size" swaggerignore:"true"
-    string max_file_size = 12;
+    int32 max_file_size = 12;
     // next check rows
     // @inject_tag: json:"next_check_rows" swaggerignore:"true"
-    string next_check_rows = 13;
+    int64 next_check_rows = 13;
     // row group size
     // @inject_tag: json:"row_group_size" swaggerignore:"true"
-    string row_group_size = 14;
+    int32 row_group_size = 14;
     // enable dictionary
     // @inject_tag: json:"enable_dictionary" swaggerignore:"true"
-    string enable_dictionary = 15;
-    // encoding
-    // @inject_tag: json:"encoding" swaggerignore:"true"
-    string encoding = 16;
+    bool enable_dictionary = 15;
     // hadoop config
     // @inject_tag: json:"hadoop_config" swaggerignore:"true"
-    string hadoop_config = 17;
+    string hadoop_config = 16;
 
 }
 
@@ -805,7 +815,7 @@ message FtpSource {
     repeated Column column = 1;
     // path
     // @inject_tag: json:"path" swaggerignore:"true"
-    repeated string path = 2;
+    string path = 2;
     // private key path
     // @inject_tag: json:"private_key_path" swaggerignore:"true"
     string private_key_path = 3;
@@ -823,7 +833,7 @@ message FtpSource {
     string control_encoding = 7;
     // is first line header
     // @inject_tag: json:"is_first_line_header" swaggerignore:"true"
-    string is_first_line_header = 8;
+    bool is_first_line_header = 8;
     // timeout
     // @inject_tag: json:"timeout" swaggerignore:"true"
     string timeout = 9;
@@ -845,7 +855,7 @@ message FtpTarget {
     repeated Column column = 1;
     // path
     // @inject_tag: json:"path" swaggerignore:"true"
-    repeated string path = 2;
+    string path = 2;
     // private key path
     // @inject_tag: json:"private_key_path" swaggerignore:"true"
     string private_key_path = 3;
@@ -863,13 +873,13 @@ message FtpTarget {
     string control_encoding = 7;
     // is first line header
     // @inject_tag: json:"is_first_line_header" swaggerignore:"true"
-    string is_first_line_header = 8;
+    bool is_first_line_header = 8;
     // ftp_file_name
     // @inject_tag: json:"ftp_file_name" swaggerignore:"true"
     string ftp_file_name = 9;
     // timeout
     // @inject_tag: json:"timeout" swaggerignore:"true"
-    string timeout = 10;
+    int32 timeout = 10;
 }
 
 message HbaseSource {
@@ -900,21 +910,27 @@ message HbaseReadParameter {
     // encoding
     // @inject_tag: json:"encoding" swaggerignore:"true"
     string encoding = 5;
+    // scan cache size
+    // @inject_tag: json:"scan_cache_size" swaggerignore:"true"
+    int32 scan_cache_size = 6;
+    // hbase scan batch size
+    // @inject_tag: json:"scan_batch_size" swaggerignore:"true"
+    int32 scan_batch_size = 7;
     // hbase hadoopConfig
     // @inject_tag: json:"hadoopConfig" swaggerignore:"true"
-    string hadoopConfig = 6;
+    string hadoopConfig = 8;
 }
 
 message Range {
     // start row key
     // @inject_tag: json:"start_row_key" swaggerignore:"true"
-    int64 start_row_key = 1;
+    string start_row_key = 1;
     // end row key
     // @inject_tag: json:"end_row_key" swaggerignore:"true"
-    int64 end_row_key = 2;
+    string end_row_key = 2;
     // is binary rowkey
     // @inject_tag: json:"is_binary_rowkey" swaggerignore:"true"
-    int64 is_binary_rowkey = 3;
+    bool is_binary_rowkey = 3;
 }
 
 message HbaseTarget {
@@ -929,17 +945,17 @@ message HbaseTarget {
     Table table = 3;
 }
 message Table {
-    // hbase tablename
-    // @inject_tag: json:"tablename" swaggerignore:"true"
-    string tablename = 1;
+    // hbase table_name
+    // @inject_tag: json:"table_name" swaggerignore:"true"
+    string table_name = 1;
 }
 
 message HbaseWriteParameter {
     // @inject_tag: json:"column" swaggerignore:"true"
     repeated Column column = 1;
-    // hbaseConfig
-    // @inject_tag: json:"hbaseConfig" swaggerignore:"true"
-    string hbaseConfig = 2;
+    // hbase Config
+    // @inject_tag: json:"hbase_config" swaggerignore:"true"
+    string hbase_config = 2;
     // null_mode
     // @inject_tag: json:"null_mode" swaggerignore:"true"
     string null_mode = 3;
@@ -948,7 +964,7 @@ message HbaseWriteParameter {
     bool wal_flag = 4;
     // write buffer size
     // @inject_tag: json:"write_buffer_size" swaggerignore:"true"
-    string write_buffer_size = 5;
+    int32 write_buffer_size = 5;
     // change_log
     // @inject_tag: json:"change_log" swaggerignore:"true"
     string change_log = 6;
@@ -957,10 +973,16 @@ message HbaseWriteParameter {
     string rowkey_express = 7;
     // version column index
     // @inject_tag: json:"version_column_index" swaggerignore:"true"
-    string version_column_index = 8;
+    int32 version_column_index = 8;
     // version column value
     // @inject_tag: json:"version_column_value" swaggerignore:"true"
     string version_column_value = 9;
+    // scan cache size
+    // @inject_tag: json:"scan_cache_size" swaggerignore:"true"
+    int32 scan_cache_size = 10;
+    // hbase scan batch size
+    // @inject_tag: json:"scan_batch_size" swaggerignore:"true"
+    int32 scan_batch_size = 11;
 }
 
 
@@ -975,7 +997,7 @@ message KafkaSource {
     string mode = 3;
     // timestamp
     // @inject_tag: json:"timestamp" swaggerignore:"true"
-    string timestamp = 4;
+    int64 timestamp = 4;
     // offset
     // @inject_tag: json:"offset" swaggerignore:"true"
     string offset = 5;
@@ -989,8 +1011,8 @@ message KafkaSource {
     // @inject_tag: json:"codec" swaggerignore:"true"
     string codec = 8;
     // kafka consumer settings
-    // @inject_tag: json:"consumersettings" swaggerignore:"true"
-    ConsumerSettings consumersettings = 9;
+    // @inject_tag: json:"consumer_settings" swaggerignore:"true"
+    ConsumerSettings consumer_settings = 9;
 }
 
 message ConsumerSettings {
@@ -1005,19 +1027,19 @@ message ConsumerSettings {
 message KafkaTarget {
     // kafka tableFields
     // @inject_tag: json:"tableFields" swaggerignore:"true"
-    repeated string tableFields = 1;
+    repeated Column tableFields = 1;
     // kafka topic
     // @inject_tag: json:"topic" swaggerignore:"true"
     string topic = 2;
     // kafka consumer settings
-    // @inject_tag: json:"consumersettings" swaggerignore:"true"
-    ConsumerSettings consumersettings = 3;
+    // @inject_tag: json:"consumer_settings" swaggerignore:"true"
+    ConsumerSettings consumer_settings = 3;
 }
 
 message RedisTarget {
     // select database
     // @inject_tag: json:"database" swaggerignore:"true"
-    string database = 1;
+    int32 database = 1;
     // keyIndexes
     // @inject_tag: json:"keyIndexes" swaggerignore:"true"
     repeated int32 keyIndexes = 2;
@@ -1026,10 +1048,10 @@ message RedisTarget {
     string date_format = 3;
     // expire time
     // @inject_tag: json:"expire_time" swaggerignore:"true"
-    string expire_time = 4;
-    // write type
-    // @inject_tag: json:"write_type" swaggerignore:"true"
-    string write_type = 5;
+    int64 expire_time = 4;
+    // type
+    // @inject_tag: json:"type" swaggerignore:"true"
+    string type = 5;
     // mode
     // @inject_tag: json:"mode" swaggerignore:"true"
     string mode = 6;
@@ -1039,4 +1061,7 @@ message RedisTarget {
     // value field delimiter
     // @inject_tag: json:"value_field_delimiter" swaggerignore:"true"
     string value_field_delimiter = 8;
+    // timeout
+    // @inject_tag: json:"timeout" swaggerignore:"true"
+    int32 timeout = 9;
 }
