@@ -155,11 +155,11 @@ message SyncJobArgs {
     MongodbTarget mongodb_target = 12;
 
     // elasticsearch source
-    // @inject_tag: json:"elasticsearch_source"
-    ElasticSearchSource elasticsearch_source = 13;
+    // @inject_tag: json:"elastic_search_source"
+    ElasticSearchSource elastic_search_source = 13;
     // elasticsearch target
-    // @inject_tag: json:"elasticsearch_target"
-    ElasticSearchTarget elasticsearch_target = 14;
+    // @inject_tag: json:"elastic_search_target"
+    ElasticSearchTarget elastic_search_target = 14;
 
     // hdfs source
     // @inject_tag: json:"hdfs_source"
@@ -195,8 +195,8 @@ message SyncJobArgs {
     // @inject_tag: json:"pgwal_source"
     PgwalSource pgwal_source = 24;
     // sqlservercdc source
-    // @inject_tag: json:"sqlservercdc_source"
-    SqlServerCdcSource sqlservercdc_source = 25;
+    // @inject_tag: json:"sqlserver_cdc_source"
+    SqlServerCdcSource sqlserver_cdc_source = 25;
     // logminer source
     // @inject_tag: json:"logminer_source"
     LogminerSource logminer_source = 26;
@@ -648,13 +648,13 @@ message HiveTarget {
     string distribute_table = 6;
     // write mode
     // @inject_tag: json:"write_mode" swaggerignore:"true"
-    int64 write_mode = 7;
+    string write_mode = 7;
     // Relationaldb column
     // @inject_tag: json:"file_type" swaggerignore:"true"
-    int64 file_type = 8;
+    string file_type = 8;
     // default_fs
     // @inject_tag: json:"default_fs" swaggerignore:"true"
-    int64 default_fs = 9;
+    string default_fs = 9;
     // max file size
     // @inject_tag: json:"max_file_size" swaggerignore:"true"
     int64 max_file_size = 10;
@@ -666,22 +666,22 @@ message HiveTarget {
     int64 row_group_size = 12;
     // enable dictionary
     // @inject_tag: json:"enable_dictionary" swaggerignore:"true"
-    int64 enable_dictionary = 13;
+    bool enable_dictionary = 13;
     // encoding
     // @inject_tag: json:"encoding" swaggerignore:"true"
-    int64 encoding = 14;
+    string encoding = 14;
     // field_delimiter
     // @inject_tag: json:"field_delimiter" swaggerignore:"true"
-    int64 field_delimiter = 15;
+    string field_delimiter = 15;
     // compress
     // @inject_tag: json:"compress" swaggerignore:"true"
-    int64 compress = 16;
+    string compress = 16;
     // charset_name
     // @inject_tag: json:"charset_name" swaggerignore:"true"
-    int64 charset_name = 17;
+    string charset_name = 17;
     // hadoop config
-    // @inject_tag: json:"hadoop_Config" swaggerignore:"true"
-    string hadoop_Config = 18;
+    // @inject_tag: json:"hadoop_config" swaggerignore:"true"
+    string hadoop_config = 18;
 
 }
 
@@ -864,9 +864,12 @@ message FtpTarget {
     // is first line header
     // @inject_tag: json:"is_first_line_header" swaggerignore:"true"
     string is_first_line_header = 8;
+    // ftp_file_name
+    // @inject_tag: json:"ftp_file_name" swaggerignore:"true"
+    string ftp_file_name = 9;
     // timeout
     // @inject_tag: json:"timeout" swaggerignore:"true"
-    string timeout = 9;
+    string timeout = 10;
 }
 
 message HbaseSource {
