@@ -986,7 +986,6 @@ message HbaseWriteParameter {
 }
 
 
-
 message KafkaSource {
     // @inject_tag: json:"column" swaggerignore:"true"
     repeated Column column = 1;
