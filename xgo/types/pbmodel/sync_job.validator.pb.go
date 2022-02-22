@@ -342,8 +342,8 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_mongodb_target() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elasticsearch_source() error {
-	if dt, ok := interface{}(this.ElasticsearchSource).(interface{ Validate() error }); ok {
+func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elastic_search_source() error {
+	if dt, ok := interface{}(this.ElasticSearchSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -351,8 +351,8 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elasticsearch_source() erro
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elasticsearch_target() error {
-	if dt, ok := interface{}(this.ElasticsearchTarget).(interface{ Validate() error }); ok {
+func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_elastic_search_target() error {
+	if dt, ok := interface{}(this.ElasticSearchTarget).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -450,8 +450,8 @@ func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_pgwal_source() error {
 	return nil
 }
 
-func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_sqlservercdc_source() error {
-	if dt, ok := interface{}(this.SqlservercdcSource).(interface{ Validate() error }); ok {
+func (this *SyncJobArgs) _xxx_xxx_Validator_Validate_sqlserver_cdc_source() error {
+	if dt, ok := interface{}(this.SqlserverCdcSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -524,10 +524,10 @@ func (this *SyncJobArgs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_mongodb_target(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_elasticsearch_source(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_elastic_search_source(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_elasticsearch_target(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_elastic_search_target(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_hdfs_source(); err != nil {
@@ -560,7 +560,7 @@ func (this *SyncJobArgs) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_pgwal_source(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_sqlservercdc_source(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_sqlserver_cdc_source(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_logminer_source(); err != nil {

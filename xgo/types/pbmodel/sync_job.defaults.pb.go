@@ -77,13 +77,13 @@ func (this *SyncJobArgs) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.ElasticsearchSource != nil {
-		if dt, ok := interface{}(this.ElasticsearchSource).(interface{ SetDefaults() }); ok {
+	if this.ElasticSearchSource != nil {
+		if dt, ok := interface{}(this.ElasticSearchSource).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
-	if this.ElasticsearchTarget != nil {
-		if dt, ok := interface{}(this.ElasticsearchTarget).(interface{ SetDefaults() }); ok {
+	if this.ElasticSearchTarget != nil {
+		if dt, ok := interface{}(this.ElasticSearchTarget).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -137,8 +137,8 @@ func (this *SyncJobArgs) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.SqlservercdcSource != nil {
-		if dt, ok := interface{}(this.SqlservercdcSource).(interface{ SetDefaults() }); ok {
+	if this.SqlserverCdcSource != nil {
+		if dt, ok := interface{}(this.SqlserverCdcSource).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
