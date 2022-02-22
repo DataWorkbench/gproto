@@ -985,7 +985,6 @@ message HbaseWriteParameter {
     int32 scan_batch_size = 11;
 }
 
-
 message KafkaSource {
     // @inject_tag: json:"column" swaggerignore:"true"
     repeated Column column = 1;
