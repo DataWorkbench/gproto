@@ -193,13 +193,13 @@ message SyncJobArgs {
     BinlogSource binlog_source = 23;
     // pgwal source
     // @inject_tag: json:"pgwal_source"
-    PgWalSource pgwal_source = 24;
+    PgWalSource pg_wal_source = 24;
     // sqlservercdc source
     // @inject_tag: json:"sqlserver_cdc_source"
     SqlServerCdcSource sqlserver_cdc_source = 25;
     // logminer source
     // @inject_tag: json:"logminer_source"
-    LogMinerSource logminer_source = 26;
+    LogMinerSource log_miner_source = 26;
     // redis target
     // @inject_tag: json:"redis_target"
     RedisTarget redis_target = 27;
@@ -589,7 +589,7 @@ message SqlServerCdcSource {
     string lsn = 5;
     // poll interval
     // @inject_tag: json:"poll_interval" swaggerignore:"true"
-    string poll_interval = 6;
+    int64 poll_interval = 6;
     // database name
     // @inject_tag: json:"database_name" swaggerignore:"true"
     string database_name = 7;
