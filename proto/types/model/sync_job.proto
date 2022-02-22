@@ -210,7 +210,6 @@ message SyncJobArgs {
     // The flink cluster id. Is required.
     // @inject_tag: json:"cluster_id"
     string cluster_id = 29 [(validator.field) = {}];
-
 }
 
 // SyncJobSchedule represents a job schedule info.
