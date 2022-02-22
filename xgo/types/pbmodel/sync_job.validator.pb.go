@@ -1017,16 +1017,16 @@ func (this *ElasticSearchTarget) Validate() error {
 	return nil
 }
 
-// Set default value for message model.LogminerSource
-func (this *LogminerSource) Validate() error {
+// Set default value for message model.LogMinerSource
+func (this *LogMinerSource) Validate() error {
 	if this == nil {
 		return nil
 	}
 	return nil
 }
 
-// Set default value for message model.PgwalSource
-func (this *PgwalSource) Validate() error {
+// Set default value for message model.PgWalSource
+func (this *PgWalSource) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -1319,8 +1319,8 @@ func (this *KafkaSource) _xxx_xxx_Validator_Validate_column() error {
 	return nil
 }
 
-func (this *KafkaSource) _xxx_xxx_Validator_Validate_consumersettings() error {
-	if dt, ok := interface{}(this.Consumersettings).(interface{ Validate() error }); ok {
+func (this *KafkaSource) _xxx_xxx_Validator_Validate_consumer_settings() error {
+	if dt, ok := interface{}(this.ConsumerSettings).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -1336,7 +1336,7 @@ func (this *KafkaSource) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_consumersettings(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_consumer_settings(); err != nil {
 		return err
 	}
 	return nil
@@ -1350,8 +1350,20 @@ func (this *ConsumerSettings) Validate() error {
 	return nil
 }
 
-func (this *KafkaTarget) _xxx_xxx_Validator_Validate_consumersettings() error {
-	if dt, ok := interface{}(this.Consumersettings).(interface{ Validate() error }); ok {
+func (this *KafkaTarget) _xxx_xxx_Validator_Validate_tableFields() error {
+	for _, item := range this.TableFields {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+func (this *KafkaTarget) _xxx_xxx_Validator_Validate_consumer_settings() error {
+	if dt, ok := interface{}(this.ConsumerSettings).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -1364,7 +1376,10 @@ func (this *KafkaTarget) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_consumersettings(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_tableFields(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_consumer_settings(); err != nil {
 		return err
 	}
 	return nil

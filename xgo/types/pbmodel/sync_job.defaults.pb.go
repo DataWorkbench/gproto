@@ -232,16 +232,16 @@ func (this *ElasticSearchTarget) SetDefaults() {
 	return
 }
 
-// Set default value for message model.LogminerSource
-func (this *LogminerSource) SetDefaults() {
+// Set default value for message model.LogMinerSource
+func (this *LogMinerSource) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message model.PgwalSource
-func (this *PgwalSource) SetDefaults() {
+// Set default value for message model.PgWalSource
+func (this *PgWalSource) SetDefaults() {
 	if this == nil {
 		return
 	}
@@ -395,8 +395,8 @@ func (this *KafkaSource) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Consumersettings != nil {
-		if dt, ok := interface{}(this.Consumersettings).(interface{ SetDefaults() }); ok {
+	if this.ConsumerSettings != nil {
+		if dt, ok := interface{}(this.ConsumerSettings).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -416,8 +416,8 @@ func (this *KafkaTarget) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Consumersettings != nil {
-		if dt, ok := interface{}(this.Consumersettings).(interface{ SetDefaults() }); ok {
+	if this.ConsumerSettings != nil {
+		if dt, ok := interface{}(this.ConsumerSettings).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
