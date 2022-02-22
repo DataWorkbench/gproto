@@ -30,11 +30,11 @@ message ListUDFs {
   int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
-  // Optional values: {udf_id, name, createtime, updatetime}.
+  // Optional values: {udf_id, name, created, updated}.
   // Multiple fields are separated by commas(","), eg: sort_by="updated".
   // Not required, default: updated.
   // @inject_tag: json:"sort_by" form:"sort_by"
-  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "udf_id", "created", "updated", "name"] } ];
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "name", "created", "updated"] } ];
 
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" form:"reverse"
@@ -44,9 +44,8 @@ message ListUDFs {
   // @inject_tag: json:"search" form:"search"
   string search = 6;
 
-  // UDF Type one of 1/2/3 1=>UDF/2=>UDTF/3=>UDTTF, default is 1
-  // FIXME: rename json name
-  // @inject_tag: json:"udf_type" form:"udf_type"
+  // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF. Not required.
+  // @inject_tag: json:"type" form:"type"
   model.UDF.Type type = 7 [ (validator.field).tags.enum = { in_enums: true  } ];
 }
 
@@ -56,7 +55,7 @@ message DeleteUDFs {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
-  // delete these UDFIDs
+  // The list of udf that will be deleted.
   // @inject_tag: json:"udf_ids"
   repeated string udf_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lt: 100, item: { string: { prefix: "udf-" } } } ];
 }
@@ -72,36 +71,45 @@ message CreateUDF {
   // @inject_tag: json:"name"
   string name = 2 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 65 } ];
 
-  // describe this udf.
-  // FIXME: rename json name
-  // @inject_tag: json:"comment"
+  // description this udf.
+  // @inject_tag: json:"desc"
   string desc = 3 [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
 
-  // define this udf. jar udf this is resourcemanager jarID, python/scala this is code.
-  // @inject_tag: json:"define"
-  string define = 4 [ (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 } ];
-
-  // usage for this udf
-  // @inject_tag: json:"usage_sample"
-  string usage_sample = 5 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
-
   // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF.
-  // FIXME: rename json name
-  // @inject_tag: json:"udf_type"
-  model.UDF.Type type = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  // @inject_tag: json:"type"
+  model.UDF.Type type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
-  // UDF language one of 1/2/3 1=>Scala/2=>Java/3=>Python
-  // FIXME: rename json name
-  // @inject_tag: json:"udf_language"
-  model.UDF.Language language = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  // language of UDF; Optional Values: 1 => Scala 2=> Java 3=> Python
+  // @inject_tag: json:"language"
+  model.UDF.Language language = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // The id of resource. Used with language of JAVA.
+  // Is required if language == 2
+  // @inject_tag: json:"file_id" gorm:"column:file_id;"
+  string file_id = 6 [
+    (validator.field).check_if = { field: "language", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.string = { byte_len_eq: 20, prefix: "res-" }
+  ];
+
+  // The code. Used with language of Python and Scala.
+  // Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+  // @inject_tag: json:"code" gorm:"column:code;"
+  string code = 7 [
+    (validator.field).check_if = { field: "language", tags: { enum: { in: [1, 3] } } },
+    (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 }
+  ];
+
+  // usage sample for this udf
+  // @inject_tag: json:"usage_sample"
+  string usage_sample = 8 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
 
   // Udf owner.
   // @inject_tag: json:"created_by"
-  string created_by = 8 [(validator.field).tags.string = { ne: "" }];
+  string created_by = 9 [(validator.field).tags.string = { ne: "" }];
 
   // The owner of workspace, only used to check quota. Set by APIServer.
   // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 9 [(validator.field).tags.string = { ne: "" } ];
+  string space_owner = 10 [(validator.field).tags.string = { ne: "" } ];
 }
 
 // UpdateUDF used as request parameters for RPC and HTTP(based on Body)
@@ -118,18 +126,29 @@ message UpdateUDF {
   // @inject_tag: json:"name"
   string name = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 65 } ];
 
-  // describe this udf.
-  // FIXME: rename json name
-  // @inject_tag: json:"comment"
+  // description this udf.
+  // @inject_tag: json:"desc"
   string desc = 4 [ (validator.field).tags.string = { byte_len_lte: 256 } ];
 
-  // define this udf. jar udf this is resource jarID, is python/scala this is code.
-  // @inject_tag: json:"define"
-  string define = 5 [ (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 } ];
+  // The id of resource. Used with language of JAVA.
+  // Is required if language == 2
+  // @inject_tag: json:"file_id" gorm:"column:file_id;"
+  string file_id = 5 [
+    (validator.field).check_if = { field: "file_id", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20, prefix: "res-" }
+  ];
+
+  // The code. Used with language of Python and Scala.
+  // Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+  // @inject_tag: json:"code" gorm:"column:code;"
+  string code = 6 [
+    (validator.field).check_if = { field: "code", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 }
+  ];
 
   // usage for this udf
   // @inject_tag: json:"usage_sample"
-  string usage_sample = 6 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
+  string usage_sample = 7 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
 }
 
 // DescribeUDF used as request parameters for RPC and HTTP(based on Body)

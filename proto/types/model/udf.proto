@@ -40,50 +40,58 @@ message UDF {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
   // ID, unique within a region.
-  // FIXME: rename json name
-  // @inject_tag: json:"udf_id" gorm:"column:id;primaryKey;"
+  // @inject_tag: json:"id" gorm:"column:id;primaryKey;"
   string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "udf-" } ];
 
   // UDF Name, unique within a space.
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 64} ];
 
-  // Comment, describe this UDF.
-  // FIXME: rename json name
-  // @inject_tag: json:"comment" gorm:"column:desc;"
+  // Desc is description this UDF.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
   string desc = 4 [(validator.field).tags.string = { char_len_lte: 256 }];
-
-  // define this udf. jar udf this is resource jarID, is python/scala this is code.
-  // @inject_tag: json:"define" gorm:"column:define;"
-  string define = 5 [ (validator.field).tags.string = { char_len_lte: 20000 }];
-
-  // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF.
-  // FIXME: rename json name
-  // @inject_tag: json:"udf_type" gorm:"column:type;"
-  Type type = 6  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // UDF status, Optional Values: 1 => "deleted", 2 => "enabled"
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
-  // UDF language; Optional Values: 1 => Scala 2=> Java 3=> Python
-  // FIXME: rename json name
-  // @inject_tag: json:"udf_language" gorm:"column:language;"
-  Language language = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF.
+  // @inject_tag: json:"type" gorm:"column:type;"
+  Type type = 6  [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // language of UDF; Optional Values: 1 => Scala 2=> Java 3=> Python
+  // @inject_tag: json:"language" gorm:"column:language;"
+  Language language = 7  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // The id of resource. Used with language of JAVA.
+  // Is required if language == 2
+  // @inject_tag: json:"file_id" gorm:"column:file_id;"
+  string file_id = 8 [
+    (validator.field).check_if = { field: "language", tags: { enum: { eq: 2 } } },
+    (validator.field).tags.string = { byte_len_eq: 20, prefix: "res-" }
+  ];
+
+  // The code. Used with language of Python and Scala.
+  // Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
+  // @inject_tag: json:"code" gorm:"column:code;"
+  string code = 9 [
+    (validator.field).check_if = { field: "language", tags: { enum: { in: [1, 3] } } },
+    (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 }
+  ];
 
   // usage example for this udf
   // @inject_tag: json:"usage_sample" gorm:"column:usage_sample;"
-  string usage_sample = 9 [ (validator.field).tags.string = { char_len_lte: 2000 }];
+  string usage_sample = 10 [ (validator.field).tags.string = { char_len_lte: 2000 }];
 
   // Who created this udf.
   // @inject_tag: json:"created_by" gorm:"column:created_by"
-  string created_by = 10 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+  string created_by = 11 [ (validator.field).tags.string = { byte_len_lte: 64} ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 11 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 12 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 12 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 updated = 13 [ (validator.field).tags.int = { gt: 0 } ];
 }

@@ -64,7 +64,7 @@ message Member {
   string user_id = 3 [ (validator.field).tags.string = { byte_len_lte: 64} ];
 
   // The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-  // FIXME: confirm the
+  // FIXME: review it.
   // @inject_tag: json:"role_ids" gorm:"column:role_ids;"
   string role_ids = 4;
 
