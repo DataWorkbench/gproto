@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\021PBSvcMemberManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.proto/service/spacemanager/member_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a\'proto/types/request/member_manage.proto\x1a(proto/types/response/member_manage.proto2\x94\x02\n\x0cMemberManage\x12H\n\x0fListSystemRoles\x12\x18.request.ListSystemRoles\x1a\x19.response.ListSystemRoles\"\x00\x12<\n\x0bListMembers\x12\x14.request.ListMembers\x1a\x15.response.ListMembers\"\x00\x12=\n\rUpsertMembers\x12\x16.request.UpsertMembers\x1a\x12.model.EmptyStruct\"\x00\x12=\n\rDeleteMembers\x12\x16.request.DeleteMembers\x1a\x12.model.EmptyStruct\"\x00\x42v\n\'com.dataomnis.gproto.service.pbsvcspaceB\x11PBSvcMemberManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n.proto/service/spacemanager/member_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a\'proto/types/request/member_manage.proto\x1a(proto/types/response/member_manage.proto2\x92\x02\n\x0cMemberManage\x12H\n\x0fListSystemRoles\x12\x18.request.ListSystemRoles\x1a\x19.response.ListSystemRoles\"\x00\x12<\n\x0bListMembers\x12\x14.request.ListMembers\x1a\x15.response.ListMembers\"\x00\x12=\n\rDeleteMembers\x12\x16.request.DeleteMembers\x1a\x12.model.EmptyStruct\"\x00\x12;\n\x0cUpsertMember\x12\x15.request.UpsertMember\x1a\x12.model.EmptyStruct\"\x00\x42v\n\'com.dataomnis.gproto.service.pbsvcspaceB\x11PBSvcMemberManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_member__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_member__manage__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _MEMBERMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=179,
-  serialized_end=455,
+  serialized_end=453,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListSystemRoles',
@@ -64,21 +64,21 @@ _MEMBERMANAGE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='UpsertMembers',
-    full_name='spacemanager.MemberManage.UpsertMembers',
+    name='DeleteMembers',
+    full_name='spacemanager.MemberManage.DeleteMembers',
     index=2,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_member__manage__pb2._UPSERTMEMBERS,
+    input_type=proto_dot_types_dot_request_dot_member__manage__pb2._DELETEMEMBERS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='DeleteMembers',
-    full_name='spacemanager.MemberManage.DeleteMembers',
+    name='UpsertMember',
+    full_name='spacemanager.MemberManage.UpsertMember',
     index=3,
     containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_member__manage__pb2._DELETEMEMBERS,
+    input_type=proto_dot_types_dot_request_dot_member__manage__pb2._UPSERTMEMBER,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,

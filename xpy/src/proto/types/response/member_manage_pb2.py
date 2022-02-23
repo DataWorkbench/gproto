@@ -20,57 +20,11 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\026PBResponseMemberManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/response/member_manage.proto\x12\x08response\x1a\x1eproto/types/model/member.proto\"L\n\x0bListMembers\x12\x1c\n\x05infos\x18\x01 \x03(\x0b\x32\r.model.Member\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"N\n\x0fListSystemRoles\x12\x1a\n\x05infos\x18\x01 \x03(\x0b\x32\x0b.model.Role\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\x42w\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseMemberManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n(proto/types/response/member_manage.proto\x12\x08response\x1a\x1eproto/types/model/member.proto\"N\n\x0fListSystemRoles\x12\x1a\n\x05infos\x18\x01 \x03(\x0b\x32\x0b.model.Role\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"L\n\x0bListMembers\x12\x1c\n\x05infos\x18\x01 \x03(\x0b\x32\r.model.Member\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\x42w\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseMemberManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_member__pb2.DESCRIPTOR,])
 
 
-
-
-_LISTMEMBERS = _descriptor.Descriptor(
-  name='ListMembers',
-  full_name='response.ListMembers',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='infos', full_name='response.ListMembers.infos', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='has_more', full_name='response.ListMembers.has_more', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='total', full_name='response.ListMembers.total', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=86,
-  serialized_end=162,
-)
 
 
 _LISTSYSTEMROLES = _descriptor.Descriptor(
@@ -89,16 +43,16 @@ _LISTSYSTEMROLES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='has_more', full_name='response.ListSystemRoles.has_more', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='total', full_name='response.ListSystemRoles.total', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='total', full_name='response.ListSystemRoles.total', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      name='has_more', full_name='response.ListSystemRoles.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -114,22 +68,61 @@ _LISTSYSTEMROLES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=164,
+  serialized_start=86,
+  serialized_end=164,
+)
+
+
+_LISTMEMBERS = _descriptor.Descriptor(
+  name='ListMembers',
+  full_name='response.ListMembers',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='infos', full_name='response.ListMembers.infos', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total', full_name='response.ListMembers.total', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListMembers.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=166,
   serialized_end=242,
 )
 
-_LISTMEMBERS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_member__pb2._MEMBER
 _LISTSYSTEMROLES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_member__pb2._ROLE
-DESCRIPTOR.message_types_by_name['ListMembers'] = _LISTMEMBERS
+_LISTMEMBERS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_member__pb2._MEMBER
 DESCRIPTOR.message_types_by_name['ListSystemRoles'] = _LISTSYSTEMROLES
+DESCRIPTOR.message_types_by_name['ListMembers'] = _LISTMEMBERS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-ListMembers = _reflection.GeneratedProtocolMessageType('ListMembers', (_message.Message,), {
-  'DESCRIPTOR' : _LISTMEMBERS,
-  '__module__' : 'proto.types.response.member_manage_pb2'
-  # @@protoc_insertion_point(class_scope:response.ListMembers)
-  })
-_sym_db.RegisterMessage(ListMembers)
 
 ListSystemRoles = _reflection.GeneratedProtocolMessageType('ListSystemRoles', (_message.Message,), {
   'DESCRIPTOR' : _LISTSYSTEMROLES,
@@ -137,6 +130,13 @@ ListSystemRoles = _reflection.GeneratedProtocolMessageType('ListSystemRoles', (_
   # @@protoc_insertion_point(class_scope:response.ListSystemRoles)
   })
 _sym_db.RegisterMessage(ListSystemRoles)
+
+ListMembers = _reflection.GeneratedProtocolMessageType('ListMembers', (_message.Message,), {
+  'DESCRIPTOR' : _LISTMEMBERS,
+  '__module__' : 'proto.types.response.member_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.ListMembers)
+  })
+_sym_db.RegisterMessage(ListMembers)
 
 
 DESCRIPTOR._options = None

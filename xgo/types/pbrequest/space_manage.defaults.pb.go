@@ -70,30 +70,6 @@ func (this *DescribeWorkspace) SetDefaults() {
 	return
 }
 
-// Set default value for message request.AddOpAudit
-func (this *AddOpAudit) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Info != nil {
-		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message request.ListOpAudits
-func (this *ListOpAudits) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Limit == 0 {
-		this.Limit = 100
-	}
-	return
-}
-
 // Set default value for message request.CheckPermission
 func (this *CheckPermission) SetDefaults() {
 	if this == nil {

@@ -35,29 +35,6 @@ func (this *ListWorkspaces) Validate() error {
 	return nil
 }
 
-func (this *ListOpAudits) _xxx_xxx_Validator_Validate_infos() error {
-	for _, item := range this.Infos {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message response.ListOpAudits
-func (this *ListOpAudits) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_infos(); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (this *CreateWorkspace) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("CreateWorkspace", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))

@@ -27,28 +27,27 @@ public final class PBSvcSpaceManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/space_" +
       "manage.proto\032\'proto/types/response/space" +
-      "_manage.proto2\306\005\n\013SpaceManage\022E\n\016ListWor" +
+      "_manage.proto2\231\005\n\013SpaceManage\022E\n\016ListWor" +
       "kspaces\022\027.request.ListWorkspaces\032\030.respo" +
-      "nse.ListWorkspaces\"\000\022C\n\020DeleteWorkspaces" +
-      "\022\031.request.DeleteWorkspaces\032\022.model.Empt" +
-      "yStruct\"\000\022E\n\021DisableWorkspaces\022\032.request" +
-      ".DisableWorkspaces\032\022.model.EmptyStruct\"\000" +
-      "\022C\n\020EnableWorkspaces\022\031.request.EnableWor" +
-      "kspaces\032\022.model.EmptyStruct\"\000\022H\n\017CreateW" +
-      "orkspace\022\030.request.CreateWorkspace\032\031.res" +
-      "ponse.CreateWorkspace\"\000\022A\n\017UpdateWorkspa" +
-      "ce\022\030.request.UpdateWorkspace\032\022.model.Emp" +
-      "tyStruct\"\000\022N\n\021DescribeWorkspace\022\032.reques" +
-      "t.DescribeWorkspace\032\033.response.DescribeW" +
-      "orkspace\"\000\022H\n\017CheckPermission\022\030.request." +
-      "CheckPermission\032\031.response.CheckPermissi" +
-      "on\"\000\022?\n\014ListOpAudits\022\025.request.ListOpAud" +
-      "its\032\026.response.ListOpAudits\"\000\0227\n\nAddOpAu" +
-      "dit\022\023.request.AddOpAudit\032\022.model.EmptySt" +
-      "ruct\"\000Bu\n\'com.dataomnis.gproto.service.p" +
-      "bsvcspaceB\020PBSvcSpaceManageP\000Z6github.co" +
-      "m/DataWorkbench/gproto/xgo/service/pbsvc" +
-      "spaceb\006proto3"
+      "nse.ListWorkspaces\"\000\022K\n\024ListMemberWorksp" +
+      "aces\022\027.request.ListWorkspaces\032\030.response" +
+      ".ListWorkspaces\"\000\022C\n\020DeleteWorkspaces\022\031." +
+      "request.DeleteWorkspaces\032\022.model.EmptySt" +
+      "ruct\"\000\022E\n\021DisableWorkspaces\022\032.request.Di" +
+      "sableWorkspaces\032\022.model.EmptyStruct\"\000\022C\n" +
+      "\020EnableWorkspaces\022\031.request.EnableWorksp" +
+      "aces\032\022.model.EmptyStruct\"\000\022H\n\017CreateWork" +
+      "space\022\030.request.CreateWorkspace\032\031.respon" +
+      "se.CreateWorkspace\"\000\022A\n\017UpdateWorkspace\022" +
+      "\030.request.UpdateWorkspace\032\022.model.EmptyS" +
+      "truct\"\000\022N\n\021DescribeWorkspace\022\032.request.D" +
+      "escribeWorkspace\032\033.response.DescribeWork" +
+      "space\"\000\022H\n\017CheckPermission\022\030.request.Che" +
+      "ckPermission\032\031.response.CheckPermission\"" +
+      "\000Bu\n\'com.dataomnis.gproto.service.pbsvcs" +
+      "paceB\020PBSvcSpaceManageP\000Z6github.com/Dat" +
+      "aWorkbench/gproto/xgo/service/pbsvcspace" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

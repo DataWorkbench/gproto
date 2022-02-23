@@ -29,24 +29,16 @@ func (this *ListMembers) SetDefaults() {
 	return
 }
 
-// Set default value for message request.UpsertMembers
-func (this *UpsertMembers) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.UpsertMembers.Pair
-func (this *UpsertMembers_Pair) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message request.DeleteMembers
 func (this *DeleteMembers) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.UpsertMember
+func (this *UpsertMember) SetDefaults() {
 	if this == nil {
 		return
 	}

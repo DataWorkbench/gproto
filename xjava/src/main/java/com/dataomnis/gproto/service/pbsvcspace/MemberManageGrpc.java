@@ -80,37 +80,6 @@ public final class MemberManageGrpc {
     return getListMembersMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMembersMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpsertMembers",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.class,
-      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMembersMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMembersMethod;
-    if ((getUpsertMembersMethod = MemberManageGrpc.getUpsertMembersMethod) == null) {
-      synchronized (MemberManageGrpc.class) {
-        if ((getUpsertMembersMethod = MemberManageGrpc.getUpsertMembersMethod) == null) {
-          MemberManageGrpc.getUpsertMembersMethod = getUpsertMembersMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpsertMembers"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new MemberManageMethodDescriptorSupplier("UpsertMembers"))
-              .build();
-        }
-      }
-    }
-    return getUpsertMembersMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteMembersMethod;
 
@@ -140,6 +109,37 @@ public final class MemberManageGrpc {
       }
     }
     return getDeleteMembersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpsertMember",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMemberMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpsertMemberMethod;
+    if ((getUpsertMemberMethod = MemberManageGrpc.getUpsertMemberMethod) == null) {
+      synchronized (MemberManageGrpc.class) {
+        if ((getUpsertMemberMethod = MemberManageGrpc.getUpsertMemberMethod) == null) {
+          MemberManageGrpc.getUpsertMemberMethod = getUpsertMemberMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpsertMember"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new MemberManageMethodDescriptorSupplier("UpsertMember"))
+              .build();
+        }
+      }
+    }
+    return getUpsertMemberMethod;
   }
 
   /**
@@ -194,9 +194,6 @@ public final class MemberManageGrpc {
   public static abstract class MemberManageImplBase implements io.grpc.BindableService {
 
     /**
-     * <pre>
-     * API of workspace role.
-     * </pre>
      */
     public void listSystemRoles(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> responseObserver) {
@@ -205,7 +202,7 @@ public final class MemberManageGrpc {
 
     /**
      * <pre>
-     * API of workspace member.
+     * ListMembers get a lists of workspace member.
      * </pre>
      */
     public void listMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers request,
@@ -215,16 +212,16 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public void upsertMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request,
+    public void deleteMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpsertMembersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMembersMethod(), responseObserver);
     }
 
     /**
      */
-    public void deleteMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers request,
+    public void upsertMember(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMembersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpsertMemberMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -244,19 +241,19 @@ public final class MemberManageGrpc {
                 com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers>(
                   this, METHODID_LIST_MEMBERS)))
           .addMethod(
-            getUpsertMembersMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers,
-                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_UPSERT_MEMBERS)))
-          .addMethod(
             getDeleteMembersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_MEMBERS)))
+          .addMethod(
+            getUpsertMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_UPSERT_MEMBER)))
           .build();
     }
   }
@@ -279,9 +276,6 @@ public final class MemberManageGrpc {
     }
 
     /**
-     * <pre>
-     * API of workspace role.
-     * </pre>
      */
     public void listSystemRoles(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> responseObserver) {
@@ -291,7 +285,7 @@ public final class MemberManageGrpc {
 
     /**
      * <pre>
-     * API of workspace member.
+     * ListMembers get a lists of workspace member.
      * </pre>
      */
     public void listMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers request,
@@ -302,18 +296,18 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public void upsertMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpsertMembersMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void deleteMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteMembersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void upsertMember(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpsertMemberMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -335,9 +329,6 @@ public final class MemberManageGrpc {
     }
 
     /**
-     * <pre>
-     * API of workspace role.
-     * </pre>
      */
     public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles listSystemRoles(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -346,7 +337,7 @@ public final class MemberManageGrpc {
 
     /**
      * <pre>
-     * API of workspace member.
+     * ListMembers get a lists of workspace member.
      * </pre>
      */
     public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers listMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers request) {
@@ -356,16 +347,16 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct upsertMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpsertMembersMethod(), getCallOptions(), request);
+          getChannel(), getDeleteMembersMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteMembers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct upsertMember(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteMembersMethod(), getCallOptions(), request);
+          getChannel(), getUpsertMemberMethod(), getCallOptions(), request);
     }
   }
 
@@ -387,9 +378,6 @@ public final class MemberManageGrpc {
     }
 
     /**
-     * <pre>
-     * API of workspace role.
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListSystemRoles> listSystemRoles(
         com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListSystemRoles request) {
@@ -399,7 +387,7 @@ public final class MemberManageGrpc {
 
     /**
      * <pre>
-     * API of workspace member.
+     * ListMembers get a lists of workspace member.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers> listMembers(
@@ -410,25 +398,25 @@ public final class MemberManageGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> upsertMembers(
-        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpsertMembersMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteMembers(
         com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteMembersMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> upsertMember(
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpsertMemberMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SYSTEM_ROLES = 0;
   private static final int METHODID_LIST_MEMBERS = 1;
-  private static final int METHODID_UPSERT_MEMBERS = 2;
-  private static final int METHODID_DELETE_MEMBERS = 3;
+  private static final int METHODID_DELETE_MEMBERS = 2;
+  private static final int METHODID_UPSERT_MEMBER = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -455,12 +443,12 @@ public final class MemberManageGrpc {
           serviceImpl.listMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers>) responseObserver);
           break;
-        case METHODID_UPSERT_MEMBERS:
-          serviceImpl.upsertMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMembers) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
-          break;
         case METHODID_DELETE_MEMBERS:
           serviceImpl.deleteMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.DeleteMembers) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_UPSERT_MEMBER:
+          serviceImpl.upsertMember((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.UpsertMember) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         default:
@@ -526,8 +514,8 @@ public final class MemberManageGrpc {
               .setSchemaDescriptor(new MemberManageFileDescriptorSupplier())
               .addMethod(getListSystemRolesMethod())
               .addMethod(getListMembersMethod())
-              .addMethod(getUpsertMembersMethod())
               .addMethod(getDeleteMembersMethod())
+              .addMethod(getUpsertMemberMethod())
               .build();
         }
       }

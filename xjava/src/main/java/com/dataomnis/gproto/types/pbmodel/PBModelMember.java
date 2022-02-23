@@ -20,6 +20,7 @@ public final class PBModelMember {
 
     /**
      * <pre>
+     * The workspace id.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
@@ -29,6 +30,7 @@ public final class PBModelMember {
     java.lang.String getSpaceId();
     /**
      * <pre>
+     * The workspace id.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
@@ -40,6 +42,7 @@ public final class PBModelMember {
 
     /**
      * <pre>
+     * The role id.
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
@@ -49,6 +52,7 @@ public final class PBModelMember {
     java.lang.String getId();
     /**
      * <pre>
+     * The role id.
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
@@ -124,8 +128,7 @@ public final class PBModelMember {
   }
   /**
    * <pre>
-   * The Role info.
-   * TODO: unused on present.
+   * The Role schema.
    * </pre>
    *
    * Protobuf type {@code model.Role}
@@ -477,6 +480,7 @@ public final class PBModelMember {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
+     * The workspace id.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
@@ -498,6 +502,7 @@ public final class PBModelMember {
     }
     /**
      * <pre>
+     * The workspace id.
      * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
      * </pre>
      *
@@ -523,6 +528,7 @@ public final class PBModelMember {
     private volatile java.lang.Object id_;
     /**
      * <pre>
+     * The role id.
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
@@ -544,6 +550,7 @@ public final class PBModelMember {
     }
     /**
      * <pre>
+     * The role id.
      * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
      * </pre>
      *
@@ -867,8 +874,7 @@ public final class PBModelMember {
     }
     /**
      * <pre>
-     * The Role info.
-     * TODO: unused on present.
+     * The Role schema.
      * </pre>
      *
      * Protobuf type {@code model.Role}
@@ -1047,6 +1053,7 @@ public final class PBModelMember {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
+       * The workspace id.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
@@ -1067,6 +1074,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The workspace id.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
@@ -1088,6 +1096,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The workspace id.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
@@ -1107,6 +1116,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The workspace id.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
@@ -1121,6 +1131,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The workspace id.
        * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
        * </pre>
        *
@@ -1143,6 +1154,7 @@ public final class PBModelMember {
       private java.lang.Object id_ = "";
       /**
        * <pre>
+       * The role id.
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
@@ -1163,6 +1175,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The role id.
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
@@ -1184,6 +1197,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The role id.
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
@@ -1203,6 +1217,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The role id.
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
@@ -1217,6 +1232,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * The role id.
        * &#64;inject_tag: json:"id" gorm:"column:id;primarykey;"
        * </pre>
        *
@@ -1619,7 +1635,7 @@ public final class PBModelMember {
 
     /**
      * <pre>
-     * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+     * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -1629,7 +1645,7 @@ public final class PBModelMember {
     int getStatusValue();
     /**
      * <pre>
-     * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+     * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -1640,6 +1656,7 @@ public final class PBModelMember {
 
     /**
      * <pre>
+     * Timestamp of create time.
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
@@ -1650,7 +1667,7 @@ public final class PBModelMember {
 
     /**
      * <pre>
-     * Timestamp of update time
+     * Timestamp of update time.
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
@@ -1658,11 +1675,89 @@ public final class PBModelMember {
      * @return The updated.
      */
     long getUpdated();
+
+    /**
+     * <pre>
+     * The user detailed information. Not in db. Only used to Describe Or Lists.
+     * &#64;inject_tag: json:"user_info" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.User user_info = 8;</code>
+     * @return Whether the userInfo field is set.
+     */
+    boolean hasUserInfo();
+    /**
+     * <pre>
+     * The user detailed information. Not in db. Only used to Describe Or Lists.
+     * &#64;inject_tag: json:"user_info" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.User user_info = 8;</code>
+     * @return The userInfo.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getUserInfo();
+    /**
+     * <pre>
+     * The user detailed information. Not in db. Only used to Describe Or Lists.
+     * &#64;inject_tag: json:"user_info" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.User user_info = 8;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getUserInfoOrBuilder();
+
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> 
+        getRolesList();
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getRoles(int index);
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    int getRolesCount();
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
+        getRolesOrBuilderList();
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder getRolesOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * The workspace member info.
-   * TODO: unused on present.
+   * The workspace member schema.
    * </pre>
    *
    * Protobuf type {@code model.Member}
@@ -1681,6 +1776,7 @@ public final class PBModelMember {
       userId_ = "";
       roleIds_ = "";
       status_ = 0;
+      roles_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1703,6 +1799,7 @@ public final class PBModelMember {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1747,6 +1844,28 @@ public final class PBModelMember {
               updated_ = input.readInt64();
               break;
             }
+            case 66: {
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder subBuilder = null;
+              if (userInfo_ != null) {
+                subBuilder = userInfo_.toBuilder();
+              }
+              userInfo_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(userInfo_);
+                userInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                roles_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              roles_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1762,6 +1881,9 @@ public final class PBModelMember {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          roles_ = java.util.Collections.unmodifiableList(roles_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1789,13 +1911,13 @@ public final class PBModelMember {
        */
       StatusUnset(0),
       /**
-       * <code>Normal = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      Normal(1),
+      Deleted(1),
       /**
-       * <code>Deleted = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      Deleted(2),
+      Enabled(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -1804,13 +1926,13 @@ public final class PBModelMember {
        */
       public static final int StatusUnset_VALUE = 0;
       /**
-       * <code>Normal = 1;</code>
+       * <code>Deleted = 1;</code>
        */
-      public static final int Normal_VALUE = 1;
+      public static final int Deleted_VALUE = 1;
       /**
-       * <code>Deleted = 2;</code>
+       * <code>Enabled = 2;</code>
        */
-      public static final int Deleted_VALUE = 2;
+      public static final int Enabled_VALUE = 2;
 
 
       public final int getNumber() {
@@ -1838,8 +1960,8 @@ public final class PBModelMember {
       public static Status forNumber(int value) {
         switch (value) {
           case 0: return StatusUnset;
-          case 1: return Normal;
-          case 2: return Deleted;
+          case 1: return Deleted;
+          case 2: return Enabled;
           default: return null;
         }
       }
@@ -2044,7 +2166,7 @@ public final class PBModelMember {
     private int status_;
     /**
      * <pre>
-     * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+     * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -2056,7 +2178,7 @@ public final class PBModelMember {
     }
     /**
      * <pre>
-     * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+     * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
      * &#64;inject_tag: json:"status" gorm:"column:status;"
      * </pre>
      *
@@ -2073,6 +2195,7 @@ public final class PBModelMember {
     private long created_;
     /**
      * <pre>
+     * Timestamp of create time.
      * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
      * </pre>
      *
@@ -2088,7 +2211,7 @@ public final class PBModelMember {
     private long updated_;
     /**
      * <pre>
-     * Timestamp of update time
+     * Timestamp of update time.
      * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
      * </pre>
      *
@@ -2098,6 +2221,112 @@ public final class PBModelMember {
     @java.lang.Override
     public long getUpdated() {
       return updated_;
+    }
+
+    public static final int USER_INFO_FIELD_NUMBER = 8;
+    private com.dataomnis.gproto.types.pbmodel.PBModelAccount.User userInfo_;
+    /**
+     * <pre>
+     * The user detailed information. Not in db. Only used to Describe Or Lists.
+     * &#64;inject_tag: json:"user_info" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.User user_info = 8;</code>
+     * @return Whether the userInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserInfo() {
+      return userInfo_ != null;
+    }
+    /**
+     * <pre>
+     * The user detailed information. Not in db. Only used to Describe Or Lists.
+     * &#64;inject_tag: json:"user_info" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.User user_info = 8;</code>
+     * @return The userInfo.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getUserInfo() {
+      return userInfo_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance() : userInfo_;
+    }
+    /**
+     * <pre>
+     * The user detailed information. Not in db. Only used to Describe Or Lists.
+     * &#64;inject_tag: json:"user_info" gorm:"-"
+     * </pre>
+     *
+     * <code>.model.User user_info = 8;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getUserInfoOrBuilder() {
+      return getUserInfo();
+    }
+
+    public static final int ROLES_FIELD_NUMBER = 9;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> roles_;
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> getRolesList() {
+      return roles_;
+    }
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
+        getRolesOrBuilderList() {
+      return roles_;
+    }
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    @java.lang.Override
+    public int getRolesCount() {
+      return roles_.size();
+    }
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getRoles(int index) {
+      return roles_.get(index);
+    }
+    /**
+     * <pre>
+     * The lis of role info.
+     * &#64;inject_tag: json:"roles" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated .model.Role roles = 9;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder getRolesOrBuilder(
+        int index) {
+      return roles_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2132,6 +2361,12 @@ public final class PBModelMember {
       if (updated_ != 0L) {
         output.writeInt64(7, updated_);
       }
+      if (userInfo_ != null) {
+        output.writeMessage(8, getUserInfo());
+      }
+      for (int i = 0; i < roles_.size(); i++) {
+        output.writeMessage(9, roles_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2162,6 +2397,14 @@ public final class PBModelMember {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, updated_);
       }
+      if (userInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getUserInfo());
+      }
+      for (int i = 0; i < roles_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, roles_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2188,6 +2431,13 @@ public final class PBModelMember {
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
+      if (hasUserInfo() != other.hasUserInfo()) return false;
+      if (hasUserInfo()) {
+        if (!getUserInfo()
+            .equals(other.getUserInfo())) return false;
+      }
+      if (!getRolesList()
+          .equals(other.getRolesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2213,6 +2463,14 @@ public final class PBModelMember {
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
+      if (hasUserInfo()) {
+        hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getUserInfo().hashCode();
+      }
+      if (getRolesCount() > 0) {
+        hash = (37 * hash) + ROLES_FIELD_NUMBER;
+        hash = (53 * hash) + getRolesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2310,8 +2568,7 @@ public final class PBModelMember {
     }
     /**
      * <pre>
-     * The workspace member info.
-     * TODO: unused on present.
+     * The workspace member schema.
      * </pre>
      *
      * Protobuf type {@code model.Member}
@@ -2346,6 +2603,7 @@ public final class PBModelMember {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getRolesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -2363,6 +2621,18 @@ public final class PBModelMember {
 
         updated_ = 0L;
 
+        if (userInfoBuilder_ == null) {
+          userInfo_ = null;
+        } else {
+          userInfo_ = null;
+          userInfoBuilder_ = null;
+        }
+        if (rolesBuilder_ == null) {
+          roles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          rolesBuilder_.clear();
+        }
         return this;
       }
 
@@ -2389,12 +2659,27 @@ public final class PBModelMember {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.PBModelMember.Member buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBModelMember.Member result = new com.dataomnis.gproto.types.pbmodel.PBModelMember.Member(this);
+        int from_bitField0_ = bitField0_;
         result.spaceId_ = spaceId_;
         result.userId_ = userId_;
         result.roleIds_ = roleIds_;
         result.status_ = status_;
         result.created_ = created_;
         result.updated_ = updated_;
+        if (userInfoBuilder_ == null) {
+          result.userInfo_ = userInfo_;
+        } else {
+          result.userInfo_ = userInfoBuilder_.build();
+        }
+        if (rolesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            roles_ = java.util.Collections.unmodifiableList(roles_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.roles_ = roles_;
+        } else {
+          result.roles_ = rolesBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2464,6 +2749,35 @@ public final class PBModelMember {
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
         }
+        if (other.hasUserInfo()) {
+          mergeUserInfo(other.getUserInfo());
+        }
+        if (rolesBuilder_ == null) {
+          if (!other.roles_.isEmpty()) {
+            if (roles_.isEmpty()) {
+              roles_ = other.roles_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRolesIsMutable();
+              roles_.addAll(other.roles_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.roles_.isEmpty()) {
+            if (rolesBuilder_.isEmpty()) {
+              rolesBuilder_.dispose();
+              rolesBuilder_ = null;
+              roles_ = other.roles_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rolesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRolesFieldBuilder() : null;
+            } else {
+              rolesBuilder_.addAllMessages(other.roles_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2492,6 +2806,7 @@ public final class PBModelMember {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object spaceId_ = "";
       /**
@@ -2799,7 +3114,7 @@ public final class PBModelMember {
       private int status_ = 0;
       /**
        * <pre>
-       * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+       * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2811,7 +3126,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+       * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2827,7 +3142,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+       * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2842,7 +3157,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+       * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2861,7 +3176,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * 1 =&gt; "Normal" 2 =&gt; "Deleted". Ignore it for client.
+       * The status of member. 1 =&gt; "Deleted" 2 =&gt; "Enabled". Ignore it for client.
        * &#64;inject_tag: json:"status" gorm:"column:status;"
        * </pre>
        *
@@ -2878,6 +3193,7 @@ public final class PBModelMember {
       private long created_ ;
       /**
        * <pre>
+       * Timestamp of create time.
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
@@ -2890,6 +3206,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * Timestamp of create time.
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
@@ -2905,6 +3222,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
+       * Timestamp of create time.
        * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
        * </pre>
        *
@@ -2921,7 +3239,7 @@ public final class PBModelMember {
       private long updated_ ;
       /**
        * <pre>
-       * Timestamp of update time
+       * Timestamp of update time.
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
@@ -2934,7 +3252,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * Timestamp of update time
+       * Timestamp of update time.
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
@@ -2950,7 +3268,7 @@ public final class PBModelMember {
       }
       /**
        * <pre>
-       * Timestamp of update time
+       * Timestamp of update time.
        * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
        * </pre>
        *
@@ -2962,6 +3280,500 @@ public final class PBModelMember {
         updated_ = 0L;
         onChanged();
         return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelAccount.User userInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.User, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> userInfoBuilder_;
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       * @return Whether the userInfo field is set.
+       */
+      public boolean hasUserInfo() {
+        return userInfoBuilder_ != null || userInfo_ != null;
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       * @return The userInfo.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getUserInfo() {
+        if (userInfoBuilder_ == null) {
+          return userInfo_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance() : userInfo_;
+        } else {
+          return userInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       */
+      public Builder setUserInfo(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User value) {
+        if (userInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          userInfo_ = value;
+          onChanged();
+        } else {
+          userInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       */
+      public Builder setUserInfo(
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder builderForValue) {
+        if (userInfoBuilder_ == null) {
+          userInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          userInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       */
+      public Builder mergeUserInfo(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User value) {
+        if (userInfoBuilder_ == null) {
+          if (userInfo_ != null) {
+            userInfo_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.newBuilder(userInfo_).mergeFrom(value).buildPartial();
+          } else {
+            userInfo_ = value;
+          }
+          onChanged();
+        } else {
+          userInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       */
+      public Builder clearUserInfo() {
+        if (userInfoBuilder_ == null) {
+          userInfo_ = null;
+          onChanged();
+        } else {
+          userInfo_ = null;
+          userInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder getUserInfoBuilder() {
+        
+        onChanged();
+        return getUserInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getUserInfoOrBuilder() {
+        if (userInfoBuilder_ != null) {
+          return userInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return userInfo_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance() : userInfo_;
+        }
+      }
+      /**
+       * <pre>
+       * The user detailed information. Not in db. Only used to Describe Or Lists.
+       * &#64;inject_tag: json:"user_info" gorm:"-"
+       * </pre>
+       *
+       * <code>.model.User user_info = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.User, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> 
+          getUserInfoFieldBuilder() {
+        if (userInfoBuilder_ == null) {
+          userInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.User, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder>(
+                  getUserInfo(),
+                  getParentForChildren(),
+                  isClean());
+          userInfo_ = null;
+        }
+        return userInfoBuilder_;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> roles_ =
+        java.util.Collections.emptyList();
+      private void ensureRolesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          roles_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role>(roles_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelMember.Role, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> rolesBuilder_;
+
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> getRolesList() {
+        if (rolesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(roles_);
+        } else {
+          return rolesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public int getRolesCount() {
+        if (rolesBuilder_ == null) {
+          return roles_.size();
+        } else {
+          return rolesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role getRoles(int index) {
+        if (rolesBuilder_ == null) {
+          return roles_.get(index);
+        } else {
+          return rolesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder setRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role value) {
+        if (rolesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRolesIsMutable();
+          roles_.set(index, value);
+          onChanged();
+        } else {
+          rolesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder setRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder builderForValue) {
+        if (rolesBuilder_ == null) {
+          ensureRolesIsMutable();
+          roles_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rolesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder addRoles(com.dataomnis.gproto.types.pbmodel.PBModelMember.Role value) {
+        if (rolesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRolesIsMutable();
+          roles_.add(value);
+          onChanged();
+        } else {
+          rolesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder addRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role value) {
+        if (rolesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRolesIsMutable();
+          roles_.add(index, value);
+          onChanged();
+        } else {
+          rolesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder addRoles(
+          com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder builderForValue) {
+        if (rolesBuilder_ == null) {
+          ensureRolesIsMutable();
+          roles_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rolesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder addRoles(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder builderForValue) {
+        if (rolesBuilder_ == null) {
+          ensureRolesIsMutable();
+          roles_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rolesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder addAllRoles(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.Role> values) {
+        if (rolesBuilder_ == null) {
+          ensureRolesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, roles_);
+          onChanged();
+        } else {
+          rolesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder clearRoles() {
+        if (rolesBuilder_ == null) {
+          roles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rolesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public Builder removeRoles(int index) {
+        if (rolesBuilder_ == null) {
+          ensureRolesIsMutable();
+          roles_.remove(index);
+          onChanged();
+        } else {
+          rolesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder getRolesBuilder(
+          int index) {
+        return getRolesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder getRolesOrBuilder(
+          int index) {
+        if (rolesBuilder_ == null) {
+          return roles_.get(index);  } else {
+          return rolesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
+           getRolesOrBuilderList() {
+        if (rolesBuilder_ != null) {
+          return rolesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(roles_);
+        }
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder addRolesBuilder() {
+        return getRolesFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder addRolesBuilder(
+          int index) {
+        return getRolesFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * The lis of role info.
+       * &#64;inject_tag: json:"roles" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated .model.Role roles = 9;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder> 
+           getRolesBuilderList() {
+        return getRolesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelMember.Role, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder> 
+          getRolesFieldBuilder() {
+        if (rolesBuilder_ == null) {
+          rolesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelMember.Role, com.dataomnis.gproto.types.pbmodel.PBModelMember.Role.Builder, com.dataomnis.gproto.types.pbmodel.PBModelMember.RoleOrBuilder>(
+                  roles_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          roles_ = null;
+        }
+        return rolesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3037,29 +3849,32 @@ public final class PBModelMember {
     java.lang.String[] descriptorData = {
       "\n\036proto/types/model/member.proto\022\005model\032" +
       "3github.com/yu31/protoc-plugin/proto/val" +
-      "idator.proto\"\255\002\n\004Role\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\360\001\024\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\001\022-" +
-      "\n\004type\030\004 \001(\0162\020.model.Role.TypeB\r\342\337\037\t\022\007\332\001" +
-      "\0040\000X\001\0221\n\006status\030\005 \001(\0162\022.model.Role.Statu" +
-      "sB\r\342\337\037\t\022\007\332\001\0040\000X\001\"-\n\004Type\022\r\n\tTypeUnset\020\000\022" +
-      "\n\n\006System\020\001\022\n\n\006Custom\020\002\"3\n\006Status\022\017\n\013Sta" +
-      "tusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\205\002\n" +
-      "\006Member\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004wks-\022\035\n\007user_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\020\n" +
-      "\010role_ids\030\004 \001(\t\0223\n\006status\030\005 \001(\0162\024.model." +
-      "Member.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030" +
-      "\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007 \001(\003B\013\342\337\037" +
-      "\007\022\005\262\001\0020\000\"2\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006N" +
-      "ormal\020\001\022\013\n\007Deleted\020\002Bh\n\"com.dataomnis.gp" +
-      "roto.types.pbmodelB\rPBModelMemberP\000Z1git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "bmodelb\006proto3"
+      "idator.proto\032\037proto/types/model/account." +
+      "proto\"\255\002\n\004Role\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022\030\n\002id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022" +
+      "\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\001\230\002\200\001\022-\n\004type\030" +
+      "\004 \001(\0162\020.model.Role.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221" +
+      "\n\006status\030\005 \001(\0162\022.model.Role.StatusB\r\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\"-\n\004Type\022\r\n\tTypeUnset\020\000\022\n\n\006Syst" +
+      "em\020\001\022\n\n\006Custom\020\002\"3\n\006Status\022\017\n\013StatusUnse" +
+      "t\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\302\002\n\006Member" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "\035\n\007user_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\020\n\010role_i" +
+      "ds\030\004 \001(\t\0223\n\006status\030\005 \001(\0162\024.model.Member." +
+      "StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\006 \001(\003B\013" +
+      "\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
+      "\000\022\036\n\tuser_info\030\010 \001(\0132\013.model.User\022\032\n\005rol" +
+      "es\030\t \003(\0132\013.model.Role\"3\n\006Status\022\017\n\013Statu" +
+      "sUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002Bh\n\"co" +
+      "m.dataomnis.gproto.types.pbmodelB\rPBMode" +
+      "lMemberP\000Z1github.com/DataWorkbench/gpro" +
+      "to/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.getDescriptor(),
         });
     internal_static_model_Role_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3072,13 +3887,14 @@ public final class PBModelMember {
     internal_static_model_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Member_descriptor,
-        new java.lang.String[] { "SpaceId", "UserId", "RoleIds", "Status", "Created", "Updated", });
+        new java.lang.String[] { "SpaceId", "UserId", "RoleIds", "Status", "Created", "Updated", "UserInfo", "Roles", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

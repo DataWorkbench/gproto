@@ -13,7 +13,6 @@ _sym_db = _symbol_database.Default()
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import workspace_pb2 as proto_dot_types_dot_model_dot_workspace__pb2
-from proto.types.model import opaudit_pb2 as proto_dot_types_dot_model_dot_opaudit__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\025PBResponseSpaceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/response/space_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a!proto/types/model/workspace.proto\x1a\x1fproto/types/model/opaudit.proto\"R\n\x0eListWorkspaces\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Workspace\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"A\n\x0cListOpAudits\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Operation\x12\x10\n\x08has_more\x18\x02 \x01(\x08\"2\n\x0f\x43reateWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"3\n\x11\x44\x65scribeWorkspace\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"1\n\x0f\x43heckPermission\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.WorkspaceBv\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseSpaceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\'proto/types/response/space_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a!proto/types/model/workspace.proto\"R\n\x0eListWorkspaces\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Workspace\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"2\n\x0f\x43reateWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"3\n\x11\x44\x65scribeWorkspace\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"1\n\x0f\x43heckPermission\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.WorkspaceBv\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseSpaceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_workspace__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_opaudit__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_workspace__pb2.DESCRIPTOR,])
 
 
 
@@ -70,47 +69,8 @@ _LISTWORKSPACES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=174,
-  serialized_end=256,
-)
-
-
-_LISTOPAUDITS = _descriptor.Descriptor(
-  name='ListOpAudits',
-  full_name='response.ListOpAudits',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='infos', full_name='response.ListOpAudits.infos', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='has_more', full_name='response.ListOpAudits.has_more', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=258,
-  serialized_end=323,
+  serialized_start=141,
+  serialized_end=223,
 )
 
 
@@ -141,8 +101,8 @@ _CREATEWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=325,
-  serialized_end=375,
+  serialized_start=225,
+  serialized_end=275,
 )
 
 
@@ -173,8 +133,8 @@ _DESCRIBEWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=377,
-  serialized_end=428,
+  serialized_start=277,
+  serialized_end=328,
 )
 
 
@@ -205,16 +165,14 @@ _CHECKPERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=430,
-  serialized_end=479,
+  serialized_start=330,
+  serialized_end=379,
 )
 
 _LISTWORKSPACES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
-_LISTOPAUDITS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPERATION
 _DESCRIBEWORKSPACE.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
 _CHECKPERMISSION.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
 DESCRIPTOR.message_types_by_name['ListWorkspaces'] = _LISTWORKSPACES
-DESCRIPTOR.message_types_by_name['ListOpAudits'] = _LISTOPAUDITS
 DESCRIPTOR.message_types_by_name['CreateWorkspace'] = _CREATEWORKSPACE
 DESCRIPTOR.message_types_by_name['DescribeWorkspace'] = _DESCRIBEWORKSPACE
 DESCRIPTOR.message_types_by_name['CheckPermission'] = _CHECKPERMISSION
@@ -226,13 +184,6 @@ ListWorkspaces = _reflection.GeneratedProtocolMessageType('ListWorkspaces', (_me
   # @@protoc_insertion_point(class_scope:response.ListWorkspaces)
   })
 _sym_db.RegisterMessage(ListWorkspaces)
-
-ListOpAudits = _reflection.GeneratedProtocolMessageType('ListOpAudits', (_message.Message,), {
-  'DESCRIPTOR' : _LISTOPAUDITS,
-  '__module__' : 'proto.types.response.space_manage_pb2'
-  # @@protoc_insertion_point(class_scope:response.ListOpAudits)
-  })
-_sym_db.RegisterMessage(ListOpAudits)
 
 CreateWorkspace = _reflection.GeneratedProtocolMessageType('CreateWorkspace', (_message.Message,), {
   'DESCRIPTOR' : _CREATEWORKSPACE,

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\020PBSvcSpaceManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/spacemanager/space_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/space_manage.proto\x1a\'proto/types/response/space_manage.proto2\xc6\x05\n\x0bSpaceManage\x12\x45\n\x0eListWorkspaces\x12\x17.request.ListWorkspaces\x1a\x18.response.ListWorkspaces\"\x00\x12\x43\n\x10\x44\x65leteWorkspaces\x12\x19.request.DeleteWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x11\x44isableWorkspaces\x12\x1a.request.DisableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10\x45nableWorkspaces\x12\x19.request.EnableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x43reateWorkspace\x12\x18.request.CreateWorkspace\x1a\x19.response.CreateWorkspace\"\x00\x12\x41\n\x0fUpdateWorkspace\x12\x18.request.UpdateWorkspace\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x44\x65scribeWorkspace\x12\x1a.request.DescribeWorkspace\x1a\x1b.response.DescribeWorkspace\"\x00\x12H\n\x0f\x43heckPermission\x12\x18.request.CheckPermission\x1a\x19.response.CheckPermission\"\x00\x12?\n\x0cListOpAudits\x12\x15.request.ListOpAudits\x1a\x16.response.ListOpAudits\"\x00\x12\x37\n\nAddOpAudit\x12\x13.request.AddOpAudit\x1a\x12.model.EmptyStruct\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcSpaceManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n-proto/service/spacemanager/space_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/space_manage.proto\x1a\'proto/types/response/space_manage.proto2\x99\x05\n\x0bSpaceManage\x12\x45\n\x0eListWorkspaces\x12\x17.request.ListWorkspaces\x1a\x18.response.ListWorkspaces\"\x00\x12K\n\x14ListMemberWorkspaces\x12\x17.request.ListWorkspaces\x1a\x18.response.ListWorkspaces\"\x00\x12\x43\n\x10\x44\x65leteWorkspaces\x12\x19.request.DeleteWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x11\x44isableWorkspaces\x12\x1a.request.DisableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10\x45nableWorkspaces\x12\x19.request.EnableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x43reateWorkspace\x12\x18.request.CreateWorkspace\x1a\x19.response.CreateWorkspace\"\x00\x12\x41\n\x0fUpdateWorkspace\x12\x18.request.UpdateWorkspace\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x44\x65scribeWorkspace\x12\x1a.request.DescribeWorkspace\x1a\x1b.response.DescribeWorkspace\"\x00\x12H\n\x0f\x43heckPermission\x12\x18.request.CheckPermission\x1a\x19.response.CheckPermission\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcSpaceManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_space__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_space__manage__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=176,
-  serialized_end=886,
+  serialized_end=841,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListWorkspaces',
@@ -54,9 +54,19 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='ListMemberWorkspaces',
+    full_name='spacemanager.SpaceManage.ListMemberWorkspaces',
+    index=1,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_space__manage__pb2._LISTWORKSPACES,
+    output_type=proto_dot_types_dot_response_dot_space__manage__pb2._LISTWORKSPACES,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='DeleteWorkspaces',
     full_name='spacemanager.SpaceManage.DeleteWorkspaces',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._DELETEWORKSPACES,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -66,7 +76,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DisableWorkspaces',
     full_name='spacemanager.SpaceManage.DisableWorkspaces',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._DISABLEWORKSPACES,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -76,7 +86,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='EnableWorkspaces',
     full_name='spacemanager.SpaceManage.EnableWorkspaces',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._ENABLEWORKSPACES,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -86,7 +96,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateWorkspace',
     full_name='spacemanager.SpaceManage.CreateWorkspace',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._CREATEWORKSPACE,
     output_type=proto_dot_types_dot_response_dot_space__manage__pb2._CREATEWORKSPACE,
@@ -96,7 +106,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateWorkspace',
     full_name='spacemanager.SpaceManage.UpdateWorkspace',
-    index=5,
+    index=6,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._UPDATEWORKSPACE,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -106,7 +116,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeWorkspace',
     full_name='spacemanager.SpaceManage.DescribeWorkspace',
-    index=6,
+    index=7,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._DESCRIBEWORKSPACE,
     output_type=proto_dot_types_dot_response_dot_space__manage__pb2._DESCRIBEWORKSPACE,
@@ -116,30 +126,10 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CheckPermission',
     full_name='spacemanager.SpaceManage.CheckPermission',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._CHECKPERMISSION,
     output_type=proto_dot_types_dot_response_dot_space__manage__pb2._CHECKPERMISSION,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOpAudits',
-    full_name='spacemanager.SpaceManage.ListOpAudits',
-    index=8,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_space__manage__pb2._LISTOPAUDITS,
-    output_type=proto_dot_types_dot_response_dot_space__manage__pb2._LISTOPAUDITS,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='AddOpAudit',
-    full_name='spacemanager.SpaceManage.AddOpAudit',
-    index=9,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_space__manage__pb2._ADDOPAUDIT,
-    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

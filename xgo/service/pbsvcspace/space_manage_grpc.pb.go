@@ -25,8 +25,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SpaceManageClient interface {
-	// API of workspace manager.
+	// ListWorkspaces get a lists of workspaces.
 	ListWorkspaces(ctx context.Context, in *pbrequest.ListWorkspaces, opts ...grpc.CallOption) (*pbresponse.ListWorkspaces, error)
+	// ListMemberWorkspaces get a lists of workspaces that the specified user has be joined.
+	ListMemberWorkspaces(ctx context.Context, in *pbrequest.ListWorkspaces, opts ...grpc.CallOption) (*pbresponse.ListWorkspaces, error)
 	// DeleteWorkspaces allowed only invoke by space owner.
 	DeleteWorkspaces(ctx context.Context, in *pbrequest.DeleteWorkspaces, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// DisableWorkspaces allowed only invoke by space owner.
@@ -39,9 +41,6 @@ type SpaceManageClient interface {
 	// Permission Check.
 	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(ctx context.Context, in *pbrequest.CheckPermission, opts ...grpc.CallOption) (*pbresponse.CheckPermission, error)
-	// API of workspace operation audit log.
-	ListOpAudits(ctx context.Context, in *pbrequest.ListOpAudits, opts ...grpc.CallOption) (*pbresponse.ListOpAudits, error)
-	AddOpAudit(ctx context.Context, in *pbrequest.AddOpAudit, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type spaceManageClient struct {
@@ -55,6 +54,15 @@ func NewSpaceManageClient(cc grpc.ClientConnInterface) SpaceManageClient {
 func (c *spaceManageClient) ListWorkspaces(ctx context.Context, in *pbrequest.ListWorkspaces, opts ...grpc.CallOption) (*pbresponse.ListWorkspaces, error) {
 	out := new(pbresponse.ListWorkspaces)
 	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/ListWorkspaces", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *spaceManageClient) ListMemberWorkspaces(ctx context.Context, in *pbrequest.ListWorkspaces, opts ...grpc.CallOption) (*pbresponse.ListWorkspaces, error) {
+	out := new(pbresponse.ListWorkspaces)
+	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/ListMemberWorkspaces", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -124,30 +132,14 @@ func (c *spaceManageClient) CheckPermission(ctx context.Context, in *pbrequest.C
 	return out, nil
 }
 
-func (c *spaceManageClient) ListOpAudits(ctx context.Context, in *pbrequest.ListOpAudits, opts ...grpc.CallOption) (*pbresponse.ListOpAudits, error) {
-	out := new(pbresponse.ListOpAudits)
-	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/ListOpAudits", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *spaceManageClient) AddOpAudit(ctx context.Context, in *pbrequest.AddOpAudit, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
-	out := new(pbmodel.EmptyStruct)
-	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/AddOpAudit", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // SpaceManageServer is the server API for SpaceManage service.
 // All implementations must embed UnimplementedSpaceManageServer
 // for forward compatibility
 type SpaceManageServer interface {
-	// API of workspace manager.
+	// ListWorkspaces get a lists of workspaces.
 	ListWorkspaces(context.Context, *pbrequest.ListWorkspaces) (*pbresponse.ListWorkspaces, error)
+	// ListMemberWorkspaces get a lists of workspaces that the specified user has be joined.
+	ListMemberWorkspaces(context.Context, *pbrequest.ListWorkspaces) (*pbresponse.ListWorkspaces, error)
 	// DeleteWorkspaces allowed only invoke by space owner.
 	DeleteWorkspaces(context.Context, *pbrequest.DeleteWorkspaces) (*pbmodel.EmptyStruct, error)
 	// DisableWorkspaces allowed only invoke by space owner.
@@ -160,9 +152,6 @@ type SpaceManageServer interface {
 	// Permission Check.
 	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(context.Context, *pbrequest.CheckPermission) (*pbresponse.CheckPermission, error)
-	// API of workspace operation audit log.
-	ListOpAudits(context.Context, *pbrequest.ListOpAudits) (*pbresponse.ListOpAudits, error)
-	AddOpAudit(context.Context, *pbrequest.AddOpAudit) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedSpaceManageServer()
 }
 
@@ -172,6 +161,9 @@ type UnimplementedSpaceManageServer struct {
 
 func (UnimplementedSpaceManageServer) ListWorkspaces(context.Context, *pbrequest.ListWorkspaces) (*pbresponse.ListWorkspaces, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListWorkspaces not implemented")
+}
+func (UnimplementedSpaceManageServer) ListMemberWorkspaces(context.Context, *pbrequest.ListWorkspaces) (*pbresponse.ListWorkspaces, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListMemberWorkspaces not implemented")
 }
 func (UnimplementedSpaceManageServer) DeleteWorkspaces(context.Context, *pbrequest.DeleteWorkspaces) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteWorkspaces not implemented")
@@ -193,12 +185,6 @@ func (UnimplementedSpaceManageServer) DescribeWorkspace(context.Context, *pbrequ
 }
 func (UnimplementedSpaceManageServer) CheckPermission(context.Context, *pbrequest.CheckPermission) (*pbresponse.CheckPermission, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckPermission not implemented")
-}
-func (UnimplementedSpaceManageServer) ListOpAudits(context.Context, *pbrequest.ListOpAudits) (*pbresponse.ListOpAudits, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListOpAudits not implemented")
-}
-func (UnimplementedSpaceManageServer) AddOpAudit(context.Context, *pbrequest.AddOpAudit) (*pbmodel.EmptyStruct, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddOpAudit not implemented")
 }
 func (UnimplementedSpaceManageServer) mustEmbedUnimplementedSpaceManageServer() {}
 
@@ -227,6 +213,24 @@ func _SpaceManage_ListWorkspaces_Handler(srv interface{}, ctx context.Context, d
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SpaceManageServer).ListWorkspaces(ctx, req.(*pbrequest.ListWorkspaces))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SpaceManage_ListMemberWorkspaces_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListWorkspaces)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SpaceManageServer).ListMemberWorkspaces(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SpaceManage/ListMemberWorkspaces",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SpaceManageServer).ListMemberWorkspaces(ctx, req.(*pbrequest.ListWorkspaces))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -357,42 +361,6 @@ func _SpaceManage_CheckPermission_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpaceManage_ListOpAudits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.ListOpAudits)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SpaceManageServer).ListOpAudits(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.SpaceManage/ListOpAudits",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpaceManageServer).ListOpAudits(ctx, req.(*pbrequest.ListOpAudits))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _SpaceManage_AddOpAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbrequest.AddOpAudit)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SpaceManageServer).AddOpAudit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spacemanager.SpaceManage/AddOpAudit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpaceManageServer).AddOpAudit(ctx, req.(*pbrequest.AddOpAudit))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // SpaceManage_ServiceDesc is the grpc.ServiceDesc for SpaceManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -403,6 +371,10 @@ var SpaceManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListWorkspaces",
 			Handler:    _SpaceManage_ListWorkspaces_Handler,
+		},
+		{
+			MethodName: "ListMemberWorkspaces",
+			Handler:    _SpaceManage_ListMemberWorkspaces_Handler,
 		},
 		{
 			MethodName: "DeleteWorkspaces",
@@ -431,14 +403,6 @@ var SpaceManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckPermission",
 			Handler:    _SpaceManage_CheckPermission_Handler,
-		},
-		{
-			MethodName: "ListOpAudits",
-			Handler:    _SpaceManage_ListOpAudits_Handler,
-		},
-		{
-			MethodName: "AddOpAudit",
-			Handler:    _SpaceManage_AddOpAudit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

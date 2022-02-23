@@ -9,16 +9,16 @@ import (
 	_ "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
 )
 
-// Set default value for message response.ListMembers
-func (this *ListMembers) SetDefaults() {
+// Set default value for message response.ListSystemRoles
+func (this *ListSystemRoles) SetDefaults() {
 	if this == nil {
 		return
 	}
 	return
 }
 
-// Set default value for message response.ListSystemRoles
-func (this *ListSystemRoles) SetDefaults() {
+// Set default value for message response.ListMembers
+func (this *ListMembers) SetDefaults() {
 	if this == nil {
 		return
 	}

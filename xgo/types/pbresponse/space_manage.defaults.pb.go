@@ -18,14 +18,6 @@ func (this *ListWorkspaces) SetDefaults() {
 	return
 }
 
-// Set default value for message response.ListOpAudits
-func (this *ListOpAudits) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message response.CreateWorkspace
 func (this *CreateWorkspace) SetDefaults() {
 	if this == nil {

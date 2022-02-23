@@ -22,5 +22,10 @@ func (this *Member) SetDefaults() {
 	if this == nil {
 		return
 	}
+	if this.UserInfo != nil {
+		if dt, ok := interface{}(this.UserInfo).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }

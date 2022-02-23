@@ -128,6 +128,27 @@ func (this *Member) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *Member) _xxx_xxx_Validator_Validate_user_info() error {
+	if dt, ok := interface{}(this.UserInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *Member) _xxx_xxx_Validator_Validate_roles() error {
+	for _, item := range this.Roles {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.Member
 func (this *Member) Validate() error {
 	if this == nil {
@@ -146,6 +167,12 @@ func (this *Member) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_info(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_roles(); err != nil {
 		return err
 	}
 	return nil

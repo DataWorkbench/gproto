@@ -22,84 +22,20 @@ const (
 )
 
 // ListSystemRoles used as reply parameters in RPC or response body in HTTP.
-type ListMembers struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Infos   []*pbmodel.Member `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos"`
-	HasMore bool              `protobuf:"varint,2,opt,name=has_more,json=hasMore,proto3" json:"has_more"`
-	Total   int64             `protobuf:"varint,3,opt,name=total,proto3" json:"total"`
-}
-
-func (x *ListMembers) Reset() {
-	*x = ListMembers{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_response_member_manage_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ListMembers) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ListMembers) ProtoMessage() {}
-
-func (x *ListMembers) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_response_member_manage_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ListMembers.ProtoReflect.Descriptor instead.
-func (*ListMembers) Descriptor() ([]byte, []int) {
-	return file_proto_types_response_member_manage_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *ListMembers) GetInfos() []*pbmodel.Member {
-	if x != nil {
-		return x.Infos
-	}
-	return nil
-}
-
-func (x *ListMembers) GetHasMore() bool {
-	if x != nil {
-		return x.HasMore
-	}
-	return false
-}
-
-func (x *ListMembers) GetTotal() int64 {
-	if x != nil {
-		return x.Total
-	}
-	return 0
-}
-
-// ListSystemRoles used as reply parameters in RPC or response body in HTTP.
 type ListSystemRoles struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	Infos   []*pbmodel.Role `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos"`
-	HasMore bool            `protobuf:"varint,2,opt,name=has_more,json=hasMore,proto3" json:"has_more"`
-	Total   int64           `protobuf:"varint,3,opt,name=total,proto3" json:"total"`
+	Total   int64           `protobuf:"varint,2,opt,name=total,proto3" json:"total"`
+	HasMore bool            `protobuf:"varint,3,opt,name=has_more,json=hasMore,proto3" json:"has_more"`
 }
 
 func (x *ListSystemRoles) Reset() {
 	*x = ListSystemRoles{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_response_member_manage_proto_msgTypes[1]
+		mi := &file_proto_types_response_member_manage_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -112,7 +48,7 @@ func (x *ListSystemRoles) String() string {
 func (*ListSystemRoles) ProtoMessage() {}
 
 func (x *ListSystemRoles) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_response_member_manage_proto_msgTypes[1]
+	mi := &file_proto_types_response_member_manage_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -125,7 +61,7 @@ func (x *ListSystemRoles) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSystemRoles.ProtoReflect.Descriptor instead.
 func (*ListSystemRoles) Descriptor() ([]byte, []int) {
-	return file_proto_types_response_member_manage_proto_rawDescGZIP(), []int{1}
+	return file_proto_types_response_member_manage_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListSystemRoles) GetInfos() []*pbmodel.Role {
@@ -135,6 +71,13 @@ func (x *ListSystemRoles) GetInfos() []*pbmodel.Role {
 	return nil
 }
 
+func (x *ListSystemRoles) GetTotal() int64 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
 func (x *ListSystemRoles) GetHasMore() bool {
 	if x != nil {
 		return x.HasMore
@@ -142,11 +85,68 @@ func (x *ListSystemRoles) GetHasMore() bool {
 	return false
 }
 
-func (x *ListSystemRoles) GetTotal() int64 {
+// ListMembers used as reply parameters in RPC or response body in HTTP.
+type ListMembers struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Infos   []*pbmodel.Member `protobuf:"bytes,1,rep,name=infos,proto3" json:"infos"`
+	Total   int64             `protobuf:"varint,2,opt,name=total,proto3" json:"total"`
+	HasMore bool              `protobuf:"varint,3,opt,name=has_more,json=hasMore,proto3" json:"has_more"`
+}
+
+func (x *ListMembers) Reset() {
+	*x = ListMembers{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_member_manage_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListMembers) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMembers) ProtoMessage() {}
+
+func (x *ListMembers) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_member_manage_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMembers.ProtoReflect.Descriptor instead.
+func (*ListMembers) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_member_manage_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ListMembers) GetInfos() []*pbmodel.Member {
+	if x != nil {
+		return x.Infos
+	}
+	return nil
+}
+
+func (x *ListMembers) GetTotal() int64 {
 	if x != nil {
 		return x.Total
 	}
 	return 0
+}
+
+func (x *ListMembers) GetHasMore() bool {
+	if x != nil {
+		return x.HasMore
+	}
+	return false
 }
 
 var File_proto_types_response_member_manage_proto protoreflect.FileDescriptor
@@ -157,19 +157,19 @@ var file_proto_types_response_member_manage_proto_rawDesc = []byte{
 	0x6e, 0x61, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x08, 0x72, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x1e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65,
 	0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2f, 0x6d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x22, 0x63, 0x0a, 0x0b, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x65, 0x6d, 0x62,
-	0x65, 0x72, 0x73, 0x12, 0x23, 0x0a, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03,
-	0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4d, 0x65, 0x6d, 0x62, 0x65,
-	0x72, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x19, 0x0a, 0x08, 0x68, 0x61, 0x73, 0x5f,
-	0x6d, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d,
-	0x6f, 0x72, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x03, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x65, 0x0a, 0x0f, 0x4c, 0x69, 0x73,
-	0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x12, 0x21, 0x0a, 0x05,
-	0x69, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x6d, 0x6f,
-	0x64, 0x65, 0x6c, 0x2e, 0x52, 0x6f, 0x6c, 0x65, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12,
-	0x19, 0x0a, 0x08, 0x68, 0x61, 0x73, 0x5f, 0x6d, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x08, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d, 0x6f, 0x72, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f,
-	0x74, 0x61, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c,
+	0x72, 0x6f, 0x74, 0x6f, 0x22, 0x65, 0x0a, 0x0f, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x79, 0x73, 0x74,
+	0x65, 0x6d, 0x52, 0x6f, 0x6c, 0x65, 0x73, 0x12, 0x21, 0x0a, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x52,
+	0x6f, 0x6c, 0x65, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f,
+	0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c,
+	0x12, 0x19, 0x0a, 0x08, 0x68, 0x61, 0x73, 0x5f, 0x6d, 0x6f, 0x72, 0x65, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d, 0x6f, 0x72, 0x65, 0x22, 0x63, 0x0a, 0x0b, 0x4c,
+	0x69, 0x73, 0x74, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x23, 0x0a, 0x05, 0x69, 0x6e,
+	0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
+	0x6c, 0x2e, 0x4d, 0x65, 0x6d, 0x62, 0x65, 0x72, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x12,
+	0x14, 0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05,
+	0x74, 0x6f, 0x74, 0x61, 0x6c, 0x12, 0x19, 0x0a, 0x08, 0x68, 0x61, 0x73, 0x5f, 0x6d, 0x6f, 0x72,
+	0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x68, 0x61, 0x73, 0x4d, 0x6f, 0x72, 0x65,
 	0x42, 0x77, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69,
 	0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70,
 	0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x16, 0x50, 0x42, 0x52, 0x65, 0x73,
@@ -195,14 +195,14 @@ func file_proto_types_response_member_manage_proto_rawDescGZIP() []byte {
 
 var file_proto_types_response_member_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_types_response_member_manage_proto_goTypes = []interface{}{
-	(*ListMembers)(nil),     // 0: response.ListMembers
-	(*ListSystemRoles)(nil), // 1: response.ListSystemRoles
-	(*pbmodel.Member)(nil),  // 2: model.Member
-	(*pbmodel.Role)(nil),    // 3: model.Role
+	(*ListSystemRoles)(nil), // 0: response.ListSystemRoles
+	(*ListMembers)(nil),     // 1: response.ListMembers
+	(*pbmodel.Role)(nil),    // 2: model.Role
+	(*pbmodel.Member)(nil),  // 3: model.Member
 }
 var file_proto_types_response_member_manage_proto_depIdxs = []int32{
-	2, // 0: response.ListMembers.infos:type_name -> model.Member
-	3, // 1: response.ListSystemRoles.infos:type_name -> model.Role
+	2, // 0: response.ListSystemRoles.infos:type_name -> model.Role
+	3, // 1: response.ListMembers.infos:type_name -> model.Member
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -217,7 +217,7 @@ func file_proto_types_response_member_manage_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_proto_types_response_member_manage_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListMembers); i {
+			switch v := v.(*ListSystemRoles); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -229,7 +229,7 @@ func file_proto_types_response_member_manage_proto_init() {
 			}
 		}
 		file_proto_types_response_member_manage_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListSystemRoles); i {
+			switch v := v.(*ListMembers); i {
 			case 0:
 				return &v.state
 			case 1:
