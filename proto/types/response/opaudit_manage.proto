@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseOpAuditManage";
+option java_multiple_files = false;
+
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+import "proto/types/model/opaudit.proto";
+
+// ListOpAudits used as reply parameters in RPC or response body in HTTP.
+message ListOpAudits {
+  // @inject_tag: json:"infos"
+  repeated model.Operation infos = 1;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+}

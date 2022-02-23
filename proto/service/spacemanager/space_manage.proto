@@ -17,8 +17,11 @@ import "proto/types/response/space_manage.proto";
 
 // SpaceManage declares API for manage workspace.
 service SpaceManage {
-  // API of workspace manager.
+  // ListWorkspaces get a lists of workspaces.
   rpc ListWorkspaces(request.ListWorkspaces)       returns (response.ListWorkspaces)    {}
+
+  // ListMemberWorkspaces get a lists of workspaces that the specified user has be joined.
+  rpc ListMemberWorkspaces(request.ListWorkspaces) returns (response.ListWorkspaces) {}
 
   // DeleteWorkspaces allowed only invoke by space owner.
   rpc DeleteWorkspaces(request.DeleteWorkspaces)   returns (model.EmptyStruct)          {}
@@ -36,8 +39,4 @@ service SpaceManage {
   // Permission Check.
   // Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
   rpc CheckPermission(request.CheckPermission) returns (response.CheckPermission) {}
-
-  // API of workspace operation audit log.
-  rpc ListOpAudits(request.ListOpAudits) returns (response.ListOpAudits) {}
-  rpc AddOpAudit(request.AddOpAudit)     returns (model.EmptyStruct) {}
 }

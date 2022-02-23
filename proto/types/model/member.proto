@@ -12,9 +12,9 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "proto/types/model/account.proto";
 
-// The Role info.
-// TODO: unused on present.
+// The Role schema.
 message Role {
   enum Type {
     TypeUnset = 0;
@@ -28,9 +28,11 @@ message Role {
     Enabled = 2;
   }
 
+  // The workspace id.
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
+  // The role id.
   // @inject_tag: json:"id" gorm:"column:id;primarykey;"
   string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
@@ -47,13 +49,12 @@ message Role {
   Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 }
 
-// The workspace member info.
-// TODO: unused on present.
+// The workspace member schema.
 message Member {
   enum Status {
     StatusUnset = 0;
-    Normal = 1;
-    Deleted = 2;
+    Deleted = 1;
+    Enabled = 2;
   }
 
   // @inject_tag: json:"space_id" gorm:"column:space_id;primaryKey;"
@@ -68,14 +69,23 @@ message Member {
   // @inject_tag: json:"role_ids" gorm:"column:role_ids;"
   string role_ids = 4;
 
-  // 1 => "Normal" 2 => "Deleted". Ignore it for client.
+  // The status of member. 1 => "Deleted" 2 => "Enabled". Ignore it for client.
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
+  // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
   int64 created = 6 [ (validator.field).tags.int = { gt: 0 } ];
 
-  // Timestamp of update time
+  // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 7 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // The user detailed information. Not in db. Only used to Describe Or Lists.
+  // @inject_tag: json:"user_info" gorm:"-"
+  User user_info = 8;
+
+  // The lis of role info.
+  // @inject_tag: json:"roles" gorm:"-"
+  repeated Role roles = 9;
 }

@@ -17,11 +17,11 @@ import "proto/types/response/member_manage.proto";
 
 // MemberManage declares API for manage member and role of member.
 service MemberManage {
-  // API of workspace role.
   rpc ListSystemRoles(request.ListSystemRoles) returns (response.ListSystemRoles) {}
 
-  // API of workspace member.
+  // ListMembers get a lists of workspace member.
   rpc ListMembers(request.ListMembers)    returns (response.ListMembers)  {}
-  rpc UpsertMembers(request.UpsertMembers) returns (model.EmptyStruct) {}
   rpc DeleteMembers(request.DeleteMembers) returns (model.EmptyStruct) {}
+
+  rpc UpsertMember(request.UpsertMember) returns (model.EmptyStruct) {}
 }

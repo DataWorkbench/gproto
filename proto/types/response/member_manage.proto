@@ -17,25 +17,25 @@ option java_multiple_files = false;
 import "proto/types/model/member.proto";
 
 // ListSystemRoles used as reply parameters in RPC or response body in HTTP.
-message ListMembers {
-  // @inject_tag: json:"infos"
-  repeated model.Member infos = 1;
-
-  // @inject_tag: json:"has_more"
-  bool has_more = 2;
-
-  // @inject_tag: json:"total"
-  int64 total = 3;
-}
-
-// ListSystemRoles used as reply parameters in RPC or response body in HTTP.
 message ListSystemRoles {
   // @inject_tag: json:"infos"
   repeated model.Role infos = 1;
 
+  // @inject_tag: json:"total"
+  int64 total = 2;
+
   // @inject_tag: json:"has_more"
-  bool has_more = 2;
+  bool has_more = 3;
+}
+
+// ListMembers used as reply parameters in RPC or response body in HTTP.
+message ListMembers {
+  // @inject_tag: json:"infos"
+  repeated model.Member infos = 1;
 
   // @inject_tag: json:"total"
-  int64 total = 3;
+  int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
 }

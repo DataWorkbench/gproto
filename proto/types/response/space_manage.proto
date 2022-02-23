@@ -11,11 +11,10 @@ option java_outer_classname = "PBResponseSpaceManage";
 option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
-//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/workspace.proto";
-import "proto/types/model/opaudit.proto";
+
 
 // ListWorkspaces used as reply parameters in RPC or response body in HTTP.
 message ListWorkspaces {
@@ -27,15 +26,6 @@ message ListWorkspaces {
 
   // @inject_tag: json:"total"
   int64 total = 3;
-}
-
-// ListOpAudits used as reply parameters in RPC or response body in HTTP.
-message ListOpAudits {
-  // @inject_tag: json:"infos"
-  repeated model.Operation infos = 1;
-
-  // @inject_tag: json:"has_more"
-  bool has_more = 2;
 }
 
 // CreateWorkspace used as reply parameters in RPC or response body in HTTP.
