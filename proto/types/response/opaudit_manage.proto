@@ -18,7 +18,7 @@ import "proto/types/model/opaudit.proto";
 // ListOpAudits used as reply parameters in RPC or response body in HTTP.
 message ListOpAudits {
   // @inject_tag: json:"infos"
-  repeated model.Operation infos = 1;
+  repeated model.OpAudit infos = 1;
 
   // @inject_tag: json:"has_more"
   bool has_more = 2;

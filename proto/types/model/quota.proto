@@ -74,8 +74,7 @@ message QuotaNetwork {
   int64 limit = 1;
 }
 
-
-// Quota for user level.
+// Quota for user level. supported modified by Platform Administrator.
 message UserQuota {
   // The user id of owner.
   // @inject_tag: json:"user_id" gorm:"column:user_id;primarykey"
@@ -104,4 +103,19 @@ message UserQuota {
 
   // @inject_tag: json:"sync_job" gorm:"column:sync_job;"
   QuotaSyncJob sync_job = 9;
+}
+
+// Quota for project level. supported modified by Tenant Administrator.
+message ProjectQuota {
+  // The user id of workspace owner.
+  string user_id = 1;
+  string space_id = 2;
+}
+
+// Quota for workspace level. supported modified by Workspace Owner and Workspace Administrator.
+message WorkspaceQuota {
+  string space_id = 2;
+
+  // The user id of workspace member.
+  string user_id = 1;
 }

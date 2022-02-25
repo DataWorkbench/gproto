@@ -13,6 +13,8 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "proto/types/model/account.proto";
+import "proto/types/model/role.proto";
+
 
 // The Role schema.
 message Role {
@@ -47,6 +49,33 @@ message Role {
   // Status. 1 => "Deleted" 2 => "Enabled"
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // Description for this Role. Not required. Max Charset Length: 1024.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 6 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
+
+  // The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
+  // @inject_tag: json:"modules" gorm:"column:modules;"
+  string modules = 7;
+
+  // Allowed operation kind for specified modules.
+  // @inject_tag: json:"op_kind" gorm:"column:op_kind;"
+  APIDesc.Kind op_kind = 8 [
+    (validator.field).check_if = { field: "modules", tags: { string: { ne: "" } } },
+    (validator.field).tags.enum = { gt: 0, in_enums: true }
+  ];
+
+  // The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
+  // @inject_tag: json:"apis" gorm:"column:apis;"
+  string apis = 9;
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 10;
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 11;
 }
 
 // The workspace member schema.
@@ -65,7 +94,6 @@ message Member {
   string user_id = 3 [ (validator.field).tags.string = { byte_len_lte: 64} ];
 
   // The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-  // FIXME: review it.
   // @inject_tag: json:"role_ids" gorm:"column:role_ids;"
   string role_ids = 4;
 

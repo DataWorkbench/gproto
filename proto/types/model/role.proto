@@ -1,0 +1,126 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelRole";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+
+// Module declares the module information.
+message Module {
+  enum Classify {
+    ClassifyUnSet = 0;
+    // Module In project.
+    AuditManage = 1;
+    ProjectQuota = 2;
+    SpaceManage = 3;
+    // Module In workspace;
+    WorkspaceQuota = 4;
+    MemberManage = 5;
+    RoleManage = 6;
+    DataSourceMange = 7;
+    UDFManage = 8;
+    FileManage = 9;
+    NetworkMange = 10;
+    ClusterMange = 11;
+    StreamJobDevMange = 12;
+    StreamJobReleaseManage = 13;
+    StreamJobVersionManage = 14;
+    StreamJobInstanceManage = 15;
+    SyncJobDevMange = 16;
+    SyncJobReleaseManage = 17;
+    SyncJobVersionManage = 18;
+    SyncJobInstanceManage = 19;
+  }
+
+  // The module name.
+  // @inject_tag: json:"name"
+  Classify name = 1 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  // DisplayName is the display name of this Module. Is user readable.
+  // @inject_tag: json:"display_name"
+  string display_name = 2 [ (validator.field).tags.string = { ne: "" } ];
+}
+
+//// SystemRole declares the information of built-in role.
+//message SystemRole {
+//  enum Type {
+//    TypeUnset = 0; // useless.
+//    SpaceOwner = 1;
+//    SpaceAdmin = 2;
+//    SpaceDeveloper = 3;
+//    SpaceOperator = 4;
+//    SpaceVisitor = 5;
+//  }
+//  // @inject_tag: json:"type"
+//  Type type = 1 [ (validator.field).tags.enum = {gt: 0, in_enums: true } ];
+//
+//  // @inject_tag: json:"name"
+//  string name = 2 [(validator.field).tags.string = { ne: "" }];
+//}
+
+// PermissionSystemRole declares the permission for system roles.
+message PermissionSystemRole {
+  // The role id.
+  // @inject_tag: json:"role_id"
+  string role_id = 1;
+
+  // The role name.
+  // @inject_tag: json:"role_name"
+  string role_name = 2;
+
+  // @inject_tag: json:"allowed"
+  bool allowed = 3;
+}
+
+// APIDesc is the information of API description.
+message APIDesc {
+  enum Kind {
+    TypeUnset = 0; // is useless.
+    Write = 1;
+    Read = 2;
+  }
+
+  // Name represents the action of this API. Default is the API Handler Func Name.
+  // It cannot be modified after publishing.
+  // @inject_tag: json:"name"
+  string name = 1 [ (validator.field).tags.string = { ne: "" } ];
+
+  // DisplayName is the display of this API. Is user readable.
+  // @inject_tag: json:"display_name"
+  string display_name = 2 [ (validator.field).tags.string = { ne: "" } ];
+
+  // Kind is the api operation type. 1 => "write" 2 => "read"
+  // Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
+  // @inject_tag: json:"kind"
+  Kind kind = 3 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  // Permissions is permission of this API.
+  // @inject_tag: json:"permissions"
+  repeated PermissionSystemRole permissions = 4 [ (validator.field).tags.repeated = { len_gt: 0 } ];
+
+  // Module is set by func registerHandler. Only used to return module info to client.
+  // @inject_tag: json:"-"
+  Module module = 5 [ (validator.field).tags.message = { not_null: true } ] ;
+
+  // SystemRoles is set by func registerHandler. Only used to check permission.
+  // @inject_tag: json:"-"
+  map<string, bool> system_roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
+}
+
+// PermissionModule for declares the information of a module.
+message PermissionModule {
+  // The module info.
+  // @inject_tag: json:"module"
+  Module module = 1 [ (validator.field).tags.message = { not_null: true } ];
+
+  // A list of API.
+  // @inject_tag: json:"api_list"
+  repeated APIDesc api_list = 2;
+}

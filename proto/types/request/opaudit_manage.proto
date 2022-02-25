@@ -14,10 +14,11 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/opaudit.proto";
+import "proto/types/model/role.proto";
 
 // AddOpAudit used as a request parameters for RPC.
 message AddOpAudit {
-  model.Operation info = 1 [ (validator.field) = { } ];
+  model.OpAudit info = 1 [ (validator.field) = { } ];
 }
 
 // ListOpAudits used as a request parameters for RPC and HTTP(based on URL-Query)
@@ -52,7 +53,8 @@ message ListOpAudits {
 
   // Querying conditions. Not required.
   // @inject_tag: json:"type" form:"type"
-  model.Operation.Type type = 7 [(validator.field).tags.enum = { in_enums: true }];
+  // FIXME:
+  model.APIDesc.Kind type = 7 [(validator.field).tags.enum = { in_enums: true }];
 
   // Querying conditions. Not required.
   // @inject_tag: json:"action" form:"action"
@@ -60,7 +62,7 @@ message ListOpAudits {
 
   // Querying conditions. Not required.
   // @inject_tag: json:"state" form:"state"
-  model.Operation.State state = 9 [(validator.field) = {}];
+  model.OpAudit.State state = 9 [(validator.field) = {}];
 
   // Querying conditions. Not required.
   // Desc: Timestamp of start time.

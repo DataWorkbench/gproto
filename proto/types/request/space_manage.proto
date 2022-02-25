@@ -14,7 +14,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/workspace.proto";
-import "proto/types/model/opaudit.proto";
+import "proto/types/model/role.proto";
 
 // ListWorkspaces used as a request parameters for RPC and HTTP(based on URL-Query)
 message ListWorkspaces {
@@ -139,10 +139,12 @@ message DescribeWorkspace {
 
 // CheckPermission used as a request parameters for RPC.
 message CheckPermission {
-  string req_user_id      = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
-  string space_id         = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-  string module           = 3 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
-  model.Operation.Type op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  string op_name          = 5 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
-  map<string, bool> roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
+  string req_user_id         = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
+  string space_id            = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  string module_name         = 3 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
+  string api_name                = 5 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
+  model.APIDesc.Kind op_type     = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // key(role_id) => (IsAllowed)
+  map<string, bool> system_roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
 }

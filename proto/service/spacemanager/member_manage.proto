@@ -23,5 +23,6 @@ service MemberManage {
   rpc ListMembers(request.ListMembers)    returns (response.ListMembers)  {}
   rpc DeleteMembers(request.DeleteMembers) returns (model.EmptyStruct) {}
 
-  rpc UpsertMember(request.UpsertMember) returns (model.EmptyStruct) {}
+  rpc UpsertMembers(request.UpsertMembers) returns (model.EmptyStruct) {}
+  rpc UpdateMember(request.UpdateMember) returns (model.EmptyStruct) {}
 }

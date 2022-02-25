@@ -13,15 +13,11 @@ option java_multiple_files = false;
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
-// The workspace operation audit log record.
-message Operation {
-  // Type declares the API operation type.
-  enum Type {
-    TypeUnset = 0; // Is useless.
-    Write = 1; // Include Operation: create/update/delete.
-    Read = 2; // Include Operation: read.
-  }
+import "proto/types/model/role.proto";
 
+
+// The workspace operation audit log record.
+message OpAudit {
   // State declares the API operation result.
   enum State {
     StateUnset = 0;
@@ -42,8 +38,9 @@ message Operation {
   string op_name = 3 [(validator.field).tags.string = { ne: "" }];
 
   // -- The type of operation, 2 => "Write",  3 => "Read".
+  // FIXME: review it.
   // @inject_tag: json:"op_type" gorm:"column:op_type;"
-  Type op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  APIDesc.Kind op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // -- The result of operation, 1 => "Success", 2 => "Failed".
   // @inject_tag: json:"state" gorm:"column:state;"
