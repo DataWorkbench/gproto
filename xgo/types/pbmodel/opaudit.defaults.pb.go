@@ -9,8 +9,8 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.Operation
-func (this *Operation) SetDefaults() {
+// Set default value for message model.OpAudit
+func (this *OpAudit) SetDefaults() {
 	if this == nil {
 		return
 	}

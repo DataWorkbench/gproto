@@ -19,19 +19,19 @@ public final class PBRequestOpAuditManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
      * @return The info.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getInfo();
+    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getInfo();
     /**
-     * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder getInfoOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder getInfoOrBuilder();
   }
   /**
    * <pre>
@@ -83,11 +83,11 @@ public final class PBRequestOpAuditManage {
               done = true;
               break;
             case 10: {
-              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder subBuilder = null;
+              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
               }
-              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.parser(), extensionRegistry);
+              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(info_);
                 info_ = subBuilder.buildPartial();
@@ -128,9 +128,9 @@ public final class PBRequestOpAuditManage {
     }
 
     public static final int INFO_FIELD_NUMBER = 1;
-    private com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation info_;
+    private com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit info_;
     /**
-     * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -138,18 +138,18 @@ public final class PBRequestOpAuditManage {
       return info_ != null;
     }
     /**
-     * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
      * @return The info.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getInfo() {
-      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDefaultInstance() : info_;
+    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getInfo() {
+      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDefaultInstance() : info_;
     }
     /**
-     * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder getInfoOrBuilder() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder getInfoOrBuilder() {
       return getInfo();
     }
 
@@ -472,31 +472,31 @@ public final class PBRequestOpAuditManage {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation info_;
+      private com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit info_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder> infoBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder> infoBuilder_;
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        * @return The info.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getInfo() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getInfo() {
         if (infoBuilder_ == null) {
-          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDefaultInstance() : info_;
+          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDefaultInstance() : info_;
         } else {
           return infoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation value) {
+      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit value) {
         if (infoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -510,10 +510,10 @@ public final class PBRequestOpAuditManage {
         return this;
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setInfo(
-          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder builderForValue) {
+          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder builderForValue) {
         if (infoBuilder_ == null) {
           info_ = builderForValue.build();
           onChanged();
@@ -524,13 +524,13 @@ public final class PBRequestOpAuditManage {
         return this;
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation value) {
+      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit value) {
         if (infoBuilder_ == null) {
           if (info_ != null) {
             info_ =
-              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.newBuilder(info_).mergeFrom(value).buildPartial();
+              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.newBuilder(info_).mergeFrom(value).buildPartial();
           } else {
             info_ = value;
           }
@@ -542,7 +542,7 @@ public final class PBRequestOpAuditManage {
         return this;
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -556,33 +556,33 @@ public final class PBRequestOpAuditManage {
         return this;
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder getInfoBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder getInfoBuilder() {
         
         onChanged();
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder getInfoOrBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
           return infoBuilder_.getMessageOrBuilder();
         } else {
           return info_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDefaultInstance() : info_;
+              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDefaultInstance() : info_;
         }
       }
       /**
-       * <code>.model.Operation info = 1 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit info = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder> 
+          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder> 
           getInfoFieldBuilder() {
         if (infoBuilder_ == null) {
           infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder>(
+              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder>(
                   getInfo(),
                   getParentForChildren(),
                   isClean());
@@ -757,9 +757,10 @@ public final class PBRequestOpAuditManage {
      * <pre>
      * Querying conditions. Not required.
      * &#64;inject_tag: json:"type" form:"type"
+     * FIXME:
      * </pre>
      *
-     * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
@@ -767,12 +768,13 @@ public final class PBRequestOpAuditManage {
      * <pre>
      * Querying conditions. Not required.
      * &#64;inject_tag: json:"type" form:"type"
+     * FIXME:
      * </pre>
      *
-     * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
      * @return The type.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getType();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getType();
 
     /**
      * <pre>
@@ -802,7 +804,7 @@ public final class PBRequestOpAuditManage {
      * &#64;inject_tag: json:"state" form:"state"
      * </pre>
      *
-     * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
@@ -812,10 +814,10 @@ public final class PBRequestOpAuditManage {
      * &#64;inject_tag: json:"state" form:"state"
      * </pre>
      *
-     * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
      * @return The state.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State getState();
+    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State getState();
 
     /**
      * <pre>
@@ -1194,9 +1196,10 @@ public final class PBRequestOpAuditManage {
      * <pre>
      * Querying conditions. Not required.
      * &#64;inject_tag: json:"type" form:"type"
+     * FIXME:
      * </pre>
      *
-     * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -1206,15 +1209,16 @@ public final class PBRequestOpAuditManage {
      * <pre>
      * Querying conditions. Not required.
      * &#64;inject_tag: json:"type" form:"type"
+     * FIXME:
      * </pre>
      *
-     * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
      * @return The type.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.valueOf(type_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
     }
 
     public static final int ACTION_FIELD_NUMBER = 8;
@@ -1273,7 +1277,7 @@ public final class PBRequestOpAuditManage {
      * &#64;inject_tag: json:"state" form:"state"
      * </pre>
      *
-     * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -1285,13 +1289,13 @@ public final class PBRequestOpAuditManage {
      * &#64;inject_tag: json:"state" form:"state"
      * </pre>
      *
-     * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
      * @return The state.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State getState() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State getState() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.valueOf(state_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.valueOf(state_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.UNRECOGNIZED : result;
     }
 
     public static final int STARTED_FIELD_NUMBER = 10;
@@ -1360,13 +1364,13 @@ public final class PBRequestOpAuditManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, spaceId_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
         output.writeEnum(7, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, action_);
       }
-      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.StateUnset.getNumber()) {
+      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         output.writeEnum(9, state_);
       }
       if (started_ != 0L) {
@@ -1405,14 +1409,14 @@ public final class PBRequestOpAuditManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, spaceId_);
       }
-      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, action_);
       }
-      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.StateUnset.getNumber()) {
+      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, state_);
       }
@@ -2269,9 +2273,10 @@ public final class PBRequestOpAuditManage {
        * <pre>
        * Querying conditions. Not required.
        * &#64;inject_tag: json:"type" form:"type"
+       * FIXME:
        * </pre>
        *
-       * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -2281,9 +2286,10 @@ public final class PBRequestOpAuditManage {
        * <pre>
        * Querying conditions. Not required.
        * &#64;inject_tag: json:"type" form:"type"
+       * FIXME:
        * </pre>
        *
-       * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -2297,28 +2303,30 @@ public final class PBRequestOpAuditManage {
        * <pre>
        * Querying conditions. Not required.
        * &#64;inject_tag: json:"type" form:"type"
+       * FIXME:
        * </pre>
        *
-       * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
        * @return The type.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.valueOf(type_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * Querying conditions. Not required.
        * &#64;inject_tag: json:"type" form:"type"
+       * FIXME:
        * </pre>
        *
-       * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type value) {
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2331,9 +2339,10 @@ public final class PBRequestOpAuditManage {
        * <pre>
        * Querying conditions. Not required.
        * &#64;inject_tag: json:"type" form:"type"
+       * FIXME:
        * </pre>
        *
-       * <code>.model.Operation.Type type = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind type = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -2451,7 +2460,7 @@ public final class PBRequestOpAuditManage {
        * &#64;inject_tag: json:"state" form:"state"
        * </pre>
        *
-       * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for state.
        */
       @java.lang.Override public int getStateValue() {
@@ -2463,7 +2472,7 @@ public final class PBRequestOpAuditManage {
        * &#64;inject_tag: json:"state" form:"state"
        * </pre>
        *
-       * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for state to set.
        * @return This builder for chaining.
        */
@@ -2479,14 +2488,14 @@ public final class PBRequestOpAuditManage {
        * &#64;inject_tag: json:"state" form:"state"
        * </pre>
        *
-       * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
        * @return The state.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State getState() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State getState() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.valueOf(state_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.valueOf(state_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.UNRECOGNIZED : result;
       }
       /**
        * <pre>
@@ -2494,11 +2503,11 @@ public final class PBRequestOpAuditManage {
        * &#64;inject_tag: json:"state" form:"state"
        * </pre>
        *
-       * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
        * @param value The state to set.
        * @return This builder for chaining.
        */
-      public Builder setState(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State value) {
+      public Builder setState(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2513,7 +2522,7 @@ public final class PBRequestOpAuditManage {
        * &#64;inject_tag: json:"state" form:"state"
        * </pre>
        *
-       * <code>.model.Operation.State state = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearState() {
@@ -2696,21 +2705,21 @@ public final class PBRequestOpAuditManage {
       "to\022\007request\0323github.com/yu31/protoc-plug" +
       "in/proto/validator.proto\0322github.com/yu3" +
       "1/protoc-plugin/proto/defaults.proto\032\037pr" +
-      "oto/types/model/opaudit.proto\"2\n\nAddOpAu" +
-      "dit\022$\n\004info\030\001 \001(\0132\020.model.OperationB\004\342\337\037" +
-      "\000\"\355\002\n\014ListOpAudits\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252" +
-      "\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007" +
-      "\022\005\262\001\002@\000\022)\n\007sort_by\030\003 \001(\tB\030\342\337\037\024\022\022\302\001\017J\000J\002i" +
-      "dJ\007created\022\025\n\007reverse\030\004 \001(\010B\004\342\337\037\000\022\035\n\007use" +
-      "r_id\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\210\002A\022\026\n\010space_id\030\006 \001" +
-      "(\tB\004\342\337\037\000\0220\n\004type\030\007 \001(\0162\025.model.Operation" +
-      ".TypeB\013\342\337\037\007\022\005\332\001\002X\001\022\024\n\006action\030\010 \001(\tB\004\342\337\037\000" +
-      "\022+\n\005state\030\t \001(\0162\026.model.Operation.StateB" +
-      "\004\342\337\037\000\022\025\n\007started\030\n \001(\003B\004\342\337\037\000\022\023\n\005ended\030\013 " +
-      "\001(\003B\004\342\337\037\000Bu\n$com.dataomnis.gproto.types." +
-      "pbrequestB\026PBRequestOpAuditManageP\000Z3git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "brequestb\006proto3"
+      "oto/types/model/opaudit.proto\032\034proto/typ" +
+      "es/model/role.proto\"0\n\nAddOpAudit\022\"\n\004inf" +
+      "o\030\001 \001(\0132\016.model.OpAuditB\004\342\337\037\000\"\351\002\n\014ListOp" +
+      "Audits\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262" +
+      "\001\0040\0008d\022\033\n\006offset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022)\n\007s" +
+      "ort_by\030\003 \001(\tB\030\342\337\037\024\022\022\302\001\017J\000J\002idJ\007created\022\025" +
+      "\n\007reverse\030\004 \001(\010B\004\342\337\037\000\022\035\n\007user_id\030\005 \001(\tB\014" +
+      "\342\337\037\010\022\006\302\001\003\210\002A\022\026\n\010space_id\030\006 \001(\tB\004\342\337\037\000\022.\n\004" +
+      "type\030\007 \001(\0162\023.model.APIDesc.KindB\013\342\337\037\007\022\005\332" +
+      "\001\002X\001\022\024\n\006action\030\010 \001(\tB\004\342\337\037\000\022)\n\005state\030\t \001(" +
+      "\0162\024.model.OpAudit.StateB\004\342\337\037\000\022\025\n\007started" +
+      "\030\n \001(\003B\004\342\337\037\000\022\023\n\005ended\030\013 \001(\003B\004\342\337\037\000Bu\n$com" +
+      ".dataomnis.gproto.types.pbrequestB\026PBReq" +
+      "uestOpAuditManageP\000Z3github.com/DataWork" +
+      "bench/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2718,6 +2727,7 @@ public final class PBRequestOpAuditManage {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelRole.getDescriptor(),
         });
     internal_static_request_AddOpAudit_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2740,6 +2750,7 @@ public final class PBRequestOpAuditManage {
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

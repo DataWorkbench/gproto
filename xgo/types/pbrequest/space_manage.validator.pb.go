@@ -332,14 +332,21 @@ func (this *CheckPermission) _xxx_xxx_Validator_Validate_space_id() error {
 	return nil
 }
 
-func (this *CheckPermission) _xxx_xxx_Validator_Validate_module() error {
-	if !(len(this.Module) > 0) {
-		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'module' must be greater than '0'", protovalidator.StringByteLenToString(this.Module))
+func (this *CheckPermission) _xxx_xxx_Validator_Validate_module_name() error {
+	if !(len(this.ModuleName) > 0) {
+		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'module_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ModuleName))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_CheckPermission_InEnums_OpType = map[pbmodel.Operation_Type]bool{0: true, 1: true, 2: true}
+func (this *CheckPermission) _xxx_xxx_Validator_Validate_api_name() error {
+	if !(len(this.ApiName) > 0) {
+		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_CheckPermission_InEnums_OpType = map[pbmodel.APIDesc_Kind]bool{0: true, 1: true, 2: true}
 
 func (this *CheckPermission) _xxx_xxx_Validator_Validate_op_type() error {
 	if !(this.OpType > 0) {
@@ -351,16 +358,9 @@ func (this *CheckPermission) _xxx_xxx_Validator_Validate_op_type() error {
 	return nil
 }
 
-func (this *CheckPermission) _xxx_xxx_Validator_Validate_op_name() error {
-	if !(len(this.OpName) > 0) {
-		return protovalidator.FieldError1("CheckPermission", "the byte length of field 'op_name' must be greater than '0'", protovalidator.StringByteLenToString(this.OpName))
-	}
-	return nil
-}
-
-func (this *CheckPermission) _xxx_xxx_Validator_Validate_roles() error {
-	if !(len(this.Roles) > 0) {
-		return protovalidator.FieldError1("CheckPermission", "the length of field 'roles' must be greater than '0'", strconv.Itoa(len(this.Roles)))
+func (this *CheckPermission) _xxx_xxx_Validator_Validate_system_roles() error {
+	if !(len(this.SystemRoles) > 0) {
+		return protovalidator.FieldError1("CheckPermission", "the length of field 'system_roles' must be greater than '0'", strconv.Itoa(len(this.SystemRoles)))
 	}
 	return nil
 }
@@ -376,16 +376,16 @@ func (this *CheckPermission) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_module(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_module_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_name(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_op_type(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_op_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_roles(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_system_roles(); err != nil {
 		return err
 	}
 	return nil

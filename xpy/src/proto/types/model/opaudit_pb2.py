@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
+from proto.types.model import role_pb2 as proto_dot_types_dot_model_dot_role__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,45 +21,15 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelOpAuditP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/opaudit.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xc5\x02\n\tOperation\x12\x1f\n\x07user_id\x18\x01 \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\"\x00\x98\x02@\x12\x10\n\x08space_id\x18\x02 \x01(\t\x12\x1c\n\x07op_name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x35\n\x07op_type\x18\x04 \x01(\x0e\x32\x15.model.Operation.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x34\n\x05state\x18\x05 \x01(\x0e\x32\x16.model.Operation.StateB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"*\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05Write\x10\x01\x12\x08\n\x04Read\x10\x02\"0\n\x05State\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelOpAuditP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/opaudit.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1cproto/types/model/role.proto\"\x93\x02\n\x07OpAudit\x12\x1f\n\x07user_id\x18\x01 \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\"\x00\x98\x02@\x12\x10\n\x08space_id\x18\x02 \x01(\t\x12\x1c\n\x07op_name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x33\n\x07op_type\x18\x04 \x01(\x0e\x32\x13.model.APIDesc.KindB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x32\n\x05state\x18\x05 \x01(\x0e\x32\x14.model.OpAudit.StateB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"0\n\x05State\x12\x0e\n\nStateUnset\x10\x00\x12\x0b\n\x07Success\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelOpAuditP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_role__pb2.DESCRIPTOR,])
 
 
 
-_OPERATION_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='model.Operation.Type',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='TypeUnset', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Write', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Read', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=329,
-  serialized_end=371,
-)
-_sym_db.RegisterEnumDescriptor(_OPERATION_TYPE)
-
-_OPERATION_STATE = _descriptor.EnumDescriptor(
+_OPAUDIT_STATE = _descriptor.EnumDescriptor(
   name='State',
-  full_name='model.Operation.State',
+  full_name='model.OpAudit.State',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -81,57 +52,57 @@ _OPERATION_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=373,
-  serialized_end=421,
+  serialized_start=353,
+  serialized_end=401,
 )
-_sym_db.RegisterEnumDescriptor(_OPERATION_STATE)
+_sym_db.RegisterEnumDescriptor(_OPAUDIT_STATE)
 
 
-_OPERATION = _descriptor.Descriptor(
-  name='Operation',
-  full_name='model.Operation',
+_OPAUDIT = _descriptor.Descriptor(
+  name='OpAudit',
+  full_name='model.OpAudit',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='model.Operation.user_id', index=0,
+      name='user_id', full_name='model.OpAudit.user_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\n\022\010\302\001\005\"\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='model.Operation.space_id', index=1,
+      name='space_id', full_name='model.OpAudit.space_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='op_name', full_name='model.Operation.op_name', index=2,
+      name='op_name', full_name='model.OpAudit.op_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='op_type', full_name='model.Operation.op_type', index=3,
+      name='op_type', full_name='model.OpAudit.op_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='state', full_name='model.Operation.state', index=4,
+      name='state', full_name='model.OpAudit.state', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created', full_name='model.Operation.created', index=5,
+      name='created', full_name='model.OpAudit.created', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -142,8 +113,7 @@ _OPERATION = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _OPERATION_TYPE,
-    _OPERATION_STATE,
+    _OPAUDIT_STATE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -151,29 +121,28 @@ _OPERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=96,
-  serialized_end=421,
+  serialized_start=126,
+  serialized_end=401,
 )
 
-_OPERATION.fields_by_name['op_type'].enum_type = _OPERATION_TYPE
-_OPERATION.fields_by_name['state'].enum_type = _OPERATION_STATE
-_OPERATION_TYPE.containing_type = _OPERATION
-_OPERATION_STATE.containing_type = _OPERATION
-DESCRIPTOR.message_types_by_name['Operation'] = _OPERATION
+_OPAUDIT.fields_by_name['op_type'].enum_type = proto_dot_types_dot_model_dot_role__pb2._APIDESC_KIND
+_OPAUDIT.fields_by_name['state'].enum_type = _OPAUDIT_STATE
+_OPAUDIT_STATE.containing_type = _OPAUDIT
+DESCRIPTOR.message_types_by_name['OpAudit'] = _OPAUDIT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Operation = _reflection.GeneratedProtocolMessageType('Operation', (_message.Message,), {
-  'DESCRIPTOR' : _OPERATION,
+OpAudit = _reflection.GeneratedProtocolMessageType('OpAudit', (_message.Message,), {
+  'DESCRIPTOR' : _OPAUDIT,
   '__module__' : 'proto.types.model.opaudit_pb2'
-  # @@protoc_insertion_point(class_scope:model.Operation)
+  # @@protoc_insertion_point(class_scope:model.OpAudit)
   })
-_sym_db.RegisterMessage(Operation)
+_sym_db.RegisterMessage(OpAudit)
 
 
 DESCRIPTOR._options = None
-_OPERATION.fields_by_name['user_id']._options = None
-_OPERATION.fields_by_name['op_name']._options = None
-_OPERATION.fields_by_name['op_type']._options = None
-_OPERATION.fields_by_name['state']._options = None
-_OPERATION.fields_by_name['created']._options = None
+_OPAUDIT.fields_by_name['user_id']._options = None
+_OPAUDIT.fields_by_name['op_name']._options = None
+_OPAUDIT.fields_by_name['op_type']._options = None
+_OPAUDIT.fields_by_name['state']._options = None
+_OPAUDIT.fields_by_name['created']._options = None
 # @@protoc_insertion_point(module_scope)

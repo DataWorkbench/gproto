@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestMemberManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/member_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"8\n\x0fListSystemRoles\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"\xc3\x01\n\x0bListMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x04 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07user_idJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\"U\n\rDeleteMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x08user_ids\x18\x02 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\"u\n\x0cUpsertMember\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x07user_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x1f\n\x08role_ids\x18\x03 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\nBt\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestMemberManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/member_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"8\n\x0fListSystemRoles\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"\xc3\x01\n\x0bListMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x04 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07user_idJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\"U\n\rDeleteMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x08user_ids\x18\x02 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\"\x95\x01\n\rUpsertMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x08user_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x1f\n\x08role_ids\x18\x03 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\n\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"\x92\x01\n\x0cUpdateMember\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x07user_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x1f\n\x08role_ids\x18\x03 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\n\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestMemberManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
 
@@ -159,35 +159,42 @@ _DELETEMEMBERS = _descriptor.Descriptor(
 )
 
 
-_UPSERTMEMBER = _descriptor.Descriptor(
-  name='UpsertMember',
-  full_name='request.UpsertMember',
+_UPSERTMEMBERS = _descriptor.Descriptor(
+  name='UpsertMembers',
+  full_name='request.UpsertMembers',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.UpsertMember.space_id', index=0,
+      name='space_id', full_name='request.UpsertMembers.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='request.UpsertMember.user_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='user_ids', full_name='request.UpsertMembers.user_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\210\002A', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='role_ids', full_name='request.UpsertMember.role_ids', index=2,
+      name='role_ids', full_name='request.UpsertMembers.role_ids', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008\n', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='desc', full_name='request.UpsertMembers.desc', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -200,14 +207,68 @@ _UPSERTMEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=500,
-  serialized_end=617,
+  serialized_start=501,
+  serialized_end=650,
+)
+
+
+_UPDATEMEMBER = _descriptor.Descriptor(
+  name='UpdateMember',
+  full_name='request.UpdateMember',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.UpdateMember.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='request.UpdateMember.user_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\210\002A', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='role_ids', full_name='request.UpdateMember.role_ids', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008\n', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='desc', full_name='request.UpdateMember.desc', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=653,
+  serialized_end=799,
 )
 
 DESCRIPTOR.message_types_by_name['ListSystemRoles'] = _LISTSYSTEMROLES
 DESCRIPTOR.message_types_by_name['ListMembers'] = _LISTMEMBERS
 DESCRIPTOR.message_types_by_name['DeleteMembers'] = _DELETEMEMBERS
-DESCRIPTOR.message_types_by_name['UpsertMember'] = _UPSERTMEMBER
+DESCRIPTOR.message_types_by_name['UpsertMembers'] = _UPSERTMEMBERS
+DESCRIPTOR.message_types_by_name['UpdateMember'] = _UPDATEMEMBER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListSystemRoles = _reflection.GeneratedProtocolMessageType('ListSystemRoles', (_message.Message,), {
@@ -231,12 +292,19 @@ DeleteMembers = _reflection.GeneratedProtocolMessageType('DeleteMembers', (_mess
   })
 _sym_db.RegisterMessage(DeleteMembers)
 
-UpsertMember = _reflection.GeneratedProtocolMessageType('UpsertMember', (_message.Message,), {
-  'DESCRIPTOR' : _UPSERTMEMBER,
+UpsertMembers = _reflection.GeneratedProtocolMessageType('UpsertMembers', (_message.Message,), {
+  'DESCRIPTOR' : _UPSERTMEMBERS,
   '__module__' : 'proto.types.request.member_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.UpsertMember)
+  # @@protoc_insertion_point(class_scope:request.UpsertMembers)
   })
-_sym_db.RegisterMessage(UpsertMember)
+_sym_db.RegisterMessage(UpsertMembers)
+
+UpdateMember = _reflection.GeneratedProtocolMessageType('UpdateMember', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEMEMBER,
+  '__module__' : 'proto.types.request.member_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.UpdateMember)
+  })
+_sym_db.RegisterMessage(UpdateMember)
 
 
 DESCRIPTOR._options = None
@@ -247,7 +315,12 @@ _LISTMEMBERS.fields_by_name['offset']._options = None
 _LISTMEMBERS.fields_by_name['sort_by']._options = None
 _DELETEMEMBERS.fields_by_name['space_id']._options = None
 _DELETEMEMBERS.fields_by_name['user_ids']._options = None
-_UPSERTMEMBER.fields_by_name['space_id']._options = None
-_UPSERTMEMBER.fields_by_name['user_id']._options = None
-_UPSERTMEMBER.fields_by_name['role_ids']._options = None
+_UPSERTMEMBERS.fields_by_name['space_id']._options = None
+_UPSERTMEMBERS.fields_by_name['user_ids']._options = None
+_UPSERTMEMBERS.fields_by_name['role_ids']._options = None
+_UPSERTMEMBERS.fields_by_name['desc']._options = None
+_UPDATEMEMBER.fields_by_name['space_id']._options = None
+_UPDATEMEMBER.fields_by_name['user_id']._options = None
+_UPDATEMEMBER.fields_by_name['role_ids']._options = None
+_UPDATEMEMBER.fields_by_name['desc']._options = None
 # @@protoc_insertion_point(module_scope)

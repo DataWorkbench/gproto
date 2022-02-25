@@ -10,56 +10,56 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 )
 
-func (this *Operation) _xxx_xxx_Validator_Validate_user_id() error {
+func (this *OpAudit) _xxx_xxx_Validator_Validate_user_id() error {
 	if !(this.UserId != "") {
-		return protovalidator.FieldError1("Operation", "the value of field 'user_id' must be not equal to ''", this.UserId)
+		return protovalidator.FieldError1("OpAudit", "the value of field 'user_id' must be not equal to ''", this.UserId)
 	}
 	if !(len(this.UserId) <= 64) {
-		return protovalidator.FieldError1("Operation", "the byte length of field 'user_id' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.UserId))
+		return protovalidator.FieldError1("OpAudit", "the byte length of field 'user_id' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.UserId))
 	}
 	return nil
 }
 
-func (this *Operation) _xxx_xxx_Validator_Validate_op_name() error {
+func (this *OpAudit) _xxx_xxx_Validator_Validate_op_name() error {
 	if !(this.OpName != "") {
-		return protovalidator.FieldError1("Operation", "the value of field 'op_name' must be not equal to ''", this.OpName)
+		return protovalidator.FieldError1("OpAudit", "the value of field 'op_name' must be not equal to ''", this.OpName)
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_Operation_InEnums_OpType = map[Operation_Type]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_OpAudit_InEnums_OpType = map[APIDesc_Kind]bool{0: true, 1: true, 2: true}
 
-func (this *Operation) _xxx_xxx_Validator_Validate_op_type() error {
+func (this *OpAudit) _xxx_xxx_Validator_Validate_op_type() error {
 	if !(this.OpType > 0) {
-		return protovalidator.FieldError1("Operation", "the value of field 'op_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.OpType)))
+		return protovalidator.FieldError1("OpAudit", "the value of field 'op_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.OpType)))
 	}
-	if !(_xxx_xxx_Validator_Operation_InEnums_OpType[this.OpType]) {
-		return protovalidator.FieldError1("Operation", "the value of field 'op_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OpType)))
+	if !(_xxx_xxx_Validator_OpAudit_InEnums_OpType[this.OpType]) {
+		return protovalidator.FieldError1("OpAudit", "the value of field 'op_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OpType)))
 	}
 	return nil
 }
 
-var _xxx_xxx_Validator_Operation_InEnums_State = map[Operation_State]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_OpAudit_InEnums_State = map[OpAudit_State]bool{0: true, 1: true, 2: true}
 
-func (this *Operation) _xxx_xxx_Validator_Validate_state() error {
+func (this *OpAudit) _xxx_xxx_Validator_Validate_state() error {
 	if !(this.State > 0) {
-		return protovalidator.FieldError1("Operation", "the value of field 'state' must be greater than '0'", protovalidator.Int32ToString(int32(this.State)))
+		return protovalidator.FieldError1("OpAudit", "the value of field 'state' must be greater than '0'", protovalidator.Int32ToString(int32(this.State)))
 	}
-	if !(_xxx_xxx_Validator_Operation_InEnums_State[this.State]) {
-		return protovalidator.FieldError1("Operation", "the value of field 'state' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.State)))
+	if !(_xxx_xxx_Validator_OpAudit_InEnums_State[this.State]) {
+		return protovalidator.FieldError1("OpAudit", "the value of field 'state' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.State)))
 	}
 	return nil
 }
 
-func (this *Operation) _xxx_xxx_Validator_Validate_created() error {
+func (this *OpAudit) _xxx_xxx_Validator_Validate_created() error {
 	if !(this.Created > 0) {
-		return protovalidator.FieldError1("Operation", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+		return protovalidator.FieldError1("OpAudit", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
 	}
 	return nil
 }
 
-// Set default value for message model.Operation
-func (this *Operation) Validate() error {
+// Set default value for message model.OpAudit
+func (this *OpAudit) Validate() error {
 	if this == nil {
 		return nil
 	}

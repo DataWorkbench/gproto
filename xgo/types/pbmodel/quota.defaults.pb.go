@@ -120,3 +120,19 @@ func (this *UserQuota) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.ProjectQuota
+func (this *ProjectQuota) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.WorkspaceQuota
+func (this *WorkspaceQuota) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

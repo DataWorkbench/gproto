@@ -7585,72 +7585,92 @@ public final class PBRequestSpaceManage {
         getSpaceIdBytes();
 
     /**
-     * <code>string module = 3 [(.validator.field) = { ... }</code>
-     * @return The module.
+     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+     * @return The moduleName.
      */
-    java.lang.String getModule();
+    java.lang.String getModuleName();
     /**
-     * <code>string module = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for module.
+     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleName.
      */
     com.google.protobuf.ByteString
-        getModuleBytes();
+        getModuleNameBytes();
 
     /**
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+     * @return The apiName.
+     */
+    java.lang.String getApiName();
+    /**
+     * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
+     */
+    com.google.protobuf.ByteString
+        getApiNameBytes();
+
+    /**
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for opType.
      */
     int getOpTypeValue();
     /**
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The opType.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getOpType();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType();
 
     /**
-     * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-     * @return The opName.
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
-    java.lang.String getOpName();
+    int getSystemRolesCount();
     /**
-     * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for opName.
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
-    com.google.protobuf.ByteString
-        getOpNameBytes();
-
-    /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
-     */
-    int getRolesCount();
-    /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
-     */
-    boolean containsRoles(
+    boolean containsSystemRoles(
         java.lang.String key);
     /**
-     * Use {@link #getRolesMap()} instead.
+     * Use {@link #getSystemRolesMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.Boolean>
-    getRoles();
+    getSystemRoles();
     /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
     java.util.Map<java.lang.String, java.lang.Boolean>
-    getRolesMap();
+    getSystemRolesMap();
     /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
 
-    boolean getRolesOrDefault(
+    boolean getSystemRolesOrDefault(
         java.lang.String key,
         boolean defaultValue);
     /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
 
-    boolean getRolesOrThrow(
+    boolean getSystemRolesOrThrow(
         java.lang.String key);
   }
   /**
@@ -7672,9 +7692,9 @@ public final class PBRequestSpaceManage {
     private CheckPermission() {
       reqUserId_ = "";
       spaceId_ = "";
-      module_ = "";
+      moduleName_ = "";
+      apiName_ = "";
       opType_ = 0;
-      opName_ = "";
     }
 
     @java.lang.Override
@@ -7723,7 +7743,7 @@ public final class PBRequestSpaceManage {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              module_ = s;
+              moduleName_ = s;
               break;
             }
             case 32: {
@@ -7735,20 +7755,20 @@ public final class PBRequestSpaceManage {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              opName_ = s;
+              apiName_ = s;
               break;
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roles_ = com.google.protobuf.MapField.newMapField(
-                    RolesDefaultEntryHolder.defaultEntry);
+                systemRoles_ = com.google.protobuf.MapField.newMapField(
+                    SystemRolesDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
-              roles__ = input.readMessage(
-                  RolesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              roles_.getMutableMap().put(
-                  roles__.getKey(), roles__.getValue());
+              systemRoles__ = input.readMessage(
+                  SystemRolesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              systemRoles_.getMutableMap().put(
+                  systemRoles__.getKey(), systemRoles__.getValue());
               break;
             }
             default: {
@@ -7781,7 +7801,7 @@ public final class PBRequestSpaceManage {
         int number) {
       switch (number) {
         case 6:
-          return internalGetRoles();
+          return internalGetSystemRoles();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -7871,38 +7891,76 @@ public final class PBRequestSpaceManage {
       }
     }
 
-    public static final int MODULE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object module_;
+    public static final int MODULE_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object moduleName_;
     /**
-     * <code>string module = 3 [(.validator.field) = { ... }</code>
-     * @return The module.
+     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+     * @return The moduleName.
      */
     @java.lang.Override
-    public java.lang.String getModule() {
-      java.lang.Object ref = module_;
+    public java.lang.String getModuleName() {
+      java.lang.Object ref = moduleName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        module_ = s;
+        moduleName_ = s;
         return s;
       }
     }
     /**
-     * <code>string module = 3 [(.validator.field) = { ... }</code>
-     * @return The bytes for module.
+     * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for moduleName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getModuleBytes() {
-      java.lang.Object ref = module_;
+        getModuleNameBytes() {
+      java.lang.Object ref = moduleName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        module_ = b;
+        moduleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object apiName_;
+    /**
+     * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+     * @return The apiName.
+     */
+    @java.lang.Override
+    public java.lang.String getApiName() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiNameBytes() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7912,135 +7970,113 @@ public final class PBRequestSpaceManage {
     public static final int OP_TYPE_FIELD_NUMBER = 4;
     private int opType_;
     /**
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for opType.
      */
     @java.lang.Override public int getOpTypeValue() {
       return opType_;
     }
     /**
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The opType.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getOpType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.valueOf(opType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
     }
 
-    public static final int OP_NAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object opName_;
-    /**
-     * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-     * @return The opName.
-     */
-    @java.lang.Override
-    public java.lang.String getOpName() {
-      java.lang.Object ref = opName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        opName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-     * @return The bytes for opName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOpNameBytes() {
-      java.lang.Object ref = opName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        opName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROLES_FIELD_NUMBER = 6;
-    private static final class RolesDefaultEntryHolder {
+    public static final int SYSTEM_ROLES_FIELD_NUMBER = 6;
+    private static final class SystemRolesDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.Boolean> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.Boolean>newDefaultInstance(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_CheckPermission_RolesEntry_descriptor, 
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.internal_static_request_CheckPermission_SystemRolesEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BOOL,
                   false);
     }
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.Boolean> roles_;
+        java.lang.String, java.lang.Boolean> systemRoles_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
-    internalGetRoles() {
-      if (roles_ == null) {
+    internalGetSystemRoles() {
+      if (systemRoles_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            RolesDefaultEntryHolder.defaultEntry);
+            SystemRolesDefaultEntryHolder.defaultEntry);
       }
-      return roles_;
+      return systemRoles_;
     }
 
-    public int getRolesCount() {
-      return internalGetRoles().getMap().size();
+    public int getSystemRolesCount() {
+      return internalGetSystemRoles().getMap().size();
     }
     /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
 
     @java.lang.Override
-    public boolean containsRoles(
+    public boolean containsSystemRoles(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetRoles().getMap().containsKey(key);
+      return internalGetSystemRoles().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getRolesMap()} instead.
+     * Use {@link #getSystemRolesMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.Boolean> getRoles() {
-      return getRolesMap();
+    public java.util.Map<java.lang.String, java.lang.Boolean> getSystemRoles() {
+      return getSystemRolesMap();
     }
     /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.String, java.lang.Boolean> getRolesMap() {
-      return internalGetRoles().getMap();
+    public java.util.Map<java.lang.String, java.lang.Boolean> getSystemRolesMap() {
+      return internalGetSystemRoles().getMap();
     }
     /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
 
-    public boolean getRolesOrDefault(
+    public boolean getSystemRolesOrDefault(
         java.lang.String key,
         boolean defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.Boolean> map =
-          internalGetRoles().getMap();
+          internalGetSystemRoles().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+     * <pre>
+     * key(role_id) =&gt; (IsAllowed)
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
      */
     @java.lang.Override
 
-    public boolean getRolesOrThrow(
+    public boolean getSystemRolesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.Boolean> map =
-          internalGetRoles().getMap();
+          internalGetSystemRoles().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -8067,20 +8103,20 @@ public final class PBRequestSpaceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(module_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, module_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, moduleName_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {
+      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
         output.writeEnum(4, opType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, opName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, apiName_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
-          internalGetRoles(),
-          RolesDefaultEntryHolder.defaultEntry,
+          internalGetSystemRoles(),
+          SystemRolesDefaultEntryHolder.defaultEntry,
           6);
       unknownFields.writeTo(output);
     }
@@ -8097,25 +8133,25 @@ public final class PBRequestSpaceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(module_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, module_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, moduleName_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {
+      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, opType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, opName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, apiName_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.Boolean> entry
-           : internalGetRoles().getMap().entrySet()) {
+           : internalGetSystemRoles().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
-        roles__ = RolesDefaultEntryHolder.defaultEntry.newBuilderForType()
+        systemRoles__ = SystemRolesDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, roles__);
+            .computeMessageSize(6, systemRoles__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8136,13 +8172,13 @@ public final class PBRequestSpaceManage {
           .equals(other.getReqUserId())) return false;
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
-      if (!getModule()
-          .equals(other.getModule())) return false;
+      if (!getModuleName()
+          .equals(other.getModuleName())) return false;
+      if (!getApiName()
+          .equals(other.getApiName())) return false;
       if (opType_ != other.opType_) return false;
-      if (!getOpName()
-          .equals(other.getOpName())) return false;
-      if (!internalGetRoles().equals(
-          other.internalGetRoles())) return false;
+      if (!internalGetSystemRoles().equals(
+          other.internalGetSystemRoles())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8158,15 +8194,15 @@ public final class PBRequestSpaceManage {
       hash = (53 * hash) + getReqUserId().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
-      hash = (37 * hash) + MODULE_FIELD_NUMBER;
-      hash = (53 * hash) + getModule().hashCode();
+      hash = (37 * hash) + MODULE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleName().hashCode();
+      hash = (37 * hash) + API_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getApiName().hashCode();
       hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + opType_;
-      hash = (37 * hash) + OP_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getOpName().hashCode();
-      if (!internalGetRoles().getMap().isEmpty()) {
-        hash = (37 * hash) + ROLES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetRoles().hashCode();
+      if (!internalGetSystemRoles().getMap().isEmpty()) {
+        hash = (37 * hash) + SYSTEM_ROLES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSystemRoles().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -8284,7 +8320,7 @@ public final class PBRequestSpaceManage {
           int number) {
         switch (number) {
           case 6:
-            return internalGetRoles();
+            return internalGetSystemRoles();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -8295,7 +8331,7 @@ public final class PBRequestSpaceManage {
           int number) {
         switch (number) {
           case 6:
-            return internalGetMutableRoles();
+            return internalGetMutableSystemRoles();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -8331,13 +8367,13 @@ public final class PBRequestSpaceManage {
 
         spaceId_ = "";
 
-        module_ = "";
+        moduleName_ = "";
+
+        apiName_ = "";
 
         opType_ = 0;
 
-        opName_ = "";
-
-        internalGetMutableRoles().clear();
+        internalGetMutableSystemRoles().clear();
         return this;
       }
 
@@ -8367,11 +8403,11 @@ public final class PBRequestSpaceManage {
         int from_bitField0_ = bitField0_;
         result.reqUserId_ = reqUserId_;
         result.spaceId_ = spaceId_;
-        result.module_ = module_;
+        result.moduleName_ = moduleName_;
+        result.apiName_ = apiName_;
         result.opType_ = opType_;
-        result.opName_ = opName_;
-        result.roles_ = internalGetRoles();
-        result.roles_.makeImmutable();
+        result.systemRoles_ = internalGetSystemRoles();
+        result.systemRoles_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -8428,19 +8464,19 @@ public final class PBRequestSpaceManage {
           spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.getModule().isEmpty()) {
-          module_ = other.module_;
+        if (!other.getModuleName().isEmpty()) {
+          moduleName_ = other.moduleName_;
+          onChanged();
+        }
+        if (!other.getApiName().isEmpty()) {
+          apiName_ = other.apiName_;
           onChanged();
         }
         if (other.opType_ != 0) {
           setOpTypeValue(other.getOpTypeValue());
         }
-        if (!other.getOpName().isEmpty()) {
-          opName_ = other.opName_;
-          onChanged();
-        }
-        internalGetMutableRoles().mergeFrom(
-            other.internalGetRoles());
+        internalGetMutableSystemRoles().mergeFrom(
+            other.internalGetSystemRoles());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8623,92 +8659,168 @@ public final class PBRequestSpaceManage {
         return this;
       }
 
-      private java.lang.Object module_ = "";
+      private java.lang.Object moduleName_ = "";
       /**
-       * <code>string module = 3 [(.validator.field) = { ... }</code>
-       * @return The module.
+       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+       * @return The moduleName.
        */
-      public java.lang.String getModule() {
-        java.lang.Object ref = module_;
+      public java.lang.String getModuleName() {
+        java.lang.Object ref = moduleName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          module_ = s;
+          moduleName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string module = 3 [(.validator.field) = { ... }</code>
-       * @return The bytes for module.
+       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for moduleName.
        */
       public com.google.protobuf.ByteString
-          getModuleBytes() {
-        java.lang.Object ref = module_;
+          getModuleNameBytes() {
+        java.lang.Object ref = moduleName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          module_ = b;
+          moduleName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string module = 3 [(.validator.field) = { ... }</code>
-       * @param value The module to set.
+       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+       * @param value The moduleName to set.
        * @return This builder for chaining.
        */
-      public Builder setModule(
+      public Builder setModuleName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        module_ = value;
+        moduleName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string module = 3 [(.validator.field) = { ... }</code>
+       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearModule() {
+      public Builder clearModuleName() {
         
-        module_ = getDefaultInstance().getModule();
+        moduleName_ = getDefaultInstance().getModuleName();
         onChanged();
         return this;
       }
       /**
-       * <code>string module = 3 [(.validator.field) = { ... }</code>
-       * @param value The bytes for module to set.
+       * <code>string module_name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for moduleName to set.
        * @return This builder for chaining.
        */
-      public Builder setModuleBytes(
+      public Builder setModuleNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        module_ = value;
+        moduleName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiName_ = "";
+      /**
+       * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+       * @return The apiName.
+       */
+      public java.lang.String getApiName() {
+        java.lang.Object ref = apiName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiName.
+       */
+      public com.google.protobuf.ByteString
+          getApiNameBytes() {
+        java.lang.Object ref = apiName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+       * @param value The apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiName() {
+        
+        apiName_ = getDefaultInstance().getApiName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string api_name = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiName_ = value;
         onChanged();
         return this;
       }
 
       private int opType_ = 0;
       /**
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for opType.
        */
       @java.lang.Override public int getOpTypeValue() {
         return opType_;
       }
       /**
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for opType to set.
        * @return This builder for chaining.
        */
@@ -8719,21 +8831,21 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @return The opType.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getOpType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.valueOf(opType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
       }
       /**
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @param value The opType to set.
        * @return This builder for chaining.
        */
-      public Builder setOpType(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type value) {
+      public Builder setOpType(com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -8743,7 +8855,7 @@ public final class PBRequestSpaceManage {
         return this;
       }
       /**
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
@@ -8753,176 +8865,120 @@ public final class PBRequestSpaceManage {
         return this;
       }
 
-      private java.lang.Object opName_ = "";
-      /**
-       * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-       * @return The opName.
-       */
-      public java.lang.String getOpName() {
-        java.lang.Object ref = opName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          opName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-       * @return The bytes for opName.
-       */
-      public com.google.protobuf.ByteString
-          getOpNameBytes() {
-        java.lang.Object ref = opName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          opName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-       * @param value The opName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        opName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOpName() {
-        
-        opName_ = getDefaultInstance().getOpName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string op_name = 5 [(.validator.field) = { ... }</code>
-       * @param value The bytes for opName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        opName_ = value;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.MapField<
-          java.lang.String, java.lang.Boolean> roles_;
+          java.lang.String, java.lang.Boolean> systemRoles_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
-      internalGetRoles() {
-        if (roles_ == null) {
+      internalGetSystemRoles() {
+        if (systemRoles_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              RolesDefaultEntryHolder.defaultEntry);
+              SystemRolesDefaultEntryHolder.defaultEntry);
         }
-        return roles_;
+        return systemRoles_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
-      internalGetMutableRoles() {
+      internalGetMutableSystemRoles() {
         onChanged();;
-        if (roles_ == null) {
-          roles_ = com.google.protobuf.MapField.newMapField(
-              RolesDefaultEntryHolder.defaultEntry);
+        if (systemRoles_ == null) {
+          systemRoles_ = com.google.protobuf.MapField.newMapField(
+              SystemRolesDefaultEntryHolder.defaultEntry);
         }
-        if (!roles_.isMutable()) {
-          roles_ = roles_.copy();
+        if (!systemRoles_.isMutable()) {
+          systemRoles_ = systemRoles_.copy();
         }
-        return roles_;
+        return systemRoles_;
       }
 
-      public int getRolesCount() {
-        return internalGetRoles().getMap().size();
+      public int getSystemRolesCount() {
+        return internalGetSystemRoles().getMap().size();
       }
       /**
-       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       * <pre>
+       * key(role_id) =&gt; (IsAllowed)
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
        */
 
       @java.lang.Override
-      public boolean containsRoles(
+      public boolean containsSystemRoles(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetRoles().getMap().containsKey(key);
+        return internalGetSystemRoles().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getRolesMap()} instead.
+       * Use {@link #getSystemRolesMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.Boolean> getRoles() {
-        return getRolesMap();
+      public java.util.Map<java.lang.String, java.lang.Boolean> getSystemRoles() {
+        return getSystemRolesMap();
       }
       /**
-       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       * <pre>
+       * key(role_id) =&gt; (IsAllowed)
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.String, java.lang.Boolean> getRolesMap() {
-        return internalGetRoles().getMap();
+      public java.util.Map<java.lang.String, java.lang.Boolean> getSystemRolesMap() {
+        return internalGetSystemRoles().getMap();
       }
       /**
-       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       * <pre>
+       * key(role_id) =&gt; (IsAllowed)
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
        */
       @java.lang.Override
 
-      public boolean getRolesOrDefault(
+      public boolean getSystemRolesOrDefault(
           java.lang.String key,
           boolean defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.Boolean> map =
-            internalGetRoles().getMap();
+            internalGetSystemRoles().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       * <pre>
+       * key(role_id) =&gt; (IsAllowed)
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
        */
       @java.lang.Override
 
-      public boolean getRolesOrThrow(
+      public boolean getSystemRolesOrThrow(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.Boolean> map =
-            internalGetRoles().getMap();
+            internalGetSystemRoles().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearRoles() {
-        internalGetMutableRoles().getMutableMap()
+      public Builder clearSystemRoles() {
+        internalGetMutableSystemRoles().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       * <pre>
+       * key(role_id) =&gt; (IsAllowed)
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
        */
 
-      public Builder removeRoles(
+      public Builder removeSystemRoles(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableRoles().getMutableMap()
+        internalGetMutableSystemRoles().getMutableMap()
             .remove(key);
         return this;
       }
@@ -8931,28 +8987,36 @@ public final class PBRequestSpaceManage {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Boolean>
-      getMutableRoles() {
-        return internalGetMutableRoles().getMutableMap();
+      getMutableSystemRoles() {
+        return internalGetMutableSystemRoles().getMutableMap();
       }
       /**
-       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       * <pre>
+       * key(role_id) =&gt; (IsAllowed)
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
        */
-      public Builder putRoles(
+      public Builder putSystemRoles(
           java.lang.String key,
           boolean value) {
         if (key == null) { throw new NullPointerException("map key"); }
         
-        internalGetMutableRoles().getMutableMap()
+        internalGetMutableSystemRoles().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <code>map&lt;string, bool&gt; roles = 6 [(.validator.field) = { ... }</code>
+       * <pre>
+       * key(role_id) =&gt; (IsAllowed)
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; system_roles = 6 [(.validator.field) = { ... }</code>
        */
 
-      public Builder putAllRoles(
+      public Builder putAllSystemRoles(
           java.util.Map<java.lang.String, java.lang.Boolean> values) {
-        internalGetMutableRoles().getMutableMap()
+        internalGetMutableSystemRoles().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -9050,10 +9114,10 @@ public final class PBRequestSpaceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_CheckPermission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_CheckPermission_RolesEntry_descriptor;
+    internal_static_request_CheckPermission_SystemRolesEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_CheckPermission_RolesEntry_fieldAccessorTable;
+      internal_static_request_CheckPermission_SystemRolesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9067,42 +9131,43 @@ public final class PBRequestSpaceManage {
       "\022\007request\0323github.com/yu31/protoc-plugin" +
       "/proto/validator.proto\0322github.com/yu31/" +
       "protoc-plugin/proto/defaults.proto\032!prot" +
-      "o/types/model/workspace.proto\032\037proto/typ" +
-      "es/model/opaudit.proto\"\251\002\n\016ListWorkspace" +
-      "s\022 \n\007user_id\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022&\n\005l" +
-      "imit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006o" +
-      "ffset\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\003 \001(" +
-      "\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007updat" +
-      "ed\022\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\005 \001(\t\0224\n\006s" +
-      "tatus\030\007 \001(\0162\027.model.Workspace.StatusB\013\342\337" +
-      "\037\007\022\005\332\001\002X\001\022\014\n\004name\030\010 \001(\t\022\021\n\tspace_ids\030\t \003" +
-      "(\t\"f\n\020DeleteWorkspaces\022,\n\tspace_ids\030\001 \003(" +
-      "\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022$\n\013req_user" +
-      "_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\"g\n\021DisableWor" +
-      "kspaces\022,\n\tspace_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008" +
-      "dZ\n\302\001\007\312\002\004wks-\022$\n\013req_user_id\030\002 \001(\tB\017\342\337\037\013" +
-      "\022\t\302\001\006\200\002\001\210\002A\"z\n\020EnableWorkspaces\022,\n\tspace" +
-      "_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022\022\n" +
-      "\nresume_job\030\002 \001(\010\022$\n\013req_user_id\030\003 \001(\tB\017" +
-      "\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\"n\n\017CreateWorkspace\022\036\n\005ow" +
-      "ner\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022\036\n\004name\030\002 \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007" +
-      "\302\001\004\310\001\200\010\"u\n\017UpdateWorkspace\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\004name\030\002 \001(\tB" +
-      "\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302" +
-      "\001\004\310\001\200\010\":\n\021DescribeWorkspace\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\301\002\n\017CheckPerm" +
-      "ission\022$\n\013req_user_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002" +
-      "\001\210\002A\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022\034\n\006module\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\0225\n\007op_" +
-      "type\030\004 \001(\0162\025.model.Operation.TypeB\r\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\022\035\n\007op_name\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022" +
-      "?\n\005roles\030\006 \003(\0132#.request.CheckPermission" +
-      ".RolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\032,\n\nRolesEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001Bs\n$com.da" +
-      "taomnis.gproto.types.pbrequestB\024PBReques" +
-      "tSpaceManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "o/types/model/workspace.proto\032\034proto/typ" +
+      "es/model/role.proto\"\251\002\n\016ListWorkspaces\022 " +
+      "\n\007user_id\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022&\n\005limi" +
+      "t\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offs" +
+      "et\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\003 \001(\tB\'" +
+      "\342\337\037#\022!\302\001\036J\000J\002idJ\004nameJ\007createdJ\007updated\022" +
+      "\017\n\007reverse\030\004 \001(\010\022\016\n\006search\030\005 \001(\t\0224\n\006stat" +
+      "us\030\007 \001(\0162\027.model.Workspace.StatusB\013\342\337\037\007\022" +
+      "\005\332\001\002X\001\022\014\n\004name\030\010 \001(\t\022\021\n\tspace_ids\030\t \003(\t\"" +
+      "f\n\020DeleteWorkspaces\022,\n\tspace_ids\030\001 \003(\tB\031" +
+      "\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022$\n\013req_user_id" +
+      "\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\"g\n\021DisableWorksp" +
+      "aces\022,\n\tspace_ids\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n" +
+      "\302\001\007\312\002\004wks-\022$\n\013req_user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302" +
+      "\001\006\200\002\001\210\002A\"z\n\020EnableWorkspaces\022,\n\tspace_id" +
+      "s\030\001 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004wks-\022\022\n\nre" +
+      "sume_job\030\002 \001(\010\022$\n\013req_user_id\030\003 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\200\002\001\210\002A\"n\n\017CreateWorkspace\022\036\n\005owner" +
+      "\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002A\022\036\n\004name\030\002 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
+      "\310\001\200\010\"u\n\017UpdateWorkspace\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\036\n\004name\030\002 \001(\tB\020\342\337" +
+      "\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\033\n\004desc\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\310" +
+      "\001\200\010\":\n\021DescribeWorkspace\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\330\002\n\017CheckPermiss" +
+      "ion\022$\n\013req_user_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\001\210\002" +
+      "A\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022!\n\013module_name\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\036\n\010a" +
+      "pi_name\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\0223\n\007op_type\030\004" +
+      " \001(\0162\023.model.APIDesc.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022L\n\014system_roles\030\006 \003(\0132).request.CheckPe" +
+      "rmission.SystemRolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\0322" +
+      "\n\020SystemRolesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\010:\0028\001Bs\n$com.dataomnis.gproto.types" +
+      ".pbrequestB\024PBRequestSpaceManageP\000Z3gith" +
+      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
+      "requestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9110,7 +9175,7 @@ public final class PBRequestSpaceManage {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.getDescriptor(),
-          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelRole.getDescriptor(),
         });
     internal_static_request_ListWorkspaces_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -9159,12 +9224,12 @@ public final class PBRequestSpaceManage {
     internal_static_request_CheckPermission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CheckPermission_descriptor,
-        new java.lang.String[] { "ReqUserId", "SpaceId", "Module", "OpType", "OpName", "Roles", });
-    internal_static_request_CheckPermission_RolesEntry_descriptor =
+        new java.lang.String[] { "ReqUserId", "SpaceId", "ModuleName", "ApiName", "OpType", "SystemRoles", });
+    internal_static_request_CheckPermission_SystemRolesEntry_descriptor =
       internal_static_request_CheckPermission_descriptor.getNestedTypes().get(0);
-    internal_static_request_CheckPermission_RolesEntry_fieldAccessorTable = new
+    internal_static_request_CheckPermission_SystemRolesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_CheckPermission_RolesEntry_descriptor,
+        internal_static_request_CheckPermission_SystemRolesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -9175,7 +9240,7 @@ public final class PBRequestSpaceManage {
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.getDescriptor();
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

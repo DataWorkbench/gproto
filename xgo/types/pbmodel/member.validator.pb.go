@@ -9,6 +9,7 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strings "strings"
+	utf8 "unicode/utf8"
 )
 
 func (this *Role) _xxx_xxx_Validator_Validate_space_id() error {
@@ -62,6 +63,35 @@ func (this *Role) _xxx_xxx_Validator_Validate_status() error {
 	return nil
 }
 
+func (this *Role) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("Role", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
+	}
+	return nil
+}
+
+func (this *Role) _xxx_xxx_Validator_CheckIf_op_kind() bool {
+	if !(this.Modules != "") {
+		return false
+	}
+	return true
+}
+
+var _xxx_xxx_Validator_Role_InEnums_OpKind = map[APIDesc_Kind]bool{0: true, 1: true, 2: true}
+
+func (this *Role) _xxx_xxx_Validator_Validate_op_kind() error {
+	if !this._xxx_xxx_Validator_CheckIf_op_kind() {
+		return nil
+	}
+	if !(this.OpKind > 0) {
+		return protovalidator.FieldError1("Role", "the value of field 'op_kind' must be greater than '0'", protovalidator.Int32ToString(int32(this.OpKind)))
+	}
+	if !(_xxx_xxx_Validator_Role_InEnums_OpKind[this.OpKind]) {
+		return protovalidator.FieldError1("Role", "the value of field 'op_kind' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OpKind)))
+	}
+	return nil
+}
+
 // Set default value for message model.Role
 func (this *Role) Validate() error {
 	if this == nil {
@@ -80,6 +110,12 @@ func (this *Role) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_op_kind(); err != nil {
 		return err
 	}
 	return nil

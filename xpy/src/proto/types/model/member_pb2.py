@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import account_pb2 as proto_dot_types_dot_model_dot_account__pb2
+from proto.types.model import role_pb2 as proto_dot_types_dot_model_dot_role__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\rPBModelMemberP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1eproto/types/model/member.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1fproto/types/model/account.proto\"\xad\x02\n\x04Role\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x01\x98\x02\x80\x01\x12-\n\x04type\x18\x04 \x01(\x0e\x32\x10.model.Role.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x06status\x18\x05 \x01(\x0e\x32\x12.model.Role.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"-\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\n\n\x06System\x10\x01\x12\n\n\x06\x43ustom\x10\x02\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\xc2\x02\n\x06Member\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x07user_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x10\n\x08role_ids\x18\x04 \x01(\t\x12\x33\n\x06status\x18\x05 \x01(\x0e\x32\x14.model.Member.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1e\n\tuser_info\x18\x08 \x01(\x0b\x32\x0b.model.User\x12\x1a\n\x05roles\x18\t \x03(\x0b\x32\x0b.model.Role\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x42h\n\"com.dataomnis.gproto.types.pbmodelB\rPBModelMemberP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1eproto/types/model/member.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x1fproto/types/model/account.proto\x1a\x1cproto/types/model/role.proto\"\xd6\x03\n\x04Role\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x18\n\x02id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x01\x98\x02\x80\x01\x12-\n\x04type\x18\x04 \x01(\x0e\x32\x10.model.Role.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x06status\x18\x05 \x01(\x0e\x32\x12.model.Role.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x0f\n\x07modules\x18\x07 \x01(\t\x12I\n\x07op_kind\x18\x08 \x01(\x0e\x32\x13.model.APIDesc.KindB#\xe2\xdf\x1f\x12\n\x10\n\x07modules\x12\x05\xc2\x01\x02\"\x00\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x0c\n\x04\x61pis\x18\t \x01(\t\x12\x0f\n\x07\x63reated\x18\n \x01(\x03\x12\x0f\n\x07updated\x18\x0b \x01(\x03\"-\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\n\n\x06System\x10\x01\x12\n\n\x06\x43ustom\x10\x02\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\xc2\x02\n\x06Member\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x07user_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x10\n\x08role_ids\x18\x04 \x01(\t\x12\x33\n\x06status\x18\x05 \x01(\x0e\x32\x14.model.Member.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x06 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1e\n\tuser_info\x18\x08 \x01(\x0b\x32\x0b.model.User\x12\x1a\n\x05roles\x18\t \x03(\x0b\x32\x0b.model.Role\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x42h\n\"com.dataomnis.gproto.types.pbmodelB\rPBModelMemberP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_role__pb2.DESCRIPTOR,])
 
 
 
@@ -52,8 +53,8 @@ _ROLE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=331,
-  serialized_end=376,
+  serialized_start=530,
+  serialized_end=575,
 )
 _sym_db.RegisterEnumDescriptor(_ROLE_TYPE)
 
@@ -82,8 +83,8 @@ _ROLE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=378,
-  serialized_end=429,
+  serialized_start=577,
+  serialized_end=628,
 )
 _sym_db.RegisterEnumDescriptor(_ROLE_STATUS)
 
@@ -112,8 +113,8 @@ _MEMBER_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=378,
-  serialized_end=429,
+  serialized_start=577,
+  serialized_end=628,
 )
 _sym_db.RegisterEnumDescriptor(_MEMBER_STATUS)
 
@@ -161,6 +162,48 @@ _ROLE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='desc', full_name='model.Role.desc', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='modules', full_name='model.Role.modules', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='op_kind', full_name='model.Role.op_kind', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\022\n\020\n\007modules\022\005\302\001\002\"\000\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='apis', full_name='model.Role.apis', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='model.Role.created', index=9,
+      number=10, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updated', full_name='model.Role.updated', index=10,
+      number=11, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -175,8 +218,8 @@ _ROLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=128,
-  serialized_end=429,
+  serialized_start=158,
+  serialized_end=628,
 )
 
 
@@ -257,12 +300,13 @@ _MEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=432,
-  serialized_end=754,
+  serialized_start=631,
+  serialized_end=953,
 )
 
 _ROLE.fields_by_name['type'].enum_type = _ROLE_TYPE
 _ROLE.fields_by_name['status'].enum_type = _ROLE_STATUS
+_ROLE.fields_by_name['op_kind'].enum_type = proto_dot_types_dot_model_dot_role__pb2._APIDESC_KIND
 _ROLE_TYPE.containing_type = _ROLE
 _ROLE_STATUS.containing_type = _ROLE
 _MEMBER.fields_by_name['status'].enum_type = _MEMBER_STATUS
@@ -294,6 +338,8 @@ _ROLE.fields_by_name['id']._options = None
 _ROLE.fields_by_name['name']._options = None
 _ROLE.fields_by_name['type']._options = None
 _ROLE.fields_by_name['status']._options = None
+_ROLE.fields_by_name['desc']._options = None
+_ROLE.fields_by_name['op_kind']._options = None
 _MEMBER.fields_by_name['space_id']._options = None
 _MEMBER.fields_by_name['user_id']._options = None
 _MEMBER.fields_by_name['status']._options = None

@@ -4435,62 +4435,62 @@ public final class PBSyncManageSyncJob {
     /**
      * <pre>
      * elasticsearch source
-     * &#64;inject_tag: json:"elasticsearch_source"
+     * &#64;inject_tag: json:"elastic_search_source"
      * </pre>
      *
-     * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
-     * @return Whether the elasticsearchSource field is set.
+     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
+     * @return Whether the elasticSearchSource field is set.
      */
-    boolean hasElasticsearchSource();
+    boolean hasElasticSearchSource();
     /**
      * <pre>
      * elasticsearch source
-     * &#64;inject_tag: json:"elasticsearch_source"
+     * &#64;inject_tag: json:"elastic_search_source"
      * </pre>
      *
-     * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
-     * @return The elasticsearchSource.
+     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
+     * @return The elasticSearchSource.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource getElasticsearchSource();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource getElasticSearchSource();
     /**
      * <pre>
      * elasticsearch source
-     * &#64;inject_tag: json:"elasticsearch_source"
+     * &#64;inject_tag: json:"elastic_search_source"
      * </pre>
      *
-     * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder getElasticsearchSourceOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder();
 
     /**
      * <pre>
      * elasticsearch target
-     * &#64;inject_tag: json:"elasticsearch_target"
+     * &#64;inject_tag: json:"elastic_search_target"
      * </pre>
      *
-     * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
-     * @return Whether the elasticsearchTarget field is set.
+     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
+     * @return Whether the elasticSearchTarget field is set.
      */
-    boolean hasElasticsearchTarget();
+    boolean hasElasticSearchTarget();
     /**
      * <pre>
      * elasticsearch target
-     * &#64;inject_tag: json:"elasticsearch_target"
+     * &#64;inject_tag: json:"elastic_search_target"
      * </pre>
      *
-     * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
-     * @return The elasticsearchTarget.
+     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
+     * @return The elasticSearchTarget.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget getElasticsearchTarget();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget getElasticSearchTarget();
     /**
      * <pre>
      * elasticsearch target
-     * &#64;inject_tag: json:"elasticsearch_target"
+     * &#64;inject_tag: json:"elastic_search_target"
      * </pre>
      *
-     * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder getElasticsearchTargetOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder();
 
     /**
      * <pre>
@@ -4768,59 +4768,59 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"pgwal_source"
      * </pre>
      *
-     * <code>.model.PgwalSource pgwal_source = 24;</code>
-     * @return Whether the pgwalSource field is set.
+     * <code>.model.PgWalSource pg_wal_source = 24;</code>
+     * @return Whether the pgWalSource field is set.
      */
-    boolean hasPgwalSource();
+    boolean hasPgWalSource();
     /**
      * <pre>
      * pgwal source
      * &#64;inject_tag: json:"pgwal_source"
      * </pre>
      *
-     * <code>.model.PgwalSource pgwal_source = 24;</code>
-     * @return The pgwalSource.
+     * <code>.model.PgWalSource pg_wal_source = 24;</code>
+     * @return The pgWalSource.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource getPgwalSource();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource getPgWalSource();
     /**
      * <pre>
      * pgwal source
      * &#64;inject_tag: json:"pgwal_source"
      * </pre>
      *
-     * <code>.model.PgwalSource pgwal_source = 24;</code>
+     * <code>.model.PgWalSource pg_wal_source = 24;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSourceOrBuilder getPgwalSourceOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSourceOrBuilder getPgWalSourceOrBuilder();
 
     /**
      * <pre>
      * sqlservercdc source
-     * &#64;inject_tag: json:"sqlservercdc_source"
+     * &#64;inject_tag: json:"sqlserver_cdc_source"
      * </pre>
      *
-     * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
-     * @return Whether the sqlservercdcSource field is set.
+     * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
+     * @return Whether the sqlserverCdcSource field is set.
      */
-    boolean hasSqlservercdcSource();
+    boolean hasSqlserverCdcSource();
     /**
      * <pre>
      * sqlservercdc source
-     * &#64;inject_tag: json:"sqlservercdc_source"
+     * &#64;inject_tag: json:"sqlserver_cdc_source"
      * </pre>
      *
-     * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
-     * @return The sqlservercdcSource.
+     * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
+     * @return The sqlserverCdcSource.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource getSqlservercdcSource();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource getSqlserverCdcSource();
     /**
      * <pre>
      * sqlservercdc source
-     * &#64;inject_tag: json:"sqlservercdc_source"
+     * &#64;inject_tag: json:"sqlserver_cdc_source"
      * </pre>
      *
-     * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+     * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder getSqlservercdcSourceOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder getSqlserverCdcSourceOrBuilder();
 
     /**
      * <pre>
@@ -4828,29 +4828,29 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"logminer_source"
      * </pre>
      *
-     * <code>.model.LogminerSource logminer_source = 26;</code>
-     * @return Whether the logminerSource field is set.
+     * <code>.model.LogMinerSource log_miner_source = 26;</code>
+     * @return Whether the logMinerSource field is set.
      */
-    boolean hasLogminerSource();
+    boolean hasLogMinerSource();
     /**
      * <pre>
      * logminer source
      * &#64;inject_tag: json:"logminer_source"
      * </pre>
      *
-     * <code>.model.LogminerSource logminer_source = 26;</code>
-     * @return The logminerSource.
+     * <code>.model.LogMinerSource log_miner_source = 26;</code>
+     * @return The logMinerSource.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource getLogminerSource();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource getLogMinerSource();
     /**
      * <pre>
      * logminer source
      * &#64;inject_tag: json:"logminer_source"
      * </pre>
      *
-     * <code>.model.LogminerSource logminer_source = 26;</code>
+     * <code>.model.LogMinerSource log_miner_source = 26;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSourceOrBuilder getLogminerSourceOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder();
 
     /**
      * <pre>
@@ -5085,26 +5085,26 @@ public final class PBSyncManageSyncJob {
             }
             case 106: {
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder subBuilder = null;
-              if (elasticsearchSource_ != null) {
-                subBuilder = elasticsearchSource_.toBuilder();
+              if (elasticSearchSource_ != null) {
+                subBuilder = elasticSearchSource_.toBuilder();
               }
-              elasticsearchSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.parser(), extensionRegistry);
+              elasticSearchSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(elasticsearchSource_);
-                elasticsearchSource_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(elasticSearchSource_);
+                elasticSearchSource_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 114: {
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder subBuilder = null;
-              if (elasticsearchTarget_ != null) {
-                subBuilder = elasticsearchTarget_.toBuilder();
+              if (elasticSearchTarget_ != null) {
+                subBuilder = elasticSearchTarget_.toBuilder();
               }
-              elasticsearchTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.parser(), extensionRegistry);
+              elasticSearchTarget_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(elasticsearchTarget_);
-                elasticsearchTarget_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(elasticSearchTarget_);
+                elasticSearchTarget_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5227,40 +5227,40 @@ public final class PBSyncManageSyncJob {
               break;
             }
             case 194: {
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder subBuilder = null;
-              if (pgwalSource_ != null) {
-                subBuilder = pgwalSource_.toBuilder();
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder subBuilder = null;
+              if (pgWalSource_ != null) {
+                subBuilder = pgWalSource_.toBuilder();
               }
-              pgwalSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.parser(), extensionRegistry);
+              pgWalSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(pgwalSource_);
-                pgwalSource_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(pgWalSource_);
+                pgWalSource_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 202: {
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder subBuilder = null;
-              if (sqlservercdcSource_ != null) {
-                subBuilder = sqlservercdcSource_.toBuilder();
+              if (sqlserverCdcSource_ != null) {
+                subBuilder = sqlserverCdcSource_.toBuilder();
               }
-              sqlservercdcSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.parser(), extensionRegistry);
+              sqlserverCdcSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(sqlservercdcSource_);
-                sqlservercdcSource_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(sqlserverCdcSource_);
+                sqlserverCdcSource_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 210: {
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder subBuilder = null;
-              if (logminerSource_ != null) {
-                subBuilder = logminerSource_.toBuilder();
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder subBuilder = null;
+              if (logMinerSource_ != null) {
+                subBuilder = logMinerSource_.toBuilder();
               }
-              logminerSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.parser(), extensionRegistry);
+              logMinerSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(logminerSource_);
-                logminerSource_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(logMinerSource_);
+                logMinerSource_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5718,86 +5718,86 @@ public final class PBSyncManageSyncJob {
       return getMongodbTarget();
     }
 
-    public static final int ELASTICSEARCH_SOURCE_FIELD_NUMBER = 13;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource elasticsearchSource_;
+    public static final int ELASTIC_SEARCH_SOURCE_FIELD_NUMBER = 13;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource elasticSearchSource_;
     /**
      * <pre>
      * elasticsearch source
-     * &#64;inject_tag: json:"elasticsearch_source"
+     * &#64;inject_tag: json:"elastic_search_source"
      * </pre>
      *
-     * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
-     * @return Whether the elasticsearchSource field is set.
+     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
+     * @return Whether the elasticSearchSource field is set.
      */
     @java.lang.Override
-    public boolean hasElasticsearchSource() {
-      return elasticsearchSource_ != null;
+    public boolean hasElasticSearchSource() {
+      return elasticSearchSource_ != null;
     }
     /**
      * <pre>
      * elasticsearch source
-     * &#64;inject_tag: json:"elasticsearch_source"
+     * &#64;inject_tag: json:"elastic_search_source"
      * </pre>
      *
-     * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
-     * @return The elasticsearchSource.
+     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
+     * @return The elasticSearchSource.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource getElasticsearchSource() {
-      return elasticsearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.getDefaultInstance() : elasticsearchSource_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource getElasticSearchSource() {
+      return elasticSearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
     }
     /**
      * <pre>
      * elasticsearch source
-     * &#64;inject_tag: json:"elasticsearch_source"
+     * &#64;inject_tag: json:"elastic_search_source"
      * </pre>
      *
-     * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+     * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder getElasticsearchSourceOrBuilder() {
-      return getElasticsearchSource();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder() {
+      return getElasticSearchSource();
     }
 
-    public static final int ELASTICSEARCH_TARGET_FIELD_NUMBER = 14;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget elasticsearchTarget_;
+    public static final int ELASTIC_SEARCH_TARGET_FIELD_NUMBER = 14;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget elasticSearchTarget_;
     /**
      * <pre>
      * elasticsearch target
-     * &#64;inject_tag: json:"elasticsearch_target"
+     * &#64;inject_tag: json:"elastic_search_target"
      * </pre>
      *
-     * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
-     * @return Whether the elasticsearchTarget field is set.
+     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
+     * @return Whether the elasticSearchTarget field is set.
      */
     @java.lang.Override
-    public boolean hasElasticsearchTarget() {
-      return elasticsearchTarget_ != null;
+    public boolean hasElasticSearchTarget() {
+      return elasticSearchTarget_ != null;
     }
     /**
      * <pre>
      * elasticsearch target
-     * &#64;inject_tag: json:"elasticsearch_target"
+     * &#64;inject_tag: json:"elastic_search_target"
      * </pre>
      *
-     * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
-     * @return The elasticsearchTarget.
+     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
+     * @return The elasticSearchTarget.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget getElasticsearchTarget() {
-      return elasticsearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.getDefaultInstance() : elasticsearchTarget_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget getElasticSearchTarget() {
+      return elasticSearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
     }
     /**
      * <pre>
      * elasticsearch target
-     * &#64;inject_tag: json:"elasticsearch_target"
+     * &#64;inject_tag: json:"elastic_search_target"
      * </pre>
      *
-     * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+     * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder getElasticsearchTargetOrBuilder() {
-      return getElasticsearchTarget();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder() {
+      return getElasticSearchTarget();
     }
 
     public static final int HDFS_SOURCE_FIELD_NUMBER = 15;
@@ -6169,20 +6169,20 @@ public final class PBSyncManageSyncJob {
       return getBinlogSource();
     }
 
-    public static final int PGWAL_SOURCE_FIELD_NUMBER = 24;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource pgwalSource_;
+    public static final int PG_WAL_SOURCE_FIELD_NUMBER = 24;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource pgWalSource_;
     /**
      * <pre>
      * pgwal source
      * &#64;inject_tag: json:"pgwal_source"
      * </pre>
      *
-     * <code>.model.PgwalSource pgwal_source = 24;</code>
-     * @return Whether the pgwalSource field is set.
+     * <code>.model.PgWalSource pg_wal_source = 24;</code>
+     * @return Whether the pgWalSource field is set.
      */
     @java.lang.Override
-    public boolean hasPgwalSource() {
-      return pgwalSource_ != null;
+    public boolean hasPgWalSource() {
+      return pgWalSource_ != null;
     }
     /**
      * <pre>
@@ -6190,12 +6190,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"pgwal_source"
      * </pre>
      *
-     * <code>.model.PgwalSource pgwal_source = 24;</code>
-     * @return The pgwalSource.
+     * <code>.model.PgWalSource pg_wal_source = 24;</code>
+     * @return The pgWalSource.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource getPgwalSource() {
-      return pgwalSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.getDefaultInstance() : pgwalSource_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource getPgWalSource() {
+      return pgWalSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.getDefaultInstance() : pgWalSource_;
     }
     /**
      * <pre>
@@ -6203,68 +6203,68 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"pgwal_source"
      * </pre>
      *
-     * <code>.model.PgwalSource pgwal_source = 24;</code>
+     * <code>.model.PgWalSource pg_wal_source = 24;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSourceOrBuilder getPgwalSourceOrBuilder() {
-      return getPgwalSource();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSourceOrBuilder getPgWalSourceOrBuilder() {
+      return getPgWalSource();
     }
 
-    public static final int SQLSERVERCDC_SOURCE_FIELD_NUMBER = 25;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource sqlservercdcSource_;
+    public static final int SQLSERVER_CDC_SOURCE_FIELD_NUMBER = 25;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource sqlserverCdcSource_;
     /**
      * <pre>
      * sqlservercdc source
-     * &#64;inject_tag: json:"sqlservercdc_source"
+     * &#64;inject_tag: json:"sqlserver_cdc_source"
      * </pre>
      *
-     * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
-     * @return Whether the sqlservercdcSource field is set.
+     * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
+     * @return Whether the sqlserverCdcSource field is set.
      */
     @java.lang.Override
-    public boolean hasSqlservercdcSource() {
-      return sqlservercdcSource_ != null;
+    public boolean hasSqlserverCdcSource() {
+      return sqlserverCdcSource_ != null;
     }
     /**
      * <pre>
      * sqlservercdc source
-     * &#64;inject_tag: json:"sqlservercdc_source"
+     * &#64;inject_tag: json:"sqlserver_cdc_source"
      * </pre>
      *
-     * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
-     * @return The sqlservercdcSource.
+     * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
+     * @return The sqlserverCdcSource.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource getSqlservercdcSource() {
-      return sqlservercdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.getDefaultInstance() : sqlservercdcSource_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource getSqlserverCdcSource() {
+      return sqlserverCdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.getDefaultInstance() : sqlserverCdcSource_;
     }
     /**
      * <pre>
      * sqlservercdc source
-     * &#64;inject_tag: json:"sqlservercdc_source"
+     * &#64;inject_tag: json:"sqlserver_cdc_source"
      * </pre>
      *
-     * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+     * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder getSqlservercdcSourceOrBuilder() {
-      return getSqlservercdcSource();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder getSqlserverCdcSourceOrBuilder() {
+      return getSqlserverCdcSource();
     }
 
-    public static final int LOGMINER_SOURCE_FIELD_NUMBER = 26;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource logminerSource_;
+    public static final int LOG_MINER_SOURCE_FIELD_NUMBER = 26;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource logMinerSource_;
     /**
      * <pre>
      * logminer source
      * &#64;inject_tag: json:"logminer_source"
      * </pre>
      *
-     * <code>.model.LogminerSource logminer_source = 26;</code>
-     * @return Whether the logminerSource field is set.
+     * <code>.model.LogMinerSource log_miner_source = 26;</code>
+     * @return Whether the logMinerSource field is set.
      */
     @java.lang.Override
-    public boolean hasLogminerSource() {
-      return logminerSource_ != null;
+    public boolean hasLogMinerSource() {
+      return logMinerSource_ != null;
     }
     /**
      * <pre>
@@ -6272,12 +6272,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"logminer_source"
      * </pre>
      *
-     * <code>.model.LogminerSource logminer_source = 26;</code>
-     * @return The logminerSource.
+     * <code>.model.LogMinerSource log_miner_source = 26;</code>
+     * @return The logMinerSource.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource getLogminerSource() {
-      return logminerSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.getDefaultInstance() : logminerSource_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource getLogMinerSource() {
+      return logMinerSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.getDefaultInstance() : logMinerSource_;
     }
     /**
      * <pre>
@@ -6285,11 +6285,11 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"logminer_source"
      * </pre>
      *
-     * <code>.model.LogminerSource logminer_source = 26;</code>
+     * <code>.model.LogMinerSource log_miner_source = 26;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSourceOrBuilder getLogminerSourceOrBuilder() {
-      return getLogminerSource();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder() {
+      return getLogMinerSource();
     }
 
     public static final int REDIS_TARGET_FIELD_NUMBER = 27;
@@ -6472,11 +6472,11 @@ public final class PBSyncManageSyncJob {
       if (mongodbTarget_ != null) {
         output.writeMessage(12, getMongodbTarget());
       }
-      if (elasticsearchSource_ != null) {
-        output.writeMessage(13, getElasticsearchSource());
+      if (elasticSearchSource_ != null) {
+        output.writeMessage(13, getElasticSearchSource());
       }
-      if (elasticsearchTarget_ != null) {
-        output.writeMessage(14, getElasticsearchTarget());
+      if (elasticSearchTarget_ != null) {
+        output.writeMessage(14, getElasticSearchTarget());
       }
       if (hdfsSource_ != null) {
         output.writeMessage(15, getHdfsSource());
@@ -6505,14 +6505,14 @@ public final class PBSyncManageSyncJob {
       if (binlogSource_ != null) {
         output.writeMessage(23, getBinlogSource());
       }
-      if (pgwalSource_ != null) {
-        output.writeMessage(24, getPgwalSource());
+      if (pgWalSource_ != null) {
+        output.writeMessage(24, getPgWalSource());
       }
-      if (sqlservercdcSource_ != null) {
-        output.writeMessage(25, getSqlservercdcSource());
+      if (sqlserverCdcSource_ != null) {
+        output.writeMessage(25, getSqlserverCdcSource());
       }
-      if (logminerSource_ != null) {
-        output.writeMessage(26, getLogminerSource());
+      if (logMinerSource_ != null) {
+        output.writeMessage(26, getLogMinerSource());
       }
       if (redisTarget_ != null) {
         output.writeMessage(27, getRedisTarget());
@@ -6577,13 +6577,13 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getMongodbTarget());
       }
-      if (elasticsearchSource_ != null) {
+      if (elasticSearchSource_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getElasticsearchSource());
+          .computeMessageSize(13, getElasticSearchSource());
       }
-      if (elasticsearchTarget_ != null) {
+      if (elasticSearchTarget_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getElasticsearchTarget());
+          .computeMessageSize(14, getElasticSearchTarget());
       }
       if (hdfsSource_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -6621,17 +6621,17 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(23, getBinlogSource());
       }
-      if (pgwalSource_ != null) {
+      if (pgWalSource_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(24, getPgwalSource());
+          .computeMessageSize(24, getPgWalSource());
       }
-      if (sqlservercdcSource_ != null) {
+      if (sqlserverCdcSource_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, getSqlservercdcSource());
+          .computeMessageSize(25, getSqlserverCdcSource());
       }
-      if (logminerSource_ != null) {
+      if (logMinerSource_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(26, getLogminerSource());
+          .computeMessageSize(26, getLogMinerSource());
       }
       if (redisTarget_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -6695,15 +6695,15 @@ public final class PBSyncManageSyncJob {
         if (!getMongodbTarget()
             .equals(other.getMongodbTarget())) return false;
       }
-      if (hasElasticsearchSource() != other.hasElasticsearchSource()) return false;
-      if (hasElasticsearchSource()) {
-        if (!getElasticsearchSource()
-            .equals(other.getElasticsearchSource())) return false;
+      if (hasElasticSearchSource() != other.hasElasticSearchSource()) return false;
+      if (hasElasticSearchSource()) {
+        if (!getElasticSearchSource()
+            .equals(other.getElasticSearchSource())) return false;
       }
-      if (hasElasticsearchTarget() != other.hasElasticsearchTarget()) return false;
-      if (hasElasticsearchTarget()) {
-        if (!getElasticsearchTarget()
-            .equals(other.getElasticsearchTarget())) return false;
+      if (hasElasticSearchTarget() != other.hasElasticSearchTarget()) return false;
+      if (hasElasticSearchTarget()) {
+        if (!getElasticSearchTarget()
+            .equals(other.getElasticSearchTarget())) return false;
       }
       if (hasHdfsSource() != other.hasHdfsSource()) return false;
       if (hasHdfsSource()) {
@@ -6750,20 +6750,20 @@ public final class PBSyncManageSyncJob {
         if (!getBinlogSource()
             .equals(other.getBinlogSource())) return false;
       }
-      if (hasPgwalSource() != other.hasPgwalSource()) return false;
-      if (hasPgwalSource()) {
-        if (!getPgwalSource()
-            .equals(other.getPgwalSource())) return false;
+      if (hasPgWalSource() != other.hasPgWalSource()) return false;
+      if (hasPgWalSource()) {
+        if (!getPgWalSource()
+            .equals(other.getPgWalSource())) return false;
       }
-      if (hasSqlservercdcSource() != other.hasSqlservercdcSource()) return false;
-      if (hasSqlservercdcSource()) {
-        if (!getSqlservercdcSource()
-            .equals(other.getSqlservercdcSource())) return false;
+      if (hasSqlserverCdcSource() != other.hasSqlserverCdcSource()) return false;
+      if (hasSqlserverCdcSource()) {
+        if (!getSqlserverCdcSource()
+            .equals(other.getSqlserverCdcSource())) return false;
       }
-      if (hasLogminerSource() != other.hasLogminerSource()) return false;
-      if (hasLogminerSource()) {
-        if (!getLogminerSource()
-            .equals(other.getLogminerSource())) return false;
+      if (hasLogMinerSource() != other.hasLogMinerSource()) return false;
+      if (hasLogMinerSource()) {
+        if (!getLogMinerSource()
+            .equals(other.getLogMinerSource())) return false;
       }
       if (hasRedisTarget() != other.hasRedisTarget()) return false;
       if (hasRedisTarget()) {
@@ -6820,13 +6820,13 @@ public final class PBSyncManageSyncJob {
         hash = (37 * hash) + MONGODB_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getMongodbTarget().hashCode();
       }
-      if (hasElasticsearchSource()) {
-        hash = (37 * hash) + ELASTICSEARCH_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getElasticsearchSource().hashCode();
+      if (hasElasticSearchSource()) {
+        hash = (37 * hash) + ELASTIC_SEARCH_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getElasticSearchSource().hashCode();
       }
-      if (hasElasticsearchTarget()) {
-        hash = (37 * hash) + ELASTICSEARCH_TARGET_FIELD_NUMBER;
-        hash = (53 * hash) + getElasticsearchTarget().hashCode();
+      if (hasElasticSearchTarget()) {
+        hash = (37 * hash) + ELASTIC_SEARCH_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getElasticSearchTarget().hashCode();
       }
       if (hasHdfsSource()) {
         hash = (37 * hash) + HDFS_SOURCE_FIELD_NUMBER;
@@ -6864,17 +6864,17 @@ public final class PBSyncManageSyncJob {
         hash = (37 * hash) + BINLOG_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getBinlogSource().hashCode();
       }
-      if (hasPgwalSource()) {
-        hash = (37 * hash) + PGWAL_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getPgwalSource().hashCode();
+      if (hasPgWalSource()) {
+        hash = (37 * hash) + PG_WAL_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getPgWalSource().hashCode();
       }
-      if (hasSqlservercdcSource()) {
-        hash = (37 * hash) + SQLSERVERCDC_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getSqlservercdcSource().hashCode();
+      if (hasSqlserverCdcSource()) {
+        hash = (37 * hash) + SQLSERVER_CDC_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlserverCdcSource().hashCode();
       }
-      if (hasLogminerSource()) {
-        hash = (37 * hash) + LOGMINER_SOURCE_FIELD_NUMBER;
-        hash = (53 * hash) + getLogminerSource().hashCode();
+      if (hasLogMinerSource()) {
+        hash = (37 * hash) + LOG_MINER_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getLogMinerSource().hashCode();
       }
       if (hasRedisTarget()) {
         hash = (37 * hash) + REDIS_TARGET_FIELD_NUMBER;
@@ -7064,17 +7064,17 @@ public final class PBSyncManageSyncJob {
           mongodbTarget_ = null;
           mongodbTargetBuilder_ = null;
         }
-        if (elasticsearchSourceBuilder_ == null) {
-          elasticsearchSource_ = null;
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSource_ = null;
         } else {
-          elasticsearchSource_ = null;
-          elasticsearchSourceBuilder_ = null;
+          elasticSearchSource_ = null;
+          elasticSearchSourceBuilder_ = null;
         }
-        if (elasticsearchTargetBuilder_ == null) {
-          elasticsearchTarget_ = null;
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTarget_ = null;
         } else {
-          elasticsearchTarget_ = null;
-          elasticsearchTargetBuilder_ = null;
+          elasticSearchTarget_ = null;
+          elasticSearchTargetBuilder_ = null;
         }
         if (hdfsSourceBuilder_ == null) {
           hdfsSource_ = null;
@@ -7130,23 +7130,23 @@ public final class PBSyncManageSyncJob {
           binlogSource_ = null;
           binlogSourceBuilder_ = null;
         }
-        if (pgwalSourceBuilder_ == null) {
-          pgwalSource_ = null;
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSource_ = null;
         } else {
-          pgwalSource_ = null;
-          pgwalSourceBuilder_ = null;
+          pgWalSource_ = null;
+          pgWalSourceBuilder_ = null;
         }
-        if (sqlservercdcSourceBuilder_ == null) {
-          sqlservercdcSource_ = null;
+        if (sqlserverCdcSourceBuilder_ == null) {
+          sqlserverCdcSource_ = null;
         } else {
-          sqlservercdcSource_ = null;
-          sqlservercdcSourceBuilder_ = null;
+          sqlserverCdcSource_ = null;
+          sqlserverCdcSourceBuilder_ = null;
         }
-        if (logminerSourceBuilder_ == null) {
-          logminerSource_ = null;
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSource_ = null;
         } else {
-          logminerSource_ = null;
-          logminerSourceBuilder_ = null;
+          logMinerSource_ = null;
+          logMinerSourceBuilder_ = null;
         }
         if (redisTargetBuilder_ == null) {
           redisTarget_ = null;
@@ -7216,15 +7216,15 @@ public final class PBSyncManageSyncJob {
         } else {
           result.mongodbTarget_ = mongodbTargetBuilder_.build();
         }
-        if (elasticsearchSourceBuilder_ == null) {
-          result.elasticsearchSource_ = elasticsearchSource_;
+        if (elasticSearchSourceBuilder_ == null) {
+          result.elasticSearchSource_ = elasticSearchSource_;
         } else {
-          result.elasticsearchSource_ = elasticsearchSourceBuilder_.build();
+          result.elasticSearchSource_ = elasticSearchSourceBuilder_.build();
         }
-        if (elasticsearchTargetBuilder_ == null) {
-          result.elasticsearchTarget_ = elasticsearchTarget_;
+        if (elasticSearchTargetBuilder_ == null) {
+          result.elasticSearchTarget_ = elasticSearchTarget_;
         } else {
-          result.elasticsearchTarget_ = elasticsearchTargetBuilder_.build();
+          result.elasticSearchTarget_ = elasticSearchTargetBuilder_.build();
         }
         if (hdfsSourceBuilder_ == null) {
           result.hdfsSource_ = hdfsSource_;
@@ -7271,20 +7271,20 @@ public final class PBSyncManageSyncJob {
         } else {
           result.binlogSource_ = binlogSourceBuilder_.build();
         }
-        if (pgwalSourceBuilder_ == null) {
-          result.pgwalSource_ = pgwalSource_;
+        if (pgWalSourceBuilder_ == null) {
+          result.pgWalSource_ = pgWalSource_;
         } else {
-          result.pgwalSource_ = pgwalSourceBuilder_.build();
+          result.pgWalSource_ = pgWalSourceBuilder_.build();
         }
-        if (sqlservercdcSourceBuilder_ == null) {
-          result.sqlservercdcSource_ = sqlservercdcSource_;
+        if (sqlserverCdcSourceBuilder_ == null) {
+          result.sqlserverCdcSource_ = sqlserverCdcSource_;
         } else {
-          result.sqlservercdcSource_ = sqlservercdcSourceBuilder_.build();
+          result.sqlserverCdcSource_ = sqlserverCdcSourceBuilder_.build();
         }
-        if (logminerSourceBuilder_ == null) {
-          result.logminerSource_ = logminerSource_;
+        if (logMinerSourceBuilder_ == null) {
+          result.logMinerSource_ = logMinerSource_;
         } else {
-          result.logminerSource_ = logminerSourceBuilder_.build();
+          result.logMinerSource_ = logMinerSourceBuilder_.build();
         }
         if (redisTargetBuilder_ == null) {
           result.redisTarget_ = redisTarget_;
@@ -7384,11 +7384,11 @@ public final class PBSyncManageSyncJob {
         if (other.hasMongodbTarget()) {
           mergeMongodbTarget(other.getMongodbTarget());
         }
-        if (other.hasElasticsearchSource()) {
-          mergeElasticsearchSource(other.getElasticsearchSource());
+        if (other.hasElasticSearchSource()) {
+          mergeElasticSearchSource(other.getElasticSearchSource());
         }
-        if (other.hasElasticsearchTarget()) {
-          mergeElasticsearchTarget(other.getElasticsearchTarget());
+        if (other.hasElasticSearchTarget()) {
+          mergeElasticSearchTarget(other.getElasticSearchTarget());
         }
         if (other.hasHdfsSource()) {
           mergeHdfsSource(other.getHdfsSource());
@@ -7417,14 +7417,14 @@ public final class PBSyncManageSyncJob {
         if (other.hasBinlogSource()) {
           mergeBinlogSource(other.getBinlogSource());
         }
-        if (other.hasPgwalSource()) {
-          mergePgwalSource(other.getPgwalSource());
+        if (other.hasPgWalSource()) {
+          mergePgWalSource(other.getPgWalSource());
         }
-        if (other.hasSqlservercdcSource()) {
-          mergeSqlservercdcSource(other.getSqlservercdcSource());
+        if (other.hasSqlserverCdcSource()) {
+          mergeSqlserverCdcSource(other.getSqlserverCdcSource());
         }
-        if (other.hasLogminerSource()) {
-          mergeLogminerSource(other.getLogminerSource());
+        if (other.hasLogMinerSource()) {
+          mergeLogMinerSource(other.getLogMinerSource());
         }
         if (other.hasRedisTarget()) {
           mergeRedisTarget(other.getRedisTarget());
@@ -8657,54 +8657,54 @@ public final class PBSyncManageSyncJob {
         return mongodbTargetBuilder_;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource elasticsearchSource_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource elasticSearchSource_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder> elasticsearchSourceBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder> elasticSearchSourceBuilder_;
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
-       * @return Whether the elasticsearchSource field is set.
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
+       * @return Whether the elasticSearchSource field is set.
        */
-      public boolean hasElasticsearchSource() {
-        return elasticsearchSourceBuilder_ != null || elasticsearchSource_ != null;
+      public boolean hasElasticSearchSource() {
+        return elasticSearchSourceBuilder_ != null || elasticSearchSource_ != null;
       }
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
-       * @return The elasticsearchSource.
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
+       * @return The elasticSearchSource.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource getElasticsearchSource() {
-        if (elasticsearchSourceBuilder_ == null) {
-          return elasticsearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.getDefaultInstance() : elasticsearchSource_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource getElasticSearchSource() {
+        if (elasticSearchSourceBuilder_ == null) {
+          return elasticSearchSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
         } else {
-          return elasticsearchSourceBuilder_.getMessage();
+          return elasticSearchSourceBuilder_.getMessage();
         }
       }
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
        */
-      public Builder setElasticsearchSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource value) {
-        if (elasticsearchSourceBuilder_ == null) {
+      public Builder setElasticSearchSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource value) {
+        if (elasticSearchSourceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          elasticsearchSource_ = value;
+          elasticSearchSource_ = value;
           onChanged();
         } else {
-          elasticsearchSourceBuilder_.setMessage(value);
+          elasticSearchSourceBuilder_.setMessage(value);
         }
 
         return this;
@@ -8712,18 +8712,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
        */
-      public Builder setElasticsearchSource(
+      public Builder setElasticSearchSource(
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder builderForValue) {
-        if (elasticsearchSourceBuilder_ == null) {
-          elasticsearchSource_ = builderForValue.build();
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSource_ = builderForValue.build();
           onChanged();
         } else {
-          elasticsearchSourceBuilder_.setMessage(builderForValue.build());
+          elasticSearchSourceBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -8731,22 +8731,22 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
        */
-      public Builder mergeElasticsearchSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource value) {
-        if (elasticsearchSourceBuilder_ == null) {
-          if (elasticsearchSource_ != null) {
-            elasticsearchSource_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.newBuilder(elasticsearchSource_).mergeFrom(value).buildPartial();
+      public Builder mergeElasticSearchSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource value) {
+        if (elasticSearchSourceBuilder_ == null) {
+          if (elasticSearchSource_ != null) {
+            elasticSearchSource_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.newBuilder(elasticSearchSource_).mergeFrom(value).buildPartial();
           } else {
-            elasticsearchSource_ = value;
+            elasticSearchSource_ = value;
           }
           onChanged();
         } else {
-          elasticsearchSourceBuilder_.mergeFrom(value);
+          elasticSearchSourceBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -8754,18 +8754,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
        */
-      public Builder clearElasticsearchSource() {
-        if (elasticsearchSourceBuilder_ == null) {
-          elasticsearchSource_ = null;
+      public Builder clearElasticSearchSource() {
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSource_ = null;
           onChanged();
         } else {
-          elasticsearchSource_ = null;
-          elasticsearchSourceBuilder_ = null;
+          elasticSearchSource_ = null;
+          elasticSearchSourceBuilder_ = null;
         }
 
         return this;
@@ -8773,102 +8773,102 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder getElasticsearchSourceBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder getElasticSearchSourceBuilder() {
         
         onChanged();
-        return getElasticsearchSourceFieldBuilder().getBuilder();
+        return getElasticSearchSourceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder getElasticsearchSourceOrBuilder() {
-        if (elasticsearchSourceBuilder_ != null) {
-          return elasticsearchSourceBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder getElasticSearchSourceOrBuilder() {
+        if (elasticSearchSourceBuilder_ != null) {
+          return elasticSearchSourceBuilder_.getMessageOrBuilder();
         } else {
-          return elasticsearchSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.getDefaultInstance() : elasticsearchSource_;
+          return elasticSearchSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.getDefaultInstance() : elasticSearchSource_;
         }
       }
       /**
        * <pre>
        * elasticsearch source
-       * &#64;inject_tag: json:"elasticsearch_source"
+       * &#64;inject_tag: json:"elastic_search_source"
        * </pre>
        *
-       * <code>.model.ElasticSearchSource elasticsearch_source = 13;</code>
+       * <code>.model.ElasticSearchSource elastic_search_source = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder> 
-          getElasticsearchSourceFieldBuilder() {
-        if (elasticsearchSourceBuilder_ == null) {
-          elasticsearchSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getElasticSearchSourceFieldBuilder() {
+        if (elasticSearchSourceBuilder_ == null) {
+          elasticSearchSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchSourceOrBuilder>(
-                  getElasticsearchSource(),
+                  getElasticSearchSource(),
                   getParentForChildren(),
                   isClean());
-          elasticsearchSource_ = null;
+          elasticSearchSource_ = null;
         }
-        return elasticsearchSourceBuilder_;
+        return elasticSearchSourceBuilder_;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget elasticsearchTarget_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget elasticSearchTarget_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder> elasticsearchTargetBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder> elasticSearchTargetBuilder_;
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
-       * @return Whether the elasticsearchTarget field is set.
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
+       * @return Whether the elasticSearchTarget field is set.
        */
-      public boolean hasElasticsearchTarget() {
-        return elasticsearchTargetBuilder_ != null || elasticsearchTarget_ != null;
+      public boolean hasElasticSearchTarget() {
+        return elasticSearchTargetBuilder_ != null || elasticSearchTarget_ != null;
       }
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
-       * @return The elasticsearchTarget.
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
+       * @return The elasticSearchTarget.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget getElasticsearchTarget() {
-        if (elasticsearchTargetBuilder_ == null) {
-          return elasticsearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.getDefaultInstance() : elasticsearchTarget_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget getElasticSearchTarget() {
+        if (elasticSearchTargetBuilder_ == null) {
+          return elasticSearchTarget_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
         } else {
-          return elasticsearchTargetBuilder_.getMessage();
+          return elasticSearchTargetBuilder_.getMessage();
         }
       }
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
        */
-      public Builder setElasticsearchTarget(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget value) {
-        if (elasticsearchTargetBuilder_ == null) {
+      public Builder setElasticSearchTarget(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget value) {
+        if (elasticSearchTargetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          elasticsearchTarget_ = value;
+          elasticSearchTarget_ = value;
           onChanged();
         } else {
-          elasticsearchTargetBuilder_.setMessage(value);
+          elasticSearchTargetBuilder_.setMessage(value);
         }
 
         return this;
@@ -8876,18 +8876,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
        */
-      public Builder setElasticsearchTarget(
+      public Builder setElasticSearchTarget(
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder builderForValue) {
-        if (elasticsearchTargetBuilder_ == null) {
-          elasticsearchTarget_ = builderForValue.build();
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTarget_ = builderForValue.build();
           onChanged();
         } else {
-          elasticsearchTargetBuilder_.setMessage(builderForValue.build());
+          elasticSearchTargetBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -8895,22 +8895,22 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
        */
-      public Builder mergeElasticsearchTarget(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget value) {
-        if (elasticsearchTargetBuilder_ == null) {
-          if (elasticsearchTarget_ != null) {
-            elasticsearchTarget_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.newBuilder(elasticsearchTarget_).mergeFrom(value).buildPartial();
+      public Builder mergeElasticSearchTarget(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget value) {
+        if (elasticSearchTargetBuilder_ == null) {
+          if (elasticSearchTarget_ != null) {
+            elasticSearchTarget_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.newBuilder(elasticSearchTarget_).mergeFrom(value).buildPartial();
           } else {
-            elasticsearchTarget_ = value;
+            elasticSearchTarget_ = value;
           }
           onChanged();
         } else {
-          elasticsearchTargetBuilder_.mergeFrom(value);
+          elasticSearchTargetBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -8918,18 +8918,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
        */
-      public Builder clearElasticsearchTarget() {
-        if (elasticsearchTargetBuilder_ == null) {
-          elasticsearchTarget_ = null;
+      public Builder clearElasticSearchTarget() {
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTarget_ = null;
           onChanged();
         } else {
-          elasticsearchTarget_ = null;
-          elasticsearchTargetBuilder_ = null;
+          elasticSearchTarget_ = null;
+          elasticSearchTargetBuilder_ = null;
         }
 
         return this;
@@ -8937,52 +8937,52 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder getElasticsearchTargetBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder getElasticSearchTargetBuilder() {
         
         onChanged();
-        return getElasticsearchTargetFieldBuilder().getBuilder();
+        return getElasticSearchTargetFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder getElasticsearchTargetOrBuilder() {
-        if (elasticsearchTargetBuilder_ != null) {
-          return elasticsearchTargetBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder getElasticSearchTargetOrBuilder() {
+        if (elasticSearchTargetBuilder_ != null) {
+          return elasticSearchTargetBuilder_.getMessageOrBuilder();
         } else {
-          return elasticsearchTarget_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.getDefaultInstance() : elasticsearchTarget_;
+          return elasticSearchTarget_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.getDefaultInstance() : elasticSearchTarget_;
         }
       }
       /**
        * <pre>
        * elasticsearch target
-       * &#64;inject_tag: json:"elasticsearch_target"
+       * &#64;inject_tag: json:"elastic_search_target"
        * </pre>
        *
-       * <code>.model.ElasticSearchTarget elasticsearch_target = 14;</code>
+       * <code>.model.ElasticSearchTarget elastic_search_target = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder> 
-          getElasticsearchTargetFieldBuilder() {
-        if (elasticsearchTargetBuilder_ == null) {
-          elasticsearchTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getElasticSearchTargetFieldBuilder() {
+        if (elasticSearchTargetBuilder_ == null) {
+          elasticSearchTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTarget.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ElasticSearchTargetOrBuilder>(
-                  getElasticsearchTarget(),
+                  getElasticSearchTarget(),
                   getParentForChildren(),
                   isClean());
-          elasticsearchTarget_ = null;
+          elasticSearchTarget_ = null;
         }
-        return elasticsearchTargetBuilder_;
+        return elasticSearchTargetBuilder_;
       }
 
       private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.HdfsSource hdfsSource_;
@@ -10461,20 +10461,20 @@ public final class PBSyncManageSyncJob {
         return binlogSourceBuilder_;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource pgwalSource_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource pgWalSource_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSourceOrBuilder> pgwalSourceBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSourceOrBuilder> pgWalSourceBuilder_;
       /**
        * <pre>
        * pgwal source
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
-       * @return Whether the pgwalSource field is set.
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
+       * @return Whether the pgWalSource field is set.
        */
-      public boolean hasPgwalSource() {
-        return pgwalSourceBuilder_ != null || pgwalSource_ != null;
+      public boolean hasPgWalSource() {
+        return pgWalSourceBuilder_ != null || pgWalSource_ != null;
       }
       /**
        * <pre>
@@ -10482,14 +10482,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
-       * @return The pgwalSource.
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
+       * @return The pgWalSource.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource getPgwalSource() {
-        if (pgwalSourceBuilder_ == null) {
-          return pgwalSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.getDefaultInstance() : pgwalSource_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource getPgWalSource() {
+        if (pgWalSourceBuilder_ == null) {
+          return pgWalSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.getDefaultInstance() : pgWalSource_;
         } else {
-          return pgwalSourceBuilder_.getMessage();
+          return pgWalSourceBuilder_.getMessage();
         }
       }
       /**
@@ -10498,17 +10498,17 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
        */
-      public Builder setPgwalSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource value) {
-        if (pgwalSourceBuilder_ == null) {
+      public Builder setPgWalSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource value) {
+        if (pgWalSourceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          pgwalSource_ = value;
+          pgWalSource_ = value;
           onChanged();
         } else {
-          pgwalSourceBuilder_.setMessage(value);
+          pgWalSourceBuilder_.setMessage(value);
         }
 
         return this;
@@ -10519,15 +10519,15 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
        */
-      public Builder setPgwalSource(
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder builderForValue) {
-        if (pgwalSourceBuilder_ == null) {
-          pgwalSource_ = builderForValue.build();
+      public Builder setPgWalSource(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder builderForValue) {
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSource_ = builderForValue.build();
           onChanged();
         } else {
-          pgwalSourceBuilder_.setMessage(builderForValue.build());
+          pgWalSourceBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -10538,19 +10538,19 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
        */
-      public Builder mergePgwalSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource value) {
-        if (pgwalSourceBuilder_ == null) {
-          if (pgwalSource_ != null) {
-            pgwalSource_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.newBuilder(pgwalSource_).mergeFrom(value).buildPartial();
+      public Builder mergePgWalSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource value) {
+        if (pgWalSourceBuilder_ == null) {
+          if (pgWalSource_ != null) {
+            pgWalSource_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.newBuilder(pgWalSource_).mergeFrom(value).buildPartial();
           } else {
-            pgwalSource_ = value;
+            pgWalSource_ = value;
           }
           onChanged();
         } else {
-          pgwalSourceBuilder_.mergeFrom(value);
+          pgWalSourceBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -10561,15 +10561,15 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
        */
-      public Builder clearPgwalSource() {
-        if (pgwalSourceBuilder_ == null) {
-          pgwalSource_ = null;
+      public Builder clearPgWalSource() {
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSource_ = null;
           onChanged();
         } else {
-          pgwalSource_ = null;
-          pgwalSourceBuilder_ = null;
+          pgWalSource_ = null;
+          pgWalSourceBuilder_ = null;
         }
 
         return this;
@@ -10580,12 +10580,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder getPgwalSourceBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder getPgWalSourceBuilder() {
         
         onChanged();
-        return getPgwalSourceFieldBuilder().getBuilder();
+        return getPgWalSourceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
@@ -10593,14 +10593,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSourceOrBuilder getPgwalSourceOrBuilder() {
-        if (pgwalSourceBuilder_ != null) {
-          return pgwalSourceBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSourceOrBuilder getPgWalSourceOrBuilder() {
+        if (pgWalSourceBuilder_ != null) {
+          return pgWalSourceBuilder_.getMessageOrBuilder();
         } else {
-          return pgwalSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.getDefaultInstance() : pgwalSource_;
+          return pgWalSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.getDefaultInstance() : pgWalSource_;
         }
       }
       /**
@@ -10609,70 +10609,70 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pgwal_source"
        * </pre>
        *
-       * <code>.model.PgwalSource pgwal_source = 24;</code>
+       * <code>.model.PgWalSource pg_wal_source = 24;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSourceOrBuilder> 
-          getPgwalSourceFieldBuilder() {
-        if (pgwalSourceBuilder_ == null) {
-          pgwalSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSourceOrBuilder>(
-                  getPgwalSource(),
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSourceOrBuilder> 
+          getPgWalSourceFieldBuilder() {
+        if (pgWalSourceBuilder_ == null) {
+          pgWalSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSourceOrBuilder>(
+                  getPgWalSource(),
                   getParentForChildren(),
                   isClean());
-          pgwalSource_ = null;
+          pgWalSource_ = null;
         }
-        return pgwalSourceBuilder_;
+        return pgWalSourceBuilder_;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource sqlservercdcSource_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource sqlserverCdcSource_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder> sqlservercdcSourceBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder> sqlserverCdcSourceBuilder_;
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
-       * @return Whether the sqlservercdcSource field is set.
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
+       * @return Whether the sqlserverCdcSource field is set.
        */
-      public boolean hasSqlservercdcSource() {
-        return sqlservercdcSourceBuilder_ != null || sqlservercdcSource_ != null;
+      public boolean hasSqlserverCdcSource() {
+        return sqlserverCdcSourceBuilder_ != null || sqlserverCdcSource_ != null;
       }
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
-       * @return The sqlservercdcSource.
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
+       * @return The sqlserverCdcSource.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource getSqlservercdcSource() {
-        if (sqlservercdcSourceBuilder_ == null) {
-          return sqlservercdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.getDefaultInstance() : sqlservercdcSource_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource getSqlserverCdcSource() {
+        if (sqlserverCdcSourceBuilder_ == null) {
+          return sqlserverCdcSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.getDefaultInstance() : sqlserverCdcSource_;
         } else {
-          return sqlservercdcSourceBuilder_.getMessage();
+          return sqlserverCdcSourceBuilder_.getMessage();
         }
       }
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
        */
-      public Builder setSqlservercdcSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource value) {
-        if (sqlservercdcSourceBuilder_ == null) {
+      public Builder setSqlserverCdcSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource value) {
+        if (sqlserverCdcSourceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          sqlservercdcSource_ = value;
+          sqlserverCdcSource_ = value;
           onChanged();
         } else {
-          sqlservercdcSourceBuilder_.setMessage(value);
+          sqlserverCdcSourceBuilder_.setMessage(value);
         }
 
         return this;
@@ -10680,18 +10680,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
        */
-      public Builder setSqlservercdcSource(
+      public Builder setSqlserverCdcSource(
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder builderForValue) {
-        if (sqlservercdcSourceBuilder_ == null) {
-          sqlservercdcSource_ = builderForValue.build();
+        if (sqlserverCdcSourceBuilder_ == null) {
+          sqlserverCdcSource_ = builderForValue.build();
           onChanged();
         } else {
-          sqlservercdcSourceBuilder_.setMessage(builderForValue.build());
+          sqlserverCdcSourceBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -10699,22 +10699,22 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
        */
-      public Builder mergeSqlservercdcSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource value) {
-        if (sqlservercdcSourceBuilder_ == null) {
-          if (sqlservercdcSource_ != null) {
-            sqlservercdcSource_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.newBuilder(sqlservercdcSource_).mergeFrom(value).buildPartial();
+      public Builder mergeSqlserverCdcSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource value) {
+        if (sqlserverCdcSourceBuilder_ == null) {
+          if (sqlserverCdcSource_ != null) {
+            sqlserverCdcSource_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.newBuilder(sqlserverCdcSource_).mergeFrom(value).buildPartial();
           } else {
-            sqlservercdcSource_ = value;
+            sqlserverCdcSource_ = value;
           }
           onChanged();
         } else {
-          sqlservercdcSourceBuilder_.mergeFrom(value);
+          sqlserverCdcSourceBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -10722,18 +10722,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
        */
-      public Builder clearSqlservercdcSource() {
-        if (sqlservercdcSourceBuilder_ == null) {
-          sqlservercdcSource_ = null;
+      public Builder clearSqlserverCdcSource() {
+        if (sqlserverCdcSourceBuilder_ == null) {
+          sqlserverCdcSource_ = null;
           onChanged();
         } else {
-          sqlservercdcSource_ = null;
-          sqlservercdcSourceBuilder_ = null;
+          sqlserverCdcSource_ = null;
+          sqlserverCdcSourceBuilder_ = null;
         }
 
         return this;
@@ -10741,68 +10741,68 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder getSqlservercdcSourceBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder getSqlserverCdcSourceBuilder() {
         
         onChanged();
-        return getSqlservercdcSourceFieldBuilder().getBuilder();
+        return getSqlserverCdcSourceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder getSqlservercdcSourceOrBuilder() {
-        if (sqlservercdcSourceBuilder_ != null) {
-          return sqlservercdcSourceBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder getSqlserverCdcSourceOrBuilder() {
+        if (sqlserverCdcSourceBuilder_ != null) {
+          return sqlserverCdcSourceBuilder_.getMessageOrBuilder();
         } else {
-          return sqlservercdcSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.getDefaultInstance() : sqlservercdcSource_;
+          return sqlserverCdcSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.getDefaultInstance() : sqlserverCdcSource_;
         }
       }
       /**
        * <pre>
        * sqlservercdc source
-       * &#64;inject_tag: json:"sqlservercdc_source"
+       * &#64;inject_tag: json:"sqlserver_cdc_source"
        * </pre>
        *
-       * <code>.model.SqlServerCdcSource sqlservercdc_source = 25;</code>
+       * <code>.model.SqlServerCdcSource sqlserver_cdc_source = 25;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder> 
-          getSqlservercdcSourceFieldBuilder() {
-        if (sqlservercdcSourceBuilder_ == null) {
-          sqlservercdcSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getSqlserverCdcSourceFieldBuilder() {
+        if (sqlserverCdcSourceBuilder_ == null) {
+          sqlserverCdcSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SqlServerCdcSourceOrBuilder>(
-                  getSqlservercdcSource(),
+                  getSqlserverCdcSource(),
                   getParentForChildren(),
                   isClean());
-          sqlservercdcSource_ = null;
+          sqlserverCdcSource_ = null;
         }
-        return sqlservercdcSourceBuilder_;
+        return sqlserverCdcSourceBuilder_;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource logminerSource_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource logMinerSource_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSourceOrBuilder> logminerSourceBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSourceOrBuilder> logMinerSourceBuilder_;
       /**
        * <pre>
        * logminer source
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
-       * @return Whether the logminerSource field is set.
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
+       * @return Whether the logMinerSource field is set.
        */
-      public boolean hasLogminerSource() {
-        return logminerSourceBuilder_ != null || logminerSource_ != null;
+      public boolean hasLogMinerSource() {
+        return logMinerSourceBuilder_ != null || logMinerSource_ != null;
       }
       /**
        * <pre>
@@ -10810,14 +10810,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
-       * @return The logminerSource.
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
+       * @return The logMinerSource.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource getLogminerSource() {
-        if (logminerSourceBuilder_ == null) {
-          return logminerSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.getDefaultInstance() : logminerSource_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource getLogMinerSource() {
+        if (logMinerSourceBuilder_ == null) {
+          return logMinerSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.getDefaultInstance() : logMinerSource_;
         } else {
-          return logminerSourceBuilder_.getMessage();
+          return logMinerSourceBuilder_.getMessage();
         }
       }
       /**
@@ -10826,17 +10826,17 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
        */
-      public Builder setLogminerSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource value) {
-        if (logminerSourceBuilder_ == null) {
+      public Builder setLogMinerSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource value) {
+        if (logMinerSourceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          logminerSource_ = value;
+          logMinerSource_ = value;
           onChanged();
         } else {
-          logminerSourceBuilder_.setMessage(value);
+          logMinerSourceBuilder_.setMessage(value);
         }
 
         return this;
@@ -10847,15 +10847,15 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
        */
-      public Builder setLogminerSource(
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder builderForValue) {
-        if (logminerSourceBuilder_ == null) {
-          logminerSource_ = builderForValue.build();
+      public Builder setLogMinerSource(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder builderForValue) {
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSource_ = builderForValue.build();
           onChanged();
         } else {
-          logminerSourceBuilder_.setMessage(builderForValue.build());
+          logMinerSourceBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -10866,19 +10866,19 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
        */
-      public Builder mergeLogminerSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource value) {
-        if (logminerSourceBuilder_ == null) {
-          if (logminerSource_ != null) {
-            logminerSource_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.newBuilder(logminerSource_).mergeFrom(value).buildPartial();
+      public Builder mergeLogMinerSource(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource value) {
+        if (logMinerSourceBuilder_ == null) {
+          if (logMinerSource_ != null) {
+            logMinerSource_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.newBuilder(logMinerSource_).mergeFrom(value).buildPartial();
           } else {
-            logminerSource_ = value;
+            logMinerSource_ = value;
           }
           onChanged();
         } else {
-          logminerSourceBuilder_.mergeFrom(value);
+          logMinerSourceBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -10889,15 +10889,15 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
        */
-      public Builder clearLogminerSource() {
-        if (logminerSourceBuilder_ == null) {
-          logminerSource_ = null;
+      public Builder clearLogMinerSource() {
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSource_ = null;
           onChanged();
         } else {
-          logminerSource_ = null;
-          logminerSourceBuilder_ = null;
+          logMinerSource_ = null;
+          logMinerSourceBuilder_ = null;
         }
 
         return this;
@@ -10908,12 +10908,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder getLogminerSourceBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder getLogMinerSourceBuilder() {
         
         onChanged();
-        return getLogminerSourceFieldBuilder().getBuilder();
+        return getLogMinerSourceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
@@ -10921,14 +10921,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSourceOrBuilder getLogminerSourceOrBuilder() {
-        if (logminerSourceBuilder_ != null) {
-          return logminerSourceBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSourceOrBuilder getLogMinerSourceOrBuilder() {
+        if (logMinerSourceBuilder_ != null) {
+          return logMinerSourceBuilder_.getMessageOrBuilder();
         } else {
-          return logminerSource_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.getDefaultInstance() : logminerSource_;
+          return logMinerSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.getDefaultInstance() : logMinerSource_;
         }
       }
       /**
@@ -10937,20 +10937,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"logminer_source"
        * </pre>
        *
-       * <code>.model.LogminerSource logminer_source = 26;</code>
+       * <code>.model.LogMinerSource log_miner_source = 26;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSourceOrBuilder> 
-          getLogminerSourceFieldBuilder() {
-        if (logminerSourceBuilder_ == null) {
-          logminerSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSourceOrBuilder>(
-                  getLogminerSource(),
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSourceOrBuilder> 
+          getLogMinerSourceFieldBuilder() {
+        if (logMinerSourceBuilder_ == null) {
+          logMinerSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSourceOrBuilder>(
+                  getLogMinerSource(),
                   getParentForChildren(),
                   isClean());
-          logminerSource_ = null;
+          logMinerSource_ = null;
         }
-        return logminerSourceBuilder_;
+        return logMinerSourceBuilder_;
       }
 
       private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RedisTarget redisTarget_;
@@ -16941,25 +16941,25 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * splitpk
-     * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+     * split_pk
+     * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
      * </pre>
      *
-     * <code>string splitpk = 5;</code>
-     * @return The splitpk.
+     * <code>string split_pk = 5;</code>
+     * @return The splitPk.
      */
-    java.lang.String getSplitpk();
+    java.lang.String getSplitPk();
     /**
      * <pre>
-     * splitpk
-     * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+     * split_pk
+     * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
      * </pre>
      *
-     * <code>string splitpk = 5;</code>
-     * @return The bytes for splitpk.
+     * <code>string split_pk = 5;</code>
+     * @return The bytes for splitPk.
      */
     com.google.protobuf.ByteString
-        getSplitpkBytes();
+        getSplitPkBytes();
   }
   /**
    * Protobuf type {@code model.RelationaldbSource}
@@ -16978,7 +16978,7 @@ public final class PBSyncManageSyncJob {
       table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       schema_ = "";
       where_ = "";
-      splitpk_ = "";
+      splitPk_ = "";
     }
 
     @java.lang.Override
@@ -17045,7 +17045,7 @@ public final class PBSyncManageSyncJob {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              splitpk_ = s;
+              splitPk_ = s;
               break;
             }
             default: {
@@ -17302,48 +17302,48 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int SPLITPK_FIELD_NUMBER = 5;
-    private volatile java.lang.Object splitpk_;
+    public static final int SPLIT_PK_FIELD_NUMBER = 5;
+    private volatile java.lang.Object splitPk_;
     /**
      * <pre>
-     * splitpk
-     * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+     * split_pk
+     * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
      * </pre>
      *
-     * <code>string splitpk = 5;</code>
-     * @return The splitpk.
+     * <code>string split_pk = 5;</code>
+     * @return The splitPk.
      */
     @java.lang.Override
-    public java.lang.String getSplitpk() {
-      java.lang.Object ref = splitpk_;
+    public java.lang.String getSplitPk() {
+      java.lang.Object ref = splitPk_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        splitpk_ = s;
+        splitPk_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * splitpk
-     * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+     * split_pk
+     * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
      * </pre>
      *
-     * <code>string splitpk = 5;</code>
-     * @return The bytes for splitpk.
+     * <code>string split_pk = 5;</code>
+     * @return The bytes for splitPk.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSplitpkBytes() {
-      java.lang.Object ref = splitpk_;
+        getSplitPkBytes() {
+      java.lang.Object ref = splitPk_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        splitpk_ = b;
+        splitPk_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -17376,8 +17376,8 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(where_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, where_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitpk_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, splitpk_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitPk_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, splitPk_);
       }
       unknownFields.writeTo(output);
     }
@@ -17406,8 +17406,8 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(where_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, where_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitpk_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, splitpk_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitPk_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, splitPk_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17432,8 +17432,8 @@ public final class PBSyncManageSyncJob {
           .equals(other.getSchema())) return false;
       if (!getWhere()
           .equals(other.getWhere())) return false;
-      if (!getSplitpk()
-          .equals(other.getSplitpk())) return false;
+      if (!getSplitPk()
+          .equals(other.getSplitPk())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17457,8 +17457,8 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + getSchema().hashCode();
       hash = (37 * hash) + WHERE_FIELD_NUMBER;
       hash = (53 * hash) + getWhere().hashCode();
-      hash = (37 * hash) + SPLITPK_FIELD_NUMBER;
-      hash = (53 * hash) + getSplitpk().hashCode();
+      hash = (37 * hash) + SPLIT_PK_FIELD_NUMBER;
+      hash = (53 * hash) + getSplitPk().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17605,7 +17605,7 @@ public final class PBSyncManageSyncJob {
 
         where_ = "";
 
-        splitpk_ = "";
+        splitPk_ = "";
 
         return this;
       }
@@ -17650,7 +17650,7 @@ public final class PBSyncManageSyncJob {
         result.table_ = table_;
         result.schema_ = schema_;
         result.where_ = where_;
-        result.splitpk_ = splitpk_;
+        result.splitPk_ = splitPk_;
         onBuilt();
         return result;
       }
@@ -17743,8 +17743,8 @@ public final class PBSyncManageSyncJob {
           where_ = other.where_;
           onChanged();
         }
-        if (!other.getSplitpk().isEmpty()) {
-          splitpk_ = other.splitpk_;
+        if (!other.getSplitPk().isEmpty()) {
+          splitPk_ = other.splitPk_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -18464,23 +18464,23 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object splitpk_ = "";
+      private java.lang.Object splitPk_ = "";
       /**
        * <pre>
-       * splitpk
-       * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+       * split_pk
+       * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
        * </pre>
        *
-       * <code>string splitpk = 5;</code>
-       * @return The splitpk.
+       * <code>string split_pk = 5;</code>
+       * @return The splitPk.
        */
-      public java.lang.String getSplitpk() {
-        java.lang.Object ref = splitpk_;
+      public java.lang.String getSplitPk() {
+        java.lang.Object ref = splitPk_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          splitpk_ = s;
+          splitPk_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -18488,21 +18488,21 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * splitpk
-       * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+       * split_pk
+       * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
        * </pre>
        *
-       * <code>string splitpk = 5;</code>
-       * @return The bytes for splitpk.
+       * <code>string split_pk = 5;</code>
+       * @return The bytes for splitPk.
        */
       public com.google.protobuf.ByteString
-          getSplitpkBytes() {
-        java.lang.Object ref = splitpk_;
+          getSplitPkBytes() {
+        java.lang.Object ref = splitPk_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          splitpk_ = b;
+          splitPk_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -18510,57 +18510,57 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * splitpk
-       * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+       * split_pk
+       * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
        * </pre>
        *
-       * <code>string splitpk = 5;</code>
-       * @param value The splitpk to set.
+       * <code>string split_pk = 5;</code>
+       * @param value The splitPk to set.
        * @return This builder for chaining.
        */
-      public Builder setSplitpk(
+      public Builder setSplitPk(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        splitpk_ = value;
+        splitPk_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * splitpk
-       * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+       * split_pk
+       * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
        * </pre>
        *
-       * <code>string splitpk = 5;</code>
+       * <code>string split_pk = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSplitpk() {
+      public Builder clearSplitPk() {
         
-        splitpk_ = getDefaultInstance().getSplitpk();
+        splitPk_ = getDefaultInstance().getSplitPk();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * splitpk
-       * &#64;inject_tag: json:"splitpk" swaggerignore:"true"
+       * split_pk
+       * &#64;inject_tag: json:"split_pk" swaggerignore:"true"
        * </pre>
        *
-       * <code>string splitpk = 5;</code>
-       * @param value The bytes for splitpk to set.
+       * <code>string split_pk = 5;</code>
+       * @param value The bytes for splitPk to set.
        * @return This builder for chaining.
        */
-      public Builder setSplitpkBytes(
+      public Builder setSplitPkBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        splitpk_ = value;
+        splitPk_ = value;
         onChanged();
         return this;
       }
@@ -18743,21 +18743,44 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string pre_sql = 4;</code>
-     * @return The preSql.
+     * <code>repeated string pre_sql = 4;</code>
+     * @return A list containing the preSql.
      */
-    java.lang.String getPreSql();
+    java.util.List<java.lang.String>
+        getPreSqlList();
     /**
      * <pre>
      * pre sql
      * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string pre_sql = 4;</code>
-     * @return The bytes for preSql.
+     * <code>repeated string pre_sql = 4;</code>
+     * @return The count of preSql.
+     */
+    int getPreSqlCount();
+    /**
+     * <pre>
+     * pre sql
+     * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string pre_sql = 4;</code>
+     * @param index The index of the element to return.
+     * @return The preSql at the given index.
+     */
+    java.lang.String getPreSql(int index);
+    /**
+     * <pre>
+     * pre sql
+     * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string pre_sql = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the preSql at the given index.
      */
     com.google.protobuf.ByteString
-        getPreSqlBytes();
+        getPreSqlBytes(int index);
 
     /**
      * <pre>
@@ -18765,21 +18788,44 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string post_sql = 5;</code>
-     * @return The postSql.
+     * <code>repeated string post_sql = 5;</code>
+     * @return A list containing the postSql.
      */
-    java.lang.String getPostSql();
+    java.util.List<java.lang.String>
+        getPostSqlList();
     /**
      * <pre>
      * post sql
      * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string post_sql = 5;</code>
-     * @return The bytes for postSql.
+     * <code>repeated string post_sql = 5;</code>
+     * @return The count of postSql.
+     */
+    int getPostSqlCount();
+    /**
+     * <pre>
+     * post sql
+     * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string post_sql = 5;</code>
+     * @param index The index of the element to return.
+     * @return The postSql at the given index.
+     */
+    java.lang.String getPostSql(int index);
+    /**
+     * <pre>
+     * post sql
+     * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string post_sql = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the postSql at the given index.
      */
     com.google.protobuf.ByteString
-        getPostSqlBytes();
+        getPostSqlBytes(int index);
 
     /**
      * <pre>
@@ -18809,21 +18855,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string batch_size = 7;</code>
+     * <code>int32 batch_size = 7;</code>
      * @return The batchSize.
      */
-    java.lang.String getBatchSize();
-    /**
-     * <pre>
-     * batch size
-     * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string batch_size = 7;</code>
-     * @return The bytes for batchSize.
-     */
-    com.google.protobuf.ByteString
-        getBatchSizeBytes();
+    int getBatchSize();
 
     /**
      * <pre>
@@ -18831,21 +18866,44 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"update_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>string update_key = 8;</code>
-     * @return The updateKey.
+     * <code>repeated string update_key = 8;</code>
+     * @return A list containing the updateKey.
      */
-    java.lang.String getUpdateKey();
+    java.util.List<java.lang.String>
+        getUpdateKeyList();
     /**
      * <pre>
      * update key
      * &#64;inject_tag: json:"update_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>string update_key = 8;</code>
-     * @return The bytes for updateKey.
+     * <code>repeated string update_key = 8;</code>
+     * @return The count of updateKey.
+     */
+    int getUpdateKeyCount();
+    /**
+     * <pre>
+     * update key
+     * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string update_key = 8;</code>
+     * @param index The index of the element to return.
+     * @return The updateKey at the given index.
+     */
+    java.lang.String getUpdateKey(int index);
+    /**
+     * <pre>
+     * update key
+     * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string update_key = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the updateKey at the given index.
      */
     com.google.protobuf.ByteString
-        getUpdateKeyBytes();
+        getUpdateKeyBytes(int index);
 
     /**
      * <pre>
@@ -18929,11 +18987,10 @@ public final class PBSyncManageSyncJob {
       column_ = java.util.Collections.emptyList();
       table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       schema_ = "";
-      preSql_ = "";
-      postSql_ = "";
+      preSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      postSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       writeMode_ = "";
-      batchSize_ = "";
-      updateKey_ = "";
+      updateKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       mode_ = "";
       semantic_ = "";
       withNoLock_ = "";
@@ -18996,14 +19053,20 @@ public final class PBSyncManageSyncJob {
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              preSql_ = s;
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                preSql_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              preSql_.add(s);
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              postSql_ = s;
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                postSql_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              postSql_.add(s);
               break;
             }
             case 50: {
@@ -19012,16 +19075,18 @@ public final class PBSyncManageSyncJob {
               writeMode_ = s;
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 56: {
 
-              batchSize_ = s;
+              batchSize_ = input.readInt32();
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              updateKey_ = s;
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                updateKey_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              updateKey_.add(s);
               break;
             }
             case 74: {
@@ -19062,6 +19127,15 @@ public final class PBSyncManageSyncJob {
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           table_ = table_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          preSql_ = preSql_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          postSql_ = postSql_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          updateKey_ = updateKey_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -19249,28 +19323,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int PRE_SQL_FIELD_NUMBER = 4;
-    private volatile java.lang.Object preSql_;
+    private com.google.protobuf.LazyStringList preSql_;
     /**
      * <pre>
      * pre sql
      * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string pre_sql = 4;</code>
-     * @return The preSql.
+     * <code>repeated string pre_sql = 4;</code>
+     * @return A list containing the preSql.
      */
-    @java.lang.Override
-    public java.lang.String getPreSql() {
-      java.lang.Object ref = preSql_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        preSql_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getPreSqlList() {
+      return preSql_;
     }
     /**
      * <pre>
@@ -19278,47 +19343,54 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string pre_sql = 4;</code>
-     * @return The bytes for preSql.
+     * <code>repeated string pre_sql = 4;</code>
+     * @return The count of preSql.
      */
-    @java.lang.Override
+    public int getPreSqlCount() {
+      return preSql_.size();
+    }
+    /**
+     * <pre>
+     * pre sql
+     * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string pre_sql = 4;</code>
+     * @param index The index of the element to return.
+     * @return The preSql at the given index.
+     */
+    public java.lang.String getPreSql(int index) {
+      return preSql_.get(index);
+    }
+    /**
+     * <pre>
+     * pre sql
+     * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string pre_sql = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the preSql at the given index.
+     */
     public com.google.protobuf.ByteString
-        getPreSqlBytes() {
-      java.lang.Object ref = preSql_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        preSql_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getPreSqlBytes(int index) {
+      return preSql_.getByteString(index);
     }
 
     public static final int POST_SQL_FIELD_NUMBER = 5;
-    private volatile java.lang.Object postSql_;
+    private com.google.protobuf.LazyStringList postSql_;
     /**
      * <pre>
      * post sql
      * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string post_sql = 5;</code>
-     * @return The postSql.
+     * <code>repeated string post_sql = 5;</code>
+     * @return A list containing the postSql.
      */
-    @java.lang.Override
-    public java.lang.String getPostSql() {
-      java.lang.Object ref = postSql_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        postSql_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getPostSqlList() {
+      return postSql_;
     }
     /**
      * <pre>
@@ -19326,22 +19398,38 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
      * </pre>
      *
-     * <code>string post_sql = 5;</code>
-     * @return The bytes for postSql.
+     * <code>repeated string post_sql = 5;</code>
+     * @return The count of postSql.
      */
-    @java.lang.Override
+    public int getPostSqlCount() {
+      return postSql_.size();
+    }
+    /**
+     * <pre>
+     * post sql
+     * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string post_sql = 5;</code>
+     * @param index The index of the element to return.
+     * @return The postSql at the given index.
+     */
+    public java.lang.String getPostSql(int index) {
+      return postSql_.get(index);
+    }
+    /**
+     * <pre>
+     * post sql
+     * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string post_sql = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the postSql at the given index.
+     */
     public com.google.protobuf.ByteString
-        getPostSqlBytes() {
-      java.lang.Object ref = postSql_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        postSql_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getPostSqlBytes(int index) {
+      return postSql_.getByteString(index);
     }
 
     public static final int WRITE_MODE_FIELD_NUMBER = 6;
@@ -19393,76 +19481,35 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int BATCH_SIZE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object batchSize_;
+    private int batchSize_;
     /**
      * <pre>
      * batch size
      * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string batch_size = 7;</code>
+     * <code>int32 batch_size = 7;</code>
      * @return The batchSize.
      */
     @java.lang.Override
-    public java.lang.String getBatchSize() {
-      java.lang.Object ref = batchSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        batchSize_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * batch size
-     * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string batch_size = 7;</code>
-     * @return The bytes for batchSize.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBatchSizeBytes() {
-      java.lang.Object ref = batchSize_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        batchSize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getBatchSize() {
+      return batchSize_;
     }
 
     public static final int UPDATE_KEY_FIELD_NUMBER = 8;
-    private volatile java.lang.Object updateKey_;
+    private com.google.protobuf.LazyStringList updateKey_;
     /**
      * <pre>
      * update key
      * &#64;inject_tag: json:"update_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>string update_key = 8;</code>
-     * @return The updateKey.
+     * <code>repeated string update_key = 8;</code>
+     * @return A list containing the updateKey.
      */
-    @java.lang.Override
-    public java.lang.String getUpdateKey() {
-      java.lang.Object ref = updateKey_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updateKey_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getUpdateKeyList() {
+      return updateKey_;
     }
     /**
      * <pre>
@@ -19470,22 +19517,38 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"update_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>string update_key = 8;</code>
-     * @return The bytes for updateKey.
+     * <code>repeated string update_key = 8;</code>
+     * @return The count of updateKey.
      */
-    @java.lang.Override
+    public int getUpdateKeyCount() {
+      return updateKey_.size();
+    }
+    /**
+     * <pre>
+     * update key
+     * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string update_key = 8;</code>
+     * @param index The index of the element to return.
+     * @return The updateKey at the given index.
+     */
+    public java.lang.String getUpdateKey(int index) {
+      return updateKey_.get(index);
+    }
+    /**
+     * <pre>
+     * update key
+     * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string update_key = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the updateKey at the given index.
+     */
     public com.google.protobuf.ByteString
-        getUpdateKeyBytes() {
-      java.lang.Object ref = updateKey_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updateKey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getUpdateKeyBytes(int index) {
+      return updateKey_.getByteString(index);
     }
 
     public static final int MODE_FIELD_NUMBER = 9;
@@ -19655,20 +19718,20 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, schema_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preSql_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, preSql_);
+      for (int i = 0; i < preSql_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, preSql_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postSql_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, postSql_);
+      for (int i = 0; i < postSql_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, postSql_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, writeMode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchSize_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, batchSize_);
+      if (batchSize_ != 0) {
+        output.writeInt32(7, batchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updateKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updateKey_);
+      for (int i = 0; i < updateKey_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updateKey_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, mode_);
@@ -19703,20 +19766,36 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, schema_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preSql_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, preSql_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < preSql_.size(); i++) {
+          dataSize += computeStringSizeNoTag(preSql_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPreSqlList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postSql_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, postSql_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < postSql_.size(); i++) {
+          dataSize += computeStringSizeNoTag(postSql_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPostSqlList().size();
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, writeMode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchSize_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, batchSize_);
+      if (batchSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, batchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updateKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updateKey_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < updateKey_.size(); i++) {
+          dataSize += computeStringSizeNoTag(updateKey_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUpdateKeyList().size();
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, mode_);
@@ -19748,16 +19827,16 @@ public final class PBSyncManageSyncJob {
           .equals(other.getTableList())) return false;
       if (!getSchema()
           .equals(other.getSchema())) return false;
-      if (!getPreSql()
-          .equals(other.getPreSql())) return false;
-      if (!getPostSql()
-          .equals(other.getPostSql())) return false;
+      if (!getPreSqlList()
+          .equals(other.getPreSqlList())) return false;
+      if (!getPostSqlList()
+          .equals(other.getPostSqlList())) return false;
       if (!getWriteMode()
           .equals(other.getWriteMode())) return false;
-      if (!getBatchSize()
-          .equals(other.getBatchSize())) return false;
-      if (!getUpdateKey()
-          .equals(other.getUpdateKey())) return false;
+      if (getBatchSize()
+          != other.getBatchSize()) return false;
+      if (!getUpdateKeyList()
+          .equals(other.getUpdateKeyList())) return false;
       if (!getMode()
           .equals(other.getMode())) return false;
       if (!getSemantic()
@@ -19785,16 +19864,22 @@ public final class PBSyncManageSyncJob {
       }
       hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getSchema().hashCode();
-      hash = (37 * hash) + PRE_SQL_FIELD_NUMBER;
-      hash = (53 * hash) + getPreSql().hashCode();
-      hash = (37 * hash) + POST_SQL_FIELD_NUMBER;
-      hash = (53 * hash) + getPostSql().hashCode();
+      if (getPreSqlCount() > 0) {
+        hash = (37 * hash) + PRE_SQL_FIELD_NUMBER;
+        hash = (53 * hash) + getPreSqlList().hashCode();
+      }
+      if (getPostSqlCount() > 0) {
+        hash = (37 * hash) + POST_SQL_FIELD_NUMBER;
+        hash = (53 * hash) + getPostSqlList().hashCode();
+      }
       hash = (37 * hash) + WRITE_MODE_FIELD_NUMBER;
       hash = (53 * hash) + getWriteMode().hashCode();
       hash = (37 * hash) + BATCH_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getBatchSize().hashCode();
-      hash = (37 * hash) + UPDATE_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdateKey().hashCode();
+      hash = (53 * hash) + getBatchSize();
+      if (getUpdateKeyCount() > 0) {
+        hash = (37 * hash) + UPDATE_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateKeyList().hashCode();
+      }
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + getMode().hashCode();
       hash = (37 * hash) + SEMANTIC_FIELD_NUMBER;
@@ -19945,16 +20030,16 @@ public final class PBSyncManageSyncJob {
         bitField0_ = (bitField0_ & ~0x00000002);
         schema_ = "";
 
-        preSql_ = "";
-
-        postSql_ = "";
-
+        preSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        postSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         writeMode_ = "";
 
-        batchSize_ = "";
+        batchSize_ = 0;
 
-        updateKey_ = "";
-
+        updateKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         mode_ = "";
 
         semantic_ = "";
@@ -20003,10 +20088,22 @@ public final class PBSyncManageSyncJob {
         }
         result.table_ = table_;
         result.schema_ = schema_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          preSql_ = preSql_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
         result.preSql_ = preSql_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          postSql_ = postSql_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
         result.postSql_ = postSql_;
         result.writeMode_ = writeMode_;
         result.batchSize_ = batchSize_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          updateKey_ = updateKey_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
         result.updateKey_ = updateKey_;
         result.mode_ = mode_;
         result.semantic_ = semantic_;
@@ -20099,24 +20196,41 @@ public final class PBSyncManageSyncJob {
           schema_ = other.schema_;
           onChanged();
         }
-        if (!other.getPreSql().isEmpty()) {
-          preSql_ = other.preSql_;
+        if (!other.preSql_.isEmpty()) {
+          if (preSql_.isEmpty()) {
+            preSql_ = other.preSql_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePreSqlIsMutable();
+            preSql_.addAll(other.preSql_);
+          }
           onChanged();
         }
-        if (!other.getPostSql().isEmpty()) {
-          postSql_ = other.postSql_;
+        if (!other.postSql_.isEmpty()) {
+          if (postSql_.isEmpty()) {
+            postSql_ = other.postSql_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensurePostSqlIsMutable();
+            postSql_.addAll(other.postSql_);
+          }
           onChanged();
         }
         if (!other.getWriteMode().isEmpty()) {
           writeMode_ = other.writeMode_;
           onChanged();
         }
-        if (!other.getBatchSize().isEmpty()) {
-          batchSize_ = other.batchSize_;
-          onChanged();
+        if (other.getBatchSize() != 0) {
+          setBatchSize(other.getBatchSize());
         }
-        if (!other.getUpdateKey().isEmpty()) {
-          updateKey_ = other.updateKey_;
+        if (!other.updateKey_.isEmpty()) {
+          if (updateKey_.isEmpty()) {
+            updateKey_ = other.updateKey_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureUpdateKeyIsMutable();
+            updateKey_.addAll(other.updateKey_);
+          }
           onChanged();
         }
         if (!other.getMode().isEmpty()) {
@@ -20747,27 +20861,12 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object preSql_ = "";
-      /**
-       * <pre>
-       * pre sql
-       * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string pre_sql = 4;</code>
-       * @return The preSql.
-       */
-      public java.lang.String getPreSql() {
-        java.lang.Object ref = preSql_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          preSql_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList preSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePreSqlIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          preSql_ = new com.google.protobuf.LazyStringArrayList(preSql_);
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <pre>
@@ -20775,21 +20874,51 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string pre_sql = 4;</code>
-       * @return The bytes for preSql.
+       * <code>repeated string pre_sql = 4;</code>
+       * @return A list containing the preSql.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPreSqlList() {
+        return preSql_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * pre sql
+       * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string pre_sql = 4;</code>
+       * @return The count of preSql.
+       */
+      public int getPreSqlCount() {
+        return preSql_.size();
+      }
+      /**
+       * <pre>
+       * pre sql
+       * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string pre_sql = 4;</code>
+       * @param index The index of the element to return.
+       * @return The preSql at the given index.
+       */
+      public java.lang.String getPreSql(int index) {
+        return preSql_.get(index);
+      }
+      /**
+       * <pre>
+       * pre sql
+       * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string pre_sql = 4;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the preSql at the given index.
        */
       public com.google.protobuf.ByteString
-          getPreSqlBytes() {
-        java.lang.Object ref = preSql_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          preSql_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getPreSqlBytes(int index) {
+        return preSql_.getByteString(index);
       }
       /**
        * <pre>
@@ -20797,17 +20926,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string pre_sql = 4;</code>
+       * <code>repeated string pre_sql = 4;</code>
+       * @param index The index to set the value at.
        * @param value The preSql to set.
        * @return This builder for chaining.
        */
       public Builder setPreSql(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePreSqlIsMutable();
+        preSql_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * pre sql
+       * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string pre_sql = 4;</code>
+       * @param value The preSql to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPreSql(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        preSql_ = value;
+  ensurePreSqlIsMutable();
+        preSql_.add(value);
         onChanged();
         return this;
       }
@@ -20817,12 +20967,30 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string pre_sql = 4;</code>
+       * <code>repeated string pre_sql = 4;</code>
+       * @param values The preSql to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPreSql(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePreSqlIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, preSql_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * pre sql
+       * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string pre_sql = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPreSql() {
-        
-        preSql_ = getDefaultInstance().getPreSql();
+        preSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -20832,43 +21000,28 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"pre_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string pre_sql = 4;</code>
-       * @param value The bytes for preSql to set.
+       * <code>repeated string pre_sql = 4;</code>
+       * @param value The bytes of the preSql to add.
        * @return This builder for chaining.
        */
-      public Builder setPreSqlBytes(
+      public Builder addPreSqlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        preSql_ = value;
+        ensurePreSqlIsMutable();
+        preSql_.add(value);
         onChanged();
         return this;
       }
 
-      private java.lang.Object postSql_ = "";
-      /**
-       * <pre>
-       * post sql
-       * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string post_sql = 5;</code>
-       * @return The postSql.
-       */
-      public java.lang.String getPostSql() {
-        java.lang.Object ref = postSql_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          postSql_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList postSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePostSqlIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          postSql_ = new com.google.protobuf.LazyStringArrayList(postSql_);
+          bitField0_ |= 0x00000008;
+         }
       }
       /**
        * <pre>
@@ -20876,21 +21029,51 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string post_sql = 5;</code>
-       * @return The bytes for postSql.
+       * <code>repeated string post_sql = 5;</code>
+       * @return A list containing the postSql.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPostSqlList() {
+        return postSql_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * post sql
+       * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string post_sql = 5;</code>
+       * @return The count of postSql.
+       */
+      public int getPostSqlCount() {
+        return postSql_.size();
+      }
+      /**
+       * <pre>
+       * post sql
+       * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string post_sql = 5;</code>
+       * @param index The index of the element to return.
+       * @return The postSql at the given index.
+       */
+      public java.lang.String getPostSql(int index) {
+        return postSql_.get(index);
+      }
+      /**
+       * <pre>
+       * post sql
+       * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string post_sql = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the postSql at the given index.
        */
       public com.google.protobuf.ByteString
-          getPostSqlBytes() {
-        java.lang.Object ref = postSql_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          postSql_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getPostSqlBytes(int index) {
+        return postSql_.getByteString(index);
       }
       /**
        * <pre>
@@ -20898,17 +21081,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string post_sql = 5;</code>
+       * <code>repeated string post_sql = 5;</code>
+       * @param index The index to set the value at.
        * @param value The postSql to set.
        * @return This builder for chaining.
        */
       public Builder setPostSql(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePostSqlIsMutable();
+        postSql_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * post sql
+       * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string post_sql = 5;</code>
+       * @param value The postSql to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPostSql(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        postSql_ = value;
+  ensurePostSqlIsMutable();
+        postSql_.add(value);
         onChanged();
         return this;
       }
@@ -20918,12 +21122,30 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string post_sql = 5;</code>
+       * <code>repeated string post_sql = 5;</code>
+       * @param values The postSql to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPostSql(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePostSqlIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, postSql_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * post sql
+       * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string post_sql = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPostSql() {
-        
-        postSql_ = getDefaultInstance().getPostSql();
+        postSql_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -20933,18 +21155,18 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"post_sql" swaggerignore:"true"
        * </pre>
        *
-       * <code>string post_sql = 5;</code>
-       * @param value The bytes for postSql to set.
+       * <code>repeated string post_sql = 5;</code>
+       * @param value The bytes of the postSql to add.
        * @return This builder for chaining.
        */
-      public Builder setPostSqlBytes(
+      public Builder addPostSqlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        postSql_ = value;
+        ensurePostSqlIsMutable();
+        postSql_.add(value);
         onChanged();
         return this;
       }
@@ -21050,27 +21272,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object batchSize_ = "";
+      private int batchSize_ ;
       /**
        * <pre>
        * batch size
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 7;</code>
+       * <code>int32 batch_size = 7;</code>
        * @return The batchSize.
        */
-      public java.lang.String getBatchSize() {
-        java.lang.Object ref = batchSize_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          batchSize_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getBatchSize() {
+        return batchSize_;
       }
       /**
        * <pre>
@@ -21078,38 +21292,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 7;</code>
-       * @return The bytes for batchSize.
-       */
-      public com.google.protobuf.ByteString
-          getBatchSizeBytes() {
-        java.lang.Object ref = batchSize_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          batchSize_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * batch size
-       * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string batch_size = 7;</code>
+       * <code>int32 batch_size = 7;</code>
        * @param value The batchSize to set.
        * @return This builder for chaining.
        */
-      public Builder setBatchSize(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setBatchSize(int value) {
+        
         batchSize_ = value;
         onChanged();
         return this;
@@ -21120,58 +21308,22 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 7;</code>
+       * <code>int32 batch_size = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearBatchSize() {
         
-        batchSize_ = getDefaultInstance().getBatchSize();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * batch size
-       * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string batch_size = 7;</code>
-       * @param value The bytes for batchSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBatchSizeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        batchSize_ = value;
+        batchSize_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object updateKey_ = "";
-      /**
-       * <pre>
-       * update key
-       * &#64;inject_tag: json:"update_key" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string update_key = 8;</code>
-       * @return The updateKey.
-       */
-      public java.lang.String getUpdateKey() {
-        java.lang.Object ref = updateKey_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          updateKey_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList updateKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureUpdateKeyIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          updateKey_ = new com.google.protobuf.LazyStringArrayList(updateKey_);
+          bitField0_ |= 0x00000010;
+         }
       }
       /**
        * <pre>
@@ -21179,21 +21331,51 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"update_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>string update_key = 8;</code>
-       * @return The bytes for updateKey.
+       * <code>repeated string update_key = 8;</code>
+       * @return A list containing the updateKey.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getUpdateKeyList() {
+        return updateKey_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * update key
+       * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string update_key = 8;</code>
+       * @return The count of updateKey.
+       */
+      public int getUpdateKeyCount() {
+        return updateKey_.size();
+      }
+      /**
+       * <pre>
+       * update key
+       * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string update_key = 8;</code>
+       * @param index The index of the element to return.
+       * @return The updateKey at the given index.
+       */
+      public java.lang.String getUpdateKey(int index) {
+        return updateKey_.get(index);
+      }
+      /**
+       * <pre>
+       * update key
+       * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string update_key = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the updateKey at the given index.
        */
       public com.google.protobuf.ByteString
-          getUpdateKeyBytes() {
-        java.lang.Object ref = updateKey_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          updateKey_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getUpdateKeyBytes(int index) {
+        return updateKey_.getByteString(index);
       }
       /**
        * <pre>
@@ -21201,17 +21383,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"update_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>string update_key = 8;</code>
+       * <code>repeated string update_key = 8;</code>
+       * @param index The index to set the value at.
        * @param value The updateKey to set.
        * @return This builder for chaining.
        */
       public Builder setUpdateKey(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUpdateKeyIsMutable();
+        updateKey_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * update key
+       * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string update_key = 8;</code>
+       * @param value The updateKey to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUpdateKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        updateKey_ = value;
+  ensureUpdateKeyIsMutable();
+        updateKey_.add(value);
         onChanged();
         return this;
       }
@@ -21221,12 +21424,30 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"update_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>string update_key = 8;</code>
+       * <code>repeated string update_key = 8;</code>
+       * @param values The updateKey to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUpdateKey(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureUpdateKeyIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, updateKey_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * update key
+       * &#64;inject_tag: json:"update_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string update_key = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdateKey() {
-        
-        updateKey_ = getDefaultInstance().getUpdateKey();
+        updateKey_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -21236,18 +21457,18 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"update_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>string update_key = 8;</code>
-       * @param value The bytes for updateKey to set.
+       * <code>repeated string update_key = 8;</code>
+       * @param value The bytes of the updateKey to add.
        * @return This builder for chaining.
        */
-      public Builder setUpdateKeyBytes(
+      public Builder addUpdateKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        updateKey_ = value;
+        ensureUpdateKeyIsMutable();
+        updateKey_.add(value);
         onChanged();
         return this;
       }
@@ -25226,21 +25447,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string batch_size = 4;</code>
+     * <code>int32 batch_size = 4;</code>
      * @return The batchSize.
      */
-    java.lang.String getBatchSize();
-    /**
-     * <pre>
-     * batch size
-     * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string batch_size = 4;</code>
-     * @return The bytes for batchSize.
-     */
-    com.google.protobuf.ByteString
-        getBatchSizeBytes();
+    int getBatchSize();
   }
   /**
    * Protobuf type {@code model.ElasticSearchSource}
@@ -25258,7 +25468,6 @@ public final class PBSyncManageSyncJob {
       column_ = java.util.Collections.emptyList();
       version_ = "";
       index_ = "";
-      batchSize_ = "";
     }
 
     @java.lang.Override
@@ -25313,10 +25522,9 @@ public final class PBSyncManageSyncJob {
               index_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
 
-              batchSize_ = s;
+              batchSize_ = input.readInt32();
               break;
             }
             default: {
@@ -25516,51 +25724,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int BATCH_SIZE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object batchSize_;
+    private int batchSize_;
     /**
      * <pre>
      * batch size
      * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string batch_size = 4;</code>
+     * <code>int32 batch_size = 4;</code>
      * @return The batchSize.
      */
     @java.lang.Override
-    public java.lang.String getBatchSize() {
-      java.lang.Object ref = batchSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        batchSize_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * batch size
-     * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string batch_size = 4;</code>
-     * @return The bytes for batchSize.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBatchSizeBytes() {
-      java.lang.Object ref = batchSize_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        batchSize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getBatchSize() {
+      return batchSize_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -25586,8 +25762,8 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, index_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchSize_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, batchSize_);
+      if (batchSize_ != 0) {
+        output.writeInt32(4, batchSize_);
       }
       unknownFields.writeTo(output);
     }
@@ -25608,8 +25784,9 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, index_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchSize_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, batchSize_);
+      if (batchSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, batchSize_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -25632,8 +25809,8 @@ public final class PBSyncManageSyncJob {
           .equals(other.getVersion())) return false;
       if (!getIndex()
           .equals(other.getIndex())) return false;
-      if (!getBatchSize()
-          .equals(other.getBatchSize())) return false;
+      if (getBatchSize()
+          != other.getBatchSize()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -25654,7 +25831,7 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex().hashCode();
       hash = (37 * hash) + BATCH_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getBatchSize().hashCode();
+      hash = (53 * hash) + getBatchSize();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -25799,7 +25976,7 @@ public final class PBSyncManageSyncJob {
 
         index_ = "";
 
-        batchSize_ = "";
+        batchSize_ = 0;
 
         return this;
       }
@@ -25922,9 +26099,8 @@ public final class PBSyncManageSyncJob {
           index_ = other.index_;
           onChanged();
         }
-        if (!other.getBatchSize().isEmpty()) {
-          batchSize_ = other.batchSize_;
-          onChanged();
+        if (other.getBatchSize() != 0) {
+          setBatchSize(other.getBatchSize());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -26488,27 +26664,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object batchSize_ = "";
+      private int batchSize_ ;
       /**
        * <pre>
        * batch size
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 4;</code>
+       * <code>int32 batch_size = 4;</code>
        * @return The batchSize.
        */
-      public java.lang.String getBatchSize() {
-        java.lang.Object ref = batchSize_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          batchSize_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getBatchSize() {
+        return batchSize_;
       }
       /**
        * <pre>
@@ -26516,38 +26684,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 4;</code>
-       * @return The bytes for batchSize.
-       */
-      public com.google.protobuf.ByteString
-          getBatchSizeBytes() {
-        java.lang.Object ref = batchSize_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          batchSize_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * batch size
-       * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string batch_size = 4;</code>
+       * <code>int32 batch_size = 4;</code>
        * @param value The batchSize to set.
        * @return This builder for chaining.
        */
-      public Builder setBatchSize(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setBatchSize(int value) {
+        
         batchSize_ = value;
         onChanged();
         return this;
@@ -26558,33 +26700,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 4;</code>
+       * <code>int32 batch_size = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBatchSize() {
         
-        batchSize_ = getDefaultInstance().getBatchSize();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * batch size
-       * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string batch_size = 4;</code>
-       * @param value The bytes for batchSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBatchSizeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        batchSize_ = value;
+        batchSize_ = 0;
         onChanged();
         return this;
       }
@@ -26744,21 +26865,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string batch_size = 4;</code>
+     * <code>int32 batch_size = 4;</code>
      * @return The batchSize.
      */
-    java.lang.String getBatchSize();
-    /**
-     * <pre>
-     * batch size
-     * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string batch_size = 4;</code>
-     * @return The bytes for batchSize.
-     */
-    com.google.protobuf.ByteString
-        getBatchSizeBytes();
+    int getBatchSize();
 
     /**
      * <pre>
@@ -26798,7 +26908,6 @@ public final class PBSyncManageSyncJob {
       column_ = java.util.Collections.emptyList();
       version_ = "";
       index_ = "";
-      batchSize_ = "";
       keyDelimiter_ = "";
     }
 
@@ -26854,10 +26963,9 @@ public final class PBSyncManageSyncJob {
               index_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
 
-              batchSize_ = s;
+              batchSize_ = input.readInt32();
               break;
             }
             case 42: {
@@ -27063,51 +27171,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int BATCH_SIZE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object batchSize_;
+    private int batchSize_;
     /**
      * <pre>
      * batch size
      * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string batch_size = 4;</code>
+     * <code>int32 batch_size = 4;</code>
      * @return The batchSize.
      */
     @java.lang.Override
-    public java.lang.String getBatchSize() {
-      java.lang.Object ref = batchSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        batchSize_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * batch size
-     * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string batch_size = 4;</code>
-     * @return The bytes for batchSize.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBatchSizeBytes() {
-      java.lang.Object ref = batchSize_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        batchSize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getBatchSize() {
+      return batchSize_;
     }
 
     public static final int KEY_DELIMITER_FIELD_NUMBER = 5;
@@ -27181,8 +27257,8 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, index_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchSize_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, batchSize_);
+      if (batchSize_ != 0) {
+        output.writeInt32(4, batchSize_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyDelimiter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keyDelimiter_);
@@ -27206,8 +27282,9 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(index_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, index_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(batchSize_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, batchSize_);
+      if (batchSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, batchSize_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyDelimiter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, keyDelimiter_);
@@ -27233,8 +27310,8 @@ public final class PBSyncManageSyncJob {
           .equals(other.getVersion())) return false;
       if (!getIndex()
           .equals(other.getIndex())) return false;
-      if (!getBatchSize()
-          .equals(other.getBatchSize())) return false;
+      if (getBatchSize()
+          != other.getBatchSize()) return false;
       if (!getKeyDelimiter()
           .equals(other.getKeyDelimiter())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -27257,7 +27334,7 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex().hashCode();
       hash = (37 * hash) + BATCH_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getBatchSize().hashCode();
+      hash = (53 * hash) + getBatchSize();
       hash = (37 * hash) + KEY_DELIMITER_FIELD_NUMBER;
       hash = (53 * hash) + getKeyDelimiter().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -27404,7 +27481,7 @@ public final class PBSyncManageSyncJob {
 
         index_ = "";
 
-        batchSize_ = "";
+        batchSize_ = 0;
 
         keyDelimiter_ = "";
 
@@ -27530,9 +27607,8 @@ public final class PBSyncManageSyncJob {
           index_ = other.index_;
           onChanged();
         }
-        if (!other.getBatchSize().isEmpty()) {
-          batchSize_ = other.batchSize_;
-          onChanged();
+        if (other.getBatchSize() != 0) {
+          setBatchSize(other.getBatchSize());
         }
         if (!other.getKeyDelimiter().isEmpty()) {
           keyDelimiter_ = other.keyDelimiter_;
@@ -28100,27 +28176,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object batchSize_ = "";
+      private int batchSize_ ;
       /**
        * <pre>
        * batch size
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 4;</code>
+       * <code>int32 batch_size = 4;</code>
        * @return The batchSize.
        */
-      public java.lang.String getBatchSize() {
-        java.lang.Object ref = batchSize_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          batchSize_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getBatchSize() {
+        return batchSize_;
       }
       /**
        * <pre>
@@ -28128,38 +28196,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 4;</code>
-       * @return The bytes for batchSize.
-       */
-      public com.google.protobuf.ByteString
-          getBatchSizeBytes() {
-        java.lang.Object ref = batchSize_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          batchSize_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * batch size
-       * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string batch_size = 4;</code>
+       * <code>int32 batch_size = 4;</code>
        * @param value The batchSize to set.
        * @return This builder for chaining.
        */
-      public Builder setBatchSize(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setBatchSize(int value) {
+        
         batchSize_ = value;
         onChanged();
         return this;
@@ -28170,33 +28212,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string batch_size = 4;</code>
+       * <code>int32 batch_size = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearBatchSize() {
         
-        batchSize_ = getDefaultInstance().getBatchSize();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * batch size
-       * &#64;inject_tag: json:"batch_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string batch_size = 4;</code>
-       * @param value The bytes for batchSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBatchSizeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        batchSize_ = value;
+        batchSize_ = 0;
         onChanged();
         return this;
       }
@@ -28354,8 +28375,8 @@ public final class PBSyncManageSyncJob {
 
   }
 
-  public interface LogminerSourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.LogminerSource)
+  public interface LogMinerSourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.LogMinerSource)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -28409,21 +28430,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"split_update" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 2;</code>
+     * <code>bool split_update = 2;</code>
      * @return The splitUpdate.
      */
-    java.lang.String getSplitUpdate();
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 2;</code>
-     * @return The bytes for splitUpdate.
-     */
-    com.google.protobuf.ByteString
-        getSplitUpdateBytes();
+    boolean getSplitUpdate();
 
     /**
      * <pre>
@@ -28431,21 +28441,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 3;</code>
+     * <code>bool paving_data = 3;</code>
      * @return The pavingData.
      */
-    java.lang.String getPavingData();
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 3;</code>
-     * @return The bytes for pavingData.
-     */
-    com.google.protobuf.ByteString
-        getPavingDataBytes();
+    boolean getPavingData();
 
     /**
      * <pre>
@@ -28508,10 +28507,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 start_scn = 7;</code>
+     * <code>string start_scn = 7;</code>
      * @return The startScn.
      */
-    long getStartScn();
+    java.lang.String getStartScn();
+    /**
+     * <pre>
+     * start scn
+     * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string start_scn = 7;</code>
+     * @return The bytes for startScn.
+     */
+    com.google.protobuf.ByteString
+        getStartScnBytes();
 
     /**
      * <pre>
@@ -28519,10 +28529,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"fetch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 fetch_size = 8;</code>
+     * <code>int32 fetch_size = 8;</code>
      * @return The fetchSize.
      */
-    long getFetchSize();
+    int getFetchSize();
 
     /**
      * <pre>
@@ -28530,36 +28540,46 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"support_auto_add_log" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 support_auto_add_log = 9;</code>
+     * <code>bool support_auto_add_log = 9;</code>
      * @return The supportAutoAddLog.
      */
-    long getSupportAutoAddLog();
+    boolean getSupportAutoAddLog();
+
+    /**
+     * <pre>
+     * support auto add log
+     * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 query_timeout = 10;</code>
+     * @return The queryTimeout.
+     */
+    int getQueryTimeout();
   }
   /**
-   * Protobuf type {@code model.LogminerSource}
+   * Protobuf type {@code model.LogMinerSource}
    */
-  public static final class LogminerSource extends
+  public static final class LogMinerSource extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.LogminerSource)
-      LogminerSourceOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.LogMinerSource)
+      LogMinerSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use LogminerSource.newBuilder() to construct.
-    private LogminerSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use LogMinerSource.newBuilder() to construct.
+    private LogMinerSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private LogminerSource() {
+    private LogMinerSource() {
       table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      splitUpdate_ = "";
-      pavingData_ = "";
       cat_ = "";
       readPosition_ = "";
+      startScn_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new LogminerSource();
+      return new LogMinerSource();
     }
 
     @java.lang.Override
@@ -28567,7 +28587,7 @@ public final class PBSyncManageSyncJob {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LogminerSource(
+    private LogMinerSource(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -28595,16 +28615,14 @@ public final class PBSyncManageSyncJob {
               table_.add(s);
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              splitUpdate_ = s;
+              splitUpdate_ = input.readBool();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              pavingData_ = s;
+              pavingData_ = input.readBool();
               break;
             }
             case 34: {
@@ -28624,19 +28642,25 @@ public final class PBSyncManageSyncJob {
               startTime_ = input.readInt64();
               break;
             }
-            case 56: {
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              startScn_ = input.readInt64();
+              startScn_ = s;
               break;
             }
             case 64: {
 
-              fetchSize_ = input.readInt64();
+              fetchSize_ = input.readInt32();
               break;
             }
             case 72: {
 
-              supportAutoAddLog_ = input.readInt64();
+              supportAutoAddLog_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              queryTimeout_ = input.readInt32();
               break;
             }
             default: {
@@ -28663,15 +28687,15 @@ public final class PBSyncManageSyncJob {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogminerSource_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogMinerSource_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogminerSource_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogMinerSource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder.class);
     }
 
     public static final int TABLE_FIELD_NUMBER = 1;
@@ -28730,99 +28754,35 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int SPLIT_UPDATE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object splitUpdate_;
+    private boolean splitUpdate_;
     /**
      * <pre>
      * split update
      * &#64;inject_tag: json:"split_update" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 2;</code>
+     * <code>bool split_update = 2;</code>
      * @return The splitUpdate.
      */
     @java.lang.Override
-    public java.lang.String getSplitUpdate() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        splitUpdate_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 2;</code>
-     * @return The bytes for splitUpdate.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSplitUpdateBytes() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        splitUpdate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getSplitUpdate() {
+      return splitUpdate_;
     }
 
     public static final int PAVING_DATA_FIELD_NUMBER = 3;
-    private volatile java.lang.Object pavingData_;
+    private boolean pavingData_;
     /**
      * <pre>
      * paving data
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 3;</code>
+     * <code>bool paving_data = 3;</code>
      * @return The pavingData.
      */
     @java.lang.Override
-    public java.lang.String getPavingData() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pavingData_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 3;</code>
-     * @return The bytes for pavingData.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPavingDataBytes() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pavingData_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getPavingData() {
+      return pavingData_;
     }
 
     public static final int CAT_FIELD_NUMBER = 4;
@@ -28938,51 +28898,99 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int START_SCN_FIELD_NUMBER = 7;
-    private long startScn_;
+    private volatile java.lang.Object startScn_;
     /**
      * <pre>
      * start scn
      * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 start_scn = 7;</code>
+     * <code>string start_scn = 7;</code>
      * @return The startScn.
      */
     @java.lang.Override
-    public long getStartScn() {
-      return startScn_;
+    public java.lang.String getStartScn() {
+      java.lang.Object ref = startScn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startScn_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * start scn
+     * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string start_scn = 7;</code>
+     * @return The bytes for startScn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStartScnBytes() {
+      java.lang.Object ref = startScn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startScn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int FETCH_SIZE_FIELD_NUMBER = 8;
-    private long fetchSize_;
+    private int fetchSize_;
     /**
      * <pre>
      * fetch size
      * &#64;inject_tag: json:"fetch_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 fetch_size = 8;</code>
+     * <code>int32 fetch_size = 8;</code>
      * @return The fetchSize.
      */
     @java.lang.Override
-    public long getFetchSize() {
+    public int getFetchSize() {
       return fetchSize_;
     }
 
     public static final int SUPPORT_AUTO_ADD_LOG_FIELD_NUMBER = 9;
-    private long supportAutoAddLog_;
+    private boolean supportAutoAddLog_;
     /**
      * <pre>
      * support auto add log
      * &#64;inject_tag: json:"support_auto_add_log" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 support_auto_add_log = 9;</code>
+     * <code>bool support_auto_add_log = 9;</code>
      * @return The supportAutoAddLog.
      */
     @java.lang.Override
-    public long getSupportAutoAddLog() {
+    public boolean getSupportAutoAddLog() {
       return supportAutoAddLog_;
+    }
+
+    public static final int QUERY_TIMEOUT_FIELD_NUMBER = 10;
+    private int queryTimeout_;
+    /**
+     * <pre>
+     * support auto add log
+     * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 query_timeout = 10;</code>
+     * @return The queryTimeout.
+     */
+    @java.lang.Override
+    public int getQueryTimeout() {
+      return queryTimeout_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -29002,11 +29010,11 @@ public final class PBSyncManageSyncJob {
       for (int i = 0; i < table_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, table_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, splitUpdate_);
+      if (splitUpdate_ != false) {
+        output.writeBool(2, splitUpdate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pavingData_);
+      if (pavingData_ != false) {
+        output.writeBool(3, pavingData_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cat_);
@@ -29017,14 +29025,17 @@ public final class PBSyncManageSyncJob {
       if (startTime_ != 0L) {
         output.writeInt64(6, startTime_);
       }
-      if (startScn_ != 0L) {
-        output.writeInt64(7, startScn_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startScn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startScn_);
       }
-      if (fetchSize_ != 0L) {
-        output.writeInt64(8, fetchSize_);
+      if (fetchSize_ != 0) {
+        output.writeInt32(8, fetchSize_);
       }
-      if (supportAutoAddLog_ != 0L) {
-        output.writeInt64(9, supportAutoAddLog_);
+      if (supportAutoAddLog_ != false) {
+        output.writeBool(9, supportAutoAddLog_);
+      }
+      if (queryTimeout_ != 0) {
+        output.writeInt32(10, queryTimeout_);
       }
       unknownFields.writeTo(output);
     }
@@ -29043,11 +29054,13 @@ public final class PBSyncManageSyncJob {
         size += dataSize;
         size += 1 * getTableList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, splitUpdate_);
+      if (splitUpdate_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, splitUpdate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pavingData_);
+      if (pavingData_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, pavingData_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cat_);
@@ -29059,17 +29072,20 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, startTime_);
       }
-      if (startScn_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, startScn_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startScn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startScn_);
       }
-      if (fetchSize_ != 0L) {
+      if (fetchSize_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, fetchSize_);
+          .computeInt32Size(8, fetchSize_);
       }
-      if (supportAutoAddLog_ != 0L) {
+      if (supportAutoAddLog_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, supportAutoAddLog_);
+          .computeBoolSize(9, supportAutoAddLog_);
+      }
+      if (queryTimeout_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, queryTimeout_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -29081,29 +29097,31 @@ public final class PBSyncManageSyncJob {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource) obj;
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource) obj;
 
       if (!getTableList()
           .equals(other.getTableList())) return false;
-      if (!getSplitUpdate()
-          .equals(other.getSplitUpdate())) return false;
-      if (!getPavingData()
-          .equals(other.getPavingData())) return false;
+      if (getSplitUpdate()
+          != other.getSplitUpdate()) return false;
+      if (getPavingData()
+          != other.getPavingData()) return false;
       if (!getCat()
           .equals(other.getCat())) return false;
       if (!getReadPosition()
           .equals(other.getReadPosition())) return false;
       if (getStartTime()
           != other.getStartTime()) return false;
-      if (getStartScn()
-          != other.getStartScn()) return false;
+      if (!getStartScn()
+          .equals(other.getStartScn())) return false;
       if (getFetchSize()
           != other.getFetchSize()) return false;
       if (getSupportAutoAddLog()
           != other.getSupportAutoAddLog()) return false;
+      if (getQueryTimeout()
+          != other.getQueryTimeout()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -29120,9 +29138,11 @@ public final class PBSyncManageSyncJob {
         hash = (53 * hash) + getTableList().hashCode();
       }
       hash = (37 * hash) + SPLIT_UPDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getSplitUpdate().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSplitUpdate());
       hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getPavingData().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPavingData());
       hash = (37 * hash) + CAT_FIELD_NUMBER;
       hash = (53 * hash) + getCat().hashCode();
       hash = (37 * hash) + READ_POSITION_FIELD_NUMBER;
@@ -29131,82 +29151,82 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getStartTime());
       hash = (37 * hash) + START_SCN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStartScn());
+      hash = (53 * hash) + getStartScn().hashCode();
       hash = (37 * hash) + FETCH_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFetchSize());
+      hash = (53 * hash) + getFetchSize();
       hash = (37 * hash) + SUPPORT_AUTO_ADD_LOG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSupportAutoAddLog());
+      hash = (37 * hash) + QUERY_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryTimeout();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -29219,7 +29239,7 @@ public final class PBSyncManageSyncJob {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -29235,26 +29255,26 @@ public final class PBSyncManageSyncJob {
       return builder;
     }
     /**
-     * Protobuf type {@code model.LogminerSource}
+     * Protobuf type {@code model.LogMinerSource}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.LogminerSource)
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSourceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.LogMinerSource)
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSourceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogminerSource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogMinerSource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogminerSource_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogMinerSource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -29274,9 +29294,9 @@ public final class PBSyncManageSyncJob {
         super.clear();
         table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        splitUpdate_ = "";
+        splitUpdate_ = false;
 
-        pavingData_ = "";
+        pavingData_ = false;
 
         cat_ = "";
 
@@ -29284,11 +29304,13 @@ public final class PBSyncManageSyncJob {
 
         startTime_ = 0L;
 
-        startScn_ = 0L;
+        startScn_ = "";
 
-        fetchSize_ = 0L;
+        fetchSize_ = 0;
 
-        supportAutoAddLog_ = 0L;
+        supportAutoAddLog_ = false;
+
+        queryTimeout_ = 0;
 
         return this;
       }
@@ -29296,17 +29318,17 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogminerSource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_LogMinerSource_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource build() {
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource build() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -29314,8 +29336,8 @@ public final class PBSyncManageSyncJob {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource(this);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           table_ = table_.getUnmodifiableView();
@@ -29330,6 +29352,7 @@ public final class PBSyncManageSyncJob {
         result.startScn_ = startScn_;
         result.fetchSize_ = fetchSize_;
         result.supportAutoAddLog_ = supportAutoAddLog_;
+        result.queryTimeout_ = queryTimeout_;
         onBuilt();
         return result;
       }
@@ -29368,16 +29391,16 @@ public final class PBSyncManageSyncJob {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource.getDefaultInstance()) return this;
         if (!other.table_.isEmpty()) {
           if (table_.isEmpty()) {
             table_ = other.table_;
@@ -29388,13 +29411,11 @@ public final class PBSyncManageSyncJob {
           }
           onChanged();
         }
-        if (!other.getSplitUpdate().isEmpty()) {
-          splitUpdate_ = other.splitUpdate_;
-          onChanged();
+        if (other.getSplitUpdate() != false) {
+          setSplitUpdate(other.getSplitUpdate());
         }
-        if (!other.getPavingData().isEmpty()) {
-          pavingData_ = other.pavingData_;
-          onChanged();
+        if (other.getPavingData() != false) {
+          setPavingData(other.getPavingData());
         }
         if (!other.getCat().isEmpty()) {
           cat_ = other.cat_;
@@ -29407,14 +29428,18 @@ public final class PBSyncManageSyncJob {
         if (other.getStartTime() != 0L) {
           setStartTime(other.getStartTime());
         }
-        if (other.getStartScn() != 0L) {
-          setStartScn(other.getStartScn());
+        if (!other.getStartScn().isEmpty()) {
+          startScn_ = other.startScn_;
+          onChanged();
         }
-        if (other.getFetchSize() != 0L) {
+        if (other.getFetchSize() != 0) {
           setFetchSize(other.getFetchSize());
         }
-        if (other.getSupportAutoAddLog() != 0L) {
+        if (other.getSupportAutoAddLog() != false) {
           setSupportAutoAddLog(other.getSupportAutoAddLog());
+        }
+        if (other.getQueryTimeout() != 0) {
+          setQueryTimeout(other.getQueryTimeout());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -29431,11 +29456,11 @@ public final class PBSyncManageSyncJob {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -29601,27 +29626,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object splitUpdate_ = "";
+      private boolean splitUpdate_ ;
       /**
        * <pre>
        * split update
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 2;</code>
+       * <code>bool split_update = 2;</code>
        * @return The splitUpdate.
        */
-      public java.lang.String getSplitUpdate() {
-        java.lang.Object ref = splitUpdate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          splitUpdate_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getSplitUpdate() {
+        return splitUpdate_;
       }
       /**
        * <pre>
@@ -29629,38 +29646,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 2;</code>
-       * @return The bytes for splitUpdate.
-       */
-      public com.google.protobuf.ByteString
-          getSplitUpdateBytes() {
-        java.lang.Object ref = splitUpdate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          splitUpdate_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 2;</code>
+       * <code>bool split_update = 2;</code>
        * @param value The splitUpdate to set.
        * @return This builder for chaining.
        */
-      public Builder setSplitUpdate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setSplitUpdate(boolean value) {
+        
         splitUpdate_ = value;
         onChanged();
         return this;
@@ -29671,58 +29662,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 2;</code>
+       * <code>bool split_update = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSplitUpdate() {
         
-        splitUpdate_ = getDefaultInstance().getSplitUpdate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 2;</code>
-       * @param value The bytes for splitUpdate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSplitUpdateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        splitUpdate_ = value;
+        splitUpdate_ = false;
         onChanged();
         return this;
       }
 
-      private java.lang.Object pavingData_ = "";
+      private boolean pavingData_ ;
       /**
        * <pre>
        * paving data
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 3;</code>
+       * <code>bool paving_data = 3;</code>
        * @return The pavingData.
        */
-      public java.lang.String getPavingData() {
-        java.lang.Object ref = pavingData_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          pavingData_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getPavingData() {
+        return pavingData_;
       }
       /**
        * <pre>
@@ -29730,38 +29692,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 3;</code>
-       * @return The bytes for pavingData.
-       */
-      public com.google.protobuf.ByteString
-          getPavingDataBytes() {
-        java.lang.Object ref = pavingData_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pavingData_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 3;</code>
+       * <code>bool paving_data = 3;</code>
        * @param value The pavingData to set.
        * @return This builder for chaining.
        */
-      public Builder setPavingData(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setPavingData(boolean value) {
+        
         pavingData_ = value;
         onChanged();
         return this;
@@ -29772,33 +29708,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 3;</code>
+       * <code>bool paving_data = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPavingData() {
         
-        pavingData_ = getDefaultInstance().getPavingData();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 3;</code>
-       * @param value The bytes for pavingData to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPavingDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pavingData_ = value;
+        pavingData_ = false;
         onChanged();
         return this;
       }
@@ -30051,19 +29966,27 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private long startScn_ ;
+      private java.lang.Object startScn_ = "";
       /**
        * <pre>
        * start scn
        * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 start_scn = 7;</code>
+       * <code>string start_scn = 7;</code>
        * @return The startScn.
        */
-      @java.lang.Override
-      public long getStartScn() {
-        return startScn_;
+      public java.lang.String getStartScn() {
+        java.lang.Object ref = startScn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startScn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -30071,12 +29994,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 start_scn = 7;</code>
+       * <code>string start_scn = 7;</code>
+       * @return The bytes for startScn.
+       */
+      public com.google.protobuf.ByteString
+          getStartScnBytes() {
+        java.lang.Object ref = startScn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startScn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * start scn
+       * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string start_scn = 7;</code>
        * @param value The startScn to set.
        * @return This builder for chaining.
        */
-      public Builder setStartScn(long value) {
-        
+      public Builder setStartScn(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         startScn_ = value;
         onChanged();
         return this;
@@ -30087,28 +30036,49 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 start_scn = 7;</code>
+       * <code>string start_scn = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartScn() {
         
-        startScn_ = 0L;
+        startScn_ = getDefaultInstance().getStartScn();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * start scn
+       * &#64;inject_tag: json:"start_scn" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string start_scn = 7;</code>
+       * @param value The bytes for startScn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartScnBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        startScn_ = value;
         onChanged();
         return this;
       }
 
-      private long fetchSize_ ;
+      private int fetchSize_ ;
       /**
        * <pre>
        * fetch size
        * &#64;inject_tag: json:"fetch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 fetch_size = 8;</code>
+       * <code>int32 fetch_size = 8;</code>
        * @return The fetchSize.
        */
       @java.lang.Override
-      public long getFetchSize() {
+      public int getFetchSize() {
         return fetchSize_;
       }
       /**
@@ -30117,11 +30087,11 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"fetch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 fetch_size = 8;</code>
+       * <code>int32 fetch_size = 8;</code>
        * @param value The fetchSize to set.
        * @return This builder for chaining.
        */
-      public Builder setFetchSize(long value) {
+      public Builder setFetchSize(int value) {
         
         fetchSize_ = value;
         onChanged();
@@ -30133,28 +30103,28 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"fetch_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 fetch_size = 8;</code>
+       * <code>int32 fetch_size = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearFetchSize() {
         
-        fetchSize_ = 0L;
+        fetchSize_ = 0;
         onChanged();
         return this;
       }
 
-      private long supportAutoAddLog_ ;
+      private boolean supportAutoAddLog_ ;
       /**
        * <pre>
        * support auto add log
        * &#64;inject_tag: json:"support_auto_add_log" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 support_auto_add_log = 9;</code>
+       * <code>bool support_auto_add_log = 9;</code>
        * @return The supportAutoAddLog.
        */
       @java.lang.Override
-      public long getSupportAutoAddLog() {
+      public boolean getSupportAutoAddLog() {
         return supportAutoAddLog_;
       }
       /**
@@ -30163,11 +30133,11 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"support_auto_add_log" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 support_auto_add_log = 9;</code>
+       * <code>bool support_auto_add_log = 9;</code>
        * @param value The supportAutoAddLog to set.
        * @return This builder for chaining.
        */
-      public Builder setSupportAutoAddLog(long value) {
+      public Builder setSupportAutoAddLog(boolean value) {
         
         supportAutoAddLog_ = value;
         onChanged();
@@ -30179,12 +30149,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"support_auto_add_log" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 support_auto_add_log = 9;</code>
+       * <code>bool support_auto_add_log = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearSupportAutoAddLog() {
         
-        supportAutoAddLog_ = 0L;
+        supportAutoAddLog_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int queryTimeout_ ;
+      /**
+       * <pre>
+       * support auto add log
+       * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 query_timeout = 10;</code>
+       * @return The queryTimeout.
+       */
+      @java.lang.Override
+      public int getQueryTimeout() {
+        return queryTimeout_;
+      }
+      /**
+       * <pre>
+       * support auto add log
+       * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 query_timeout = 10;</code>
+       * @param value The queryTimeout to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryTimeout(int value) {
+        
+        queryTimeout_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * support auto add log
+       * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 query_timeout = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryTimeout() {
+        
+        queryTimeout_ = 0;
         onChanged();
         return this;
       }
@@ -30201,48 +30217,48 @@ public final class PBSyncManageSyncJob {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.LogminerSource)
+      // @@protoc_insertion_point(builder_scope:model.LogMinerSource)
     }
 
-    // @@protoc_insertion_point(class_scope:model.LogminerSource)
-    private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.LogMinerSource)
+    private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<LogminerSource>
-        PARSER = new com.google.protobuf.AbstractParser<LogminerSource>() {
+    private static final com.google.protobuf.Parser<LogMinerSource>
+        PARSER = new com.google.protobuf.AbstractParser<LogMinerSource>() {
       @java.lang.Override
-      public LogminerSource parsePartialFrom(
+      public LogMinerSource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LogminerSource(input, extensionRegistry);
+        return new LogMinerSource(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<LogminerSource> parser() {
+    public static com.google.protobuf.Parser<LogMinerSource> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<LogminerSource> getParserForType() {
+    public com.google.protobuf.Parser<LogMinerSource> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogminerSource getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.LogMinerSource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface PgwalSourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.PgwalSource)
+  public interface PgWalSourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.PgWalSource)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -30336,25 +30352,14 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
+     * status interval
+     * &#64;inject_tag: json:"status_interval" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 4;</code>
-     * @return The splitUpdate.
+     * <code>int32 status_interval = 4;</code>
+     * @return The statusInterval.
      */
-    java.lang.String getSplitUpdate();
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 4;</code>
-     * @return The bytes for splitUpdate.
-     */
-    com.google.protobuf.ByteString
-        getSplitUpdateBytes();
+    int getStatusInterval();
 
     /**
      * <pre>
@@ -30362,21 +30367,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
      * </pre>
      *
-     * <code>string allow_created = 5;</code>
+     * <code>bool allow_created = 5;</code>
      * @return The allowCreated.
      */
-    java.lang.String getAllowCreated();
-    /**
-     * <pre>
-     * allow created
-     * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string allow_created = 5;</code>
-     * @return The bytes for allowCreated.
-     */
-    com.google.protobuf.ByteString
-        getAllowCreatedBytes();
+    boolean getAllowCreated();
 
     /**
      * <pre>
@@ -30384,21 +30378,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"temporary" swaggerignore:"true"
      * </pre>
      *
-     * <code>string temporary = 6;</code>
+     * <code>bool temporary = 6;</code>
      * @return The temporary.
      */
-    java.lang.String getTemporary();
-    /**
-     * <pre>
-     * temporary
-     * &#64;inject_tag: json:"temporary" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string temporary = 6;</code>
-     * @return The bytes for temporary.
-     */
-    com.google.protobuf.ByteString
-        getTemporaryBytes();
+    boolean getTemporary();
 
     /**
      * <pre>
@@ -30406,21 +30389,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 7;</code>
+     * <code>bool paving_data = 7;</code>
      * @return The pavingData.
      */
-    java.lang.String getPavingData();
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 7;</code>
-     * @return The bytes for pavingData.
-     */
-    com.google.protobuf.ByteString
-        getPavingDataBytes();
+    boolean getPavingData();
 
     /**
      * <pre>
@@ -30428,21 +30400,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"lsn" swaggerignore:"true"
      * </pre>
      *
-     * <code>string lsn = 8;</code>
+     * <code>int64 lsn = 8;</code>
      * @return The lsn.
      */
-    java.lang.String getLsn();
-    /**
-     * <pre>
-     * lsn
-     * &#64;inject_tag: json:"lsn" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string lsn = 8;</code>
-     * @return The bytes for lsn.
-     */
-    com.google.protobuf.ByteString
-        getLsnBytes();
+    long getLsn();
 
     /**
      * <pre>
@@ -30450,51 +30411,34 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
      * </pre>
      *
-     * <code>string slot_available = 9;</code>
+     * <code>bool slot_available = 9;</code>
      * @return The slotAvailable.
      */
-    java.lang.String getSlotAvailable();
-    /**
-     * <pre>
-     * slot available
-     * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string slot_available = 9;</code>
-     * @return The bytes for slotAvailable.
-     */
-    com.google.protobuf.ByteString
-        getSlotAvailableBytes();
+    boolean getSlotAvailable();
   }
   /**
-   * Protobuf type {@code model.PgwalSource}
+   * Protobuf type {@code model.PgWalSource}
    */
-  public static final class PgwalSource extends
+  public static final class PgWalSource extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.PgwalSource)
-      PgwalSourceOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.PgWalSource)
+      PgWalSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PgwalSource.newBuilder() to construct.
-    private PgwalSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PgWalSource.newBuilder() to construct.
+    private PgWalSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PgwalSource() {
+    private PgWalSource() {
       databaseName_ = "";
       tableList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       slotName_ = "";
-      splitUpdate_ = "";
-      allowCreated_ = "";
-      temporary_ = "";
-      pavingData_ = "";
-      lsn_ = "";
-      slotAvailable_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PgwalSource();
+      return new PgWalSource();
     }
 
     @java.lang.Override
@@ -30502,7 +30446,7 @@ public final class PBSyncManageSyncJob {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PgwalSource(
+    private PgWalSource(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -30542,40 +30486,34 @@ public final class PBSyncManageSyncJob {
               slotName_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
 
-              splitUpdate_ = s;
+              statusInterval_ = input.readInt32();
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
 
-              allowCreated_ = s;
+              allowCreated_ = input.readBool();
               break;
             }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 48: {
 
-              temporary_ = s;
+              temporary_ = input.readBool();
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 56: {
 
-              pavingData_ = s;
+              pavingData_ = input.readBool();
               break;
             }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 64: {
 
-              lsn_ = s;
+              lsn_ = input.readInt64();
               break;
             }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 72: {
 
-              slotAvailable_ = s;
+              slotAvailable_ = input.readBool();
               break;
             }
             default: {
@@ -30602,15 +30540,15 @@ public final class PBSyncManageSyncJob {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgwalSource_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgWalSource_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgwalSource_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgWalSource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder.class);
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder.class);
     }
 
     public static final int DATABASE_NAME_FIELD_NUMBER = 1;
@@ -30764,292 +30702,100 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int SPLIT_UPDATE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object splitUpdate_;
+    public static final int STATUS_INTERVAL_FIELD_NUMBER = 4;
+    private int statusInterval_;
     /**
      * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
+     * status interval
+     * &#64;inject_tag: json:"status_interval" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 4;</code>
-     * @return The splitUpdate.
+     * <code>int32 status_interval = 4;</code>
+     * @return The statusInterval.
      */
     @java.lang.Override
-    public java.lang.String getSplitUpdate() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        splitUpdate_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 4;</code>
-     * @return The bytes for splitUpdate.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSplitUpdateBytes() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        splitUpdate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getStatusInterval() {
+      return statusInterval_;
     }
 
     public static final int ALLOW_CREATED_FIELD_NUMBER = 5;
-    private volatile java.lang.Object allowCreated_;
+    private boolean allowCreated_;
     /**
      * <pre>
      * allow created
      * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
      * </pre>
      *
-     * <code>string allow_created = 5;</code>
+     * <code>bool allow_created = 5;</code>
      * @return The allowCreated.
      */
     @java.lang.Override
-    public java.lang.String getAllowCreated() {
-      java.lang.Object ref = allowCreated_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        allowCreated_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * allow created
-     * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string allow_created = 5;</code>
-     * @return The bytes for allowCreated.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAllowCreatedBytes() {
-      java.lang.Object ref = allowCreated_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        allowCreated_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getAllowCreated() {
+      return allowCreated_;
     }
 
     public static final int TEMPORARY_FIELD_NUMBER = 6;
-    private volatile java.lang.Object temporary_;
+    private boolean temporary_;
     /**
      * <pre>
      * temporary
      * &#64;inject_tag: json:"temporary" swaggerignore:"true"
      * </pre>
      *
-     * <code>string temporary = 6;</code>
+     * <code>bool temporary = 6;</code>
      * @return The temporary.
      */
     @java.lang.Override
-    public java.lang.String getTemporary() {
-      java.lang.Object ref = temporary_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        temporary_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * temporary
-     * &#64;inject_tag: json:"temporary" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string temporary = 6;</code>
-     * @return The bytes for temporary.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTemporaryBytes() {
-      java.lang.Object ref = temporary_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        temporary_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getTemporary() {
+      return temporary_;
     }
 
     public static final int PAVING_DATA_FIELD_NUMBER = 7;
-    private volatile java.lang.Object pavingData_;
+    private boolean pavingData_;
     /**
      * <pre>
      * paving data
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 7;</code>
+     * <code>bool paving_data = 7;</code>
      * @return The pavingData.
      */
     @java.lang.Override
-    public java.lang.String getPavingData() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pavingData_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 7;</code>
-     * @return The bytes for pavingData.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPavingDataBytes() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pavingData_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getPavingData() {
+      return pavingData_;
     }
 
     public static final int LSN_FIELD_NUMBER = 8;
-    private volatile java.lang.Object lsn_;
+    private long lsn_;
     /**
      * <pre>
      * lsn
      * &#64;inject_tag: json:"lsn" swaggerignore:"true"
      * </pre>
      *
-     * <code>string lsn = 8;</code>
+     * <code>int64 lsn = 8;</code>
      * @return The lsn.
      */
     @java.lang.Override
-    public java.lang.String getLsn() {
-      java.lang.Object ref = lsn_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lsn_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * lsn
-     * &#64;inject_tag: json:"lsn" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string lsn = 8;</code>
-     * @return The bytes for lsn.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLsnBytes() {
-      java.lang.Object ref = lsn_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lsn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getLsn() {
+      return lsn_;
     }
 
     public static final int SLOT_AVAILABLE_FIELD_NUMBER = 9;
-    private volatile java.lang.Object slotAvailable_;
+    private boolean slotAvailable_;
     /**
      * <pre>
      * slot available
      * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
      * </pre>
      *
-     * <code>string slot_available = 9;</code>
+     * <code>bool slot_available = 9;</code>
      * @return The slotAvailable.
      */
     @java.lang.Override
-    public java.lang.String getSlotAvailable() {
-      java.lang.Object ref = slotAvailable_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        slotAvailable_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * slot available
-     * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string slot_available = 9;</code>
-     * @return The bytes for slotAvailable.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSlotAvailableBytes() {
-      java.lang.Object ref = slotAvailable_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        slotAvailable_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getSlotAvailable() {
+      return slotAvailable_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -31075,23 +30821,23 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(slotName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, slotName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, splitUpdate_);
+      if (statusInterval_ != 0) {
+        output.writeInt32(4, statusInterval_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allowCreated_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, allowCreated_);
+      if (allowCreated_ != false) {
+        output.writeBool(5, allowCreated_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(temporary_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, temporary_);
+      if (temporary_ != false) {
+        output.writeBool(6, temporary_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pavingData_);
+      if (pavingData_ != false) {
+        output.writeBool(7, pavingData_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lsn_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, lsn_);
+      if (lsn_ != 0L) {
+        output.writeInt64(8, lsn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(slotAvailable_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, slotAvailable_);
+      if (slotAvailable_ != false) {
+        output.writeBool(9, slotAvailable_);
       }
       unknownFields.writeTo(output);
     }
@@ -31116,23 +30862,29 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(slotName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, slotName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, splitUpdate_);
+      if (statusInterval_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, statusInterval_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allowCreated_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, allowCreated_);
+      if (allowCreated_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, allowCreated_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(temporary_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, temporary_);
+      if (temporary_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, temporary_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pavingData_);
+      if (pavingData_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, pavingData_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lsn_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, lsn_);
+      if (lsn_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, lsn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(slotAvailable_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, slotAvailable_);
+      if (slotAvailable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, slotAvailable_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31144,10 +30896,10 @@ public final class PBSyncManageSyncJob {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource) obj;
+      com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource) obj;
 
       if (!getDatabaseName()
           .equals(other.getDatabaseName())) return false;
@@ -31155,18 +30907,18 @@ public final class PBSyncManageSyncJob {
           .equals(other.getTableListList())) return false;
       if (!getSlotName()
           .equals(other.getSlotName())) return false;
-      if (!getSplitUpdate()
-          .equals(other.getSplitUpdate())) return false;
-      if (!getAllowCreated()
-          .equals(other.getAllowCreated())) return false;
-      if (!getTemporary()
-          .equals(other.getTemporary())) return false;
-      if (!getPavingData()
-          .equals(other.getPavingData())) return false;
-      if (!getLsn()
-          .equals(other.getLsn())) return false;
-      if (!getSlotAvailable()
-          .equals(other.getSlotAvailable())) return false;
+      if (getStatusInterval()
+          != other.getStatusInterval()) return false;
+      if (getAllowCreated()
+          != other.getAllowCreated()) return false;
+      if (getTemporary()
+          != other.getTemporary()) return false;
+      if (getPavingData()
+          != other.getPavingData()) return false;
+      if (getLsn()
+          != other.getLsn()) return false;
+      if (getSlotAvailable()
+          != other.getSlotAvailable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -31186,86 +30938,91 @@ public final class PBSyncManageSyncJob {
       }
       hash = (37 * hash) + SLOT_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getSlotName().hashCode();
-      hash = (37 * hash) + SPLIT_UPDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getSplitUpdate().hashCode();
+      hash = (37 * hash) + STATUS_INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getStatusInterval();
       hash = (37 * hash) + ALLOW_CREATED_FIELD_NUMBER;
-      hash = (53 * hash) + getAllowCreated().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAllowCreated());
       hash = (37 * hash) + TEMPORARY_FIELD_NUMBER;
-      hash = (53 * hash) + getTemporary().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getTemporary());
       hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getPavingData().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPavingData());
       hash = (37 * hash) + LSN_FIELD_NUMBER;
-      hash = (53 * hash) + getLsn().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLsn());
       hash = (37 * hash) + SLOT_AVAILABLE_FIELD_NUMBER;
-      hash = (53 * hash) + getSlotAvailable().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSlotAvailable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -31278,7 +31035,7 @@ public final class PBSyncManageSyncJob {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -31294,26 +31051,26 @@ public final class PBSyncManageSyncJob {
       return builder;
     }
     /**
-     * Protobuf type {@code model.PgwalSource}
+     * Protobuf type {@code model.PgWalSource}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.PgwalSource)
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSourceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.PgWalSource)
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSourceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgwalSource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgWalSource_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgwalSource_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgWalSource_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -31337,17 +31094,17 @@ public final class PBSyncManageSyncJob {
         bitField0_ = (bitField0_ & ~0x00000001);
         slotName_ = "";
 
-        splitUpdate_ = "";
+        statusInterval_ = 0;
 
-        allowCreated_ = "";
+        allowCreated_ = false;
 
-        temporary_ = "";
+        temporary_ = false;
 
-        pavingData_ = "";
+        pavingData_ = false;
 
-        lsn_ = "";
+        lsn_ = 0L;
 
-        slotAvailable_ = "";
+        slotAvailable_ = false;
 
         return this;
       }
@@ -31355,17 +31112,17 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgwalSource_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.internal_static_model_PgWalSource_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource build() {
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource build() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -31373,8 +31130,8 @@ public final class PBSyncManageSyncJob {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource(this);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource(this);
         int from_bitField0_ = bitField0_;
         result.databaseName_ = databaseName_;
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -31383,7 +31140,7 @@ public final class PBSyncManageSyncJob {
         }
         result.tableList_ = tableList_;
         result.slotName_ = slotName_;
-        result.splitUpdate_ = splitUpdate_;
+        result.statusInterval_ = statusInterval_;
         result.allowCreated_ = allowCreated_;
         result.temporary_ = temporary_;
         result.pavingData_ = pavingData_;
@@ -31427,16 +31184,16 @@ public final class PBSyncManageSyncJob {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource.getDefaultInstance()) return this;
         if (!other.getDatabaseName().isEmpty()) {
           databaseName_ = other.databaseName_;
           onChanged();
@@ -31455,29 +31212,23 @@ public final class PBSyncManageSyncJob {
           slotName_ = other.slotName_;
           onChanged();
         }
-        if (!other.getSplitUpdate().isEmpty()) {
-          splitUpdate_ = other.splitUpdate_;
-          onChanged();
+        if (other.getStatusInterval() != 0) {
+          setStatusInterval(other.getStatusInterval());
         }
-        if (!other.getAllowCreated().isEmpty()) {
-          allowCreated_ = other.allowCreated_;
-          onChanged();
+        if (other.getAllowCreated() != false) {
+          setAllowCreated(other.getAllowCreated());
         }
-        if (!other.getTemporary().isEmpty()) {
-          temporary_ = other.temporary_;
-          onChanged();
+        if (other.getTemporary() != false) {
+          setTemporary(other.getTemporary());
         }
-        if (!other.getPavingData().isEmpty()) {
-          pavingData_ = other.pavingData_;
-          onChanged();
+        if (other.getPavingData() != false) {
+          setPavingData(other.getPavingData());
         }
-        if (!other.getLsn().isEmpty()) {
-          lsn_ = other.lsn_;
-          onChanged();
+        if (other.getLsn() != 0L) {
+          setLsn(other.getLsn());
         }
-        if (!other.getSlotAvailable().isEmpty()) {
-          slotAvailable_ = other.slotAvailable_;
-          onChanged();
+        if (other.getSlotAvailable() != false) {
+          setSlotAvailable(other.getSlotAvailable());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -31494,11 +31245,11 @@ public final class PBSyncManageSyncJob {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -31866,128 +31617,65 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object splitUpdate_ = "";
+      private int statusInterval_ ;
       /**
        * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
+       * status interval
+       * &#64;inject_tag: json:"status_interval" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 4;</code>
-       * @return The splitUpdate.
+       * <code>int32 status_interval = 4;</code>
+       * @return The statusInterval.
        */
-      public java.lang.String getSplitUpdate() {
-        java.lang.Object ref = splitUpdate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          splitUpdate_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getStatusInterval() {
+        return statusInterval_;
       }
       /**
        * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
+       * status interval
+       * &#64;inject_tag: json:"status_interval" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 4;</code>
-       * @return The bytes for splitUpdate.
-       */
-      public com.google.protobuf.ByteString
-          getSplitUpdateBytes() {
-        java.lang.Object ref = splitUpdate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          splitUpdate_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 4;</code>
-       * @param value The splitUpdate to set.
+       * <code>int32 status_interval = 4;</code>
+       * @param value The statusInterval to set.
        * @return This builder for chaining.
        */
-      public Builder setSplitUpdate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        splitUpdate_ = value;
+      public Builder setStatusInterval(int value) {
+        
+        statusInterval_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
+       * status interval
+       * &#64;inject_tag: json:"status_interval" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 4;</code>
+       * <code>int32 status_interval = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSplitUpdate() {
+      public Builder clearStatusInterval() {
         
-        splitUpdate_ = getDefaultInstance().getSplitUpdate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 4;</code>
-       * @param value The bytes for splitUpdate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSplitUpdateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        splitUpdate_ = value;
+        statusInterval_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object allowCreated_ = "";
+      private boolean allowCreated_ ;
       /**
        * <pre>
        * allow created
        * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
        * </pre>
        *
-       * <code>string allow_created = 5;</code>
+       * <code>bool allow_created = 5;</code>
        * @return The allowCreated.
        */
-      public java.lang.String getAllowCreated() {
-        java.lang.Object ref = allowCreated_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          allowCreated_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getAllowCreated() {
+        return allowCreated_;
       }
       /**
        * <pre>
@@ -31995,38 +31683,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
        * </pre>
        *
-       * <code>string allow_created = 5;</code>
-       * @return The bytes for allowCreated.
-       */
-      public com.google.protobuf.ByteString
-          getAllowCreatedBytes() {
-        java.lang.Object ref = allowCreated_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          allowCreated_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * allow created
-       * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string allow_created = 5;</code>
+       * <code>bool allow_created = 5;</code>
        * @param value The allowCreated to set.
        * @return This builder for chaining.
        */
-      public Builder setAllowCreated(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setAllowCreated(boolean value) {
+        
         allowCreated_ = value;
         onChanged();
         return this;
@@ -32037,58 +31699,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
        * </pre>
        *
-       * <code>string allow_created = 5;</code>
+       * <code>bool allow_created = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAllowCreated() {
         
-        allowCreated_ = getDefaultInstance().getAllowCreated();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * allow created
-       * &#64;inject_tag: json:"allow_created" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string allow_created = 5;</code>
-       * @param value The bytes for allowCreated to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAllowCreatedBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        allowCreated_ = value;
+        allowCreated_ = false;
         onChanged();
         return this;
       }
 
-      private java.lang.Object temporary_ = "";
+      private boolean temporary_ ;
       /**
        * <pre>
        * temporary
        * &#64;inject_tag: json:"temporary" swaggerignore:"true"
        * </pre>
        *
-       * <code>string temporary = 6;</code>
+       * <code>bool temporary = 6;</code>
        * @return The temporary.
        */
-      public java.lang.String getTemporary() {
-        java.lang.Object ref = temporary_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          temporary_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getTemporary() {
+        return temporary_;
       }
       /**
        * <pre>
@@ -32096,38 +31729,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"temporary" swaggerignore:"true"
        * </pre>
        *
-       * <code>string temporary = 6;</code>
-       * @return The bytes for temporary.
-       */
-      public com.google.protobuf.ByteString
-          getTemporaryBytes() {
-        java.lang.Object ref = temporary_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          temporary_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * temporary
-       * &#64;inject_tag: json:"temporary" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string temporary = 6;</code>
+       * <code>bool temporary = 6;</code>
        * @param value The temporary to set.
        * @return This builder for chaining.
        */
-      public Builder setTemporary(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setTemporary(boolean value) {
+        
         temporary_ = value;
         onChanged();
         return this;
@@ -32138,58 +31745,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"temporary" swaggerignore:"true"
        * </pre>
        *
-       * <code>string temporary = 6;</code>
+       * <code>bool temporary = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTemporary() {
         
-        temporary_ = getDefaultInstance().getTemporary();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * temporary
-       * &#64;inject_tag: json:"temporary" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string temporary = 6;</code>
-       * @param value The bytes for temporary to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTemporaryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        temporary_ = value;
+        temporary_ = false;
         onChanged();
         return this;
       }
 
-      private java.lang.Object pavingData_ = "";
+      private boolean pavingData_ ;
       /**
        * <pre>
        * paving data
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 7;</code>
+       * <code>bool paving_data = 7;</code>
        * @return The pavingData.
        */
-      public java.lang.String getPavingData() {
-        java.lang.Object ref = pavingData_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          pavingData_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getPavingData() {
+        return pavingData_;
       }
       /**
        * <pre>
@@ -32197,38 +31775,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 7;</code>
-       * @return The bytes for pavingData.
-       */
-      public com.google.protobuf.ByteString
-          getPavingDataBytes() {
-        java.lang.Object ref = pavingData_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pavingData_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 7;</code>
+       * <code>bool paving_data = 7;</code>
        * @param value The pavingData to set.
        * @return This builder for chaining.
        */
-      public Builder setPavingData(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setPavingData(boolean value) {
+        
         pavingData_ = value;
         onChanged();
         return this;
@@ -32239,58 +31791,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 7;</code>
+       * <code>bool paving_data = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearPavingData() {
         
-        pavingData_ = getDefaultInstance().getPavingData();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 7;</code>
-       * @param value The bytes for pavingData to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPavingDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pavingData_ = value;
+        pavingData_ = false;
         onChanged();
         return this;
       }
 
-      private java.lang.Object lsn_ = "";
+      private long lsn_ ;
       /**
        * <pre>
        * lsn
        * &#64;inject_tag: json:"lsn" swaggerignore:"true"
        * </pre>
        *
-       * <code>string lsn = 8;</code>
+       * <code>int64 lsn = 8;</code>
        * @return The lsn.
        */
-      public java.lang.String getLsn() {
-        java.lang.Object ref = lsn_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          lsn_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getLsn() {
+        return lsn_;
       }
       /**
        * <pre>
@@ -32298,38 +31821,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"lsn" swaggerignore:"true"
        * </pre>
        *
-       * <code>string lsn = 8;</code>
-       * @return The bytes for lsn.
-       */
-      public com.google.protobuf.ByteString
-          getLsnBytes() {
-        java.lang.Object ref = lsn_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          lsn_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * lsn
-       * &#64;inject_tag: json:"lsn" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string lsn = 8;</code>
+       * <code>int64 lsn = 8;</code>
        * @param value The lsn to set.
        * @return This builder for chaining.
        */
-      public Builder setLsn(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setLsn(long value) {
+        
         lsn_ = value;
         onChanged();
         return this;
@@ -32340,58 +31837,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"lsn" swaggerignore:"true"
        * </pre>
        *
-       * <code>string lsn = 8;</code>
+       * <code>int64 lsn = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearLsn() {
         
-        lsn_ = getDefaultInstance().getLsn();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * lsn
-       * &#64;inject_tag: json:"lsn" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string lsn = 8;</code>
-       * @param value The bytes for lsn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLsnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        lsn_ = value;
+        lsn_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object slotAvailable_ = "";
+      private boolean slotAvailable_ ;
       /**
        * <pre>
        * slot available
        * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
        * </pre>
        *
-       * <code>string slot_available = 9;</code>
+       * <code>bool slot_available = 9;</code>
        * @return The slotAvailable.
        */
-      public java.lang.String getSlotAvailable() {
-        java.lang.Object ref = slotAvailable_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          slotAvailable_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getSlotAvailable() {
+        return slotAvailable_;
       }
       /**
        * <pre>
@@ -32399,38 +31867,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
        * </pre>
        *
-       * <code>string slot_available = 9;</code>
-       * @return The bytes for slotAvailable.
-       */
-      public com.google.protobuf.ByteString
-          getSlotAvailableBytes() {
-        java.lang.Object ref = slotAvailable_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          slotAvailable_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * slot available
-       * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string slot_available = 9;</code>
+       * <code>bool slot_available = 9;</code>
        * @param value The slotAvailable to set.
        * @return This builder for chaining.
        */
-      public Builder setSlotAvailable(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setSlotAvailable(boolean value) {
+        
         slotAvailable_ = value;
         onChanged();
         return this;
@@ -32441,33 +31883,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
        * </pre>
        *
-       * <code>string slot_available = 9;</code>
+       * <code>bool slot_available = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearSlotAvailable() {
         
-        slotAvailable_ = getDefaultInstance().getSlotAvailable();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * slot available
-       * &#64;inject_tag: json:"slot_available" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string slot_available = 9;</code>
-       * @param value The bytes for slotAvailable to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSlotAvailableBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        slotAvailable_ = value;
+        slotAvailable_ = false;
         onChanged();
         return this;
       }
@@ -32484,41 +31905,41 @@ public final class PBSyncManageSyncJob {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.PgwalSource)
+      // @@protoc_insertion_point(builder_scope:model.PgWalSource)
     }
 
-    // @@protoc_insertion_point(class_scope:model.PgwalSource)
-    private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.PgWalSource)
+    private static final com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PgwalSource>
-        PARSER = new com.google.protobuf.AbstractParser<PgwalSource>() {
+    private static final com.google.protobuf.Parser<PgWalSource>
+        PARSER = new com.google.protobuf.AbstractParser<PgWalSource>() {
       @java.lang.Override
-      public PgwalSource parsePartialFrom(
+      public PgWalSource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PgwalSource(input, extensionRegistry);
+        return new PgWalSource(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PgwalSource> parser() {
+    public static com.google.protobuf.Parser<PgWalSource> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PgwalSource> getParserForType() {
+    public com.google.protobuf.Parser<PgWalSource> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgwalSource getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.PgWalSource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -32579,21 +32000,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"split_update" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 2;</code>
+     * <code>bool split_update = 2;</code>
      * @return The splitUpdate.
      */
-    java.lang.String getSplitUpdate();
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 2;</code>
-     * @return The bytes for splitUpdate.
-     */
-    com.google.protobuf.ByteString
-        getSplitUpdateBytes();
+    boolean getSplitUpdate();
 
     /**
      * <pre>
@@ -32601,21 +32011,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 3;</code>
+     * <code>bool paving_data = 3;</code>
      * @return The pavingData.
      */
-    java.lang.String getPavingData();
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 3;</code>
-     * @return The bytes for pavingData.
-     */
-    com.google.protobuf.ByteString
-        getPavingDataBytes();
+    boolean getPavingData();
 
     /**
      * <pre>
@@ -32667,21 +32066,32 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
      * </pre>
      *
-     * <code>string poll_interval = 6;</code>
+     * <code>int64 poll_interval = 6;</code>
      * @return The pollInterval.
      */
-    java.lang.String getPollInterval();
+    long getPollInterval();
+
     /**
      * <pre>
-     * poll interval
-     * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+     * database name
+     * &#64;inject_tag: json:"database_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string poll_interval = 6;</code>
-     * @return The bytes for pollInterval.
+     * <code>string database_name = 7;</code>
+     * @return The databaseName.
+     */
+    java.lang.String getDatabaseName();
+    /**
+     * <pre>
+     * database name
+     * &#64;inject_tag: json:"database_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string database_name = 7;</code>
+     * @return The bytes for databaseName.
      */
     com.google.protobuf.ByteString
-        getPollIntervalBytes();
+        getDatabaseNameBytes();
   }
   /**
    * Protobuf type {@code model.SqlServerCdcSource}
@@ -32697,11 +32107,9 @@ public final class PBSyncManageSyncJob {
     }
     private SqlServerCdcSource() {
       tableList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      splitUpdate_ = "";
-      pavingData_ = "";
       cat_ = "";
       lsn_ = "";
-      pollInterval_ = "";
+      databaseName_ = "";
     }
 
     @java.lang.Override
@@ -32744,16 +32152,14 @@ public final class PBSyncManageSyncJob {
               tableList_.add(s);
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              splitUpdate_ = s;
+              splitUpdate_ = input.readBool();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              pavingData_ = s;
+              pavingData_ = input.readBool();
               break;
             }
             case 34: {
@@ -32768,10 +32174,15 @@ public final class PBSyncManageSyncJob {
               lsn_ = s;
               break;
             }
-            case 50: {
+            case 48: {
+
+              pollInterval_ = input.readInt64();
+              break;
+            }
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              pollInterval_ = s;
+              databaseName_ = s;
               break;
             }
             default: {
@@ -32865,99 +32276,35 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int SPLIT_UPDATE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object splitUpdate_;
+    private boolean splitUpdate_;
     /**
      * <pre>
      * split update
      * &#64;inject_tag: json:"split_update" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 2;</code>
+     * <code>bool split_update = 2;</code>
      * @return The splitUpdate.
      */
     @java.lang.Override
-    public java.lang.String getSplitUpdate() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        splitUpdate_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 2;</code>
-     * @return The bytes for splitUpdate.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSplitUpdateBytes() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        splitUpdate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getSplitUpdate() {
+      return splitUpdate_;
     }
 
     public static final int PAVING_DATA_FIELD_NUMBER = 3;
-    private volatile java.lang.Object pavingData_;
+    private boolean pavingData_;
     /**
      * <pre>
      * paving data
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 3;</code>
+     * <code>bool paving_data = 3;</code>
      * @return The pavingData.
      */
     @java.lang.Override
-    public java.lang.String getPavingData() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pavingData_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 3;</code>
-     * @return The bytes for pavingData.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPavingDataBytes() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pavingData_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getPavingData() {
+      return pavingData_;
     }
 
     public static final int CAT_FIELD_NUMBER = 4;
@@ -33057,47 +32404,63 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int POLL_INTERVAL_FIELD_NUMBER = 6;
-    private volatile java.lang.Object pollInterval_;
+    private long pollInterval_;
     /**
      * <pre>
      * poll interval
      * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
      * </pre>
      *
-     * <code>string poll_interval = 6;</code>
+     * <code>int64 poll_interval = 6;</code>
      * @return The pollInterval.
      */
     @java.lang.Override
-    public java.lang.String getPollInterval() {
-      java.lang.Object ref = pollInterval_;
+    public long getPollInterval() {
+      return pollInterval_;
+    }
+
+    public static final int DATABASE_NAME_FIELD_NUMBER = 7;
+    private volatile java.lang.Object databaseName_;
+    /**
+     * <pre>
+     * database name
+     * &#64;inject_tag: json:"database_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string database_name = 7;</code>
+     * @return The databaseName.
+     */
+    @java.lang.Override
+    public java.lang.String getDatabaseName() {
+      java.lang.Object ref = databaseName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        pollInterval_ = s;
+        databaseName_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * poll interval
-     * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+     * database name
+     * &#64;inject_tag: json:"database_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string poll_interval = 6;</code>
-     * @return The bytes for pollInterval.
+     * <code>string database_name = 7;</code>
+     * @return The bytes for databaseName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPollIntervalBytes() {
-      java.lang.Object ref = pollInterval_;
+        getDatabaseNameBytes() {
+      java.lang.Object ref = databaseName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        pollInterval_ = b;
+        databaseName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -33121,11 +32484,11 @@ public final class PBSyncManageSyncJob {
       for (int i = 0; i < tableList_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableList_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, splitUpdate_);
+      if (splitUpdate_ != false) {
+        output.writeBool(2, splitUpdate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pavingData_);
+      if (pavingData_ != false) {
+        output.writeBool(3, pavingData_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cat_);
@@ -33133,8 +32496,11 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lsn_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, lsn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pollInterval_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pollInterval_);
+      if (pollInterval_ != 0L) {
+        output.writeInt64(6, pollInterval_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, databaseName_);
       }
       unknownFields.writeTo(output);
     }
@@ -33153,11 +32519,13 @@ public final class PBSyncManageSyncJob {
         size += dataSize;
         size += 1 * getTableListList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, splitUpdate_);
+      if (splitUpdate_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, splitUpdate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pavingData_);
+      if (pavingData_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, pavingData_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cat_);
@@ -33165,8 +32533,12 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lsn_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, lsn_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pollInterval_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pollInterval_);
+      if (pollInterval_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, pollInterval_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, databaseName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -33185,16 +32557,18 @@ public final class PBSyncManageSyncJob {
 
       if (!getTableListList()
           .equals(other.getTableListList())) return false;
-      if (!getSplitUpdate()
-          .equals(other.getSplitUpdate())) return false;
-      if (!getPavingData()
-          .equals(other.getPavingData())) return false;
+      if (getSplitUpdate()
+          != other.getSplitUpdate()) return false;
+      if (getPavingData()
+          != other.getPavingData()) return false;
       if (!getCat()
           .equals(other.getCat())) return false;
       if (!getLsn()
           .equals(other.getLsn())) return false;
-      if (!getPollInterval()
-          .equals(other.getPollInterval())) return false;
+      if (getPollInterval()
+          != other.getPollInterval()) return false;
+      if (!getDatabaseName()
+          .equals(other.getDatabaseName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -33211,15 +32585,20 @@ public final class PBSyncManageSyncJob {
         hash = (53 * hash) + getTableListList().hashCode();
       }
       hash = (37 * hash) + SPLIT_UPDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getSplitUpdate().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSplitUpdate());
       hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getPavingData().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPavingData());
       hash = (37 * hash) + CAT_FIELD_NUMBER;
       hash = (53 * hash) + getCat().hashCode();
       hash = (37 * hash) + LSN_FIELD_NUMBER;
       hash = (53 * hash) + getLsn().hashCode();
       hash = (37 * hash) + POLL_INTERVAL_FIELD_NUMBER;
-      hash = (53 * hash) + getPollInterval().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPollInterval());
+      hash = (37 * hash) + DATABASE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabaseName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -33355,15 +32734,17 @@ public final class PBSyncManageSyncJob {
         super.clear();
         tableList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        splitUpdate_ = "";
+        splitUpdate_ = false;
 
-        pavingData_ = "";
+        pavingData_ = false;
 
         cat_ = "";
 
         lsn_ = "";
 
-        pollInterval_ = "";
+        pollInterval_ = 0L;
+
+        databaseName_ = "";
 
         return this;
       }
@@ -33402,6 +32783,7 @@ public final class PBSyncManageSyncJob {
         result.cat_ = cat_;
         result.lsn_ = lsn_;
         result.pollInterval_ = pollInterval_;
+        result.databaseName_ = databaseName_;
         onBuilt();
         return result;
       }
@@ -33460,13 +32842,11 @@ public final class PBSyncManageSyncJob {
           }
           onChanged();
         }
-        if (!other.getSplitUpdate().isEmpty()) {
-          splitUpdate_ = other.splitUpdate_;
-          onChanged();
+        if (other.getSplitUpdate() != false) {
+          setSplitUpdate(other.getSplitUpdate());
         }
-        if (!other.getPavingData().isEmpty()) {
-          pavingData_ = other.pavingData_;
-          onChanged();
+        if (other.getPavingData() != false) {
+          setPavingData(other.getPavingData());
         }
         if (!other.getCat().isEmpty()) {
           cat_ = other.cat_;
@@ -33476,8 +32856,11 @@ public final class PBSyncManageSyncJob {
           lsn_ = other.lsn_;
           onChanged();
         }
-        if (!other.getPollInterval().isEmpty()) {
-          pollInterval_ = other.pollInterval_;
+        if (other.getPollInterval() != 0L) {
+          setPollInterval(other.getPollInterval());
+        }
+        if (!other.getDatabaseName().isEmpty()) {
+          databaseName_ = other.databaseName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -33665,27 +33048,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object splitUpdate_ = "";
+      private boolean splitUpdate_ ;
       /**
        * <pre>
        * split update
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 2;</code>
+       * <code>bool split_update = 2;</code>
        * @return The splitUpdate.
        */
-      public java.lang.String getSplitUpdate() {
-        java.lang.Object ref = splitUpdate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          splitUpdate_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getSplitUpdate() {
+        return splitUpdate_;
       }
       /**
        * <pre>
@@ -33693,38 +33068,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 2;</code>
-       * @return The bytes for splitUpdate.
-       */
-      public com.google.protobuf.ByteString
-          getSplitUpdateBytes() {
-        java.lang.Object ref = splitUpdate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          splitUpdate_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 2;</code>
+       * <code>bool split_update = 2;</code>
        * @param value The splitUpdate to set.
        * @return This builder for chaining.
        */
-      public Builder setSplitUpdate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setSplitUpdate(boolean value) {
+        
         splitUpdate_ = value;
         onChanged();
         return this;
@@ -33735,58 +33084,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 2;</code>
+       * <code>bool split_update = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSplitUpdate() {
         
-        splitUpdate_ = getDefaultInstance().getSplitUpdate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 2;</code>
-       * @param value The bytes for splitUpdate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSplitUpdateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        splitUpdate_ = value;
+        splitUpdate_ = false;
         onChanged();
         return this;
       }
 
-      private java.lang.Object pavingData_ = "";
+      private boolean pavingData_ ;
       /**
        * <pre>
        * paving data
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 3;</code>
+       * <code>bool paving_data = 3;</code>
        * @return The pavingData.
        */
-      public java.lang.String getPavingData() {
-        java.lang.Object ref = pavingData_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          pavingData_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getPavingData() {
+        return pavingData_;
       }
       /**
        * <pre>
@@ -33794,38 +33114,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 3;</code>
-       * @return The bytes for pavingData.
-       */
-      public com.google.protobuf.ByteString
-          getPavingDataBytes() {
-        java.lang.Object ref = pavingData_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pavingData_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 3;</code>
+       * <code>bool paving_data = 3;</code>
        * @param value The pavingData to set.
        * @return This builder for chaining.
        */
-      public Builder setPavingData(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setPavingData(boolean value) {
+        
         pavingData_ = value;
         onChanged();
         return this;
@@ -33836,33 +33130,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 3;</code>
+       * <code>bool paving_data = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPavingData() {
         
-        pavingData_ = getDefaultInstance().getPavingData();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 3;</code>
-       * @param value The bytes for pavingData to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPavingDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pavingData_ = value;
+        pavingData_ = false;
         onChanged();
         return this;
       }
@@ -34069,23 +33342,69 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object pollInterval_ = "";
+      private long pollInterval_ ;
       /**
        * <pre>
        * poll interval
        * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
        * </pre>
        *
-       * <code>string poll_interval = 6;</code>
+       * <code>int64 poll_interval = 6;</code>
        * @return The pollInterval.
        */
-      public java.lang.String getPollInterval() {
-        java.lang.Object ref = pollInterval_;
+      @java.lang.Override
+      public long getPollInterval() {
+        return pollInterval_;
+      }
+      /**
+       * <pre>
+       * poll interval
+       * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int64 poll_interval = 6;</code>
+       * @param value The pollInterval to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPollInterval(long value) {
+        
+        pollInterval_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * poll interval
+       * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int64 poll_interval = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPollInterval() {
+        
+        pollInterval_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object databaseName_ = "";
+      /**
+       * <pre>
+       * database name
+       * &#64;inject_tag: json:"database_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string database_name = 7;</code>
+       * @return The databaseName.
+       */
+      public java.lang.String getDatabaseName() {
+        java.lang.Object ref = databaseName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          pollInterval_ = s;
+          databaseName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -34093,21 +33412,21 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * poll interval
-       * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+       * database name
+       * &#64;inject_tag: json:"database_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string poll_interval = 6;</code>
-       * @return The bytes for pollInterval.
+       * <code>string database_name = 7;</code>
+       * @return The bytes for databaseName.
        */
       public com.google.protobuf.ByteString
-          getPollIntervalBytes() {
-        java.lang.Object ref = pollInterval_;
+          getDatabaseNameBytes() {
+        java.lang.Object ref = databaseName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          pollInterval_ = b;
+          databaseName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -34115,57 +33434,57 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * poll interval
-       * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+       * database name
+       * &#64;inject_tag: json:"database_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string poll_interval = 6;</code>
-       * @param value The pollInterval to set.
+       * <code>string database_name = 7;</code>
+       * @param value The databaseName to set.
        * @return This builder for chaining.
        */
-      public Builder setPollInterval(
+      public Builder setDatabaseName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        pollInterval_ = value;
+        databaseName_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * poll interval
-       * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+       * database name
+       * &#64;inject_tag: json:"database_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string poll_interval = 6;</code>
+       * <code>string database_name = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPollInterval() {
+      public Builder clearDatabaseName() {
         
-        pollInterval_ = getDefaultInstance().getPollInterval();
+        databaseName_ = getDefaultInstance().getDatabaseName();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * poll interval
-       * &#64;inject_tag: json:"poll_interval" swaggerignore:"true"
+       * database name
+       * &#64;inject_tag: json:"database_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string poll_interval = 6;</code>
-       * @param value The bytes for pollInterval to set.
+       * <code>string database_name = 7;</code>
+       * @param value The bytes for databaseName to set.
        * @return This builder for chaining.
        */
-      public Builder setPollIntervalBytes(
+      public Builder setDatabaseNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        pollInterval_ = value;
+        databaseName_ = value;
         onChanged();
         return this;
       }
@@ -34351,21 +33670,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"split_update" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 5;</code>
+     * <code>bool split_update = 5;</code>
      * @return The splitUpdate.
      */
-    java.lang.String getSplitUpdate();
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 5;</code>
-     * @return The bytes for splitUpdate.
-     */
-    com.google.protobuf.ByteString
-        getSplitUpdateBytes();
+    boolean getSplitUpdate();
 
     /**
      * <pre>
@@ -34373,21 +33681,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 6;</code>
+     * <code>bool paving_data = 6;</code>
      * @return The pavingData.
      */
-    java.lang.String getPavingData();
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 6;</code>
-     * @return The bytes for pavingData.
-     */
-    com.google.protobuf.ByteString
-        getPavingDataBytes();
+    boolean getPavingData();
 
     /**
      * <pre>
@@ -34395,10 +33692,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"filter" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 filter = 7;</code>
+     * <code>string filter = 7;</code>
      * @return The filter.
      */
-    long getFilter();
+    java.lang.String getFilter();
+    /**
+     * <pre>
+     * filter
+     * &#64;inject_tag: json:"filter" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     * @return The bytes for filter.
+     */
+    com.google.protobuf.ByteString
+        getFilterBytes();
 
     /**
      * <pre>
@@ -34406,10 +33714,32 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"is_gtid_mode" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 is_gtid_mode = 8;</code>
+     * <code>bool is_gtid_mode = 8;</code>
      * @return The isGtidMode.
      */
-    long getIsGtidMode();
+    boolean getIsGtidMode();
+
+    /**
+     * <pre>
+     * query_timeout
+     * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 query_timeout = 9;</code>
+     * @return The queryTimeout.
+     */
+    int getQueryTimeout();
+
+    /**
+     * <pre>
+     * connect_timeout
+     * &#64;inject_tag: json:"connect_timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 connect_timeout = 10;</code>
+     * @return The connectTimeout.
+     */
+    int getConnectTimeout();
   }
   /**
    * Protobuf type {@code model.BinlogSource}
@@ -34427,8 +33757,7 @@ public final class PBSyncManageSyncJob {
       schema_ = "";
       cat_ = "";
       table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      splitUpdate_ = "";
-      pavingData_ = "";
+      filter_ = "";
     }
 
     @java.lang.Override
@@ -34496,26 +33825,35 @@ public final class PBSyncManageSyncJob {
               table_.add(s);
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
 
-              splitUpdate_ = s;
+              splitUpdate_ = input.readBool();
               break;
             }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 48: {
 
-              pavingData_ = s;
+              pavingData_ = input.readBool();
               break;
             }
-            case 56: {
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              filter_ = input.readInt64();
+              filter_ = s;
               break;
             }
             case 64: {
 
-              isGtidMode_ = input.readInt64();
+              isGtidMode_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              queryTimeout_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              connectTimeout_ = input.readInt32();
               break;
             }
             default: {
@@ -34746,131 +34084,131 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int SPLIT_UPDATE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object splitUpdate_;
+    private boolean splitUpdate_;
     /**
      * <pre>
      * split update
      * &#64;inject_tag: json:"split_update" swaggerignore:"true"
      * </pre>
      *
-     * <code>string split_update = 5;</code>
+     * <code>bool split_update = 5;</code>
      * @return The splitUpdate.
      */
     @java.lang.Override
-    public java.lang.String getSplitUpdate() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        splitUpdate_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string split_update = 5;</code>
-     * @return The bytes for splitUpdate.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSplitUpdateBytes() {
-      java.lang.Object ref = splitUpdate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        splitUpdate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getSplitUpdate() {
+      return splitUpdate_;
     }
 
     public static final int PAVING_DATA_FIELD_NUMBER = 6;
-    private volatile java.lang.Object pavingData_;
+    private boolean pavingData_;
     /**
      * <pre>
      * paving data
      * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
      * </pre>
      *
-     * <code>string paving_data = 6;</code>
+     * <code>bool paving_data = 6;</code>
      * @return The pavingData.
      */
     @java.lang.Override
-    public java.lang.String getPavingData() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pavingData_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string paving_data = 6;</code>
-     * @return The bytes for pavingData.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPavingDataBytes() {
-      java.lang.Object ref = pavingData_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pavingData_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getPavingData() {
+      return pavingData_;
     }
 
     public static final int FILTER_FIELD_NUMBER = 7;
-    private long filter_;
+    private volatile java.lang.Object filter_;
     /**
      * <pre>
      * filter
      * &#64;inject_tag: json:"filter" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 filter = 7;</code>
+     * <code>string filter = 7;</code>
      * @return The filter.
      */
     @java.lang.Override
-    public long getFilter() {
-      return filter_;
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * filter
+     * &#64;inject_tag: json:"filter" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string filter = 7;</code>
+     * @return The bytes for filter.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int IS_GTID_MODE_FIELD_NUMBER = 8;
-    private long isGtidMode_;
+    private boolean isGtidMode_;
     /**
      * <pre>
      * is gtid mode
      * &#64;inject_tag: json:"is_gtid_mode" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 is_gtid_mode = 8;</code>
+     * <code>bool is_gtid_mode = 8;</code>
      * @return The isGtidMode.
      */
     @java.lang.Override
-    public long getIsGtidMode() {
+    public boolean getIsGtidMode() {
       return isGtidMode_;
+    }
+
+    public static final int QUERY_TIMEOUT_FIELD_NUMBER = 9;
+    private int queryTimeout_;
+    /**
+     * <pre>
+     * query_timeout
+     * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 query_timeout = 9;</code>
+     * @return The queryTimeout.
+     */
+    @java.lang.Override
+    public int getQueryTimeout() {
+      return queryTimeout_;
+    }
+
+    public static final int CONNECT_TIMEOUT_FIELD_NUMBER = 10;
+    private int connectTimeout_;
+    /**
+     * <pre>
+     * connect_timeout
+     * &#64;inject_tag: json:"connect_timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 connect_timeout = 10;</code>
+     * @return The connectTimeout.
+     */
+    @java.lang.Override
+    public int getConnectTimeout() {
+      return connectTimeout_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -34899,17 +34237,23 @@ public final class PBSyncManageSyncJob {
       for (int i = 0; i < table_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, table_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, splitUpdate_);
+      if (splitUpdate_ != false) {
+        output.writeBool(5, splitUpdate_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pavingData_);
+      if (pavingData_ != false) {
+        output.writeBool(6, pavingData_);
       }
-      if (filter_ != 0L) {
-        output.writeInt64(7, filter_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, filter_);
       }
-      if (isGtidMode_ != 0L) {
-        output.writeInt64(8, isGtidMode_);
+      if (isGtidMode_ != false) {
+        output.writeBool(8, isGtidMode_);
+      }
+      if (queryTimeout_ != 0) {
+        output.writeInt32(9, queryTimeout_);
+      }
+      if (connectTimeout_ != 0) {
+        output.writeInt32(10, connectTimeout_);
       }
       unknownFields.writeTo(output);
     }
@@ -34938,19 +34282,28 @@ public final class PBSyncManageSyncJob {
         size += dataSize;
         size += 1 * getTableList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(splitUpdate_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, splitUpdate_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pavingData_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pavingData_);
-      }
-      if (filter_ != 0L) {
+      if (splitUpdate_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, filter_);
+          .computeBoolSize(5, splitUpdate_);
       }
-      if (isGtidMode_ != 0L) {
+      if (pavingData_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, isGtidMode_);
+          .computeBoolSize(6, pavingData_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, filter_);
+      }
+      if (isGtidMode_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isGtidMode_);
+      }
+      if (queryTimeout_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, queryTimeout_);
+      }
+      if (connectTimeout_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, connectTimeout_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -34978,14 +34331,18 @@ public final class PBSyncManageSyncJob {
       }
       if (!getTableList()
           .equals(other.getTableList())) return false;
-      if (!getSplitUpdate()
-          .equals(other.getSplitUpdate())) return false;
-      if (!getPavingData()
-          .equals(other.getPavingData())) return false;
-      if (getFilter()
-          != other.getFilter()) return false;
+      if (getSplitUpdate()
+          != other.getSplitUpdate()) return false;
+      if (getPavingData()
+          != other.getPavingData()) return false;
+      if (!getFilter()
+          .equals(other.getFilter())) return false;
       if (getIsGtidMode()
           != other.getIsGtidMode()) return false;
+      if (getQueryTimeout()
+          != other.getQueryTimeout()) return false;
+      if (getConnectTimeout()
+          != other.getConnectTimeout()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -35010,15 +34367,20 @@ public final class PBSyncManageSyncJob {
         hash = (53 * hash) + getTableList().hashCode();
       }
       hash = (37 * hash) + SPLIT_UPDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getSplitUpdate().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSplitUpdate());
       hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getPavingData().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPavingData());
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFilter());
+      hash = (53 * hash) + getFilter().hashCode();
       hash = (37 * hash) + IS_GTID_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGtidMode());
+      hash = (37 * hash) + QUERY_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryTimeout();
+      hash = (37 * hash) + CONNECT_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectTimeout();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -35164,13 +34526,17 @@ public final class PBSyncManageSyncJob {
         }
         table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        splitUpdate_ = "";
+        splitUpdate_ = false;
 
-        pavingData_ = "";
+        pavingData_ = false;
 
-        filter_ = 0L;
+        filter_ = "";
 
-        isGtidMode_ = 0L;
+        isGtidMode_ = false;
+
+        queryTimeout_ = 0;
+
+        connectTimeout_ = 0;
 
         return this;
       }
@@ -35215,6 +34581,8 @@ public final class PBSyncManageSyncJob {
         result.pavingData_ = pavingData_;
         result.filter_ = filter_;
         result.isGtidMode_ = isGtidMode_;
+        result.queryTimeout_ = queryTimeout_;
+        result.connectTimeout_ = connectTimeout_;
         onBuilt();
         return result;
       }
@@ -35284,19 +34652,24 @@ public final class PBSyncManageSyncJob {
           }
           onChanged();
         }
-        if (!other.getSplitUpdate().isEmpty()) {
-          splitUpdate_ = other.splitUpdate_;
+        if (other.getSplitUpdate() != false) {
+          setSplitUpdate(other.getSplitUpdate());
+        }
+        if (other.getPavingData() != false) {
+          setPavingData(other.getPavingData());
+        }
+        if (!other.getFilter().isEmpty()) {
+          filter_ = other.filter_;
           onChanged();
         }
-        if (!other.getPavingData().isEmpty()) {
-          pavingData_ = other.pavingData_;
-          onChanged();
-        }
-        if (other.getFilter() != 0L) {
-          setFilter(other.getFilter());
-        }
-        if (other.getIsGtidMode() != 0L) {
+        if (other.getIsGtidMode() != false) {
           setIsGtidMode(other.getIsGtidMode());
+        }
+        if (other.getQueryTimeout() != 0) {
+          setQueryTimeout(other.getQueryTimeout());
+        }
+        if (other.getConnectTimeout() != 0) {
+          setConnectTimeout(other.getConnectTimeout());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -35849,27 +35222,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object splitUpdate_ = "";
+      private boolean splitUpdate_ ;
       /**
        * <pre>
        * split update
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 5;</code>
+       * <code>bool split_update = 5;</code>
        * @return The splitUpdate.
        */
-      public java.lang.String getSplitUpdate() {
-        java.lang.Object ref = splitUpdate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          splitUpdate_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getSplitUpdate() {
+        return splitUpdate_;
       }
       /**
        * <pre>
@@ -35877,38 +35242,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 5;</code>
-       * @return The bytes for splitUpdate.
-       */
-      public com.google.protobuf.ByteString
-          getSplitUpdateBytes() {
-        java.lang.Object ref = splitUpdate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          splitUpdate_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 5;</code>
+       * <code>bool split_update = 5;</code>
        * @param value The splitUpdate to set.
        * @return This builder for chaining.
        */
-      public Builder setSplitUpdate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setSplitUpdate(boolean value) {
+        
         splitUpdate_ = value;
         onChanged();
         return this;
@@ -35919,54 +35258,79 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"split_update" swaggerignore:"true"
        * </pre>
        *
-       * <code>string split_update = 5;</code>
+       * <code>bool split_update = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSplitUpdate() {
         
-        splitUpdate_ = getDefaultInstance().getSplitUpdate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string split_update = 5;</code>
-       * @param value The bytes for splitUpdate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSplitUpdateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        splitUpdate_ = value;
+        splitUpdate_ = false;
         onChanged();
         return this;
       }
 
-      private java.lang.Object pavingData_ = "";
+      private boolean pavingData_ ;
       /**
        * <pre>
        * paving data
        * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 6;</code>
+       * <code>bool paving_data = 6;</code>
        * @return The pavingData.
        */
-      public java.lang.String getPavingData() {
-        java.lang.Object ref = pavingData_;
+      @java.lang.Override
+      public boolean getPavingData() {
+        return pavingData_;
+      }
+      /**
+       * <pre>
+       * paving data
+       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>bool paving_data = 6;</code>
+       * @param value The pavingData to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPavingData(boolean value) {
+        
+        pavingData_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * paving data
+       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>bool paving_data = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPavingData() {
+        
+        pavingData_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filter_ = "";
+      /**
+       * <pre>
+       * filter
+       * &#64;inject_tag: json:"filter" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string filter = 7;</code>
+       * @return The filter.
+       */
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          pavingData_ = s;
+          filter_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -35974,21 +35338,21 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
+       * filter
+       * &#64;inject_tag: json:"filter" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 6;</code>
-       * @return The bytes for pavingData.
+       * <code>string filter = 7;</code>
+       * @return The bytes for filter.
        */
       public com.google.protobuf.ByteString
-          getPavingDataBytes() {
-        java.lang.Object ref = pavingData_;
+          getFilterBytes() {
+        java.lang.Object ref = filter_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          pavingData_ = b;
+          filter_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -35996,87 +35360,20 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
+       * filter
+       * &#64;inject_tag: json:"filter" swaggerignore:"true"
        * </pre>
        *
-       * <code>string paving_data = 6;</code>
-       * @param value The pavingData to set.
+       * <code>string filter = 7;</code>
+       * @param value The filter to set.
        * @return This builder for chaining.
        */
-      public Builder setPavingData(
+      public Builder setFilter(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        pavingData_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPavingData() {
-        
-        pavingData_ = getDefaultInstance().getPavingData();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string paving_data = 6;</code>
-       * @param value The bytes for pavingData to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPavingDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pavingData_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long filter_ ;
-      /**
-       * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>int64 filter = 7;</code>
-       * @return The filter.
-       */
-      @java.lang.Override
-      public long getFilter() {
-        return filter_;
-      }
-      /**
-       * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>int64 filter = 7;</code>
-       * @param value The filter to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFilter(long value) {
-        
         filter_ = value;
         onChanged();
         return this;
@@ -36087,28 +35384,49 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"filter" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 filter = 7;</code>
+       * <code>string filter = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearFilter() {
         
-        filter_ = 0L;
+        filter_ = getDefaultInstance().getFilter();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * filter
+       * &#64;inject_tag: json:"filter" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string filter = 7;</code>
+       * @param value The bytes for filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilterBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        filter_ = value;
         onChanged();
         return this;
       }
 
-      private long isGtidMode_ ;
+      private boolean isGtidMode_ ;
       /**
        * <pre>
        * is gtid mode
        * &#64;inject_tag: json:"is_gtid_mode" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 is_gtid_mode = 8;</code>
+       * <code>bool is_gtid_mode = 8;</code>
        * @return The isGtidMode.
        */
       @java.lang.Override
-      public long getIsGtidMode() {
+      public boolean getIsGtidMode() {
         return isGtidMode_;
       }
       /**
@@ -36117,11 +35435,11 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_gtid_mode" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 is_gtid_mode = 8;</code>
+       * <code>bool is_gtid_mode = 8;</code>
        * @param value The isGtidMode to set.
        * @return This builder for chaining.
        */
-      public Builder setIsGtidMode(long value) {
+      public Builder setIsGtidMode(boolean value) {
         
         isGtidMode_ = value;
         onChanged();
@@ -36133,12 +35451,104 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_gtid_mode" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 is_gtid_mode = 8;</code>
+       * <code>bool is_gtid_mode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsGtidMode() {
         
-        isGtidMode_ = 0L;
+        isGtidMode_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int queryTimeout_ ;
+      /**
+       * <pre>
+       * query_timeout
+       * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 query_timeout = 9;</code>
+       * @return The queryTimeout.
+       */
+      @java.lang.Override
+      public int getQueryTimeout() {
+        return queryTimeout_;
+      }
+      /**
+       * <pre>
+       * query_timeout
+       * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 query_timeout = 9;</code>
+       * @param value The queryTimeout to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryTimeout(int value) {
+        
+        queryTimeout_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * query_timeout
+       * &#64;inject_tag: json:"query_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 query_timeout = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryTimeout() {
+        
+        queryTimeout_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int connectTimeout_ ;
+      /**
+       * <pre>
+       * connect_timeout
+       * &#64;inject_tag: json:"connect_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 connect_timeout = 10;</code>
+       * @return The connectTimeout.
+       */
+      @java.lang.Override
+      public int getConnectTimeout() {
+        return connectTimeout_;
+      }
+      /**
+       * <pre>
+       * connect_timeout
+       * &#64;inject_tag: json:"connect_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 connect_timeout = 10;</code>
+       * @param value The connectTimeout to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectTimeout(int value) {
+        
+        connectTimeout_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * connect_timeout
+       * &#64;inject_tag: json:"connect_timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 connect_timeout = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConnectTimeout() {
+        
+        connectTimeout_ = 0;
         onChanged();
         return this;
       }
@@ -36205,21 +35615,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
      * </pre>
      *
-     * <code>string timestamp = 1;</code>
+     * <code>int64 timestamp = 1;</code>
      * @return The timestamp.
      */
-    java.lang.String getTimestamp();
-    /**
-     * <pre>
-     * timestamp
-     * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string timestamp = 1;</code>
-     * @return The bytes for timestamp.
-     */
-    com.google.protobuf.ByteString
-        getTimestampBytes();
+    long getTimestamp();
 
     /**
      * <pre>
@@ -36249,21 +35648,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"position" swaggerignore:"true"
      * </pre>
      *
-     * <code>string position = 3;</code>
+     * <code>int64 position = 3;</code>
      * @return The position.
      */
-    java.lang.String getPosition();
-    /**
-     * <pre>
-     * position
-     * &#64;inject_tag: json:"position" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string position = 3;</code>
-     * @return The bytes for position.
-     */
-    com.google.protobuf.ByteString
-        getPositionBytes();
+    long getPosition();
   }
   /**
    * Protobuf type {@code model.Start}
@@ -36278,9 +35666,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private Start() {
-      timestamp_ = "";
       journalName_ = "";
-      position_ = "";
     }
 
     @java.lang.Override
@@ -36313,10 +35699,9 @@ public final class PBSyncManageSyncJob {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              timestamp_ = s;
+              timestamp_ = input.readInt64();
               break;
             }
             case 18: {
@@ -36325,10 +35710,9 @@ public final class PBSyncManageSyncJob {
               journalName_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              position_ = s;
+              position_ = input.readInt64();
               break;
             }
             default: {
@@ -36364,51 +35748,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
-    private volatile java.lang.Object timestamp_;
+    private long timestamp_;
     /**
      * <pre>
      * timestamp
      * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
      * </pre>
      *
-     * <code>string timestamp = 1;</code>
+     * <code>int64 timestamp = 1;</code>
      * @return The timestamp.
      */
     @java.lang.Override
-    public java.lang.String getTimestamp() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timestamp_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * timestamp
-     * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string timestamp = 1;</code>
-     * @return The bytes for timestamp.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTimestampBytes() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timestamp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTimestamp() {
+      return timestamp_;
     }
 
     public static final int JOURNAL_NAME_FIELD_NUMBER = 2;
@@ -36460,51 +35812,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int POSITION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object position_;
+    private long position_;
     /**
      * <pre>
      * position
      * &#64;inject_tag: json:"position" swaggerignore:"true"
      * </pre>
      *
-     * <code>string position = 3;</code>
+     * <code>int64 position = 3;</code>
      * @return The position.
      */
     @java.lang.Override
-    public java.lang.String getPosition() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        position_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * position
-     * &#64;inject_tag: json:"position" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string position = 3;</code>
-     * @return The bytes for position.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPositionBytes() {
-      java.lang.Object ref = position_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        position_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getPosition() {
+      return position_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -36521,14 +35841,14 @@ public final class PBSyncManageSyncJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestamp_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, timestamp_);
+      if (timestamp_ != 0L) {
+        output.writeInt64(1, timestamp_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(journalName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, journalName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(position_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, position_);
+      if (position_ != 0L) {
+        output.writeInt64(3, position_);
       }
       unknownFields.writeTo(output);
     }
@@ -36539,14 +35859,16 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestamp_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, timestamp_);
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, timestamp_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(journalName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, journalName_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(position_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, position_);
+      if (position_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, position_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -36563,12 +35885,12 @@ public final class PBSyncManageSyncJob {
       }
       com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Start other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Start) obj;
 
-      if (!getTimestamp()
-          .equals(other.getTimestamp())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
       if (!getJournalName()
           .equals(other.getJournalName())) return false;
-      if (!getPosition()
-          .equals(other.getPosition())) return false;
+      if (getPosition()
+          != other.getPosition()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -36581,11 +35903,13 @@ public final class PBSyncManageSyncJob {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getTimestamp().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
       hash = (37 * hash) + JOURNAL_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getJournalName().hashCode();
       hash = (37 * hash) + POSITION_FIELD_NUMBER;
-      hash = (53 * hash) + getPosition().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPosition());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -36719,11 +36043,11 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        timestamp_ = "";
+        timestamp_ = 0L;
 
         journalName_ = "";
 
-        position_ = "";
+        position_ = 0L;
 
         return this;
       }
@@ -36802,17 +36126,15 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Start other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Start.getDefaultInstance()) return this;
-        if (!other.getTimestamp().isEmpty()) {
-          timestamp_ = other.timestamp_;
-          onChanged();
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
         if (!other.getJournalName().isEmpty()) {
           journalName_ = other.journalName_;
           onChanged();
         }
-        if (!other.getPosition().isEmpty()) {
-          position_ = other.position_;
-          onChanged();
+        if (other.getPosition() != 0L) {
+          setPosition(other.getPosition());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -36843,27 +36165,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object timestamp_ = "";
+      private long timestamp_ ;
       /**
        * <pre>
        * timestamp
        * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timestamp = 1;</code>
+       * <code>int64 timestamp = 1;</code>
        * @return The timestamp.
        */
-      public java.lang.String getTimestamp() {
-        java.lang.Object ref = timestamp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          timestamp_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getTimestamp() {
+        return timestamp_;
       }
       /**
        * <pre>
@@ -36871,38 +36185,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timestamp = 1;</code>
-       * @return The bytes for timestamp.
-       */
-      public com.google.protobuf.ByteString
-          getTimestampBytes() {
-        java.lang.Object ref = timestamp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          timestamp_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * timestamp
-       * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string timestamp = 1;</code>
+       * <code>int64 timestamp = 1;</code>
        * @param value The timestamp to set.
        * @return This builder for chaining.
        */
-      public Builder setTimestamp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setTimestamp(long value) {
+        
         timestamp_ = value;
         onChanged();
         return this;
@@ -36913,33 +36201,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timestamp = 1;</code>
+       * <code>int64 timestamp = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
         
-        timestamp_ = getDefaultInstance().getTimestamp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * timestamp
-       * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string timestamp = 1;</code>
-       * @param value The bytes for timestamp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimestampBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        timestamp_ = value;
+        timestamp_ = 0L;
         onChanged();
         return this;
       }
@@ -37045,27 +36312,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object position_ = "";
+      private long position_ ;
       /**
        * <pre>
        * position
        * &#64;inject_tag: json:"position" swaggerignore:"true"
        * </pre>
        *
-       * <code>string position = 3;</code>
+       * <code>int64 position = 3;</code>
        * @return The position.
        */
-      public java.lang.String getPosition() {
-        java.lang.Object ref = position_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          position_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getPosition() {
+        return position_;
       }
       /**
        * <pre>
@@ -37073,38 +36332,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"position" swaggerignore:"true"
        * </pre>
        *
-       * <code>string position = 3;</code>
-       * @return The bytes for position.
-       */
-      public com.google.protobuf.ByteString
-          getPositionBytes() {
-        java.lang.Object ref = position_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          position_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * position
-       * &#64;inject_tag: json:"position" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string position = 3;</code>
+       * <code>int64 position = 3;</code>
        * @param value The position to set.
        * @return This builder for chaining.
        */
-      public Builder setPosition(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setPosition(long value) {
+        
         position_ = value;
         onChanged();
         return this;
@@ -37115,33 +36348,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"position" swaggerignore:"true"
        * </pre>
        *
-       * <code>string position = 3;</code>
+       * <code>int64 position = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPosition() {
         
-        position_ = getDefaultInstance().getPosition();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * position
-       * &#64;inject_tag: json:"position" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string position = 3;</code>
-       * @param value The bytes for position to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPositionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        position_ = value;
+        position_ = 0L;
         onChanged();
         return this;
       }
@@ -37340,10 +36552,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 write_mode = 7;</code>
+     * <code>string write_mode = 7;</code>
      * @return The writeMode.
      */
-    long getWriteMode();
+    java.lang.String getWriteMode();
+    /**
+     * <pre>
+     * write mode
+     * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string write_mode = 7;</code>
+     * @return The bytes for writeMode.
+     */
+    com.google.protobuf.ByteString
+        getWriteModeBytes();
 
     /**
      * <pre>
@@ -37351,10 +36574,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"file_type" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 file_type = 8;</code>
+     * <code>string file_type = 8;</code>
      * @return The fileType.
      */
-    long getFileType();
+    java.lang.String getFileType();
+    /**
+     * <pre>
+     * Relationaldb column
+     * &#64;inject_tag: json:"file_type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string file_type = 8;</code>
+     * @return The bytes for fileType.
+     */
+    com.google.protobuf.ByteString
+        getFileTypeBytes();
 
     /**
      * <pre>
@@ -37362,10 +36596,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 default_fs = 9;</code>
+     * <code>string default_fs = 9;</code>
      * @return The defaultFs.
      */
-    long getDefaultFs();
+    java.lang.String getDefaultFs();
+    /**
+     * <pre>
+     * default_fs
+     * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string default_fs = 9;</code>
+     * @return The bytes for defaultFs.
+     */
+    com.google.protobuf.ByteString
+        getDefaultFsBytes();
 
     /**
      * <pre>
@@ -37406,10 +36651,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 enable_dictionary = 13;</code>
+     * <code>bool enable_dictionary = 13;</code>
      * @return The enableDictionary.
      */
-    long getEnableDictionary();
+    boolean getEnableDictionary();
 
     /**
      * <pre>
@@ -37417,10 +36662,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"encoding" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 encoding = 14;</code>
+     * <code>string encoding = 14;</code>
      * @return The encoding.
      */
-    long getEncoding();
+    java.lang.String getEncoding();
+    /**
+     * <pre>
+     * encoding
+     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string encoding = 14;</code>
+     * @return The bytes for encoding.
+     */
+    com.google.protobuf.ByteString
+        getEncodingBytes();
 
     /**
      * <pre>
@@ -37428,10 +36684,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 field_delimiter = 15;</code>
+     * <code>string field_delimiter = 15;</code>
      * @return The fieldDelimiter.
      */
-    long getFieldDelimiter();
+    java.lang.String getFieldDelimiter();
+    /**
+     * <pre>
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string field_delimiter = 15;</code>
+     * @return The bytes for fieldDelimiter.
+     */
+    com.google.protobuf.ByteString
+        getFieldDelimiterBytes();
 
     /**
      * <pre>
@@ -37439,10 +36706,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"compress" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 compress = 16;</code>
+     * <code>string compress = 16;</code>
      * @return The compress.
      */
-    long getCompress();
+    java.lang.String getCompress();
+    /**
+     * <pre>
+     * compress
+     * &#64;inject_tag: json:"compress" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string compress = 16;</code>
+     * @return The bytes for compress.
+     */
+    com.google.protobuf.ByteString
+        getCompressBytes();
 
     /**
      * <pre>
@@ -37450,28 +36728,39 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 charset_name = 17;</code>
+     * <code>string charset_name = 17;</code>
      * @return The charsetName.
      */
-    long getCharsetName();
+    java.lang.String getCharsetName();
+    /**
+     * <pre>
+     * charset_name
+     * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string charset_name = 17;</code>
+     * @return The bytes for charsetName.
+     */
+    com.google.protobuf.ByteString
+        getCharsetNameBytes();
 
     /**
      * <pre>
      * hadoop config
-     * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+     * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_Config = 18;</code>
+     * <code>string hadoop_config = 18;</code>
      * @return The hadoopConfig.
      */
     java.lang.String getHadoopConfig();
     /**
      * <pre>
      * hadoop config
-     * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+     * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_Config = 18;</code>
+     * <code>string hadoop_config = 18;</code>
      * @return The bytes for hadoopConfig.
      */
     com.google.protobuf.ByteString
@@ -37496,6 +36785,13 @@ public final class PBSyncManageSyncJob {
       analyticalRules_ = "";
       schema_ = "";
       distributeTable_ = "";
+      writeMode_ = "";
+      fileType_ = "";
+      defaultFs_ = "";
+      encoding_ = "";
+      fieldDelimiter_ = "";
+      compress_ = "";
+      charsetName_ = "";
       hadoopConfig_ = "";
     }
 
@@ -37565,19 +36861,22 @@ public final class PBSyncManageSyncJob {
               distributeTable_ = s;
               break;
             }
-            case 56: {
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              writeMode_ = input.readInt64();
+              writeMode_ = s;
               break;
             }
-            case 64: {
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              fileType_ = input.readInt64();
+              fileType_ = s;
               break;
             }
-            case 72: {
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              defaultFs_ = input.readInt64();
+              defaultFs_ = s;
               break;
             }
             case 80: {
@@ -37597,27 +36896,31 @@ public final class PBSyncManageSyncJob {
             }
             case 104: {
 
-              enableDictionary_ = input.readInt64();
+              enableDictionary_ = input.readBool();
               break;
             }
-            case 112: {
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              encoding_ = input.readInt64();
+              encoding_ = s;
               break;
             }
-            case 120: {
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              fieldDelimiter_ = input.readInt64();
+              fieldDelimiter_ = s;
               break;
             }
-            case 128: {
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              compress_ = input.readInt64();
+              compress_ = s;
               break;
             }
-            case 136: {
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              charsetName_ = input.readInt64();
+              charsetName_ = s;
               break;
             }
             case 146: {
@@ -37947,51 +37250,147 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int WRITE_MODE_FIELD_NUMBER = 7;
-    private long writeMode_;
+    private volatile java.lang.Object writeMode_;
     /**
      * <pre>
      * write mode
      * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 write_mode = 7;</code>
+     * <code>string write_mode = 7;</code>
      * @return The writeMode.
      */
     @java.lang.Override
-    public long getWriteMode() {
-      return writeMode_;
+    public java.lang.String getWriteMode() {
+      java.lang.Object ref = writeMode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        writeMode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * write mode
+     * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string write_mode = 7;</code>
+     * @return The bytes for writeMode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getWriteModeBytes() {
+      java.lang.Object ref = writeMode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        writeMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int FILE_TYPE_FIELD_NUMBER = 8;
-    private long fileType_;
+    private volatile java.lang.Object fileType_;
     /**
      * <pre>
      * Relationaldb column
      * &#64;inject_tag: json:"file_type" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 file_type = 8;</code>
+     * <code>string file_type = 8;</code>
      * @return The fileType.
      */
     @java.lang.Override
-    public long getFileType() {
-      return fileType_;
+    public java.lang.String getFileType() {
+      java.lang.Object ref = fileType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Relationaldb column
+     * &#64;inject_tag: json:"file_type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string file_type = 8;</code>
+     * @return The bytes for fileType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFileTypeBytes() {
+      java.lang.Object ref = fileType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fileType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int DEFAULT_FS_FIELD_NUMBER = 9;
-    private long defaultFs_;
+    private volatile java.lang.Object defaultFs_;
     /**
      * <pre>
      * default_fs
      * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 default_fs = 9;</code>
+     * <code>string default_fs = 9;</code>
      * @return The defaultFs.
      */
     @java.lang.Override
-    public long getDefaultFs() {
-      return defaultFs_;
+    public java.lang.String getDefaultFs() {
+      java.lang.Object ref = defaultFs_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultFs_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * default_fs
+     * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string default_fs = 9;</code>
+     * @return The bytes for defaultFs.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDefaultFsBytes() {
+      java.lang.Object ref = defaultFs_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        defaultFs_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int MAX_FILE_SIZE_FIELD_NUMBER = 10;
@@ -38043,83 +37442,211 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int ENABLE_DICTIONARY_FIELD_NUMBER = 13;
-    private long enableDictionary_;
+    private boolean enableDictionary_;
     /**
      * <pre>
      * enable dictionary
      * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 enable_dictionary = 13;</code>
+     * <code>bool enable_dictionary = 13;</code>
      * @return The enableDictionary.
      */
     @java.lang.Override
-    public long getEnableDictionary() {
+    public boolean getEnableDictionary() {
       return enableDictionary_;
     }
 
     public static final int ENCODING_FIELD_NUMBER = 14;
-    private long encoding_;
+    private volatile java.lang.Object encoding_;
     /**
      * <pre>
      * encoding
      * &#64;inject_tag: json:"encoding" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 encoding = 14;</code>
+     * <code>string encoding = 14;</code>
      * @return The encoding.
      */
     @java.lang.Override
-    public long getEncoding() {
-      return encoding_;
+    public java.lang.String getEncoding() {
+      java.lang.Object ref = encoding_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        encoding_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * encoding
+     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string encoding = 14;</code>
+     * @return The bytes for encoding.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEncodingBytes() {
+      java.lang.Object ref = encoding_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        encoding_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int FIELD_DELIMITER_FIELD_NUMBER = 15;
-    private long fieldDelimiter_;
+    private volatile java.lang.Object fieldDelimiter_;
     /**
      * <pre>
      * field_delimiter
      * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 field_delimiter = 15;</code>
+     * <code>string field_delimiter = 15;</code>
      * @return The fieldDelimiter.
      */
     @java.lang.Override
-    public long getFieldDelimiter() {
-      return fieldDelimiter_;
+    public java.lang.String getFieldDelimiter() {
+      java.lang.Object ref = fieldDelimiter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fieldDelimiter_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * field_delimiter
+     * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string field_delimiter = 15;</code>
+     * @return The bytes for fieldDelimiter.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFieldDelimiterBytes() {
+      java.lang.Object ref = fieldDelimiter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fieldDelimiter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int COMPRESS_FIELD_NUMBER = 16;
-    private long compress_;
+    private volatile java.lang.Object compress_;
     /**
      * <pre>
      * compress
      * &#64;inject_tag: json:"compress" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 compress = 16;</code>
+     * <code>string compress = 16;</code>
      * @return The compress.
      */
     @java.lang.Override
-    public long getCompress() {
-      return compress_;
+    public java.lang.String getCompress() {
+      java.lang.Object ref = compress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        compress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * compress
+     * &#64;inject_tag: json:"compress" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string compress = 16;</code>
+     * @return The bytes for compress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCompressBytes() {
+      java.lang.Object ref = compress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        compress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int CHARSET_NAME_FIELD_NUMBER = 17;
-    private long charsetName_;
+    private volatile java.lang.Object charsetName_;
     /**
      * <pre>
      * charset_name
      * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 charset_name = 17;</code>
+     * <code>string charset_name = 17;</code>
      * @return The charsetName.
      */
     @java.lang.Override
-    public long getCharsetName() {
-      return charsetName_;
+    public java.lang.String getCharsetName() {
+      java.lang.Object ref = charsetName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        charsetName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * charset_name
+     * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string charset_name = 17;</code>
+     * @return The bytes for charsetName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCharsetNameBytes() {
+      java.lang.Object ref = charsetName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        charsetName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int HADOOP_CONFIG_FIELD_NUMBER = 18;
@@ -38127,10 +37654,10 @@ public final class PBSyncManageSyncJob {
     /**
      * <pre>
      * hadoop config
-     * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+     * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_Config = 18;</code>
+     * <code>string hadoop_config = 18;</code>
      * @return The hadoopConfig.
      */
     @java.lang.Override
@@ -38149,10 +37676,10 @@ public final class PBSyncManageSyncJob {
     /**
      * <pre>
      * hadoop config
-     * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+     * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_Config = 18;</code>
+     * <code>string hadoop_config = 18;</code>
      * @return The bytes for hadoopConfig.
      */
     @java.lang.Override
@@ -38202,14 +37729,14 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributeTable_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, distributeTable_);
       }
-      if (writeMode_ != 0L) {
-        output.writeInt64(7, writeMode_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, writeMode_);
       }
-      if (fileType_ != 0L) {
-        output.writeInt64(8, fileType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, fileType_);
       }
-      if (defaultFs_ != 0L) {
-        output.writeInt64(9, defaultFs_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, defaultFs_);
       }
       if (maxFileSize_ != 0L) {
         output.writeInt64(10, maxFileSize_);
@@ -38220,20 +37747,20 @@ public final class PBSyncManageSyncJob {
       if (rowGroupSize_ != 0L) {
         output.writeInt64(12, rowGroupSize_);
       }
-      if (enableDictionary_ != 0L) {
-        output.writeInt64(13, enableDictionary_);
+      if (enableDictionary_ != false) {
+        output.writeBool(13, enableDictionary_);
       }
-      if (encoding_ != 0L) {
-        output.writeInt64(14, encoding_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, encoding_);
       }
-      if (fieldDelimiter_ != 0L) {
-        output.writeInt64(15, fieldDelimiter_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, fieldDelimiter_);
       }
-      if (compress_ != 0L) {
-        output.writeInt64(16, compress_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, compress_);
       }
-      if (charsetName_ != 0L) {
-        output.writeInt64(17, charsetName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(charsetName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, charsetName_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 18, hadoopConfig_);
@@ -38265,17 +37792,14 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distributeTable_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, distributeTable_);
       }
-      if (writeMode_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, writeMode_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeMode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, writeMode_);
       }
-      if (fileType_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, fileType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, fileType_);
       }
-      if (defaultFs_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, defaultFs_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, defaultFs_);
       }
       if (maxFileSize_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -38289,25 +37813,21 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, rowGroupSize_);
       }
-      if (enableDictionary_ != 0L) {
+      if (enableDictionary_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, enableDictionary_);
+          .computeBoolSize(13, enableDictionary_);
       }
-      if (encoding_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(14, encoding_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, encoding_);
       }
-      if (fieldDelimiter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(15, fieldDelimiter_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, fieldDelimiter_);
       }
-      if (compress_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(16, compress_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, compress_);
       }
-      if (charsetName_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, charsetName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(charsetName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, charsetName_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, hadoopConfig_);
@@ -38339,12 +37859,12 @@ public final class PBSyncManageSyncJob {
           .equals(other.getSchema())) return false;
       if (!getDistributeTable()
           .equals(other.getDistributeTable())) return false;
-      if (getWriteMode()
-          != other.getWriteMode()) return false;
-      if (getFileType()
-          != other.getFileType()) return false;
-      if (getDefaultFs()
-          != other.getDefaultFs()) return false;
+      if (!getWriteMode()
+          .equals(other.getWriteMode())) return false;
+      if (!getFileType()
+          .equals(other.getFileType())) return false;
+      if (!getDefaultFs()
+          .equals(other.getDefaultFs())) return false;
       if (getMaxFileSize()
           != other.getMaxFileSize()) return false;
       if (getNextCheckRows()
@@ -38353,14 +37873,14 @@ public final class PBSyncManageSyncJob {
           != other.getRowGroupSize()) return false;
       if (getEnableDictionary()
           != other.getEnableDictionary()) return false;
-      if (getEncoding()
-          != other.getEncoding()) return false;
-      if (getFieldDelimiter()
-          != other.getFieldDelimiter()) return false;
-      if (getCompress()
-          != other.getCompress()) return false;
-      if (getCharsetName()
-          != other.getCharsetName()) return false;
+      if (!getEncoding()
+          .equals(other.getEncoding())) return false;
+      if (!getFieldDelimiter()
+          .equals(other.getFieldDelimiter())) return false;
+      if (!getCompress()
+          .equals(other.getCompress())) return false;
+      if (!getCharsetName()
+          .equals(other.getCharsetName())) return false;
       if (!getHadoopConfig()
           .equals(other.getHadoopConfig())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -38387,14 +37907,11 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + DISTRIBUTE_TABLE_FIELD_NUMBER;
       hash = (53 * hash) + getDistributeTable().hashCode();
       hash = (37 * hash) + WRITE_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getWriteMode());
+      hash = (53 * hash) + getWriteMode().hashCode();
       hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFileType());
+      hash = (53 * hash) + getFileType().hashCode();
       hash = (37 * hash) + DEFAULT_FS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDefaultFs());
+      hash = (53 * hash) + getDefaultFs().hashCode();
       hash = (37 * hash) + MAX_FILE_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxFileSize());
@@ -38405,20 +37922,16 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRowGroupSize());
       hash = (37 * hash) + ENABLE_DICTIONARY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEnableDictionary());
       hash = (37 * hash) + ENCODING_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEncoding());
+      hash = (53 * hash) + getEncoding().hashCode();
       hash = (37 * hash) + FIELD_DELIMITER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFieldDelimiter());
+      hash = (53 * hash) + getFieldDelimiter().hashCode();
       hash = (37 * hash) + COMPRESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCompress());
+      hash = (53 * hash) + getCompress().hashCode();
       hash = (37 * hash) + CHARSET_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCharsetName());
+      hash = (53 * hash) + getCharsetName().hashCode();
       hash = (37 * hash) + HADOOP_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHadoopConfig().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -38566,11 +38079,11 @@ public final class PBSyncManageSyncJob {
 
         distributeTable_ = "";
 
-        writeMode_ = 0L;
+        writeMode_ = "";
 
-        fileType_ = 0L;
+        fileType_ = "";
 
-        defaultFs_ = 0L;
+        defaultFs_ = "";
 
         maxFileSize_ = 0L;
 
@@ -38578,15 +38091,15 @@ public final class PBSyncManageSyncJob {
 
         rowGroupSize_ = 0L;
 
-        enableDictionary_ = 0L;
+        enableDictionary_ = false;
 
-        encoding_ = 0L;
+        encoding_ = "";
 
-        fieldDelimiter_ = 0L;
+        fieldDelimiter_ = "";
 
-        compress_ = 0L;
+        compress_ = "";
 
-        charsetName_ = 0L;
+        charsetName_ = "";
 
         hadoopConfig_ = "";
 
@@ -38706,14 +38219,17 @@ public final class PBSyncManageSyncJob {
           distributeTable_ = other.distributeTable_;
           onChanged();
         }
-        if (other.getWriteMode() != 0L) {
-          setWriteMode(other.getWriteMode());
+        if (!other.getWriteMode().isEmpty()) {
+          writeMode_ = other.writeMode_;
+          onChanged();
         }
-        if (other.getFileType() != 0L) {
-          setFileType(other.getFileType());
+        if (!other.getFileType().isEmpty()) {
+          fileType_ = other.fileType_;
+          onChanged();
         }
-        if (other.getDefaultFs() != 0L) {
-          setDefaultFs(other.getDefaultFs());
+        if (!other.getDefaultFs().isEmpty()) {
+          defaultFs_ = other.defaultFs_;
+          onChanged();
         }
         if (other.getMaxFileSize() != 0L) {
           setMaxFileSize(other.getMaxFileSize());
@@ -38724,20 +38240,24 @@ public final class PBSyncManageSyncJob {
         if (other.getRowGroupSize() != 0L) {
           setRowGroupSize(other.getRowGroupSize());
         }
-        if (other.getEnableDictionary() != 0L) {
+        if (other.getEnableDictionary() != false) {
           setEnableDictionary(other.getEnableDictionary());
         }
-        if (other.getEncoding() != 0L) {
-          setEncoding(other.getEncoding());
+        if (!other.getEncoding().isEmpty()) {
+          encoding_ = other.encoding_;
+          onChanged();
         }
-        if (other.getFieldDelimiter() != 0L) {
-          setFieldDelimiter(other.getFieldDelimiter());
+        if (!other.getFieldDelimiter().isEmpty()) {
+          fieldDelimiter_ = other.fieldDelimiter_;
+          onChanged();
         }
-        if (other.getCompress() != 0L) {
-          setCompress(other.getCompress());
+        if (!other.getCompress().isEmpty()) {
+          compress_ = other.compress_;
+          onChanged();
         }
-        if (other.getCharsetName() != 0L) {
-          setCharsetName(other.getCharsetName());
+        if (!other.getCharsetName().isEmpty()) {
+          charsetName_ = other.charsetName_;
+          onChanged();
         }
         if (!other.getHadoopConfig().isEmpty()) {
           hadoopConfig_ = other.hadoopConfig_;
@@ -39378,19 +38898,27 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private long writeMode_ ;
+      private java.lang.Object writeMode_ = "";
       /**
        * <pre>
        * write mode
        * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 write_mode = 7;</code>
+       * <code>string write_mode = 7;</code>
        * @return The writeMode.
        */
-      @java.lang.Override
-      public long getWriteMode() {
-        return writeMode_;
+      public java.lang.String getWriteMode() {
+        java.lang.Object ref = writeMode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          writeMode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -39398,12 +38926,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 write_mode = 7;</code>
+       * <code>string write_mode = 7;</code>
+       * @return The bytes for writeMode.
+       */
+      public com.google.protobuf.ByteString
+          getWriteModeBytes() {
+        java.lang.Object ref = writeMode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          writeMode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string write_mode = 7;</code>
        * @param value The writeMode to set.
        * @return This builder for chaining.
        */
-      public Builder setWriteMode(long value) {
-        
+      public Builder setWriteMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         writeMode_ = value;
         onChanged();
         return this;
@@ -39414,29 +38968,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 write_mode = 7;</code>
+       * <code>string write_mode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearWriteMode() {
         
-        writeMode_ = 0L;
+        writeMode_ = getDefaultInstance().getWriteMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * write mode
+       * &#64;inject_tag: json:"write_mode" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string write_mode = 7;</code>
+       * @param value The bytes for writeMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWriteModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        writeMode_ = value;
         onChanged();
         return this;
       }
 
-      private long fileType_ ;
+      private java.lang.Object fileType_ = "";
       /**
        * <pre>
        * Relationaldb column
        * &#64;inject_tag: json:"file_type" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 file_type = 8;</code>
+       * <code>string file_type = 8;</code>
        * @return The fileType.
        */
-      @java.lang.Override
-      public long getFileType() {
-        return fileType_;
+      public java.lang.String getFileType() {
+        java.lang.Object ref = fileType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fileType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -39444,12 +39027,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"file_type" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 file_type = 8;</code>
+       * <code>string file_type = 8;</code>
+       * @return The bytes for fileType.
+       */
+      public com.google.protobuf.ByteString
+          getFileTypeBytes() {
+        java.lang.Object ref = fileType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fileType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Relationaldb column
+       * &#64;inject_tag: json:"file_type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string file_type = 8;</code>
        * @param value The fileType to set.
        * @return This builder for chaining.
        */
-      public Builder setFileType(long value) {
-        
+      public Builder setFileType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         fileType_ = value;
         onChanged();
         return this;
@@ -39460,29 +39069,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"file_type" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 file_type = 8;</code>
+       * <code>string file_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearFileType() {
         
-        fileType_ = 0L;
+        fileType_ = getDefaultInstance().getFileType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Relationaldb column
+       * &#64;inject_tag: json:"file_type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string file_type = 8;</code>
+       * @param value The bytes for fileType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fileType_ = value;
         onChanged();
         return this;
       }
 
-      private long defaultFs_ ;
+      private java.lang.Object defaultFs_ = "";
       /**
        * <pre>
        * default_fs
        * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 default_fs = 9;</code>
+       * <code>string default_fs = 9;</code>
        * @return The defaultFs.
        */
-      @java.lang.Override
-      public long getDefaultFs() {
-        return defaultFs_;
+      public java.lang.String getDefaultFs() {
+        java.lang.Object ref = defaultFs_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          defaultFs_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -39490,12 +39128,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 default_fs = 9;</code>
+       * <code>string default_fs = 9;</code>
+       * @return The bytes for defaultFs.
+       */
+      public com.google.protobuf.ByteString
+          getDefaultFsBytes() {
+        java.lang.Object ref = defaultFs_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          defaultFs_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * default_fs
+       * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string default_fs = 9;</code>
        * @param value The defaultFs to set.
        * @return This builder for chaining.
        */
-      public Builder setDefaultFs(long value) {
-        
+      public Builder setDefaultFs(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         defaultFs_ = value;
         onChanged();
         return this;
@@ -39506,12 +39170,33 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 default_fs = 9;</code>
+       * <code>string default_fs = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearDefaultFs() {
         
-        defaultFs_ = 0L;
+        defaultFs_ = getDefaultInstance().getDefaultFs();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * default_fs
+       * &#64;inject_tag: json:"default_fs" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string default_fs = 9;</code>
+       * @param value The bytes for defaultFs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultFsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        defaultFs_ = value;
         onChanged();
         return this;
       }
@@ -39654,18 +39339,18 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private long enableDictionary_ ;
+      private boolean enableDictionary_ ;
       /**
        * <pre>
        * enable dictionary
        * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 enable_dictionary = 13;</code>
+       * <code>bool enable_dictionary = 13;</code>
        * @return The enableDictionary.
        */
       @java.lang.Override
-      public long getEnableDictionary() {
+      public boolean getEnableDictionary() {
         return enableDictionary_;
       }
       /**
@@ -39674,11 +39359,11 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 enable_dictionary = 13;</code>
+       * <code>bool enable_dictionary = 13;</code>
        * @param value The enableDictionary to set.
        * @return This builder for chaining.
        */
-      public Builder setEnableDictionary(long value) {
+      public Builder setEnableDictionary(boolean value) {
         
         enableDictionary_ = value;
         onChanged();
@@ -39690,29 +39375,37 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 enable_dictionary = 13;</code>
+       * <code>bool enable_dictionary = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableDictionary() {
         
-        enableDictionary_ = 0L;
+        enableDictionary_ = false;
         onChanged();
         return this;
       }
 
-      private long encoding_ ;
+      private java.lang.Object encoding_ = "";
       /**
        * <pre>
        * encoding
        * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 encoding = 14;</code>
+       * <code>string encoding = 14;</code>
        * @return The encoding.
        */
-      @java.lang.Override
-      public long getEncoding() {
-        return encoding_;
+      public java.lang.String getEncoding() {
+        java.lang.Object ref = encoding_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          encoding_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -39720,12 +39413,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 encoding = 14;</code>
+       * <code>string encoding = 14;</code>
+       * @return The bytes for encoding.
+       */
+      public com.google.protobuf.ByteString
+          getEncodingBytes() {
+        java.lang.Object ref = encoding_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          encoding_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string encoding = 14;</code>
        * @param value The encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setEncoding(long value) {
-        
+      public Builder setEncoding(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         encoding_ = value;
         onChanged();
         return this;
@@ -39736,29 +39455,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 encoding = 14;</code>
+       * <code>string encoding = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEncoding() {
         
-        encoding_ = 0L;
+        encoding_ = getDefaultInstance().getEncoding();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string encoding = 14;</code>
+       * @param value The bytes for encoding to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncodingBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        encoding_ = value;
         onChanged();
         return this;
       }
 
-      private long fieldDelimiter_ ;
+      private java.lang.Object fieldDelimiter_ = "";
       /**
        * <pre>
        * field_delimiter
        * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 field_delimiter = 15;</code>
+       * <code>string field_delimiter = 15;</code>
        * @return The fieldDelimiter.
        */
-      @java.lang.Override
-      public long getFieldDelimiter() {
-        return fieldDelimiter_;
+      public java.lang.String getFieldDelimiter() {
+        java.lang.Object ref = fieldDelimiter_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fieldDelimiter_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -39766,12 +39514,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 field_delimiter = 15;</code>
+       * <code>string field_delimiter = 15;</code>
+       * @return The bytes for fieldDelimiter.
+       */
+      public com.google.protobuf.ByteString
+          getFieldDelimiterBytes() {
+        java.lang.Object ref = fieldDelimiter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fieldDelimiter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string field_delimiter = 15;</code>
        * @param value The fieldDelimiter to set.
        * @return This builder for chaining.
        */
-      public Builder setFieldDelimiter(long value) {
-        
+      public Builder setFieldDelimiter(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         fieldDelimiter_ = value;
         onChanged();
         return this;
@@ -39782,29 +39556,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 field_delimiter = 15;</code>
+       * <code>string field_delimiter = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearFieldDelimiter() {
         
-        fieldDelimiter_ = 0L;
+        fieldDelimiter_ = getDefaultInstance().getFieldDelimiter();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * field_delimiter
+       * &#64;inject_tag: json:"field_delimiter" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string field_delimiter = 15;</code>
+       * @param value The bytes for fieldDelimiter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldDelimiterBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fieldDelimiter_ = value;
         onChanged();
         return this;
       }
 
-      private long compress_ ;
+      private java.lang.Object compress_ = "";
       /**
        * <pre>
        * compress
        * &#64;inject_tag: json:"compress" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 compress = 16;</code>
+       * <code>string compress = 16;</code>
        * @return The compress.
        */
-      @java.lang.Override
-      public long getCompress() {
-        return compress_;
+      public java.lang.String getCompress() {
+        java.lang.Object ref = compress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          compress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -39812,12 +39615,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"compress" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 compress = 16;</code>
+       * <code>string compress = 16;</code>
+       * @return The bytes for compress.
+       */
+      public com.google.protobuf.ByteString
+          getCompressBytes() {
+        java.lang.Object ref = compress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          compress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * compress
+       * &#64;inject_tag: json:"compress" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string compress = 16;</code>
        * @param value The compress to set.
        * @return This builder for chaining.
        */
-      public Builder setCompress(long value) {
-        
+      public Builder setCompress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         compress_ = value;
         onChanged();
         return this;
@@ -39828,29 +39657,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"compress" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 compress = 16;</code>
+       * <code>string compress = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompress() {
         
-        compress_ = 0L;
+        compress_ = getDefaultInstance().getCompress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * compress
+       * &#64;inject_tag: json:"compress" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string compress = 16;</code>
+       * @param value The bytes for compress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        compress_ = value;
         onChanged();
         return this;
       }
 
-      private long charsetName_ ;
+      private java.lang.Object charsetName_ = "";
       /**
        * <pre>
        * charset_name
        * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 charset_name = 17;</code>
+       * <code>string charset_name = 17;</code>
        * @return The charsetName.
        */
-      @java.lang.Override
-      public long getCharsetName() {
-        return charsetName_;
+      public java.lang.String getCharsetName() {
+        java.lang.Object ref = charsetName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          charsetName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -39858,12 +39716,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 charset_name = 17;</code>
+       * <code>string charset_name = 17;</code>
+       * @return The bytes for charsetName.
+       */
+      public com.google.protobuf.ByteString
+          getCharsetNameBytes() {
+        java.lang.Object ref = charsetName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          charsetName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * charset_name
+       * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string charset_name = 17;</code>
        * @param value The charsetName to set.
        * @return This builder for chaining.
        */
-      public Builder setCharsetName(long value) {
-        
+      public Builder setCharsetName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         charsetName_ = value;
         onChanged();
         return this;
@@ -39874,12 +39758,33 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 charset_name = 17;</code>
+       * <code>string charset_name = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearCharsetName() {
         
-        charsetName_ = 0L;
+        charsetName_ = getDefaultInstance().getCharsetName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * charset_name
+       * &#64;inject_tag: json:"charset_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string charset_name = 17;</code>
+       * @param value The bytes for charsetName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCharsetNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        charsetName_ = value;
         onChanged();
         return this;
       }
@@ -39888,10 +39793,10 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * hadoop config
-       * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+       * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_Config = 18;</code>
+       * <code>string hadoop_config = 18;</code>
        * @return The hadoopConfig.
        */
       public java.lang.String getHadoopConfig() {
@@ -39909,10 +39814,10 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * hadoop config
-       * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+       * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_Config = 18;</code>
+       * <code>string hadoop_config = 18;</code>
        * @return The bytes for hadoopConfig.
        */
       public com.google.protobuf.ByteString
@@ -39931,10 +39836,10 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * hadoop config
-       * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+       * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_Config = 18;</code>
+       * <code>string hadoop_config = 18;</code>
        * @param value The hadoopConfig to set.
        * @return This builder for chaining.
        */
@@ -39951,10 +39856,10 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * hadoop config
-       * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+       * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_Config = 18;</code>
+       * <code>string hadoop_config = 18;</code>
        * @return This builder for chaining.
        */
       public Builder clearHadoopConfig() {
@@ -39966,10 +39871,10 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * hadoop config
-       * &#64;inject_tag: json:"hadoop_Config" swaggerignore:"true"
+       * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_Config = 18;</code>
+       * <code>string hadoop_config = 18;</code>
        * @param value The bytes for hadoopConfig to set.
        * @return This builder for chaining.
        */
@@ -42500,25 +42405,25 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * filter_regex
-     * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+     * encoding
+     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
      * </pre>
      *
-     * <code>string filter_regex = 7;</code>
-     * @return The filterRegex.
+     * <code>string encoding = 7;</code>
+     * @return The encoding.
      */
-    java.lang.String getFilterRegex();
+    java.lang.String getEncoding();
     /**
      * <pre>
-     * filter_regex
-     * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+     * encoding
+     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
      * </pre>
      *
-     * <code>string filter_regex = 7;</code>
-     * @return The bytes for filterRegex.
+     * <code>string encoding = 7;</code>
+     * @return The bytes for encoding.
      */
     com.google.protobuf.ByteString
-        getFilterRegexBytes();
+        getEncodingBytes();
 
     /**
      * <pre>
@@ -42548,21 +42453,44 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_name = 9;</code>
-     * @return The fullColumnName.
+     * <code>repeated string full_column_name = 9;</code>
+     * @return A list containing the fullColumnName.
      */
-    java.lang.String getFullColumnName();
+    java.util.List<java.lang.String>
+        getFullColumnNameList();
     /**
      * <pre>
      * full column name
      * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_name = 9;</code>
-     * @return The bytes for fullColumnName.
+     * <code>repeated string full_column_name = 9;</code>
+     * @return The count of fullColumnName.
+     */
+    int getFullColumnNameCount();
+    /**
+     * <pre>
+     * full column name
+     * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_name = 9;</code>
+     * @param index The index of the element to return.
+     * @return The fullColumnName at the given index.
+     */
+    java.lang.String getFullColumnName(int index);
+    /**
+     * <pre>
+     * full column name
+     * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_name = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the fullColumnName at the given index.
      */
     com.google.protobuf.ByteString
-        getFullColumnNameBytes();
+        getFullColumnNameBytes(int index);
 
     /**
      * <pre>
@@ -42570,21 +42498,44 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_type = 10;</code>
-     * @return The fullColumnType.
+     * <code>repeated string full_column_type = 10;</code>
+     * @return A list containing the fullColumnType.
      */
-    java.lang.String getFullColumnType();
+    java.util.List<java.lang.String>
+        getFullColumnTypeList();
     /**
      * <pre>
      * full column type
      * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_type = 10;</code>
-     * @return The bytes for fullColumnType.
+     * <code>repeated string full_column_type = 10;</code>
+     * @return The count of fullColumnType.
+     */
+    int getFullColumnTypeCount();
+    /**
+     * <pre>
+     * full column type
+     * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_type = 10;</code>
+     * @param index The index of the element to return.
+     * @return The fullColumnType at the given index.
+     */
+    java.lang.String getFullColumnType(int index);
+    /**
+     * <pre>
+     * full column type
+     * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_type = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the fullColumnType at the given index.
      */
     com.google.protobuf.ByteString
-        getFullColumnTypeBytes();
+        getFullColumnTypeBytes(int index);
 
     /**
      * <pre>
@@ -42614,21 +42565,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string max_file_size = 12;</code>
+     * <code>int32 max_file_size = 12;</code>
      * @return The maxFileSize.
      */
-    java.lang.String getMaxFileSize();
-    /**
-     * <pre>
-     * max file size
-     * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string max_file_size = 12;</code>
-     * @return The bytes for maxFileSize.
-     */
-    com.google.protobuf.ByteString
-        getMaxFileSizeBytes();
+    int getMaxFileSize();
 
     /**
      * <pre>
@@ -42636,21 +42576,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
      * </pre>
      *
-     * <code>string next_check_rows = 13;</code>
+     * <code>int64 next_check_rows = 13;</code>
      * @return The nextCheckRows.
      */
-    java.lang.String getNextCheckRows();
-    /**
-     * <pre>
-     * next check rows
-     * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string next_check_rows = 13;</code>
-     * @return The bytes for nextCheckRows.
-     */
-    com.google.protobuf.ByteString
-        getNextCheckRowsBytes();
+    long getNextCheckRows();
 
     /**
      * <pre>
@@ -42658,21 +42587,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string row_group_size = 14;</code>
+     * <code>int32 row_group_size = 14;</code>
      * @return The rowGroupSize.
      */
-    java.lang.String getRowGroupSize();
-    /**
-     * <pre>
-     * row group size
-     * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string row_group_size = 14;</code>
-     * @return The bytes for rowGroupSize.
-     */
-    com.google.protobuf.ByteString
-        getRowGroupSizeBytes();
+    int getRowGroupSize();
 
     /**
      * <pre>
@@ -42680,43 +42598,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
      * </pre>
      *
-     * <code>string enable_dictionary = 15;</code>
+     * <code>bool enable_dictionary = 15;</code>
      * @return The enableDictionary.
      */
-    java.lang.String getEnableDictionary();
-    /**
-     * <pre>
-     * enable dictionary
-     * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string enable_dictionary = 15;</code>
-     * @return The bytes for enableDictionary.
-     */
-    com.google.protobuf.ByteString
-        getEnableDictionaryBytes();
-
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string encoding = 16;</code>
-     * @return The encoding.
-     */
-    java.lang.String getEncoding();
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string encoding = 16;</code>
-     * @return The bytes for encoding.
-     */
-    com.google.protobuf.ByteString
-        getEncodingBytes();
+    boolean getEnableDictionary();
 
     /**
      * <pre>
@@ -42724,7 +42609,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_config = 17;</code>
+     * <code>string hadoop_config = 16;</code>
      * @return The hadoopConfig.
      */
     java.lang.String getHadoopConfig();
@@ -42734,7 +42619,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_config = 17;</code>
+     * <code>string hadoop_config = 16;</code>
      * @return The bytes for hadoopConfig.
      */
     com.google.protobuf.ByteString
@@ -42759,16 +42644,11 @@ public final class PBSyncManageSyncJob {
       fileType_ = "";
       writeMode_ = "";
       defaultFs_ = "";
-      filterRegex_ = "";
-      fieldDelimiter_ = "";
-      fullColumnName_ = "";
-      fullColumnType_ = "";
-      compress_ = "";
-      maxFileSize_ = "";
-      nextCheckRows_ = "";
-      rowGroupSize_ = "";
-      enableDictionary_ = "";
       encoding_ = "";
+      fieldDelimiter_ = "";
+      fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      compress_ = "";
       hadoopConfig_ = "";
     }
 
@@ -42845,7 +42725,7 @@ public final class PBSyncManageSyncJob {
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              filterRegex_ = s;
+              encoding_ = s;
               break;
             }
             case 66: {
@@ -42856,14 +42736,20 @@ public final class PBSyncManageSyncJob {
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              fullColumnName_ = s;
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                fullColumnName_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              fullColumnName_.add(s);
               break;
             }
             case 82: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              fullColumnType_ = s;
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                fullColumnType_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              fullColumnType_.add(s);
               break;
             }
             case 90: {
@@ -42872,37 +42758,27 @@ public final class PBSyncManageSyncJob {
               compress_ = s;
               break;
             }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 96: {
 
-              maxFileSize_ = s;
+              maxFileSize_ = input.readInt32();
               break;
             }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 104: {
 
-              nextCheckRows_ = s;
+              nextCheckRows_ = input.readInt64();
               break;
             }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 112: {
 
-              rowGroupSize_ = s;
+              rowGroupSize_ = input.readInt32();
               break;
             }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 120: {
 
-              enableDictionary_ = s;
+              enableDictionary_ = input.readBool();
               break;
             }
             case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              encoding_ = s;
-              break;
-            }
-            case 138: {
               java.lang.String s = input.readStringRequireUtf8();
 
               hadoopConfig_ = s;
@@ -42925,6 +42801,12 @@ public final class PBSyncManageSyncJob {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           column_ = java.util.Collections.unmodifiableList(column_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          fullColumnName_ = fullColumnName_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          fullColumnType_ = fullColumnType_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -43248,48 +43130,48 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int FILTER_REGEX_FIELD_NUMBER = 7;
-    private volatile java.lang.Object filterRegex_;
+    public static final int ENCODING_FIELD_NUMBER = 7;
+    private volatile java.lang.Object encoding_;
     /**
      * <pre>
-     * filter_regex
-     * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+     * encoding
+     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
      * </pre>
      *
-     * <code>string filter_regex = 7;</code>
-     * @return The filterRegex.
+     * <code>string encoding = 7;</code>
+     * @return The encoding.
      */
     @java.lang.Override
-    public java.lang.String getFilterRegex() {
-      java.lang.Object ref = filterRegex_;
+    public java.lang.String getEncoding() {
+      java.lang.Object ref = encoding_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        filterRegex_ = s;
+        encoding_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * filter_regex
-     * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+     * encoding
+     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
      * </pre>
      *
-     * <code>string filter_regex = 7;</code>
-     * @return The bytes for filterRegex.
+     * <code>string encoding = 7;</code>
+     * @return The bytes for encoding.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getFilterRegexBytes() {
-      java.lang.Object ref = filterRegex_;
+        getEncodingBytes() {
+      java.lang.Object ref = encoding_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        filterRegex_ = b;
+        encoding_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -43345,28 +43227,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int FULL_COLUMN_NAME_FIELD_NUMBER = 9;
-    private volatile java.lang.Object fullColumnName_;
+    private com.google.protobuf.LazyStringList fullColumnName_;
     /**
      * <pre>
      * full column name
      * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_name = 9;</code>
-     * @return The fullColumnName.
+     * <code>repeated string full_column_name = 9;</code>
+     * @return A list containing the fullColumnName.
      */
-    @java.lang.Override
-    public java.lang.String getFullColumnName() {
-      java.lang.Object ref = fullColumnName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fullColumnName_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getFullColumnNameList() {
+      return fullColumnName_;
     }
     /**
      * <pre>
@@ -43374,47 +43247,54 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_name = 9;</code>
-     * @return The bytes for fullColumnName.
+     * <code>repeated string full_column_name = 9;</code>
+     * @return The count of fullColumnName.
      */
-    @java.lang.Override
+    public int getFullColumnNameCount() {
+      return fullColumnName_.size();
+    }
+    /**
+     * <pre>
+     * full column name
+     * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_name = 9;</code>
+     * @param index The index of the element to return.
+     * @return The fullColumnName at the given index.
+     */
+    public java.lang.String getFullColumnName(int index) {
+      return fullColumnName_.get(index);
+    }
+    /**
+     * <pre>
+     * full column name
+     * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_name = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the fullColumnName at the given index.
+     */
     public com.google.protobuf.ByteString
-        getFullColumnNameBytes() {
-      java.lang.Object ref = fullColumnName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fullColumnName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getFullColumnNameBytes(int index) {
+      return fullColumnName_.getByteString(index);
     }
 
     public static final int FULL_COLUMN_TYPE_FIELD_NUMBER = 10;
-    private volatile java.lang.Object fullColumnType_;
+    private com.google.protobuf.LazyStringList fullColumnType_;
     /**
      * <pre>
      * full column type
      * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_type = 10;</code>
-     * @return The fullColumnType.
+     * <code>repeated string full_column_type = 10;</code>
+     * @return A list containing the fullColumnType.
      */
-    @java.lang.Override
-    public java.lang.String getFullColumnType() {
-      java.lang.Object ref = fullColumnType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        fullColumnType_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getFullColumnTypeList() {
+      return fullColumnType_;
     }
     /**
      * <pre>
@@ -43422,22 +43302,38 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string full_column_type = 10;</code>
-     * @return The bytes for fullColumnType.
+     * <code>repeated string full_column_type = 10;</code>
+     * @return The count of fullColumnType.
      */
-    @java.lang.Override
+    public int getFullColumnTypeCount() {
+      return fullColumnType_.size();
+    }
+    /**
+     * <pre>
+     * full column type
+     * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_type = 10;</code>
+     * @param index The index of the element to return.
+     * @return The fullColumnType at the given index.
+     */
+    public java.lang.String getFullColumnType(int index) {
+      return fullColumnType_.get(index);
+    }
+    /**
+     * <pre>
+     * full column type
+     * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated string full_column_type = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the fullColumnType at the given index.
+     */
     public com.google.protobuf.ByteString
-        getFullColumnTypeBytes() {
-      java.lang.Object ref = fullColumnType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fullColumnType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getFullColumnTypeBytes(int index) {
+      return fullColumnType_.getByteString(index);
     }
 
     public static final int COMPRESS_FIELD_NUMBER = 11;
@@ -43489,246 +43385,70 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int MAX_FILE_SIZE_FIELD_NUMBER = 12;
-    private volatile java.lang.Object maxFileSize_;
+    private int maxFileSize_;
     /**
      * <pre>
      * max file size
      * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string max_file_size = 12;</code>
+     * <code>int32 max_file_size = 12;</code>
      * @return The maxFileSize.
      */
     @java.lang.Override
-    public java.lang.String getMaxFileSize() {
-      java.lang.Object ref = maxFileSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        maxFileSize_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * max file size
-     * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string max_file_size = 12;</code>
-     * @return The bytes for maxFileSize.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMaxFileSizeBytes() {
-      java.lang.Object ref = maxFileSize_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        maxFileSize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getMaxFileSize() {
+      return maxFileSize_;
     }
 
     public static final int NEXT_CHECK_ROWS_FIELD_NUMBER = 13;
-    private volatile java.lang.Object nextCheckRows_;
+    private long nextCheckRows_;
     /**
      * <pre>
      * next check rows
      * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
      * </pre>
      *
-     * <code>string next_check_rows = 13;</code>
+     * <code>int64 next_check_rows = 13;</code>
      * @return The nextCheckRows.
      */
     @java.lang.Override
-    public java.lang.String getNextCheckRows() {
-      java.lang.Object ref = nextCheckRows_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nextCheckRows_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * next check rows
-     * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string next_check_rows = 13;</code>
-     * @return The bytes for nextCheckRows.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNextCheckRowsBytes() {
-      java.lang.Object ref = nextCheckRows_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nextCheckRows_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getNextCheckRows() {
+      return nextCheckRows_;
     }
 
     public static final int ROW_GROUP_SIZE_FIELD_NUMBER = 14;
-    private volatile java.lang.Object rowGroupSize_;
+    private int rowGroupSize_;
     /**
      * <pre>
      * row group size
      * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string row_group_size = 14;</code>
+     * <code>int32 row_group_size = 14;</code>
      * @return The rowGroupSize.
      */
     @java.lang.Override
-    public java.lang.String getRowGroupSize() {
-      java.lang.Object ref = rowGroupSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        rowGroupSize_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * row group size
-     * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string row_group_size = 14;</code>
-     * @return The bytes for rowGroupSize.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRowGroupSizeBytes() {
-      java.lang.Object ref = rowGroupSize_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rowGroupSize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getRowGroupSize() {
+      return rowGroupSize_;
     }
 
     public static final int ENABLE_DICTIONARY_FIELD_NUMBER = 15;
-    private volatile java.lang.Object enableDictionary_;
+    private boolean enableDictionary_;
     /**
      * <pre>
      * enable dictionary
      * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
      * </pre>
      *
-     * <code>string enable_dictionary = 15;</code>
+     * <code>bool enable_dictionary = 15;</code>
      * @return The enableDictionary.
      */
     @java.lang.Override
-    public java.lang.String getEnableDictionary() {
-      java.lang.Object ref = enableDictionary_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        enableDictionary_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * enable dictionary
-     * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string enable_dictionary = 15;</code>
-     * @return The bytes for enableDictionary.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEnableDictionaryBytes() {
-      java.lang.Object ref = enableDictionary_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        enableDictionary_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getEnableDictionary() {
+      return enableDictionary_;
     }
 
-    public static final int ENCODING_FIELD_NUMBER = 16;
-    private volatile java.lang.Object encoding_;
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string encoding = 16;</code>
-     * @return The encoding.
-     */
-    @java.lang.Override
-    public java.lang.String getEncoding() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encoding_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string encoding = 16;</code>
-     * @return The bytes for encoding.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEncodingBytes() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encoding_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HADOOP_CONFIG_FIELD_NUMBER = 17;
+    public static final int HADOOP_CONFIG_FIELD_NUMBER = 16;
     private volatile java.lang.Object hadoopConfig_;
     /**
      * <pre>
@@ -43736,7 +43456,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_config = 17;</code>
+     * <code>string hadoop_config = 16;</code>
      * @return The hadoopConfig.
      */
     @java.lang.Override
@@ -43758,7 +43478,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoop_config = 17;</code>
+     * <code>string hadoop_config = 16;</code>
      * @return The bytes for hadoopConfig.
      */
     @java.lang.Override
@@ -43808,38 +43528,35 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, defaultFs_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filterRegex_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, filterRegex_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, encoding_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, fieldDelimiter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullColumnName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, fullColumnName_);
+      for (int i = 0; i < fullColumnName_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, fullColumnName_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullColumnType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, fullColumnType_);
+      for (int i = 0; i < fullColumnType_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, fullColumnType_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, compress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxFileSize_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, maxFileSize_);
+      if (maxFileSize_ != 0) {
+        output.writeInt32(12, maxFileSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextCheckRows_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nextCheckRows_);
+      if (nextCheckRows_ != 0L) {
+        output.writeInt64(13, nextCheckRows_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowGroupSize_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, rowGroupSize_);
+      if (rowGroupSize_ != 0) {
+        output.writeInt32(14, rowGroupSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enableDictionary_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, enableDictionary_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, encoding_);
+      if (enableDictionary_ != false) {
+        output.writeBool(15, enableDictionary_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, hadoopConfig_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, hadoopConfig_);
       }
       unknownFields.writeTo(output);
     }
@@ -43869,38 +43586,49 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultFs_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, defaultFs_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filterRegex_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, filterRegex_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, encoding_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldDelimiter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, fieldDelimiter_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullColumnName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, fullColumnName_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fullColumnName_.size(); i++) {
+          dataSize += computeStringSizeNoTag(fullColumnName_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFullColumnNameList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullColumnType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, fullColumnType_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fullColumnType_.size(); i++) {
+          dataSize += computeStringSizeNoTag(fullColumnType_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFullColumnTypeList().size();
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, compress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maxFileSize_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, maxFileSize_);
+      if (maxFileSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, maxFileSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextCheckRows_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nextCheckRows_);
+      if (nextCheckRows_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(13, nextCheckRows_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowGroupSize_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, rowGroupSize_);
+      if (rowGroupSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, rowGroupSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(enableDictionary_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, enableDictionary_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, encoding_);
+      if (enableDictionary_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, enableDictionary_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, hadoopConfig_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, hadoopConfig_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -43929,26 +43657,24 @@ public final class PBSyncManageSyncJob {
           .equals(other.getWriteMode())) return false;
       if (!getDefaultFs()
           .equals(other.getDefaultFs())) return false;
-      if (!getFilterRegex()
-          .equals(other.getFilterRegex())) return false;
-      if (!getFieldDelimiter()
-          .equals(other.getFieldDelimiter())) return false;
-      if (!getFullColumnName()
-          .equals(other.getFullColumnName())) return false;
-      if (!getFullColumnType()
-          .equals(other.getFullColumnType())) return false;
-      if (!getCompress()
-          .equals(other.getCompress())) return false;
-      if (!getMaxFileSize()
-          .equals(other.getMaxFileSize())) return false;
-      if (!getNextCheckRows()
-          .equals(other.getNextCheckRows())) return false;
-      if (!getRowGroupSize()
-          .equals(other.getRowGroupSize())) return false;
-      if (!getEnableDictionary()
-          .equals(other.getEnableDictionary())) return false;
       if (!getEncoding()
           .equals(other.getEncoding())) return false;
+      if (!getFieldDelimiter()
+          .equals(other.getFieldDelimiter())) return false;
+      if (!getFullColumnNameList()
+          .equals(other.getFullColumnNameList())) return false;
+      if (!getFullColumnTypeList()
+          .equals(other.getFullColumnTypeList())) return false;
+      if (!getCompress()
+          .equals(other.getCompress())) return false;
+      if (getMaxFileSize()
+          != other.getMaxFileSize()) return false;
+      if (getNextCheckRows()
+          != other.getNextCheckRows()) return false;
+      if (getRowGroupSize()
+          != other.getRowGroupSize()) return false;
+      if (getEnableDictionary()
+          != other.getEnableDictionary()) return false;
       if (!getHadoopConfig()
           .equals(other.getHadoopConfig())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -43976,26 +43702,30 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + getWriteMode().hashCode();
       hash = (37 * hash) + DEFAULT_FS_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultFs().hashCode();
-      hash = (37 * hash) + FILTER_REGEX_FIELD_NUMBER;
-      hash = (53 * hash) + getFilterRegex().hashCode();
+      hash = (37 * hash) + ENCODING_FIELD_NUMBER;
+      hash = (53 * hash) + getEncoding().hashCode();
       hash = (37 * hash) + FIELD_DELIMITER_FIELD_NUMBER;
       hash = (53 * hash) + getFieldDelimiter().hashCode();
-      hash = (37 * hash) + FULL_COLUMN_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getFullColumnName().hashCode();
-      hash = (37 * hash) + FULL_COLUMN_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getFullColumnType().hashCode();
+      if (getFullColumnNameCount() > 0) {
+        hash = (37 * hash) + FULL_COLUMN_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getFullColumnNameList().hashCode();
+      }
+      if (getFullColumnTypeCount() > 0) {
+        hash = (37 * hash) + FULL_COLUMN_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getFullColumnTypeList().hashCode();
+      }
       hash = (37 * hash) + COMPRESS_FIELD_NUMBER;
       hash = (53 * hash) + getCompress().hashCode();
       hash = (37 * hash) + MAX_FILE_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxFileSize().hashCode();
+      hash = (53 * hash) + getMaxFileSize();
       hash = (37 * hash) + NEXT_CHECK_ROWS_FIELD_NUMBER;
-      hash = (53 * hash) + getNextCheckRows().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getNextCheckRows());
       hash = (37 * hash) + ROW_GROUP_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getRowGroupSize().hashCode();
+      hash = (53 * hash) + getRowGroupSize();
       hash = (37 * hash) + ENABLE_DICTIONARY_FIELD_NUMBER;
-      hash = (53 * hash) + getEnableDictionary().hashCode();
-      hash = (37 * hash) + ENCODING_FIELD_NUMBER;
-      hash = (53 * hash) + getEncoding().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnableDictionary());
       hash = (37 * hash) + HADOOP_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHadoopConfig().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -44148,25 +43878,23 @@ public final class PBSyncManageSyncJob {
 
         defaultFs_ = "";
 
-        filterRegex_ = "";
+        encoding_ = "";
 
         fieldDelimiter_ = "";
 
-        fullColumnName_ = "";
-
-        fullColumnType_ = "";
-
+        fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         compress_ = "";
 
-        maxFileSize_ = "";
+        maxFileSize_ = 0;
 
-        nextCheckRows_ = "";
+        nextCheckRows_ = 0L;
 
-        rowGroupSize_ = "";
+        rowGroupSize_ = 0;
 
-        enableDictionary_ = "";
-
-        encoding_ = "";
+        enableDictionary_ = false;
 
         hadoopConfig_ = "";
 
@@ -44211,16 +43939,23 @@ public final class PBSyncManageSyncJob {
         result.fileType_ = fileType_;
         result.writeMode_ = writeMode_;
         result.defaultFs_ = defaultFs_;
-        result.filterRegex_ = filterRegex_;
+        result.encoding_ = encoding_;
         result.fieldDelimiter_ = fieldDelimiter_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          fullColumnName_ = fullColumnName_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
         result.fullColumnName_ = fullColumnName_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          fullColumnType_ = fullColumnType_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
         result.fullColumnType_ = fullColumnType_;
         result.compress_ = compress_;
         result.maxFileSize_ = maxFileSize_;
         result.nextCheckRows_ = nextCheckRows_;
         result.rowGroupSize_ = rowGroupSize_;
         result.enableDictionary_ = enableDictionary_;
-        result.encoding_ = encoding_;
         result.hadoopConfig_ = hadoopConfig_;
         onBuilt();
         return result;
@@ -44316,45 +44051,49 @@ public final class PBSyncManageSyncJob {
           defaultFs_ = other.defaultFs_;
           onChanged();
         }
-        if (!other.getFilterRegex().isEmpty()) {
-          filterRegex_ = other.filterRegex_;
+        if (!other.getEncoding().isEmpty()) {
+          encoding_ = other.encoding_;
           onChanged();
         }
         if (!other.getFieldDelimiter().isEmpty()) {
           fieldDelimiter_ = other.fieldDelimiter_;
           onChanged();
         }
-        if (!other.getFullColumnName().isEmpty()) {
-          fullColumnName_ = other.fullColumnName_;
+        if (!other.fullColumnName_.isEmpty()) {
+          if (fullColumnName_.isEmpty()) {
+            fullColumnName_ = other.fullColumnName_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFullColumnNameIsMutable();
+            fullColumnName_.addAll(other.fullColumnName_);
+          }
           onChanged();
         }
-        if (!other.getFullColumnType().isEmpty()) {
-          fullColumnType_ = other.fullColumnType_;
+        if (!other.fullColumnType_.isEmpty()) {
+          if (fullColumnType_.isEmpty()) {
+            fullColumnType_ = other.fullColumnType_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureFullColumnTypeIsMutable();
+            fullColumnType_.addAll(other.fullColumnType_);
+          }
           onChanged();
         }
         if (!other.getCompress().isEmpty()) {
           compress_ = other.compress_;
           onChanged();
         }
-        if (!other.getMaxFileSize().isEmpty()) {
-          maxFileSize_ = other.maxFileSize_;
-          onChanged();
+        if (other.getMaxFileSize() != 0) {
+          setMaxFileSize(other.getMaxFileSize());
         }
-        if (!other.getNextCheckRows().isEmpty()) {
-          nextCheckRows_ = other.nextCheckRows_;
-          onChanged();
+        if (other.getNextCheckRows() != 0L) {
+          setNextCheckRows(other.getNextCheckRows());
         }
-        if (!other.getRowGroupSize().isEmpty()) {
-          rowGroupSize_ = other.rowGroupSize_;
-          onChanged();
+        if (other.getRowGroupSize() != 0) {
+          setRowGroupSize(other.getRowGroupSize());
         }
-        if (!other.getEnableDictionary().isEmpty()) {
-          enableDictionary_ = other.enableDictionary_;
-          onChanged();
-        }
-        if (!other.getEncoding().isEmpty()) {
-          encoding_ = other.encoding_;
-          onChanged();
+        if (other.getEnableDictionary() != false) {
+          setEnableDictionary(other.getEnableDictionary());
         }
         if (!other.getHadoopConfig().isEmpty()) {
           hadoopConfig_ = other.hadoopConfig_;
@@ -45225,23 +44964,23 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object filterRegex_ = "";
+      private java.lang.Object encoding_ = "";
       /**
        * <pre>
-       * filter_regex
-       * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+       * encoding
+       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>string filter_regex = 7;</code>
-       * @return The filterRegex.
+       * <code>string encoding = 7;</code>
+       * @return The encoding.
        */
-      public java.lang.String getFilterRegex() {
-        java.lang.Object ref = filterRegex_;
+      public java.lang.String getEncoding() {
+        java.lang.Object ref = encoding_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          filterRegex_ = s;
+          encoding_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -45249,21 +44988,21 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * filter_regex
-       * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+       * encoding
+       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>string filter_regex = 7;</code>
-       * @return The bytes for filterRegex.
+       * <code>string encoding = 7;</code>
+       * @return The bytes for encoding.
        */
       public com.google.protobuf.ByteString
-          getFilterRegexBytes() {
-        java.lang.Object ref = filterRegex_;
+          getEncodingBytes() {
+        java.lang.Object ref = encoding_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          filterRegex_ = b;
+          encoding_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -45271,57 +45010,57 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * filter_regex
-       * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+       * encoding
+       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>string filter_regex = 7;</code>
-       * @param value The filterRegex to set.
+       * <code>string encoding = 7;</code>
+       * @param value The encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setFilterRegex(
+      public Builder setEncoding(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        filterRegex_ = value;
+        encoding_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * filter_regex
-       * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+       * encoding
+       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>string filter_regex = 7;</code>
+       * <code>string encoding = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFilterRegex() {
+      public Builder clearEncoding() {
         
-        filterRegex_ = getDefaultInstance().getFilterRegex();
+        encoding_ = getDefaultInstance().getEncoding();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * filter_regex
-       * &#64;inject_tag: json:"filter_regex" swaggerignore:"true"
+       * encoding
+       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
        * </pre>
        *
-       * <code>string filter_regex = 7;</code>
-       * @param value The bytes for filterRegex to set.
+       * <code>string encoding = 7;</code>
+       * @param value The bytes for encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setFilterRegexBytes(
+      public Builder setEncodingBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        filterRegex_ = value;
+        encoding_ = value;
         onChanged();
         return this;
       }
@@ -45427,27 +45166,12 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object fullColumnName_ = "";
-      /**
-       * <pre>
-       * full column name
-       * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string full_column_name = 9;</code>
-       * @return The fullColumnName.
-       */
-      public java.lang.String getFullColumnName() {
-        java.lang.Object ref = fullColumnName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fullColumnName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureFullColumnNameIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          fullColumnName_ = new com.google.protobuf.LazyStringArrayList(fullColumnName_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
        * <pre>
@@ -45455,21 +45179,51 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_name = 9;</code>
-       * @return The bytes for fullColumnName.
+       * <code>repeated string full_column_name = 9;</code>
+       * @return A list containing the fullColumnName.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getFullColumnNameList() {
+        return fullColumnName_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * full column name
+       * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_name = 9;</code>
+       * @return The count of fullColumnName.
+       */
+      public int getFullColumnNameCount() {
+        return fullColumnName_.size();
+      }
+      /**
+       * <pre>
+       * full column name
+       * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_name = 9;</code>
+       * @param index The index of the element to return.
+       * @return The fullColumnName at the given index.
+       */
+      public java.lang.String getFullColumnName(int index) {
+        return fullColumnName_.get(index);
+      }
+      /**
+       * <pre>
+       * full column name
+       * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_name = 9;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the fullColumnName at the given index.
        */
       public com.google.protobuf.ByteString
-          getFullColumnNameBytes() {
-        java.lang.Object ref = fullColumnName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fullColumnName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getFullColumnNameBytes(int index) {
+        return fullColumnName_.getByteString(index);
       }
       /**
        * <pre>
@@ -45477,17 +45231,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_name = 9;</code>
+       * <code>repeated string full_column_name = 9;</code>
+       * @param index The index to set the value at.
        * @param value The fullColumnName to set.
        * @return This builder for chaining.
        */
       public Builder setFullColumnName(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFullColumnNameIsMutable();
+        fullColumnName_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * full column name
+       * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_name = 9;</code>
+       * @param value The fullColumnName to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFullColumnName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        fullColumnName_ = value;
+  ensureFullColumnNameIsMutable();
+        fullColumnName_.add(value);
         onChanged();
         return this;
       }
@@ -45497,12 +45272,30 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_name = 9;</code>
+       * <code>repeated string full_column_name = 9;</code>
+       * @param values The fullColumnName to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFullColumnName(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureFullColumnNameIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, fullColumnName_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * full column name
+       * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_name = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearFullColumnName() {
-        
-        fullColumnName_ = getDefaultInstance().getFullColumnName();
+        fullColumnName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -45512,43 +45305,28 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_name = 9;</code>
-       * @param value The bytes for fullColumnName to set.
+       * <code>repeated string full_column_name = 9;</code>
+       * @param value The bytes of the fullColumnName to add.
        * @return This builder for chaining.
        */
-      public Builder setFullColumnNameBytes(
+      public Builder addFullColumnNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        fullColumnName_ = value;
+        ensureFullColumnNameIsMutable();
+        fullColumnName_.add(value);
         onChanged();
         return this;
       }
 
-      private java.lang.Object fullColumnType_ = "";
-      /**
-       * <pre>
-       * full column type
-       * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string full_column_type = 10;</code>
-       * @return The fullColumnType.
-       */
-      public java.lang.String getFullColumnType() {
-        java.lang.Object ref = fullColumnType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          fullColumnType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureFullColumnTypeIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          fullColumnType_ = new com.google.protobuf.LazyStringArrayList(fullColumnType_);
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
        * <pre>
@@ -45556,21 +45334,51 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_type = 10;</code>
-       * @return The bytes for fullColumnType.
+       * <code>repeated string full_column_type = 10;</code>
+       * @return A list containing the fullColumnType.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getFullColumnTypeList() {
+        return fullColumnType_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * full column type
+       * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_type = 10;</code>
+       * @return The count of fullColumnType.
+       */
+      public int getFullColumnTypeCount() {
+        return fullColumnType_.size();
+      }
+      /**
+       * <pre>
+       * full column type
+       * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_type = 10;</code>
+       * @param index The index of the element to return.
+       * @return The fullColumnType at the given index.
+       */
+      public java.lang.String getFullColumnType(int index) {
+        return fullColumnType_.get(index);
+      }
+      /**
+       * <pre>
+       * full column type
+       * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_type = 10;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the fullColumnType at the given index.
        */
       public com.google.protobuf.ByteString
-          getFullColumnTypeBytes() {
-        java.lang.Object ref = fullColumnType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          fullColumnType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getFullColumnTypeBytes(int index) {
+        return fullColumnType_.getByteString(index);
       }
       /**
        * <pre>
@@ -45578,17 +45386,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_type = 10;</code>
+       * <code>repeated string full_column_type = 10;</code>
+       * @param index The index to set the value at.
        * @param value The fullColumnType to set.
        * @return This builder for chaining.
        */
       public Builder setFullColumnType(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFullColumnTypeIsMutable();
+        fullColumnType_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * full column type
+       * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_type = 10;</code>
+       * @param value The fullColumnType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFullColumnType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        fullColumnType_ = value;
+  ensureFullColumnTypeIsMutable();
+        fullColumnType_.add(value);
         onChanged();
         return this;
       }
@@ -45598,12 +45427,30 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_type = 10;</code>
+       * <code>repeated string full_column_type = 10;</code>
+       * @param values The fullColumnType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFullColumnType(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureFullColumnTypeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, fullColumnType_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * full column type
+       * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated string full_column_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearFullColumnType() {
-        
-        fullColumnType_ = getDefaultInstance().getFullColumnType();
+        fullColumnType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -45613,18 +45460,18 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"full_column_type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string full_column_type = 10;</code>
-       * @param value The bytes for fullColumnType to set.
+       * <code>repeated string full_column_type = 10;</code>
+       * @param value The bytes of the fullColumnType to add.
        * @return This builder for chaining.
        */
-      public Builder setFullColumnTypeBytes(
+      public Builder addFullColumnTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        fullColumnType_ = value;
+        ensureFullColumnTypeIsMutable();
+        fullColumnType_.add(value);
         onChanged();
         return this;
       }
@@ -45730,27 +45577,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object maxFileSize_ = "";
+      private int maxFileSize_ ;
       /**
        * <pre>
        * max file size
        * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string max_file_size = 12;</code>
+       * <code>int32 max_file_size = 12;</code>
        * @return The maxFileSize.
        */
-      public java.lang.String getMaxFileSize() {
-        java.lang.Object ref = maxFileSize_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          maxFileSize_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getMaxFileSize() {
+        return maxFileSize_;
       }
       /**
        * <pre>
@@ -45758,38 +45597,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string max_file_size = 12;</code>
-       * @return The bytes for maxFileSize.
-       */
-      public com.google.protobuf.ByteString
-          getMaxFileSizeBytes() {
-        java.lang.Object ref = maxFileSize_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          maxFileSize_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string max_file_size = 12;</code>
+       * <code>int32 max_file_size = 12;</code>
        * @param value The maxFileSize to set.
        * @return This builder for chaining.
        */
-      public Builder setMaxFileSize(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setMaxFileSize(int value) {
+        
         maxFileSize_ = value;
         onChanged();
         return this;
@@ -45800,58 +45613,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string max_file_size = 12;</code>
+       * <code>int32 max_file_size = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxFileSize() {
         
-        maxFileSize_ = getDefaultInstance().getMaxFileSize();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * max file size
-       * &#64;inject_tag: json:"max_file_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string max_file_size = 12;</code>
-       * @param value The bytes for maxFileSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxFileSizeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        maxFileSize_ = value;
+        maxFileSize_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object nextCheckRows_ = "";
+      private long nextCheckRows_ ;
       /**
        * <pre>
        * next check rows
        * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
        * </pre>
        *
-       * <code>string next_check_rows = 13;</code>
+       * <code>int64 next_check_rows = 13;</code>
        * @return The nextCheckRows.
        */
-      public java.lang.String getNextCheckRows() {
-        java.lang.Object ref = nextCheckRows_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          nextCheckRows_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getNextCheckRows() {
+        return nextCheckRows_;
       }
       /**
        * <pre>
@@ -45859,38 +45643,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
        * </pre>
        *
-       * <code>string next_check_rows = 13;</code>
-       * @return The bytes for nextCheckRows.
-       */
-      public com.google.protobuf.ByteString
-          getNextCheckRowsBytes() {
-        java.lang.Object ref = nextCheckRows_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nextCheckRows_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string next_check_rows = 13;</code>
+       * <code>int64 next_check_rows = 13;</code>
        * @param value The nextCheckRows to set.
        * @return This builder for chaining.
        */
-      public Builder setNextCheckRows(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setNextCheckRows(long value) {
+        
         nextCheckRows_ = value;
         onChanged();
         return this;
@@ -45901,58 +45659,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
        * </pre>
        *
-       * <code>string next_check_rows = 13;</code>
+       * <code>int64 next_check_rows = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearNextCheckRows() {
         
-        nextCheckRows_ = getDefaultInstance().getNextCheckRows();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * next check rows
-       * &#64;inject_tag: json:"next_check_rows" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string next_check_rows = 13;</code>
-       * @param value The bytes for nextCheckRows to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNextCheckRowsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        nextCheckRows_ = value;
+        nextCheckRows_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object rowGroupSize_ = "";
+      private int rowGroupSize_ ;
       /**
        * <pre>
        * row group size
        * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string row_group_size = 14;</code>
+       * <code>int32 row_group_size = 14;</code>
        * @return The rowGroupSize.
        */
-      public java.lang.String getRowGroupSize() {
-        java.lang.Object ref = rowGroupSize_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          rowGroupSize_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getRowGroupSize() {
+        return rowGroupSize_;
       }
       /**
        * <pre>
@@ -45960,38 +45689,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string row_group_size = 14;</code>
-       * @return The bytes for rowGroupSize.
-       */
-      public com.google.protobuf.ByteString
-          getRowGroupSizeBytes() {
-        java.lang.Object ref = rowGroupSize_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          rowGroupSize_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string row_group_size = 14;</code>
+       * <code>int32 row_group_size = 14;</code>
        * @param value The rowGroupSize to set.
        * @return This builder for chaining.
        */
-      public Builder setRowGroupSize(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setRowGroupSize(int value) {
+        
         rowGroupSize_ = value;
         onChanged();
         return this;
@@ -46002,58 +45705,29 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string row_group_size = 14;</code>
+       * <code>int32 row_group_size = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRowGroupSize() {
         
-        rowGroupSize_ = getDefaultInstance().getRowGroupSize();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * row group size
-       * &#64;inject_tag: json:"row_group_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string row_group_size = 14;</code>
-       * @param value The bytes for rowGroupSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRowGroupSizeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        rowGroupSize_ = value;
+        rowGroupSize_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object enableDictionary_ = "";
+      private boolean enableDictionary_ ;
       /**
        * <pre>
        * enable dictionary
        * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
        * </pre>
        *
-       * <code>string enable_dictionary = 15;</code>
+       * <code>bool enable_dictionary = 15;</code>
        * @return The enableDictionary.
        */
-      public java.lang.String getEnableDictionary() {
-        java.lang.Object ref = enableDictionary_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          enableDictionary_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getEnableDictionary() {
+        return enableDictionary_;
       }
       /**
        * <pre>
@@ -46061,38 +45735,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
        * </pre>
        *
-       * <code>string enable_dictionary = 15;</code>
-       * @return The bytes for enableDictionary.
-       */
-      public com.google.protobuf.ByteString
-          getEnableDictionaryBytes() {
-        java.lang.Object ref = enableDictionary_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          enableDictionary_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string enable_dictionary = 15;</code>
+       * <code>bool enable_dictionary = 15;</code>
        * @param value The enableDictionary to set.
        * @return This builder for chaining.
        */
-      public Builder setEnableDictionary(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setEnableDictionary(boolean value) {
+        
         enableDictionary_ = value;
         onChanged();
         return this;
@@ -46103,134 +45751,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
        * </pre>
        *
-       * <code>string enable_dictionary = 15;</code>
+       * <code>bool enable_dictionary = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableDictionary() {
         
-        enableDictionary_ = getDefaultInstance().getEnableDictionary();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * enable dictionary
-       * &#64;inject_tag: json:"enable_dictionary" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string enable_dictionary = 15;</code>
-       * @param value The bytes for enableDictionary to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnableDictionaryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        enableDictionary_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object encoding_ = "";
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string encoding = 16;</code>
-       * @return The encoding.
-       */
-      public java.lang.String getEncoding() {
-        java.lang.Object ref = encoding_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          encoding_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string encoding = 16;</code>
-       * @return The bytes for encoding.
-       */
-      public com.google.protobuf.ByteString
-          getEncodingBytes() {
-        java.lang.Object ref = encoding_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          encoding_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string encoding = 16;</code>
-       * @param value The encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncoding(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        encoding_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string encoding = 16;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEncoding() {
-        
-        encoding_ = getDefaultInstance().getEncoding();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string encoding = 16;</code>
-       * @param value The bytes for encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncodingBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        encoding_ = value;
+        enableDictionary_ = false;
         onChanged();
         return this;
       }
@@ -46242,7 +45768,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_config = 17;</code>
+       * <code>string hadoop_config = 16;</code>
        * @return The hadoopConfig.
        */
       public java.lang.String getHadoopConfig() {
@@ -46263,7 +45789,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_config = 17;</code>
+       * <code>string hadoop_config = 16;</code>
        * @return The bytes for hadoopConfig.
        */
       public com.google.protobuf.ByteString
@@ -46285,7 +45811,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_config = 17;</code>
+       * <code>string hadoop_config = 16;</code>
        * @param value The hadoopConfig to set.
        * @return This builder for chaining.
        */
@@ -46305,7 +45831,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_config = 17;</code>
+       * <code>string hadoop_config = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearHadoopConfig() {
@@ -46320,7 +45846,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoop_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoop_config = 17;</code>
+       * <code>string hadoop_config = 16;</code>
        * @param value The bytes for hadoopConfig to set.
        * @return This builder for chaining.
        */
@@ -46447,44 +45973,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return A list containing the path.
+     * <code>string path = 2;</code>
+     * @return The path.
      */
-    java.util.List<java.lang.String>
-        getPathList();
+    java.lang.String getPath();
     /**
      * <pre>
      * path
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return The count of path.
-     */
-    int getPathCount();
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the element to return.
-     * @return The path at the given index.
-     */
-    java.lang.String getPath(int index);
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the path at the given index.
+     * <code>string path = 2;</code>
+     * @return The bytes for path.
      */
     com.google.protobuf.ByteString
-        getPathBytes(int index);
+        getPathBytes();
 
     /**
      * <pre>
@@ -46602,21 +46105,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
      * </pre>
      *
-     * <code>string is_first_line_header = 8;</code>
+     * <code>bool is_first_line_header = 8;</code>
      * @return The isFirstLineHeader.
      */
-    java.lang.String getIsFirstLineHeader();
-    /**
-     * <pre>
-     * is first line header
-     * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string is_first_line_header = 8;</code>
-     * @return The bytes for isFirstLineHeader.
-     */
-    com.google.protobuf.ByteString
-        getIsFirstLineHeaderBytes();
+    boolean getIsFirstLineHeader();
 
     /**
      * <pre>
@@ -46720,13 +46212,12 @@ public final class PBSyncManageSyncJob {
     }
     private FtpSource() {
       column_ = java.util.Collections.emptyList();
-      path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      path_ = "";
       privateKeyPath_ = "";
       connectPattern_ = "";
       fieldDelimiter_ = "";
       encoding_ = "";
       controlEncoding_ = "";
-      isFirstLineHeader_ = "";
       timeout_ = "";
       fileType_ = "";
       compressType_ = "";
@@ -46775,11 +46266,8 @@ public final class PBSyncManageSyncJob {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                path_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              path_.add(s);
+
+              path_ = s;
               break;
             }
             case 26: {
@@ -46812,10 +46300,9 @@ public final class PBSyncManageSyncJob {
               controlEncoding_ = s;
               break;
             }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 64: {
 
-              isFirstLineHeader_ = s;
+              isFirstLineHeader_ = input.readBool();
               break;
             }
             case 74: {
@@ -46859,9 +46346,6 @@ public final class PBSyncManageSyncJob {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           column_ = java.util.Collections.unmodifiableList(column_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          path_ = path_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -46946,19 +46430,28 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
-    private com.google.protobuf.LazyStringList path_;
+    private volatile java.lang.Object path_;
     /**
      * <pre>
      * path
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return A list containing the path.
+     * <code>string path = 2;</code>
+     * @return The path.
      */
-    public com.google.protobuf.ProtocolStringList
-        getPathList() {
-      return path_;
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
@@ -46966,38 +46459,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return The count of path.
+     * <code>string path = 2;</code>
+     * @return The bytes for path.
      */
-    public int getPathCount() {
-      return path_.size();
-    }
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the element to return.
-     * @return The path at the given index.
-     */
-    public java.lang.String getPath(int index) {
-      return path_.get(index);
-    }
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the path at the given index.
-     */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getPathBytes(int index) {
-      return path_.getByteString(index);
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PRIVATE_KEY_PATH_FIELD_NUMBER = 3;
@@ -47241,51 +46718,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int IS_FIRST_LINE_HEADER_FIELD_NUMBER = 8;
-    private volatile java.lang.Object isFirstLineHeader_;
+    private boolean isFirstLineHeader_;
     /**
      * <pre>
      * is first line header
      * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
      * </pre>
      *
-     * <code>string is_first_line_header = 8;</code>
+     * <code>bool is_first_line_header = 8;</code>
      * @return The isFirstLineHeader.
      */
     @java.lang.Override
-    public java.lang.String getIsFirstLineHeader() {
-      java.lang.Object ref = isFirstLineHeader_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        isFirstLineHeader_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * is first line header
-     * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string is_first_line_header = 8;</code>
-     * @return The bytes for isFirstLineHeader.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIsFirstLineHeaderBytes() {
-      java.lang.Object ref = isFirstLineHeader_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        isFirstLineHeader_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getIsFirstLineHeader() {
+      return isFirstLineHeader_;
     }
 
     public static final int TIMEOUT_FIELD_NUMBER = 9;
@@ -47497,8 +46942,8 @@ public final class PBSyncManageSyncJob {
       for (int i = 0; i < column_.size(); i++) {
         output.writeMessage(1, column_.get(i));
       }
-      for (int i = 0; i < path_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_.getRaw(i));
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKeyPath_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, privateKeyPath_);
@@ -47515,8 +46960,8 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlEncoding_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, controlEncoding_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isFirstLineHeader_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, isFirstLineHeader_);
+      if (isFirstLineHeader_ != false) {
+        output.writeBool(8, isFirstLineHeader_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeout_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, timeout_);
@@ -47543,13 +46988,8 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, column_.get(i));
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < path_.size(); i++) {
-          dataSize += computeStringSizeNoTag(path_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getPathList().size();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKeyPath_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, privateKeyPath_);
@@ -47566,8 +47006,9 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlEncoding_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, controlEncoding_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isFirstLineHeader_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, isFirstLineHeader_);
+      if (isFirstLineHeader_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isFirstLineHeader_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeout_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, timeout_);
@@ -47598,8 +47039,8 @@ public final class PBSyncManageSyncJob {
 
       if (!getColumnList()
           .equals(other.getColumnList())) return false;
-      if (!getPathList()
-          .equals(other.getPathList())) return false;
+      if (!getPath()
+          .equals(other.getPath())) return false;
       if (!getPrivateKeyPath()
           .equals(other.getPrivateKeyPath())) return false;
       if (!getConnectPattern()
@@ -47610,8 +47051,8 @@ public final class PBSyncManageSyncJob {
           .equals(other.getEncoding())) return false;
       if (!getControlEncoding()
           .equals(other.getControlEncoding())) return false;
-      if (!getIsFirstLineHeader()
-          .equals(other.getIsFirstLineHeader())) return false;
+      if (getIsFirstLineHeader()
+          != other.getIsFirstLineHeader()) return false;
       if (!getTimeout()
           .equals(other.getTimeout())) return false;
       if (!getFileType()
@@ -47635,10 +47076,8 @@ public final class PBSyncManageSyncJob {
         hash = (37 * hash) + COLUMN_FIELD_NUMBER;
         hash = (53 * hash) + getColumnList().hashCode();
       }
-      if (getPathCount() > 0) {
-        hash = (37 * hash) + PATH_FIELD_NUMBER;
-        hash = (53 * hash) + getPathList().hashCode();
-      }
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
       hash = (37 * hash) + PRIVATE_KEY_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateKeyPath().hashCode();
       hash = (37 * hash) + CONNECT_PATTERN_FIELD_NUMBER;
@@ -47650,7 +47089,8 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + CONTROL_ENCODING_FIELD_NUMBER;
       hash = (53 * hash) + getControlEncoding().hashCode();
       hash = (37 * hash) + IS_FIRST_LINE_HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + getIsFirstLineHeader().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFirstLineHeader());
       hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getTimeout().hashCode();
       hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
@@ -47799,8 +47239,8 @@ public final class PBSyncManageSyncJob {
         } else {
           columnBuilder_.clear();
         }
-        path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        path_ = "";
+
         privateKeyPath_ = "";
 
         connectPattern_ = "";
@@ -47811,7 +47251,7 @@ public final class PBSyncManageSyncJob {
 
         controlEncoding_ = "";
 
-        isFirstLineHeader_ = "";
+        isFirstLineHeader_ = false;
 
         timeout_ = "";
 
@@ -47856,10 +47296,6 @@ public final class PBSyncManageSyncJob {
           result.column_ = column_;
         } else {
           result.column_ = columnBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          path_ = path_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.path_ = path_;
         result.privateKeyPath_ = privateKeyPath_;
@@ -47946,14 +47382,8 @@ public final class PBSyncManageSyncJob {
             }
           }
         }
-        if (!other.path_.isEmpty()) {
-          if (path_.isEmpty()) {
-            path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensurePathIsMutable();
-            path_.addAll(other.path_);
-          }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
           onChanged();
         }
         if (!other.getPrivateKeyPath().isEmpty()) {
@@ -47976,9 +47406,8 @@ public final class PBSyncManageSyncJob {
           controlEncoding_ = other.controlEncoding_;
           onChanged();
         }
-        if (!other.getIsFirstLineHeader().isEmpty()) {
-          isFirstLineHeader_ = other.isFirstLineHeader_;
-          onChanged();
+        if (other.getIsFirstLineHeader() != false) {
+          setIsFirstLineHeader(other.getIsFirstLineHeader());
         }
         if (!other.getTimeout().isEmpty()) {
           timeout_ = other.timeout_;
@@ -48356,25 +47785,27 @@ public final class PBSyncManageSyncJob {
         return columnBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensurePathIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          path_ = new com.google.protobuf.LazyStringArrayList(path_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+      private java.lang.Object path_ = "";
       /**
        * <pre>
        * path
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @return A list containing the path.
+       * <code>string path = 2;</code>
+       * @return The path.
        */
-      public com.google.protobuf.ProtocolStringList
-          getPathList() {
-        return path_.getUnmodifiableView();
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -48382,38 +47813,21 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @return The count of path.
-       */
-      public int getPathCount() {
-        return path_.size();
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
-       * @param index The index of the element to return.
-       * @return The path at the given index.
-       */
-      public java.lang.String getPath(int index) {
-        return path_.get(index);
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the path at the given index.
+       * <code>string path = 2;</code>
+       * @return The bytes for path.
        */
       public com.google.protobuf.ByteString
-          getPathBytes(int index) {
-        return path_.getByteString(index);
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
        * <pre>
@@ -48421,38 +47835,17 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @param index The index to set the value at.
+       * <code>string path = 2;</code>
        * @param value The path to set.
        * @return This builder for chaining.
        */
       public Builder setPath(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePathIsMutable();
-        path_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
-       * @param value The path to add.
-       * @return This builder for chaining.
-       */
-      public Builder addPath(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensurePathIsMutable();
-        path_.add(value);
+  
+        path_ = value;
         onChanged();
         return this;
       }
@@ -48462,30 +47855,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @param values The path to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllPath(
-          java.lang.Iterable<java.lang.String> values) {
-        ensurePathIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, path_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
+       * <code>string path = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-        path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
+        path_ = getDefaultInstance().getPath();
         onChanged();
         return this;
       }
@@ -48495,18 +47870,18 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @param value The bytes of the path to add.
+       * <code>string path = 2;</code>
+       * @param value The bytes for path to set.
        * @return This builder for chaining.
        */
-      public Builder addPathBytes(
+      public Builder setPathBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensurePathIsMutable();
-        path_.add(value);
+        
+        path_ = value;
         onChanged();
         return this;
       }
@@ -49016,27 +48391,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object isFirstLineHeader_ = "";
+      private boolean isFirstLineHeader_ ;
       /**
        * <pre>
        * is first line header
        * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
        * </pre>
        *
-       * <code>string is_first_line_header = 8;</code>
+       * <code>bool is_first_line_header = 8;</code>
        * @return The isFirstLineHeader.
        */
-      public java.lang.String getIsFirstLineHeader() {
-        java.lang.Object ref = isFirstLineHeader_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          isFirstLineHeader_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getIsFirstLineHeader() {
+        return isFirstLineHeader_;
       }
       /**
        * <pre>
@@ -49044,38 +48411,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
        * </pre>
        *
-       * <code>string is_first_line_header = 8;</code>
-       * @return The bytes for isFirstLineHeader.
-       */
-      public com.google.protobuf.ByteString
-          getIsFirstLineHeaderBytes() {
-        java.lang.Object ref = isFirstLineHeader_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          isFirstLineHeader_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * is first line header
-       * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string is_first_line_header = 8;</code>
+       * <code>bool is_first_line_header = 8;</code>
        * @param value The isFirstLineHeader to set.
        * @return This builder for chaining.
        */
-      public Builder setIsFirstLineHeader(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setIsFirstLineHeader(boolean value) {
+        
         isFirstLineHeader_ = value;
         onChanged();
         return this;
@@ -49086,33 +48427,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
        * </pre>
        *
-       * <code>string is_first_line_header = 8;</code>
+       * <code>bool is_first_line_header = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFirstLineHeader() {
         
-        isFirstLineHeader_ = getDefaultInstance().getIsFirstLineHeader();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * is first line header
-       * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string is_first_line_header = 8;</code>
-       * @param value The bytes for isFirstLineHeader to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFirstLineHeaderBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        isFirstLineHeader_ = value;
+        isFirstLineHeader_ = false;
         onChanged();
         return this;
       }
@@ -49632,44 +48952,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return A list containing the path.
+     * <code>string path = 2;</code>
+     * @return The path.
      */
-    java.util.List<java.lang.String>
-        getPathList();
+    java.lang.String getPath();
     /**
      * <pre>
      * path
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return The count of path.
-     */
-    int getPathCount();
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the element to return.
-     * @return The path at the given index.
-     */
-    java.lang.String getPath(int index);
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the path at the given index.
+     * <code>string path = 2;</code>
+     * @return The bytes for path.
      */
     com.google.protobuf.ByteString
-        getPathBytes(int index);
+        getPathBytes();
 
     /**
      * <pre>
@@ -49787,21 +49084,32 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
      * </pre>
      *
-     * <code>string is_first_line_header = 8;</code>
+     * <code>bool is_first_line_header = 8;</code>
      * @return The isFirstLineHeader.
      */
-    java.lang.String getIsFirstLineHeader();
+    boolean getIsFirstLineHeader();
+
     /**
      * <pre>
-     * is first line header
-     * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
+     * ftp_file_name
+     * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string is_first_line_header = 8;</code>
-     * @return The bytes for isFirstLineHeader.
+     * <code>string ftp_file_name = 9;</code>
+     * @return The ftpFileName.
+     */
+    java.lang.String getFtpFileName();
+    /**
+     * <pre>
+     * ftp_file_name
+     * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string ftp_file_name = 9;</code>
+     * @return The bytes for ftpFileName.
      */
     com.google.protobuf.ByteString
-        getIsFirstLineHeaderBytes();
+        getFtpFileNameBytes();
 
     /**
      * <pre>
@@ -49809,21 +49117,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"timeout" swaggerignore:"true"
      * </pre>
      *
-     * <code>string timeout = 9;</code>
+     * <code>int32 timeout = 10;</code>
      * @return The timeout.
      */
-    java.lang.String getTimeout();
-    /**
-     * <pre>
-     * timeout
-     * &#64;inject_tag: json:"timeout" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string timeout = 9;</code>
-     * @return The bytes for timeout.
-     */
-    com.google.protobuf.ByteString
-        getTimeoutBytes();
+    int getTimeout();
   }
   /**
    * Protobuf type {@code model.FtpTarget}
@@ -49839,14 +49136,13 @@ public final class PBSyncManageSyncJob {
     }
     private FtpTarget() {
       column_ = java.util.Collections.emptyList();
-      path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      path_ = "";
       privateKeyPath_ = "";
       connectPattern_ = "";
       fieldDelimiter_ = "";
       encoding_ = "";
       controlEncoding_ = "";
-      isFirstLineHeader_ = "";
-      timeout_ = "";
+      ftpFileName_ = "";
     }
 
     @java.lang.Override
@@ -49891,11 +49187,8 @@ public final class PBSyncManageSyncJob {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                path_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              path_.add(s);
+
+              path_ = s;
               break;
             }
             case 26: {
@@ -49928,16 +49221,20 @@ public final class PBSyncManageSyncJob {
               controlEncoding_ = s;
               break;
             }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 64: {
 
-              isFirstLineHeader_ = s;
+              isFirstLineHeader_ = input.readBool();
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              timeout_ = s;
+              ftpFileName_ = s;
+              break;
+            }
+            case 80: {
+
+              timeout_ = input.readInt32();
               break;
             }
             default: {
@@ -49957,9 +49254,6 @@ public final class PBSyncManageSyncJob {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           column_ = java.util.Collections.unmodifiableList(column_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          path_ = path_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -50044,19 +49338,28 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
-    private com.google.protobuf.LazyStringList path_;
+    private volatile java.lang.Object path_;
     /**
      * <pre>
      * path
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return A list containing the path.
+     * <code>string path = 2;</code>
+     * @return The path.
      */
-    public com.google.protobuf.ProtocolStringList
-        getPathList() {
-      return path_;
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
@@ -50064,38 +49367,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"path" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string path = 2;</code>
-     * @return The count of path.
+     * <code>string path = 2;</code>
+     * @return The bytes for path.
      */
-    public int getPathCount() {
-      return path_.size();
-    }
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the element to return.
-     * @return The path at the given index.
-     */
-    public java.lang.String getPath(int index) {
-      return path_.get(index);
-    }
-    /**
-     * <pre>
-     * path
-     * &#64;inject_tag: json:"path" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>repeated string path = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the path at the given index.
-     */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getPathBytes(int index) {
-      return path_.getByteString(index);
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PRIVATE_KEY_PATH_FIELD_NUMBER = 3;
@@ -50339,99 +49626,83 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int IS_FIRST_LINE_HEADER_FIELD_NUMBER = 8;
-    private volatile java.lang.Object isFirstLineHeader_;
+    private boolean isFirstLineHeader_;
     /**
      * <pre>
      * is first line header
      * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
      * </pre>
      *
-     * <code>string is_first_line_header = 8;</code>
+     * <code>bool is_first_line_header = 8;</code>
      * @return The isFirstLineHeader.
      */
     @java.lang.Override
-    public java.lang.String getIsFirstLineHeader() {
-      java.lang.Object ref = isFirstLineHeader_;
+    public boolean getIsFirstLineHeader() {
+      return isFirstLineHeader_;
+    }
+
+    public static final int FTP_FILE_NAME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object ftpFileName_;
+    /**
+     * <pre>
+     * ftp_file_name
+     * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string ftp_file_name = 9;</code>
+     * @return The ftpFileName.
+     */
+    @java.lang.Override
+    public java.lang.String getFtpFileName() {
+      java.lang.Object ref = ftpFileName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        isFirstLineHeader_ = s;
+        ftpFileName_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * is first line header
-     * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
+     * ftp_file_name
+     * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string is_first_line_header = 8;</code>
-     * @return The bytes for isFirstLineHeader.
+     * <code>string ftp_file_name = 9;</code>
+     * @return The bytes for ftpFileName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIsFirstLineHeaderBytes() {
-      java.lang.Object ref = isFirstLineHeader_;
+        getFtpFileNameBytes() {
+      java.lang.Object ref = ftpFileName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        isFirstLineHeader_ = b;
+        ftpFileName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TIMEOUT_FIELD_NUMBER = 9;
-    private volatile java.lang.Object timeout_;
+    public static final int TIMEOUT_FIELD_NUMBER = 10;
+    private int timeout_;
     /**
      * <pre>
      * timeout
      * &#64;inject_tag: json:"timeout" swaggerignore:"true"
      * </pre>
      *
-     * <code>string timeout = 9;</code>
+     * <code>int32 timeout = 10;</code>
      * @return The timeout.
      */
     @java.lang.Override
-    public java.lang.String getTimeout() {
-      java.lang.Object ref = timeout_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timeout_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * timeout
-     * &#64;inject_tag: json:"timeout" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string timeout = 9;</code>
-     * @return The bytes for timeout.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTimeoutBytes() {
-      java.lang.Object ref = timeout_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timeout_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getTimeout() {
+      return timeout_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -50451,8 +49722,8 @@ public final class PBSyncManageSyncJob {
       for (int i = 0; i < column_.size(); i++) {
         output.writeMessage(1, column_.get(i));
       }
-      for (int i = 0; i < path_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_.getRaw(i));
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKeyPath_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, privateKeyPath_);
@@ -50469,11 +49740,14 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlEncoding_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, controlEncoding_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isFirstLineHeader_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, isFirstLineHeader_);
+      if (isFirstLineHeader_ != false) {
+        output.writeBool(8, isFirstLineHeader_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeout_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, timeout_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ftpFileName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, ftpFileName_);
+      }
+      if (timeout_ != 0) {
+        output.writeInt32(10, timeout_);
       }
       unknownFields.writeTo(output);
     }
@@ -50488,13 +49762,8 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, column_.get(i));
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < path_.size(); i++) {
-          dataSize += computeStringSizeNoTag(path_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getPathList().size();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKeyPath_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, privateKeyPath_);
@@ -50511,11 +49780,16 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlEncoding_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, controlEncoding_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isFirstLineHeader_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, isFirstLineHeader_);
+      if (isFirstLineHeader_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isFirstLineHeader_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeout_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, timeout_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ftpFileName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, ftpFileName_);
+      }
+      if (timeout_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, timeout_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -50534,8 +49808,8 @@ public final class PBSyncManageSyncJob {
 
       if (!getColumnList()
           .equals(other.getColumnList())) return false;
-      if (!getPathList()
-          .equals(other.getPathList())) return false;
+      if (!getPath()
+          .equals(other.getPath())) return false;
       if (!getPrivateKeyPath()
           .equals(other.getPrivateKeyPath())) return false;
       if (!getConnectPattern()
@@ -50546,10 +49820,12 @@ public final class PBSyncManageSyncJob {
           .equals(other.getEncoding())) return false;
       if (!getControlEncoding()
           .equals(other.getControlEncoding())) return false;
-      if (!getIsFirstLineHeader()
-          .equals(other.getIsFirstLineHeader())) return false;
-      if (!getTimeout()
-          .equals(other.getTimeout())) return false;
+      if (getIsFirstLineHeader()
+          != other.getIsFirstLineHeader()) return false;
+      if (!getFtpFileName()
+          .equals(other.getFtpFileName())) return false;
+      if (getTimeout()
+          != other.getTimeout()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -50565,10 +49841,8 @@ public final class PBSyncManageSyncJob {
         hash = (37 * hash) + COLUMN_FIELD_NUMBER;
         hash = (53 * hash) + getColumnList().hashCode();
       }
-      if (getPathCount() > 0) {
-        hash = (37 * hash) + PATH_FIELD_NUMBER;
-        hash = (53 * hash) + getPathList().hashCode();
-      }
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
       hash = (37 * hash) + PRIVATE_KEY_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateKeyPath().hashCode();
       hash = (37 * hash) + CONNECT_PATTERN_FIELD_NUMBER;
@@ -50580,9 +49854,12 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + CONTROL_ENCODING_FIELD_NUMBER;
       hash = (53 * hash) + getControlEncoding().hashCode();
       hash = (37 * hash) + IS_FIRST_LINE_HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + getIsFirstLineHeader().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFirstLineHeader());
+      hash = (37 * hash) + FTP_FILE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFtpFileName().hashCode();
       hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
-      hash = (53 * hash) + getTimeout().hashCode();
+      hash = (53 * hash) + getTimeout();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -50723,8 +50000,8 @@ public final class PBSyncManageSyncJob {
         } else {
           columnBuilder_.clear();
         }
-        path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        path_ = "";
+
         privateKeyPath_ = "";
 
         connectPattern_ = "";
@@ -50735,9 +50012,11 @@ public final class PBSyncManageSyncJob {
 
         controlEncoding_ = "";
 
-        isFirstLineHeader_ = "";
+        isFirstLineHeader_ = false;
 
-        timeout_ = "";
+        ftpFileName_ = "";
+
+        timeout_ = 0;
 
         return this;
       }
@@ -50775,10 +50054,6 @@ public final class PBSyncManageSyncJob {
         } else {
           result.column_ = columnBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          path_ = path_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
         result.path_ = path_;
         result.privateKeyPath_ = privateKeyPath_;
         result.connectPattern_ = connectPattern_;
@@ -50786,6 +50061,7 @@ public final class PBSyncManageSyncJob {
         result.encoding_ = encoding_;
         result.controlEncoding_ = controlEncoding_;
         result.isFirstLineHeader_ = isFirstLineHeader_;
+        result.ftpFileName_ = ftpFileName_;
         result.timeout_ = timeout_;
         onBuilt();
         return result;
@@ -50861,14 +50137,8 @@ public final class PBSyncManageSyncJob {
             }
           }
         }
-        if (!other.path_.isEmpty()) {
-          if (path_.isEmpty()) {
-            path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensurePathIsMutable();
-            path_.addAll(other.path_);
-          }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
           onChanged();
         }
         if (!other.getPrivateKeyPath().isEmpty()) {
@@ -50891,13 +50161,15 @@ public final class PBSyncManageSyncJob {
           controlEncoding_ = other.controlEncoding_;
           onChanged();
         }
-        if (!other.getIsFirstLineHeader().isEmpty()) {
-          isFirstLineHeader_ = other.isFirstLineHeader_;
+        if (other.getIsFirstLineHeader() != false) {
+          setIsFirstLineHeader(other.getIsFirstLineHeader());
+        }
+        if (!other.getFtpFileName().isEmpty()) {
+          ftpFileName_ = other.ftpFileName_;
           onChanged();
         }
-        if (!other.getTimeout().isEmpty()) {
-          timeout_ = other.timeout_;
-          onChanged();
+        if (other.getTimeout() != 0) {
+          setTimeout(other.getTimeout());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -51259,25 +50531,27 @@ public final class PBSyncManageSyncJob {
         return columnBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensurePathIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          path_ = new com.google.protobuf.LazyStringArrayList(path_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+      private java.lang.Object path_ = "";
       /**
        * <pre>
        * path
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @return A list containing the path.
+       * <code>string path = 2;</code>
+       * @return The path.
        */
-      public com.google.protobuf.ProtocolStringList
-          getPathList() {
-        return path_.getUnmodifiableView();
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -51285,38 +50559,21 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @return The count of path.
-       */
-      public int getPathCount() {
-        return path_.size();
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
-       * @param index The index of the element to return.
-       * @return The path at the given index.
-       */
-      public java.lang.String getPath(int index) {
-        return path_.get(index);
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the path at the given index.
+       * <code>string path = 2;</code>
+       * @return The bytes for path.
        */
       public com.google.protobuf.ByteString
-          getPathBytes(int index) {
-        return path_.getByteString(index);
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
        * <pre>
@@ -51324,38 +50581,17 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @param index The index to set the value at.
+       * <code>string path = 2;</code>
        * @param value The path to set.
        * @return This builder for chaining.
        */
       public Builder setPath(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePathIsMutable();
-        path_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
-       * @param value The path to add.
-       * @return This builder for chaining.
-       */
-      public Builder addPath(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensurePathIsMutable();
-        path_.add(value);
+  
+        path_ = value;
         onChanged();
         return this;
       }
@@ -51365,30 +50601,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @param values The path to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllPath(
-          java.lang.Iterable<java.lang.String> values) {
-        ensurePathIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, path_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * path
-       * &#64;inject_tag: json:"path" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string path = 2;</code>
+       * <code>string path = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-        path_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
+        path_ = getDefaultInstance().getPath();
         onChanged();
         return this;
       }
@@ -51398,18 +50616,18 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"path" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string path = 2;</code>
-       * @param value The bytes of the path to add.
+       * <code>string path = 2;</code>
+       * @param value The bytes for path to set.
        * @return This builder for chaining.
        */
-      public Builder addPathBytes(
+      public Builder setPathBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensurePathIsMutable();
-        path_.add(value);
+        
+        path_ = value;
         onChanged();
         return this;
       }
@@ -51919,27 +51137,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object isFirstLineHeader_ = "";
+      private boolean isFirstLineHeader_ ;
       /**
        * <pre>
        * is first line header
        * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
        * </pre>
        *
-       * <code>string is_first_line_header = 8;</code>
+       * <code>bool is_first_line_header = 8;</code>
        * @return The isFirstLineHeader.
        */
-      public java.lang.String getIsFirstLineHeader() {
-        java.lang.Object ref = isFirstLineHeader_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          isFirstLineHeader_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getIsFirstLineHeader() {
+        return isFirstLineHeader_;
       }
       /**
        * <pre>
@@ -51947,38 +51157,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
        * </pre>
        *
-       * <code>string is_first_line_header = 8;</code>
-       * @return The bytes for isFirstLineHeader.
-       */
-      public com.google.protobuf.ByteString
-          getIsFirstLineHeaderBytes() {
-        java.lang.Object ref = isFirstLineHeader_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          isFirstLineHeader_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * is first line header
-       * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string is_first_line_header = 8;</code>
+       * <code>bool is_first_line_header = 8;</code>
        * @param value The isFirstLineHeader to set.
        * @return This builder for chaining.
        */
-      public Builder setIsFirstLineHeader(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setIsFirstLineHeader(boolean value) {
+        
         isFirstLineHeader_ = value;
         onChanged();
         return this;
@@ -51989,54 +51173,33 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
        * </pre>
        *
-       * <code>string is_first_line_header = 8;</code>
+       * <code>bool is_first_line_header = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFirstLineHeader() {
         
-        isFirstLineHeader_ = getDefaultInstance().getIsFirstLineHeader();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * is first line header
-       * &#64;inject_tag: json:"is_first_line_header" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string is_first_line_header = 8;</code>
-       * @param value The bytes for isFirstLineHeader to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFirstLineHeaderBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        isFirstLineHeader_ = value;
+        isFirstLineHeader_ = false;
         onChanged();
         return this;
       }
 
-      private java.lang.Object timeout_ = "";
+      private java.lang.Object ftpFileName_ = "";
       /**
        * <pre>
-       * timeout
-       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * ftp_file_name
+       * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timeout = 9;</code>
-       * @return The timeout.
+       * <code>string ftp_file_name = 9;</code>
+       * @return The ftpFileName.
        */
-      public java.lang.String getTimeout() {
-        java.lang.Object ref = timeout_;
+      public java.lang.String getFtpFileName() {
+        java.lang.Object ref = ftpFileName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          timeout_ = s;
+          ftpFileName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -52044,21 +51207,21 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * timeout
-       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * ftp_file_name
+       * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timeout = 9;</code>
-       * @return The bytes for timeout.
+       * <code>string ftp_file_name = 9;</code>
+       * @return The bytes for ftpFileName.
        */
       public com.google.protobuf.ByteString
-          getTimeoutBytes() {
-        java.lang.Object ref = timeout_;
+          getFtpFileNameBytes() {
+        java.lang.Object ref = ftpFileName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          timeout_ = b;
+          ftpFileName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -52066,57 +51229,103 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * timeout
-       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * ftp_file_name
+       * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timeout = 9;</code>
-       * @param value The timeout to set.
+       * <code>string ftp_file_name = 9;</code>
+       * @param value The ftpFileName to set.
        * @return This builder for chaining.
        */
-      public Builder setTimeout(
+      public Builder setFtpFileName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        timeout_ = value;
+        ftpFileName_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * timeout
-       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * ftp_file_name
+       * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timeout = 9;</code>
+       * <code>string ftp_file_name = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTimeout() {
+      public Builder clearFtpFileName() {
         
-        timeout_ = getDefaultInstance().getTimeout();
+        ftpFileName_ = getDefaultInstance().getFtpFileName();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * timeout
-       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * ftp_file_name
+       * &#64;inject_tag: json:"ftp_file_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timeout = 9;</code>
-       * @param value The bytes for timeout to set.
+       * <code>string ftp_file_name = 9;</code>
+       * @param value The bytes for ftpFileName to set.
        * @return This builder for chaining.
        */
-      public Builder setTimeoutBytes(
+      public Builder setFtpFileNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
+        ftpFileName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int timeout_ ;
+      /**
+       * <pre>
+       * timeout
+       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 timeout = 10;</code>
+       * @return The timeout.
+       */
+      @java.lang.Override
+      public int getTimeout() {
+        return timeout_;
+      }
+      /**
+       * <pre>
+       * timeout
+       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 timeout = 10;</code>
+       * @param value The timeout to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimeout(int value) {
+        
         timeout_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * timeout
+       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 timeout = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimeout() {
+        
+        timeout_ = 0;
         onChanged();
         return this;
       }
@@ -53493,11 +52702,33 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
+     * scan cache size
+     * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_cache_size = 6;</code>
+     * @return The scanCacheSize.
+     */
+    int getScanCacheSize();
+
+    /**
+     * <pre>
+     * hbase scan batch size
+     * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_batch_size = 7;</code>
+     * @return The scanBatchSize.
+     */
+    int getScanBatchSize();
+
+    /**
+     * <pre>
      * hbase hadoopConfig
      * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoopConfig = 6;</code>
+     * <code>string hadoopConfig = 8;</code>
      * @return The hadoopConfig.
      */
     java.lang.String getHadoopConfig();
@@ -53507,7 +52738,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoopConfig = 6;</code>
+     * <code>string hadoopConfig = 8;</code>
      * @return The bytes for hadoopConfig.
      */
     com.google.protobuf.ByteString
@@ -53604,7 +52835,17 @@ public final class PBSyncManageSyncJob {
               encoding_ = s;
               break;
             }
-            case 50: {
+            case 48: {
+
+              scanCacheSize_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              scanBatchSize_ = input.readInt32();
+              break;
+            }
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               hadoopConfig_ = s;
@@ -53895,7 +53136,39 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int HADOOPCONFIG_FIELD_NUMBER = 6;
+    public static final int SCAN_CACHE_SIZE_FIELD_NUMBER = 6;
+    private int scanCacheSize_;
+    /**
+     * <pre>
+     * scan cache size
+     * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_cache_size = 6;</code>
+     * @return The scanCacheSize.
+     */
+    @java.lang.Override
+    public int getScanCacheSize() {
+      return scanCacheSize_;
+    }
+
+    public static final int SCAN_BATCH_SIZE_FIELD_NUMBER = 7;
+    private int scanBatchSize_;
+    /**
+     * <pre>
+     * hbase scan batch size
+     * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_batch_size = 7;</code>
+     * @return The scanBatchSize.
+     */
+    @java.lang.Override
+    public int getScanBatchSize() {
+      return scanBatchSize_;
+    }
+
+    public static final int HADOOPCONFIG_FIELD_NUMBER = 8;
     private volatile java.lang.Object hadoopConfig_;
     /**
      * <pre>
@@ -53903,7 +53176,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoopConfig = 6;</code>
+     * <code>string hadoopConfig = 8;</code>
      * @return The hadoopConfig.
      */
     @java.lang.Override
@@ -53925,7 +53198,7 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hadoopConfig = 6;</code>
+     * <code>string hadoopConfig = 8;</code>
      * @return The bytes for hadoopConfig.
      */
     @java.lang.Override
@@ -53972,8 +53245,14 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, encoding_);
       }
+      if (scanCacheSize_ != 0) {
+        output.writeInt32(6, scanCacheSize_);
+      }
+      if (scanBatchSize_ != 0) {
+        output.writeInt32(7, scanBatchSize_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, hadoopConfig_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, hadoopConfig_);
       }
       unknownFields.writeTo(output);
     }
@@ -54001,8 +53280,16 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, encoding_);
       }
+      if (scanCacheSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, scanCacheSize_);
+      }
+      if (scanBatchSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, scanBatchSize_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, hadoopConfig_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, hadoopConfig_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -54032,6 +53319,10 @@ public final class PBSyncManageSyncJob {
           .equals(other.getChangeLog())) return false;
       if (!getEncoding()
           .equals(other.getEncoding())) return false;
+      if (getScanCacheSize()
+          != other.getScanCacheSize()) return false;
+      if (getScanBatchSize()
+          != other.getScanBatchSize()) return false;
       if (!getHadoopConfig()
           .equals(other.getHadoopConfig())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -54059,6 +53350,10 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + getChangeLog().hashCode();
       hash = (37 * hash) + ENCODING_FIELD_NUMBER;
       hash = (53 * hash) + getEncoding().hashCode();
+      hash = (37 * hash) + SCAN_CACHE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getScanCacheSize();
+      hash = (37 * hash) + SCAN_BATCH_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getScanBatchSize();
       hash = (37 * hash) + HADOOPCONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHadoopConfig().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -54213,6 +53508,10 @@ public final class PBSyncManageSyncJob {
 
         encoding_ = "";
 
+        scanCacheSize_ = 0;
+
+        scanBatchSize_ = 0;
+
         hadoopConfig_ = "";
 
         return this;
@@ -54259,6 +53558,8 @@ public final class PBSyncManageSyncJob {
         }
         result.changeLog_ = changeLog_;
         result.encoding_ = encoding_;
+        result.scanCacheSize_ = scanCacheSize_;
+        result.scanBatchSize_ = scanBatchSize_;
         result.hadoopConfig_ = hadoopConfig_;
         onBuilt();
         return result;
@@ -54348,6 +53649,12 @@ public final class PBSyncManageSyncJob {
         if (!other.getEncoding().isEmpty()) {
           encoding_ = other.encoding_;
           onChanged();
+        }
+        if (other.getScanCacheSize() != 0) {
+          setScanCacheSize(other.getScanCacheSize());
+        }
+        if (other.getScanBatchSize() != 0) {
+          setScanBatchSize(other.getScanBatchSize());
         }
         if (!other.getHadoopConfig().isEmpty()) {
           hadoopConfig_ = other.hadoopConfig_;
@@ -55180,6 +54487,98 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
+      private int scanCacheSize_ ;
+      /**
+       * <pre>
+       * scan cache size
+       * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_cache_size = 6;</code>
+       * @return The scanCacheSize.
+       */
+      @java.lang.Override
+      public int getScanCacheSize() {
+        return scanCacheSize_;
+      }
+      /**
+       * <pre>
+       * scan cache size
+       * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_cache_size = 6;</code>
+       * @param value The scanCacheSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScanCacheSize(int value) {
+        
+        scanCacheSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * scan cache size
+       * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_cache_size = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScanCacheSize() {
+        
+        scanCacheSize_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int scanBatchSize_ ;
+      /**
+       * <pre>
+       * hbase scan batch size
+       * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_batch_size = 7;</code>
+       * @return The scanBatchSize.
+       */
+      @java.lang.Override
+      public int getScanBatchSize() {
+        return scanBatchSize_;
+      }
+      /**
+       * <pre>
+       * hbase scan batch size
+       * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_batch_size = 7;</code>
+       * @param value The scanBatchSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScanBatchSize(int value) {
+        
+        scanBatchSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase scan batch size
+       * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_batch_size = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScanBatchSize() {
+        
+        scanBatchSize_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object hadoopConfig_ = "";
       /**
        * <pre>
@@ -55187,7 +54586,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoopConfig = 6;</code>
+       * <code>string hadoopConfig = 8;</code>
        * @return The hadoopConfig.
        */
       public java.lang.String getHadoopConfig() {
@@ -55208,7 +54607,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoopConfig = 6;</code>
+       * <code>string hadoopConfig = 8;</code>
        * @return The bytes for hadoopConfig.
        */
       public com.google.protobuf.ByteString
@@ -55230,7 +54629,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoopConfig = 6;</code>
+       * <code>string hadoopConfig = 8;</code>
        * @param value The hadoopConfig to set.
        * @return This builder for chaining.
        */
@@ -55250,7 +54649,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoopConfig = 6;</code>
+       * <code>string hadoopConfig = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearHadoopConfig() {
@@ -55265,7 +54664,7 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"hadoopConfig" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hadoopConfig = 6;</code>
+       * <code>string hadoopConfig = 8;</code>
        * @param value The bytes for hadoopConfig to set.
        * @return This builder for chaining.
        */
@@ -55343,10 +54742,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 start_row_key = 1;</code>
+     * <code>string start_row_key = 1;</code>
      * @return The startRowKey.
      */
-    long getStartRowKey();
+    java.lang.String getStartRowKey();
+    /**
+     * <pre>
+     * start row key
+     * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string start_row_key = 1;</code>
+     * @return The bytes for startRowKey.
+     */
+    com.google.protobuf.ByteString
+        getStartRowKeyBytes();
 
     /**
      * <pre>
@@ -55354,10 +54764,21 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 end_row_key = 2;</code>
+     * <code>string end_row_key = 2;</code>
      * @return The endRowKey.
      */
-    long getEndRowKey();
+    java.lang.String getEndRowKey();
+    /**
+     * <pre>
+     * end row key
+     * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string end_row_key = 2;</code>
+     * @return The bytes for endRowKey.
+     */
+    com.google.protobuf.ByteString
+        getEndRowKeyBytes();
 
     /**
      * <pre>
@@ -55365,10 +54786,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"is_binary_rowkey" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 is_binary_rowkey = 3;</code>
+     * <code>bool is_binary_rowkey = 3;</code>
      * @return The isBinaryRowkey.
      */
-    long getIsBinaryRowkey();
+    boolean getIsBinaryRowkey();
   }
   /**
    * Protobuf type {@code model.Range}
@@ -55383,6 +54804,8 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private Range() {
+      startRowKey_ = "";
+      endRowKey_ = "";
     }
 
     @java.lang.Override
@@ -55415,19 +54838,21 @@ public final class PBSyncManageSyncJob {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              startRowKey_ = input.readInt64();
+              startRowKey_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              endRowKey_ = input.readInt64();
+              endRowKey_ = s;
               break;
             }
             case 24: {
 
-              isBinaryRowkey_ = input.readInt64();
+              isBinaryRowkey_ = input.readBool();
               break;
             }
             default: {
@@ -55463,50 +54888,114 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int START_ROW_KEY_FIELD_NUMBER = 1;
-    private long startRowKey_;
+    private volatile java.lang.Object startRowKey_;
     /**
      * <pre>
      * start row key
      * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 start_row_key = 1;</code>
+     * <code>string start_row_key = 1;</code>
      * @return The startRowKey.
      */
     @java.lang.Override
-    public long getStartRowKey() {
-      return startRowKey_;
+    public java.lang.String getStartRowKey() {
+      java.lang.Object ref = startRowKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startRowKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * start row key
+     * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string start_row_key = 1;</code>
+     * @return The bytes for startRowKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStartRowKeyBytes() {
+      java.lang.Object ref = startRowKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startRowKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int END_ROW_KEY_FIELD_NUMBER = 2;
-    private long endRowKey_;
+    private volatile java.lang.Object endRowKey_;
     /**
      * <pre>
      * end row key
      * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 end_row_key = 2;</code>
+     * <code>string end_row_key = 2;</code>
      * @return The endRowKey.
      */
     @java.lang.Override
-    public long getEndRowKey() {
-      return endRowKey_;
+    public java.lang.String getEndRowKey() {
+      java.lang.Object ref = endRowKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endRowKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * end row key
+     * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string end_row_key = 2;</code>
+     * @return The bytes for endRowKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEndRowKeyBytes() {
+      java.lang.Object ref = endRowKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endRowKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int IS_BINARY_ROWKEY_FIELD_NUMBER = 3;
-    private long isBinaryRowkey_;
+    private boolean isBinaryRowkey_;
     /**
      * <pre>
      * is binary rowkey
      * &#64;inject_tag: json:"is_binary_rowkey" swaggerignore:"true"
      * </pre>
      *
-     * <code>int64 is_binary_rowkey = 3;</code>
+     * <code>bool is_binary_rowkey = 3;</code>
      * @return The isBinaryRowkey.
      */
     @java.lang.Override
-    public long getIsBinaryRowkey() {
+    public boolean getIsBinaryRowkey() {
       return isBinaryRowkey_;
     }
 
@@ -55524,14 +55013,14 @@ public final class PBSyncManageSyncJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (startRowKey_ != 0L) {
-        output.writeInt64(1, startRowKey_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startRowKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, startRowKey_);
       }
-      if (endRowKey_ != 0L) {
-        output.writeInt64(2, endRowKey_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endRowKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, endRowKey_);
       }
-      if (isBinaryRowkey_ != 0L) {
-        output.writeInt64(3, isBinaryRowkey_);
+      if (isBinaryRowkey_ != false) {
+        output.writeBool(3, isBinaryRowkey_);
       }
       unknownFields.writeTo(output);
     }
@@ -55542,17 +55031,15 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      if (startRowKey_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, startRowKey_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startRowKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, startRowKey_);
       }
-      if (endRowKey_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, endRowKey_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endRowKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, endRowKey_);
       }
-      if (isBinaryRowkey_ != 0L) {
+      if (isBinaryRowkey_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, isBinaryRowkey_);
+          .computeBoolSize(3, isBinaryRowkey_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -55569,10 +55056,10 @@ public final class PBSyncManageSyncJob {
       }
       com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Range other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Range) obj;
 
-      if (getStartRowKey()
-          != other.getStartRowKey()) return false;
-      if (getEndRowKey()
-          != other.getEndRowKey()) return false;
+      if (!getStartRowKey()
+          .equals(other.getStartRowKey())) return false;
+      if (!getEndRowKey()
+          .equals(other.getEndRowKey())) return false;
       if (getIsBinaryRowkey()
           != other.getIsBinaryRowkey()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -55587,13 +55074,11 @@ public final class PBSyncManageSyncJob {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + START_ROW_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStartRowKey());
+      hash = (53 * hash) + getStartRowKey().hashCode();
       hash = (37 * hash) + END_ROW_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEndRowKey());
+      hash = (53 * hash) + getEndRowKey().hashCode();
       hash = (37 * hash) + IS_BINARY_ROWKEY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBinaryRowkey());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -55728,11 +55213,11 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        startRowKey_ = 0L;
+        startRowKey_ = "";
 
-        endRowKey_ = 0L;
+        endRowKey_ = "";
 
-        isBinaryRowkey_ = 0L;
+        isBinaryRowkey_ = false;
 
         return this;
       }
@@ -55811,13 +55296,15 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Range other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Range.getDefaultInstance()) return this;
-        if (other.getStartRowKey() != 0L) {
-          setStartRowKey(other.getStartRowKey());
+        if (!other.getStartRowKey().isEmpty()) {
+          startRowKey_ = other.startRowKey_;
+          onChanged();
         }
-        if (other.getEndRowKey() != 0L) {
-          setEndRowKey(other.getEndRowKey());
+        if (!other.getEndRowKey().isEmpty()) {
+          endRowKey_ = other.endRowKey_;
+          onChanged();
         }
-        if (other.getIsBinaryRowkey() != 0L) {
+        if (other.getIsBinaryRowkey() != false) {
           setIsBinaryRowkey(other.getIsBinaryRowkey());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -55849,19 +55336,27 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private long startRowKey_ ;
+      private java.lang.Object startRowKey_ = "";
       /**
        * <pre>
        * start row key
        * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 start_row_key = 1;</code>
+       * <code>string start_row_key = 1;</code>
        * @return The startRowKey.
        */
-      @java.lang.Override
-      public long getStartRowKey() {
-        return startRowKey_;
+      public java.lang.String getStartRowKey() {
+        java.lang.Object ref = startRowKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startRowKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -55869,12 +55364,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 start_row_key = 1;</code>
+       * <code>string start_row_key = 1;</code>
+       * @return The bytes for startRowKey.
+       */
+      public com.google.protobuf.ByteString
+          getStartRowKeyBytes() {
+        java.lang.Object ref = startRowKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          startRowKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * start row key
+       * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string start_row_key = 1;</code>
        * @param value The startRowKey to set.
        * @return This builder for chaining.
        */
-      public Builder setStartRowKey(long value) {
-        
+      public Builder setStartRowKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         startRowKey_ = value;
         onChanged();
         return this;
@@ -55885,29 +55406,58 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 start_row_key = 1;</code>
+       * <code>string start_row_key = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartRowKey() {
         
-        startRowKey_ = 0L;
+        startRowKey_ = getDefaultInstance().getStartRowKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * start row key
+       * &#64;inject_tag: json:"start_row_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string start_row_key = 1;</code>
+       * @param value The bytes for startRowKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartRowKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        startRowKey_ = value;
         onChanged();
         return this;
       }
 
-      private long endRowKey_ ;
+      private java.lang.Object endRowKey_ = "";
       /**
        * <pre>
        * end row key
        * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 end_row_key = 2;</code>
+       * <code>string end_row_key = 2;</code>
        * @return The endRowKey.
        */
-      @java.lang.Override
-      public long getEndRowKey() {
-        return endRowKey_;
+      public java.lang.String getEndRowKey() {
+        java.lang.Object ref = endRowKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endRowKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
@@ -55915,12 +55465,38 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 end_row_key = 2;</code>
+       * <code>string end_row_key = 2;</code>
+       * @return The bytes for endRowKey.
+       */
+      public com.google.protobuf.ByteString
+          getEndRowKeyBytes() {
+        java.lang.Object ref = endRowKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          endRowKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * end row key
+       * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string end_row_key = 2;</code>
        * @param value The endRowKey to set.
        * @return This builder for chaining.
        */
-      public Builder setEndRowKey(long value) {
-        
+      public Builder setEndRowKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         endRowKey_ = value;
         onChanged();
         return this;
@@ -55931,28 +55507,49 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 end_row_key = 2;</code>
+       * <code>string end_row_key = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndRowKey() {
         
-        endRowKey_ = 0L;
+        endRowKey_ = getDefaultInstance().getEndRowKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * end row key
+       * &#64;inject_tag: json:"end_row_key" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string end_row_key = 2;</code>
+       * @param value The bytes for endRowKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndRowKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        endRowKey_ = value;
         onChanged();
         return this;
       }
 
-      private long isBinaryRowkey_ ;
+      private boolean isBinaryRowkey_ ;
       /**
        * <pre>
        * is binary rowkey
        * &#64;inject_tag: json:"is_binary_rowkey" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 is_binary_rowkey = 3;</code>
+       * <code>bool is_binary_rowkey = 3;</code>
        * @return The isBinaryRowkey.
        */
       @java.lang.Override
-      public long getIsBinaryRowkey() {
+      public boolean getIsBinaryRowkey() {
         return isBinaryRowkey_;
       }
       /**
@@ -55961,11 +55558,11 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_binary_rowkey" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 is_binary_rowkey = 3;</code>
+       * <code>bool is_binary_rowkey = 3;</code>
        * @param value The isBinaryRowkey to set.
        * @return This builder for chaining.
        */
-      public Builder setIsBinaryRowkey(long value) {
+      public Builder setIsBinaryRowkey(boolean value) {
         
         isBinaryRowkey_ = value;
         onChanged();
@@ -55977,12 +55574,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"is_binary_rowkey" swaggerignore:"true"
        * </pre>
        *
-       * <code>int64 is_binary_rowkey = 3;</code>
+       * <code>bool is_binary_rowkey = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsBinaryRowkey() {
         
-        isBinaryRowkey_ = 0L;
+        isBinaryRowkey_ = false;
         onChanged();
         return this;
       }
@@ -57214,25 +56811,25 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * hbase tablename
-     * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+     * hbase table_name
+     * &#64;inject_tag: json:"table_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string tablename = 1;</code>
-     * @return The tablename.
+     * <code>string table_name = 1;</code>
+     * @return The tableName.
      */
-    java.lang.String getTablename();
+    java.lang.String getTableName();
     /**
      * <pre>
-     * hbase tablename
-     * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+     * hbase table_name
+     * &#64;inject_tag: json:"table_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string tablename = 1;</code>
-     * @return The bytes for tablename.
+     * <code>string table_name = 1;</code>
+     * @return The bytes for tableName.
      */
     com.google.protobuf.ByteString
-        getTablenameBytes();
+        getTableNameBytes();
   }
   /**
    * Protobuf type {@code model.Table}
@@ -57247,7 +56844,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private Table() {
-      tablename_ = "";
+      tableName_ = "";
     }
 
     @java.lang.Override
@@ -57283,7 +56880,7 @@ public final class PBSyncManageSyncJob {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              tablename_ = s;
+              tableName_ = s;
               break;
             }
             default: {
@@ -57318,48 +56915,48 @@ public final class PBSyncManageSyncJob {
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table.class, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table.Builder.class);
     }
 
-    public static final int TABLENAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object tablename_;
+    public static final int TABLE_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object tableName_;
     /**
      * <pre>
-     * hbase tablename
-     * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+     * hbase table_name
+     * &#64;inject_tag: json:"table_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string tablename = 1;</code>
-     * @return The tablename.
+     * <code>string table_name = 1;</code>
+     * @return The tableName.
      */
     @java.lang.Override
-    public java.lang.String getTablename() {
-      java.lang.Object ref = tablename_;
+    public java.lang.String getTableName() {
+      java.lang.Object ref = tableName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tablename_ = s;
+        tableName_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * hbase tablename
-     * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+     * hbase table_name
+     * &#64;inject_tag: json:"table_name" swaggerignore:"true"
      * </pre>
      *
-     * <code>string tablename = 1;</code>
-     * @return The bytes for tablename.
+     * <code>string table_name = 1;</code>
+     * @return The bytes for tableName.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTablenameBytes() {
-      java.lang.Object ref = tablename_;
+        getTableNameBytes() {
+      java.lang.Object ref = tableName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tablename_ = b;
+        tableName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -57380,8 +56977,8 @@ public final class PBSyncManageSyncJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablename_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tablename_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableName_);
       }
       unknownFields.writeTo(output);
     }
@@ -57392,8 +56989,8 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablename_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tablename_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -57410,8 +57007,8 @@ public final class PBSyncManageSyncJob {
       }
       com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table) obj;
 
-      if (!getTablename()
-          .equals(other.getTablename())) return false;
+      if (!getTableName()
+          .equals(other.getTableName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -57423,8 +57020,8 @@ public final class PBSyncManageSyncJob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTablename().hashCode();
+      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTableName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -57558,7 +57155,7 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tablename_ = "";
+        tableName_ = "";
 
         return this;
       }
@@ -57586,7 +57183,7 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table(this);
-        result.tablename_ = tablename_;
+        result.tableName_ = tableName_;
         onBuilt();
         return result;
       }
@@ -57635,8 +57232,8 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Table.getDefaultInstance()) return this;
-        if (!other.getTablename().isEmpty()) {
-          tablename_ = other.tablename_;
+        if (!other.getTableName().isEmpty()) {
+          tableName_ = other.tableName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -57668,23 +57265,23 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object tablename_ = "";
+      private java.lang.Object tableName_ = "";
       /**
        * <pre>
-       * hbase tablename
-       * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+       * hbase table_name
+       * &#64;inject_tag: json:"table_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string tablename = 1;</code>
-       * @return The tablename.
+       * <code>string table_name = 1;</code>
+       * @return The tableName.
        */
-      public java.lang.String getTablename() {
-        java.lang.Object ref = tablename_;
+      public java.lang.String getTableName() {
+        java.lang.Object ref = tableName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          tablename_ = s;
+          tableName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -57692,21 +57289,21 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * hbase tablename
-       * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+       * hbase table_name
+       * &#64;inject_tag: json:"table_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string tablename = 1;</code>
-       * @return The bytes for tablename.
+       * <code>string table_name = 1;</code>
+       * @return The bytes for tableName.
        */
       public com.google.protobuf.ByteString
-          getTablenameBytes() {
-        java.lang.Object ref = tablename_;
+          getTableNameBytes() {
+        java.lang.Object ref = tableName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          tablename_ = b;
+          tableName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -57714,57 +57311,57 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * hbase tablename
-       * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+       * hbase table_name
+       * &#64;inject_tag: json:"table_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string tablename = 1;</code>
-       * @param value The tablename to set.
+       * <code>string table_name = 1;</code>
+       * @param value The tableName to set.
        * @return This builder for chaining.
        */
-      public Builder setTablename(
+      public Builder setTableName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        tablename_ = value;
+        tableName_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbase tablename
-       * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+       * hbase table_name
+       * &#64;inject_tag: json:"table_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string tablename = 1;</code>
+       * <code>string table_name = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearTablename() {
+      public Builder clearTableName() {
         
-        tablename_ = getDefaultInstance().getTablename();
+        tableName_ = getDefaultInstance().getTableName();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbase tablename
-       * &#64;inject_tag: json:"tablename" swaggerignore:"true"
+       * hbase table_name
+       * &#64;inject_tag: json:"table_name" swaggerignore:"true"
        * </pre>
        *
-       * <code>string tablename = 1;</code>
-       * @param value The bytes for tablename to set.
+       * <code>string table_name = 1;</code>
+       * @param value The bytes for tableName to set.
        * @return This builder for chaining.
        */
-      public Builder setTablenameBytes(
+      public Builder setTableNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        tablename_ = value;
+        tableName_ = value;
         onChanged();
         return this;
       }
@@ -57871,21 +57468,21 @@ public final class PBSyncManageSyncJob {
 
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+     * hbase Config
+     * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
+     * <code>string hbase_config = 2;</code>
      * @return The hbaseConfig.
      */
     java.lang.String getHbaseConfig();
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+     * hbase Config
+     * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
+     * <code>string hbase_config = 2;</code>
      * @return The bytes for hbaseConfig.
      */
     com.google.protobuf.ByteString
@@ -57930,21 +57527,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string write_buffer_size = 5;</code>
+     * <code>int32 write_buffer_size = 5;</code>
      * @return The writeBufferSize.
      */
-    java.lang.String getWriteBufferSize();
-    /**
-     * <pre>
-     * write buffer size
-     * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string write_buffer_size = 5;</code>
-     * @return The bytes for writeBufferSize.
-     */
-    com.google.protobuf.ByteString
-        getWriteBufferSizeBytes();
+    int getWriteBufferSize();
 
     /**
      * <pre>
@@ -57996,21 +57582,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
      * </pre>
      *
-     * <code>string version_column_index = 8;</code>
+     * <code>int32 version_column_index = 8;</code>
      * @return The versionColumnIndex.
      */
-    java.lang.String getVersionColumnIndex();
-    /**
-     * <pre>
-     * version column index
-     * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string version_column_index = 8;</code>
-     * @return The bytes for versionColumnIndex.
-     */
-    com.google.protobuf.ByteString
-        getVersionColumnIndexBytes();
+    int getVersionColumnIndex();
 
     /**
      * <pre>
@@ -58033,6 +57608,28 @@ public final class PBSyncManageSyncJob {
      */
     com.google.protobuf.ByteString
         getVersionColumnValueBytes();
+
+    /**
+     * <pre>
+     * scan cache size
+     * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_cache_size = 10;</code>
+     * @return The scanCacheSize.
+     */
+    int getScanCacheSize();
+
+    /**
+     * <pre>
+     * hbase scan batch size
+     * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_batch_size = 11;</code>
+     * @return The scanBatchSize.
+     */
+    int getScanBatchSize();
   }
   /**
    * Protobuf type {@code model.HbaseWriteParameter}
@@ -58050,10 +57647,8 @@ public final class PBSyncManageSyncJob {
       column_ = java.util.Collections.emptyList();
       hbaseConfig_ = "";
       nullMode_ = "";
-      writeBufferSize_ = "";
       changeLog_ = "";
       rowkeyExpress_ = "";
-      versionColumnIndex_ = "";
       versionColumnValue_ = "";
     }
 
@@ -58114,10 +57709,9 @@ public final class PBSyncManageSyncJob {
               walFlag_ = input.readBool();
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
 
-              writeBufferSize_ = s;
+              writeBufferSize_ = input.readInt32();
               break;
             }
             case 50: {
@@ -58132,16 +57726,25 @@ public final class PBSyncManageSyncJob {
               rowkeyExpress_ = s;
               break;
             }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 64: {
 
-              versionColumnIndex_ = s;
+              versionColumnIndex_ = input.readInt32();
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               versionColumnValue_ = s;
+              break;
+            }
+            case 80: {
+
+              scanCacheSize_ = input.readInt32();
+              break;
+            }
+            case 88: {
+
+              scanBatchSize_ = input.readInt32();
               break;
             }
             default: {
@@ -58239,15 +57842,15 @@ public final class PBSyncManageSyncJob {
       return column_.get(index);
     }
 
-    public static final int HBASECONFIG_FIELD_NUMBER = 2;
+    public static final int HBASE_CONFIG_FIELD_NUMBER = 2;
     private volatile java.lang.Object hbaseConfig_;
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+     * hbase Config
+     * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
+     * <code>string hbase_config = 2;</code>
      * @return The hbaseConfig.
      */
     @java.lang.Override
@@ -58265,11 +57868,11 @@ public final class PBSyncManageSyncJob {
     }
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+     * hbase Config
+     * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
+     * <code>string hbase_config = 2;</code>
      * @return The bytes for hbaseConfig.
      */
     @java.lang.Override
@@ -58352,51 +57955,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int WRITE_BUFFER_SIZE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object writeBufferSize_;
+    private int writeBufferSize_;
     /**
      * <pre>
      * write buffer size
      * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
      * </pre>
      *
-     * <code>string write_buffer_size = 5;</code>
+     * <code>int32 write_buffer_size = 5;</code>
      * @return The writeBufferSize.
      */
     @java.lang.Override
-    public java.lang.String getWriteBufferSize() {
-      java.lang.Object ref = writeBufferSize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        writeBufferSize_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * write buffer size
-     * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string write_buffer_size = 5;</code>
-     * @return The bytes for writeBufferSize.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getWriteBufferSizeBytes() {
-      java.lang.Object ref = writeBufferSize_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        writeBufferSize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getWriteBufferSize() {
+      return writeBufferSize_;
     }
 
     public static final int CHANGE_LOG_FIELD_NUMBER = 6;
@@ -58496,51 +58067,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int VERSION_COLUMN_INDEX_FIELD_NUMBER = 8;
-    private volatile java.lang.Object versionColumnIndex_;
+    private int versionColumnIndex_;
     /**
      * <pre>
      * version column index
      * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
      * </pre>
      *
-     * <code>string version_column_index = 8;</code>
+     * <code>int32 version_column_index = 8;</code>
      * @return The versionColumnIndex.
      */
     @java.lang.Override
-    public java.lang.String getVersionColumnIndex() {
-      java.lang.Object ref = versionColumnIndex_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        versionColumnIndex_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * version column index
-     * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string version_column_index = 8;</code>
-     * @return The bytes for versionColumnIndex.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVersionColumnIndexBytes() {
-      java.lang.Object ref = versionColumnIndex_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        versionColumnIndex_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getVersionColumnIndex() {
+      return versionColumnIndex_;
     }
 
     public static final int VERSION_COLUMN_VALUE_FIELD_NUMBER = 9;
@@ -58591,6 +58130,38 @@ public final class PBSyncManageSyncJob {
       }
     }
 
+    public static final int SCAN_CACHE_SIZE_FIELD_NUMBER = 10;
+    private int scanCacheSize_;
+    /**
+     * <pre>
+     * scan cache size
+     * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_cache_size = 10;</code>
+     * @return The scanCacheSize.
+     */
+    @java.lang.Override
+    public int getScanCacheSize() {
+      return scanCacheSize_;
+    }
+
+    public static final int SCAN_BATCH_SIZE_FIELD_NUMBER = 11;
+    private int scanBatchSize_;
+    /**
+     * <pre>
+     * hbase scan batch size
+     * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 scan_batch_size = 11;</code>
+     * @return The scanBatchSize.
+     */
+    @java.lang.Override
+    public int getScanBatchSize() {
+      return scanBatchSize_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -58617,8 +58188,8 @@ public final class PBSyncManageSyncJob {
       if (walFlag_ != false) {
         output.writeBool(4, walFlag_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeBufferSize_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, writeBufferSize_);
+      if (writeBufferSize_ != 0) {
+        output.writeInt32(5, writeBufferSize_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, changeLog_);
@@ -58626,11 +58197,17 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowkeyExpress_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, rowkeyExpress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnIndex_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, versionColumnIndex_);
+      if (versionColumnIndex_ != 0) {
+        output.writeInt32(8, versionColumnIndex_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnValue_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, versionColumnValue_);
+      }
+      if (scanCacheSize_ != 0) {
+        output.writeInt32(10, scanCacheSize_);
+      }
+      if (scanBatchSize_ != 0) {
+        output.writeInt32(11, scanBatchSize_);
       }
       unknownFields.writeTo(output);
     }
@@ -58655,8 +58232,9 @@ public final class PBSyncManageSyncJob {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, walFlag_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeBufferSize_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, writeBufferSize_);
+      if (writeBufferSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, writeBufferSize_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, changeLog_);
@@ -58664,11 +58242,20 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowkeyExpress_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, rowkeyExpress_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnIndex_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, versionColumnIndex_);
+      if (versionColumnIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, versionColumnIndex_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnValue_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, versionColumnValue_);
+      }
+      if (scanCacheSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, scanCacheSize_);
+      }
+      if (scanBatchSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, scanBatchSize_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -58693,16 +58280,20 @@ public final class PBSyncManageSyncJob {
           .equals(other.getNullMode())) return false;
       if (getWalFlag()
           != other.getWalFlag()) return false;
-      if (!getWriteBufferSize()
-          .equals(other.getWriteBufferSize())) return false;
+      if (getWriteBufferSize()
+          != other.getWriteBufferSize()) return false;
       if (!getChangeLog()
           .equals(other.getChangeLog())) return false;
       if (!getRowkeyExpress()
           .equals(other.getRowkeyExpress())) return false;
-      if (!getVersionColumnIndex()
-          .equals(other.getVersionColumnIndex())) return false;
+      if (getVersionColumnIndex()
+          != other.getVersionColumnIndex()) return false;
       if (!getVersionColumnValue()
           .equals(other.getVersionColumnValue())) return false;
+      if (getScanCacheSize()
+          != other.getScanCacheSize()) return false;
+      if (getScanBatchSize()
+          != other.getScanBatchSize()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -58718,7 +58309,7 @@ public final class PBSyncManageSyncJob {
         hash = (37 * hash) + COLUMN_FIELD_NUMBER;
         hash = (53 * hash) + getColumnList().hashCode();
       }
-      hash = (37 * hash) + HBASECONFIG_FIELD_NUMBER;
+      hash = (37 * hash) + HBASE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHbaseConfig().hashCode();
       hash = (37 * hash) + NULL_MODE_FIELD_NUMBER;
       hash = (53 * hash) + getNullMode().hashCode();
@@ -58726,15 +58317,19 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getWalFlag());
       hash = (37 * hash) + WRITE_BUFFER_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getWriteBufferSize().hashCode();
+      hash = (53 * hash) + getWriteBufferSize();
       hash = (37 * hash) + CHANGE_LOG_FIELD_NUMBER;
       hash = (53 * hash) + getChangeLog().hashCode();
       hash = (37 * hash) + ROWKEY_EXPRESS_FIELD_NUMBER;
       hash = (53 * hash) + getRowkeyExpress().hashCode();
       hash = (37 * hash) + VERSION_COLUMN_INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getVersionColumnIndex().hashCode();
+      hash = (53 * hash) + getVersionColumnIndex();
       hash = (37 * hash) + VERSION_COLUMN_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getVersionColumnValue().hashCode();
+      hash = (37 * hash) + SCAN_CACHE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getScanCacheSize();
+      hash = (37 * hash) + SCAN_BATCH_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getScanBatchSize();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -58881,15 +58476,19 @@ public final class PBSyncManageSyncJob {
 
         walFlag_ = false;
 
-        writeBufferSize_ = "";
+        writeBufferSize_ = 0;
 
         changeLog_ = "";
 
         rowkeyExpress_ = "";
 
-        versionColumnIndex_ = "";
+        versionColumnIndex_ = 0;
 
         versionColumnValue_ = "";
+
+        scanCacheSize_ = 0;
+
+        scanBatchSize_ = 0;
 
         return this;
       }
@@ -58935,6 +58534,8 @@ public final class PBSyncManageSyncJob {
         result.rowkeyExpress_ = rowkeyExpress_;
         result.versionColumnIndex_ = versionColumnIndex_;
         result.versionColumnValue_ = versionColumnValue_;
+        result.scanCacheSize_ = scanCacheSize_;
+        result.scanBatchSize_ = scanBatchSize_;
         onBuilt();
         return result;
       }
@@ -59020,9 +58621,8 @@ public final class PBSyncManageSyncJob {
         if (other.getWalFlag() != false) {
           setWalFlag(other.getWalFlag());
         }
-        if (!other.getWriteBufferSize().isEmpty()) {
-          writeBufferSize_ = other.writeBufferSize_;
-          onChanged();
+        if (other.getWriteBufferSize() != 0) {
+          setWriteBufferSize(other.getWriteBufferSize());
         }
         if (!other.getChangeLog().isEmpty()) {
           changeLog_ = other.changeLog_;
@@ -59032,13 +58632,18 @@ public final class PBSyncManageSyncJob {
           rowkeyExpress_ = other.rowkeyExpress_;
           onChanged();
         }
-        if (!other.getVersionColumnIndex().isEmpty()) {
-          versionColumnIndex_ = other.versionColumnIndex_;
-          onChanged();
+        if (other.getVersionColumnIndex() != 0) {
+          setVersionColumnIndex(other.getVersionColumnIndex());
         }
         if (!other.getVersionColumnValue().isEmpty()) {
           versionColumnValue_ = other.versionColumnValue_;
           onChanged();
+        }
+        if (other.getScanCacheSize() != 0) {
+          setScanCacheSize(other.getScanCacheSize());
+        }
+        if (other.getScanBatchSize() != 0) {
+          setScanBatchSize(other.getScanBatchSize());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -59385,11 +58990,11 @@ public final class PBSyncManageSyncJob {
       private java.lang.Object hbaseConfig_ = "";
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+       * hbase Config
+       * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
+       * <code>string hbase_config = 2;</code>
        * @return The hbaseConfig.
        */
       public java.lang.String getHbaseConfig() {
@@ -59406,11 +59011,11 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+       * hbase Config
+       * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
+       * <code>string hbase_config = 2;</code>
        * @return The bytes for hbaseConfig.
        */
       public com.google.protobuf.ByteString
@@ -59428,11 +59033,11 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+       * hbase Config
+       * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
+       * <code>string hbase_config = 2;</code>
        * @param value The hbaseConfig to set.
        * @return This builder for chaining.
        */
@@ -59448,11 +59053,11 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+       * hbase Config
+       * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
+       * <code>string hbase_config = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearHbaseConfig() {
@@ -59463,11 +59068,11 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig" swaggerignore:"true"
+       * hbase Config
+       * &#64;inject_tag: json:"hbase_config" swaggerignore:"true"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
+       * <code>string hbase_config = 2;</code>
        * @param value The bytes for hbaseConfig to set.
        * @return This builder for chaining.
        */
@@ -59630,27 +59235,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object writeBufferSize_ = "";
+      private int writeBufferSize_ ;
       /**
        * <pre>
        * write buffer size
        * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_buffer_size = 5;</code>
+       * <code>int32 write_buffer_size = 5;</code>
        * @return The writeBufferSize.
        */
-      public java.lang.String getWriteBufferSize() {
-        java.lang.Object ref = writeBufferSize_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          writeBufferSize_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getWriteBufferSize() {
+        return writeBufferSize_;
       }
       /**
        * <pre>
@@ -59658,38 +59255,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_buffer_size = 5;</code>
-       * @return The bytes for writeBufferSize.
-       */
-      public com.google.protobuf.ByteString
-          getWriteBufferSizeBytes() {
-        java.lang.Object ref = writeBufferSize_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          writeBufferSize_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * write buffer size
-       * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string write_buffer_size = 5;</code>
+       * <code>int32 write_buffer_size = 5;</code>
        * @param value The writeBufferSize to set.
        * @return This builder for chaining.
        */
-      public Builder setWriteBufferSize(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setWriteBufferSize(int value) {
+        
         writeBufferSize_ = value;
         onChanged();
         return this;
@@ -59700,33 +59271,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_buffer_size = 5;</code>
+       * <code>int32 write_buffer_size = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearWriteBufferSize() {
         
-        writeBufferSize_ = getDefaultInstance().getWriteBufferSize();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * write buffer size
-       * &#64;inject_tag: json:"write_buffer_size" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string write_buffer_size = 5;</code>
-       * @param value The bytes for writeBufferSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWriteBufferSizeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        writeBufferSize_ = value;
+        writeBufferSize_ = 0;
         onChanged();
         return this;
       }
@@ -59933,27 +59483,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object versionColumnIndex_ = "";
+      private int versionColumnIndex_ ;
       /**
        * <pre>
        * version column index
        * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_column_index = 8;</code>
+       * <code>int32 version_column_index = 8;</code>
        * @return The versionColumnIndex.
        */
-      public java.lang.String getVersionColumnIndex() {
-        java.lang.Object ref = versionColumnIndex_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          versionColumnIndex_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getVersionColumnIndex() {
+        return versionColumnIndex_;
       }
       /**
        * <pre>
@@ -59961,38 +59503,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_column_index = 8;</code>
-       * @return The bytes for versionColumnIndex.
-       */
-      public com.google.protobuf.ByteString
-          getVersionColumnIndexBytes() {
-        java.lang.Object ref = versionColumnIndex_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          versionColumnIndex_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * version column index
-       * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string version_column_index = 8;</code>
+       * <code>int32 version_column_index = 8;</code>
        * @param value The versionColumnIndex to set.
        * @return This builder for chaining.
        */
-      public Builder setVersionColumnIndex(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setVersionColumnIndex(int value) {
+        
         versionColumnIndex_ = value;
         onChanged();
         return this;
@@ -60003,33 +59519,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_column_index = 8;</code>
+       * <code>int32 version_column_index = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearVersionColumnIndex() {
         
-        versionColumnIndex_ = getDefaultInstance().getVersionColumnIndex();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * version column index
-       * &#64;inject_tag: json:"version_column_index" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string version_column_index = 8;</code>
-       * @param value The bytes for versionColumnIndex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionColumnIndexBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        versionColumnIndex_ = value;
+        versionColumnIndex_ = 0;
         onChanged();
         return this;
       }
@@ -60131,6 +59626,98 @@ public final class PBSyncManageSyncJob {
   checkByteStringIsUtf8(value);
         
         versionColumnValue_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int scanCacheSize_ ;
+      /**
+       * <pre>
+       * scan cache size
+       * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_cache_size = 10;</code>
+       * @return The scanCacheSize.
+       */
+      @java.lang.Override
+      public int getScanCacheSize() {
+        return scanCacheSize_;
+      }
+      /**
+       * <pre>
+       * scan cache size
+       * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_cache_size = 10;</code>
+       * @param value The scanCacheSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScanCacheSize(int value) {
+        
+        scanCacheSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * scan cache size
+       * &#64;inject_tag: json:"scan_cache_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_cache_size = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScanCacheSize() {
+        
+        scanCacheSize_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int scanBatchSize_ ;
+      /**
+       * <pre>
+       * hbase scan batch size
+       * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_batch_size = 11;</code>
+       * @return The scanBatchSize.
+       */
+      @java.lang.Override
+      public int getScanBatchSize() {
+        return scanBatchSize_;
+      }
+      /**
+       * <pre>
+       * hbase scan batch size
+       * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_batch_size = 11;</code>
+       * @param value The scanBatchSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScanBatchSize(int value) {
+        
+        scanBatchSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * hbase scan batch size
+       * &#64;inject_tag: json:"scan_batch_size" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 scan_batch_size = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScanBatchSize() {
+        
+        scanBatchSize_ = 0;
         onChanged();
         return this;
       }
@@ -60285,21 +59872,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
      * </pre>
      *
-     * <code>string timestamp = 4;</code>
+     * <code>int64 timestamp = 4;</code>
      * @return The timestamp.
      */
-    java.lang.String getTimestamp();
-    /**
-     * <pre>
-     * timestamp
-     * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string timestamp = 4;</code>
-     * @return The bytes for timestamp.
-     */
-    com.google.protobuf.ByteString
-        getTimestampBytes();
+    long getTimestamp();
 
     /**
      * <pre>
@@ -60392,32 +59968,32 @@ public final class PBSyncManageSyncJob {
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 9;</code>
-     * @return Whether the consumersettings field is set.
+     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+     * @return Whether the consumerSettings field is set.
      */
-    boolean hasConsumersettings();
+    boolean hasConsumerSettings();
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 9;</code>
-     * @return The consumersettings.
+     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+     * @return The consumerSettings.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumersettings();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumerSettings();
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 9;</code>
+     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumersettingsOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder();
   }
   /**
    * Protobuf type {@code model.KafkaSource}
@@ -60435,7 +60011,6 @@ public final class PBSyncManageSyncJob {
       column_ = java.util.Collections.emptyList();
       topic_ = "";
       mode_ = "";
-      timestamp_ = "";
       offset_ = "";
       groupId_ = "";
       encoding_ = "";
@@ -60494,10 +60069,9 @@ public final class PBSyncManageSyncJob {
               mode_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
 
-              timestamp_ = s;
+              timestamp_ = input.readInt64();
               break;
             }
             case 42: {
@@ -60526,13 +60100,13 @@ public final class PBSyncManageSyncJob {
             }
             case 74: {
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder subBuilder = null;
-              if (consumersettings_ != null) {
-                subBuilder = consumersettings_.toBuilder();
+              if (consumerSettings_ != null) {
+                subBuilder = consumerSettings_.toBuilder();
               }
-              consumersettings_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.parser(), extensionRegistry);
+              consumerSettings_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(consumersettings_);
-                consumersettings_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(consumerSettings_);
+                consumerSettings_ = subBuilder.buildPartial();
               }
 
               break;
@@ -60729,51 +60303,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
-    private volatile java.lang.Object timestamp_;
+    private long timestamp_;
     /**
      * <pre>
      * timestamp
      * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
      * </pre>
      *
-     * <code>string timestamp = 4;</code>
+     * <code>int64 timestamp = 4;</code>
      * @return The timestamp.
      */
     @java.lang.Override
-    public java.lang.String getTimestamp() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timestamp_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * timestamp
-     * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string timestamp = 4;</code>
-     * @return The bytes for timestamp.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTimestampBytes() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timestamp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getTimestamp() {
+      return timestamp_;
     }
 
     public static final int OFFSET_FIELD_NUMBER = 5;
@@ -60968,45 +60510,45 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int CONSUMERSETTINGS_FIELD_NUMBER = 9;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumersettings_;
+    public static final int CONSUMER_SETTINGS_FIELD_NUMBER = 9;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumerSettings_;
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 9;</code>
-     * @return Whether the consumersettings field is set.
+     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+     * @return Whether the consumerSettings field is set.
      */
     @java.lang.Override
-    public boolean hasConsumersettings() {
-      return consumersettings_ != null;
+    public boolean hasConsumerSettings() {
+      return consumerSettings_ != null;
     }
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 9;</code>
-     * @return The consumersettings.
+     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+     * @return The consumerSettings.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumersettings() {
-      return consumersettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumersettings_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumerSettings() {
+      return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumerSettings_;
     }
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 9;</code>
+     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumersettingsOrBuilder() {
-      return getConsumersettings();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
+      return getConsumerSettings();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -61032,8 +60574,8 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestamp_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, timestamp_);
+      if (timestamp_ != 0L) {
+        output.writeInt64(4, timestamp_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(offset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, offset_);
@@ -61047,8 +60589,8 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, codec_);
       }
-      if (consumersettings_ != null) {
-        output.writeMessage(9, getConsumersettings());
+      if (consumerSettings_ != null) {
+        output.writeMessage(9, getConsumerSettings());
       }
       unknownFields.writeTo(output);
     }
@@ -61069,8 +60611,9 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timestamp_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, timestamp_);
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, timestamp_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(offset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, offset_);
@@ -61084,9 +60627,9 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, codec_);
       }
-      if (consumersettings_ != null) {
+      if (consumerSettings_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getConsumersettings());
+          .computeMessageSize(9, getConsumerSettings());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -61109,8 +60652,8 @@ public final class PBSyncManageSyncJob {
           .equals(other.getTopic())) return false;
       if (!getMode()
           .equals(other.getMode())) return false;
-      if (!getTimestamp()
-          .equals(other.getTimestamp())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
       if (!getOffset()
           .equals(other.getOffset())) return false;
       if (!getGroupId()
@@ -61119,10 +60662,10 @@ public final class PBSyncManageSyncJob {
           .equals(other.getEncoding())) return false;
       if (!getCodec()
           .equals(other.getCodec())) return false;
-      if (hasConsumersettings() != other.hasConsumersettings()) return false;
-      if (hasConsumersettings()) {
-        if (!getConsumersettings()
-            .equals(other.getConsumersettings())) return false;
+      if (hasConsumerSettings() != other.hasConsumerSettings()) return false;
+      if (hasConsumerSettings()) {
+        if (!getConsumerSettings()
+            .equals(other.getConsumerSettings())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -61144,7 +60687,8 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + getMode().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getTimestamp().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset().hashCode();
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
@@ -61153,9 +60697,9 @@ public final class PBSyncManageSyncJob {
       hash = (53 * hash) + getEncoding().hashCode();
       hash = (37 * hash) + CODEC_FIELD_NUMBER;
       hash = (53 * hash) + getCodec().hashCode();
-      if (hasConsumersettings()) {
-        hash = (37 * hash) + CONSUMERSETTINGS_FIELD_NUMBER;
-        hash = (53 * hash) + getConsumersettings().hashCode();
+      if (hasConsumerSettings()) {
+        hash = (37 * hash) + CONSUMER_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getConsumerSettings().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -61301,7 +60845,7 @@ public final class PBSyncManageSyncJob {
 
         mode_ = "";
 
-        timestamp_ = "";
+        timestamp_ = 0L;
 
         offset_ = "";
 
@@ -61311,11 +60855,11 @@ public final class PBSyncManageSyncJob {
 
         codec_ = "";
 
-        if (consumersettingsBuilder_ == null) {
-          consumersettings_ = null;
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettings_ = null;
         } else {
-          consumersettings_ = null;
-          consumersettingsBuilder_ = null;
+          consumerSettings_ = null;
+          consumerSettingsBuilder_ = null;
         }
         return this;
       }
@@ -61360,10 +60904,10 @@ public final class PBSyncManageSyncJob {
         result.groupId_ = groupId_;
         result.encoding_ = encoding_;
         result.codec_ = codec_;
-        if (consumersettingsBuilder_ == null) {
-          result.consumersettings_ = consumersettings_;
+        if (consumerSettingsBuilder_ == null) {
+          result.consumerSettings_ = consumerSettings_;
         } else {
-          result.consumersettings_ = consumersettingsBuilder_.build();
+          result.consumerSettings_ = consumerSettingsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -61447,9 +60991,8 @@ public final class PBSyncManageSyncJob {
           mode_ = other.mode_;
           onChanged();
         }
-        if (!other.getTimestamp().isEmpty()) {
-          timestamp_ = other.timestamp_;
-          onChanged();
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
         if (!other.getOffset().isEmpty()) {
           offset_ = other.offset_;
@@ -61467,8 +61010,8 @@ public final class PBSyncManageSyncJob {
           codec_ = other.codec_;
           onChanged();
         }
-        if (other.hasConsumersettings()) {
-          mergeConsumersettings(other.getConsumersettings());
+        if (other.hasConsumerSettings()) {
+          mergeConsumerSettings(other.getConsumerSettings());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -62014,27 +61557,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object timestamp_ = "";
+      private long timestamp_ ;
       /**
        * <pre>
        * timestamp
        * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timestamp = 4;</code>
+       * <code>int64 timestamp = 4;</code>
        * @return The timestamp.
        */
-      public java.lang.String getTimestamp() {
-        java.lang.Object ref = timestamp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          timestamp_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getTimestamp() {
+        return timestamp_;
       }
       /**
        * <pre>
@@ -62042,38 +61577,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timestamp = 4;</code>
-       * @return The bytes for timestamp.
-       */
-      public com.google.protobuf.ByteString
-          getTimestampBytes() {
-        java.lang.Object ref = timestamp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          timestamp_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * timestamp
-       * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string timestamp = 4;</code>
+       * <code>int64 timestamp = 4;</code>
        * @param value The timestamp to set.
        * @return This builder for chaining.
        */
-      public Builder setTimestamp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setTimestamp(long value) {
+        
         timestamp_ = value;
         onChanged();
         return this;
@@ -62084,33 +61593,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
        * </pre>
        *
-       * <code>string timestamp = 4;</code>
+       * <code>int64 timestamp = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
         
-        timestamp_ = getDefaultInstance().getTimestamp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * timestamp
-       * &#64;inject_tag: json:"timestamp" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string timestamp = 4;</code>
-       * @param value The bytes for timestamp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimestampBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        timestamp_ = value;
+        timestamp_ = 0L;
         onChanged();
         return this;
       }
@@ -62519,54 +62007,54 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumersettings_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumerSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder> consumersettingsBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder> consumerSettingsBuilder_;
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
-       * @return Whether the consumersettings field is set.
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * @return Whether the consumerSettings field is set.
        */
-      public boolean hasConsumersettings() {
-        return consumersettingsBuilder_ != null || consumersettings_ != null;
+      public boolean hasConsumerSettings() {
+        return consumerSettingsBuilder_ != null || consumerSettings_ != null;
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
-       * @return The consumersettings.
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * @return The consumerSettings.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumersettings() {
-        if (consumersettingsBuilder_ == null) {
-          return consumersettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumersettings_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumerSettings() {
+        if (consumerSettingsBuilder_ == null) {
+          return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumerSettings_;
         } else {
-          return consumersettingsBuilder_.getMessage();
+          return consumerSettingsBuilder_.getMessage();
         }
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
        */
-      public Builder setConsumersettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
-        if (consumersettingsBuilder_ == null) {
+      public Builder setConsumerSettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
+        if (consumerSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          consumersettings_ = value;
+          consumerSettings_ = value;
           onChanged();
         } else {
-          consumersettingsBuilder_.setMessage(value);
+          consumerSettingsBuilder_.setMessage(value);
         }
 
         return this;
@@ -62574,18 +62062,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
        */
-      public Builder setConsumersettings(
+      public Builder setConsumerSettings(
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder builderForValue) {
-        if (consumersettingsBuilder_ == null) {
-          consumersettings_ = builderForValue.build();
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettings_ = builderForValue.build();
           onChanged();
         } else {
-          consumersettingsBuilder_.setMessage(builderForValue.build());
+          consumerSettingsBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -62593,22 +62081,22 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
        */
-      public Builder mergeConsumersettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
-        if (consumersettingsBuilder_ == null) {
-          if (consumersettings_ != null) {
-            consumersettings_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.newBuilder(consumersettings_).mergeFrom(value).buildPartial();
+      public Builder mergeConsumerSettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
+        if (consumerSettingsBuilder_ == null) {
+          if (consumerSettings_ != null) {
+            consumerSettings_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.newBuilder(consumerSettings_).mergeFrom(value).buildPartial();
           } else {
-            consumersettings_ = value;
+            consumerSettings_ = value;
           }
           onChanged();
         } else {
-          consumersettingsBuilder_.mergeFrom(value);
+          consumerSettingsBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -62616,18 +62104,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
        */
-      public Builder clearConsumersettings() {
-        if (consumersettingsBuilder_ == null) {
-          consumersettings_ = null;
+      public Builder clearConsumerSettings() {
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettings_ = null;
           onChanged();
         } else {
-          consumersettings_ = null;
-          consumersettingsBuilder_ = null;
+          consumerSettings_ = null;
+          consumerSettingsBuilder_ = null;
         }
 
         return this;
@@ -62635,52 +62123,52 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder getConsumersettingsBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder getConsumerSettingsBuilder() {
         
         onChanged();
-        return getConsumersettingsFieldBuilder().getBuilder();
+        return getConsumerSettingsFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumersettingsOrBuilder() {
-        if (consumersettingsBuilder_ != null) {
-          return consumersettingsBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
+        if (consumerSettingsBuilder_ != null) {
+          return consumerSettingsBuilder_.getMessageOrBuilder();
         } else {
-          return consumersettings_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumersettings_;
+          return consumerSettings_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumerSettings_;
         }
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 9;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder> 
-          getConsumersettingsFieldBuilder() {
-        if (consumersettingsBuilder_ == null) {
-          consumersettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getConsumerSettingsFieldBuilder() {
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder>(
-                  getConsumersettings(),
+                  getConsumerSettings(),
                   getParentForChildren(),
                   isClean());
-          consumersettings_ = null;
+          consumerSettings_ = null;
         }
-        return consumersettingsBuilder_;
+        return consumerSettingsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -63553,10 +63041,9 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @return A list containing the tableFields.
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
-    java.util.List<java.lang.String>
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> 
         getTableFieldsList();
     /**
      * <pre>
@@ -63564,8 +63051,16 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @return The count of tableFields.
+     * <code>repeated .model.Column tableFields = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getTableFields(int index);
+    /**
+     * <pre>
+     * kafka tableFields
+     * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
     int getTableFieldsCount();
     /**
@@ -63574,23 +63069,20 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @param index The index of the element to return.
-     * @return The tableFields at the given index.
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
-    java.lang.String getTableFields(int index);
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getTableFieldsOrBuilderList();
     /**
      * <pre>
      * kafka tableFields
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tableFields at the given index.
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getTableFieldsBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getTableFieldsOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -63617,32 +63109,32 @@ public final class PBSyncManageSyncJob {
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 3;</code>
-     * @return Whether the consumersettings field is set.
+     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+     * @return Whether the consumerSettings field is set.
      */
-    boolean hasConsumersettings();
+    boolean hasConsumerSettings();
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 3;</code>
-     * @return The consumersettings.
+     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+     * @return The consumerSettings.
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumersettings();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumerSettings();
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 3;</code>
+     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumersettingsOrBuilder();
+    com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder();
   }
   /**
    * Protobuf type {@code model.KafkaTarget}
@@ -63657,7 +63149,7 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private KafkaTarget() {
-      tableFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tableFields_ = java.util.Collections.emptyList();
       topic_ = "";
     }
 
@@ -63693,12 +63185,12 @@ public final class PBSyncManageSyncJob {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tableFields_ = new com.google.protobuf.LazyStringArrayList();
+                tableFields_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              tableFields_.add(s);
+              tableFields_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -63709,13 +63201,13 @@ public final class PBSyncManageSyncJob {
             }
             case 26: {
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder subBuilder = null;
-              if (consumersettings_ != null) {
-                subBuilder = consumersettings_.toBuilder();
+              if (consumerSettings_ != null) {
+                subBuilder = consumerSettings_.toBuilder();
               }
-              consumersettings_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.parser(), extensionRegistry);
+              consumerSettings_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(consumersettings_);
-                consumersettings_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(consumerSettings_);
+                consumerSettings_ = subBuilder.buildPartial();
               }
 
               break;
@@ -63736,7 +63228,7 @@ public final class PBSyncManageSyncJob {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          tableFields_ = tableFields_.getUnmodifiableView();
+          tableFields_ = java.util.Collections.unmodifiableList(tableFields_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -63756,18 +63248,17 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int TABLEFIELDS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList tableFields_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> tableFields_;
     /**
      * <pre>
      * kafka tableFields
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @return A list containing the tableFields.
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getTableFieldsList() {
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getTableFieldsList() {
       return tableFields_;
     }
     /**
@@ -63776,9 +63267,22 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @return The count of tableFields.
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+        getTableFieldsOrBuilderList() {
+      return tableFields_;
+    }
+    /**
+     * <pre>
+     * kafka tableFields
+     * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>repeated .model.Column tableFields = 1;</code>
+     */
+    @java.lang.Override
     public int getTableFieldsCount() {
       return tableFields_.size();
     }
@@ -63788,11 +63292,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @param index The index of the element to return.
-     * @return The tableFields at the given index.
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
-    public java.lang.String getTableFields(int index) {
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getTableFields(int index) {
       return tableFields_.get(index);
     }
     /**
@@ -63801,13 +63304,12 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
      * </pre>
      *
-     * <code>repeated string tableFields = 1;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tableFields at the given index.
+     * <code>repeated .model.Column tableFields = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTableFieldsBytes(int index) {
-      return tableFields_.getByteString(index);
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getTableFieldsOrBuilder(
+        int index) {
+      return tableFields_.get(index);
     }
 
     public static final int TOPIC_FIELD_NUMBER = 2;
@@ -63858,45 +63360,45 @@ public final class PBSyncManageSyncJob {
       }
     }
 
-    public static final int CONSUMERSETTINGS_FIELD_NUMBER = 3;
-    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumersettings_;
+    public static final int CONSUMER_SETTINGS_FIELD_NUMBER = 3;
+    private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumerSettings_;
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 3;</code>
-     * @return Whether the consumersettings field is set.
+     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+     * @return Whether the consumerSettings field is set.
      */
     @java.lang.Override
-    public boolean hasConsumersettings() {
-      return consumersettings_ != null;
+    public boolean hasConsumerSettings() {
+      return consumerSettings_ != null;
     }
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 3;</code>
-     * @return The consumersettings.
+     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+     * @return The consumerSettings.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumersettings() {
-      return consumersettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumersettings_;
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumerSettings() {
+      return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumerSettings_;
     }
     /**
      * <pre>
      * kafka consumer settings
-     * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+     * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumersettings = 3;</code>
+     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumersettingsOrBuilder() {
-      return getConsumersettings();
+    public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
+      return getConsumerSettings();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -63914,13 +63416,13 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < tableFields_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableFields_.getRaw(i));
+        output.writeMessage(1, tableFields_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
       }
-      if (consumersettings_ != null) {
-        output.writeMessage(3, getConsumersettings());
+      if (consumerSettings_ != null) {
+        output.writeMessage(3, getConsumerSettings());
       }
       unknownFields.writeTo(output);
     }
@@ -63931,20 +63433,16 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tableFields_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tableFields_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTableFieldsList().size();
+      for (int i = 0; i < tableFields_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, tableFields_.get(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
       }
-      if (consumersettings_ != null) {
+      if (consumerSettings_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getConsumersettings());
+          .computeMessageSize(3, getConsumerSettings());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -63965,10 +63463,10 @@ public final class PBSyncManageSyncJob {
           .equals(other.getTableFieldsList())) return false;
       if (!getTopic()
           .equals(other.getTopic())) return false;
-      if (hasConsumersettings() != other.hasConsumersettings()) return false;
-      if (hasConsumersettings()) {
-        if (!getConsumersettings()
-            .equals(other.getConsumersettings())) return false;
+      if (hasConsumerSettings() != other.hasConsumerSettings()) return false;
+      if (hasConsumerSettings()) {
+        if (!getConsumerSettings()
+            .equals(other.getConsumerSettings())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -63987,9 +63485,9 @@ public final class PBSyncManageSyncJob {
       }
       hash = (37 * hash) + TOPIC_FIELD_NUMBER;
       hash = (53 * hash) + getTopic().hashCode();
-      if (hasConsumersettings()) {
-        hash = (37 * hash) + CONSUMERSETTINGS_FIELD_NUMBER;
-        hash = (53 * hash) + getConsumersettings().hashCode();
+      if (hasConsumerSettings()) {
+        hash = (37 * hash) + CONSUMER_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getConsumerSettings().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -64119,20 +63617,25 @@ public final class PBSyncManageSyncJob {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTableFieldsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        tableFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        if (tableFieldsBuilder_ == null) {
+          tableFields_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          tableFieldsBuilder_.clear();
+        }
         topic_ = "";
 
-        if (consumersettingsBuilder_ == null) {
-          consumersettings_ = null;
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettings_ = null;
         } else {
-          consumersettings_ = null;
-          consumersettingsBuilder_ = null;
+          consumerSettings_ = null;
+          consumerSettingsBuilder_ = null;
         }
         return this;
       }
@@ -64161,16 +63664,20 @@ public final class PBSyncManageSyncJob {
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaTarget buildPartial() {
         com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaTarget result = new com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaTarget(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          tableFields_ = tableFields_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.tableFields_ = tableFields_;
-        result.topic_ = topic_;
-        if (consumersettingsBuilder_ == null) {
-          result.consumersettings_ = consumersettings_;
+        if (tableFieldsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            tableFields_ = java.util.Collections.unmodifiableList(tableFields_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.tableFields_ = tableFields_;
         } else {
-          result.consumersettings_ = consumersettingsBuilder_.build();
+          result.tableFields_ = tableFieldsBuilder_.build();
+        }
+        result.topic_ = topic_;
+        if (consumerSettingsBuilder_ == null) {
+          result.consumerSettings_ = consumerSettings_;
+        } else {
+          result.consumerSettings_ = consumerSettingsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -64220,22 +63727,38 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.KafkaTarget.getDefaultInstance()) return this;
-        if (!other.tableFields_.isEmpty()) {
-          if (tableFields_.isEmpty()) {
-            tableFields_ = other.tableFields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureTableFieldsIsMutable();
-            tableFields_.addAll(other.tableFields_);
+        if (tableFieldsBuilder_ == null) {
+          if (!other.tableFields_.isEmpty()) {
+            if (tableFields_.isEmpty()) {
+              tableFields_ = other.tableFields_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTableFieldsIsMutable();
+              tableFields_.addAll(other.tableFields_);
+            }
+            onChanged();
           }
-          onChanged();
+        } else {
+          if (!other.tableFields_.isEmpty()) {
+            if (tableFieldsBuilder_.isEmpty()) {
+              tableFieldsBuilder_.dispose();
+              tableFieldsBuilder_ = null;
+              tableFields_ = other.tableFields_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              tableFieldsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTableFieldsFieldBuilder() : null;
+            } else {
+              tableFieldsBuilder_.addAllMessages(other.tableFields_);
+            }
+          }
         }
         if (!other.getTopic().isEmpty()) {
           topic_ = other.topic_;
           onChanged();
         }
-        if (other.hasConsumersettings()) {
-          mergeConsumersettings(other.getConsumersettings());
+        if (other.hasConsumerSettings()) {
+          mergeConsumerSettings(other.getConsumerSettings());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -64267,25 +63790,32 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList tableFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> tableFields_ =
+        java.util.Collections.emptyList();
       private void ensureTableFieldsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          tableFields_ = new com.google.protobuf.LazyStringArrayList(tableFields_);
+          tableFields_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column>(tableFields_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> tableFieldsBuilder_;
+
       /**
        * <pre>
        * kafka tableFields
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @return A list containing the tableFields.
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getTableFieldsList() {
-        return tableFields_.getUnmodifiableView();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> getTableFieldsList() {
+        if (tableFieldsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(tableFields_);
+        } else {
+          return tableFieldsBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
@@ -64293,11 +63823,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @return The count of tableFields.
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
       public int getTableFieldsCount() {
-        return tableFields_.size();
+        if (tableFieldsBuilder_ == null) {
+          return tableFields_.size();
+        } else {
+          return tableFieldsBuilder_.getCount();
+        }
       }
       /**
        * <pre>
@@ -64305,12 +63838,14 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @param index The index of the element to return.
-       * @return The tableFields at the given index.
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
-      public java.lang.String getTableFields(int index) {
-        return tableFields_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column getTableFields(int index) {
+        if (tableFieldsBuilder_ == null) {
+          return tableFields_.get(index);
+        } else {
+          return tableFieldsBuilder_.getMessage(index);
+        }
       }
       /**
        * <pre>
@@ -64318,33 +63853,20 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the tableFields at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getTableFieldsBytes(int index) {
-        return tableFields_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * kafka tableFields
-       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>repeated string tableFields = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The tableFields to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
       public Builder setTableFields(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTableFieldsIsMutable();
-        tableFields_.set(index, value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (tableFieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTableFieldsIsMutable();
+          tableFields_.set(index, value);
+          onChanged();
+        } else {
+          tableFieldsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -64353,18 +63875,60 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @param value The tableFields to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public Builder setTableFields(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (tableFieldsBuilder_ == null) {
+          ensureTableFieldsIsMutable();
+          tableFields_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tableFieldsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public Builder addTableFields(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (tableFieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTableFieldsIsMutable();
+          tableFields_.add(value);
+          onChanged();
+        } else {
+          tableFieldsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
       public Builder addTableFields(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTableFieldsIsMutable();
-        tableFields_.add(value);
-        onChanged();
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column value) {
+        if (tableFieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTableFieldsIsMutable();
+          tableFields_.add(index, value);
+          onChanged();
+        } else {
+          tableFieldsBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -64373,16 +63937,56 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @param values The tableFields to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public Builder addTableFields(
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (tableFieldsBuilder_ == null) {
+          ensureTableFieldsIsMutable();
+          tableFields_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tableFieldsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public Builder addTableFields(
+          int index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder builderForValue) {
+        if (tableFieldsBuilder_ == null) {
+          ensureTableFieldsIsMutable();
+          tableFields_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tableFieldsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
       public Builder addAllTableFields(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTableFieldsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tableFields_);
-        onChanged();
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column> values) {
+        if (tableFieldsBuilder_ == null) {
+          ensureTableFieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, tableFields_);
+          onChanged();
+        } else {
+          tableFieldsBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
@@ -64391,13 +63995,16 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
       public Builder clearTableFields() {
-        tableFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        if (tableFieldsBuilder_ == null) {
+          tableFields_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          tableFieldsBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -64406,20 +64013,111 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
        * </pre>
        *
-       * <code>repeated string tableFields = 1;</code>
-       * @param value The bytes of the tableFields to add.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column tableFields = 1;</code>
        */
-      public Builder addTableFieldsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTableFieldsIsMutable();
-        tableFields_.add(value);
-        onChanged();
+      public Builder removeTableFields(int index) {
+        if (tableFieldsBuilder_ == null) {
+          ensureTableFieldsIsMutable();
+          tableFields_.remove(index);
+          onChanged();
+        } else {
+          tableFieldsBuilder_.remove(index);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder getTableFieldsBuilder(
+          int index) {
+        return getTableFieldsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder getTableFieldsOrBuilder(
+          int index) {
+        if (tableFieldsBuilder_ == null) {
+          return tableFields_.get(index);  } else {
+          return tableFieldsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+           getTableFieldsOrBuilderList() {
+        if (tableFieldsBuilder_ != null) {
+          return tableFieldsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tableFields_);
+        }
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addTableFieldsBuilder() {
+        return getTableFieldsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder addTableFieldsBuilder(
+          int index) {
+        return getTableFieldsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * kafka tableFields
+       * &#64;inject_tag: json:"tableFields" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>repeated .model.Column tableFields = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder> 
+           getTableFieldsBuilderList() {
+        return getTableFieldsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder> 
+          getTableFieldsFieldBuilder() {
+        if (tableFieldsBuilder_ == null) {
+          tableFieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.Column.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ColumnOrBuilder>(
+                  tableFields_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          tableFields_ = null;
+        }
+        return tableFieldsBuilder_;
       }
 
       private java.lang.Object topic_ = "";
@@ -64523,54 +64221,54 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumersettings_;
+      private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings consumerSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder> consumersettingsBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder> consumerSettingsBuilder_;
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
-       * @return Whether the consumersettings field is set.
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+       * @return Whether the consumerSettings field is set.
        */
-      public boolean hasConsumersettings() {
-        return consumersettingsBuilder_ != null || consumersettings_ != null;
+      public boolean hasConsumerSettings() {
+        return consumerSettingsBuilder_ != null || consumerSettings_ != null;
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
-       * @return The consumersettings.
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+       * @return The consumerSettings.
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumersettings() {
-        if (consumersettingsBuilder_ == null) {
-          return consumersettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumersettings_;
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings getConsumerSettings() {
+        if (consumerSettingsBuilder_ == null) {
+          return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumerSettings_;
         } else {
-          return consumersettingsBuilder_.getMessage();
+          return consumerSettingsBuilder_.getMessage();
         }
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
        */
-      public Builder setConsumersettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
-        if (consumersettingsBuilder_ == null) {
+      public Builder setConsumerSettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
+        if (consumerSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          consumersettings_ = value;
+          consumerSettings_ = value;
           onChanged();
         } else {
-          consumersettingsBuilder_.setMessage(value);
+          consumerSettingsBuilder_.setMessage(value);
         }
 
         return this;
@@ -64578,18 +64276,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
        */
-      public Builder setConsumersettings(
+      public Builder setConsumerSettings(
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder builderForValue) {
-        if (consumersettingsBuilder_ == null) {
-          consumersettings_ = builderForValue.build();
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettings_ = builderForValue.build();
           onChanged();
         } else {
-          consumersettingsBuilder_.setMessage(builderForValue.build());
+          consumerSettingsBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -64597,22 +64295,22 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
        */
-      public Builder mergeConsumersettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
-        if (consumersettingsBuilder_ == null) {
-          if (consumersettings_ != null) {
-            consumersettings_ =
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.newBuilder(consumersettings_).mergeFrom(value).buildPartial();
+      public Builder mergeConsumerSettings(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings value) {
+        if (consumerSettingsBuilder_ == null) {
+          if (consumerSettings_ != null) {
+            consumerSettings_ =
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.newBuilder(consumerSettings_).mergeFrom(value).buildPartial();
           } else {
-            consumersettings_ = value;
+            consumerSettings_ = value;
           }
           onChanged();
         } else {
-          consumersettingsBuilder_.mergeFrom(value);
+          consumerSettingsBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -64620,18 +64318,18 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
        */
-      public Builder clearConsumersettings() {
-        if (consumersettingsBuilder_ == null) {
-          consumersettings_ = null;
+      public Builder clearConsumerSettings() {
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettings_ = null;
           onChanged();
         } else {
-          consumersettings_ = null;
-          consumersettingsBuilder_ = null;
+          consumerSettings_ = null;
+          consumerSettingsBuilder_ = null;
         }
 
         return this;
@@ -64639,52 +64337,52 @@ public final class PBSyncManageSyncJob {
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder getConsumersettingsBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder getConsumerSettingsBuilder() {
         
         onChanged();
-        return getConsumersettingsFieldBuilder().getBuilder();
+        return getConsumerSettingsFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumersettingsOrBuilder() {
-        if (consumersettingsBuilder_ != null) {
-          return consumersettingsBuilder_.getMessageOrBuilder();
+      public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
+        if (consumerSettingsBuilder_ != null) {
+          return consumerSettingsBuilder_.getMessageOrBuilder();
         } else {
-          return consumersettings_ == null ?
-              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumersettings_;
+          return consumerSettings_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.getDefaultInstance() : consumerSettings_;
         }
       }
       /**
        * <pre>
        * kafka consumer settings
-       * &#64;inject_tag: json:"consumersettings" swaggerignore:"true"
+       * &#64;inject_tag: json:"consumer_settings" swaggerignore:"true"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumersettings = 3;</code>
+       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder> 
-          getConsumersettingsFieldBuilder() {
-        if (consumersettingsBuilder_ == null) {
-          consumersettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getConsumerSettingsFieldBuilder() {
+        if (consumerSettingsBuilder_ == null) {
+          consumerSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.ConsumerSettingsOrBuilder>(
-                  getConsumersettings(),
+                  getConsumerSettings(),
                   getParentForChildren(),
                   isClean());
-          consumersettings_ = null;
+          consumerSettings_ = null;
         }
-        return consumersettingsBuilder_;
+        return consumerSettingsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -64749,21 +64447,10 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"database" swaggerignore:"true"
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>int32 database = 1;</code>
      * @return The database.
      */
-    java.lang.String getDatabase();
-    /**
-     * <pre>
-     * select database
-     * &#64;inject_tag: json:"database" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string database = 1;</code>
-     * @return The bytes for database.
-     */
-    com.google.protobuf.ByteString
-        getDatabaseBytes();
+    int getDatabase();
 
     /**
      * <pre>
@@ -64825,43 +64512,32 @@ public final class PBSyncManageSyncJob {
      * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
      * </pre>
      *
-     * <code>string expire_time = 4;</code>
+     * <code>int64 expire_time = 4;</code>
      * @return The expireTime.
      */
-    java.lang.String getExpireTime();
-    /**
-     * <pre>
-     * expire time
-     * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string expire_time = 4;</code>
-     * @return The bytes for expireTime.
-     */
-    com.google.protobuf.ByteString
-        getExpireTimeBytes();
+    long getExpireTime();
 
     /**
      * <pre>
-     * write type
-     * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string write_type = 5;</code>
-     * @return The writeType.
+     * <code>string type = 5;</code>
+     * @return The type.
      */
-    java.lang.String getWriteType();
+    java.lang.String getType();
     /**
      * <pre>
-     * write type
-     * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string write_type = 5;</code>
-     * @return The bytes for writeType.
+     * <code>string type = 5;</code>
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString
-        getWriteTypeBytes();
+        getTypeBytes();
 
     /**
      * <pre>
@@ -64928,6 +64604,17 @@ public final class PBSyncManageSyncJob {
      */
     com.google.protobuf.ByteString
         getValueFieldDelimiterBytes();
+
+    /**
+     * <pre>
+     * timeout
+     * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 timeout = 9;</code>
+     * @return The timeout.
+     */
+    int getTimeout();
   }
   /**
    * Protobuf type {@code model.RedisTarget}
@@ -64942,11 +64629,9 @@ public final class PBSyncManageSyncJob {
       super(builder);
     }
     private RedisTarget() {
-      database_ = "";
       keyIndexes_ = emptyIntList();
       dateFormat_ = "";
-      expireTime_ = "";
-      writeType_ = "";
+      type_ = "";
       mode_ = "";
       keyFieldDelimiter_ = "";
       valueFieldDelimiter_ = "";
@@ -64983,10 +64668,9 @@ public final class PBSyncManageSyncJob {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              database_ = s;
+              database_ = input.readInt32();
               break;
             }
             case 16: {
@@ -65016,16 +64700,15 @@ public final class PBSyncManageSyncJob {
               dateFormat_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
 
-              expireTime_ = s;
+              expireTime_ = input.readInt64();
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              writeType_ = s;
+              type_ = s;
               break;
             }
             case 50: {
@@ -65044,6 +64727,11 @@ public final class PBSyncManageSyncJob {
               java.lang.String s = input.readStringRequireUtf8();
 
               valueFieldDelimiter_ = s;
+              break;
+            }
+            case 72: {
+
+              timeout_ = input.readInt32();
               break;
             }
             default: {
@@ -65082,51 +64770,19 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int DATABASE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object database_;
+    private int database_;
     /**
      * <pre>
      * select database
      * &#64;inject_tag: json:"database" swaggerignore:"true"
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>int32 database = 1;</code>
      * @return The database.
      */
     @java.lang.Override
-    public java.lang.String getDatabase() {
-      java.lang.Object ref = database_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        database_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * select database
-     * &#64;inject_tag: json:"database" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string database = 1;</code>
-     * @return The bytes for database.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDatabaseBytes() {
-      java.lang.Object ref = database_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        database_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getDatabase() {
+      return database_;
     }
 
     public static final int KEYINDEXES_FIELD_NUMBER = 2;
@@ -65221,95 +64877,63 @@ public final class PBSyncManageSyncJob {
     }
 
     public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object expireTime_;
+    private long expireTime_;
     /**
      * <pre>
      * expire time
      * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
      * </pre>
      *
-     * <code>string expire_time = 4;</code>
+     * <code>int64 expire_time = 4;</code>
      * @return The expireTime.
      */
     @java.lang.Override
-    public java.lang.String getExpireTime() {
-      java.lang.Object ref = expireTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        expireTime_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * expire time
-     * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
-     * </pre>
-     *
-     * <code>string expire_time = 4;</code>
-     * @return The bytes for expireTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getExpireTimeBytes() {
-      java.lang.Object ref = expireTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        expireTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getExpireTime() {
+      return expireTime_;
     }
 
-    public static final int WRITE_TYPE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object writeType_;
+    public static final int TYPE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object type_;
     /**
      * <pre>
-     * write type
-     * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string write_type = 5;</code>
-     * @return The writeType.
+     * <code>string type = 5;</code>
+     * @return The type.
      */
     @java.lang.Override
-    public java.lang.String getWriteType() {
-      java.lang.Object ref = writeType_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        writeType_ = s;
+        type_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * write type
-     * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+     * type
+     * &#64;inject_tag: json:"type" swaggerignore:"true"
      * </pre>
      *
-     * <code>string write_type = 5;</code>
-     * @return The bytes for writeType.
+     * <code>string type = 5;</code>
+     * @return The bytes for type.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getWriteTypeBytes() {
-      java.lang.Object ref = writeType_;
+        getTypeBytes() {
+      java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        writeType_ = b;
+        type_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -65460,6 +65084,22 @@ public final class PBSyncManageSyncJob {
       }
     }
 
+    public static final int TIMEOUT_FIELD_NUMBER = 9;
+    private int timeout_;
+    /**
+     * <pre>
+     * timeout
+     * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>int32 timeout = 9;</code>
+     * @return The timeout.
+     */
+    @java.lang.Override
+    public int getTimeout() {
+      return timeout_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -65475,8 +65115,8 @@ public final class PBSyncManageSyncJob {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
+      if (database_ != 0) {
+        output.writeInt32(1, database_);
       }
       if (getKeyIndexesList().size() > 0) {
         output.writeUInt32NoTag(18);
@@ -65488,11 +65128,11 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dateFormat_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dateFormat_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expireTime_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, expireTime_);
+      if (expireTime_ != 0L) {
+        output.writeInt64(4, expireTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeType_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, writeType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, mode_);
@@ -65503,6 +65143,9 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(valueFieldDelimiter_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, valueFieldDelimiter_);
       }
+      if (timeout_ != 0) {
+        output.writeInt32(9, timeout_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -65512,8 +65155,9 @@ public final class PBSyncManageSyncJob {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, database_);
+      if (database_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, database_);
       }
       {
         int dataSize = 0;
@@ -65532,11 +65176,12 @@ public final class PBSyncManageSyncJob {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dateFormat_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dateFormat_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expireTime_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, expireTime_);
+      if (expireTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, expireTime_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeType_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, writeType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, mode_);
@@ -65546,6 +65191,10 @@ public final class PBSyncManageSyncJob {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(valueFieldDelimiter_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, valueFieldDelimiter_);
+      }
+      if (timeout_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, timeout_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -65562,22 +65211,24 @@ public final class PBSyncManageSyncJob {
       }
       com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RedisTarget other = (com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RedisTarget) obj;
 
-      if (!getDatabase()
-          .equals(other.getDatabase())) return false;
+      if (getDatabase()
+          != other.getDatabase()) return false;
       if (!getKeyIndexesList()
           .equals(other.getKeyIndexesList())) return false;
       if (!getDateFormat()
           .equals(other.getDateFormat())) return false;
-      if (!getExpireTime()
-          .equals(other.getExpireTime())) return false;
-      if (!getWriteType()
-          .equals(other.getWriteType())) return false;
+      if (getExpireTime()
+          != other.getExpireTime()) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
       if (!getMode()
           .equals(other.getMode())) return false;
       if (!getKeyFieldDelimiter()
           .equals(other.getKeyFieldDelimiter())) return false;
       if (!getValueFieldDelimiter()
           .equals(other.getValueFieldDelimiter())) return false;
+      if (getTimeout()
+          != other.getTimeout()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -65590,7 +65241,7 @@ public final class PBSyncManageSyncJob {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATABASE_FIELD_NUMBER;
-      hash = (53 * hash) + getDatabase().hashCode();
+      hash = (53 * hash) + getDatabase();
       if (getKeyIndexesCount() > 0) {
         hash = (37 * hash) + KEYINDEXES_FIELD_NUMBER;
         hash = (53 * hash) + getKeyIndexesList().hashCode();
@@ -65598,15 +65249,18 @@ public final class PBSyncManageSyncJob {
       hash = (37 * hash) + DATE_FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + getDateFormat().hashCode();
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getExpireTime().hashCode();
-      hash = (37 * hash) + WRITE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getWriteType().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getExpireTime());
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + getMode().hashCode();
       hash = (37 * hash) + KEY_FIELD_DELIMITER_FIELD_NUMBER;
       hash = (53 * hash) + getKeyFieldDelimiter().hashCode();
       hash = (37 * hash) + VALUE_FIELD_DELIMITER_FIELD_NUMBER;
       hash = (53 * hash) + getValueFieldDelimiter().hashCode();
+      hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeout();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -65740,21 +65394,23 @@ public final class PBSyncManageSyncJob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        database_ = "";
+        database_ = 0;
 
         keyIndexes_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         dateFormat_ = "";
 
-        expireTime_ = "";
+        expireTime_ = 0L;
 
-        writeType_ = "";
+        type_ = "";
 
         mode_ = "";
 
         keyFieldDelimiter_ = "";
 
         valueFieldDelimiter_ = "";
+
+        timeout_ = 0;
 
         return this;
       }
@@ -65791,10 +65447,11 @@ public final class PBSyncManageSyncJob {
         result.keyIndexes_ = keyIndexes_;
         result.dateFormat_ = dateFormat_;
         result.expireTime_ = expireTime_;
-        result.writeType_ = writeType_;
+        result.type_ = type_;
         result.mode_ = mode_;
         result.keyFieldDelimiter_ = keyFieldDelimiter_;
         result.valueFieldDelimiter_ = valueFieldDelimiter_;
+        result.timeout_ = timeout_;
         onBuilt();
         return result;
       }
@@ -65843,9 +65500,8 @@ public final class PBSyncManageSyncJob {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RedisTarget other) {
         if (other == com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.RedisTarget.getDefaultInstance()) return this;
-        if (!other.getDatabase().isEmpty()) {
-          database_ = other.database_;
-          onChanged();
+        if (other.getDatabase() != 0) {
+          setDatabase(other.getDatabase());
         }
         if (!other.keyIndexes_.isEmpty()) {
           if (keyIndexes_.isEmpty()) {
@@ -65861,12 +65517,11 @@ public final class PBSyncManageSyncJob {
           dateFormat_ = other.dateFormat_;
           onChanged();
         }
-        if (!other.getExpireTime().isEmpty()) {
-          expireTime_ = other.expireTime_;
-          onChanged();
+        if (other.getExpireTime() != 0L) {
+          setExpireTime(other.getExpireTime());
         }
-        if (!other.getWriteType().isEmpty()) {
-          writeType_ = other.writeType_;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
           onChanged();
         }
         if (!other.getMode().isEmpty()) {
@@ -65880,6 +65535,9 @@ public final class PBSyncManageSyncJob {
         if (!other.getValueFieldDelimiter().isEmpty()) {
           valueFieldDelimiter_ = other.valueFieldDelimiter_;
           onChanged();
+        }
+        if (other.getTimeout() != 0) {
+          setTimeout(other.getTimeout());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -65911,27 +65569,19 @@ public final class PBSyncManageSyncJob {
       }
       private int bitField0_;
 
-      private java.lang.Object database_ = "";
+      private int database_ ;
       /**
        * <pre>
        * select database
        * &#64;inject_tag: json:"database" swaggerignore:"true"
        * </pre>
        *
-       * <code>string database = 1;</code>
+       * <code>int32 database = 1;</code>
        * @return The database.
        */
-      public java.lang.String getDatabase() {
-        java.lang.Object ref = database_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          database_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getDatabase() {
+        return database_;
       }
       /**
        * <pre>
@@ -65939,38 +65589,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"database" swaggerignore:"true"
        * </pre>
        *
-       * <code>string database = 1;</code>
-       * @return The bytes for database.
-       */
-      public com.google.protobuf.ByteString
-          getDatabaseBytes() {
-        java.lang.Object ref = database_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          database_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * select database
-       * &#64;inject_tag: json:"database" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string database = 1;</code>
+       * <code>int32 database = 1;</code>
        * @param value The database to set.
        * @return This builder for chaining.
        */
-      public Builder setDatabase(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setDatabase(int value) {
+        
         database_ = value;
         onChanged();
         return this;
@@ -65981,33 +65605,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"database" swaggerignore:"true"
        * </pre>
        *
-       * <code>string database = 1;</code>
+       * <code>int32 database = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearDatabase() {
         
-        database_ = getDefaultInstance().getDatabase();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * select database
-       * &#64;inject_tag: json:"database" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string database = 1;</code>
-       * @param value The bytes for database to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDatabaseBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        database_ = value;
+        database_ = 0;
         onChanged();
         return this;
       }
@@ -66227,27 +65830,19 @@ public final class PBSyncManageSyncJob {
         return this;
       }
 
-      private java.lang.Object expireTime_ = "";
+      private long expireTime_ ;
       /**
        * <pre>
        * expire time
        * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
        * </pre>
        *
-       * <code>string expire_time = 4;</code>
+       * <code>int64 expire_time = 4;</code>
        * @return The expireTime.
        */
-      public java.lang.String getExpireTime() {
-        java.lang.Object ref = expireTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          expireTime_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getExpireTime() {
+        return expireTime_;
       }
       /**
        * <pre>
@@ -66255,38 +65850,12 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
        * </pre>
        *
-       * <code>string expire_time = 4;</code>
-       * @return The bytes for expireTime.
-       */
-      public com.google.protobuf.ByteString
-          getExpireTimeBytes() {
-        java.lang.Object ref = expireTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          expireTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * expire time
-       * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string expire_time = 4;</code>
+       * <code>int64 expire_time = 4;</code>
        * @param value The expireTime to set.
        * @return This builder for chaining.
        */
-      public Builder setExpireTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setExpireTime(long value) {
+        
         expireTime_ = value;
         onChanged();
         return this;
@@ -66297,54 +65866,33 @@ public final class PBSyncManageSyncJob {
        * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
        * </pre>
        *
-       * <code>string expire_time = 4;</code>
+       * <code>int64 expire_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearExpireTime() {
         
-        expireTime_ = getDefaultInstance().getExpireTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * expire time
-       * &#64;inject_tag: json:"expire_time" swaggerignore:"true"
-       * </pre>
-       *
-       * <code>string expire_time = 4;</code>
-       * @param value The bytes for expireTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExpireTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        expireTime_ = value;
+        expireTime_ = 0L;
         onChanged();
         return this;
       }
 
-      private java.lang.Object writeType_ = "";
+      private java.lang.Object type_ = "";
       /**
        * <pre>
-       * write type
-       * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_type = 5;</code>
-       * @return The writeType.
+       * <code>string type = 5;</code>
+       * @return The type.
        */
-      public java.lang.String getWriteType() {
-        java.lang.Object ref = writeType_;
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          writeType_ = s;
+          type_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -66352,21 +65900,21 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * write type
-       * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_type = 5;</code>
-       * @return The bytes for writeType.
+       * <code>string type = 5;</code>
+       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
-          getWriteTypeBytes() {
-        java.lang.Object ref = writeType_;
+          getTypeBytes() {
+        java.lang.Object ref = type_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          writeType_ = b;
+          type_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -66374,57 +65922,57 @@ public final class PBSyncManageSyncJob {
       }
       /**
        * <pre>
-       * write type
-       * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_type = 5;</code>
-       * @param value The writeType to set.
+       * <code>string type = 5;</code>
+       * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setWriteType(
+      public Builder setType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        writeType_ = value;
+        type_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * write type
-       * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_type = 5;</code>
+       * <code>string type = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearWriteType() {
+      public Builder clearType() {
         
-        writeType_ = getDefaultInstance().getWriteType();
+        type_ = getDefaultInstance().getType();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * write type
-       * &#64;inject_tag: json:"write_type" swaggerignore:"true"
+       * type
+       * &#64;inject_tag: json:"type" swaggerignore:"true"
        * </pre>
        *
-       * <code>string write_type = 5;</code>
-       * @param value The bytes for writeType to set.
+       * <code>string type = 5;</code>
+       * @param value The bytes for type to set.
        * @return This builder for chaining.
        */
-      public Builder setWriteTypeBytes(
+      public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        writeType_ = value;
+        type_ = value;
         onChanged();
         return this;
       }
@@ -66731,6 +66279,52 @@ public final class PBSyncManageSyncJob {
         onChanged();
         return this;
       }
+
+      private int timeout_ ;
+      /**
+       * <pre>
+       * timeout
+       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 timeout = 9;</code>
+       * @return The timeout.
+       */
+      @java.lang.Override
+      public int getTimeout() {
+        return timeout_;
+      }
+      /**
+       * <pre>
+       * timeout
+       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 timeout = 9;</code>
+       * @param value The timeout to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimeout(int value) {
+        
+        timeout_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * timeout
+       * &#64;inject_tag: json:"timeout" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>int32 timeout = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimeout() {
+        
+        timeout_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -66845,15 +66439,15 @@ public final class PBSyncManageSyncJob {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_ElasticSearchTarget_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_LogminerSource_descriptor;
+    internal_static_model_LogMinerSource_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_LogminerSource_fieldAccessorTable;
+      internal_static_model_LogMinerSource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_PgwalSource_descriptor;
+    internal_static_model_PgWalSource_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_PgwalSource_fieldAccessorTable;
+      internal_static_model_PgWalSource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_SqlServerCdcSource_descriptor;
   private static final 
@@ -66978,7 +66572,7 @@ public final class PBSyncManageSyncJob {
       "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022\035\n\007version\030\003 \001(\t" +
       "B\014\342\337\037\010\022\006\302\001\003\360\001\020\022&\n\004args\030\004 \001(\0132\022.model.Syn" +
       "cJobArgsB\004\342\337\037\000\022.\n\010schedule\030\005 \001(\0132\026.model" +
-      ".SyncJobScheduleB\004\342\337\037\000\"\365\t\n\013SyncJobArgs\022&" +
+      ".SyncJobScheduleB\004\342\337\037\000\"\372\t\n\013SyncJobArgs\022&" +
       "\n\tsource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022&" +
       "\n\ttarget_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022*" +
       "\n\013parallelism\030\003 \001(\005B\025\242\241\037\004\252\006\0011\342\337\037\t\022\007\262\001\0040\000" +
@@ -66991,176 +66585,182 @@ public final class PBSyncManageSyncJob {
       "\0226\n\023relationaldb_target\030\n \001(\0132\031.model.Re" +
       "lationaldbTarget\022,\n\016mongodb_source\030\013 \001(\013" +
       "2\024.model.MongodbSource\022,\n\016mongodb_target" +
-      "\030\014 \001(\0132\024.model.MongodbTarget\0228\n\024elastics" +
-      "earch_source\030\r \001(\0132\032.model.ElasticSearch" +
-      "Source\0228\n\024elasticsearch_target\030\016 \001(\0132\032.m" +
-      "odel.ElasticSearchTarget\022&\n\013hdfs_source\030" +
-      "\017 \001(\0132\021.model.HdfsSource\022&\n\013hdfs_target\030" +
-      "\020 \001(\0132\021.model.HdfsTarget\022$\n\nftp_source\030\021" +
-      " \001(\0132\020.model.FtpSource\022$\n\nftp_target\030\022 \001" +
-      "(\0132\020.model.FtpTarget\022(\n\014hbase_source\030\023 \001" +
-      "(\0132\022.model.HbaseSource\022(\n\014hbase_target\030\024" +
-      " \001(\0132\022.model.HbaseTarget\022(\n\014kafka_source" +
-      "\030\025 \001(\0132\022.model.KafkaSource\022(\n\014kafka_targ" +
-      "et\030\026 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog_s" +
-      "ource\030\027 \001(\0132\023.model.BinlogSource\022(\n\014pgwa" +
-      "l_source\030\030 \001(\0132\022.model.PgwalSource\0226\n\023sq" +
-      "lservercdc_source\030\031 \001(\0132\031.model.SqlServe" +
-      "rCdcSource\022.\n\017logminer_source\030\032 \001(\0132\025.mo" +
-      "del.LogminerSource\022(\n\014redis_target\030\033 \001(\013" +
-      "2\022.model.RedisTarget\022&\n\013hive_target\030\034 \001(" +
-      "\0132\021.model.HiveTarget\022\030\n\ncluster_id\030\035 \001(\t" +
-      "B\004\342\337\037\000:\006\312\262\004\002\n\000\"\256\007\n\017SyncJobSchedule\022M\n\017sc" +
-      "hedule_policy\030\001 \001(\0162%.model.SyncJobSched" +
-      "ule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>\n\010exe" +
-      "cuted\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001" +
-      "\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000\022S\n\022c" +
-      "oncurrency_policy\030\006 \001(\0162(.model.SyncJobS" +
-      "chedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017schedule_" +
-      "policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hourJ\003da" +
-      "yJ\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001(\tB*\342" +
-      "\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006\302\001\003\200\005" +
-      "\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022G\n\014ret" +
-      "ry_policy\030\n \001(\0162\".model.SyncJobSchedule." +
-      "RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry_limi" +
-      "t\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t" +
-      "\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005B(\342\337\037\027\n" +
-      "\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001\"\\\n\016S" +
-      "chedulePolicy\022\027\n\023SchedulePolicyUnset\020\000\022\017" +
-      "\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n\013Imme" +
-      "diately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026Concur" +
-      "rencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Forbid\020" +
-      "\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020RetryPo" +
-      "licyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262\004\002\n\000\"" +
-      "\246\003\n\016SyncJobRelease\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
-      "\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220\n\004typ" +
-      "e\030\005 \001(\0162\023.model.SyncJob.TypeB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022,\n\006status\030\006 \001(\0162\034.model.SyncJobRelea" +
-      "se.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreated_by\030\010 " +
-      "\001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"A\n" +
-      "\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Active\020\001\022\r\n\t" +
-      "Suspended\020\002\022\013\n\007Deleted\020\003\"$\n\006Column\022\014\n\004na" +
-      "me\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\"r\n\022RelationaldbSo" +
-      "urce\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\r\n\005t" +
-      "able\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\r\n\005where\030\004 \001(" +
-      "\t\022\017\n\007splitpk\030\005 \001(\t\"\347\001\n\022RelationaldbTarge" +
-      "t\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\r\n\005tabl" +
-      "e\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \001(\t" +
-      "\022\020\n\010post_sql\030\005 \001(\t\022\022\n\nwrite_mode\030\006 \001(\t\022\022" +
-      "\n\nbatch_size\030\007 \001(\t\022\022\n\nupdate_key\030\010 \001(\t\022\014" +
-      "\n\004mode\030\t \001(\t\022\020\n\010semantic\030\n \001(\t\022\024\n\014with_n" +
-      "o_lock\030\013 \001(\t\"}\n\rMongodbSource\022\035\n\006column\030" +
-      "\001 \003(\0132\r.model.Column\022\020\n\010database\030\002 \001(\t\022\027" +
-      "\n\017collection_name\030\003 \001(\t\022\022\n\nfetch_size\030\004 " +
-      "\001(\005\022\016\n\006filter\030\005 \001(\t\"\264\001\n\rMongodbTarget\022\035\n" +
-      "\006column\030\001 \003(\0132\r.model.Column\022\020\n\010database" +
-      "\030\002 \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\023\n\013repla" +
-      "ce_key\030\004 \001(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022\n\nbatc" +
-      "h_size\030\006 \001(\005\022\034\n\024flush_interval_mills\030\007 \001" +
-      "(\005\"h\n\023ElasticSearchSource\022\035\n\006column\030\001 \003(" +
-      "\0132\r.model.Column\022\017\n\007version\030\002 \001(\t\022\r\n\005ind" +
-      "ex\030\003 \001(\t\022\022\n\nbatch_size\030\004 \001(\t\"\177\n\023ElasticS" +
-      "earchTarget\022\035\n\006column\030\001 \003(\0132\r.model.Colu" +
-      "mn\022\017\n\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\t\022\022\n\nba" +
-      "tch_size\030\004 \001(\t\022\025\n\rkey_delimiter\030\005 \001(\t\"\307\001" +
-      "\n\016LogminerSource\022\r\n\005table\030\001 \003(\t\022\024\n\014split" +
-      "_update\030\002 \001(\t\022\023\n\013paving_data\030\003 \001(\t\022\013\n\003ca" +
-      "t\030\004 \001(\t\022\025\n\rread_position\030\005 \001(\t\022\022\n\nstart_" +
-      "time\030\006 \001(\003\022\021\n\tstart_scn\030\007 \001(\003\022\022\n\nfetch_s" +
-      "ize\030\010 \001(\003\022\034\n\024support_auto_add_log\030\t \001(\003\"" +
-      "\305\001\n\013PgwalSource\022\025\n\rdatabase_name\030\001 \001(\t\022\022" +
-      "\n\ntable_list\030\002 \003(\t\022\021\n\tslot_name\030\003 \001(\t\022\024\n" +
-      "\014split_update\030\004 \001(\t\022\025\n\rallow_created\030\005 \001" +
-      "(\t\022\021\n\ttemporary\030\006 \001(\t\022\023\n\013paving_data\030\007 \001" +
-      "(\t\022\013\n\003lsn\030\010 \001(\t\022\026\n\016slot_available\030\t \001(\t\"" +
-      "\204\001\n\022SqlServerCdcSource\022\022\n\ntable_list\030\001 \003" +
-      "(\t\022\024\n\014split_update\030\002 \001(\t\022\023\n\013paving_data\030" +
-      "\003 \001(\t\022\013\n\003cat\030\004 \001(\t\022\013\n\003lsn\030\005 \001(\t\022\025\n\rpoll_" +
-      "interval\030\006 \001(\t\"\250\001\n\014BinlogSource\022\016\n\006schem" +
-      "a\030\001 \001(\t\022\013\n\003cat\030\002 \001(\t\022\033\n\005start\030\003 \001(\0132\014.mo" +
-      "del.Start\022\r\n\005table\030\004 \003(\t\022\024\n\014split_update" +
-      "\030\005 \001(\t\022\023\n\013paving_data\030\006 \001(\t\022\016\n\006filter\030\007 " +
-      "\001(\003\022\024\n\014is_gtid_mode\030\010 \001(\003\"B\n\005Start\022\021\n\tti" +
-      "mestamp\030\001 \001(\t\022\024\n\014journal_name\030\002 \001(\t\022\020\n\010p" +
-      "osition\030\003 \001(\t\"\232\003\n\nHiveTarget\022\021\n\tpartitio" +
-      "n\030\001 \001(\t\022\026\n\016partition_type\030\002 \001(\t\022\025\n\rtable" +
-      "s_column\030\003 \001(\t\022\030\n\020analytical_rules\030\004 \001(\t" +
-      "\022\016\n\006schema\030\005 \001(\t\022\030\n\020distribute_table\030\006 \001" +
-      "(\t\022\022\n\nwrite_mode\030\007 \001(\003\022\021\n\tfile_type\030\010 \001(" +
-      "\003\022\022\n\ndefault_fs\030\t \001(\003\022\025\n\rmax_file_size\030\n" +
-      " \001(\003\022\027\n\017next_check_rows\030\013 \001(\003\022\026\n\016row_gro" +
-      "up_size\030\014 \001(\003\022\031\n\021enable_dictionary\030\r \001(\003" +
-      "\022\020\n\010encoding\030\016 \001(\003\022\027\n\017field_delimiter\030\017 " +
-      "\001(\003\022\020\n\010compress\030\020 \001(\003\022\024\n\014charset_name\030\021 " +
-      "\001(\003\022\025\n\rhadoop_Config\030\022 \001(\t\"\270\001\n\nHdfsSourc" +
-      "e\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\014\n\004path" +
-      "\030\002 \001(\t\022\021\n\tfile_type\030\003 \001(\t\022\022\n\ndefault_fs\030" +
-      "\004 \001(\t\022\024\n\014filter_regex\030\005 \001(\t\022\027\n\017field_del" +
-      "imiter\030\006 \001(\t\022\020\n\010encoding\030\007 \001(\t\022\025\n\rhadoop" +
-      "_config\030\010 \001(\t\"\210\003\n\nHdfsTarget\022\035\n\006column\030\001" +
-      " \003(\0132\r.model.Column\022\014\n\004path\030\002 \001(\t\022\021\n\tfil" +
-      "e_name\030\003 \001(\t\022\021\n\tfile_type\030\004 \001(\t\022\022\n\nwrite" +
-      "_mode\030\005 \001(\t\022\022\n\ndefault_fs\030\006 \001(\t\022\024\n\014filte" +
-      "r_regex\030\007 \001(\t\022\027\n\017field_delimiter\030\010 \001(\t\022\030" +
-      "\n\020full_column_name\030\t \001(\t\022\030\n\020full_column_" +
-      "type\030\n \001(\t\022\020\n\010compress\030\013 \001(\t\022\025\n\rmax_file" +
-      "_size\030\014 \001(\t\022\027\n\017next_check_rows\030\r \001(\t\022\026\n\016" +
-      "row_group_size\030\016 \001(\t\022\031\n\021enable_dictionar" +
-      "y\030\017 \001(\t\022\020\n\010encoding\030\020 \001(\t\022\025\n\rhadoop_conf" +
-      "ig\030\021 \001(\t\"\236\002\n\tFtpSource\022\035\n\006column\030\001 \003(\0132\r" +
-      ".model.Column\022\014\n\004path\030\002 \003(\t\022\030\n\020private_k" +
-      "ey_path\030\003 \001(\t\022\027\n\017connect_pattern\030\004 \001(\t\022\027" +
-      "\n\017field_delimiter\030\005 \001(\t\022\020\n\010encoding\030\006 \001(" +
-      "\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024is_first_" +
-      "line_header\030\010 \001(\t\022\017\n\007timeout\030\t \001(\t\022\021\n\tfi" +
-      "le_type\030\n \001(\t\022\025\n\rcompress_type\030\013 \001(\t\022\023\n\013" +
-      "file_config\030\014 \001(\t\"\337\001\n\tFtpTarget\022\035\n\006colum" +
-      "n\030\001 \003(\0132\r.model.Column\022\014\n\004path\030\002 \003(\t\022\030\n\020" +
-      "private_key_path\030\003 \001(\t\022\027\n\017connect_patter" +
-      "n\030\004 \001(\t\022\027\n\017field_delimiter\030\005 \001(\t\022\020\n\010enco" +
-      "ding\030\006 \001(\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024" +
-      "is_first_line_header\030\010 \001(\t\022\017\n\007timeout\030\t " +
-      "\001(\t\"f\n\013HbaseSource\022,\n\tparameter\030\001 \001(\0132\031." +
-      "model.HbaseReadParameter\022\014\n\004name\030\002 \001(\t\022\033" +
-      "\n\005table\030\003 \001(\0132\014.model.Table\"\241\001\n\022HbaseRea" +
-      "dParameter\022\035\n\006column\030\001 \003(\0132\r.model.Colum" +
-      "n\022\023\n\013hbaseConfig\030\002 \001(\t\022\033\n\005range\030\003 \001(\0132\014." +
-      "model.Range\022\022\n\nchange_log\030\004 \001(\t\022\020\n\010encod" +
-      "ing\030\005 \001(\t\022\024\n\014hadoopConfig\030\006 \001(\t\"M\n\005Range" +
-      "\022\025\n\rstart_row_key\030\001 \001(\003\022\023\n\013end_row_key\030\002" +
-      " \001(\003\022\030\n\020is_binary_rowkey\030\003 \001(\003\"g\n\013HbaseT" +
-      "arget\022-\n\tparameter\030\001 \001(\0132\032.model.HbaseWr" +
-      "iteParameter\022\014\n\004name\030\002 \001(\t\022\033\n\005table\030\003 \001(" +
-      "\0132\014.model.Table\"\032\n\005Table\022\021\n\ttablename\030\001 " +
-      "\001(\t\"\361\001\n\023HbaseWriteParameter\022\035\n\006column\030\001 " +
-      "\003(\0132\r.model.Column\022\023\n\013hbaseConfig\030\002 \001(\t\022" +
-      "\021\n\tnull_mode\030\003 \001(\t\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021" +
-      "write_buffer_size\030\005 \001(\t\022\022\n\nchange_log\030\006 " +
-      "\001(\t\022\026\n\016rowkey_express\030\007 \001(\t\022\034\n\024version_c" +
-      "olumn_index\030\010 \001(\t\022\034\n\024version_column_valu" +
-      "e\030\t \001(\t\"\322\001\n\013KafkaSource\022\035\n\006column\030\001 \003(\0132" +
-      "\r.model.Column\022\r\n\005topic\030\002 \001(\t\022\014\n\004mode\030\003 " +
-      "\001(\t\022\021\n\ttimestamp\030\004 \001(\t\022\016\n\006offset\030\005 \001(\t\022\020" +
-      "\n\010group_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001(\t\022\r\n\005co" +
-      "dec\030\010 \001(\t\0221\n\020consumersettings\030\t \001(\0132\027.mo" +
-      "del.ConsumerSettings\"I\n\020ConsumerSettings" +
-      "\022\031\n\021bootstrap_servers\030\001 \001(\t\022\032\n\022auto_comm" +
-      "it_enable\030\002 \001(\t\"d\n\013KafkaTarget\022\023\n\013tableF" +
-      "ields\030\001 \003(\t\022\r\n\005topic\030\002 \001(\t\0221\n\020consumerse" +
-      "ttings\030\003 \001(\0132\027.model.ConsumerSettings\"\273\001" +
-      "\n\013RedisTarget\022\020\n\010database\030\001 \001(\t\022\022\n\nkeyIn" +
-      "dexes\030\002 \003(\005\022\023\n\013date_format\030\003 \001(\t\022\023\n\013expi" +
-      "re_time\030\004 \001(\t\022\022\n\nwrite_type\030\005 \001(\t\022\014\n\004mod" +
-      "e\030\006 \001(\t\022\033\n\023key_field_delimiter\030\007 \001(\t\022\035\n\025" +
-      "value_field_delimiter\030\010 \001(\tBn\n\"com.datao" +
-      "mnis.gproto.types.pbmodelB\023PBSyncManageS" +
-      "yncJobP\000Z1github.com/DataWorkbench/gprot" +
-      "o/xgo/types/pbmodelb\006proto3"
+      "\030\014 \001(\0132\024.model.MongodbTarget\0229\n\025elastic_" +
+      "search_source\030\r \001(\0132\032.model.ElasticSearc" +
+      "hSource\0229\n\025elastic_search_target\030\016 \001(\0132\032" +
+      ".model.ElasticSearchTarget\022&\n\013hdfs_sourc" +
+      "e\030\017 \001(\0132\021.model.HdfsSource\022&\n\013hdfs_targe" +
+      "t\030\020 \001(\0132\021.model.HdfsTarget\022$\n\nftp_source" +
+      "\030\021 \001(\0132\020.model.FtpSource\022$\n\nftp_target\030\022" +
+      " \001(\0132\020.model.FtpTarget\022(\n\014hbase_source\030\023" +
+      " \001(\0132\022.model.HbaseSource\022(\n\014hbase_target" +
+      "\030\024 \001(\0132\022.model.HbaseTarget\022(\n\014kafka_sour" +
+      "ce\030\025 \001(\0132\022.model.KafkaSource\022(\n\014kafka_ta" +
+      "rget\030\026 \001(\0132\022.model.KafkaTarget\022*\n\rbinlog" +
+      "_source\030\027 \001(\0132\023.model.BinlogSource\022)\n\rpg" +
+      "_wal_source\030\030 \001(\0132\022.model.PgWalSource\0227\n" +
+      "\024sqlserver_cdc_source\030\031 \001(\0132\031.model.SqlS" +
+      "erverCdcSource\022/\n\020log_miner_source\030\032 \001(\013" +
+      "2\025.model.LogMinerSource\022(\n\014redis_target\030" +
+      "\033 \001(\0132\022.model.RedisTarget\022&\n\013hive_target" +
+      "\030\034 \001(\0132\021.model.HiveTarget\022\030\n\ncluster_id\030" +
+      "\035 \001(\tB\004\342\337\037\000:\006\312\262\004\002\n\000\"\256\007\n\017SyncJobSchedule\022" +
+      "M\n\017schedule_policy\030\001 \001(\0162%.model.SyncJob" +
+      "Schedule.SchedulePolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022>" +
+      "\n\010executed\030\002 \001(\003B,\342\337\037\032\n\030\n\017schedule_polic" +
+      "y\022\005\332\001\002\030\002\342\337\037\n\022\010\262\001\005@\200\206\203\017\022\034\n\007started\030\004 \001(\003B" +
+      "\013\342\337\037\007\022\005\262\001\002@\000\022\032\n\005ended\030\005 \001(\003B\013\342\337\037\007\022\005\262\001\002@\000" +
+      "\022S\n\022concurrency_policy\030\006 \001(\0162(.model.Syn" +
+      "cJobSchedule.ConcurrencyPolicyB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022b\n\013period_type\030\007 \001(\tBM\342\337\037\032\n\030\n\017sche" +
+      "dule_policy\022\005\332\001\002\030\001\342\337\037+\022)\302\001&J\006minuteJ\004hou" +
+      "rJ\003dayJ\004weekJ\005monthJ\004year\022;\n\007express\030\010 \001" +
+      "(\tB*\342\337\037\032\n\030\n\017schedule_policy\022\005\332\001\002\030\001\342\337\037\010\022\006" +
+      "\302\001\003\200\005\001\022\036\n\007timeout\030\t \001(\005B\r\342\337\037\t\022\007\262\001\0048d@\000\022G" +
+      "\n\014retry_policy\030\n \001(\0162\".model.SyncJobSche" +
+      "dule.RetryPolicyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022=\n\013retry" +
+      "_limit\030\013 \001(\005B(\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030" +
+      "\002\342\337\037\t\022\007\262\001\0048d@\000\022@\n\016retry_interval\030\014 \001(\005B(" +
+      "\342\337\037\027\n\025\n\014retry_policy\022\005\332\001\002\030\002\342\337\037\t\022\007\262\001\0048\036@\001" +
+      "\"\\\n\016SchedulePolicy\022\027\n\023SchedulePolicyUnse" +
+      "t\020\000\022\017\n\013Periodicity\020\001\022\017\n\013AppointTime\020\002\022\017\n" +
+      "\013Immediately\020\003\"S\n\021ConcurrencyPolicy\022\032\n\026C" +
+      "oncurrencyPolicyUnset\020\000\022\t\n\005Allow\020\001\022\n\n\006Fo" +
+      "rbid\020\002\022\013\n\007Replace\020\003\"7\n\013RetryPolicy\022\024\n\020Re" +
+      "tryPolicyUnset\020\000\022\010\n\004None\020\001\022\010\n\004Auto\020\002:\006\312\262" +
+      "\004\002\n\000\"\246\003\n\016SyncJobRelease\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004stj-\022\035\n\007version\030\003 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\360\001\020\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\0220" +
+      "\n\004type\030\005 \001(\0162\023.model.SyncJob.TypeB\r\342\337\037\t\022" +
+      "\007\332\001\0040\000X\001\022,\n\006status\030\006 \001(\0162\034.model.SyncJob" +
+      "Release.Status\022\014\n\004desc\030\007 \001(\t\022 \n\ncreated_" +
+      "by\030\010 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\034\n\007created\030\t \001(\003B" +
+      "\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "0\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\n\n\006Active\020" +
+      "\001\022\r\n\tSuspended\020\002\022\013\n\007Deleted\020\003\"$\n\006Column\022" +
+      "\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\"s\n\022Relationa" +
+      "ldbSource\022\035\n\006column\030\001 \003(\0132\r.model.Column" +
+      "\022\r\n\005table\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\r\n\005where" +
+      "\030\004 \001(\t\022\020\n\010split_pk\030\005 \001(\t\"\347\001\n\022Relationald" +
+      "bTarget\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\r" +
+      "\n\005table\030\002 \003(\t\022\016\n\006schema\030\003 \001(\t\022\017\n\007pre_sql" +
+      "\030\004 \003(\t\022\020\n\010post_sql\030\005 \003(\t\022\022\n\nwrite_mode\030\006" +
+      " \001(\t\022\022\n\nbatch_size\030\007 \001(\005\022\022\n\nupdate_key\030\010" +
+      " \003(\t\022\014\n\004mode\030\t \001(\t\022\020\n\010semantic\030\n \001(\t\022\024\n\014" +
+      "with_no_lock\030\013 \001(\t\"}\n\rMongodbSource\022\035\n\006c" +
+      "olumn\030\001 \003(\0132\r.model.Column\022\020\n\010database\030\002" +
+      " \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\022\n\nfetch_s" +
+      "ize\030\004 \001(\005\022\016\n\006filter\030\005 \001(\t\"\264\001\n\rMongodbTar" +
+      "get\022\035\n\006column\030\001 \003(\0132\r.model.Column\022\020\n\010da" +
+      "tabase\030\002 \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\023\n" +
+      "\013replace_key\030\004 \001(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022" +
+      "\n\nbatch_size\030\006 \001(\005\022\034\n\024flush_interval_mil" +
+      "ls\030\007 \001(\005\"h\n\023ElasticSearchSource\022\035\n\006colum" +
+      "n\030\001 \003(\0132\r.model.Column\022\017\n\007version\030\002 \001(\t\022" +
+      "\r\n\005index\030\003 \001(\t\022\022\n\nbatch_size\030\004 \001(\005\"\177\n\023El" +
+      "asticSearchTarget\022\035\n\006column\030\001 \003(\0132\r.mode" +
+      "l.Column\022\017\n\007version\030\002 \001(\t\022\r\n\005index\030\003 \001(\t" +
+      "\022\022\n\nbatch_size\030\004 \001(\005\022\025\n\rkey_delimiter\030\005 " +
+      "\001(\t\"\336\001\n\016LogMinerSource\022\r\n\005table\030\001 \003(\t\022\024\n" +
+      "\014split_update\030\002 \001(\010\022\023\n\013paving_data\030\003 \001(\010" +
+      "\022\013\n\003cat\030\004 \001(\t\022\025\n\rread_position\030\005 \001(\t\022\022\n\n" +
+      "start_time\030\006 \001(\003\022\021\n\tstart_scn\030\007 \001(\t\022\022\n\nf" +
+      "etch_size\030\010 \001(\005\022\034\n\024support_auto_add_log\030" +
+      "\t \001(\010\022\025\n\rquery_timeout\030\n \001(\005\"\310\001\n\013PgWalSo" +
+      "urce\022\025\n\rdatabase_name\030\001 \001(\t\022\022\n\ntable_lis" +
+      "t\030\002 \003(\t\022\021\n\tslot_name\030\003 \001(\t\022\027\n\017status_int" +
+      "erval\030\004 \001(\005\022\025\n\rallow_created\030\005 \001(\010\022\021\n\tte" +
+      "mporary\030\006 \001(\010\022\023\n\013paving_data\030\007 \001(\010\022\013\n\003ls" +
+      "n\030\010 \001(\003\022\026\n\016slot_available\030\t \001(\010\"\233\001\n\022SqlS" +
+      "erverCdcSource\022\022\n\ntable_list\030\001 \003(\t\022\024\n\014sp" +
+      "lit_update\030\002 \001(\010\022\023\n\013paving_data\030\003 \001(\010\022\013\n" +
+      "\003cat\030\004 \001(\t\022\013\n\003lsn\030\005 \001(\t\022\025\n\rpoll_interval" +
+      "\030\006 \001(\003\022\025\n\rdatabase_name\030\007 \001(\t\"\330\001\n\014Binlog" +
+      "Source\022\016\n\006schema\030\001 \001(\t\022\013\n\003cat\030\002 \001(\t\022\033\n\005s" +
+      "tart\030\003 \001(\0132\014.model.Start\022\r\n\005table\030\004 \003(\t\022" +
+      "\024\n\014split_update\030\005 \001(\010\022\023\n\013paving_data\030\006 \001" +
+      "(\010\022\016\n\006filter\030\007 \001(\t\022\024\n\014is_gtid_mode\030\010 \001(\010" +
+      "\022\025\n\rquery_timeout\030\t \001(\005\022\027\n\017connect_timeo" +
+      "ut\030\n \001(\005\"B\n\005Start\022\021\n\ttimestamp\030\001 \001(\003\022\024\n\014" +
+      "journal_name\030\002 \001(\t\022\020\n\010position\030\003 \001(\003\"\232\003\n" +
+      "\nHiveTarget\022\021\n\tpartition\030\001 \001(\t\022\026\n\016partit" +
+      "ion_type\030\002 \001(\t\022\025\n\rtables_column\030\003 \001(\t\022\030\n" +
+      "\020analytical_rules\030\004 \001(\t\022\016\n\006schema\030\005 \001(\t\022" +
+      "\030\n\020distribute_table\030\006 \001(\t\022\022\n\nwrite_mode\030" +
+      "\007 \001(\t\022\021\n\tfile_type\030\010 \001(\t\022\022\n\ndefault_fs\030\t" +
+      " \001(\t\022\025\n\rmax_file_size\030\n \001(\003\022\027\n\017next_chec" +
+      "k_rows\030\013 \001(\003\022\026\n\016row_group_size\030\014 \001(\003\022\031\n\021" +
+      "enable_dictionary\030\r \001(\010\022\020\n\010encoding\030\016 \001(" +
+      "\t\022\027\n\017field_delimiter\030\017 \001(\t\022\020\n\010compress\030\020" +
+      " \001(\t\022\024\n\014charset_name\030\021 \001(\t\022\025\n\rhadoop_con" +
+      "fig\030\022 \001(\t\"\270\001\n\nHdfsSource\022\035\n\006column\030\001 \003(\013" +
+      "2\r.model.Column\022\014\n\004path\030\002 \001(\t\022\021\n\tfile_ty" +
+      "pe\030\003 \001(\t\022\022\n\ndefault_fs\030\004 \001(\t\022\024\n\014filter_r" +
+      "egex\030\005 \001(\t\022\027\n\017field_delimiter\030\006 \001(\t\022\020\n\010e" +
+      "ncoding\030\007 \001(\t\022\025\n\rhadoop_config\030\010 \001(\t\"\362\002\n" +
+      "\nHdfsTarget\022\035\n\006column\030\001 \003(\0132\r.model.Colu" +
+      "mn\022\014\n\004path\030\002 \001(\t\022\021\n\tfile_name\030\003 \001(\t\022\021\n\tf" +
+      "ile_type\030\004 \001(\t\022\022\n\nwrite_mode\030\005 \001(\t\022\022\n\nde" +
+      "fault_fs\030\006 \001(\t\022\020\n\010encoding\030\007 \001(\t\022\027\n\017fiel" +
+      "d_delimiter\030\010 \001(\t\022\030\n\020full_column_name\030\t " +
+      "\003(\t\022\030\n\020full_column_type\030\n \003(\t\022\020\n\010compres" +
+      "s\030\013 \001(\t\022\025\n\rmax_file_size\030\014 \001(\005\022\027\n\017next_c" +
+      "heck_rows\030\r \001(\003\022\026\n\016row_group_size\030\016 \001(\005\022" +
+      "\031\n\021enable_dictionary\030\017 \001(\010\022\025\n\rhadoop_con" +
+      "fig\030\020 \001(\t\"\236\002\n\tFtpSource\022\035\n\006column\030\001 \003(\0132" +
+      "\r.model.Column\022\014\n\004path\030\002 \001(\t\022\030\n\020private_" +
+      "key_path\030\003 \001(\t\022\027\n\017connect_pattern\030\004 \001(\t\022" +
+      "\027\n\017field_delimiter\030\005 \001(\t\022\020\n\010encoding\030\006 \001" +
+      "(\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n\024is_first" +
+      "_line_header\030\010 \001(\010\022\017\n\007timeout\030\t \001(\t\022\021\n\tf" +
+      "ile_type\030\n \001(\t\022\025\n\rcompress_type\030\013 \001(\t\022\023\n" +
+      "\013file_config\030\014 \001(\t\"\366\001\n\tFtpTarget\022\035\n\006colu" +
+      "mn\030\001 \003(\0132\r.model.Column\022\014\n\004path\030\002 \001(\t\022\030\n" +
+      "\020private_key_path\030\003 \001(\t\022\027\n\017connect_patte" +
+      "rn\030\004 \001(\t\022\027\n\017field_delimiter\030\005 \001(\t\022\020\n\010enc" +
+      "oding\030\006 \001(\t\022\030\n\020control_encoding\030\007 \001(\t\022\034\n" +
+      "\024is_first_line_header\030\010 \001(\010\022\025\n\rftp_file_" +
+      "name\030\t \001(\t\022\017\n\007timeout\030\n \001(\005\"f\n\013HbaseSour" +
+      "ce\022,\n\tparameter\030\001 \001(\0132\031.model.HbaseReadP" +
+      "arameter\022\014\n\004name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132\014." +
+      "model.Table\"\323\001\n\022HbaseReadParameter\022\035\n\006co" +
+      "lumn\030\001 \003(\0132\r.model.Column\022\023\n\013hbaseConfig" +
+      "\030\002 \001(\t\022\033\n\005range\030\003 \001(\0132\014.model.Range\022\022\n\nc" +
+      "hange_log\030\004 \001(\t\022\020\n\010encoding\030\005 \001(\t\022\027\n\017sca" +
+      "n_cache_size\030\006 \001(\005\022\027\n\017scan_batch_size\030\007 " +
+      "\001(\005\022\024\n\014hadoopConfig\030\010 \001(\t\"M\n\005Range\022\025\n\rst" +
+      "art_row_key\030\001 \001(\t\022\023\n\013end_row_key\030\002 \001(\t\022\030" +
+      "\n\020is_binary_rowkey\030\003 \001(\010\"g\n\013HbaseTarget\022" +
+      "-\n\tparameter\030\001 \001(\0132\032.model.HbaseWritePar" +
+      "ameter\022\014\n\004name\030\002 \001(\t\022\033\n\005table\030\003 \001(\0132\014.mo" +
+      "del.Table\"\033\n\005Table\022\022\n\ntable_name\030\001 \001(\t\"\244" +
+      "\002\n\023HbaseWriteParameter\022\035\n\006column\030\001 \003(\0132\r" +
+      ".model.Column\022\024\n\014hbase_config\030\002 \001(\t\022\021\n\tn" +
+      "ull_mode\030\003 \001(\t\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021writ" +
+      "e_buffer_size\030\005 \001(\005\022\022\n\nchange_log\030\006 \001(\t\022" +
+      "\026\n\016rowkey_express\030\007 \001(\t\022\034\n\024version_colum" +
+      "n_index\030\010 \001(\005\022\034\n\024version_column_value\030\t " +
+      "\001(\t\022\027\n\017scan_cache_size\030\n \001(\005\022\027\n\017scan_bat" +
+      "ch_size\030\013 \001(\005\"\323\001\n\013KafkaSource\022\035\n\006column\030" +
+      "\001 \003(\0132\r.model.Column\022\r\n\005topic\030\002 \001(\t\022\014\n\004m" +
+      "ode\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\016\n\006offset\030\005" +
+      " \001(\t\022\020\n\010group_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001(\t" +
+      "\022\r\n\005codec\030\010 \001(\t\0222\n\021consumer_settings\030\t \001" +
+      "(\0132\027.model.ConsumerSettings\"I\n\020ConsumerS" +
+      "ettings\022\031\n\021bootstrap_servers\030\001 \001(\t\022\032\n\022au" +
+      "to_commit_enable\030\002 \001(\t\"t\n\013KafkaTarget\022\"\n" +
+      "\013tableFields\030\001 \003(\0132\r.model.Column\022\r\n\005top" +
+      "ic\030\002 \001(\t\0222\n\021consumer_settings\030\003 \001(\0132\027.mo" +
+      "del.ConsumerSettings\"\306\001\n\013RedisTarget\022\020\n\010" +
+      "database\030\001 \001(\005\022\022\n\nkeyIndexes\030\002 \003(\005\022\023\n\013da" +
+      "te_format\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\003\022\014\n\004" +
+      "type\030\005 \001(\t\022\014\n\004mode\030\006 \001(\t\022\033\n\023key_field_de" +
+      "limiter\030\007 \001(\t\022\035\n\025value_field_delimiter\030\010" +
+      " \001(\t\022\017\n\007timeout\030\t \001(\005Bn\n\"com.dataomnis.g" +
+      "proto.types.pbmodelB\023PBSyncManageSyncJob" +
+      "P\000Z1github.com/DataWorkbench/gproto/xgo/" +
+      "types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -67186,7 +66786,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_SyncJobArgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SyncJobArgs_descriptor,
-        new java.lang.String[] { "SourceId", "TargetId", "Parallelism", "Percentage", "RecordNum", "Bytes", "JobMode", "JobContent", "RelationaldbSource", "RelationaldbTarget", "MongodbSource", "MongodbTarget", "ElasticsearchSource", "ElasticsearchTarget", "HdfsSource", "HdfsTarget", "FtpSource", "FtpTarget", "HbaseSource", "HbaseTarget", "KafkaSource", "KafkaTarget", "BinlogSource", "PgwalSource", "SqlservercdcSource", "LogminerSource", "RedisTarget", "HiveTarget", "ClusterId", });
+        new java.lang.String[] { "SourceId", "TargetId", "Parallelism", "Percentage", "RecordNum", "Bytes", "JobMode", "JobContent", "RelationaldbSource", "RelationaldbTarget", "MongodbSource", "MongodbTarget", "ElasticSearchSource", "ElasticSearchTarget", "HdfsSource", "HdfsTarget", "FtpSource", "FtpTarget", "HbaseSource", "HbaseTarget", "KafkaSource", "KafkaTarget", "BinlogSource", "PgWalSource", "SqlserverCdcSource", "LogMinerSource", "RedisTarget", "HiveTarget", "ClusterId", });
     internal_static_model_SyncJobSchedule_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_model_SyncJobSchedule_fieldAccessorTable = new
@@ -67210,7 +66810,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_RelationaldbSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RelationaldbSource_descriptor,
-        new java.lang.String[] { "Column", "Table", "Schema", "Where", "Splitpk", });
+        new java.lang.String[] { "Column", "Table", "Schema", "Where", "SplitPk", });
     internal_static_model_RelationaldbTarget_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_model_RelationaldbTarget_fieldAccessorTable = new
@@ -67241,30 +66841,30 @@ public final class PBSyncManageSyncJob {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ElasticSearchTarget_descriptor,
         new java.lang.String[] { "Column", "Version", "Index", "BatchSize", "KeyDelimiter", });
-    internal_static_model_LogminerSource_descriptor =
+    internal_static_model_LogMinerSource_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_model_LogminerSource_fieldAccessorTable = new
+    internal_static_model_LogMinerSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_LogminerSource_descriptor,
-        new java.lang.String[] { "Table", "SplitUpdate", "PavingData", "Cat", "ReadPosition", "StartTime", "StartScn", "FetchSize", "SupportAutoAddLog", });
-    internal_static_model_PgwalSource_descriptor =
+        internal_static_model_LogMinerSource_descriptor,
+        new java.lang.String[] { "Table", "SplitUpdate", "PavingData", "Cat", "ReadPosition", "StartTime", "StartScn", "FetchSize", "SupportAutoAddLog", "QueryTimeout", });
+    internal_static_model_PgWalSource_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_model_PgwalSource_fieldAccessorTable = new
+    internal_static_model_PgWalSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_PgwalSource_descriptor,
-        new java.lang.String[] { "DatabaseName", "TableList", "SlotName", "SplitUpdate", "AllowCreated", "Temporary", "PavingData", "Lsn", "SlotAvailable", });
+        internal_static_model_PgWalSource_descriptor,
+        new java.lang.String[] { "DatabaseName", "TableList", "SlotName", "StatusInterval", "AllowCreated", "Temporary", "PavingData", "Lsn", "SlotAvailable", });
     internal_static_model_SqlServerCdcSource_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_model_SqlServerCdcSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SqlServerCdcSource_descriptor,
-        new java.lang.String[] { "TableList", "SplitUpdate", "PavingData", "Cat", "Lsn", "PollInterval", });
+        new java.lang.String[] { "TableList", "SplitUpdate", "PavingData", "Cat", "Lsn", "PollInterval", "DatabaseName", });
     internal_static_model_BinlogSource_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_model_BinlogSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_BinlogSource_descriptor,
-        new java.lang.String[] { "Schema", "Cat", "Start", "Table", "SplitUpdate", "PavingData", "Filter", "IsGtidMode", });
+        new java.lang.String[] { "Schema", "Cat", "Start", "Table", "SplitUpdate", "PavingData", "Filter", "IsGtidMode", "QueryTimeout", "ConnectTimeout", });
     internal_static_model_Start_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_model_Start_fieldAccessorTable = new
@@ -67288,7 +66888,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_HdfsTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HdfsTarget_descriptor,
-        new java.lang.String[] { "Column", "Path", "FileName", "FileType", "WriteMode", "DefaultFs", "FilterRegex", "FieldDelimiter", "FullColumnName", "FullColumnType", "Compress", "MaxFileSize", "NextCheckRows", "RowGroupSize", "EnableDictionary", "Encoding", "HadoopConfig", });
+        new java.lang.String[] { "Column", "Path", "FileName", "FileType", "WriteMode", "DefaultFs", "Encoding", "FieldDelimiter", "FullColumnName", "FullColumnType", "Compress", "MaxFileSize", "NextCheckRows", "RowGroupSize", "EnableDictionary", "HadoopConfig", });
     internal_static_model_FtpSource_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_model_FtpSource_fieldAccessorTable = new
@@ -67300,7 +66900,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_FtpTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_FtpTarget_descriptor,
-        new java.lang.String[] { "Column", "Path", "PrivateKeyPath", "ConnectPattern", "FieldDelimiter", "Encoding", "ControlEncoding", "IsFirstLineHeader", "Timeout", });
+        new java.lang.String[] { "Column", "Path", "PrivateKeyPath", "ConnectPattern", "FieldDelimiter", "Encoding", "ControlEncoding", "IsFirstLineHeader", "FtpFileName", "Timeout", });
     internal_static_model_HbaseSource_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_model_HbaseSource_fieldAccessorTable = new
@@ -67312,7 +66912,7 @@ public final class PBSyncManageSyncJob {
     internal_static_model_HbaseReadParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseReadParameter_descriptor,
-        new java.lang.String[] { "Column", "HbaseConfig", "Range", "ChangeLog", "Encoding", "HadoopConfig", });
+        new java.lang.String[] { "Column", "HbaseConfig", "Range", "ChangeLog", "Encoding", "ScanCacheSize", "ScanBatchSize", "HadoopConfig", });
     internal_static_model_Range_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_model_Range_fieldAccessorTable = new
@@ -67330,19 +66930,19 @@ public final class PBSyncManageSyncJob {
     internal_static_model_Table_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Table_descriptor,
-        new java.lang.String[] { "Tablename", });
+        new java.lang.String[] { "TableName", });
     internal_static_model_HbaseWriteParameter_descriptor =
       getDescriptor().getMessageTypes().get(27);
     internal_static_model_HbaseWriteParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseWriteParameter_descriptor,
-        new java.lang.String[] { "Column", "HbaseConfig", "NullMode", "WalFlag", "WriteBufferSize", "ChangeLog", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", });
+        new java.lang.String[] { "Column", "HbaseConfig", "NullMode", "WalFlag", "WriteBufferSize", "ChangeLog", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", "ScanCacheSize", "ScanBatchSize", });
     internal_static_model_KafkaSource_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_model_KafkaSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_KafkaSource_descriptor,
-        new java.lang.String[] { "Column", "Topic", "Mode", "Timestamp", "Offset", "GroupId", "Encoding", "Codec", "Consumersettings", });
+        new java.lang.String[] { "Column", "Topic", "Mode", "Timestamp", "Offset", "GroupId", "Encoding", "Codec", "ConsumerSettings", });
     internal_static_model_ConsumerSettings_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_model_ConsumerSettings_fieldAccessorTable = new
@@ -67354,13 +66954,13 @@ public final class PBSyncManageSyncJob {
     internal_static_model_KafkaTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_KafkaTarget_descriptor,
-        new java.lang.String[] { "TableFields", "Topic", "Consumersettings", });
+        new java.lang.String[] { "TableFields", "Topic", "ConsumerSettings", });
     internal_static_model_RedisTarget_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_model_RedisTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RedisTarget_descriptor,
-        new java.lang.String[] { "Database", "KeyIndexes", "DateFormat", "ExpireTime", "WriteType", "Mode", "KeyFieldDelimiter", "ValueFieldDelimiter", });
+        new java.lang.String[] { "Database", "KeyIndexes", "DateFormat", "ExpireTime", "Type", "Mode", "KeyFieldDelimiter", "ValueFieldDelimiter", "Timeout", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

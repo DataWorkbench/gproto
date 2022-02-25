@@ -37,8 +37,16 @@ func (this *DeleteMembers) SetDefaults() {
 	return
 }
 
-// Set default value for message request.UpsertMember
-func (this *UpsertMember) SetDefaults() {
+// Set default value for message request.UpsertMembers
+func (this *UpsertMembers) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.UpdateMember
+func (this *UpdateMember) SetDefaults() {
 	if this == nil {
 		return
 	}

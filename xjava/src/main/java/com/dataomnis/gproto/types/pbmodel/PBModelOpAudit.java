@@ -14,8 +14,8 @@ public final class PBModelOpAudit {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface OperationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.Operation)
+  public interface OpAuditOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.OpAudit)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -85,23 +85,25 @@ public final class PBModelOpAudit {
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+     * FIXME: review it.
      * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
      * </pre>
      *
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for opType.
      */
     int getOpTypeValue();
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+     * FIXME: review it.
      * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
      * </pre>
      *
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The opType.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getOpType();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType();
 
     /**
      * <pre>
@@ -109,7 +111,7 @@ public final class PBModelOpAudit {
      * &#64;inject_tag: json:"state" gorm:"column:state;"
      * </pre>
      *
-     * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
@@ -119,10 +121,10 @@ public final class PBModelOpAudit {
      * &#64;inject_tag: json:"state" gorm:"column:state;"
      * </pre>
      *
-     * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
      * @return The state.
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State getState();
+    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State getState();
 
     /**
      * <pre>
@@ -140,18 +142,18 @@ public final class PBModelOpAudit {
    * The workspace operation audit log record.
    * </pre>
    *
-   * Protobuf type {@code model.Operation}
+   * Protobuf type {@code model.OpAudit}
    */
-  public static final class Operation extends
+  public static final class OpAudit extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.Operation)
-      OperationOrBuilder {
+      // @@protoc_insertion_point(message_implements:model.OpAudit)
+      OpAuditOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Operation.newBuilder() to construct.
-    private Operation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use OpAudit.newBuilder() to construct.
+    private OpAudit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Operation() {
+    private OpAudit() {
       userId_ = "";
       spaceId_ = "";
       opName_ = "";
@@ -163,7 +165,7 @@ public final class PBModelOpAudit {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new Operation();
+      return new OpAudit();
     }
 
     @java.lang.Override
@@ -171,7 +173,7 @@ public final class PBModelOpAudit {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Operation(
+    private OpAudit(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -245,160 +247,15 @@ public final class PBModelOpAudit {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_Operation_descriptor;
+      return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_OpAudit_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_Operation_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_OpAudit_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.class, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder.class);
-    }
-
-    /**
-     * <pre>
-     * Type declares the API operation type.
-     * </pre>
-     *
-     * Protobuf enum {@code model.Operation.Type}
-     */
-    public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <pre>
-       * Is useless.
-       * </pre>
-       *
-       * <code>TypeUnset = 0;</code>
-       */
-      TypeUnset(0),
-      /**
-       * <pre>
-       * Include Operation: create/update/delete.
-       * </pre>
-       *
-       * <code>Write = 1;</code>
-       */
-      Write(1),
-      /**
-       * <pre>
-       * Include Operation: read.
-       * </pre>
-       *
-       * <code>Read = 2;</code>
-       */
-      Read(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <pre>
-       * Is useless.
-       * </pre>
-       *
-       * <code>TypeUnset = 0;</code>
-       */
-      public static final int TypeUnset_VALUE = 0;
-      /**
-       * <pre>
-       * Include Operation: create/update/delete.
-       * </pre>
-       *
-       * <code>Write = 1;</code>
-       */
-      public static final int Write_VALUE = 1;
-      /**
-       * <pre>
-       * Include Operation: read.
-       * </pre>
-       *
-       * <code>Read = 2;</code>
-       */
-      public static final int Read_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Type valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static Type forNumber(int value) {
-        switch (value) {
-          case 0: return TypeUnset;
-          case 1: return Write;
-          case 2: return Read;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Type> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Type[] VALUES = values();
-
-      public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Type(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:model.Operation.Type)
+              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.class, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder.class);
     }
 
     /**
@@ -406,7 +263,7 @@ public final class PBModelOpAudit {
      * State declares the API operation result.
      * </pre>
      *
-     * Protobuf enum {@code model.Operation.State}
+     * Protobuf enum {@code model.OpAudit.State}
      */
     public enum State
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -496,7 +353,7 @@ public final class PBModelOpAudit {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDescriptor().getEnumTypes().get(1);
+        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final State[] VALUES = values();
@@ -519,7 +376,7 @@ public final class PBModelOpAudit {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:model.Operation.State)
+      // @@protoc_insertion_point(enum_scope:model.OpAudit.State)
     }
 
     public static final int USER_ID_FIELD_NUMBER = 1;
@@ -669,10 +526,11 @@ public final class PBModelOpAudit {
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+     * FIXME: review it.
      * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
      * </pre>
      *
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for opType.
      */
     @java.lang.Override public int getOpTypeValue() {
@@ -681,16 +539,17 @@ public final class PBModelOpAudit {
     /**
      * <pre>
      * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+     * FIXME: review it.
      * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
      * </pre>
      *
-     * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+     * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
      * @return The opType.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getOpType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.valueOf(opType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
     }
 
     public static final int STATE_FIELD_NUMBER = 5;
@@ -701,7 +560,7 @@ public final class PBModelOpAudit {
      * &#64;inject_tag: json:"state" gorm:"column:state;"
      * </pre>
      *
-     * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -713,13 +572,13 @@ public final class PBModelOpAudit {
      * &#64;inject_tag: json:"state" gorm:"column:state;"
      * </pre>
      *
-     * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
      * @return The state.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State getState() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State getState() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.valueOf(state_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.valueOf(state_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.UNRECOGNIZED : result;
     }
 
     public static final int CREATED_FIELD_NUMBER = 6;
@@ -761,10 +620,10 @@ public final class PBModelOpAudit {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, opName_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {
+      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
         output.writeEnum(4, opType_);
       }
-      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.StateUnset.getNumber()) {
+      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         output.writeEnum(5, state_);
       }
       if (created_ != 0L) {
@@ -788,11 +647,11 @@ public final class PBModelOpAudit {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(opName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, opName_);
       }
-      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.TypeUnset.getNumber()) {
+      if (opType_ != com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.TypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, opType_);
       }
-      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.StateUnset.getNumber()) {
+      if (state_ != com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.StateUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, state_);
       }
@@ -810,10 +669,10 @@ public final class PBModelOpAudit {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation other = (com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation) obj;
+      com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit other = (com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit) obj;
 
       if (!getUserId()
           .equals(other.getUserId())) return false;
@@ -854,69 +713,69 @@ public final class PBModelOpAudit {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parseFrom(
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -929,7 +788,7 @@ public final class PBModelOpAudit {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -949,26 +808,26 @@ public final class PBModelOpAudit {
      * The workspace operation audit log record.
      * </pre>
      *
-     * Protobuf type {@code model.Operation}
+     * Protobuf type {@code model.OpAudit}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.Operation)
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder {
+        // @@protoc_insertion_point(builder_implements:model.OpAudit)
+        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_Operation_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_OpAudit_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_Operation_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_OpAudit_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.class, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder.class);
+                com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.class, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1004,17 +863,17 @@ public final class PBModelOpAudit {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_Operation_descriptor;
+        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.internal_static_model_OpAudit_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation result = buildPartial();
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1022,8 +881,8 @@ public final class PBModelOpAudit {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation result = new com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation(this);
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit result = new com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit(this);
         result.userId_ = userId_;
         result.spaceId_ = spaceId_;
         result.opName_ = opName_;
@@ -1068,16 +927,16 @@ public final class PBModelOpAudit {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation)other);
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDefaultInstance()) return this;
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
           onChanged();
@@ -1114,11 +973,11 @@ public final class PBModelOpAudit {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation parsedMessage = null;
+        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1430,10 +1289,11 @@ public final class PBModelOpAudit {
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+       * FIXME: review it.
        * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
        * </pre>
        *
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for opType.
        */
       @java.lang.Override public int getOpTypeValue() {
@@ -1442,10 +1302,11 @@ public final class PBModelOpAudit {
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+       * FIXME: review it.
        * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
        * </pre>
        *
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for opType to set.
        * @return This builder for chaining.
        */
@@ -1458,29 +1319,31 @@ public final class PBModelOpAudit {
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+       * FIXME: review it.
        * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
        * </pre>
        *
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @return The opType.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type getOpType() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind getOpType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.valueOf(opType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind result = com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.valueOf(opType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+       * FIXME: review it.
        * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
        * </pre>
        *
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @param value The opType to set.
        * @return This builder for chaining.
        */
-      public Builder setOpType(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Type value) {
+      public Builder setOpType(com.dataomnis.gproto.types.pbmodel.PBModelRole.APIDesc.Kind value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1492,10 +1355,11 @@ public final class PBModelOpAudit {
       /**
        * <pre>
        * -- The type of operation, 2 =&gt; "Write",  3 =&gt; "Read".
+       * FIXME: review it.
        * &#64;inject_tag: json:"op_type" gorm:"column:op_type;"
        * </pre>
        *
-       * <code>.model.Operation.Type op_type = 4 [(.validator.field) = { ... }</code>
+       * <code>.model.APIDesc.Kind op_type = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
@@ -1512,7 +1376,7 @@ public final class PBModelOpAudit {
        * &#64;inject_tag: json:"state" gorm:"column:state;"
        * </pre>
        *
-       * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for state.
        */
       @java.lang.Override public int getStateValue() {
@@ -1524,7 +1388,7 @@ public final class PBModelOpAudit {
        * &#64;inject_tag: json:"state" gorm:"column:state;"
        * </pre>
        *
-       * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for state to set.
        * @return This builder for chaining.
        */
@@ -1540,14 +1404,14 @@ public final class PBModelOpAudit {
        * &#64;inject_tag: json:"state" gorm:"column:state;"
        * </pre>
        *
-       * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
        * @return The state.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State getState() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State getState() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.valueOf(state_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State result = com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.valueOf(state_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State.UNRECOGNIZED : result;
       }
       /**
        * <pre>
@@ -1555,11 +1419,11 @@ public final class PBModelOpAudit {
        * &#64;inject_tag: json:"state" gorm:"column:state;"
        * </pre>
        *
-       * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
        * @param value The state to set.
        * @return This builder for chaining.
        */
-      public Builder setState(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.State value) {
+      public Builder setState(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.State value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1574,7 +1438,7 @@ public final class PBModelOpAudit {
        * &#64;inject_tag: json:"state" gorm:"column:state;"
        * </pre>
        *
-       * <code>.model.Operation.State state = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.OpAudit.State state = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearState() {
@@ -1642,51 +1506,51 @@ public final class PBModelOpAudit {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:model.Operation)
+      // @@protoc_insertion_point(builder_scope:model.OpAudit)
     }
 
-    // @@protoc_insertion_point(class_scope:model.Operation)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:model.OpAudit)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit();
     }
 
-    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Operation>
-        PARSER = new com.google.protobuf.AbstractParser<Operation>() {
+    private static final com.google.protobuf.Parser<OpAudit>
+        PARSER = new com.google.protobuf.AbstractParser<OpAudit>() {
       @java.lang.Override
-      public Operation parsePartialFrom(
+      public OpAudit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Operation(input, extensionRegistry);
+        return new OpAudit(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Operation> parser() {
+    public static com.google.protobuf.Parser<OpAudit> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Operation> getParserForType() {
+    public com.google.protobuf.Parser<OpAudit> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_Operation_descriptor;
+    internal_static_model_OpAudit_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_Operation_fieldAccessorTable;
+      internal_static_model_OpAudit_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1698,29 +1562,29 @@ public final class PBModelOpAudit {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/opaudit.proto\022\005model" +
       "\0323github.com/yu31/protoc-plugin/proto/va" +
-      "lidator.proto\"\305\002\n\tOperation\022\037\n\007user_id\030\001" +
-      " \001(\tB\016\342\337\037\n\022\010\302\001\005\"\000\230\002@\022\020\n\010space_id\030\002 \001(\t\022\034" +
-      "\n\007op_name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0225\n\007op_type\030" +
-      "\004 \001(\0162\025.model.Operation.TypeB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\0224\n\005state\030\005 \001(\0162\026.model.Operation.Sta" +
-      "teB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\0020\000\"*\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005Write\020" +
-      "\001\022\010\n\004Read\020\002\"0\n\005State\022\016\n\nStateUnset\020\000\022\013\n\007" +
-      "Success\020\001\022\n\n\006Failed\020\002Bi\n\"com.dataomnis.g" +
-      "proto.types.pbmodelB\016PBModelOpAuditP\000Z1g" +
-      "ithub.com/DataWorkbench/gproto/xgo/types" +
-      "/pbmodelb\006proto3"
+      "lidator.proto\032\034proto/types/model/role.pr" +
+      "oto\"\223\002\n\007OpAudit\022\037\n\007user_id\030\001 \001(\tB\016\342\337\037\n\022\010" +
+      "\302\001\005\"\000\230\002@\022\020\n\010space_id\030\002 \001(\t\022\034\n\007op_name\030\003 " +
+      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\0223\n\007op_type\030\004 \001(\0162\023.mode" +
+      "l.APIDesc.KindB\r\342\337\037\t\022\007\332\001\0040\000X\001\0222\n\005state\030\005" +
+      " \001(\0162\024.model.OpAudit.StateB\r\342\337\037\t\022\007\332\001\0040\000X" +
+      "\001\022\034\n\007created\030\006 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"0\n\005State" +
+      "\022\016\n\nStateUnset\020\000\022\013\n\007Success\020\001\022\n\n\006Failed\020" +
+      "\002Bi\n\"com.dataomnis.gproto.types.pbmodelB" +
+      "\016PBModelOpAuditP\000Z1github.com/DataWorkbe" +
+      "nch/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelRole.getDescriptor(),
         });
-    internal_static_model_Operation_descriptor =
+    internal_static_model_OpAudit_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_model_Operation_fieldAccessorTable = new
+    internal_static_model_OpAudit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_Operation_descriptor,
+        internal_static_model_OpAudit_descriptor,
         new java.lang.String[] { "UserId", "SpaceId", "OpName", "OpType", "State", "Created", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -1728,6 +1592,7 @@ public final class PBModelOpAudit {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelRole.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

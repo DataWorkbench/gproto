@@ -65,7 +65,7 @@ func (this *ListOpAudits) _xxx_xxx_Validator_Validate_user_id() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ListOpAudits_InEnums_Type = map[pbmodel.Operation_Type]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_ListOpAudits_InEnums_Type = map[pbmodel.APIDesc_Kind]bool{0: true, 1: true, 2: true}
 
 func (this *ListOpAudits) _xxx_xxx_Validator_Validate_type() error {
 	if !(_xxx_xxx_Validator_ListOpAudits_InEnums_Type[this.Type]) {

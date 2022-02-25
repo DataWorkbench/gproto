@@ -176,3 +176,19 @@ func (this *UserQuota) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message model.ProjectQuota
+func (this *ProjectQuota) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message model.WorkspaceQuota
+func (this *WorkspaceQuota) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

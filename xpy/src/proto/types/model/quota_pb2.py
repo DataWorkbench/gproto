@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\014PBModelQuotaP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\'\n\x0eQuotaWorkspace\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaStreamJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaSyncJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaDataSource\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"!\n\x08QuotaUDF\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"D\n\tQuotaFile\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x12\n\nsize_total\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\x11QuotaFlinkCluster\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\n\n\x02\x63u\x18\x02 \x01(\x02\x12\x10\n\x08\x63u_total\x18\x03 \x01(\x02:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaNetwork\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xda\x02\n\tUserQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12(\n\tworkspace\x18\x02 \x01(\x0b\x32\x15.model.QuotaWorkspace\x12)\n\nstream_job\x18\x03 \x01(\x0b\x32\x15.model.QuotaStreamJob\x12+\n\x0b\x64\x61ta_source\x18\x04 \x01(\x0b\x32\x16.model.QuotaDataSource\x12\x1c\n\x03udf\x18\x05 \x01(\x0b\x32\x0f.model.QuotaUDF\x12\x1e\n\x04\x66ile\x18\x06 \x01(\x0b\x32\x10.model.QuotaFile\x12/\n\rflink_cluster\x18\x07 \x01(\x0b\x32\x18.model.QuotaFlinkCluster\x12$\n\x07network\x18\x08 \x01(\x0b\x32\x13.model.QuotaNetwork\x12%\n\x08sync_job\x18\t \x01(\x0b\x32\x13.model.QuotaSyncJobBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1dproto/types/model/quota.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\'\n\x0eQuotaWorkspace\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\'\n\x0eQuotaStreamJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaSyncJob\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"(\n\x0fQuotaDataSource\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"!\n\x08QuotaUDF\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"D\n\tQuotaFile\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x12\n\nsize_total\x18\x03 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"H\n\x11QuotaFlinkCluster\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\n\n\x02\x63u\x18\x02 \x01(\x02\x12\x10\n\x08\x63u_total\x18\x03 \x01(\x02:\x06\xca\xb2\x04\x02\n\x00\"%\n\x0cQuotaNetwork\x12\r\n\x05limit\x18\x01 \x01(\x03:\x06\xca\xb2\x04\x02\n\x00\"\xda\x02\n\tUserQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12(\n\tworkspace\x18\x02 \x01(\x0b\x32\x15.model.QuotaWorkspace\x12)\n\nstream_job\x18\x03 \x01(\x0b\x32\x15.model.QuotaStreamJob\x12+\n\x0b\x64\x61ta_source\x18\x04 \x01(\x0b\x32\x16.model.QuotaDataSource\x12\x1c\n\x03udf\x18\x05 \x01(\x0b\x32\x0f.model.QuotaUDF\x12\x1e\n\x04\x66ile\x18\x06 \x01(\x0b\x32\x10.model.QuotaFile\x12/\n\rflink_cluster\x18\x07 \x01(\x0b\x32\x18.model.QuotaFlinkCluster\x12$\n\x07network\x18\x08 \x01(\x0b\x32\x13.model.QuotaNetwork\x12%\n\x08sync_job\x18\t \x01(\x0b\x32\x13.model.QuotaSyncJob\"1\n\x0cProjectQuota\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x10\n\x08space_id\x18\x02 \x01(\t\"3\n\x0eWorkspaceQuota\x12\x10\n\x08space_id\x18\x02 \x01(\t\x12\x0f\n\x07user_id\x18\x01 \x01(\tBg\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelQuotaP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
@@ -398,6 +398,84 @@ _USERQUOTA = _descriptor.Descriptor(
   serialized_end=817,
 )
 
+
+_PROJECTQUOTA = _descriptor.Descriptor(
+  name='ProjectQuota',
+  full_name='model.ProjectQuota',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='model.ProjectQuota.user_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.ProjectQuota.space_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=819,
+  serialized_end=868,
+)
+
+
+_WORKSPACEQUOTA = _descriptor.Descriptor(
+  name='WorkspaceQuota',
+  full_name='model.WorkspaceQuota',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.WorkspaceQuota.space_id', index=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='model.WorkspaceQuota.user_id', index=1,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=870,
+  serialized_end=921,
+)
+
 _USERQUOTA.fields_by_name['workspace'].message_type = _QUOTAWORKSPACE
 _USERQUOTA.fields_by_name['stream_job'].message_type = _QUOTASTREAMJOB
 _USERQUOTA.fields_by_name['data_source'].message_type = _QUOTADATASOURCE
@@ -415,6 +493,8 @@ DESCRIPTOR.message_types_by_name['QuotaFile'] = _QUOTAFILE
 DESCRIPTOR.message_types_by_name['QuotaFlinkCluster'] = _QUOTAFLINKCLUSTER
 DESCRIPTOR.message_types_by_name['QuotaNetwork'] = _QUOTANETWORK
 DESCRIPTOR.message_types_by_name['UserQuota'] = _USERQUOTA
+DESCRIPTOR.message_types_by_name['ProjectQuota'] = _PROJECTQUOTA
+DESCRIPTOR.message_types_by_name['WorkspaceQuota'] = _WORKSPACEQUOTA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 QuotaWorkspace = _reflection.GeneratedProtocolMessageType('QuotaWorkspace', (_message.Message,), {
@@ -479,6 +559,20 @@ UserQuota = _reflection.GeneratedProtocolMessageType('UserQuota', (_message.Mess
   # @@protoc_insertion_point(class_scope:model.UserQuota)
   })
 _sym_db.RegisterMessage(UserQuota)
+
+ProjectQuota = _reflection.GeneratedProtocolMessageType('ProjectQuota', (_message.Message,), {
+  'DESCRIPTOR' : _PROJECTQUOTA,
+  '__module__' : 'proto.types.model.quota_pb2'
+  # @@protoc_insertion_point(class_scope:model.ProjectQuota)
+  })
+_sym_db.RegisterMessage(ProjectQuota)
+
+WorkspaceQuota = _reflection.GeneratedProtocolMessageType('WorkspaceQuota', (_message.Message,), {
+  'DESCRIPTOR' : _WORKSPACEQUOTA,
+  '__module__' : 'proto.types.model.quota_pb2'
+  # @@protoc_insertion_point(class_scope:model.WorkspaceQuota)
+  })
+_sym_db.RegisterMessage(WorkspaceQuota)
 
 
 DESCRIPTOR._options = None

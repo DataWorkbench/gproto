@@ -23,24 +23,24 @@ public final class PBResponseOpAuditManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation> 
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit> 
         getInfosList();
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getInfos(int index);
+    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getInfos(int index);
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
     int getInfosCount();
     /**
@@ -48,18 +48,18 @@ public final class PBResponseOpAuditManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder> 
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder> 
         getInfosOrBuilderList();
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder getInfosOrBuilder(
+    com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder getInfosOrBuilder(
         int index);
 
     /**
@@ -125,11 +125,11 @@ public final class PBResponseOpAuditManage {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation>();
+                infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit>();
                 mutable_bitField0_ |= 0x00000001;
               }
               infos_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.parser(), extensionRegistry));
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.parser(), extensionRegistry));
               break;
             }
             case 16: {
@@ -173,16 +173,16 @@ public final class PBResponseOpAuditManage {
     }
 
     public static final int INFOS_FIELD_NUMBER = 1;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation> infos_;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit> infos_;
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation> getInfosList() {
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit> getInfosList() {
       return infos_;
     }
     /**
@@ -190,10 +190,10 @@ public final class PBResponseOpAuditManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder> 
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder> 
         getInfosOrBuilderList() {
       return infos_;
     }
@@ -202,7 +202,7 @@ public final class PBResponseOpAuditManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
     @java.lang.Override
     public int getInfosCount() {
@@ -213,10 +213,10 @@ public final class PBResponseOpAuditManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getInfos(int index) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getInfos(int index) {
       return infos_.get(index);
     }
     /**
@@ -224,10 +224,10 @@ public final class PBResponseOpAuditManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.Operation infos = 1;</code>
+     * <code>repeated .model.OpAudit infos = 1;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder getInfosOrBuilder(
+    public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder getInfosOrBuilder(
         int index) {
       return infos_.get(index);
     }
@@ -611,26 +611,26 @@ public final class PBResponseOpAuditManage {
       }
       private int bitField0_;
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation> infos_ =
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit> infos_ =
         java.util.Collections.emptyList();
       private void ensureInfosIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation>(infos_);
+          infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit>(infos_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder> infosBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder> infosBuilder_;
 
       /**
        * <pre>
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation> getInfosList() {
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit> getInfosList() {
         if (infosBuilder_ == null) {
           return java.util.Collections.unmodifiableList(infos_);
         } else {
@@ -642,7 +642,7 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public int getInfosCount() {
         if (infosBuilder_ == null) {
@@ -656,9 +656,9 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation getInfos(int index) {
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit getInfos(int index) {
         if (infosBuilder_ == null) {
           return infos_.get(index);
         } else {
@@ -670,10 +670,10 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder setInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -691,10 +691,10 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder setInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.set(index, builderForValue.build());
@@ -709,9 +709,9 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public Builder addInfos(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation value) {
+      public Builder addInfos(com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -729,10 +729,10 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder addInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation value) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -750,10 +750,10 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder addInfos(
-          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder builderForValue) {
+          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.add(builderForValue.build());
@@ -768,10 +768,10 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder addInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.add(index, builderForValue.build());
@@ -786,10 +786,10 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder addAllInfos(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation> values) {
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit> values) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -805,7 +805,7 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder clearInfos() {
         if (infosBuilder_ == null) {
@@ -822,7 +822,7 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
       public Builder removeInfos(int index) {
         if (infosBuilder_ == null) {
@@ -839,9 +839,9 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder getInfosBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder getInfosBuilder(
           int index) {
         return getInfosFieldBuilder().getBuilder(index);
       }
@@ -850,9 +850,9 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder getInfosOrBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder getInfosOrBuilder(
           int index) {
         if (infosBuilder_ == null) {
           return infos_.get(index);  } else {
@@ -864,9 +864,9 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder> 
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder> 
            getInfosOrBuilderList() {
         if (infosBuilder_ != null) {
           return infosBuilder_.getMessageOrBuilderList();
@@ -879,41 +879,41 @@ public final class PBResponseOpAuditManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder addInfosBuilder() {
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder addInfosBuilder() {
         return getInfosFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDefaultInstance());
+            com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDefaultInstance());
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder addInfosBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder addInfosBuilder(
           int index) {
         return getInfosFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.getDefaultInstance());
+            index, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.getDefaultInstance());
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.Operation infos = 1;</code>
+       * <code>repeated .model.OpAudit infos = 1;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder> 
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder> 
            getInfosBuilderList() {
         return getInfosFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder> 
+          com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder> 
           getInfosFieldBuilder() {
         if (infosBuilder_ == null) {
           infosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.Operation.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OperationOrBuilder>(
+              com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAudit.Builder, com.dataomnis.gproto.types.pbmodel.PBModelOpAudit.OpAuditOrBuilder>(
                   infos_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1034,12 +1034,12 @@ public final class PBResponseOpAuditManage {
     java.lang.String[] descriptorData = {
       "\n)proto/types/response/opaudit_manage.pr" +
       "oto\022\010response\032\037proto/types/model/opaudit" +
-      ".proto\"A\n\014ListOpAudits\022\037\n\005infos\030\001 \003(\0132\020." +
-      "model.Operation\022\020\n\010has_more\030\002 \001(\010Bx\n%com" +
-      ".dataomnis.gproto.types.pbresponseB\027PBRe" +
-      "sponseOpAuditManageP\000Z4github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbresponseb\006pro" +
-      "to3"
+      ".proto\"?\n\014ListOpAudits\022\035\n\005infos\030\001 \003(\0132\016." +
+      "model.OpAudit\022\020\n\010has_more\030\002 \001(\010Bx\n%com.d" +
+      "ataomnis.gproto.types.pbresponseB\027PBResp" +
+      "onseOpAuditManageP\000Z4github.com/DataWork" +
+      "bench/gproto/xgo/types/pbresponseb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

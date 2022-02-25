@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
 from proto.types.model import opaudit_pb2 as proto_dot_types_dot_model_dot_opaudit__pb2
+from proto.types.model import role_pb2 as proto_dot_types_dot_model_dot_role__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\026PBRequestOpAuditManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/request/opaudit_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1fproto/types/model/opaudit.proto\"2\n\nAddOpAudit\x12$\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.OperationB\x04\xe2\xdf\x1f\x00\"\xed\x02\n\x0cListOpAudits\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12)\n\x07sort_by\x18\x03 \x01(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xc2\x01\x0fJ\x00J\x02idJ\x07\x63reated\x12\x15\n\x07reverse\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1d\n\x07user_id\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x16\n\x08space_id\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12\x30\n\x04type\x18\x07 \x01(\x0e\x32\x15.model.Operation.TypeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x14\n\x06\x61\x63tion\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12+\n\x05state\x18\t \x01(\x0e\x32\x16.model.Operation.StateB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\n \x01(\x03\x42\x04\xe2\xdf\x1f\x00\x12\x13\n\x05\x65nded\x18\x0b \x01(\x03\x42\x04\xe2\xdf\x1f\x00\x42u\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestOpAuditManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n(proto/types/request/opaudit_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1fproto/types/model/opaudit.proto\x1a\x1cproto/types/model/role.proto\"0\n\nAddOpAudit\x12\"\n\x04info\x18\x01 \x01(\x0b\x32\x0e.model.OpAuditB\x04\xe2\xdf\x1f\x00\"\xe9\x02\n\x0cListOpAudits\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12)\n\x07sort_by\x18\x03 \x01(\tB\x18\xe2\xdf\x1f\x14\x12\x12\xc2\x01\x0fJ\x00J\x02idJ\x07\x63reated\x12\x15\n\x07reverse\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1d\n\x07user_id\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x88\x02\x41\x12\x16\n\x08space_id\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\x12.\n\x04type\x18\x07 \x01(\x0e\x32\x13.model.APIDesc.KindB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12\x14\n\x06\x61\x63tion\x18\x08 \x01(\tB\x04\xe2\xdf\x1f\x00\x12)\n\x05state\x18\t \x01(\x0e\x32\x14.model.OpAudit.StateB\x04\xe2\xdf\x1f\x00\x12\x15\n\x07started\x18\n \x01(\x03\x42\x04\xe2\xdf\x1f\x00\x12\x13\n\x05\x65nded\x18\x0b \x01(\x03\x42\x04\xe2\xdf\x1f\x00\x42u\n$com.dataomnis.gproto.types.pbrequestB\x16PBRequestOpAuditManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_opaudit__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_opaudit__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_role__pb2.DESCRIPTOR,])
 
 
 
@@ -56,8 +57,8 @@ _ADDOPAUDIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=191,
-  serialized_end=241,
+  serialized_start=221,
+  serialized_end=269,
 )
 
 
@@ -158,13 +159,13 @@ _LISTOPAUDITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=244,
-  serialized_end=609,
+  serialized_start=272,
+  serialized_end=633,
 )
 
-_ADDOPAUDIT.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPERATION
-_LISTOPAUDITS.fields_by_name['type'].enum_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPERATION_TYPE
-_LISTOPAUDITS.fields_by_name['state'].enum_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPERATION_STATE
+_ADDOPAUDIT.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPAUDIT
+_LISTOPAUDITS.fields_by_name['type'].enum_type = proto_dot_types_dot_model_dot_role__pb2._APIDESC_KIND
+_LISTOPAUDITS.fields_by_name['state'].enum_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPAUDIT_STATE
 DESCRIPTOR.message_types_by_name['AddOpAudit'] = _ADDOPAUDIT
 DESCRIPTOR.message_types_by_name['ListOpAudits'] = _LISTOPAUDITS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

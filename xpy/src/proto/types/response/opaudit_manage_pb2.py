@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\027PBResponseOpAuditManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)proto/types/response/opaudit_manage.proto\x12\x08response\x1a\x1fproto/types/model/opaudit.proto\"A\n\x0cListOpAudits\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Operation\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x42x\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseOpAuditManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n)proto/types/response/opaudit_manage.proto\x12\x08response\x1a\x1fproto/types/model/opaudit.proto\"?\n\x0cListOpAudits\x12\x1d\n\x05infos\x18\x01 \x03(\x0b\x32\x0e.model.OpAudit\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x42x\n%com.dataomnis.gproto.types.pbresponseB\x17PBResponseOpAuditManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_opaudit__pb2.DESCRIPTOR,])
 
@@ -62,10 +62,10 @@ _LISTOPAUDITS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=88,
-  serialized_end=153,
+  serialized_end=151,
 )
 
-_LISTOPAUDITS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPERATION
+_LISTOPAUDITS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_opaudit__pb2._OPAUDIT
 DESCRIPTOR.message_types_by_name['ListOpAudits'] = _LISTOPAUDITS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

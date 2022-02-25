@@ -11,6 +11,7 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
 	strings "strings"
+	utf8 "unicode/utf8"
 )
 
 func (this *ListSystemRoles) _xxx_xxx_Validator_Validate_space_id() error {
@@ -121,35 +122,99 @@ func (this *DeleteMembers) Validate() error {
 	return nil
 }
 
-func (this *UpsertMember) _xxx_xxx_Validator_Validate_space_id() error {
+func (this *UpsertMembers) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
-		return protovalidator.FieldError1("UpsertMember", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+		return protovalidator.FieldError1("UpsertMembers", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
 	}
 	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
-		return protovalidator.FieldError1("UpsertMember", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+		return protovalidator.FieldError1("UpsertMembers", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
 	}
 	return nil
 }
 
-func (this *UpsertMember) _xxx_xxx_Validator_Validate_user_id() error {
-	if !(len(this.UserId) < 65) {
-		return protovalidator.FieldError1("UpsertMember", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
+func (this *UpsertMembers) _xxx_xxx_Validator_Validate_user_ids() error {
+	if !(len(this.UserIds) > 0) {
+		return protovalidator.FieldError1("UpsertMembers", "the length of field 'user_ids' must be greater than '0'", strconv.Itoa(len(this.UserIds)))
+	}
+	if !(len(this.UserIds) <= 100) {
+		return protovalidator.FieldError1("UpsertMembers", "the length of field 'user_ids' must be less than or equal to '100'", strconv.Itoa(len(this.UserIds)))
 	}
 	return nil
 }
 
-func (this *UpsertMember) _xxx_xxx_Validator_Validate_role_ids() error {
+func (this *UpsertMembers) _xxx_xxx_Validator_Validate_role_ids() error {
 	if !(len(this.RoleIds) > 0) {
-		return protovalidator.FieldError1("UpsertMember", "the length of field 'role_ids' must be greater than '0'", strconv.Itoa(len(this.RoleIds)))
+		return protovalidator.FieldError1("UpsertMembers", "the length of field 'role_ids' must be greater than '0'", strconv.Itoa(len(this.RoleIds)))
 	}
 	if !(len(this.RoleIds) <= 10) {
-		return protovalidator.FieldError1("UpsertMember", "the length of field 'role_ids' must be less than or equal to '10'", strconv.Itoa(len(this.RoleIds)))
+		return protovalidator.FieldError1("UpsertMembers", "the length of field 'role_ids' must be less than or equal to '10'", strconv.Itoa(len(this.RoleIds)))
 	}
 	return nil
 }
 
-// Set default value for message request.UpsertMember
-func (this *UpsertMember) Validate() error {
+func (this *UpsertMembers) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("UpsertMembers", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
+	}
+	return nil
+}
+
+// Set default value for message request.UpsertMembers
+func (this *UpsertMembers) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_ids(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_role_ids(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *UpdateMember) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("UpdateMember", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("UpdateMember", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *UpdateMember) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(len(this.UserId) < 65) {
+		return protovalidator.FieldError1("UpdateMember", "the byte length of field 'user_id' must be less than '65'", protovalidator.StringByteLenToString(this.UserId))
+	}
+	return nil
+}
+
+func (this *UpdateMember) _xxx_xxx_Validator_Validate_role_ids() error {
+	if !(len(this.RoleIds) > 0) {
+		return protovalidator.FieldError1("UpdateMember", "the length of field 'role_ids' must be greater than '0'", strconv.Itoa(len(this.RoleIds)))
+	}
+	if !(len(this.RoleIds) <= 10) {
+		return protovalidator.FieldError1("UpdateMember", "the length of field 'role_ids' must be less than or equal to '10'", strconv.Itoa(len(this.RoleIds)))
+	}
+	return nil
+}
+
+func (this *UpdateMember) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("UpdateMember", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
+	}
+	return nil
+}
+
+// Set default value for message request.UpdateMember
+func (this *UpdateMember) Validate() error {
 	if this == nil {
 		return nil
 	}
@@ -160,6 +225,9 @@ func (this *UpsertMember) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_role_ids(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	return nil
