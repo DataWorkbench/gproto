@@ -52,13 +52,12 @@ message ListOpAudits {
   string space_id = 6 [(validator.field) = {}];
 
   // Querying conditions. Not required.
-  // @inject_tag: json:"type" form:"type"
-  // FIXME:
-  model.APIDesc.Kind type = 7 [(validator.field).tags.enum = { in_enums: true }];
+  // @inject_tag: json:"perm_type" form:"perm_type"
+  model.ProjectAPI.PermType perm_type = 7 [(validator.field).tags.enum = { in_enums: true }];
 
   // Querying conditions. Not required.
-  // @inject_tag: json:"action" form:"action"
-  string action = 8 [(validator.field) = {}];
+  // @inject_tag: json:"api_name" form:"api_name"
+  string api_name = 8 [(validator.field) = {}];
 
   // Querying conditions. Not required.
   // @inject_tag: json:"state" form:"state"

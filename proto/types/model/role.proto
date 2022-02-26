@@ -11,9 +11,82 @@ option java_outer_classname = "PBModelRole";
 option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
-// Module declares the module information.
-message Module {
+// TODO: reserved, unused on present.
+message CustomRole {
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Enabled = 2;
+  }
+
+  // The workspace id.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // The role id.
+  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
+  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The name of role. unique in a workspace.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3 [(validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 128 }];
+
+  // Description for this Role. Not required. Max Charset Length: 1024.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 4 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
+
+  // Status. 1 => "Deleted" 2 => "Enabled"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+
+  // The id list of project module that separated by commas. eg: 'pmo-xxx,pmo-xxx'
+  // @inject_tag: json:"module_ids" gorm:"column:module_ids;"
+  string module_ids = 6 [ (validator.field).tags.string = { byte_len_lte: 1024 } ];
+
+  // Allowed operation kind for specified modules.
+  // @inject_tag: json:"perm_type" gorm:"column:perm_type;"
+  ProjectAPI.PermType perm_type = 7 [
+    (validator.field).check_if = { field: "module_ids", tags: { string: { ne: "" } } },
+    (validator.field).tags.enum = { gt: 0, in_enums: true }
+  ];
+
+  // The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
+  // @inject_tag: json:"api_names" gorm:"column:api_names;"
+  string api_names = 8;
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 9;
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 10;
+}
+
+// SystemRole declares the information of built-in role.
+message SystemRole {
+  enum Type {
+    TypeUnset = 0; // useless.
+    SpaceAdmin = 1;
+    SpaceDeveloper = 2;
+    SpaceOperator = 3;
+    SpaceVisitor = 4;
+  }
+
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_eq:20, prefix: "ros-" } ];
+
+  // @inject_tag: json:"type"
+  Type type = 2 [ (validator.field).tags.enum = {gt: 0, in_enums: true } ];
+
+  // @inject_tag: json:"name"
+  string name = 3 [(validator.field).tags.string = { ne: "" }];
+}
+
+// ProjectModule declares the module information in the project.
+message ProjectModule {
   enum Classify {
     ClassifyUnSet = 0;
     // Module In project.
@@ -39,88 +112,61 @@ message Module {
     SyncJobInstanceManage = 19;
   }
 
+  // The module id.
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "pmo-" }];
+
   // The module name.
-  // @inject_tag: json:"name"
-  Classify name = 1 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  // @inject_tag: json:"classify"
+  Classify classify = 2 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // DisplayName is the display name of this Module. Is user readable.
-  // @inject_tag: json:"display_name"
-  string display_name = 2 [ (validator.field).tags.string = { ne: "" } ];
-}
+  // @inject_tag: json:"name"
+  string name = 3 [ (validator.field).tags.string = { ne: "" } ];
 
-//// SystemRole declares the information of built-in role.
-//message SystemRole {
-//  enum Type {
-//    TypeUnset = 0; // useless.
-//    SpaceOwner = 1;
-//    SpaceAdmin = 2;
-//    SpaceDeveloper = 3;
-//    SpaceOperator = 4;
-//    SpaceVisitor = 5;
-//  }
-//  // @inject_tag: json:"type"
-//  Type type = 1 [ (validator.field).tags.enum = {gt: 0, in_enums: true } ];
-//
-//  // @inject_tag: json:"name"
-//  string name = 2 [(validator.field).tags.string = { ne: "" }];
-//}
-
-// PermissionSystemRole declares the permission for system roles.
-message PermissionSystemRole {
-  // The role id.
-  // @inject_tag: json:"role_id"
-  string role_id = 1;
-
-  // The role name.
-  // @inject_tag: json:"role_name"
-  string role_name = 2;
-
-  // @inject_tag: json:"allowed"
-  bool allowed = 3;
+  // ApiList represents the list of APIs belonging to this module
+  // @inject_tag: json:"api_lists"
+  repeated ProjectAPI api_lists = 4;
 }
 
 // APIDesc is the information of API description.
-message APIDesc {
-  enum Kind {
-    TypeUnset = 0; // is useless.
+message ProjectAPI {
+  enum PermType {
+    PermTypeUnset = 0; // is useless.
     Write = 1;
     Read = 2;
   }
 
-  // Name represents the action of this API. Default is the API Handler Func Name.
+  message Permission {
+    // The system role info.
+    // @inject_tag: json:"system_role"
+    SystemRole system_role = 1;
+
+    // Indicates whether the specified role allows access to this API
+    // @inject_tag: json:"allowed"
+    bool allowed = 2;
+  }
+
+  // APIName represents the action of this API. Default is the API Handler Func Name.
   // It cannot be modified after publishing.
-  // @inject_tag: json:"name"
-  string name = 1 [ (validator.field).tags.string = { ne: "" } ];
+  // @inject_tag: json:"api_name"
+  string api_name = 1 [ (validator.field).tags.string = { ne: "" } ];
 
   // DisplayName is the display of this API. Is user readable.
   // @inject_tag: json:"display_name"
   string display_name = 2 [ (validator.field).tags.string = { ne: "" } ];
 
-  // Kind is the api operation type. 1 => "write" 2 => "read"
+  // PermType is the api permission type. 1 => "Write" 2 => "Read"
   // Default type: HTTP Method GET/OPTIONS is `read`, PUT/POST/DELETE/PATCH is `write`
-  // @inject_tag: json:"kind"
-  Kind kind = 3 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  // @inject_tag: json:"perm_type"
+  PermType perm_type = 3 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
-  // Permissions is permission of this API.
+  // Permissions for defines permission of this API.
   // @inject_tag: json:"permissions"
-  repeated PermissionSystemRole permissions = 4 [ (validator.field).tags.repeated = { len_gt: 0 } ];
+  repeated Permission permissions = 4 [ (validator.field).tags.repeated = { len_gt: 0 } ];
 
-  // Module is set by func registerHandler. Only used to return module info to client.
-  // @inject_tag: json:"-"
-  Module module = 5 [ (validator.field).tags.message = { not_null: true } ] ;
-
-  // SystemRoles is set by func registerHandler. Only used to check permission.
-  // @inject_tag: json:"-"
+  // SystemRoles is a map to defines the permissions of this API.
+  // It set by func registerHandler. Only used to check permission.
+  // @inject_tag: json:"-" swaggerignore:"true"
   map<string, bool> system_roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
-}
-
-// PermissionModule for declares the information of a module.
-message PermissionModule {
-  // The module info.
-  // @inject_tag: json:"module"
-  Module module = 1 [ (validator.field).tags.message = { not_null: true } ];
-
-  // A list of API.
-  // @inject_tag: json:"api_list"
-  repeated APIDesc api_list = 2;
 }

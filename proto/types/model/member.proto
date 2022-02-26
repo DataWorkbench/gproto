@@ -15,69 +15,6 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/account.proto";
 import "proto/types/model/role.proto";
 
-
-// The Role schema.
-message Role {
-  enum Type {
-    TypeUnset = 0;
-    System = 1;
-    Custom = 2;
-  }
-
-  enum Status {
-    StatusUnset = 0;
-    Deleted = 1;
-    Enabled = 2;
-  }
-
-  // The workspace id.
-  // @inject_tag: json:"space_id" gorm:"column:space_id;"
-  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
-
-  // The role id.
-  // @inject_tag: json:"id" gorm:"column:id;primarykey;"
-  string id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
-
-  // The name of role. unique in a workspace.
-  // @inject_tag: json:"name" gorm:"column:name;"
-  string name = 3 [(validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 128 }];
-
-  // Type. 1 => "System" 2 => "Custom"
-  // @inject_tag: json:"type" gorm:"column:type;"
-  Type type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-
-  // Status. 1 => "Deleted" 2 => "Enabled"
-  // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
-
-  // Description for this Role. Not required. Max Charset Length: 1024.
-  // @inject_tag: json:"desc" gorm:"column:desc;"
-  string desc = 6 [ (validator.field).tags.string = { char_len_lte: 1024 } ];
-
-  // The list of module name that separated by commas. eg: 'SpaceManage,RoleManage'
-  // @inject_tag: json:"modules" gorm:"column:modules;"
-  string modules = 7;
-
-  // Allowed operation kind for specified modules.
-  // @inject_tag: json:"op_kind" gorm:"column:op_kind;"
-  APIDesc.Kind op_kind = 8 [
-    (validator.field).check_if = { field: "modules", tags: { string: { ne: "" } } },
-    (validator.field).tags.enum = { gt: 0, in_enums: true }
-  ];
-
-  // The list of api name that separated by commas. eg: 'ListWorkspace,CreateWorkspace'
-  // @inject_tag: json:"apis" gorm:"column:apis;"
-  string apis = 9;
-
-  // Timestamp of create time.
-  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 10;
-
-  // Timestamp of update time.
-  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 11;
-}
-
 // The workspace member schema.
 message Member {
   enum Status {
@@ -91,29 +28,43 @@ message Member {
 
   // The user id in account-server.
   // @inject_tag: json:"user_id" gorm:"column:user_id;primaryKey;"
-  string user_id = 3 [ (validator.field).tags.string = { byte_len_lte: 64} ];
-
-  // The list of role id that separated by commas. eg: 'rs-1001,rs-1002'
-  // @inject_tag: json:"role_ids" gorm:"column:role_ids;"
-  string role_ids = 4;
+  string user_id = 2 [ (validator.field).tags.string = { byte_len_lte: 64} ];
 
   // The status of member. 1 => "Deleted" 2 => "Enabled". Ignore it for client.
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  Status status = 3 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // Description for member. Max charset: 1024.
+  // @inject_tag: json:"desc" gorm:"column:desc;"
+  string desc = 4 [ (validator.field).tags.string = { char_len_lte:1024 }];
+
+  // The id lists of system role. Multiple id separated by commas, eg: "ros-1,ros-2"
+  // @inject_tag: json:"system_role_ids" gorm:"column:system_role_ids;"
+  string system_role_ids = 5;
+
+  // The id lists of custom role. Multiple id separated by commas, eg: "roc-1,roc-2"
+  // A member can have up to 100 custom roles.
+  // TODO: reserved field. unused on present.
+  // @inject_tag: json:"custom_role_ids" gorm:"column:custom_role_ids;"
+  string custom_role_ids = 6;
+
+  // The user-id of created this network.
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 7 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lte: 65 } ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 6 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 8 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 7 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 updated = 9 [ (validator.field).tags.int = { gt: 0 } ];
 
   // The user detailed information. Not in db. Only used to Describe Or Lists.
   // @inject_tag: json:"user_info" gorm:"-"
-  User user_info = 8;
+  User user_info = 10;
 
-  // The lis of role info.
-  // @inject_tag: json:"roles" gorm:"-"
-  repeated Role roles = 9;
+  // The lis of system role info.
+  // @inject_tag: json:"system_roles" gorm:"-"
+  repeated SystemRole system_roles = 11;
 }

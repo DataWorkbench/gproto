@@ -41,5 +41,5 @@ message DescribeWorkspace {
 }
 
 message CheckPermission {
-  model.Workspace info = 1;
+  model.Workspace workspace = 1;
 }

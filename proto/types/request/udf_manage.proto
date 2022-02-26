@@ -67,26 +67,34 @@ message CreateUDF {
   // @inject_tag: json:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
+  // The request user id.
+  // @inject_tag: json:"created_by" swaggerignore:"true"
+  string created_by = 2 [(validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 }];
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 3 [(validator.field).tags.string = { ne: "" } ];
+
   // UDF name unique within a space.
   // @inject_tag: json:"name"
-  string name = 2 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 65 } ];
+  string name = 4 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 65 } ];
 
   // description this udf.
   // @inject_tag: json:"desc"
-  string desc = 3 [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
+  string desc = 5 [ (validator.field).tags.string = {  byte_len_lte: 256 } ];
 
   // UDF Type; Optional Values: 1=>UDF, 2=>UDTF 3=> UDTTF.
   // @inject_tag: json:"type"
-  model.UDF.Type type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  model.UDF.Type type = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // language of UDF; Optional Values: 1 => Scala 2=> Java 3=> Python
   // @inject_tag: json:"language"
-  model.UDF.Language language = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  model.UDF.Language language = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // The id of resource. Used with language of JAVA.
   // Is required if language == 2
   // @inject_tag: json:"file_id" gorm:"column:file_id;"
-  string file_id = 6 [
+  string file_id = 8 [
     (validator.field).check_if = { field: "language", tags: { enum: { eq: 2 } } },
     (validator.field).tags.string = { byte_len_eq: 20, prefix: "res-" }
   ];
@@ -94,22 +102,14 @@ message CreateUDF {
   // The code. Used with language of Python and Scala.
   // Is required if language == (1 or 3). Min Charset Length: 1, Max Charset Length: 20000.
   // @inject_tag: json:"code" gorm:"column:code;"
-  string code = 7 [
+  string code = 9 [
     (validator.field).check_if = { field: "language", tags: { enum: { in: [1, 3] } } },
     (validator.field).tags.string = { char_len_gt: 0, char_len_lte: 20000 }
   ];
 
   // usage sample for this udf
   // @inject_tag: json:"usage_sample"
-  string usage_sample = 8 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
-
-  // Udf owner.
-  // @inject_tag: json:"created_by"
-  string created_by = 9 [(validator.field).tags.string = { ne: "" }];
-
-  // The owner of workspace, only used to check quota. Set by APIServer.
-  // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 10 [(validator.field).tags.string = { ne: "" } ];
+  string usage_sample = 10 [ (validator.field).tags.string = { char_len_lte: 2000 } ];
 }
 
 // UpdateUDF used as request parameters for RPC and HTTP(based on Body)

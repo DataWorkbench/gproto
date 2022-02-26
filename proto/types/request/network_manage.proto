@@ -65,23 +65,23 @@ message CreateNetwork {
 
   // The user-id of created this cluster. It fixed to request user id.
   // @inject_tag: json:"created_by" swaggerignore:"true"
-  string created_by = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
-
-  // Network Name. Is required.
-  // @inject_tag: json:"name"
-  string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
-
-  // VPC's route id, Is required.
-  // @inject_tag: json:"router_id"
-  string router_id = 4 [ (validator.field).tags.string = { prefix: "rtr-" } ];
-
-  // vxnet id. Is required.
-  // @inject_tag: json:"vxnet_id"
-  string vxnet_id = 5 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
+  string created_by = 2 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
 
   // The owner of workspace, only used to check quota. Set by APIServer.
   // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 6 [(validator.field).tags.string = { ne: "" } ];
+  string space_owner = 3 [(validator.field).tags.string = { ne: "" } ];
+
+  // Network Name. Is required.
+  // @inject_tag: json:"name"
+  string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
+
+  // VPC's route id, Is required.
+  // @inject_tag: json:"router_id"
+  string router_id = 5 [ (validator.field).tags.string = { prefix: "rtr-" } ];
+
+  // vxnet id. Is required.
+  // @inject_tag: json:"vxnet_id"
+  string vxnet_id = 6 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
 }
 
 message UpdateNetwork {

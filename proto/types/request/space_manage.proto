@@ -139,12 +139,21 @@ message DescribeWorkspace {
 
 // CheckPermission used as a request parameters for RPC.
 message CheckPermission {
-  string req_user_id         = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
-  string space_id            = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-  string module_name         = 3 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
-  string api_name                = 5 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
-  model.APIDesc.Kind op_type     = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // The user id of this request.
+  string req_user_id = 1 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lt: 65 } ];
 
-  // key(role_id) => (IsAllowed)
+  // The workspace id of this request.
+  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The id of module that this api belongs.
+  string module_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "pmo-" } ];
+
+  // The permission type of this api.
+  model.ProjectAPI.PermType perm_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // The name of this api.
+  string api_name = 5 [ (validator.field).tags.string = { byte_len_gt: 0  } ];
+
+  // The permissions of system roles. key(role_id) => (Allowed)
   map<string, bool> system_roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
 }

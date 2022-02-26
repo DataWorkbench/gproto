@@ -12,21 +12,8 @@ option java_multiple_files = false;
 
 //import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
-//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 import "proto/types/model/member.proto";
-
-// ListSystemRoles used as reply parameters in RPC or response body in HTTP.
-message ListSystemRoles {
-  // @inject_tag: json:"infos"
-  repeated model.Role infos = 1;
-
-  // @inject_tag: json:"total"
-  int64 total = 2;
-
-  // @inject_tag: json:"has_more"
-  bool has_more = 3;
-}
 
 // ListMembers used as reply parameters in RPC or response body in HTTP.
 message ListMembers {
@@ -38,4 +25,9 @@ message ListMembers {
 
   // @inject_tag: json:"has_more"
   bool has_more = 3;
+}
+
+// DescribeMember used as reply parameters in RPC or response body in HTTP.
+message DescribeMember {
+  model.Member info = 1;
 }

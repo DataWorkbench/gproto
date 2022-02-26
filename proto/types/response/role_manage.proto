@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseRoleManage";
+option java_multiple_files = false;
+
+//import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+import "proto/types/model/role.proto";
+
+// ListSystemRoles for return a list of system roles.
+// Only used as response body in HTTP.
+message ListSystemRoles {
+  // @inject_tag: json:"infos"
+  repeated model.SystemRole infos = 1;
+}
+
+// ListSystemRolePermissions for return a list of permissions.
+// Only used as response body in HTTP.
+message ListSystemRolePermissions {
+  // @inject_tag: json:"infos"
+  repeated model.ProjectModule infos = 1;
+}

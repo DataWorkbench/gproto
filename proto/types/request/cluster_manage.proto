@@ -103,45 +103,45 @@ message CreateFlinkCluster {
 
   // The user-id of created this cluster. It fixed to request user id.
   // @inject_tag: json:"created_by" swaggerignore:"true"
-  string created_by = 2 [ (validator.field).tags.string = { byte_len_lt: 65 } ];
+  string created_by = 2 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
+
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 3 [(validator.field).tags.string = { ne: "" } ];
 
   // Cluster Name. Is required.
   // @inject_tag: json:"name"
-  string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
+  string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
   // Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
   // @inject_tag: json:"version"
-  string version = 4 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11"] } ];
+  string version = 5 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11"] } ];
 
   // resource config.
   //
   // Flink task number for TaskManager. Is required, Min 1, Max 24
   // @inject_tag: json:"task_num"
-  int32 task_num = 5 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
+  int32 task_num = 6 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
 
   // Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"job_cu"
-  float job_cu = 6 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float job_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"task_cu"
-  float task_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float task_cu = 8 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Network config. Is required.
   // @inject_tag: json:"network_id"
-  string network_id = 8 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
+  string network_id = 9 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
 
   // Config of host aliases. Not required.
   // @inject_tag: json:"host_aliases"
-  model.HostAliases host_aliases = 9;
+  model.HostAliases host_aliases = 10;
 
   // Flink config. Not required.
   // @inject_tag: json:"config"
-  flink.FlinkConfig config = 10;
-
-  // The owner of workspace, only used to check quota. Set by APIServer.
-  // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 11 [(validator.field).tags.string = { ne: "" } ];
+  flink.FlinkConfig config = 11;
 }
 
 message UpdateFlinkCluster {
@@ -149,13 +149,17 @@ message UpdateFlinkCluster {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
 
+  // The owner of workspace, only used to check quota. Set by APIServer.
+  // @inject_tag: json:"space_owner" swaggerignore:"true"
+  string space_owner = 2 [(validator.field).tags.string = { ne: "" } ];
+
   // The flink cluster id in HTTP Request-URI
   // @inject_tag: json:"cluster_id" uri:"cluster_id" swaggerignore:"true"
-  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+  string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
 
   // Cluster Name. Is required.
   // @inject_tag: json:"name"
-  string name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
+  string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
   //	// Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11"
   //	// @inject_tag: json:"version" binding:"oneof=flink-1.12.3-scala_2.11"
@@ -165,31 +169,27 @@ message UpdateFlinkCluster {
   //
   // Flink task number for TaskManager. Is required, Min 1, Max 24
   // @inject_tag: json:"task_num"
-  int32 task_num = 5 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
+  int32 task_num = 6 [ (validator.field).tags.int = { gte: 1, lte: 24 } ];
 
   // Flink JobManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"job_cu"
-  float job_cu = 6 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float job_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Flink TaskManager. 1CU = 1C + 4GB. Is required, Min 0.5, Max 8
   // @inject_tag: json:"task_cu"
-  float task_cu = 7 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
+  float task_cu = 8 [ (validator.field).tags.float = { gte: 0.5, lte: 8 } ];
 
   // Network config. Is required.
   // @inject_tag: json:"network_id"
-  string network_id = 8 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
+  string network_id = 9 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "net-" }];
 
   // Config of host aliases. Not required.
   // @inject_tag: json:"host_aliases"
-  model.HostAliases host_aliases = 9;
+  model.HostAliases host_aliases = 10;
 
   // Flink config, Is required.
   // @inject_tag: json:"config"
-  flink.FlinkConfig config = 10;
-
-  // The owner of workspace, only used to check quota. Set by APIServer.
-  // @inject_tag: json:"space_owner" swaggerignore:"true"
-  string space_owner = 11 [(validator.field).tags.string = { ne: "" } ];
+  flink.FlinkConfig config = 11;
 }
 
 message DescribeFlinkCluster {

@@ -133,7 +133,7 @@ message DataSource {
 
   // DataSource owner.
   // @inject_tag: json:"created_by" gorm:"column:created_by"
-  string created_by = 8 [ (validator.field).tags.string = { byte_len_lte: 64} ];
+  string created_by = 8 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
 
   // Create Time, this Source create time.
   // @inject_tag: json:"created" gorm:"column:created;"

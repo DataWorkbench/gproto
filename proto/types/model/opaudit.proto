@@ -33,14 +33,13 @@ message OpAudit {
   string space_id = 2;
   //  string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 
-  //	-- The operation of user behavior.
-  // @inject_tag: json:"op_name" gorm:"column:op_name;"
-  string op_name = 3 [(validator.field).tags.string = { ne: "" }];
+  //The operation of user behavior.
+  // @inject_tag: json:"api_name" gorm:"column:api_name;"
+  string api_name = 3 [(validator.field).tags.string = { ne: "" }];
 
   // -- The type of operation, 2 => "Write",  3 => "Read".
-  // FIXME: review it.
-  // @inject_tag: json:"op_type" gorm:"column:op_type;"
-  APIDesc.Kind op_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
+  // @inject_tag: json:"perm_type" gorm:"column:perm_type;"
+  ProjectAPI.PermType perm_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
 
   // -- The result of operation, 1 => "Success", 2 => "Failed".
   // @inject_tag: json:"state" gorm:"column:state;"
